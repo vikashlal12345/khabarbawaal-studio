@@ -49,6 +49,14 @@ The post maker picks a mode on its own each hour:
 
 GitHub Actions and Pages are free for public repos.
 
+## Fun posts
+
+Every 3rd hourly post is an original funny post (tag-your-friend, desi relatable,
+expectation vs reality, family group, office and student life) on a bright text card
+made for forwarding. Claude writes it on your membership. If that's unavailable,
+an unused post from `assets/fun_bank.json` is used. Add more to the bank with
+`python fun.py --bank 50`. Make one now with `python generate.py --kind fun`.
+
 ## Email alerts
 
 When something needs your attention, the robot opens a GitHub issue (label `alert`) that

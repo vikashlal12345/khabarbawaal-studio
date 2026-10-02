@@ -9,6 +9,8 @@
   "membership_token_days": 365,
   "caption_language": "Hinglish (Hindi written in English letters mixed with simple English), Gen Z tone",
   "max_posts_kept": 150,
+  "fun_every": 3,
+  "fun_bank_max_age_days": 14,
   "lookback_hours": 8,
   "per_feed": 4,
   "feeds": [

@@ -5,6 +5,11 @@ on:
     - cron: "7 * * * *"   # every hour at :07 (GitHub may delay a few minutes)
   workflow_dispatch:       # "Run workflow" button for an instant post
     inputs:
+      kind:
+        description: "Post type"
+        type: choice
+        options: [auto, news, fun]
+        default: auto
       test_alert:
         description: "Also send a test alert email"
         type: boolean
@@ -46,7 +51,7 @@ jobs:
         run: npm install -g @anthropic-ai/claude-code
 
       - name: Create post
-        run: python generate.py
+        run: python generate.py --kind "${{ inputs.kind || 'auto' }}"
 
       - name: Email alerts (as GitHub issues)
         if: always()
@@ -62,7 +67,7 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || git commit -m "New post $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          git pull --rebase -q && git push
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

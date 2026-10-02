@@ -33,6 +33,7 @@
     overflow: hidden; margin-bottom: 20px; }
   .post img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #222; }
   .meta { display: flex; align-items: center; gap: 8px; padding: 12px 14px 0; font-size: 12px; color: var(--muted); }
+  .tag.fun { background: var(--accent); color: #000; }
   .tag { background: var(--red); color: #fff; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
   .new { background: var(--accent); color: #000; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
   .caption { padding: 10px 14px 0; font-size: 14px; white-space: pre-wrap; color: #ddd;
@@ -103,13 +104,14 @@ function prepare(post) {
 
 // Comment to paste under the post and pin (Instagram doesn't make links in captions clickable).
 function commentText(post) {
+  if (post.kind === 'fun') return 'Tag karo 3 dosto ko jo ye dekh ke pakka hasenge 😂👇';
   return `🔗 Source: ${post.source_url}`;
 }
 
 async function copyComment(post) {
   try {
     await navigator.clipboard.writeText(commentText(post));
-    toast('Link copied — paste as comment, then pin it 📌');
+    toast(post.kind === 'fun' ? 'Comment copied — paste & pin it 📌' : 'Link copied — paste as comment, then pin it 📌');
   } catch {
     toast('Could not copy — open 🔗 Story and copy the link');
   }
@@ -164,7 +166,7 @@ function render() {
     <article class="post" data-id="${p.id}">
       <img src="${p.image}" alt="${esc(p.headline)}" loading="lazy">
       <div class="meta">
-        <span class="tag">${esc(p.tag || 'NEWS')}</span>
+        <span class="tag${p.kind === 'fun' ? ' fun' : ''}">${esc(p.tag || 'NEWS')}</span>
         ${lastSeen && p.created_at > lastSeen ? '<span class="new">NEW</span>' : ''}
         <span>${ago(p.created_at)} · ${esc(p.source)}</span>
       </div>
@@ -173,7 +175,7 @@ function render() {
         <button class="primary" data-act="share">📤 Post</button>
         <button data-act="copy">📋 Caption</button>
         <button data-act="comment">💬 Comment</button>
-        <a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>
+        ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
       </div>
     </article>`).join('');
   feedEl.querySelectorAll('.post').forEach(el => observer.observe(el));
@@ -188,6 +190,7 @@ feedEl.addEventListener('click', e => {
   if (act === 'share') share(post);
   else if (act === 'copy') copyCaption(post);
   else if (act === 'comment') copyComment(post);
+  else if (act === 'whatsapp') share(post);
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
 

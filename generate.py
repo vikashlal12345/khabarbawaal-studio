@@ -510,18 +510,164 @@ def token_expiry_check(raised: dict, resolved: list[str]) -> None:
         resolved.append("token-expiry")
 
 
+# ---------------------------------------------------------------- fun posts
+
+FUN_THEMES = [  # (background, pattern, text, highlight, tag background, tag text)
+    ("#FFD400", "#F2C900", "#111111", "#E50914", "#111111", "#FFD400"),
+    ("#E50914", "#D40812", "#FFFFFF", "#FFD400", "#111111", "#FFFFFF"),
+    ("#6C2BD9", "#6326CB", "#FFFFFF", "#FFD400", "#FFD400", "#111111"),
+    ("#00A884", "#009B7A", "#FFFFFF", "#FFE66D", "#111111", "#FFFFFF"),
+    ("#FF6B00", "#F26500", "#111111", "#FFFFFF", "#111111", "#FF6B00"),
+    ("#111111", "#1C1C1C", "#FFFFFF", "#FFD400", "#E50914", "#FFFFFF"),
+]
+
+
+def printable(text: str) -> str:
+    """Drop emojis and other symbols the card fonts can't draw."""
+    return "".join(ch for ch in text if ord(ch) < 0x2000 or ch in "₹–—‘’“”…•").strip()
+
+
+def render_fun_card(post: dict, theme_index: int) -> Image.Image:
+    bg, pattern, fg, hi, tag_bg, tag_fg = FUN_THEMES[theme_index % len(FUN_THEMES)]
+    img = Image.new("RGB", (W, H), bg)
+    d = ImageDraw.Draw(img)
+
+    # Faint "HAHA" wallpaper.
+    pf = font("Anton-Regular.ttf", 150)
+    for row, y in enumerate(range(-40, H, 175)):
+        x = -90 * (row % 3)
+        while x < W:
+            d.text((x, y), "HAHA", font=pf, fill=pattern)
+            x += d.textlength("HAHA  ", font=pf)
+
+    if LOGO_FILE.exists():
+        logo = Image.open(LOGO_FILE).convert("RGBA")
+        logo.thumbnail((420, 96))
+        img.paste(logo, (44, 44), logo)
+
+    tag_font = font("Poppins-Bold.ttf", 32)
+    tag = printable(post["tag"]).upper()
+    tw = d.textlength(tag, font=tag_font)
+    d.rounded_rectangle((60, 190, 60 + tw + 44, 248), radius=12, fill=tag_bg)
+    d.text((82, 219), tag, font=tag_font, fill=tag_fg, anchor="lm")
+
+    # Main text: keep the writer's line breaks, wrap within them, shrink to fit.
+    paragraphs = [p.split() for p in printable(post["card_text"]).split("\n") if p.strip()]
+    highlights = {norm(w) for phrase in post.get("highlight", []) for w in phrase.split()}
+    top, bottom, max_w = 300, H - 190, W - 120
+    for size in range(96, 40, -4):
+        fnt = font("Poppins-Bold.ttf", size)
+        line_h, gap = int(size * 1.28), int(size * 0.55)
+        blocks = [wrap_words(p, fnt, max_w, d) for p in paragraphs]
+        total = sum(len(b) * line_h for b in blocks) + gap * (len(blocks) - 1)
+        if total <= bottom - top:
+            break
+    y = top + (bottom - top - total) // 2
+    space = d.textlength(" ", font=fnt)
+    for block in blocks:
+        for line in block:
+            x = 60
+            for word in line:
+                d.text((x, y), word, font=fnt, fill=hi if norm(word) in highlights else fg)
+                x += d.textlength(word, font=fnt) + space
+            y += line_h
+        y += gap
+
+    foot = font("Poppins-SemiBold.ttf", 30)
+    d.line((60, H - 150, W - 60, H - 150), fill=fg, width=3)
+    d.text((60, H - 95), CONFIG["handle"], font=foot, fill=fg, anchor="lm")
+    d.text((W - 60, H - 95), "SHARE KARO APNE GROUP MEIN", font=font("Poppins-Bold.ttf", 26), fill=fg, anchor="rm")
+    return img
+
+
+def fun_caption(post: dict) -> str:
+    tags = " ".join(t if t.startswith("#") else f"#{t}" for t in post["hashtags"])
+    return (f"{post['caption'].strip()}\n\n"
+            f"Follow {CONFIG['handle']} for daily bawaal 😂\n\n{tags}")
+
+
+def trending_titles() -> list[str]:
+    """Today's buzz for the fun writer: newest viral, entertainment and sports headlines."""
+    wanted = {"viral", "funny/offbeat", "entertainment", "cricket", "sports", "tech"}
+    items = [i for i in fetch_candidates(set()) if i["category"] in wanted]
+    return [i["title"] for i in items[:25]]
+
+
+def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], use_ai: bool) -> bool:
+    """Make a fun post; False if nothing fresh is available (caller posts news instead)."""
+    import fun
+
+    post = None
+    if use_ai and (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
+        try:
+            post = fun.write_fun_post(CONFIG, state.get("recent_fun", [])[-40:], trending_titles())
+            print("Mode: fun (membership, trending)")
+            resolved += ["token", "limit", "ai-error"]
+        except Exception as e:
+            print(f"  ! fun AI failed, trying the fresh fun bank: {e}")
+            raised[classify_ai_error(str(e))] = {"error": str(e)[:400]}
+    if post is None:
+        used = set(state.get("fun_bank_used", []))
+        post = fun.bank_post(used, CONFIG.get("fun_bank_max_age_days", 14))
+        if post is None:
+            print("No fresh fun post available: making a news post instead (no old jokes).")
+            return False
+        state["fun_bank_used"] = (state.get("fun_bank_used", []) + [fun.post_key(post)])[-500:]
+        print("Mode: fun (fresh bank)")
+
+    fun_count = state.get("fun_count", 0)
+    card = render_fun_card(post, fun_count)
+    state["fun_count"] = fun_count + 1
+    state["recent_fun"] = (state.get("recent_fun", []) + [printable(post["card_text"]).replace("\n", " ")])[-200:]
+    save_post(feed, state, card, fun.post_key(post), {
+        "kind": "fun",
+        "headline": printable(post["card_text"]).replace("\n", " "),
+        "tag": "😂 " + post["tag"],
+        "caption": fun_caption(post),
+        "source": "KhabarBawaal Original",
+        "source_url": "",
+    })
+    return True
+
+
+def save_post(feed: list, state: dict, card: Image.Image, post_id: str, entry: dict) -> str:
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+    filename = f"{stamp}-{post_id}.jpg"
+    POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    card.save(POSTS_DIR / filename, "JPEG", quality=88, optimize=True)
+    feed.insert(0, {"id": post_id, "image": f"posts/{filename}", **entry,
+                    "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
+    for old in feed[CONFIG["max_posts_kept"]:]:
+        (DOCS / old["image"]).unlink(missing_ok=True)
+    del feed[CONFIG["max_posts_kept"]:]
+    save_json(FEED_FILE, feed)
+    save_json(STATE_FILE, state)
+    print(f"Saved docs/posts/{filename}")
+    return filename
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
+    parser.add_argument("--kind", choices=["auto", "news", "fun"], default="auto",
+                        help="auto: every 3rd post is a fun post")
     args = parser.parse_args()
 
     state = load_json(STATE_FILE, {"seen": [], "recent_headlines": []})
     feed = load_json(FEED_FILE, [])
     seen = set(state["seen"])
-
     raised: dict = {}
     resolved: list[str] = []
     token_expiry_check(raised, resolved)
+
+    turn = state.get("turn", 0)
+    every = CONFIG.get("fun_every", 3)
+    if args.kind == "fun" or (args.kind == "auto" and every and turn % every == every - 1):
+        state["turn"] = turn + 1
+        if make_fun_post(state, feed, raised, resolved, use_ai=not args.dry_run):
+            write_alerts(raised, resolved)
+            return 0
+        FEED_ERRORS.clear()
 
     print("Fetching news...")
     candidates = fetch_candidates(seen)
@@ -537,7 +683,6 @@ def main() -> int:
     resolved.append("feeds")
     print(f"{len(candidates)} candidates")
 
-    turn = state.get("turn", 0)
     item = post = None
     if not args.dry_run:
         if os.environ.get("ANTHROPIC_API_KEY"):
@@ -561,32 +706,18 @@ def main() -> int:
     print(f"Picked: {item['title']}\nHeadline: {post['headline']}")
 
     card = render_card(best_photo(item), post, item["source"])
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
-    filename = f"{stamp}-{item['id']}.jpg"
-    POSTS_DIR.mkdir(parents=True, exist_ok=True)
-    card.save(POSTS_DIR / filename, "JPEG", quality=88, optimize=True)
-
-    feed.insert(0, {
-        "id": item["id"],
-        "image": f"posts/{filename}",
+    # Unpicked stories stay eligible next hour; recent_headlines stops repeats.
+    state["seen"] = (state["seen"] + [item["id"]])[-3000:]
+    state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
+    save_post(feed, state, card, item["id"], {
+        "kind": "news",
         "headline": post["headline"],
         "tag": post["tag"],
         "caption": full_caption(post, item),
         "source": item["source"],
         "source_url": item["link"],
-        "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     })
-    for old in feed[CONFIG["max_posts_kept"]:]:
-        (DOCS / old["image"]).unlink(missing_ok=True)
-    feed = feed[:CONFIG["max_posts_kept"]]
-
-    # Unpicked stories stay eligible next hour; recent_headlines stops repeats.
-    state["seen"] = (state["seen"] + [item["id"]])[-3000:]
-    state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
-    save_json(FEED_FILE, feed)
-    save_json(STATE_FILE, state)
     write_alerts(raised, resolved)
-    print(f"Saved docs/posts/{filename}")
     return 0
 
 
