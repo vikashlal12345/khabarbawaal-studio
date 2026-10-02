@@ -350,18 +350,39 @@ def norm(word: str) -> str:
     return re.sub(r"[^\w₹]", "", word.upper())
 
 
-def branded_background() -> Image.Image:
-    """Backup when no photo can be downloaded: big faint brand word on a dark field."""
-    bg = Image.new("RGB", (W, H), "#121212")
+def branded_background(tag: str = "") -> Image.Image:
+    """Backup when there's no photo: "split poster" - yellow top with the topic word
+    and a topic icon, dark bottom for the headline."""
+    import make_highlights as mh
+
+    bg = Image.new("RGB", (W, H), "#0d0d0d")
     d = ImageDraw.Draw(bg)
-    word = CONFIG["page_name"].upper()
-    fnt = font("Anton-Regular.ttf", 260)
-    for row, y in enumerate(range(150, 700, 230)):
-        x = -120 * (row % 3)
-        while x < W:
-            d.text((x, y), word, font=fnt, fill="#1e1e1e")
-            x += d.textlength(word + " ", font=fnt)
-    d.rectangle((0, 0, 14, H), fill=CONFIG["tag_color"])
+    d.polygon([(0, 0), (W, 0), (W, 560), (0, 700)], fill=CONFIG["accent_color"])
+    word = printable(tag).upper() or CONFIG["page_name"].upper()
+    size = 260
+    while size > 120 and d.textlength(word, font=font("Anton-Regular.ttf", size)) > W - 80:
+        size -= 10
+    d.text((40, 330), word, font=font("Anton-Regular.ttf", size), fill="#E8C200", anchor="lm")
+    icons = {"CRICKET": mh.icon_cricket, "SPORTS": mh.icon_cricket, "BOLLYWOOD": mh.icon_bollywood,
+             "ENTERTAINMENT": mh.icon_bollywood, "OTT": mh.icon_bollywood, "BOX OFFICE": mh.icon_bollywood,
+             "POLITICS": mh.icon_politics, "INDIA": mh.icon_politics}
+    icon = icons.get(word, mh.icon_viral)().resize((330, 330), Image.LANCZOS)
+    # Icon colours on the yellow: yellow parts -> near-black, red parts stay red,
+    # the icon's dark detail lines (clapper stripes, bat grip) become see-through.
+    px = icon.load()
+    for y in range(icon.height):
+        for x in range(icon.width):
+            r, g_, b_, a = px[x, y]
+            if a < 10:
+                continue
+            if r < 70 and g_ < 70 and b_ < 70:
+                px[x, y] = (0, 0, 0, 0)
+            elif r > 180 and g_ < 100:
+                px[x, y] = (229, 9, 20, a)
+            else:
+                px[x, y] = (13, 13, 13, a)
+    bg.paste(icon, (W - 400, 190), icon)
+    d.polygon([(0, 700), (W, 560), (W, 580), (0, 720)], fill=CONFIG["tag_color"])
     return bg
 
 
@@ -371,7 +392,7 @@ def render_card(photo: Optional[Image.Image], post: dict, source: str) -> Image.
     if photo is not None:
         canvas.paste(cover(photo, W, H), (0, 0))
     else:
-        canvas = branded_background()
+        canvas = branded_background(post.get("tag", ""))
     canvas = canvas.convert("RGBA")
     canvas.alpha_composite(vertical_gradient(W, 260, 150, 0), (0, 0))
     canvas.alpha_composite(vertical_gradient(W, int(H * 0.62), 0, 245), (0, H - int(H * 0.62)))
@@ -418,8 +439,9 @@ def render_card(photo: Optional[Image.Image], post: dict, source: str) -> Image.
     draw.line((60, footer_top, W - 60, footer_top), fill=(255, 255, 255, 70), width=2)
     draw.text((60, footer_top + 48), CONFIG["handle"], font=font("Poppins-SemiBold.ttf", 32),
               fill="white", anchor="lm")
-    draw.text((W - 60, footer_top + 48), f"Source: {source}", font=font("Poppins-SemiBold.ttf", 24),
-              fill=(200, 200, 200), anchor="rm")
+    if source and source not in (CONFIG["page_name"], "Your pick"):  # don't credit ourselves
+        draw.text((W - 60, footer_top + 48), f"Source: {source}", font=font("Poppins-SemiBold.ttf", 24),
+                  fill=(200, 200, 200), anchor="rm")
     draw.rectangle((0, H - 12, W, H), fill=accent)
     return canvas.convert("RGB")
 
