@@ -2,7 +2,7 @@
 
 Every hour a GitHub Action:
 1. pulls fresh news from 15 Indian RSS feeds (viral, funny, politics, entertainment, cricket, tech),
-2. asks Claude to pick the most viral story and write a headline, Hinglish caption and hashtags,
+2. asks Claude (on your membership) to pick the most viral story and write a headline, Hinglish caption and hashtags,
 3. renders a 1080×1350 Instagram card (photo, headline, logo, handle, source),
 4. publishes it to a small web app you install on your iPhone's home screen.
 
@@ -37,11 +37,16 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 ANTHROPIC_API_KEY=sk-... .venv/bin/python generate.py
 ```
 
-## Cost
+## Writing modes and cost
 
-The default model (`claude-opus-5-5`, low effort) costs about $0.02–0.04 per post, so roughly
-$15–30 a month at 24 posts a day. Setting `"model": "claude-haiku-4-5"` in `config.json`
-cuts that to about a fifth, but headlines and story picks will be a bit weaker.
+The post maker picks a mode on its own each hour:
+
+| Mode | When | Extra cost |
+|---|---|---|
+| Membership | `CLAUDE_CODE_OAUTH_TOKEN` secret is set (from `claude setup-token`) | None. Uses your Claude plan's usage limits |
+| Free | No token, or the AI call fails | None. Uses the news site's own headline and summary |
+| API | `ANTHROPIC_API_KEY` secret is set | Pay-as-you-go API billing |
+
 GitHub Actions and Pages are free for public repos.
 
 ## Before posting

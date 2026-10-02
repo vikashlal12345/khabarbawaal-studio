@@ -1,8 +1,11 @@
 """Fetch trending entertainment news, pick the most viral story with Claude,
 and render an Instagram-ready card (1080x1350) + caption into docs/.
 
-Run:  python generate.py            (needs ANTHROPIC_API_KEY)
-      python generate.py --dry-run  (no AI: uses the newest story as-is)
+Writing mode is picked automatically:
+  ANTHROPIC_API_KEY set        -> paid Anthropic API
+  CLAUDE_CODE_OAUTH_TOKEN set  -> Claude Code CLI on your Claude membership (no extra cost)
+  neither (or AI fails)        -> free mode, no AI
+  --dry-run                    -> force free mode
 """
 from __future__ import annotations
 
@@ -14,6 +17,7 @@ import io
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 from datetime import datetime, timezone
@@ -93,6 +97,10 @@ def fetch_candidates(seen: set[str]) -> list[dict]:
         # Cap each feed so busy feeds don't crowd out the other categories.
         fresh.sort(key=lambda i: i["ts"], reverse=True)
         fresh = fresh[:CONFIG["per_feed"]]
+        # Some sites block image downloads from scripts; skip them so every post gets a photo.
+        if fresh and download_image(fresh[0]["image"]) is None and download_image(og_image(fresh[0]["link"])) is None:
+            print(f"  {feed['name']} ({feed.get('category')}): photos blocked, skipped")
+            continue
         taken.update(i["id"] for i in fresh)
         items.extend(fresh)
         print(f"  {feed['name']} ({feed.get('category')}): {len(fresh)} fresh")
@@ -176,9 +184,7 @@ stories (deaths, accidents, crimes) get a respectful tone.
 Hashtags: 6-8 relevant ones, each starting with #."""
 
 
-def write_post(candidates: list[dict], recent_headlines: list[str]) -> tuple[dict, dict]:
-    import anthropic
-
+def build_prompt(candidates: list[dict], recent_headlines: list[str]) -> tuple[str, str]:
     lines = []
     for n, item in enumerate(candidates, 1):
         age_h = (time.time() - item["ts"]) / 3600
@@ -186,7 +192,21 @@ def write_post(candidates: list[dict], recent_headlines: list[str]) -> tuple[dic
     recent = "\n".join(f"- {h}" for h in recent_headlines) or "(none yet)"
     user_msg = (f"Recently posted (don't repeat these stories):\n{recent}\n\n"
                 f"Candidates:\n\n" + "\n\n".join(lines))
+    system = SYSTEM_PROMPT.format(page=CONFIG["page_name"], lang=CONFIG["caption_language"])
+    return system, user_msg
 
+
+def checked_pick(candidates: list[dict], post: dict) -> tuple[dict, dict]:
+    if not 1 <= post["pick"] <= len(candidates):
+        raise RuntimeError(f"Model picked invalid story #{post['pick']}")
+    return candidates[post["pick"] - 1], post
+
+
+def write_post_api(candidates: list[dict], recent_headlines: list[str]) -> tuple[dict, dict]:
+    """Paid mode: Anthropic API key (ANTHROPIC_API_KEY)."""
+    import anthropic
+
+    system, user_msg = build_prompt(candidates, recent_headlines)
     output_config = {"format": {"type": "json_schema", "schema": POST_SCHEMA}}
     extra = {}
     if "haiku" not in CONFIG["model"]:
@@ -200,7 +220,7 @@ def write_post(candidates: list[dict], recent_headlines: list[str]) -> tuple[dic
         max_tokens=8000,
         output_config=output_config,
         **extra,
-        system=SYSTEM_PROMPT.format(page=CONFIG["page_name"], lang=CONFIG["caption_language"]),
+        system=system,
         messages=[{"role": "user", "content": user_msg}],
     )
     if response.stop_reason == "refusal":
@@ -208,20 +228,73 @@ def write_post(candidates: list[dict], recent_headlines: list[str]) -> tuple[dic
     if response.stop_reason == "max_tokens":
         raise RuntimeError("Response cut off (max_tokens)")
     post = json.loads(next(b.text for b in response.content if b.type == "text"))
-    if not 1 <= post["pick"] <= len(candidates):
-        raise RuntimeError(f"Model picked invalid story #{post['pick']}")
-    return candidates[post["pick"] - 1], post
+    return checked_pick(candidates, post)
 
 
-def dry_run_post(candidates: list[dict]) -> tuple[dict, dict]:
-    item = next((c for c in candidates if c["image"]), candidates[0])
-    words = item["title"].split()
+def write_post_membership(candidates: list[dict], recent_headlines: list[str]) -> tuple[dict, dict]:
+    """Membership mode: Claude Code CLI logged in with CLAUDE_CODE_OAUTH_TOKEN
+    (from `claude setup-token`), so usage counts against the Claude plan."""
+    system, user_msg = build_prompt(candidates, recent_headlines)
+    cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p",
+           "--output-format", "json",
+           "--tools", "",
+           "--model", CONFIG.get("membership_model", "sonnet"),
+           "--system-prompt", system,
+           "--json-schema", json.dumps(POST_SCHEMA)]
+    proc = subprocess.run(cmd, input=user_msg, capture_output=True, text=True, timeout=300)
+    try:
+        result = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        raise RuntimeError(f"Claude CLI failed: {(proc.stderr or proc.stdout)[:300]}")
+    if result.get("is_error") or not result.get("structured_output"):
+        raise RuntimeError(f"Claude CLI error: {str(result.get('result'))[:300]}")
+    return checked_pick(candidates, result["structured_output"])
+
+
+# Free mode (no AI): rotate topics so the feed stays varied.
+FREE_ROTATION = ["viral", "india/politics", "entertainment", "funny/offbeat", "cricket", "viral", "politics", "tech"]
+FREE_STYLE = {
+    "viral": ("VIRAL", ["#Viral", "#Trending", "#India", "#ViralNews", "#KhabarBawaal"]),
+    "funny/offbeat": ("WTF NEWS", ["#Funny", "#Viral", "#Desi", "#WTF", "#KhabarBawaal"]),
+    "india/politics": ("INDIA", ["#India", "#BreakingNews", "#IndiaNews", "#Politics", "#KhabarBawaal"]),
+    "politics": ("POLITICS", ["#Politics", "#IndianPolitics", "#India", "#News", "#KhabarBawaal"]),
+    "entertainment": ("BOLLYWOOD", ["#Bollywood", "#BollywoodNews", "#Celebrity", "#Entertainment", "#KhabarBawaal"]),
+    "cricket": ("CRICKET", ["#Cricket", "#TeamIndia", "#CricketNews", "#BCCI", "#KhabarBawaal"]),
+    "sports": ("SPORTS", ["#Sports", "#India", "#SportsNews", "#Cricket", "#KhabarBawaal"]),
+    "tech": ("TECH", ["#Tech", "#TechNews", "#AI", "#Gadgets", "#KhabarBawaal"]),
+}
+
+
+def short_headline(title: str) -> str:
+    # News titles often run "Main point: extra detail" - keep the main point if it's long.
+    if len(title.split()) > 14:
+        for sep in (": ", " - ", " | ", ", "):
+            head = title.split(sep)[0]
+            if 5 <= len(head.split()) <= 14:
+                return head
+        return " ".join(title.split()[:14]) + "..."
+    return title
+
+
+def free_post(candidates: list[dict], turn: int) -> tuple[dict, dict]:
+    with_image = [c for c in candidates if c["image"]] or candidates
+    for offset in range(len(FREE_ROTATION)):
+        wanted = FREE_ROTATION[(turn + offset) % len(FREE_ROTATION)]
+        pool = [c for c in with_image if c["category"] == wanted]
+        if pool:
+            break
+    else:
+        pool = with_image
+    item = pool[0]  # candidates are newest first
+    tag, hashtags = FREE_STYLE.get(item["category"], ("TRENDING", ["#India", "#News", "#Trending", "#KhabarBawaal"]))
+    headline = short_headline(item["title"])
+    caption = (item["summary"] or item["title"]).strip()
     return item, {
-        "tag": "TRENDING",
-        "headline": item["title"],
-        "highlight": words[:2],
-        "caption": item["summary"] or item["title"],
-        "hashtags": ["#India", "#Viral", "#NewsUpdate"],
+        "tag": tag,
+        "headline": headline,
+        "highlight": headline.split()[:2],
+        "caption": f"{caption}\n\nAap kya sochte ho? 👇 Comment karo!",
+        "hashtags": hashtags,
     }
 
 
@@ -264,13 +337,28 @@ def norm(word: str) -> str:
     return re.sub(r"[^\w₹]", "", word.upper())
 
 
+def branded_background() -> Image.Image:
+    """Backup when no photo can be downloaded: big faint brand word on a dark field."""
+    bg = Image.new("RGB", (W, H), "#121212")
+    d = ImageDraw.Draw(bg)
+    word = CONFIG["page_name"].upper()
+    fnt = font("Anton-Regular.ttf", 260)
+    for row, y in enumerate(range(150, 700, 230)):
+        x = -120 * (row % 3)
+        while x < W:
+            d.text((x, y), word, font=fnt, fill="#1e1e1e")
+            x += d.textlength(word + " ", font=fnt)
+    d.rectangle((0, 0, 14, H), fill=CONFIG["tag_color"])
+    return bg
+
+
 def render_card(photo: Optional[Image.Image], post: dict, source: str) -> Image.Image:
     accent = CONFIG["accent_color"]
     canvas = Image.new("RGB", (W, H), "#111111")
     if photo is not None:
         canvas.paste(cover(photo, W, H), (0, 0))
     else:
-        canvas = Image.new("RGB", (W, H), "#1a1a2e")
+        canvas = branded_background()
     canvas = canvas.convert("RGBA")
     canvas.alpha_composite(vertical_gradient(W, 260, 150, 0), (0, 0))
     canvas.alpha_composite(vertical_gradient(W, int(H * 0.62), 0, 245), (0, H - int(H * 0.62)))
@@ -357,13 +445,25 @@ def main() -> int:
         return 0
     print(f"{len(candidates)} candidates")
 
-    if args.dry_run:
-        item, post = dry_run_post(candidates)
-    elif not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY is not set: add it as a repo secret. Skipping this run.")
-        return 0
-    else:
-        item, post = write_post(candidates, state["recent_headlines"][-24:])
+    turn = state.get("turn", 0)
+    item = post = None
+    if not args.dry_run:
+        if os.environ.get("ANTHROPIC_API_KEY"):
+            writers = [("API", write_post_api)]
+        elif os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
+            writers = [("membership", write_post_membership)]
+        else:
+            writers = []
+        for mode, writer in writers:
+            try:
+                item, post = writer(candidates, state["recent_headlines"][-24:])
+                print(f"Mode: {mode}")
+            except Exception as e:  # limits hit, CLI/network error: fall back to free mode
+                print(f"  ! {mode} mode failed, using free mode: {e}")
+    if post is None:
+        item, post = free_post(candidates, turn)
+        print("Mode: free (no AI)")
+    state["turn"] = turn + 1
     print(f"Picked: {item['title']}\nHeadline: {post['headline']}")
 
     card = render_card(best_photo(item), post, item["source"])
