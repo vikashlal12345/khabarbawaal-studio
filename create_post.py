@@ -162,6 +162,31 @@ def free_post(text: str, article: dict | None) -> dict:
             "photo_query": title[:120], "wiki_title": ""}
 
 
+def words(text: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z0-9]+", text.lower()) if len(w) > 2}
+
+
+def find_duplicate(feed: list, link: str, texts: list[str], days: int = 3) -> dict | None:
+    """A post from the last `days` days with the same link or clearly the same story."""
+    cutoff = datetime.now(timezone.utc).timestamp() - days * 86400
+    asked = [words(t) for t in texts if t]
+    for p in feed:
+        if datetime.fromisoformat(p["created_at"]).timestamp() < cutoff:
+            continue
+        if link and p.get("source_url") and g.clean_link(p["source_url"]) == link:
+            return p
+        have = words(p["headline"])
+        for a in asked:
+            if a and have and len(a & have) / min(len(a), len(have)) >= 0.6:
+                return p
+    return None
+
+
+def ist_time(iso: str) -> str:
+    from datetime import timedelta
+    return (datetime.fromisoformat(iso) + timedelta(hours=5, minutes=30)).strftime("%d %b, %I:%M %p")
+
+
 def caption(post: dict, source: str | None) -> str:
     tags = " ".join(t if t.startswith("#") else f"#{t}" for t in post["hashtags"])
     src = f"Source: {source} (link pinned in comments 👇)\n" if source else ""
@@ -178,6 +203,19 @@ def main() -> int:
     article = read_article(urls[0]) if urls else None
     if article:
         print(f"Link: {article['site']} | {article['title']}")
+
+    summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
+    feed = g.load_json(g.FEED_FILE, [])
+    force = re.search(r"\bagain\b", text, re.I)
+    if not force:
+        dup = find_duplicate(feed, article["url"] if article else "",
+                             [article["title"] if article else "", text])
+        if dup:
+            msg = (f"⚠️ **Already posted** on {ist_time(dup['created_at'])} IST:\n\n> {dup['headline']}\n\n"
+                   f"Not creating it again. To post it anyway, send it again with the word **again** in your message.")
+            summary_file.write_text(msg)
+            print(msg)
+            return 0
 
     post = None
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
@@ -204,7 +242,6 @@ def main() -> int:
         card.save(g.DOCS / name, "JPEG", quality=88, optimize=True)
         options.append(name)
 
-    feed = g.load_json(g.FEED_FILE, [])
     state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
     source_url = article["url"] if article else ""
     feed.insert(0, {
@@ -219,13 +256,15 @@ def main() -> int:
             (g.DOCS / img).unlink(missing_ok=True)
     del feed[g.CONFIG["max_posts_kept"]:]
     state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
+    if source_url:  # the hourly robot won't pick this story up again
+        state["seen"] = (state["seen"] + [g.hashlib.sha1(source_url.encode()).hexdigest()[:12]])[-3000:]
     g.save_json(g.FEED_FILE, feed)
     g.save_json(g.STATE_FILE, state)
 
     summary = (f"✅ **Post ready:** {post['headline']}\n\n"
                f"{len(photos)} photo option(s) + brand banner. Open the KhabarBawaal Studio app "
                f"(pull to refresh), swipe to pick a version, then tap 📤 Post.")
-    g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md")).write_text(summary)
+    summary_file.write_text(summary)
     print(summary)
     return 0
 

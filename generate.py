@@ -470,6 +470,10 @@ ALERT_TEXT = {
                  "The AI step failed this hour, so the post was made in **free mode**:\n\n> {error}\n\n"
                  "Usually temporary. This alert closes itself when AI posts work again. "
                  "If it stays open for a day, open Claude Code and say: `KhabarBawaal AI posts are failing, please check`."),
+    "gap": ("Posting was paused for {hours} hours",
+            "No post was made for **{hours} hours** before this run (GitHub's scheduler can stall). "
+            "Posting has resumed now and this alert will close itself on the next normal run.\n\n"
+            "If you get this often, open Claude Code and say: `KhabarBawaal hourly posting keeps stopping`."),
     "feeds": ("No news stories for {runs} hours",
               "The robot found no fresh stories for {runs} runs in a row. Feeds that failed: {failed}.\n\n"
               "News sites sometimes change or block their feeds. Open Claude Code and say: "
@@ -652,6 +656,8 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
     parser.add_argument("--kind", choices=["auto", "news", "fun"], default="auto",
                         help="auto: every 3rd post is a fun post")
+    parser.add_argument("--min-gap", type=int, default=0,
+                        help="skip if the newest post is younger than this many minutes (timed runs)")
     args = parser.parse_args()
 
     state = load_json(STATE_FILE, {"seen": [], "recent_headlines": []})
@@ -660,6 +666,16 @@ def main() -> int:
     raised: dict = {}
     resolved: list[str] = []
     token_expiry_check(raised, resolved)
+
+    if feed:
+        age_min = (datetime.now(timezone.utc) - datetime.fromisoformat(feed[0]["created_at"])).total_seconds() / 60
+        if args.min_gap and age_min < args.min_gap:
+            print(f"Newest post is only {age_min:.0f} min old: skipping this run (no double posts).")
+            return 0
+        if age_min > 180:
+            raised["gap"] = {"hours": round(age_min / 60)}
+        else:
+            resolved.append("gap")
 
     turn = state.get("turn", 0)
     every = CONFIG.get("fun_every", 3)
