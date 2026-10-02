@@ -49,6 +49,22 @@ The post maker picks a mode on its own each hour:
 
 GitHub Actions and Pages are free for public repos.
 
+## Email alerts
+
+When something needs your attention, the robot opens a GitHub issue (label `alert`) that
+@mentions you, and GitHub emails it. Alerts close themselves when the problem is gone.
+
+| Alert | Meaning |
+|---|---|
+| `token` | Membership token expired or invalid. Posts continue in free mode. Renew with `python3 renew_token.py` |
+| `token-expiry` | Token expires within 30 days |
+| `limit` | Claude usage limit hit this hour. That post was made in free mode |
+| `ai-error` | Other AI failure. That post was made in free mode |
+| `feeds` | No news found for 3+ hours |
+
+Test it: **Actions → Hourly post → Run workflow → tick "Also send a test alert email"**.
+If no email arrives, check https://github.com/settings/notifications (Email must be on for "Participating").
+
 ## Before posting
 
 Read the headline against the original story (**🔗 Story** button) before you post. Use news photos

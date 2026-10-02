@@ -20,7 +20,7 @@ import re
 import subprocess
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -50,6 +50,14 @@ def clean_text(raw: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
+def clean_link(url: str) -> str:
+    """Drop #fragments and utm_* tracking params so the link reads cleanly in a comment."""
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+    parts = urlsplit(url.strip())
+    query = urlencode([(k, v) for k, v in parse_qsl(parts.query) if not k.lower().startswith("utm_")])
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, query, ""))
+
+
 def rss_image(entry) -> Optional[str]:
     for key in ("media_content", "media_thumbnail"):
         for media in entry.get(key, []) or []:
@@ -61,6 +69,9 @@ def rss_image(entry) -> Optional[str]:
     return None
 
 
+FEED_ERRORS: list[str] = []
+
+
 def fetch_candidates(seen: set[str]) -> list[dict]:
     cutoff = time.time() - CONFIG["lookback_hours"] * 3600
     items, taken = [], set(seen)
@@ -70,6 +81,7 @@ def fetch_candidates(seen: set[str]) -> list[dict]:
             parsed = feedparser.parse(resp.content)
         except requests.RequestException as e:
             print(f"  ! {feed['name']}: {e}")
+            FEED_ERRORS.append(feed["name"])
             continue
         fresh = []
         for entry in parsed.entries:
@@ -77,6 +89,7 @@ def fetch_candidates(seen: set[str]) -> list[dict]:
             title = clean_text(entry.get("title", ""))
             if not link or not title:
                 continue
+            link = clean_link(link)
             item_id = hashlib.sha1(link.encode()).hexdigest()[:12]
             if item_id in taken:
                 continue
@@ -426,7 +439,75 @@ def full_caption(post: dict, item: dict) -> str:
     tags = " ".join(t if t.startswith("#") else f"#{t}" for t in post["hashtags"])
     return (f"{post['caption'].strip()}\n\n"
             f"Follow {CONFIG['handle']} for daily updates.\n"
-            f"Source: {item['source']}\n\n{tags}")
+            f"Source: {item['source']} (link pinned in comments 👇)\n\n{tags}")
+
+
+# ---------------------------------------------------------------- alerts
+# The workflow turns these into GitHub issues that @mention the owner, which GitHub
+# emails. Each alert has a key; an alert whose problem is gone is listed in "resolved"
+# so its issue gets closed automatically.
+
+RENEW_STEPS = """**How to renew the membership token (5 minutes):**
+1. On your Mac, open VS Code → Claude Code and type: `renew the KhabarBawaal membership token`
+   Claude will open the login, test the new token and save it to GitHub for you.
+2. Or do it yourself in Terminal:
+   - `claude setup-token` → sign in → copy the token it prints
+   - `gh secret set CLAUDE_CODE_OAUTH_TOKEN -R vikashlal12345/khabarbawaal-studio` → paste the token
+3. Then update `membership_token_created` in `config.json` to today's date.
+
+Until then, posts keep coming every hour in **free mode** (no AI captions)."""
+
+ALERT_TEXT = {
+    "token": ("Claude membership token expired or invalid",
+              "The hourly robot could not log in to your Claude membership:\n\n> {error}\n\n" + RENEW_STEPS),
+    "token-expiry": ("Claude membership token expires in {days} days",
+                     "Your membership token was created on {created} and expires around **{expires}**.\n\n" + RENEW_STEPS),
+    "limit": ("Claude membership usage limit reached",
+              "Your Claude plan's usage limit was reached, so this hour's post was made in **free mode**:\n\n> {error}\n\n"
+              "Nothing to do: AI posts resume automatically when your limit resets, and this alert closes itself.\n"
+              "If this happens often, ask Claude Code to post less often (e.g. every 2 hours)."),
+    "ai-error": ("AI writing failed (posting in free mode)",
+                 "The AI step failed this hour, so the post was made in **free mode**:\n\n> {error}\n\n"
+                 "Usually temporary. This alert closes itself when AI posts work again. "
+                 "If it stays open for a day, open Claude Code and say: `KhabarBawaal AI posts are failing, please check`."),
+    "feeds": ("No news stories for {runs} hours",
+              "The robot found no fresh stories for {runs} runs in a row. Feeds that failed: {failed}.\n\n"
+              "News sites sometimes change or block their feeds. Open Claude Code and say: "
+              "`KhabarBawaal news feeds are failing, please fix`."),
+}
+
+
+def classify_ai_error(err: str) -> str:
+    low = err.lower()
+    if any(w in low for w in ("401", "invalid", "expired", "authenticat", "oauth", "unauthorized")):
+        return "token"
+    if any(w in low for w in ("limit", "429", "quota", "usage", "rate")):
+        return "limit"
+    return "ai-error"
+
+
+def write_alerts(raised: dict, resolved: list[str]) -> None:
+    out = {"raise": [], "resolve": resolved}
+    for key, fields in raised.items():
+        title, body = ALERT_TEXT[key]
+        out["raise"].append({"key": key, "title": title.format(**fields), "body": body.format(**fields)})
+    path = Path(os.environ.get("ALERTS_FILE", ROOT / ".alerts.json"))
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=1))
+    for a in out["raise"]:
+        print(f"ALERT [{a['key']}] {a['title']}")
+
+
+def token_expiry_check(raised: dict, resolved: list[str]) -> None:
+    created = CONFIG.get("membership_token_created")
+    if not (created and os.environ.get("CLAUDE_CODE_OAUTH_TOKEN")):
+        return
+    start = datetime.strptime(created, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    expires = start + timedelta(days=CONFIG.get("membership_token_days", 365))
+    days = (expires - datetime.now(timezone.utc)).days
+    if days <= 30:
+        raised["token-expiry"] = {"days": max(days, 0), "created": created, "expires": expires.date().isoformat()}
+    else:
+        resolved.append("token-expiry")
 
 
 def main() -> int:
@@ -438,11 +519,22 @@ def main() -> int:
     feed = load_json(FEED_FILE, [])
     seen = set(state["seen"])
 
+    raised: dict = {}
+    resolved: list[str] = []
+    token_expiry_check(raised, resolved)
+
     print("Fetching news...")
     candidates = fetch_candidates(seen)
     if not candidates:
+        state["empty_runs"] = state.get("empty_runs", 0) + 1
+        if state["empty_runs"] >= 3:
+            raised["feeds"] = {"runs": state["empty_runs"], "failed": ", ".join(FEED_ERRORS) or "none (feeds empty)"}
+        save_json(STATE_FILE, state)
+        write_alerts(raised, resolved)
         print("No fresh stories this hour.")
         return 0
+    state["empty_runs"] = 0
+    resolved.append("feeds")
     print(f"{len(candidates)} candidates")
 
     turn = state.get("turn", 0)
@@ -458,8 +550,10 @@ def main() -> int:
             try:
                 item, post = writer(candidates, state["recent_headlines"][-24:])
                 print(f"Mode: {mode}")
+                resolved += ["token", "limit", "ai-error"]
             except Exception as e:  # limits hit, CLI/network error: fall back to free mode
                 print(f"  ! {mode} mode failed, using free mode: {e}")
+                raised[classify_ai_error(str(e))] = {"error": str(e)[:400]}
     if post is None:
         item, post = free_post(candidates, turn)
         print("Mode: free (no AI)")
@@ -491,6 +585,7 @@ def main() -> int:
     state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
     save_json(FEED_FILE, feed)
     save_json(STATE_FILE, state)
+    write_alerts(raised, resolved)
     print(f"Saved docs/posts/{filename}")
     return 0
 

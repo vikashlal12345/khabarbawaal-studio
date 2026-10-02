@@ -1,6 +1,6 @@
 // Network-first for the feed, cache-first for post images, so the app opens
 // instantly and still shows the last posts when offline.
-const CACHE = 'studio-v1';
+const CACHE = 'studio-v2';
 const SHELL = ['./', 'index.html', 'manifest.json', 'icons/apple-touch-icon.png', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {

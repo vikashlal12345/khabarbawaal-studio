@@ -5,6 +5,8 @@
   "tag_color": "#E50914",
   "model": "claude-opus-5-5",
   "membership_model": "sonnet",
+  "membership_token_created": "2026-10-02",
+  "membership_token_days": 365,
   "caption_language": "Hinglish (Hindi written in English letters mixed with simple English), Gen Z tone",
   "max_posts_kept": 150,
   "lookback_hours": 8,

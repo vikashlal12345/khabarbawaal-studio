@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 .DS_Store
+.alerts.json
+.renew_token.log
+code.txt

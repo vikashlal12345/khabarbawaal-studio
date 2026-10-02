@@ -38,7 +38,8 @@
   .caption { padding: 10px 14px 0; font-size: 14px; white-space: pre-wrap; color: #ddd;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .caption.open { -webkit-line-clamp: unset; display: block; }
-  .actions { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr) minmax(0,1fr); gap: 8px; padding: 12px 14px 14px; }
+  .actions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; padding: 12px 14px 14px; }
+  .actions .primary { grid-column: 1 / -1; padding: 14px 6px; font-size: 16px; }
   .actions button, .actions a { border: 0; border-radius: 10px; padding: 12px 6px; font-size: 14px;
     font-weight: 600; text-align: center; text-decoration: none; white-space: nowrap; color: var(--text); background: #262626; }
   .actions .primary { background: var(--accent); color: #000; }
@@ -100,6 +101,20 @@ function prepare(post) {
   return pending[post.id];
 }
 
+// Comment to paste under the post and pin (Instagram doesn't make links in captions clickable).
+function commentText(post) {
+  return `🔗 Source: ${post.source_url}`;
+}
+
+async function copyComment(post) {
+  try {
+    await navigator.clipboard.writeText(commentText(post));
+    toast('Link copied — paste as comment, then pin it 📌');
+  } catch {
+    toast('Could not copy — open 🔗 Story and copy the link');
+  }
+}
+
 async function copyCaption(post) {
   try {
     await navigator.clipboard.writeText(post.caption);
@@ -120,7 +135,7 @@ async function share(post) {
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {
       await navigator.share({ files: [file] });
-      toast('Caption copied — paste it in Instagram');
+      toast('Caption copied — after posting, tap 💬 Comment for the link');
     } catch (e) {
       if (e.name !== 'AbortError') toast('Share failed: ' + e.message);
     }
@@ -156,7 +171,8 @@ function render() {
       <div class="caption">${esc(p.caption)}</div>
       <div class="actions">
         <button class="primary" data-act="share">📤 Post</button>
-        <button data-act="copy">📋 Copy</button>
+        <button data-act="copy">📋 Caption</button>
+        <button data-act="comment">💬 Comment</button>
         <a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>
       </div>
     </article>`).join('');
@@ -171,6 +187,7 @@ feedEl.addEventListener('click', e => {
   const act = e.target.closest('[data-act]')?.dataset.act;
   if (act === 'share') share(post);
   else if (act === 'copy') copyCaption(post);
+  else if (act === 'comment') copyComment(post);
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
 
