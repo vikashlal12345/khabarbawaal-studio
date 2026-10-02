@@ -1,0 +1,67 @@
+name: Create post from your news
+
+# The app's ➕ button opens a GitHub issue titled "Create post" with your link/text.
+# Only issues opened by the repo owner are processed.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: hourly-post        # takes turns with the hourly robot
+  cancel-in-progress: false
+
+jobs:
+  create:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Create post')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Install Claude Code (membership mode)
+        if: env.CLAUDE_CODE_OAUTH_TOKEN != ''
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Create post
+        env:
+          INPUT_TEXT: ${{ github.event.issue.body }}
+          SUMMARY_FILE: ${{ runner.temp }}/summary.md
+        run: python create_post.py
+
+      - name: Save post to repo
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Your post (issue #$ISSUE)"
+          git pull --rebase -q && git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Reply and close
+        if: success()
+        run: gh issue close "$ISSUE" --comment "$(cat "${{ runner.temp }}/summary.md")"
+      - name: Report failure
+        if: failure()
+        run: gh issue comment "$ISSUE" --body "❌ Could not create this post. Check the link or try different words. Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

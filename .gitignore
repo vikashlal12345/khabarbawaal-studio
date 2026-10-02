@@ -4,3 +4,4 @@ __pycache__/
 .alerts.json
 .renew_token.log
 code.txt
+.create_summary.md

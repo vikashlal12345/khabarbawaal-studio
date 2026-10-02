@@ -638,7 +638,8 @@ def save_post(feed: list, state: dict, card: Image.Image, post_id: str, entry: d
     feed.insert(0, {"id": post_id, "image": f"posts/{filename}", **entry,
                     "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
     for old in feed[CONFIG["max_posts_kept"]:]:
-        (DOCS / old["image"]).unlink(missing_ok=True)
+        for img in old.get("options", [old["image"]]):
+            (DOCS / img).unlink(missing_ok=True)
     del feed[CONFIG["max_posts_kept"]:]
     save_json(FEED_FILE, feed)
     save_json(STATE_FILE, state)
