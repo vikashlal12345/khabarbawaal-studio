@@ -154,8 +154,8 @@ politics, cricket, Bollywood and tech. Every hour you choose ONE story from the 
 candidates and write the post.
 
 Choosing: pick the story most likely to be shared, saved and argued about in the \
-comments by 18-28 year olds in India. The page's name means "drama alert", so lean \
-towards kalesh: public spats, viral fights and arguments, controversies, heated debates, \
+comments by 18-28 year olds in India. The page's name means "news that causes an \
+uproar", so lean towards bawaal: controversies, public spats, viral fights, heated debates, \
 plus surprising, relatable or funny "wait what" moments, big numbers, underdog wins \
 and major political developments. Keep the feed varied: \
 avoid the same category as the last two posts unless the story is huge. Skip routine \

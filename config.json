@@ -1,6 +1,6 @@
 {
-  "page_name": "KaleshAlert",
-  "handle": "@kaleshalert",
+  "page_name": "KhabarBawaal",
+  "handle": "@khabarbawaal",
   "accent_color": "#FFD400",
   "tag_color": "#E50914",
   "model": "claude-opus-5-5",

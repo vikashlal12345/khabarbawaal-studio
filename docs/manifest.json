@@ -1,6 +1,6 @@
 {
-  "name": "KaleshAlert Studio",
-  "short_name": "KaleshAlert",
+  "name": "KhabarBawaal Studio",
+  "short_name": "KhabarBawaal",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

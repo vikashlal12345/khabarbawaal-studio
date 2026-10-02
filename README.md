@@ -1,4 +1,4 @@
-# KaleshAlert Studio
+# KhabarBawaal Studio
 
 Every hour a GitHub Action:
 1. pulls fresh news from 15 Indian RSS feeds (viral, funny, politics, entertainment, cricket, tech),
