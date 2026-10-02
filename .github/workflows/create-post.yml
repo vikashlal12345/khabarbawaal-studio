@@ -64,4 +64,5 @@ jobs:
         run: gh issue close "$ISSUE" --comment "$(cat "${{ runner.temp }}/summary.md")"
       - name: Report failure
         if: failure()
-        run: gh issue comment "$ISSUE" --body "❌ Could not create this post. Check the link or try different words. Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        run: |
+          gh issue comment "$ISSUE" --body "❌ Could not create this post. Check the link or try different words. Details - ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
