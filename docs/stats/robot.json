@@ -42,23 +42,23 @@
   "news": {
    "posts": 6,
    "requests": 24,
-   "input": 88,
-   "output": 21253,
-   "cache_read": 118456,
-   "cache_write": 132065,
-   "value_usd": 0.7645,
+   "input": 90,
+   "output": 21213,
+   "cache_read": 125881,
+   "cache_write": 127764,
+   "value_usd": 0.7483,
    "by_purpose": {
     "writing": {
      "requests": 6,
-     "tokens": 38143
+     "tokens": 44355
     },
     "photo check": {
      "requests": 6,
-     "tokens": 49684
+     "tokens": 48396
     },
     "proofreading": {
      "requests": 12,
-     "tokens": 184035
+     "tokens": 182197
     }
    }
   },
