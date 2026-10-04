@@ -1,5 +1,28 @@
 [
  {
+  "id": "92bcf180c8d9",
+  "image": "posts/20261004-1331-92bcf180c8d9.jpg",
+  "kind": "news",
+  "headline": "60-Year-Old Chinese Woman Takes Up Gaming To Understand Son, Becomes Online Streaming Star",
+  "tag": "VIRAL",
+  "caption": "Beta ko samajhne ke liye mummy ne gamer banna choose kar liya 🎮\nChina ki 60 saal ki Zhong Juanjuan ne apne son ki gaming habit samajhne ke liye gaming start ki.\nAb wahi try unka streaming career ban gaya hai aur online followers bhi mil rahe hain.\nAapki mummy ko gaming sikhani pade toh kitne din chalegi, ek hafta ya ek ghanta? 😂\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Viral #China #Gaming #Streamer #Wholesome #MomGoals #KhabarBawaal #TrendingNow",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/60yearold-chinese-woman-takes-up-gaming-to-understand-son-gains-following-online-101791115276110.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The photo credit at bottom right (\"Photo: மாலைமலர்\", Tamil script) shows as empty boxes. The font doesn't support Tamil. Re-render it in a font that does, or replace it with a Latin-script credit such as \"Photo: Maalai Malar\". The credit also names a different outlet from the \"Source: Hindustan Times\" line, so check that the photo is properly credited."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261004-1331-92bcf180c8d9-s2.jpg",
+   "posts/20261004-1331-92bcf180c8d9-s3.jpg",
+   "posts/20261004-1331-92bcf180c8d9-s4.jpg"
+  ],
+  "created_at": "2026-10-04T13:31:00+00:00"
+ },
+ {
   "id": "dfb9b1573f67",
   "image": "posts/20261004-1302-dfb9b1573f67.jpg",
   "kind": "news",
