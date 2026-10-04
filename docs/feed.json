@@ -1,5 +1,34 @@
 [
  {
+  "id": "183b72254349",
+  "image": "posts/20261004-0733-183b72254349.jpg",
+  "kind": "news",
+  "headline": "Sanjay Dutt says he doesn't feel peace in India anymore, jokes about becoming PM",
+  "tag": "BOLLYWOOD",
+  "caption": "Sanjay Baba ke is statement ne internet pe halchal macha di 👀\n\nShekhar Suman ke show pe Sanjay Dutt ne kaha ki unhe ab India mein peace feel nahi hoti.\nSaath hi mazaak mein bole ki agar wo Prime Minister bane, toh abroad jaake celebrate nahi karenge.\n\nAapko kya lagta hai, sirf mazaak tha ya baat mein dum hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SanjayDutt #ShekharSuman #Bollywood #BollywoodNews #ViralNews #KhabarBawaal #India #Celebs",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-says-he-doesn-t-feel-peace-in-india-anymore-prime-minister-narendra-modi-munna-bhai-shekhar-suman-donald-trump-101791092629616.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Quote must match what Sanjay actually said (\"aap sab logon ke beech\"); \"janta ke beech\" is not in the article.",
+    "Slide 1: The cover photo looks like two crops placed side by side. Sanjay Dutt's face is cut off at the left edge. The right half shows only a sliver of a face and looks like a duplicate. The photo looks awkward and badly cropped. Replace it with one clean, centered image.",
+    "Slide 2: The photo credit says 'The Statesman', but the article source is Hindustan Times. Check that the credit is correct, because the article doesn't confirm where the image came from.",
+    "Caption: The caption says the statement 'ne internet pe halchal macha di'. The article doesn't report any online reaction, so this claim has no support. Consider softening it."
+   ],
+   "fixed": [
+    "Video-trip wali joke → Videsh-trip wali joke",
+    "janta ke beech.\" → aap sab logon ke beech.\""
+   ]
+  },
+  "slides": [
+   "posts/20261004-0733-183b72254349-s2.jpg",
+   "posts/20261004-0733-183b72254349-s3.jpg",
+   "posts/20261004-0733-183b72254349-s4.jpg"
+  ],
+  "created_at": "2026-10-04T07:33:59+00:00"
+ },
+ {
   "id": "35a7fde34619",
   "image": "posts/20261004-0731-35a7fde34619.jpg",
   "kind": "news",
