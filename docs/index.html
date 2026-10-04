@@ -240,10 +240,11 @@ function proofHtml(p) {
 }
 
 // A ready post counts as used once you mark it or link its Instagram post.
-function isUsed(p) { return !!(localGet('used-' + p.id) || igLinks[p.id]); }
+function isUsed(p) { return !!(localGet('used-' + p.id) || igLinks[p.id] || localGet('linked-' + p.id)); }
 
 function instaHtml(p) {
-  const link = igLinks[p.id], res = igData[p.id];
+  const local = localGet('linked-' + p.id);
+  const link = igLinks[p.id] || (local ? { url: local } : null), res = igData[p.id];
   if (!link) return `<div class="insta"><span>Posted it? Link it to track likes</span><button data-act="insta">🔗 Insta link</button></div>`;
   return `<div class="insta"><span>${res ? `❤️ ${res.likes} · 💬 ${res.comments}` : '🔗 Linked: likes appear within a few hours'}</span>
     <a href="${link.url}" target="_blank" rel="noopener" style="color:var(--muted)">Open ↗</a></div>`;
@@ -336,18 +337,26 @@ document.getElementById('create-go').addEventListener('click', () => {
   if (!window.open(url, '_blank')) window.location.href = url;
 });
 
-// 🔗 Insta link: sends the post's Instagram URL to the robot (via a GitHub issue, like ➕ Create).
-function linkInsta(post) {
+// 🔗 Insta link: sent to the robot's private inbox (no GitHub screen). The robot collects
+// it on its next run (every 30-60 min).
+let inboxTopic = null;
+async function linkInsta(post) {
   const url = prompt('Paste the Instagram link of this post (in Instagram: ⋯ → Copy link):');
   if (!url) return;
-  if (!/instagram\.com\/(p|reel)\//.test(url)) { toast('That doesn\'t look like an Instagram post link'); return; }
-  const owner = location.hostname.endsWith('github.io') ? location.hostname.split('.')[0] : 'vikashlal12345';
-  const repo = location.pathname.split('/').filter(Boolean)[0] || 'khabarbawaal-studio';
-  const body = `post: ${post.id}\nurl: ${url.trim()}`;
-  if (post.kind === 'ready') localSet('used-' + post.id, '1');
-  const gh = `https://github.com/${owner}/${repo}/issues/new?title=${encodeURIComponent('Insta link')}&body=${encodeURIComponent(body)}`;
-  toast('Tap Create in GitHub to save the link');
-  if (!window.open(gh, '_blank')) window.location.href = gh;
+  const m = url.match(/https:\/\/(www\.)?instagram\.com\/(p|reel)\/[A-Za-z0-9_-]+/);
+  if (!m) { toast('That doesn\'t look like an Instagram post link'); return; }
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST',
+      body: JSON.stringify({ type: 'insta', post: post.id, url: m[0] }) });
+    if (!r.ok) throw new Error(r.status);
+    localSet('linked-' + post.id, m[0]);
+    if (post.kind === 'ready') localSet('used-' + post.id, '1');
+    toast('✅ Link saved: likes will show in a few hours');
+    render();
+  } catch (e) {
+    toast('Couldn\'t save the link (no internet?). Try again.');
+  }
 }
 function localDel(k) { try { localStorage.removeItem(k); } catch {} }
 

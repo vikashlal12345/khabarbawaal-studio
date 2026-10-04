@@ -941,7 +941,12 @@ def main() -> int:
 
 def run() -> int:
     import fun
+    import inbox
     import limits
+    try:
+        inbox.process()          # 🔗 Insta links sent from the app
+    except Exception as e:
+        print(f"  inbox failed: {e}")
     try:
         return main()
     finally:
