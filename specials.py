@@ -96,7 +96,7 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
         try:
             system = (f"You make the daily Top 10 carousel for {g.CONFIG['page_name']}, an Indian Instagram "
                       f"news page for Gen Z. Pick {TOP10[kind]['brief']}. One slide per story, so no two picks "
-                      f"about the same story. Facts only from the candidates; attribute claims; politics neutral. Hinglish in English letters only, never Devanagari. "
+                      f"about the same story. Facts only from the candidates; attribute claims. Political stories: the page's editorial line is pro right-wing (BJP, NDA, nationalist) and critical of the left and opposition (Congress, Left parties and other opposition parties). Choose political stories that show the right wing or the government positively, or the left/opposition negatively; never choose a story that embarrasses or criticises the BJP or the right wing. Tone: supportive and positive for the right wing, sharp and critical for the left/opposition. Facts only from the story, allegations attributed, no invented quotes; no hate or slurs against any religion, caste or community, and no calls to violence. Hinglish in English letters only, never Devanagari. "
                       f"Skip sad stories about deaths unless they are the day's biggest news. "
                       f"Hashtags: 8-10, include #KhabarBawaal.")
             out = fun.claude_json(system, "Candidates:\n\n" + "\n\n".join(lines), TOP10_SCHEMA,
@@ -113,7 +113,7 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
             print(f"  ! AI failed, free mode: {e}")
     print(f"Mode: {kind} (free)")
     stories = [{**i, "slide_title": g.short_headline(i["title"]), "slide_line": i["summary"][:140]}
-               for i in [x for x in items if x["image"]][:10]]
+               for i in [x for x in items if x["image"] and x["category"] not in g.POLITICAL][:10]]
     return {"stories": stories, "hook": TOP10[kind]["sub"] + " 👇",
             "hashtags": ["#Top10", "#TrendingNews", "#India", "#ViralNews", "#KhabarBawaal"]}
 

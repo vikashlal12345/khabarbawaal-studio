@@ -54,35 +54,6 @@
   "created_at": "2026-10-04T05:49:38+00:00"
  },
  {
-  "id": "ce5c1036695e",
-  "image": "posts/20261004-0508-ce5c1036695e.jpg",
-  "kind": "news",
-  "headline": "BJP MP Gajendra Singh Patel tells Hindus to marry early, have five kids",
-  "tag": "POLITICS",
-  "caption": "BJP MP ke ek bayaan par charcha shuru ho gayi hai 👀\nGajendra Singh Patel ne Hindus ko jaldi shaadi karne aur paanch bachche karne ki salah di.\nUnhone kaha ki pehle log 20-22 saal mein shaadi kar lete the aur 4-7 bachche hote the. Saath mein unhone \"other community\" ki birth rate ka bhi zikr kiya.\nAbhi tak is par aur reactions aane baaki hain.\nAapko kya lagta hai, is bayaan par aapki kya raay hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#GajendraSinghPatel #BJP #IndiaPolitics #BirthRate #PoliticalNews #KhabarBawaal #TrendingIndia #BreakingNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/marry-early-have-five-kids-bjp-mps-advice-to-hindus-cites-birth-rate-of-other-community-101791085823851.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't say the remark sparked an internet debate; unsupported claim that also contradicts 'reactions aane baaki hain'.",
-    "Fact corrected to match the article: Clearer wording; the claim is Patel's and no supporting data was given in his remarks.",
-    "Fact corrected to match the article: Article does not say that no data was provided; claim is unsupported. Keep it attributed to Patel."
-   ],
-   "fixed": [
-    "BJP MP ke ek bayaan ne internet pe nayi behes chhed di hai → BJP MP ke ek bayaan par charcha shuru ho gayi hai",
-    "Article mein koi data nahi diya gaya. → Is daave ke samarthan mein koi data nahi diya gaya.",
-    "Is daave ke samarthan mein koi data nahi diya gaya. → Yeh Patel ke apne daave hain."
-   ]
-  },
-  "slides": [
-   "posts/20261004-0508-ce5c1036695e-s2.jpg",
-   "posts/20261004-0508-ce5c1036695e-s3.jpg",
-   "posts/20261004-0508-ce5c1036695e-s4.jpg"
-  ],
-  "created_at": "2026-10-04T05:08:33+00:00"
- },
- {
   "id": "5f9e6aad7588",
   "image": "posts/20261004-0426-5f9e6aad7588.jpg",
   "kind": "news",

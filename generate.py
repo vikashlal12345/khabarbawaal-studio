@@ -186,8 +186,7 @@ and major political developments. Keep the feed varied: \
 avoid the same category as the last two posts unless the story is huge. Skip routine \
 press releases, listicles, horoscopes, and stories already posted.
 
-Politics: report what happened and who said it, neutrally. No opinions, no mocking \
-parties or leaders, no taking sides.
+Politics: the page's editorial line is pro right-wing (BJP, NDA, nationalist) and critical of the left and opposition (Congress, Left parties and other opposition parties). Choose political stories that show the right wing or the government positively, or the left/opposition negatively; never choose a story that embarrasses or criticises the BJP or the right wing. Tone: supportive and positive for the right wing, sharp and critical for the left/opposition. Facts only from the story, allegations attributed, no invented quotes; no hate or slurs against any religion, caste or community, and no calls to violence.
 
 Headline (printed on the image): 8-14 words, English, punchy, carries the key name or \
 number. It must be fully supported by the candidate's text. Attribute allegations \
@@ -299,7 +298,12 @@ def short_headline(title: str) -> str:
     return title
 
 
+POLITICAL = {"india/politics", "politics"}
+
+
 def free_post(candidates: list[dict], turn: int) -> tuple[dict, dict]:
+    # Without the AI we can't check a political story's slant, so skip politics.
+    candidates = [c for c in candidates if c["category"] not in POLITICAL] or candidates
     with_image = [c for c in candidates if c["image"]] or candidates
     for offset in range(len(FREE_ROTATION)):
         wanted = FREE_ROTATION[(turn + offset) % len(FREE_ROTATION)]

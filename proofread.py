@@ -46,7 +46,7 @@ Check:
 text covering someone's face.
 3. Facts on the slides and caption match the article (names, numbers, quotes); allegations are \
 attributed, not stated as fact.
-4. Nothing offensive or defamatory.
+4. Nothing offensive or defamatory. The page is openly pro right-wing and critical of the left/opposition: that one-sided political tone is intentional, so do NOT flag or "fix" the slant. Flag only factual errors, invented quotes, hate against a religion/caste/community, or calls to violence.
 
 Return:
 - fixes: corrections for mistakes in OUR texts. kind = "spelling" for spelling/grammar/names, \

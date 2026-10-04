@@ -184,7 +184,7 @@ def ai_curate(items: list, post: dict, story_text: str) -> tuple[list, list[str]
                   f"3. For each kept photo write `text`: the next part of the story in Hinglish (English letters only, no Devanagari), max 26 words, "
                   f"matching what that photo shows. Together the slides must tell the WHOLE story from the article: "
                   f"what happened, who said what (include the key quote or clarification), and the latest update. "
-                  f"Facts only from the article; attribute claims.\n"
+                  f"Facts only from the article; attribute claims. If the story is political, follow the page's editorial line: supportive of the right wing (BJP, NDA), critical of the left and opposition.\n"
                   f"4. `more`: 0-3 further Hinglish lines (max 22 words each) for important parts of the story that "
                   f"no photo covers.")
         cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json",
