@@ -1,0 +1,118 @@
+name: Hourly post
+
+# Two ways this runs every hour:
+#  1. A chain: after each post, the "next" job waits until the next :07 and starts
+#     this workflow again (workflow_dispatch from GITHUB_TOKEN is allowed to do that).
+#  2. GitHub's own timer (schedule) as a backup. It also restarts the chain if it broke.
+# --min-gap 40 on timed runs stops double posts when both fire in the same hour.
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: "Post type"
+        type: choice
+        options: [auto, news, fun]
+        default: auto
+      test_alert:
+        description: "Also send a test alert email"
+        type: boolean
+        default: false
+      chain:
+        description: "Timed run from the chain (leave unticked for an instant post)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+  actions: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: hourly-post        # takes turns with "Create post" requests
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      # Membership mode: token from `claude setup-token` (uses your Claude plan, no API bill).
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      # Paid mode, only if you ever add this secret.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      TIMED: ${{ github.event_name == 'schedule' || inputs.chain }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Install Claude Code (membership mode)
+        if: env.CLAUDE_CODE_OAUTH_TOKEN != ''
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Create post
+        run: |
+          GAP=0; [ "$TIMED" = "true" ] && GAP=40
+          python generate.py --kind "${{ inputs.kind || 'auto' }}" --min-gap "$GAP"
+
+      - name: Email alerts (as GitHub issues)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python notify.py
+          if [ "${{ inputs.test_alert }}" = "true" ]; then python notify.py --test; fi
+
+      - name: Save post to repo
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "New post $(date -u +%Y-%m-%dT%H:%MZ)"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+  next:
+    # Keeps the hourly chain going. Runs even if the post failed, so one bad hour
+    # doesn't stop the robot.
+    needs: generate
+    if: always() && (github.event_name == 'schedule' || inputs.chain)
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Wait for the next hour, then start the next run
+        run: |
+          busy() {   # other hourly runs that are running or waiting (any trigger)
+            gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 20 --json databaseId,status \
+              -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and .status != \"completed\")] | length"
+          }
+          queued_chain() {   # a chain run already dispatched and waiting to start
+            gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -e workflow_dispatch -L 20 --json databaseId,status \
+              -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and (.status == \"queued\" or .status == \"pending\" or .status == \"waiting\"))] | length"
+          }
+          # A timer run only (re)starts the chain if nothing else is running (the chain sleeps
+          # inside a running job, so a live chain always shows up here).
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(busy)" != "0" ]; then
+            echo "Chain already running: nothing to do."; exit 0
+          fi
+          m=$((10#$(date -u +%M))); s=$((10#$(date -u +%S)))
+          wait=$(( ( (67 - m) % 60 ) * 60 - s ))   # seconds until the next hh:07
+          [ "$wait" -lt 600 ] && wait=$((wait + 3600))
+          echo "Next post in $((wait / 60)) minutes"; sleep "$wait"
+          if [ "$(queued_chain)" != "0" ]; then echo "A chain run is already queued."; exit 0; fi
+          gh workflow run hourly.yml -R "$GITHUB_REPOSITORY" -f chain=true

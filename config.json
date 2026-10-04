@@ -1,0 +1,33 @@
+{
+  "page_name": "KhabarBawaal",
+  "handle": "@khabarbawaal",
+  "accent_color": "#FFD400",
+  "tag_color": "#E50914",
+  "model": "claude-opus-5-5",
+  "membership_model": "sonnet",
+  "membership_token_created": "2026-10-02",
+  "membership_token_days": 365,
+  "caption_language": "Hinglish (Hindi written in English letters mixed with simple English), Gen Z tone",
+  "max_posts_kept": 150,
+  "keep_days": 3,
+  "fun_every": 3,
+  "fun_bank_max_age_days": 14,
+  "lookback_hours": 8,
+  "per_feed": 4,
+  "feeds": [
+    {"name": "Hindustan Times", "category": "viral", "url": "https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml"},
+    {"name": "Indian Express", "category": "viral", "url": "https://indianexpress.com/section/trending/feed/"},
+    {"name": "News18", "category": "viral", "url": "https://www.news18.com/commonfeeds/v1/eng/rss/viral.xml"},
+
+    {"name": "Hindustan Times", "category": "india/politics", "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml"},
+    {"name": "Indian Express", "category": "politics", "url": "https://indianexpress.com/section/political-pulse/feed/"},
+    {"name": "News18", "category": "politics", "url": "https://www.news18.com/commonfeeds/v1/eng/rss/politics.xml"},
+
+    {"name": "Hindustan Times", "category": "entertainment", "url": "https://www.hindustantimes.com/feeds/rss/entertainment/bollywood/rssfeed.xml"},
+    {"name": "Bollywood Hungama", "category": "entertainment", "url": "https://www.bollywoodhungama.com/rss/news.xml"},
+
+    {"name": "News18", "category": "cricket", "url": "https://www.news18.com/commonfeeds/v1/eng/rss/cricket.xml"},
+
+    {"name": "Hindustan Times", "category": "tech", "url": "https://www.hindustantimes.com/feeds/rss/technology/rssfeed.xml"}
+  ]
+}
