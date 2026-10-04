@@ -138,7 +138,8 @@
   "night_learn": "2026-10-04",
   "market_close": "2026-10-04",
   "top10_day": "2026-10-04",
-  "night_ready": "2026-10-05"
+  "night_ready": "2026-10-05",
+  "night_calendar": "2026-10-05"
  },
  "inbox_since": "Rplw9hPm01cH",
  "used_otps": [
@@ -155,5 +156,9 @@
   "India GK Quiz: Can You Score 4/4?",
   "Repo Rate Explained: Why Your EMI Cares",
   "5 October: The Day Pop Culture Changed"
- ]
+ ],
+ "calendar": {
+  "date": "2026-10-05",
+  "items": []
+ }
 }
