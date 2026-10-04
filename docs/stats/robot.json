@@ -1,21 +1,21 @@
 {
  "2026-10-04": {
   "fun": {
-   "posts": 5,
-   "requests": 10,
-   "input": 30,
-   "output": 5693,
-   "cache_read": 25556,
-   "cache_write": 26210,
-   "value_usd": 0.167,
+   "posts": 6,
+   "requests": 12,
+   "input": 36,
+   "output": 7119,
+   "cache_read": 29610,
+   "cache_write": 32941,
+   "value_usd": 0.209,
    "by_purpose": {
     "writing": {
-     "requests": 5,
-     "tokens": 21199
+     "requests": 6,
+     "tokens": 26228
     },
     "proofreading": {
-     "requests": 5,
-     "tokens": 36290
+     "requests": 6,
+     "tokens": 43478
     }
    }
   },
