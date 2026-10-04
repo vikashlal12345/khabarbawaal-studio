@@ -55,6 +55,9 @@ const JOB_NAMES = { news: 'News posts', fun: 'Fun posts', create: '➕ Create po
   market_close: 'Closing Bell', 'fun bank': 'Joke bank', other: 'Other' };
 const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(Math.round(n));
 const tokens = t => (t.input || 0) + (t.output || 0) + (t.cache_read || 0) + (t.cache_write || 0);
+// How much tokens count against the plan (same ratios as API pricing): cached reads are cheap,
+// output is expensive. Used for the robot-vs-you split and the capacity estimate.
+const weighted = t => (t.input || 0) + 5 * (t.output || 0) + 1.25 * (t.cache_write || 0) + 0.1 * (t.cache_read || 0);
 const istDay = d => new Date(d.getTime() + 330 * 60000).toISOString().slice(0, 10);
 const lastDays = n => [...Array(n)].map((_, i) => istDay(new Date(Date.now() - i * 86400000)));
 const colour = p => p >= 85 ? 'var(--red)' : p >= 60 ? 'var(--amber)' : 'var(--green)';
@@ -81,12 +84,13 @@ function gauge(label, w) { const p = Math.round(w.pct);
     : '<div class="muted">Not available yet. It comes from your Mac every hour while it\'s on.</div>');
 
   // --- robot
-  const robotWeek = { posts: 0, requests: 0, tokens: 0, value: 0, jobs: {}, purposes: {} };
+  const robotWeek = { posts: 0, requests: 0, tokens: 0, weighted: 0, value: 0, jobs: {}, purposes: {} };
   const robotToday = { posts: 0, tokens: 0, requests: 0 };
   for (const day of week) {
     for (const [job, j] of Object.entries((robot || {})[day] || {})) {
       const t = tokens(j);
       robotWeek.posts += j.posts; robotWeek.requests += j.requests; robotWeek.tokens += t; robotWeek.value += j.value_usd || 0;
+      robotWeek.weighted += weighted(j);
       const r = robotWeek.jobs[job] = robotWeek.jobs[job] || { posts: 0, tokens: 0 };
       r.posts += j.posts; r.tokens += t;
       for (const [p, v] of Object.entries(j.by_purpose || {})) robotWeek.purposes[p] = (robotWeek.purposes[p] || 0) + v.tokens;
@@ -102,7 +106,7 @@ function gauge(label, w) { const p = Math.round(w.pct);
     `<div class="row"><span>${p[0].toUpperCase() + p.slice(1)}</span><div class="bar"><i style="width:${t / maxP * 100}%;background:var(--blue)"></i></div>
      <span class="num">${fmt(t)}</span></div>`).join('');
   document.getElementById('robot').innerHTML = `<h2>KhabarBawaal robot</h2>
-    <div class="kpis"><div class="kpi"><b>${robotToday.posts}</b><span>posts today</span></div>
+    <div class="kpis"><div class="kpi"><b>${robotToday.posts}</b><span>${robotToday.posts === 1 ? 'post' : 'posts'} today</span></div>
       <div class="kpi"><b>${fmt(robotToday.tokens)}</b><span>tokens today</span></div>
       <div class="kpi"><b>${robotToday.requests}</b><span>AI requests today</span></div></div>
     <h2 style="margin-top:16px">Last 7 days by job <span class="muted">(tokens · posts)</span></h2>${jobRows || '<div class="muted">No data yet.</div>'}
@@ -112,24 +116,27 @@ function gauge(label, w) { const p = Math.round(w.pct);
 
   // --- ad hoc
   const adhocWeek = week.reduce((s, d) => s + tokens((adhoc || {})[d] || {}), 0);
+  const adhocWeekW = week.reduce((s, d) => s + weighted((adhoc || {})[d] || {}), 0);
   const adhocToday = tokens((adhoc || {})[today] || {});
-  const total = robotWeek.tokens + adhocWeek;
-  const robotShare = total ? robotWeek.tokens / total : 0;
+  const totalW = robotWeek.weighted + adhocWeekW;
+  const robotShare = totalW ? robotWeek.weighted / totalW : 0;
   document.getElementById('adhoc').innerHTML = `<h2>Your own Claude use (Claude Code on your Mac)</h2>
     <div class="kpis"><div class="kpi"><b>${fmt(adhocToday)}</b><span>tokens today</span></div>
       <div class="kpi"><b>${fmt(adhocWeek)}</b><span>last 7 days</span></div>
-      <div class="kpi"><b>${Math.round((1 - robotShare) * 100)}%</b><span>of tracked use</span></div></div>
+      <div class="kpi"><b>${Math.round((1 - robotShare) * 100)}%</b><span>of tracked use*</span></div></div>
     <div class="bar" style="margin-top:12px;height:14px"><i style="width:${robotShare * 100}%;background:var(--accent)"></i></div>
     <div class="legend"><span><i style="background:var(--accent)"></i>Robot ${Math.round(robotShare * 100)}%</span>
       <span><i style="background:#262626"></i>You ${Math.round((1 - robotShare) * 100)}%</span></div>
-    <div class="muted" style="margin-top:10px">${adhoc ? '' : 'Not available yet (sent from your Mac hourly while it\'s on). '}
+    <div class="muted" style="margin-top:10px">*Weighted by how much tokens count against your plan (cached tokens count about a tenth).
+      ${adhoc ? '' : 'Not available yet (sent from your Mac hourly while it\'s on). '}
       claude.ai website and phone chats can't be tracked here. See them at
       <a class="link" href="https://claude.ai/settings/usage" target="_blank" rel="noopener">claude.ai → Settings → Usage</a>.</div>`;
 
   // --- capacity estimate
   const cap = document.getElementById('capacity');
-  if (!snap || !robotWeek.posts) {
-    cap.innerHTML = '<h2>Room for more posts</h2><div class="muted">Collecting data. The estimate appears once plan usage and a few robot posts are recorded.</div>';
+  if (!snap || robotWeek.posts < 10) {
+    cap.innerHTML = `<h2>Room for more posts</h2><div class="muted">Collecting data (${robotWeek.posts}/10 robot posts tracked).
+      The estimate appears once at least 10 posts and your plan usage are recorded.</div>`;
     return;
   }
   const w = snap.seven_day, reset = new Date(w.resets_at).getTime(), now = Date.now();
