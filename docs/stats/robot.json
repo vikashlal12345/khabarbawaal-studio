@@ -1,0 +1,23 @@
+{
+ "2026-10-04": {
+  "fun": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 1271,
+   "cache_read": 3989,
+   "cache_write": 6084,
+   "value_usd": 0.0379,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 3949
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 7401
+    }
+   }
+  }
+ }
+}
