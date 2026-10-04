@@ -556,12 +556,29 @@ FUN_THEMES = [  # (background, pattern, text, highlight, tag background, tag tex
 ]
 
 
+_FONT_CHARS: set[int] | None = None
+
+
+def font_chars() -> set[int]:
+    """Every character that the card fonts (Anton and Poppins) can actually draw."""
+    global _FONT_CHARS
+    if _FONT_CHARS is None:
+        from fontTools.ttLib import TTFont
+        _FONT_CHARS = set()
+        for f in FONTS.glob("*.ttf"):
+            _FONT_CHARS |= set(TTFont(str(f)).getBestCmap())
+    return _FONT_CHARS
+
+
 def printable(text: str) -> str:
     """Text the card fonts can draw: accented letters become plain (bolī -> boli),
-    emojis and other symbols are dropped."""
+    emojis and anything the fonts don't have are dropped."""
     import unicodedata
     text = "".join(ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch))
-    return "".join(ch for ch in text if ord(ch) < 0x2000 or ch in "₹–—‘’“”…•").strip()
+    chars = font_chars()
+    kept = "".join(ch for ch in text if ch == "\n" or (ord(ch) in chars and ord(ch) < 0x2000)
+                   or ch in "₹–—‘’“”…•")
+    return re.sub(r"[ \t]{2,}", " ", kept).strip()
 
 
 def render_fun_card(post: dict, theme_index: int) -> Image.Image:
@@ -652,8 +669,11 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
         state["fun_bank_used"] = (state.get("fun_bank_used", []) + [fun.post_key(post)])[-500:]
         print("Mode: fun (fresh bank)")
 
+    import proofread
+
     fun_count = state.get("fun_count", 0)
-    card = render_fun_card(post, fun_count)
+    slides, post, proof = proofread.run(lambda d: [render_fun_card(d, fun_count)], post, fun_caption)
+    card = slides[0]
     state["fun_count"] = fun_count + 1
     state["recent_fun"] = (state.get("recent_fun", []) + [printable(post["card_text"]).replace("\n", " ")])[-200:]
     save_post(feed, state, card, fun.post_key(post), {
@@ -663,6 +683,7 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
         "caption": fun_caption(post),
         "source": "KhabarBawaal Original",
         "source_url": "",
+        "proof": proof,
     })
     return True
 
@@ -718,7 +739,7 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
     save_post(feed, state, slides[0], f"{kind}-{today}", {
         "kind": "thought" if kind == "thought" else "top10",
         "headline": out["headline"], "tag": out["tag"], "caption": out["caption"],
-        "source": out["source"], "source_url": "",
+        "source": out["source"], "source_url": "", "proof": out.get("proof"),
     }, slides[1:] or None)
     resolved += ["token", "limit", "ai-error"]
 
@@ -811,27 +832,37 @@ def main() -> int:
     state["turn"] = turn + 1
     print(f"Picked: {item['title']}\nHeadline: {post['headline']}")
 
+    import carousel
+    import proofread
+
     photo = best_photo(item)
-    card = render_card(photo, post, item["source"])
-    slides = None
+    specs, article = [], ""
     if CONFIG.get("carousel", True):
         try:
-            import carousel
-            slides = carousel.build(item, post, photo)
-            card = carousel.mark_cover(card)
+            specs = carousel.plan(item, post, photo)
+            article = carousel.article_text(carousel.page_html(item["link"]))
         except Exception as e:
             print(f"  ! carousel failed, posting a single image: {e}")
+
+    def render(d):
+        card = render_card(photo, d["post"], item["source"])
+        return [carousel.mark_cover(card)] + carousel.render(d["specs"]) if d["specs"] else [card]
+
+    slides, data, proof = proofread.run(render, {"post": post, "specs": specs},
+                                        lambda d: full_caption(d["post"], item), article)
+    post = data["post"]
     # Unpicked stories stay eligible next hour; recent_headlines stops repeats.
     state["seen"] = (state["seen"] + [item["id"]])[-3000:]
     state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
-    save_post(feed, state, card, item["id"], {
+    save_post(feed, state, slides[0], item["id"], {
         "kind": "news",
         "headline": post["headline"],
         "tag": post["tag"],
         "caption": full_caption(post, item),
         "source": item["source"],
         "source_url": item["link"],
-    }, slides)
+        "proof": proof,
+    }, slides[1:] or None)
     write_alerts(raised, resolved)
     return 0
 

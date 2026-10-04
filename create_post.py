@@ -233,17 +233,33 @@ def main() -> int:
 
     photos = find_photos(article, post)
     banner_source = article["site"] if article else g.CONFIG["page_name"]
-    cards = [g.render_card(img, post, site) for img, site in photos] + [g.render_card(None, post, banner_source)]
 
     # Carousel slides after the cover (photos already offered as covers aren't repeated).
     slides = []
     item = {"link": article["url"] if article else "", "source": article["site"] if article else "",
             "title": (article or {}).get("title") or post["headline"]}
     import carousel
+    import proofread
+    specs = []
     try:
-        slides = carousel.build(item, post, [img for img, _ in photos])  # typed news: photo search only
+        specs = carousel.plan(item, post, [img for img, _ in photos])  # typed news: photo search only
     except Exception as e:
         print(f"  ! carousel failed, single image only: {e}")
+
+    # Proofread the first cover option + the slides; fixes apply to every cover option.
+    first_img, first_site = photos[0] if photos else (None, banner_source)
+
+    def render(d):
+        card = g.render_card(first_img, d["post"], first_site)
+        return [carousel.mark_cover(card)] + carousel.render(d["specs"]) if d["specs"] else [card]
+
+    article_txt = carousel.article_text(carousel.page_html(item["link"])) if item["link"] else text
+    checked, data, proof = proofread.run(render, {"post": post, "specs": specs},
+                                         lambda d: caption(d["post"], article["site"] if article else None),
+                                         article_txt)
+    post = data["post"]
+    slides = checked[1:]
+    cards = [g.render_card(img, post, site) for img, site in photos] + [g.render_card(None, post, banner_source)]
 
     post_id = "c" + g.hashlib.sha1(raw.encode()).hexdigest()[:11]
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
@@ -267,7 +283,7 @@ def main() -> int:
         "id": post_id, "kind": "custom", "image": options[0], "options": options, "slides": slide_names,
         "headline": post["headline"], "tag": post["tag"],
         "caption": caption(post, article["site"] if article else None),
-        "source": article["site"] if article else "Your pick", "source_url": source_url,
+        "source": article["site"] if article else "Your pick", "source_url": source_url, "proof": proof,
         "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     })
     g.trim_feed(feed)

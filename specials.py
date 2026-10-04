@@ -194,29 +194,40 @@ def closing_slide(kind: str, n: int, total: int) -> Image.Image:
     return slide
 
 
+def render_top10(kind: str, data: dict) -> list[Image.Image]:
+    stories, photos = data["stories"], data["photos"]
+    count = len(stories)
+    total = 1 + count + 1
+    slides = [cover_slide(kind, photos)]
+    # Countdown: slide 2 is the lowest rank, the last story slide is #1.
+    for n, idx in enumerate(range(count - 1, -1, -1), 2):
+        slides.append(rank_slide(idx + 1, stories[idx], photos[idx], n, total))
+    slides.append(closing_slide(kind, total, total))
+    return slides
+
+
+def top10_caption(data: dict) -> str:
+    listing = "\n".join(f"{r + 1}. {g.printable(s['slide_title'])}" for r, s in enumerate(data["stories"]))
+    tags = " ".join(t if t.startswith("#") else f"#{t}" for t in data["hashtags"])
+    return (f"{data['hook'].strip()}\n\n{listing}\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\n"
+            f"Follow {g.CONFIG['handle']} for daily updates.\n\n{tags}")
+
+
 def make_top10(kind: str) -> dict | None:
+    import proofread
+
     items = gather(kind)
     if len(items) < 5:
         print("Not enough stories for a Top 10.")
         return None
     pick = pick_top10(kind, items)
-    stories = pick["stories"]
-    photos = [g.best_photo(s) for s in stories]
-    count = len(stories)
-    total = 1 + count + 1
-    slides = [cover_slide(kind, photos)]
-    # Countdown: slide 2 is the lowest rank, the last story slide is #1.
-    order = list(range(count - 1, -1, -1))
-    for n, idx in enumerate(order, 2):
-        slides.append(rank_slide(idx + 1, stories[idx], photos[idx], n, total))
-    slides.append(closing_slide(kind, total, total))
-    listing = "\n".join(f"{r + 1}. {g.printable(s['slide_title'])}" for r, s in enumerate(stories))
-    tags = " ".join(t if t.startswith("#") else f"#{t}" for t in pick["hashtags"])
-    caption = (f"{pick['hook'].strip()}\n\n{listing}\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\n"
-               f"Follow {g.CONFIG['handle']} for daily updates.\n\n{tags}")
-    return {"slides": slides, "caption": caption, "tag": TOP10[kind]["tag"],
+    data = {"stories": pick["stories"], "photos": [g.best_photo(s) for s in pick["stories"]],
+            "hook": pick["hook"], "hashtags": pick["hashtags"]}
+    article = "\n".join(f"- {s['title']}: {s['summary'][:200]}" for s in data["stories"])
+    slides, data, proof = proofread.run(lambda d: render_top10(kind, d), data, top10_caption, article)
+    return {"slides": slides, "caption": top10_caption(data), "tag": TOP10[kind]["tag"], "proof": proof,
             "headline": f"{TOP10[kind]['title'][0]} {TOP10[kind]['title'][1]}: {ist_now():%d %b}",
-            "source": ", ".join(dict.fromkeys(s["source"] for s in stories))[:80]}
+            "source": ", ".join(dict.fromkeys(s["source"] for s in data["stories"]))[:80]}
 
 
 # ---------------------------------------------------------------- thought of the day
@@ -286,11 +297,17 @@ def thought_card(thought: str, author: str) -> Image.Image:
     return img
 
 
-def make_thought(state: dict) -> dict:
-    out = write_thought(state.get("recent_thoughts", [])[-30:])
-    state["recent_thoughts"] = (state.get("recent_thoughts", []) + [out["thought"]])[-60:]
+def thought_caption(out: dict) -> str:
     tags = " ".join(t if t.startswith("#") else f"#{t}" for t in out["hashtags"])
-    return {"slides": [thought_card(out["thought"], out["author"])],
-            "caption": f"{out['caption'].strip()}\n\nFollow {g.CONFIG['handle']} for daily updates.\n\n{tags}",
+    return f"{out['caption'].strip()}\n\nFollow {g.CONFIG['handle']} for daily updates.\n\n{tags}"
+
+
+def make_thought(state: dict) -> dict:
+    import proofread
+
+    out = write_thought(state.get("recent_thoughts", [])[-30:])
+    slides, out, proof = proofread.run(lambda d: [thought_card(d["thought"], d["author"])], out, thought_caption)
+    state["recent_thoughts"] = (state.get("recent_thoughts", []) + [out["thought"]])[-60:]
+    return {"slides": slides, "caption": thought_caption(out), "proof": proof,
             "tag": "💭 THOUGHT OF THE DAY", "headline": g.printable(out["thought"]),
             "source": out["author"] or g.CONFIG["page_name"]}

@@ -369,23 +369,39 @@ def mark_cover(card: Image.Image) -> Image.Image:
     return card
 
 
-def build(item: dict, post: dict, cover_photo: Image.Image | list | None) -> list[Image.Image]:
-    """Slides 2..N for a news post (slide 1 is the headline card; pass it through mark_cover).
+def plan(item: dict, post: dict, cover_photo: Image.Image | list | None) -> list[dict]:
+    """Decide slides 2..N (photos found and checked, story lines written). Done once per post;
+    render() can then draw it again cheaply, e.g. after a proofreading fix.
     cover_photo: the cover's photo, or a list of photos already used, so they aren't repeated."""
     used = cover_photo if isinstance(cover_photo, list) else [cover_photo] if cover_photo is not None else []
     picked, more = collect(item, post, used, want=MAX_SLIDES - 2)
     extra = more if len(more) >= 2 else []
     if not extra and len(picked) < 2:
         extra = [f for f in post.get("key_facts", []) if f.strip()][:3]
-    extra_titles = ("Aur kya", "hua?") if more and extra == more else ("3 cheezein jo", "jaanni chahiye")
-    total = 1 + len(picked) + (1 if len(extra) >= 2 else 0) + 1
-    slides, n = [], 2
-    for (kind, img, credit, _), text in picked:
-        slides.append(tweet_slide(img, credit, text, n, total) if kind == "tweet"
-                      else photo_slide(img, credit, text, n, total))
-        n += 1
+    titles = ["Aur kya", "hua?"] if more and extra == more else ["3 cheezein jo", "jaanni chahiye"]
+    specs = [{"type": kind, "img": img, "credit": credit, "text": text}
+             for (kind, img, credit, _), text in picked]
     if len(extra) >= 2:
-        slides.append(lines_slide(*extra_titles, extra, n, total))
-        n += 1
-    slides.append(closing_slide(n, total))
+        specs.append({"type": "lines", "titles": titles, "lines": extra})
+    specs.append({"type": "closing"})
+    return specs
+
+
+def render(specs: list[dict]) -> list[Image.Image]:
+    total = 1 + len(specs)
+    slides = []
+    for n, sp in enumerate(specs, 2):
+        if sp["type"] == "tweet":
+            slides.append(tweet_slide(sp["img"], sp["credit"], sp["text"], n, total))
+        elif sp["type"] == "photo":
+            slides.append(photo_slide(sp["img"], sp["credit"], sp["text"], n, total))
+        elif sp["type"] == "lines":
+            slides.append(lines_slide(sp["titles"][0], sp["titles"][1], sp["lines"], n, total))
+        else:
+            slides.append(closing_slide(n, total))
     return slides
+
+
+def build(item: dict, post: dict, cover_photo: Image.Image | list | None) -> list[Image.Image]:
+    """Slides 2..N for a news post (slide 1 is the headline card; pass it through mark_cover)."""
+    return render(plan(item, post, cover_photo))
