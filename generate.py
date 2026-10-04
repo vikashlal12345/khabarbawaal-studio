@@ -268,6 +268,8 @@ def write_post_membership(candidates: list[dict], recent_headlines: list[str]) -
         result = json.loads(proc.stdout)
     except json.JSONDecodeError:
         raise RuntimeError(f"Claude CLI failed: {(proc.stderr or proc.stdout)[:300]}")
+    import fun
+    fun.log_usage(result, "writing")
     if result.get("is_error") or not result.get("structured_output"):
         raise RuntimeError(f"Claude CLI error: {str(result.get('result'))[:300]}")
     return checked_pick(candidates, result["structured_output"])
@@ -695,6 +697,9 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
     return True
 
 
+POSTED = 0  # posts saved in this run (for usage stats)
+
+
 def post_images(post: dict) -> list[str]:
     return list(dict.fromkeys(post.get("options", [post["image"]]) + [post["image"]] + post.get("slides", [])))
 
@@ -713,6 +718,8 @@ def trim_feed(feed: list) -> None:
 
 def save_post(feed: list, state: dict, card: Image.Image, post_id: str, entry: dict,
               slides: list[Image.Image] | None = None) -> str:
+    global POSTED
+    POSTED += 1
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
     filename = f"{stamp}-{post_id}.jpg"
     POSTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -785,7 +792,9 @@ def main() -> int:
         if not special and schedule.is_quiet(now_ist):
             print(f"Quiet hours ({now_ist:%H:%M} IST): no post.")
             return 0
+    import fun
     if special:
+        fun.CURRENT_JOB = special
         make_special(special, state, feed, raised, resolved)
         write_alerts(raised, resolved)
         return 0
@@ -808,11 +817,13 @@ def main() -> int:
     every = CONFIG.get("fun_every", 3)
     if args.kind == "fun" or (args.kind == "auto" and every and turn % every == every - 1):
         state["turn"] = turn + 1
+        fun.CURRENT_JOB = "fun"
         if make_fun_post(state, feed, raised, resolved, use_ai=not args.dry_run):
             write_alerts(raised, resolved)
             return 0
         FEED_ERRORS.clear()
 
+    fun.CURRENT_JOB = "news"
     print("Fetching news...")
     candidates = fetch_candidates(seen)
     if not candidates:
@@ -885,5 +896,15 @@ def main() -> int:
     return 0
 
 
+def run() -> int:
+    import fun
+    import limits
+    try:
+        return main()
+    finally:
+        fun.flush_usage(posts=POSTED)
+        limits.record()
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(run())

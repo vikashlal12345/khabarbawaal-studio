@@ -63,7 +63,47 @@ real person, and never joke about deaths, accidents, crimes or disasters.
 - hashtags: 6-8, each starting with #, always include #KhabarBawaal."""
 
 
-def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300) -> dict:
+# ---------------------------------------------------------------- usage stats
+# Every Claude call reports its exact token usage; it's collected here per run and
+# added to docs/stats/robot.json (shown on the app's Stats page).
+CURRENT_JOB = "other"
+USAGE: list[dict] = []
+
+
+def log_usage(result: dict, purpose: str) -> None:
+    u = result.get("usage") or {}
+    USAGE.append({"job": CURRENT_JOB, "purpose": purpose,
+                  "input": u.get("input_tokens", 0), "output": u.get("output_tokens", 0),
+                  "cache_read": u.get("cache_read_input_tokens", 0),
+                  "cache_write": u.get("cache_creation_input_tokens", 0),
+                  "value_usd": result.get("total_cost_usd", 0) or 0})
+
+
+def flush_usage(posts: int = 1) -> None:
+    """Add this run's usage to today's totals (IST) in docs/stats/robot.json; keeps 35 days."""
+    path = ROOT / "docs" / "stats" / "robot.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    stats = json.loads(path.read_text()) if path.exists() else {}
+    day = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).date().isoformat()
+    jobs = stats.setdefault(day, {})
+    job = jobs.setdefault(CURRENT_JOB, {"posts": 0, "requests": 0, "input": 0, "output": 0,
+                                        "cache_read": 0, "cache_write": 0, "value_usd": 0.0, "by_purpose": {}})
+    job["posts"] += posts
+    for u in USAGE:
+        job["requests"] += 1
+        for k in ("input", "output", "cache_read", "cache_write"):
+            job[k] += u[k]
+        job["value_usd"] = round(job["value_usd"] + u["value_usd"], 4)
+        p = job["by_purpose"].setdefault(u["purpose"], {"requests": 0, "tokens": 0})
+        p["requests"] += 1
+        p["tokens"] += u["input"] + u["output"] + u["cache_read"] + u["cache_write"]
+    for old in sorted(stats)[:-35]:
+        del stats[old]
+    path.write_text(json.dumps(stats, indent=1))
+    USAGE.clear()
+
+
+def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300, purpose: str = "writing") -> dict:
     cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json", "--tools", "",
            "--model", model, "--system-prompt", system, "--json-schema", json.dumps(schema)]
     proc = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=timeout)
@@ -71,6 +111,7 @@ def claude_json(system: str, user: str, schema: dict, model: str, timeout: int =
         result = json.loads(proc.stdout)
     except json.JSONDecodeError:
         raise RuntimeError(f"Claude CLI failed: {(proc.stderr or proc.stdout)[:300]}")
+    log_usage(result, purpose)
     if result.get("is_error") or not result.get("structured_output"):
         raise RuntimeError(f"Claude CLI error: {str(result.get('result'))[:300]}")
     return result["structured_output"]
@@ -149,6 +190,8 @@ def grow_bank(count: int, config: dict) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "--bank":
+        CURRENT_JOB = "fun bank"
         grow_bank(int(sys.argv[2]), json.loads((ROOT / "config.json").read_text()))
+        flush_usage(posts=0)
     else:
         print(__doc__)

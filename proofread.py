@@ -90,7 +90,10 @@ def check(slides: list[Image.Image], caption: str, texts: list[str], article: st
                "--system-prompt", "You are a careful news proofreader.", "--json-schema", json.dumps(SCHEMA)]
         try:
             proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=400, cwd=tmp)
-            return json.loads(proc.stdout)["structured_output"]
+            result = json.loads(proc.stdout)
+            import fun
+            fun.log_usage(result, "proofreading")
+            return result["structured_output"]
         except Exception as e:
             print(f"  ! proofread failed: {str(e)[:120]}")
             return None

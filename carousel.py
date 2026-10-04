@@ -193,7 +193,10 @@ def ai_curate(items: list, post: dict, story_text: str) -> tuple[list, list[str]
                "--json-schema", json.dumps(schema)]
         try:
             proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=400, cwd=tmp)
-            out = json.loads(proc.stdout)["structured_output"]
+            result = json.loads(proc.stdout)
+            import fun
+            fun.log_usage(result, "photo check")
+            out = result["structured_output"]
         except Exception as e:
             print(f"  ! photo check failed: {str(e)[:120]}")
             return None

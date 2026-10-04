@@ -288,6 +288,7 @@ def main() -> int:
     })
     g.trim_feed(feed)
     state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
+    g.POSTED += 1
     if source_url:  # the hourly robot won't pick this story up again
         state["seen"] = (state["seen"] + [g.hashlib.sha1(source_url.encode()).hexdigest()[:12]])[-3000:]
     g.save_json(g.FEED_FILE, feed)
@@ -302,4 +303,11 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    import limits
+    fun.CURRENT_JOB = "create"
+    try:
+        code = main()
+    finally:
+        fun.flush_usage(posts=g.POSTED)
+        limits.record()
+    sys.exit(code)
