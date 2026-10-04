@@ -44,6 +44,7 @@ def process() -> int:
         post = next((p for p in feed + ready if p["id"] == msg["post"]), {})
         links[msg["post"]] = {"url": url.group(0), "kind": post.get("kind", "news"), "tag": post.get("tag", ""),
                               "headline": post.get("headline", ""), "posted_at": post.get("created_at", ""),
+                              "slides": 1 + len(post.get("slides", [])),
                               "linked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
         done += 1
     if done:

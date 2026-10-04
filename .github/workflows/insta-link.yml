@@ -44,6 +44,7 @@ jobs:
           links = json.load(open(path)) if os.path.exists(path) else {}
           links[pid.group(1)] = {"url": url.group(0), "kind": post.get("kind", "news"), "tag": post.get("tag", ""),
                                  "headline": post.get("headline", ""), "posted_at": post.get("created_at", ""),
+                                 "slides": 1 + len(post.get("slides", [])),
                                  "linked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
           json.dump(links, open(path, "w"), ensure_ascii=False, indent=1)
           print("saved", pid.group(1), url.group(0))
