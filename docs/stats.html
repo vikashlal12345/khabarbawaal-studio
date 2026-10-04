@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KhabarBawaal Stats</title>
+<meta name="theme-color" content="#0d0d0d">
+<style>
+  :root { --bg: #0d0d0d; --card: #1a1a1a; --line: #2a2a2a; --text: #f2f2f2; --muted: #9a9a9a;
+    --accent: #FFD400; --red: #E50914; --green: #3ddc84; --amber: #ffb020; --blue: #4ea1ff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: rgba(13,13,13,.94); backdrop-filter: blur(10px);
+    padding: calc(env(safe-area-inset-top) + 10px) 16px 10px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 12px; }
+  header a { color: var(--text); text-decoration: none; font-size: 22px; padding: 4px 8px; }
+  header h1 { font-size: 19px; margin: 0; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(env(safe-area-inset-bottom) + 30px);
+    display: flex; flex-direction: column; gap: 16px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+  h2 { margin: 0 0 10px; font-size: 16px; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .gauge { margin: 10px 0 14px; }
+  .gauge .top { display: flex; justify-content: space-between; font-weight: 600; }
+  .bar { height: 12px; background: #262626; border-radius: 999px; overflow: hidden; margin-top: 6px; }
+  .bar i { display: block; height: 100%; border-radius: 999px; }
+  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .kpi { background: #222; border-radius: 10px; padding: 10px; }
+  .kpi b { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+  .kpi span { color: var(--muted); font-size: 12px; }
+  .row { display: grid; grid-template-columns: 110px minmax(0,1fr) 72px; gap: 8px; align-items: center; margin: 7px 0; font-size: 14px; }
+  .row .bar { margin: 0; height: 10px; }
+  .row .num { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .verdict { padding: 12px; border-radius: 10px; font-weight: 600; margin-top: 8px; }
+  .ok { background: rgba(61,220,132,.12); color: var(--green); }
+  .tight { background: rgba(255,176,32,.14); color: var(--amber); }
+  .over { background: rgba(229,9,20,.16); color: #ff6b6b; }
+  a.link { color: var(--blue); }
+  .legend { display: flex; gap: 14px; font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<header><a href="./" aria-label="Back">‹</a><h1>📊 Stats</h1></header>
+<main>
+  <section id="plan"><h2>Claude plan usage</h2><div class="muted">Loading…</div></section>
+  <section id="capacity"><h2>Room for more posts</h2><div class="muted">Loading…</div></section>
+  <section id="robot"><h2>KhabarBawaal robot</h2><div class="muted">Loading…</div></section>
+  <section id="adhoc"><h2>Your own Claude use</h2><div class="muted">Loading…</div></section>
+</main>
+<script>
+const JOB_NAMES = { news: 'News posts', fun: 'Fun posts', create: '➕ Create posts', top10_viral: 'Top 10 Viral',
+  top10_day: 'Top 10 News', thought: 'Thought of Day', market_open: 'Market Brief', market_preopen: 'Pre-open',
+  market_close: 'Closing Bell', 'fun bank': 'Joke bank', other: 'Other' };
+const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(Math.round(n));
+const tokens = t => (t.input || 0) + (t.output || 0) + (t.cache_read || 0) + (t.cache_write || 0);
+const istDay = d => new Date(d.getTime() + 330 * 60000).toISOString().slice(0, 10);
+const lastDays = n => [...Array(n)].map((_, i) => istDay(new Date(Date.now() - i * 86400000)));
+const colour = p => p >= 85 ? 'var(--red)' : p >= 60 ? 'var(--amber)' : 'var(--green)';
+function ago(iso) { const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  return m < 60 ? m + ' min ago' : Math.round(m / 60) + 'h ago'; }
+function inIST(iso) { return new Date(iso).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata',
+  weekday: 'short', hour: 'numeric', minute: '2-digit' }); }
+async function getJSON(path) { try { const r = await fetch(path + '?t=' + Date.now(), { cache: 'no-store' });
+  return r.ok ? r.json() : null; } catch { return null; } }
+function gauge(label, w) { const p = Math.round(w.pct);
+  return `<div class="gauge"><div class="top"><span>${label}</span><span style="color:${colour(p)}">${p}% used</span></div>
+    <div class="bar"><i style="width:${Math.min(p, 100)}%;background:${colour(p)}"></i></div>
+    <div class="muted">Resets ${inIST(w.resets_at)}</div></div>`; }
+
+(async () => {
+  const [robot, adhoc, limits] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'), getJSON('stats/limits.json')]);
+  const week = lastDays(7), today = week[0];
+
+  // --- plan
+  const snap = limits && limits.length ? limits[limits.length - 1] : null;
+  document.getElementById('plan').innerHTML = '<h2>Claude plan usage (Pro)</h2>' + (snap
+    ? gauge('5-hour window', snap.five_hour) + gauge('This week', snap.seven_day) +
+      `<div class="muted">Includes everything: robot, Claude Code and claude.ai chats. Updated ${ago(snap.at)} (from your Mac, hourly while it's on).</div>`
+    : '<div class="muted">Not available yet. It comes from your Mac every hour while it\'s on.</div>');
+
+  // --- robot
+  const robotWeek = { posts: 0, requests: 0, tokens: 0, value: 0, jobs: {}, purposes: {} };
+  const robotToday = { posts: 0, tokens: 0, requests: 0 };
+  for (const day of week) {
+    for (const [job, j] of Object.entries((robot || {})[day] || {})) {
+      const t = tokens(j);
+      robotWeek.posts += j.posts; robotWeek.requests += j.requests; robotWeek.tokens += t; robotWeek.value += j.value_usd || 0;
+      const r = robotWeek.jobs[job] = robotWeek.jobs[job] || { posts: 0, tokens: 0 };
+      r.posts += j.posts; r.tokens += t;
+      for (const [p, v] of Object.entries(j.by_purpose || {})) robotWeek.purposes[p] = (robotWeek.purposes[p] || 0) + v.tokens;
+      if (day === today) { robotToday.posts += j.posts; robotToday.tokens += t; robotToday.requests += j.requests; }
+    }
+  }
+  const maxJob = Math.max(1, ...Object.values(robotWeek.jobs).map(j => j.tokens));
+  const jobRows = Object.entries(robotWeek.jobs).sort((a, b) => b[1].tokens - a[1].tokens).map(([job, j]) =>
+    `<div class="row"><span>${JOB_NAMES[job] || job}</span><div class="bar"><i style="width:${j.tokens / maxJob * 100}%;background:var(--accent)"></i></div>
+     <span class="num">${fmt(j.tokens)} · ${j.posts}</span></div>`).join('');
+  const maxP = Math.max(1, ...Object.values(robotWeek.purposes));
+  const purposeRows = Object.entries(robotWeek.purposes).sort((a, b) => b[1] - a[1]).map(([p, t]) =>
+    `<div class="row"><span>${p[0].toUpperCase() + p.slice(1)}</span><div class="bar"><i style="width:${t / maxP * 100}%;background:var(--blue)"></i></div>
+     <span class="num">${fmt(t)}</span></div>`).join('');
+  document.getElementById('robot').innerHTML = `<h2>KhabarBawaal robot</h2>
+    <div class="kpis"><div class="kpi"><b>${robotToday.posts}</b><span>posts today</span></div>
+      <div class="kpi"><b>${fmt(robotToday.tokens)}</b><span>tokens today</span></div>
+      <div class="kpi"><b>${robotToday.requests}</b><span>AI requests today</span></div></div>
+    <h2 style="margin-top:16px">Last 7 days by job <span class="muted">(tokens · posts)</span></h2>${jobRows || '<div class="muted">No data yet.</div>'}
+    <h2 style="margin-top:16px">What the tokens are spent on</h2>${purposeRows || '<div class="muted">No data yet.</div>'}
+    <div class="muted" style="margin-top:10px">7 days: ${robotWeek.posts} posts, ${robotWeek.requests} AI requests, ${fmt(robotWeek.tokens)} tokens.
+      Same usage on the paid API would cost about $${robotWeek.value.toFixed(2)}. You don't pay this: it's covered by your plan.</div>`;
+
+  // --- ad hoc
+  const adhocWeek = week.reduce((s, d) => s + tokens((adhoc || {})[d] || {}), 0);
+  const adhocToday = tokens((adhoc || {})[today] || {});
+  const total = robotWeek.tokens + adhocWeek;
+  const robotShare = total ? robotWeek.tokens / total : 0;
+  document.getElementById('adhoc').innerHTML = `<h2>Your own Claude use (Claude Code on your Mac)</h2>
+    <div class="kpis"><div class="kpi"><b>${fmt(adhocToday)}</b><span>tokens today</span></div>
+      <div class="kpi"><b>${fmt(adhocWeek)}</b><span>last 7 days</span></div>
+      <div class="kpi"><b>${Math.round((1 - robotShare) * 100)}%</b><span>of tracked use</span></div></div>
+    <div class="bar" style="margin-top:12px;height:14px"><i style="width:${robotShare * 100}%;background:var(--accent)"></i></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Robot ${Math.round(robotShare * 100)}%</span>
+      <span><i style="background:#262626"></i>You ${Math.round((1 - robotShare) * 100)}%</span></div>
+    <div class="muted" style="margin-top:10px">${adhoc ? '' : 'Not available yet (sent from your Mac hourly while it\'s on). '}
+      claude.ai website and phone chats can't be tracked here. See them at
+      <a class="link" href="https://claude.ai/settings/usage" target="_blank" rel="noopener">claude.ai → Settings → Usage</a>.</div>`;
+
+  // --- capacity estimate
+  const cap = document.getElementById('capacity');
+  if (!snap || !robotWeek.posts) {
+    cap.innerHTML = '<h2>Room for more posts</h2><div class="muted">Collecting data. The estimate appears once plan usage and a few robot posts are recorded.</div>';
+    return;
+  }
+  const w = snap.seven_day, reset = new Date(w.resets_at).getTime(), now = Date.now();
+  const elapsed = Math.min(1, Math.max(0.05, 1 - (reset - now) / (7 * 86400000)));
+  const projected = w.pct / elapsed;                              // where this week ends at today's pace
+  const daysLeft = Math.max(0.5, (reset - now) / 86400000);
+  const perPost = (w.pct * robotShare) / robotWeek.posts;          // % of weekly limit per robot post (approx.)
+  const headroom = 90 - projected;                                 // keep 10% spare for your own chats
+  const extraPerDay = perPost > 0 ? Math.floor(headroom / perPost / daysLeft) : 0;
+  const cls = projected >= 100 ? 'over' : projected >= 80 ? 'tight' : 'ok';
+  const msg = cls === 'over' ? `❌ At this pace you'd run out before the weekly reset. Consider fewer posts.`
+    : cls === 'tight' ? `⚠️ Tight: little room left this week.` : `✅ Safe: current schedule fits comfortably.`;
+  cap.innerHTML = `<h2>Room for more posts</h2>
+    <div class="kpis"><div class="kpi"><b>${Math.round(w.pct)}%</b><span>week used so far</span></div>
+      <div class="kpi"><b>${Math.round(projected)}%</b><span>projected by reset</span></div>
+      <div class="kpi"><b>${extraPerDay > 0 ? '+' + extraPerDay : 0}</b><span>more posts/day fit</span></div></div>
+    <div class="verdict ${cls}">${msg}</div>
+    <div class="muted" style="margin-top:8px">Estimate: one robot post ≈ ${perPost.toFixed(2)}% of the weekly limit. Keeps 10% spare
+      for your own chats. claude.ai chats aren't tracked, so heavy chatting there makes this optimistic.</div>`;
+})();
+</script>
+</body>
+</html>
