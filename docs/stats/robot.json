@@ -169,14 +169,14 @@
    "posts": 0,
    "requests": 1,
    "input": 2,
-   "output": 2465,
-   "cache_read": 0,
-   "cache_write": 5114,
-   "value_usd": 0.0451,
+   "output": 2333,
+   "cache_read": 5114,
+   "cache_write": 0,
+   "value_usd": 0.0244,
    "by_purpose": {
     "writing": {
      "requests": 1,
-     "tokens": 7581
+     "tokens": 7449
     }
    }
   }
