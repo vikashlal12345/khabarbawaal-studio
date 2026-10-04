@@ -41,24 +41,24 @@
   },
   "news": {
    "posts": 4,
-   "requests": 16,
-   "input": 58,
-   "output": 15107,
-   "cache_read": 76734,
-   "cache_write": 88569,
-   "value_usd": 0.5207,
+   "requests": 17,
+   "input": 64,
+   "output": 14930,
+   "cache_read": 88182,
+   "cache_write": 89246,
+   "value_usd": 0.5239,
    "by_purpose": {
     "writing": {
      "requests": 4,
-     "tokens": 27113
+     "tokens": 27200
     },
     "photo check": {
      "requests": 4,
-     "tokens": 32102
+     "tokens": 30344
     },
     "proofreading": {
-     "requests": 8,
-     "tokens": 121253
+     "requests": 9,
+     "tokens": 134878
     }
    }
   },
