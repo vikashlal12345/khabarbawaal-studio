@@ -331,15 +331,21 @@ def lines_slide(title_top: str, title_bottom: str, lines: list[str], n: int, tot
     slide, d = frame("", n)
     d.text((60, 260), title_top, font=g.font("Anton-Regular.ttf", 96), fill="white", anchor="lm")
     d.text((60, 370), title_bottom, font=g.font("Anton-Regular.ttf", 96), fill=g.CONFIG["accent_color"], anchor="lm")
-    f = g.font("Poppins-Bold.ttf", 40)
+    lines = lines[:3]
+    for size in range(40, 25, -2):  # largest size where every line fits fully
+        f = g.font("Poppins-Bold.ttf", size)
+        wrapped = [g.wrap_words(g.printable(line).split(), f, g.W - 230, d) for line in lines]
+        row_h, gap = int(size * 1.35), int(size * 1.1)
+        if 500 + sum(len(w) * row_h + gap for w in wrapped) <= g.H - 120:
+            break
     y = 500
-    for i, line in enumerate(lines[:3], 1):
+    for i, rows in enumerate(wrapped, 1):
         d.rounded_rectangle((60, y, 130, y + 70), radius=14, fill=g.CONFIG["tag_color"])
         d.text((95, y + 35), str(i), font=g.font("Anton-Regular.ttf", 48), fill="white", anchor="mm")
-        for row in g.wrap_words(g.printable(line).split(), f, g.W - 230, d)[:4]:
+        for row in rows:
             d.text((160, y + 8), " ".join(row), font=f, fill="white")
-            y += 54
-        y += 50
+            y += row_h
+        y += gap
     footer(d, "", n, total)
     return slide
 

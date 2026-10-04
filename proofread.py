@@ -27,11 +27,12 @@ SCHEMA = {
             "wrong": {"type": "string"}, "right": {"type": "string"}, "why": {"type": "string"},
             "kind": {"type": "string", "enum": ["spelling", "fact"]}},
             "required": ["wrong", "right", "why", "kind"], "additionalProperties": False}},
+        "drop_slides": {"type": "array", "items": {"type": "integer"}},
         "issues": {"type": "array", "items": {"type": "object", "properties": {
             "slide": {"type": "integer"}, "problem": {"type": "string"}},
             "required": ["slide", "problem"], "additionalProperties": False}},
     },
-    "required": ["fixes", "issues"],
+    "required": ["fixes", "drop_slides", "issues"],
     "additionalProperties": False,
 }
 
@@ -52,7 +53,9 @@ Return:
 "fact" when you change what the text claims (numbers, who said what, what happened). `wrong` must be an EXACT substring (same case) of one \
 of the texts listed below; `right` is the replacement. Only real mistakes, not style preferences. \
 Hinglish spellings vary (nahi/nahin, hai/hain): don't "fix" those.
-- issues: only problems a text fix can't solve (layout, photo problems, doubtful facts), with the \
+- drop_slides: numbers of PHOTO slides (never slide 1 or text-only slides) whose photo is unrelated \
+to the story, pixelated or badly cropped. They will be removed.
+- issues: only problems a text fix or dropping a slide can't solve (layout, photo problems, doubtful facts), with the \
 slide number (1 = first image, 0 = caption). Empty if the post is fine.
 
 Article (for fact checks):
@@ -138,8 +141,18 @@ def apply_fixes(obj, fixes: list[dict]):
     return obj
 
 
-def run(render, data, caption_of, article: str = "", rounds: int = 2):
-    """render(data) -> slides; caption_of(data) -> caption text.
+def drop_photo_slides(data: dict, numbers: list[int]) -> dict | None:
+    """For {"post", "specs"} data: remove photo/X slides (slide n = specs[n - 2])."""
+    idx = {n - 2 for n in numbers if 0 <= n - 2 < len(data["specs"])
+           and data["specs"][n - 2]["type"] in ("photo", "tweet")}
+    if not idx:
+        return None
+    return {**data, "specs": [sp for i, sp in enumerate(data["specs"]) if i not in idx]}
+
+
+def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None):
+    """render(data) -> slides; caption_of(data) -> caption text; drop(data, slide_numbers) -> data
+    without those slides (or None when slides can't be dropped).
     Returns (slides, data, proof) where proof = {"state": ok|check|none, "issues": [...], "fixed": [...]}."""
     slides = render(data)
     fixed: list[str] = []
@@ -151,11 +164,21 @@ def run(render, data, caption_of, article: str = "", rounds: int = 2):
         texts = strings(data)
         fixes = [f for f in result["fixes"]
                  if f["wrong"] and f["wrong"] != f["right"] and any(f["wrong"] in t for t in texts)]
-        if not fixes:
+        dropped = None
+        if drop and result.get("drop_slides"):
+            dropped = drop(data, sorted({n for n in result["drop_slides"] if n > 1}))
+        if dropped is not None:
+            print(f"  proofread: removed slide(s) {result['drop_slides']}")
+            fixed.append(f"removed weak photo slide(s) {result['drop_slides']}")
+            data = dropped
+        if not fixes and dropped is None:
             issues = fact_notes + [f"Slide {i['slide']}: {i['problem']}" if i["slide"] else f"Caption: {i['problem']}"
                                    for i in result["issues"]]
             print(f"  proofread: {len(fixed)} fix(es), {len(issues)} issue(s) left")
             return slides, data, {"state": "check" if issues else "ok", "issues": issues, "fixed": fixed}
+        if not fixes:
+            slides = render(data)
+            continue
         for f in fixes:
             print(f"  proofread fix: '{f['wrong']}' -> '{f['right']}' ({f['why']})")
             fixed.append(f"{f['wrong']} → {f['right']}")

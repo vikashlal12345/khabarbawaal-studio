@@ -576,7 +576,8 @@ def printable(text: str) -> str:
     import unicodedata
     text = "".join(ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch))
     chars = font_chars()
-    kept = "".join(ch for ch in text if ch == "\n" or (ord(ch) in chars and ord(ch) < 0x2000)
+    # Latin letters only: scripts like Devanagari need text shaping that Pillow doesn't do here.
+    kept = "".join(ch for ch in text if ch == "\n" or (ord(ch) in chars and ord(ch) < 0x0250)
                    or ch in "₹–—‘’“”…•")
     return re.sub(r"[ \t]{2,}", " ", kept).strip()
 
@@ -849,7 +850,8 @@ def main() -> int:
         return [carousel.mark_cover(card)] + carousel.render(d["specs"]) if d["specs"] else [card]
 
     slides, data, proof = proofread.run(render, {"post": post, "specs": specs},
-                                        lambda d: full_caption(d["post"], item), article)
+                                        lambda d: full_caption(d["post"], item), article,
+                                        drop=proofread.drop_photo_slides)
     post = data["post"]
     # Unpicked stories stay eligible next hour; recent_headlines stops repeats.
     state["seen"] = (state["seen"] + [item["id"]])[-3000:]

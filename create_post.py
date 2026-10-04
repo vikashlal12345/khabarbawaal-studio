@@ -256,7 +256,7 @@ def main() -> int:
     article_txt = carousel.article_text(carousel.page_html(item["link"])) if item["link"] else text
     checked, data, proof = proofread.run(render, {"post": post, "specs": specs},
                                          lambda d: caption(d["post"], article["site"] if article else None),
-                                         article_txt)
+                                         article_txt, drop=proofread.drop_photo_slides)
     post = data["post"]
     slides = checked[1:]
     cards = [g.render_card(img, post, site) for img, site in photos] + [g.render_card(None, post, banner_source)]
