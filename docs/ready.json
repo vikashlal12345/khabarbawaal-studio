@@ -23,30 +23,143 @@
   "created_at": "2026-10-04T06:50:57+00:00"
  },
  {
-  "id": "r20261004-0651-on_this_day",
+  "id": "r20261004-1930-on_this_day",
   "kind": "ready",
-  "image": "posts/r20261004-0651-on_this_day-1.jpg",
+  "image": "posts/r20261004-1930-on_this_day-1.jpg",
   "slides": [
-   "posts/r20261004-0651-on_this_day-2.jpg",
-   "posts/r20261004-0651-on_this_day-3.jpg",
-   "posts/r20261004-0651-on_this_day-4.jpg",
-   "posts/r20261004-0651-on_this_day-5.jpg",
-   "posts/r20261004-0651-on_this_day-6.jpg",
-   "posts/r20261004-0651-on_this_day-7.jpg"
+   "posts/r20261004-1930-on_this_day-2.jpg",
+   "posts/r20261004-1930-on_this_day-3.jpg",
+   "posts/r20261004-1930-on_this_day-4.jpg",
+   "posts/r20261004-1930-on_this_day-5.jpg",
+   "posts/r20261004-1930-on_this_day-6.jpg",
+   "posts/r20261004-1930-on_this_day-7.jpg"
   ],
-  "headline": "4 October: When Space Age Began With Beeps",
+  "headline": "5 October: Bond, Beatles aur Steve Jobs",
   "tag": "📦 ON THIS DAY",
-  "caption": "4 October 1957 ko ek chhoti si beep ne poori duniya ka future badal diya. Space Age yahin se shuru hua. Aapko space ka sabse cool fact kaunsa lagta hai? Share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #OnThisDay #Sputnik #SpaceRace #ISRO #History #SpaceFacts #DidYouKnow #IndianInstagram #Science",
+  "caption": "Ek hi tareekh, 5 October, aur itni badi pop culture history! Bond, Beatles, Monty Python aur Steve Jobs. Aapko inme se kaunsa sabse zyada pasand hai? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #OnThisDay #5October #JamesBond #TheBeatles #SteveJobs #History #PopCulture #FactsInHindi #DidYouKnow",
   "source": "KhabarBawaal Original",
   "source_url": "",
   "proof": {
    "state": "check",
    "issues": [
-    "Slide 3: Slide 3 uses the same museum photo as slides 1 and 2. It looks repetitive, but the photo is related to the story and nothing is wrong with it. Swap in a different image if one is available."
+    "Slide 1: The flame icon covers the last letters of the faint 'ON THIS DAY' background text, so 'DAY' is partly hidden. It is only a decorative watermark, so this is minor."
    ],
    "fixed": []
   },
-  "created_at": "2026-10-04T06:51:36+00:00",
-  "valid_on": "2026-10-04"
+  "created_at": "2026-10-04T19:30:47+00:00",
+  "valid_on": "2026-10-05"
+ },
+ {
+  "id": "r20261004-1931-facts",
+  "kind": "ready",
+  "image": "posts/r20261004-1931-facts-1.jpg",
+  "slides": [
+   "posts/r20261004-1931-facts-2.jpg",
+   "posts/r20261004-1931-facts-3.jpg",
+   "posts/r20261004-1931-facts-4.jpg",
+   "posts/r20261004-1931-facts-5.jpg",
+   "posts/r20261004-1931-facts-6.jpg",
+   "posts/r20261004-1931-facts-7.jpg"
+  ],
+  "headline": "4 Desi Foods That Aren't Originally Desi",
+  "tag": "📦 AMAZING FACTS",
+  "caption": "Jo cheezein hum desi samajhte hain, unki journey kayi deshon se hokar aayi hai. Aapka favourite snack kaunsa hai? Comment mein batao aur share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #IndianFood #FoodFacts #Samosa #Jalebi #Rasgulla #DidYouKnow #AmazingFacts #Foodie #DesiFood",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Only four items (samosa, mirchi, jalebi, rasgulla) are non-desi; slide 6 says kali mirch is native to India.",
+    "Slide 5: The Rasgulla slide is about a Bengal vs Odisha GI dispute. It does not show that Rasgulla is not originally desi, so it contradicts the title '4 Desi Foods That Aren't Originally Desi'. Both claimants are Indian states. Rewrite the slide or swap the item.",
+    "Slide 1: The black flame icon covers part of the faint 'AMAZING FACTS' watermark text, so the 'C' and 'T' are partly hidden. This is a minor layout issue."
+   ],
+   "fixed": [
+    "5 Desi Foods That Aren't Originally Desi → 4 Desi Foods That Aren't Originally Desi"
+   ]
+  },
+  "created_at": "2026-10-04T19:31:23+00:00"
+ },
+ {
+  "id": "r20261004-1931-quiz",
+  "kind": "ready",
+  "image": "posts/r20261004-1931-quiz-1.jpg",
+  "slides": [
+   "posts/r20261004-1931-quiz-2.jpg",
+   "posts/r20261004-1931-quiz-3.jpg",
+   "posts/r20261004-1931-quiz-4.jpg",
+   "posts/r20261004-1931-quiz-5.jpg",
+   "posts/r20261004-1931-quiz-6.jpg",
+   "posts/r20261004-1931-quiz-7.jpg"
+  ],
+  "headline": "Space aur Science Quiz: Kitne Sahi Karoge?",
+  "tag": "📦 QUIZ",
+  "caption": "4 sawaal, 3 options, aur ek hi sawaal: kitne sahi? Answers 6th slide par hain, pehle andaza lagao! Apna score comment karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #Quiz #GeneralKnowledge #ScienceQuiz #SpaceFacts #DidYouKnow #TestYourself #IndianInstagram #Trivia #LearnOnInstagram",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Every question has only 3 options (A, B, C), not 4.",
+    "Fact corrected to match the article: Answers are on slide 6. The last slide, 7, is the comment prompt.",
+    "Slide 3: The skeleton image is cropped at the top, so the head and upper body are cut off. It also shows faint anatomical genitalia. This is minor and the femur highlight is clear, so I left the slide in."
+   ],
+   "fixed": [
+    "4 sawaal, 4 options, aur ek hi sawaal → 4 sawaal, 3 options, aur ek hi sawaal",
+    "Answers last slide par hain → Answers 6th slide par hain"
+   ]
+  },
+  "created_at": "2026-10-04T19:31:50+00:00"
+ },
+ {
+  "id": "r20261004-1932-myth_fact",
+  "kind": "ready",
+  "image": "posts/r20261004-1932-myth_fact-1.jpg",
+  "slides": [
+   "posts/r20261004-1932-myth_fact-2.jpg",
+   "posts/r20261004-1932-myth_fact-3.jpg",
+   "posts/r20261004-1932-myth_fact-4.jpg",
+   "posts/r20261004-1932-myth_fact-5.jpg",
+   "posts/r20261004-1932-myth_fact-6.jpg"
+  ],
+  "headline": "4 Myths Jo Hum Sab Sach Maante Hain",
+  "tag": "📦 MYTH VS FACT",
+  "caption": "Kitne myths pe aap bhi bachpan se bharosa karte aaye? Ye 4 facts dost ke saath share karo! Aapko kaun sa myth sabse zyada surprising laga?\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #MythVsFact #MythBusted #AmazingFacts #DidYouKnow #FactCheck #GyaanKiBaat #ScienceFacts #IndiaFacts #Hinglish",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover uses the same brain photo as slide 2, so the image repeats. This is a minor point and not an error."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-04T19:32:12+00:00"
+ },
+ {
+  "id": "r20261004-1932-explainer",
+  "kind": "ready",
+  "image": "posts/r20261004-1932-explainer-1.jpg",
+  "slides": [
+   "posts/r20261004-1932-explainer-2.jpg",
+   "posts/r20261004-1932-explainer-3.jpg",
+   "posts/r20261004-1932-explainer-4.jpg",
+   "posts/r20261004-1932-explainer-5.jpg",
+   "posts/r20261004-1932-explainer-6.jpg",
+   "posts/r20261004-1932-explainer-7.jpg"
+  ],
+  "headline": "Repo Rate Kya Hota Hai? Simple Explainer",
+  "tag": "📦 EXPLAINER",
+  "caption": "Repo rate ka naam roz sunte hain, par matlab ab clear hua? Ye seedha aapki EMI se juda hai. Dost ko bhejo jo abhi bhi confuse hai, share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #RepoRate #RBI #Explainer #PersonalFinance #EMI #Inflation #IndianEconomy #MoneyTips #LearnWithUs",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo is a global IMF inflation map. Its text is tiny and unreadable on a phone. It is not specific to India or the RBI, and it has grey blurred bars above and below it. It loosely fits the inflation point, so I kept it, but a clearer image would be better.",
+    "Slide 1: The flame icon overlaps the faint EXPLAINER watermark, so the last letters are hidden. This is a minor design issue and the main headline is unaffected."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-04T19:32:32+00:00"
  }
 ]
