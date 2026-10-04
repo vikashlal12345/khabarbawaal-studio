@@ -181,7 +181,7 @@ def ai_curate(items: list, post: dict, story_text: str) -> tuple[list, list[str]
                   f"placeholders, ads, unrelated people or places, photos with a big agency watermark across them "
                   f"(Getty, Reuters, AP, PTI, ANI), and near-duplicates of a photo already kept.\n"
                   f"2. Put the kept photos in the order that tells the story best.\n"
-                  f"3. For each kept photo write `text`: the next part of the story in Hinglish, max 26 words, "
+                  f"3. For each kept photo write `text`: the next part of the story in Hinglish (English letters only, no Devanagari), max 26 words, "
                   f"matching what that photo shows. Together the slides must tell the WHOLE story from the article: "
                   f"what happened, who said what (include the key quote or clarification), and the latest update. "
                   f"Facts only from the article; attribute claims.\n"

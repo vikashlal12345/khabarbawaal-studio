@@ -65,6 +65,7 @@
   .proof.none { background: #222; color: var(--muted); }
   .proof ul { margin: 4px 0 0; padding-left: 18px; color: var(--text); }
   .tag.thought { background: #7b2cbf; }
+  .tag.market { background: #16a34a; }
   .sheet { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.7); display: flex; align-items: flex-end; }
   .sheet[hidden] { display: none; }
   .sheet-box { width: 100%; max-width: 560px; margin: 0 auto; background: var(--card); border-radius: 18px 18px 0 0;
@@ -241,7 +242,7 @@ function render() {
       <div class="opt-label">Slide <b>1</b> of ${p.slides.length + 1} · swipe ← → · Post shares all ${p.slides.length + 1}</div>`
       : `<img src="${p.image}" alt="${esc(p.headline)}" loading="lazy">`}
       <div class="meta">
-        <span class="tag${['fun', 'custom', 'top10', 'thought'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
+        <span class="tag${['fun', 'custom', 'top10', 'thought', 'market'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
         ${lastSeen && p.created_at > lastSeen ? '<span class="new">NEW</span>' : ''}
         <span>${ago(p.created_at)} · ${esc(p.source)}</span>
       </div>

@@ -96,7 +96,7 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
         try:
             system = (f"You make the daily Top 10 carousel for {g.CONFIG['page_name']}, an Indian Instagram "
                       f"news page for Gen Z. Pick {TOP10[kind]['brief']}. One slide per story, so no two picks "
-                      f"about the same story. Facts only from the candidates; attribute claims; politics neutral. "
+                      f"about the same story. Facts only from the candidates; attribute claims; politics neutral. Hinglish in English letters only, never Devanagari. "
                       f"Skip sad stories about deaths unless they are the day's biggest news. "
                       f"Hashtags: 8-10, include #KhabarBawaal.")
             out = fun.claude_json(system, "Candidates:\n\n" + "\n\n".join(lines), TOP10_SCHEMA,
@@ -236,7 +236,7 @@ def write_thought(recent: list[str]) -> dict:
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
         try:
             system = (f"You write the daily 'Thought of the Day' for {g.CONFIG['page_name']}, an Indian Instagram "
-                      f"page for 18-35 year olds. Short, powerful, positive, in simple Hinglish. Either an original "
+                      f"page for 18-35 year olds. Short, powerful, positive, in simple Hinglish (English letters only, never Devanagari). Either an original "
                       f"line, or a genuine famous quote by a real person (Kalam, Vivekananda, Gandhi, Tagore, Ratan "
                       f"Tata, Bhagat Singh, etc.) translated faithfully, with their name in author. Never invent a "
                       f"quote and attribute it to a real person. No emojis in thought. Caption: 2-3 Hinglish lines "

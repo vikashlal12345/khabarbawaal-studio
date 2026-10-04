@@ -193,6 +193,8 @@ Headline (printed on the image): 8-14 words, English, punchy, carries the key na
 number. It must be fully supported by the candidate's text. Attribute allegations \
 ("alleges", "reportedly"). No invented facts, no fake quotes.
 
+Write all Hinglish in English (Roman) letters only, never Devanagari script.
+
 Caption: written in {lang}. 3-5 short lines: a hook line, then the key facts from \
 the story, then one question that invites comments. Plain text, 1-3 emojis max, \
 no hashtags inside the caption. Funny is fine when the story is funny; serious \
@@ -731,14 +733,22 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
     import schedule
     import specials
 
-    out = specials.make_thought(state) if kind == "thought" else specials.make_top10(kind)
-    if out is None:
+    if kind == "thought":
+        out = specials.make_thought(state)
+    elif kind.startswith("market_"):
+        import market
+        out = market.make_morning(state) if kind == "market_open" else market.make_close(state)
+    else:
+        out = specials.make_top10(kind)
+    if out is None:  # e.g. market holiday
+        state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()
+        save_json(STATE_FILE, state)
         return
     today = schedule.ist_now().date().isoformat()
     state.setdefault("specials_done", {})[kind] = today
     slides = out["slides"]
     save_post(feed, state, slides[0], f"{kind}-{today}", {
-        "kind": "thought" if kind == "thought" else "top10",
+        "kind": "thought" if kind == "thought" else "market" if kind.startswith("market_") else "top10",
         "headline": out["headline"], "tag": out["tag"], "caption": out["caption"],
         "source": out["source"], "source_url": "", "proof": out.get("proof"),
     }, slides[1:] or None)
@@ -748,7 +758,8 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
-    parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought"],
+    parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
+                                           "market_open", "market_close"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
@@ -774,7 +785,7 @@ def main() -> int:
         write_alerts(raised, resolved)
         return 0
 
-    regular = [p for p in feed if p.get("kind") not in ("top10", "thought")]
+    regular = [p for p in feed if p.get("kind") not in ("top10", "thought", "market")]
     if regular:
         age_min = (datetime.now(timezone.utc) - datetime.fromisoformat(regular[0]["created_at"])).total_seconds() / 60
         if args.min_gap and age_min < args.min_gap:

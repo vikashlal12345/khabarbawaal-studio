@@ -10,7 +10,8 @@ from datetime import datetime, timedelta, timezone
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
 PEAK_HOURS = [(7, 11), (18, 23)]                      # Instagram's busiest hours: a post every 30 min
-SPECIALS = {"top10_viral": (6, 15), "thought": (9, 15), "top10_day": (21, 15)}
+SPECIALS = {"top10_viral": (6, 15), "market_open": (8, 15), "thought": (9, 15),
+            "market_close": (15, 45), "top10_day": (21, 15)}   # market posts skip non-trading days
 SPECIAL_WINDOW = (-10, 12)                            # minutes around a special's time that count as its run
 
 

@@ -96,7 +96,7 @@ def check(slides: list[Image.Image], caption: str, texts: list[str], article: st
             return None
 
 
-SKIP_KEYS = {"type", "id", "link", "image", "category", "pick"}  # internal fields, not shown text
+SKIP_KEYS = {"type", "id", "link", "image", "category", "pick", "market"}  # internal fields / data numbers
 
 
 def strings(obj) -> list[str]:
