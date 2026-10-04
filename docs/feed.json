@@ -1,5 +1,34 @@
 [
  {
+  "id": "fec385fe5133",
+  "image": "posts/20261004-1631-fec385fe5133.jpg",
+  "kind": "news",
+  "headline": "Bengaluru man says salary is stuck in 2006 but rent lives in 2046",
+  "tag": "VIRAL",
+  "caption": "Bengaluru ka rent dekh ke salary khud sharma jaati hai 😭\nEk resident ne corporate salaries aur rent ke beech ke gap ko \"absolute mathematical comedy\" bola.\nUnke hisaab se salary 2006 mein atki hai, par rent 2046 mein jee raha hai.\nExample mein New Thippasandra aur Indiranagar jaise areas ka zikr kiya gaya.\nTumhare city mein rent vs salary ka kya scene hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bengaluru #BengaluruRent #Indiranagar #SalaryVsRent #CorporateLife #ViralIndia #GenZIndia #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/bengaluru-man-highlights-salary-rent-gap-says-salary-stuck-in-2006-but-rent-is-living-in-2046-101791120313416.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says more than 15-year-old apartment",
+    "Slide 2: The photo credit says 'moneycontrol.com', but the article source is Hindustan Times. Check that the photo really comes from moneycontrol, or change the credit.",
+    "Slide 3: The photo looks like a generic or AI-generated stock image: a modern apartment block and a toy house with keys. It doesn't match the 'more than 15-year-old walk-up' described in the text. The credit 'moneycontrol.com' also looks wrong or misleading. Check the credit or label the image as illustrative.",
+    "Slide 1: The cover photo shows a rail yard and has no clear link to Indiranagar or to rents. It is only loosely related, so check it is acceptable."
+   ],
+   "fixed": [
+    "Unke mutabiq 15 saal purane second-floor → Unke mutabiq 15 saal se zyada purane second-floor"
+   ]
+  },
+  "slides": [
+   "posts/20261004-1631-fec385fe5133-s2.jpg",
+   "posts/20261004-1631-fec385fe5133-s3.jpg",
+   "posts/20261004-1631-fec385fe5133-s4.jpg",
+   "posts/20261004-1631-fec385fe5133-s5.jpg"
+  ],
+  "created_at": "2026-10-04T16:31:16+00:00"
+ },
+ {
   "id": "c1207656ddcd",
   "image": "posts/20261004-1600-c1207656ddcd.jpg",
   "kind": "news",
