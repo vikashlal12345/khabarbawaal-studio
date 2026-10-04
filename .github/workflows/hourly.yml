@@ -12,12 +12,13 @@ on:
     - cron: "0 2-5,13-17 * * *"   # hh:30 IST in peak hours (7:30-10:30 AM, 6:30-10:30 PM)
     - cron: "45 0,2,3,15 * * *"   # 6:15, 8:15, 9:15 AM and 9:15 PM IST specials
     - cron: "15 10 * * 1-5"       # 3:45 PM IST closing bell (weekdays)
+    - cron: "39 3 * * 1-5"        # 9:09 AM IST pre-open snapshot (weekdays)
   workflow_dispatch:
     inputs:
       kind:
         description: "Post type"
         type: choice
-        options: [auto, news, fun, top10_viral, top10_day, thought, market_open, market_close]
+        options: [auto, news, fun, top10_viral, top10_day, thought, market_open, market_preopen, market_close]
         default: auto
       test_alert:
         description: "Also send a test alert email"

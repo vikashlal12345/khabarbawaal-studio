@@ -737,7 +737,8 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
         out = specials.make_thought(state)
     elif kind.startswith("market_"):
         import market
-        out = market.make_morning(state) if kind == "market_open" else market.make_close(state)
+        out = {"market_open": market.make_morning, "market_preopen": market.make_preopen,
+               "market_close": market.make_close}[kind](state)
     else:
         out = specials.make_top10(kind)
     if out is None:  # e.g. market holiday
@@ -759,7 +760,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
     parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
-                                           "market_open", "market_close"],
+                                           "market_open", "market_preopen", "market_close"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")

@@ -468,3 +468,80 @@ def make_close(state: dict, force: bool = False) -> dict | None:
     slides, data, proof = proofread.run(render, data, caption, facts + "\n\nHeadlines:\n" + "\n".join(news))
     return {"slides": slides, "caption": caption(data), "proof": proof, "tag": "🔔 CLOSING BELL",
             "headline": f"Closing Bell: Nifty {market['nifty']['last']} ({market['nifty']['pct']})", "source": "NSE, CNBC"}
+
+
+# ---------------------------------------------------------------- 9:09 AM pre-open snapshot
+
+def preopen_data(s: requests.Session | None = None, force: bool = False) -> dict | None:
+    """NSE pre-open session (9:00-9:08): expected opening of Nifty 50 stocks and the index."""
+    s = s or nse()
+    if not force and not is_trading_day(s):
+        print("Market holiday/weekend: no pre-open snapshot.")
+        return None
+    d = nse_json(s, "/api/market-data-pre-open?key=NIFTY")
+    rows = []
+    for r in d.get("data", []):
+        m = r.get("metadata", {})
+        price = m.get("iep") or m.get("finalPrice") or m.get("lastPrice")
+        if m.get("symbol") and price:
+            rows.append({"symbol": m["symbol"], "price": float(price), "pct": float(m.get("pChange") or 0)})
+    if len(rows) < 10:
+        print("Pre-open data not available yet: skipping.")
+        return None
+    rows.sort(key=lambda r: r["pct"], reverse=True)
+    fmt = lambda r: (r["symbol"], f"{r['price']:,.2f}", f"{r['pct']:+.2f}%")
+    idx = nse_json(s, "/api/NextApi/apiClient?functionName=getIndexData&&index=NIFTY%2050")["data"][0]
+    last, prev = float(idx.get("last") or 0), float(idx.get("previousClose") or 0)
+    change = last - prev if last and prev else 0.0
+    return {
+        "nifty": {"last": f"{last:,.2f}", "change": f"{change:+,.2f}",
+                  "pct": f"{(change / prev * 100) if prev else 0:+.2f}%", "prev": f"{prev:,.2f}"},
+        "advances": d.get("advances", sum(r["pct"] > 0 for r in rows)),
+        "declines": d.get("declines", sum(r["pct"] < 0 for r in rows)),
+        "high": [fmt(r) for r in rows[:5]], "low": [fmt(r) for r in rows[::-1][:5]],
+    }
+
+
+def render_preopen(m: dict) -> list[Image.Image]:
+    total = 3
+    img, d = base("PRE-OPEN", schedule.ist_now().strftime("%A, %d %B %Y") + "  ·  9:08 AM", market_photo(), 820)
+    up, col = arrow(m["nifty"]["pct"])
+    d.text((60, 470), "NIFTY 50 EXPECTED OPEN", font=g.font("Poppins-Bold.ttf", 40), fill="white", anchor="lm")
+    d.text((60, 590), m["nifty"]["last"], font=g.font("Anton-Regular.ttf", 150), fill="white", anchor="lm")
+    x = tri(d, 60, 725, 54, up, col)
+    d.text((x, 720), f"{m['nifty']['change']} ({m['nifty']['pct']})", font=g.font("Anton-Regular.ttf", 80),
+           fill=col, anchor="lm")
+    f = g.font("Poppins-Bold.ttf", 42)
+    d.text((60, 890), f"Pichhla close: {m['nifty']['prev']}", font=f, fill=(210, 210, 210), anchor="lm")
+    d.text((60, 960), f"Pre-open: {m['advances']} upar · {m['declines']} neeche", font=f,
+           fill=g.CONFIG["accent_color"], anchor="lm")
+    d.text((60, 1040), "Market 9:15 pe khulega", font=g.font("Anton-Regular.ttf", 64), fill="white", anchor="lm")
+    foot(d, 1, total, "Data: NSE pre-open")
+    slides = [img]
+    img, d = base("OPENING HIGH", "Pre-open mein sabse upar")
+    y = table_rows(d, m["high"], 360, row_h=80)
+    d.text((60, y + 50), "OPENING LOW", font=g.font("Anton-Regular.ttf", 80), fill="white", anchor="lm")
+    table_rows(d, m["low"], y + 120, row_h=80)
+    foot(d, 2, total, "Data: NSE pre-open")
+    slides.append(img)
+    slides.append(disclaimer_slide(3, total))
+    return slides
+
+
+def make_preopen(state: dict, force: bool = False, data: dict | None = None) -> dict | None:
+    """Data-only post (no AI) so it's ready within a minute of 9:09."""
+    m = data or preopen_data(force=force)
+    if m is None:
+        return None
+    print("Mode: market_preopen (data)")
+    n = m["nifty"]
+    trend = "positive" if pct_value(n["pct"]) > 0 else "negative" if pct_value(n["pct"]) < 0 else "flat"
+    hi, lo = m["high"][0], m["low"][0]
+    caption = (f"🔔 Pre-open update: Nifty {n['last']} ({n['pct']}) par khulne ke sanket, {trend} start.\n"
+               f"Pre-open mein sabse upar {hi[0]} ({hi[2]}), sabse neeche {lo[0]} ({lo[2]}).\n"
+               f"Market 9:15 pe khulega. Aaj aapko market kaisa lag raha hai? 👇\nNot investment advice.\n\n"
+               f"Follow {g.CONFIG['handle']} for daily market updates.\n\n"
+               f"#KhabarBawaal #StockMarket #Nifty #PreOpen #ShareMarketIndia #StockMarketIndia #DalalStreet")
+    return {"slides": render_preopen(m), "caption": caption, "tag": "🔔 PRE-OPEN",
+            "proof": {"state": "ok", "issues": [], "fixed": ["Data-only post: numbers straight from NSE"]},
+            "headline": f"Pre-open: Nifty {n['last']} ({n['pct']})", "source": "NSE"}
