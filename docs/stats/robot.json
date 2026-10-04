@@ -84,6 +84,21 @@
      "tokens": 16618
     }
    }
+  },
+  "fun bank": {
+   "posts": 0,
+   "requests": 2,
+   "input": 4,
+   "output": 6835,
+   "cache_read": 1378,
+   "cache_write": 8683,
+   "value_usd": 0.1034,
+   "by_purpose": {
+    "writing": {
+     "requests": 2,
+     "tokens": 16900
+    }
+   }
   }
  }
 }
