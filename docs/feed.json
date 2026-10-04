@@ -1,5 +1,59 @@
 [
  {
+  "id": "sample-market-open",
+  "image": "posts/20261004-0550-sample-market-open.jpg",
+  "kind": "market",
+  "headline": "SAMPLE (for review): Market Morning Brief: 04 Oct",
+  "tag": "📈 MARKET BRIEF · SAMPLE",
+  "caption": "GIFT Nifty +0.59% upar, par Nifty ne 8 hafte lagataar girawat dekhi hai.\nUS markets hare rang mein band hue, Asia kamzor raha.\nMonday ko TCS Q2 aur auto sales ka mood dekhna hoga.\nAapke hisaab se kya Nifty 9th hafte mein rebound karega?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#KhabarBawaal #StockMarket #Nifty #Sensex #GIFTNifty #MarketMorningBrief #TCS #DMart #Dalalstreet #StockMarketIndia",
+  "source": "NSE, CNBC, ET, Moneycontrol",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says 10 stocks turn ex-record date this week, not 15.",
+    "Slide 4: The HDFC Bank item says Anup Bagchi has become the new MD-CEO. Nothing in the article or headlines supports this, so please verify it or remove it.",
+    "Slide 4: The Vedanta item (\"Q2 results se pehle group companies par charcha\") has no source in the article. Verify it or remove it."
+   ],
+   "fixed": [
+    "Is hafte 15 companies → Is hafte 10 companies"
+   ]
+  },
+  "slides": [
+   "posts/20261004-0550-sample-market-open-s2.jpg",
+   "posts/20261004-0550-sample-market-open-s3.jpg",
+   "posts/20261004-0550-sample-market-open-s4.jpg",
+   "posts/20261004-0550-sample-market-open-s5.jpg",
+   "posts/20261004-0550-sample-market-open-s6.jpg"
+  ],
+  "created_at": "2026-10-04T05:50:22+00:00"
+ },
+ {
+  "id": "sample-market-close",
+  "image": "posts/20261004-0549-sample-market-close.jpg",
+  "kind": "market",
+  "headline": "SAMPLE (for review): Closing Bell: Nifty 22,421.95 (-0.88%)",
+  "tag": "🔔 CLOSING BELL · SAMPLE",
+  "caption": "Nifty 50 aaj 22,421.95 pe band hua, 198.50 points (-0.88%) neeche. 🔔\nAuto index -3.46% aur Metal -2.35% gira, lekin IT 2.17% chadha. INFY +4.11% top gainer raha.\nIndia VIX 14.44 pe, +7.04%. Brent $102.25 pe flat raha.\nAapke hisaab se agle hafte bazaar mein rebound aayega ya dabav jaari rahega?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#KhabarBawaal #StockMarket #Nifty #Sensex #ClosingBell #BankNifty #IndiaVIX #Infosys #AutoStocks #ShareMarketIndia",
+  "source": "NSE, CNBC",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "oil ki ooncheen keematein → oil ki oonchi keematein"
+   ]
+  },
+  "slides": [
+   "posts/20261004-0549-sample-market-close-s2.jpg",
+   "posts/20261004-0549-sample-market-close-s3.jpg",
+   "posts/20261004-0549-sample-market-close-s4.jpg",
+   "posts/20261004-0549-sample-market-close-s5.jpg",
+   "posts/20261004-0549-sample-market-close-s6.jpg"
+  ],
+  "created_at": "2026-10-04T05:49:38+00:00"
+ },
+ {
   "id": "ce5c1036695e",
   "image": "posts/20261004-0508-ce5c1036695e.jpg",
   "kind": "news",
