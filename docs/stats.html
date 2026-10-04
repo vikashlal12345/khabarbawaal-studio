@@ -59,8 +59,8 @@
   <section id="adhoc"><h2>Your own Claude use</h2><div class="muted">Loading…</div></section>
 </main>
 <script>
-const JOB_NAMES = { news: 'News posts', fun: 'Fun posts', create: '➕ Create posts', top10_viral: 'Top 10 Viral',
-  top10_day: 'Top 10 News', thought: 'Thought of Day', market_open: 'Market Brief', market_preopen: 'Pre-open',
+const JOB_NAMES = { news: 'News posts', fun: 'Fun posts', create: '➕ Create posts', top10_viral: 'Top 5 Viral',
+  top10_day: 'Top 5 News', thought: 'Thought of Day', market_open: 'Market Brief', market_preopen: 'Pre-open',
   market_close: 'Closing Bell', 'fun bank': 'Joke bank', other: 'Other' };
 const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(Math.round(n));
 const tokens = t => (t.input || 0) + (t.output || 0) + (t.cache_read || 0) + (t.cache_write || 0);

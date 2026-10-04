@@ -212,6 +212,7 @@ async function share(post) {
     return;
   }
   navigator.clipboard.writeText(post.caption).catch(() => {});
+  if (list.length > 10) toast(`${list.length} slides: Instagram takes max 10 here. Tap "Save Images", then post from Instagram (+ → Select multiple)`);
   if (navigator.canShare && navigator.canShare({ files: list })) {
     try {
       await navigator.share({ files: list });

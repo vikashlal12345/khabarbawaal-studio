@@ -1,5 +1,5 @@
-"""Daily special posts: Top 10 Viral (6 AM), Thought of the Day (9 AM),
-Top 10 News of the Day (9 PM), all in IST. Written by Claude on the membership,
+"""Daily special posts: Top 5 Viral (6:15 AM), Thought of the Day (9:15 AM),
+Top 5 News of the Day (9:15 PM), 5 AM overnight roundup, all in IST. Written by Claude on the membership,
 with a no-AI fallback so the slot is never missed.
 """
 from __future__ import annotations
@@ -16,15 +16,16 @@ import generate as g
 IST = timedelta(hours=5, minutes=30)
 
 TOP10 = {
-    "top10_viral": {"title": ("TOP 10", "VIRAL"), "sub": "Aaj ki sabse viral khabrein",
-                    "tag": "🔥 TOP 10 VIRAL",
+    # Top 5 (cover + 5 stories + closing = 7 slides): Instagram's share sheet takes at most 10 photos.
+    "top10_viral": {"title": ("TOP 5", "VIRAL"), "sub": "Aaj ki 5 sabse viral khabrein",
+                    "tag": "🔥 TOP 5 VIRAL", "count": 5,
                     "cats": {"viral", "funny/offbeat", "entertainment", "cricket", "sports", "tech"},
-                    "brief": "the 10 stories that went most VIRAL in India in the last 24 hours: internet "
+                    "brief": "the 5 stories that went most VIRAL in India in the last 24 hours: internet "
                              "moments, shocking or funny stories, celebrity buzz, big sports moments"},
-    "top10_day": {"title": ("TOP 10", "NEWS"), "sub": "Aaj ki 10 sabse badi khabrein",
-                  "tag": "📰 TOP 10 NEWS",
+    "top10_day": {"title": ("TOP 5", "NEWS"), "sub": "Aaj ki 5 sabse badi khabrein",
+                  "tag": "📰 TOP 5 NEWS", "count": 5,
                   "cats": None,
-                  "brief": "the 10 BIGGEST news stories of today in India across politics, India news, "
+                  "brief": "the 5 BIGGEST news stories of today in India across politics, India news, "
                            "cricket, Bollywood, tech and viral"},
     "night_roundup": {"title": ("TOP 5", "RAAT KI KHABAR"), "sub": "Jab aap so rahe the...",
                       "tag": "🌅 RAAT KI 5 KHABREIN", "cats": None, "count": 5, "hours": 9,
@@ -226,7 +227,7 @@ def make_top10(kind: str) -> dict | None:
 
     items = gather(kind)
     if len(items) < 5:
-        print("Not enough stories for a Top 10.")
+        print("Not enough stories for a Top 5.")
         return None
     pick = pick_top10(kind, items)
     data = {"stories": pick["stories"], "photos": [g.best_photo(s) for s in pick["stories"]],
