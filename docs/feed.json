@@ -1,5 +1,44 @@
 [
  {
+  "id": "c7c89da54a25",
+  "image": "posts/20261004-0422-c7c89da54a25.jpg",
+  "kind": "news",
+  "headline": "Indian envoy on sheltering Sheikh Hasina: 'Our duty, she was still Bangladesh PM'",
+  "tag": "POLITICS",
+  "caption": "India ne Sheikh Hasina ko shelter kyun diya? Ab Indian envoy ne bataya.\nEnvoy ke mutabiq \"it was our duty\" kyunki wo us time bhi Bangladesh ki PM thi.\nHasina August 2024 mein Dhaka se nikalne ke baad se India mein reh rahi hain, jab unki government gir gayi thi.\nAapko kya lagta hai, ye sahi faisla tha? Comments mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SheikhHasina #India #Bangladesh #IndiaBangladesh #Politics #Diplomacy #NewsUpdate #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/bangladesh-sheikh-hasina-india-extradition-dinesh-trivedi-latest-news-bilateral-ties-101791082744744.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article says she announced her return in an interview. It does not mention a press conference on 5 August. 5 August is the date she flew to India.",
+    "Fact corrected to match the article: The article says nothing about a Tarique Rahman India visit or its date, so this claim is unsupported.",
+    "Fact corrected to match the article: The article does not say the BNP government backed the ban. It only says the BNP government repeated the extradition demand, and the Yunus government sought extradition through a diplomatic note.",
+    "Slide 6: Point 2 is cut off. It ends at 'BNP sarkar ne bhi', so the rest of the sentence ('extradition ki maang dohrayi') doesn't show. Shorten the text or resize it so the full sentence fits.",
+    "Slide 1: The headline sits over the lower part of Hasina's face (mouth and chin). Move the text down or shift the photo.",
+    "Slide 3: The photo is a bad crop of a low-resolution image. It cuts off Hasina's face at the eyes and looks pixelated with a hard outline. Use a better photo or crop.",
+    "Slide 5: The photo shows a meeting of officials, not Hasina or her interview. It doesn't match the caption about her return plan. Use a relevant photo or add a caption identifying the people.",
+    "Slide 4: The photo shows two men shaking hands, and the caption doesn't identify them. It is unclear that one is Trivedi, and the picture doesn't relate to the extradition quote. Add a photo caption or use a better image.",
+    "Slide 1: The headline puts 'Our duty, she was still Bangladesh PM' in quotation marks, but this is a paraphrase stitched from two separate parts of Trivedi's remarks. The actual quotes are 'It was our duty' and 'she was still the prime minister of Bangladesh'. Use the exact wording or drop the quote marks."
+   ],
+   "fixed": [
+    "aayi थीं। → aayi thin.",
+    "Hasina ne 5 August ko press conference mein December mein wapas jaane ka elaan kiya. → Hasina ne haal hi ke ek interview mein December mein Bangladesh wapas jaane ka elaan kiya.",
+    "; PM Tarique Rahman ki India visit ki date abhi tay nahi. → .",
+    "Yunus sarkar ne Awami League ko disband kiya. 12 February ke chunav ke baad BNP sarkar ne ban ko samarthan diya aur extradition maang dohrayi. → Yunus sarkar ne Awami League ko disband kiya aur extradition ke liye diplomatic note bheja. 12 February ke chunav ke baad aayi BNP sarkar ne bhi extradition ki maang dohrayi."
+   ]
+  },
+  "slides": [
+   "posts/20261004-0422-c7c89da54a25-s2.jpg",
+   "posts/20261004-0422-c7c89da54a25-s3.jpg",
+   "posts/20261004-0422-c7c89da54a25-s4.jpg",
+   "posts/20261004-0422-c7c89da54a25-s5.jpg",
+   "posts/20261004-0422-c7c89da54a25-s6.jpg",
+   "posts/20261004-0422-c7c89da54a25-s7.jpg"
+  ],
+  "created_at": "2026-10-04T04:22:50+00:00"
+ },
+ {
   "id": "9f959aad3892",
   "image": "posts/20261004-0408-9f959aad3892.jpg",
   "kind": "news",
