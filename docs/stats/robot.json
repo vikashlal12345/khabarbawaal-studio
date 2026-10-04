@@ -189,6 +189,25 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "night_roundup": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 2046,
+   "cache_read": 3974,
+   "cache_write": 14676,
+   "value_usd": 0.0799,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 3765
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 16937
+    }
+   }
   }
  }
 }
