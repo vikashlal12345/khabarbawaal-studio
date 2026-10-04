@@ -239,6 +239,9 @@ function proofHtml(p) {
     pr.issues.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
 }
 
+// A ready post counts as used once you mark it or link its Instagram post.
+function isUsed(p) { return !!(localGet('used-' + p.id) || igLinks[p.id]); }
+
 function instaHtml(p) {
   const link = igLinks[p.id], res = igData[p.id];
   if (!link) return `<div class="insta"><span>Posted it? Link it to track likes</span><button data-act="insta">🔗 Insta link</button></div>`;
@@ -255,7 +258,7 @@ function render() {
   }
   const lastSeen = localGet('lastSeen');
   feedEl.innerHTML = posts.map(p => `
-    <article class="post" data-id="${p.id}">
+    <article class="post${tab === 'ready' && isUsed(p) ? ' used' : ''}" data-id="${p.id}">
       ${p.options && p.options.length > 1 ? `
       <div class="carousel" data-role="options">${p.options.map(o => `<img src="${o}" alt="${esc(p.headline)}" loading="lazy">`).join('')}</div>
       <div class="opt-label">Cover option <b>1</b> of ${p.options.length} · swipe ← → to choose</div>
@@ -279,8 +282,9 @@ function render() {
         <button data-act="comment">💬 Comment</button>
         ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
       </div>
-      ${tab === 'feed' ? instaHtml(p) : `<div class="insta"><span>${localGet('used-' + p.id) ? '✓ Marked as used' : ''}</span>
-        <button data-act="used">${localGet('used-' + p.id) ? 'Unmark' : '✓ Mark used'}</button></div>`}
+      ${instaHtml(p)}
+      ${tab === 'ready' ? `<div class="insta"><span>${isUsed(p) ? '✓ Used (posted)' : 'Posted it? Mark it so you don\'t repeat it'}</span>
+        <button data-act="used">${localGet('used-' + p.id) ? 'Unmark' : '✓ Mark used'}</button></div>` : ''}
     </article>`).join('');
   feedEl.querySelectorAll('.post').forEach(el => observer.observe(el));
   if (tab === 'feed') localSet('lastSeen', posts[0].created_at);
@@ -340,6 +344,7 @@ function linkInsta(post) {
   const owner = location.hostname.endsWith('github.io') ? location.hostname.split('.')[0] : 'vikashlal12345';
   const repo = location.pathname.split('/').filter(Boolean)[0] || 'khabarbawaal-studio';
   const body = `post: ${post.id}\nurl: ${url.trim()}`;
+  if (post.kind === 'ready') localSet('used-' + post.id, '1');
   const gh = `https://github.com/${owner}/${repo}/issues/new?title=${encodeURIComponent('Insta link')}&body=${encodeURIComponent(body)}`;
   toast('Tap Create in GitHub to save the link');
   if (!window.open(gh, '_blank')) window.location.href = gh;

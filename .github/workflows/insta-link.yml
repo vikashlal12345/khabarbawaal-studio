@@ -37,7 +37,8 @@ jobs:
           if not (url and pid):
               raise SystemExit("No Instagram link or post id found")
           feed = json.load(open("docs/feed.json"))
-          post = next((p for p in feed if p["id"] == pid.group(1)), {})
+          ready = json.load(open("docs/ready.json")) if os.path.exists("docs/ready.json") else []
+          post = next((p for p in feed + ready if p["id"] == pid.group(1)), {})
           path = "docs/stats/ig_links.json"
           os.makedirs("docs/stats", exist_ok=True)
           links = json.load(open(path)) if os.path.exists(path) else {}
