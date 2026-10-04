@@ -1,5 +1,33 @@
 [
  {
+  "id": "a36b38d15aff",
+  "image": "posts/20261004-1131-a36b38d15aff.jpg",
+  "kind": "news",
+  "headline": "LeT commander Hashim Moosa reportedly used Ayurvedic honey remedy to heal bullet wounds in jungle",
+  "tag": "BREAKING",
+  "caption": "Jungle mein chhupke bullet wounds ka desi ilaaj? Officials ka kehna hai ki LeT commander Hashim Moosa ne Ayurvedic honey remedy use ki.\nOfficials ke mutabik Moosa ko Dorimal-Gambhir Moghla area mein pichhle encounter ke dauran bullet injuries lagi thi.\nYe details security officials ne share ki hain.\nAapko kya lagta hai, ye jungle survival ki kahani kitni crazy hai? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#LeT #HashimMoosa #IndianArmy #SecurityForces #JammuKashmir #BreakingNews #IndiaNews #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/let-commander-hashim-moosa-used-ayurvedic-honey-remedy-to-heal-bullet-wounds-in-jungle-101791110505908.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article gives no Poonch/Rajouri/Ganderbal attacks; says he was 'allegedly' involved in a dozen attacks. Allegation must be attributed.",
+    "Slide 1: The cover photo shows soldiers and a vehicle. It's a generic file image, not a picture of Moosa or this operation. It's readable and the text doesn't cover any faces. Consider adding a 'Representative image' note.",
+    "Slide 3: The photo circles one man in a group of four as Moosa. The article doesn't confirm this identification, so check the photo source before posting."
+   ],
+   "fixed": [
+    "Moosa Pahalgam 2025 hamle ke masterminds mein tha, jisme 26 log maare gaye. Woh Poonch, Rajouri, Ganderbal ke kai hamlon mein shamil tha. → Officials ke mutabik Moosa Pahalgam 2025 hamle ke masterminds mein tha, jisme 26 log maare gaye. Us par kareeb ek dozen hamlon mein shamil hone ka aarop tha."
+   ]
+  },
+  "slides": [
+   "posts/20261004-1131-a36b38d15aff-s2.jpg",
+   "posts/20261004-1131-a36b38d15aff-s3.jpg",
+   "posts/20261004-1131-a36b38d15aff-s4.jpg",
+   "posts/20261004-1131-a36b38d15aff-s5.jpg"
+  ],
+  "created_at": "2026-10-04T11:31:48+00:00"
+ },
+ {
   "id": "a8e912993e2c",
   "image": "posts/20261004-1031-a8e912993e2c.jpg",
   "kind": "news",
