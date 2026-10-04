@@ -7,13 +7,14 @@ name: Hourly post
 # --min-gap 40 on timed runs stops double posts when both fire in the same hour.
 on:
   schedule:
-    - cron: "7 * * * *"
+    - cron: "7 0-17 * * *"        # hh:37 IST, 5:37 AM - 10:37 PM (backup for the chain)
+    - cron: "30 0,3,15 * * *"     # 6:00 AM, 9:00 AM, 9:00 PM IST specials (backup)
   workflow_dispatch:
     inputs:
       kind:
         description: "Post type"
         type: choice
-        options: [auto, news, fun]
+        options: [auto, news, fun, top10_viral, top10_day, thought]
         default: auto
       test_alert:
         description: "Also send a test alert email"
@@ -95,7 +96,8 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Wait for the next hour, then start the next run
+      - uses: actions/checkout@v4
+      - name: Wait for the next posting slot, then start the next run
         run: |
           busy() {   # other hourly runs that are running or waiting (any trigger)
             gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 20 --json databaseId,status \
@@ -110,9 +112,13 @@ jobs:
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(busy)" != "0" ]; then
             echo "Chain already running: nothing to do."; exit 0
           fi
-          m=$((10#$(date -u +%M))); s=$((10#$(date -u +%S)))
-          wait=$(( ( (67 - m) % 60 ) * 60 - s ))   # seconds until the next hh:07
-          [ "$wait" -lt 600 ] && wait=$((wait + 3600))
-          echo "Next post in $((wait / 60)) minutes"; sleep "$wait"
+          wait=$(python3 schedule.py next-wait)   # next hh:37 IST or special slot; skips quiet hours
+          if [ "$wait" -gt 19800 ]; then
+            # Overnight: a job can only run 6 hours, so wait 5h30m and hand over to a new run,
+            # which waits the rest.
+            echo "Quiet hours: waiting 330 minutes, then handing over"; sleep 19800
+          else
+            echo "Next post in $((wait / 60)) minutes"; sleep "$wait"
+          fi
           if [ "$(queued_chain)" != "0" ]; then echo "A chain run is already queued."; exit 0; fi
           gh workflow run hourly.yml -R "$GITHUB_REPOSITORY" -f chain=true

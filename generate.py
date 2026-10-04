@@ -412,7 +412,7 @@ def render_card(photo: Optional[Image.Image], post: dict, source: str) -> Image.
         canvas.alpha_composite(logo, (44, 44))
 
     # Headline: shrink until it fits in 5 lines / 560px.
-    words = post["headline"].upper().split()
+    words = printable(post["headline"]).upper().split()
     highlights = {norm(w) for phrase in post["highlight"] for w in phrase.split()}
     max_w = W - 120
     for size in range(118, 54, -4):
@@ -557,7 +557,10 @@ FUN_THEMES = [  # (background, pattern, text, highlight, tag background, tag tex
 
 
 def printable(text: str) -> str:
-    """Drop emojis and other symbols the card fonts can't draw."""
+    """Text the card fonts can draw: accented letters become plain (bolī -> boli),
+    emojis and other symbols are dropped."""
+    import unicodedata
+    text = "".join(ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch))
     return "".join(ch for ch in text if ord(ch) < 0x2000 or ch in "₹–—‘’“”…•").strip()
 
 
@@ -701,11 +704,30 @@ def save_post(feed: list, state: dict, card: Image.Image, post_id: str, entry: d
     return filename
 
 
+def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: list[str]) -> None:
+    """Top 10 carousels and Thought of the Day (see specials.py)."""
+    import schedule
+    import specials
+
+    out = specials.make_thought(state) if kind == "thought" else specials.make_top10(kind)
+    if out is None:
+        return
+    today = schedule.ist_now().date().isoformat()
+    state.setdefault("specials_done", {})[kind] = today
+    slides = out["slides"]
+    save_post(feed, state, slides[0], f"{kind}-{today}", {
+        "kind": "thought" if kind == "thought" else "top10",
+        "headline": out["headline"], "tag": out["tag"], "caption": out["caption"],
+        "source": out["source"], "source_url": "",
+    }, slides[1:] or None)
+    resolved += ["token", "limit", "ai-error"]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
-    parser.add_argument("--kind", choices=["auto", "news", "fun"], default="auto",
-                        help="auto: every 3rd post is a fun post")
+    parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought"],
+                        default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
     args = parser.parse_args()
@@ -717,13 +739,30 @@ def main() -> int:
     resolved: list[str] = []
     token_expiry_check(raised, resolved)
 
-    if feed:
-        age_min = (datetime.now(timezone.utc) - datetime.fromisoformat(feed[0]["created_at"])).total_seconds() / 60
+    import schedule
+    now_ist = schedule.ist_now()
+    special = args.kind if args.kind in schedule.SPECIALS else None
+    if args.kind == "auto":
+        special = schedule.special_due(now_ist, state.get("specials_done", {}))
+        if not special and schedule.is_quiet(now_ist):
+            print(f"Quiet hours ({now_ist:%H:%M} IST): no post.")
+            return 0
+    if special:
+        make_special(special, state, feed, raised, resolved)
+        write_alerts(raised, resolved)
+        return 0
+
+    regular = [p for p in feed if p.get("kind") not in ("top10", "thought")]
+    if regular:
+        age_min = (datetime.now(timezone.utc) - datetime.fromisoformat(regular[0]["created_at"])).total_seconds() / 60
         if args.min_gap and age_min < args.min_gap:
             print(f"Newest post is only {age_min:.0f} min old: skipping this run (no double posts).")
             return 0
-        if age_min > 180:
-            raised["gap"] = {"hours": round(age_min / 60)}
+        # Count only posting hours (quiet hours are expected gaps).
+        steps = int(age_min // 10)
+        active_min = 10 * sum(not schedule.is_quiet(now_ist - timedelta(minutes=10 * k)) for k in range(steps))
+        if active_min > 180:
+            raised["gap"] = {"hours": round(active_min / 60)}
         else:
             resolved.append("gap")
 
