@@ -1,5 +1,35 @@
 [
  {
+  "id": "d898d3f47472",
+  "image": "posts/20261004-1501-d898d3f47472.jpg",
+  "kind": "news",
+  "headline": "Meerut woman hangs on car bonnet as husband allegedly tries to drive off after she catches him with girlfriend",
+  "tag": "VIRAL",
+  "caption": "Yeh video dekh ke dil dehal gaya 😳\nMeerut mein ek aurat ne pati ko kathit girlfriend ke saath pakda, aur car aage badhi to woh bonnet pe latakti dikhi.\nAurat ka aarop hai ki usse jhaadiyon mein dhakela gaya aur gala dabane ki koshish hui.\nVideo social media pe viral hai, aarop abhi allegations hain.\nAapko kya lagta hai, aisi cases mein kitni sakht saza honi chahiye?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Meerut #ViralVideo #UttarPradesh #IndiaNews #Trending #KhabarBawaal #DomesticViolence",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/meerut-man-drags-wife-on-car-bonnet-after-she-catches-him-with-girlfriend-pushed-me-into-bush-tried-to-strangle-me-101791115124489.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Headline states as fact that the man dragged his wife; article says it is the wife's allegation and the video shows her on the bonnet of a moving car",
+    "Slide 3: The embedded Meerut Police X post shows garbled box or placeholder glyphs instead of readable text. The Hindi font failed to render, so the tweet text is unreadable. Re-capture the screenshot or replace it with a readable one. The tweet is also dated Oct 4, 2026, so check that it is the real police post about this incident."
+   ],
+   "fixed": [
+    "Meerut man drags wife on car bonnet after she catches him with girlfriend → Meerut woman hangs on car bonnet as husband allegedly tries to drive off after she catches him with girlfriend",
+    "dehel → dehal",
+    "bush mein → jhaadiyon mein",
+    "behas → bahas"
+   ]
+  },
+  "slides": [
+   "posts/20261004-1501-d898d3f47472-s2.jpg",
+   "posts/20261004-1501-d898d3f47472-s3.jpg",
+   "posts/20261004-1501-d898d3f47472-s4.jpg",
+   "posts/20261004-1501-d898d3f47472-s5.jpg"
+  ],
+  "created_at": "2026-10-04T15:01:24+00:00"
+ },
+ {
   "id": "94d1b27e871e",
   "image": "posts/20261004-1431-94d1b27e871e.jpg",
   "kind": "news",
