@@ -1,0 +1,61 @@
+name: Save Instagram post link
+
+# The app's "🔗 Insta link" button opens a GitHub issue titled "Insta link" with the post id and
+# its Instagram URL. The Mac stats job then checks that post's likes/comments, and the 4 AM
+# learning job uses them to favour what your audience likes.
+on:
+  issues:
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: hourly-post
+  cancel-in-progress: false
+
+jobs:
+  save:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Insta link')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+      BODY: ${{ github.event.issue.body }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save link
+        id: save
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          from datetime import datetime, timezone
+          body = os.environ["BODY"]
+          url = re.search(r"https://(?:www\.)?instagram\.com/(?:p|reel)/[A-Za-z0-9_-]+", body)
+          pid = re.search(r"post:\s*(\S+)", body)
+          if not (url and pid):
+              raise SystemExit("No Instagram link or post id found")
+          feed = json.load(open("docs/feed.json"))
+          post = next((p for p in feed if p["id"] == pid.group(1)), {})
+          path = "docs/stats/ig_links.json"
+          os.makedirs("docs/stats", exist_ok=True)
+          links = json.load(open(path)) if os.path.exists(path) else {}
+          links[pid.group(1)] = {"url": url.group(0), "kind": post.get("kind", "news"), "tag": post.get("tag", ""),
+                                 "headline": post.get("headline", ""), "posted_at": post.get("created_at", ""),
+                                 "linked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+          json.dump(links, open(path, "w"), ensure_ascii=False, indent=1)
+          print("saved", pid.group(1), url.group(0))
+          PY
+      - name: Upload
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "Insta link (issue #$ISSUE)"
+      - name: Reply and close
+        if: success()
+        run: gh issue close "$ISSUE" --comment "✅ Link saved. Likes and comments will show on the Stats page within a few hours."
+      - name: Report failure
+        if: failure()
+        run: |
+          gh issue comment "$ISSUE" --body "❌ Couldn't read an Instagram post link. Copy it from Instagram (⋯ → Copy link) and try again."

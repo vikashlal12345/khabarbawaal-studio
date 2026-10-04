@@ -44,6 +44,7 @@
 <body>
 <header><a href="./" aria-label="Back">‹</a><h1>📊 Stats</h1></header>
 <main>
+  <section id="insta"><h2>📈 Instagram</h2><div class="muted">Loading…</div></section>
   <section id="plan"><h2>Claude plan usage</h2><div class="muted">Loading…</div></section>
   <section id="capacity"><h2>Room for more posts</h2><div class="muted">Loading…</div></section>
   <section id="robot"><h2>KhabarBawaal robot</h2><div class="muted">Loading…</div></section>
@@ -73,7 +74,28 @@ function gauge(label, w) { const p = Math.round(w.pct);
     <div class="muted">Resets ${inIST(w.resets_at)}</div></div>`; }
 
 (async () => {
-  const [robot, adhoc, limits] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'), getJSON('stats/limits.json')]);
+  const [robot, adhoc, limits, ig, links, audience, feed] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'),
+    getJSON('stats/limits.json'), getJSON('stats/instagram.json'), getJSON('stats/ig_links.json'), getJSON('stats/audience.json'), getJSON('feed.json')]);
+
+  // --- instagram
+  {
+    const fol = (ig && ig.followers) || [];
+    const latest = fol[fol.length - 1];
+    const weekAgo = fol.find(f => Date.now() - new Date(f.at) < 7 * 86400000) || fol[0];
+    const results = Object.entries((ig && ig.posts) || {}).map(([id, r]) => ({ id, ...r, ...(links || {})[id],
+      score: r.likes + 2 * r.comments })).sort((a, b) => b.score - a.score);
+    const top = results.slice(0, 5).map(p => `<div class="row" style="grid-template-columns:minmax(0,1fr) 90px">
+      <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${(p.headline || p.id).replace(/</g, '&lt;')}</span>
+      <span class="num">❤️ ${p.likes} · 💬 ${p.comments}</span></div>`).join('');
+    document.getElementById('insta').innerHTML = `<h2>📈 Instagram @khabarbawaal</h2>
+      <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers</span></div>
+        <div class="kpi"><b>${latest && weekAgo ? (latest.followers - weekAgo.followers >= 0 ? '+' : '') + (latest.followers - weekAgo.followers) : '–'}</b><span>this week</span></div>
+        <div class="kpi"><b>${Object.keys(links || {}).length}</b><span>posts linked</span></div></div>
+      <h2 style="margin-top:14px">Best posts</h2>${top || '<div class="muted">Link posts with 🔗 Insta link in the app to see their likes here.</div>'}
+      <h2 style="margin-top:14px">What the robot learned</h2>
+      <div class="muted">${audience && audience.summary ? audience.summary.replace(/</g, '&lt;')
+        : `Needs at least 10 linked posts with results (${results.length} so far). Then every night at 4 AM it learns which topics your audience likes and posts more of them.`}</div>`;
+  }
   const week = lastDays(7), today = week[0];
 
   // --- plan

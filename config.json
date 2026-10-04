@@ -11,6 +11,8 @@
   "max_posts_kept": 150,
   "keep_days": 3,
   "fun_every": 3,
+  "ready_per_night": 5,
+  "jokes_per_night": 10,
   "fun_bank_max_age_days": 14,
   "lookback_hours": 8,
   "per_feed": 4,

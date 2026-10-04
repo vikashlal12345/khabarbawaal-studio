@@ -212,7 +212,9 @@ def build_prompt(candidates: list[dict], recent_headlines: list[str]) -> tuple[s
         age_h = (time.time() - item["ts"]) / 3600
         lines.append(f"[{n}] ({item['category']} | {item['source']} | {age_h:.0f}h ago) {item['title']}\n    {item['summary']}")
     recent = "\n".join(f"- {h}" for h in recent_headlines) or "(none yet)"
-    user_msg = (f"Recently posted (don't repeat these stories):\n{recent}\n\n"
+    audience = (load_json(STATE_FILE, {}).get("audience") or {}).get("summary", "")
+    user_msg = ((f"What our audience engages with most: {audience}\n\n" if audience else "") +
+                f"Recently posted (don't repeat these stories):\n{recent}\n\n"
                 f"Candidates:\n\n" + "\n\n".join(lines))
     system = SYSTEM_PROMPT.format(page=CONFIG["page_name"], lang=CONFIG["caption_language"])
     return system, user_msg
@@ -739,10 +741,33 @@ def save_post(feed: list, state: dict, card: Image.Image, post_id: str, entry: d
     return filename
 
 
+def night_job(kind: str, state: dict) -> None:
+    """Background work in quiet hours; nothing is posted."""
+    import schedule
+    if kind == "night_ready":
+        import evergreen
+        print(f"Ready posts made: {evergreen.make_batch(state, CONFIG.get('ready_per_night', 5))}")
+    elif kind == "night_calendar":
+        import calendar_plan
+        print(f"Previews planned: {calendar_plan.plan(state)}")
+    elif kind == "night_jokes":
+        import fun
+        fun.grow_bank(CONFIG.get("jokes_per_night", 10), CONFIG)
+    elif kind == "night_learn":
+        import insights
+        insights.learn(state)
+    state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()
+    save_json(STATE_FILE, state)
+
+
 def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: list[str]) -> None:
-    """Top 10 carousels and Thought of the Day (see specials.py)."""
+    """Top 10 carousels, the 5 AM roundup, Thought of the Day and market posts."""
     import schedule
     import specials
+
+    if kind in schedule.NIGHT_JOBS:
+        night_job(kind, state)
+        return
 
     if kind == "thought":
         out = specials.make_thought(state)
@@ -771,7 +796,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
     parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
-                                           "market_open", "market_preopen", "market_close"],
+                                           "market_open", "market_preopen", "market_close", "night_roundup",
+                                           "night_ready", "night_calendar", "night_jokes", "night_learn"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
@@ -798,6 +824,16 @@ def main() -> int:
         make_special(special, state, feed, raised, resolved)
         write_alerts(raised, resolved)
         return 0
+
+    # 📅 A planned preview for this slot (made like a ➕ Create post).
+    import calendar_plan
+    event = calendar_plan.due(state)
+    if event and args.kind == "auto":
+        event["done"] = True
+        save_json(STATE_FILE, state)          # create_post reloads state/feed from disk
+        if calendar_plan.make_preview(event):
+            write_alerts(raised, resolved)
+            return 0
 
     regular = [p for p in feed if p.get("kind") not in ("top10", "thought", "market")]
     if regular:
@@ -854,6 +890,13 @@ def main() -> int:
             except Exception as e:  # limits hit, CLI/network error: fall back to free mode
                 print(f"  ! {mode} mode failed, using free mode: {e}")
                 raised[classify_ai_error(str(e))] = {"error": str(e)[:400]}
+    if post is None and writers:
+        # The AI couldn't write this one: use a 📦 ready post instead of a weaker free-mode post.
+        import evergreen
+        state["turn"] = turn + 1
+        if evergreen.take_one(feed, state):
+            write_alerts(raised, resolved)
+            return 0
     if post is None:
         item, post = free_post(candidates, turn)
         print("Mode: free (no AI)")

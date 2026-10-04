@@ -1,6 +1,6 @@
 // Network-first for the feed, cache-first for post images, so the app opens
 // instantly and still shows the last posts when offline.
-const CACHE = 'studio-v7';
+const CACHE = 'studio-v8';
 const SHELL = ['./', 'index.html', 'stats.html', 'manifest.json', 'icons/apple-touch-icon.png', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {
@@ -39,6 +39,7 @@ self.addEventListener('fetch', e => {
 async function cleanUp(feedResponse) {
   try {
     const posts = await feedResponse.json();
+    try { const r = await fetch('ready.json?t=' + Date.now()); if (r.ok) posts.push(...await r.json()); } catch {}
     const keep = new Set();
     for (const p of posts) {
       [p.image, ...(p.options || []), ...(p.slides || [])].forEach(src => keep.add(src));

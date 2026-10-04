@@ -80,6 +80,54 @@ def adhoc_usage(days: int = 35) -> dict:
     return dict(sorted(out.items()))
 
 
+IG_UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+
+
+def ig_count(text: str, word: str) -> int:
+    import re
+    m = re.search(rf"([\d.,]+)\s*([KM]?)\s+{word}", text)
+    if not m:
+        return 0
+    n = float(m.group(1).replace(",", ""))
+    return int(n * {"K": 1e3, "M": 1e6}.get(m.group(2), 1))
+
+
+def instagram(stats: Path, handle: str = "khabarbawaal") -> None:
+    """Followers (public profile) + likes/comments of linked posts (public post pages).
+    Instagram blocks servers, so this runs from the Mac. At most every 3 hours."""
+    import re
+    path = stats / "instagram.json"
+    data = json.loads(path.read_text()) if path.exists() else {"followers": [], "posts": {}}
+    last = data["followers"][-1]["at"] if data["followers"] else "2000-01-01T00:00:00+00:00"
+    if datetime.now(timezone.utc) - datetime.fromisoformat(last) < timedelta(hours=3):
+        return
+    meta = lambda html: (re.search(r'og:description" content="([^"]+)', html) or re.search(r'name="description" content="([^"]+)', html))
+    try:
+        prof = requests.get(f"https://www.instagram.com/{handle}/", headers={"User-Agent": IG_UA}, timeout=20).text
+        m = meta(prof)
+        if m:
+            data["followers"].append({"at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                                      "followers": ig_count(m.group(1), "Followers"), "posts": ig_count(m.group(1), "Posts")})
+            data["followers"] = data["followers"][-500:]
+    except requests.RequestException as e:
+        print("instagram profile:", e)
+    links = json.loads((stats / "ig_links.json").read_text()) if (stats / "ig_links.json").exists() else {}
+    cutoff = datetime.now(timezone.utc) - timedelta(days=14)
+    for pid, info in links.items():
+        if info.get("linked_at") and datetime.fromisoformat(info["linked_at"]) < cutoff:
+            continue
+        try:
+            html = requests.get(info["url"], headers={"User-Agent": IG_UA}, timeout=20).text
+        except requests.RequestException:
+            continue
+        m = meta(html)
+        if m:
+            data["posts"][pid] = {"likes": ig_count(m.group(1), "likes"), "comments": ig_count(m.group(1), "comments"),
+                                  "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    path.write_text(json.dumps(data, indent=1))
+    print(f"instagram: {len(data['posts'])} posts checked, followers {data['followers'][-1]['followers'] if data['followers'] else '?'}")
+
+
 def main() -> None:
     if not CLONE.exists():
         git("clone", "-q", "--depth", "1", REPO, str(CLONE), cwd=Path.home())
@@ -94,6 +142,10 @@ def main() -> None:
         path.write_text(json.dumps((hist + [snap])[-700:], indent=1))
         print("plan:", snap["five_hour"], snap["seven_day"])
     (stats / "adhoc.json").write_text(json.dumps(adhoc_usage(), indent=1))
+    try:
+        instagram(stats)
+    except Exception as e:
+        print("instagram:", e)
     git("config", "user.name", "stats-bot")
     git("config", "user.email", "stats-bot@users.noreply.github.com")
     r = subprocess.run(["python3", "save.py", "Stats update from Mac"], cwd=CLONE, capture_output=True, text=True)

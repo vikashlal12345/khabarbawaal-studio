@@ -200,6 +200,11 @@ def main() -> int:
     if not raw:
         print("No input given.")
         return 1
+    return make(raw)
+
+
+def make(raw: str, kind: str = "custom") -> int:
+    """Build and save a post from a link and/or text (used by ➕ Create and 📅 calendar previews)."""
     urls = re.findall(r"https?://\S+", raw)
     text = re.sub(r"https?://\S+", "", raw).strip()
     article = read_article(urls[0]) if urls else None
@@ -280,7 +285,7 @@ def main() -> int:
     state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
     source_url = article["url"] if article else ""
     feed.insert(0, {
-        "id": post_id, "kind": "custom", "image": options[0], "options": options, "slides": slide_names,
+        "id": post_id, "kind": kind, "image": options[0], "options": options, "slides": slide_names,
         "headline": post["headline"], "tag": post["tag"],
         "caption": caption(post, article["site"] if article else None),
         "source": article["site"] if article else "Your pick", "source_url": source_url, "proof": proof,

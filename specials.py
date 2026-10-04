@@ -26,6 +26,10 @@ TOP10 = {
                   "cats": None,
                   "brief": "the 10 BIGGEST news stories of today in India across politics, India news, "
                            "cricket, Bollywood, tech and viral"},
+    "night_roundup": {"title": ("TOP 5", "RAAT KI KHABAR"), "sub": "Jab aap so rahe the...",
+                      "tag": "🌅 RAAT KI 5 KHABREIN", "cats": None, "count": 5, "hours": 9,
+                      "brief": "the 5 BIGGEST stories that happened overnight (since about 9 PM IST yesterday): "
+                               "India news, world news, sports results, politics, viral"},
 }
 
 TOP10_SCHEMA = {
@@ -36,7 +40,7 @@ TOP10_SCHEMA = {
             "title": {"type": "string", "description": "Max 9 words, English, punchy"},
             "line": {"type": "string", "description": "Max 22 words, Hinglish: what happened"}},
             "required": ["pick", "title", "line"], "additionalProperties": False},
-            "description": "Exactly 10 stories, #1 (biggest) first"},
+            "description": "Exactly the requested number of stories, #1 (biggest) first"},
         "caption_hook": {"type": "string", "description": "1-2 Hinglish lines opening the caption"},
         "hashtags": {"type": "array", "items": {"type": "string"}},
     },
@@ -79,7 +83,7 @@ def ist_now() -> datetime:
 def gather(kind: str) -> list[dict]:
     cfg = TOP10[kind]
     saved = g.CONFIG["lookback_hours"], g.CONFIG["per_feed"]
-    g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = 24, 8
+    g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = cfg.get("hours", 24), 8
     try:
         items = g.fetch_candidates(set())
     finally:
@@ -94,8 +98,9 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
              for n, i in enumerate(items, 1)]
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
         try:
-            system = (f"You make the daily Top 10 carousel for {g.CONFIG['page_name']}, an Indian Instagram "
-                      f"news page for Gen Z. Pick {TOP10[kind]['brief']}. One slide per story, so no two picks "
+            count = TOP10[kind].get("count", 10)
+            system = (f"You make the Top {count} carousel for {g.CONFIG['page_name']}, an Indian Instagram "
+                      f"news page for Gen Z. Pick exactly {count}: {TOP10[kind]['brief']}. One slide per story, so no two picks "
                       f"about the same story. Facts only from the candidates; attribute claims. Political stories: the page's editorial line is pro right-wing (BJP, NDA, nationalist) and critical of the left and opposition (Congress, Left parties and other opposition parties). Choose political stories that show the right wing or the government positively, or the left/opposition negatively; never choose a story that embarrasses or criticises the BJP or the right wing. Tone: supportive and positive for the right wing, sharp and critical for the left/opposition. Facts only from the story, allegations attributed, no invented quotes; no hate or slurs against any religion, caste or community, and no calls to violence. Hinglish in English letters only, never Devanagari. "
                       f"Skip sad stories about deaths unless they are the day's biggest news. "
                       f"Hashtags: 8-10, include #KhabarBawaal.")
@@ -106,14 +111,14 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
                 if 1 <= s["pick"] <= len(items) and s["pick"] not in used:
                     used.add(s["pick"])
                     stories.append({**items[s["pick"] - 1], "slide_title": s["title"], "slide_line": s["line"]})
-            if len(stories) >= 5:
+            if len(stories) >= min(5, count):
                 print(f"Mode: {kind} (membership), {len(stories)} stories")
-                return {"stories": stories[:10], "hook": out["caption_hook"], "hashtags": out["hashtags"]}
+                return {"stories": stories[:count], "hook": out["caption_hook"], "hashtags": out["hashtags"]}
         except Exception as e:
             print(f"  ! AI failed, free mode: {e}")
     print(f"Mode: {kind} (free)")
     stories = [{**i, "slide_title": g.short_headline(i["title"]), "slide_line": i["summary"][:140]}
-               for i in [x for x in items if x["image"] and x["category"] not in g.POLITICAL][:10]]
+               for i in [x for x in items if x["image"] and x["category"] not in g.POLITICAL][:TOP10[kind].get("count", 10)]]
     return {"stories": stories, "hook": TOP10[kind]["sub"] + " 👇",
             "hashtags": ["#Top10", "#TrendingNews", "#India", "#ViralNews", "#KhabarBawaal"]}
 
@@ -133,8 +138,10 @@ def cover_slide(kind: str, photos: list[Image.Image | None]) -> Image.Image:
         img.paste(logo, (44, 44), logo)
     big, word = TOP10[kind]["title"]
     d.text((W / 2, 520), big, font=g.font("Anton-Regular.ttf", 300), fill=g.CONFIG["accent_color"], anchor="mm")
-    d.rectangle((W / 2 - 330, 690, W / 2 + 330, 800), fill=g.CONFIG["tag_color"])
-    d.text((W / 2, 745), word, font=g.font("Anton-Regular.ttf", 96), fill="white", anchor="mm")
+    wf = g.font("Anton-Regular.ttf", 96)
+    half = max(330, d.textlength(word, font=wf) / 2 + 40)
+    d.rectangle((W / 2 - half, 690, W / 2 + half, 800), fill=g.CONFIG["tag_color"])
+    d.text((W / 2, 745), word, font=wf, fill="white", anchor="mm")
     d.text((W / 2, 880), TOP10[kind]["sub"], font=g.font("Poppins-Bold.ttf", 48), fill="white", anchor="mm")
     d.text((W / 2, 950), ist_now().strftime("%d %B %Y"), font=g.font("Poppins-SemiBold.ttf", 36),
            fill=(210, 210, 210), anchor="mm")
@@ -208,6 +215,7 @@ def render_top10(kind: str, data: dict) -> list[Image.Image]:
 
 def top10_caption(data: dict) -> str:
     listing = "\n".join(f"{r + 1}. {g.printable(s['slide_title'])}" for r, s in enumerate(data["stories"]))
+    # (same caption shape for the Top 10s and the 5 AM roundup)
     tags = " ".join(t if t.startswith("#") else f"#{t}" for t in data["hashtags"])
     return (f"{data['hook'].strip()}\n\n{listing}\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\n"
             f"Follow {g.CONFIG['handle']} for daily updates.\n\n{tags}")

@@ -353,6 +353,25 @@ def lines_slide(title_top: str, title_bottom: str, lines: list[str], n: int, tot
     return slide
 
 
+def text_slide(title: str, text: str, n: int, total: int) -> Image.Image:
+    """A slide that's just one big piece of text (for posts without a fitting photo)."""
+    slide, d = frame(title.upper()[:28], n)
+    words = g.printable(text).split()
+    for size in range(68, 34, -4):
+        f = g.font("Poppins-Bold.ttf", size)
+        rows = g.wrap_words(words, f, g.W - 160, d)
+        line_h = int(size * 1.35)
+        if len(rows) * line_h <= g.H - 420:
+            break
+    y = (g.H - len(rows) * line_h) / 2
+    d.rectangle((60, y - 10, 70, y + len(rows) * line_h), fill=g.CONFIG["accent_color"])
+    for row in rows:
+        d.text((100, y), " ".join(row), font=f, fill="white")
+        y += line_h
+    footer(d, "", n, total)
+    return slide
+
+
 def closing_slide(n: int, total: int) -> Image.Image:
     slide, d = frame("", n)
     d.text((g.W / 2, 520), "Aap kya", font=g.font("Anton-Regular.ttf", 150), fill="white", anchor="mm")
@@ -404,6 +423,8 @@ def render(specs: list[dict]) -> list[Image.Image]:
             slides.append(tweet_slide(sp["img"], sp["credit"], sp["text"], n, total))
         elif sp["type"] == "photo":
             slides.append(photo_slide(sp["img"], sp["credit"], sp["text"], n, total))
+        elif sp["type"] == "text":
+            slides.append(text_slide(sp["title"], sp["text"], n, total))
         elif sp["type"] == "lines":
             slides.append(lines_slide(sp["titles"][0], sp["titles"][1], sp["lines"], n, total))
         else:

@@ -66,6 +66,17 @@
   .proof ul { margin: 4px 0 0; padding-left: 18px; color: var(--text); }
   .tag.thought { background: #7b2cbf; }
   .tag.market { background: #16a34a; }
+  .tag.calendar { background: #0ea5e9; }
+  .tag.ready { background: #a16207; }
+  .tabs { display: flex; gap: 8px; max-width: 560px; margin: 12px auto 0; padding: 0 16px; }
+  .tabs button { flex: 1; border: 1px solid var(--line); background: var(--card); color: var(--text);
+    border-radius: 999px; padding: 9px; font-weight: 700; font-size: 14px; }
+  .tabs button.on { background: var(--accent); color: #000; border-color: var(--accent); }
+  .insta { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 14px 14px;
+    font-size: 13px; color: var(--muted); }
+  .insta button { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 999px;
+    padding: 6px 12px; font-size: 13px; }
+  .used { opacity: .45; }
   .sheet { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.7); display: flex; align-items: flex-end; }
   .sheet[hidden] { display: none; }
   .sheet-box { width: 100%; max-width: 560px; margin: 0 auto; background: var(--card); border-radius: 18px 18px 0 0;
@@ -104,6 +115,7 @@
     </div>
   </div>
 </div>
+<div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-ready">📦 Ready</button></div>
 <main id="feed"></main>
 <div id="toast"></div>
 
@@ -115,6 +127,8 @@ const files = {};      // image path -> File, ready for the share sheet
 const pending = {};    // image path -> Promise<File>
 const chosen = {};     // post id -> picked option index (posts with photo options)
 let posts = [];
+let feedPosts = [], readyPosts = [], tab = 'feed';
+let igLinks = {}, igData = {};
 
 function currentImage(post) {
   return post.options ? post.options[chosen[post.id] || 0] : post.image;
@@ -225,9 +239,18 @@ function proofHtml(p) {
     pr.issues.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
 }
 
+function instaHtml(p) {
+  const link = igLinks[p.id], res = igData[p.id];
+  if (!link) return `<div class="insta"><span>Posted it? Link it to track likes</span><button data-act="insta">🔗 Insta link</button></div>`;
+  return `<div class="insta"><span>${res ? `❤️ ${res.likes} · 💬 ${res.comments}` : '🔗 Linked: likes appear within a few hours'}</span>
+    <a href="${link.url}" target="_blank" rel="noopener" style="color:var(--muted)">Open ↗</a></div>`;
+}
+
 function render() {
   if (!posts.length) {
-    feedEl.innerHTML = '<div class="empty">No posts yet.<br>The first one appears after the next hourly run.</div>';
+    feedEl.innerHTML = tab === 'ready'
+      ? '<div class="empty">No ready posts yet.<br>5 new evergreen posts are made every night at 1 AM.</div>'
+      : '<div class="empty">No posts yet.<br>The first one appears after the next hourly run.</div>';
     return;
   }
   const lastSeen = localGet('lastSeen');
@@ -243,11 +266,12 @@ function render() {
       <div class="opt-label">Slide <b>1</b> of ${p.slides.length + 1} · swipe ← → · Post shares all ${p.slides.length + 1}</div>`
       : `<img src="${p.image}" alt="${esc(p.headline)}" loading="lazy">`}
       <div class="meta">
-        <span class="tag${['fun', 'custom', 'top10', 'thought', 'market'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
+        <span class="tag${['fun', 'custom', 'top10', 'thought', 'market', 'calendar', 'ready'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
         ${lastSeen && p.created_at > lastSeen ? '<span class="new">NEW</span>' : ''}
         <span>${ago(p.created_at)} · ${esc(p.source)}</span>
       </div>
       ${proofHtml(p)}
+      ${p.kind === 'ready' ? (p.valid_on ? '<div class="proof check">📅 Post today only: it\'s about today\'s date.</div>' : '<div class="proof none">📦 Ready post: evergreen, post it any time.</div>') : ''}
       <div class="caption">${esc(p.caption)}</div>
       <div class="actions">
         <button class="primary" data-act="share">📤 Post</button>
@@ -255,9 +279,11 @@ function render() {
         <button data-act="comment">💬 Comment</button>
         ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
       </div>
+      ${tab === 'feed' ? instaHtml(p) : `<div class="insta"><span>${localGet('used-' + p.id) ? '✓ Marked as used' : ''}</span>
+        <button data-act="used">${localGet('used-' + p.id) ? 'Unmark' : '✓ Mark used'}</button></div>`}
     </article>`).join('');
   feedEl.querySelectorAll('.post').forEach(el => observer.observe(el));
-  localSet('lastSeen', posts[0].created_at);
+  if (tab === 'feed') localSet('lastSeen', posts[0].created_at);
 }
 
 feedEl.addEventListener('click', e => {
@@ -269,6 +295,8 @@ feedEl.addEventListener('click', e => {
   else if (act === 'copy') copyCaption(post);
   else if (act === 'comment') copyComment(post);
   else if (act === 'whatsapp') share(post);
+  else if (act === 'insta') linkInsta(post);
+  else if (act === 'used') { localGet('used-' + post.id) ? localDel('used-' + post.id) : localSet('used-' + post.id, '1'); render(); }
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
 
@@ -304,6 +332,20 @@ document.getElementById('create-go').addEventListener('click', () => {
   if (!window.open(url, '_blank')) window.location.href = url;
 });
 
+// 🔗 Insta link: sends the post's Instagram URL to the robot (via a GitHub issue, like ➕ Create).
+function linkInsta(post) {
+  const url = prompt('Paste the Instagram link of this post (in Instagram: ⋯ → Copy link):');
+  if (!url) return;
+  if (!/instagram\.com\/(p|reel)\//.test(url)) { toast('That doesn\'t look like an Instagram post link'); return; }
+  const owner = location.hostname.endsWith('github.io') ? location.hostname.split('.')[0] : 'vikashlal12345';
+  const repo = location.pathname.split('/').filter(Boolean)[0] || 'khabarbawaal-studio';
+  const body = `post: ${post.id}\nurl: ${url.trim()}`;
+  const gh = `https://github.com/${owner}/${repo}/issues/new?title=${encodeURIComponent('Insta link')}&body=${encodeURIComponent(body)}`;
+  toast('Tap Create in GitHub to save the link');
+  if (!window.open(gh, '_blank')) window.location.href = gh;
+}
+function localDel(k) { try { localStorage.removeItem(k); } catch {} }
+
 function localGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
 function localSet(k, v) { try { localStorage.setItem(k, v); } catch {} }
 
@@ -311,7 +353,13 @@ async function load() {
   statusEl.textContent = 'Refreshing…';
   try {
     const res = await fetch('feed.json?t=' + Date.now(), { cache: 'no-store' });
-    posts = await res.json();
+    feedPosts = await res.json();
+    const opt = async p => { try { const r = await fetch(p + '?t=' + Date.now(), { cache: 'no-store' }); return r.ok ? r.json() : null; } catch { return null; } };
+    const [ready, links, ig] = await Promise.all([opt('ready.json'), opt('stats/ig_links.json'), opt('stats/instagram.json')]);
+    readyPosts = (ready || []).slice().reverse();
+    igLinks = links || {}; igData = (ig && ig.posts) || {};
+    document.getElementById('tab-ready').textContent = `📦 Ready (${readyPosts.length})`;
+    posts = tab === 'feed' ? feedPosts : readyPosts;
     render();
     statusEl.textContent = posts.length
       ? `${posts.length} posts · latest ${ago(posts[0].created_at)}`
@@ -329,6 +377,14 @@ fetch('manifest.json').then(r => r.json()).then(m => {
 }).catch(() => {});
 
 document.getElementById('refresh').addEventListener('click', load);
+for (const [id, name] of [['tab-feed', 'feed'], ['tab-ready', 'ready']]) {
+  document.getElementById(id).addEventListener('click', () => {
+    tab = name; posts = tab === 'feed' ? feedPosts : readyPosts;
+    document.getElementById('tab-feed').classList.toggle('on', tab === 'feed');
+    document.getElementById('tab-ready').classList.toggle('on', tab === 'ready');
+    render(); window.scrollTo(0, 0);
+  });
+}
 document.addEventListener('visibilitychange', () => { if (!document.hidden) load(); });
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 load();
