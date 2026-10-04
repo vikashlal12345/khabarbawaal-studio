@@ -9,9 +9,9 @@ from datetime import datetime, timedelta, timezone
 
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
-HOURLY_MINUTE = 37                                    # regular posts at hh:37
-SPECIALS = {"top10_viral": (6, 0), "thought": (9, 0), "top10_day": (21, 0)}
-SPECIAL_WINDOW = (-10, 40)                            # minutes around a special's time that count as its run
+PEAK_HOURS = [(7, 11), (18, 23)]                      # Instagram's busiest hours: a post every 30 min
+SPECIALS = {"top10_viral": (6, 15), "thought": (9, 15), "top10_day": (21, 15)}
+SPECIAL_WINDOW = (-10, 12)                            # minutes around a special's time that count as its run
 
 
 def ist_now() -> datetime:
@@ -32,9 +32,19 @@ def special_due(t: datetime, done: dict) -> str | None:
     return None
 
 
+def regular_times() -> list[tuple[int, int]]:
+    """hh:00 every hour from 5 AM; also hh:30 in peak hours. Last post 10:30 PM."""
+    out = []
+    for h in range(QUIET_END, QUIET_START):
+        out.append((h, 0))
+        if any(a <= h < b for a, b in PEAK_HOURS):
+            out.append((h, 30))
+    return out
+
+
 def slots(day: datetime) -> list[datetime]:
     base = day.replace(hour=0, minute=0, second=0, microsecond=0)
-    out = [base.replace(hour=h, minute=HOURLY_MINUTE) for h in range(QUIET_END, QUIET_START)]
+    out = [base.replace(hour=h, minute=m) for h, m in regular_times()]
     out += [base.replace(hour=h, minute=m) for h, m in SPECIALS.values()]
     return sorted(out)
 

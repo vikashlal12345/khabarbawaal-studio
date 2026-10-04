@@ -7,8 +7,10 @@ name: Hourly post
 # --min-gap 40 on timed runs stops double posts when both fire in the same hour.
 on:
   schedule:
-    - cron: "7 0-17 * * *"        # hh:37 IST, 5:37 AM - 10:37 PM (backup for the chain)
-    - cron: "30 0,3,15 * * *"     # 6:00 AM, 9:00 AM, 9:00 PM IST specials (backup)
+    # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
+    - cron: "30 23,0-16 * * *"    # hh:00 IST, 5 AM - 10 PM
+    - cron: "0 2-5,13-17 * * *"   # hh:30 IST in peak hours (7:30-10:30 AM, 6:30-10:30 PM)
+    - cron: "45 0,3,15 * * *"     # 6:15 AM, 9:15 AM, 9:15 PM IST specials
   workflow_dispatch:
     inputs:
       kind:
@@ -61,9 +63,21 @@ jobs:
         if: env.CLAUDE_CODE_OAUTH_TOKEN != ''
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Create post
+      - name: Is the chain alive? (backup timer runs only step in if not)
+        id: chain
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          GAP=0; [ "$TIMED" = "true" ] && GAP=40
+          busy=$(gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 20 --json databaseId,status \
+            -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and .status != \"completed\")] | length")
+          echo "skip=$([ "$busy" != "0" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          [ "$busy" != "0" ] && echo "Chain is running: backup timer does nothing." || true
+
+      - name: Create post
+        if: steps.chain.outputs.skip != 'true'
+        run: |
+          GAP=0; [ "$TIMED" = "true" ] && GAP=20
           python generate.py --kind "${{ inputs.kind || 'auto' }}" --min-gap "$GAP"
 
       - name: Email alerts (as GitHub issues)
@@ -112,7 +126,7 @@ jobs:
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(busy)" != "0" ]; then
             echo "Chain already running: nothing to do."; exit 0
           fi
-          wait=$(python3 schedule.py next-wait)   # next hh:37 IST or special slot; skips quiet hours
+          wait=$(python3 schedule.py next-wait)   # next posting slot (IST); skips quiet hours
           if [ "$wait" -gt 19800 ]; then
             # Overnight: a job can only run 6 hours, so wait 5h30m and hand over to a new run,
             # which waits the rest.
