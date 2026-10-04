@@ -133,20 +133,20 @@
  "2026-10-05": {
   "night_ready": {
    "posts": 0,
-   "requests": 12,
-   "input": 38,
-   "output": 12206,
-   "cache_read": 32924,
-   "cache_write": 71145,
-   "value_usd": 0.4134,
+   "requests": 13,
+   "input": 42,
+   "output": 13226,
+   "cache_read": 39649,
+   "cache_write": 78568,
+   "value_usd": 0.4547,
    "by_purpose": {
     "writing": {
      "requests": 5,
-     "tokens": 12178
+     "tokens": 12317
     },
     "proofreading": {
-     "requests": 7,
-     "tokens": 104135
+     "requests": 8,
+     "tokens": 119168
     }
    }
   }
