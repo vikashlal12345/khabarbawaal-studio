@@ -130,12 +130,8 @@ jobs:
             echo "Chain already running: nothing to do."; exit 0
           fi
           wait=$(python3 schedule.py next-wait)   # next posting slot (IST); skips quiet hours
-          if [ "$wait" -gt 19800 ]; then
-            # Overnight: a job can only run 6 hours, so wait 5h30m and hand over to a new run,
-            # which waits the rest.
-            echo "Quiet hours: waiting 330 minutes, then handing over"; sleep 19800
-          else
-            echo "Next post in $((wait / 60)) minutes"; sleep "$wait"
-          fi
+          [ "$wait" -gt 19800 ] && wait=19800   # a job can run 6 hours max: hand over after 5h30m
+          echo "Next run in $((wait / 60)) minutes (checking the inbox for ➕ Create requests meanwhile)"
+          python3 inbox_watch.py "$wait"
           if [ "$(queued_chain)" != "0" ]; then echo "A chain run is already queued."; exit 0; fi
           gh workflow run hourly.yml -R "$GITHUB_REPOSITORY" -f chain=true

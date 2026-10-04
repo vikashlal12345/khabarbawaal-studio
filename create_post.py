@@ -200,6 +200,22 @@ def main() -> int:
     if not raw:
         print("No input given.")
         return 1
+    # Requests from the app's inbox (not a GitHub issue) must carry the owner's one-time code.
+    if os.environ.get("REQUEST_SOURCE") == "app":
+        import otp
+        state = g.load_json(g.STATE_FILE, {})
+        used = state.get("used_otps", [])
+        try:
+            sent_at = float(os.environ.get("CREATE_TS", "0"))
+        except ValueError:
+            sent_at = 0
+        ok, why = otp.verify(os.environ.get("CREATE_TOTP_SECRET", ""), os.environ.get("CREATE_OTP", ""), sent_at, used)
+        if not ok:
+            print(f"Rejected create request: {why}")
+            return 0
+        state["used_otps"] = (used + [os.environ["CREATE_OTP"].strip() + ":" + str(int(sent_at // 30))])[-200:]
+        g.save_json(g.STATE_FILE, state)
+        print("One-time code OK")
     return make(raw)
 
 
