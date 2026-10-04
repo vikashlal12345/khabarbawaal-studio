@@ -109,6 +109,25 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "top10_day": {
+   "posts": 1,
+   "requests": 3,
+   "input": 10,
+   "output": 4766,
+   "cache_read": 14447,
+   "cache_write": 40705,
+   "value_usd": 0.2134,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 5741
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 54187
+    }
+   }
   }
  }
 }
