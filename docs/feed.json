@@ -1,36 +1,5 @@
 [
  {
-  "id": "cdf1c23a59f8",
-  "kind": "custom",
-  "image": "posts/20261004-0748-cdf1c23a59f8-1.jpg",
-  "options": [
-   "posts/20261004-0748-cdf1c23a59f8-1.jpg",
-   "posts/20261004-0748-cdf1c23a59f8-2.jpg",
-   "posts/20261004-0748-cdf1c23a59f8-3.jpg"
-  ],
-  "slides": [
-   "posts/20261004-0748-cdf1c23a59f8-s2.jpg",
-   "posts/20261004-0748-cdf1c23a59f8-s3.jpg",
-   "posts/20261004-0748-cdf1c23a59f8-s4.jpg",
-   "posts/20261004-0748-cdf1c23a59f8-s5.jpg"
-  ],
-  "headline": "Sanjay Dutt says he doesn't feel peace in India anymore, jokes about becoming PM",
-  "tag": "BOLLYWOOD",
-  "caption": "Sanjay Dutt ka naya interview aur internet ka dhyan seedha udhar 👀\n\nShekhar Suman ke show par Sanju baba ne kaha ki unhe ab India mein pehle jaisi shanti feel nahi hoti.\n\nPhir mazaak mein khud ko Prime Minister imagine kiya, aur bola ki PM ban gaye toh bhi abroad jaakar celebrate nahi karenge 😂\n\nAapko kya lagta hai, ye sirf joke tha ya isme koi baat bhi thi? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SanjayDutt #ShekharSuman #Bollywood #BollywoodNews #ViralNow #India #PrimeMinister #KhabarBawaal",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-says-he-doesn-t-feel-peace-in-india-anymore-prime-minister-narendra-modi-munna-bhai-shekhar-suman-donald-trump-101791092629616.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover photo is a blurry split or doubled image. Sanjay Dutt's face is cut off at the left edge, and the right half shows only a sliver of a face. It looks odd and low quality. Use a cleaner, single crop. Slide 1 can't be dropped.",
-    "Slide 2: The quote \"Is desh mein ab pehle jaisa peace feel nahi hota\" is a Hinglish paraphrase placed in quotation marks. Sanjay's actual words in the article were \"I can't feel that peace in our country anymore.\" Consider removing the quote marks or using his real words.",
-    "Slide 3: The quote is shortened and rearranged from his original lines. His original was \"Apun is khushi ko celebrate karne videsh nahi jaane wala hai. Apun idharich rahega...\" The \"tanz maana gaya\" line is also unattributed. The article calls it a \"veiled joke\", so say who interpreted it that way."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T07:48:50+00:00"
- },
- {
   "id": "183b72254349",
   "image": "posts/20261004-0733-183b72254349.jpg",
   "kind": "news",
