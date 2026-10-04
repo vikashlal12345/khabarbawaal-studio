@@ -63,14 +63,27 @@
    }
   },
   "create": {
-   "posts": 0,
-   "requests": 0,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
-   "by_purpose": {}
+   "posts": 1,
+   "requests": 3,
+   "input": 10,
+   "output": 2828,
+   "cache_read": 10610,
+   "cache_write": 13924,
+   "value_usd": 0.0861,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 2801
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 7953
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 16618
+    }
+   }
   }
  }
 }
