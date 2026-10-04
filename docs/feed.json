@@ -1,5 +1,32 @@
 [
  {
+  "id": "6e90f9341c6f",
+  "image": "posts/20261004-0608-6e90f9341c6f.jpg",
+  "kind": "news",
+  "headline": "SP MP Claims Congress Wouldn't Have Won Single Seat Without Alliance; Akhilesh Steps In",
+  "tag": "POLITICS",
+  "caption": "Opposition ka ghar ka jhagda public ho gaya 👀\n\nSP MP Shiv Pal Singh Patel (Pratapgarh) ne UP seat sharing par Rahul Gandhi pe \"so scared\" wala dig maara. Unka claim hai ki SP ke bina Congress 2024 Lok Sabha mein ek bhi seat nahi jeetti.\n\nCongress ne palat kar jawab diya, aur phir Akhilesh Yadav ko beech mein aana pada.\n\nAapko kya lagta hai, ye alliance 2027 tak chalega ya seat sharing pe tootega? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Politics #SamajwadiParty #Congress #RahulGandhi #AkhileshYadav #UttarPradesh #INDIAAlliance #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/sp-mp-rahul-gandhi-was-so-scared-to-contest-from-amethi-up-seat-sharing-congress-hits-back-akhilesh-yadav-intervenes-101791088986183.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Akhilesh issued a gag order to his own leaders; he did not mediate (beech-bachav)."
+   ],
+   "fixed": [
+    "Congress ne palatwaar kiya, Akhilesh Yadav ne beech-bachav kiya → Congress ne palatwaar kiya, Akhilesh Yadav ne SP netaon ko bayanbaazi se roka"
+   ]
+  },
+  "slides": [
+   "posts/20261004-0608-6e90f9341c6f-s2.jpg",
+   "posts/20261004-0608-6e90f9341c6f-s3.jpg",
+   "posts/20261004-0608-6e90f9341c6f-s4.jpg",
+   "posts/20261004-0608-6e90f9341c6f-s5.jpg",
+   "posts/20261004-0608-6e90f9341c6f-s6.jpg"
+  ],
+  "created_at": "2026-10-04T06:08:30+00:00"
+ },
+ {
   "id": "sample-market-open",
   "image": "posts/20261004-0550-sample-market-open.jpg",
   "kind": "market",
