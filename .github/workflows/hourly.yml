@@ -132,5 +132,10 @@ jobs:
           [ "$wait" -gt 19800 ] && wait=19800   # a job can run 6 hours max: hand over after 5h30m
           echo "Next run in $((wait / 60)) minutes (checking the inbox for ➕ Create requests meanwhile)"
           python3 inbox_watch.py "$wait"
-          if [ "$(queued_chain)" != "0" ]; then echo "A chain run is already queued."; exit 0; fi
+          # If two chains ever run side by side, only one may continue: wait a random moment,
+          # then step aside if another run was started in the last 5 minutes.
+          sleep $((RANDOM % 40))
+          recent=$(gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -e workflow_dispatch -L 10 --json databaseId,createdAt \
+            -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and ((now - (.createdAt | fromdateiso8601)) < 300))] | length")
+          if [ "$(queued_chain)" != "0" ] || [ "$recent" != "0" ]; then echo "Another chain run already started."; exit 0; fi
           gh workflow run hourly.yml -R "$GITHUB_REPOSITORY" -f chain=true

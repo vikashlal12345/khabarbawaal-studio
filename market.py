@@ -478,7 +478,7 @@ def preopen_data(s: requests.Session | None = None, force: bool = False) -> dict
     if not force and not is_trading_day(s):
         print("Market holiday/weekend: no pre-open snapshot.")
         return None
-    d = nse_json(s, "/api/market-data-pre-open?key=NIFTY")
+    d = nse_json(s, "/api/market-data-pre-open?key=NIFTY%2050")   # NSE renamed the key from NIFTY (Oct 2026)
     rows = []
     for r in d.get("data", []):
         m = r.get("metadata", {})
