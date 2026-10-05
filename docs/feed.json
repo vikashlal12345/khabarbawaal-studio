@@ -1,5 +1,33 @@
 [
  {
+  "id": "1b6169577cc3",
+  "image": "posts/20261005-1631-1b6169577cc3.jpg",
+  "kind": "news",
+  "headline": "Fire Breaks Out On Ranbir Kapoor-Sai Pallavi's Ramayana Set In Mumbai, No Injuries Reported",
+  "tag": "BOLLYWOOD",
+  "caption": "Mumbai mein Ramayana ke set pe aag lag gayi, and fans ka tension high hai 😟\n\nReport ke mutabik Ranbir Kapoor aur Sai Pallavi starrer Ramayana ke set pe fire break out hua. Thank god, koi injury report nahi hui.\n\nNitesh Tiwari ki film ka pehla part November 2026 mein release hona hai.\n\nAapko kya lagta hai, kya release date pe asar padega? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #SaiPallavi #NiteshTiwari #Bollywood #MumbaiNews #FilmCity #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/fire-breaks-out-on-ranbir-kapoor-s-ramayana-set-no-injuries-reported-nitesh-tiwari-sai-pallavi-sunny-deol-yash-101791210190293.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The details on this slide aren't in the article: Film City Goregaon, BMC Fire Brigade, and the times 4:02 pm and 4:55 pm. They come only from a tweet. The tweet is timestamped 12:28 PM on Oct 5, yet it reports a 4:02 pm fire, which looks inconsistent. Our text states the BMC attribution as fact. The article places the fire outside Prime Focus Studios. Verify the details or remove the slide.",
+    "Slide 3: The photo carries a visible TOI watermark, but the post's source is Hindustan Times. The inset fire image is small and low quality.",
+    "Slide 4: The photo credit says Moneycontrol, while the article source is Hindustan Times. The fire photo is a screenshot and looks low quality.",
+    "Slide 1: The headline calls it 'Ranbir Kapoor-Sai Pallavi's Ramayana'. The article calls it the 'Ranbir Kapoor-starrer' film, so this is slightly different. Sai Pallavi is in the cast, so it is acceptable."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261005-1631-1b6169577cc3-s2.jpg",
+   "posts/20261005-1631-1b6169577cc3-s3.jpg",
+   "posts/20261005-1631-1b6169577cc3-s4.jpg",
+   "posts/20261005-1631-1b6169577cc3-s5.jpg",
+   "posts/20261005-1631-1b6169577cc3-s6.jpg"
+  ],
+  "created_at": "2026-10-05T16:31:55+00:00"
+ },
+ {
   "id": "top10_day-2026-10-05",
   "image": "posts/20261005-1546-top10_day-2026-10-05.jpg",
   "kind": "top10",
@@ -1751,16 +1779,5 @@
   "source": "Bollywood Hungama",
   "source_url": "https://www.bollywoodhungama.com/news/bollywood/exclusive-big-breakthrough-for-salman-khans-maatrubhumi-as-it-gets-government-clearance-revised-film-shows-india-china-ties-in-a-positive-light/",
   "created_at": "2026-10-02T17:07:40+00:00"
- },
- {
-  "id": "7f7e3280bb77",
-  "image": "posts/20261002-1607-7f7e3280bb77.jpg",
-  "kind": "news",
-  "headline": "Locals loot liquor bottles after mini-truck crashes in dry Bihar as driver flees",
-  "tag": "WTF NEWS",
-  "caption": "Dry state mein truck palta aur bottles ki barsaat ho gayi 😭\nBihar mein ek mini-truck road divider se takraya aur driver bhaag gaya.\nUske baad locals ne gaadi se liquor bottles loot li.\nPolice ab CCTV footage aur social media videos check kar rahi hai, taaki loot karne walon ko book karke bottles wapas le sakein.\nAapko kya lagta hai, kya action hona chahiye? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bihar #LiquorBan #ViralNews #India #KhabarBawaal #WTFNews #TrendingNow #BiharNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/minitruck-crashes-into-road-divider-in-dry-bihar-locals-loot-liquor-bottles-as-driver-flees-101790955337202.html",
-  "created_at": "2026-10-02T16:07:47+00:00"
  }
 ]
