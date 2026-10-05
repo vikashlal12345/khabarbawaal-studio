@@ -1,5 +1,30 @@
 [
  {
+  "id": "79286ca0663d",
+  "image": "posts/20261005-0031-79286ca0663d.jpg",
+  "kind": "news",
+  "headline": "As Peace Prevails, Abujhmad Security Camp Turns Into Tribal Hostel",
+  "tag": "POLITICS",
+  "caption": "Jahan pehle security camp tha, wahan ab hostel ban gaya hai. 🙌\nAbujhmad mein shanti aane ke baad ek security camp ko tribal hostel mein badal diya gaya hai.\nYe badlav dikhata hai ki ilaake mein halaat kitne change hue hain.\nAapko kya lagta hai, aise badlav se local logon ki zindagi kitni behtar hogi? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Abujhmad #Chhattisgarh #Bastar #Peace #TribalHostel #IndiaNews #KhabarBawaal #Development",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/as-peace-prevails-security-camp-in-abujhmad-turns-into-tribal-hostel-101791139061972.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo is a generic 'INDIA NEWS' channel logo graphic. It has nothing to do with Abujhmad, the camp or the hostel. Swap it for a relevant image. Slide 1 can't be dropped.",
+    "Caption: The caption and slide 1 credit Hindustan Times. The article text came from an automated agency feed, so please confirm the source credit is correct."
+   ],
+   "fixed": [
+    "Abujhmarh → Abujhmad"
+   ]
+  },
+  "slides": [
+   "posts/20261005-0031-79286ca0663d-s2.jpg",
+   "posts/20261005-0031-79286ca0663d-s3.jpg"
+  ],
+  "created_at": "2026-10-05T00:31:04+00:00"
+ },
+ {
   "id": "night_roundup-2026-10-05",
   "image": "posts/20261004-2330-night_roundup-2026-10-05.jpg",
   "kind": "top10",
