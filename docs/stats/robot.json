@@ -252,21 +252,21 @@
    }
   },
   "fun": {
-   "posts": 3,
-   "requests": 6,
-   "input": 18,
-   "output": 4087,
-   "cache_read": 16102,
-   "cache_write": 16737,
-   "value_usd": 0.111,
+   "posts": 4,
+   "requests": 8,
+   "input": 24,
+   "output": 5553,
+   "cache_read": 20140,
+   "cache_write": 26718,
+   "value_usd": 0.1664,
    "by_purpose": {
     "writing": {
-     "requests": 3,
-     "tokens": 15896
+     "requests": 4,
+     "tokens": 24553
     },
     "proofreading": {
-     "requests": 3,
-     "tokens": 21048
+     "requests": 4,
+     "tokens": 27882
     }
    }
   },
