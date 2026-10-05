@@ -97,13 +97,63 @@ def icon_bollywood():
     return img
 
 
+def icon_fun():
+    """Laughing face."""
+    img, d = icon_canvas()
+    u = ICON * S / 100
+    d.ellipse((8 * u, 8 * u, 92 * u, 92 * u), fill=YELLOW)
+    for x in (30, 70):  # closed laughing eyes
+        d.arc(((x - 10) * u, 30 * u, (x + 10) * u, 50 * u), 200, 340, fill=BG, width=int(5 * u))
+    d.chord((22 * u, 40 * u, 78 * u, 84 * u), 0, 180, fill=BG)          # open mouth
+    d.chord((34 * u, 62 * u, 66 * u, 86 * u), 180, 360, fill=RED)      # tongue
+    return img
+
+
+def icon_facts():
+    """Light bulb with rays."""
+    img, d = icon_canvas()
+    u = ICON * S / 100
+    d.ellipse((26 * u, 12 * u, 74 * u, 60 * u), fill=YELLOW)             # bulb
+    d.polygon([(34 * u, 50 * u), (66 * u, 50 * u), (60 * u, 70 * u), (40 * u, 70 * u)], fill=YELLOW)
+    for y in (73, 80):                                                   # screw base
+        d.rounded_rectangle((39 * u, y * u, 61 * u, (y + 5) * u), radius=2 * u, fill=WHITE)
+    d.rounded_rectangle((44 * u, 87 * u, 56 * u, 92 * u), radius=2 * u, fill=WHITE)
+    for ang in (-150, -120, -90, -60, -30):                              # rays
+        import math
+        a = math.radians(ang)
+        x1, y1 = 50 + 30 * math.cos(a), 36 + 30 * math.sin(a)
+        x2, y2 = 50 + 40 * math.cos(a), 36 + 40 * math.sin(a)
+        d.line((x1 * u, y1 * u, x2 * u, y2 * u), fill=RED, width=int(4 * u))
+    return img
+
+
+def icon_market():
+    """Candlesticks with a rising arrow."""
+    img, d = icon_canvas()
+    u = ICON * S / 100
+    green = "#22c55e"
+    candles = [(16, 58, 78, 50, 84, RED), (34, 44, 66, 38, 72, green), (52, 50, 70, 44, 76, RED), (70, 28, 52, 20, 58, green)]
+    for x, top, bot, wtop, wbot, col in candles:
+        d.line(((x + 6) * u, wtop * u, (x + 6) * u, wbot * u), fill=WHITE, width=int(2 * u))
+        d.rectangle((x * u, top * u, (x + 12) * u, bot * u), fill=col)
+    d.line((10 * u, 70 * u, 40 * u, 46 * u, 58 * u, 54 * u, 86 * u, 16 * u), fill=YELLOW, width=int(5 * u), joint="curve")
+    d.polygon([(90 * u, 10 * u), (76 * u, 14 * u), (87 * u, 25 * u)], fill=YELLOW)   # arrow head
+    d.line((8 * u, 92 * u, 92 * u, 92 * u), fill=WHITE, width=int(3 * u))               # baseline
+    return img
+
+
 def cover(label: str, icon: Image.Image) -> Image.Image:
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
     d.ellipse((CX - R, CY - R, CX + R, CY + R), outline=YELLOW, width=16)
     icon = icon.resize((ICON, ICON), Image.LANCZOS)
     img.paste(icon, (CX - ICON // 2, CY - ICON // 2 - 90), icon)
-    fnt = ImageFont.truetype(str(ROOT / "assets" / "fonts" / "Anton-Regular.ttf"), 120)
+    size = 120
+    while True:  # long labels shrink so they stay well inside Instagram's round crop
+        fnt = ImageFont.truetype(str(ROOT / "assets" / "fonts" / "Anton-Regular.ttf"), size)
+        if d.textlength(label.upper(), font=fnt) <= 520 or size <= 70:
+            break
+        size -= 6
     d.text((CX, CY + 205), label.upper(), font=fnt, fill=WHITE, anchor="mm")
     d.rectangle((CX - 90, CY + 290, CX + 90, CY + 302), fill=RED)
     return img
@@ -113,13 +163,14 @@ if __name__ == "__main__":
     out = ROOT / "assets" / "highlights"
     out.mkdir(parents=True, exist_ok=True)
     covers = {"Viral": icon_viral(), "Politics": icon_politics(),
-              "Cricket": icon_cricket(), "Bollywood": icon_bollywood()}
+              "Cricket": icon_cricket(), "Bollywood": icon_bollywood(),
+              "Fun": icon_fun(), "Facts": icon_facts(), "Stock Market": icon_market()}
     for i, (label, icon) in enumerate(covers.items(), 1):
-        cover(label, icon).save(out / f"{i}-{label.lower()}.png")
+        cover(label, icon).save(out / f"{i}-{label.lower().replace(' ', '-')}.png")
     # Preview sheet, cropped to the circle area like Instagram shows it.
-    sheet = Image.new("RGB", (4 * 460 + 60, 520), "#222222")
+    sheet = Image.new("RGB", (len(covers) * 460 + 60, 520), "#222222")
     for i, label in enumerate(covers):
-        c = Image.open(out / f"{i + 1}-{label.lower()}.png").crop((CX - R - 10, CY - R - 10, CX + R + 10, CY + R + 10))
+        c = Image.open(out / f"{i + 1}-{label.lower().replace(' ', '-')}.png").crop((CX - R - 10, CY - R - 10, CX + R + 10, CY + R + 10))
         c = c.resize((440, 440))
         mask = Image.new("L", c.size, 0)
         ImageDraw.Draw(mask).ellipse((0, 0, 439, 439), fill=255)
