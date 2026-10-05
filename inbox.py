@@ -38,6 +38,20 @@ def process() -> int:
             msg = json.loads(m.get("message", "{}"))
         except (json.JSONDecodeError, KeyError):
             continue
+        if msg.get("type") == "boost" and msg.get("post"):
+            bpath = g.DOCS / "stats" / "boosts.json"
+            boosts = json.loads(bpath.read_text()) if bpath.exists() else {}
+            post = next((p for p in feed + ready if p["id"] == msg["post"]), {})
+            if msg.get("on"):
+                boosts[msg["post"]] = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                                       "headline": post.get("headline", boosts.get(msg["post"], {}).get("headline", "")),
+                                       "tag": post.get("tag", "")}
+            else:
+                boosts.pop(msg["post"], None)
+            bpath.parent.mkdir(parents=True, exist_ok=True)
+            bpath.write_text(json.dumps(boosts, ensure_ascii=False, indent=1))
+            print(f"  inbox: boost {'on' if msg.get('on') else 'off'} for {msg['post']}")
+            continue
         url = re.search(r"https://(?:www\.)?instagram\.com/(?:p|reel)/[A-Za-z0-9_-]+", msg.get("url", ""))
         if msg.get("type") != "insta" or not url or not msg.get("post"):
             continue

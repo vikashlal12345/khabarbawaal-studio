@@ -26,9 +26,12 @@ def learn(state: dict) -> None:
     stats = g.DOCS / "stats"
     links = json.loads((stats / "ig_links.json").read_text()) if (stats / "ig_links.json").exists() else {}
     insta = json.loads((stats / "instagram.json").read_text()) if (stats / "instagram.json").exists() else {}
+    boosts = json.loads((stats / "boosts.json").read_text()) if (stats / "boosts.json").exists() else {}
     cutoff = datetime.now(timezone.utc) - timedelta(days=21)
     rows = []
     for pid, link in links.items():
+        if pid in boosts:      # paid reach would mislead the learning
+            continue
         res = insta.get("posts", {}).get(pid)
         if not res or not link.get("linked_at") or datetime.fromisoformat(link["linked_at"]) < cutoff:
             continue

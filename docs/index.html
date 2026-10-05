@@ -132,7 +132,7 @@ const pending = {};    // image path -> Promise<File>
 const chosen = {};     // post id -> picked option index (posts with photo options)
 let posts = [];
 let feedPosts = [], readyPosts = [], tab = 'feed';
-let igLinks = {}, igData = {};
+let igLinks = {}, igData = {}, boosts = {};
 let inboxTopic = null;
 
 function currentImage(post) {
@@ -254,9 +254,11 @@ function isUsed(p) { return !!(localGet('used-' + p.id) || igLinks[p.id] || loca
 function instaHtml(p) {
   const local = localGet('linked-' + p.id);
   const link = igLinks[p.id] || (local ? { url: local } : null), res = igData[p.id];
-  if (!link) return `<div class="insta"><span>Posted it? Link it to track likes</span><button data-act="insta">🔗 Insta link</button></div>`;
+  const boosted = localGet('boost-' + p.id) === '1' || (boosts[p.id] && localGet('boost-' + p.id) !== '0');
+  const boostBtn = `<button data-act="boost" style="${boosted ? 'background:var(--accent);color:#000;border-color:var(--accent)' : ''}">🚀 ${boosted ? 'Boosted' : 'Boost?'}</button>`;
+  if (!link) return `<div class="insta"><span>Posted it? Link it to track likes</span><span style="display:flex;gap:6px">${boostBtn}<button data-act="insta">🔗 Insta link</button></span></div>`;
   return `<div class="insta"><span>${res ? `❤️ ${res.likes} · 💬 ${res.comments}` : '🔗 Linked: likes appear within a few hours'}</span>
-    <a href="${link.url}" target="_blank" rel="noopener" style="color:var(--muted)">Open ↗</a></div>`;
+    <span style="display:flex;gap:6px;align-items:center">${boostBtn}<a href="${link.url}" target="_blank" rel="noopener" style="color:var(--muted)">Open ↗</a></span></div>`;
 }
 
 function render() {
@@ -310,6 +312,7 @@ feedEl.addEventListener('click', e => {
   else if (act === 'comment') copyComment(post);
   else if (act === 'whatsapp') share(post);
   else if (act === 'insta') linkInsta(post);
+  else if (act === 'boost') toggleBoost(post);
   else if (act === 'used') { localGet('used-' + post.id) ? localDel('used-' + post.id) : localSet('used-' + post.id, '1'); render(); }
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
@@ -374,6 +377,20 @@ document.getElementById('create-go').addEventListener('click', async () => {
 
 // 🔗 Insta link: sent to the robot's private inbox (no GitHub screen). The robot collects
 // it on its next run (every 30-60 min).
+// 🚀 Mark a post as boosted (paid). Boosted posts are left out of the learning and shown under Stats → Boosts.
+async function toggleBoost(post) {
+  const on = !(localGet('boost-' + post.id) === '1' || (boosts[post.id] && localGet('boost-' + post.id) !== '0'));
+  if (on && !confirm('Mark this post as boosted (paid promotion)?')) return;
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify({ type: 'boost', post: post.id, on }) });
+    if (!r.ok) throw new Error(r.status);
+    localSet('boost-' + post.id, on ? '1' : '0');
+    toast(on ? '🚀 Marked as boosted' : 'Boost mark removed');
+    render();
+  } catch { toast('Couldn\'t save (no internet?). Try again.'); }
+}
+
 async function linkInsta(post) {
   const url = prompt('Paste the Instagram link of this post (in Instagram: ⋯ → Copy link):');
   if (!url) return;
@@ -403,7 +420,8 @@ async function load() {
     const res = await fetch('feed.json?t=' + Date.now(), { cache: 'no-store' });
     feedPosts = await res.json();
     const opt = async p => { try { const r = await fetch(p + '?t=' + Date.now(), { cache: 'no-store' }); return r.ok ? r.json() : null; } catch { return null; } };
-    const [ready, links, ig] = await Promise.all([opt('ready.json'), opt('stats/ig_links.json'), opt('stats/instagram.json')]);
+    const [ready, links, ig, bst] = await Promise.all([opt('ready.json'), opt('stats/ig_links.json'), opt('stats/instagram.json'), opt('stats/boosts.json')]);
+    boosts = bst || {};
     readyPosts = (ready || []).slice().reverse();
     igLinks = links || {}; igData = (ig && ig.posts) || {};
     document.getElementById('tab-ready').textContent = `📦 Ready (${readyPosts.length})`;

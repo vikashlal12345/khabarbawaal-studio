@@ -53,6 +53,7 @@
 <main>
   <section id="report"><h2>📋 Report</h2><div class="muted">Loading…</div></section>
   <section id="insta"><h2>📈 Instagram</h2><div class="muted">Loading…</div></section>
+  <section id="boosts"><h2>🚀 Boosts</h2><div class="muted">Loading…</div></section>
   <section id="plan"><h2>Claude plan usage</h2><div class="muted">Loading…</div></section>
   <section id="capacity"><h2>Room for more posts</h2><div class="muted">Loading…</div></section>
   <section id="robot"><h2>KhabarBawaal robot</h2><div class="muted">Loading…</div></section>
@@ -84,6 +85,7 @@ function gauge(label, w) { const p = Math.round(w.pct);
 (async () => {
   const [robot, adhoc, limits, ig, links, audience, feed] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'),
     getJSON('stats/limits.json'), getJSON('stats/instagram.json'), getJSON('stats/ig_links.json'), getJSON('stats/audience.json'), getJSON('feed.json')]);
+  const boostsData = (await getJSON('stats/boosts.json')) || {};
 
   // --- 📋 report (daily = yesterday, weekly = last 7 days), all from the collected data
   const cleanTopic = l => (l.tag || '').replace(/[^\w &]/g, '').replace('SAMPLE', '').trim().toUpperCase() || (l.kind || 'news').toUpperCase();
@@ -148,6 +150,25 @@ function gauge(label, w) { const p = Math.round(w.pct);
       period = b.dataset.p; try { localStorage.setItem('reportPeriod', period); } catch {} drawReport(); }));
   };
   drawReport();
+
+  // --- 🚀 boosts: followers at the start of each boost vs now, and the post's likes
+  {
+    const fol = (ig && ig.followers) || [];
+    const at = iso => ([...fol].reverse().find(f => new Date(f.at) <= new Date(iso)) || fol[0] || {}).followers;
+    const latest = (fol[fol.length - 1] || {}).followers;
+    const rows = Object.entries(boostsData).sort((a, b) => b[1].at.localeCompare(a[1].at)).map(([id, b]) => {
+      const res = ((ig && ig.posts) || {})[id], start = at(b.at);
+      const gained = start != null && latest != null ? latest - start : null;
+      return `<div style="padding:8px 0;border-bottom:1px solid var(--line)">
+        <div style="font-weight:600">${(b.headline || id).replace(/</g, '&lt;')}</div>
+        <div class="muted">Boosted ${inIST(b.at)} · ${res ? `❤️ ${res.likes} · 💬 ${Math.max(0, res.comments - 1)}` : 'link it with 🔗 to see likes'}
+          · followers ${gained != null ? `${start} → ${latest} (<b style="color:var(--green)">${gained >= 0 ? '+' : ''}${gained}</b>)` : 'not tracked yet'}</div></div>`;
+    }).join('');
+    document.getElementById('boosts').innerHTML = `<h2>🚀 Boosts</h2>${rows ||
+      '<div class="muted">No boosted posts yet. Tap 🚀 Boost? on a post in the app after you boost it on Instagram.</div>'}
+      <div class="muted" style="margin-top:8px">Boosted posts are left out of the learning (paid reach would mislead it).
+      Followers gained counts all new followers since the boost started.</div>`;
+  }
 
   // --- instagram
   {
