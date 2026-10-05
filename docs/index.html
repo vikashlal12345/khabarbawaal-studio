@@ -213,7 +213,10 @@ async function share(post) {
   }
   // Shared exactly as prepared, in slide order (renaming/re-timestamping the files broke
   // Instagram's ordering, so the original files are sent unchanged).
-  const list = ready;
+  // Instagram orders shared photos by their time stamp, and downloads finish in random order
+  // (the cover is usually the biggest file). Same files and names, time stamps set in slide order.
+  const base = Date.now() - 60000;
+  const list = ready.map((f, i) => new File([f], f.name, { type: f.type || 'image/jpeg', lastModified: base + i * 1000 }));
   navigator.clipboard.writeText(post.caption).catch(() => {});
   if (list.length > 10) toast(`${list.length} slides: Instagram takes max 10 here. Tap "Save Images", then post from Instagram (+ → Select multiple)`);
   if (navigator.canShare && navigator.canShare({ files: list })) {
