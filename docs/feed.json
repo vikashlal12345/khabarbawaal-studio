@@ -1,5 +1,33 @@
 [
  {
+  "id": "0ed08ce43f5b",
+  "image": "posts/20261005-0633-0ed08ce43f5b.jpg",
+  "kind": "news",
+  "headline": "Kiran Mazumdar-Shaw reacts to Canadian vlogger's viral video of Bengaluru's Indiranagar footpath 'mess'",
+  "tag": "VIRAL",
+  "caption": "Bangalore footpaths phir se trending, aur is baar vlogger bhi foreigner hai 👀\nEk Canadian vlogger ka Indiranagar 12th Main footpath wala video viral hua hai.\nBiocon ki Kiran Mazumdar-Shaw ne bhi comment kiya: \"Please go all over Bangalore and shoot these videos\".\nMatlab shikayat sirf public ki nahi, bade naam bhi bol rahe hain.\nAapke sheher ke footpath ka haal kaisa hai? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bengaluru #Bangalore #Indiranagar #KiranMazumdarShaw #ViralVideo #CivicIssues #KhabarBawaal #India",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/please-go-all-over-bangalore-and-shoot-these-kiran-mazumdar-shaw-on-foreigners-indiranagar-12th-main-mess-video-101791177393188.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: This is a paraphrase shown inside quotation marks as if she said it word for word. Her actual words were 'Firstly, @GBA_office seem to have fixed the complaints.'",
+    "Fact corrected to match the article: The quote is cut short. Her actual words were 'shoot these videos'."
+   ],
+   "fixed": [
+    "\"GBA shayad complaints fix kar chuki hai.\" → GBA ne shayad complaints fix kar di hain.",
+    "\"Please go all over Bangalore and shoot these\" → \"Please go all over Bangalore and shoot these videos\""
+   ]
+  },
+  "slides": [
+   "posts/20261005-0633-0ed08ce43f5b-s2.jpg",
+   "posts/20261005-0633-0ed08ce43f5b-s3.jpg",
+   "posts/20261005-0633-0ed08ce43f5b-s4.jpg",
+   "posts/20261005-0633-0ed08ce43f5b-s5.jpg"
+  ],
+  "created_at": "2026-10-05T06:33:05+00:00"
+ },
+ {
   "id": "bc3e0b58c26c",
   "image": "posts/20261005-0631-bc3e0b58c26c.jpg",
   "kind": "news",
