@@ -50,7 +50,7 @@ Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 3:00 jo
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
 - `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
 - App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
-  `docs/stats.html` (report, Instagram, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
+  `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
 - Data: `docs/feed.json` (3 days), `docs/ready.json`, `state/history.json`, `docs/stats/*.json`.
 - Config: `config.json` (feeds, colours, `inbox_topic` for ntfy.sh, counts).
 
@@ -66,5 +66,5 @@ then e.g. `.venv/bin/python generate.py --kind fun`; restore with
 `git checkout docs/feed.json state/ && git clean -fq docs/posts` before uploading.
 
 ## Open ideas (not built)
-🚀 Boosted-post button + boost stats · daily Reel · Cloudflare email login for the app ·
+Daily Reel · Cloudflare email login for the app ·
 Instagram Graph API (shares/saves, auto post list).
