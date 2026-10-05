@@ -272,20 +272,20 @@
   },
   "market_open": {
    "posts": 1,
-   "requests": 3,
-   "input": 10,
-   "output": 2959,
-   "cache_read": 12186,
-   "cache_write": 25150,
-   "value_usd": 0.1327,
+   "requests": 4,
+   "input": 14,
+   "output": 4486,
+   "cache_read": 19258,
+   "cache_write": 34535,
+   "value_usd": 0.1869,
    "by_purpose": {
     "writing": {
      "requests": 1,
-     "tokens": 5353
+     "tokens": 5354
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 34952
+     "requests": 3,
+     "tokens": 52939
     }
    }
   }
