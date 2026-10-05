@@ -242,19 +242,32 @@ function gauge(label, w) { const p = Math.round(w.pct);
   }
   const w = snap.seven_day, reset = new Date(w.resets_at).getTime(), now = Date.now();
   const elapsed = Math.min(1, Math.max(0.05, 1 - (reset - now) / (7 * 86400000)));
+  const robotPct = w.pct * robotShare, youPct = w.pct - robotPct;   // split of the week's usage so far
+  const split = `<div class="muted" style="margin-top:8px">This week so far: 🤖 robot ≈ <b>${robotPct.toFixed(1)}%</b> · 👤 you ≈ <b>${youPct.toFixed(1)}%</b>
+    (robot alone ≈ ${(robotPct / elapsed).toFixed(0)}% by the weekly reset at this pace)</div>`;
+  if (elapsed < 1 / 7) {   // first day: one busy chat would make any projection look alarming
+    cap.innerHTML = `<h2>Room for more posts</h2>
+      <div class="kpis"><div class="kpi"><b>${Math.round(w.pct)}%</b><span>week used so far</span></div>
+        <div class="kpi"><b>–</b><span>projection after day 1</span></div>
+        <div class="kpi"><b>${inIST(w.resets_at)}</b><span>weekly reset</span></div></div>${split}
+      <div class="muted" style="margin-top:6px">The week only just started, so the projection appears after the first day.</div>`;
+    return;
+  }
   const projected = w.pct / elapsed;                              // where this week ends at today's pace
   const daysLeft = Math.max(0.5, (reset - now) / 86400000);
   const perPost = (w.pct * robotShare) / robotWeek.posts;          // % of weekly limit per robot post (approx.)
   const headroom = 90 - projected;                                 // keep 10% spare for your own chats
   const extraPerDay = perPost > 0 ? Math.floor(headroom / perPost / daysLeft) : 0;
   const cls = projected >= 100 ? 'over' : projected >= 80 ? 'tight' : 'ok';
-  const msg = cls === 'over' ? `❌ At this pace you'd run out before the weekly reset. Consider fewer posts.`
+  const msg = cls === 'over' ? (youPct > robotPct * 2
+      ? `❌ At this pace you'd run out before the reset, mostly from your own chats. Start fresh chats to save.`
+      : `❌ At this pace you'd run out before the weekly reset. Consider fewer posts.`)
     : cls === 'tight' ? `⚠️ Tight: little room left this week.` : `✅ Safe: current schedule fits comfortably.`;
   cap.innerHTML = `<h2>Room for more posts</h2>
     <div class="kpis"><div class="kpi"><b>${Math.round(w.pct)}%</b><span>week used so far</span></div>
       <div class="kpi"><b>${Math.round(projected)}%</b><span>projected by reset</span></div>
       <div class="kpi"><b>${extraPerDay > 0 ? '+' + extraPerDay : 0}</b><span>more posts/day fit</span></div></div>
-    <div class="verdict ${cls}">${msg}</div>
+    <div class="verdict ${cls}">${msg}</div>${split}
     <div class="muted" style="margin-top:8px">Estimate: one robot post ≈ ${perPost.toFixed(2)}% of the weekly limit. Keeps 10% spare
       for your own chats. claude.ai chats aren't tracked, so heavy chatting there makes this optimistic.</div>`;
 })();
