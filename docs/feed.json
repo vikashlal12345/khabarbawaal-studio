@@ -1,5 +1,23 @@
 [
  {
+  "id": "d6fa4e189647",
+  "image": "posts/20261005-0831-d6fa4e189647.jpg",
+  "kind": "fun",
+  "headline": "Beta ne Claude ko mummy ki 24x7 video call pe baitha diya. Mummy: Khana khaya? Claude: Ji, 3 baar. Mummy: Jhooth. Shakal se bhookha lag raha hai.",
+  "tag": "😂 FAMILY GROUP",
+  "caption": "AI ne exams, code, emails sab sambhal liya, par mummy ki jaasoosi nazar? Wahan abhi update baaki hai 😄 Family group mein bhejo, aur tag karo us dost ko jo mummy ke calls 'baad mein karta hoon' pe taalta hai 📞\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #DesiMummy #FamilyGroup #ClaudeAI #HinglishHumour #RelatableIndia #MummyKaCall #IndianFamily",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The slide is a fictional joke dialogue, but the source headline is about a real man in San Francisco. The slide has no 'imagined' or 'satire' label, so readers could take the dialogue as real quotes. Consider adding a label. I couldn't check this against the article because it wasn't provided."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-05T08:31:03+00:00"
+ },
+ {
   "id": "5ebafc540513",
   "image": "posts/20261005-0731-5ebafc540513.jpg",
   "kind": "news",
@@ -1589,35 +1607,5 @@
   "source": "Bollywood Hungama",
   "source_url": "https://www.bollywoodhungama.com/news/bollywood/drishyam-the-conclusion-mania-explodes-theatres-add-post-midnight-shows-before-release-exhibitors-asked-to-match-spider-man-dhurandhar-the-revenge-pricing/",
   "created_at": "2026-10-02T08:37:18+00:00"
- },
- {
-  "id": "9d56360ba737",
-  "image": "posts/20261002-0824-9d56360ba737.jpg",
-  "headline": "Man sends AI crocodile picture to colleague, triggers search operation and now faces jail in Singapore",
-  "tag": "WTF NEWS",
-  "caption": "Ek AI photo aur poora Singapore alert pe aa gaya 😳\nEk bande ne AI se crocodile ki picture banayi aur colleague ko bhej di.\nResult: search operations chale, water activities roki gayi aur police report bhi hui.\nAb usse jail time ka saamna karna pad sakta hai.\nAapko kya lagta hai, ye sirf prank tha ya serious galti? Comment karo!\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times\n\n#AI #Singapore #ViralNews #AIGenerated #Crocodile #KhabarBawaal #WTF #TrendingNow",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/he-created-an-ai-picture-of-a-crocodile-sent-it-to-a-colleague-now-he-is-facing-jail-time-101790923140507.html",
-  "created_at": "2026-10-02T08:24:48+00:00"
- },
- {
-  "id": "13b48703a7ff",
-  "image": "posts/20261002-0822-13b48703a7ff.jpg",
-  "headline": "Mithi River desilting case: Mumbai Police question Bollywood actor Dino Morea",
-  "tag": "INDIA",
-  "caption": "Bollywood actor Dino Morea and his brother, Santino Rocco Morea, were also questioned in the case in May 2025\n\nAap kya sochte ho? 👇 Comment karo!\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times\n\n#India #BreakingNews #IndiaNews #Politics #KhabarBawaal",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/mithi-river-desilting-case-mumbai-police-question-bollywood-actor-dino-morea-101790928273548.html",
-  "created_at": "2026-10-02T08:22:43+00:00"
- },
- {
-  "id": "882df074ee4d",
-  "image": "posts/20261002-0819-882df074ee4d.jpg",
-  "headline": "‘Next target is 1 million’: Father celebrates daughter hitting 500K Instagram followers",
-  "tag": "VIRAL",
-  "caption": "A content creator’s father had the sweetest reaction after she reached 500K followers on Instagram.\n\nAap kya sochte ho? 👇 Comment karo!\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times\n\n#Viral #Trending #India #ViralNews #KhabarBawaal",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/next-target-is-1-million-father-celebrates-daughter-hitting-500k-instagram-followers-101790922739974.html",
-  "created_at": "2026-10-02T08:19:49+00:00"
  }
 ]
