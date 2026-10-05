@@ -1,5 +1,38 @@
 [
  {
+  "id": "5ebafc540513",
+  "image": "posts/20261005-0731-5ebafc540513.jpg",
+  "kind": "news",
+  "headline": "Drishyam 3 mints ₹273 crore worldwide, beats Raid 2 and Bhooth Bangla in opening weekend",
+  "tag": "BOLLYWOOD",
+  "caption": "Ajay Devgn ka Drishyam 3 box office pe aag laga raha hai 🔥\nOpening weekend mein hi worldwide collection ₹273 crore tak pahunch gaya.\nFilm ne Raid 2 aur Bhooth Bangla ke lifetime hauls ko bhi peeche chhod diya hai.\nAb ₹300 crore ka mark bas kuch kadam door hai.\nAapke hisaab se Drishyam 3 kitna kamayegi final mein?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Drishyam3 #AjayDevgn #BoxOffice #Bollywood #BollywoodNews #KhabarBawaal #Drishyam #TrendingIndia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-day-3-ajay-devgn-jaideep-ahlawat-film-272-crore-beats-raid-2-bhooth-bangla-tabu-shriya-saran-101791183325672.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says worldwide gross is ₹273 crore; slide 2 also says 273",
+    "Fact corrected to match the article: Article says ₹273 crore worldwide",
+    "Fact corrected to match the article: Article says ₹273 crore worldwide",
+    "Fact corrected to match the article: Big-number text must match article's ₹273 crore"
+   ],
+   "fixed": [
+    "Drishyam 3 mints ₹272 crore worldwide → Drishyam 3 mints ₹273 crore worldwide",
+    "worldwide collection ₹272 crore tak → worldwide collection ₹273 crore tak",
+    "Drishyam 3 ka worldwide collection ₹272 crore ho gaya → Drishyam 3 ka worldwide collection ₹273 crore ho gaya",
+    "₹272 crore → ₹273 crore"
+   ]
+  },
+  "slides": [
+   "posts/20261005-0731-5ebafc540513-s2.jpg",
+   "posts/20261005-0731-5ebafc540513-s3.jpg",
+   "posts/20261005-0731-5ebafc540513-s4.jpg",
+   "posts/20261005-0731-5ebafc540513-s5.jpg",
+   "posts/20261005-0731-5ebafc540513-s6.jpg"
+  ],
+  "created_at": "2026-10-05T07:31:14+00:00"
+ },
+ {
   "id": "0ed08ce43f5b",
   "image": "posts/20261005-0633-0ed08ce43f5b.jpg",
   "kind": "news",
