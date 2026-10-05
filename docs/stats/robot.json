@@ -250,6 +250,25 @@
      "tokens": 17715
     }
    }
+  },
+  "fun": {
+   "posts": 1,
+   "requests": 3,
+   "input": 12,
+   "output": 2040,
+   "cache_read": 11797,
+   "cache_write": 10158,
+   "value_usd": 0.0634,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 9274
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 14733
+    }
+   }
   }
  }
 }
