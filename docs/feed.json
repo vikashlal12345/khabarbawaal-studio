@@ -1,5 +1,30 @@
 [
  {
+  "id": "aec460371814",
+  "image": "posts/20261005-0132-aec460371814.jpg",
+  "kind": "news",
+  "headline": "Two Captive-Bred Great Indian Bustards Released Into Wild In Rajasthan, Pulled From Extinction's Edge",
+  "tag": "GOOD NEWS",
+  "caption": "Ek achhi khabar for a change! 🦅\n\nRajasthan mein do captive-bred Great Indian Bustards ko wild mein release kiya gaya hai. Ye bird extinction ke kinare pe pahunch chuki thi.\n\nYe conservation programme ka naya phase hai. Experts ab track karenge ki captive mein pale ye birds bina kisi help ke survive aur breed kar paate hain ya nahi.\n\nAapko kya lagta hai, ye experiment kaamyab hoga?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#GreatIndianBustard #Rajasthan #WildlifeConservation #India #GoodNews #SaveGIB #Wildlife #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/from-the-edge-of-extinction-two-captive-bred-great-indian-bustards-released-into-wild-in-rajasthan-101791157226498.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The claim 'Gujarat mein 30 birds chhodne ka target hai' is not in the article text provided. The article only says the next destination could be Kutch. Check it against the full article or remove it.",
+    "Slide 4: The quote attributed to 'Sumer Singh Bhati' (survival is the real test, all transmission lines should go underground) is not in the article text provided. Check the name and quote against the full article. The text we were given is cut off."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261005-0132-aec460371814-s2.jpg",
+   "posts/20261005-0132-aec460371814-s3.jpg",
+   "posts/20261005-0132-aec460371814-s4.jpg",
+   "posts/20261005-0132-aec460371814-s5.jpg"
+  ],
+  "created_at": "2026-10-05T01:32:41+00:00"
+ },
+ {
   "id": "cfd8b44c52d1",
   "image": "posts/20261005-0131-cfd8b44c52d1.jpg",
   "kind": "news",
