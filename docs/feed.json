@@ -1,5 +1,30 @@
 [
  {
+  "id": "f9228bd0b427",
+  "image": "posts/20261005-0331-f9228bd0b427.jpg",
+  "kind": "news",
+  "headline": "JEE Advanced 2026: SC qualification rate jumps to 50.16% from 40.41%",
+  "tag": "EDUCATION",
+  "caption": "JEE Advanced 2026 se ek bada number aaya hai 📈\nSC students ka qualification rate 50.16% ho gaya, pichle saal 40.41% tha.\nST ka rate bhi 33.99% se badhkar 42.14% pahunch gaya.\nWomen ke liye bhi yeh 6 saal mein sabse high bataya gaya hai.\nAapko kya lagta hai, is badlav ki sabse badi wajah kya hai? Comment karo.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#JEEAdvanced #JEEAdvanced2026 #IIT #Education #JEE #StudentLife #India #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/jee-advanced-2026-sc-st-qualification-rates-jump-highest-for-women-in-6-years-101791170119277.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: Point 3 has a quote from BITS Pilani VC V Ramgopal Rao and a figure of 52,559 JoSAA choice-filling candidates. Neither is in the article text I was given, and the article is cut off. Check both against the full article. If they aren't there, remove the line, because it could be an invented quote.",
+    "Slide 1: The headline text sits over students' faces in the lower half of the photo. It is readable, but it covers a face or two. Consider moving the text or the photo.",
+    "Slide 2: The image is a website screenshot with blurry grey bands at the top and bottom, and the credit says 'Photo: The Free Press Journal' while the source is Hindustan Times. Check that the credit is correct."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261005-0331-f9228bd0b427-s2.jpg",
+   "posts/20261005-0331-f9228bd0b427-s3.jpg",
+   "posts/20261005-0331-f9228bd0b427-s4.jpg"
+  ],
+  "created_at": "2026-10-05T03:31:06+00:00"
+ },
+ {
   "id": "market_open-2026-10-05",
   "image": "posts/20261005-0245-market_open-2026-10-05.jpg",
   "kind": "market",
