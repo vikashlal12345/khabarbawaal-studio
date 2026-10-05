@@ -1,5 +1,32 @@
 [
  {
+  "id": "market_open-2026-10-05",
+  "image": "posts/20261005-0245-market_open-2026-10-05.jpg",
+  "kind": "market",
+  "headline": "Market Morning Brief: 05 Oct",
+  "tag": "📈 MARKET BRIEF",
+  "caption": "Monday ki shuruaat: GIFT Nifty 22,631.00 par, +0.09% upar.\nNifty 8 hafte ki losing streak ke baad support zone ke paas hai.\nAaj Orient Cables aur AceVector ki listing bhi hai.\nAapki nazar aaj kis cheez par rahegi?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#KhabarBawaal #StockMarket #Nifty #GIFTNifty #Sensex #IPO #MarketMorningBrief #StocksInFocus #ShareMarketIndia",
+  "source": "NSE, CNBC, ET, Moneycontrol",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The Ola Electric Mobility and HDFC Bank items cite Mint's stocks-to-watch list. Nothing in the supplied article headlines supports this, so please check it against the source. The two items are also worded inconsistently: 'aaj ke' in one and '5 October ki' in the other."
+   ],
+   "fixed": [
+    "Mint ki 5 October ki stocks to watch list mein news mein → Mint ki 5 October ki stocks to watch list mein shamil"
+   ]
+  },
+  "slides": [
+   "posts/20261005-0245-market_open-2026-10-05-s2.jpg",
+   "posts/20261005-0245-market_open-2026-10-05-s3.jpg",
+   "posts/20261005-0245-market_open-2026-10-05-s4.jpg",
+   "posts/20261005-0245-market_open-2026-10-05-s5.jpg",
+   "posts/20261005-0245-market_open-2026-10-05-s6.jpg"
+  ],
+  "created_at": "2026-10-05T02:45:55+00:00"
+ },
+ {
   "id": "448814f38c27",
   "image": "posts/20261005-0231-448814f38c27.jpg",
   "kind": "fun",
