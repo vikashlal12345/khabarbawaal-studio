@@ -53,6 +53,8 @@ jobs:
       TIMED: ${{ github.event_name == 'schedule' || inputs.chain }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
@@ -113,6 +115,8 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Wait for the next posting slot, then start the next run
         run: |
           busy() {   # other hourly runs that are running or waiting (any trigger)

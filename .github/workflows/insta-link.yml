@@ -25,6 +25,8 @@ jobs:
       BODY: ${{ github.event.issue.body }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Save link
         id: save
         run: |
