@@ -159,13 +159,19 @@ function gauge(label, w) { const p = Math.round(w.pct);
     const top = results.slice(0, 5).map(p => `<div class="row" style="grid-template-columns:minmax(0,1fr) 90px">
       <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${(p.headline || p.id).replace(/</g, '&lt;')}</span>
       <span class="num">❤️ ${p.likes} · 💬 ${p.comments}</span></div>`).join('');
+    const checks = [...fol.map(f => f.at), ...Object.values((ig && ig.posts) || {}).map(p => p.checked_at)].filter(Boolean).sort();
+    const lastCheck = checks[checks.length - 1];
+    const when = iso => iso ? `${inIST(iso)} (${ago(iso)})` : 'never';
     document.getElementById('insta').innerHTML = `<h2>📈 Instagram @khabarbawaal</h2>
+      <div class="muted" style="margin:-4px 0 10px">🕐 Last fetched: <b>${when(lastCheck)}</b>. Your Mac checks every 3 hours while it's awake.</div>
       <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers</span></div>
         <div class="kpi"><b>${latest && weekAgo ? (latest.followers - weekAgo.followers >= 0 ? '+' : '') + (latest.followers - weekAgo.followers) : '–'}</b><span>this week</span></div>
         <div class="kpi"><b>${Object.keys(links || {}).length}</b><span>posts linked</span></div></div>
       <h2 style="margin-top:14px">Best posts</h2>${top || '<div class="muted">Link posts with 🔗 Insta link in the app to see their likes here.</div>'}
       <h2 style="margin-top:14px">What the robot learned</h2>
-      <div class="muted">${audience && audience.summary ? audience.summary.replace(/</g, '&lt;')
+      <div class="muted">🕐 Last analysis: <b>${when(audience && audience.updated)}</b> (runs every night at 4 AM)</div>
+      <div class="muted" style="margin-top:6px">${audience && audience.summary ? '✅ Adjusting posts: ' + audience.summary.replace(/</g, '&lt;')
+        : audience && audience.waiting ? `⏳ Not adjusting yet: ${audience.waiting}. It starts once posts get real engagement (10+ linked posts and 30+ likes in total), so it learns from your audience, not from noise. Your own pinned comments aren't counted.`
         : `Needs at least 10 linked posts with results (${results.length} so far). Then every night at 4 AM it learns which topics your audience likes and posts more of them.`}</div>`;
   }
   const week = lastDays(7), today = week[0];
@@ -174,7 +180,7 @@ function gauge(label, w) { const p = Math.round(w.pct);
   const snap = limits && limits.length ? limits[limits.length - 1] : null;
   document.getElementById('plan').innerHTML = '<h2>Claude plan usage (Pro)</h2>' + (snap
     ? gauge('5-hour window', snap.five_hour) + gauge('This week', snap.seven_day) +
-      `<div class="muted">Includes everything: robot, Claude Code and claude.ai chats. Updated ${ago(snap.at)} (from your Mac, hourly while it's on).</div>`
+      `<div class="muted">Includes everything: robot, Claude Code and claude.ai chats.<br>🕐 Last fetched: <b>${inIST(snap.at)} (${ago(snap.at)})</b>, from your Mac hourly while it's awake.</div>`
     : '<div class="muted">Not available yet. It comes from your Mac every hour while it\'s on.</div>');
 
   // --- robot
@@ -203,6 +209,7 @@ function gauge(label, w) { const p = Math.round(w.pct);
     <div class="kpis"><div class="kpi"><b>${robotToday.posts}</b><span>${robotToday.posts === 1 ? 'post' : 'posts'} today</span></div>
       <div class="kpi"><b>${fmt(robotToday.tokens)}</b><span>tokens today</span></div>
       <div class="kpi"><b>${robotToday.requests}</b><span>AI requests today</span></div></div>
+    <div class="muted" style="margin-top:8px">🕐 Last post made: <b>${feed && feed.length ? inIST(feed[0].created_at) + ' (' + ago(feed[0].created_at) + ')' : '–'}</b></div>
     <h2 style="margin-top:16px">Last 7 days by job <span class="muted">(tokens · posts)</span></h2>${jobRows || '<div class="muted">No data yet.</div>'}
     <h2 style="margin-top:16px">What the tokens are spent on</h2>${purposeRows || '<div class="muted">No data yet.</div>'}
     <div class="muted" style="margin-top:10px">7 days: ${robotWeek.posts} posts, ${robotWeek.requests} AI requests, ${fmt(robotWeek.tokens)} tokens.
