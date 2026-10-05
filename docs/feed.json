@@ -1,5 +1,29 @@
 [
  {
+  "id": "d2ee0bc27222",
+  "image": "posts/20261005-1031-d2ee0bc27222.jpg",
+  "kind": "news",
+  "headline": "Gujarat Influencer Simran Patel Booked Under IT Act Over Reel On Mahatma Gandhi",
+  "tag": "VIRAL",
+  "caption": "Ek reel aur seedha police case. 😳\n\nGujarat ki influencer Simran Patel, jinke Instagram par lagbhag 1 million followers hain, ke khilaaf IT Act ke tahat case darj hua hai.\n\nAarop hai ki unhone Mahatma Gandhi aur ₹500 note wali reel mein \"insulting remarks\" aur \"sexual gestures\" kiye.\n\nKya reel ke liye national icons ka mazaak banana sahi hai, ya content creators ko bhi limits samajhni chahiye? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SimranPatel #MahatmaGandhi #Gujarat #Influencer #ITAct #ViralReel #KhabarBawaal #TrendingIndia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/insulting-remarks-sexual-gestures-gujarat-influencer-posts-reel-on-mahatma-gandhi-with-rs-500-note-booked-under-it-act-101791190035183.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo shows Delhi Police personnel with umbrellas in the rain. It has nothing to do with Simran Patel or the Surat case, and it could mislead readers. Slide 1 can't be dropped, so swap in a relevant image, such as the Surat Cyber Crime shot from slide 2 or 3."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261005-1031-d2ee0bc27222-s2.jpg",
+   "posts/20261005-1031-d2ee0bc27222-s3.jpg",
+   "posts/20261005-1031-d2ee0bc27222-s4.jpg",
+   "posts/20261005-1031-d2ee0bc27222-s5.jpg"
+  ],
+  "created_at": "2026-10-05T10:31:41+00:00"
+ },
+ {
   "id": "market_close-2026-10-05",
   "image": "posts/20261005-1016-market_close-2026-10-05.jpg",
   "kind": "market",
