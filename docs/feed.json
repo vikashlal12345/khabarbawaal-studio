@@ -1,5 +1,33 @@
 [
  {
+  "id": "top10_viral-2026-10-05",
+  "image": "posts/20261005-0045-top10_viral-2026-10-05.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 VIRAL: 05 Oct",
+  "tag": "🔥 TOP 5 VIRAL",
+  "caption": "Drishyam 3 ka box office tandav aur internet par #IAmJaneDoe ki goonj! 🔥 Swipe karo, aaj ki Top 5 khabrein yahan hain.\n\n1. Drishyam 3 crosses ₹175 crore in opening weekend\n2. #IAmJaneDoe goes viral in Cornell 7 case\n3. Sanjay Dutt clarifies 'no peace in India' remark\n4. Kainchi Dham sees massive devotee rush after Hanuman Ansh\n5. Bengaluru man roasts salary-rent gap: 'Salary 2006, rent 2046'\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #Drishyam3 #AjayDevgn #IAmJaneDoe #SanjayDutt #KainchiDham #HanumanAnsh #BengaluruRent #ViralIndia #TrendingNow",
+  "source": "Hindustan Times",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 6: The article's headline says Drishyam 3 crossed ₹175 crore, but its subheading says it \"breezed past the ₹150 crore mark in its opening weekend\". Our slide and caption use ₹175 crore. Please check the figure against the source before posting.",
+    "Slide 5: The Cornell University sign is cut off on the right and reads \"UNIVERSIT\". The photo is related to the story, so this is only a crop issue. Shift the crop if possible.",
+    "Slide 1: On the cover collage, the \"TOP 5\" text covers the face of the Hanuman Ansh director. The Cornell sign is also cut off at \"UNIVERSI\". Consider moving the text or the crop."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261005-0045-top10_viral-2026-10-05-s2.jpg",
+   "posts/20261005-0045-top10_viral-2026-10-05-s3.jpg",
+   "posts/20261005-0045-top10_viral-2026-10-05-s4.jpg",
+   "posts/20261005-0045-top10_viral-2026-10-05-s5.jpg",
+   "posts/20261005-0045-top10_viral-2026-10-05-s6.jpg",
+   "posts/20261005-0045-top10_viral-2026-10-05-s7.jpg"
+  ],
+  "created_at": "2026-10-05T00:45:57+00:00"
+ },
+ {
   "id": "79286ca0663d",
   "image": "posts/20261005-0031-79286ca0663d.jpg",
   "kind": "news",
