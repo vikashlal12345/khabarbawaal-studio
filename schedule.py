@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
-PEAK_HOURS = [(7, 11), (18, 23)]                      # Instagram's busiest hours: a post every 30 min
+PEAK_HOURS: list[tuple[int, int]] = []                # hours with an extra hh:30 post (none: hourly all day)
 SPECIALS = {"top10_viral": (6, 15), "market_open": (8, 15), "market_preopen": (9, 9), "thought": (9, 15),
             "market_close": (15, 45), "top10_day": (21, 15),   # market posts skip non-trading days
             # Night work (nothing is posted): ready posts, day planning, fresh jokes, learning from stats,
