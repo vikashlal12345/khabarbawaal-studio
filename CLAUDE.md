@@ -11,8 +11,9 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   `main` is **force-replaced every Sunday** (weekly-cleanup): if `git pull` fails with unrelated
   histories and there are no local changes, `git fetch origin && git reset --hard origin/main`.
 - When redoing a published post by hand, **use new image file names** (the app caches images by path).
-- **Don't change how 📤 Post shares files** without testing a version with the owner first
-  (renaming/re-timestamping files broke Instagram's photo order once).
+- **Don't change how 📤 Post shares files** without testing a version with the owner first.
+  Verified (5 Oct 2026): Instagram orders shared photos by **file time stamp**, so `share()` keeps the
+  original file names and sets `lastModified` in slide order. Renaming the files broke the order.
 - Long chats are expensive (each message re-reads history): prefer fresh chats + this file.
 
 ## Content rules
