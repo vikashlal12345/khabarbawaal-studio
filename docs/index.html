@@ -211,11 +211,9 @@ async function share(post) {
     prepare(post).catch(() => {});
     return;
   }
-  // Instagram/Photos order shared photos by name and time, so give them names and times in slide order
-  // (otherwise "...-s2.jpg" sorts before the cover "....jpg").
-  const base = Date.now() - ready.length * 1000;
-  const list = ready.map((f, i) => new File([f], `KhabarBawaal-${String(i + 1).padStart(2, '0')}.jpg`,
-    { type: 'image/jpeg', lastModified: base + i * 1000 }));
+  // Shared exactly as prepared, in slide order (renaming/re-timestamping the files broke
+  // Instagram's ordering, so the original files are sent unchanged).
+  const list = ready;
   navigator.clipboard.writeText(post.caption).catch(() => {});
   if (list.length > 10) toast(`${list.length} slides: Instagram takes max 10 here. Tap "Save Images", then post from Instagram (+ → Select multiple)`);
   if (navigator.canShare && navigator.canShare({ files: list })) {
