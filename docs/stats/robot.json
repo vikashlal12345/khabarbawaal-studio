@@ -253,20 +253,20 @@
   },
   "fun": {
    "posts": 1,
-   "requests": 3,
-   "input": 12,
-   "output": 2040,
-   "cache_read": 11797,
-   "cache_write": 10158,
-   "value_usd": 0.0634,
+   "requests": 2,
+   "input": 6,
+   "output": 1414,
+   "cache_read": 5353,
+   "cache_write": 5031,
+   "value_usd": 0.0353,
    "by_purpose": {
     "writing": {
      "requests": 1,
-     "tokens": 9274
+     "tokens": 4964
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 14733
+     "requests": 1,
+     "tokens": 6840
     }
    }
   }
