@@ -255,18 +255,18 @@
    "posts": 2,
    "requests": 4,
    "input": 12,
-   "output": 2544,
-   "cache_read": 9360,
-   "cache_write": 12197,
-   "value_usd": 0.0761,
+   "output": 2334,
+   "cache_read": 10715,
+   "cache_write": 10509,
+   "value_usd": 0.0675,
    "by_purpose": {
     "writing": {
      "requests": 2,
-     "tokens": 9762
+     "tokens": 9970
     },
     "proofreading": {
      "requests": 2,
-     "tokens": 14351
+     "tokens": 13600
     }
    }
   },
