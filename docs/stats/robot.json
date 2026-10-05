@@ -213,22 +213,22 @@
    "posts": 1,
    "requests": 4,
    "input": 12,
-   "output": 2972,
-   "cache_read": 11131,
-   "cache_write": 19348,
-   "value_usd": 0.1094,
+   "output": 2814,
+   "cache_read": 16035,
+   "cache_write": 14762,
+   "value_usd": 0.0903,
    "by_purpose": {
     "writing": {
      "requests": 1,
-     "tokens": 4520
+     "tokens": 4530
     },
     "photo check": {
      "requests": 1,
-     "tokens": 3343
+     "tokens": 3325
     },
     "proofreading": {
      "requests": 2,
-     "tokens": 25600
+     "tokens": 25768
     }
    }
   }
