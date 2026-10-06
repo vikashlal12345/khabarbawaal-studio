@@ -1,5 +1,35 @@
 [
  {
+  "id": "c5af436f9033",
+  "kind": "custom",
+  "image": "posts/20261006-1139-c5af436f9033-1.jpg",
+  "options": [
+   "posts/20261006-1139-c5af436f9033-1.jpg",
+   "posts/20261006-1139-c5af436f9033-2.jpg",
+   "posts/20261006-1139-c5af436f9033-3.jpg"
+  ],
+  "slides": [
+   "posts/20261006-1139-c5af436f9033-s2.jpg",
+   "posts/20261006-1139-c5af436f9033-s3.jpg",
+   "posts/20261006-1139-c5af436f9033-s4.jpg"
+  ],
+  "headline": "Jio Tag 2 Is Here: Jio Officially Launches Its New Tag",
+  "tag": "TECH",
+  "caption": "Jio ne launch kar diya Jio Tag 2 🔥\nJio ki taraf se naya Tag 2 ab officially aa gaya hai.\nPrice aur features ki details abhi confirm hoti rahengi, toh updates ke liye tune rehna.\nAap lenge Jio Tag 2 ya purana wala hi chalega? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\n\n#jio #tech #trending #india #launch",
+  "source": "Your pick",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo is a comparison graphic that reads 'Google Pixel Tag / JioTag 2 vs Apple AirTag'. Its text is cut off at the edges ('oogle Pixel Ta', 'oTag 2', 'Apple Air'), so it looks cropped and messy. The graphic also brings in Google and Apple, which the headline doesn't mention. Consider a cleaner photo of the Jio tag alone. This is slide 1, so it can't be dropped."
+   ],
+   "fixed": [
+    "jaanni chahiye → jaanna chahiye"
+   ]
+  },
+  "created_at": "2026-10-06T11:39:02+00:00"
+ },
+ {
   "id": "9db6473a29fc",
   "image": "posts/20261006-1132-9db6473a29fc.jpg",
   "kind": "news",
