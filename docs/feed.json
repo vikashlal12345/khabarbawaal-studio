@@ -1,5 +1,36 @@
 [
  {
+  "id": "c94f6e732f9a",
+  "image": "posts/20261006-0732-c94f6e732f9a.jpg",
+  "kind": "news",
+  "headline": "Raju Kher Says Brother Anupam Kher Didn't Help During Financial Crisis After Bad Investment",
+  "tag": "BOLLYWOOD",
+  "caption": "Ghar ki baat ab public ho gayi 👀\nRaju Kher ne bataya ki ek bad investment ke baad unhe financial crisis jhelna pada.\nUnke mutabiq unhe bhai Anupam Kher se support ki umeed thi, aur unhone maana ki unhone bhai ko \"for granted\" liya.\nBaad mein Raju ko realise hua ki Anupam ke saamne bhi apni struggles thi.\nAapko kya lagta hai, family mein paise ki madad karna zaroori hai ya har kisi ki apni zimmedari?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #bollywood #anupamkher #rajukher",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/raju-kher-recalls-financial-crisis-after-tv-channel-vanished-says-brother-anupam-kher-didnt-help-him-101791264689011.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article: Raju assumed Anupam had no problems because he was financially successful; the slide reverses who thought what.",
+    "Fact corrected to match the article: Raju said he took his brother for granted; the caption's wording is ambiguous and presents a quote that is not his exact words.",
+    "Slide 1: The cover photo is low-resolution and blurry. It is zoomed in so far that both men's faces are cut off at the edges, which looks unprofessional. The headline text also sits over the lower part of the faces. A cleaner crop or a sharper photo would be better. This is slide 1, so it can't be dropped."
+   ],
+   "fixed": [
+    "Raju ne mana ki Anupam ko lagta tha paisa hai toh pareshani nahi hogi. → Raju ne mana ki unhone socha tha ki Anupam ke paas paisa hai toh unhe pareshani nahi hogi.",
+    "aur unhone kaha ki unhe \"took him for granted\". → aur unhone maana ki unhone bhai ko \"for granted\" liya."
+   ]
+  },
+  "slides": [
+   "posts/20261006-0732-c94f6e732f9a-s2.jpg",
+   "posts/20261006-0732-c94f6e732f9a-s3.jpg",
+   "posts/20261006-0732-c94f6e732f9a-s4.jpg",
+   "posts/20261006-0732-c94f6e732f9a-s5.jpg",
+   "posts/20261006-0732-c94f6e732f9a-s6.jpg",
+   "posts/20261006-0732-c94f6e732f9a-s7.jpg"
+  ],
+  "created_at": "2026-10-06T07:32:01+00:00"
+ },
+ {
   "id": "2eee9aa17b3f",
   "image": "posts/20261006-0631-2eee9aa17b3f.jpg",
   "kind": "fun",
@@ -1733,16 +1764,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/india-news/ndas-and-san-francisco-dinner-why-anthropic-invited-a-hindu-monk-swami-sarvapriyananda-to-discuss-ai-ethics-101791010404700.html",
   "created_at": "2026-10-03T08:07:35+00:00"
- },
- {
-  "id": "b569bcc5473a",
-  "image": "posts/20261003-0707-b569bcc5473a.jpg",
-  "kind": "fun",
-  "headline": "Expectation: Job lagegi toh Mercedes aayegi. Reality: Saturday dopahar ki 2 ghante ki neend hi ab asli luxury hai.",
-  "tag": "😂 EXPECTATION VS REALITY",
-  "caption": "Job se pehle neend free thi, ab Saturday ki dopahar ki jhapki bhi premium feature hai 😴\nAaj 12 baje se hi bed bula raha hai.\nTag karo us dost ko jo aaj sirf sone ka plan bana ke baitha hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #OfficeLife #SaturdayMood #DesiHumour #Relatable #NineToFive",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "created_at": "2026-10-03T07:07:35+00:00"
  }
 ]
