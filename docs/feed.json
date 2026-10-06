@@ -1,5 +1,33 @@
 [
  {
+  "id": "cb699e2fe046",
+  "kind": "custom",
+  "image": "posts/20261006-0422-cb699e2fe046-1.jpg",
+  "options": [
+   "posts/20261006-0422-cb699e2fe046-1.jpg"
+  ],
+  "slides": [
+   "posts/20261006-0422-cb699e2fe046-s2.jpg",
+   "posts/20261006-0422-cb699e2fe046-s3.jpg"
+  ],
+  "headline": "No story was provided, so this post cannot be written yet",
+  "tag": "NO STORY",
+  "caption": "Story missing hai, article text \"not set\" aaya.\nBina facts ke post nahi bana sakte.\nLink ya story ke details dobara bhejo.\nKaunsi story post karni hai?\n\nFollow @khabarbawaal for daily updates.\nSource: indiatvnews.com (link pinned in comments 👇)\n\n#KhabarBawaal #India #News #Viral #Trending #IndiaNews",
+  "source": "indiatvnews.com",
+  "source_url": "https://www.indiatvnews.com/trending/offbeat/arunachal-girl-tinkle-karga-gongo-viral-video-parents-reaction-2026-08-23-1052186",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Caption: The caption is an internal error message ('Story missing hai, article text \"not set\" aaya... Kaunsi story post karni hai?'), not a real caption. It also cites Source: indiatvnews.com with a pinned link, but no story was provided. Do not publish.",
+    "Slide 1: The whole post says 'NO STORY' and 'post cannot be written yet'. It has no news content, so it is a placeholder and not publishable. Slide 1 also shows the source indiatvnews.com although no article exists.",
+    "Slide 2: The slide text is internal production notes ('facts invent nahi kar sakte', 'carousel dobara banaya jayega') and not reader-facing news. Do not publish.",
+    "Slide 3: The slide asks 'Aap kya sochte ho?' about a story that doesn't exist. The engagement prompt is meaningless without a story."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-06T04:22:20+00:00"
+ },
+ {
   "id": "thought-2026-10-06",
   "image": "posts/20261006-0345-thought-2026-10-06.jpg",
   "kind": "thought",
@@ -1716,16 +1744,5 @@
   "source": "Your pick",
   "source_url": "",
   "created_at": "2026-10-03T04:39:35+00:00"
- },
- {
-  "id": "1128160eb8f3",
-  "image": "posts/20261003-0407-1128160eb8f3.jpg",
-  "kind": "news",
-  "headline": "Drishyam 3 mints almost ₹100 crore worldwide on day one, beats Jailer and Tiger 3",
-  "tag": "BOLLYWOOD",
-  "caption": "Drishyam 3 ne pehle hi din box office pe aag laga di 🔥\nWorldwide day 1 collection almost ₹100 crore bataya ja raha hai.\nAjay Devgn ki career ki best opening, aur Hindi film ki sixth-highest ever opening.\nIsne Rajinikanth ki Jailer aur Salman Khan ki Tiger 3 ko bhi peeche chhod diya.\nAapko kya lagta hai, ye film 500 crore cross karegi? Comments mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Drishyam3 #AjayDevgn #BoxOffice #Bollywood #Drishyam #Jailer #Tiger3 #KhabarBawaal",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-day-1-ajay-devgn-jaideep-ahlawat-film-opens-at-95-crore-beats-rajinikanth-jailer-salman-khan-tiger-3-101790998286742.html",
-  "created_at": "2026-10-03T04:07:33+00:00"
  }
 ]
