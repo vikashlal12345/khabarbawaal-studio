@@ -39,6 +39,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     concurrency:
       group: hourly-post        # takes turns with "Create post" requests
       cancel-in-progress: false
@@ -136,6 +137,10 @@ jobs:
           [ "$wait" -gt 19800 ] && wait=19800   # a job can run 6 hours max: hand over after 5h30m
           echo "Next run in $((wait / 60)) minutes (checking the inbox for ➕ Create requests meanwhile)"
           python3 inbox_watch.py "$wait"
+          # Watchdog: a run stuck "queued" (GitHub never gave it a computer) blocks every post behind it.
+          gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 30 --json databaseId,status,createdAt \
+            -q ".[] | select(.databaseId != $GITHUB_RUN_ID and (.status == \"queued\" or .status == \"pending\" or .status == \"waiting\") and ((now - (.createdAt | fromdateiso8601)) > 1200)) | .databaseId" |
+            while read -r stuck; do echo "Cancelling stuck run $stuck"; gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$stuck/force-cancel" || true; done
           # If two chains ever run side by side, only one may continue: wait a random moment,
           # then step aside if another run was started in the last 5 minutes.
           sleep $((RANDOM % 40))
