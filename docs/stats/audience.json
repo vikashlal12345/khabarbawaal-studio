@@ -1,7 +1,122 @@
 {
- "summary": "",
- "posts": 11,
- "likes": 3,
- "updated": "2026-10-05T09:16:52+00:00",
- "waiting": "only 3/30 likes so far"
+ "summary": "From our last 45 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics VIRAL (2), TECH (2), MYTH VS FACT (2); weakest CLOSING BELL (1), TOP 5 NEWS (1). Formats: custom 2, news 1, ready 1, fun 1, market 1, thought 1, top10 1. Lean toward what works, keep some variety.",
+ "posts": 45,
+ "likes": 56,
+ "updated": "2026-10-06T22:31:05+00:00",
+ "topics": [
+  [
+   "VIRAL",
+   2.2857142857142856
+  ],
+  [
+   "TECH",
+   2.0
+  ],
+  [
+   "MYTH VS FACT",
+   1.5
+  ],
+  [
+   "RELATABLE",
+   1.3333333333333333
+  ],
+  [
+   "BOLLYWOOD",
+   1.125
+  ],
+  [
+   "GOOD NEWS",
+   1.0
+  ],
+  [
+   "EDUCATION",
+   1.0
+  ],
+  [
+   "ON THIS DAY",
+   1.0
+  ],
+  [
+   "TOP 5 VIRAL",
+   1.0
+  ],
+  [
+   "WTF NEWS",
+   1.0
+  ],
+  [
+   "TAG KARO",
+   1.0
+  ],
+  [
+   "RAAT KI 5 KHABREIN",
+   1.0
+  ],
+  [
+   "MARKET BRIEF",
+   1.0
+  ],
+  [
+   "THOUGHT OF THE DAY",
+   1.0
+  ],
+  [
+   "AMAZING FACTS",
+   1.0
+  ],
+  [
+   "POLITICS",
+   1.0
+  ],
+  [
+   "DESI LIFE",
+   1.0
+  ],
+  [
+   "FAMILY GROUP",
+   1.0
+  ],
+  [
+   "PREOPEN",
+   1.0
+  ],
+  [
+   "CLOSING BELL",
+   1.0
+  ],
+  [
+   "TOP 5 NEWS",
+   1.0
+  ]
+ ],
+ "kinds": [
+  [
+   "custom",
+   2.0
+  ],
+  [
+   "news",
+   1.434782608695652
+  ],
+  [
+   "ready",
+   1.2
+  ],
+  [
+   "fun",
+   1.1428571428571428
+  ],
+  [
+   "market",
+   1.0
+  ],
+  [
+   "thought",
+   1.0
+  ],
+  [
+   "top10",
+   1.0
+  ]
+ ]
 }
