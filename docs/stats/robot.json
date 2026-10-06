@@ -428,6 +428,25 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "thought": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 491,
+   "cache_read": 3986,
+   "cache_write": 6391,
+   "value_usd": 0.0313,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 4179
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 6695
+    }
+   }
   }
  }
 }
