@@ -262,7 +262,14 @@ def resolve_prompt(text: str) -> dict | None:
         return None
     chosen = cands[out["pick"] - 1]
     print(f"Prompt '{text[:40]}' -> picked: ({chosen['site']}) {chosen['title']}")
-    return read_article(chosen["url"])
+    article = read_article(chosen["url"])
+    # Some sites block reading the page: fall back to the headline/summary found in the search.
+    if not article["title"] or article["title"].lower() in ("not set", "access denied"):
+        article["title"] = chosen["title"]
+        article["site"] = chosen["site"]
+    if not article["description"]:
+        article["description"] = chosen.get("summary") or chosen["title"]
+    return article
 
 
 def make(raw: str, kind: str = "custom") -> int:
@@ -289,6 +296,11 @@ def make(raw: str, kind: str = "custom") -> int:
             summary_file.write_text(msg)
             print(msg)
             return 0
+
+    # Never make a post out of nothing (e.g. a link whose page couldn't be read and no text).
+    if not text and not (article and (article.get("title") or article.get("description"))):
+        print("No story found to write about: not creating a post.")
+        return 0
 
     post = None
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
