@@ -177,7 +177,7 @@
   "market_close": "2026-10-06",
   "top10_day": "2026-10-06",
   "night_ready": "2026-10-07",
-  "night_calendar": "2026-10-05",
+  "night_calendar": "2026-10-07",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-05",
   "top10_viral": "2026-10-05",
@@ -211,8 +211,16 @@
   "4 Desi Myths Busted With Real Facts"
  ],
  "calendar": {
-  "date": "2026-10-05",
-  "items": []
+  "date": "2026-10-07",
+  "items": [
+   {
+    "time": "08:00",
+    "topic": "BJP marks PM Modi's 25 years in public life, Delhi",
+    "brief": "BJP marks 25 years of PM Narendra Modi in public life in Delhi on October 7. Delhi Police has barred traffic on Secretariat Road and Velodrome Road from 6 am, so expect curbs and diversions around the venue.",
+    "search": "BJP PM Modi 25 years in public life Delhi October 7",
+    "done": false
+   }
+  ]
  },
  "recent_thoughts": [
   "Monday ka matlab naya mauka hai. Bade sapne ek chhote kadam se shuru hote hain, aur wo kadam aaj hi uthana hai.",
