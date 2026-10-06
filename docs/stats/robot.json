@@ -395,6 +395,29 @@
      "tokens": 15226
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 3,
+   "input": 8,
+   "output": 1660,
+   "cache_read": 4189,
+   "cache_write": 11436,
+   "value_usd": 0.0632,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 5322
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 2164
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 9807
+    }
+   }
   }
  }
 }
