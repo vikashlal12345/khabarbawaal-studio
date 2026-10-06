@@ -1,5 +1,37 @@
 [
  {
+  "id": "top10_day-2026-10-06",
+  "image": "posts/20261006-1546-top10_day-2026-10-06.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 NEWS: 06 Oct",
+  "tag": "📰 TOP 5 NEWS",
+  "caption": "Aaj ki top 5 khabrein aa gayi! Drishyam 3 ka box office dhamaka aur EC vs Rahul Gandhi ka naya round. 🔥\n\n1. Drishyam 3 crosses ₹212 crore in 5 days\n2. EC hits back at Rahul Gandhi-led INDIA bloc uproar\n3. Fire at TV set forces Amitabh Bachchan, Badshah to evacuate\n4. Kareena Kapoor Khan reportedly joins SRK's King for dance number\n5. Security forces recover Maoist arms cache in Dantewada\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #bollywood #viral #Drishyam3",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article never says the location is Mumbai; unsupported detail.",
+    "Fact corrected to match the article: Article says this is only a report; headline states it as confirmed fact.",
+    "Slide 4: The Badshah photo on the right half looks soft and low-resolution (upscaled). It is still readable and related to the story, so I left it in.",
+    "Slide 2: The photo is generic stock crime tape, not a Dantewada or Maoist image. It is weakly related, but I kept the slide because it is not misleading."
+   ],
+   "fixed": [
+    "Fire at Mumbai set forces Amitabh Bachchan, Badshah to evacuate → Fire at TV set forces Amitabh Bachchan, Badshah to evacuate",
+    "Kareena Kapoor Khan joins SRK's King for dance number → Kareena Kapoor Khan reportedly joins SRK's King for dance number"
+   ]
+  },
+  "slides": [
+   "posts/20261006-1546-top10_day-2026-10-06-s2.jpg",
+   "posts/20261006-1546-top10_day-2026-10-06-s3.jpg",
+   "posts/20261006-1546-top10_day-2026-10-06-s4.jpg",
+   "posts/20261006-1546-top10_day-2026-10-06-s5.jpg",
+   "posts/20261006-1546-top10_day-2026-10-06-s6.jpg",
+   "posts/20261006-1546-top10_day-2026-10-06-s7.jpg"
+  ],
+  "created_at": "2026-10-06T15:46:33+00:00"
+ },
+ {
   "id": "c82904714179",
   "image": "posts/20261006-1531-c82904714179.jpg",
   "kind": "fun",
