@@ -47,8 +47,7 @@ They must stay interesting for weeks (no dated news). Hinglish in English letter
 Devanagari. Only well-established facts you are sure of: no invented numbers, quotes or dates; \
 if unsure, choose a different fact. Clean, family-safe, no politics. Each slide's wiki_title \
 names a real English Wikipedia article whose main photo fits that slide (or empty). Caption: \
-2-3 Hinglish lines ending with a question or "save karo / share karo". Hashtags 8-10 incl. \
-#KhabarBawaal."""
+2-3 Hinglish lines ending with a question or "save karo / share karo". Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag."""
 
 
 def load() -> list:
@@ -130,7 +129,7 @@ def make_batch(state: dict, count: int = 5) -> int:
             im.save(g.DOCS / name, "JPEG", quality=86, optimize=True)
             names.append(name)
         items.append({"id": pid, "kind": "ready", "image": names[0], "slides": names[1:],
-                      "headline": out["headline"], "tag": out["tag"], "caption": out["caption"],
+                      "headline": out["headline"], "tag": out["tag"], "caption": g.limit_hashtags(out["caption"]),
                       "source": "KhabarBawaal Original", "source_url": "", "proof": out["proof"],
                       "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                       **({"valid_on": (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).date().isoformat()}

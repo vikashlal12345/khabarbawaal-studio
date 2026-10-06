@@ -60,7 +60,7 @@ real person, and never joke about deaths, accidents, crimes or disasters.
 - card_text: max 30 words, NO emojis (the image font can't show them).
 - caption: 2-3 short Hinglish lines with 1-3 emojis, ending with a call to tag or share \
 ("Tag karo us dost ko...", "Family group mein bhejo...").
-- hashtags: 6-8, each starting with #, always include #KhabarBawaal."""
+- hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag."""
 
 
 # ---------------------------------------------------------------- usage stats

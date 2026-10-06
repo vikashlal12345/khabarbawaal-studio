@@ -162,7 +162,7 @@ def free_post(text: str, article: dict | None) -> dict:
     title = (article or {}).get("title") or text
     return {"tag": "BREAKING", "headline": g.short_headline(title), "highlight": title.split()[:2],
             "caption": ((article or {}).get("description") or text) + "\n\nAap kya sochte ho? 👇 Comment karo!",
-            "hashtags": ["#India", "#News", "#Trending", "#KhabarBawaal"],
+            "hashtags": ["#India", "#News", "#Trending"],
             "photo_query": title[:120], "wiki_title": ""}
 
 
@@ -365,7 +365,7 @@ def make(raw: str, kind: str = "custom") -> int:
     feed.insert(0, {
         "id": post_id, "kind": kind, "image": options[0], "options": options, "slides": slide_names,
         "headline": post["headline"], "tag": post["tag"],
-        "caption": caption(post, article["site"] if article else None),
+        "caption": g.limit_hashtags(caption(post, article["site"] if article else None)),
         "source": article["site"] if article else "Your pick", "source_url": source_url, "proof": proof,
         "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     })

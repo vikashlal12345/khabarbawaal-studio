@@ -199,7 +199,7 @@ the story, then one question that invites comments. Plain text, 1-3 emojis max, 
 no hashtags inside the caption. Funny is fine when the story is funny; serious \
 stories (deaths, accidents, crimes) get a respectful tone.
 
-Hashtags: 6-8 relevant ones, each starting with #.
+Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag.
 
 Also: key_facts (3 short Hinglish facts from the story, for a swipe slide), photo_query \
 (a short English search query that finds news photos of this exact story) and wiki_title \
@@ -280,14 +280,14 @@ def write_post_membership(candidates: list[dict], recent_headlines: list[str]) -
 # Free mode (no AI): rotate topics so the feed stays varied.
 FREE_ROTATION = ["viral", "india/politics", "entertainment", "funny/offbeat", "cricket", "viral", "politics", "tech"]
 FREE_STYLE = {
-    "viral": ("VIRAL", ["#Viral", "#Trending", "#India", "#ViralNews", "#KhabarBawaal"]),
-    "funny/offbeat": ("WTF NEWS", ["#Funny", "#Viral", "#Desi", "#WTF", "#KhabarBawaal"]),
-    "india/politics": ("INDIA", ["#India", "#BreakingNews", "#IndiaNews", "#Politics", "#KhabarBawaal"]),
-    "politics": ("POLITICS", ["#Politics", "#IndianPolitics", "#India", "#News", "#KhabarBawaal"]),
-    "entertainment": ("BOLLYWOOD", ["#Bollywood", "#BollywoodNews", "#Celebrity", "#Entertainment", "#KhabarBawaal"]),
-    "cricket": ("CRICKET", ["#Cricket", "#TeamIndia", "#CricketNews", "#BCCI", "#KhabarBawaal"]),
-    "sports": ("SPORTS", ["#Sports", "#India", "#SportsNews", "#Cricket", "#KhabarBawaal"]),
-    "tech": ("TECH", ["#Tech", "#TechNews", "#AI", "#Gadgets", "#KhabarBawaal"]),
+    "viral": ("VIRAL", ["#Viral", "#Trending", "#India", "#ViralNews"]),
+    "funny/offbeat": ("WTF NEWS", ["#Funny", "#Viral", "#Desi", "#WTF"]),
+    "india/politics": ("INDIA", ["#India", "#BreakingNews", "#IndiaNews", "#Politics"]),
+    "politics": ("POLITICS", ["#Politics", "#IndianPolitics", "#India", "#News"]),
+    "entertainment": ("BOLLYWOOD", ["#Bollywood", "#BollywoodNews", "#Celebrity", "#Entertainment"]),
+    "cricket": ("CRICKET", ["#Cricket", "#TeamIndia", "#CricketNews", "#BCCI"]),
+    "sports": ("SPORTS", ["#Sports", "#India", "#SportsNews", "#Cricket"]),
+    "tech": ("TECH", ["#Tech", "#TechNews", "#AI", "#Gadgets"]),
 }
 
 
@@ -317,7 +317,7 @@ def free_post(candidates: list[dict], turn: int) -> tuple[dict, dict]:
     else:
         pool = with_image
     item = pool[0]  # candidates are newest first
-    tag, hashtags = FREE_STYLE.get(item["category"], ("TRENDING", ["#India", "#News", "#Trending", "#KhabarBawaal"]))
+    tag, hashtags = FREE_STYLE.get(item["category"], ("TRENDING", ["#India", "#News", "#Trending"]))
     headline = short_headline(item["title"])
     caption = (item["summary"] or item["title"]).strip()
     return item, {
@@ -701,6 +701,21 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
 POSTED = 0  # posts saved in this run (for usage stats)
 
 
+def limit_hashtags(caption: str, n: int = 5) -> str:
+    """Instagram allows only 5 hashtags: keep the first 5 (brand tag dropped), remove the rest."""
+    kept, seen = [], set()
+    def keep(m):
+        tag = m.group(0)
+        key = tag.lower()
+        if key == "#khabarbawaal" or key in seen or len(kept) >= n:
+            return ""
+        seen.add(key); kept.append(tag)
+        return tag
+    out = re.sub(r"#\w+", keep, caption)
+    out = re.sub(r"[ \t]{2,}", " ", out)
+    return re.sub(r"[ \t]+\n", "\n", out).strip()
+
+
 def post_images(post: dict) -> list[str]:
     return list(dict.fromkeys(post.get("options", [post["image"]]) + [post["image"]] + post.get("slides", [])))
 
@@ -731,6 +746,7 @@ def save_post(feed: list, state: dict, card: Image.Image, post_id: str, entry: d
             name = f"posts/{stamp}-{post_id}-s{n}.jpg"
             slide.save(DOCS / name, "JPEG", quality=86, optimize=True)
             entry["slides"].append(name)
+    entry["caption"] = limit_hashtags(entry.get("caption", ""))
     feed.insert(0, {"id": post_id, "image": f"posts/{filename}", **entry,
                     "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
     trim_feed(feed)

@@ -104,7 +104,7 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
                       f"news page for Gen Z. Pick exactly {count}: {TOP10[kind]['brief']}. One slide per story, so no two picks "
                       f"about the same story. Facts only from the candidates; attribute claims. Political stories: the page's editorial line is pro right-wing (BJP, NDA, nationalist) and critical of the left and opposition (Congress, Left parties and other opposition parties). Choose political stories that show the right wing or the government positively, or the left/opposition negatively; never choose a story that embarrasses or criticises the BJP or the right wing. Tone: supportive and positive for the right wing, sharp and critical for the left/opposition. Facts only from the story, allegations attributed, no invented quotes; no hate or slurs against any religion, caste or community, and no calls to violence. Hinglish in English letters only, never Devanagari. "
                       f"Skip sad stories about deaths unless they are the day's biggest news. "
-                      f"Hashtags: 8-10, include #KhabarBawaal.")
+                      f"Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag.")
             out = fun.claude_json(system, "Candidates:\n\n" + "\n\n".join(lines), TOP10_SCHEMA,
                                   g.CONFIG.get("membership_model", "sonnet"))
             stories, used = [], set()
@@ -121,7 +121,7 @@ def pick_top10(kind: str, items: list[dict]) -> dict:
     stories = [{**i, "slide_title": g.short_headline(i["title"]), "slide_line": i["summary"][:140]}
                for i in [x for x in items if x["image"] and x["category"] not in g.POLITICAL][:TOP10[kind].get("count", 10)]]
     return {"stories": stories, "hook": TOP10[kind]["sub"] + " 👇",
-            "hashtags": ["#Top10", "#TrendingNews", "#India", "#ViralNews", "#KhabarBawaal"]}
+            "hashtags": ["#Top10", "#TrendingNews", "#India", "#ViralNews"]}
 
 
 def cover_slide(kind: str, photos: list[Image.Image | None]) -> Image.Image:
@@ -249,7 +249,7 @@ def write_thought(recent: list[str]) -> dict:
                       f"line, or a genuine famous quote by a real person (Kalam, Vivekananda, Gandhi, Tagore, Ratan "
                       f"Tata, Bhagat Singh, etc.) translated faithfully, with their name in author. Never invent a "
                       f"quote and attribute it to a real person. No emojis in thought. Caption: 2-3 Hinglish lines "
-                      f"with 1-2 emojis asking people to share it. Hashtags: 6-8, include #KhabarBawaal and "
+                      f"with 1-2 emojis asking people to share it. Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag, e.g. "
                       f"#ThoughtOfTheDay.")
             user = (f"{fun.today_context()}\nPick a different theme from these recent ones:\n"
                     + ("\n".join(f"- {r}" for r in recent) or "(none)"))
@@ -263,7 +263,7 @@ def write_thought(recent: list[str]) -> dict:
     print("Mode: thought (classic)")
     return {"thought": text, "author": author,
             "caption": "Aaj ki soch 💭 Kisi ek dost ko bhejo jise aaj iski zaroorat hai.",
-            "hashtags": ["#ThoughtOfTheDay", "#Motivation", "#HindiQuotes", "#KhabarBawaal"]}
+            "hashtags": ["#ThoughtOfTheDay", "#Motivation", "#HindiQuotes"]}
 
 
 def thought_card(thought: str, author: str) -> Image.Image:

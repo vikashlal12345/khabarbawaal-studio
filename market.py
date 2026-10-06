@@ -227,8 +227,7 @@ CLOSE_SCHEMA = {
 RULES = ("Write in simple Hinglish for young Indians, in English (Roman) letters only, never Devanagari. Facts only from the data and headlines given. "
          "NEVER tell anyone to buy, sell or hold a stock, and never give targets or tips: SEBI rules allow that "
          "only for registered advisers. Say 'in focus' or 'news mein', never 'buy'. Use the numbers exactly as given. "
-         "Caption: 3-4 short lines ending with a question, plus the line 'Not investment advice.' Hashtags: 8-10 "
-         "including #KhabarBawaal #StockMarket #Nifty.")
+         "Caption: 3-4 short lines ending with a question, plus the line 'Not investment advice.' Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag, e.g. #StockMarket #Nifty #Sensex #ShareMarket.")
 
 
 def ai_write(system: str, user: str, schema: dict) -> dict | None:
@@ -272,7 +271,7 @@ def make_morning(state: dict, force: bool = False) -> dict | None:
     if out is None:  # no AI: data slides only, headlines as news
         out = {"mood": "Aaj market ke liye global sanket", "big_news": [h.split(": ")[0][:110] for h in news[:3]],
                "in_focus": [], "events": [], "caption": "Aaj ka Market Morning Brief 📈\nNot investment advice.",
-               "hashtags": ["#StockMarket", "#Nifty", "#KhabarBawaal"]}
+               "hashtags": ["#StockMarket", "#Nifty"]}
         print("Mode: market_open (free)")
     else:
         print("Mode: market_open (membership)")
@@ -390,7 +389,7 @@ def make_close(state: dict, force: bool = False) -> dict | None:
                    f"{fun.today_context()}\n\nToday's market data:\n{facts}\n\nHeadlines:\n" + "\n".join(news), CLOSE_SCHEMA)
     if out is None:
         out = {"summary": "Aaj market aise band hua", "why": [h.split(": ")[0][:110] for h in news[:3]],
-               "caption": "Aaj ka Closing Bell 🔔\nNot investment advice.", "hashtags": ["#StockMarket", "#Nifty", "#KhabarBawaal"]}
+               "caption": "Aaj ka Closing Bell 🔔\nNot investment advice.", "hashtags": ["#StockMarket", "#Nifty"]}
         print("Mode: market_close (free)")
     else:
         print("Mode: market_close (membership)")
@@ -541,7 +540,7 @@ def make_preopen(state: dict, force: bool = False, data: dict | None = None) -> 
                f"Pre-open mein sabse upar {hi[0]} ({hi[2]}), sabse neeche {lo[0]} ({lo[2]}).\n"
                f"Market 9:15 pe khulega. Aaj aapko market kaisa lag raha hai? 👇\nNot investment advice.\n\n"
                f"Follow {g.CONFIG['handle']} for daily market updates.\n\n"
-               f"#KhabarBawaal #StockMarket #Nifty #PreOpen #ShareMarketIndia #StockMarketIndia #DalalStreet")
+               f"#StockMarket #Nifty #ShareMarket #PreOpen #DalalStreet")
     return {"slides": render_preopen(m), "caption": caption, "tag": "🔔 PRE-OPEN",
             "proof": {"state": "ok", "issues": [], "fixed": ["Data-only post: numbers straight from NSE"]},
             "headline": f"Pre-open: Nifty {n['last']} ({n['pct']})", "source": "NSE"}
