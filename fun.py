@@ -154,6 +154,10 @@ JOKE_RULES = """Write jokes ONLY about things almost every young Indian already 
 searching (Google Trends), the biggest stories everyone is talking about, the day of the week, the season \
 or festival, exams, cricket matches, big movie releases, weather, prices. NEVER joke about a small or niche \
 news story the reader would need explained: if a stranger can't get the joke without reading an article, don't.
+Second style (also great): RELATABLE DESI-LIFE MOMENTS that need no news at all, told first person and \
+deadpan, with unexpected timing. Example that did well: "Ghar mein jhagda chal raha tha, aur beech mein hi \
+meri half-hour wali potty aa gayi." Think: awkward timing, ghar ke jhagde, mummy logic, siblings, sleep, \
+food cravings, phone at 1%, office/college moments. Light awkward or toilet humour is fine, nothing gross.
 Format: short and punchy, max 20 words on the card, ONE clear punchline. Use Gen Z meme formats: \
 "POV: ...", "Nobody: ... / Me: ...", "Me after ...", "Expectation: ... / Reality: ...", "Tag that friend who ...". \
 No long dialogues, max 2 speakers."""
@@ -185,7 +189,8 @@ def write_fun_post(config: dict, recent: list[str], trending: list[str], used_to
             f"\n\nToday's big headlines (use only ones nearly everyone knows):\n" + "\n".join(f"- {t}" for t in trending[:15]) +
             f"\n\nTopics already joked about recently (don't reuse):\n" + ("\n".join(f"- {t}" for t in used_topics[-30:]) or "(none)") +
             f"\n\nRecent fun posts (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in recent[-20:]) or "(none)") +
-            "\n\nWrite exactly 3 different jokes on 3 different widely-known topics.")
+            "\n\nWrite exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
+            "relatable desi-life moments (different situations).")
     model = config.get("membership_model", "sonnet")
     options = [normalize(o) for o in claude_json(system, user, OPTIONS_SCHEMA, model)["options"]][:3]
     judge_system = ("You are a 21-year-old from Delhi who lives on Instagram memes. Rate each joke 1-10 for: "

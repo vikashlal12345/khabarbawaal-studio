@@ -22,7 +22,7 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   the BJP. Still: real facts, no invented quotes, no hate against communities, no calls to violence.
 - Markets: data from NSE/CNBC only, **never buy/sell tips** (SEBI), "Not investment advice" on every post.
 - Carousels max **10 images** (Instagram share-sheet limit): Top posts are **Top 5** (7 slides).
-- Fun posts: single image; jokes only on widely-known trends (Google Trends India, big stories, day/season), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
+- Fun posts: single image; jokes on widely-known trends (Google Trends India, big stories, day/season) + relatable desi-life moments (first person, deadpan, e.g. @weebx_ style), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.
 
 ## Schedule (IST) - `schedule.py`
