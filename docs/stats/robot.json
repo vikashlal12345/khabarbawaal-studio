@@ -453,25 +453,25 @@
    }
   },
   "news": {
-   "posts": 7,
-   "requests": 29,
-   "input": 102,
-   "output": 34149,
-   "cache_read": 121469,
-   "cache_write": 233269,
-   "value_usd": 1.2991,
+   "posts": 8,
+   "requests": 33,
+   "input": 118,
+   "output": 39980,
+   "cache_read": 143460,
+   "cache_write": 273889,
+   "value_usd": 1.5243,
    "by_purpose": {
     "writing": {
-     "requests": 7,
-     "tokens": 64335
+     "requests": 8,
+     "tokens": 74870
     },
     "photo check": {
-     "requests": 7,
-     "tokens": 66725
+     "requests": 8,
+     "tokens": 86539
     },
     "proofreading": {
-     "requests": 15,
-     "tokens": 257929
+     "requests": 17,
+     "tokens": 296038
     }
    }
   },

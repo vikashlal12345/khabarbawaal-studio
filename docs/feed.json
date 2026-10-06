@@ -1,5 +1,37 @@
 [
  {
+  "id": "6c9e38b096db",
+  "image": "posts/20261006-1433-6c9e38b096db.jpg",
+  "kind": "news",
+  "headline": "DMK Jibes At Rahul Gandhi: 'Afraid Of Vijay?' Clarify Your Stand On SIR",
+  "tag": "POLITICS",
+  "caption": "Opposition ke andar hi bawaal shuru ho gaya 👀\nDMK spokesperson Saravanan Annadurai ne Rahul Gandhi pe jibe maara: \"Afraid of Vijay?\"\nDMK ne pucha ki Tamil Nadu mein SIR pe Rahul apna stand clear kyun nahi karte.\nUnka sawaal ye bhi tha ki Rahul ne Kharge ke \"dissolution\" of state governments wale stand ko endorse kyun nahi kiya.\nINDIA bloc ke dost ya dushman? Congress 🅰️ ya DMK 🅱️, kiska point sahi hai?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#trending #india #politics #rahulgandhi #dmk",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/dmk-rahul-gandhi-jibe-tamil-nadu-sir-stand-election-commission-afraid-of-vijay-india-bloc-march-101791290944747.html",
+  "pin_comment": "Sabse funny part: sawaal BJP se nahi, Congress ke apne ally DMK se aa raha hai. Rahul jawab denge ya chup rahenge? 🍿",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article: BJP demanded that Kharge apologise; BJP did not apologise.",
+    "Fact corrected to match the article: Kharge asked for dissolution of state governments, not assemblies.",
+    "Slide 3: The embedded X post screenshot (@INCIndia) shows garbled placeholder boxes instead of readable text. The tweet text is unreadable, and the slide gives no Rahul quote to check against it. Re-render the screenshot with a font that works, or replace it with a clean photo. The slide credits the post to @INCIndia, but the article says the \"300 MPs\" quote came from Rahul's own X post."
+   ],
+   "fixed": [
+    "removed weak photo slide(s) [2]",
+    "BJP ne maafi maangi; → BJP ne Kharge se maafi maangne ko kaha;",
+    "of state assemblies wale stand → of state governments wale stand"
+   ]
+  },
+  "slides": [
+   "posts/20261006-1433-6c9e38b096db-s2.jpg",
+   "posts/20261006-1433-6c9e38b096db-s3.jpg",
+   "posts/20261006-1433-6c9e38b096db-s4.jpg",
+   "posts/20261006-1433-6c9e38b096db-s5.jpg",
+   "posts/20261006-1433-6c9e38b096db-s6.jpg"
+  ],
+  "created_at": "2026-10-06T14:33:28+00:00"
+ },
+ {
   "id": "4ecf6d40a2ec",
   "image": "posts/20261006-1331-4ecf6d40a2ec.jpg",
   "kind": "news",
@@ -1898,16 +1930,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/india-news/punjabi-makeup-artist-influencer-maddy-sandhu-shot-dead-in-amritsar-101791038285108.html",
   "created_at": "2026-10-03T15:07:34+00:00"
- },
- {
-  "id": "d9a0941d3c47",
-  "image": "posts/20261003-1407-d9a0941d3c47.jpg",
-  "kind": "news",
-  "headline": "Passenger flags dirty interiors and rusted toilets on Vande Bharat, shares photos on X",
-  "tag": "VIRAL",
-  "caption": "Vande Bharat ka safar aur ye haal? 😬\nEk passenger ne X par photos share kari hain jisme train ke interiors gande dikh rahe hain aur toilets mein rust hai.\nUnka kehna hai ki train ki condition dekh ke wo surprised reh gaye, aisi expectation nahi thi.\nPremium train ka tag toh hai, par kya maintenance bhi premium hona chahiye?\nTumhara Vande Bharat ka experience kaisa raha? Comments mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#VandeBharat #IndianRailways #ViralNews #TrainTravel #TwitterViral",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/never-expected-to-see-this-passenger-flags-dirty-interiors-broken-glass-on-vande-bharat-101791021483028.html",
-  "created_at": "2026-10-03T14:07:38+00:00"
  }
 ]
