@@ -1,5 +1,33 @@
 [
  {
+  "id": "a3789a3cdde3",
+  "image": "posts/20261006-0831-a3789a3cdde3.jpg",
+  "kind": "news",
+  "headline": "Gurgaon Woman Spends Over 50% Of Salary On Rent, Says She Won't Change It",
+  "tag": "VIRAL",
+  "caption": "Aadhi salary rent mein? Gurgaon ki ek woman ne yahi kiya aur bol rahi hai no regrets.\nUnke paas sasta option bhi tha, phir bhi unhone mehenga ghar chuna.\nReason: \"I am saving my peace, my energy, and my time.\"\nAapke hisaab se ye smart move hai ya salary ka bura balance? Comments mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #gurgaon #rent",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/gurgaon-woman-spends-over-50-of-salary-on-rent-says-she-won-t-change-it-i-m-saving-my-peace-energy-and-time-101791262613630.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The quote must match her exact words from the article.",
+    "Slide 1: The woman's face is cut off at the left edge of the photo, and her eye is the only part visible. The headline also overlaps the on-video text 'saving my time'. This is a layout and crop issue that a text fix can't solve.",
+    "Slide 3: The photo is a small, slightly low-resolution generic high-rise image set on a heavily blurred background. It is not her actual home. Slide 2 is also a stock Gurgaon shot. Both are acceptable as illustrations, but they are generic."
+   ],
+   "fixed": [
+    "\"I'm saving my peace, energy and time.\" → \"I am saving my peace, my energy, and my time.\""
+   ]
+  },
+  "slides": [
+   "posts/20261006-0831-a3789a3cdde3-s2.jpg",
+   "posts/20261006-0831-a3789a3cdde3-s3.jpg",
+   "posts/20261006-0831-a3789a3cdde3-s4.jpg",
+   "posts/20261006-0831-a3789a3cdde3-s5.jpg"
+  ],
+  "created_at": "2026-10-06T08:31:51+00:00"
+ },
+ {
   "id": "c94f6e732f9a",
   "image": "posts/20261006-0732-c94f6e732f9a.jpg",
   "kind": "news",
@@ -1753,16 +1781,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/trending/send-me-enough-money-every-month-millennial-shares-gen-z-cousin-s-blunt-college-demands-101791015576007.html",
   "created_at": "2026-10-03T09:07:40+00:00"
- },
- {
-  "id": "932e4a2b796e",
-  "image": "posts/20261003-0807-932e4a2b796e.jpg",
-  "kind": "news",
-  "headline": "Anthropic invites Hindu monk Swami Sarvapriyananda to San Francisco dinner to discuss AI and morality",
-  "tag": "TECH",
-  "caption": "AI companies ab monk se gyaan le rahe hain 👀\nAnthropic ne San Francisco mein ek dinner rakha aur Hindu monk Swami Sarvapriyananda ko AI par baat karne bulaya.\nReport ke mutabiq ye ek \"morality push\" ka hissa tha. Monk ne NDA ki wajah se details nahi batayi, par Anthropic ke \"Mythos\" aur \"Project Glasswing\" ka zikr kiya.\nKya AI ko ethics sikhane ke liye spiritual leaders ki zarurat hai, ya ye sirf PR hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Anthropic #AI #ArtificialIntelligence #TechNews #Sarvapriyananda",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/ndas-and-san-francisco-dinner-why-anthropic-invited-a-hindu-monk-swami-sarvapriyananda-to-discuss-ai-ethics-101791010404700.html",
-  "created_at": "2026-10-03T08:07:35+00:00"
  }
 ]
