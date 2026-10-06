@@ -129,29 +129,82 @@ def today_context() -> str:
     return f"Today in India: {ist.strftime('%A, %d %B %Y')}, around {ist.strftime('%I %p')}."
 
 
-TRENDING_POST = {**FUN_POST,
-                 "properties": {"based_on": {"type": "string", "description":
-                                             "The exact trending headline this joke is about"},
-                                **FUN_POST["properties"]},
-                 "required": ["based_on"] + FUN_POST["required"]}
+OPTIONS_SCHEMA = {
+    "type": "object",
+    "properties": {"options": {"type": "array", "items": {
+        "type": "object",
+        "properties": {"based_on": {"type": "string", "description": "The big trend/topic this joke is about"},
+                       **FUN_POST["properties"]},
+        "required": ["based_on"] + FUN_POST["required"], "additionalProperties": False},
+        "description": "Exactly 3 different jokes"}},
+    "required": ["options"], "additionalProperties": False,
+}
+
+JUDGE_SCHEMA = {
+    "type": "object",
+    "properties": {"scores": {"type": "array", "items": {
+        "type": "object",
+        "properties": {"option": {"type": "integer"}, "understandable": {"type": "integer"},
+                       "funny": {"type": "integer"}, "fresh": {"type": "integer"}, "why": {"type": "string"}},
+        "required": ["option", "understandable", "funny", "fresh", "why"], "additionalProperties": False}}},
+    "required": ["scores"], "additionalProperties": False,
+}
+
+JOKE_RULES = """Write jokes ONLY about things almost every young Indian already knows today: what India is \
+searching (Google Trends), the biggest stories everyone is talking about, the day of the week, the season \
+or festival, exams, cricket matches, big movie releases, weather, prices. NEVER joke about a small or niche \
+news story the reader would need explained: if a stranger can't get the joke without reading an article, don't.
+Format: short and punchy, max 20 words on the card, ONE clear punchline. Use Gen Z meme formats: \
+"POV: ...", "Nobody: ... / Me: ...", "Me after ...", "Expectation: ... / Reality: ...", "Tag that friend who ...". \
+No long dialogues, max 2 speakers."""
 
 
-def write_fun_post(config: dict, recent: list[str], trending: list[str]) -> dict:
-    system = FUN_SYSTEM.format(page=config["page_name"])
-    tag = random.choice(FUN_TAGS)
-    topics = "\n".join(f"- {t}" for t in trending) or "(none available)"
+class NoGoodJoke(Exception):
+    pass
+
+
+def google_trends() -> list[str]:
+    """What India is searching today (Google Trends daily RSS, free)."""
+    import re
+    import urllib.request
+    try:
+        with urllib.request.urlopen("https://trends.google.com/trending/rss?geo=IN", timeout=15) as r:
+            xml = r.read().decode("utf-8", "ignore")
+    except Exception:
+        return []
+    return [t for t in re.findall(r"<title>([^<]+)</title>", xml)[1:21]]
+
+
+def write_fun_post(config: dict, recent: list[str], trending: list[str], used_topics: list[str]) -> dict:
+    """3 options on big, widely-known trends; a 'young Indian' judge scores them; the best is used.
+    Raises NoGoodJoke if none is clear and funny enough (the slot then posts news)."""
+    system = FUN_SYSTEM.format(page=config["page_name"]) + "\n\n" + JOKE_RULES
+    searches = google_trends()
     user = (f"{today_context()}\n\n"
-            f"What India is talking about right now (today's trending and viral headlines):\n{topics}\n\n"
-            f"Pick the trending headline above with the most comic potential (skip anything sad or "
-            f"serious) and write one post that is clearly about it: people should recognise today's "
-            f"buzz the moment they read it. Put that headline in based_on. "
-            f"Preferred format: {tag} (switch format if another fits the topic better).\n\n"
-            f"Recent fun posts (don't repeat these ideas):\n" + ("\n".join(f"- {r}" for r in recent) or "(none)"))
-    schema = TRENDING_POST if trending else FUN_POST
-    post = normalize(claude_json(system, user, schema, config.get("membership_model", "sonnet")))
-    if post.get("based_on"):
-        print(f"  joke based on: {post['based_on']}")
-    return post
+            f"What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
+            f"\n\nToday's big headlines (use only ones nearly everyone knows):\n" + "\n".join(f"- {t}" for t in trending[:15]) +
+            f"\n\nTopics already joked about recently (don't reuse):\n" + ("\n".join(f"- {t}" for t in used_topics[-30:]) or "(none)") +
+            f"\n\nRecent fun posts (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in recent[-20:]) or "(none)") +
+            "\n\nWrite exactly 3 different jokes on 3 different widely-known topics.")
+    model = config.get("membership_model", "sonnet")
+    options = [normalize(o) for o in claude_json(system, user, OPTIONS_SCHEMA, model)["options"]][:3]
+    judge_system = ("You are a 21-year-old from Delhi who lives on Instagram memes. Rate each joke 1-10 for: "
+                    "understandable (instantly gets it without any context or article), funny (would you actually "
+                    "laugh / send it to your group), fresh (feels new, not an old forward). Be strict.")
+    listing = "\n\n".join(f"Option {n}: {o['card_text']}\n(topic: {o['based_on']})" for n, o in enumerate(options, 1))
+    scores = claude_json(judge_system, listing, JUDGE_SCHEMA, model, purpose="joke judge")["scores"]
+    best, best_score = None, -1
+    for s in scores:
+        if not 1 <= s["option"] <= len(options):
+            continue
+        total = 0.5 * s["understandable"] + 0.35 * s["funny"] + 0.15 * s["fresh"]
+        print(f"  option {s['option']}: understandable {s['understandable']}, funny {s['funny']}, fresh {s['fresh']}")
+        if s["understandable"] >= 7 and s["funny"] >= 6 and total > best_score:
+            best, best_score = options[s["option"] - 1], total
+    if best is None:
+        raise NoGoodJoke("no joke was clear and funny enough")
+    print(f"  joke based on: {best['based_on']}")
+    return best
 
 
 def post_key(post: dict) -> str:

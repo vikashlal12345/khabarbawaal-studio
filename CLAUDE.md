@@ -22,14 +22,14 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   the BJP. Still: real facts, no invented quotes, no hate against communities, no calls to violence.
 - Markets: data from NSE/CNBC only, **never buy/sell tips** (SEBI), "Not investment advice" on every post.
 - Carousels max **10 images** (Instagram share-sheet limit): Top posts are **Top 5** (7 slides).
-- Fun posts: single image, fresh trending jokes only (no old jokes). Clean humour.
+- Fun posts: single image; jokes only on widely-known trends (Google Trends India, big stories, day/season), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.
 
 ## Schedule (IST) - `schedule.py`
 Quiet 11 PM-5 AM (night jobs only). Regular post **hourly at :00, 5:00-22:00** (every 3rd = fun).
 Specials: 5:00 overnight Top 5 roundup · 6:15 Top 5 Viral · 8:15 Market Brief · 9:09 Pre-open ·
 9:15 Thought of the Day · 15:45 Closing Bell · 21:15 Top 5 News (market posts trading days only).
-Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 3:00 joke bank · 4:00 learning.
+Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 4:00 learning.
 
 ## How it runs
 - `.github/workflows/hourly.yml`: a self-restarting chain. `generate` job makes the post; `next` job

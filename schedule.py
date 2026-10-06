@@ -12,11 +12,11 @@ QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
 PEAK_HOURS: list[tuple[int, int]] = []                # hours with an extra hh:30 post (none: hourly all day)
 SPECIALS = {"top10_viral": (6, 15), "market_open": (8, 15), "market_preopen": (9, 9), "thought": (9, 15),
             "market_close": (15, 45), "top10_day": (21, 15),   # market posts skip non-trading days
-            # Night work (nothing is posted): ready posts, day planning, fresh jokes, learning from stats,
+            # Night work (nothing is posted): ready posts, day planning, learning from stats,
             # then the 5 AM overnight roundup (which takes the 5:00 slot).
-            "night_ready": (1, 0), "night_calendar": (2, 0), "night_jokes": (3, 0), "night_learn": (4, 0),
+            "night_ready": (1, 0), "night_calendar": (2, 0), "night_learn": (4, 0),
             "night_roundup": (5, 0)}
-NIGHT_JOBS = {"night_ready", "night_calendar", "night_jokes", "night_learn"}
+NIGHT_JOBS = {"night_ready", "night_calendar", "night_learn"}   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08
 

@@ -665,20 +665,19 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
     post = None
     if use_ai and (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
         try:
-            post = fun.write_fun_post(CONFIG, state.get("recent_fun", [])[-40:], trending_titles())
-            print("Mode: fun (membership, trending)")
+            post = fun.write_fun_post(CONFIG, state.get("recent_fun", [])[-40:], trending_titles(),
+                                      state.get("fun_topics", []))
+            print("Mode: fun (membership, judged)")
+            resolved += ["token", "limit", "ai-error"]
+        except fun.NoGoodJoke as e:
+            print(f"  {e}: posting news instead")
             resolved += ["token", "limit", "ai-error"]
         except Exception as e:
-            print(f"  ! fun AI failed, trying the fresh fun bank: {e}")
+            print(f"  ! fun AI failed: {e}")
             raised[classify_ai_error(str(e))] = {"error": str(e)[:400]}
-    if post is None:
-        used = set(state.get("fun_bank_used", []))
-        post = fun.bank_post(used, CONFIG.get("fun_bank_max_age_days", 14))
-        if post is None:
-            print("No fresh fun post available: making a news post instead (no old jokes).")
-            return False
-        state["fun_bank_used"] = (state.get("fun_bank_used", []) + [fun.post_key(post)])[-500:]
-        print("Mode: fun (fresh bank)")
+    if post is None:   # no old/bank jokes: this slot posts news instead
+        return False
+    state["fun_topics"] = (state.get("fun_topics", []) + [post.get("based_on", "")])[-60:]
 
     import proofread
 
