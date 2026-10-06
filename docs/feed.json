@@ -1,5 +1,45 @@
 [
  {
+  "id": "9db6473a29fc",
+  "image": "posts/20261006-1132-9db6473a29fc.jpg",
+  "kind": "news",
+  "headline": "Amitabh Bachchan Steps Out Of KBC Set After Pati Patni Aur Panga 2 Set Fire",
+  "tag": "BOLLYWOOD",
+  "caption": "TV sets pe aag ka drama real ho gaya 🔥\nPati Patni Aur Panga 2 ke temporary setup mein aag lag gayi.\nSmoke saath wale KBC aur Hustle 5 ke sets tak pahunch gaya, aur crew ko evacuate karna pada, Amitabh Bachchan ko bhi KBC set se bahar aana pada.\nHustle 5 ka shoot bhi disrupt hua.\nAapko kya lagta hai, set safety pe aur dhyaan dena chahiye? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#amitabhbachchan #bollywood #trending #kbc #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-badshah-forced-to-evacuate-after-pati-patni-aur-panga-2-set-fire-smoke-reached-kaun-banega-crorepati-set-hustle-5-finale-disrupted-101791282615219.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article does not say Badshah was evacuated",
+    "Fact corrected to match the article: Badshah and 'finale' not in the article",
+    "Fact corrected to match the article: Badshah and 'finale' not in the article",
+    "Fact corrected to match the article: Badshah and finale not in the article",
+    "Fact corrected to match the article: Fire brigade control and Hustle resumption not in the article",
+    "Fact corrected to match the article: Unverified allegations stated as fact; claims not in the article",
+    "Fact corrected to match the article: 'Ek hi din mein' is unsupported",
+    "Many corrections were needed: please give it a quick read."
+   ],
+   "fixed": [
+    "lagbhag der ghante → lagbhag dedh ghante",
+    "Amitabh Bachchan, Badshah Evacuated After Pati Patni Aur Panga 2 Set Fire → Amitabh Bachchan Steps Out Of KBC Set After Pati Patni Aur Panga 2 Set Fire",
+    "Amitabh Bachchan aur Badshah ko evacuate karna pada.\nHustle 5 ka finale bhi disrupt hua. → crew ko evacuate karna pada, Amitabh Bachchan ko bhi KBC set se bahar aana pada.\nHustle 5 ka shoot bhi disrupt hua.",
+    "Amitabh Bachchan aur Badshah ko evacuate kiya gaya, Hustle 5 finale disrupt hua. → Crew ko evacuate kiya gaya, Amitabh Bachchan ko bhi bahar aana pada, Hustle 5 ka shoot disrupt hua.",
+    "Hustle 5 finale mein Badshah bhi the, sabko nikalna pada. → Dhuan Hustle 5 aur KBC ke sets tak pahuncha, crew ko nikalna pada.",
+    "Fire brigade ne aag par kaabu paya. Hustle 5 finale shoot dobara shuru hua. KBC shoot lagbhag dedh ghante ruka raha. → Is ghatna se KBC ka shoot lagbhag dedh ghante ruka raha. Ashok Dubey ke mutabik set safety par dhyaan nahi diya ja raha.",
+    "set par fire safety nahi thi, ise 'criminal negligence' bataya. Maange: inquiry, FIR, aur Film City MD ka istifa. → AICWA ka aarop hai ki Film City mein koi jawabdehi nahi hai. Article mein in maangon ki pushti nahi hai.",
+    "Ek hi din mein TV sets pe drama real ho gaya → TV sets pe aag ka drama real ho gaya",
+    "removed weak photo slide(s) [3]"
+   ]
+  },
+  "slides": [
+   "posts/20261006-1132-9db6473a29fc-s2.jpg",
+   "posts/20261006-1132-9db6473a29fc-s3.jpg",
+   "posts/20261006-1132-9db6473a29fc-s4.jpg"
+  ],
+  "created_at": "2026-10-06T11:32:21+00:00"
+ },
+ {
   "id": "02bdd5c5d10b",
   "image": "posts/20261006-1032-02bdd5c5d10b.jpg",
   "kind": "news",
@@ -1820,16 +1860,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/entertainment/bollywood/arbaaz-khan-walks-away-when-asked-about-salman-khan-at-mumbai-event-sohail-khan-bigg-boss-20-101791023166398.html",
   "created_at": "2026-10-03T12:07:46+00:00"
- },
- {
-  "id": "7a0b68e440eb",
-  "image": "posts/20261003-1107-7a0b68e440eb.jpg",
-  "kind": "news",
-  "headline": "FSSAI bans sale of Nestle's dairy whitener at top Delhi hotel after sample found substandard",
-  "tag": "BREAKING",
-  "caption": "Chai ya coffee peene se pehle ye padh lo 👀\nFSSAI ne Delhi ke ek top hotel mein Nestle ke dairy whitener ki sale ban kar di hai.\nReason: sample ko Food Safety and Standards Act, 2006 ke under \"substandard\" declare kiya gaya.\nBade brand aur bade hotel, phir bhi quality pe sawaal.\nAap packaged food ki quality pe kitna bharosa karte ho? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#FSSAI #Nestle #FoodSafety #Delhi #DairyWhitener",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/fssai-bans-sale-of-nestle-low-fat-dairy-whitener-at-top-delhi-hotel-after-sample-found-to-be-unsafe-101791023171852.html",
-  "created_at": "2026-10-03T11:07:41+00:00"
  }
 ]
