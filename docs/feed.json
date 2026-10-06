@@ -1,5 +1,36 @@
 [
  {
+  "id": "5d41429879fd",
+  "image": "posts/20261006-0432-5d41429879fd.jpg",
+  "kind": "news",
+  "headline": "Opposition INDIA Bloc Marches To Election Commission HQ On Fifth Day Of Protest, RAF Deployed",
+  "tag": "POLITICS",
+  "caption": "Paanch din se protest, ab seedha Nirvachan Sadan ki taraf march. 🚨\nINDIA bloc CEC Gyanesh Kumar ke khilaaf poll body ke decisions mein alleged irregularities ka daava kar raha hai.\nDelhi mein Connaught Place aur Patel Chowk ke aas-paas traffic curbs lage hain, aur RAF bhi tainaat hai.\nAapko kya lagta hai: ye sach mein mudda hai ya sirf political drama? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#INDIABloc #ElectionCommission #GyaneshKumar #DelhiNews #Opposition #Politics #IndiaNews #KhabarBawaal",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/gyanesh-kumar-news-live-updates-india-bloc-march-cjp-protest-jantar-mantar-form-6-sc-abhijeet-dipke-rahul-gandhi-eci-cec-101791255458441.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article says the promotion was put on hold at the officer's own request. It does not say the complaint caused the hold, and the harassment claim is an allegation that should be attributed.",
+    "Caption: The caption says there are traffic curbs near Connaught Place and Patel Chowk. The article text we were given doesn't mention traffic curbs or Patel Chowk, so check this against the Hindustan Times source before posting. Connaught Place appears in the article only as ACP Vivek Bhagat's posting.",
+    "Slide 3: The slide says 'hazaaron nahi, sainkdon' security personnel. The article says only 'hundreds', so this wording is awkward. The 'permission nahi mili' line applies only to the activist delegation's Jantar Mantar protest call, not to all protesters.",
+    "Slide 1: The cover photo is a collage. One panel shows a woman striking a bus window, which could suggest violence by protesters that the article doesn't report. Check that the image really comes from this protest."
+   ],
+   "fixed": [
+    "ACP Vivek Bhagat ka promotion hold par hai, kyunki ek mahila journalist ne unpar harassment ki complaint ki hai. → ACP Vivek Bhagat ka promotion unki request par hold kiya gaya hai. Ek mahila journalist ne unke khilaaf harassment ka aarop lagate hue complaint ki hai."
+   ]
+  },
+  "slides": [
+   "posts/20261006-0432-5d41429879fd-s2.jpg",
+   "posts/20261006-0432-5d41429879fd-s3.jpg",
+   "posts/20261006-0432-5d41429879fd-s4.jpg",
+   "posts/20261006-0432-5d41429879fd-s5.jpg",
+   "posts/20261006-0432-5d41429879fd-s6.jpg",
+   "posts/20261006-0432-5d41429879fd-s7.jpg"
+  ],
+  "created_at": "2026-10-06T04:32:12+00:00"
+ },
+ {
   "id": "thought-2026-10-06",
   "image": "posts/20261006-0345-thought-2026-10-06.jpg",
   "kind": "thought",
@@ -36,26 +67,6 @@
    "posts/20261006-0339-market_preopen-2026-10-06-s3.jpg"
   ],
   "created_at": "2026-10-06T03:39:41+00:00"
- },
- {
-  "id": "2086ab6b4da8",
-  "image": "posts/20261006-0331-2086ab6b4da8.jpg",
-  "kind": "fun",
-  "headline": "Banda ne 25 LPA job chhodi. Pehla mahina: Flipkart ₹0, Amazon ₹45,000. Boss: Humne bhi kabhi ₹0 nahi diya. HR: Wapas aaja, notice period maaf.",
-  "tag": "😂 OFFICE LIFE",
-  "caption": "Ek platform ne ₹0 diya, doosre ne ₹45,000. Phir bhi job wala mood: \"Wapas aa jaun?\" 😅\nOffice group mein ab yehi chal raha hai.\nTag karo us dost ko jo har Monday bolta hai \"Main business karunga\" 🚀\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #OfficeLife #Flipkart #Amazon #QuitJob #Startup #DesiHumor #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The article text wasn't available, so I couldn't check the figures (₹25 LPA, ₹0 on Flipkart, ₹45,000 on Amazon). The 'Boss' and 'HR' lines are satirical and are not quotes from the article. The slide has no source or attribution line, so readers could take those lines as real."
-   ],
-   "fixed": [
-    "‘ ₹0 on Flipkart → ‘₹0 on Flipkart"
-   ]
-  },
-  "created_at": "2026-10-06T03:31:55+00:00"
  },
  {
   "id": "market_open-2026-10-06",
