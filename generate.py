@@ -154,6 +154,39 @@ def best_photo(item: dict) -> Optional[Image.Image]:
 
 # ---------------------------------------------------------------- AI copy
 
+# Comment bait: the caption's last line and the pinned first comment must change every post.
+ENGAGE_RULES = """Last line of the caption (comment bait): never start with "Aapko kya lagta hai" \
+and never end with "Comments mein batao" / "Comment karo" (our followers are bored of them). \
+Pick the style that fits the story best, and NOT the style of our recent endings listed below:
+- this-or-that: "Team A ya Team B? 🅰️/🅱️"
+- emoji vote: "Sahi kiya to 🔥, galat to 🤡"
+- one word: "Is scene ko ek word mein describe karo 👇"
+- fill the blank: "Agar main wahan hota to ____"
+- hot take: "Unpopular opinion: ... Agree ya disagree?"
+- prediction: "2027 tak chalega? Haan ya Na?"
+- personal: "Tumhare saath kabhi aisa hua hai? 😅"
+- tag: "Us dost ko tag karo jo ..."
+Short, specific to this story (use its names/numbers), Gen Z tone.
+
+pin_comment: the first comment we pin under the post, max 25 words, Hinglish. Different from \
+the caption's last line. Make it catchy and specific: a spicy "sabse shocking part" detail, a \
+bold opinion to argue with, a quick poll, or a funny one-liner reaction. No hashtags, no links \
+(the source link is added automatically), 1-2 emojis. Same tone rules as the caption."""
+
+
+def recent_endings(n: int = 8) -> str:
+    """Last caption lines of our newest posts, so the AI doesn't repeat the same style."""
+    out = []
+    for p in load_json(FEED_FILE, []):
+        if p.get("kind") in ("news", "custom", "fun"):
+            body = (p.get("caption") or "").split("\n\nFollow")[0].strip()
+            if body:
+                out.append("- " + body.splitlines()[-1][:140])
+        if len(out) >= n:
+            break
+    return "\n".join(out) or "(none yet)"
+
+
 POST_SCHEMA = {
     "type": "object",
     "properties": {
@@ -163,13 +196,14 @@ POST_SCHEMA = {
         "highlight": {"type": "array", "items": {"type": "string"},
                       "description": "1-3 words copied exactly from the headline to colour"},
         "caption": {"type": "string"},
+        "pin_comment": {"type": "string", "description": "First comment we pin under the post (see rules)"},
         "hashtags": {"type": "array", "items": {"type": "string"}},
         "key_facts": {"type": "array", "items": {"type": "string"},
                       "description": "3 short Hinglish facts from the story, max 14 words each"},
         "photo_query": {"type": "string", "description": "Short English news-search query for photos of this story"},
         "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
     },
-    "required": ["pick", "tag", "headline", "highlight", "caption", "hashtags", "key_facts", "photo_query", "wiki_title"],
+    "required": ["pick", "tag", "headline", "highlight", "caption", "pin_comment", "hashtags", "key_facts", "photo_query", "wiki_title"],
     "additionalProperties": False,
 }
 
@@ -195,9 +229,11 @@ number. It must be fully supported by the candidate's text. Attribute allegation
 Write all Hinglish in English (Roman) letters only, never Devanagari script.
 
 Caption: written in {lang}. 3-5 short lines: a hook line, then the key facts from \
-the story, then one question that invites comments. Plain text, 1-3 emojis max, \
-no hashtags inside the caption. Funny is fine when the story is funny; serious \
-stories (deaths, accidents, crimes) get a respectful tone.
+the story, then a catchy last line that makes people comment (rules below). Plain text, \
+1-3 emojis max, no hashtags inside the caption. Funny is fine when the story is funny; \
+serious stories (deaths, accidents, crimes) get a respectful tone.
+
+{engage}
 
 Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag.
 
@@ -215,8 +251,9 @@ def build_prompt(candidates: list[dict], recent_headlines: list[str]) -> tuple[s
     audience = (load_json(STATE_FILE, {}).get("audience") or {}).get("summary", "")
     user_msg = ((f"What our audience engages with most: {audience}\n\n" if audience else "") +
                 f"Recently posted (don't repeat these stories):\n{recent}\n\n"
+                f"Our recent caption endings (use a different style):\n{recent_endings()}\n\n"
                 f"Candidates:\n\n" + "\n\n".join(lines))
-    system = SYSTEM_PROMPT.format(page=CONFIG["page_name"], lang=CONFIG["caption_language"])
+    system = SYSTEM_PROMPT.format(page=CONFIG["page_name"], lang=CONFIG["caption_language"], engage=ENGAGE_RULES)
     return system, user_msg
 
 
@@ -324,7 +361,7 @@ def free_post(candidates: list[dict], turn: int) -> tuple[dict, dict]:
         "tag": tag,
         "headline": headline,
         "highlight": headline.split()[:2],
-        "caption": f"{caption}\n\nAap kya sochte ho? 👇 Comment karo!",
+        "caption": f"{caption}\n\nAap kya sochte ho? 👇",
         "hashtags": hashtags,
     }
 
@@ -666,7 +703,7 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
     if use_ai and (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
         try:
             post = fun.write_fun_post(CONFIG, state.get("recent_fun", [])[-40:], trending_titles(),
-                                      state.get("fun_topics", []))
+                                      state.get("fun_topics", []), recent_endings())
             print("Mode: fun (membership, judged)")
             resolved += ["token", "limit", "ai-error"]
         except fun.NoGoodJoke as e:
@@ -693,6 +730,7 @@ def make_fun_post(state: dict, feed: list, raised: dict, resolved: list[str], us
         "caption": fun_caption(post),
         "source": "KhabarBawaal Original",
         "source_url": "",
+        "pin_comment": post.get("pin_comment", ""),
         "proof": proof,
     })
     return True
@@ -948,6 +986,7 @@ def main() -> int:
         "caption": full_caption(post, item),
         "source": item["source"],
         "source_url": item["link"],
+        "pin_comment": post.get("pin_comment", ""),
         "proof": proof,
     }, slides[1:] or None)
     write_alerts(raised, resolved)

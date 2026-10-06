@@ -180,16 +180,18 @@ function fetchFile(src) {
 }
 
 // Comment to paste under the post and pin (Instagram doesn't make links in captions clickable).
+// New posts carry an AI-written pin_comment; older ones fall back to the fixed lines.
 function commentText(post) {
-  if (post.kind === 'fun') return 'Tag karo 3 dosto ko jo ye dekh ke pakka hasenge 😂👇';
-  if (!post.source_url) return 'Aap kya sochte ho? Comment mein batao 👇';
-  return `🔗 Source: ${post.source_url}`;
+  const pin = (post.pin_comment || '').trim();
+  if (post.kind === 'fun') return pin || 'Tag karo 3 dosto ko jo ye dekh ke pakka hasenge 😂👇';
+  if (!post.source_url) return pin || 'Aap kya sochte ho? Comment mein batao 👇';
+  return pin ? `${pin}\n\n🔗 Source: ${post.source_url}` : `🔗 Source: ${post.source_url}`;
 }
 
 async function copyComment(post) {
   try {
     await navigator.clipboard.writeText(commentText(post));
-    toast(post.kind === 'fun' ? 'Comment copied — paste & pin it 📌' : 'Link copied — paste as comment, then pin it 📌');
+    toast(post.kind === 'fun' || post.pin_comment ? 'Comment copied — paste & pin it 📌' : 'Link copied — paste as comment, then pin it 📌');
   } catch {
     toast('Could not copy — open 🔗 Story and copy the link');
   }

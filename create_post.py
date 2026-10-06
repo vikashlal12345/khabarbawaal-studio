@@ -32,13 +32,14 @@ CUSTOM_POST = {
         "highlight": {"type": "array", "items": {"type": "string"},
                       "description": "1-3 words copied exactly from the headline to colour"},
         "caption": {"type": "string"},
+        "pin_comment": {"type": "string", "description": "First comment we pin under the post (see rules)"},
         "hashtags": {"type": "array", "items": {"type": "string"}},
         "key_facts": {"type": "array", "items": {"type": "string"},
                       "description": "3 short Hinglish facts from the story, max 14 words each"},
         "photo_query": {"type": "string", "description": "Short English news-search query to find photos of this story"},
         "wiki_title": {"type": "string", "description": "English Wikipedia article title of the main person, team or place, or empty"},
     },
-    "required": ["tag", "headline", "highlight", "caption", "hashtags", "key_facts", "photo_query", "wiki_title"],
+    "required": ["tag", "headline", "highlight", "caption", "pin_comment", "hashtags", "key_facts", "photo_query", "wiki_title"],
     "additionalProperties": False,
 }
 
@@ -153,15 +154,17 @@ def write_post(text: str, article: dict | None) -> dict:
         parts.append(f"Article ({article['site']}): {article['title']}\n{article['description']}")
     if text:
         parts.append(f"Owner's note: {text}")
+    parts.append(f"Our recent caption endings (use a different style):\n{g.recent_endings()}")
     user = "\n\n".join(parts)
-    system = CUSTOM_SYSTEM.format(page=g.CONFIG["page_name"], lang=g.CONFIG["caption_language"])
+    system = CUSTOM_SYSTEM.format(page=g.CONFIG["page_name"], lang=g.CONFIG["caption_language"],
+                                  engage=g.ENGAGE_RULES)
     return fun.claude_json(system, user, CUSTOM_POST, g.CONFIG.get("membership_model", "sonnet"))
 
 
 def free_post(text: str, article: dict | None) -> dict:
     title = (article or {}).get("title") or text
     return {"tag": "BREAKING", "headline": g.short_headline(title), "highlight": title.split()[:2],
-            "caption": ((article or {}).get("description") or text) + "\n\nAap kya sochte ho? 👇 Comment karo!",
+            "caption": ((article or {}).get("description") or text) + "\n\nAap kya sochte ho? 👇",
             "hashtags": ["#India", "#News", "#Trending"],
             "photo_query": title[:120], "wiki_title": ""}
 
@@ -366,7 +369,8 @@ def make(raw: str, kind: str = "custom") -> int:
         "id": post_id, "kind": kind, "image": options[0], "options": options, "slides": slide_names,
         "headline": post["headline"], "tag": post["tag"],
         "caption": g.limit_hashtags(caption(post, article["site"] if article else None)),
-        "source": article["site"] if article else "Your pick", "source_url": source_url, "proof": proof,
+        "source": article["site"] if article else "Your pick", "source_url": source_url,
+        "pin_comment": post.get("pin_comment", ""), "proof": proof,
         "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     })
     g.trim_feed(feed)

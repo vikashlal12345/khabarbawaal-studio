@@ -31,9 +31,11 @@ FUN_POST = {
         "highlight": {"type": "array", "items": {"type": "string"},
                       "description": "1-3 words copied exactly from card_text to colour"},
         "caption": {"type": "string"},
+        "pin_comment": {"type": "string",
+                        "description": "First comment we pin under the post: a funny follow-up line for THIS joke"},
         "hashtags": {"type": "array", "items": {"type": "string"}},
     },
-    "required": ["tag", "card_text", "highlight", "caption", "hashtags"],
+    "required": ["tag", "card_text", "highlight", "caption", "pin_comment", "hashtags"],
     "additionalProperties": False,
 }
 
@@ -58,8 +60,13 @@ gender stereotypes, disabilities, politicians or real private people. No adult j
 real person, and never joke about deaths, accidents, crimes or disasters.
 - Original: do not copy famous jokes or memes word for word.
 - card_text: max 30 words, NO emojis (the image font can't show them).
-- caption: 2-3 short Hinglish lines with 1-3 emojis, ending with a call to tag or share \
-("Tag karo us dost ko...", "Family group mein bhejo...").
+- caption: 2-3 short Hinglish lines with 1-3 emojis. The last line makes people comment, tag \
+or share, and must be specific to this joke. Vary it, don't always use "Tag karo us dost ko...": \
+e.g. "Ghar mein ye kaun karta hai? Mummy ya Papa? 👇", "Ek emoji mein apna Monday batao", \
+"Agar tumhare saath bhi hua hai to 😭 drop karo", "Family group mein bhejo, dekhte hain kaun pakda jaata hai".
+- pin_comment: our pinned first comment, max 20 words: a funny follow-up line or twist on THIS \
+joke (like a friend replying in the comments), or a quick this-or-that question. Not a copy of \
+the caption's last line, no hashtags.
 - hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag."""
 
 
@@ -179,7 +186,8 @@ def google_trends() -> list[str]:
     return [t for t in re.findall(r"<title>([^<]+)</title>", xml)[1:21]]
 
 
-def write_fun_post(config: dict, recent: list[str], trending: list[str], used_topics: list[str]) -> dict:
+def write_fun_post(config: dict, recent: list[str], trending: list[str], used_topics: list[str],
+                   endings: str = "") -> dict:
     """3 options on big, widely-known trends; a 'young Indian' judge scores them; the best is used.
     Raises NoGoodJoke if none is clear and funny enough (the slot then posts news)."""
     system = FUN_SYSTEM.format(page=config["page_name"]) + "\n\n" + JOKE_RULES
@@ -189,6 +197,7 @@ def write_fun_post(config: dict, recent: list[str], trending: list[str], used_to
             f"\n\nToday's big headlines (use only ones nearly everyone knows):\n" + "\n".join(f"- {t}" for t in trending[:15]) +
             f"\n\nTopics already joked about recently (don't reuse):\n" + ("\n".join(f"- {t}" for t in used_topics[-30:]) or "(none)") +
             f"\n\nRecent fun posts (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in recent[-20:]) or "(none)") +
+            (f"\n\nOur recent caption endings (use a different style):\n{endings}" if endings else "") +
             "\n\nWrite exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
             "relatable desi-life moments (different situations).")
     model = config.get("membership_model", "sonnet")
