@@ -47,9 +47,9 @@ Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 3:00 jo
 - `proofread.py`: AI proofreader (`run(render, data, caption_of, article, drop=...)`), whole-word fixes.
 - `specials.py` (Top 5s, roundup, thought) · `market.py` (NSE: `market-data-pre-open?key=NIFTY%2050`,
   allIndices, gainers/losers; CNBC quotes; BSE/Yahoo blocked) · `fun.py` (jokes + `claude_json` + usage log)
-- `create_post.py` (`make(raw, kind)`), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
+- `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
-- `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
+- `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
 - App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
 - Data: `docs/feed.json` (3 days), `docs/ready.json`, `state/history.json`, `docs/stats/*.json`.
