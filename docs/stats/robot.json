@@ -558,6 +558,25 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "night_roundup": {
+   "posts": 1,
+   "requests": 4,
+   "input": 14,
+   "output": 5006,
+   "cache_read": 15537,
+   "cache_write": 40491,
+   "value_usd": 0.2152,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 7300
+    },
+    "proofreading": {
+     "requests": 3,
+     "tokens": 53748
+    }
+   }
   }
  }
 }
