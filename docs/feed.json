@@ -1,5 +1,32 @@
 [
  {
+  "id": "market_open-2026-10-06",
+  "image": "posts/20261006-0248-market_open-2026-10-06.jpg",
+  "kind": "market",
+  "headline": "Market Morning Brief: 06 Oct",
+  "tag": "📈 MARKET BRIEF",
+  "caption": "Market Morning Brief: GIFT Nifty 22,640.00 (-0.08%), Nifty ka previous close 22,555.75.\nUS aur Asia ke markets mostly hare mein, Brent crude $100.82 pe.\nAaj SRIT India ki listing aur Vedanta dividend news mein hai.\nAaj aapki nazar kis news pe rahegi?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#KhabarBawaal #StockMarket #Nifty #MarketMorningBrief #GIFTNifty #Sensex #IPO #StocksInFocus #IndianMarket #ShareMarketIndia",
+  "source": "NSE, CNBC, ET, Moneycontrol",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The Vedanta details (FY27 first interim dividend, Monday close of Rs 255.05) are not in the supplied article headlines, so I couldn't check them. Please check them against the source. The Axis Bank 'stocks-to-watch' item has the same problem.",
+    "Slide 5: The Vedanta dividend item and the 'IREDA, Kotak Mahindra Bank, Trent, Marico' stocks list are not in the supplied article, so I couldn't check them. Please check them against the source.",
+    "Caption: The caption's Vedanta dividend claim is not in the supplied article, so I couldn't check it. 'Hare mein' is Hinglish for 'in the green', which matches the data, since the US and Asian markets are all up."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261006-0248-market_open-2026-10-06-s2.jpg",
+   "posts/20261006-0248-market_open-2026-10-06-s3.jpg",
+   "posts/20261006-0248-market_open-2026-10-06-s4.jpg",
+   "posts/20261006-0248-market_open-2026-10-06-s5.jpg",
+   "posts/20261006-0248-market_open-2026-10-06-s6.jpg"
+  ],
+  "created_at": "2026-10-06T02:48:49+00:00"
+ },
+ {
   "id": "1b6169577cc3",
   "image": "posts/20261005-1631-1b6169577cc3.jpg",
   "kind": "news",
@@ -1653,131 +1680,5 @@
   "source": "KhabarBawaal Original",
   "source_url": "",
   "created_at": "2026-10-03T03:07:34+00:00"
- },
- {
-  "id": "93ea9429caea",
-  "image": "posts/20261003-0207-93ea9429caea.jpg",
-  "kind": "news",
-  "headline": "Canadian man calls Bengaluru's Indiranagar footpaths 'pathetic', says they'd be unacceptable in any other country",
-  "tag": "VIRAL",
-  "caption": "Bengaluru ke footpaths pe phir bahस chhid gayi 👀\nEk Canadian man ne Indiranagar ke toote footpaths ko 'pathetic' bola.\nUnka kehna hai ki aisa kisi aur country mein unacceptable hota, aur tech hub basic infrastructure pe struggle kyun kar raha hai.\nAapke sheher ke footpaths ka kya haal hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bengaluru #Indiranagar #BengaluruInfra #Footpath #ViralNews #India #KhabarBawaal #CityLife",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/canadian-man-slams-pathetic-footpaths-in-bengaluru-s-indiranagar-this-would-be-unacceptable-in-any-other-country-101790989468403.html",
-  "created_at": "2026-10-03T02:07:29+00:00"
- },
- {
-  "id": "517ae9cc1a4e",
-  "image": "posts/20261003-0107-517ae9cc1a4e.jpg",
-  "kind": "news",
-  "headline": "1,000 detained as Delhi Police stop Jantar Mantar protest against Gyanesh Kumar",
-  "tag": "POLITICS",
-  "caption": "Jantar Mantar pe aaj kaafi hungama hua 👀\nDelhi Police ne Gyanesh Kumar ke khilaf hone wale protest ko rok diya aur around 1,000 logo ko detain kiya.\nDetained logo me political leaders aur student activists bhi the, jo electoral roll irregularities pe accountability maang rahe the.\nAapko kya lagta hai, protest ka right aur law-and-order ka balance kaise hona chahiye? Comment me batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#JantarMantar #Delhi #GyaneshKumar #ElectoralRolls #Protest #DelhiPolice #IndiaPolitics #BreakingNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/1000-detained-as-delhi-cops-thwart-jantar-mantar-protest-against-gyanesh-kumar-101790963614683.html",
-  "created_at": "2026-10-03T01:07:47+00:00"
- },
- {
-  "id": "368266ea1b34",
-  "image": "posts/20261003-0007-368266ea1b34.jpg",
-  "kind": "fun",
-  "headline": "Naye shehar mein 1.5 saal baad chhoti cheezein pasand aane lagi hain: A) Thandi hawa B) Traffic mein mila free 'me time' Tum kya choose karoge?",
-  "tag": "😂 THIS OR THAT",
-  "caption": "Chennai se Bengaluru aaye bande ko chhoti chhoti cheezein pasand aa gayi, aur humein traffic mein 'me time' mil gaya 😄\nComment mein batao A ya B?\nTag karo us dost ko jo naye shehar mein shift hokar sirf tareefein kar raha hai 🚗\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #Bengaluru #Chennai #ThisOrThat #DesiLife #Relatable #CityLife #TagKaro",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "created_at": "2026-10-03T00:07:34+00:00"
- },
- {
-  "id": "b28e511c6897",
-  "image": "posts/20261002-2307-b28e511c6897.jpg",
-  "kind": "news",
-  "headline": "Indian woman says moving to Dubai caused a 'huge mindset shift' as people normalise luxury",
-  "tag": "VIRAL",
-  "caption": "Dubai shift hone ke baad sab kuch alag lagta hai? 👀\nEk Indian woman ne share kiya ki Dubai move karne se unka 'huge mindset shift' hua.\nUnke mutabik wahan log luxury ko normal maan lete hain, aur success aur ambition ko dekhne ka nazariya hi badal gaya.\nKya sach mein jagah badalne se sochne ka tarika badal jata hai, ya ye sab sirf flex culture hai? Comments mein batao 💬\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Dubai #IndianInDubai #ViralNews #Mindset #LuxuryLife #GenZIndia #KhabarBawaal #NRI",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/indian-woman-says-moving-to-dubai-brings-a-huge-mindset-shift-people-here-have-normalised-luxury-101790954938111.html",
-  "created_at": "2026-10-02T23:07:34+00:00"
- },
- {
-  "id": "74f03b3f7762",
-  "image": "posts/20261002-2207-74f03b3f7762.jpg",
-  "kind": "news",
-  "headline": "Trump's camera goes off on G7 Zoom call, internet jokes about 'nap' and 'bad hair day'",
-  "tag": "VIRAL",
-  "caption": "Bhai, G7 meeting mein bhi camera off? 😭\nDonald Trump ka camera ek G7 Zoom call ke dauran off tha, aur internet ko mauka mil gaya.\nKuch users ne joke kiya ki shayad woh 'nap' le rahe the, toh kuch bole 'bad hair day' chal raha hai.\nOfficial reason kya tha, yeh post mein confirm nahi hua, bas memes chal rahe hain.\nTumhare hisaab se asli reason kya hai: nap, hair ya kuch aur? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Trump #G7 #ZoomCall #ViralNews #Memes #KhabarBawaal #TrendingNow #WorldNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/us/trumps-camera-off-moment-during-g7-zoom-call-sparks-nap-and-bad-hair-day-reactions-online-101790966374584.html",
-  "created_at": "2026-10-02T22:07:38+00:00"
- },
- {
-  "id": "3f3b35dccd9c",
-  "image": "posts/20261002-2107-3f3b35dccd9c.jpg",
-  "kind": "fun",
-  "headline": "G7 Zoom call mein camera off ho gaya, internet bola nap ya bad hair day. Hum students 3 saal se yahi bahana de rahe hain: \"Sir, camera kharab hai.\"",
-  "tag": "😂 STUDENT LIFE",
-  "caption": "Camera off ka bahana ab international level pe pahunch gaya 😂 Humne toh yeh pehle hi patent kar liya tha.\nTag karo us dost ko jo online class mein camera off karke so jaata tha 😴\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #G7Zoom #CameraOff #StudentLife #OnlineClass #BadHairDay #Relatable #DesiHumor",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "created_at": "2026-10-02T21:07:38+00:00"
- },
- {
-  "id": "3d9b56cd3254",
-  "image": "posts/20261002-1954-3d9b56cd3254.jpg",
-  "kind": "news",
-  "headline": "Chennai man lists small things he loves about Bengaluru: parks, AC buses, affordable food",
-  "tag": "VIRAL",
-  "caption": "Chennai wale ko Bengaluru se pyaar ho gaya? 👀\nEk Chennai ka banda 1.5 saal Bengaluru mein rehne ke baad apni list share kar raha hai.\nUske hisaab se log in \"small things\" ko ignore kar dete hain: neighbourhood parks, AC buses aur affordable food.\nBengaluru ke traffic ke beech ye cheezein sach mein sahi lagti hain?\nTumhare hisaab se Bengaluru ki sabse underrated cheez kya hai? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bengaluru #Chennai #BengaluruLife #ViralNews #KhabarBawaal #CityLife #TrendingIndia #GenZIndia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/chennai-man-shares-small-things-he-loves-about-bengaluru-after-1-5-years-in-city-people-often-ignore-them-101790960669765.html",
-  "created_at": "2026-10-02T19:54:17+00:00"
- },
- {
-  "id": "81d0670ca8bf",
-  "image": "posts/20261002-1907-81d0670ca8bf.jpg",
-  "kind": "news",
-  "headline": "Stalin asks CM Vijay \"Are you afraid of BJP?\" over alleged silence on SIR",
-  "tag": "POLITICS",
-  "caption": "Tamil Nadu politics mein naya war of words shuru ho gaya hai.\n\nStalin ne CM Vijay ko target kiya hai SIR aur CEC par unki alleged chuppi ko lekar.\n\nUnka sawaal: \"What is your fear, CM sir, what is the fear?\" Stalin ne pucha ki kya Vijay BJP se dar rahe hain. Vijay ki taraf se is par abhi koi jawab report nahi hua hai.\n\nAapko kya lagta hai, kya CM ko is mudde par bolna chahiye? Comments mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Stalin #Vijay #TamilNadu #SIR #TamilNaduPolitics #IndianPolitics #KhabarBawaal #BreakingNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/stalin-targets-vijay-for-alleged-silence-over-sir-cec-row-are-you-afraid-of-bjp-dmk-tvk-tamil-nadu-october-6-bypoll-101790951070344.html",
-  "created_at": "2026-10-02T19:07:34+00:00"
- },
- {
-  "id": "eee7d958b4be",
-  "image": "posts/20261002-1807-eee7d958b4be.jpg",
-  "kind": "fun",
-  "headline": "Dost Dubai shift hua: \"Yahan luxury normal hai, bro.\"  Wahi dost jo kal tak chai ke 20 rupaye ka UPI split karta tha.",
-  "tag": "😂 DOSTI",
-  "caption": "Dubai gaye ho, mindset shift ho gaya, par 20 rupaye wala hisaab abhi bhi yaad hai 😂✈️\nLuxury normal ho gayi, par split karna nahi bhoola.\nTag karo us dost ko jo Dubai ka gyaan deta hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #Dosti #DubaiLife #DesiHumor #Relatable #UPI #FriendsGoals #Hinglish",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "created_at": "2026-10-02T18:07:39+00:00"
- },
- {
-  "id": "cb21a3b7c202",
-  "kind": "custom",
-  "image": "posts/20261002-1720-cb21a3b7c202-1.jpg",
-  "options": [
-   "posts/20261002-1720-cb21a3b7c202-1.jpg",
-   "posts/20261002-1720-cb21a3b7c202-2.jpg",
-   "posts/20261002-1720-cb21a3b7c202-3.jpg"
-  ],
-  "headline": "Virat Kohli smashes a century, adding another hundred to his name",
-  "tag": "CRICKET",
-  "caption": "King Kohli ne phir se kar dikhaya! 👑\nVirat Kohli ne apna 100 maar diya aur fans ka din bana diya.\nMatch ki aur details abhi aa rahi hain, lekin social media pe already celebration shuru ho gaya hai.\nAapko Kohli ki kaunsi century sabse zyada pasand hai? Comment mein batao 🏏\n\nFollow @khabarbawaal for daily updates.\n\n#ViratKohli #Kohli #KingKohli #Cricket #TeamIndia #Century #IndianCricket #BCCI",
-  "source": "Your pick",
-  "source_url": "",
-  "created_at": "2026-10-02T17:20:51+00:00"
- },
- {
-  "id": "fa1c1c26cabc",
-  "image": "posts/20261002-1707-fa1c1c26cabc.jpg",
-  "kind": "news",
-  "headline": "Salman Khan's Maatrubhumi reportedly gets government clearance, revised film shows India-China ties in positive light",
-  "tag": "BOLLYWOOD",
-  "caption": "Salman Khan ki Maatrubhumi ko lekar badi khabar aayi hai 👀\nBollywood Hungama ke exclusive ke mutabiq, film ko government clearance mil gayi hai.\nPehle ise Battle Of Galwan naam se announce kiya gaya tha, ab naam hai Maatrubhumi. Film 2020 ke India-China conflict par based hai.\nReport ke hisaab se revised version mein India-China ties ko positive light mein dikhaya gaya hai.\nAapko kya lagta hai, naya version sahi call hai ya original vibe miss hogi? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#SalmanKhan #Maatrubhumi #BattleOfGalwan #BollywoodNews #IndiaChina #Bollywood #KhabarBawaal #TrendingNow",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/exclusive-big-breakthrough-for-salman-khans-maatrubhumi-as-it-gets-government-clearance-revised-film-shows-india-china-ties-in-a-positive-light/",
-  "created_at": "2026-10-02T17:07:40+00:00"
  }
 ]

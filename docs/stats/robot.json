@@ -356,5 +356,26 @@
     }
    }
   }
+ },
+ "2026-10-06": {
+  "market_open": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 2389,
+   "cache_read": 4963,
+   "cache_write": 18875,
+   "value_usd": 0.1004,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 8261
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 17972
+    }
+   }
+  }
  }
 }
