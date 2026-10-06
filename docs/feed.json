@@ -1,5 +1,35 @@
 [
  {
+  "id": "c12d8694b08e",
+  "kind": "custom",
+  "image": "posts/20261006-0529-c12d8694b08e-1.jpg",
+  "options": [
+   "posts/20261006-0529-c12d8694b08e-1.jpg"
+  ],
+  "slides": [
+   "posts/20261006-0529-c12d8694b08e-s2.jpg",
+   "posts/20261006-0529-c12d8694b08e-s3.jpg",
+   "posts/20261006-0529-c12d8694b08e-s4.jpg"
+  ],
+  "headline": "Sanjay Dutt apologises to NCW over Sarke Chunar song, to sponsor 50 children's education",
+  "tag": "BOLLYWOOD",
+  "caption": "Sarke Chunar Teri Sarke row mein Sanjay Dutt ne maafi maang li hai 🙏\nUnke advocate ke mutabik, actor ne National Commission for Women ko bataya ki unhe song ke lyrics ke baare mein pata nahi tha.\nSaath hi, Dutt 50 bachchon ki education sponsor karenge.\nKya aapko lagta hai ye apology aur sponsorship sahi step hai?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sanjaydutt #bollywood #trending #india #viral",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-apologises-to-national-commission-for-women-over-sarke-chunar-song-row-to-sponsor-education-for-50-children-101777289399792.html",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Obscenity is an allegation; the HT tweet says 'alleged obscenity'",
+    "Fact corrected to match the article: Vulgarity is alleged/criticised, not established fact"
+   ],
+   "fixed": [
+    "gaane ki obscenity par summon → gaane ki kathit obscenity par summon",
+    "ke gaane par vulgar lyrics aur choreography ko lekar bawaal hua → ke gaane par vulgar lyrics aur choreography ke aaropon ko lekar bawaal hua"
+   ]
+  },
+  "created_at": "2026-10-06T05:29:26+00:00"
+ },
+ {
   "id": "5d41429879fd",
   "image": "posts/20261006-0432-5d41429879fd.jpg",
   "kind": "news",
@@ -1712,20 +1742,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/entertainment/bollywood/govinda-rumoured-girlfriend-komal-rani-swarnkar-hits-back-at-divya-khossla-sindoor-jibe-takes-swipe-at-sunita-ahuja-101791003526656.html",
   "created_at": "2026-10-03T06:07:35+00:00"
- },
- {
-  "id": "cb38ce6ddadf",
-  "kind": "custom",
-  "image": "posts/20261003-0439-cb38ce6ddadf-1.jpg",
-  "options": [
-   "posts/20261003-0439-cb38ce6ddadf-1.jpg",
-   "posts/20261003-0439-cb38ce6ddadf-2.jpg"
-  ],
-  "headline": "Disciple of Premanand reportedly murdered, details awaited as story develops",
-  "tag": "BREAKING",
-  "caption": "Ek dukhad khabar saamne aayi hai.\nReports ke mutabiq Premanand ke ek disciple ki murder ho gayi hai.\nAbhi poori details aur police ki taraf se confirmation aana baaki hai.\nJab tak official info nahi aati, unverified baatein share karne se bachein.\nAapko kya lagta hai, aisi cases mein jaldi aur sahi jaanch kaise ho sakti hai? 🙏\n\nFollow @khabarbawaal for daily updates.\n\n#Premanand #BreakingNews #IndiaNews #Vrindavan #CrimeNews",
-  "source": "Your pick",
-  "source_url": "",
-  "created_at": "2026-10-03T04:39:35+00:00"
  }
 ]
