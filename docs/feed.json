@@ -1,5 +1,25 @@
 [
  {
+  "id": "2086ab6b4da8",
+  "image": "posts/20261006-0331-2086ab6b4da8.jpg",
+  "kind": "fun",
+  "headline": "Banda ne 25 LPA job chhodi. Pehla mahina: Flipkart ₹0, Amazon ₹45,000. Boss: Humne bhi kabhi ₹0 nahi diya. HR: Wapas aaja, notice period maaf.",
+  "tag": "😂 OFFICE LIFE",
+  "caption": "Ek platform ne ₹0 diya, doosre ne ₹45,000. Phir bhi job wala mood: \"Wapas aa jaun?\" 😅\nOffice group mein ab yehi chal raha hai.\nTag karo us dost ko jo har Monday bolta hai \"Main business karunga\" 🚀\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #OfficeLife #Flipkart #Amazon #QuitJob #Startup #DesiHumor #Relatable",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The article text wasn't available, so I couldn't check the figures (₹25 LPA, ₹0 on Flipkart, ₹45,000 on Amazon). The 'Boss' and 'HR' lines are satirical and are not quotes from the article. The slide has no source or attribution line, so readers could take those lines as real."
+   ],
+   "fixed": [
+    "‘ ₹0 on Flipkart → ‘₹0 on Flipkart"
+   ]
+  },
+  "created_at": "2026-10-06T03:31:55+00:00"
+ },
+ {
   "id": "market_open-2026-10-06",
   "image": "posts/20261006-0248-market_open-2026-10-06.jpg",
   "kind": "market",
@@ -1669,16 +1689,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-day-1-ajay-devgn-jaideep-ahlawat-film-opens-at-95-crore-beats-rajinikanth-jailer-salman-khan-tiger-3-101790998286742.html",
   "created_at": "2026-10-03T04:07:33+00:00"
- },
- {
-  "id": "ae2e5de6aea1",
-  "image": "posts/20261003-0307-ae2e5de6aea1.jpg",
-  "kind": "fun",
-  "headline": "Ek baar report time pe bhej di. Ab boss: \"Tum toh fast ho, ye 3 aur le lo.\" Your best becomes your baseline. Ab main jaanbujhkar 'working on it' bolta hoon.",
-  "tag": "😂 OFFICE LIFE",
-  "caption": "Ek din jaldi kaam kya kiya, poori life ka KPI set ho gaya 😭\nAb 'almost done' hi safe zone hai 😅\nOffice group mein bhejo us colleague ko jo bolta hai \"Maine toh 10 minute mein kar diya tha!\"\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#KhabarBawaal #OfficeLife #CorporateHumor #BestBecomesBaseline #DesiOffice #MondayMood #WorkLifeIndia #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "created_at": "2026-10-03T03:07:34+00:00"
  }
 ]
