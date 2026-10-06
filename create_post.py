@@ -148,6 +148,42 @@ def find_photos(article: dict | None, post: dict, want: int = 3) -> list[tuple[I
     return found
 
 
+# 🎬 Your video/photos: the app sends ~6 frames joined into one picture plus the owner's context.
+MEDIA_POST = {
+    "type": "object",
+    "properties": {
+        "tag": {"type": "string", "description": "1-2 word label, e.g. VIRAL, WTF, BOLLYWOOD, CRICKET, DESI LIFE"},
+        "headline": {"type": "string", "description": "Cover headline, 6-12 words"},
+        "highlight": {"type": "array", "items": {"type": "string"},
+                      "description": "1-3 words copied exactly from the headline to colour"},
+        "overlay_text": {"type": "string",
+                         "description": "Hook text the owner puts ON the video in Instagram, 3-10 words"},
+        "caption": {"type": "string"},
+        "pin_comment": {"type": "string", "description": "First comment we pin under the post (see rules)"},
+        "hashtags": {"type": "array", "items": {"type": "string"}},
+        "cover_frame": {"type": "integer", "description": "Number of the most striking frame for the cover"},
+    },
+    "required": ["tag", "headline", "highlight", "overlay_text", "caption", "pin_comment", "hashtags", "cover_frame"],
+    "additionalProperties": False,
+}
+
+MEDIA_SYSTEM = g.SYSTEM_PROMPT.split("Choosing:")[0] + """The page owner sent a video (or photos) \
+from their phone with a few words of context. Open frames.jpg: it shows {n} numbered moments \
+(left to right, top to bottom; 1 is the start). Write a Reel post for it.
+
+""" + "Politics:" + g.SYSTEM_PROMPT.split("Politics:")[1].split("\n\nAlso: key_facts")[0] + """
+
+For this Reel (these rules win over the ones above):
+- Only say what is visible in the frames or written in the owner's context: no invented names, \
+places, numbers or quotes. Don't name people the owner didn't name. If the context and the \
+frames disagree, trust the context.
+- overlay_text: the hook the owner types ON the video (Instagram text tool), 3-10 words, \
+Hinglish, makes people stop scrolling and watch till the end (e.g. "Wait for the end 😭", \
+"Delhi metro ka naya episode"). Max 1 emoji.
+- headline: printed on the cover image, 6-12 words, punchy.
+- caption: 2-4 short lines (hook, what happens, comment-bait last line).
+- cover_frame: the number of the clearest, most striking frame."""
+
 def write_post(text: str, article: dict | None) -> dict:
     parts = []
     if article:
@@ -221,6 +257,8 @@ def main() -> int:
         state["used_otps"] = (used + [os.environ["CREATE_OTP"].strip() + ":" + str(int(sent_at // 30))])[-200:]
         g.save_json(g.STATE_FILE, state)
         print("One-time code OK")
+    if os.environ.get("MEDIA"):
+        return make_media(raw, json.loads(os.environ["MEDIA"]))
     return make(raw)
 
 
@@ -384,6 +422,115 @@ def make(raw: str, kind: str = "custom") -> int:
     summary = (f"✅ **Post ready:** {post['headline']}\n\n"
                f"{len(photos)} cover option(s) + brand banner, and {len(slide_names)} more carousel slide(s). "
                f"Open the KhabarBawaal Studio app (pull to refresh), swipe to pick a cover, then tap 📤 Post.")
+    summary_file.write_text(summary)
+    print(summary)
+    return 0
+
+
+def frames_from(media: dict) -> list[Image.Image]:
+    """Download the frame sheet from the inbox and cut it back into single frames."""
+    url = media.get("url", "")
+    if not url.startswith("https://ntfy.sh/file/"):
+        raise RuntimeError(f"Unexpected media link: {url[:80]}")
+    resp = requests.get(url, timeout=60)
+    resp.raise_for_status()
+    sheet = Image.open(io.BytesIO(resp.content)).convert("RGB")
+    n, cols = int(media.get("n", 1)), int(media.get("cols", 1))
+    rows = -(-n // cols)
+    w, h = sheet.width // cols, sheet.height // rows
+    return [sheet.crop(((i % cols) * w, (i // cols) * h, (i % cols + 1) * w, (i // cols + 1) * h)) for i in range(n)]
+
+
+def numbered_sheet(frames: list[Image.Image], cols: int) -> Image.Image:
+    """The frames again, with big numbers so the AI can say which one makes the best cover."""
+    w, h = frames[0].size
+    rows = -(-len(frames) // cols)
+    sheet = Image.new("RGB", (cols * w, rows * h), "black")
+    d = g.ImageDraw.Draw(sheet)
+    for i, f in enumerate(frames):
+        x, y = (i % cols) * w, (i // cols) * h
+        sheet.paste(f.resize((w, h)), (x, y))
+        d.rectangle((x, y, x + 90, y + 90), fill="black")
+        d.text((x + 45, y + 45), str(i + 1), font=g.font("Anton-Regular.ttf", 64), fill="#FFD400", anchor="mm")
+    sheet.thumbnail((1800, 1800))
+    return sheet
+
+
+def make_media(text: str, media: dict) -> int:
+    """🎬 Post for the owner's own video/photos: cover options, on-video text, caption, pinned comment.
+    The owner posts the video from their gallery; only the frames come here."""
+    import proofread
+    import tempfile
+    summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
+    frames = frames_from(media)
+    kind_word = "video" if media.get("type") == "video" else "photos"
+    print(f"Media: {len(frames)} frame(s) from {kind_word} | context: {text[:80]}")
+
+    post = None
+    if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                numbered_sheet(frames, int(media.get("cols", 1))).save(g.Path(tmp) / "frames.jpg", quality=85)
+                system = MEDIA_SYSTEM.format(page=g.CONFIG["page_name"], lang=g.CONFIG["caption_language"],
+                                             engage=g.ENGAGE_RULES, n=len(frames))
+                user = (f"Owner's context ({kind_word}): {text}\n\n"
+                        f"Our recent caption endings (use a different style):\n{g.recent_endings()}\n\n"
+                        "Open frames.jpg first, then write the post.")
+                post = fun.claude_json(system, user, MEDIA_POST, g.CONFIG.get("membership_model", "sonnet"),
+                                       folder=tmp, purpose="video post")
+            post = fun.normalize({**post, "card_text": ""})
+            print("Mode: membership")
+        except Exception as e:
+            print(f"  ! AI failed, using free mode: {e}")
+    if post is None:
+        post = {"tag": "VIRAL", "headline": g.short_headline(text), "highlight": text.split()[:2],
+                "overlay_text": g.short_headline(text), "caption": text + "\n\nAap kya sochte ho? 👇",
+                "pin_comment": "", "hashtags": ["#viral", "#trending", "#india", "#reels", "#instagood"],
+                "cover_frame": 1}
+    print(f"Headline: {post['headline']}\nOn video: {post['overlay_text']}")
+
+    # Cover options: the AI's pick, two other moments, then the brand banner.
+    best = min(max(int(post.get("cover_frame") or 1), 1), len(frames)) - 1
+    others = [i for i in range(len(frames)) if i != best]
+    picks = [frames[best]] + [frames[i] for i in others[len(others) // 3::max(1, len(others) // 2)][:2]]
+    source = g.CONFIG["page_name"]
+
+    def render(d):
+        return [g.render_card(picks[0], d["post"], source)]
+
+    _, data, proof = proofread.run(render, {"post": post}, lambda d: caption(d["post"], None),
+                                   f"Owner's context: {text}\nOn-video text: {post['overlay_text']}")
+    post = data["post"]
+    cards = [g.render_card(img, post, source) for img in picks] + [g.render_card(None, post, source)]
+
+    post_id = "v" + g.hashlib.sha1((text + media.get("url", "")).encode()).hexdigest()[:11]
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+    g.POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    options = []
+    for n, card in enumerate(cards, 1):
+        name = f"posts/{stamp}-{post_id}-{n}.jpg"
+        card.save(g.DOCS / name, "JPEG", quality=88, optimize=True)
+        options.append(name)
+
+    feed = g.load_json(g.FEED_FILE, [])
+    feed.insert(0, {
+        "id": post_id, "kind": "custom", "media": kind_word, "image": options[0], "options": options, "slides": [],
+        "headline": post["headline"], "tag": post["tag"],
+        "caption": g.limit_hashtags(caption(post, None)),
+        "overlay_text": post["overlay_text"].strip(),
+        "source": f"Your {kind_word}", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""), "proof": proof,
+        "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    })
+    g.trim_feed(feed)
+    state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
+    state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
+    g.POSTED += 1
+    g.save_json(g.FEED_FILE, feed)
+    g.save_json(g.STATE_FILE, state)
+
+    summary = (f"✅ **Video post ready:** {post['headline']}\n\nOn-video text: {post['overlay_text']}\n\n"
+               f"Open the KhabarBawaal Studio app (pull to refresh) for the caption, comment and {len(options)} cover options.")
     summary_file.write_text(summary)
     print(summary)
     return 0

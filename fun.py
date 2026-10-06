@@ -110,10 +110,13 @@ def flush_usage(posts: int = 1) -> None:
     USAGE.clear()
 
 
-def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300, purpose: str = "writing") -> dict:
-    cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json", "--tools", "",
+def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300, purpose: str = "writing",
+                folder: str | None = None) -> dict:
+    """folder: a directory with images the model may open (Read tool), e.g. video frames."""
+    tools = ["--tools", "Read", "--allowedTools", "Read"] if folder else ["--tools", ""]
+    cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json", *tools,
            "--model", model, "--system-prompt", system, "--json-schema", json.dumps(schema)]
-    proc = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=timeout)
+    proc = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=timeout, cwd=folder)
     try:
         result = json.loads(proc.stdout)
     except json.JSONDecodeError:

@@ -48,6 +48,8 @@ Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 4:00 le
 - `proofread.py`: AI proofreader (`run(render, data, caption_of, article, drop=...)`), whole-word fixes.
 - `specials.py` (Top 5s, roundup, thought) · `market.py` (NSE: `market-data-pre-open?key=NIFTY%2050`,
   allIndices, gainers/losers; CNBC quotes; BSE/Yahoo blocked) · `fun.py` (jokes + `claude_json` + usage log)
+- 🎬 Your video/photos (in ➕ Create): the app grabs 6 frames into one picture, uploads it to the ntfy inbox as a file,
+  `create_post.make_media()` writes on-video text, caption, pinned comment + cover options; the owner posts the video from the gallery.
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).

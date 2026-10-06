@@ -44,7 +44,8 @@ def main(wait: int) -> None:
             print(f"Create request received: {m['text'][:60]}")
             subprocess.run(["gh", "workflow", "run", "create-post.yml", "-R", REPO,
                             "-f", f"text={m['text'][:2000]}", "-f", f"otp={m.get('otp', '')}",
-                            "-f", f"ts={m.get('ts', 0)}"], check=False)
+                            "-f", f"ts={m.get('ts', 0)}",
+                            "-f", f"media={json.dumps(m['media']) if m.get('media') else ''}"], check=False)
         time.sleep(max(1, min(60, end - time.time())))
 
 
