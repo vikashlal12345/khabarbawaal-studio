@@ -1,33 +1,30 @@
 [
  {
-  "id": "c12d8694b08e",
-  "kind": "custom",
-  "image": "posts/20261006-0529-c12d8694b08e-1.jpg",
-  "options": [
-   "posts/20261006-0529-c12d8694b08e-1.jpg"
-  ],
-  "slides": [
-   "posts/20261006-0529-c12d8694b08e-s2.jpg",
-   "posts/20261006-0529-c12d8694b08e-s3.jpg",
-   "posts/20261006-0529-c12d8694b08e-s4.jpg"
-  ],
-  "headline": "Sanjay Dutt apologises to NCW over Sarke Chunar song, to sponsor 50 children's education",
-  "tag": "BOLLYWOOD",
-  "caption": "Sarke Chunar Teri Sarke row mein Sanjay Dutt ne maafi maang li hai 🙏\nUnke advocate ke mutabik, actor ne National Commission for Women ko bataya ki unhe song ke lyrics ke baare mein pata nahi tha.\nSaath hi, Dutt 50 bachchon ki education sponsor karenge.\nKya aapko lagta hai ye apology aur sponsorship sahi step hai?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sanjaydutt #bollywood #trending #india #viral",
+  "id": "7868bfc154a1",
+  "image": "posts/20261006-0531-7868bfc154a1.jpg",
+  "kind": "news",
+  "headline": "Man Quits ₹25 LPA Job For E-Commerce, Earns ₹0 On Flipkart, ₹45,000 On Amazon",
+  "tag": "VIRAL",
+  "caption": "Bhai ne ₹25 LPA ki job chhodi aur seedha e-commerce mein kood gaya 😳\nPehle mahine ka hisaab: Flipkart pe ₹0, Amazon pe ₹45,000.\nUska video viral hai aur social media pe reactions mixed hain. Kuch log hustle ko salute kar rahe hain, kuch bol rahe hain risk bahut bada tha.\nTum hote toh stable job chhodte ya nahi? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #entrepreneur #amazon",
   "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-apologises-to-national-commission-for-women-over-sarke-chunar-song-row-to-sponsor-education-for-50-children-101777289399792.html",
+  "source_url": "https://www.hindustantimes.com/trending/man-quits-25-lpa-job-for-e-commerce-business-reveals-first-month-earnings-0-on-flipkart-45-000-on-amazon-101791254953487.html",
   "proof": {
    "state": "check",
    "issues": [
-    "Fact corrected to match the article: Obscenity is an allegation; the HT tweet says 'alleged obscenity'",
-    "Fact corrected to match the article: Vulgarity is alleged/criticised, not established fact"
+    "Fact corrected to match the article: The photo is a screenshot from Tolani's own video, and the article is from Hindustan Times. Nothing in the article links it to Moneycontrol.",
+    "Slide 1: The background photo is a cropped screenshot. Leftover text fragments (\"PA.\", \"er\") show at the top left behind the logo, and the 'Quit... 1 Mont...' text is cut off at the right edge. The man's face is cropped out of the frame. The slide is readable, but the layout looks messy.",
+    "Slide 1: The headline says he 'earns' ₹0 and ₹45,000 as plain fact. These are Tolani's own claims, and HT has not yet verified them. The dashboard shows sales (₹45,382), not necessarily earnings or profit. Consider attributing this, e.g. 'Claims'."
    ],
    "fixed": [
-    "gaane ki obscenity par summon → gaane ki kathit obscenity par summon",
-    "ke gaane par vulgar lyrics aur choreography ko lekar bawaal hua → ke gaane par vulgar lyrics aur choreography ke aaropon ko lekar bawaal hua"
+    "Moneycontrol → Kamal Tolani/Instagram"
    ]
   },
-  "created_at": "2026-10-06T05:29:26+00:00"
+  "slides": [
+   "posts/20261006-0531-7868bfc154a1-s2.jpg",
+   "posts/20261006-0531-7868bfc154a1-s3.jpg",
+   "posts/20261006-0531-7868bfc154a1-s4.jpg"
+  ],
+  "created_at": "2026-10-06T05:31:33+00:00"
  },
  {
   "id": "5d41429879fd",
