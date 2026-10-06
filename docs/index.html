@@ -39,7 +39,7 @@
   .caption { padding: 10px 14px 0; font-size: 14px; white-space: pre-wrap; color: #ddd;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .caption.open { -webkit-line-clamp: unset; display: block; }
-  .actions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; padding: 12px 14px 14px; }
+  .actions { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; padding: 12px 14px 14px; }
   .actions .primary { grid-column: 1 / -1; padding: 14px 6px; font-size: 16px; }
   .actions button, .actions a { border: 0; border-radius: 10px; padding: 12px 6px; font-size: 14px;
     font-weight: 600; text-align: center; text-decoration: none; white-space: nowrap; color: var(--text); background: #262626; }
@@ -265,6 +265,7 @@ function instaHtml(p) {
 }
 
 function render() {
+  posts = (tab === 'feed' ? feedPosts : readyPosts).filter(p => !localGet('deleted-' + p.id));
   if (!posts.length) {
     feedEl.innerHTML = tab === 'ready'
       ? '<div class="empty">No ready posts yet.<br>5 new evergreen posts are made every night at 1 AM.</div>'
@@ -295,6 +296,7 @@ function render() {
         <button class="primary" data-act="share">📤 Post</button>
         <button data-act="copy">📋 Caption</button>
         <button data-act="comment">💬 Comment</button>
+        <button data-act="delete" title="Delete">🗑️ Delete</button>
         ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
       </div>
       ${instaHtml(p)}
@@ -316,6 +318,7 @@ feedEl.addEventListener('click', e => {
   else if (act === 'whatsapp') share(post);
   else if (act === 'insta') linkInsta(post);
   else if (act === 'boost') toggleBoost(post);
+  else if (act === 'delete') deletePost(post);
   else if (act === 'used') { localGet('used-' + post.id) ? localDel('used-' + post.id) : localSet('used-' + post.id, '1'); render(); }
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
@@ -380,6 +383,18 @@ document.getElementById('create-go').addEventListener('click', async () => {
 
 // 🔗 Insta link: sent to the robot's private inbox (no GitHub screen). The robot collects
 // it on its next run (every 30-60 min).
+// 🗑️ Delete: hidden on this phone at once; the robot removes it (and its images) on its next run.
+async function deletePost(post) {
+  if (!confirm('Delete this post from the app?')) return;
+  localSet('deleted-' + post.id, '1');
+  render();
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify({ type: 'delete', post: post.id }) });
+    toast('🗑️ Deleted');
+  } catch { toast('Hidden here; will retry when online'); }
+}
+
 // 🚀 Mark a post as boosted (paid). Boosted posts are left out of the learning and shown under Stats → Boosts.
 async function toggleBoost(post) {
   const on = !(localGet('boost-' + post.id) === '1' || (boosts[post.id] && localGet('boost-' + post.id) !== '0'));

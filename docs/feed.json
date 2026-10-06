@@ -38,37 +38,6 @@
   "created_at": "2026-10-06T03:39:41+00:00"
  },
  {
-  "id": "c5dde414729a",
-  "kind": "custom",
-  "image": "posts/20261006-0337-c5dde414729a-1.jpg",
-  "options": [
-   "posts/20261006-0337-c5dde414729a-1.jpg",
-   "posts/20261006-0337-c5dde414729a-2.jpg",
-   "posts/20261006-0337-c5dde414729a-3.jpg",
-   "posts/20261006-0337-c5dde414729a-4.jpg"
-  ],
-  "slides": [
-   "posts/20261006-0337-c5dde414729a-s2.jpg",
-   "posts/20261006-0337-c5dde414729a-s3.jpg"
-  ],
-  "headline": "No story provided: please send article link or text to post",
-  "tag": "NEEDS STORY",
-  "caption": "PLACEHOLDER, do not post. Story text ya link nahi mila.\nOwner note mein sirf \"latest viral trending news\" likha tha.\nBina facts ke post banana sahi nahi hoga.\nArticle link ya details bhejo, phir proper post banega. Kaunsi story cover karni hai? 🙂\n\nFollow @khabarbawaal for daily updates.\n\n#KhabarBawaal #IndiaNews #TrendingNow #ViralIndia #NewsUpdate #Placeholder",
-  "source": "Your pick",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Caption: This is a placeholder post with no story. The caption says \"PLACEHOLDER, do not post\", and it has no article content to fact-check. Don't publish it.",
-    "Slide 1: The cover has no story. The background photo is a blurry, low-resolution Election Commission (Nirvachan Sadan) building. It is unrelated to any story, and the \"Source: News9Live\" credit is not backed by any article. The headline is a placeholder instruction, not news.",
-    "Slide 2: The slide is meta text about a missing request, not content for readers. The title \"3 cheezein jo jaanni chahiye\" does not match the three points below it.",
-    "Slide 3: The slide asks readers \"Aap kya sochte ho?\" about a story that doesn't exist, so it has no topic to comment on."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-06T03:37:16+00:00"
- },
- {
   "id": "2086ab6b4da8",
   "image": "posts/20261006-0331-2086ab6b4da8.jpg",
   "kind": "fun",

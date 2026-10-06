@@ -38,6 +38,17 @@ def process() -> int:
             msg = json.loads(m.get("message", "{}"))
         except (json.JSONDecodeError, KeyError):
             continue
+        if msg.get("type") == "delete" and msg.get("post"):
+            for name, items in (("feed", feed), ("ready", ready)):
+                gone = [p for p in items if p["id"] == msg["post"]]
+                for p in gone:
+                    for img in g.post_images(p):
+                        (g.DOCS / img).unlink(missing_ok=True)
+                    items.remove(p)
+                if gone:
+                    g.save_json(g.FEED_FILE if name == "feed" else g.DOCS / "ready.json", items)
+                    print(f"  inbox: deleted {msg['post']} from {name}")
+            continue
         if msg.get("type") == "boost" and msg.get("post"):
             bpath = g.DOCS / "stats" / "boosts.json"
             boosts = json.loads(bpath.read_text()) if bpath.exists() else {}

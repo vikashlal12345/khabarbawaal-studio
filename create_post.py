@@ -88,7 +88,9 @@ def bing_articles(query: str, limit: int = 6) -> list[dict]:
         link = html.unescape(re.search(r"<link>(.*?)</link>", item).group(1))
         real = parse_qs(urlsplit(link).query).get("url", [link])[0]
         src = re.search(r"<News:Source>(.*?)</News:Source>", item)
-        out.append({"url": real, "site": html.unescape(src.group(1)).split(" on ")[0] if src else urlsplit(real).netloc})
+        title = re.search(r"<title>(.*?)</title>", item)
+        out.append({"url": real, "site": html.unescape(src.group(1)).split(" on ")[0] if src else urlsplit(real).netloc,
+                    "title": html.unescape(title.group(1)) if title else ""})
     return out
 
 
@@ -219,11 +221,59 @@ def main() -> int:
     return make(raw)
 
 
+PROMPT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "is_request": {"type": "boolean", "description": "True if the text asks us to FIND a story (an instruction/topic), "
+                                                          "false if it already IS a news story or fact to post"},
+        "pick": {"type": "integer", "description": "Number of the best matching candidate (0 if none fits)"},
+    },
+    "required": ["is_request", "pick"],
+    "additionalProperties": False,
+}
+
+
+def resolve_prompt(text: str) -> dict | None:
+    """Typed text like "latest viral trending news" is a request: search the feeds (24 h) + Bing News
+    and let the AI pick the best story. Returns that story's article, or None if the text is the news."""
+    import fun
+    saved = g.CONFIG["lookback_hours"], g.CONFIG["per_feed"]
+    g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = 24, 6
+    try:
+        cands = [{"url": i["link"], "site": i["source"], "title": i["title"], "summary": i["summary"][:160]}
+                 for i in g.fetch_candidates(set())]
+    finally:
+        g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = saved
+    cands += [{**a, "summary": ""} for a in bing_articles(text, limit=10) if a.get("title")]
+    if not cands:
+        return None
+    lines = "\n".join(f"[{n}] ({c['site']}) {c['title']} {c['summary']}" for n, c in enumerate(cands, 1))
+    system = (f"You help the owner of {g.CONFIG['page_name']}, an Indian Gen Z news page, create a post. Decide if their "
+              f"message is a REQUEST to find a story (e.g. 'latest viral news', 'best cricket story') or is itself the "
+              f"news to post. If it's a request, pick the candidate that best fits it and would go most viral with "
+              f"young Indians (follow the page's political line: {g.SYSTEM_PROMPT.split('Politics: ')[1].split(chr(10))[0][:250]}).")
+    try:
+        out = fun.claude_json(system, f"Owner's message: {text}\n\nCandidates:\n{lines}", PROMPT_SCHEMA,
+                              g.CONFIG.get("membership_model", "sonnet"))
+    except Exception as e:
+        print(f"  ! prompt check failed, treating text as the news: {e}")
+        return None
+    if not out["is_request"] or not 1 <= out["pick"] <= len(cands):
+        return None
+    chosen = cands[out["pick"] - 1]
+    print(f"Prompt '{text[:40]}' -> picked: ({chosen['site']}) {chosen['title']}")
+    return read_article(chosen["url"])
+
+
 def make(raw: str, kind: str = "custom") -> int:
     """Build and save a post from a link and/or text (used by ➕ Create and 📅 calendar previews)."""
     urls = re.findall(r"https?://\S+", raw)
     text = re.sub(r"https?://\S+", "", raw).strip()
     article = read_article(urls[0]) if urls else None
+    if not urls and text and (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
+        picked = resolve_prompt(text)
+        if picked:
+            article, text = picked, ""      # the request isn't news itself: write from the chosen article
     if article:
         print(f"Link: {article['site']} | {article['title']}")
 
