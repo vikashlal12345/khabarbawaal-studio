@@ -1,5 +1,30 @@
 [
  {
+  "id": "9011345301c1",
+  "image": "posts/20261007-1531-9011345301c1.jpg",
+  "kind": "news",
+  "headline": "Jharkhand Widow Kavita Mahto Runs 1,600m Barefoot To Chase Home Guard Job",
+  "tag": "VIRAL",
+  "caption": "Jharkhand se aisi kahani aayi hai jo scroll rokne pe majboor kar degi.\nKavita Mahto, ek widow, ne home guard job ke liye 1,600m ki daud bina shoes aur bina kit ke lagayi.\nAur haan, unhone course official time limit se kaafi pehle poora kar diya, ye baat Ajay Karmali (director, HMT Physical Academy, Dulmi) ne batayi.\nInternet ka dil jeet liya 🫡\nTumhare paas shoes, gym aur time sab hai, phir bhi 1,600m bina ruke daud paoge? Sach batao 😅\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #jharkhand #inspiration",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/no-shoes-no-kit-jharkhand-widow-s-1-600m-dash-for-home-guard-s-job-wins-hearts-101791385563628.html",
+  "pin_comment": "Sabse badi baat: na shoes, na kit, phir bhi time limit se pehle finish. Excuses wale dost ko ye post bhejo 🔥",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: \"devar\" is a guess. The article only says \"brother-in-law\", which could also be a jeth or nandoi. Consider \"rishtedaar/brother-in-law\" or confirm. Also, 284 posts comes from the article's recruitment details, not from the government official quoted for the reservation, so \"Officer ke mutabik 284 pad\" slightly misattributes it.",
+    "Caption: The caption and slides imply she ran the race for the job itself. It was a practice/trial run before the recruitment drive (Oct 24–Nov 5), so the job race has not happened yet. \"bina kit\" is an inference: the article only says the academy gave her a proper kit afterwards.",
+    "Slide 1: The headline block overlaps the runner's body and legs. Her face is visible, so this is only a minor layout concern."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-1531-9011345301c1-s2.jpg",
+   "posts/20261007-1531-9011345301c1-s3.jpg"
+  ],
+  "created_at": "2026-10-07T15:31:35+00:00"
+ },
+ {
   "id": "575353c15d27",
   "image": "posts/20261007-1431-575353c15d27.jpg",
   "kind": "fun",
@@ -1831,82 +1856,5 @@
    "fixed": []
   },
   "created_at": "2026-10-04T15:31:42+00:00"
- },
- {
-  "id": "7590c6abb158",
-  "image": "posts/20261004-1530-7590c6abb158.jpg",
-  "kind": "fun",
-  "headline": "Bhagyashree ki mehendi saal bhar nahi utri, toothpick se khud laga leti thi. Meri salary: 1 tareekh ko aayi, 3 tareekh ko fade. Koi toothpick se salary bhi touch-up kar do.",
-  "tag": "😂 DESI LIFE",
-  "caption": "Mehendi saal bhar tik gayi, meri salary teen din bhi nahi 😭\nKoi toh iska bhi touch-up kar do 😂\nTag karo us dost ko jiski salary aate hi fade ho jaati hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #Bhagyashree #Mehendi #SalaryDay #DesiLife #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The article was not available, so I could not check the Bhagyashree claim. The slide says her mehendi lasted a year and she reapplied it with a toothpick. The source line says she did it 'to make sure' it didn't fade. Please check this against the original interview. The slide states it as fact without saying she said it herself."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T15:30:46+00:00"
- },
- {
-  "id": "d898d3f47472",
-  "image": "posts/20261004-1501-d898d3f47472.jpg",
-  "kind": "news",
-  "headline": "Meerut woman hangs on car bonnet as husband allegedly tries to drive off after she catches him with girlfriend",
-  "tag": "VIRAL",
-  "caption": "Yeh video dekh ke dil dehal gaya 😳\nMeerut mein ek aurat ne pati ko kathit girlfriend ke saath pakda, aur car aage badhi to woh bonnet pe latakti dikhi.\nAurat ka aarop hai ki usse jhaadiyon mein dhakela gaya aur gala dabane ki koshish hui.\nVideo social media pe viral hai, aarop abhi allegations hain.\nAapko kya lagta hai, aisi cases mein kitni sakht saza honi chahiye?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Meerut #ViralVideo #UttarPradesh #IndiaNews #Trending",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/meerut-man-drags-wife-on-car-bonnet-after-she-catches-him-with-girlfriend-pushed-me-into-bush-tried-to-strangle-me-101791115124489.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Headline states as fact that the man dragged his wife; article says it is the wife's allegation and the video shows her on the bonnet of a moving car",
-    "Slide 3: The embedded Meerut Police X post shows garbled box or placeholder glyphs instead of readable text. The Hindi font failed to render, so the tweet text is unreadable. Re-capture the screenshot or replace it with a readable one. The tweet is also dated Oct 4, 2026, so check that it is the real police post about this incident."
-   ],
-   "fixed": [
-    "Meerut man drags wife on car bonnet after she catches him with girlfriend → Meerut woman hangs on car bonnet as husband allegedly tries to drive off after she catches him with girlfriend",
-    "dehel → dehal",
-    "bush mein → jhaadiyon mein",
-    "behas → bahas"
-   ]
-  },
-  "slides": [
-   "posts/20261004-1501-d898d3f47472-s2.jpg",
-   "posts/20261004-1501-d898d3f47472-s3.jpg",
-   "posts/20261004-1501-d898d3f47472-s4.jpg",
-   "posts/20261004-1501-d898d3f47472-s5.jpg"
-  ],
-  "created_at": "2026-10-04T15:01:24+00:00"
- },
- {
-  "id": "94d1b27e871e",
-  "image": "posts/20261004-1431-94d1b27e871e.jpg",
-  "kind": "news",
-  "headline": "BJP fields actor Rukmini Mallick for Bengal Rajya Sabha seat in October 16 bypoll",
-  "tag": "POLITICS",
-  "caption": "BJP ne Bengal mein bada filmy danv khela hai! 🎬\nParty ne actor Rukmini Mallick, jinhe Koel Mallick naam se jaana jata hai, ko Rajya Sabha bypoll ke liye candidate banaya hai.\nBypoll 16 October ko hai, aur naam central election committee ke statement mein Sunday ko announce hua.\nKya star power Bengal ki politics mein BJP ko edge dilayega? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#BJP #Bengal #RajyaSabha #KoelMallick #RukminiMallick",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/bjp-fields-actor-koel-mallick-for-bengal-rajya-sabha-seat-in-october-16-bypoll-101791121688750.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover photo seems to show a different woman from the one in slides 2-4. She wears a bindi and a red saree and doesn't look like Koel Mallick. It may be a different person, possibly another politician, so the cover could misidentify someone. Replace it with a verified photo of Rukmini/Koel Mallick. This slide can't be dropped, and the photo is also blurry and low-resolution."
-   ],
-   "fixed": [
-    "removed weak photo slide(s) [3]",
-    "Maarch mein TMC ne bheja tha → March mein TMC ne bheja tha",
-    "TMC ka Rajya Sabha mein sankhya ghatkar nau reh gayi. → TMC ki Rajya Sabha mein sankhya ghatkar nau reh gayi."
-   ]
-  },
-  "slides": [
-   "posts/20261004-1431-94d1b27e871e-s2.jpg",
-   "posts/20261004-1431-94d1b27e871e-s3.jpg",
-   "posts/20261004-1431-94d1b27e871e-s4.jpg",
-   "posts/20261004-1431-94d1b27e871e-s5.jpg",
-   "posts/20261004-1431-94d1b27e871e-s6.jpg"
-  ],
-  "created_at": "2026-10-04T14:31:22+00:00"
  }
 ]
