@@ -44,43 +44,48 @@
    "at": "2026-10-07T04:05:55+00:00",
    "followers": 12,
    "posts": 94
+  },
+  {
+   "at": "2026-10-07T19:46:23+00:00",
+   "followers": 12,
+   "posts": 107
   }
  ],
  "posts": {
   "r20261004-0650-myth_fact": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:05:56+00:00"
+   "checked_at": "2026-10-07T19:46:24+00:00"
   },
   "r20261004-0651-on_this_day": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:05:56+00:00"
+   "checked_at": "2026-10-07T19:46:25+00:00"
   },
   "35a7fde34619": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:05:57+00:00"
+   "checked_at": "2026-10-07T19:46:26+00:00"
   },
   "183b72254349": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:05:58+00:00"
+   "checked_at": "2026-10-07T19:46:26+00:00"
   },
   "add875c0f230": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:05:58+00:00"
+   "checked_at": "2026-10-07T19:46:27+00:00"
   },
   "85e8931eed00": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:05:59+00:00"
+   "checked_at": "2026-10-07T19:46:28+00:00"
   },
   "fec385fe5133": {
    "likes": 3,
    "comments": 0,
-   "checked_at": "2026-10-07T04:05:59+00:00"
+   "checked_at": "2026-10-07T19:46:28+00:00"
   },
   "night_roundup-2026-10-05": {
    "likes": 1,
@@ -90,112 +95,112 @@
   "79286ca0663d": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:06:01+00:00"
+   "checked_at": "2026-10-07T20:02:14+00:00"
   },
   "r20261004-1933-myth_fact": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:06:01+00:00"
+   "checked_at": "2026-10-07T20:02:15+00:00"
   },
   "r20261004-1933-facts": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:06:02+00:00"
+   "checked_at": "2026-10-07T20:02:20+00:00"
   },
   "top10_viral-2026-10-05": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:07+00:00"
+   "checked_at": "2026-10-07T20:02:21+00:00"
   },
   "cfd8b44c52d1": {
    "likes": 3,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:07+00:00"
+   "checked_at": "2026-10-07T20:02:22+00:00"
   },
   "aec460371814": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:08+00:00"
+   "checked_at": "2026-10-07T20:02:22+00:00"
   },
   "r20261004-1935-explainer": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:09+00:00"
+   "checked_at": "2026-10-07T20:02:25+00:00"
   },
   "r20261004-1935-on_this_day": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:38+00:00"
+   "checked_at": "2026-10-07T20:02:26+00:00"
   },
   "ed7266cae6c2": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:39+00:00"
+   "checked_at": "2026-10-07T20:02:27+00:00"
   },
   "market_open-2026-10-05": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:40+00:00"
+   "checked_at": "2026-10-07T20:02:28+00:00"
   },
   "448814f38c27": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:41+00:00"
+   "checked_at": "2026-10-07T20:02:29+00:00"
   },
   "f9228bd0b427": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:42+00:00"
+   "checked_at": "2026-10-07T20:02:29+00:00"
   },
   "thought-2026-10-05": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:42+00:00"
+   "checked_at": "2026-10-07T20:02:30+00:00"
   },
   "7ebcdb31d800": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:43+00:00"
+   "checked_at": "2026-10-07T20:02:31+00:00"
   },
   "f96116682984": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:44+00:00"
+   "checked_at": "2026-10-07T20:02:32+00:00"
   },
   "0d72c5bb87a1": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:44+00:00"
+   "checked_at": "2026-10-07T20:02:32+00:00"
   },
   "bc3e0b58c26c": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:46+00:00"
+   "checked_at": "2026-10-07T20:02:33+00:00"
   },
   "0ed08ce43f5b": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:47+00:00"
+   "checked_at": "2026-10-07T20:02:34+00:00"
   },
   "5ebafc540513": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:47+00:00"
+   "checked_at": "2026-10-07T20:02:34+00:00"
   },
   "585a642f0475": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:48+00:00"
+   "checked_at": "2026-10-07T20:02:35+00:00"
   },
   "market_close-2026-10-05": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:49+00:00"
+   "checked_at": "2026-10-07T20:02:36+00:00"
   },
   "d2ee0bc27222": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:50+00:00"
+   "checked_at": "2026-10-07T20:02:37+00:00"
   },
   "c30b5d30d6f8": {
    "likes": 1,
@@ -205,147 +210,197 @@
   "73f12f5113d1": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:52+00:00"
+   "checked_at": "2026-10-07T20:18:05+00:00"
   },
   "c6bbe163cc6a": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:52+00:00"
+   "checked_at": "2026-10-07T20:18:06+00:00"
   },
   "ddef0c71e119": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:53+00:00"
+   "checked_at": "2026-10-07T20:18:07+00:00"
   },
   "top10_day-2026-10-05": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:54+00:00"
+   "checked_at": "2026-10-07T20:18:08+00:00"
   },
   "1b6169577cc3": {
-   "likes": 1,
+   "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:55+00:00"
+   "checked_at": "2026-10-07T20:18:08+00:00"
   },
   "market_open-2026-10-06": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:55+00:00"
+   "checked_at": "2026-10-07T20:18:09+00:00"
   },
   "market_preopen-2026-10-06": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:57+00:00"
+   "checked_at": "2026-10-07T20:18:10+00:00"
   },
   "thought-2026-10-06": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:21:58+00:00"
+   "checked_at": "2026-10-07T20:18:11+00:00"
   },
   "5d41429879fd": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:21:59+00:00"
+   "checked_at": "2026-10-07T20:18:11+00:00"
   },
   "7868bfc154a1": {
    "likes": 3,
    "comments": 2,
-   "checked_at": "2026-10-07T04:22:00+00:00"
+   "checked_at": "2026-10-07T20:18:12+00:00"
   },
   "2eee9aa17b3f": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:01+00:00"
+   "checked_at": "2026-10-07T20:18:17+00:00"
   },
   "c94f6e732f9a": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:01+00:00"
+   "checked_at": "2026-10-07T20:18:18+00:00"
   },
   "a3789a3cdde3": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:03+00:00"
+   "checked_at": "2026-10-07T20:18:19+00:00"
   },
   "02bdd5c5d10b": {
    "likes": 0,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:04+00:00"
+   "checked_at": "2026-10-07T20:18:24+00:00"
   },
   "c5af436f9033": {
    "likes": 2,
    "comments": 3,
-   "checked_at": "2026-10-07T04:22:04+00:00"
+   "checked_at": "2026-10-07T20:18:25+00:00"
   },
   "4ecf6d40a2ec": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:05+00:00"
+   "checked_at": "2026-10-07T20:18:26+00:00"
   },
   "night_roundup-2026-10-07": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:06+00:00"
+   "checked_at": "2026-10-07T20:18:27+00:00"
   },
   "55da14faf91a": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:06+00:00"
+   "checked_at": "2026-10-07T20:18:28+00:00"
   },
   "top10_viral-2026-10-07": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:07+00:00"
+   "checked_at": "2026-10-07T20:18:29+00:00"
   },
   "r20261006-1931-facts": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:08+00:00"
+   "checked_at": "2026-10-07T20:18:29+00:00"
   },
   "r20261006-1931-on_this_day": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:09+00:00"
+   "checked_at": "2026-10-07T20:18:30+00:00"
   },
   "r20261006-1932-quiz": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:10+00:00"
+   "checked_at": "2026-10-07T20:18:31+00:00"
   },
   "r20261006-1932-explainer": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:11+00:00"
+   "checked_at": "2026-10-07T20:18:31+00:00"
   },
   "r20261006-1933-myth_fact": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:12+00:00"
+   "checked_at": "2026-10-07T20:18:32+00:00"
   },
   "54466372ed7f": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-07T04:22:13+00:00"
+   "checked_at": "2026-10-07T20:18:33+00:00"
   },
   "c4523c0cb3bf": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:13+00:00"
+   "checked_at": "2026-10-07T20:18:37+00:00"
   },
   "market_open-2026-10-07": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:14+00:00"
+   "checked_at": "2026-10-07T20:18:42+00:00"
   },
   "60161bc2361a": {
-   "likes": 0,
+   "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:15+00:00"
+   "checked_at": "2026-10-07T20:18:43+00:00"
   },
   "market_preopen-2026-10-07": {
+   "likes": 1,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:43+00:00"
+  },
+  "d34951c53b69": {
+   "likes": 1,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:44+00:00"
+  },
+  "cb3fb5772395": {
+   "likes": 1,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:45+00:00"
+  },
+  "04da687b3e37": {
+   "likes": 2,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:45+00:00"
+  },
+  "market_close-2026-10-07": {
+   "likes": 1,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:46+00:00"
+  },
+  "f1a9fd69a526": {
+   "likes": 1,
+   "comments": 1,
+   "checked_at": "2026-10-07T20:18:47+00:00"
+  },
+  "e92df0b18fe1": {
+   "likes": 2,
+   "comments": 1,
+   "checked_at": "2026-10-07T20:18:48+00:00"
+  },
+  "48af632d1623": {
+   "likes": 3,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:48+00:00"
+  },
+  "575353c15d27": {
+   "likes": 2,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:18:49+00:00"
+  },
+  "9011345301c1": {
    "likes": 0,
    "comments": 0,
-   "checked_at": "2026-10-07T04:22:16+00:00"
+   "checked_at": "2026-10-07T20:34:16+00:00"
+  },
+  "d8d0c0d79df1": {
+   "likes": 1,
+   "comments": 0,
+   "checked_at": "2026-10-07T20:34:18+00:00"
   }
  }
 }
