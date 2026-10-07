@@ -1,5 +1,33 @@
 [
  {
+  "id": "c4523c0cb3bf",
+  "kind": "calendar",
+  "image": "posts/20261007-0231-c4523c0cb3bf-1.jpg",
+  "options": [
+   "posts/20261007-0231-c4523c0cb3bf-1.jpg",
+   "posts/20261007-0231-c4523c0cb3bf-2.jpg",
+   "posts/20261007-0231-c4523c0cb3bf-3.jpg"
+  ],
+  "slides": [
+   "posts/20261007-0231-c4523c0cb3bf-s2.jpg",
+   "posts/20261007-0231-c4523c0cb3bf-s3.jpg"
+  ],
+  "headline": "Delhi Police bars traffic on Secretariat, Velodrome Road as BJP marks Modi's 25 years",
+  "tag": "DELHI",
+  "caption": "Delhi walo, aaj office ka route check kar lena 🚦\nBJP aaj PM Modi ke 25 saal public life mein poore hone ka event kar rahi hai.\nDelhi Police ke mutabiq Secretariat Road aur Velodrome Road par subah 6 baje se traffic allowed nahi hai.\nVenue ke aas-paas curbs aur diversions expect karo.\nModi ji ke 25 saal ka scene: Team Celebration 🔥 ya Team Traffic Jam 😭?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#delhi #narendramodi #bjp #trending #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/delhi-traffic-update-curbs-on-october-7-as-bjp-marks-pm-modi-s-25-years-in-public-life-check-affected-routes-timings-101791303957899.html",
+  "pin_comment": "Delhi walo, aaj kaunsa route pakdoge? Secretariat Road to band hai, alternate plan share karo 🚗",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "curbs lagे hain → curbs lage hain"
+   ]
+  },
+  "created_at": "2026-10-07T02:31:40+00:00"
+ },
+ {
   "id": "54466372ed7f",
   "image": "posts/20261007-0131-54466372ed7f.jpg",
   "kind": "fun",
@@ -1976,16 +2004,5 @@
   "source": "Hindustan Times",
   "source_url": "https://www.hindustantimes.com/trending/founder-explains-how-low-salary-becomes-a-benchmark-for-future-jobs-don-t-blindly-chase-percentage-hikes-101791079545147.html",
   "created_at": "2026-10-04T03:07:51+00:00"
- },
- {
-  "id": "81572c93172c",
-  "image": "posts/20261004-0207-81572c93172c.jpg",
-  "kind": "news",
-  "headline": "Flydubai Captain Smit Machchhar recounts 'crash attempt' to Netanyahu: 'One last fight left in me'",
-  "tag": "BREAKING",
-  "caption": "Ye story sunke rongte khade ho jayenge 😳\nFlydubai ke Capt Smit Machchhar ne Netanyahu ke saath call par apni \"crash attempt\" wali story detail mein batayi, kaha \"one last fight left in me\".\nUAE investigators ke mutabik co-pilot ne reportedly captain par axe se attack plan kiya tha. Airlines mein crash axe emergency ke liye cockpit mein rakhi jaati hai.\nInvestigation abhi jaari hai, toh baaki details aana baaki hai.\nAapko kya lagta hai, cockpit security aur kitni strong honi chahiye?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Flydubai #SmitMachchhar #Netanyahu #BreakingNews #Aviation",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/smit-machchhar-pilot-detailed-account-flydubai-blows-kept-coming-one-last-fight-in-me-omani-copilot-netanyahu-call-uae-israel-101791077428994.html",
-  "created_at": "2026-10-04T02:07:34+00:00"
  }
 ]
