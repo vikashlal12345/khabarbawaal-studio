@@ -579,25 +579,25 @@
    }
   },
   "news": {
-   "posts": 5,
-   "requests": 20,
-   "input": 66,
-   "output": 23299,
-   "cache_read": 70150,
-   "cache_write": 157369,
-   "value_usd": 0.8766,
+   "posts": 6,
+   "requests": 23,
+   "input": 76,
+   "output": 26167,
+   "cache_read": 82156,
+   "cache_write": 175638,
+   "value_usd": 0.9808,
    "by_purpose": {
     "writing": {
-     "requests": 6,
-     "tokens": 54938
+     "requests": 7,
+     "tokens": 65256
     },
     "photo check": {
-     "requests": 5,
-     "tokens": 49506
+     "requests": 6,
+     "tokens": 56741
     },
     "proofreading": {
-     "requests": 8,
-     "tokens": 141812
+     "requests": 9,
+     "tokens": 157412
     },
     "joke judge": {
      "requests": 1,
