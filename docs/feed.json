@@ -1,5 +1,33 @@
 [
  {
+  "id": "55da14faf91a",
+  "image": "posts/20261007-0031-55da14faf91a.jpg",
+  "kind": "news",
+  "headline": "Amazon Great Indian Festival 2026 goes live for Prime members with laptop, tablet, speaker deals",
+  "tag": "TECH",
+  "caption": "Sale season is back, wallet ready ho jao 🛒\nAmazon Great Indian Festival 2026 Prime members ke liye live ho gaya hai.\nLaptops, tablets aur speakers pe top deals dikh rahe hain.\nHome appliances aur electronics ki deals bhi list mein hain.\nUs dost ko tag karo jo cart mein 15 cheezein daalke bhi kuch kharidta nahi 😅\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#amazon #greatindianfestival #sale #trending #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/technology/amazon-great-indian-festival-2026-is-live-for-prime-members-here-are-top-deals-on-laptops-tablets-speakers-more-101791301288292.html",
+  "pin_comment": "Sabse badi sale ka sach: jo cheez chahiye thi woh nahi kharidi, jo nahi chahiye thi woh cart mein hai 😭 Tumhara cart total kitna?",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo is a heavily upscaled, pixelated crop of the Amazon sale banner. It is cut off, with the 'Gr/In/Fes' text half visible and a Samsung logo and 'Free Del' in the background. It's the cover, so it can't be dropped. A cleaner image would be better.",
+    "Slide 3: The photo carries an 'abp live AI' watermark, so it is an AI-generated image of an Apple MacBook. It is not a real sale photo and has no clear link to the Amazon deal. Credit 'Photo: ABP News' is questionable, so check the licence and consider a different image.",
+    "Slide 4: Smartwatches up to 80%, monitors up to 50% and soundbars-speakers up to 70% do not appear in the article text provided, which is cut off at the earbuds section. Verify against the full article before posting. The slide attributes the smartwatch figure with 'daava hai', but the monitor and soundbar figures are stated as fact.",
+    "Caption: The caption says 'Home appliances aur electronics ki deals bhi list mein hain'. Slide text also lists fridge, washing machine and TV deals. The article provided only covers laptops, tablets, earbuds and similar electronics, so the appliance claim can't be verified. The '2026' year is also not in the article."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-0031-55da14faf91a-s2.jpg",
+   "posts/20261007-0031-55da14faf91a-s3.jpg",
+   "posts/20261007-0031-55da14faf91a-s4.jpg",
+   "posts/20261007-0031-55da14faf91a-s5.jpg"
+  ],
+  "created_at": "2026-10-07T00:31:55+00:00"
+ },
+ {
   "id": "night_roundup-2026-10-07",
   "image": "posts/20261006-2331-night_roundup-2026-10-07.jpg",
   "kind": "top10",
@@ -1922,16 +1950,5 @@
   "source": "KhabarBawaal Original",
   "source_url": "",
   "created_at": "2026-10-04T01:07:52+00:00"
- },
- {
-  "id": "4c531cdabba3",
-  "image": "posts/20261004-0007-4c531cdabba3.jpg",
-  "kind": "news",
-  "headline": "Elderly couple flung in air after car hits them in Delhi's Kirti Nagar; woman driver reportedly flees",
-  "tag": "BREAKING",
-  "caption": "Delhi ke Kirti Nagar se ek disturbing video saamne aaya hai.\nEk elderly couple ko car ne takkar maari aur dono hawa mein uchhal gaye, dono injured hain.\nVideo mein dikhta hai ki woman driver gaadi rok kar bahar aayi aur road par pade buzurg ki taraf gayi, lekin reports ke mutabik baad mein wo wahan se nikal gayi.\nRoad safety ko lekar hum sab ko zyada alert rehna padega.\nAapke hisaab se hit-and-run karne walon ke liye kitni strict saza honi chahiye? 🙏\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Delhi #KirtiNagar #HitAndRun #RoadSafety #DelhiNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/elderly-couple-flung-in-air-injured-after-being-hit-by-car-in-delhis-kirti-nagar-woman-driver-flees-video-101791047028041.html",
-  "created_at": "2026-10-04T00:07:47+00:00"
  }
 ]
