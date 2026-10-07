@@ -1,5 +1,36 @@
 [
  {
+  "id": "top10_viral-2026-10-07",
+  "image": "posts/20261007-0046-top10_viral-2026-10-07.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 VIRAL: 07 Oct",
+  "tag": "🔥 TOP 5 VIRAL",
+  "caption": "Drishyam 3 ka box office dhamaal aur KBC set par aag! 🔥 Aaj ki Top 5 viral khabrein, swipe karo 👉\n\n1. Drishyam 3 crosses ₹216 crore in 5 days\n2. Fire at Mumbai sets: Big B, Badshah evacuated\n3. Kareena Kapoor reportedly joins SRK's King for dance number\n4. Anushka Sharma, parents buy Rs 25.8 crore Mumbai flats: Report\n5. Bengaluru woman: ₹1 lakh/month not enough\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #bollywood #drishyam3",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Anushka and her parents together invested Rs 25.8 crore in two apartments (about Rs 14.9 crore was Anushka's one), and it is only a report.",
+    "Fact corrected to match the article: The article calls this a report, not confirmed, so it should not be stated as fact.",
+    "Slide 2: Photo is the same woman duplicated side by side and looks soft/low-resolution; consider a sharper single frame (kept since it relates to the story)."
+   ],
+   "fixed": [
+    "Anushka Sharma buys Rs 25.8 crore Mumbai flats → Anushka Sharma, parents buy Rs 25.8 crore Mumbai flats: Report",
+    "Kareena Kapoor joins SRK's King for dance number → Kareena Kapoor reportedly joins SRK's King for dance number"
+   ]
+  },
+  "slides": [
+   "posts/20261007-0046-top10_viral-2026-10-07-s2.jpg",
+   "posts/20261007-0046-top10_viral-2026-10-07-s3.jpg",
+   "posts/20261007-0046-top10_viral-2026-10-07-s4.jpg",
+   "posts/20261007-0046-top10_viral-2026-10-07-s5.jpg",
+   "posts/20261007-0046-top10_viral-2026-10-07-s6.jpg",
+   "posts/20261007-0046-top10_viral-2026-10-07-s7.jpg"
+  ],
+  "created_at": "2026-10-07T00:46:29+00:00"
+ },
+ {
   "id": "55da14faf91a",
   "image": "posts/20261007-0031-55da14faf91a.jpg",
   "kind": "news",
