@@ -1,5 +1,34 @@
 [
  {
+  "id": "top10_day-2026-10-07",
+  "image": "posts/20261007-1546-top10_day-2026-10-07.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 NEWS: 07 Oct",
+  "tag": "📰 TOP 5 NEWS",
+  "caption": "Aaj ki Top 5 khabrein aa gayi! Diplomacy se Bollywood tak, sab ek jagah 🔥\n\n1. India in talks with Russia, Ukraine on ceasefire\n2. Mithun Chakraborty named Bengal's cultural advisor\n3. NSA Doval holds talks with top Canadian official\n4. SC warns Rajpal Yadav, orders ₹2 crore deposit\n5. Kareena Kapoor Khan teams up with Google Android\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #news #bollywood #viral",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article does not mention a cheque bounce case, so this detail is unsupported.",
+    "Slide 1: The KHABARBAWAAL logo box on the cover collage sits over the eyes and forehead of the man in the top-left photo (the MEA spokesperson). Move the logo so it doesn't cover his face."
+   ],
+   "fixed": [
+    "Cheque bounce case mein Supreme Court ne → Supreme Court ne"
+   ]
+  },
+  "slides": [
+   "posts/20261007-1546-top10_day-2026-10-07-s2.jpg",
+   "posts/20261007-1546-top10_day-2026-10-07-s3.jpg",
+   "posts/20261007-1546-top10_day-2026-10-07-s4.jpg",
+   "posts/20261007-1546-top10_day-2026-10-07-s5.jpg",
+   "posts/20261007-1546-top10_day-2026-10-07-s6.jpg",
+   "posts/20261007-1546-top10_day-2026-10-07-s7.jpg"
+  ],
+  "created_at": "2026-10-07T15:46:51+00:00"
+ },
+ {
   "id": "9011345301c1",
   "image": "posts/20261007-1531-9011345301c1.jpg",
   "kind": "news",
@@ -1810,51 +1839,5 @@
    "posts/20261004-1600-c1207656ddcd-s3.jpg"
   ],
   "created_at": "2026-10-04T16:00:57+00:00"
- },
- {
-  "id": "top10_day-2026-10-04",
-  "image": "posts/20261004-1546-top10_day-2026-10-04-t5-1b.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 NEWS: 04 Oct",
-  "tag": "📰 TOP 5 NEWS",
-  "caption": "Aaj ki Top 5 khabrein aa gayi! Drishyam 3 ka dhamaka aur Jaishankar ka global message, scroll karo. 🔥\n\n1. Drishyam 3 smashes ₹168 crore in opening weekend\n2. Jaishankar: India has gone beyond advocacy on Ukraine war\n3. BJP confident of wresting Nagaon seat from Congress\n4. Madhavan, Disha Patani, Shriya Saran join Akshay's comedy\n5. Parvati song from Hanuman Ansh tops YouTube chart\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n #Top 5News #India #Drishyam3 #Jaishankar #Bollywood",
-  "source": "Hindustan Times, Bollywood Hungama",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says he plans to buy Tesla cars for 10 of his employees, not '10 more'."
-   ],
-   "fixed": [
-    "US founder swaps Bentley for Tesla, plans 10 more → US founder swaps Bentley for Tesla, plans 10 for employees"
-   ]
-  },
-  "slides": [
-   "posts/20261004-1546-top10_day-2026-10-04-t5-2.jpg",
-   "posts/20261004-1546-top10_day-2026-10-04-t5-3.jpg",
-   "posts/20261004-1546-top10_day-2026-10-04-t5-4.jpg",
-   "posts/20261004-1546-top10_day-2026-10-04-t5-5.jpg",
-   "posts/20261004-1546-top10_day-2026-10-04-t5-6.jpg",
-   "posts/20261004-1546-top10_day-2026-10-04-t5-7.jpg"
-  ],
-  "created_at": "2026-10-04T15:46:12+00:00"
- },
- {
-  "id": "b21f614b5d55",
-  "image": "posts/20261004-1531-b21f614b5d55.jpg",
-  "kind": "fun",
-  "headline": "Bhagyashree: Mehendi fade hui toh toothpick se khud laga di. Meri mehendi: Bartan dhote hi 2 din mein bola, \"Bhai, main chali.\"",
-  "tag": "😂 EXPECTATION VS REALITY",
-  "caption": "Ek saal tak mehendi rakhna bhi commitment hai, apne bas ki baat nahi 😂 Hamari toh Monday tak fade ho jaati hai.\nTag karo us dost ko jiski mehendi 2 din mein gayab ho gayi 🌿\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #Bhagyashree #Mehendi #ShaadiSeason #DesiHumor #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The slide says Bhagyashree used a toothpick to reapply her mehendi herself. The article wasn't available, so I couldn't check that claim or the quote 'Toothpick se khud hi laga deti'. The slide wording ('laga di') and the source text wording ('laga deti') also differ slightly. Please check both against the article."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T15:31:42+00:00"
  }
 ]
