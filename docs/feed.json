@@ -1,5 +1,24 @@
 [
  {
+  "id": "575353c15d27",
+  "image": "posts/20261007-1431-575353c15d27.jpg",
+  "kind": "fun",
+  "headline": "Tag that friend jo lift mein padosi ko dekh ke phone nikaal leta hai, jabki phone mein network hi nahi hai.",
+  "tag": "😂 TAG KARO",
+  "caption": "8 floor, 40 second, aur 0 baat 😅\nLift ka sabse lamba safar wahi hota hai jisme padosi ho.\nUs dost ko tag karo jo ye roz karta hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#tagfriend #relatable #viral #trending #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aur phir 'Kaise ho?' bolne ke baad poori lift mein sirf floor number ki awaaz.",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "jab ki phone mein → jabki phone mein"
+   ]
+  },
+  "created_at": "2026-10-07T14:31:08+00:00"
+ },
+ {
   "id": "48af632d1623",
   "image": "posts/20261007-1332-48af632d1623.jpg",
   "kind": "news",
@@ -1889,39 +1908,5 @@
    "posts/20261004-1431-94d1b27e871e-s6.jpg"
   ],
   "created_at": "2026-10-04T14:31:22+00:00"
- },
- {
-  "id": "721ff971c598",
-  "image": "posts/20261004-1401-721ff971c598.jpg",
-  "kind": "fun",
-  "headline": "Salary: 2006 mein atki hui hai. Rent: 2046 mein reh raha hai. Main: 2026 mein baith ke dono ke beech time travel kar raha hoon.",
-  "tag": "😂 DESI LIFE",
-  "caption": "Salary ne 2006 mein ghar bana liya, rent ne seedha 2046 ka flat book kar liya 😭 Hum beech mein Maggi pe zinda hain.\nTag karo us dost ko jo rent dekhke bolta hai \"bhai, ghar chhod ke hostel chalte hain\" 🏠\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #BengaluruRent #SalaryVsRent #DesiLife #Relatable #MonthEnd",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T14:01:42+00:00"
- },
- {
-  "id": "380e3866ea40",
-  "image": "posts/20261004-1400-380e3866ea40.jpg",
-  "kind": "fun",
-  "headline": "Mummy ne beta ko samajhne ke liye gaming seekhi. Mummy: Ab samjhi, 'bas ek match' matlab 3 ghante. Beta: Mummy, aap toh pro nikli. Mummy: Khana thanda ho raha hai, pause kar.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "Ab mummy ko gaming aa gayi, bachna mushkil hai 😂 Ab \"bas ek match\" ka bahana nahi chalega 🎮\nFamily group mein bhejo, aur tag karo us dost ko jo 'bas ek match' mein raat nikaal deta hai.\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #MummyVsBeta #GamingMom #FamilyGroup #DesiLife #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The article was not available, so I could not check the headline facts (60-year-old Chinese woman, gaming to understand her son). The slide is a meme and doesn't show that headline. The Mummy/Beta dialogue is a joke, not a real quote, but it could be mistaken for the woman's words. Consider a label such as 'imagined chat'. No spelling or layout problems found."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T14:00:47+00:00"
  }
 ]
