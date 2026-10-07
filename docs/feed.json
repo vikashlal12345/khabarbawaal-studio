@@ -1,5 +1,43 @@
 [
  {
+  "id": "48af632d1623",
+  "image": "posts/20261007-1332-48af632d1623.jpg",
+  "kind": "news",
+  "headline": "Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
+  "tag": "VIRAL",
+  "caption": "Tumhe 5 km mein hi saans phool jaati hai, aur Kanpur ka ye dog 38 km daud gayi 🐕\nEk viral video mein ek stray dog runners ke group ke saath 38 km bhaagta dikh raha hai.\nSabse funny part: ye beech-beech mein ruk kar hydration breaks bhi leti rahi, full pro runner vibes.\nUnpopular opinion: is dog ki stamina tumhare gym wale dost se zyada hai. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #kanpur #dog",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/kanpur-dog-runs-38-km-without-stopping-takes-hydration-breaks-on-the-move-101791369596044.html",
+  "pin_comment": "38 km aur beech mein hydration breaks bhi? Ye dog marathon medal deserve karta hai 🏅 Iska naam kya rakhoge?",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the dog and runners stopped to rest and drink water, so 'bina ruke' (without stopping) is inaccurate",
+    "Fact corrected to match the article: Article says the dog stopped and rested with the group to drink water, not while moving.",
+    "Fact corrected to match the article: Article says she rested and drank water with the runners. 'Bina ruke' contradicts that.",
+    "Fact corrected to match the article: The dog stopped and rested to drink water. It did not drink while moving.",
+    "Fact corrected to match the article: The breaks were stops, not 'on the move'.",
+    "Many corrections were needed: please give it a quick read."
+   ],
+   "fixed": [
+    "bina rukke → bina ruke",
+    "ke saath bina ruke 38 km bhaagta → ke saath 38 km bhaagta",
+    "Takes Hydration Breaks On The Move → Takes Hydration Breaks Along The Way",
+    "Daudte hue hydration breaks bhi liye, bina ruke → Beech mein ruk kar hydration breaks bhi liye",
+    "ye chalte-chalte hydration breaks bhi leta raha → ye beech-beech mein ruk kar hydration breaks bhi leta raha",
+    "38 km aur hydration breaks bhi on the move? → 38 km aur beech mein hydration breaks bhi?",
+    "ye dog 38 km daud gaya → ye dog 38 km daud gayi",
+    "hydration breaks bhi leta raha → hydration breaks bhi leti rahi"
+   ]
+  },
+  "slides": [
+   "posts/20261007-1332-48af632d1623-s2.jpg",
+   "posts/20261007-1332-48af632d1623-s3.jpg",
+   "posts/20261007-1332-48af632d1623-s4.jpg"
+  ],
+  "created_at": "2026-10-07T13:32:27+00:00"
+ },
+ {
   "id": "e92df0b18fe1",
   "image": "posts/20261007-1231-e92df0b18fe1.jpg",
   "kind": "news",
@@ -1885,57 +1923,5 @@
    "fixed": []
   },
   "created_at": "2026-10-04T14:00:47+00:00"
- },
- {
-  "id": "92bcf180c8d9",
-  "image": "posts/20261004-1331-92bcf180c8d9.jpg",
-  "kind": "news",
-  "headline": "60-Year-Old Chinese Woman Takes Up Gaming To Understand Son, Becomes Online Streaming Star",
-  "tag": "VIRAL",
-  "caption": "Beta ko samajhne ke liye mummy ne gamer banna choose kar liya 🎮\nChina ki 60 saal ki Zhong Juanjuan ne apne son ki gaming habit samajhne ke liye gaming start ki.\nAb wahi try unka streaming career ban gaya hai aur online followers bhi mil rahe hain.\nAapki mummy ko gaming sikhani pade toh kitne din chalegi, ek hafta ya ek ghanta? 😂\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Viral #China #Gaming #Streamer #Wholesome",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/60yearold-chinese-woman-takes-up-gaming-to-understand-son-gains-following-online-101791115276110.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The photo credit at bottom right (\"Photo: மாலைமலர்\", Tamil script) shows as empty boxes. The font doesn't support Tamil. Re-render it in a font that does, or replace it with a Latin-script credit such as \"Photo: Maalai Malar\". The credit also names a different outlet from the \"Source: Hindustan Times\" line, so check that the photo is properly credited."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261004-1331-92bcf180c8d9-s2.jpg",
-   "posts/20261004-1331-92bcf180c8d9-s3.jpg",
-   "posts/20261004-1331-92bcf180c8d9-s4.jpg"
-  ],
-  "created_at": "2026-10-04T13:31:00+00:00"
- },
- {
-  "id": "dfb9b1573f67",
-  "image": "posts/20261004-1302-dfb9b1573f67.jpg",
-  "kind": "news",
-  "headline": "FSSAI recalls Everest cumin powder over unsafe pesticide levels, suspends Creative Bakers' licence",
-  "tag": "BREAKING",
-  "caption": "Aapke kitchen ke jeera pe FSSAI ki nazar pad gayi 👀\n\nFSSAI ne Everest cumin powder ko 'unsafe' pesticide levels ki wajah se recall kiya hai.\nSaath hi Creative Bakers ka licence bhi suspend kar diya gaya hai.\nReport ke mutabik pichle 6 mahine mein FSSAI ne enforcement actions tez kiye hain aur social media pe public ko bataye ja rahe hain.\n\nKya aap packaged masale khareedte waqt label ya brand check karte ho? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#FSSAI #Everest #FoodSafety #Jeera #IndiaNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/fssai-everest-cumin-power-unsafe-pesticide-levels-suspends-creative-bakers-licence-sugarr-and-spice-bakery-101791111407870.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The six-month statement is the article's own description, not an attributed FSSAI quote; also fixes the grammar"
-   ],
-   "fixed": [
-    "jaari rakhe hai → jaari rakh raha hai",
-    "FSSAI ke mutabik pichle 6 mahine mein enforcement actions tez kiye gaye hain → Report ke mutabik pichle 6 mahine mein FSSAI ne enforcement actions tez kiye hain"
-   ]
-  },
-  "slides": [
-   "posts/20261004-1302-dfb9b1573f67-s2.jpg",
-   "posts/20261004-1302-dfb9b1573f67-s3.jpg",
-   "posts/20261004-1302-dfb9b1573f67-s4.jpg",
-   "posts/20261004-1302-dfb9b1573f67-s5.jpg",
-   "posts/20261004-1302-dfb9b1573f67-s6.jpg",
-   "posts/20261004-1302-dfb9b1573f67-s7.jpg"
-  ],
-  "created_at": "2026-10-04T13:02:18+00:00"
  }
 ]
