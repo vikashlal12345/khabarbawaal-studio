@@ -198,7 +198,7 @@
   "market_close": "2026-10-07",
   "top10_day": "2026-10-07",
   "night_ready": "2026-10-08",
-  "night_calendar": "2026-10-07",
+  "night_calendar": "2026-10-08",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-07",
   "top10_viral": "2026-10-07",
@@ -239,14 +239,14 @@
   "GIFT Nifty Kya Hai? Simple Explainer"
  ],
  "calendar": {
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "items": [
    {
-    "time": "08:00",
-    "topic": "BJP marks PM Modi's 25 years in public life, Delhi",
-    "brief": "BJP marks 25 years of PM Narendra Modi in public life in Delhi on October 7. Delhi Police has barred traffic on Secretariat Road and Velodrome Road from 6 am, so expect curbs and diversions around the venue.",
-    "search": "BJP PM Modi 25 years in public life Delhi October 7",
-    "done": true
+    "time": "09:00",
+    "topic": "Amazon Great Indian Festival 2026 opens for all today",
+    "brief": "Amazon Great Indian Festival 2026 starts for everyone on October 8 (today), after early access for Prime members. Big festive-season discounts are expected on soundbars, AirPods and 55-inch LG and Samsung TVs. Gen Z shoppers will be hunting for gadget deals.",
+    "search": "Amazon Great Indian Festival 2026 sale begins October 8 deals",
+    "done": false
    }
   ]
  },
