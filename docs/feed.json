@@ -1,5 +1,33 @@
 [
  {
+  "id": "market_open-2026-10-07",
+  "image": "posts/20261007-0246-market_open-2026-10-07.jpg",
+  "kind": "market",
+  "headline": "Market Morning Brief: 07 Oct",
+  "tag": "📈 MARKET BRIEF",
+  "caption": "Aaj market ki shuruaat thodi soft dikh rahi hai, GIFT Nifty -0.53% neeche hai. 📉\nSabki nazar subah 10 baje RBI policy par rahegi.\nBrent crude bhi 101.48 dollar par chal raha hai.\nAapko kya lagta hai, aaj RBI kya faisla lega?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #Sensex #ShareMarket #RBI",
+  "source": "NSE, CNBC, ET, Moneycontrol",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: Trent revenue growth is written as 22.5%. The Economic Times headline says 23% year-... and the text is cut off, so please check the exact figure.",
+    "Slide 4: Kotak, IndusInd and Axis Bank 'strong Q2 business updates' do not appear in the headlines we were given. Please confirm the source. The line is also written in the past tense ('jump aaya tha'), so it may be old news.",
+    "Slide 5: The Sebi and Jane Street SAT hearing item is not in the supplied article headlines. Please confirm it is correct and happening today.",
+    "Slide 1: The red '-0.53%' sits over the busy fence and railing in the photo. It is less readable than the rest of the text, so it needs a darker overlay or a text shadow."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-0246-market_open-2026-10-07-s2.jpg",
+   "posts/20261007-0246-market_open-2026-10-07-s3.jpg",
+   "posts/20261007-0246-market_open-2026-10-07-s4.jpg",
+   "posts/20261007-0246-market_open-2026-10-07-s5.jpg",
+   "posts/20261007-0246-market_open-2026-10-07-s6.jpg"
+  ],
+  "created_at": "2026-10-07T02:46:01+00:00"
+ },
+ {
   "id": "c4523c0cb3bf",
   "kind": "calendar",
   "image": "posts/20261007-0231-c4523c0cb3bf-1.jpg",

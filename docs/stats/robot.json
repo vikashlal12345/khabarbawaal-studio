@@ -665,6 +665,25 @@
      "tokens": 25542
     }
    }
+  },
+  "market_open": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 1790,
+   "cache_read": 6189,
+   "cache_write": 17826,
+   "value_usd": 0.0904,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 8209
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 17602
+    }
+   }
   }
  }
 }
