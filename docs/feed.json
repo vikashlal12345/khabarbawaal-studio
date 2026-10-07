@@ -1,5 +1,36 @@
 [
  {
+  "id": "c418179eaf45",
+  "kind": "custom",
+  "image": "posts/20261007-1702-c418179eaf45-1.jpg",
+  "options": [
+   "posts/20261007-1702-c418179eaf45-1.jpg",
+   "posts/20261007-1702-c418179eaf45-2.jpg",
+   "posts/20261007-1702-c418179eaf45-3.jpg",
+   "posts/20261007-1702-c418179eaf45-4.jpg"
+  ],
+  "slides": [
+   "posts/20261007-1702-c418179eaf45-s2.jpg",
+   "posts/20261007-1702-c418179eaf45-s3.jpg"
+  ],
+  "headline": "Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
+  "tag": "TECH",
+  "caption": "Ab tumhare saved reels bhi kaam aayenge, sirf dekh ke bhool nahi jaoge 😎\nMeta ne Muse AI agent launch kiya hai, jo Mark Zuckerberg ki company ka naya tool hai.\nYe purane saved Instagram recipe reels dekh sakta hai aur unse grocery list bana ke bhej sakta hai.\nReport ke mutabiq ye aur bhi kaam kar sakta hai.\nSaved reels ka graveyard finally productive hoga: 🔥 ya 🤡?\n\nFollow @khabarbawaal for daily updates.\nSource: msn.com (link pinned in comments 👇)\n\n#meta #instagram #ai #tech #trending",
+  "source": "msn.com",
+  "source_url": "https://www.msn.com/en-in/news/other/muse-ai-agent-launched-by-mark-zuckerbergs-meta-can-look-at-old-saved-instagram-reels-on-a-recipe-and-send-a-grocery-list-check-what-else-it-can-do/ar-AA2bQLxt",
+  "pin_comment": "Sabse relatable part: hum recipe reels save karte hain, banate kabhi nahi. Muse ab guilt bhi grocery list mein daal dega 😂",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Slide 1 credits the source as 'Geo News'. The caption says 'Source: msn.com'. Make them match the real source.",
+    "Caption: The caption says 'Report ke mutabiq ye aur bhi kaam kar sakta hai', which is vague and unsupported. Slide 2 admits full details are not available. Consider removing the line or stating what the report actually says. The caption also says the agent sees saved reels and 'bhej sakta hai' (sends the list). That detail should be checked against the article, because the slides only mention a headline.",
+    "Slide 1: The background photo shows a plush toy and a phone. It is not clearly Muse or Meta AI. Check it is licensed and relevant. It is a cover slide, so it cannot be dropped."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-07T17:02:20+00:00"
+ },
+ {
   "id": "d8d0c0d79df1",
   "image": "posts/20261007-1631-d8d0c0d79df1.jpg",
   "kind": "news",
@@ -1775,41 +1806,5 @@
    "posts/20261004-2330-night_roundup-2026-10-05-s7.jpg"
   ],
   "created_at": "2026-10-04T23:30:58+00:00"
- },
- {
-  "id": "7b310bc0451c",
-  "image": "posts/20261004-1701-7b310bc0451c.jpg",
-  "kind": "fun",
-  "headline": "Bhutan mein road rage nahi hota. Hamare college canteen mein samosa ki line mein ho jaata hai.  Shaanti: 11:59 Break khatam: 12:00 Samosa khatam: 12:01",
-  "tag": "😂 STUDENT LIFE",
-  "caption": "Bhutan mein shaanti hai, hamare canteen mein samosa ke liye jung hai 😂🥟\nLine mein peeche se 'bhaiya mera bhi' bolne wala har college mein hota hai.\nTag karo us dost ko jo line todke samosa le aata hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #StudentLife #CollegeCanteen #SamosaLove #Bhutan #DesiHumor",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The post is a joke/meme, but the first text in the list is a news-style headline about an Indian woman comparing India with Bhutan, with a quote. That headline doesn't appear on the slide image. The article wasn't provided, so I couldn't check it. If that headline is used anywhere, it doesn't match the meme content."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T17:01:40+00:00"
- },
- {
-  "id": "f2139cae939d",
-  "image": "posts/20261004-1700-f2139cae939d.jpg",
-  "kind": "fun",
-  "headline": "Guest list 2,000 se seedha ghar pe simple shaadi. Tum kya choose karoge? A) Mausi: \"Humein toh bulaya hi nahi\" B) Papa: \"Khana bach gaya, bill bhi\"",
-  "tag": "😂 THIS OR THAT",
-  "caption": "2,000 mehmaan uninvite karna celebrity ke liye easy hai, humare yahan toh Mausi pehle hi naraz baithi hai 😂\nAap A choose karoge ya B? 🤭\nFamily group mein bhejo aur dekho kaun pehle \"humein kyun nahi bulaya\" bolta hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #ThisOrThat #ShaadiSeason #DesiLife #Relatable #FamilyGroup",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Caption: The post is built on an unnamed 'Bollywood icon' and her billionaire husband. No article was available, so I couldn't check the claim (cancelled wedding, 2,000 guests uninvited, home wedding). Confirm it against the source before posting. Also, 'Bollywood icon' is vague and the story isn't clearly stated on the visible slide."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T17:00:47+00:00"
  }
 ]
