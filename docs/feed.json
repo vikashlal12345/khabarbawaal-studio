@@ -1,5 +1,27 @@
 [
  {
+  "id": "e92df0b18fe1",
+  "image": "posts/20261007-1231-e92df0b18fe1.jpg",
+  "kind": "news",
+  "headline": "Bihar Teen Shubham Kumar, 19, Hits Level 22,222 In Candy Crush, Sets Record",
+  "tag": "VIRAL",
+  "caption": "Hum log Level 50 pe atak ke phone fek dete hain, aur yahan bhai ne 22,222 tak pahuncha diya 😳\nBihar ke 19 saal ke Shubham Kumar ne Candy Crush Saga mein Level 22,222 tak ka safar poora kiya.\nIs achievement ko International Book of Records mein record recognition mila hai.\nAgar main Candy Crush ke itne level khelta to ____ (fill the blank 👇)\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #bihar #candycrush",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/bihar-teen-shubham-kumar-reaches-level-22-222-in-candy-crush-saga-gets-record-recognition-101791373523962.html",
+  "pin_comment": "22,222 levels ka matlab kitni lives, kitna sabr? Shubham ka screen time dekhne ka mann hai 😭",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-1231-e92df0b18fe1-s2.jpg",
+   "posts/20261007-1231-e92df0b18fe1-s3.jpg",
+   "posts/20261007-1231-e92df0b18fe1-s4.jpg"
+  ],
+  "created_at": "2026-10-07T12:31:43+00:00"
+ },
+ {
   "id": "39b98bc0b3d0",
   "image": "posts/20261007-1131-39b98bc0b3d0.jpg",
   "kind": "fun",
@@ -1915,96 +1937,5 @@
    "posts/20261004-1302-dfb9b1573f67-s7.jpg"
   ],
   "created_at": "2026-10-04T13:02:18+00:00"
- },
- {
-  "id": "ea7d1b1542c9",
-  "image": "posts/20261004-1231-ea7d1b1542c9.jpg",
-  "kind": "fun",
-  "headline": "Papa: Beta, notice period mein office mein kya karte ho? Main: Kaam dhoondh raha hoon. Mummy: Reels mein? Main: Haan, wahi toh knowledge hai. Bua: Salary toh aayegi na? Main: Bas wahi pakka hai.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "Notice period ka asli kaam: laptop khula, reels chalu, aur chehre pe \"busy\" wala look 😂\nFamily group mein sab ko pata hai, bas bolta koi nahi.\nTag karo us dost ko jo notice period mein sirf scroll kar raha hai.\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #NoticePeriod #OfficeLife #ReelsAddiction #FamilyGroup #DesiHumour",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T12:31:42+00:00"
- },
- {
-  "id": "961e74ea3423",
-  "image": "posts/20261004-1230-961e74ea3423.jpg",
-  "kind": "fun",
-  "headline": "Notice period ka mood: Kaam kisi ne diya nahi. Reels ne kaha, 'Aaja bhai.' Laptop pe Excel khula hai, aankhon mein 400 reels.",
-  "tag": "😂 MOOD",
-  "caption": "Notice period mein company ne bola \"bas handover do\", aur humne reels ka handover le liya 😅\nExcel khula hai, dimaag Instagram pe hai.\nTag karo us colleague ko jo last month mein sirf scroll kar raha hai 📱\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #NoticePeriod #OfficeLife #CorporateHumour #ReelsAddict #DesiOffice",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The slide is a generic meme. It doesn't show the news headline ('No one gave me work': Consultant says he spent 2 days scrolling reels in office during notice period). The '400 reels' figure isn't from any source. The article wasn't available, so I couldn't check it against the story.",
-    "Caption: The caption says 'last month mein sirf scroll kar raha hai', but the headline says the consultant scrolled for 2 days. This is a possible factual mismatch with the story. The caption also never credits or mentions the consultant's claim. Please check this against the article."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T12:30:47+00:00"
- },
- {
-  "id": "d0e7acb1f3b0",
-  "image": "posts/20261004-1133-d0e7acb1f3b0.jpg",
-  "kind": "news",
-  "headline": "'No one replied': Consultant spends 2 days scrolling reels during notice period",
-  "tag": "VIRAL",
-  "caption": "Notice period ka asli sapna poora ho gaya 😭\nEk consultant ne Reddit pe bataya ki office jaake bhi 2 din uske paas koi kaam hi nahi tha.\nBas baith ke reels scroll karta raha, kyunki \"no one replied\".\nTumhare notice period me kya scene tha: full chill ya last-minute kaam ka bojh?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#NoticePeriod #CorporateLife #OfficeLife #Reddit #ViralIndia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/no-one-gave-me-work-consultant-says-he-spent-2-days-scrolling-reels-in-office-during-notice-period-101791108626866.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Allegation about toxic behaviour is the consultant's own unverified claim and should be attributed.",
-    "Fact corrected to match the article: The consultant never wrote 'No one gave me work'. His actual quote is 'No one replied, so I sat all day scrolling reels', so the quoted line was invented.",
-    "Fact corrected to match the article: The caption puts 'no one gave me work' in quotes, but the article quote is 'No one replied'."
-   ],
-   "fixed": [
-    "Usne toxic seniors aur boss ki wajah se resign kiya. → Uska claim hai ki usne toxic seniors aur boss ki wajah se resign kiya.",
-    "No one gave me work → No one replied",
-    "no one gave me work → no one replied"
-   ]
-  },
-  "slides": [
-   "posts/20261004-1133-d0e7acb1f3b0-s2.jpg",
-   "posts/20261004-1133-d0e7acb1f3b0-s3.jpg"
-  ],
-  "created_at": "2026-10-04T11:33:12+00:00"
- },
- {
-  "id": "a36b38d15aff",
-  "image": "posts/20261004-1131-a36b38d15aff.jpg",
-  "kind": "news",
-  "headline": "LeT commander Hashim Moosa reportedly used Ayurvedic honey remedy to heal bullet wounds in jungle",
-  "tag": "BREAKING",
-  "caption": "Jungle mein chhupke bullet wounds ka desi ilaaj? Officials ka kehna hai ki LeT commander Hashim Moosa ne Ayurvedic honey remedy use ki.\nOfficials ke mutabik Moosa ko Dorimal-Gambhir Moghla area mein pichhle encounter ke dauran bullet injuries lagi thi.\nYe details security officials ne share ki hain.\nAapko kya lagta hai, ye jungle survival ki kahani kitni crazy hai? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#LeT #HashimMoosa #IndianArmy #SecurityForces #JammuKashmir",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/let-commander-hashim-moosa-used-ayurvedic-honey-remedy-to-heal-bullet-wounds-in-jungle-101791110505908.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article gives no Poonch/Rajouri/Ganderbal attacks; says he was 'allegedly' involved in a dozen attacks. Allegation must be attributed.",
-    "Slide 1: The cover photo shows soldiers and a vehicle. It's a generic file image, not a picture of Moosa or this operation. It's readable and the text doesn't cover any faces. Consider adding a 'Representative image' note.",
-    "Slide 3: The photo circles one man in a group of four as Moosa. The article doesn't confirm this identification, so check the photo source before posting."
-   ],
-   "fixed": [
-    "Moosa Pahalgam 2025 hamle ke masterminds mein tha, jisme 26 log maare gaye. Woh Poonch, Rajouri, Ganderbal ke kai hamlon mein shamil tha. → Officials ke mutabik Moosa Pahalgam 2025 hamle ke masterminds mein tha, jisme 26 log maare gaye. Us par kareeb ek dozen hamlon mein shamil hone ka aarop tha."
-   ]
-  },
-  "slides": [
-   "posts/20261004-1131-a36b38d15aff-s2.jpg",
-   "posts/20261004-1131-a36b38d15aff-s3.jpg",
-   "posts/20261004-1131-a36b38d15aff-s4.jpg",
-   "posts/20261004-1131-a36b38d15aff-s5.jpg"
-  ],
-  "created_at": "2026-10-04T11:31:48+00:00"
  }
 ]
