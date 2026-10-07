@@ -1,5 +1,35 @@
 [
  {
+  "id": "f1a9fd69a526",
+  "image": "posts/20261007-1032-f1a9fd69a526.jpg",
+  "kind": "news",
+  "headline": "World Leaders Pay Tribute To 'Good Friend' PM Modi On 25 Years In Public Life",
+  "tag": "POLITICS",
+  "caption": "25 saal pehle ek chhota sa shapath grahan, aaj poori duniya tribute de rahi hai 🇮🇳\nPM Modi ne October 2001 mein Gujarat CM ke roop mein pehli baar sarkar ki kamaan sambhali thi.\nAb unke 25 saal public life mein poore hone par world leaders unhe \"good friend\" keh rahe hain.\nTributes mein \"Vishnu avatar\" se lekar \"Kalki\" tak ke words trend kar rahe hain.\nEk word mein batao: 25 saal ki is journey ko tum kya naam doge? 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#narendramodi #india #trending #bjp #politics",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/vishnu-avatar-to-kalki-world-leaders-pay-tribute-to-good-friend-pm-modi-on-25-years-in-public-life-101791364861368.html",
+  "pin_comment": "Gujarat CM se lekar world stage tak, 25 saal ka safar. Sabse yaadgar Modi moment tumhare liye kaunsa raha? 🔥",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The headline and the caption put 'Good Friend' in quotes as if world leaders said it. The article text has no leader saying 'good friend'. Only Dominica's Skerrit is slotted as saying 'my dear friend', and that line isn't in the article either. Check the source or soften the headline.",
+    "Slide 1: The headline block covers the lower part of Modi's face and chin. It is readable, but the text sits on his face.",
+    "Slide 2: The embedded tweet screenshot is too small to read on a phone. The long article text inside it is illegible. Consider cropping to the key lines.",
+    "Slide 5: The Skerrit 'my dear friend' quote and the Tinubu message are not in the article text provided, only in the cut-off part. Verify them against the full source before posting.",
+    "Caption: The caption says the 'Vishnu avatar' and 'Kalki' words are 'trend kar rahe hain'. The article doesn't support the claim of trending. Also, the article says Modi's 25 years are as head of government, while the caption and slides say 'public life'. Check that the wording is consistent."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-1032-f1a9fd69a526-s2.jpg",
+   "posts/20261007-1032-f1a9fd69a526-s3.jpg",
+   "posts/20261007-1032-f1a9fd69a526-s4.jpg",
+   "posts/20261007-1032-f1a9fd69a526-s5.jpg",
+   "posts/20261007-1032-f1a9fd69a526-s6.jpg"
+  ],
+  "created_at": "2026-10-07T10:32:09+00:00"
+ },
+ {
   "id": "market_close-2026-10-07",
   "image": "posts/20261007-1016-market_close-2026-10-07.jpg",
   "kind": "market",
@@ -1959,36 +1989,5 @@
    "posts/20261004-1131-a36b38d15aff-s5.jpg"
   ],
   "created_at": "2026-10-04T11:31:48+00:00"
- },
- {
-  "id": "a8e912993e2c",
-  "image": "posts/20261004-1031-a8e912993e2c.jpg",
-  "kind": "news",
-  "headline": "Rakhi Sawant slams Govinda for neglecting Sunita Ahuja, calls rumoured girlfriend 'pati chor'",
-  "tag": "BOLLYWOOD",
-  "caption": "Govinda ke naam pe naya bawaal shuru ho gaya hai 👀\nRakhi Sawant ne Govinda ko wife Sunita Ahuja ko neglect karne ke liye criticise kiya hai.\nUnhone Govinda ki rumoured girlfriend Komal Rani Swarnkar ko \"pati chor\" bola aur unhe apne saath panga na lene ki warn bhi kiya.\nYe sab Rakhi ke claims hain, in claims par Govinda ya Komal ka seedha reaction abhi story mein nahi hai.\nAapko kya lagta hai, Rakhi ka beech mein aana sahi hai ya ye personal matter hai?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#RakhiSawant #Govinda #SunitaAhuja #BollywoodGossip #BollywoodNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/rakhi-sawant-slams-govinda-for-neglecting-sunita-ahuja-warns-rumoured-girlfriend-komal-rani-swarnkar-101791098365855.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article: Rakhi said Komal was badmouthing HER and warned Komal not to mess with her, not about speaking against Sunita.",
-    "Fact corrected to match the article: Article says Govinda has denied the allegations and Komal reacted to the criticism, so 'no reaction' is inaccurate; narrowed to Rakhi's remarks.",
-    "Fact corrected to match the article: Sunita's claim was stated as fact; it is an allegation and should be attributed to her, with the court detail from the article.",
-    "Many corrections were needed: please give it a quick read."
-   ],
-   "fixed": [
-    "Sunita ke khilaf bolne se warn → apne saath panga na lene ki warn",
-    "Ye sab Rakhi ke claims hain, Govinda ya Komal ka reaction abhi story mein nahi hai. → Ye sab Rakhi ke claims hain, in claims par Govinda ya Komal ka seedha reaction abhi story mein nahi hai.",
-    "Sunita ne Rakhi se phone par kaha ki Govinda aur Komal shaadi plan kar rahe hain, isliye unhone divorce petition wapas liya. → Sunita ne Rakhi se phone par aarop lagaya ki Govinda aur Komal shaadi plan kar rahe hain, aur isi wajah se unhone court jaakar divorce petition wapas liya."
-   ]
-  },
-  "slides": [
-   "posts/20261004-1031-a8e912993e2c-s2.jpg",
-   "posts/20261004-1031-a8e912993e2c-s3.jpg",
-   "posts/20261004-1031-a8e912993e2c-s4.jpg",
-   "posts/20261004-1031-a8e912993e2c-s5.jpg"
-  ],
-  "created_at": "2026-10-04T10:31:31+00:00"
  }
 ]
