@@ -1,5 +1,26 @@
 [
  {
+  "id": "d8d0c0d79df1",
+  "image": "posts/20261007-1631-d8d0c0d79df1.jpg",
+  "kind": "news",
+  "headline": "Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
+  "tag": "BOLLYWOOD",
+  "caption": "Kareena ka helmet wala mystery post dekh ke sab confuse the 👀\nVideo mein Google Android ka helmet tha, fans guess kar rahe the ki hint kya hai.\nSources ke mutabik, Kareena ne F1 champion Lando Norris ke saath global collab kiya hai.\nBollywood, tech aur Formula 1 ek frame mein, kaafi unexpected combo hai.\nKareena ya Lando, is collab mein kaun zyada scene chura lega? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#kareenakapoorkhan #bollywood #f1 #trending #viral",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/exclusive-kareena-kapoor-khans-mystery-helmet-post-decoded-she-has-teamed-up-with-f1-champion-lando-norris-for-a-global-collaboration-say-sources/",
+  "pin_comment": "Bebo aur F1 ka crossover bingo mein kisne guess kiya tha? Honest raho 😂",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-1631-d8d0c0d79df1-s2.jpg",
+   "posts/20261007-1631-d8d0c0d79df1-s3.jpg"
+  ],
+  "created_at": "2026-10-07T16:31:32+00:00"
+ },
+ {
   "id": "top10_day-2026-10-07",
   "image": "posts/20261007-1546-top10_day-2026-10-07.jpg",
   "kind": "top10",
@@ -1790,54 +1811,5 @@
    "fixed": []
   },
   "created_at": "2026-10-04T17:00:47+00:00"
- },
- {
-  "id": "fec385fe5133",
-  "image": "posts/20261004-1631-fec385fe5133.jpg",
-  "kind": "news",
-  "headline": "Bengaluru man says salary is stuck in 2006 but rent lives in 2046",
-  "tag": "VIRAL",
-  "caption": "Bengaluru ka rent dekh ke salary khud sharma jaati hai 😭\nEk resident ne corporate salaries aur rent ke beech ke gap ko \"absolute mathematical comedy\" bola.\nUnke hisaab se salary 2006 mein atki hai, par rent 2046 mein jee raha hai.\nExample mein New Thippasandra aur Indiranagar jaise areas ka zikr kiya gaya.\nTumhare city mein rent vs salary ka kya scene hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bengaluru #BengaluruRent #Indiranagar #SalaryVsRent #CorporateLife",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/bengaluru-man-highlights-salary-rent-gap-says-salary-stuck-in-2006-but-rent-is-living-in-2046-101791120313416.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says more than 15-year-old apartment",
-    "Slide 2: The photo credit says 'moneycontrol.com', but the article source is Hindustan Times. Check that the photo really comes from moneycontrol, or change the credit.",
-    "Slide 3: The photo looks like a generic or AI-generated stock image: a modern apartment block and a toy house with keys. It doesn't match the 'more than 15-year-old walk-up' described in the text. The credit 'moneycontrol.com' also looks wrong or misleading. Check the credit or label the image as illustrative.",
-    "Slide 1: The cover photo shows a rail yard and has no clear link to Indiranagar or to rents. It is only loosely related, so check it is acceptable."
-   ],
-   "fixed": [
-    "Unke mutabiq 15 saal purane second-floor → Unke mutabiq 15 saal se zyada purane second-floor"
-   ]
-  },
-  "slides": [
-   "posts/20261004-1631-fec385fe5133-s2.jpg",
-   "posts/20261004-1631-fec385fe5133-s3.jpg",
-   "posts/20261004-1631-fec385fe5133-s4.jpg",
-   "posts/20261004-1631-fec385fe5133-s5.jpg"
-  ],
-  "created_at": "2026-10-04T16:31:16+00:00"
- },
- {
-  "id": "c1207656ddcd",
-  "image": "posts/20261004-1600-c1207656ddcd.jpg",
-  "kind": "news",
-  "headline": "Indian woman compares India with Bhutan: clean air, safer streets, no road rage",
-  "tag": "VIRAL",
-  "caption": "Ek Indian woman ne India aur Bhutan ko compare kiya aur internet ka mood hi badal gaya 👀\nUnka kehna hai ki Bhutan me saaf hawa, safer streets aur road rage nahi dikha.\nWoman ke mutabik unka maksad India ko neecha dikhana nahi tha, balki public spaces me individual responsibility ki baat karna tha.\nAb sawaal ye hai: kya sach me badlav humse shuru hota hai? Comments me batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#India #Bhutan #ViralNews #RoadRage #CleanAir",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/indian-woman-compares-india-with-bhutan-highlights-clean-air-safer-streets-no-road-rage-for-the-first-time-i-realised-101791127854825.html",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261004-1600-c1207656ddcd-s2.jpg",
-   "posts/20261004-1600-c1207656ddcd-s3.jpg"
-  ],
-  "created_at": "2026-10-04T16:00:57+00:00"
  }
 ]
