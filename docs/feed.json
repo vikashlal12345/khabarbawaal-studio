@@ -1,5 +1,27 @@
 [
  {
+  "id": "market_preopen-2026-10-07",
+  "image": "posts/20261007-0339-market_preopen-2026-10-07.jpg",
+  "kind": "market",
+  "headline": "Pre-open: Nifty 22,690.45 (-0.38%)",
+  "tag": "🔔 PRE-OPEN",
+  "caption": "🔔 Pre-open update: Nifty 22,690.45 (-0.38%) par khulne ke sanket, negative start.\nPre-open mein sabse upar ETERNAL (+1.09%), sabse neeche TITAN (-2.44%).\nMarket 9:15 pe khulega. Aaj aapko market kaisa lag raha hai? 👇\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #ShareMarket #PreOpen #DalalStreet",
+  "source": "NSE",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Data-only post: numbers straight from NSE"
+   ]
+  },
+  "slides": [
+   "posts/20261007-0339-market_preopen-2026-10-07-s2.jpg",
+   "posts/20261007-0339-market_preopen-2026-10-07-s3.jpg"
+  ],
+  "created_at": "2026-10-07T03:39:58+00:00"
+ },
+ {
   "id": "60161bc2361a",
   "image": "posts/20261007-0334-60161bc2361a.jpg",
   "kind": "news",
