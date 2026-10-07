@@ -625,25 +625,25 @@
    }
   },
   "fun": {
-   "posts": 2,
-   "requests": 6,
-   "input": 16,
-   "output": 2979,
-   "cache_read": 8073,
-   "cache_write": 29587,
-   "value_usd": 0.1498,
+   "posts": 3,
+   "requests": 9,
+   "input": 24,
+   "output": 4514,
+   "cache_read": 12048,
+   "cache_write": 44854,
+   "value_usd": 0.2271,
    "by_purpose": {
     "writing": {
-     "requests": 2,
-     "tokens": 17790
+     "requests": 3,
+     "tokens": 26919
     },
     "joke judge": {
-     "requests": 2,
-     "tokens": 9138
+     "requests": 3,
+     "tokens": 13639
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 13727
+     "requests": 3,
+     "tokens": 20882
     }
    }
   },
