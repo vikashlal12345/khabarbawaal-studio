@@ -1,5 +1,34 @@
 [
  {
+  "id": "60161bc2361a",
+  "image": "posts/20261007-0334-60161bc2361a.jpg",
+  "kind": "news",
+  "headline": "Pikachu Went To Space: Plush Toy Flew Aboard ISS With Sophie Adenot's Mission",
+  "tag": "VIRAL",
+  "caption": "Pikachu ne bhi space ki sair kar li! ⚡\nEk Pikachu plushie International Space Station par tha, ESA astronaut Sophie Adenot ke mission ke dauraan.\nShubhanshu Shukla samet kai astronauts pehle bhi plush toys space le ja chuke hain.\nAgar main astronaut hota to space mein ____ le jaata 🚀\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #space #pikachu",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/pikachu-aboard-iss-5-times-astronauts-including-shubhanshu-shukla-flew-plush-toys-into-space-and-why-101791339607918.html",
+  "pin_comment": "Sabse cute part: space mein plushie hawa mein tairta hai, gravity ka koi tension nahi 😂 Tumhara favourite cartoon kaun sa hai jo space jaana chahiye?",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: '5 baar' is not in the article; the article says astronauts have carried plush toys for years, with no count."
+   ],
+   "fixed": [
+    "Shubhanshu Shukla samet 5 baar astronauts ne plush toys uraye → Shubhanshu Shukla samet kai astronauts plush toys space le ja chuke hain"
+   ]
+  },
+  "slides": [
+   "posts/20261007-0334-60161bc2361a-s2.jpg",
+   "posts/20261007-0334-60161bc2361a-s3.jpg",
+   "posts/20261007-0334-60161bc2361a-s4.jpg",
+   "posts/20261007-0334-60161bc2361a-s5.jpg",
+   "posts/20261007-0334-60161bc2361a-s6.jpg",
+   "posts/20261007-0334-60161bc2361a-s7.jpg"
+  ],
+  "created_at": "2026-10-07T03:34:28+00:00"
+ },
+ {
   "id": "market_open-2026-10-07",
   "image": "posts/20261007-0246-market_open-2026-10-07.jpg",
   "kind": "market",
@@ -2003,34 +2032,5 @@
    "posts/20261004-0408-9f959aad3892-s6.jpg"
   ],
   "created_at": "2026-10-04T04:08:34+00:00"
- },
- {
-  "id": "b8a5c931e968",
-  "image": "posts/20261004-0324-b8a5c931e968-v3.jpg",
-  "kind": "news",
-  "headline": "Rajpal Yadav wasn't asked to leave Mushtaq Khan's funeral, creator Nazma Shaikh clarifies viral video",
-  "tag": "BOLLYWOOD",
-  "caption": "Ek viral video ne internet pe bawaal macha diya tha 👀\nRajpal Yadav ko Mushtaq Khan ke prayer meet se kathit taur pe jaane ko kaha gaya, aisa claim tha.\nAb social media creator Nazma Shaikh ne video share karke clarify kiya hai ki unhe leave karne ko nahi kaha gaya tha.\nKya hum bina context ke viral videos pe jaldi believe kar lete hain?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#RajpalYadav #MushtaqKhan #NazmaShaikh #Bollywood #ViralVideo",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/rajpal-yadav-wasnt-asked-to-leave-mushtaq-khan-funeral-social-media-creator-nazma-shaikh-sets-the-record-straight-on-viral-videos-101791082834874.html",
-  "slides": [
-   "posts/20261004-0324-b8a5c931e968-s2-v3.jpg",
-   "posts/20261004-0324-b8a5c931e968-s3-v3.jpg",
-   "posts/20261004-0324-b8a5c931e968-s4-v4.jpg",
-   "posts/20261004-0324-b8a5c931e968-s5-v3.jpg",
-   "posts/20261004-0324-b8a5c931e968-s6-v3.jpg"
-  ],
-  "created_at": "2026-10-04T03:24:04+00:00"
- },
- {
-  "id": "d23f455b03d8",
-  "image": "posts/20261004-0307-d23f455b03d8.jpg",
-  "kind": "news",
-  "headline": "Founder warns low salary becomes 'benchmark' that keeps you underpaid across job switches",
-  "tag": "VIRAL",
-  "caption": "Job switch kar rahe ho? Ye padh lo pehle 👀\nEk founder ne warn kiya hai ki low salary aapka \"benchmark\" ban jaata hai.\nMatlab kai job switch ke baad bhi aap saalon tak underpaid reh sakte ho.\nUnki advice: percentage hike ke peeche blindly mat bhaago.\nAapka kya experience raha, hike ya actual salary, kya matter karta hai? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n #SalaryTalk #CareerAdvice #JobSwitch #CorporateLife #GenZ",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/founder-explains-how-low-salary-becomes-a-benchmark-for-future-jobs-don-t-blindly-chase-percentage-hikes-101791079545147.html",
-  "created_at": "2026-10-04T03:07:51+00:00"
  }
 ]
