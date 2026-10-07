@@ -1,5 +1,33 @@
 [
  {
+  "id": "ae3de972cd12",
+  "image": "posts/20261007-0631-ae3de972cd12.jpg",
+  "kind": "news",
+  "headline": "Karl Bushby Returns To UK After Walking The World For 28 Years",
+  "tag": "VIRAL",
+  "caption": "Bhai ne 28 saal paidal chalke duniya naap di 🤯\nKarl Bushby ne 1998 mein Punta Arenas, Chile se safar shuru kiya, tab uski age 29 thi.\nTakriban 50,000 km chalne ke baad woh 2026 mein UK wapas pahunch gaya, ab 57 saal ka hai.\nHum 5 minute ke liye bhi gym nahi ja paate, ye banda poori life chal diya.\n28 saal paidal ya 28 saal Delhi traffic mein? 🚶/🚗\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #worldnews #karlbushby",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/who-is-karl-bushby-man-who-walked-the-world-for-28-years-covered-nearly-50-000-km-returns-to-uk-101791350685858.html",
+  "pin_comment": "Sabse crazy part: shuru kiya 29 pe, laut ke aaya 57 pe. Poori jawani ek walk mein 😳",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The photo shows Bushby with an unidentified man in glasses. He is not named in the article and is not Herzog, so readers may think he is someone relevant. Check who he is or confirm that the photo is meant to be Bushby only.",
+    "Slide 3: The claim 'Hull November tak pahunchne ka plan' cannot be checked. The article text is cut off at 'He is exp...'. Confirm the November date against the full source.",
+    "Slide 2: The photo carries a visible TOI watermark and white side borders, but the credit says 'Indiatimes'. The slide 1 source line says Hindustan Times. Check that the credits match the actual photo sources.",
+    "Caption: The caption says he walked '28 saal paidal' and 'poori life chal diya'. The article says he also swam the Channel and made trips to the US to meet sponsors. This is acceptable as hyperbole, but it is not strictly accurate."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261007-0631-ae3de972cd12-s2.jpg",
+   "posts/20261007-0631-ae3de972cd12-s3.jpg",
+   "posts/20261007-0631-ae3de972cd12-s4.jpg",
+   "posts/20261007-0631-ae3de972cd12-s5.jpg"
+  ],
+  "created_at": "2026-10-07T06:31:51+00:00"
+ },
+ {
   "id": "04da687b3e37",
   "image": "posts/20261007-0532-04da687b3e37.jpg",
   "kind": "news",
@@ -1982,102 +2010,5 @@
    "posts/20261004-0731-35a7fde34619-s6.jpg"
   ],
   "created_at": "2026-10-04T07:31:54+00:00"
- },
- {
-  "id": "06716c35a66a",
-  "image": "posts/20261004-0623-06716c35a66a.jpg",
-  "kind": "fun",
-  "headline": "Family group mein poll: Front-load ya top-load? Papa: Jo sasta ho. Bua: Front-load, paani bachta hai. Mummy: Kuch mat lo, main haath se dho lungi. Poll band.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "Festive upgrade ka plan banta hai, phir Mummy ka emotional veto aa jata hai 😂\nWashing machine kharidne se pehle family meeting zaroori hai.\nFamily group mein bhejo, jahan har koi expert ban jata hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #FamilyGroup #DesiLife #WashingMachine #FestiveSeason #DiwaliShopping",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T06:23:10+00:00"
- },
- {
-  "id": "6e90f9341c6f",
-  "image": "posts/20261004-0608-6e90f9341c6f.jpg",
-  "kind": "news",
-  "headline": "SP MP Claims Congress Wouldn't Have Won Single Seat Without Alliance; Akhilesh Steps In",
-  "tag": "POLITICS",
-  "caption": "Opposition ka ghar ka jhagda public ho gaya 👀\n\nSP MP Shiv Pal Singh Patel (Pratapgarh) ne UP seat sharing par Rahul Gandhi pe \"so scared\" wala dig maara. Unka claim hai ki SP ke bina Congress 2024 Lok Sabha mein ek bhi seat nahi jeetti.\n\nCongress ne palat kar jawab diya, aur phir Akhilesh Yadav ko beech mein aana pada.\n\nAapko kya lagta hai, ye alliance 2027 tak chalega ya seat sharing pe tootega? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Politics #SamajwadiParty #Congress #RahulGandhi #AkhileshYadav",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/sp-mp-rahul-gandhi-was-so-scared-to-contest-from-amethi-up-seat-sharing-congress-hits-back-akhilesh-yadav-intervenes-101791088986183.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Akhilesh issued a gag order to his own leaders; he did not mediate (beech-bachav)."
-   ],
-   "fixed": [
-    "Congress ne palatwaar kiya, Akhilesh Yadav ne beech-bachav kiya → Congress ne palatwaar kiya, Akhilesh Yadav ne SP netaon ko bayanbaazi se roka"
-   ]
-  },
-  "slides": [
-   "posts/20261004-0608-6e90f9341c6f-s2.jpg",
-   "posts/20261004-0608-6e90f9341c6f-s3.jpg",
-   "posts/20261004-0608-6e90f9341c6f-s4.jpg",
-   "posts/20261004-0608-6e90f9341c6f-s5.jpg",
-   "posts/20261004-0608-6e90f9341c6f-s6.jpg"
-  ],
-  "created_at": "2026-10-04T06:08:30+00:00"
- },
- {
-  "id": "sample-market-open",
-  "image": "posts/20261004-0550-sample-market-open.jpg",
-  "kind": "market",
-  "headline": "SAMPLE (for review): Market Morning Brief: 04 Oct",
-  "tag": "📈 MARKET BRIEF · SAMPLE",
-  "caption": "GIFT Nifty +0.59% upar, par Nifty ne 8 hafte lagataar girawat dekhi hai.\nUS markets hare rang mein band hue, Asia kamzor raha.\nMonday ko TCS Q2 aur auto sales ka mood dekhna hoga.\nAapke hisaab se kya Nifty 9th hafte mein rebound karega?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n #StockMarket #Nifty #Sensex #GIFTNifty #MarketMorningBrief",
-  "source": "NSE, CNBC, ET, Moneycontrol",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says 10 stocks turn ex-record date this week, not 15.",
-    "Slide 4: The HDFC Bank item says Anup Bagchi has become the new MD-CEO. Nothing in the article or headlines supports this, so please verify it or remove it.",
-    "Slide 4: The Vedanta item (\"Q2 results se pehle group companies par charcha\") has no source in the article. Verify it or remove it."
-   ],
-   "fixed": [
-    "Is hafte 15 companies → Is hafte 10 companies"
-   ]
-  },
-  "slides": [
-   "posts/20261004-0550-sample-market-open-s2.jpg",
-   "posts/20261004-0550-sample-market-open-s3.jpg",
-   "posts/20261004-0550-sample-market-open-s4.jpg",
-   "posts/20261004-0550-sample-market-open-s5.jpg",
-   "posts/20261004-0550-sample-market-open-s6.jpg"
-  ],
-  "created_at": "2026-10-04T05:50:22+00:00"
- },
- {
-  "id": "sample-market-close",
-  "image": "posts/20261004-0549-sample-market-close.jpg",
-  "kind": "market",
-  "headline": "SAMPLE (for review): Closing Bell: Nifty 22,421.95 (-0.88%)",
-  "tag": "🔔 CLOSING BELL · SAMPLE",
-  "caption": "Nifty 50 aaj 22,421.95 pe band hua, 198.50 points (-0.88%) neeche. 🔔\nAuto index -3.46% aur Metal -2.35% gira, lekin IT 2.17% chadha. INFY +4.11% top gainer raha.\nIndia VIX 14.44 pe, +7.04%. Brent $102.25 pe flat raha.\nAapke hisaab se agle hafte bazaar mein rebound aayega ya dabav jaari rahega?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n #StockMarket #Nifty #Sensex #ClosingBell #BankNifty",
-  "source": "NSE, CNBC",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "oil ki ooncheen keematein → oil ki oonchi keematein"
-   ]
-  },
-  "slides": [
-   "posts/20261004-0549-sample-market-close-s2.jpg",
-   "posts/20261004-0549-sample-market-close-s3.jpg",
-   "posts/20261004-0549-sample-market-close-s4.jpg",
-   "posts/20261004-0549-sample-market-close-s5.jpg",
-   "posts/20261004-0549-sample-market-close-s6.jpg"
-  ],
-  "created_at": "2026-10-04T05:49:38+00:00"
  }
 ]
