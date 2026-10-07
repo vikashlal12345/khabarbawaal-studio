@@ -1,5 +1,22 @@
 [
  {
+  "id": "639a1af4b455",
+  "image": "posts/20261007-0831-639a1af4b455.jpg",
+  "kind": "fun",
+  "headline": "POV: Fridge mein kuch nahi hai. Mummy: Dekh, andar hi hoga. Main: Mummy, 4 baar dekha. Mummy: Dhyaan se dekha?",
+  "tag": "😂 FAMILY GROUP",
+  "caption": "Mummy ki aankhein fridge ka GPS hain 😅\nJo cheez hume nahi dikhti, unhe 2 second mein mil jaati hai.\nFamily group mein bhejo, dekhte hain kaun pakda jaata hai\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#viral #trending #mummy #relatable #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Fridge mein raita dikha toh bhi hum bolenge 'kuch nahi hai'.",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-07T08:31:18+00:00"
+ },
+ {
   "id": "c6932c360eae",
   "image": "posts/20261007-0731-c6932c360eae.jpg",
   "kind": "news",
@@ -1952,88 +1969,5 @@
    "fixed": []
   },
   "created_at": "2026-10-04T09:30:45+00:00"
- },
- {
-  "id": "add875c0f230",
-  "image": "posts/20261004-0831-add875c0f230.jpg",
-  "kind": "news",
-  "headline": "Drishyam 3 hits ₹177 crore worldwide, beats part 1's lifetime haul in 2 days",
-  "tag": "BOLLYWOOD",
-  "caption": "Ajay Devgn ne box office pe Vijay Salgaonkar wali game fir se laga di 🔥\n\nDrishyam 3 ne worldwide ₹177 crore ka collection kar liya hai, sirf 2 din mein.\nMatlab part 1 ka poora lifetime collection pehle weekend ke beech mein hi beat ho gaya.\nOpening weekend ab monstrous hone ki ummeed hai.\n\nAapko kaunsa Drishyam sabse best laga: 1, 2 ya 3? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Drishyam3 #AjayDevgn #BoxOffice #Bollywood #BollywoodNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-day-2-ajay-devgn-jaideep-ahlawat-film-177-crore-beats-drishyam-1-tabu-shriya-saran-101791087325978.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Film beat Drishyam's lifetime on Saturday morning, i.e. during the opening weekend, not before it.",
-    "Fact corrected to match the article: Article only says the film is on course for a huge weekend; a prediction should not be stated as certain.",
-    "Slide 1: The man in the centre of the poster (presumably Ajay Devgn) has his face hidden. The tag, the headline and the dark gradient cover everything from the forehead down. Move the headline lower or shift the photo so his face shows."
-   ],
-   "fixed": [
-    "pehle weekend se pehle hi beat ho gaya → pehle weekend ke beech mein hi beat ho gaya",
-    "Opening weekend ab monstrous hone wala hai. → Opening weekend ab monstrous hone ki ummeed hai."
-   ]
-  },
-  "slides": [
-   "posts/20261004-0831-add875c0f230-s2.jpg",
-   "posts/20261004-0831-add875c0f230-s3.jpg"
-  ],
-  "created_at": "2026-10-04T08:31:08+00:00"
- },
- {
-  "id": "183b72254349",
-  "image": "posts/20261004-0733-183b72254349.jpg",
-  "kind": "news",
-  "headline": "Sanjay Dutt says he doesn't feel peace in India anymore, jokes about becoming PM",
-  "tag": "BOLLYWOOD",
-  "caption": "Sanjay Baba ke is statement ne internet pe halchal macha di 👀\n\nShekhar Suman ke show pe Sanjay Dutt ne kaha ki unhe ab India mein peace feel nahi hoti.\nSaath hi mazaak mein bole ki agar wo Prime Minister bane, toh abroad jaake celebrate nahi karenge.\n\nAapko kya lagta hai, sirf mazaak tha ya baat mein dum hai? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SanjayDutt #ShekharSuman #Bollywood #BollywoodNews #ViralNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-says-he-doesn-t-feel-peace-in-india-anymore-prime-minister-narendra-modi-munna-bhai-shekhar-suman-donald-trump-101791092629616.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Quote must match what Sanjay actually said (\"aap sab logon ke beech\"); \"janta ke beech\" is not in the article.",
-    "Slide 1: The cover photo looks like two crops placed side by side. Sanjay Dutt's face is cut off at the left edge. The right half shows only a sliver of a face and looks like a duplicate. The photo looks awkward and badly cropped. Replace it with one clean, centered image.",
-    "Slide 2: The photo credit says 'The Statesman', but the article source is Hindustan Times. Check that the credit is correct, because the article doesn't confirm where the image came from.",
-    "Caption: The caption says the statement 'ne internet pe halchal macha di'. The article doesn't report any online reaction, so this claim has no support. Consider softening it."
-   ],
-   "fixed": [
-    "Video-trip wali joke → Videsh-trip wali joke",
-    "janta ke beech.\" → aap sab logon ke beech.\""
-   ]
-  },
-  "slides": [
-   "posts/20261004-0733-183b72254349-s2.jpg",
-   "posts/20261004-0733-183b72254349-s3.jpg",
-   "posts/20261004-0733-183b72254349-s4.jpg"
-  ],
-  "created_at": "2026-10-04T07:33:59+00:00"
- },
- {
-  "id": "35a7fde34619",
-  "image": "posts/20261004-0731-35a7fde34619.jpg",
-  "kind": "news",
-  "headline": "Uddhav and Raj Thackeray reunite for Mumbai rally demanding CEC Gyanesh Kumar's removal",
-  "tag": "POLITICS",
-  "caption": "Mumbai mein opposition ka naya reunion show 🎤\n\nUddhav Thackeray (Shiv Sena UBT) aur Raj Thackeray (MNS) ne joint protest rally ki aur CEC Gyanesh Kumar ko hatane ki demand ki.\n\nRaj Thackeray ka daava hai ki wo 2017 se \"vote chori\" ki warning de rahe hain. Ye sirf unke allegations hain, koi proof story mein nahi diya gaya.\n\nAapko kya lagta hai: ye real issue hai ya sirf political drama? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ThackerayBrothers #RajThackeray #UddhavThackeray #Mumbai #Maharashtra",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/uddhav-raj-thackeray-brothers-protest-live-updates-mumbai-garjana-morcha-rally-march-eci-delhi-jantar-mantar-aisa-101791094286324.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says the CJP rally was on Friday, not 'one day before' the Sunday (4 Oct) march."
-   ],
-   "fixed": [
-    "ek din pehle Shivaji Park mein CJP rally bhi hui. → Friday ko Shivaji Park mein CJP rally bhi hui."
-   ]
-  },
-  "slides": [
-   "posts/20261004-0731-35a7fde34619-s2.jpg",
-   "posts/20261004-0731-35a7fde34619-s3.jpg",
-   "posts/20261004-0731-35a7fde34619-s4.jpg",
-   "posts/20261004-0731-35a7fde34619-s5.jpg",
-   "posts/20261004-0731-35a7fde34619-s6.jpg"
-  ],
-  "created_at": "2026-10-04T07:31:54+00:00"
  }
 ]
