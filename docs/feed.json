@@ -1,5 +1,36 @@
 [
  {
+  "id": "a0050affa174",
+  "image": "posts/20261007-0931-a0050affa174.jpg",
+  "kind": "news",
+  "headline": "Supreme Court Directs Rajpal Yadav To Deposit ₹2 Crore By October 13 In Cheque Bounce Case",
+  "tag": "BOLLYWOOD",
+  "caption": "Rajpal Yadav ke liye Supreme Court se seedha deadline aa gaya 😬\nCheque bounce case mein SC ne actor ko ₹2 crore deposit karne ko kaha hai.\nLast date: 13 October. Court ne naraazgi bhi jataayi, lekin paise jama karne ka time diya.\nReport ki headline mein toh \"Ata Pata Laapata\" wala punch bhi aa gaya.\n13 October tak ₹2 crore jama ho jayega? Haan ya Na?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#rajpalyadav #bollywood #supremecourt #trending #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/htcity/cinema/sc-directs-rajpal-yadav-to-deposit-rs-2-crores-in-cheque-bounce-case-by-october-13-like-your-movie-your-money-is-also-ata-pata-laapata-101791357513769.html",
+  "pin_comment": "Sabse bada twist: cheque bounce se seedha Supreme Court tak pahunch gaya case. Cheque likhne se pehle ab sab 2 baar sochenge 😅",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article calls it an alleged loan; allegation should be attributed.",
+    "Fact corrected to match the article: The loan is only alleged in the article, so it should be attributed and not stated as fact.",
+    "Caption: The caption says the Report ki headline mein toh \"Ata Pata Laapata\" wala punch bhi aa gaya. The article text doesn't show the headline, so I couldn't check this. Confirm the Hindustan Times headline actually uses that phrase, or reword the line."
+   ],
+   "fixed": [
+    "Case Murli Projects Pvt Ltd ke 2010 ke loan se juda hai → Case Murli Projects Pvt Ltd ke kathit (alleged) 2010 ke loan se juda hai",
+    "Case 2010 ke loan ka hai. → Case kathit (alleged) 2010 ke loan ka hai."
+   ]
+  },
+  "slides": [
+   "posts/20261007-0931-a0050affa174-s2.jpg",
+   "posts/20261007-0931-a0050affa174-s3.jpg",
+   "posts/20261007-0931-a0050affa174-s4.jpg",
+   "posts/20261007-0931-a0050affa174-s5.jpg",
+   "posts/20261007-0931-a0050affa174-s6.jpg"
+  ],
+  "created_at": "2026-10-07T09:31:52+00:00"
+ },
+ {
   "id": "639a1af4b455",
   "image": "posts/20261007-0831-639a1af4b455.jpg",
   "kind": "fun",
@@ -1934,40 +1965,5 @@
    "posts/20261004-1031-a8e912993e2c-s5.jpg"
   ],
   "created_at": "2026-10-04T10:31:31+00:00"
- },
- {
-  "id": "9ffa26ad34c8",
-  "image": "posts/20261004-0931-9ffa26ad34c8.jpg",
-  "kind": "fun",
-  "headline": "Oscar jeet liya, Grammy jeet liya. Bengaluru traffic bola: Sab theek hai, bas Silk Board se 'Jai Ho' bolke nikal ke dikha.",
-  "tag": "😂 DESI LIFE",
-  "caption": "Oscar winner ko bhi traffic ne roka, toh hum log kis khet ki mooli hain 😂\nLagta hai Bengaluru mein sabse bada award sirf time pe pahunchna hai 🚗\nTag karo us dost ko jo kehta hai \"bas 10 minute mein aa raha hoon\"!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #ARRahman #BengaluruTraffic #SilkBoard #DesiLife #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T09:31:38+00:00"
- },
- {
-  "id": "85e8931eed00",
-  "image": "posts/20261004-0930-85e8931eed00.jpg",
-  "kind": "fun",
-  "headline": "AR Rahman Bengaluru traffic mein phans gaye. Oscar hai, Grammy hai, par 2 km ka signal nahi jeet paye. Jai Ho nahi, Jam Ho.",
-  "tag": "😂 RELATABLE",
-  "caption": "Oscar jeetne se zyada mushkil Bengaluru ka silk board paar karna hai 😂\nAaj ke din traffic ne sabko barabar bana diya.\nTag karo us dost ko jo hamesha \"bas 10 minute mein pahunch raha hoon\" bolta hai 🚗\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #ARRahman #BengaluruTraffic #JaiHo #TrafficMood #DesiHumour",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: I couldn't check this against the article because none was provided. The \"2 km ka signal\" detail and the fan quote 'Even Oscar winner can't escape' (used in the source headline) should be confirmed. The slide text is also humour and doesn't say where Rahman was stuck or when.",
-    "Caption: Only slide1.jpg exists, so I couldn't review any other slides. The slide 1 layout is clean: the text is readable, nothing is cut off, and no face is covered."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T09:30:45+00:00"
  }
 ]
