@@ -1,5 +1,35 @@
 [
  {
+  "id": "cb3fb5772395",
+  "kind": "custom",
+  "image": "posts/20261007-0456-cb3fb5772395-1.jpg",
+  "options": [
+   "posts/20261007-0456-cb3fb5772395-1.jpg",
+   "posts/20261007-0456-cb3fb5772395-2.jpg",
+   "posts/20261007-0456-cb3fb5772395-3.jpg"
+  ],
+  "slides": [
+   "posts/20261007-0456-cb3fb5772395-s2.jpg",
+   "posts/20261007-0456-cb3fb5772395-s3.jpg",
+   "posts/20261007-0456-cb3fb5772395-s4.jpg"
+  ],
+  "headline": "RBI Hikes Repo Rate By 25 bps To 5.50%, First Hike In Nearly 4 Years",
+  "tag": "BREAKING",
+  "caption": "RBI ne repo rate badha diya, aur wo bhi nearly 4 saal baad 📈\nMPC meeting mein repo rate 25 bps badhkar 5.50% ho gaya.\nReport ke mutabik inflation ka pressure badh raha hai, isliye ye kadam uthaya gaya.\nSimple bhasha mein: loan aur EMI pe asar ki baat ab sab karenge.\nEMI badhegi to kya cut karoge: Netflix, Swiggy ya weekend plan? 👇\n\nFollow @khabarbawaal for daily updates.\nSource: msn.com (link pinned in comments 👇)\n\n#RBI #RepoRate #india #trending #economy",
+  "source": "msn.com",
+  "source_url": "https://www.msn.com/en-in/money/economy/rbi-mpc-meeting-2026-malhotra-co-hike-repo-rate-by-25-bps-to-5-50-for-first-time-in-nearly-4-years-as-inflation-pressures-build/ar-AA2dIDh1",
+  "pin_comment": "Sabse bada twist: pichhle nearly 4 saal mein pehli baar rate hike aaya hai. Ab EMI wale dost kya bolenge? 😬",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The slide credits 'Source: The Economic Times', but the caption credits msn.com. The article isn't available, so I couldn't check which is right. Make the two match.",
+    "Caption: I couldn't verify the numbers (25 bps, 5.50%, first hike in nearly 4 years) because the article wasn't provided. They are consistent across the slides and caption."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-07T04:56:22+00:00"
+ },
+ {
   "id": "d34951c53b69",
   "image": "posts/20261007-0431-d34951c53b69.jpg",
   "kind": "news",
