@@ -1,43 +1,51 @@
 {
- "summary": "From our last 45 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics VIRAL (2), TECH (2), MYTH VS FACT (2); weakest CLOSING BELL (1), TOP 5 NEWS (1). Formats: custom 2, news 1, ready 1, fun 1, market 1, thought 1, top10 1. Lean toward what works, keep some variety.",
- "posts": 45,
- "likes": 56,
- "updated": "2026-10-06T22:31:05+00:00",
+ "summary": "From our last 69 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics TECH (4), EXPECTATION VS REALITY (2), VIRAL (2); weakest DELHI (1), EXPLAINER (1). Formats: custom 4, news 1, fun 1, top10 1, ready 1, calendar 1, market 1, thought 1. Lean toward what works, keep some variety.",
+ "posts": 69,
+ "likes": 89,
+ "updated": "2026-10-07T22:31:03+00:00",
  "topics": [
   [
-   "VIRAL",
-   2.2857142857142856
+   "TECH",
+   3.5
   ],
   [
-   "TECH",
+   "EXPECTATION VS REALITY",
    2.0
   ],
   [
-   "MYTH VS FACT",
+   "VIRAL",
+   2.0
+  ],
+  [
+   "AMAZING FACTS",
    1.5
+  ],
+  [
+   "TOP 5 VIRAL",
+   1.5
+  ],
+  [
+   "TAG KARO",
+   1.5
+  ],
+  [
+   "MYTH VS FACT",
+   1.3333333333333333
   ],
   [
    "RELATABLE",
    1.3333333333333333
   ],
   [
+   "POLITICS",
+   1.25
+  ],
+  [
    "BOLLYWOOD",
-   1.125
+   1.2
   ],
   [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "EDUCATION",
-   1.0
-  ],
-  [
-   "ON THIS DAY",
-   1.0
-  ],
-  [
-   "TOP 5 VIRAL",
+   "THOUGHT OF THE DAY",
    1.0
   ],
   [
@@ -45,35 +53,11 @@
    1.0
   ],
   [
-   "TAG KARO",
-   1.0
-  ],
-  [
    "RAAT KI 5 KHABREIN",
    1.0
   ],
   [
-   "MARKET BRIEF",
-   1.0
-  ],
-  [
-   "THOUGHT OF THE DAY",
-   1.0
-  ],
-  [
-   "AMAZING FACTS",
-   1.0
-  ],
-  [
-   "POLITICS",
-   1.0
-  ],
-  [
-   "DESI LIFE",
-   1.0
-  ],
-  [
-   "FAMILY GROUP",
+   "BREAKING",
    1.0
   ],
   [
@@ -81,30 +65,74 @@
    1.0
   ],
   [
+   "TOP 5 NEWS",
+   1.0
+  ],
+  [
+   "QUIZ",
+   1.0
+  ],
+  [
+   "MARKET BRIEF",
+   1.0
+  ],
+  [
    "CLOSING BELL",
    1.0
   ],
   [
-   "TOP 5 NEWS",
+   "ON THIS DAY",
+   1.0
+  ],
+  [
+   "GOOD NEWS",
+   1.0
+  ],
+  [
+   "FAMILY GROUP",
+   1.0
+  ],
+  [
+   "DESI LIFE",
+   1.0
+  ],
+  [
+   "EDUCATION",
+   1.0
+  ],
+  [
+   "DELHI",
+   1.0
+  ],
+  [
+   "EXPLAINER",
    1.0
   ]
  ],
  "kinds": [
   [
    "custom",
-   2.0
+   3.5
   ],
   [
    "news",
-   1.434782608695652
+   1.4545454545454546
+  ],
+  [
+   "fun",
+   1.3333333333333333
+  ],
+  [
+   "top10",
+   1.2
   ],
   [
    "ready",
    1.2
   ],
   [
-   "fun",
-   1.1428571428571428
+   "calendar",
+   1.0
   ],
   [
    "market",
@@ -112,10 +140,6 @@
   ],
   [
    "thought",
-   1.0
-  ],
-  [
-   "top10",
    1.0
   ]
  ]
