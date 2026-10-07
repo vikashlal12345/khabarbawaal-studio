@@ -1,5 +1,41 @@
 [
  {
+  "id": "04da687b3e37",
+  "image": "posts/20261007-0532-04da687b3e37.jpg",
+  "kind": "news",
+  "headline": "FIR Against Rahul Gandhi, Priyanka For Allegedly Entering Akashvani Bhawan Without Permission",
+  "tag": "POLITICS",
+  "caption": "March ke baad ab FIR ka number 😬\nRahul Gandhi aur Priyanka Gandhi ke khilaf FIR darj hui hai, aarop hai ki wo bina permission Akashvani Bhawan mein ghus gaye.\nYe sab us march ke ek din baad hua, jisme kam se kam 300 opposition saansad Parliament se Nirvachan Sadan gaye aur CEC Kumar ke resignation ki demand ki.\nIs poore drama ko ek word mein describe karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#rahulgandhi #priyankagandhi #india #trending #politics",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/fir-against-rahul-priyanka-for-entering-akashvani-bhawan-without-permission-101791348991671.html",
+  "pin_comment": "Sabse interesting part: march Election Commission ke liye tha, FIR Akashvani Bhawan ki entry pe aa gayi. Protest ya photo-op? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says at least 300 lawmakers, not approximately 300",
+    "Fact corrected to match the article: The entry without permission is only an allegation in a complaint, so it must be attributed",
+    "Fact corrected to match the article: Article says 'at least 300' lawmakers, not more than 300; also matches caption.",
+    "Fact corrected to match the article: Article says 'at least 300' Opposition lawmakers, not more than 300.",
+    "Many corrections were needed: please give it a quick read."
+   ],
+   "fixed": [
+    "jisme kareeb 300 opposition saansad → jisme kam se kam 300 opposition saansad",
+    "FIR darj ki hai ki Rahul-Priyanka bina ijazat andar gaye. → FIR darj ki hai, jisme aarop hai ki Rahul-Priyanka bina ijazat andar gaye.",
+    "Akashvani Bhavan campus mein ghus kar → Akashvani Bhawan campus mein ghus kar",
+    "Ek din pehle 300 se zyada opposition saansadon ne march kiya → Ek din pehle kam se kam 300 opposition saansadon ne march kiya",
+    "Mangalvar ko 300 se zyada Opposition saansad → Mangalvar ko kam se kam 300 Opposition saansad"
+   ]
+  },
+  "slides": [
+   "posts/20261007-0532-04da687b3e37-s2.jpg",
+   "posts/20261007-0532-04da687b3e37-s3.jpg",
+   "posts/20261007-0532-04da687b3e37-s4.jpg",
+   "posts/20261007-0532-04da687b3e37-s5.jpg",
+   "posts/20261007-0532-04da687b3e37-s6.jpg"
+  ],
+  "created_at": "2026-10-07T05:32:49+00:00"
+ },
+ {
   "id": "cb3fb5772395",
   "kind": "custom",
   "image": "posts/20261007-0456-cb3fb5772395-1.jpg",
