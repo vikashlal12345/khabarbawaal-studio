@@ -1,5 +1,36 @@
 [
  {
+  "id": "d3c884adeb0e",
+  "image": "posts/20261008-1031-d3c884adeb0e.jpg",
+  "kind": "news",
+  "headline": "61-Year-Old DonnaJean Wilde Holds Plank For 5 Hours, Sets Women's World Record",
+  "tag": "VIRAL",
+  "caption": "Tum 1 minute plank mein hil jaate ho, aur ye aunty 5 ghante tak tiki rahi 😳\nDonnaJean Wilde, 61 saal ki, ne longest female abdominal plank ka world record tod diya.\nPoore 5 ghante tak wahi position hold ki. Haan, 5 ghante.\nTumhara plank: 30 second ya 30 minute? Sach batao 😅\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #worldrecord #fitness #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/61yearold-woman-completes-5-hour-plank-sets-longest-female-abdominal-plank-record-101791443159786.html",
+  "pin_comment": "61 saal mein 5 ghante plank, aur hum 5 minute ke gym session mein bhi bahane dhundhte hain 😭",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The quoted Instagram caption is altered. The original reads 'with the time of 5 hours.'",
+    "Slide 1: The cover is a split collage. The sign on the left is cut off and reads only 'ECORD'. The trophy emoji sits over the crowd. The plank itself is barely visible, so the image is weak. It is readable and the headline text is fine.",
+    "Slide 3: The video is a small portrait frame with blurred side panels. The central image is small and the timer is hard to read. It is acceptable.",
+    "Slide 2: The photo credits are The Economic Times (slide 2), KYMA (slide 3) and Yahoo (slide 4). The article is from Hindustan Times, and the video comes from the @worldseniorgames Instagram page. I could not check these credits against the article, so confirm they are right."
+   ],
+   "fixed": [
+    "longest female abdominal plank, 5 hours. → longest female abdominal plank with the time of 5 hours."
+   ]
+  },
+  "slides": [
+   "posts/20261008-1031-d3c884adeb0e-s2.jpg",
+   "posts/20261008-1031-d3c884adeb0e-s3.jpg",
+   "posts/20261008-1031-d3c884adeb0e-s4.jpg",
+   "posts/20261008-1031-d3c884adeb0e-s5.jpg",
+   "posts/20261008-1031-d3c884adeb0e-s6.jpg"
+  ],
+  "created_at": "2026-10-08T10:31:42+00:00"
+ },
+ {
   "id": "market_close-2026-10-08",
   "image": "posts/20261008-1016-market_close-2026-10-08.jpg",
   "kind": "market",
@@ -1715,29 +1746,5 @@
    "fixed": []
   },
   "created_at": "2026-10-05T11:31:29+00:00"
- },
- {
-  "id": "d2ee0bc27222",
-  "image": "posts/20261005-1031-d2ee0bc27222.jpg",
-  "kind": "news",
-  "headline": "Gujarat Influencer Simran Patel Booked Under IT Act Over Reel On Mahatma Gandhi",
-  "tag": "VIRAL",
-  "caption": "Ek reel aur seedha police case. 😳\n\nGujarat ki influencer Simran Patel, jinke Instagram par lagbhag 1 million followers hain, ke khilaaf IT Act ke tahat case darj hua hai.\n\nAarop hai ki unhone Mahatma Gandhi aur ₹500 note wali reel mein \"insulting remarks\" aur \"sexual gestures\" kiye.\n\nKya reel ke liye national icons ka mazaak banana sahi hai, ya content creators ko bhi limits samajhni chahiye? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SimranPatel #MahatmaGandhi #Gujarat #Influencer #ITAct",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/insulting-remarks-sexual-gestures-gujarat-influencer-posts-reel-on-mahatma-gandhi-with-rs-500-note-booked-under-it-act-101791190035183.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover photo shows Delhi Police personnel with umbrellas in the rain. It has nothing to do with Simran Patel or the Surat case, and it could mislead readers. Slide 1 can't be dropped, so swap in a relevant image, such as the Surat Cyber Crime shot from slide 2 or 3."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-1031-d2ee0bc27222-s2.jpg",
-   "posts/20261005-1031-d2ee0bc27222-s3.jpg",
-   "posts/20261005-1031-d2ee0bc27222-s4.jpg",
-   "posts/20261005-1031-d2ee0bc27222-s5.jpg"
-  ],
-  "created_at": "2026-10-05T10:31:41+00:00"
  }
 ]
