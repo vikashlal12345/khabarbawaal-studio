@@ -1,5 +1,37 @@
 [
  {
+  "id": "164439e612b0",
+  "image": "posts/20261008-0732-164439e612b0.jpg",
+  "kind": "news",
+  "headline": "India Slams Pakistan At UN: 'Lost Control Of Its Frankenstein' On Terrorism Doublespeak",
+  "tag": "POLITICS",
+  "caption": "UN mein India ne Pakistan ko seedha aaina dikha diya 🔥\nIndia ke first secretary ne Pakistan ki terrorism par doglapan wali baat ko \"doublespeak\" bataya.\nUnhone kaha Pakistan ne apne hi \"Frankenstein\" par control kho diya hai.\nSaath mein 9/11 yaad dilaya, jiska mukhya aaropi Osama Bin Laden Abbottabad, Pakistan mein mila tha.\nUnpopular opinion: Pakistan ko ab UN mein jawab dene ke liye bolne ki jagah sirf record dikhane chahiye. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#india #trending #pakistan #unitednations #news",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/lost-control-of-its-frankenstein-india-lambasts-pakistan-doublespeak-on-terrorism-at-un-101791441761079.html",
+  "pin_comment": "Sabse bada punch: Osama ka Abbottabad wala reference. Pakistan ke paas iska kya jawab hoga? 👀",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Puri never said the exact words 'lost control of its Frankenstein'; the actual quote is different, so it must not be shown as a direct quote",
+    "Slide 2: The photo shows the main UN General Assembly hall. The caption says the Sixth Committee. It looks like a generic stock image, not the actual session. Not wrong enough to drop, but it is not the Sixth Committee room.",
+    "Slide 5: Item 2 puts a Hinglish paraphrase of Nawaz Sharif's Dawn quote inside quote marks. The original says \"should we allow them to cross the border and kill 150 people in Mumbai?\". The meaning matches, but it is a loose translation inside quotes."
+   ],
+   "fixed": [
+    "jiska main aaropi → jiska mukhya aaropi",
+    "'Lost control of its Frankenstein' wali line → 'Frankenstein' wali line",
+    "doublespeak ko lambasted kiya → doublespeak ko lambast kiya"
+   ]
+  },
+  "slides": [
+   "posts/20261008-0732-164439e612b0-s2.jpg",
+   "posts/20261008-0732-164439e612b0-s3.jpg",
+   "posts/20261008-0732-164439e612b0-s4.jpg",
+   "posts/20261008-0732-164439e612b0-s5.jpg",
+   "posts/20261008-0732-164439e612b0-s6.jpg"
+  ],
+  "created_at": "2026-10-08T07:32:44+00:00"
+ },
+ {
   "id": "5fcbc0b92fa4",
   "image": "posts/20261008-0631-5fcbc0b92fa4.jpg",
   "kind": "fun",
@@ -1715,95 +1747,5 @@
    "fixed": []
   },
   "created_at": "2026-10-05T08:31:03+00:00"
- },
- {
-  "id": "5ebafc540513",
-  "image": "posts/20261005-0731-5ebafc540513.jpg",
-  "kind": "news",
-  "headline": "Drishyam 3 mints ₹273 crore worldwide, beats Raid 2 and Bhooth Bangla in opening weekend",
-  "tag": "BOLLYWOOD",
-  "caption": "Ajay Devgn ka Drishyam 3 box office pe aag laga raha hai 🔥\nOpening weekend mein hi worldwide collection ₹273 crore tak pahunch gaya.\nFilm ne Raid 2 aur Bhooth Bangla ke lifetime hauls ko bhi peeche chhod diya hai.\nAb ₹300 crore ka mark bas kuch kadam door hai.\nAapke hisaab se Drishyam 3 kitna kamayegi final mein?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Drishyam3 #AjayDevgn #BoxOffice #Bollywood #BollywoodNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-day-3-ajay-devgn-jaideep-ahlawat-film-272-crore-beats-raid-2-bhooth-bangla-tabu-shriya-saran-101791183325672.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says worldwide gross is ₹273 crore; slide 2 also says 273",
-    "Fact corrected to match the article: Article says ₹273 crore worldwide",
-    "Fact corrected to match the article: Article says ₹273 crore worldwide",
-    "Fact corrected to match the article: Big-number text must match article's ₹273 crore"
-   ],
-   "fixed": [
-    "Drishyam 3 mints ₹272 crore worldwide → Drishyam 3 mints ₹273 crore worldwide",
-    "worldwide collection ₹272 crore tak → worldwide collection ₹273 crore tak",
-    "Drishyam 3 ka worldwide collection ₹272 crore ho gaya → Drishyam 3 ka worldwide collection ₹273 crore ho gaya",
-    "₹272 crore → ₹273 crore"
-   ]
-  },
-  "slides": [
-   "posts/20261005-0731-5ebafc540513-s2.jpg",
-   "posts/20261005-0731-5ebafc540513-s3.jpg",
-   "posts/20261005-0731-5ebafc540513-s4.jpg",
-   "posts/20261005-0731-5ebafc540513-s5.jpg",
-   "posts/20261005-0731-5ebafc540513-s6.jpg"
-  ],
-  "created_at": "2026-10-05T07:31:14+00:00"
- },
- {
-  "id": "0ed08ce43f5b",
-  "image": "posts/20261005-0633-0ed08ce43f5b.jpg",
-  "kind": "news",
-  "headline": "Kiran Mazumdar-Shaw reacts to Canadian vlogger's viral video of Bengaluru's Indiranagar footpath 'mess'",
-  "tag": "VIRAL",
-  "caption": "Bangalore footpaths phir se trending, aur is baar vlogger bhi foreigner hai 👀\nEk Canadian vlogger ka Indiranagar 12th Main footpath wala video viral hua hai.\nBiocon ki Kiran Mazumdar-Shaw ne bhi comment kiya: \"Please go all over Bangalore and shoot these videos\".\nMatlab shikayat sirf public ki nahi, bade naam bhi bol rahe hain.\nAapke sheher ke footpath ka haal kaisa hai? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Bengaluru #Bangalore #Indiranagar #KiranMazumdarShaw #ViralVideo",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/please-go-all-over-bangalore-and-shoot-these-kiran-mazumdar-shaw-on-foreigners-indiranagar-12th-main-mess-video-101791177393188.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: This is a paraphrase shown inside quotation marks as if she said it word for word. Her actual words were 'Firstly, @GBA_office seem to have fixed the complaints.'",
-    "Fact corrected to match the article: The quote is cut short. Her actual words were 'shoot these videos'."
-   ],
-   "fixed": [
-    "\"GBA shayad complaints fix kar chuki hai.\" → GBA ne shayad complaints fix kar di hain.",
-    "\"Please go all over Bangalore and shoot these\" → \"Please go all over Bangalore and shoot these videos\""
-   ]
-  },
-  "slides": [
-   "posts/20261005-0633-0ed08ce43f5b-s2.jpg",
-   "posts/20261005-0633-0ed08ce43f5b-s3.jpg",
-   "posts/20261005-0633-0ed08ce43f5b-s4.jpg",
-   "posts/20261005-0633-0ed08ce43f5b-s5.jpg"
-  ],
-  "created_at": "2026-10-05T06:33:05+00:00"
- },
- {
-  "id": "bc3e0b58c26c",
-  "image": "posts/20261005-0631-bc3e0b58c26c.jpg",
-  "kind": "news",
-  "headline": "Mika Singh Questions Diljit Dosanjh Over Hania Aamir Film Promotion But Not Border 2",
-  "tag": "BOLLYWOOD",
-  "caption": "Mika Singh ne Diljit se seedha sawaal puchh liya 👀\nMika ne kaha ki wo Diljit ki success pe proud hain, lekin confused hain.\nUnke mutabik Diljit ne Pakistani actor Hania Aamir ke saath wali film promote ki, par Border 2 ke liye 'not even 1%' promotion hua.\nAb Diljit ka jawab aana baaki hai.\nAapko kya lagta hai, Mika ka sawaal jayaz hai ya bas controversy? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#MikaSingh #DiljitDosanjh #Border2 #HaniaAamir #Bollywood",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/mika-singh-asks-diljit-dosanjh-why-he-promoted-film-with-pakistani-actor-hania-aamir-but-not-border-2-not-even-1-101791179243054.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The Aura tour claim and 'latest film' are not in the article. The article only has Mika saying Diljit did not post about Main Vaapas Aaunga."
-   ],
-   "fixed": [
-    "Mika ne kaha ki unhe Diljit ki success pe proud hai, lekin wo confused hain. → Mika ne kaha ki wo Diljit ki success pe proud hain, lekin confused hain.",
-    "par Border 2 ke liye 'not even 1%' promotion nahi hua. → par Border 2 ke liye 'not even 1%' promotion hua.",
-    "Diljit ki latest film Imtiaz Ali ki Main Vaapas Aaunga hai. Ab woh apna Aura stadium tour India laa rahe hain, kai shehron ka ailaan hua. → Mika ke mutabik Main Vaapas Aaunga release hui, lekin Diljit ne uske liye bhi koi post nahi kiya."
-   ]
-  },
-  "slides": [
-   "posts/20261005-0631-bc3e0b58c26c-s2.jpg",
-   "posts/20261005-0631-bc3e0b58c26c-s3.jpg",
-   "posts/20261005-0631-bc3e0b58c26c-s4.jpg",
-   "posts/20261005-0631-bc3e0b58c26c-s5.jpg",
-   "posts/20261005-0631-bc3e0b58c26c-s6.jpg"
-  ],
-  "created_at": "2026-10-05T06:31:35+00:00"
  }
 ]
