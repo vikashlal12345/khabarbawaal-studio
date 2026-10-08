@@ -1,5 +1,35 @@
 [
  {
+  "id": "9dcbee73e294",
+  "image": "posts/20261008-0831-9dcbee73e294.jpg",
+  "kind": "news",
+  "headline": "Kangana Ranaut Moves Delhi High Court Against AI-Generated Obscene Content About Her Online",
+  "tag": "BOLLYWOOD",
+  "caption": "AI deepfakes ab celebs ke liye bhi headache ban gaye hain.\nActor aur BJP MP Kangana Ranaut ne Delhi High Court ka darwaza khatkhataya hai.\nUnhone online chal rahe AI-generated aur allegedly obscene content ko hatwane ki maang ki hai.\nCourt ne summons issue kar diye hain.\nGalti kiski? Platforms ki ya AI banane walon ki? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kanganaranaut #delhihighcourt #deepfake #trending #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kangana-ranaut-moves-delhi-high-court-seeking-removal-of-ai-generated-obscene-content-online-summons-issued-101791443967692.html",
+  "pin_comment": "Aaj Kangana ke saath hua, kal kisi ke bhi saath ho sakta hai. AI deepfake pe kadak law chahiye ya nahi? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the court indicated it would pass an interim order; it has not been passed yet, so 'aayega' states it as certain.",
+    "Slide 3: The photo carries a visible 'Law Trend' (lawtrend.in) watermark, but the credit line says 'Photo: India Legal'. Correct the credit or swap the photo.",
+    "Slide 2: The Kangana cut-out has a LiveLaw logo overlaid on a gradient. The credit is consistent, but check that the photo is cleared for use."
+   ],
+   "fixed": [
+    "Vijay Deverakonda ki alag personality rights petition par bhi interim order aayega. → Vijay Deverakonda ki alag personality rights petition par bhi interim order dene ke sanket diye."
+   ]
+  },
+  "slides": [
+   "posts/20261008-0831-9dcbee73e294-s2.jpg",
+   "posts/20261008-0831-9dcbee73e294-s3.jpg",
+   "posts/20261008-0831-9dcbee73e294-s4.jpg",
+   "posts/20261008-0831-9dcbee73e294-s5.jpg",
+   "posts/20261008-0831-9dcbee73e294-s6.jpg"
+  ],
+  "created_at": "2026-10-08T08:31:48+00:00"
+ },
+ {
   "id": "164439e612b0",
   "image": "posts/20261008-0732-164439e612b0.jpg",
   "kind": "news",
@@ -1729,23 +1759,5 @@
    "fixed": []
   },
   "created_at": "2026-10-05T08:32:06+00:00"
- },
- {
-  "id": "d6fa4e189647",
-  "image": "posts/20261005-0831-d6fa4e189647.jpg",
-  "kind": "fun",
-  "headline": "Beta ne Claude ko mummy ki 24x7 video call pe baitha diya. Mummy: Khana khaya? Claude: Ji, 3 baar. Mummy: Jhooth. Shakal se bhookha lag raha hai.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "AI ne exams, code, emails sab sambhal liya, par mummy ki jaasoosi nazar? Wahan abhi update baaki hai 😄 Family group mein bhejo, aur tag karo us dost ko jo mummy ke calls 'baad mein karta hoon' pe taalta hai 📞\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #DesiMummy #FamilyGroup #ClaudeAI #HinglishHumour #RelatableIndia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The slide is a fictional joke dialogue, but the source headline is about a real man in San Francisco. The slide has no 'imagined' or 'satire' label, so readers could take the dialogue as real quotes. Consider adding a label. I couldn't check this against the article because it wasn't provided."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T08:31:03+00:00"
  }
 ]
