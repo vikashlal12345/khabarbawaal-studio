@@ -1,5 +1,33 @@
 [
  {
+  "id": "76bf6679acfe",
+  "image": "posts/20261008-1431-76bf6679acfe.jpg",
+  "kind": "news",
+  "headline": "Chinese Boss Ma Yanli Gifts Two Top Employees BMWs After Seeing Scooter Commute",
+  "tag": "VIRAL",
+  "caption": "Boss ho to aisa, warna na ho 🔥\nChina ki restaurant owner Ma Yanli ne apne do top-performing employees ko brand-new BMW gift kar di.\nWajah? Unhone dekha ki employees thand mein electric scooter pe commute karte hain, aur ek employee ke mutabik boss ne kaha \"You deserve this car\".\nHumare yahan appraisal mein 4% hike milta hai, wahan seedha BMW.\nUs boss ko tag karo jo bonus ki jagah sirf \"good job\" bolta hai 😅\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #china #bmw #workculture",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/restaurant-owner-gifts-top-employees-bmws-after-seeing-harsh-commute-says-you-deserve-this-car-101791458748069.html",
+  "pin_comment": "Sabse shocking part: ek restaurant owner ne gift mein seedha BMW de di. Tumhari company ka best gift kya tha? Honest answer 👇😂",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Ma saw employees (Li Jie specifically) commuting on scooters; 'dono' isn't supported, and the quote is the boss's, relayed by Liu.",
+    "Fact corrected to match the article: In the article the 'You deserve this car' line is quoted from employee Liu relaying what the boss told her, not from Ma directly. It needs attribution.",
+    "Caption: Caption line \"appraisal mein 4% hike milta hai\" is a number that isn't in the article. It reads as a joke, but it could be taken as a real statistic. Consider making it generic, e.g. \"Humare yahan appraisal mein bas thoda sa hike milta hai\"."
+   ],
+   "fixed": [
+    "Unhone dekha ki dono electric scooter pe commute karte hain, aur bola → Unhone dekha ki employees thand mein electric scooter pe commute karte hain, aur boss ne kaha",
+    "aur boss ne kaha \"You deserve this car\" → aur ek employee ke mutabik boss ne kaha \"You deserve this car\""
+   ]
+  },
+  "slides": [
+   "posts/20261008-1431-76bf6679acfe-s2.jpg",
+   "posts/20261008-1431-76bf6679acfe-s3.jpg"
+  ],
+  "created_at": "2026-10-08T14:31:51+00:00"
+ },
+ {
   "id": "3662c0081e0a",
   "image": "posts/20261008-1332-3662c0081e0a.jpg",
   "kind": "news",
@@ -1738,23 +1766,5 @@
    "posts/20261005-1531-ddef0c71e119-s5.jpg"
   ],
   "created_at": "2026-10-05T15:31:49+00:00"
- },
- {
-  "id": "c6bbe163cc6a",
-  "image": "posts/20261005-1431-c6bbe163cc6a.jpg",
-  "kind": "fun",
-  "headline": "8 mahine ghar baithe bande ne kaha: \"Ghar pe zyada stress hai.\" Sach hai. Office mein boss ek hai. Ghar pe Mummy, Papa, Bua aur padosi, sabka same sawal: \"Ab aage kya plan hai?\"",
-  "tag": "😂 RELATABLE",
-  "caption": "Office mein boss ek tha, ghar pe poori shareholders meeting hai 😅\nResignation likhne se pehle ye soch lena.\nTag karo us dost ko jo roz bolta hai \"Bas, ab quit kar dunga\" 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #RelatableHumor #OfficeLife #DesiLife #QuitJob #IndianMemes",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The quote \"Ghar pe zyada stress hai.\" is a Hinglish paraphrase. The source headline says 'Sitting at home is more stressful'. It is shown in quotation marks as if the man said these exact words. The article wasn't available, so I couldn't check this."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T14:31:03+00:00"
  }
 ]
