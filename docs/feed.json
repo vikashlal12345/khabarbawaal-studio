@@ -1,5 +1,27 @@
 [
  {
+  "id": "market_preopen-2026-10-08",
+  "image": "posts/20261008-0339-market_preopen-2026-10-08.jpg",
+  "kind": "market",
+  "headline": "Pre-open: Nifty 22,599.05 (-0.02%)",
+  "tag": "🔔 PRE-OPEN",
+  "caption": "🔔 Pre-open update: Nifty 22,599.05 (-0.02%) par khulne ke sanket, negative start.\nPre-open mein sabse upar TCS (+1.14%), sabse neeche BAJAJFINSV (-0.92%).\nMarket 9:15 pe khulega. Aaj aapko market kaisa lag raha hai? 👇\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #ShareMarket #PreOpen #DalalStreet",
+  "source": "NSE",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Data-only post: numbers straight from NSE"
+   ]
+  },
+  "slides": [
+   "posts/20261008-0339-market_preopen-2026-10-08-s2.jpg",
+   "posts/20261008-0339-market_preopen-2026-10-08-s3.jpg"
+  ],
+  "created_at": "2026-10-08T03:39:32+00:00"
+ },
+ {
   "id": "baa495a5b719",
   "image": "posts/20261008-0331-baa495a5b719.jpg",
   "kind": "fun",
