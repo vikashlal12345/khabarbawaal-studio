@@ -1,5 +1,21 @@
 [
  {
+  "id": "thought-2026-10-08",
+  "image": "posts/20261008-0345-thought-2026-10-08.jpg",
+  "kind": "thought",
+  "headline": "Jo tum sab ke saamne ho, wahi tumhari pehchaan nahi hai. Jo tum akele mein karte ho, wahi tumhara asli character hai.",
+  "tag": "💭 THOUGHT OF THE DAY",
+  "caption": "Aaj ka thought dil se padho aur apne dost ke saath baant do 💯 Kisi ka din ban sakta hai! Share karo aur save karna mat bhoolo 🙌\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #motivation #thoughtoftheday",
+  "source": "KhabarBawaal",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-08T03:45:53+00:00"
+ },
+ {
   "id": "market_preopen-2026-10-08",
   "image": "posts/20261008-0339-market_preopen-2026-10-08.jpg",
   "kind": "market",
@@ -1770,21 +1786,5 @@
    "posts/20261005-0431-7ebcdb31d800-s6.jpg"
   ],
   "created_at": "2026-10-05T04:31:05+00:00"
- },
- {
-  "id": "thought-2026-10-05",
-  "image": "posts/20261005-0345-thought-2026-10-05.jpg",
-  "kind": "thought",
-  "headline": "Monday ka matlab naya mauka hai. Bade sapne ek chhote kadam se shuru hote hain, aur wo kadam aaj hi uthana hai.",
-  "tag": "💭 THOUGHT OF THE DAY",
-  "caption": "Naya hafta, nayi shuruaat! 🌅 Aaj ka ek chhota kadam kal ki badi jeet banega. Is thought ko apne dost ke saath share karo 💪\n\nFollow @khabarbawaal for daily updates.\n\n #ThoughtOfTheDay #MondayMotivation #Positivity #NayiShuruaat #Motivation",
-  "source": "KhabarBawaal",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T03:45:32+00:00"
  }
 ]
