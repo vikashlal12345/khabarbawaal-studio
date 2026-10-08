@@ -142,9 +142,9 @@
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
   "[POLITICS] India Engaged In Talks With Russia, Ukraine On Ceasefire Proposal, Says MEA"
  ],
- "turn": 116,
+ "turn": 117,
  "empty_runs": 0,
- "fun_count": 35,
+ "fun_count": 36,
  "recent_fun": [
   "Tag that friend who says \"Bas 5 km hai, 10 minute mein pahunch jaunga\" and then reaches after 1 hour 40 minutes.",
   "Bali mein traffic mein koi honk nahi karta. Delhi mein signal pe hari batti ka intezaar bhi nahi hota, peeche se orchestra shuru ho jaata hai.",
@@ -188,7 +188,8 @@
   "POV: Fridge mein kuch nahi hai. Mummy: Dekh, andar hi hoga. Main: Mummy, 4 baar dekha. Mummy: Dhyaan se dekha?",
   "POV: Shower mein shampoo laga hai. Tabhi paani aana band. Mummy bahar se: \"Bucket mein hai, use kar lo!\"",
   "Tag that friend jo lift mein padosi ko dekh ke phone nikaal leta hai, jabki phone mein network hi nahi hai.",
-  "POV: Mehmaan ne bola, 'Chai mat banao, bas thoda sa.' Mummy: Theek hai. Mummy ne laaye: chai, samosa, mithai, namkeen aur fruit."
+  "POV: Mehmaan ne bola, 'Chai mat banao, bas thoda sa.' Mummy: Theek hai. Mummy ne laaye: chai, samosa, mithai, namkeen aur fruit.",
+  "Subah: Mummy, sabzi nahi chahiye. Mummy ne tiffin mein rakh di. 1 baje office mein sabse pehle wahi khatam."
  ],
  "audience": {
   "summary": "From our last 69 Instagram posts (engagement = likes + 2×comments, not counting our own pinned comment): best topics TECH (4), EXPECTATION VS REALITY (2), VIRAL (2); weakest DELHI (1), EXPLAINER (1). Formats: custom 4, news 1, fun 1, top10 1, ready 1, calendar 1, market 1, thought 1. Lean toward what works, keep some variety.",
@@ -209,7 +210,7 @@
   "market_preopen": "2026-10-07",
   "thought": "2026-10-07"
  },
- "inbox_since": "tk2QtVfrVqXQ",
+ "inbox_since": "sw8zsZ1aup9G",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -249,7 +250,7 @@
     "topic": "Amazon Great Indian Festival 2026 opens for all today",
     "brief": "Amazon Great Indian Festival 2026 starts for everyone on October 8 (today), after early access for Prime members. Big festive-season discounts are expected on soundbars, AirPods and 55-inch LG and Samsung TVs. Gen Z shoppers will be hunting for gadget deals.",
     "search": "Amazon Great Indian Festival 2026 sale begins October 8 deals",
-    "done": false
+    "done": true
    }
   ]
  },
@@ -268,6 +269,7 @@
   "Relatable desi life: mummy logic, fridge",
   "Relatable desi life: bathroom timing",
   "Relatable desi life: lift and neighbour awkward timing",
-  "Relatable desi life: guests and chai"
+  "Relatable desi life: guests and chai",
+  "Relatable desi-life: mummy ka tiffin"
  ]
 }
