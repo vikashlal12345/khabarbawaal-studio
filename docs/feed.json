@@ -1,5 +1,31 @@
 [
  {
+  "id": "market_close-2026-10-08",
+  "image": "posts/20261008-1016-market_close-2026-10-08.jpg",
+  "kind": "market",
+  "headline": "Closing Bell: Nifty 22,231.80 (-1.64%)",
+  "tag": "🔔 CLOSING BELL",
+  "caption": "Closing Bell: Nifty 50 22,231.80 par band hua, 371.25 points (1.64%) neeche. 😬\nSirf 3 stocks hare, 47 laal. Bank Nifty 54,515.05 (-0.98%), India VIX 15.31.\nOil 104.49 dollar par aur Adani Enterprises, JSW Steel, ITC top losers mein rahe.\nAapke portfolio mein aaj kitna laal tha? 👇\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #Sensex #ShareMarket #trending",
+  "source": "NSE, CNBC",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The red '-371.25 (-1.64%)' text sits over the busy fence and trees in the photo. Contrast is weak and it is harder to read than the rest of the slide.",
+    "Slide 4: Point 1 says 'West Asia mein vessels par attacks' caused the fall and hurt stocks like IndiGo. The article and headlines I was given don't mention West Asia or vessel attacks. Check this against the source, or soften it to say oil rose."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261008-1016-market_close-2026-10-08-s2.jpg",
+   "posts/20261008-1016-market_close-2026-10-08-s3.jpg",
+   "posts/20261008-1016-market_close-2026-10-08-s4.jpg",
+   "posts/20261008-1016-market_close-2026-10-08-s5.jpg",
+   "posts/20261008-1016-market_close-2026-10-08-s6.jpg"
+  ],
+  "created_at": "2026-10-08T10:16:35+00:00"
+ },
+ {
   "id": "9eef223580c2",
   "image": "posts/20261008-0931-9eef223580c2.jpg",
   "kind": "fun",
@@ -1713,30 +1739,5 @@
    "posts/20261005-1031-d2ee0bc27222-s5.jpg"
   ],
   "created_at": "2026-10-05T10:31:41+00:00"
- },
- {
-  "id": "market_close-2026-10-05",
-  "image": "posts/20261005-1016-market_close-2026-10-05.jpg",
-  "kind": "market",
-  "headline": "Closing Bell: Nifty 22,555.75 (+0.60%)",
-  "tag": "🔔 CLOSING BELL",
-  "caption": "Closing Bell: Nifty 50 22,555.75 pe band hua (+133.80, +0.60%).\n31 stocks upar, 18 neeche. FMCG +1.80% se sabse aage raha.\nBank Nifty 54,714.10 (+0.48%), India VIX 14.67.\nAapke portfolio mein aaj kaisa raha din?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n #StockMarket #Nifty #ClosingBell #Sensex #BankNifty",
-  "source": "NSE, CNBC",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 3: The FMCG row's percentage label overlaps the end of its green bar. The '+' sign is hidden, so it reads '1.80%' instead of '+1.80%'. The bar needs to be shortened or the label moved so the full text shows."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-1016-market_close-2026-10-05-s2.jpg",
-   "posts/20261005-1016-market_close-2026-10-05-s3.jpg",
-   "posts/20261005-1016-market_close-2026-10-05-s4.jpg",
-   "posts/20261005-1016-market_close-2026-10-05-s5.jpg",
-   "posts/20261005-1016-market_close-2026-10-05-s6.jpg"
-  ],
-  "created_at": "2026-10-05T10:16:08+00:00"
  }
 ]
