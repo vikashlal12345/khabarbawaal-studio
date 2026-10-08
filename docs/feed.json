@@ -1,5 +1,34 @@
 [
  {
+  "id": "market_open-2026-10-08",
+  "image": "posts/20261008-0246-market_open-2026-10-08.jpg",
+  "kind": "market",
+  "headline": "Market Morning Brief: 08 Oct",
+  "tag": "📈 MARKET BRIEF",
+  "caption": "Good morning! Market khulne se pehle ek nazar: GIFT Nifty 22,622 par hai, +0.28%.\\nDow Jones -0.66% aur Nikkei -0.95% neeche, Brent Crude 102.04 dollar par.\\nNityas Gems & Jewellery ki aaj listing hai.\\nAaj aapki nazar kis news par rahegi?\\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #Sensex #ShareMarket #India",
+  "source": "NSE, CNBC, ET, Moneycontrol",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article only says mainland China markets return from a holiday; 'week-long' is not stated.",
+    "Slide 4: TCS, Tata Steel, Sun Pharma and Varun Beverages are said to be on Mint's stocks-to-watch list. None of these appear in the article headlines, so I can't verify them. Please check them against the Mint source. The slide gives no reason why each stock is in focus.",
+    "Slide 3: The FPI outflow of Rs 21,745 crore is for the second half of September, and the Sebi risk-o-meter item is also not clearly from today. Today is 8 October, so these may be stale news. Check that they are current."
+   ],
+   "fixed": [
+    "China ka market week-long holiday ke baad wapas khul raha hai → China ka market holiday ke baad wapas khul raha hai"
+   ]
+  },
+  "slides": [
+   "posts/20261008-0246-market_open-2026-10-08-s2.jpg",
+   "posts/20261008-0246-market_open-2026-10-08-s3.jpg",
+   "posts/20261008-0246-market_open-2026-10-08-s4.jpg",
+   "posts/20261008-0246-market_open-2026-10-08-s5.jpg",
+   "posts/20261008-0246-market_open-2026-10-08-s6.jpg"
+  ],
+  "created_at": "2026-10-08T02:46:04+00:00"
+ },
+ {
   "id": "b051ec8b8514",
   "image": "posts/20261008-0231-b051ec8b8514.jpg",
   "kind": "news",
@@ -1743,32 +1772,5 @@
    "posts/20261005-0331-f9228bd0b427-s4.jpg"
   ],
   "created_at": "2026-10-05T03:31:06+00:00"
- },
- {
-  "id": "market_open-2026-10-05",
-  "image": "posts/20261005-0245-market_open-2026-10-05.jpg",
-  "kind": "market",
-  "headline": "Market Morning Brief: 05 Oct",
-  "tag": "📈 MARKET BRIEF",
-  "caption": "Monday ki shuruaat: GIFT Nifty 22,631.00 par, +0.09% upar.\nNifty 8 hafte ki losing streak ke baad support zone ke paas hai.\nAaj Orient Cables aur AceVector ki listing bhi hai.\nAapki nazar aaj kis cheez par rahegi?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n #StockMarket #Nifty #GIFTNifty #Sensex #IPO",
-  "source": "NSE, CNBC, ET, Moneycontrol",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The Ola Electric Mobility and HDFC Bank items cite Mint's stocks-to-watch list. Nothing in the supplied article headlines supports this, so please check it against the source. The two items are also worded inconsistently: 'aaj ke' in one and '5 October ki' in the other."
-   ],
-   "fixed": [
-    "Mint ki 5 October ki stocks to watch list mein news mein → Mint ki 5 October ki stocks to watch list mein shamil"
-   ]
-  },
-  "slides": [
-   "posts/20261005-0245-market_open-2026-10-05-s2.jpg",
-   "posts/20261005-0245-market_open-2026-10-05-s3.jpg",
-   "posts/20261005-0245-market_open-2026-10-05-s4.jpg",
-   "posts/20261005-0245-market_open-2026-10-05-s5.jpg",
-   "posts/20261005-0245-market_open-2026-10-05-s6.jpg"
-  ],
-  "created_at": "2026-10-05T02:45:55+00:00"
  }
 ]
