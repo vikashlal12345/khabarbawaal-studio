@@ -975,6 +975,25 @@
      "tokens": 17420
     }
    }
+  },
+  "top10_day": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 2482,
+   "cache_read": 5411,
+   "cache_write": 19680,
+   "value_usd": 0.1046,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 10081
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 17498
+    }
+   }
   }
  }
 }

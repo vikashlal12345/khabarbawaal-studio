@@ -1,5 +1,33 @@
 [
  {
+  "id": "top10_day-2026-10-08",
+  "image": "posts/20261008-1546-top10_day-2026-10-08.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 NEWS: 08 Oct",
+  "tag": "📰 TOP 5 NEWS",
+  "caption": "Aaj ki 5 badi khabrein, ek hi jagah! 🇮🇳🔥 Swipe karke poora scene samajh lo.\n\n1. Veteran actor Nana Patekar dies at 75\n2. Houthi missiles aimed at Riyadh, flights cancelled\n3. Half of rebel TMC MPs skip Kolkata meeting\n4. New CAPF Act comes into force\n5. Amazon Great Indian Festival 2026 goes live\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #news #bollywood #NanaPatekar",
+  "source": "Hindustan Times",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo shows a fire at industrial or oil storage tanks. It isn't clearly Riyadh airport, a kindergarten or a hospital. It could look like a misleading stock or file image, so add a 'representative image' note or check the source.",
+    "Slide 1: On the cover, the 'TOP 5' text covers part of the Om Birla photo. The Amazon tile is cropped, so the text on it is cut off. This is only a cosmetic problem.",
+    "Slide 3: The photo is of the LS Speaker, not the rebel MPs. That is fine as a representative photo, but nothing on the slide says who is pictured."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261008-1546-top10_day-2026-10-08-s2.jpg",
+   "posts/20261008-1546-top10_day-2026-10-08-s3.jpg",
+   "posts/20261008-1546-top10_day-2026-10-08-s4.jpg",
+   "posts/20261008-1546-top10_day-2026-10-08-s5.jpg",
+   "posts/20261008-1546-top10_day-2026-10-08-s6.jpg",
+   "posts/20261008-1546-top10_day-2026-10-08-s7.jpg"
+  ],
+  "created_at": "2026-10-08T15:46:07+00:00"
+ },
+ {
   "id": "fec04b38a644",
   "image": "posts/20261008-1531-fec04b38a644.jpg",
   "kind": "fun",
