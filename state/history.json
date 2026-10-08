@@ -215,7 +215,7 @@
   "market_close": "2026-10-08",
   "top10_day": "2026-10-08",
   "night_ready": "2026-10-09",
-  "night_calendar": "2026-10-08",
+  "night_calendar": "2026-10-09",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-08",
   "top10_viral": "2026-10-08",
@@ -261,16 +261,8 @@
   "4 Myths Indians Believe, Busted Today"
  ],
  "calendar": {
-  "date": "2026-10-08",
-  "items": [
-   {
-    "time": "09:00",
-    "topic": "Amazon Great Indian Festival 2026 opens for all today",
-    "brief": "Amazon Great Indian Festival 2026 starts for everyone on October 8 (today), after early access for Prime members. Big festive-season discounts are expected on soundbars, AirPods and 55-inch LG and Samsung TVs. Gen Z shoppers will be hunting for gadget deals.",
-    "search": "Amazon Great Indian Festival 2026 sale begins October 8 deals",
-    "done": true
-   }
-  ]
+  "date": "2026-10-09",
+  "items": []
  },
  "recent_thoughts": [
   "Monday ka matlab naya mauka hai. Bade sapne ek chhote kadam se shuru hote hain, aur wo kadam aaj hi uthana hai.",
