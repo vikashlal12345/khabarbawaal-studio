@@ -1,79 +1,5 @@
 [
  {
-  "id": "r20261004-0650-myth_fact",
-  "kind": "ready",
-  "image": "posts/r20261004-0650-myth_fact-1.jpg",
-  "slides": [
-   "posts/r20261004-0650-myth_fact-2.jpg",
-   "posts/r20261004-0650-myth_fact-3.jpg",
-   "posts/r20261004-0650-myth_fact-4.jpg",
-   "posts/r20261004-0650-myth_fact-5.jpg",
-   "posts/r20261004-0650-myth_fact-6.jpg"
-  ],
-  "headline": "4 Myths Indians Believe, Totally Busted",
-  "tag": "📦 MYTH VS FACT",
-  "caption": "Kitne myths pe aapne bhi yakeen kiya tha? 😄 Ye 4 sach jaanke dimaag ghoom gaya! Dost ko share karo, kaunsa myth sabse zyada surprise kiya?\n\nFollow @khabarbawaal for daily updates.\n\n #MythVsFact #AmazingFacts #DidYouKnow #IndiaFacts #FactCheck",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T06:50:57+00:00"
- },
- {
-  "id": "r20261004-1933-myth_fact",
-  "kind": "ready",
-  "image": "posts/r20261004-1933-myth_fact-1.jpg",
-  "slides": [
-   "posts/r20261004-1933-myth_fact-2.jpg",
-   "posts/r20261004-1933-myth_fact-3.jpg",
-   "posts/r20261004-1933-myth_fact-4.jpg",
-   "posts/r20261004-1933-myth_fact-5.jpg",
-   "posts/r20261004-1933-myth_fact-6.jpg"
-  ],
-  "headline": "4 Myths Indians Believe, Busted",
-  "tag": "📦 MYTH VS FACT",
-  "caption": "Kitne myths pe tum bhi yakeen karte the? 😅 Ye post doston ko bhejo aur unka reaction dekho. Save karo / share karo!\n\nFollow @khabarbawaal for daily updates.\n\n #MythVsFact #MythBusted #AmazingFacts #DidYouKnow #FactCheck",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The faint 'MYTH VS FACT' background text is partly covered by the flame icon, so 'FACT' is cut off. It is decorative and low contrast, so this is minor."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T19:33:24+00:00"
- },
- {
-  "id": "r20261004-1933-facts",
-  "kind": "ready",
-  "image": "posts/r20261004-1933-facts-1.jpg",
-  "slides": [
-   "posts/r20261004-1933-facts-2.jpg",
-   "posts/r20261004-1933-facts-3.jpg",
-   "posts/r20261004-1933-facts-4.jpg",
-   "posts/r20261004-1933-facts-5.jpg",
-   "posts/r20261004-1933-facts-6.jpg",
-   "posts/r20261004-1933-facts-7.jpg"
-  ],
-  "headline": "5 Mind-Blowing Facts About Indian Space Missions",
-  "tag": "📦 AMAZING FACTS",
-  "caption": "Space mein India ke ye records sunke seena chauda ho jayega! Aapko inme se kaunsa fact sabse zyada pasand aaya? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n #ISRO #SpaceFacts #Chandrayaan3 #Mangalyaan #IndiaProud",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The faint 'AMAZING FACTS' watermark text in the yellow area is partly covered by the flame icon, so the last letters are cut off. It is decorative and low contrast, so this is minor."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-04T19:33:45+00:00"
- },
- {
   "id": "r20261004-1934-quiz",
   "kind": "ready",
   "image": "posts/r20261004-1934-quiz-1.jpg",
@@ -311,35 +237,6 @@
   "created_at": "2026-10-07T19:32:09+00:00"
  },
  {
-  "id": "r20261007-1932-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261007-1932-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261007-1932-on_this_day-2.jpg",
-   "posts/r20261007-1932-on_this_day-3.jpg",
-   "posts/r20261007-1932-on_this_day-4.jpg",
-   "posts/r20261007-1932-on_this_day-5.jpg",
-   "posts/r20261007-1932-on_this_day-6.jpg",
-   "posts/r20261007-1932-on_this_day-7.jpg"
-  ],
-  "headline": "8 October: 4 Things That Shaped History",
-  "tag": "📦 ON THIS DAY",
-  "caption": "8 October ko Air Force Day, Premchand ki yaad aur history ke kuch bade pal ek saath. Kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#india #viral #trending #indianairforce #onthisday",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Godaan is a novel, not a short story; 'rachnayein' covers both Godaan and Idgah."
-   ],
-   "fixed": [
-    "Godaan aur Idgah jaisi kahaniyan aaj bhi padhi jaati hain. → Godaan aur Idgah jaisi rachnayein aaj bhi padhi jaati hain."
-   ]
-  },
-  "created_at": "2026-10-07T19:32:48+00:00",
-  "valid_on": "2026-10-08"
- },
- {
   "id": "r20261007-1933-explainer",
   "kind": "ready",
   "image": "posts/r20261007-1933-explainer-1.jpg",
@@ -366,5 +263,145 @@
    ]
   },
   "created_at": "2026-10-07T19:33:21+00:00"
+ },
+ {
+  "id": "r20261008-1931-explainer",
+  "kind": "ready",
+  "image": "posts/r20261008-1931-explainer-1.jpg",
+  "slides": [
+   "posts/r20261008-1931-explainer-2.jpg",
+   "posts/r20261008-1931-explainer-3.jpg",
+   "posts/r20261008-1931-explainer-4.jpg",
+   "posts/r20261008-1931-explainer-5.jpg",
+   "posts/r20261008-1931-explainer-6.jpg"
+  ],
+  "headline": "Sensex vs Nifty: Kya Fark Hai?",
+  "tag": "📦 EXPLAINER",
+  "caption": "Sensex aur Nifty ka fark ab ek minute mein clear. Dono market ka report card hain, bas exchange alag. Not investment advice. Kisi confuse dost ko dekho toh share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #stockmarket #nifty",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Kisi dost ko confuse dekha ho toh share karo! → Kisi dost ko confuse dekho toh share karo!",
+    "removed weak photo slide(s) [2]",
+    "Kisi dost ko confuse dekho toh share karo! → Kisi confuse dost ko dekho toh share karo!"
+   ]
+  },
+  "created_at": "2026-10-08T19:31:41+00:00"
+ },
+ {
+  "id": "r20261008-1932-quiz",
+  "kind": "ready",
+  "image": "posts/r20261008-1932-quiz-1.jpg",
+  "slides": [
+   "posts/r20261008-1932-quiz-2.jpg",
+   "posts/r20261008-1932-quiz-3.jpg",
+   "posts/r20261008-1932-quiz-4.jpg",
+   "posts/r20261008-1932-quiz-5.jpg",
+   "posts/r20261008-1932-quiz-6.jpg",
+   "posts/r20261008-1932-quiz-7.jpg"
+  ],
+  "headline": "Geography Quiz: Kya Tum 4/4 Score Karoge?",
+  "tag": "📦 QUIZ",
+  "caption": "Geography ke 4 sawaal, aur sirf sach ke fans hi 4/4 laayenge! Slide 6 par answers hain. Comment mein apna score batao, aur dost ko tag karo. Tumhara score kya raha?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #quiz #geography",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Answers are on slide 6, not the last slide (slide 7 is a comment prompt).",
+    "Fact corrected to match the article: Answers are on slide 6 of 7, not the last slide."
+   ],
+   "fixed": [
+    "Answer last slide par milega! → Answer slide 6 par milega!",
+    "Last slide par answers hain. → Slide 6 par answers hain."
+   ]
+  },
+  "created_at": "2026-10-08T19:32:21+00:00"
+ },
+ {
+  "id": "r20261008-1932-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261008-1932-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261008-1932-on_this_day-2.jpg",
+   "posts/r20261008-1932-on_this_day-3.jpg",
+   "posts/r20261008-1932-on_this_day-4.jpg",
+   "posts/r20261008-1932-on_this_day-5.jpg",
+   "posts/r20261008-1932-on_this_day-6.jpg"
+  ],
+  "headline": "9 October: 4 Things Jo Duniya Badal Gaye",
+  "tag": "📦 ON THIS DAY",
+  "caption": "9 October ko chitthi, alphabet, aazadi aur music, sab kuch juda hai. History itni boring bhi nahi hoti! Aapko kaunsa fact sabse zyada pasand aaya?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #history #onthisday",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Hangul Day on 9 October is observed in South Korea; North Korea marks it on 15 January."
+   ],
+   "fixed": [
+    "Korea mein 9 October ko Hangul Day manate hain. → South Korea mein 9 October ko Hangul Day manate hain."
+   ]
+  },
+  "created_at": "2026-10-08T19:32:51+00:00",
+  "valid_on": "2026-10-09"
+ },
+ {
+  "id": "r20261008-1933-facts",
+  "kind": "ready",
+  "image": "posts/r20261008-1933-facts-1.jpg",
+  "slides": [
+   "posts/r20261008-1933-facts-2.jpg",
+   "posts/r20261008-1933-facts-3.jpg",
+   "posts/r20261008-1933-facts-4.jpg",
+   "posts/r20261008-1933-facts-5.jpg",
+   "posts/r20261008-1933-facts-6.jpg"
+  ],
+  "headline": "4 Taj Mahal Facts Jo Kam Log Jaante Hain",
+  "tag": "📦 AMAZING FACTS",
+  "caption": "Taj Mahal sirf pyaar ki nishani nahi, engineering ka kamaal bhi hai. Kaunsa fact tumhe pehle se pata tha? Save karo aur dost ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#tajmahal #india #history #viral #trending",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The post has only four fact slides (2-5), not five.",
+    "Slide 4: The photo is the same Taj Mahal image used on slide 2. It does not show the tilted minarets the text talks about. Consider a different photo, such as a close-up of a minaret. I did not drop the slide because it carries one of the 4 facts, and dropping it would break the '4 facts' title and the page numbers.",
+    "Slide 5: The photo is a miniature portrait, apparently of Mumtaz Mahal. The text is about the UNESCO listing, so the photo is only loosely related. It is not wrong, but a photo of the monument would fit better."
+   ],
+   "fixed": [
+    "removed weak photo slide(s) [4]",
+    "girein to main maqbare par na gireen → girein to maqbare par na girein",
+    "5 Taj Mahal Facts Jo Kam Log Jaante Hain → 4 Taj Mahal Facts Jo Kam Log Jaante Hain"
+   ]
+  },
+  "created_at": "2026-10-08T19:33:43+00:00"
+ },
+ {
+  "id": "r20261008-1934-myth_fact",
+  "kind": "ready",
+  "image": "posts/r20261008-1934-myth_fact-1.jpg",
+  "slides": [
+   "posts/r20261008-1934-myth_fact-2.jpg",
+   "posts/r20261008-1934-myth_fact-3.jpg",
+   "posts/r20261008-1934-myth_fact-4.jpg",
+   "posts/r20261008-1934-myth_fact-5.jpg",
+   "posts/r20261008-1934-myth_fact-6.jpg",
+   "posts/r20261008-1934-myth_fact-7.jpg"
+  ],
+  "headline": "4 Myths Indians Believe, Busted Today",
+  "tag": "📦 MYTH VS FACT",
+  "caption": "Kitne saalon se hum yeh myths sach maante aaye! Aaj inki asli sachai jaan lo. Kaun sa myth tumne sach maana tha? Save karo aur dost ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #facts #mythbusted",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-08T19:34:03+00:00"
  }
 ]
