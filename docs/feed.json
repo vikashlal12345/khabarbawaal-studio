@@ -1,5 +1,36 @@
 [
  {
+  "id": "night_roundup-2026-10-09",
+  "image": "posts/20261008-2331-night_roundup-2026-10-09.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 RAAT KI KHABAR: 09 Oct",
+  "tag": "🌅 RAAT KI 5 KHABREIN",
+  "caption": "Aaj ki top 5 khabrein: Bollywood se Bihar tak, sab yahin! 🔥\n\n1. Nana Patekar cremated with state honours in Pune\n2. Drishyam 3 nears ₹250 crore in week one\n3. Half of rebel TMC MPs skip Kolkata meeting\n4. Bihar EOU raids engineer, finds ₹52 lakh cash\n5. Anne Carson wins 2026 Literature Nobel\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #bollywood #news #drishyam3",
+  "source": "Hindustan Times",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Claim not in the article; invented detail",
+    "Slide 3: The EOU logo photo is a low-resolution upscaled image and looks a bit soft. It is related to the story, so it is not dropped, but a sharper image would be better.",
+    "Slide 4: The photo is of Lok Sabha Speaker Om Birla, not the rebel TMC MPs. It fits the Speaker's notices, but the slide has no caption naming him. Check that this is the intended image."
+   ],
+   "fixed": [
+    " Mamata camp mein hulchul. → ",
+    "Unka bhai Michael Carson → Unke bhai Michael Carson"
+   ]
+  },
+  "slides": [
+   "posts/20261008-2331-night_roundup-2026-10-09-s2.jpg",
+   "posts/20261008-2331-night_roundup-2026-10-09-s3.jpg",
+   "posts/20261008-2331-night_roundup-2026-10-09-s4.jpg",
+   "posts/20261008-2331-night_roundup-2026-10-09-s5.jpg",
+   "posts/20261008-2331-night_roundup-2026-10-09-s6.jpg",
+   "posts/20261008-2331-night_roundup-2026-10-09-s7.jpg"
+  ],
+  "created_at": "2026-10-08T23:31:15+00:00"
+ },
+ {
   "id": "3dbf543cf0a5",
   "image": "posts/20261008-1631-3dbf543cf0a5.jpg",
   "kind": "news",
@@ -1763,33 +1794,5 @@
    "posts/20261006-0248-market_open-2026-10-06-s6.jpg"
   ],
   "created_at": "2026-10-06T02:48:49+00:00"
- },
- {
-  "id": "1b6169577cc3",
-  "image": "posts/20261005-1631-1b6169577cc3.jpg",
-  "kind": "news",
-  "headline": "Fire Breaks Out On Ranbir Kapoor-Sai Pallavi's Ramayana Set In Mumbai, No Injuries Reported",
-  "tag": "BOLLYWOOD",
-  "caption": "Mumbai mein Ramayana ke set pe aag lag gayi, and fans ka tension high hai 😟\n\nReport ke mutabik Ranbir Kapoor aur Sai Pallavi starrer Ramayana ke set pe fire break out hua. Thank god, koi injury report nahi hui.\n\nNitesh Tiwari ki film ka pehla part November 2026 mein release hona hai.\n\nAapko kya lagta hai, kya release date pe asar padega? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #SaiPallavi #NiteshTiwari #Bollywood",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/fire-breaks-out-on-ranbir-kapoor-s-ramayana-set-no-injuries-reported-nitesh-tiwari-sai-pallavi-sunny-deol-yash-101791210190293.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The details on this slide aren't in the article: Film City Goregaon, BMC Fire Brigade, and the times 4:02 pm and 4:55 pm. They come only from a tweet. The tweet is timestamped 12:28 PM on Oct 5, yet it reports a 4:02 pm fire, which looks inconsistent. Our text states the BMC attribution as fact. The article places the fire outside Prime Focus Studios. Verify the details or remove the slide.",
-    "Slide 3: The photo carries a visible TOI watermark, but the post's source is Hindustan Times. The inset fire image is small and low quality.",
-    "Slide 4: The photo credit says Moneycontrol, while the article source is Hindustan Times. The fire photo is a screenshot and looks low quality.",
-    "Slide 1: The headline calls it 'Ranbir Kapoor-Sai Pallavi's Ramayana'. The article calls it the 'Ranbir Kapoor-starrer' film, so this is slightly different. Sai Pallavi is in the cast, so it is acceptable."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-1631-1b6169577cc3-s2.jpg",
-   "posts/20261005-1631-1b6169577cc3-s3.jpg",
-   "posts/20261005-1631-1b6169577cc3-s4.jpg",
-   "posts/20261005-1631-1b6169577cc3-s5.jpg",
-   "posts/20261005-1631-1b6169577cc3-s6.jpg"
-  ],
-  "created_at": "2026-10-05T16:31:55+00:00"
  }
 ]
