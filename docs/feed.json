@@ -1,5 +1,35 @@
 [
  {
+  "id": "top10_viral-2026-10-08",
+  "image": "posts/20261008-0046-top10_viral-2026-10-08.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 VIRAL: 08 Oct",
+  "tag": "🔥 TOP 5 VIRAL",
+  "caption": "Aaj ka internet full masala: Drishyam 3 ka dhamaka se lekar Kanpur ke daudte dog tak! 🔥🐶\n\n1. Drishyam 3 hits ₹230 crore by day 6\n2. Kareena Kapoor Khan teams up with Google Android\n3. Kanpur stray dog runs 38 km with runners\n4. Bihar teen hits Level 22,222 in Candy Crush\n5. SC warns Rajpal Yadav, orders ₹2 crore deposit\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #bollywood #Drishyam3",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article does not say this is a cheque bounce case; that detail is unsupported.",
+    "Slide 5: The slide text says Lando Norris is also part of the Google Android collab and that Kareena's 'mystery helmet post' was explained by it. It cites Bollywood Hungama sources. Neither claim appears in the article excerpt we were given. Check them against the full article before posting, or remove them.",
+    "Caption: The caption says 'Kanpur ke daudte dog'. The slide 4 photo shows a dog lying on the ground in one of its two panels. This is a minor mismatch with the 'running' story, not a text error."
+   ],
+   "fixed": [
+    "aur cheque bounce case mein 13 October tak → aur 13 October tak"
+   ]
+  },
+  "slides": [
+   "posts/20261008-0046-top10_viral-2026-10-08-s2.jpg",
+   "posts/20261008-0046-top10_viral-2026-10-08-s3.jpg",
+   "posts/20261008-0046-top10_viral-2026-10-08-s4.jpg",
+   "posts/20261008-0046-top10_viral-2026-10-08-s5.jpg",
+   "posts/20261008-0046-top10_viral-2026-10-08-s6.jpg",
+   "posts/20261008-0046-top10_viral-2026-10-08-s7.jpg"
+  ],
+  "created_at": "2026-10-08T00:46:17+00:00"
+ },
+ {
   "id": "f8b8485c872c",
   "image": "posts/20261008-0031-f8b8485c872c.jpg",
   "kind": "fun",
@@ -1771,58 +1801,5 @@
    "posts/20261005-0131-cfd8b44c52d1-s4.jpg"
   ],
   "created_at": "2026-10-05T01:31:29+00:00"
- },
- {
-  "id": "top10_viral-2026-10-05",
-  "image": "posts/20261005-0045-top10_viral-2026-10-05.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 VIRAL: 05 Oct",
-  "tag": "🔥 TOP 5 VIRAL",
-  "caption": "Drishyam 3 ka box office tandav aur internet par #IAmJaneDoe ki goonj! 🔥 Swipe karo, aaj ki Top 5 khabrein yahan hain.\n\n1. Drishyam 3 crosses ₹175 crore in opening weekend\n2. goes viral in Cornell 7 case\n3. Sanjay Dutt clarifies 'no peace in India' remark\n4. Kainchi Dham sees massive devotee rush after Hanuman Ansh\n5. Bengaluru man roasts salary-rent gap: 'Salary 2006, rent 2046'\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n #Drishyam3 #AjayDevgn #SanjayDutt #KainchiDham",
-  "source": "Hindustan Times",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 6: The article's headline says Drishyam 3 crossed ₹175 crore, but its subheading says it \"breezed past the ₹150 crore mark in its opening weekend\". Our slide and caption use ₹175 crore. Please check the figure against the source before posting.",
-    "Slide 5: The Cornell University sign is cut off on the right and reads \"UNIVERSIT\". The photo is related to the story, so this is only a crop issue. Shift the crop if possible.",
-    "Slide 1: On the cover collage, the \"TOP 5\" text covers the face of the Hanuman Ansh director. The Cornell sign is also cut off at \"UNIVERSI\". Consider moving the text or the crop."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-0045-top10_viral-2026-10-05-s2.jpg",
-   "posts/20261005-0045-top10_viral-2026-10-05-s3.jpg",
-   "posts/20261005-0045-top10_viral-2026-10-05-s4.jpg",
-   "posts/20261005-0045-top10_viral-2026-10-05-s5.jpg",
-   "posts/20261005-0045-top10_viral-2026-10-05-s6.jpg",
-   "posts/20261005-0045-top10_viral-2026-10-05-s7.jpg"
-  ],
-  "created_at": "2026-10-05T00:45:57+00:00"
- },
- {
-  "id": "79286ca0663d",
-  "image": "posts/20261005-0031-79286ca0663d.jpg",
-  "kind": "news",
-  "headline": "As Peace Prevails, Abujhmad Security Camp Turns Into Tribal Hostel",
-  "tag": "POLITICS",
-  "caption": "Jahan pehle security camp tha, wahan ab hostel ban gaya hai. 🙌\nAbujhmad mein shanti aane ke baad ek security camp ko tribal hostel mein badal diya gaya hai.\nYe badlav dikhata hai ki ilaake mein halaat kitne change hue hain.\nAapko kya lagta hai, aise badlav se local logon ki zindagi kitni behtar hogi? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Abujhmad #Chhattisgarh #Bastar #Peace #TribalHostel",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/as-peace-prevails-security-camp-in-abujhmad-turns-into-tribal-hostel-101791139061972.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover photo is a generic 'INDIA NEWS' channel logo graphic. It has nothing to do with Abujhmad, the camp or the hostel. Swap it for a relevant image. Slide 1 can't be dropped.",
-    "Caption: The caption and slide 1 credit Hindustan Times. The article text came from an automated agency feed, so please confirm the source credit is correct."
-   ],
-   "fixed": [
-    "Abujhmarh → Abujhmad"
-   ]
-  },
-  "slides": [
-   "posts/20261005-0031-79286ca0663d-s2.jpg",
-   "posts/20261005-0031-79286ca0663d-s3.jpg"
-  ],
-  "created_at": "2026-10-05T00:31:04+00:00"
  }
 ]

@@ -866,6 +866,25 @@
      "tokens": 7475
     }
    }
+  },
+  "top10_viral": {
+   "posts": 1,
+   "requests": 3,
+   "input": 10,
+   "output": 2901,
+   "cache_read": 10856,
+   "cache_write": 29584,
+   "value_usd": 0.1495,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 8645
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 34706
+    }
+   }
   }
  }
 }
