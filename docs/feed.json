@@ -1,5 +1,35 @@
 [
  {
+  "id": "3dbf543cf0a5",
+  "image": "posts/20261008-1631-3dbf543cf0a5.jpg",
+  "kind": "news",
+  "headline": "10 Of 20 Rebel TMC MPs Skip Kolkata Meeting Over Speaker's Disqualification Notice",
+  "tag": "POLITICS",
+  "caption": "TMC ke ghar mein hi bawaal shuru ho gaya 👀\n20 rebel MPs ko Lok Sabha Speaker ne disqualification notice bheja, unke NCPI se alignment ko lekar.\nKolkata mein meeting hui to discuss, lekin aadhe yaani 10 MPs aaye hi nahi.\nJawab dene ki deadline Thursday ko khatam ho gayi, ab MPs 2 hafte aur maang rahe hain.\nIs scene mein TMC ka kya hoga: bachegi ya bikhregi? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#politics #india #trending #TMC #breakingnews",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/20-rebel-tmc-mps-seek-two-more-weeks-to-reply-to-disqualification-notices-amid-kolkata-meeting-101791470087618.html",
+  "pin_comment": "Sabse interesting part: 20 mein se sirf 10 pahunche. Baaki 10 ka silence kya keh raha hai? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the two-week deadline ended Thursday and the MPs are seeking another extension. It is not still upcoming.",
+    "Slide 4: The Kalyan Banerjee claim ('20 MPs saal bhar mein disqualify honge aur bypolls honge') can't be checked. The article text is cut off at 'claimed that the 20 rebel p...'. Check it against the full article before posting, or remove it.",
+    "Caption: The caption and slide 2 say the meeting was in Kolkata. The article only says 'at a hotel here', with no city given. Confirm the city against the full article.",
+    "Slide 2: The photo shows three women, and none is identified. Check that it relates to the story, for example that it shows a rebel MP such as Satabdi Roy, whose quote is on the slide. If it doesn't, use a clearly relevant photo."
+   ],
+   "fixed": [
+    "Jawab dene ki deadline bhi sir par hai. → Jawab dene ki deadline Thursday ko khatam ho gayi, ab MPs 2 hafte aur maang rahe hain."
+   ]
+  },
+  "slides": [
+   "posts/20261008-1631-3dbf543cf0a5-s2.jpg",
+   "posts/20261008-1631-3dbf543cf0a5-s3.jpg",
+   "posts/20261008-1631-3dbf543cf0a5-s4.jpg",
+   "posts/20261008-1631-3dbf543cf0a5-s5.jpg"
+  ],
+  "created_at": "2026-10-08T16:31:53+00:00"
+ },
+ {
   "id": "top10_day-2026-10-08",
   "image": "posts/20261008-1546-top10_day-2026-10-08.jpg",
   "kind": "top10",
@@ -1761,29 +1791,5 @@
    "posts/20261005-1631-1b6169577cc3-s6.jpg"
   ],
   "created_at": "2026-10-05T16:31:55+00:00"
- },
- {
-  "id": "top10_day-2026-10-05",
-  "image": "posts/20261005-1546-top10_day-2026-10-05.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 NEWS: 05 Oct",
-  "tag": "📰 TOP 5 NEWS",
-  "caption": "Aaj ki Top 5 khabrein aa gayi! Set par aag se lekar cheetahs tak, sab yahin.\n\n1. Mamata sends notice to SSKM over leaked reports\n2. Fire on Ranbir-Sai Pallavi's Ramayana set in Mumbai\n3. Cheetahs to roam in tiger territory in MP\n4. First Assam cargo vessel sails to Bangladesh since Independence\n5. Shekhar Suman defends Sanjay Dutt after backlash\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n #Top5 #IndiaNews #Ramayana #Cheetah #Bollywood",
-  "source": "Hindustan Times",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-1546-top10_day-2026-10-05-s2.jpg",
-   "posts/20261005-1546-top10_day-2026-10-05-s3.jpg",
-   "posts/20261005-1546-top10_day-2026-10-05-s4.jpg",
-   "posts/20261005-1546-top10_day-2026-10-05-s5.jpg",
-   "posts/20261005-1546-top10_day-2026-10-05-s6.jpg",
-   "posts/20261005-1546-top10_day-2026-10-05-s7.jpg"
-  ],
-  "created_at": "2026-10-05T15:46:58+00:00"
  }
 ]
