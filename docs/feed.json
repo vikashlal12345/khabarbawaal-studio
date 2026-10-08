@@ -1,5 +1,22 @@
 [
  {
+  "id": "9eef223580c2",
+  "image": "posts/20261008-0931-9eef223580c2.jpg",
+  "kind": "fun",
+  "headline": "Mummy ne bola: Bas dhaniya le aana. Main laaya: chips, cold drink, biscuit. Dhaniya: dukaan pe hi reh gaya.",
+  "tag": "😂 RELATABLE",
+  "caption": "Dukaan jaane ka asli maksad hamesha last mein yaad aata hai 😅\nMummy ka face dekhne wala moment alag hi hota hai.\nFamily group mein bhejo, dekhte hain kaun pakda jaata hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #desimemes #viral #trending #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Mummy: Chips toh yaad rahe, bas dhaniya hi bhool gaya?",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-08T09:31:35+00:00"
+ },
+ {
   "id": "9dcbee73e294",
   "image": "posts/20261008-0831-9dcbee73e294.jpg",
   "kind": "news",
@@ -1721,43 +1738,5 @@
    "posts/20261005-1016-market_close-2026-10-05-s6.jpg"
   ],
   "created_at": "2026-10-05T10:16:08+00:00"
- },
- {
-  "id": "585a642f0475",
-  "image": "posts/20261005-0930-585a642f0475.jpg",
-  "kind": "news",
-  "headline": "Rakul Preet Singh breaks silence on Income Tax searches, denies illegal foreign remittances",
-  "tag": "BOLLYWOOD",
-  "caption": "Bollywood mein Income Tax ka bawaal, aur ab Rakul Preet Singh ne chuppi todi hai.\n\nReports ke mutabik Mumbai mein film industry ke suspected financial irregularities ke probe mein IT searches hui thi.\nRakul ne illegal foreign remittances mein involvement deny kiya hai.\nUnka kehna hai ki wo 20 saal ki age se apne taxes bhar rahi hain.\n\nAapko kya lagta hai, ye sirf reports hain ya aur naam bhi aayenge? 👀\n\nFollow @khabarbawaal for daily updates.\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#RakulPreetSingh #IncomeTax #Bollywood #BollywoodNews #Mumbai",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/rakul-preet-singh-breaks-silence-on-income-tax-searches-denies-involvement-in-illegal-foreign-remittances-have-been-paying-my-due-taxes-since-the-age-of-20/",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-0930-585a642f0475-s2.jpg",
-   "posts/20261005-0930-585a642f0475-s3.jpg"
-  ],
-  "created_at": "2026-10-05T09:30:59+00:00"
- },
- {
-  "id": "fb0d710edb4c",
-  "image": "posts/20261005-0832-fb0d710edb4c.jpg",
-  "kind": "fun",
-  "headline": "Tag that dost jo San Francisco se mummy ko 24x7 video call pe rakhta hai. Mummy 3 baje uthi: Khana khaya? Claude: Haan. Mummy: Tujhse nahi puchha.",
-  "tag": "😂 TAG KARO",
-  "caption": "Mummy ka sawaal AI ko bhi nahi bakhshta 😂 Beta door ho ya Claude paas, \"khana khaya?\" ka jawab beta ko hi dena padta hai 📞\nTag karo us dost ko jo mummy ka call kabhi cut nahi karta!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #TagKaro #DesiMummy #MummyKaCall #NRILife #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The post has only one image. The headline text, \"Indian man in San Francisco uses Claude to stay on 24x7 video call with mom\", doesn't appear on it. The article wasn't provided, so I couldn't check the headline's claims. The mummy and Claude dialogue reads as a joke, not a real quote. It should be clearly framed as humour and not as something the man or Claude actually said."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T08:32:06+00:00"
  }
 ]
