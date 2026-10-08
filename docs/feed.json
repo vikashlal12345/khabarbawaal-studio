@@ -1,5 +1,31 @@
 [
  {
+  "id": "b051ec8b8514",
+  "image": "posts/20261008-0231-b051ec8b8514.jpg",
+  "kind": "news",
+  "headline": "India Engaged In Talks With Russia, Ukraine On Ceasefire Proposal, Says MEA",
+  "tag": "POLITICS",
+  "caption": "Duniya ki ek badi jung ke beech India ka naam phir aaya 🇮🇳\nMEA ke mutabik India Russia aur Ukraine dono se ceasefire proposal par baat kar raha hai.\nAgenda mein Black Sea mein merchant shipping ki safety aur grain-energy supply ka bina rukawat movement bhi hai.\nMEA ke hisaab se dono deshon ne New Delhi ki peace efforts ko appreciate kiya hai.\nPrediction time: kya 2027 tak ye jung rukegi? Haan ya Na?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#india #trending #news #russiaukraine #MEA",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/india-engaged-in-talks-with-russia-ukraine-on-truce-proposal-mea-101791400618558.html",
+  "pin_comment": "Dono taraf se tareef milna chhoti baat nahi hai. Kya India sach mein peace broker ban sakta hai? 🌍",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article covers one war (Russia-Ukraine), not two big wars."
+   ],
+   "fixed": [
+    "Duniya ki do bade jung ke beech India ka naam phir aaya → Duniya ki ek badi jung ke beech India ka naam phir aaya"
+   ]
+  },
+  "slides": [
+   "posts/20261008-0231-b051ec8b8514-s2.jpg",
+   "posts/20261008-0231-b051ec8b8514-s3.jpg",
+   "posts/20261008-0231-b051ec8b8514-s4.jpg"
+  ],
+  "created_at": "2026-10-08T02:31:56+00:00"
+ },
+ {
   "id": "3127c5498e52",
   "image": "posts/20261008-0132-3127c5498e52.jpg",
   "kind": "news",
@@ -1744,66 +1770,5 @@
    "posts/20261005-0245-market_open-2026-10-05-s6.jpg"
   ],
   "created_at": "2026-10-05T02:45:55+00:00"
- },
- {
-  "id": "448814f38c27",
-  "image": "posts/20261005-0231-448814f38c27.jpg",
-  "kind": "fun",
-  "headline": "Tag that relative jo bolta hai: 'Mere padosi ka beta bhi IIT mein tha.' Ek American ne IIT ko chheda, poora internet Sharma ji ka beta ban gaya.",
-  "tag": "😂 TAG KARO",
-  "caption": "Ek comment kya aaya, poora India IIT ka official family WhatsApp group ban gaya 😂\nAaj sabke rishtedaar ka padosi IIT mein nikla 🎓\nTag karo us relative ko jo har baat mein \"mere jaanne wale\" laata hai!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #IIT #SharmaJiKaBeta #DesiHumor #Relatable #TagKaro",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Caption: The article text wasn't available, so I couldn't check the facts. The caption says 'poora India' and the slide says 'American man mocks Indian professor's IIT degree'. I couldn't confirm that the man was American, that the professor was Indian, or that the mocking happened as described."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T02:31:50+00:00"
- },
- {
-  "id": "ed7266cae6c2",
-  "image": "posts/20261005-0230-ed7266cae6c2.jpg",
-  "kind": "fun",
-  "headline": "Foreigner ne IIT degree ka mazaak udaya. Internet: Bhai, tu rehne de. Mummy: IIT chhodo, pehle ye batao, Sharma ji ke bete ke 98% ke aage tumhara result kahan hai?",
-  "tag": "😂 RELATABLE",
-  "caption": "Internet ne ek hi din mein poora syllabus padha diya 😂 Par mummy ka sawaal abhi bhi next level hai.\nTag karo us dost ko jo har baat pe \"Sharma ji ka beta\" le aata hai 🎓\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #IIT #DesiHumor #Relatable #IndianMemes #Hinglish",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "Sharma ji ke beta ke 98% → Sharma ji ke bete ke 98%"
-   ]
-  },
-  "created_at": "2026-10-05T02:30:49+00:00"
- },
- {
-  "id": "aec460371814",
-  "image": "posts/20261005-0132-aec460371814.jpg",
-  "kind": "news",
-  "headline": "Two Captive-Bred Great Indian Bustards Released Into Wild In Rajasthan, Pulled From Extinction's Edge",
-  "tag": "GOOD NEWS",
-  "caption": "Ek achhi khabar for a change! 🦅\n\nRajasthan mein do captive-bred Great Indian Bustards ko wild mein release kiya gaya hai. Ye bird extinction ke kinare pe pahunch chuki thi.\n\nYe conservation programme ka naya phase hai. Experts ab track karenge ki captive mein pale ye birds bina kisi help ke survive aur breed kar paate hain ya nahi.\n\nAapko kya lagta hai, ye experiment kaamyab hoga?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#GreatIndianBustard #Rajasthan #WildlifeConservation #India #GoodNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/from-the-edge-of-extinction-two-captive-bred-great-indian-bustards-released-into-wild-in-rajasthan-101791157226498.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The claim 'Gujarat mein 30 birds chhodne ka target hai' is not in the article text provided. The article only says the next destination could be Kutch. Check it against the full article or remove it.",
-    "Slide 4: The quote attributed to 'Sumer Singh Bhati' (survival is the real test, all transmission lines should go underground) is not in the article text provided. Check the name and quote against the full article. The text we were given is cut off."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261005-0132-aec460371814-s2.jpg",
-   "posts/20261005-0132-aec460371814-s3.jpg",
-   "posts/20261005-0132-aec460371814-s4.jpg",
-   "posts/20261005-0132-aec460371814-s5.jpg"
-  ],
-  "created_at": "2026-10-05T01:32:41+00:00"
  }
 ]
