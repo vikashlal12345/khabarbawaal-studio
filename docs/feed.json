@@ -1,5 +1,42 @@
 [
  {
+  "id": "243e0f3b6424",
+  "image": "posts/20261008-0532-243e0f3b6424.jpg",
+  "kind": "news",
+  "headline": "Chinese Runner Disqualified From Berlin Marathon After Being Caught Riding Bicycle Mid-Race, Dropped By Sponsor",
+  "tag": "VIRAL",
+  "caption": "Marathon mein shortcut? Yahan toh cycle ki sawari kar li 😭\n\nBerlin Marathon mein ek Chinese runner ko race ke beech bicycle ke peeche ride lete hue pakda gaya.\nResult: disqualify ho gayi, aur sponsor ne bhi saath chhod diya.\nUnka bayan: \"My attempt to take a shortcut was disrespectful to the fairness of the competition.\"\n\nUs dost ko tag karo jo marathon mein bhi shortcut dhundh lega 😂\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #marathon #berlinmarathon #news",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/chinese-runner-caught-riding-bicycle-during-marathon-dropped-by-sponsor-i-feel-deeply-guilty-101791431767834.html",
+  "pin_comment": "Sabse funny part: 42 km ke liye training karna tha, unhone pedal pe full trust kar liya 🚴 Sponsor ka exit bhi bina warm-up ke hua!",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The quote \"I feel deeply guilty\" does not appear in the article. Sun's actual apology is used instead.",
+    "Fact corrected to match the article: The quote is invented and wrongly attributed to the sponsor. Brooks said nothing of the kind.",
+    "Fact corrected to match the article: The article says she was on the back of a bicycle, not a vehicle.",
+    "Fact corrected to match the article: Article says she hitched a ride on the back of a bicycle, not that she pedalled it",
+    "Fact corrected to match the article: She was photographed hitching a ride on a bicycle, not riding it herself",
+    "Fact corrected to match the article: She hitched a ride on the back of a bicycle, not pedalled it",
+    "Slide 3: The Hinglish line in quotation marks (\"Tabiyat theek nahi thi, par rules todna bahana nahi.\") is a translation of Sun's English quote, not her exact words. It would be safer without quote marks or labelled as a translation. The caption's English quote is exact."
+   ],
+   "fixed": [
+    "Unka bayan: \"I feel deeply guilty.\" → Unka bayan: \"My attempt to take a shortcut was disrespectful to the fairness of the competition.\"",
+    "Sponsor ne drop kiya, bola: I feel deeply guilty → Sponsor ne drop kiya, Sun ne maafi maangi",
+    "ek vehicle/bicycle ke peeche → ek bicycle ke peeche",
+    "ko race ke beech bicycle chalate hue pakda gaya → ko race ke beech bicycle ke peeche ride lete hue pakda gaya",
+    "Yahan toh cycle hi chala di → Yahan toh cycle ki sawari kar li",
+    "Race ke beech bicycle chalate hue pakdi gayi → Race ke beech bicycle ke peeche ride lete hue pakdi gayi"
+   ]
+  },
+  "slides": [
+   "posts/20261008-0532-243e0f3b6424-s2.jpg",
+   "posts/20261008-0532-243e0f3b6424-s3.jpg",
+   "posts/20261008-0532-243e0f3b6424-s4.jpg"
+  ],
+  "created_at": "2026-10-08T05:32:15+00:00"
+ },
+ {
   "id": "7dc55e49dccd",
   "image": "posts/20261008-0431-7dc55e49dccd.jpg",
   "kind": "news",
@@ -1751,39 +1788,5 @@
    "posts/20261005-0631-bc3e0b58c26c-s6.jpg"
   ],
   "created_at": "2026-10-05T06:31:35+00:00"
- },
- {
-  "id": "0d72c5bb87a1",
-  "image": "posts/20261005-0531-0d72c5bb87a1.jpg",
-  "kind": "fun",
-  "headline": "Nayi car bolne se pehle mann padh legi. Mera mann: Biryani. Papa wali car: Budget dekh ke ghar chalte hain, dal chawal. Papa: Yehi toh asli AI hai.",
-  "tag": "😂 DESI LIFE",
-  "caption": "Car mann padh legi, par Papa ka budget padhna usse bhi seekhna padega 😂🚗\nBiryani ka plan banate hi car ne U-turn le liya toh samajh jana.\nTag karo us dost ko jiske papa ki car already ye AI hai, family group mein bhejo!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #DesiLife #DesiHumor #PapaLogic #AICar #IndianFamily",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T05:31:41+00:00"
- },
- {
-  "id": "f96116682984",
-  "image": "posts/20261005-0530-f96116682984.jpg",
-  "kind": "fun",
-  "headline": "Dadu ki awaaz Delhi Metro mein aayi. Pota: Dadu, aap announcement kar rahe ho! Mummy ghar pe: Mujhe toh 20 saal se \"Agla station: Khana ready hai\" sunti hoon, koi taali nahi bajata.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "Dadu ki awaaz Metro mein, Mummy ki awaaz poore ghar mein, par fan following sirf ek ki. 😂🚇\nFamily group mein bhejo, sabki Mummy ko announcer ka award do.\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #DelhiMetro #ShammiNarang #FamilyGroup #DesiMummy #Relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The post is a single meme slide. The article isn't available, so I couldn't check the headline quote or Shammi Narang's details. The Pota/Mummy dialogue is joke content, not a real quote. The slide doesn't name Narang, so it shouldn't be read as his words. Layout and spelling are fine."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-05T05:30:40+00:00"
  }
 ]
