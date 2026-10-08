@@ -843,6 +843,29 @@
      "tokens": 17488
     }
    }
+  },
+  "fun": {
+   "posts": 1,
+   "requests": 3,
+   "input": 8,
+   "output": 1773,
+   "cache_read": 4075,
+   "cache_write": 15106,
+   "value_usd": 0.079,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 8928
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 4559
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 7475
+    }
+   }
   }
  }
 }
