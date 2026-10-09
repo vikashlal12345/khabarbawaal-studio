@@ -34,6 +34,8 @@
   .post img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #222; }
   .meta { display: flex; align-items: center; gap: 8px; padding: 12px 14px 0; font-size: 12px; color: var(--muted); }
   .tag.fun { background: var(--accent); color: #000; }
+  .tag.reel { background: #e50914; color: #fff; }
+  .post video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #222; }
   .tag { background: var(--red); color: #fff; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
   .new { background: var(--accent); color: #000; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
   .caption { padding: 10px 14px 0; font-size: 14px; white-space: pre-wrap; color: #ddd;
@@ -150,6 +152,7 @@ function currentImage(post) {
 
 // Everything that gets shared: the cover (or picked option) + carousel slides.
 function allImages(post) {
+  if (post.video) return [post.video];   // 🎬 Reel: the video file is what gets shared
   return [currentImage(post), ...(post.slides || [])];
 }
 
@@ -181,7 +184,7 @@ function prepare(post) {
 function fetchFile(src) {
   if (!pending[src]) {
     pending[src] = fetch(src).then(r => r.blob()).then(b => {
-      files[src] = new File([b], src.split('/').pop(), { type: 'image/jpeg' });
+      files[src] = new File([b], src.split('/').pop(), { type: src.endsWith('.mp4') ? 'video/mp4' : 'image/jpeg' });
       return files[src];
     }).catch(err => { delete pending[src]; throw err; });
   }
@@ -218,7 +221,7 @@ async function copyCaption(post) {
 async function share(post) {
   const ready = allImages(post).map(src => files[src]);
   if (ready.some(f => !f)) {
-    toast(list.length > 1 ? 'Preparing slides… tap again' : 'Preparing image… tap again');
+    toast(post.video ? 'Preparing video… tap again' : ready.length > 1 ? 'Preparing slides… tap again' : 'Preparing image… tap again');
     prepare(post).catch(() => {});
     return;
   }
@@ -233,7 +236,7 @@ async function share(post) {
   if (navigator.canShare && navigator.canShare({ files: list })) {
     try {
       await navigator.share({ files: list });
-      toast(list.length > 1 ? `${list.length} slides sent — paste caption in Instagram` : 'Caption copied — after posting, tap 💬 Comment for the link');
+      toast(post.video ? 'Caption copied: pick Reel, add a trending song, paste caption' : list.length > 1 ? `${list.length} slides sent — paste caption in Instagram` : 'Caption copied — after posting, tap 💬 Comment for the link');
     } catch (e) {
       if (e.name !== 'AbortError') toast('Share failed: ' + e.message);
     }
@@ -286,7 +289,8 @@ function render() {
   const lastSeen = localGet('lastSeen');
   feedEl.innerHTML = posts.map(p => `
     <article class="post${tab === 'ready' && isUsed(p) ? ' used' : ''}" data-id="${p.id}">
-      ${p.options && p.options.length > 1 ? `
+      ${p.video ? `<video src="${p.video}" poster="${p.image}" autoplay muted loop playsinline preload="auto"></video>`
+      : p.options && p.options.length > 1 ? `
       <div class="carousel" data-role="options">${p.options.map(o => `<img src="${o}" alt="${esc(p.headline)}" loading="lazy">`).join('')}</div>
       <div class="opt-label">Cover option <b>1</b> of ${p.options.length} · swipe ← → to choose</div>
       ${p.slides && p.slides.length ? `<div class="more-label">+ ${p.slides.length} more slides (all shared together)</div>
@@ -296,7 +300,7 @@ function render() {
       <div class="opt-label">Slide <b>1</b> of ${p.slides.length + 1} · swipe ← → · Post shares all ${p.slides.length + 1}</div>`
       : `<img src="${p.image}" alt="${esc(p.headline)}" loading="lazy">`}
       <div class="meta">
-        <span class="tag${['fun', 'custom', 'top10', 'thought', 'market', 'calendar', 'ready'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
+        <span class="tag${['fun', 'reel', 'custom', 'top10', 'thought', 'market', 'calendar', 'ready'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
         ${lastSeen && p.created_at > lastSeen ? '<span class="new">NEW</span>' : ''}
         <span>${ago(p.created_at)} · ${esc(p.source)}</span>
       </div>

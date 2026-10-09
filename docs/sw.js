@@ -1,6 +1,6 @@
 // Network-first for the feed, cache-first for post images, so the app opens
 // instantly and still shows the last posts when offline.
-const CACHE = 'studio-v16';
+const CACHE = 'studio-v17';
 const SHELL = ['./', 'index.html', 'stats.html', 'manifest.json', 'icons/apple-touch-icon.png', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {
@@ -17,6 +17,7 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
 
+  if (url.pathname.endsWith('.mp4')) return;   // videos stream in pieces: let the browser fetch them directly
   if (url.pathname.includes('/posts/')) {
     e.respondWith(caches.match(e.request).then(hit => hit || fetch(e.request).then(res => {
       const copy = res.clone();

@@ -755,7 +755,8 @@ def limit_hashtags(caption: str, n: int = 5) -> str:
 
 
 def post_images(post: dict) -> list[str]:
-    return list(dict.fromkeys(post.get("options", [post["image"]]) + [post["image"]] + post.get("slides", [])))
+    return list(dict.fromkeys(post.get("options", [post["image"]]) + [post["image"]] + post.get("slides", [])
+                              + ([post["video"]] if post.get("video") else [])))
 
 
 def trim_feed(feed: list) -> None:
