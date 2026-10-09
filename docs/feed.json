@@ -1,5 +1,27 @@
 [
  {
+  "id": "market_preopen-2026-10-09",
+  "image": "posts/20261009-0339-market_preopen-2026-10-09.jpg",
+  "kind": "market",
+  "headline": "Pre-open: Nifty 22,314.95 (+0.37%)",
+  "tag": "🔔 PRE-OPEN",
+  "caption": "🔔 Pre-open update: Nifty 22,314.95 (+0.37%) par khulne ke sanket, positive start.\nPre-open mein sabse upar APOLLOHOSP (+3.70%), sabse neeche TATASTEEL (-0.56%).\nMarket 9:15 pe khulega. Aaj aapko market kaisa lag raha hai? 👇\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #ShareMarket #PreOpen #DalalStreet",
+  "source": "NSE",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Data-only post: numbers straight from NSE"
+   ]
+  },
+  "slides": [
+   "posts/20261009-0339-market_preopen-2026-10-09-s2.jpg",
+   "posts/20261009-0339-market_preopen-2026-10-09-s3.jpg"
+  ],
+  "created_at": "2026-10-09T03:39:59+00:00"
+ },
+ {
   "id": "d9200b0a5a1f",
   "image": "posts/20261009-0331-d9200b0a5a1f.jpg",
   "kind": "news",
@@ -1887,27 +1909,5 @@
    "fixed": []
   },
   "created_at": "2026-10-06T03:45:55+00:00"
- },
- {
-  "id": "market_preopen-2026-10-06",
-  "image": "posts/20261006-0339-market_preopen-2026-10-06.jpg",
-  "kind": "market",
-  "headline": "Pre-open: Nifty 22,603.25 (+0.21%)",
-  "tag": "🔔 PRE-OPEN",
-  "caption": "🔔 Pre-open update: Nifty 22,603.25 (+0.21%) par khulne ke sanket, positive start.\nPre-open mein sabse upar TRENT (+8.53%), sabse neeche TCS (-0.82%).\nMarket 9:15 pe khulega. Aaj aapko market kaisa lag raha hai? 👇\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n #StockMarket #Nifty #PreOpen #ShareMarketIndia #StockMarketIndia",
-  "source": "NSE",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "Data-only post: numbers straight from NSE"
-   ]
-  },
-  "slides": [
-   "posts/20261006-0339-market_preopen-2026-10-06-s2.jpg",
-   "posts/20261006-0339-market_preopen-2026-10-06-s3.jpg"
-  ],
-  "created_at": "2026-10-06T03:39:41+00:00"
  }
 ]
