@@ -54,7 +54,8 @@ Night: 1:00 five 📦 ready posts (3 carousels + 2 timeless Reels) · 2:00 day p
 - 🎬 Your video/photos (in ➕ Create): the app grabs 6 frames into one picture, uploads it to the ntfy inbox as a file,
   `create_post.make_media()` writes on-video text, caption, pinned comment + cover options; the owner posts the video from the gallery.
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
-  (`fun.judge_best`), AI picks a Mixkit clip by title (free, no key), proofread on still frames; news = AI picks a
+  (`fun.judge_best`), AI ranks Mixkit clips by title (no key); **only clips labelled "Free" licence** are used
+  (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a
   visual story from today's news posts, photos via `carousel.collect(max_words=14)`. Feed entry has `video`.
   Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`

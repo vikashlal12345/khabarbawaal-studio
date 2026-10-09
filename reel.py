@@ -13,7 +13,7 @@ Three styles (each writes the MP4 and returns still frames for the proofreader):
         news photos zooming/sliding with story lines, ending on a punchline card
         slides = [(photo, credit, text), ...]
 
-Clips come from Mixkit (free licence, no sign-up). Text stays inside Instagram's safe
+Clips come from Mixkit (no sign-up); only clips under its Free licence are used. Text stays inside Instagram's safe
 zone (Reels buttons cover the bottom and the right edge).
 """
 from __future__ import annotations
@@ -526,11 +526,20 @@ def mixkit_search(query: str) -> list[tuple[str, str]]:
     slug = re.sub(r"[^a-z0-9]+", "-", query.lower()).strip("-")
     if not slug:
         return []
-    try:
-        page = requests.get(f"https://mixkit.co/free-stock-video/{slug}/", headers=UA, timeout=25).text
-    except Exception as e:
-        print(f"  ! Mixkit search '{query}' failed: {e}")
-        return []
+    import time
+    page = ""
+    for wait in (0, 8, 20):   # Mixkit answers 429 to quick repeated requests: wait and retry
+        time.sleep(wait)
+        try:
+            r = requests.get(f"https://mixkit.co/free-stock-video/{slug}/", headers=UA, timeout=25)
+        except Exception as e:
+            print(f"  ! Mixkit search '{query}' failed: {e}")
+            continue
+        if r.status_code != 429:
+            page = r.text
+            break
+    else:
+        print(f"  ! Mixkit search '{query}': too many requests")
     out = []
     for m in re.finditer(r'<div class="item-grid-video-player.*?</div>\s*</div>', page, re.S):
         v = re.search(r"assets\.mixkit\.co/videos/(\d+)/", m.group(0))
@@ -540,33 +549,67 @@ def mixkit_search(query: str) -> list[tuple[str, str]]:
     return out
 
 
-def pick_clip(post: dict, used: list[str]) -> str:
-    """Search Mixkit and let the AI pick the clip whose title fits the joke best. Returns the clip id."""
+def clip_license(cid: str, known: dict) -> str:
+    """The clip's licence as Mixkit labels it on its own page: "Free", "Mixkit Restricted License",
+    or "" if it can't be read (treated as not free). known = remembered licences (state)."""
+    import re
+    import time
+    import requests
+    if cid in known:
+        return known[cid]
+    for wait in (0, 8, 20):   # Mixkit answers 429 to quick repeated requests: wait and retry
+        time.sleep(wait)
+        try:
+            r = requests.get(f"https://mixkit.co/free-stock-video/x-{cid}/", headers=UA, timeout=20)
+        except Exception:
+            continue
+        if r.status_code == 429:
+            continue
+        m = re.search(rf'-{cid}/#video".{{0,3000}}?"copyrightNotice":"([^"]*)"', r.text, re.S)
+        if m:
+            known[cid] = m.group(1)
+            return known[cid]
+        return ""
+    return ""
+
+
+def pick_clip(post: dict, state: dict) -> str:
+    """Search Mixkit; the AI ranks the clips whose titles fit the joke; the first one under the
+    Free licence is used (the Restricted licence forbids business social media). Returns the clip id."""
     import fun
+    used = state.get("reel_clips", [])
+    known = state.setdefault("clip_licences", {})
     found: dict[str, str] = {}
     queries = list(dict.fromkeys(q.strip() for q in post["clip_search"] if q.strip()))
     if post.get("punch"):   # meme Reels land on a reaction: common reaction clips as backup
         queries += ["shocked", "surprised", "laughing", "panic", "facepalm"]
     for q in queries:
         for cid, title in mixkit_search(q):
-            if cid not in used:
+            if cid not in used and known.get(cid, "Free") == "Free":
                 found.setdefault(cid, title)
         if len(found) >= 60:
             break
     if not found:
         raise RuntimeError(f"no Mixkit clips for {post['clip_search']}")
     listing = "\n".join(f"{cid}: {title}" for cid, title in list(found.items())[:60])
-    schema = {"type": "object", "properties": {"id": {"type": "string"}, "fits": {"type": "integer"}},
-              "required": ["id", "fits"], "additionalProperties": False}
-    pick = fun.claude_json("You pick stock video clips for funny Instagram Reels. Choose by title the clip that "
-                           "best shows the wanted moment; fits = 1-10.",
-                           f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
-                           f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
-                           schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")
-    if pick["id"] not in found or pick["fits"] < 5:
-        raise RuntimeError(f"no fitting clip (best: {found.get(pick['id'], '?')}, fits {pick['fits']})")
-    print(f"  clip {pick['id']}: {found[pick['id']]} (fits {pick['fits']}/10)")
-    return pick["id"]
+    schema = {"type": "object", "properties": {"ranked": {"type": "array", "description": "Best 6 clips, best first",
+              "items": {"type": "object", "properties": {"id": {"type": "string"}, "fits": {"type": "integer"}},
+                        "required": ["id", "fits"], "additionalProperties": False}}},
+              "required": ["ranked"], "additionalProperties": False}
+    ranked = fun.claude_json("You pick stock video clips for funny Instagram Reels. Rank by title the 6 clips that "
+                             "best show the wanted moment; fits = 1-10.",
+                             f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
+                             f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
+                             schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")["ranked"]
+    for r in ranked[:6]:
+        if r["id"] not in found or r["fits"] < 5:
+            continue
+        lic = clip_license(r["id"], known)
+        if lic == "Free":
+            print(f"  clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10, Free licence)")
+            return r["id"]
+        print(f"  skipped clip {r['id']} ({found[r['id']]}): licence '{lic or 'unknown'}'")
+    raise RuntimeError("no fitting clip under the Free licence")
 
 
 def download_clip(cid: str, folder: str) -> tuple[str, float]:
@@ -604,7 +647,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False) -
     import generate as g
     import proofread
     post = write_joke(kind, state, evergreen)
-    cid = pick_clip(post, state.get("reel_clips", []))
+    cid = pick_clip(post, state)
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
