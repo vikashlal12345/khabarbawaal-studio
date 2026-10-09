@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_clip-2026-10-10-manual",
+  "image": "posts/20261009-2009-reel_clip-2026-10-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261009-200947-reel_clip-2026-10-10.mp4",
+  "headline": "Wo dost jo Saturday ko bhi 6 baje ka alarm lagata hai: 'Bas check kar raha tha' Phir 11 baje tak sota hai",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Alarm ko pata hai Saturday hai, bas wo hi nahi maanta 😴\nHum bhi nahi uthenge.\nApne alarm ko kitni baar snooze karte ho? Number batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#reelsindia #relatable #viral #trending #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Sunday ko alarm nahi lagaya phir bhi 6 baje aankh khul jaati hai, ye kaisa system hai",
+  "songs": [
+   {
+    "title": "Jalebi Baby",
+    "artist": "Tesher",
+    "lang": "english",
+    "mood": "funny, playful"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "Pal Pal",
+    "artist": "Afusic, AliSoomroMusic",
+    "lang": "hindi",
+    "mood": "chill, lazy"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "light, groovy"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-09T20:09:47+00:00"
+ },
+ {
   "id": "575d0b6f4ab3",
   "image": "posts/20261009-1631-575d0b6f4ab3.jpg",
   "kind": "news",

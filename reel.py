@@ -592,16 +592,16 @@ def pick_clip(post: dict, state: dict) -> str:
     if not found:
         raise RuntimeError(f"no Mixkit clips for {post['clip_search']}")
     listing = "\n".join(f"{cid}: {title}" for cid, title in list(found.items())[:60])
-    schema = {"type": "object", "properties": {"ranked": {"type": "array", "description": "Best 6 clips, best first",
+    schema = {"type": "object", "properties": {"ranked": {"type": "array", "description": "Best 12 clips, best first",
               "items": {"type": "object", "properties": {"id": {"type": "string"}, "fits": {"type": "integer"}},
                         "required": ["id", "fits"], "additionalProperties": False}}},
               "required": ["ranked"], "additionalProperties": False}
-    ranked = fun.claude_json("You pick stock video clips for funny Instagram Reels. Rank by title the 6 clips that "
+    ranked = fun.claude_json("You pick stock video clips for funny Instagram Reels. Rank by title the 12 clips that "
                              "best show the wanted moment; fits = 1-10.",
                              f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
                              f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
                              schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")["ranked"]
-    for r in ranked[:6]:
+    for r in ranked[:12]:   # many good clips are Restricted: keep going until a Free one fits
         if r["id"] not in found or r["fits"] < 5:
             continue
         lic = clip_license(r["id"], known)
