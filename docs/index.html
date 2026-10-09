@@ -441,11 +441,19 @@ document.getElementById('create-cancel').addEventListener('click', () => { sheet
 const mediaEl = document.getElementById('create-media'), mediaPreview = document.getElementById('media-preview');
 let media = null;   // { blob, n, cols, type }
 const CELL_W = 720;
+// One photo at a time, shrunk straight away: a full 12 MP photo needs ~48 MB of phone memory.
 function loadImage(file) {
   return new Promise((res, rej) => {
-    const img = new Image();
-    img.onload = () => res(img); img.onerror = () => rej(new Error('image'));
-    img.src = URL.createObjectURL(file);
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const c = document.createElement('canvas'), k = Math.min(1, CELL_W / img.naturalWidth);
+      c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url); img.src = '';
+      res(c);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); rej(new Error('image')); };
+    img.src = url;
   });
 }
 function once(el, ev, ms = 8000) {
@@ -457,7 +465,8 @@ function once(el, ev, ms = 8000) {
 async function videoFrames(file, n = 6) {
   const v = document.createElement('video');
   v.muted = true; v.playsInline = true; v.preload = 'auto';
-  v.src = URL.createObjectURL(file);
+  const url = URL.createObjectURL(file);
+  v.src = url;
   await once(v, 'loadedmetadata');
   try { await v.play(); v.pause(); } catch {}   // iPhone only decodes frames after a play
   const out = [];
@@ -470,6 +479,7 @@ async function videoFrames(file, n = 6) {
     c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
     out.push(c);
   }
+  v.pause(); v.removeAttribute('src'); v.load(); URL.revokeObjectURL(url);   // free the video right away
   return out;
 }
 function frameSheet(frames, cellH) {
@@ -498,8 +508,8 @@ const MAX_UPLOAD = 14.5 * 1024 * 1024;   // the inbox (ntfy.sh) takes files up t
 // Re-record the video at Reel size (max 1280 px, first 15 s) so it fits the inbox. iPhone plays it muted
 // to re-record it, so the shrunk copy has no sound (the owner adds a song in Instagram).
 async function shrinkVideo(file, maxSec = 15) {
-  const v = document.createElement('video');
-  v.muted = true; v.playsInline = true; v.src = URL.createObjectURL(file);
+  const v = document.createElement('video'), url = URL.createObjectURL(file);
+  v.muted = true; v.playsInline = true; v.src = url;
   await once(v, 'loadedmetadata');
   const k = Math.min(1, 1280 / Math.max(v.videoWidth, v.videoHeight));
   const c = document.createElement('canvas');
@@ -520,6 +530,7 @@ async function shrinkVideo(file, maxSec = 15) {
     draw();
   });
   rec.stop(); await stopped;
+  v.removeAttribute('src'); v.load(); URL.revokeObjectURL(url);
   return new Blob(chunks, { type: type.split(';')[0] });
 }
 async function uploadVideo(file) {
@@ -548,10 +559,13 @@ mediaEl.addEventListener('change', async () => {
       frames = await videoFrames(video);
       cellH = Math.min(1280, Math.round(CELL_W * frames[0].height / frames[0].width));
     } else {
-      frames = await Promise.all(files.slice(0, 6).map(loadImage));
+      frames = [];
+      for (const f of files.slice(0, 6)) frames.push(await loadImage(f));   // one at a time
       cellH = 900;
     }
     media = { ...(await frameSheet(frames, cellH)), type: video ? 'video' : 'photos', file: video || null };
+    const old = mediaPreview.querySelector('img');
+    if (old) URL.revokeObjectURL(old.src);
     mediaPreview.innerHTML = `<img src="${URL.createObjectURL(media.blob)}" alt="">`;
     createInput.placeholder = 'Context: what is happening, who, where… e.g. Delhi metro mein seat ke liye do aunties ki ladai';
     toast(`✅ ${media.n} ${video ? 'moments' : 'photos'} ready: now write the context`);
