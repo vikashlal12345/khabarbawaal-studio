@@ -1,5 +1,29 @@
 [
  {
+  "id": "3e51dea447a3",
+  "image": "posts/20261009-1131-3e51dea447a3.jpg",
+  "kind": "news",
+  "headline": "Ram Madhav Targets Rahul Gandhi Over Musk Post, Says No Starlink Spectrum Discrimination",
+  "tag": "POLITICS",
+  "caption": "Elon Musk ki post aayi aur Rahul Gandhi pe seedha nishana lag gaya 👀\nBJP leader Ram Madhav ne kaha ki India \"banana republic\" nahi hai.\nUnke mutabiq Starlink ke saath koi discrimination nahi ho raha.\nJio aur Airtel jaisi companies bhi spectrum allocation ka wait kar rahi hain.\n\"Banana republic\" wali line pe 🔥 ya 🤡?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#india #trending #starlink #rahulgandhi #bjp",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/starlink-india-elon-musk-license-rahul-gandhi-bjp-ram-madhav-101791542801383.html",
+  "pin_comment": "Sabse interesting part: Jio, Airtel aur Starlink, teeno line mein hain. Spectrum pe sabka number aayega ya nahi? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The headline block starts around the speaker's mouth and chin. Part of the lower face is covered by 'RAM MADHAV TARGETS' and the lines below it. The eyes and forehead are clear. If you can, move the text lower or shift the photo up."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261009-1131-3e51dea447a3-s2.jpg",
+   "posts/20261009-1131-3e51dea447a3-s3.jpg",
+   "posts/20261009-1131-3e51dea447a3-s4.jpg"
+  ],
+  "created_at": "2026-10-09T11:31:30+00:00"
+ },
+ {
   "id": "e1eabbd4c655",
   "image": "posts/20261009-1031-e1eabbd4c655.jpg",
   "kind": "fun",
@@ -1889,35 +1913,5 @@
    "posts/20261006-1132-9db6473a29fc-s4.jpg"
   ],
   "created_at": "2026-10-06T11:32:21+00:00"
- },
- {
-  "id": "02bdd5c5d10b",
-  "image": "posts/20261006-1032-02bdd5c5d10b.jpg",
-  "kind": "news",
-  "headline": "Rahul Gandhi Climbs Barricades, Waves Tricolour During Opposition March To Election Commission",
-  "tag": "POLITICS",
-  "caption": "Opposition ka ECI march aur ab seedha barricade drama 🚧\nRahul Gandhi ne barricades par chadh kar Tricolour lehraya, aur reportedly bola \"We are going to destroy them\".\nCongress president Mallikarjun Kharge aur Priyanka Gandhi bhi Parliament House complex se march mein shamil the.\nProtest ya photo-op? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#rahulgandhi #congress #india #trending #politics",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/rahul-gandhi-climbs-police-barricades-waves-tricolour-during-opposition-india-bloc-march-to-eci-we-are-going-to-destroy-them-101791277773082.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The embedded Congress tweet text is garbled. The Hindi shows as empty boxes (missing-font glyphs), with only 'INDIA' readable. Re-render the screenshot with a Hindi font or crop the text out.",
-    "Slide 1: The cover photo is blurry and low-resolution. Rahul Gandhi's face is cut off at the left edge. A sharper or better-cropped image would help.",
-    "Caption: The caption and slide 4 quote 'We are going to destroy them' without context. In the article, Rahul says 'we are not only countering them, we are going to destroy them', and 'them' refers to the poll body. Consider adding 'Election Commission' or the fuller quote so it is not read as a threat against people. The attribution to Rahul is correct."
-   ],
-   "fixed": [
-    "Parliament House complex se march mein joined → Parliament House complex se march mein shamil hue"
-   ]
-  },
-  "slides": [
-   "posts/20261006-1032-02bdd5c5d10b-s2.jpg",
-   "posts/20261006-1032-02bdd5c5d10b-s3.jpg",
-   "posts/20261006-1032-02bdd5c5d10b-s4.jpg",
-   "posts/20261006-1032-02bdd5c5d10b-s5.jpg",
-   "posts/20261006-1032-02bdd5c5d10b-s6.jpg",
-   "posts/20261006-1032-02bdd5c5d10b-s7.jpg"
-  ],
-  "created_at": "2026-10-06T10:32:14+00:00"
  }
 ]
