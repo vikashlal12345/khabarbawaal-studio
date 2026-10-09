@@ -1,5 +1,35 @@
 [
  {
+  "id": "top10_day-2026-10-09",
+  "image": "posts/20261009-1546-top10_day-2026-10-09.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 NEWS: 09 Oct",
+  "tag": "📰 TOP 5 NEWS",
+  "caption": "Aaj ki Top 5 khabrein: Nobel se Nana Patekar tak, sab ek jagah! 🔥\n\n1. Nana Patekar cremated with full state honours\n2. Indian-origin Navi Pillay wins 2026 Nobel Peace Prize\n3. BJP bypoll wins lead October 9 news brief\n4. Rahul Gandhi: 'This govt will fall' as INDIA bloc protest stopped\n5. Rohit Prasad named Boston Dynamics CEO\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #viral #nobelprize #nanapatekar",
+  "source": "Bollywood Hungama, Hindustan Times",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Age 75 is not given in the article, so it can't be verified.",
+    "Slide 3: The photo shows Rahul and Priyanka Gandhi sitting with their eyes closed among supporters. It doesn't clearly show the bus protest or police stoppage in the story. Check that it's a suitable file photo."
+   ],
+   "fixed": [
+    "Veteran actor Nana Patekar, 75, ko Pune → Veteran actor Nana Patekar ko Pune",
+    "tells INIDA bloc MPs → tells INDIA bloc MPs"
+   ]
+  },
+  "slides": [
+   "posts/20261009-1546-top10_day-2026-10-09-s2.jpg",
+   "posts/20261009-1546-top10_day-2026-10-09-s3.jpg",
+   "posts/20261009-1546-top10_day-2026-10-09-s4.jpg",
+   "posts/20261009-1546-top10_day-2026-10-09-s5.jpg",
+   "posts/20261009-1546-top10_day-2026-10-09-s6.jpg",
+   "posts/20261009-1546-top10_day-2026-10-09-s7.jpg"
+  ],
+  "created_at": "2026-10-09T15:46:22+00:00"
+ },
+ {
   "id": "reel-clip-1",
   "image": "posts/20261009-1542-reel-clip-1.jpg",
   "video": "posts/20261009-1542-reel-clip-1.mp4",
@@ -1871,54 +1901,5 @@
    "posts/20261006-1546-top10_day-2026-10-06-s7.jpg"
   ],
   "created_at": "2026-10-06T15:46:33+00:00"
- },
- {
-  "id": "c82904714179",
-  "image": "posts/20261006-1531-c82904714179.jpg",
-  "kind": "fun",
-  "headline": "POV: Behen ne bola, 'Tere liye bhi maggi bana rahi hoon.' Main: Wah, pyaar. Behen: Bas bartan tu dhoyega.",
-  "tag": "😂 DESI LIFE",
-  "caption": "Behen ka pyaar bhi terms and conditions ke saath aata hai 😂\nMaggi free nahi thi, bas bartan ki EMI thi.\nBhai-behen wale group mein bhejo, dekhte hain kaun pakda jaata hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#viral #trending #india #funny #siblings",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aur agar maggi mein extra masala daalo to bartan bhi tumhare, pura ghar bhi.",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-06T15:31:20+00:00"
- },
- {
-  "id": "6c9e38b096db",
-  "image": "posts/20261006-1433-6c9e38b096db.jpg",
-  "kind": "news",
-  "headline": "DMK Jibes At Rahul Gandhi: 'Afraid Of Vijay?' Clarify Your Stand On SIR",
-  "tag": "POLITICS",
-  "caption": "Opposition ke andar hi bawaal shuru ho gaya 👀\nDMK spokesperson Saravanan Annadurai ne Rahul Gandhi pe jibe maara: \"Afraid of Vijay?\"\nDMK ne pucha ki Tamil Nadu mein SIR pe Rahul apna stand clear kyun nahi karte.\nUnka sawaal ye bhi tha ki Rahul ne Kharge ke \"dissolution\" of state governments wale stand ko endorse kyun nahi kiya.\nINDIA bloc ke dost ya dushman? Congress 🅰️ ya DMK 🅱️, kiska point sahi hai?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#trending #india #politics #rahulgandhi #dmk",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/dmk-rahul-gandhi-jibe-tamil-nadu-sir-stand-election-commission-afraid-of-vijay-india-bloc-march-101791290944747.html",
-  "pin_comment": "Sabse funny part: sawaal BJP se nahi, Congress ke apne ally DMK se aa raha hai. Rahul jawab denge ya chup rahenge? 🍿",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article: BJP demanded that Kharge apologise; BJP did not apologise.",
-    "Fact corrected to match the article: Kharge asked for dissolution of state governments, not assemblies.",
-    "Slide 3: The embedded X post screenshot (@INCIndia) shows garbled placeholder boxes instead of readable text. The tweet text is unreadable, and the slide gives no Rahul quote to check against it. Re-render the screenshot with a font that works, or replace it with a clean photo. The slide credits the post to @INCIndia, but the article says the \"300 MPs\" quote came from Rahul's own X post."
-   ],
-   "fixed": [
-    "removed weak photo slide(s) [2]",
-    "BJP ne maafi maangi; → BJP ne Kharge se maafi maangne ko kaha;",
-    "of state assemblies wale stand → of state governments wale stand"
-   ]
-  },
-  "slides": [
-   "posts/20261006-1433-6c9e38b096db-s2.jpg",
-   "posts/20261006-1433-6c9e38b096db-s3.jpg",
-   "posts/20261006-1433-6c9e38b096db-s4.jpg",
-   "posts/20261006-1433-6c9e38b096db-s5.jpg",
-   "posts/20261006-1433-6c9e38b096db-s6.jpg"
-  ],
-  "created_at": "2026-10-06T14:33:28+00:00"
  }
 ]
