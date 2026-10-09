@@ -1,5 +1,36 @@
 [
  {
+  "id": "c21df0fe5b66",
+  "kind": "custom",
+  "image": "posts/20261009-2030-c21df0fe5b66-1.jpg",
+  "options": [
+   "posts/20261009-2030-c21df0fe5b66-1.jpg",
+   "posts/20261009-2030-c21df0fe5b66-2.jpg",
+   "posts/20261009-2030-c21df0fe5b66-3.jpg"
+  ],
+  "slides": [
+   "posts/20261009-2030-c21df0fe5b66-s2.jpg",
+   "posts/20261009-2030-c21df0fe5b66-s3.jpg",
+   "posts/20261009-2030-c21df0fe5b66-s4.jpg"
+  ],
+  "headline": "Nana Patekar Was About To Buy Rs 1.5-Crore Car, Then Saw Farmer Suicide Report",
+  "tag": "BOLLYWOOD",
+  "caption": "Nana Patekar ek Rs 1.5 crore ki car lene hi wale the 🚗\nTabhi unhone ek farmer suicide report dekh li.\nNews18 ki report ke mutabiq, is khabar ne unka mind hila diya.\nEk headline kabhi kabhi poori soch badal deti hai.\nSahi soch ya overthinking? Tum batao: 🔥 ya 🤔\n\nFollow @khabarbawaal for daily updates.\nSource: News18 (link pinned in comments 👇)\n\n#nanapatekar #bollywood #viral #trending #india",
+  "source": "News18",
+  "source_url": "https://www.news18.com/movies/bollywood/nana-patekar-death-actor-was-about-to-buy-a-rs-1-5-crore-car-then-he-saw-a-farmer-suicide-report-ws-lr-10372098.html",
+  "pin_comment": "Sabse badi baat: Rs 1.5 crore ki car aur ek report ka collision. Aisa kabhi tumhare saath hua jab ek news ne mood badal diya? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Caption: The caption and slide 3 name News18 as the source. The slide 1 credit says Free Press Journal. The article link only returned an error page (Reference #18...), so I couldn't check the source, the Rs 1.5 crore figure or the farmer suicide report claim. Confirm the right outlet and the facts, then make all three match.",
+    "Slide 1: The slide 1 cover photo shows a woman's face next to a man in a hat. It doesn't clearly show Nana Patekar, so it may not match the story. It is the cover, so it can't be dropped. Swap in a photo of Nana Patekar.",
+    "Slide 3: The slide says the report is in a News18 article, but slide 1 credits Free Press Journal. One of the two is wrong."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-09T20:30:03+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-10-manual",
   "image": "posts/20261009-2009-reel_clip-2026-10-10.jpg",
   "kind": "reel",
