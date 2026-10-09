@@ -257,9 +257,13 @@ def main() -> int:
         state["used_otps"] = (used + [os.environ["CREATE_OTP"].strip() + ":" + str(int(sent_at // 30))])[-200:]
         g.save_json(g.STATE_FILE, state)
         print("One-time code OK")
+    reel_wanted = os.environ.get("FORMAT", "post") == "reel"
     if os.environ.get("MEDIA"):
-        return make_media(raw, json.loads(os.environ["MEDIA"]))
-    return make(raw)
+        media = json.loads(os.environ["MEDIA"])
+        if reel_wanted and media.get("video"):
+            return make_media_reel(raw, media)
+        return make_media(raw, media)
+    return make_reel(raw) if reel_wanted else make(raw)
 
 
 PROMPT_SCHEMA = {
@@ -531,6 +535,116 @@ def make_media(text: str, media: dict) -> int:
 
     summary = (f"✅ **Video post ready:** {post['headline']}\n\nOn-video text: {post['overlay_text']}\n\n"
                f"Open the KhabarBawaal Studio app (pull to refresh) for the caption, comment and {len(options)} cover options.")
+    summary_file.write_text(summary)
+    print(summary)
+    return 0
+
+
+def has_ai() -> bool:
+    return bool(os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"))
+
+
+def make_reel(raw: str) -> int:
+    """🎬 Reel for a topic/link/news typed in ➕ Create (no video): news -> photo slideshow,
+    a funny idea -> 'Tag that friend' clip or meme. Falls back to a normal post if no Reel can be made."""
+    import tempfile
+    import reel
+    summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
+    if not has_ai():
+        print("Reels need the AI: making a normal post instead.")
+        return make(raw)
+    urls = re.findall(r"https?://\S+", raw)
+    text = re.sub(r"https?://\S+", "", raw).strip()
+    article = read_article(urls[0]) if urls else None
+    if article and not (article.get("title") or article.get("description")):
+        article = None
+    if not urls and text:
+        picked = resolve_prompt(text)   # "latest cricket news" -> a real story
+        if picked:
+            article, text = picked, ""
+    state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            cover, mp4, entry = reel.topic_reel(text, article, state, tmp)
+            feed = g.load_json(g.FEED_FILE, [])
+            post_id = "c" + g.hashlib.sha1((raw + "|reel").encode()).hexdigest()[:11]
+            reel.save_reel(feed, state, cover, mp4, post_id, {**entry, "kind": "custom"})
+    except Exception as e:
+        print(f"  ! Reel not made ({str(e)[:200]}): making a normal post instead.")
+        code = make(raw)
+        if summary_file.exists():
+            summary_file.write_text("ℹ️ A Reel couldn't be made for this, so a normal post was made.\n\n"
+                                    + summary_file.read_text())
+        return code
+    summary = (f"✅ **Reel ready:** {entry['headline']}\n\n"
+               f"Open the KhabarBawaal Studio app (pull to refresh), add a song from 🎵 Song ideas, then tap 📤 Post.")
+    summary_file.write_text(summary)
+    print(summary)
+    return 0
+
+
+REEL_RULES = """
+
+This is a REEL: the owner's video with OUR text burned onto it (these rules win):
+- overlay_text: the hook shown big at the top of the video for the whole Reel, 4-14 words, Hinglish, \
+makes people stop scrolling and watch till the end. NO emojis (the video font can't show them).
+- highlight: 1-3 words copied exactly from overlay_text to colour.
+- songs: see the list below."""
+
+
+def make_media_reel(text: str, media: dict) -> int:
+    """🎬 Reel from the owner's own video: the AI writes the hook (burned onto the video), caption,
+    pinned comment and song ideas from the context + frames; the video's own sound is kept."""
+    import proofread
+    import tempfile
+    import reel
+    summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
+    url = media.get("video", "")
+    if not url.startswith("https://ntfy.sh/file/") or not has_ai():
+        print("No usable video link (or no AI): making the usual video post instead.")
+        return make_media(text, media)
+    frames = frames_from(media)
+    print(f"Own video Reel | context: {text[:80]}")
+    with tempfile.TemporaryDirectory() as tmp:
+        try:
+            resp = requests.get(url, timeout=120)
+            resp.raise_for_status()
+            clip = os.path.join(tmp, "own" + os.path.splitext(urlsplit(url).path)[1].lower())
+            open(clip, "wb").write(resp.content)
+            dur = min(15.0, reel.video_info(clip)[2] - 0.05)
+            if dur < 1:
+                raise RuntimeError("video too short or unreadable")
+            songs = reel.trending_songs()
+            numbered_sheet(frames, int(media.get("cols", 1))).save(g.Path(tmp) / "frames.jpg", quality=85)
+            schema = {**MEDIA_POST, "properties": {**MEDIA_POST["properties"], "songs": reel.SONGS},
+                      "required": MEDIA_POST["required"] + ["songs"]}
+            system = MEDIA_SYSTEM.format(page=g.CONFIG["page_name"], lang=g.CONFIG["caption_language"],
+                                         engage=g.ENGAGE_RULES, n=len(frames)) + REEL_RULES
+            post = fun.claude_json(system, f"Owner's context (video): {text}\n\n"
+                                   f"Our recent caption endings (use a different style):\n{g.recent_endings()}\n\n"
+                                   "Open frames.jpg first, then write the post." + reel.songs_prompt(songs),
+                                   schema, g.CONFIG.get("membership_model", "sonnet"), folder=tmp, purpose="video reel")
+            post = fun.normalize({**post, "card_text": ""})
+            reel.roman_only(post, ["caption", "pin_comment"])
+            picked_songs = reel.checked_songs(post.pop("songs", []), songs)
+            out = os.path.join(tmp, "reel.mp4")
+            checks, data, proof = proofread.run(
+                lambda d: reel.own_reel(clip, dur, d["post"]["overlay_text"], d["post"]["highlight"], out),
+                {"post": post}, lambda d: caption(d["post"], None), f"Owner's context: {text}")
+            post = data["post"]
+            feed = g.load_json(g.FEED_FILE, [])
+            state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
+            state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
+            post_id = "v" + g.hashlib.sha1((text + url).encode()).hexdigest()[:11]
+            reel.save_reel(feed, state, checks[0], out, post_id, {
+                "kind": "custom", "headline": post["overlay_text"].strip(), "tag": "🎬 REEL · " + post["tag"],
+                "caption": g.limit_hashtags(caption(post, None)), "source": "Your video", "source_url": "",
+                "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+        except Exception as e:
+            print(f"  ! own-video Reel failed ({str(e)[:200]}): making the usual video post instead.")
+            return make_media(text, media)
+    summary = (f"✅ **Reel ready from your video:** {post['overlay_text']}\n\n"
+               f"Open the KhabarBawaal Studio app (pull to refresh), add a song from 🎵 Song ideas, then tap 📤 Post.")
     summary_file.write_text(summary)
     print(summary)
     return 0

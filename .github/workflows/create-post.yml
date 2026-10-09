@@ -11,6 +11,7 @@ on:
       otp: { description: "One-time code", required: true }
       ts: { description: "When the request was sent (unix time)", required: true }
       media: { description: "🎬 Frames of your video/photos (inbox file link)", required: false, default: "" }
+      format: { description: "post or reel", required: false, default: "post" }
 
 permissions:
   contents: write
@@ -53,6 +54,7 @@ jobs:
           CREATE_OTP: ${{ inputs.otp }}
           CREATE_TS: ${{ inputs.ts }}
           MEDIA: ${{ inputs.media }}
+          FORMAT: ${{ inputs.format || 'post' }}
           CREATE_TOTP_SECRET: ${{ secrets.CREATE_TOTP_SECRET }}
           SUMMARY_FILE: ${{ runner.temp }}/summary.md
         run: python create_post.py

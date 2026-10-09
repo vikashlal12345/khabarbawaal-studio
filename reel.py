@@ -42,16 +42,23 @@ def ffmpeg_exe() -> str:
 
 # ---------------------------------------------------------------- video in / out
 
-class Encoder:
-    """Feed PIL frames in, get an Instagram-friendly MP4 (H.264 + silent audio track)."""
+def has_audio(path: str) -> bool:
+    return "Audio:" in subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
 
-    def __init__(self, out_mp4: str):
+
+class Encoder:
+    """Feed PIL frames in, get an Instagram-friendly MP4 (H.264 + audio: the source clip's own
+    sound when audio_from is given and has sound, else a silent track)."""
+
+    def __init__(self, out_mp4: str, audio_from: str | None = None, audio_start: float = 0.0):
+        sound = (["-ss", str(audio_start), "-i", audio_from] if audio_from and has_audio(audio_from)
+                 else ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"])   # some apps reject video-only files
         self.p = subprocess.Popen(
             [ffmpeg_exe(), "-y", "-loglevel", "error",
              "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{RW}x{RH}", "-r", str(FPS), "-i", "-",
-             "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",   # some apps reject video-only files
+             *sound, "-map", "0:v", "-map", "1:a",
              "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p",
-             "-profile:v", "high", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", out_mp4],
+             "-profile:v", "high", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out_mp4],
             stdin=subprocess.PIPE)
 
     def add(self, frame: Image.Image) -> None:
@@ -76,6 +83,19 @@ def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: flo
             break
         yield Image.frombytes("RGB", (w, h), raw)
     p.wait()
+
+
+def video_info(path: str) -> tuple[int, int, float]:
+    """(width, height, seconds) as shown (phone videos are rotated by ffmpeg automatically)."""
+    import re
+    info = subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", info)
+    secs = int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else 0.0
+    size = re.search(r"Video:.*?(\d{2,5})x(\d{2,5})", info)
+    w, h = (int(size.group(1)), int(size.group(2))) if size else (RW, RH)
+    if re.search(r"rotation of -?90|rotate\s*:\s*-?90|displaymatrix: rotation of -?90", info):
+        w, h = h, w
+    return w, h, secs
 
 
 # ---------------------------------------------------------------- drawing helpers
@@ -257,6 +277,45 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
     return [(before or frame).convert("RGB"), cover or frame.convert("RGB")]
 
 
+# ---------------------------------------------------------------- 1b. the owner's own video
+
+def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """The owner's video as a Reel: full screen (a wide video sits on a blurred copy of itself),
+    hook text popping in at the top, logo and handle; the video's own sound is kept.
+    Returns the frames to proofread: [cover] (text shown)."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    w, h, _ = video_info(clip)
+    wide = w > h * 0.8   # landscape or square: don't crop away the sides
+    fit_h = 2 * round(RW * h / w / 2) if wide else RH
+    lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 430, sizes=range(84, 44, -4))
+    imgs = line_images(lines, fnt, line_h, "#FFFFFF", YELLOW, highlights, stroke=7)
+    logo = logo_img()
+    shade = Image.new("RGBA", (RW, 760), (0, 0, 0, 0))
+    ImageDraw.Draw(shade).rectangle((0, 0, RW, 640), fill=(0, 0, 0, 110))
+    shade = shade.filter(ImageFilter.GaussianBlur(60))
+    text_top = 300
+    enc, cover, frame = Encoder(out_mp4, audio_from=clip), None, None
+    for i, shot in enumerate(clip_frames(clip, 0, dur, RW, fit_h)):
+        t = i / FPS
+        if wide:   # blurred, darkened copy as the background (blurred small = fast)
+            bg = shot.resize((RW // 10, RH // 10)).filter(ImageFilter.GaussianBlur(3)).resize((RW, RH))
+            frame = Image.blend(bg, Image.new("RGB", (RW, RH), "#000000"), 0.45).convert("RGBA")
+            frame.paste(shot, (0, (RH - fit_h) // 2 + 120))
+        else:
+            frame = shot.convert("RGBA")
+        frame.alpha_composite(shade, (0, text_top - 160))
+        if logo:
+            frame.alpha_composite(logo, (60, 150))
+        for j, img in enumerate(imgs):
+            paste_pop(frame, img, LEFT, text_top + j * line_h, (t - 0.2 - j * 0.25) / 0.3)
+        handle_tag(frame, 1730)
+        if t >= min(1.8, dur * 0.4) and cover is None:
+            cover = frame.convert("RGB")
+        enc.add(frame)
+    enc.close()
+    return [cover or frame.convert("RGB")]
+
+
 # ---------------------------------------------------------------- 3. news photo slideshow
 
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
@@ -409,8 +468,9 @@ def unescape(s: str) -> str:
     return s.replace("\\n", "\n").strip()
 
 
-def write_joke(kind: str, state: dict, evergreen: bool = False) -> dict:
-    """evergreen=True: for 📦 Ready Reels, posted any day this week, so no trends, news or dates."""
+def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "") -> dict:
+    """evergreen=True: for 📦 Ready Reels, posted any day this week, so no trends, news or dates.
+    topic: the owner's idea from ➕ Create (all 3 options are about it)."""
     import fun
     import generate as g
     system = fun.FUN_SYSTEM.format(page=CONFIG["page_name"]) + "\n\n" + fun.JOKE_RULES + "\n\n" + REEL_RULES
@@ -419,7 +479,10 @@ def write_joke(kind: str, state: dict, evergreen: bool = False) -> dict:
              "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
     songs = trending_songs()
-    if evergreen:
+    if topic:
+        context = f"{fun.today_context()}\n\nThe page owner asked for a Reel about: {topic}"
+        ask = "Write exactly 3 different jokes, all about the owner's idea (different angles)."
+    elif evergreen:
         context = ("This Reel may be posted on ANY day in the next week: NO trends, news, festivals, dates, "
                    "weather or day names. Only timeless relatable desi-life moments.")
         ask = "Write exactly 3 different jokes, each a timeless relatable desi-life moment (different situations)."
@@ -641,12 +704,13 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
     g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
 
 
-def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False) -> tuple[Image.Image, str, dict]:
+def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
+                    topic: str = "") -> tuple[Image.Image, str, dict]:
     """Write, judge, find a clip, render and proofread a joke Reel.
     Returns (cover, mp4 path in tmp, feed fields); also notes the clip/topic in state."""
     import generate as g
     import proofread
-    post = write_joke(kind, state, evergreen)
+    post = write_joke(kind, state, evergreen, topic)
     cid = pick_clip(post, state)
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
@@ -687,10 +751,7 @@ that embarrasses the BJP. No hate against any community."""
 
 def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     from datetime import datetime, timedelta, timezone
-    import carousel
     import fun
-    import generate as g
-    import proofread
     cutoff = datetime.now(timezone.utc) - timedelta(hours=14)
     used = state.get("reel_news_used", [])
     stories = [p for p in feed if p.get("kind") == "news" and p.get("source_url") and p["id"] not in used
@@ -710,14 +771,31 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         story = stories[opt["pick"] - 1]
         item = {"link": story["source_url"], "source": story["source"], "title": story["headline"]}
         print(f"  news reel: {story['headline']}")
-        picked, _ = carousel.collect(item, {"headline": story["headline"], "photo_query": opt["photo_query"],
-                                            "wiki_title": opt["wiki_title"]}, [], want=4, max_words=14)
-        photos = [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
+        photos = news_photos(item, opt)
         if len(photos) >= 2:
             break
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
         raise RuntimeError("no story had 2+ good photos")
+    cover, out, entry = finish_news_reel(item, opt, photos, songs, tmp)
+    state["reel_news_used"] = (used + [story["id"]])[-60:]
+    save_reel(feed, state, cover, out, f"reel_news-{today}", {**entry, "headline": story["headline"]})
+
+
+def news_photos(item: dict, opt: dict) -> list[tuple]:
+    """Story photos checked like carousel photos, each with a short story line: [(img, credit, text, whole)]."""
+    import carousel
+    picked, _ = carousel.collect(item, {"headline": item["title"], "photo_query": opt["photo_query"],
+                                        "wiki_title": opt["wiki_title"]}, [], want=4, max_words=14)
+    return [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
+
+
+def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str,
+                     article: str | None = None) -> tuple[Image.Image, str, dict]:
+    """Render + proofread a news Reel. Returns (cover, mp4 path, feed fields)."""
+    import carousel
+    import generate as g
+    import proofread
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "end_text"])
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
@@ -733,14 +811,55 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
         return {**d, "slides": keep} if 2 <= len(keep) < len(d["slides"]) else None
 
-    article = carousel.article_text(carousel.page_html(item["link"]))
-    frames, data, proof = proofread.run(render, data, lambda d: g.full_caption(d["post"], item), article, drop=drop)
+    if article is None:
+        article = carousel.article_text(carousel.page_html(item["link"]))
+    caption_of = (lambda d: g.full_caption(d["post"], item)) if item["link"] else \
+        (lambda d: f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily updates.\n\n"
+                   + " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"]))
+    frames, data, proof = proofread.run(render, data, caption_of, article, drop=drop)
     post = data["post"]
-    state["reel_news_used"] = (used + [story["id"]])[-60:]
-    save_reel(feed, state, frames[0], out, f"reel_news-{today}", {
-        "headline": story["headline"], "tag": "🎬 REEL · " + post["tag"],
-        "caption": g.full_caption(post, item), "source": story["source"], "source_url": story["source_url"],
-        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+    return frames[0], out, {
+        "headline": item["title"], "tag": "🎬 REEL · " + post["tag"],
+        "caption": g.limit_hashtags(caption_of(data)), "source": item["source"], "source_url": item["link"],
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
+
+
+# ---------------------------------------------------------------- ➕ Create: a Reel for the owner's topic
+
+TOPIC_STYLE = {"type": "object", "properties": {
+    "style": {"type": "string", "enum": ["news", "tag_friend", "meme"],
+              "description": "news: a news story or fact (photo slideshow); tag_friend: a 'Tag that friend' joke; "
+                             "meme: a setup + punchline meme"}},
+    "required": ["style"], "additionalProperties": False}
+
+
+def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
+    """A Reel for whatever the owner typed in ➕ Create: news -> photo slideshow, a funny idea ->
+    'Tag that friend' clip or meme. Returns (cover, mp4 path, feed fields)."""
+    import fun
+    about = (f"{article.get('title', '')}. {article.get('description', '')}" if article else "") + (f" {text}" if text else "")
+    style = "news" if article else fun.claude_json(
+        "Decide what kind of Instagram Reel fits the page owner's request.", f"Request: {about.strip()}",
+        TOPIC_STYLE, CONFIG.get("membership_model", "sonnet"), purpose="reel style")["style"]
+    print(f"  Reel style: {style}")
+    if style != "news":
+        return build_joke_reel("reel_clip" if style == "tag_friend" else "reel_meme", state, tmp, topic=about.strip())
+    songs = trending_songs()
+    schema = {**NEWS_OPTION, "properties": {k: v for k, v in NEWS_OPTION["properties"].items() if k != "pick"},
+              "required": [k for k in NEWS_OPTION["required"] if k != "pick"]}
+    story = (f"Headline: {article['title']}\nSite: {article['site']}\n{article.get('description', '')}"
+             if article else f"The owner's news: {text}")
+    opt = fun.claude_json(NEWS_SYSTEM.split("From today's stories")[0] +
+                          "The owner sent ONE story: write the Reel for it.\n" +
+                          "Rules:" + NEWS_SYSTEM.split("Rules:")[1],
+                          f"{fun.today_context()}\n\n{story}" + songs_prompt(songs), schema,
+                          CONFIG.get("membership_model", "sonnet"), purpose="reel news script")
+    item = {"link": article["url"] if article else "", "source": article["site"] if article else "Your pick",
+            "title": (article or {}).get("title") or text[:120]}
+    photos = news_photos(item, opt)
+    if len(photos) < 2:
+        raise RuntimeError(f"only {len(photos)} usable photo(s) for this story")
+    return finish_news_reel(item, opt, photos, songs, tmp, article=None if article else text)
 
 
 def make(kind: str, state: dict, feed: list) -> bool:

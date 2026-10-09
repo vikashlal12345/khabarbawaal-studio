@@ -102,6 +102,10 @@
     background: #262626; color: #eee; border: 1px solid #333; border-radius: 8px; font-size: 14px; }
   .songs small { color: var(--muted); }
   .sheet-box .row { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+  .sheet-box .format { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .sheet-box .format button { padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: #111;
+    color: var(--text); font-size: 15px; }
+  .sheet-box .format button.on { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 700; }
   .sheet-box button { border: 0; border-radius: 10px; padding: 13px; font-size: 15px; font-weight: 700; background: #262626; color: var(--text); }
   .sheet-box button.primary { background: var(--accent); color: #000; }
   .head-btns { display: flex; gap: 8px; }
@@ -123,7 +127,8 @@
 <div class="sheet" id="sheet" hidden>
   <div class="sheet-box">
     <h2>✍️ Create a post</h2>
-    <p>Paste a news link, or write the news in your own words. Or add your own video/photos and write the context. Your post appears here in about 3–5 minutes.</p>
+    <p>Paste a news link, write a topic or the news in your own words, or add your own video/photos with a line of context. The AI writes all the text. Ready in about 3–6 minutes.</p>
+    <div class="format"><button type="button" id="fmt-post" class="on">📰 Post</button><button type="button" id="fmt-reel">🎬 Reel</button></div>
     <input id="create-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="Your PIN" class="field">
     <label class="pick">🎬 Add your video or photos (optional)<input type="file" id="create-media" accept="video/*,image/*" multiple hidden></label>
     <div class="media-preview" id="media-preview"></div>
@@ -440,6 +445,55 @@ function frameSheet(frames, cellH) {
   });
   return new Promise(res => c.toBlob(b => res({ blob: b, n: frames.length, cols }), 'image/jpeg', 0.85));
 }
+// 📰 Post / 🎬 Reel. A Reel from your own video sends the video itself (shrunk first if too big).
+let format = 'post';
+for (const f of ['post', 'reel']) document.getElementById('fmt-' + f).addEventListener('click', () => {
+  format = f;
+  document.getElementById('fmt-post').classList.toggle('on', f === 'post');
+  document.getElementById('fmt-reel').classList.toggle('on', f === 'reel');
+});
+const MAX_UPLOAD = 14.5 * 1024 * 1024;   // the inbox (ntfy.sh) takes files up to 15 MB
+// Re-record the video at Reel size (max 1280 px, first 15 s) so it fits the inbox. iPhone plays it muted
+// to re-record it, so the shrunk copy has no sound (the owner adds a song in Instagram).
+async function shrinkVideo(file, maxSec = 15) {
+  const v = document.createElement('video');
+  v.muted = true; v.playsInline = true; v.src = URL.createObjectURL(file);
+  await once(v, 'loadedmetadata');
+  const k = Math.min(1, 1280 / Math.max(v.videoWidth, v.videoHeight));
+  const c = document.createElement('canvas');
+  c.width = 2 * Math.round(v.videoWidth * k / 2); c.height = 2 * Math.round(v.videoHeight * k / 2);
+  const ctx = c.getContext('2d');
+  const type = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm'].find(t => MediaRecorder.isTypeSupported(t));
+  const rec = new MediaRecorder(c.captureStream(30), { mimeType: type, videoBitsPerSecond: 3000000 });
+  const chunks = [];
+  rec.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+  const stopped = new Promise(res => { rec.onstop = res; });
+  rec.start(500);
+  await v.play();
+  await new Promise(res => {
+    const draw = () => {
+      ctx.drawImage(v, 0, 0, c.width, c.height);
+      if (v.ended || v.currentTime >= maxSec) { v.pause(); res(); } else requestAnimationFrame(draw);
+    };
+    draw();
+  });
+  rec.stop(); await stopped;
+  return new Blob(chunks, { type: type.split(';')[0] });
+}
+async function uploadVideo(file) {
+  let blob = file, name = 'video.' + (file.name.split('.').pop() || 'mp4').toLowerCase();
+  if (file.size > MAX_UPLOAD) {
+    toast('Video is big: shrinking it to Reel size (takes as long as the video)…');
+    blob = await shrinkVideo(file);
+    name = blob.type.includes('webm') ? 'video.webm' : 'video.mp4';
+    if (blob.size > MAX_UPLOAD) throw new Error('still too big');
+  }
+  toast('Sending your video…');
+  const up = await fetch('https://ntfy.sh/' + inboxTopic + '?filename=' + name, { method: 'PUT', body: blob });
+  if (!up.ok) throw new Error(up.status);
+  return (await up.json()).attachment.url;
+}
+
 mediaEl.addEventListener('change', async () => {
   const files = [...mediaEl.files];
   media = null; mediaPreview.innerHTML = '';
@@ -455,7 +509,7 @@ mediaEl.addEventListener('change', async () => {
       frames = await Promise.all(files.slice(0, 6).map(loadImage));
       cellH = 900;
     }
-    media = { ...(await frameSheet(frames, cellH)), type: video ? 'video' : 'photos' };
+    media = { ...(await frameSheet(frames, cellH)), type: video ? 'video' : 'photos', file: video || null };
     mediaPreview.innerHTML = `<img src="${URL.createObjectURL(media.blob)}" alt="">`;
     createInput.placeholder = 'Context: what is happening, who, where… e.g. Delhi metro mein seat ke liye do aunties ki ladai';
     toast(`✅ ${media.n} ${video ? 'moments' : 'photos'} ready: now write the context`);
@@ -478,17 +532,25 @@ document.getElementById('create-go').addEventListener('click', async () => {
   if (!/^\d{6}$/.test(code)) { toast('Enter the 6-digit code from Google Authenticator'); return; }
   try {
     if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
-    const req = { type: 'create', text, otp: code, ts: Math.floor(Date.now() / 1000) };
+    const req = { type: 'create', text, otp: code, ts: Math.floor(Date.now() / 1000), format };
     if (media) {   // the frame picture goes to the inbox as a file (kept a few hours), then the request links it
       const up = await fetch('https://ntfy.sh/' + inboxTopic + '?filename=frames.jpg', { method: 'PUT', body: media.blob });
       if (!up.ok) throw new Error(up.status);
       req.media = { url: (await up.json()).attachment.url, n: media.n, cols: media.cols, type: media.type };
+      if (format === 'reel' && media.file) {
+        try { req.media.video = await uploadVideo(media.file); }
+        catch (e) {   // fall back to today's way: text + covers, you post the video from your gallery
+          req.format = 'post';
+          toast('Couldn\'t send the video: making a post with text + covers instead');
+        }
+      }
     }
     const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify(req) });
     if (!r.ok) throw new Error(r.status);
     sheet.hidden = true; createInput.value = ''; otpEl.value = '';
     media = null; mediaEl.value = ''; mediaPreview.innerHTML = '';
-    toast('✅ Request sent: your post will be ready in about 3–5 minutes');
+    toast(req.format === 'reel' ? '✅ Request sent: your Reel will be ready in about 4–6 minutes'
+                                : '✅ Request sent: your post will be ready in about 3–5 minutes');
   } catch (e) {
     toast('Couldn\'t send (no internet?). Try again.');
   }

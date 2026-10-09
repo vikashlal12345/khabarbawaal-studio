@@ -53,6 +53,10 @@ Night: 1:00 five 📦 ready posts (3 carousels + 2 timeless Reels) · 2:00 day p
   allIndices, gainers/losers; CNBC quotes; BSE/Yahoo blocked) · `fun.py` (jokes + `claude_json` + usage log)
 - 🎬 Your video/photos (in ➕ Create): the app grabs 6 frames into one picture, uploads it to the ntfy inbox as a file,
   `create_post.make_media()` writes on-video text, caption, pinned comment + cover options; the owner posts the video from the gallery.
+- ➕ Create has **📰 Post / 🎬 Reel** (`format` in the inbox request → create-post.yml `FORMAT`). Reel + own video: the app
+  also uploads the video (≤14.5 MB, else re-recorded at 1280 px without sound), `make_media_reel()` burns the AI hook onto it
+  (`reel.own_reel`, own sound kept). Reel without video: `make_reel()` → `reel.topic_reel()` (news → photo slideshow,
+  funny idea → Tag that friend/meme). Any failure falls back to the normal post. The owner only writes context.
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
   (`fun.judge_best`), AI ranks Mixkit clips by title (no key); **only clips labelled "Free" licence** are used
   (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a
