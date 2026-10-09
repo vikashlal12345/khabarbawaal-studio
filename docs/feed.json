@@ -1,5 +1,30 @@
 [
  {
+  "id": "877b6d2a7dd4",
+  "image": "posts/20261009-1431-877b6d2a7dd4.jpg",
+  "kind": "news",
+  "headline": "Study Finds Female AI Agents Were Paid 10.25% Less Than Male Ones For Identical Work",
+  "tag": "WTF NEWS",
+  "caption": "Ab AI mein bhi pay gap? Seriously? 😭\n\nEk study ke mutabiq female AI assistants ko male AI agents se 10.25% kam pay mila, jabki kaam bilkul same tha.\n\nMatlab insaano ka bias ab bots tak pahunch gaya.\n\nUnpopular opinion: agar AI ko bhi salary milti hai to equal pay ka rule unpe bhi lagna chahiye. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #AI #tech #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/female-ai-agents-paid-10-less-than-male-counterparts-for-same-work-study-finds-101791551954407.html",
+  "pin_comment": "Sabse funny part: bots ko na appraisal chahiye, na chai break, phir bhi pay gap mil gaya 💀 Tumhare hisaab se galti kiski hai?",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "mututabik → mutabiq"
+   ]
+  },
+  "slides": [
+   "posts/20261009-1431-877b6d2a7dd4-s2.jpg",
+   "posts/20261009-1431-877b6d2a7dd4-s3.jpg",
+   "posts/20261009-1431-877b6d2a7dd4-s4.jpg",
+   "posts/20261009-1431-877b6d2a7dd4-s5.jpg"
+  ],
+  "created_at": "2026-10-09T14:31:53+00:00"
+ },
+ {
   "id": "7393a1d06285",
   "image": "posts/20261009-1331-7393a1d06285.jpg",
   "kind": "fun",
@@ -1844,29 +1869,5 @@
    "posts/20261006-1433-6c9e38b096db-s6.jpg"
   ],
   "created_at": "2026-10-06T14:33:28+00:00"
- },
- {
-  "id": "4ecf6d40a2ec",
-  "image": "posts/20261006-1331-4ecf6d40a2ec.jpg",
-  "kind": "news",
-  "headline": "CBI Raids Punjab CM Bhagwant Mann's Camp Office, OSD's Home In Chandigarh",
-  "tag": "POLITICS",
-  "caption": "Punjab mein bada siyasi bhookamp 👀\nCBI ne CM Bhagwant Mann ke camp office aur unke OSD ke ghar Chandigarh mein raid maari hai.\nYe action tab aaya jab ek din pehle Punjab and Haryana High Court ne CBI ko case register karke Mann ke office se jude corruption allegations ki jaanch karne ko kaha.\nAb AAP ke \"imaandar\" wale claims pe sawal uth rahe hain.\nPrediction time: Mann ki kursi 2027 tak bachegi? Haan ya Na?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#trending #india #punjab #bhagwantmann #cbi",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/cbi-raids-residence-of-punjab-cm-osd-rajbir-ghuman-bhagwant-mann-claims-bjp-is-rattled-ed-crpf-jawans-mohali-101791291810507.html",
-  "pin_comment": "Sabse bada twist: raid High Court ke order ke ek din baad hi hui. Timing pe sawal banta hai ya sirf coincidence? 🤔",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "sunwai hafte mein baad mein → sunwai isi hafte baad mein"
-   ]
-  },
-  "slides": [
-   "posts/20261006-1331-4ecf6d40a2ec-s2.jpg",
-   "posts/20261006-1331-4ecf6d40a2ec-s3.jpg",
-   "posts/20261006-1331-4ecf6d40a2ec-s4.jpg"
-  ],
-  "created_at": "2026-10-06T13:31:53+00:00"
  }
 ]
