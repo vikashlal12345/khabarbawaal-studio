@@ -64,6 +64,9 @@ Night: 1:00 five 📦 ready posts (3 carousels + 2 timeless Reels) · 2:00 day p
   Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
+- `status.py`: ⏳ Activity box in the app: Reel + ➕ Create steps/✅/❌ reasons go to ntfy topic `status_topic`
+  (app polls every 10 s, keeps 24 h). `inbox_watch.py` skips requests already started; `create_done` in state stops repeats.
+  ➕ Create allows duplicate posts (owner's choice); post ids include the time.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
 - App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).

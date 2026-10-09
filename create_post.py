@@ -24,6 +24,27 @@ from PIL import Image
 import fun
 import generate as g
 
+import status
+
+FALLBACK = []   # why a 🎬 Reel became a normal post (shown with the ✅ in the app)
+
+
+def note(text: str, n: int) -> None:
+    """Progress line for the app, only for ➕ Create requests (make() also serves 📅 previews)."""
+    if status.JOB["job"] == "create":
+        status.step(text, n)
+
+
+def ready(text: str, post_id: str) -> None:
+    if status.JOB["job"] == "create":
+        status.done((f"Ready (as a normal post: {FALLBACK[0]}): " if FALLBACK else "Ready: ") + text[:90], post=post_id)
+
+
+def failed(reason: str) -> None:
+    if status.JOB["job"] == "create":
+        status.fail(reason)
+
+
 CUSTOM_POST = {
     "type": "object",
     "properties": {
@@ -238,6 +259,8 @@ def caption(post: dict, source: str | None) -> str:
 
 def main() -> int:
     raw = os.environ.get("INPUT_TEXT", "").strip()
+    reel_wanted = os.environ.get("FORMAT", "post") == "reel"
+    ts = os.environ.get("CREATE_TS", "") or os.environ.get("ISSUE", "")
     if not raw:
         print("No input given.")
         return 1
@@ -245,19 +268,28 @@ def main() -> int:
     if os.environ.get("REQUEST_SOURCE") == "app":
         import otp
         state = g.load_json(g.STATE_FILE, {})
+        if ts in state.get("create_done", []):   # the same request sent on twice (inbox watcher restart)
+            print("This request was already handled: nothing to do.")
+            return 0
+        status.start("create", ts, f"✍️ {'🎬 Reel' if reel_wanted else '📰 Post'}: {raw[:60]}", 6, "Started on GitHub")
         used = state.get("used_otps", [])
         try:
-            sent_at = float(os.environ.get("CREATE_TS", "0"))
+            sent_at = float(ts or "0")
         except ValueError:
             sent_at = 0
         ok, why = otp.verify(os.environ.get("CREATE_TOTP_SECRET", ""), os.environ.get("CREATE_OTP", ""), sent_at, used)
         if not ok:
             print(f"Rejected create request: {why}")
+            status.fail({"wrong code": "Wrong Authenticator code. Send it again with the current 6-digit code.",
+                         "code already used": "This Authenticator code was already used. Wait for the next code and send again.",
+                         "request too old": "The request arrived too late for its code. Send it again.",
+                         "code must be 6 digits": "The Authenticator code must be 6 digits. Send it again."}.get(why, why))
             return 0
         state["used_otps"] = (used + [os.environ["CREATE_OTP"].strip() + ":" + str(int(sent_at // 30))])[-200:]
+        state["create_done"] = (state.get("create_done", []) + [ts])[-200:]
         g.save_json(g.STATE_FILE, state)
         print("One-time code OK")
-    reel_wanted = os.environ.get("FORMAT", "post") == "reel"
+        status.step("Code OK: working on it", 2)
     if os.environ.get("MEDIA"):
         media = json.loads(os.environ["MEDIA"])
         if reel_wanted and media.get("video"):
@@ -330,24 +362,16 @@ def make(raw: str, kind: str = "custom") -> int:
         print(f"Link: {article['site']} | {article['title']}")
 
     summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
-    feed = g.load_json(g.FEED_FILE, [])
-    force = re.search(r"\bagain\b", text, re.I)
-    if not force:
-        dup = find_duplicate(feed, article["url"] if article else "",
-                             [article["title"] if article else "", text])
-        if dup:
-            msg = (f"⚠️ **Already posted** on {ist_time(dup['created_at'])} IST:\n\n> {dup['headline']}\n\n"
-                   f"Not creating it again. To post it anyway, send it again with the word **again** in your message.")
-            summary_file.write_text(msg)
-            print(msg)
-            return 0
+    feed = g.load_json(g.FEED_FILE, [])   # duplicates are allowed: the owner decides
 
     # Never make a post out of nothing (e.g. a link whose page couldn't be read and no text).
     if not text and not (article and (article.get("title") or article.get("description"))):
         print("No story found to write about: not creating a post.")
+        failed("No story found: the link couldn't be read and there was no text. Send a different link or a few words about the news.")
         return 0
 
     post = None
+    note("Writing the post", 3)
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
         try:
             post = fun.normalize({**write_post(text, article), "card_text": ""})
@@ -359,6 +383,7 @@ def make(raw: str, kind: str = "custom") -> int:
         print("Mode: free (no AI)")
     print(f"Headline: {post['headline']}")
 
+    note("Finding photos + making the slides", 4)
     photos = find_photos(article, post)
     banner_source = article["site"] if article else g.CONFIG["page_name"]
 
@@ -382,6 +407,7 @@ def make(raw: str, kind: str = "custom") -> int:
         return [carousel.mark_cover(card)] + carousel.render(d["specs"]) if d["specs"] else [card]
 
     article_txt = carousel.article_text(carousel.page_html(item["link"])) if item["link"] else text
+    note("Proofreading", 5)
     checked, data, proof = proofread.run(render, {"post": post, "specs": specs},
                                          lambda d: caption(d["post"], article["site"] if article else None),
                                          article_txt, drop=proofread.drop_photo_slides)
@@ -389,7 +415,7 @@ def make(raw: str, kind: str = "custom") -> int:
     slides = checked[1:]
     cards = [g.render_card(img, post, site) for img, site in photos] + [g.render_card(None, post, banner_source)]
 
-    post_id = "c" + g.hashlib.sha1(raw.encode()).hexdigest()[:11]
+    post_id = "c" + g.hashlib.sha1((raw + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
     g.POSTS_DIR.mkdir(parents=True, exist_ok=True)
     options = []
@@ -427,6 +453,7 @@ def make(raw: str, kind: str = "custom") -> int:
                f"{len(photos)} cover option(s) + brand banner, and {len(slide_names)} more carousel slide(s). "
                f"Open the KhabarBawaal Studio app (pull to refresh), swipe to pick a cover, then tap 📤 Post.")
     summary_file.write_text(summary)
+    ready(post["headline"], post_id)
     print(summary)
     return 0
 
@@ -469,6 +496,7 @@ def make_media(text: str, media: dict) -> int:
     frames = frames_from(media)
     kind_word = "video" if media.get("type") == "video" else "photos"
     print(f"Media: {len(frames)} frame(s) from {kind_word} | context: {text[:80]}")
+    note(f"Writing the text for your {kind_word}", 3)
 
     post = None
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
@@ -507,7 +535,7 @@ def make_media(text: str, media: dict) -> int:
     post = data["post"]
     cards = [g.render_card(img, post, source) for img in picks] + [g.render_card(None, post, source)]
 
-    post_id = "v" + g.hashlib.sha1((text + media.get("url", "")).encode()).hexdigest()[:11]
+    post_id = "v" + g.hashlib.sha1((text + media.get("url", "") + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
     g.POSTS_DIR.mkdir(parents=True, exist_ok=True)
     options = []
@@ -536,6 +564,7 @@ def make_media(text: str, media: dict) -> int:
     summary = (f"✅ **Video post ready:** {post['headline']}\n\nOn-video text: {post['overlay_text']}\n\n"
                f"Open the KhabarBawaal Studio app (pull to refresh) for the caption, comment and {len(options)} cover options.")
     summary_file.write_text(summary)
+    ready(post["headline"], post_id)
     print(summary)
     return 0
 
@@ -552,6 +581,7 @@ def make_reel(raw: str) -> int:
     summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
     if not has_ai():
         print("Reels need the AI: making a normal post instead.")
+        FALLBACK.append("the AI isn't available")
         return make(raw)
     urls = re.findall(r"https?://\S+", raw)
     text = re.sub(r"https?://\S+", "", raw).strip()
@@ -567,10 +597,12 @@ def make_reel(raw: str) -> int:
         with tempfile.TemporaryDirectory() as tmp:
             cover, mp4, entry = reel.topic_reel(text, article, state, tmp)
             feed = g.load_json(g.FEED_FILE, [])
-            post_id = "c" + g.hashlib.sha1((raw + "|reel").encode()).hexdigest()[:11]
+            post_id = "c" + g.hashlib.sha1((raw + "|reel" + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
             reel.save_reel(feed, state, cover, mp4, post_id, {**entry, "kind": "custom"})
     except Exception as e:
         print(f"  ! Reel not made ({str(e)[:200]}): making a normal post instead.")
+        FALLBACK.append(f"Reel not possible: {str(e)[:150]}")
+        note("Reel not possible: making a normal post instead", 3)
         code = make(raw)
         if summary_file.exists():
             summary_file.write_text("ℹ️ A Reel couldn't be made for this, so a normal post was made.\n\n"
@@ -602,9 +634,11 @@ def make_media_reel(text: str, media: dict) -> int:
     url = media.get("video", "")
     if not url.startswith("https://ntfy.sh/file/") or not has_ai():
         print("No usable video link (or no AI): making the usual video post instead.")
+        FALLBACK.append("the video didn't arrive" if not url else "the AI isn't available")
         return make_media(text, media)
     frames = frames_from(media)
     print(f"Own video Reel | context: {text[:80]}")
+    note("Downloading your video", 2)
     with tempfile.TemporaryDirectory() as tmp:
         try:
             resp = requests.get(url, timeout=120)
@@ -614,6 +648,7 @@ def make_media_reel(text: str, media: dict) -> int:
             dur = min(15.0, reel.video_info(clip)[2] - 0.05)
             if dur < 1:
                 raise RuntimeError("video too short or unreadable")
+            note("Writing the hook, caption + comment", 3)
             songs = reel.trending_songs()
             numbered_sheet(frames, int(media.get("cols", 1))).save(g.Path(tmp) / "frames.jpg", quality=85)
             schema = {**MEDIA_POST, "properties": {**MEDIA_POST["properties"], "songs": reel.SONGS},
@@ -628,6 +663,7 @@ def make_media_reel(text: str, media: dict) -> int:
             reel.roman_only(post, ["caption", "pin_comment"])
             picked_songs = reel.checked_songs(post.pop("songs", []), songs)
             out = os.path.join(tmp, "reel.mp4")
+            note("Making the video + proofreading", 5)
             checks, data, proof = proofread.run(
                 lambda d: reel.own_reel(clip, dur, d["post"]["overlay_text"], d["post"]["highlight"], out),
                 {"post": post}, lambda d: caption(d["post"], None), f"Owner's context: {text}")
@@ -635,13 +671,15 @@ def make_media_reel(text: str, media: dict) -> int:
             feed = g.load_json(g.FEED_FILE, [])
             state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
             state["recent_headlines"] = (state["recent_headlines"] + [f"[{post['tag']}] {post['headline']}"])[-48:]
-            post_id = "v" + g.hashlib.sha1((text + url).encode()).hexdigest()[:11]
+            post_id = "v" + g.hashlib.sha1((text + url + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
             reel.save_reel(feed, state, checks[0], out, post_id, {
                 "kind": "custom", "headline": post["overlay_text"].strip(), "tag": "🎬 REEL · " + post["tag"],
                 "caption": g.limit_hashtags(caption(post, None)), "source": "Your video", "source_url": "",
                 "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
         except Exception as e:
             print(f"  ! own-video Reel failed ({str(e)[:200]}): making the usual video post instead.")
+            FALLBACK.append(f"Reel not possible: {str(e)[:150]}")
+            note("Reel not possible: making the usual video post instead", 3)
             return make_media(text, media)
     summary = (f"✅ **Reel ready from your video:** {post['overlay_text']}\n\n"
                f"Open the KhabarBawaal Studio app (pull to refresh), add a song from 🎵 Song ideas, then tap 📤 Post.")
@@ -655,6 +693,9 @@ if __name__ == "__main__":
     fun.CURRENT_JOB = "create"
     try:
         code = main()
+    except Exception as e:
+        failed(f"Something went wrong: {str(e)[:200]}")
+        raise
     finally:
         fun.flush_usage(posts=g.POSTED)
         limits.record()

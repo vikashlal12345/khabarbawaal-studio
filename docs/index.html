@@ -35,6 +35,17 @@
   .meta { display: flex; align-items: center; gap: 8px; padding: 12px 14px 0; font-size: 12px; color: var(--muted); }
   .tag.fun { background: var(--accent); color: #000; }
   .tag.reel { background: #e50914; color: #fff; }
+  #activity:empty { display: none; }
+  #activity { margin: 10px 12px 0; padding: 10px 12px; border-radius: 12px; background: #161616; border: 1px solid var(--line); font-size: 13px; }
+  .act-head { font-weight: 700; margin-bottom: 4px; }
+  .act-head small, .act-row small { color: var(--muted); font-weight: 400; }
+  .act-row { padding: 7px 0; border-top: 1px solid #222; line-height: 1.4; }
+  .act-row span { color: #ccc; }
+  .act-row .dots { color: var(--accent); letter-spacing: 1px; margin-left: 4px; }
+  .act-row.fail span { color: #ff6b6b; }
+  .act-row.fallback span { color: #f5b041; }
+  .act-row[data-post] { cursor: pointer; }
+  .act-next { padding-top: 7px; border-top: 1px solid #222; color: var(--muted); }
   .post video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #222; }
   .tag { background: var(--red); color: #fff; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
   .new { background: var(--accent); color: #000; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
@@ -141,6 +152,7 @@
   </div>
 </div>
 <div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-ready">📦 Ready</button></div>
+<div id="activity"></div>
 <main id="feed"></main>
 <div id="toast"></div>
 
@@ -603,6 +615,9 @@ document.getElementById('create-go').addEventListener('click', async () => {
     }
     const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify(req) });
     if (!r.ok) throw new Error(r.status);
+    actAdd({ job: 'create', ref: String(req.ts), title: `✍️ ${req.format === 'reel' ? '🎬 Reel' : '📰 Post'}: ${text.slice(0, 60)}`,
+             state: 'run', n: 1, of: 6, text: '📨 Sent: waiting for the robot to pick it up (usually within a minute)', at: req.ts });
+    renderActivity(); window.scrollTo(0, 0);
     sheet.hidden = true; createInput.value = ''; otpEl.value = '';
     media = null; mediaEl.value = ''; mediaPreview.innerHTML = '';
     toast(req.format === 'reel' ? '✅ Request sent: your Reel will be ready in about 4–6 minutes'
@@ -701,12 +716,79 @@ for (const [id, name] of [['tab-feed', 'feed'], ['tab-ready', 'ready']]) {
     tab = name; posts = tab === 'feed' ? feedPosts : readyPosts;
     document.getElementById('tab-feed').classList.toggle('on', tab === 'feed');
     document.getElementById('tab-ready').classList.toggle('on', tab === 'ready');
-    render(); window.scrollTo(0, 0);
+    render(); renderActivity(); window.scrollTo(0, 0);
   });
 }
-document.addEventListener('visibilitychange', () => { if (!document.hidden) load(); });
+// ⏳ Activity: each step of 🎬 Reels and ➕ Create requests, sent by the robot to a private ntfy.sh
+// topic (status.py) and checked every 10 s while the app is open. Kept 24 hours on this phone.
+let statusTopic = null, statusSince = '24h', reelTimes = [];
+function actGet() { try { return JSON.parse(localGet('activity') || '{}'); } catch { return {}; } }
+function actSave(a) { localSet('activity', JSON.stringify(a)); }
+const isFinal = s => s === 'ok' || s === 'fail' || s === 'fallback';
+// Keep the latest step per job; returns true when this event newly finishes it.
+function actAdd(ev) {
+  const a = actGet(), key = ev.job + '|' + ev.ref, old = a[key];
+  if (old && (ev.at < old.at || (isFinal(old.state) && !isFinal(ev.state)))) return false;
+  a[key] = { ...old, ...ev, title: ev.title || (old && old.title) };
+  actSave(a);
+  return isFinal(ev.state) && !(old && isFinal(old.state));
+}
+async function pollStatus() {
+  if (document.hidden) return;
+  try {
+    if (!statusTopic) {
+      const cfg = await (await fetch('app.json?t=' + Date.now())).json();
+      statusTopic = cfg.status; reelTimes = cfg.reels || []; inboxTopic = inboxTopic || cfg.inbox;
+    }
+    if (statusTopic) {
+      const r = await fetch(`https://ntfy.sh/${statusTopic}/json?poll=1&since=${statusSince}`);
+      let finished = false;
+      for (const line of (await r.text()).split('\n')) {
+        if (!line.trim()) continue;
+        const m = JSON.parse(line);
+        statusSince = m.id;
+        try { const ev = JSON.parse(m.message); if (ev.job && actAdd(ev) && ev.state === 'ok') finished = true; } catch {}
+      }
+      if (finished) load();   // something new is ready: show it
+    }
+  } catch {}
+  renderActivity();
+}
+function nextReel() {
+  const ist = new Date(Date.now() + 330 * 60000), now = ist.getUTCHours() * 60 + ist.getUTCMinutes();
+  for (let d = 0; d < 2; d++) for (const [t, name] of reelTimes) {
+    const [h, m] = t.split(':').map(Number), at = h * 60 + m + d * 1440;
+    if (at <= now) continue;
+    const left = at - now, when = `${(h + 11) % 12 + 1}${m ? ':' + String(m).padStart(2, '0') : ''} ${h < 12 ? 'AM' : 'PM'}`;
+    return `${name} at ${when} (in ${left >= 60 ? Math.floor(left / 60) + ' h ' : ''}${left % 60} min)`;
+  }
+  return '';
+}
+function renderActivity() {
+  const box = document.getElementById('activity'), a = actGet(), now = Date.now() / 1000;
+  for (const k in a) if (now - a[k].at > 86400) delete a[k];   // cleared after 24 hours
+  actSave(a);
+  const rows = Object.values(a).sort((x, y) => y.at - x.at), next = nextReel();
+  if (tab !== 'feed' || (!rows.length && !next)) { box.innerHTML = ''; return; }
+  box.innerHTML = '<div class="act-head">⏳ Activity <small>last 24 hours</small></div>' + rows.map(r => {
+    const icon = { ok: '✅', fail: '❌', fallback: '⚠️' }[r.state] || '⏳';
+    const dots = r.state === 'run' && r.of ? `<span class="dots">${'●'.repeat(Math.min(r.n, r.of))}${'○'.repeat(Math.max(0, r.of - r.n))}</span>` : '';
+    const stuck = r.state === 'run' && now - r.at > 1200 ? ' · no update for 20+ min (it may have stopped)' : '';
+    return `<div class="act-row ${r.state}"${r.post ? ` data-post="${esc(r.post)}"` : ''}><b>${icon} ${esc(r.title || r.job)}</b>${dots}<br>
+      <span>${esc(r.text || '')}${stuck}</span> <small>· ${ago(new Date(r.at * 1000).toISOString())}</small></div>`;
+  }).join('') + (next ? `<div class="act-next">Next Reel: ${esc(next)}</div>` : '');
+}
+document.getElementById('activity').addEventListener('click', e => {   // tap a ✅ row: jump to that post
+  const row = e.target.closest('[data-post]');
+  const card = row && document.querySelector(`.post[data-id="${CSS.escape(row.dataset.post)}"]`);
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+setInterval(pollStatus, 10000);
+
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { load(); pollStatus(); } });
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 load();
+pollStatus();
 </script>
 </body>
 </html>

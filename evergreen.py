@@ -118,6 +118,9 @@ def make_one(fmt: str, recent: list[str]) -> dict | None:
 def make_reel(kind: str, state: dict) -> dict | None:
     """A timeless joke Reel for the 📦 Ready tab (video + cover saved under docs/posts)."""
     import reel
+    import status
+    status.start("ready_" + kind, datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                 "📦 Ready Reel (" + ("Tag that friend" if kind == "reel_clip" else "meme") + ")", 6)
     try:
         with tempfile.TemporaryDirectory() as tmp:
             cover, mp4, entry = reel.build_joke_reel(kind, state, tmp, evergreen=True)
@@ -126,8 +129,10 @@ def make_reel(kind: str, state: dict) -> dict | None:
             shutil.copy(mp4, g.DOCS / f"posts/{pid}.mp4")
     except Exception as e:
         print(f"  ! ready Reel failed: {str(e)[:200]}")
+        status.fail(f"Not made: {str(e)[:200]}. An extra carousel is made instead.", True)
         return None
     print(f"  ready Reel: {entry['headline']}")
+    status.done(f"Ready in 📦 Ready: {entry['headline'][:80]}", post=pid)
     return {"id": pid, "kind": "ready", "media": "reel", "image": f"posts/{pid}.jpg", "video": f"posts/{pid}.mp4",
             **entry, "tag": "📦 " + entry["tag"], "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
 

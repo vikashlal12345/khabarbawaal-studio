@@ -640,6 +640,8 @@ def pick_clip(post: dict, state: dict) -> str:
     """Search Mixkit; the AI ranks the clips whose titles fit the joke; the first one under the
     Free licence is used (the Restricted licence forbids business social media). Returns the clip id."""
     import fun
+    import status
+    status.step("Finding a Free-licence clip", 4)
     used = state.get("reel_clips", [])
     known = state.setdefault("clip_licences", {})
     found: dict[str, str] = {}
@@ -702,6 +704,8 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
     (g.DOCS / "posts").mkdir(parents=True, exist_ok=True)
     shutil.copy(mp4, g.DOCS / name)
     g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
+    import status
+    status.done(f"Ready: {entry['headline'][:90]}", post=post_id)
 
 
 def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
@@ -710,7 +714,10 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     Returns (cover, mp4 path in tmp, feed fields); also notes the clip/topic in state."""
     import generate as g
     import proofread
+    import status
+    status.step("Writing 3 jokes", 2)
     post = write_joke(kind, state, evergreen, topic)
+    status.step(f"Judge picked: {post['based_on'][:80]}", 3)
     cid = pick_clip(post, state)
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
@@ -723,6 +730,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
         dur = min(MEME_SECONDS, secs - 0.2)
         start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
         render = lambda d: meme_reel(clip, start, dur, d["setup"], d["punch"], round(dur * 0.55, 2), d["highlight"], out)
+    status.step("Making the video + proofreading", 5)
     frames, post, proof = proofread.run(render, post, g.fun_caption)
     text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
@@ -752,6 +760,8 @@ that embarrasses the BJP. No hate against any community."""
 def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     from datetime import datetime, timedelta, timezone
     import fun
+    import status
+    status.step("Picking today's most visual story", 2)
     cutoff = datetime.now(timezone.utc) - timedelta(hours=14)
     used = state.get("reel_news_used", [])
     stories = [p for p in feed if p.get("kind") == "news" and p.get("source_url") and p["id"] not in used
@@ -771,6 +781,7 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         story = stories[opt["pick"] - 1]
         item = {"link": story["source_url"], "source": story["source"], "title": story["headline"]}
         print(f"  news reel: {story['headline']}")
+        status.step(f"Collecting photos: {story['headline'][:70]}", 3)
         photos = news_photos(item, opt)
         if len(photos) >= 2:
             break
@@ -796,6 +807,8 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     import carousel
     import generate as g
     import proofread
+    import status
+    status.step("Making the video + proofreading", 5)
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "end_text"])
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
@@ -837,11 +850,15 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
     """A Reel for whatever the owner typed in ➕ Create: news -> photo slideshow, a funny idea ->
     'Tag that friend' clip or meme. Returns (cover, mp4 path, feed fields)."""
     import fun
+    import status
+    status.step("Choosing the Reel style", 2)
     about = (f"{article.get('title', '')}. {article.get('description', '')}" if article else "") + (f" {text}" if text else "")
     style = "news" if article else fun.claude_json(
         "Decide what kind of Instagram Reel fits the page owner's request.", f"Request: {about.strip()}",
         TOPIC_STYLE, CONFIG.get("membership_model", "sonnet"), purpose="reel style")["style"]
     print(f"  Reel style: {style}")
+    status.step({"news": "News photo slideshow", "tag_friend": "Tag that friend clip",
+                 "meme": "Meme"}[style] + " Reel", 3)
     if style != "news":
         return build_joke_reel("reel_clip" if style == "tag_friend" else "reel_meme", state, tmp, topic=about.strip())
     songs = trending_songs()
@@ -856,9 +873,10 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
                           CONFIG.get("membership_model", "sonnet"), purpose="reel news script")
     item = {"link": article["url"] if article else "", "source": article["site"] if article else "Your pick",
             "title": (article or {}).get("title") or text[:120]}
+    status.step("Collecting photos", 4)
     photos = news_photos(item, opt)
     if len(photos) < 2:
-        raise RuntimeError(f"only {len(photos)} usable photo(s) for this story")
+        raise RuntimeError(f"only {len(photos)} usable photo(s) found for this story")
     return finish_news_reel(item, opt, photos, songs, tmp, article=None if article else text)
 
 
@@ -866,10 +884,14 @@ def make(kind: str, state: dict, feed: list) -> bool:
     """Make today's Reel for this slot; False (with the reason printed) if it couldn't be made."""
     import tempfile
     import schedule
+    import status
+    today = schedule.ist_now().date().isoformat()
+    h, m = schedule.SPECIALS[kind]
+    status.start(kind, today, f"🎬 {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'} Reel", 6)
     if not (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
         print("  Reels need the AI: skipped")
+        status.fail("Reel not made: the AI isn't available (membership token?). A normal post goes out instead.", True)
         return False
-    today = schedule.ist_now().date().isoformat()
     try:
         with tempfile.TemporaryDirectory() as tmp:
             if kind == "reel_news":
@@ -879,4 +901,5 @@ def make(kind: str, state: dict, feed: list) -> bool:
         return True
     except Exception as e:
         print(f"  ! Reel not made: {str(e)[:300]}")
+        status.fail(f"Reel not made: {str(e)[:200]}. A normal post goes out in this slot instead.", True)
         return False
