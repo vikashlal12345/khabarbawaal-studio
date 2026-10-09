@@ -1,5 +1,38 @@
 [
  {
+  "id": "night_roundup-2026-10-10",
+  "image": "posts/20261009-2331-night_roundup-2026-10-10.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 RAAT KI KHABAR: 10 Oct",
+  "tag": "🌅 RAAT KI 5 KHABREIN",
+  "caption": "Raat bhar mein kya-kya ho gaya, miss mat karna! 🔥 Delhi se Washington tak, aur Drishyam 3 ka dhamaka.\n\n1. Delhi Police explains why CJP protest was denied\n2. Trump says Iran war will be 'over soon'\n3. Akhil Gogoi demands Gaurav Gogoi's resignation after bypoll loss\n4. Drishyam 3 crosses ₹257 crore, steady in week two\n5. Rahul Gandhi makes big claim after meeting President\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #news #viral #drishyam3",
+  "source": "Hindustan Times",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Quote must match article wording 'failed completely'",
+    "Slide 1: On the cover, the big 'TOP 5' and 'RAAT KI KHABAR' text covers Akhil Gogoi's face (eyes and nose) and Ajay Devgn's face in the collage. Move the text or change the collage layout so the faces stay visible.",
+    "Slide 1: The cover is dated '10 October 2026', but today is 9 October 2026. Check that the date matches the actual posting date."
+   ],
+   "fixed": [
+    "will end 'over soon' → will be 'over soon'",
+    "'completely failed' bola → 'failed completely' bola",
+    "irregulariries → irregularities",
+    "Rahul Gandhi ka claim hai ki unhe baat maan li gayi. → Rahul Gandhi ka claim hai ki President ne unki baat maan li."
+   ]
+  },
+  "slides": [
+   "posts/20261009-2331-night_roundup-2026-10-10-s2.jpg",
+   "posts/20261009-2331-night_roundup-2026-10-10-s3.jpg",
+   "posts/20261009-2331-night_roundup-2026-10-10-s4.jpg",
+   "posts/20261009-2331-night_roundup-2026-10-10-s5.jpg",
+   "posts/20261009-2331-night_roundup-2026-10-10-s6.jpg",
+   "posts/20261009-2331-night_roundup-2026-10-10-s7.jpg"
+  ],
+  "created_at": "2026-10-09T23:31:33+00:00"
+ },
+ {
   "id": "c0f4dfe33661",
   "image": "posts/20261009-2049-c0f4dfe33661.jpg",
   "kind": "custom",
@@ -679,36 +712,5 @@
    "posts/20261009-0046-top10_viral-2026-10-09-s7.jpg"
   ],
   "created_at": "2026-10-09T00:46:35+00:00"
- },
- {
-  "id": "night_roundup-2026-10-09",
-  "image": "posts/20261008-2331-night_roundup-2026-10-09.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 RAAT KI KHABAR: 09 Oct",
-  "tag": "🌅 RAAT KI 5 KHABREIN",
-  "caption": "Aaj ki top 5 khabrein: Bollywood se Bihar tak, sab yahin! 🔥\n\n1. Nana Patekar cremated with state honours in Pune\n2. Drishyam 3 nears ₹250 crore in week one\n3. Half of rebel TMC MPs skip Kolkata meeting\n4. Bihar EOU raids engineer, finds ₹52 lakh cash\n5. Anne Carson wins 2026 Literature Nobel\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #bollywood #news #drishyam3",
-  "source": "Hindustan Times",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Claim not in the article; invented detail",
-    "Slide 3: The EOU logo photo is a low-resolution upscaled image and looks a bit soft. It is related to the story, so it is not dropped, but a sharper image would be better.",
-    "Slide 4: The photo is of Lok Sabha Speaker Om Birla, not the rebel TMC MPs. It fits the Speaker's notices, but the slide has no caption naming him. Check that this is the intended image."
-   ],
-   "fixed": [
-    " Mamata camp mein hulchul. → ",
-    "Unka bhai Michael Carson → Unke bhai Michael Carson"
-   ]
-  },
-  "slides": [
-   "posts/20261008-2331-night_roundup-2026-10-09-s2.jpg",
-   "posts/20261008-2331-night_roundup-2026-10-09-s3.jpg",
-   "posts/20261008-2331-night_roundup-2026-10-09-s4.jpg",
-   "posts/20261008-2331-night_roundup-2026-10-09-s5.jpg",
-   "posts/20261008-2331-night_roundup-2026-10-09-s6.jpg",
-   "posts/20261008-2331-night_roundup-2026-10-09-s7.jpg"
-  ],
-  "created_at": "2026-10-08T23:31:15+00:00"
  }
 ]
