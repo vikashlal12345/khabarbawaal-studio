@@ -1,6 +1,7 @@
 """Reels: 1080x1920 videos, no music (the owner adds a trending song in Instagram).
 
-    make(kind, state, feed)   the robot's entry: reel_clip (7 AM), reel_meme (7 PM), reel_news (8 PM)
+    make(kind, state, feed)   the robot's entry: reel_clip_am (8 AM) and reel_clip (1 PM) "Tag that friend",
+                              reel_meme (7 PM), reel_news (8 PM)
 
 Three styles (each writes the MP4 and returns still frames for the proofreader):
     clip_reel(clip, start, dur, hook, text, highlight, out_mp4)
@@ -330,7 +331,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
 
 
 # ---------------------------------------------------------------- the robot
-# 7 AM reel_clip, 7 PM reel_meme, 8 PM reel_news (schedule.py). Jokes: 3 options, the
+# 8 AM reel_clip_am + 1 PM reel_clip, 7 PM reel_meme, 8 PM reel_news (schedule.py). Jokes: 3 options, the
 # 'young Indian' judge picks (like fun posts), the AI picks a matching Mixkit clip by title.
 # News: the AI picks today's most visual story from our own news posts; photos are collected
 # and checked like carousel photos. Every Reel is proofread (still frames). If anything fails,
@@ -338,6 +339,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
 CLIP_SECONDS, MEME_SECONDS = 6.5, 8.0
+CLIP_KINDS = ("reel_clip", "reel_clip_am")   # "Tag that friend" clip Reels (1 PM and 8 AM)
 
 REEL_RULES = """This joke becomes a short Instagram REEL: a free stock video clip (Mixkit) with our text on top.
 The clip must be something a stock-video site has: everyday people doing everyday things (lying in bed \
@@ -413,7 +415,7 @@ def write_joke(kind: str, state: dict, evergreen: bool = False) -> dict:
     import generate as g
     system = fun.FUN_SYSTEM.format(page=CONFIG["page_name"]) + "\n\n" + fun.JOKE_RULES + "\n\n" + REEL_RULES
     style = ("Style: TAG THAT FRIEND: the text describes that one friend everyone has."
-             if kind == "reel_clip" else
+             if kind in CLIP_KINDS else
              "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
     songs = trending_songs()
@@ -435,16 +437,16 @@ def write_joke(kind: str, state: dict, evergreen: bool = False) -> dict:
             "\n\nRecent Reels (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in state.get("recent_reels", [])[-20:]) or "(none)") +
             f"\n\n{ask}" + songs_prompt(songs))
     model = CONFIG.get("membership_model", "sonnet")
-    option = CLIP_OPTION if kind == "reel_clip" else MEME_OPTION
+    option = CLIP_OPTION if kind in CLIP_KINDS else MEME_OPTION
     options = fun.claude_json(system, user, options_schema(option, "Exactly 3 different jokes"), model,
                               purpose="reel writing")["options"][:3]
     for o in options:
         o["caption"] = unescape(o["caption"])
-        if kind == "reel_clip":
+        if kind in CLIP_KINDS:
             o["text"] = unescape(o["text"])
         else:
             o["punch"] = unescape(o["punch"])
-    if kind == "reel_clip":
+    if kind in CLIP_KINDS:
         text_of = lambda o: f"TAG THAT FRIEND: {o['text']}  [video: {o['clip_wanted']}]"
     else:
         text_of = lambda o: f"{' '.join(o['setup'])} -> {o['punch']}  [video: {o['clip_wanted']}]"
@@ -606,7 +608,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False) -
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
-    if kind == "reel_clip":
+    if kind in CLIP_KINDS:
         dur = min(CLIP_SECONDS, secs - 0.2)
         start = max(0.0, min(1.0, secs - dur - 0.2))
         render = lambda d: clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out)
@@ -615,13 +617,13 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False) -
         start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
         render = lambda d: meme_reel(clip, start, dur, d["setup"], d["punch"], round(dur * 0.55, 2), d["highlight"], out)
     frames, post, proof = proofread.run(render, post, g.fun_caption)
-    text = post["text"] if kind == "reel_clip" else f"{' '.join(post['setup'])} {post['punch']}"
+    text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_topics"] = (state.get("reel_topics", []) + [post["based_on"]])[-60:]
     state["recent_reels"] = (state.get("recent_reels", []) + [printable(text).replace("\n", " ")])[-60:]
     return frames[-1], out, {
         "headline": printable(text).replace("\n", " "),
-        "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind == "reel_clip" else "MEME"),
+        "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind in CLIP_KINDS else "MEME"),
         "caption": g.limit_hashtags(g.fun_caption(post)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof}
 

@@ -862,7 +862,7 @@ def main() -> int:
     parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
                                            "market_open", "market_preopen", "market_close", "night_roundup",
                                            "night_ready", "night_calendar", "night_jokes", "night_learn",
-                                           "reel_clip", "reel_meme", "reel_news"],
+                                           "reel_clip_am", "reel_clip", "reel_meme", "reel_news"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")

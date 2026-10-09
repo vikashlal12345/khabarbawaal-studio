@@ -15,7 +15,7 @@ REGULAR_HOURS = [5, 7, 8, 9, 10, 12, 13, 14, 16, 18, 19, 20, 21, 22]
 SPECIALS = {"top10_viral": (6, 15), "market_open": (8, 15), "market_preopen": (9, 9), "thought": (9, 15),
             "market_close": (15, 45), "top10_day": (21, 15),   # market posts skip non-trading days
             # 🎬 Reels take over these regular hours (reel.py): clip, meme, news slideshow.
-            "reel_clip": (13, 0), "reel_meme": (19, 0), "reel_news": (20, 0),
+            "reel_clip_am": (8, 0), "reel_clip": (13, 0), "reel_meme": (19, 0), "reel_news": (20, 0),
             # Night work (nothing is posted): ready posts, day planning, learning from stats,
             # then the 5 AM overnight roundup (which takes the 5:00 slot).
             "night_ready": (1, 0), "night_calendar": (2, 0), "night_learn": (4, 0),
