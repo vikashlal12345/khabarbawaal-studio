@@ -193,12 +193,27 @@ function prepare(post) {
 
 function fetchFile(src) {
   if (!pending[src]) {
-    pending[src] = fetch(src).then(r => r.blob()).then(b => {
-      files[src] = new File([b], src.split('/').pop(), { type: src.endsWith('.mp4') ? 'video/mp4' : 'image/jpeg' });
-      return files[src];
-    }).catch(err => { delete pending[src]; throw err; });
+    const p = fetch(src).then(r => r.blob()).then(b => {
+      const f = new File([b], src.split('/').pop(), { type: src.endsWith('.mp4') ? 'video/mp4' : 'image/jpeg' });
+      if (pending[src] === p) files[src] = f;   // not if it was released meanwhile
+      return f;
+    }).catch(err => { if (pending[src] === p) delete pending[src]; throw err; });
+    pending[src] = p;
   }
   return pending[src];
+}
+
+// iPhone gives a page little memory: only the posts near the screen keep their files ready.
+const KEEP_READY = 12;
+const kept = [];   // post ids with files ready, least recently seen first
+function keepReady(post) {
+  const i = kept.indexOf(post.id);
+  if (i >= 0) kept.splice(i, 1);
+  kept.push(post.id);
+  while (kept.length > KEEP_READY) {
+    const old = posts.find(p => p.id === kept.shift());
+    if (old) for (const src of allImages(old)) { delete files[src]; delete pending[src]; }
+  }
 }
 
 // Comment to paste under the post and pin (Instagram doesn't make links in captions clickable).
@@ -260,10 +275,26 @@ const observer = new IntersectionObserver(entries => {
   for (const e of entries) {
     if (e.isIntersecting) {
       const post = posts.find(p => p.id === e.target.dataset.id);
-      if (post) prepare(post).catch(() => {});
+      if (post) { keepReady(post); prepare(post).catch(() => {}); }
     }
   }
 }, { rootMargin: '400px' });
+
+// Reels: a video loads only near the screen (and is unloaded when far away), and only the
+// one that is mostly on screen plays.
+const videoNear = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    const v = e.target;
+    if (e.isIntersecting && !v.getAttribute('src')) { v.src = v.dataset.src; }
+    else if (!e.isIntersecting && v.getAttribute('src')) { v.pause(); v.removeAttribute('src'); v.load(); }
+  }
+}, { rootMargin: '600px' });
+const videoPlay = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    if (e.intersectionRatio >= 0.6) e.target.play().catch(() => {});
+    else e.target.pause();
+  }
+}, { threshold: [0, 0.6] });
 
 function proofHtml(p) {
   const pr = p.proof;
@@ -289,6 +320,7 @@ function instaHtml(p) {
 }
 
 function render() {
+  observer.disconnect(); videoNear.disconnect(); videoPlay.disconnect();   // the old cards are replaced below
   posts = (tab === 'feed' ? feedPosts : readyPosts).filter(p => !localGet('deleted-' + p.id));
   if (!posts.length) {
     feedEl.innerHTML = tab === 'ready'
@@ -299,7 +331,7 @@ function render() {
   const lastSeen = localGet('lastSeen');
   feedEl.innerHTML = posts.map(p => `
     <article class="post${tab === 'ready' && isUsed(p) ? ' used' : ''}" data-id="${p.id}">
-      ${p.video ? `<video src="${p.video}" poster="${p.image}" autoplay muted loop playsinline preload="auto"></video>`
+      ${p.video ? `<video data-src="${p.video}" poster="${p.image}" muted loop playsinline preload="metadata"></video>`
       : p.options && p.options.length > 1 ? `
       <div class="carousel" data-role="options">${p.options.map(o => `<img src="${o}" alt="${esc(p.headline)}" loading="lazy">`).join('')}</div>
       <div class="opt-label">Cover option <b>1</b> of ${p.options.length} · swipe ← → to choose</div>
@@ -334,6 +366,7 @@ function render() {
         <button data-act="used">${localGet('used-' + p.id) ? 'Unmark' : '✓ Mark used'}</button></div>` : ''}
     </article>`).join('');
   feedEl.querySelectorAll('.post').forEach(el => observer.observe(el));
+  feedEl.querySelectorAll('video[data-src]').forEach(v => { videoNear.observe(v); videoPlay.observe(v); });
   if (tab === 'feed') localSet('lastSeen', posts[0].created_at);
 }
 
