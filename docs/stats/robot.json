@@ -1101,6 +1101,29 @@
      "tokens": 34922
     }
    }
+  },
+  "fun": {
+   "posts": 1,
+   "requests": 3,
+   "input": 8,
+   "output": 2568,
+   "cache_read": 4015,
+   "cache_write": 14753,
+   "value_usd": 0.0855,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 9449
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 4582
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 7313
+    }
+   }
   }
  }
 }
