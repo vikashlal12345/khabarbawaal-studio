@@ -45,7 +45,33 @@
    ],
    "fixed": []
   },
-  "created_at": "2026-10-09T16:00:56+00:00"
+  "created_at": "2026-10-09T16:00:56+00:00",
+  "songs": [
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "O'Meri Laila",
+    "artist": "Atif Aslam, Jyotica Tangri",
+    "lang": "hindi",
+    "mood": "playful, desi energy"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "hype, swagger"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hype, dramatic"
+   }
+  ]
  },
  {
   "id": "top10_day-2026-10-09",
@@ -92,7 +118,33 @@
   "proof": {
    "state": "none"
   },
-  "created_at": "2026-10-09T15:42:33+00:00"
+  "created_at": "2026-10-09T15:42:33+00:00",
+  "songs": [
+   {
+    "title": "Pal Pal",
+    "artist": "Afusic, AliSoomroMusic",
+    "lang": "hindi",
+    "mood": "chill, relatable"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, bouncy"
+   },
+   {
+    "title": "Jalebi Baby",
+    "artist": "Tesher",
+    "lang": "english",
+    "mood": "funny, playful"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "dramatic, ironic"
+   }
+  ]
  },
  {
   "id": "reel-meme-2",
@@ -109,7 +161,33 @@
   "proof": {
    "state": "none"
   },
-  "created_at": "2026-10-09T15:42:32+00:00"
+  "created_at": "2026-10-09T15:42:32+00:00",
+  "songs": [
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "sleepy, chill"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "dramatic, sad-funny"
+   },
+   {
+    "title": "blue",
+    "artist": "Yung Kai",
+    "lang": "english",
+    "mood": "dreamy, lazy"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "funny, coffee-wake"
+   }
+  ]
  },
  {
   "id": "reel-news-3",
@@ -126,7 +204,33 @@
   "proof": {
    "state": "none"
   },
-  "created_at": "2026-10-09T15:42:31+00:00"
+  "created_at": "2026-10-09T15:42:31+00:00",
+  "songs": [
+   {
+    "title": "Jaan ‘Nisaar (Arijit)",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "dramatic, epic"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "sassy, upbeat"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hype, powerful"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "fast, high-flying"
+   }
+  ]
  },
  {
   "id": "877b6d2a7dd4",
