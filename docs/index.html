@@ -367,7 +367,7 @@ function render() {
         <span>${ago(p.created_at)} · ${esc(p.source)}</span>
       </div>
       ${proofHtml(p)}
-      ${p.kind === 'ready' ? (p.valid_on ? '<div class="proof check">📅 Post today only: it\'s about today\'s date.</div>' : '<div class="proof none">📦 Ready post: evergreen, post it any time.</div>') : ''}
+      ${p.kind === 'ready' ? (p.valid_on ? '<div class="proof check">📅 Post today only: it\'s about today\'s date.</div>' : '<div class="proof none">📦 Ready post: evergreen, post it any time within 24 hours (then it's cleared).</div>') : ''}
       ${p.overlay_text ? `<div class="overlay-text"><b>🎬 Text on video:</b> ${esc(p.overlay_text)}</div>` : ''}
       ${p.songs && p.songs.length ? `<div class="songs"><b>🎵 Song ideas</b> <small>tap to copy, then search in Instagram (↗ = trending there)</small>${
         p.songs.map((s, i) => `<button data-act="song" data-song="${i}">${s.lang === 'hindi' ? '🇮🇳' : '🌍'} ${esc(s.title)}: ${esc(s.artist)}${

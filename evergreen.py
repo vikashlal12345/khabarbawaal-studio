@@ -1,5 +1,5 @@
 """📦 Ready posts: evergreen carousels made at night (facts, explainers, on-this-day,
-quizzes, myth vs fact) plus 2 timeless 🎬 Reels (a "Tag that friend" clip and a meme). They wait in docs/ready.json (max 15, kept 7 days) for the owner
+quizzes, myth vs fact) plus 2 timeless 🎬 Reels (a "Tag that friend" clip and a meme). They wait in docs/ready.json (max 15, kept 24 hours) for the owner
 to post any time, and are used automatically when the AI can't write a news post.
 """
 from __future__ import annotations
@@ -16,7 +16,7 @@ import fun
 import generate as g
 
 READY_FILE = g.DOCS / "ready.json"
-MAX_READY, KEEP_DAYS = 15, 7
+MAX_READY, KEEP_DAYS = 15, g.CONFIG.get("keep_days", 1)   # same 24-hour rule as the feed
 FORMATS = {
     "facts": "5 amazing, little-known facts about one topic Indians love (India, cricket, Bollywood, space, food, history, tech)",
     "explainer": "a simple explainer of something people hear about but don't fully understand (e.g. GIFT Nifty, repo rate, ISRO missions, UPI)",
