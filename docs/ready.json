@@ -1,117 +1,5 @@
 [
  {
-  "id": "r20261004-1934-quiz",
-  "kind": "ready",
-  "image": "posts/r20261004-1934-quiz-1.jpg",
-  "slides": [
-   "posts/r20261004-1934-quiz-2.jpg",
-   "posts/r20261004-1934-quiz-3.jpg",
-   "posts/r20261004-1934-quiz-4.jpg",
-   "posts/r20261004-1934-quiz-5.jpg",
-   "posts/r20261004-1934-quiz-6.jpg",
-   "posts/r20261004-1934-quiz-7.jpg"
-  ],
-  "headline": "India GK Quiz: Can You Score 4/4?",
-  "tag": "📦 QUIZ",
-  "caption": "4 sawaal, 3 options, aur sirf ek sacha GK champion! Answers 6th slide pe hain, scroll karne se pehle khud try karo. Tumhara score kitna aaya? Comment karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n #IndiaGK #QuizTime #GeneralKnowledge #IndianQuiz #TestYourself",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Answers are on slide 6 of 7, not the last slide (slide 7 is a generic comment prompt).",
-    "Fact corrected to match the article: Each question has only 3 options (A, B, C), not 4."
-   ],
-   "fixed": [
-    "Answers last slide pe hain → Answers 6th slide pe hain",
-    "4 sawaal, 4 options, aur sirf ek sacha GK champion! → 4 sawaal, 3 options, aur sirf ek sacha GK champion!"
-   ]
-  },
-  "created_at": "2026-10-04T19:34:26+00:00"
- },
- {
-  "id": "r20261004-1935-explainer",
-  "kind": "ready",
-  "image": "posts/r20261004-1935-explainer-1.jpg",
-  "slides": [
-   "posts/r20261004-1935-explainer-2.jpg",
-   "posts/r20261004-1935-explainer-3.jpg",
-   "posts/r20261004-1935-explainer-4.jpg",
-   "posts/r20261004-1935-explainer-5.jpg",
-   "posts/r20261004-1935-explainer-6.jpg",
-   "posts/r20261004-1935-explainer-7.jpg"
-  ],
-  "headline": "Repo Rate Explained: Why Your EMI Cares",
-  "tag": "📦 EXPLAINER",
-  "caption": "Repo rate sunne mein heavy lagta hai, par seedha tumhari EMI aur savings se judta hai. Ab agli baar RBI policy aaye to samajh aayega kya ho raha hai. Kisi dost ko share karo jo EMI se pareshan hai?\n\nFollow @khabarbawaal for daily updates.\n\n #RepoRate #RBI #EMI #PersonalFinance #IndianEconomy",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 5: The photo is a generic world inflation map (IMF, Apr 2026). It is not India-specific and India is not highlighted. The title and legend text are tiny and hard to read on a phone. It also sits between grey bars. It is loosely relevant to the inflation point, so I kept it, but a clearer India or RBI image would be better.",
-    "Slide 1: The faint 'EXPLAINER' watermark is partly covered by the flame icon, so the last letters look cut off. This is a minor, decorative layout issue."
-   ],
-   "fixed": [
-    "market mein paisa ka flow badhta hai → market mein paise ka flow badhta hai"
-   ]
-  },
-  "created_at": "2026-10-04T19:35:01+00:00"
- },
- {
-  "id": "r20261006-1931-facts",
-  "kind": "ready",
-  "image": "posts/r20261006-1931-facts-1.jpg",
-  "slides": [
-   "posts/r20261006-1931-facts-2.jpg",
-   "posts/r20261006-1931-facts-3.jpg",
-   "posts/r20261006-1931-facts-4.jpg",
-   "posts/r20261006-1931-facts-5.jpg",
-   "posts/r20261006-1931-facts-6.jpg",
-   "posts/r20261006-1931-facts-7.jpg"
-  ],
-  "headline": "5 Cricket Records That Still Feel Unreal",
-  "tag": "📦 AMAZING FACTS",
-  "caption": "Cricket ke ye records sunke aaj bhi goosebumps aate hain. Inme se sabse yaadgaar moment kaunsa hai? Save karo aur dosto ke saath share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#cricket #india #viral #trending #teamindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-06T19:31:34+00:00"
- },
- {
-  "id": "r20261006-1932-quiz",
-  "kind": "ready",
-  "image": "posts/r20261006-1932-quiz-1.jpg",
-  "slides": [
-   "posts/r20261006-1932-quiz-2.jpg",
-   "posts/r20261006-1932-quiz-3.jpg",
-   "posts/r20261006-1932-quiz-4.jpg",
-   "posts/r20261006-1932-quiz-5.jpg",
-   "posts/r20261006-1932-quiz-6.jpg",
-   "posts/r20261006-1932-quiz-7.jpg"
-  ],
-  "headline": "Animal Quiz: Kya Tum 4/4 Score Karoge?",
-  "tag": "📦 QUIZ",
-  "caption": "Animal duniya ke 4 sawaal, dekhte hain kaun topper hai! Slide 6 pe answers hain, swipe karo aur comment mein apna score batao. Dost ko tag karo, kaun jeetega? Save karo / share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #quiz #animalfacts",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Answers are on slide 6 of 7; the last slide (7) is just a comment prompt.",
-    "Slide 3: The bat photo is small and low-resolution, and it sits on a heavily blurred background. It is readable and on topic, so it was kept, but the layout looks weaker than the other photo slides."
-   ],
-   "fixed": [
-    "Last slide pe answers hain → Slide 6 pe answers hain"
-   ]
-  },
-  "created_at": "2026-10-06T19:32:27+00:00"
- },
- {
   "id": "r20261006-1932-explainer",
   "kind": "ready",
   "image": "posts/r20261006-1932-explainer-1.jpg",
@@ -322,34 +210,6 @@
   "created_at": "2026-10-08T19:32:21+00:00"
  },
  {
-  "id": "r20261008-1932-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261008-1932-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261008-1932-on_this_day-2.jpg",
-   "posts/r20261008-1932-on_this_day-3.jpg",
-   "posts/r20261008-1932-on_this_day-4.jpg",
-   "posts/r20261008-1932-on_this_day-5.jpg",
-   "posts/r20261008-1932-on_this_day-6.jpg"
-  ],
-  "headline": "9 October: 4 Things Jo Duniya Badal Gaye",
-  "tag": "📦 ON THIS DAY",
-  "caption": "9 October ko chitthi, alphabet, aazadi aur music, sab kuch juda hai. History itni boring bhi nahi hoti! Aapko kaunsa fact sabse zyada pasand aaya?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #history #onthisday",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Hangul Day on 9 October is observed in South Korea; North Korea marks it on 15 January."
-   ],
-   "fixed": [
-    "Korea mein 9 October ko Hangul Day manate hain. → South Korea mein 9 October ko Hangul Day manate hain."
-   ]
-  },
-  "created_at": "2026-10-08T19:32:51+00:00",
-  "valid_on": "2026-10-09"
- },
- {
   "id": "r20261008-1933-facts",
   "kind": "ready",
   "image": "posts/r20261008-1933-facts-1.jpg",
@@ -403,5 +263,145 @@
    "fixed": []
   },
   "created_at": "2026-10-08T19:34:03+00:00"
+ },
+ {
+  "id": "r20261009-1931-explainer",
+  "kind": "ready",
+  "image": "posts/r20261009-1931-explainer-1.jpg",
+  "slides": [
+   "posts/r20261009-1931-explainer-2.jpg",
+   "posts/r20261009-1931-explainer-3.jpg",
+   "posts/r20261009-1931-explainer-4.jpg",
+   "posts/r20261009-1931-explainer-5.jpg",
+   "posts/r20261009-1931-explainer-6.jpg"
+  ],
+  "headline": "CIBIL Score Kya Hai? Simple Explainer",
+  "tag": "📦 EXPLAINER",
+  "caption": "CIBIL score tumhare loan aur credit card ka report card hai. Time pe EMI bharo, score apne aap sudharta hai. Kya tumne apna score check kiya hai? Save karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #cibil #personalfinance",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The big flame icon sits on top of the faded 'EXPLAINER' watermark and hides its last letters. It's only decoration and the main title is clear, so this is minor. The flame also doesn't fit a finance explainer."
+   ],
+   "fixed": [
+    "removed weak photo slide(s) [5]"
+   ]
+  },
+  "created_at": "2026-10-09T19:31:24+00:00"
+ },
+ {
+  "id": "r20261009-1931-quiz",
+  "kind": "ready",
+  "image": "posts/r20261009-1931-quiz-1.jpg",
+  "slides": [
+   "posts/r20261009-1931-quiz-2.jpg",
+   "posts/r20261009-1931-quiz-3.jpg",
+   "posts/r20261009-1931-quiz-4.jpg",
+   "posts/r20261009-1931-quiz-5.jpg",
+   "posts/r20261009-1931-quiz-6.jpg",
+   "posts/r20261009-1931-quiz-7.jpg"
+  ],
+  "headline": "Human Body Quiz: Kya Tum 4/4 Score Karoge?",
+  "tag": "📦 QUIZ",
+  "caption": "Body ke baare mein kitna jaante ho? Swipe karke 4 sawal try karo, answers 6th slide par hain. Apna score comment karo, aur dost ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #quiz #healthfacts",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Answers are on slide 6 of 7; the last slide (7) is just a comment prompt.",
+    "Slide 1: The cover is a da Vinci anatomical sketch that shows nude male genitals. Instagram may flag it as sensitive. Consider a cropped or different cover image.",
+    "Slide 2: The skin photo is a small, low-resolution rectangle on a heavily blurred copy of itself. It looks unpolished. I did not drop it because Q1 would then be missing and the answers slide refers to it. A larger or sharper skin photo would be better.",
+    "Slide 7: The closing slide asks \"Aap kya sochte ho?\", which doesn't fit a quiz. Something like \"Kitne sahi hue?\" would fit better. This is optional."
+   ],
+   "fixed": [
+    "answers last slide par hain → answers 6th slide par hain"
+   ]
+  },
+  "created_at": "2026-10-09T19:31:59+00:00"
+ },
+ {
+  "id": "r20261009-1932-facts",
+  "kind": "ready",
+  "image": "posts/r20261009-1932-facts-1.jpg",
+  "slides": [
+   "posts/r20261009-1932-facts-2.jpg",
+   "posts/r20261009-1932-facts-3.jpg",
+   "posts/r20261009-1932-facts-4.jpg",
+   "posts/r20261009-1932-facts-5.jpg",
+   "posts/r20261009-1932-facts-6.jpg",
+   "posts/r20261009-1932-facts-7.jpg"
+  ],
+  "headline": "5 Sachin Tendulkar Facts Jo Kam Log Jaante Hain",
+  "tag": "📦 AMAZING FACTS",
+  "caption": "Sachin sirf ek cricketer nahi, ek emotion hain. Ye 5 facts padh ke kitne pata the aapko?\nSave karo aur us dost ko share karo jo Sachin ka fan hai!\n\nFollow @khabarbawaal for daily updates.\n\n#cricket #sachintendulkar #india #viral #trending",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Women's cricketer Belinda Clarke scored an ODI double century (229*) in 1997, so 'first batsman' overall is inaccurate; Sachin was the first male player.",
+    "Slide 1: The faint 'AMAZING FACTS' background text is partly covered by the flame icon, so its last letters ('CTS') are hidden. The headline itself is fine. This is a minor layout flaw, so consider moving the icon or the watermark."
+   ],
+   "fixed": [
+    "pehle batsman bane jisne double century maari → pehle male batsman bane jisne double century maari",
+    "aapko?\\nSave → aapko?\nSave"
+   ]
+  },
+  "created_at": "2026-10-09T19:32:32+00:00"
+ },
+ {
+  "id": "r20261009-1932-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261009-1932-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261009-1932-on_this_day-2.jpg",
+   "posts/r20261009-1932-on_this_day-3.jpg",
+   "posts/r20261009-1932-on_this_day-4.jpg",
+   "posts/r20261009-1932-on_this_day-5.jpg",
+   "posts/r20261009-1932-on_this_day-6.jpg"
+  ],
+  "headline": "10 October: 4 Things Jo Itihaas Mein Hue",
+  "tag": "📦 ON THIS DAY",
+  "caption": "Ek hi tareekh, 4 badi kahaniyan. Kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #history #viral #trending #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The faint 'ON THIS DAY' watermark is partly covered by the flame icon, so the 'A' in DAY is hidden. It looks decorative and is not a real error. You could move the icon if you want it cleaner."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-09T19:32:55+00:00",
+  "valid_on": "2026-10-10"
+ },
+ {
+  "id": "r20261009-1933-myth_fact",
+  "kind": "ready",
+  "image": "posts/r20261009-1933-myth_fact-1.jpg",
+  "slides": [
+   "posts/r20261009-1933-myth_fact-2.jpg",
+   "posts/r20261009-1933-myth_fact-3.jpg",
+   "posts/r20261009-1933-myth_fact-4.jpg",
+   "posts/r20261009-1933-myth_fact-5.jpg",
+   "posts/r20261009-1933-myth_fact-6.jpg",
+   "posts/r20261009-1933-myth_fact-7.jpg"
+  ],
+  "headline": "4 Myths Jo Tumne School Mein Sach Maane",
+  "tag": "📦 MYTH VS FACT",
+  "caption": "School mein jo sach laga, wo shayad myth nikla! 😅 Aapne kitne myths maane the? Save karo aur dost ko share karo, kaun sabse zyada galat tha?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #factcheck #mythbusters",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The bull photo is shown small, in the middle of a blurred copy of itself. It looks a bit low-resolution but is readable and relevant. Optional: use a larger crop."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-09T19:33:15+00:00"
  }
 ]
