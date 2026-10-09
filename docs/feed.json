@@ -1,5 +1,36 @@
 [
  {
+  "id": "c8fe447ca8ea",
+  "kind": "custom",
+  "image": "posts/20261009-2116-c8fe447ca8ea-1.jpg",
+  "options": [
+   "posts/20261009-2116-c8fe447ca8ea-1.jpg",
+   "posts/20261009-2116-c8fe447ca8ea-2.jpg",
+   "posts/20261009-2116-c8fe447ca8ea-3.jpg"
+  ],
+  "slides": [
+   "posts/20261009-2116-c8fe447ca8ea-s2.jpg",
+   "posts/20261009-2116-c8fe447ca8ea-s3.jpg",
+   "posts/20261009-2116-c8fe447ca8ea-s4.jpg"
+  ],
+  "headline": "India rejects Musk's 'monopoly' charge in Starlink row, says Amazon also in satellite internet race",
+  "tag": "TECH",
+  "caption": "Starlink ko lekar Musk vs India ka scene garam hai 🛰️\nMusk ke 'monopoly' wale aarop ko India ne reject kar diya.\nSarkar ne yeh bhi bataya ki satellite internet ki race mein Amazon bhi hai.\nMatlab field sirf ek company ke liye khuli nahi hai.\nUnpopular opinion: India ka stand bilkul sahi hai. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: msn.com (link pinned in comments 👇)\n\n#starlink #elonmusk #india #trending #technews",
+  "source": "msn.com",
+  "source_url": "https://www.msn.com/en-in/news/other/starlink-row-india-rejects-musk-s-monopoly-accusation-reveals-amazon-also-in-satellite-internet-race/ar-AA2dSsrj",
+  "pin_comment": "Sabse interesting part: race mein Amazon bhi hai, sirf Starlink nahi. Satellite internet ka asli winner kaun hoga? 🛰️",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The photo shows Elon Musk next to a man who looks like Mukesh Ambani. The slide text never mentions him, and the article isn't available to confirm he is part of the story. Check that he belongs here, or add a caption or label.",
+    "Slide 1: Slide 1 credits 'Source: Business Standard'. The caption credits msn.com, and the slide 2 and 3 photo credits are India Today and Business Today. Make the source credit consistent.",
+    "Slide 2: The claim that Musk said 'market mein kuch players ka kabza hai' can't be checked because the article isn't available. Confirm it's in the source, or word it as the report's claim."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-09T21:16:35+00:00"
+ },
+ {
   "id": "v6b129ee8c50",
   "image": "posts/20261009-2054-v6b129ee8c50.jpg",
   "kind": "custom",
