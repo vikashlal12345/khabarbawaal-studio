@@ -1,5 +1,30 @@
 [
  {
+  "id": "4392d7d5b1a3",
+  "image": "posts/20261009-0031-4392d7d5b1a3.jpg",
+  "kind": "news",
+  "headline": "Drishyam 3 Nears ₹250 Crore In Week One, Beats Drishyam 2 Lifetime Haul",
+  "tag": "BOLLYWOOD",
+  "caption": "Ajay Devgn ne phir se box office ka scene palat diya 🔥\n\nDrishyam 3 ne sirf 7 din mein ₹250 crore ke paas pahunch kar Drishyam 2 ka poora lifetime collection beat kar diya.\n\nFriday release ke baad se film ne kai box office records tod diye hain aur ek bada success ban chuki hai.\n\nPrediction time: Drishyam 3 ₹300 crore cross karegi? Haan ya Na?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bollywood #drishyam3 #ajaydevgn #boxoffice #trending",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-box-office-collection-day-7-ajay-devgn-film-beats-drishyam-2-haul-collects-245-crore-in-first-week-tabu-abhishek-pathak-101791475588995.html",
+  "pin_comment": "Sabse shocking: ek hafte mein hi Drishyam 2 ka poora lifetime collection paar. Sequel ka sequel aur bhi bada nikla 😮",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The daily figures (66.75 + 53.50 + 61 + 21 + 19.50 + 15.50 + 13) add up to about ₹251 crore. The article's total is ₹245.50 crore, as slide 3 says. The article itself has this mismatch, and the slide just repeats the source's numbers. The ₹66.75 crore opening may already include the ₹27 crore advance bookings. Consider checking against Sacnilk."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261009-0031-4392d7d5b1a3-s2.jpg",
+   "posts/20261009-0031-4392d7d5b1a3-s3.jpg",
+   "posts/20261009-0031-4392d7d5b1a3-s4.jpg",
+   "posts/20261009-0031-4392d7d5b1a3-s5.jpg"
+  ],
+  "created_at": "2026-10-09T00:31:26+00:00"
+ },
+ {
   "id": "night_roundup-2026-10-09",
   "image": "posts/20261008-2331-night_roundup-2026-10-09.jpg",
   "kind": "top10",
