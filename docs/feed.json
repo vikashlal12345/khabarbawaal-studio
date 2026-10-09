@@ -1,5 +1,24 @@
 [
  {
+  "id": "e1eabbd4c655",
+  "image": "posts/20261009-1031-e1eabbd4c655.jpg",
+  "kind": "fun",
+  "headline": "Delivery wale ka call aaya: Bhaiya, gate pe hoon. Main tab tak teesri manzil pe, towel mein, shampoo laga hua. Main: Bas 2 minute!",
+  "tag": "😂 RELATABLE",
+  "caption": "Parcel hamesha tab aata hai jab hum sabse kam taiyaar hote hain 😅\nDelivery bhaiya ka sabr aur humari speed, dono ka test.\nFamily group mein bhejo, dekhte hain kiske ghar mein ye sabse zyada hota hai\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #viral #trending #india #desi",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Delivery bhaiya ne rating mein likha: Customer ka 2 minute mera 15 minute.",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "dekhte hain kiske ghar mein ye kaun karta hai → dekhte hain kiske ghar mein ye sabse zyada hota hai"
+   ]
+  },
+  "created_at": "2026-10-09T10:31:19+00:00"
+ },
+ {
   "id": "market_close-2026-10-09",
   "image": "posts/20261009-1016-market_close-2026-10-09.jpg",
   "kind": "market",
@@ -1900,31 +1919,5 @@
    "posts/20261006-1032-02bdd5c5d10b-s7.jpg"
   ],
   "created_at": "2026-10-06T10:32:14+00:00"
- },
- {
-  "id": "market_close-2026-10-06",
-  "image": "posts/20261006-1016-market_close-2026-10-06.jpg",
-  "kind": "market",
-  "headline": "Closing Bell: Nifty 22,776.10 (+0.98%)",
-  "tag": "🔔 CLOSING BELL",
-  "caption": "Closing Bell: Nifty 50 ne 22,776.10 pe close kiya, +0.98% upar. 🔔\nBank Nifty 55,128.40 (+0.76%). 32 stocks upar, 18 neeche.\nTrent +12.64% se top gainer, Coal India -3.16% se top loser. IT -0.59% neeche raha.\nAapka portfolio aaj green tha ya red?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n#StockMarket #Nifty #Sensex #ShareMarket #India",
-  "source": "NSE, CNBC",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 3: The Pharma bar runs into its label. The '+' of '+1.66%' is hidden, so it reads '1.66%'. Shorten the bar or move the label.",
-    "Slide 1: The green '+220.35 (+0.98%)' text sits over the busy tree and fence area of the photo, so it is slightly harder to read. It is still legible."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261006-1016-market_close-2026-10-06-s2.jpg",
-   "posts/20261006-1016-market_close-2026-10-06-s3.jpg",
-   "posts/20261006-1016-market_close-2026-10-06-s4.jpg",
-   "posts/20261006-1016-market_close-2026-10-06-s5.jpg",
-   "posts/20261006-1016-market_close-2026-10-06-s6.jpg"
-  ],
-  "created_at": "2026-10-06T10:16:28+00:00"
  }
 ]
