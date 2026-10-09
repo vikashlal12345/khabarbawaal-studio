@@ -1,5 +1,29 @@
 [
  {
+  "id": "d9200b0a5a1f",
+  "image": "posts/20261009-0331-d9200b0a5a1f.jpg",
+  "kind": "news",
+  "headline": "Thailand's Queen Suthida Flies Solo In Fighter Jet, Has 1,188 Hours Of Flight Time",
+  "tag": "VIRAL",
+  "caption": "Ek taraf hum hain jo Uber ke liye bhi nervous ho jaate hain, aur doosri taraf ek Queen fighter jet solo uda rahi hai 😳\n\nThailand ki Queen Suthida ne fighter jet mein solo flight li.\nWo 2010 mein pilot bani thi.\nAb tak alag-alag aircraft mein 1,188.48 ghante ki flying kar chuki hain.\n\nFill the blank: Fighter jet ki seat pe baith ke mera pehla reaction ____ hota 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #news #thailand #queensuthida",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/thailands-queen-suthida-takes-to-the-skies-for-solo-flight-in-fighter-jet-101791514425124.html",
+  "pin_comment": "Sabse crazy part: 1,188 ghante hawa mein. Itne ghante to hum Netflix pe \"just one more episode\" mein nikaal dete hain 😭",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261009-0331-d9200b0a5a1f-s2.jpg",
+   "posts/20261009-0331-d9200b0a5a1f-s3.jpg",
+   "posts/20261009-0331-d9200b0a5a1f-s4.jpg",
+   "posts/20261009-0331-d9200b0a5a1f-s5.jpg",
+   "posts/20261009-0331-d9200b0a5a1f-s6.jpg"
+  ],
+  "created_at": "2026-10-09T03:31:38+00:00"
+ },
+ {
   "id": "market_open-2026-10-09",
   "image": "posts/20261009-0246-market_open-2026-10-09.jpg",
   "kind": "market",
@@ -1885,32 +1909,5 @@
    "posts/20261006-0339-market_preopen-2026-10-06-s3.jpg"
   ],
   "created_at": "2026-10-06T03:39:41+00:00"
- },
- {
-  "id": "market_open-2026-10-06",
-  "image": "posts/20261006-0248-market_open-2026-10-06.jpg",
-  "kind": "market",
-  "headline": "Market Morning Brief: 06 Oct",
-  "tag": "📈 MARKET BRIEF",
-  "caption": "Market Morning Brief: GIFT Nifty 22,640.00 (-0.08%), Nifty ka previous close 22,555.75.\nUS aur Asia ke markets mostly hare mein, Brent crude $100.82 pe.\nAaj SRIT India ki listing aur Vedanta dividend news mein hai.\nAaj aapki nazar kis news pe rahegi?\nNot investment advice.\n\nFollow @khabarbawaal for daily market updates.\n\n #StockMarket #Nifty #MarketMorningBrief #GIFTNifty #Sensex",
-  "source": "NSE, CNBC, ET, Moneycontrol",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The Vedanta details (FY27 first interim dividend, Monday close of Rs 255.05) are not in the supplied article headlines, so I couldn't check them. Please check them against the source. The Axis Bank 'stocks-to-watch' item has the same problem.",
-    "Slide 5: The Vedanta dividend item and the 'IREDA, Kotak Mahindra Bank, Trent, Marico' stocks list are not in the supplied article, so I couldn't check them. Please check them against the source.",
-    "Caption: The caption's Vedanta dividend claim is not in the supplied article, so I couldn't check it. 'Hare mein' is Hinglish for 'in the green', which matches the data, since the US and Asian markets are all up."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261006-0248-market_open-2026-10-06-s2.jpg",
-   "posts/20261006-0248-market_open-2026-10-06-s3.jpg",
-   "posts/20261006-0248-market_open-2026-10-06-s4.jpg",
-   "posts/20261006-0248-market_open-2026-10-06-s5.jpg",
-   "posts/20261006-0248-market_open-2026-10-06-s6.jpg"
-  ],
-  "created_at": "2026-10-06T02:48:49+00:00"
  }
 ]
