@@ -27,12 +27,13 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.
 
 ## Schedule (IST) - `schedule.py`
-Quiet 11 PM-5 AM (night jobs only). Regular post **hourly at :00, 5:00-22:00** (every 3rd = fun).
+Quiet 11 PM-5 AM (night jobs only). Regular posts at :00 (`REGULAR_HOURS`): **hourly in Instagram's busy hours
+(7-10, 12-14, 18-22), every 2 h in slow hours** (5, 16) (every 3rd = fun).
 Specials: 5:00 overnight Top 5 roundup · 6:15 Top 5 Viral · 8:15 Market Brief · 9:09 Pre-open ·
 9:15 Thought of the Day · 15:45 Closing Bell · 21:15 Top 5 News (market posts trading days only).
-🎬 Reels replace the regular post at **7:00 (clip + "Tag that friend")**, **19:00 (meme)**, **20:00 (news photo
+🎬 Reels replace the regular post at **13:00 (clip + "Tag that friend")**, **19:00 (meme)**, **20:00 (news photo
 slideshow)**; if a Reel can't be made, that slot posts a regular post.
-Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 4:00 learning.
+Night: 1:00 five 📦 ready posts (3 carousels + 2 timeless Reels) · 2:00 day planner (📅 previews) · 4:00 learning.
 
 ## How it runs
 - `.github/workflows/hourly.yml`: a self-restarting chain. `generate` job makes the post; `next` job

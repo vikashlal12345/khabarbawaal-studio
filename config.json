@@ -13,6 +13,7 @@
   "inbox_topic": "kb-inbox-d29294d0e65aa1ec00ad30e6",
   "fun_every": 3,
   "ready_per_night": 5,
+  "ready_reels_per_night": 2,
   "jokes_per_night": 10,
   "fun_bank_max_age_days": 14,
   "lookback_hours": 8,

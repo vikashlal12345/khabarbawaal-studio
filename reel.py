@@ -407,7 +407,8 @@ def unescape(s: str) -> str:
     return s.replace("\\n", "\n").strip()
 
 
-def write_joke(kind: str, state: dict) -> dict:
+def write_joke(kind: str, state: dict, evergreen: bool = False) -> dict:
+    """evergreen=True: for 📦 Ready Reels, posted any day this week, so no trends, news or dates."""
     import fun
     import generate as g
     system = fun.FUN_SYSTEM.format(page=CONFIG["page_name"]) + "\n\n" + fun.JOKE_RULES + "\n\n" + REEL_RULES
@@ -415,17 +416,24 @@ def write_joke(kind: str, state: dict) -> dict:
              if kind == "reel_clip" else
              "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
-    searches = fun.google_trends()
     songs = trending_songs()
-    user = (f"{fun.today_context()}\n{style}\n\n"
-            "What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
-            "\n\nToday's big headlines (use only ones nearly everyone knows):\n" +
-            "\n".join(f"- {t}" for t in g.trending_titles()[:15]) +
+    if evergreen:
+        context = ("This Reel may be posted on ANY day in the next week: NO trends, news, festivals, dates, "
+                   "weather or day names. Only timeless relatable desi-life moments.")
+        ask = "Write exactly 3 different jokes, each a timeless relatable desi-life moment (different situations)."
+    else:
+        searches = fun.google_trends()
+        context = (f"{fun.today_context()}\n\n"
+                   "What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
+                   "\n\nToday's big headlines (use only ones nearly everyone knows):\n" +
+                   "\n".join(f"- {t}" for t in g.trending_titles()[:15]))
+        ask = ("Write exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
+               "relatable desi-life moments (different situations).")
+    user = (f"{style}\n\n{context}" +
             "\n\nTopics already used recently (don't reuse):\n" +
             ("\n".join(f"- {t}" for t in (state.get("fun_topics", []) + state.get("reel_topics", []))[-30:]) or "(none)") +
             "\n\nRecent Reels (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in state.get("recent_reels", [])[-20:]) or "(none)") +
-            "\n\nWrite exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
-            "relatable desi-life moments (different situations)." + songs_prompt(songs))
+            f"\n\n{ask}" + songs_prompt(songs))
     model = CONFIG.get("membership_model", "sonnet")
     option = CLIP_OPTION if kind == "reel_clip" else MEME_OPTION
     options = fun.claude_json(system, user, options_schema(option, "Exactly 3 different jokes"), model,
@@ -588,10 +596,12 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
     g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
 
 
-def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
+def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False) -> tuple[Image.Image, str, dict]:
+    """Write, judge, find a clip, render and proofread a joke Reel.
+    Returns (cover, mp4 path in tmp, feed fields); also notes the clip/topic in state."""
     import generate as g
     import proofread
-    post = write_joke(kind, state)
+    post = write_joke(kind, state, evergreen)
     cid = pick_clip(post, state.get("reel_clips", []))
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
@@ -609,11 +619,16 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_topics"] = (state.get("reel_topics", []) + [post["based_on"]])[-60:]
     state["recent_reels"] = (state.get("recent_reels", []) + [printable(text).replace("\n", " ")])[-60:]
-    save_reel(feed, state, frames[-1], out, f"{kind}-{today}", {
+    return frames[-1], out, {
         "headline": printable(text).replace("\n", " "),
         "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind == "reel_clip" else "MEME"),
-        "caption": g.fun_caption(post), "source": "KhabarBawaal Original", "source_url": "",
-        "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof})
+        "caption": g.limit_hashtags(g.fun_caption(post)), "source": "KhabarBawaal Original", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof}
+
+
+def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
+    cover, mp4, entry = build_joke_reel(kind, state, tmp)
+    save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
 
 
 NEWS_SYSTEM = """You make the evening news REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \

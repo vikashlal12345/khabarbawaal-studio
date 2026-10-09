@@ -8,7 +8,7 @@ name: Hourly post
 on:
   schedule:
     # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
-    - cron: "30 23,0-16 * * *"    # hh:00 IST, 5 AM - 10 PM
+    - cron: "30 23,1,2,3,4,6,7,8,10,12,13,14,15,16 * * *"   # schedule.REGULAR_HOURS (IST 5,7-10,12-14,16,18-22)
     - cron: "45 0,2,3,15 * * *"   # 6:15, 8:15, 9:15 AM and 9:15 PM IST specials
     - cron: "15 10 * * 1-5"       # 3:45 PM IST closing bell (weekdays)
     - cron: "39 3 * * 1-5"        # 9:09 AM IST pre-open snapshot (weekdays)

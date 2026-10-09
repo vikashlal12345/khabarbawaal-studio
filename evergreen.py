@@ -1,11 +1,13 @@
 """📦 Ready posts: evergreen carousels made at night (facts, explainers, on-this-day,
-quizzes, myth vs fact). They wait in docs/ready.json (max 15, kept 7 days) for the owner
+quizzes, myth vs fact) plus 2 timeless 🎬 Reels (a "Tag that friend" clip and a meme). They wait in docs/ready.json (max 15, kept 7 days) for the owner
 to post any time, and are used automatically when the AI can't write a news post.
 """
 from __future__ import annotations
 
 import json
 import random
+import shutil
+import tempfile
 from datetime import datetime, timedelta, timezone
 
 from PIL import Image
@@ -113,11 +115,34 @@ def make_one(fmt: str, recent: list[str]) -> dict | None:
             "tag": "📦 " + data["post"]["tag"].upper()}
 
 
+def make_reel(kind: str, state: dict) -> dict | None:
+    """A timeless joke Reel for the 📦 Ready tab (video + cover saved under docs/posts)."""
+    import reel
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            cover, mp4, entry = reel.build_joke_reel(kind, state, tmp, evergreen=True)
+            pid = f"r{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-{kind}"
+            cover.save(g.DOCS / f"posts/{pid}.jpg", "JPEG", quality=88, optimize=True)
+            shutil.copy(mp4, g.DOCS / f"posts/{pid}.mp4")
+    except Exception as e:
+        print(f"  ! ready Reel failed: {str(e)[:200]}")
+        return None
+    print(f"  ready Reel: {entry['headline']}")
+    return {"id": pid, "kind": "ready", "media": "reel", "image": f"posts/{pid}.jpg", "video": f"posts/{pid}.mp4",
+            **entry, "tag": "📦 " + entry["tag"], "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+
+
 def make_batch(state: dict, count: int = 5) -> int:
+    """count posts: up to ready_reels_per_night Reels, the rest carousels (one more carousel per failed Reel)."""
     items = prune(load())
     recent = state.get("recent_ready", [])[-40:]
     made = 0
-    for fmt in random.sample(list(FORMATS), k=min(count, len(FORMATS))):
+    for kind in ["reel_clip", "reel_meme"][:min(count, g.CONFIG.get("ready_reels_per_night", 2))]:
+        out = make_reel(kind, state)
+        if out:
+            items.append(out)
+            made += 1
+    for fmt in random.sample(list(FORMATS), k=min(count - made, len(FORMATS))):
         out = make_one(fmt, recent)
         if not out:
             continue

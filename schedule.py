@@ -9,11 +9,13 @@ from datetime import datetime, timedelta, timezone
 
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
-PEAK_HOURS: list[tuple[int, int]] = []                # hours with an extra hh:30 post (none: hourly all day)
+# Regular posts at hh:00: hourly in Instagram's busy hours (7-10 AM, 12-2 PM, 6-10 PM),
+# every 2 hours in slow hours. Specials (incl. 🎬 Reels) take over their hour's slot.
+REGULAR_HOURS = [5, 7, 8, 9, 10, 12, 13, 14, 16, 18, 19, 20, 21, 22]
 SPECIALS = {"top10_viral": (6, 15), "market_open": (8, 15), "market_preopen": (9, 9), "thought": (9, 15),
             "market_close": (15, 45), "top10_day": (21, 15),   # market posts skip non-trading days
             # 🎬 Reels take over these regular hours (reel.py): clip, meme, news slideshow.
-            "reel_clip": (7, 0), "reel_meme": (19, 0), "reel_news": (20, 0),
+            "reel_clip": (13, 0), "reel_meme": (19, 0), "reel_news": (20, 0),
             # Night work (nothing is posted): ready posts, day planning, learning from stats,
             # then the 5 AM overnight roundup (which takes the 5:00 slot).
             "night_ready": (1, 0), "night_calendar": (2, 0), "night_learn": (4, 0),
@@ -44,13 +46,8 @@ def special_due(t: datetime, done: dict) -> str | None:
 
 
 def regular_times() -> list[tuple[int, int]]:
-    """hh:00 every hour from 5 AM; also hh:30 in peak hours. Last post 10:30 PM."""
-    out = []
-    for h in range(QUIET_END, QUIET_START):
-        out.append((h, 0))
-        if any(a <= h < b for a, b in PEAK_HOURS):
-            out.append((h, 30))
-    return out
+    """hh:00 in REGULAR_HOURS (5 AM - 10 PM)."""
+    return [(h, 0) for h in REGULAR_HOURS]
 
 
 def slots(day: datetime) -> list[datetime]:
