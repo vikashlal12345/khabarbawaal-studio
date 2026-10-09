@@ -78,8 +78,47 @@ def resolve_conflicts() -> None:
             raise RuntimeError(r.stderr)
 
 
+def make_previews() -> None:
+    """Half-size copies of the post pictures for the app (docs/posts/p/): a phone needs 4x less
+    memory to show them. 📤 Post still shares the full pictures. Skipped where Pillow isn't installed."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return
+    wanted = set()
+    for path in ("docs/feed.json", "docs/ready.json"):
+        try:
+            items = json.load(open(path))
+        except (OSError, ValueError):
+            continue
+        for p in items:
+            for src in [p.get("image")] + p.get("options", []) + p.get("slides", []):
+                if src and src.startswith("posts/") and src.endswith(".jpg"):
+                    wanted.add(src)
+    os.makedirs("docs/posts/p", exist_ok=True)
+    made = 0
+    for src in wanted:
+        out = "docs/" + src.replace("posts/", "posts/p/", 1)
+        if os.path.exists(out) or not os.path.exists("docs/" + src):
+            continue
+        try:
+            img = Image.open("docs/" + src).convert("RGB")
+            img.thumbnail((540, 960))
+            img.save(out, "JPEG", quality=80, optimize=True)
+            made += 1
+        except Exception as e:
+            print(f"  preview failed for {src}: {e}")
+    keep = {os.path.basename(s) for s in wanted}
+    gone = [n for n in os.listdir("docs/posts/p") if n not in keep]
+    for name in gone:
+        os.remove(os.path.join("docs/posts/p", name))
+    if made or gone:
+        print(f"  previews: {made} made, {len(gone)} removed")
+
+
 def main() -> int:
     message = sys.argv[1] if len(sys.argv) > 1 else "Update"
+    make_previews()
     git("add", "-A")
     if git("diff", "--cached", "--quiet", check=False).returncode == 0:
         print("Nothing new to save.")

@@ -319,6 +319,14 @@ function instaHtml(p) {
     <span style="display:flex;gap:6px;align-items:center">${boostBtn}<a href="${link.url}" target="_blank" rel="noopener" style="color:var(--muted)">Open ↗</a></span></div>`;
 }
 
+// The app shows small preview copies (docs/posts/p/, made by save.py); 📤 Post still shares the
+// full pictures. A missing preview falls back to the full picture. later=true: loaded on first swipe.
+function pv(src) { return src.replace('posts/', 'posts/p/'); }
+function img(src, alt, later = false) {
+  return `<img ${later ? 'data-src' : 'src'}="${pv(src)}" data-full="${src}" alt="${alt}" loading="lazy"
+    onerror="if (this.src.includes('/p/')) this.src = this.dataset.full">`;
+}
+
 function render() {
   observer.disconnect(); videoNear.disconnect(); videoPlay.disconnect();   // the old cards are replaced below
   posts = (tab === 'feed' ? feedPosts : readyPosts).filter(p => !localGet('deleted-' + p.id));
@@ -331,16 +339,16 @@ function render() {
   const lastSeen = localGet('lastSeen');
   feedEl.innerHTML = posts.map(p => `
     <article class="post${tab === 'ready' && isUsed(p) ? ' used' : ''}" data-id="${p.id}">
-      ${p.video ? `<video data-src="${p.video}" poster="${p.image}" muted loop playsinline preload="metadata"></video>`
+      ${p.video ? `<video data-src="${p.video}" poster="${pv(p.image)}" muted loop playsinline preload="metadata"></video>`
       : p.options && p.options.length > 1 ? `
-      <div class="carousel" data-role="options">${p.options.map(o => `<img src="${o}" alt="${esc(p.headline)}" loading="lazy">`).join('')}</div>
+      <div class="carousel" data-role="options">${p.options.map((o, i) => img(o, esc(p.headline), i > 0)).join('')}</div>
       <div class="opt-label">Cover option <b>1</b> of ${p.options.length} · swipe ← → to choose</div>
       ${p.slides && p.slides.length ? `<div class="more-label">+ ${p.slides.length} more slides (all shared together)</div>
-      <div class="more-slides">${p.slides.map(sl => `<img src="${sl}" alt="" loading="lazy">`).join('')}</div>` : ''}`
+      <div class="more-slides">${p.slides.map(sl => img(sl, '')).join('')}</div>` : ''}`
       : p.slides && p.slides.length ? `
-      <div class="carousel" data-role="slides">${[p.image, ...p.slides].map(o => `<img src="${o}" alt="${esc(p.headline)}" loading="lazy">`).join('')}</div>
+      <div class="carousel" data-role="slides">${[p.image, ...p.slides].map((o, i) => img(o, esc(p.headline), i > 0)).join('')}</div>
       <div class="opt-label">Slide <b>1</b> of ${p.slides.length + 1} · swipe ← → · Post shares all ${p.slides.length + 1}</div>`
-      : `<img src="${p.image}" alt="${esc(p.headline)}" loading="lazy">`}
+      : img(p.image, esc(p.headline))}
       <div class="meta">
         <span class="tag${['fun', 'reel', 'custom', 'top10', 'thought', 'market', 'calendar', 'ready'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
         ${lastSeen && p.created_at > lastSeen ? '<span class="new">NEW</span>' : ''}
@@ -397,6 +405,7 @@ feedEl.addEventListener('click', e => {
 feedEl.addEventListener('scroll', e => {
   const c = e.target;
   if (!c.classList || !c.classList.contains('carousel')) return;
+  c.querySelectorAll('img[data-src]').forEach(i => { i.src = i.dataset.src; i.removeAttribute('data-src'); });
   const card = c.closest('.post');
   const post = posts.find(p => p.id === card.dataset.id);
   const i = Math.round(c.scrollLeft / c.clientWidth);
@@ -640,6 +649,7 @@ function localDel(k) { try { localStorage.removeItem(k); } catch {} }
 function localGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
 function localSet(k, v) { try { localStorage.setItem(k, v); } catch {} }
 
+let lastSig = '';
 async function load() {
   statusEl.textContent = 'Refreshing…';
   try {
@@ -647,12 +657,15 @@ async function load() {
     feedPosts = await res.json();
     const opt = async p => { try { const r = await fetch(p + '?t=' + Date.now(), { cache: 'no-store' }); return r.ok ? r.json() : null; } catch { return null; } };
     const [ready, links, ig, bst] = await Promise.all([opt('ready.json'), opt('stats/ig_links.json'), opt('stats/instagram.json'), opt('stats/boosts.json')]);
+    // Coming back from Instagram: only rebuild the feed if something changed (rebuilding reloads every picture).
+    const sig = JSON.stringify([feedPosts, ready, links, ig && ig.posts, bst]);
+    const same = sig === lastSig && feedEl.children.length;
+    lastSig = sig;
     boosts = bst || {};
     readyPosts = (ready || []).slice().reverse();
     igLinks = links || {}; igData = (ig && ig.posts) || {};
     document.getElementById('tab-ready').textContent = `📦 Ready (${readyPosts.length})`;
-    posts = tab === 'feed' ? feedPosts : readyPosts;
-    render();
+    if (!same) { posts = tab === 'feed' ? feedPosts : readyPosts; render(); }
     statusEl.textContent = posts.length
       ? `${posts.length} posts · latest ${ago(posts[0].created_at)}`
       : 'Waiting for first post';
