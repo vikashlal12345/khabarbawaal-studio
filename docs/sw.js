@@ -1,6 +1,6 @@
 // Network-first for the feed, cache-first for post images, so the app opens
 // instantly and still shows the last posts when offline.
-const CACHE = 'studio-v25';
+const CACHE = 'studio-v26';
 const SHELL = ['./', 'index.html', 'stats.html', 'manifest.json', 'icons/apple-touch-icon.png', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {
@@ -27,7 +27,9 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  e.respondWith(fetch(e.request).then(res => {
+  // Always ask GitHub whether there's a newer version (GitHub otherwise lets phones reuse a copy for
+  // 10 minutes, so app updates didn't show on reopen). Unchanged files cost only a tiny "not modified".
+  e.respondWith(fetch(new Request(e.request.url, { cache: 'no-cache' })).then(res => {
     const copy = res.clone();
     caches.open(CACHE).then(c => c.put(url.pathname, copy));
     if (url.pathname.endsWith('/feed.json')) cleanUp(res.clone());
@@ -43,7 +45,9 @@ async function cleanUp(feedResponse) {
     try { const r = await fetch('ready.json?t=' + Date.now()); if (r.ok) posts.push(...await r.json()); } catch {}
     const keep = new Set();
     for (const p of posts) {
-      [p.image, ...(p.options || []), ...(p.slides || [])].forEach(src => keep.add(src));
+      [p.image, ...(p.options || []), ...(p.slides || [])].forEach(src => {
+        keep.add(src); keep.add(src.replace('posts/', 'posts/p/'));   // and its small app preview
+      });
     }
     const cache = await caches.open(CACHE);
     for (const req of await cache.keys()) {
