@@ -1,5 +1,30 @@
 [
  {
+  "id": "ac67486f3824",
+  "image": "posts/20261009-0931-ac67486f3824.jpg",
+  "kind": "news",
+  "headline": "Delhi Police Reportedly Files 25 FIRs Over Anti-EC Protests, Names Rahul Gandhi, Priyanka Vadra",
+  "tag": "POLITICS",
+  "caption": "Delhi mein anti-EC protests ka scene ab police case tak pahunch gaya 👀\nPolice ke mutabiq 2 October se ab tak 25 FIRs darj hui hain.\nInme Leader of Opposition Rahul Gandhi aur Congress leader Priyanka Gandhi Vadra ke naam bhi shamil bataye ja rahe hain.\nSadak par protest ek taraf, kanooni karwai doosri taraf.\nYe case 2027 tak chalega? Haan ya Na?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#india #trending #politics #rahulgandhi #delhi",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/delhi-jantar-mantar-protests-india-bloc-connaught-place-rahul-gandhi-congress-firs-police-101791532304060.html",
+  "pin_comment": "Sabse bada sawal: 25 FIRs ke baad bhi protest rukenge ya aur badhenge? Apna take likho 👇",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Caption: The caption asks \"Ye case 2027 tak chalega?\". The article says nothing about 2027 or how long the cases will run. It's a rhetorical question, but the year is unsupported, so consider removing it or rewording the line."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261009-0931-ac67486f3824-s2.jpg",
+   "posts/20261009-0931-ac67486f3824-s3.jpg",
+   "posts/20261009-0931-ac67486f3824-s4.jpg",
+   "posts/20261009-0931-ac67486f3824-s5.jpg"
+  ],
+  "created_at": "2026-10-09T09:31:13+00:00"
+ },
+ {
   "id": "5a48748d423c",
   "image": "posts/20261009-0831-5a48748d423c.jpg",
   "kind": "news",
@@ -1890,33 +1915,5 @@
    "fixed": []
   },
   "created_at": "2026-10-06T09:31:30+00:00"
- },
- {
-  "id": "a3789a3cdde3",
-  "image": "posts/20261006-0831-a3789a3cdde3.jpg",
-  "kind": "news",
-  "headline": "Gurgaon Woman Spends Over 50% Of Salary On Rent, Says She Won't Change It",
-  "tag": "VIRAL",
-  "caption": "Aadhi salary rent mein? Gurgaon ki ek woman ne yahi kiya aur bol rahi hai no regrets.\nUnke paas sasta option bhi tha, phir bhi unhone mehenga ghar chuna.\nReason: \"I am saving my peace, my energy, and my time.\"\nAapke hisaab se ye smart move hai ya salary ka bura balance? Comments mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #gurgaon #rent",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/gurgaon-woman-spends-over-50-of-salary-on-rent-says-she-won-t-change-it-i-m-saving-my-peace-energy-and-time-101791262613630.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The quote must match her exact words from the article.",
-    "Slide 1: The woman's face is cut off at the left edge of the photo, and her eye is the only part visible. The headline also overlaps the on-video text 'saving my time'. This is a layout and crop issue that a text fix can't solve.",
-    "Slide 3: The photo is a small, slightly low-resolution generic high-rise image set on a heavily blurred background. It is not her actual home. Slide 2 is also a stock Gurgaon shot. Both are acceptable as illustrations, but they are generic."
-   ],
-   "fixed": [
-    "\"I'm saving my peace, energy and time.\" → \"I am saving my peace, my energy, and my time.\""
-   ]
-  },
-  "slides": [
-   "posts/20261006-0831-a3789a3cdde3-s2.jpg",
-   "posts/20261006-0831-a3789a3cdde3-s3.jpg",
-   "posts/20261006-0831-a3789a3cdde3-s4.jpg",
-   "posts/20261006-0831-a3789a3cdde3-s5.jpg"
-  ],
-  "created_at": "2026-10-06T08:31:51+00:00"
  }
 ]
