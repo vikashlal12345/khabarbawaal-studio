@@ -1,12 +1,16 @@
 {
- "summary": "From our last 90 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics TECH (3), EXPECTATION VS REALITY (2), WEB SERIES (2); weakest DESI LIFE (1), THOUGHT OF THE DAY (1). Formats: custom 3, news 2, fun 1, top10 1, ready 1, market 1, calendar 1, thought 1. Lean toward what works, keep some variety.",
- "posts": 90,
- "likes": 115,
- "updated": "2026-10-08T22:31:08+00:00",
+ "summary": "From our last 111 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics TECH (2), MOOD (2), EXPECTATION VS REALITY (2); weakest WTF NEWS (1), REEL 33  NEWS SLIDESHOW (0). Formats: custom 3, news 1, top10 1, fun 1, ready 1, market 1, calendar 1, thought 1, reel 0. Lean toward what works, keep some variety.",
+ "posts": 111,
+ "likes": 144,
+ "updated": "2026-10-09T22:30:59+00:00",
  "topics": [
   [
    "TECH",
-   2.6666666666666665
+   2.5
+  ],
+  [
+   "MOOD",
+   2.0
   ],
   [
    "EXPECTATION VS REALITY",
@@ -18,7 +22,15 @@
   ],
   [
    "VIRAL",
-   1.8
+   1.7647058823529411
+  ],
+  [
+   "BREAKING",
+   1.5
+  ],
+  [
+   "RAAT KI 5 KHABREIN",
+   1.5
   ],
   [
    "TOP 5 VIRAL",
@@ -29,16 +41,20 @@
    1.5
   ],
   [
-   "BREAKING",
-   1.5
+   "BOLLYWOOD",
+   1.4285714285714286
   ],
   [
-   "BOLLYWOOD",
-   1.4545454545454546
+   "TOP 5 NEWS",
+   1.3333333333333333
+  ],
+  [
+   "POLITICS",
+   1.25
   ],
   [
    "AMAZING FACTS",
-   1.3333333333333333
+   1.25
   ],
   [
    "RELATABLE",
@@ -46,30 +62,14 @@
   ],
   [
    "MYTH VS FACT",
-   1.25
-  ],
-  [
-   "POLITICS",
    1.2
-  ],
-  [
-   "WTF NEWS",
-   1.0
-  ],
-  [
-   "MARKET BRIEF",
-   1.0
-  ],
-  [
-   "TOP 5 NEWS",
-   1.0
   ],
   [
    "GOOD NEWS",
    1.0
   ],
   [
-   "EDUCATION",
+   "MARKET BRIEF",
    1.0
   ],
   [
@@ -81,15 +81,7 @@
    1.0
   ],
   [
-   "QUIZ",
-   1.0
-  ],
-  [
-   "RAAT KI 5 KHABREIN",
-   1.0
-  ],
-  [
-   "DELHI",
+   "REEL 23  MEME",
    1.0
   ],
   [
@@ -101,6 +93,10 @@
    1.0
   ],
   [
+   "QUIZ",
+   1.0
+  ],
+  [
    "ON THIS DAY",
    1.0
   ],
@@ -109,8 +105,24 @@
    1.0
   ],
   [
+   "DELHI",
+   1.0
+  ],
+  [
+   "EDUCATION",
+   1.0
+  ],
+  [
    "THOUGHT OF THE DAY",
-   0.6666666666666666
+   1.0
+  ],
+  [
+   "WTF NEWS",
+   1.0
+  ],
+  [
+   "REEL 33  NEWS SLIDESHOW",
+   0.0
   ]
  ],
  "kinds": [
@@ -120,19 +132,19 @@
   ],
   [
    "news",
-   1.5
-  ],
-  [
-   "fun",
-   1.3
+   1.4901960784313726
   ],
   [
    "top10",
-   1.1428571428571428
+   1.4444444444444444
+  ],
+  [
+   "fun",
+   1.3636363636363635
   ],
   [
    "ready",
-   1.1333333333333333
+   1.1
   ],
   [
    "market",
@@ -144,7 +156,11 @@
   ],
   [
    "thought",
-   0.6666666666666666
+   1.0
+  ],
+  [
+   "reel",
+   0.5
   ]
  ]
 }
