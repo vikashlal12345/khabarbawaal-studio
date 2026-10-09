@@ -1,5 +1,32 @@
 [
  {
+  "id": "5fe7e80c3239",
+  "image": "posts/20261009-0631-5fe7e80c3239.jpg",
+  "kind": "news",
+  "headline": "Kerala HC Allows Plea Seeking FIR Against Vijayan Based On ED Report In CMRL",
+  "tag": "POLITICS",
+  "caption": "Kerala se bada jhatka Vijayan ke liye 👀\nKerala High Court ne advocate K M Shajahan ki plea allow kar di hai.\nPlea ka kehna hai ki CMRL 'bribery' case mein ED report ke basis par police ko seedha FIR register karni chahiye, sirf preliminary inquiry nahi.\nAllegations abhi sirf allegations hain, aage court aur jaanch mein kya nikalta hai wo dekhna hoga.\nIs poore scene ko ek word mein describe karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kerala #india #trending #politics #news",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/kerala-hc-allows-plea-to-register-fir-against-pinarayi-vijayan-daughter-veena-based-on-ed-report-in-cmrl-bribery-case-101791524406168.html",
+  "pin_comment": "Sabse bada sawaal: preliminary inquiry vs seedha FIR, itna fark kyun? Tumhara jawab kya hai? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the UDF govt ordered a police inquiry and opposed an FIR. It does not say police had already conducted a preliminary inquiry.",
+    "Fact corrected to match the article: Article calls it the 'alleged' CMRL bribery case; bribery should not be stated as established fact."
+   ],
+   "fixed": [
+    "Police ne abhi sirf preliminary inquiry ki thi, CMRL case mein → Sarkar ne CMRL case mein police ki preliminary inquiry ka order diya tha",
+    "Kerala HC ne CMRL bribery case mein ED report par → Kerala HC ne alleged CMRL bribery case mein ED report par"
+   ]
+  },
+  "slides": [
+   "posts/20261009-0631-5fe7e80c3239-s2.jpg",
+   "posts/20261009-0631-5fe7e80c3239-s3.jpg"
+  ],
+  "created_at": "2026-10-09T06:31:48+00:00"
+ },
+ {
   "id": "33a925aea159",
   "image": "posts/20261009-0532-33a925aea159.jpg",
   "kind": "news",
@@ -1882,21 +1909,5 @@
    "posts/20261006-0732-c94f6e732f9a-s7.jpg"
   ],
   "created_at": "2026-10-06T07:32:01+00:00"
- },
- {
-  "id": "2eee9aa17b3f",
-  "image": "posts/20261006-0631-2eee9aa17b3f.jpg",
-  "kind": "fun",
-  "headline": "Mummy: Soja beta, kal subah jaldi uthna hai. Main: Okay. Mummy khud 1 baje tak: Dekho ye reel, kitni mast hai.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "Mummy ka sleep schedule sirf bachchon par lagu hota hai 😴\nKhud raat 1 baje tak reels, hume lecture.\nFamily group mein bhejo, mummy ko mat batana.\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#viral #trending #india #mummy #funny",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-06T06:31:35+00:00"
  }
 ]
