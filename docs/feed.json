@@ -1,5 +1,35 @@
 [
  {
+  "id": "33a925aea159",
+  "image": "posts/20261009-0532-33a925aea159.jpg",
+  "kind": "news",
+  "headline": "Film Body Slams Tanushree Dutta Over 'Evil Dead' Remark On Nana Patekar's Death",
+  "tag": "BOLLYWOOD",
+  "caption": "Nana Patekar ke nidhan ke baad ab ek naya bawaal khada ho gaya hai.\nTanushree Dutta ne Thursday ko social media video daala, jisme woh reportedly \"evil dead\" phrase use karti dikhi.\nFilm workers' body ne unhe slam kiya aur kaha ki zubaan pe check rakhni chahiye thi.\nUnpopular opinion: kisi ke guzarne ke din puraane hisaab nahi chhedne chahiye. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tanushreedutta #nanapatekar #bollywood #trending #viral",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/aicwa-slams-tanushree-dutta-over-evil-dead-remark-after-nana-patekar-death-metoo-movement-sexual-harassment-allegations-101791514431927.html",
+  "pin_comment": "Sabse bada sawaal: kya yeh bolne ka sahi time tha? Haan ya Na, seedha jawab do 👇",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The 'Lucknow or London' line is AICWA's statement to Tanushree, not her words; the slide made it look like she said it.",
+    "Slide 1: The split photo crops both faces at the edges. Tanushree's face is cut off at the left edge, and Nana's is cut off at the right. Nothing is covered by text, but a better crop would help."
+   ],
+   "fixed": [
+    "AICWA ke mutabiq Tanushree ne apne event ki baat ki: 'Lucknow ho ya London, kisi ko interest nahi.' → AICWA ke mutabiq Tanushree ne apne event ki baat ki. AICWA ne kaha: 'Lucknow ho ya London, kisi ko interest nahi.'"
+   ]
+  },
+  "slides": [
+   "posts/20261009-0532-33a925aea159-s2.jpg",
+   "posts/20261009-0532-33a925aea159-s3.jpg",
+   "posts/20261009-0532-33a925aea159-s4.jpg",
+   "posts/20261009-0532-33a925aea159-s5.jpg",
+   "posts/20261009-0532-33a925aea159-s6.jpg",
+   "posts/20261009-0532-33a925aea159-s7.jpg"
+  ],
+  "created_at": "2026-10-09T05:32:10+00:00"
+ },
+ {
   "id": "2a004f81dfc7",
   "image": "posts/20261009-0431-2a004f81dfc7.jpg",
   "kind": "fun",
@@ -1868,63 +1898,5 @@
    "fixed": []
   },
   "created_at": "2026-10-06T06:31:35+00:00"
- },
- {
-  "id": "7868bfc154a1",
-  "image": "posts/20261006-0531-7868bfc154a1.jpg",
-  "kind": "news",
-  "headline": "Man Quits ₹25 LPA Job For E-Commerce, Earns ₹0 On Flipkart, ₹45,000 On Amazon",
-  "tag": "VIRAL",
-  "caption": "Bhai ne ₹25 LPA ki job chhodi aur seedha e-commerce mein kood gaya 😳\nPehle mahine ka hisaab: Flipkart pe ₹0, Amazon pe ₹45,000.\nUska video viral hai aur social media pe reactions mixed hain. Kuch log hustle ko salute kar rahe hain, kuch bol rahe hain risk bahut bada tha.\nTum hote toh stable job chhodte ya nahi? Comment mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #india #entrepreneur #amazon",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/man-quits-25-lpa-job-for-e-commerce-business-reveals-first-month-earnings-0-on-flipkart-45-000-on-amazon-101791254953487.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The photo is a screenshot from Tolani's own video, and the article is from Hindustan Times. Nothing in the article links it to Moneycontrol.",
-    "Slide 1: The background photo is a cropped screenshot. Leftover text fragments (\"PA.\", \"er\") show at the top left behind the logo, and the 'Quit... 1 Mont...' text is cut off at the right edge. The man's face is cropped out of the frame. The slide is readable, but the layout looks messy.",
-    "Slide 1: The headline says he 'earns' ₹0 and ₹45,000 as plain fact. These are Tolani's own claims, and HT has not yet verified them. The dashboard shows sales (₹45,382), not necessarily earnings or profit. Consider attributing this, e.g. 'Claims'."
-   ],
-   "fixed": [
-    "Moneycontrol → Kamal Tolani/Instagram"
-   ]
-  },
-  "slides": [
-   "posts/20261006-0531-7868bfc154a1-s2.jpg",
-   "posts/20261006-0531-7868bfc154a1-s3.jpg",
-   "posts/20261006-0531-7868bfc154a1-s4.jpg"
-  ],
-  "created_at": "2026-10-06T05:31:33+00:00"
- },
- {
-  "id": "5d41429879fd",
-  "image": "posts/20261006-0432-5d41429879fd.jpg",
-  "kind": "news",
-  "headline": "Opposition INDIA Bloc Marches To Election Commission HQ On Fifth Day Of Protest, RAF Deployed",
-  "tag": "POLITICS",
-  "caption": "Paanch din se protest, ab seedha Nirvachan Sadan ki taraf march. 🚨\nINDIA bloc CEC Gyanesh Kumar ke khilaaf poll body ke decisions mein alleged irregularities ka daava kar raha hai.\nDelhi mein Connaught Place aur Patel Chowk ke aas-paas traffic curbs lage hain, aur RAF bhi tainaat hai.\nAapko kya lagta hai: ye sach mein mudda hai ya sirf political drama? Comments mein batao.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#INDIABloc #ElectionCommission #GyaneshKumar #DelhiNews #Opposition",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/gyanesh-kumar-news-live-updates-india-bloc-march-cjp-protest-jantar-mantar-form-6-sc-abhijeet-dipke-rahul-gandhi-eci-cec-101791255458441.html",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The article says the promotion was put on hold at the officer's own request. It does not say the complaint caused the hold, and the harassment claim is an allegation that should be attributed.",
-    "Caption: The caption says there are traffic curbs near Connaught Place and Patel Chowk. The article text we were given doesn't mention traffic curbs or Patel Chowk, so check this against the Hindustan Times source before posting. Connaught Place appears in the article only as ACP Vivek Bhagat's posting.",
-    "Slide 3: The slide says 'hazaaron nahi, sainkdon' security personnel. The article says only 'hundreds', so this wording is awkward. The 'permission nahi mili' line applies only to the activist delegation's Jantar Mantar protest call, not to all protesters.",
-    "Slide 1: The cover photo is a collage. One panel shows a woman striking a bus window, which could suggest violence by protesters that the article doesn't report. Check that the image really comes from this protest."
-   ],
-   "fixed": [
-    "ACP Vivek Bhagat ka promotion hold par hai, kyunki ek mahila journalist ne unpar harassment ki complaint ki hai. → ACP Vivek Bhagat ka promotion unki request par hold kiya gaya hai. Ek mahila journalist ne unke khilaaf harassment ka aarop lagate hue complaint ki hai."
-   ]
-  },
-  "slides": [
-   "posts/20261006-0432-5d41429879fd-s2.jpg",
-   "posts/20261006-0432-5d41429879fd-s3.jpg",
-   "posts/20261006-0432-5d41429879fd-s4.jpg",
-   "posts/20261006-0432-5d41429879fd-s5.jpg",
-   "posts/20261006-0432-5d41429879fd-s6.jpg",
-   "posts/20261006-0432-5d41429879fd-s7.jpg"
-  ],
-  "created_at": "2026-10-06T04:32:12+00:00"
  }
 ]
