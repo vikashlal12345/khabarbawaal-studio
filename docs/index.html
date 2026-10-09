@@ -96,6 +96,11 @@
   .media-preview img { height: 84px; border-radius: 8px; }
   .overlay-text { margin: 8px 12px 0; padding: 10px 12px; border-radius: 10px; background: #1d1d1d; font-size: 14px; }
   .overlay-text b { color: var(--accent); }
+  .songs { margin: 8px 12px 0; padding: 10px 12px; border-radius: 10px; background: #1d1d1d; font-size: 14px; }
+  .songs b { color: var(--accent); }
+  .songs button { display: block; width: 100%; text-align: left; margin-top: 6px; padding: 8px 10px;
+    background: #262626; color: #eee; border: 1px solid #333; border-radius: 8px; font-size: 14px; }
+  .songs small { color: var(--muted); }
   .sheet-box .row { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
   .sheet-box button { border: 0; border-radius: 10px; padding: 13px; font-size: 15px; font-weight: 700; background: #262626; color: var(--text); }
   .sheet-box button.primary { background: var(--accent); color: #000; }
@@ -307,6 +312,9 @@ function render() {
       ${proofHtml(p)}
       ${p.kind === 'ready' ? (p.valid_on ? '<div class="proof check">📅 Post today only: it\'s about today\'s date.</div>' : '<div class="proof none">📦 Ready post: evergreen, post it any time.</div>') : ''}
       ${p.overlay_text ? `<div class="overlay-text"><b>🎬 Text on video:</b> ${esc(p.overlay_text)}</div>` : ''}
+      ${p.songs && p.songs.length ? `<div class="songs"><b>🎵 Song ideas</b> <small>tap to copy, then search in Instagram (↗ = trending there)</small>${
+        p.songs.map((s, i) => `<button data-act="song" data-song="${i}">${s.lang === 'hindi' ? '🇮🇳' : '🌍'} ${esc(s.title)}: ${esc(s.artist)}${
+          s.mood ? ` <small>· ${esc(s.mood)}</small>` : ''}</button>`).join('')}</div>` : ''}
       <div class="caption">${esc(p.caption)}</div>
       <div class="actions">
         <button class="primary" data-act="share">${p.media === 'video' ? '💾 Cover' : '📤 Post'}</button>
@@ -331,6 +339,11 @@ feedEl.addEventListener('click', e => {
   const act = e.target.closest('[data-act]')?.dataset.act;
   if (act === 'share') share(post);
   else if (act === 'copy') copyCaption(post);
+  else if (act === 'song') {
+    const s = post.songs[+e.target.closest('[data-song]').dataset.song];
+    navigator.clipboard.writeText(`${s.title} ${s.artist.split(',')[0]}`)
+      .then(() => toast(`🎵 Copied "${s.title}": paste it in Instagram's music search`), () => toast('Could not copy'));
+  }
   else if (act === 'comment') copyComment(post);
   else if (act === 'overlay') navigator.clipboard.writeText(post.overlay_text)
     .then(() => toast('Text copied: add it on the video with Instagram\'s Aa tool'), () => toast('Could not copy'));

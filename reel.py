@@ -347,7 +347,16 @@ clip_search: 3 different searches for the stock site, 1-3 plain English words ea
 clip_wanted: one line describing the ideal clip.
 caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia)."""
 
+SONGS = {"type": "array", "description": "2 Hindi + 2 English songs that suit this Reel's mood, copied exactly "
+         "from today's trending lists",
+         "items": {"type": "object", "properties": {
+             "title": {"type": "string"}, "artist": {"type": "string"},
+             "lang": {"type": "string", "enum": ["hindi", "english"]},
+             "mood": {"type": "string", "description": "2-4 words, e.g. 'funny, upbeat drop'"}},
+             "required": ["title", "artist", "lang", "mood"], "additionalProperties": False}}
+
 _COMMON = {
+    "songs": SONGS,
     "based_on": {"type": "string", "description": "The trend/topic or everyday moment this joke is about"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the text to colour"},
     "clip_search": {"type": "array", "items": {"type": "string"}},
@@ -382,8 +391,10 @@ NEWS_OPTION = {"type": "object", "properties": {
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
-    "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"}},
-    "required": ["pick", "tag", "end_text", "highlight", "caption", "pin_comment", "hashtags", "photo_query", "wiki_title"],
+    "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
+    "songs": SONGS},
+    "required": ["pick", "tag", "end_text", "highlight", "caption", "pin_comment", "hashtags", "photo_query", "wiki_title",
+                 "songs"],
     "additionalProperties": False}
 
 
@@ -405,6 +416,7 @@ def write_joke(kind: str, state: dict) -> dict:
              "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
     searches = fun.google_trends()
+    songs = trending_songs()
     user = (f"{fun.today_context()}\n{style}\n\n"
             "What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
             "\n\nToday's big headlines (use only ones nearly everyone knows):\n" +
@@ -413,7 +425,7 @@ def write_joke(kind: str, state: dict) -> dict:
             ("\n".join(f"- {t}" for t in (state.get("fun_topics", []) + state.get("reel_topics", []))[-30:]) or "(none)") +
             "\n\nRecent Reels (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in state.get("recent_reels", [])[-20:]) or "(none)") +
             "\n\nWrite exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
-            "relatable desi-life moments (different situations).")
+            "relatable desi-life moments (different situations)." + songs_prompt(songs))
     model = CONFIG.get("membership_model", "sonnet")
     option = CLIP_OPTION if kind == "reel_clip" else MEME_OPTION
     options = fun.claude_json(system, user, options_schema(option, "Exactly 3 different jokes"), model,
@@ -431,7 +443,50 @@ def write_joke(kind: str, state: dict) -> dict:
     best = fun.judge_best(options, text_of, model)
     print(f"  reel joke based on: {best['based_on']}")
     roman_only(best, ["caption", "pin_comment"])
+    best["songs"] = checked_songs(best.get("songs", []), songs)
     return best
+
+
+def trending_songs() -> dict[str, list[tuple[str, str]]]:
+    """Today's trending Hindi and English songs on JioSaavn (free, no key): {lang: [(title, artist)]}."""
+    import html
+    import requests
+    out = {}
+    for lang in ("hindi", "english"):
+        try:
+            r = requests.get("https://www.jiosaavn.com/api.php", headers=UA, timeout=20, params={
+                "__call": "content.getTrending", "entity_type": "song", "entity_language": lang,
+                "_format": "json", "_marker": "0", "api_version": "4", "ctx": "web6dot0"})
+            items = [s for s in r.json() if s.get("type") == "song"]
+        except Exception as e:
+            print(f"  ! trending {lang} songs failed: {e}")
+            items = []
+        out[lang] = [(html.unescape(s["title"]),
+                      ", ".join(a["name"] for a in s.get("more_info", {}).get("artistMap", {}).get("primary_artists", [])[:2])
+                      or html.unescape(s.get("subtitle", "")).split(" - ")[0])
+                     for s in items][:25]
+    return out
+
+
+def songs_prompt(songs: dict) -> str:
+    if not any(songs.values()):
+        return ""
+    lists = "\n".join(f"{lang.title()}:\n" + "\n".join(f"- {t} | {a}" for t, a in songs[lang]) for lang in songs if songs[lang])
+    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Hindi + 2 English songs from these trending "
+            "lists that suit the mood (funny, dramatic, chill, hype...). Copy title and artist exactly; no other songs.\n"
+            + lists)
+
+
+def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
+    """Keep only songs that are really on today's lists (max 2 per language), with the list's spelling."""
+    out, seen = [], set()
+    for s in picked:
+        lang = s.get("lang", "")
+        match = next(((t, a) for t, a in songs.get(lang, []) if t.lower() == s.get("title", "").strip().lower()), None)
+        if match and match[0] not in seen and sum(o["lang"] == lang for o in out) < 2:
+            seen.add(match[0])
+            out.append({"title": match[0], "artist": match[1], "lang": lang, "mood": s.get("mood", "")[:40]})
+    return out
 
 
 def roman_only(post: dict, fields: list[str]) -> None:
@@ -540,6 +595,7 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     cid = pick_clip(post, state.get("reel_clips", []))
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
+    songs = post.pop("songs", [])   # kept out of the proofreader's text
     if kind == "reel_clip":
         dur = min(CLIP_SECONDS, secs - 0.2)
         start = max(0.0, min(1.0, secs - dur - 0.2))
@@ -557,7 +613,7 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         "headline": printable(text).replace("\n", " "),
         "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind == "reel_clip" else "MEME"),
         "caption": g.fun_caption(post), "source": "KhabarBawaal Original", "source_url": "",
-        "pin_comment": post.get("pin_comment", ""), "proof": proof})
+        "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof})
 
 
 NEWS_SYSTEM = """You make the evening news REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
@@ -582,8 +638,10 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     if not stories:
         raise RuntimeError("no news posts from today to make a Reel from")
     listing = "\n".join(f"{n}. [{p['tag']}] {p['headline']}" for n, p in enumerate(stories, 1))
+    songs = trending_songs()
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
-                              f"{fun.today_context()}\n\nToday's stories:\n{listing}\n\nGive your top 3 picks.",
+                              f"{fun.today_context()}\n\nToday's stories:\n{listing}\n\nGive your top 3 picks."
+                              + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
     for opt in options:
@@ -602,6 +660,7 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         raise RuntimeError("no story had 2+ good photos")
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "end_text"])
+    picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
     images = [(img, whole) for img, _, _, whole in photos]
     data = {"post": opt, "slides": [{"n": i, "credit": c, "text": t} for i, (_, c, t, _) in enumerate(photos)]}
     out = os.path.join(tmp, "reel.mp4")
@@ -621,7 +680,7 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     save_reel(feed, state, frames[0], out, f"reel_news-{today}", {
         "headline": story["headline"], "tag": "🎬 REEL · " + post["tag"],
         "caption": g.full_caption(post, item), "source": story["source"], "source_url": story["source_url"],
-        "pin_comment": post.get("pin_comment", ""), "proof": proof})
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
 
 
 def make(kind: str, state: dict, feed: list) -> bool:
