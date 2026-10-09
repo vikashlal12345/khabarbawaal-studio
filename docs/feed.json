@@ -1,20 +1,54 @@
 [
  {
-  "id": "reel-test-1",
-  "image": "posts/20261009-1525-reel-test-1.jpg",
-  "video": "posts/20261009-1525-reel-test-1.mp4",
+  "id": "reel-clip-1",
+  "image": "posts/20261009-1542-reel-clip-1.jpg",
+  "video": "posts/20261009-1542-reel-clip-1.mp4",
   "kind": "reel",
   "media": "reel",
-  "headline": "Wo dost jo bolta hai 'Bas 5 min mein nikal raha hoon'",
-  "tag": "🎬 REEL · TEST",
-  "caption": "Har group mein ek aisa banda hota hai jiska '5 min' = 1 ghanta 😭⏰\nTag karo usko, aaj expose karte hain 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#tagthatfriend #desimemes #relatable #dostikimasti #reelsindia",
+  "headline": "Wo dost jo bed se text karta hai: 'Bhai nikal gaya, 5 min mein pahunch raha hoon'",
+  "tag": "🎬 REEL 1/3 · CLIP",
+  "caption": "Har group mein ek aisa banda hota hai jiska '5 min' = 1 ghanta 😭\nTag karo usko, aaj expose karte hain 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#tagthatfriend #desimemes #relatable #dostikimasti #reelsindia",
   "source": "KhabarBawaal Original",
   "source_url": "",
   "pin_comment": "Sach batao, tumhara '5 min' asli mein kitne ka hota hai? 😂👇",
   "proof": {
    "state": "none"
   },
-  "created_at": "2026-10-09T15:25:17+00:00"
+  "created_at": "2026-10-09T15:42:33+00:00"
+ },
+ {
+  "id": "reel-meme-2",
+  "image": "posts/20261009-1542-reel-meme-2.jpg",
+  "video": "posts/20261009-1542-reel-meme-2.mp4",
+  "kind": "reel",
+  "media": "reel",
+  "headline": "Alarm: 6:00, 6:05, 6:10... Me at 9:45 jab office 10 baje hai",
+  "tag": "🎬 REEL 2/3 · MEME",
+  "caption": "Snooze button humara sabse loyal dost hai 😭⏰\nTag karo us dost ko jo 5 alarm lagake bhi late hota hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #officelife #desimemes #reelsindia #mondaymood",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Tumhara record kitne snooze ka hai? 😂 Comment karo 👇",
+  "proof": {
+   "state": "none"
+  },
+  "created_at": "2026-10-09T15:42:32+00:00"
+ },
+ {
+  "id": "reel-news-3",
+  "image": "posts/20261009-1542-reel-news-3.jpg",
+  "video": "posts/20261009-1542-reel-news-3.mp4",
+  "kind": "reel",
+  "media": "reel",
+  "headline": "Thailand ki Queen Suthida ne khud fighter jet udaya",
+  "tag": "🎬 REEL 3/3 · NEWS SLIDESHOW",
+  "caption": "Ek Queen fighter jet SOLO uda rahi hai aur hum Uber mein bhi nervous ho jaate hain 😭✈️\n\nThailand ki Queen Suthida ne fighter jet mein solo flight li. Wo 2010 se pilot hain aur ab tak 1,188 ghante ki flying kar chuki hain.\n\nTumhara pehla reaction fighter jet mein kya hota? 👇\n\nFollow @khabarbawaal for daily bawaal 🔥\n\n#viral #trending #reelsindia #thailand #fighterjet",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/thailands-queen-suthida-takes-to-the-skies-for-solo-flight-in-fighter-jet-101791514425124.html",
+  "pin_comment": "Sach batao, fighter jet mein baithke tumhara pehla reaction kya hota? 😂👇",
+  "proof": {
+   "state": "none"
+  },
+  "created_at": "2026-10-09T15:42:31+00:00"
  },
  {
   "id": "877b6d2a7dd4",
