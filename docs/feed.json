@@ -1,5 +1,44 @@
 [
  {
+  "id": "c98a7611b240",
+  "kind": "custom",
+  "image": "posts/20261009-2047-c98a7611b240-1.jpg",
+  "options": [
+   "posts/20261009-2047-c98a7611b240-1.jpg",
+   "posts/20261009-2047-c98a7611b240-2.jpg",
+   "posts/20261009-2047-c98a7611b240-3.jpg"
+  ],
+  "slides": [
+   "posts/20261009-2047-c98a7611b240-s2.jpg",
+   "posts/20261009-2047-c98a7611b240-s3.jpg",
+   "posts/20261009-2047-c98a7611b240-s4.jpg",
+   "posts/20261009-2047-c98a7611b240-s5.jpg"
+  ],
+  "headline": "Shai Hope's Hundred Powers West Indies To Chase Down India's 249, Level Series 1-1",
+  "tag": "CRICKET",
+  "caption": "Bhai ye kya chase tha! 249 ka target aur West Indies ne bas 6 wickets se khel diya 😮\nShai Hope ne majestic hundred thok di, aur West Indies ne history rach di.\nIndia ka 249 ka total bhi kaam nahi aaya aur series ab 1-1 pe barabar hai.\nAb decider mein kaun jeetega? India ya West Indies? 🇮🇳/🌴\n\nFollow @khabarbawaal for daily updates.\nSource: news24online.com (link pinned in comments 👇)\n\n#cricket #indvswi #t20i #teamindia #trending",
+  "source": "news24online.com",
+  "source_url": "https://news24online.com/sports/cricket/ind-vs-wi-2nd-t20i-shai-hope-majestic-hundred-powers-west-indies-chase-down-250-target-to-level-series-1-1/940906/",
+  "pin_comment": "249 bhi kam pad gaya? Bowling ko lekar sabse bada sawaal yahi hai 😅 Aapke hisaab se gadbad kahan hui?",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Rutherford's role is not supported by the article or the ICC posts, so the claim is removed.",
+    "Fact corrected to match the article: Nothing in the article or the ICC posts supports a Rutherford performance. ICC says the chase was historic.",
+    "Fact corrected to match the article: The ICC graphic '100' marks the century milestone. It does not give his final score, so '100 runs' may be inaccurate.",
+    "Slide 1: Slide 1 says \"Source: India Today\". The caption says the source is news24online.com. The article's image credit is X. Pick one source and use it in both places.",
+    "Caption: The caption credits news24online.com, but slide 1 credits India Today. Make them match."
+   ],
+   "fixed": [
+    "Sherfane Rutherford ne bhi chase mein bada role nibhaya, series 1-1 → series ab 1-1 se barabar",
+    "saath mein Sherfane Rutherford ne bhi dhaaka machaya. → aur West Indies ne history rach di.",
+    "100 runon ki pari kheli → shandaar shatak jada",
+    "Unhone India ke khilaf shandaar shatak jada. → Unhone India ke khilaf shandaar shatak jama diya."
+   ]
+  },
+  "created_at": "2026-10-09T20:47:30+00:00"
+ },
+ {
   "id": "c9fbfeee72da",
   "image": "posts/20261009-2039-c9fbfeee72da.jpg",
   "kind": "custom",

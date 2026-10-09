@@ -1270,25 +1270,25 @@
    }
   },
   "create": {
-   "posts": 2,
-   "requests": 8,
-   "input": 24,
-   "output": 5038,
-   "cache_read": 25190,
-   "cache_write": 35503,
-   "value_usd": 0.1948,
+   "posts": 3,
+   "requests": 14,
+   "input": 44,
+   "output": 10431,
+   "cache_read": 45745,
+   "cache_write": 72929,
+   "value_usd": 0.4005,
    "by_purpose": {
     "writing": {
-     "requests": 3,
-     "tokens": 24069
+     "requests": 5,
+     "tokens": 39097
     },
     "photo check": {
-     "requests": 2,
-     "tokens": 11718
+     "requests": 3,
+     "tokens": 19043
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 22589
+     "requests": 5,
+     "tokens": 63630
     },
     "reel news script": {
      "requests": 1,
