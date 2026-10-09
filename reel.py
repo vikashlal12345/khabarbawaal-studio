@@ -172,10 +172,10 @@ def handle_tag(frame: Image.Image, y: int, fill="#FFFFFF", stroke=3) -> None:
 # ---------------------------------------------------------------- 1. clip + meme text
 
 def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlight: list[str],
-              out_mp4: str, crop_x: float = 0.5, text_top: int = 860) -> list[Image.Image]:
+              out_mp4: str, crop_x: float = 0.5, text_top: int = 960) -> list[Image.Image]:
     """Returns the frames to proofread: [cover] (all text shown)."""
     highlights = {norm(w) for phrase in highlight for w in phrase.split()}
-    lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 520, sizes=range(80, 40, -4))
+    lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 470, sizes=range(80, 40, -4))
     imgs = line_images(lines, fnt, line_h, "#FFFFFF", YELLOW, highlights, stroke=7)
     hook_img = pill(hook, font("Anton-Regular.ttf", 84), RED, "#FFFFFF", pad=(38, 12))
     foot = pill("TAG KARO USKO", font("Poppins-Bold.ttf", 46), YELLOW, "#111111", pad=(34, 16), arrow=True)
@@ -200,7 +200,7 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
         if k > 0:
             fy = int(text_top + len(lines) * line_h + 40 + 120 * (1 - k))
             frame.alpha_composite(foot, ((RW - foot.width) // 2, fy))
-        handle_tag(frame, 1680)
+        handle_tag(frame, 1730)
         if t >= dur - 1.0 and cover is None:
             cover = frame.convert("RGB")
         enc.add(frame)
