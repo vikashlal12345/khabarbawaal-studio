@@ -68,6 +68,8 @@ Night: 1:00 five 📦 ready posts (3 carousels + 2 timeless Reels) · 2:00 day p
 - App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
 - Data: `docs/feed.json` (3 days), `docs/ready.json`, `state/history.json`, `docs/stats/*.json`.
+- App memory (iPhone crashes): the app shows half-size previews `docs/posts/p/` (made/cleaned by `save.py`
+  `make_previews()`, needs Pillow), loads carousel slides on swipe, plays only the on-screen Reel, keeps ~12 posts' share files.
 - Config: `config.json` (feeds, colours, `inbox_topic` for ntfy.sh, counts).
 
 ## Secrets / Mac pieces
