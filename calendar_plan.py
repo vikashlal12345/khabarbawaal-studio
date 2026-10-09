@@ -33,7 +33,8 @@ def plan(state: dict) -> int:
         items = g.fetch_candidates(set())
     finally:
         g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = saved
-    slots = [f"{h:02d}:{m:02d}" for h, m in schedule.regular_times() if h >= 7]
+    slots = [f"{h:02d}:{m:02d}" for h, m in schedule.regular_times()
+             if h >= 7 and (h, m) not in schedule.SPECIALS.values()]   # not the 🎬 Reel hours
     lines = [f"- ({i['category']}) {i['title']}: {i['summary'][:160]}" for i in items[:70]]
     system = (f"You plan preview posts for {g.CONFIG['page_name']}, an Indian Instagram news page for Gen Z. "
               f"From the headlines, find events SCHEDULED FOR TODAY ({today:%A %d %B %Y}) that young Indians care about: "

@@ -205,10 +205,18 @@ def write_fun_post(config: dict, recent: list[str], trending: list[str], used_to
             "relatable desi-life moments (different situations).")
     model = config.get("membership_model", "sonnet")
     options = [normalize(o) for o in claude_json(system, user, OPTIONS_SCHEMA, model)["options"]][:3]
+    best = judge_best(options, lambda o: o["card_text"], model)
+    print(f"  joke based on: {best['based_on']}")
+    return best
+
+
+def judge_best(options: list[dict], text_of, model: str) -> dict:
+    """A strict 'young Indian' judge scores the options; the best clear (>=7) and funny (>=6) one wins.
+    Raises NoGoodJoke if none passes."""
     judge_system = ("You are a 21-year-old from Delhi who lives on Instagram memes. Rate each joke 1-10 for: "
                     "understandable (instantly gets it without any context or article), funny (would you actually "
                     "laugh / send it to your group), fresh (feels new, not an old forward). Be strict.")
-    listing = "\n\n".join(f"Option {n}: {o['card_text']}\n(topic: {o['based_on']})" for n, o in enumerate(options, 1))
+    listing = "\n\n".join(f"Option {n}: {text_of(o)}\n(topic: {o['based_on']})" for n, o in enumerate(options, 1))
     scores = claude_json(judge_system, listing, JUDGE_SCHEMA, model, purpose="joke judge")["scores"]
     best, best_score = None, -1
     for s in scores:
@@ -220,7 +228,6 @@ def write_fun_post(config: dict, recent: list[str], trending: list[str], used_to
             best, best_score = options[s["option"] - 1], total
     if best is None:
         raise NoGoodJoke("no joke was clear and funny enough")
-    print(f"  joke based on: {best['based_on']}")
     return best
 
 

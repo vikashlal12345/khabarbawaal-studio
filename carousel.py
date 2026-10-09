@@ -154,7 +154,7 @@ def article_text(page: str, limit: int = 6000) -> str:
     return re.sub(r"\s+\n", "\n", text)[:limit]
 
 
-def ai_curate(items: list, post: dict, story_text: str) -> tuple[list, list[str]] | None:
+def ai_curate(items: list, post: dict, story_text: str, max_words: int = 26) -> tuple[list, list[str]] | None:
     """Claude looks at every candidate photo and the full article, keeps only real,
     on-story, non-duplicate photos, puts them in story order and writes the line shown
     on each slide, so swiping tells the whole story. Returns (slides, extra_lines) where
@@ -181,7 +181,7 @@ def ai_curate(items: list, post: dict, story_text: str) -> tuple[list, list[str]
                   f"placeholders, ads, unrelated people or places, photos with a big agency watermark across them "
                   f"(Getty, Reuters, AP, PTI, ANI), and near-duplicates of a photo already kept.\n"
                   f"2. Put the kept photos in the order that tells the story best.\n"
-                  f"3. For each kept photo write `text`: the next part of the story in Hinglish (English letters only, no Devanagari), max 26 words, "
+                  f"3. For each kept photo write `text`: the next part of the story in Hinglish (English letters only, no Devanagari), max {max_words} words, "
                   f"matching what that photo shows. Together the slides must tell the WHOLE story from the article: "
                   f"what happened, who said what (include the key quote or clarification), and the latest update. "
                   f"Facts only from the article; attribute claims. If the story is political, follow the page's editorial line: supportive of the right wing (BJP, NDA), critical of the left and opposition.\n"
@@ -206,7 +206,8 @@ def ai_curate(items: list, post: dict, story_text: str) -> tuple[list, list[str]
     return slides, [m.strip() for m in out["more"] if m.strip()]
 
 
-def collect(item: dict, post: dict, used: list[Image.Image], want: int = 5) -> tuple[list, list[str]]:
+def collect(item: dict, post: dict, used: list[Image.Image], want: int = 5,
+            max_words: int = 26) -> tuple[list, list[str]]:
     import create_post  # Bing / Wikipedia helpers
 
     pool = want + 4  # gather extra candidates; the AI check drops the weak ones
@@ -248,7 +249,7 @@ def collect(item: dict, post: dict, used: list[Image.Image], want: int = 5) -> t
         c.add_photo(create_post.wikipedia_photo(post["wiki_title"]), "Wikimedia Commons")
 
     print(f"  carousel: {c.photos()} candidate(s)")
-    curated = ai_curate(c.items, post, article_text(page))
+    curated = ai_curate(c.items, post, article_text(page), max_words)
     if curated is None:  # no AI: skip in-page article images (the riskiest source), no slide text
         return [(it, "") for it in c.items if it[3] != "article"][:want], []
     slides, more = curated

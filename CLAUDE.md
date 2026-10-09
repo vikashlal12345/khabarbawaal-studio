@@ -30,6 +30,8 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 Quiet 11 PM-5 AM (night jobs only). Regular post **hourly at :00, 5:00-22:00** (every 3rd = fun).
 Specials: 5:00 overnight Top 5 roundup · 6:15 Top 5 Viral · 8:15 Market Brief · 9:09 Pre-open ·
 9:15 Thought of the Day · 15:45 Closing Bell · 21:15 Top 5 News (market posts trading days only).
+🎬 Reels replace the regular post at **7:00 (clip + "Tag that friend")**, **19:00 (meme)**, **20:00 (news photo
+slideshow)**; if a Reel can't be made, that slot posts a regular post.
 Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 4:00 learning.
 
 ## How it runs
@@ -50,6 +52,10 @@ Night: 1:00 five 📦 ready posts · 2:00 day planner (📅 previews) · 4:00 le
   allIndices, gainers/losers; CNBC quotes; BSE/Yahoo blocked) · `fun.py` (jokes + `claude_json` + usage log)
 - 🎬 Your video/photos (in ➕ Create): the app grabs 6 frames into one picture, uploads it to the ntfy inbox as a file,
   `create_post.make_media()` writes on-video text, caption, pinned comment + cover options; the owner posts the video from the gallery.
+- `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
+  (`fun.judge_best`), AI picks a Mixkit clip by title (free, no key), proofread on still frames; news = AI picks a
+  visual story from today's news posts, photos via `carousel.collect(max_words=14)`. Feed entry has `video`.
+  Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
@@ -70,5 +76,5 @@ then e.g. `.venv/bin/python generate.py --kind fun`; restore with
 `git checkout docs/feed.json state/ && git clean -fq docs/posts` before uploading.
 
 ## Open ideas (not built)
-Daily Reel · Cloudflare email login for the app ·
+Cloudflare email login for the app ·
 Instagram Graph API (shares/saves, auto post list).

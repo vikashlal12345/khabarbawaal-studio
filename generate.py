@@ -178,7 +178,7 @@ def recent_endings(n: int = 8) -> str:
     """Last caption lines of our newest posts, so the AI doesn't repeat the same style."""
     out = []
     for p in load_json(FEED_FILE, []):
-        if p.get("kind") in ("news", "custom", "fun"):
+        if p.get("kind") in ("news", "custom", "fun", "reel"):
             body = (p.get("caption") or "").split("\n\nFollow")[0].strip()
             if body:
                 out.append("- " + body.splitlines()[-1][:140])
@@ -814,14 +814,24 @@ def night_job(kind: str, state: dict) -> None:
     save_json(STATE_FILE, state)
 
 
-def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: list[str]) -> None:
-    """Top 10 carousels, the 5 AM roundup, Thought of the Day and market posts."""
+def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: list[str]) -> bool | None:
+    """Top 10 carousels, the 5 AM roundup, Thought of the Day, market posts and 🎬 Reels.
+    False means a Reel couldn't be made (the slot then gets a regular post)."""
     import schedule
     import specials
 
     if kind in schedule.NIGHT_JOBS:
         night_job(kind, state)
         return
+
+    if kind.startswith("reel_"):
+        import reel
+        state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()   # one try a day
+        save_json(STATE_FILE, state)
+        if not reel.make(kind, state, feed):
+            return False
+        resolved += ["token", "limit", "ai-error"]
+        return True
 
     if kind == "thought":
         out = specials.make_thought(state)
@@ -851,7 +861,8 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
     parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
                                            "market_open", "market_preopen", "market_close", "night_roundup",
-                                           "night_ready", "night_calendar", "night_jokes", "night_learn"],
+                                           "night_ready", "night_calendar", "night_jokes", "night_learn",
+                                           "reel_clip", "reel_meme", "reel_news"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
@@ -875,9 +886,10 @@ def main() -> int:
     import fun
     if special:
         fun.CURRENT_JOB = special
-        make_special(special, state, feed, raised, resolved)
-        write_alerts(raised, resolved)
-        return 0
+        if make_special(special, state, feed, raised, resolved) is not False:
+            write_alerts(raised, resolved)
+            return 0
+        print("No Reel this time: making a regular post for this slot instead.")
 
     # 📅 A planned preview for this slot (made like a ➕ Create post).
     import calendar_plan
