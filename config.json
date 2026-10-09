@@ -9,7 +9,7 @@
   "membership_token_days": 365,
   "caption_language": "Hinglish (Hindi written in English letters mixed with simple English), Gen Z tone",
   "max_posts_kept": 150,
-  "keep_days": 3,
+  "keep_days": 1,
   "inbox_topic": "kb-inbox-d29294d0e65aa1ec00ad30e6",
   "fun_every": 3,
   "ready_per_night": 5,
