@@ -23,7 +23,7 @@ import os
 import shutil
 import subprocess
 
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from generate import CONFIG, LOGO_FILE, font, norm, printable, wrap_words
 
@@ -563,10 +563,10 @@ def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
 
 
 def roman_only(post: dict, fields: list[str]) -> None:
-    """Captions must be English (Roman) letters only: if Hindi script slipped in, the AI rewrites those fields."""
+    """Captions must be English (Roman) letters only: if Hindi, Urdu or other non-Roman script slipped in, the AI rewrites those fields."""
     import re
     import fun
-    bad = [f for f in fields if re.search(r"[\u0900-\u097F]", post.get(f, ""))]
+    bad = [f for f in fields if re.search(r"[\u0590-\u08FF\u0900-\u0DFF]", post.get(f, ""))]
     if not bad:
         return
     schema = {"type": "object", "properties": {f: {"type": "string"} for f in bad},
@@ -576,7 +576,7 @@ def roman_only(post: dict, fields: list[str]) -> None:
                             json.dumps({f: post[f] for f in bad}, ensure_ascii=False), schema,
                             CONFIG.get("membership_model", "sonnet"), purpose="roman letters")
     for f in bad:
-        if not re.search(r"[\u0900-\u097F]", fixed.get(f, "")):
+        if not re.search(r"[\u0590-\u08FF\u0900-\u0DFF]", fixed.get(f, "")):
             post[f] = fixed[f]
             print(f"  {f}: Hindi script rewritten in English letters")
 
@@ -1100,7 +1100,7 @@ def commons_images(queries: list[str]) -> list[dict]:
     return out
 
 
-def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str]]:
+def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
     """The AI looks at the free Krishna-Arjuna images and picks the 2 most beautiful, on-topic ones
     (not used recently). Returns [(image, credit)]."""
     import generate as g
@@ -1116,8 +1116,11 @@ def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str]]:
     loaded = []
     for c in cands[:14]:
         try:
-            time.sleep(0.6)
+            time.sleep(1.2)
             r = requests.get(c["url"], headers=ua, timeout=30)
+            if r.status_code == 429:   # Wikimedia: too many requests, wait and try once more
+                time.sleep(6)
+                r = requests.get(c["url"], headers=ua, timeout=30)
             r.raise_for_status()
             img = Image.open(io.BytesIO(r.content))
             img.load()
@@ -1131,105 +1134,243 @@ def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str]]:
         loaded.append((name, img, c))
     if not loaded:
         raise RuntimeError("no free Krishna-Arjuna images found on Wikimedia Commons")
-    schema = {"type": "object", "properties": {"best": {"type": "array", "items": {"type": "string"},
-              "description": "File names, best first (max 2)"}}, "required": ["best"], "additionalProperties": False}
+    schema = {"type": "object", "properties": {"best": {"type": "array", "description": "Best first (max 2)", "items": {
+              "type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
+              "description": "Horizontal position (0 = left, 1 = right) of Krishna and Arjuna, to centre a tall crop"}},
+              "required": ["file", "focus"], "additionalProperties": False}}}, "required": ["best"], "additionalProperties": False}
     best = fun.claude_json("You choose background images for a respectful Bhagavad Gita Instagram Reel.",
                            f"Candidate images: {', '.join(n for n, _, _ in loaded)}. Open each with the Read tool. "
                            "Pick the 2 most beautiful, striking images that clearly show Lord Krishna with Arjuna "
                            "(chariot, Kurukshetra battlefield, Gita Upadesh). Reject photos of people/actors/events, "
-                           "plain buildings, book covers, text-heavy, blurry, side-by-side duplicated (stereo) or "
-                           "collage images. Paintings are best. Empty list if none fits.",
+                           "plain buildings, book covers, manuscript pages with writing, text-heavy, blurry, side-by-side "
+                           "duplicated (stereo) or collage images. Colourful paintings with large figures are best. "
+                           "Empty list if none fits.",
                            schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="gita image pick")["best"]
-    chosen = [(img, c) for n in best for name, img, c in loaded if name == n][:2]
+    chosen = [(img, c, min(1.0, max(0.0, float(b["focus"])))) for b in best for name, img, c in loaded
+              if name == b["file"]][:2]
     if not chosen:
         raise RuntimeError("no suitable Krishna-Arjuna image among the free ones")
-    state["gita_images_used"] = (used + [c["title"] for _, c in chosen])[-20:]
-    print("  Gita images: " + " | ".join(c["title"][:50] for _, c in chosen))
-    return [(img.convert("RGB"), c["credit"]) for img, c in chosen]
+    state["gita_images_used"] = (used + [c["title"] for _, c, _ in chosen])[-20:]
+    print("  Gita images: " + " | ".join(f"{c['title'][:45]} (focus {f:.2f})" for _, c, f in chosen))
+    return [(img.convert("RGB"), c["credit"], f) for img, c, f in chosen]
 
 
-def gita_reel(images: list[tuple[Image.Image, str]], verse: str, shloka: str, hook: str, lesson: str, real_life: str,
-              highlight: list[str], out_mp4: str) -> list[Image.Image]:
-    """Krishna-Arjuna painting(s) slowly zooming (wide paintings sit whole on a blurred copy), with
-    1) the real-life hook, 2) Krishna's lesson + verse, 3) what it means today, 4) 'send this' ending.
-    Returns frames to proofread (one per part)."""
-    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
-    phases = [3.5, 6.0, 4.5, 2.0]
-    starts = [sum(phases[:i]) for i in range(len(phases) + 1)]
-    band_h, band_y, text_y = 760, 250, 1060
+GOLD, CREAM = "#F5C26B", "#FFF4DD"
 
-    def background(img: Image.Image) -> tuple[Image.Image, Image.Image | None]:
-        k = max(RW / img.width, RH / img.height)
-        bg = img.resize((int(img.width * k) + 1, int(img.height * k) + 1)).crop((0, 0, RW, RH))
-        bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(30)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
-        return bg, img
-    bgs = [background(img) for img, _ in images]
-    credits = [c for _, c in images]
-    tag = pill("GITA GYAAN", font("Anton-Regular.ttf", 60), SAFFRON, "#111111", pad=(28, 8))
-    texts = []
-    for t, room in ((hook, 470), (lesson, 380), (real_life, 470)):   # the lesson shares room with its header + verse
-        lines, fnt, lh = fit_lines(t, RIGHT - LEFT, room, sizes=range(76, 40, -4))
-        texts.append((line_images(lines, fnt, lh, "#FFFFFF", SAFFRON, highlights, stroke=6), lh))
-    small = font("Poppins-SemiBold.ttf", 34)
-    cta = pill("SEND THIS TO SOMEONE WHO NEEDS IT", font("Poppins-Bold.ttf", 38), SAFFRON, "#111111", pad=(28, 16), arrow=True)
-    logo = logo_img()
-    enc, checks, frame = Encoder(out_mp4), [], None
-    for i in range(int(starts[-1] * FPS)):
-        t = i / FPS
-        ph = sum(t >= s_ for s_ in starts[1:])
-        lt = t - starts[ph]
-        n = 0 if ph < 2 or len(bgs) == 1 else 1      # 2nd painting for the 'today' part
-        bg, img = bgs[n]
-        frame = bg.convert("RGBA")
-        z = 1.0 + 0.08 * (t / starts[-1])
-        kk = min(RW / img.width, band_h / img.height) * z
-        pic = img.resize((int(img.width * kk), int(img.height * kk)), Image.BICUBIC)
-        if pic.width > RW or pic.height > band_h:   # crop the zoom to the band
-            x0, y0 = max(0, (pic.width - RW) // 2), max(0, (pic.height - band_h) // 2)
-            pic = pic.crop((x0, y0, x0 + min(RW, pic.width), y0 + min(band_h, pic.height)))
-        frame.paste(pic, ((RW - pic.width) // 2, band_y + (band_h - pic.height) // 2))
-        if n == 1 and lt < 0.6 and ph == 2:          # crossfade into the 2nd painting
-            prev = bgs[0][0].convert("RGBA")
-            frame = Image.blend(prev, frame, lt / 0.6)
-        if logo:
-            frame.alpha_composite(logo, (60, 150))
-        frame.alpha_composite(tag, (RW - tag.width - 60, 140))
-        d = ImageDraw.Draw(frame)
-        d.text((RW - 60, band_y + band_h + 8), f"Image: {credits[n]}"[:80], font=font("Poppins-SemiBold.ttf", 20),
-               fill="#BBBBBB", anchor="ra")
-        if ph < 3:
-            imgs, lh = texts[ph]
-            y = text_y
-            if ph == 1:
-                d.text((LEFT, y), "Krishna ne Arjun se kaha:", font=small, fill=SAFFRON)
-                y += 60
-                if shloka:
-                    d.text((LEFT, y), printable(shloka)[:60], font=font("Poppins-SemiBold.ttf", 30), fill="#FFE0B2")
-                    y += 52
-            for j, li in enumerate(imgs):
-                paste_pop(frame, li, LEFT, y + j * lh, (lt - 0.15 - j * 0.2) / 0.3)
-            if ph == 1:
-                d.text((LEFT, y + len(imgs) * lh + 16), f"Bhagavad Gita {verse}", font=small, fill=SAFFRON)
-            if lt >= phases[ph] - 0.15 and len(checks) == ph:
-                checks.append(frame.convert("RGB"))
+
+def vfont(name: str, size: int, weight: str = "") -> ImageFont.FreeTypeFont:
+    """Variable Google fonts (Playfair Display, Cinzel, Lora) at a named weight."""
+    from generate import FONTS
+    f = ImageFont.truetype(str(FONTS / name), size)
+    if weight:
+        try:
+            f.set_variation_by_name(weight)
+        except Exception:
+            pass
+    return f
+
+
+def glow_line(text: str, fnt, fill: str, glow: int = 16) -> Image.Image:
+    """One centred text line with a soft dark glow behind it (no hard outline)."""
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    l, t, r, b = probe.textbbox((0, 0), text, font=fnt)
+    pad = glow * 3
+    img = Image.new("RGBA", (r - l + 2 * pad, b - t + 2 * pad), (0, 0, 0, 0))
+    shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).text((pad - l, pad - t), text, font=fnt, fill=(0, 0, 0, 235))
+    img.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(glow)))
+    ImageDraw.Draw(img).text((pad - l, pad - t), text, font=fnt, fill=fill)
+    return img
+
+
+def wrap_centre(text: str, fnt, max_w: int) -> list[str]:
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    lines, cur = [], ""
+    for word in printable(text).split():
+        trial = (cur + " " + word).strip()
+        if cur and probe.textlength(trial, font=fnt) > max_w:
+            lines.append(cur)
+            cur = word
         else:
-            k = ease_out(lt / 0.4)
-            frame.alpha_composite(cta, ((RW - cta.width) // 2, int(text_y + 120 + 120 * (1 - k))))
-        handle_tag(frame, 1730)
+            cur = trial
+    if cur:
+        lines.append(cur)
+    if len(lines) > 1 and len(lines[-1].split()) == 1:   # no lone last word
+        prev = lines[-2].split()
+        lines[-2], lines[-1] = " ".join(prev[:-1]), prev[-1] + " " + lines[-1]
+    return lines
+
+
+def read_time(text: str) -> float:
+    """Seconds to read a line comfortably twice-ish (Hinglish ~3 words/s) + a calm hold."""
+    return max(2.4, len(text.split()) / 3.2 + 1.2)
+
+
+def faded(img: Image.Image, a: float) -> Image.Image:
+    if a >= 1:
+        return img
+    out = img.copy()
+    out.putalpha(out.getchannel("A").point(lambda v: int(v * max(0.0, a))))
+    return out
+
+
+def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: str, hook: str, lesson: str,
+              real_life: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
+    golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
+    hook → Shri Krishna kehte hain + shloka → lesson + verse → (2nd painting) Aaj ki seekh → send this.
+    images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread."""
+    import random
+
+    def graded(img: Image.Image, focus: float) -> Image.Image:
+        zmax = 1.12
+        k = max(RW / img.width, RH / img.height) * zmax
+        big = img.resize((int(img.width * k) + 2, int(img.height * k) + 2), Image.LANCZOS)
+        cw, ch = int(RW * zmax), int(RH * zmax)
+        x0 = int(min(max(0, big.width * focus - cw / 2), big.width - cw))
+        big = big.crop((x0, (big.height - ch) // 2, x0 + cw, (big.height - ch) // 2 + ch))
+        return Image.blend(big, Image.new("RGB", big.size, "#3a2000"), 0.18)    # warm golden grade
+
+    bases = [graded(img, focus) for img, _, focus in images]
+    credits = [c for _, c, _ in images]
+    # Overlay: soft dark edges + dark lower part where the text sits.
+    shade = Image.new("L", (RW, RH), 0)
+    ImageDraw.Draw(shade).ellipse((-RW * 0.35, -RH * 0.15, RW * 1.35, RH * 1.05), fill=255)
+    shade = shade.filter(ImageFilter.GaussianBlur(160)).point(lambda v: 255 - v)
+    grad = Image.new("L", (1, RH))
+    for y in range(RH):
+        lower = 248 * min(1.0, max(0.0, (y - RH * 0.33) / (RH * 0.27)))   # text area: nearly black
+        top = 170 * max(0.0, 1 - y / 360)                                 # behind "GITA GYAAN"
+        grad.putpixel((0, y), int(max(lower, top)))
+    alpha = Image.composite(Image.new("L", (RW, RH), 255), shade, grad.resize((RW, RH)))
+    overlay = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    overlay.putalpha(alpha)
+
+    head = glow_line("GITA  GYAAN", vfont("Cinzel-Variable.ttf", 58, "Bold"), GOLD)
+    body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
+    lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
+    small_gold = vfont("Cinzel-Variable.ttf", 40, "SemiBold")
+    shloka_f = vfont("Lora-Variable.ttf", 46, "Medium")
+    hl = {norm(w) for phrase in highlight for w in phrase.split()}
+
+    def lines_of(text, fnt, color):
+        out = []
+        for ln in wrap_centre(text, fnt, RW - 200):
+            gold = any(norm(w) in hl for w in ln.split())
+            out.append(glow_line(ln, fnt, GOLD if gold else color))
+        return out
+
+    # Parts: (start, list of (y, image, appear_at)), plus fade-out time.
+    gap, pause = 0.45, 0.35
+    parts, t = [], 0.6
+    hook_l = lines_of(hook, body, CREAM)
+    y0 = 1330 - len(hook_l) * 50
+    items = [(y0 + i * int(body.size * 1.3), im, t + i * gap) for i, im in enumerate(hook_l)]
+    end = t + len(hook_l) * gap + read_time(hook)
+    parts.append((items, end))
+    t = end + 0.5 + pause
+    items, y = [], 1060
+    items.append((y, glow_line("SHRI KRISHNA KEHTE HAIN", small_gold, GOLD), t)); y += 85
+    sh_lines = [x.strip() for x in printable(shloka).replace("|", "\n").split("\n") if x.strip()][:2]
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    for i, ln in enumerate(sh_lines):
+        size = 46
+        while size > 26 and probe.textlength(ln, font=vfont("Lora-Variable.ttf", size, "Medium")) > RW - 140:
+            size -= 2
+        items.append((y, glow_line(ln, vfont("Lora-Variable.ttf", size, "Medium"), "#FFE3A8"), t + 0.5 + i * gap)); y += 62
+    shloka_hold = 1.8 if sh_lines else 0.5
+    t2 = t + 0.5 + len(sh_lines) * gap + shloka_hold
+    y += 10
+    divider_y = y
+    y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
+    les = lines_of(lesson, lesson_f, CREAM)
+    for i, im in enumerate(les):
+        items.append((y, im, t2 + i * gap)); y += int(lesson_f.size * 1.32)
+    items.append((y + 20, glow_line(f"—  Bhagavad Gita {verse}", vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
+                  t2 + len(les) * gap))
+    end = t2 + len(les) * gap + read_time(lesson)
+    parts.append((items, end))
+    divider = (divider_y, t2 - 0.2, end)
+    t = end + 0.5 + pause
+    switch = t - 0.2                                     # 2nd painting cross-fades in here
+    items, y = [], 1200
+    items.append((y, glow_line("AAJ KI SEEKH", vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
+    take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
+    for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
+        items.append((y, im, t + 0.8 + i * gap)); y += int(take_f.size * 1.3)
+    end = t + 0.8 + len(items) * gap + read_time(real_life)
+    parts.append((items, end))
+    cta_at = end + 0.3
+    cta = glow_line("Send this to someone who needs it", vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
+    handle = glow_line(CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
+    total = cta_at + 3.0
+
+    random.seed(7)
+    dust = [(random.uniform(0, RW), random.uniform(300, 1700), random.uniform(-14, -40), random.choice((2, 3, 4)),
+             random.randint(70, 200)) for _ in range(46)]
+    enc, checks, frame = Encoder(out_mp4), [], None
+    check_at = [parts[0][1] - 0.2, parts[1][1] - 0.2, parts[2][1] - 0.2, total - 0.1]
+    for i in range(int(total * FPS)):
+        t = i / FPS
+        n = 1 if len(bases) > 1 and t >= switch else 0
+        z = 1.0 + 0.10 * t / total                       # slow zoom in
+        b = bases[n]
+        cw, ch = int(RW * 1.12 / z), int(RH * 1.12 / z)
+        x0, y0 = (b.width - cw) // 2, (b.height - ch) // 2
+        bg = b.crop((x0, y0, x0 + cw, y0 + ch)).resize((RW, RH), Image.BILINEAR)
+        if n == 1 and t < switch + 1.0:                  # slow cross-fade
+            p = bases[0]
+            prev = p.crop((x0, y0, x0 + cw, y0 + ch)).resize((RW, RH), Image.BILINEAR)
+            bg = Image.blend(prev, bg, (t - switch) / 1.0)
+        frame = bg.convert("RGBA")
+        frame.alpha_composite(overlay)
+        d = ImageDraw.Draw(frame)
+        for x, y, v, r, a in dust:                       # golden dust drifting up
+            yy = (y + v * t) % 1500 + 250
+            d.ellipse((x - r, yy - r, x + r, yy + r), fill=(245, 194, 107, a))
+        frame.alpha_composite(head, ((RW - head.width) // 2, 210 - head.height // 2))
+        hy = 210
+        d.line((250, hy, 395, hy), fill=GOLD, width=2)
+        d.line((RW - 395, hy, RW - 250, hy), fill=GOLD, width=2)
+        start = 0.0
+        for items, end in parts:
+            if start - 0.1 <= t <= end + 0.5:
+                out_a = 1.0 if t <= end else 1 - (t - end) / 0.5
+                for y, im, at in items:
+                    a = min(1.0, max(0.0, (t - at) / 0.6)) * out_a
+                    if a > 0:
+                        frame.alpha_composite(faded(im, a), ((RW - im.width) // 2, int(y - im.height / 2)))
+            start = end + 0.5
+        dy, d0, d1 = divider
+        if d0 <= t <= d1 + 0.5:
+            a = min(1.0, (t - d0) / 0.6) * (1.0 if t <= d1 else 1 - (t - d1) / 0.5)
+            d.line((RW // 2 - 90, dy, RW // 2 + 90, dy), fill=(245, 194, 107, int(255 * a)), width=2)
+        if t >= cta_at:
+            a = min(1.0, (t - cta_at) / 0.7)
+            frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, 1380 - cta.height // 2))
+            frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, 1470 - handle.height // 2))
+        ImageDraw.Draw(frame).text((RW - 40, RH - 40), f"Image: {credits[n]}"[:80], font=font("Poppins-SemiBold.ttf", 20),
+                                   fill="#9a8f7a", anchor="rd")
+        if len(checks) < len(check_at) and t >= check_at[len(checks)]:
+            checks.append(frame.convert("RGB"))
         enc.add(frame)
     enc.close()
-    checks.append(frame.convert("RGB"))
+    while len(checks) < 4:
+        checks.append(frame.convert("RGB"))
     return checks
 
 
 GITA_OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string", "description": "The life situation or trending topic this lesson is about"},
     "verse": {"type": "string", "description": "Chapter.verse of the Bhagavad Gita, e.g. 2.47"},
-    "shloka": {"type": "string", "description": "First line of the shloka in Roman letters (max 8 words), or empty if unsure"},
-    "hook": {"type": "string", "description": "The real-life situation as a question/line, max 12 words, e.g. "
-             "'Interview mein reject ho gaye aur himmat toot gayi?'"},
-    "lesson": {"type": "string", "description": "What Krishna tells Arjuna in this verse, simple Hinglish, max 26 words"},
-    "real_life": {"type": "string", "description": "What it means for you today, practical, max 22 words"},
+    "shloka": {"type": "string", "description": "The shloka's first two half-lines in Roman letters, separated by ' | ' "
+               "(max 12 words), or empty if unsure of the exact words"},
+    "hook": {"type": "string", "description": "A feeling the viewer knows, max 11 words, with a natural pause '...', e.g. "
+             "'Gusse mein kuch keh diya... aur baad mein pachtaye?'"},
+    "lesson": {"type": "string", "description": "What Krishna says in this verse, simple poetic Hinglish, max 20 words. "
+               "It is shown under 'SHRI KRISHNA KEHTE HAIN', so don't start with 'Krishna kehte hain'"},
+    "real_life": {"type": "string", "description": "'Aaj ki seekh': one line people want to save, max 18 words, e.g. "
+                  "'Jawab kal bhi diya ja sakta hai, shabd wapas nahi aate.'"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "caption": {"type": "string"}, "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
@@ -1241,14 +1382,15 @@ GITA_SYSTEM = """You write a daily Bhagavad Gita Reel for {page}, an Indian Inst
 (Hinglish in English letters only, never Devanagari). Each Reel: a real-life situation young Indians face \
 (exams, jobs, breakups, money, family pressure, failure, comparison, anger, overthinking) or a widely-known \
 trending topic of the day, then ONE lesson Krishna gives Arjuna, then what it means in practice today.
+Write it like poetry, not a lecture: short lines, warm words, natural pauses ("..."). \
 Rules: the lesson must truly match the chapter.verse you cite (use well-known verses you are sure of; leave \
 shloka empty if unsure of the exact words). Reverent and warm tone: never joke about Krishna or the Gita, no \
 politics, no tragedies, nothing against any religion or community. Make it something people send to a friend \
 who needs it. Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line invites a comment or a send."""
 
 GITA_JUDGE = ("You are a 22-year-old Indian who loves Gita Reels on Instagram. Rate each Reel 1-10 for: "
-              "understandable (the lesson is clear from the Reel alone), funny (here: how much it moves or helps you, "
-              "would you send it to someone), fresh (not a tired motivational line). Be strict.")
+              "understandable (the lesson is clear from the Reel alone), funny (here: how beautiful and moving the "
+              "lines are, would you save it or send it to someone), fresh (not a tired motivational line). Be strict.")
 
 
 def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
@@ -1274,7 +1416,7 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
         o["caption"] = unescape(o["caption"])
     best = fun.judge_best(options, lambda o: f"{o['hook']} -> Krishna: {o['lesson']} (Gita {o['verse']}) -> {o['real_life']}",
                           CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE)
-    roman_only(best, ["caption", "pin_comment"])
+    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life", "shloka"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     out = os.path.join(tmp, "reel.mp4")
     status.step("Making the video + proofreading", 5)
