@@ -1426,6 +1426,29 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "news": {
+   "posts": 1,
+   "requests": 4,
+   "input": 14,
+   "output": 4160,
+   "cache_read": 16404,
+   "cache_write": 37679,
+   "value_usd": 0.194,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 10261
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 9563
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 38433
+    }
+   }
   }
  }
 }
