@@ -1,52 +1,48 @@
 [
  {
   "id": "reel_politics-2026-10-10",
-  "image": "posts/20261010-1232-reel_politics-2026-10-10.jpg",
+  "image": "posts/20261010-1248-reel_politics-2026-10-10.jpg",
   "kind": "reel",
   "media": "reel",
-  "video": "posts/20261010-123219-reel_politics-2026-10-10.mp4",
-  "headline": "Congress ka formula: Jeeto toh janta ki jeet, haaro toh system ki galti",
+  "video": "posts/20261010-124846-reel_politics-2026-10-10.mp4",
+  "headline": "Opposition ki ekta: Chunav haaro, phir Election Commission ko hatao",
   "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "Result mein haar, blame mein hamesha jeet 😂\nPehle EVM, ab SIR. Agla bahana kya hoga?\nApna prediction comment karo, aur dost ko bhejo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SIR #INDIAbloc #Congress #funnyreels #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/genesis/dhami-questions-congress-led-opposition-to-sir-says-voter-roll-revision-is-not-new-101791630385158.html",
-  "pin_comment": "Agla bahana kya hoga? Best guess likho 👇",
+  "caption": "Kharge ne kaha 'Muzzled Democracy', par Bihar mein 202 seat NDA ko mili 🤷\nOpposition ka formula: haaro toh EC ko hatao.\nUs dost ko tag karo jo exam mein fail hokar paper check karne wale ko dosh deta hai!\n\nFollow @khabarbawaal for daily updates.\nSource: The Times of India (link pinned in comments 👇)\n\n#congress #kharge #election #politicalmemes #reelsindia",
+  "source": "The Times of India",
+  "source_url": "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
+  "pin_comment": "Agla bahana kya hoga? Comment karo",
   "songs": [
+   {
+    "title": "Tere Bina",
+    "artist": "Arijit Singh, Aakanksha Sharma",
+    "lang": "hindi",
+    "mood": "dramatic, ironic"
+   },
    {
     "title": "Boom Shaka",
     "artist": "Dhanda Nyoliwala, KR$NA",
     "lang": "hindi",
-    "mood": "hype, savage"
+    "mood": "funny, upbeat drop"
    },
    {
-    "title": "Teen Baan Ke Dhari",
-    "artist": "Chotu Singh Rawna",
-    "lang": "hindi",
-    "mood": "dramatic, bold"
-   },
-   {
-    "title": "Dracula",
-    "artist": "Tame Impala",
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
     "lang": "english",
-    "mood": "dramatic, groovy"
+    "mood": "hype, dramatic"
    },
    {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
     "lang": "english",
-    "mood": "funny, upbeat"
+    "mood": "chill, playful"
    }
   ],
   "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The line 'Telangana, Karnataka mein jeet par kisi ne list pe sawal nahi uthaya' is not in the article. It is stated as fact with no attribution and no source. Verify it, attribute it, or remove it.",
-    "Slide 2: The Bihar 2025 figures (NDA 202 of 243 seats) are not in the article, but the slide credits Hindustan Times. These figures appear to match the real result, but confirm them against a source. Don't present them as coming from the HT article.",
-    "Caption: The caption says 'Source: Hindustan Times', but the Telangana/Karnataka and Bihar claims are not in that article. The sourcing is misleading unless those claims are sourced separately."
-   ],
+   "state": "ok",
+   "issues": [],
    "fixed": []
   },
-  "created_at": "2026-10-10T12:32:19+00:00"
+  "created_at": "2026-10-10T12:48:46+00:00"
  },
  {
   "id": "367929ead359",

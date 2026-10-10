@@ -882,30 +882,46 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
 
 # ---------------------------------------------------------------- 4. political satire + reality check (6 PM)
 
-def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], facts: list[str], source: str,
-                highlight: list[str], out_mp4: str) -> list[Image.Image]:
-    """Meme part: the party's claim/action over a reaction clip; then a REALITY CHECK card where the
-    facts pop in one by one; then a 'send this' ending. Returns frames to proofread: [claim, facts]."""
+def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], context: list[str],
+                facts: list[dict], punchline: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """1) the dig over a reaction clip (meme layout), 2) KYA HUA? plain context, 3) REALITY CHECK: recent
+    facts, each with its own source, 4) the punchline on yellow, 5) 'send this'. Each part stays long enough
+    to read. Returns frames to proofread: [hook, context, facts, punchline]."""
     highlights = {norm(w) for phrase in highlight for w in phrase.split()}
     clip_w, clip_h = RW, int(RW * 9 / 16)
     clip_y, text_bottom = 1000, 960
     c_lines, c_fnt, c_lh = fit_lines("\n".join(claim), RIGHT - LEFT, 520, sizes=range(84, 44, -4))
     c_imgs = line_images(c_lines, c_fnt, c_lh, "#111111", RED, highlights)
-    fact_blocks = []
+    k_lines, k_fnt, k_lh = fit_lines("\n".join(context), RIGHT - LEFT, 760, sizes=range(64, 38, -2))
+    k_imgs = line_images(k_lines, k_fnt, k_lh, "#FFFFFF", YELLOW, highlights)
+    blocks = []
     for f in facts:
-        lines, fnt, lh = fit_lines(f, RIGHT - LEFT - 70, 300, sizes=range(58, 36, -2))
+        lines, fnt, lh = fit_lines(f["fact"], RIGHT - LEFT - 70, 300, sizes=range(54, 34, -2))
         nums = {norm(w) for line in lines for w in line if any(ch.isdigit() for ch in w)}
-        fact_blocks.append((line_images(lines, fnt, lh, "#FFFFFF", YELLOW, highlights | nums), lh))
-    head = pill("REALITY CHECK", font("Anton-Regular.ttf", 96), YELLOW, "#111111", pad=(40, 14))
+        blocks.append((line_images(lines, fnt, lh, "#FFFFFF", YELLOW, highlights | nums), lh, printable(f["source"])[:60]))
+    p_lines, p_fnt, p_lh = fit_lines(punchline, RIGHT - LEFT, 700, sizes=range(96, 48, -4))
+    p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, highlights)
+    kya = pill("KYA HUA?", font("Anton-Regular.ttf", 84), "#FFFFFF", "#111111", pad=(36, 12))
+    head = pill("REALITY CHECK", font("Anton-Regular.ttf", 92), YELLOW, "#111111", pad=(40, 14))
     cta = pill("SEND THIS TO THAT ONE FRIEND", font("Poppins-Bold.ttf", 40), RED, "#FFFFFF", pad=(30, 16), arrow=True)
+    src_f = font("Poppins-SemiBold.ttf", 26)
     logo = logo_img()
-    per_fact = 2.4
-    total = clip_dur + per_fact * len(facts) + 1.8
+
+    def secs(text: str) -> float:          # time to read comfortably (~3.5 words/s + a short hold)
+        return max(2.0, len(text.split()) / 3.5 + 0.9)
+    t_ctx = clip_dur
+    d_ctx = 0.5 + secs(" ".join(context))
+    t_facts = t_ctx + d_ctx
+    per = [0.4 + secs(f["fact"]) for f in facts]
+    t_punch = t_facts + 0.4 + sum(per)
+    d_punch = 0.4 + secs(punchline)
+    total = t_punch + d_punch + 2.0
     enc, checks, frame = Encoder(out_mp4), [], None
+    marks = [t_ctx - 0.2, t_facts - 0.2, t_punch - 0.2, t_punch + d_punch - 0.2]
     shots = clip_frames(clip, start, clip_dur, clip_w, clip_h)
     for i in range(int(total * FPS)):
         t = i / FPS
-        if t < clip_dur:
+        if t < t_ctx:                                   # 1) the dig over the clip
             shot = next(shots, None)
             frame = Image.new("RGBA", (RW, RH), "#FFFFFF")
             if logo:
@@ -916,10 +932,19 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], fact
             if shot is not None:
                 frame.paste(shot, (0, clip_y))
             handle_tag(frame, clip_y + clip_h + 70, fill="#111111", stroke=0)
-            if len(checks) == 0 and t >= clip_dur - 0.2:
-                checks.append(frame.convert("RGB"))
-        else:
-            lt = t - clip_dur
+        elif t < t_facts:                               # 2) KYA HUA?
+            lt = t - t_ctx
+            frame = Image.new("RGBA", (RW, RH), "#1b1b1b")
+            if logo:
+                frame.alpha_composite(logo, (60, 150))
+            k = ease_out_back(lt / 0.4)
+            frame.alpha_composite(kya, ((RW - kya.width) // 2, int(330 - 160 * (1 - k))))
+            y0 = 330 + kya.height + 80
+            for j, img in enumerate(k_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * k_lh, (lt - 0.3 - j * 0.15) / 0.3)
+            handle_tag(frame, 1730)
+        elif t < t_punch:                               # 3) REALITY CHECK, one fact at a time
+            lt = t - t_facts
             frame = Image.new("RGBA", (RW, RH), "#111111")
             if logo:
                 frame.alpha_composite(logo, (60, 150))
@@ -927,21 +952,37 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], fact
             frame.alpha_composite(head, ((RW - head.width) // 2, int(300 - 200 * (1 - k))))
             y = 300 + head.height + 70
             d = ImageDraw.Draw(frame)
-            for j, (imgs, lh) in enumerate(fact_blocks):
-                p = (lt - 0.4 - j * per_fact) / 0.3
+            at = 0.4
+            for (imgs, lh, src), dur in zip(blocks, per):
+                p = (lt - at) / 0.3
                 if p > 0:
                     d.ellipse((LEFT, y + lh // 2 - 14, LEFT + 28, y + lh // 2 + 14), fill=YELLOW)
                 for n, img in enumerate(imgs):
                     paste_pop(frame, img, LEFT + 60, y + n * lh, p)
-                y += len(imgs) * lh + 40
-            d.text((LEFT, min(y + 10, 1500)), f"Source: {source}", font=font("Poppins-SemiBold.ttf", 28), fill="#9a9a9a")
-            k = ease_out((lt - per_fact * len(facts)) / 0.4)
-            if k > 0:
-                frame.alpha_composite(cta, ((RW - cta.width) // 2, int(1560 + 120 * (1 - k))))
+                y += len(imgs) * lh + 8
+                if p > 0.5:
+                    d.text((LEFT + 60, y), f"Source: {src}", font=src_f, fill="#9a9a9a")
+                y += 70
+                at += dur
             handle_tag(frame, 1730)
+        else:                                           # 4) punchline, 5) send this
+            lt = t - t_punch
+            frame = Image.new("RGBA", (RW, RH), YELLOW)
+            if logo:
+                frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+            y0 = (RH - len(p_imgs) * p_lh) // 2 - 120
+            for j, img in enumerate(p_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * p_lh, (lt - j * 0.15) / 0.3)
+            k = ease_out((lt - d_punch) / 0.4)
+            if k > 0:
+                frame.alpha_composite(cta, ((RW - cta.width) // 2, int(y0 + len(p_imgs) * p_lh + 90 + 100 * (1 - k))))
+            handle_tag(frame, 1730, fill="#111111", stroke=0)
+        if len(checks) < len(marks) and t >= marks[len(checks)]:
+            checks.append(frame.convert("RGB"))
         enc.add(frame)
     enc.close()
-    checks.append(frame.convert("RGB"))
+    while len(checks) < 4:
+        checks.append(frame.convert("RGB"))
     return checks
 
 
@@ -952,42 +993,58 @@ POLITICS_OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string", "description": "The party and its action this joke is about"},
     "party": {"type": "string"},
     "claim": {"type": "array", "items": {"type": "string"}, "description":
-              "1-3 short lines (max 22 words total) shown over the clip: what the party said or did, with a "
-              "funny dig, e.g. [\"Congress:\", \"'Hum hi asli garibon ki party hain'\"]. Quote only if the article "
-              "quotes it, else paraphrase. No emojis."},
-    "facts": {"type": "array", "items": {"type": "string"}, "description":
-              "REALITY CHECK: 2-3 facts (max 16 words each, Hinglish) that show why they are wrong or hypocritical. "
-              "From the article, or certain, widely reported public record (election results, official data). "
-              "No invented numbers or quotes. No emojis."},
-    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from claim/facts"},
+              "The hook over the clip: 1-3 short lines (max 18 words total), a funny dig at what they did, e.g. "
+              "[\"Congress ka formula:\", \"Jeeto toh janta ki jeet, haaro toh system ki galti\"]. No emojis."},
+    "context": {"type": "array", "items": {"type": "string"}, "description":
+                "'KYA HUA?': 2 short lines (max 28 words total) so a stranger understands: who (full name + role on "
+                "first mention, e.g. 'Uttarakhand CM Pushkar Singh Dhami'), what they did, when ('is hafte', 'kal'), "
+                "and explain every term in brackets (e.g. 'SIR (voter list ki jaanch)'). Natural Hinglish: "
+                "'X ne kaha', 'X ke mutabik', never 'X ke as per'. No emojis."},
+    "facts": {"type": "array", "description": "REALITY CHECK: 2 recent facts (2024-2026, with month/year) that "
+              "CONTRADICT their claim or show their hypocrisy (e.g. their own past actions, election results, court or "
+              "official decisions). NEVER repeat their own statements, slogans or accusations as facts.",
+              "items": {"type": "object", "properties": {
+                  "fact": {"type": "string", "description": "Max 14 words, Hinglish, with month/year, e.g. "
+                           "'Nov 2025 Bihar chunav: NDA ne 243 mein se 202 seat jeeti'"},
+                  "source": {"type": "string", "description": "Where it is reported: the article's site, or e.g. "
+                             "'Election Commission' for official results"}},
+                  "required": ["fact", "source"], "additionalProperties": False}},
+    "punchline": {"type": "string", "description": "The big funny closing line, max 14 words, e.g. "
+                  "'Jeet pe EVM mahaan, haar pe EVM shaitaan'. No emojis."},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "clip_search": {"type": "array", "items": {"type": "string"},
                     "description": "3 searches for a REACTION stock clip (laughing, facepalm, shocked, eye roll...)"},
     "clip_wanted": {"type": "string"},
     "caption": {"type": "string"}, "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},
-    "required": ["based_on", "party", "claim", "facts", "highlight", "clip_search", "clip_wanted", "caption",
-                 "pin_comment", "hashtags", "songs"], "additionalProperties": False}
+    "required": ["based_on", "party", "claim", "context", "facts", "punchline", "highlight", "clip_search",
+                 "clip_wanted", "caption", "pin_comment", "hashtags", "songs"], "additionalProperties": False}
 
 POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
 (English letters only, never Devanagari). The page is pro right-wing (BJP, NDA) and mocks the opposition: \
-{targets}. Take the story about their LATEST action or statement, make a sharp, funny dig, then a REALITY CHECK \
-with real facts that show why they are wrong or hypocritical. Make it something people SEND to friends.
-Hard rules: real facts only (from the article, or certain and widely reported public record); quotes only if the \
-article has them; attribute claims ("as per ..."). Mock their politics and actions only: never religion, caste, \
-region, community, family, looks or health; no slurs, no abuse, no calls to violence; nothing that embarrasses the BJP.
-Make it instantly clear: tie the latest action to a running joke about them that young Indians already know \
-(e.g. blaming EVMs after losing, "Sheesh Mahal", free-everything promises, foreign trips before results, \
-U-turns), so the Reel alone is enough to get it. Short and punchy beats clever and long.
-Caption: 2-4 short Hinglish lines, 1-3 emojis, last line makes people comment or send it."""
+{targets}. Structure: a sharp funny dig (hook) -> KYA HUA? (plain context so ANYONE gets it without reading the \
+news) -> REALITY CHECK (recent facts with month/year and a source that CONTRADICT their claim or expose their \
+hypocrisy, never their own lines) -> a big funny punchline. Keep it tight: the whole Reel is read in ~25 seconds. Make it something \
+people SEND to friends.
+Make it instantly clear: name people with their role, explain every term, say when it happened. Tie it to a \
+running joke young Indians already know (blaming EVMs after losing, "Sheesh Mahal", free-everything promises, \
+foreign trips before results, U-turns) and use RECENT examples (2024-2026).
+Hard rules: real facts only, from the articles given or certain, widely reported public record (election results, \
+official data) with the right source; quotes only if an article has them; attribute claims ("X ne kaha", \
+"X ke mutabik"). Mock their politics and actions only: never religion, caste, region, community, family, looks \
+or health; no slurs, no abuse, no calls to violence; nothing that embarrasses the BJP.
+Caption: 2-4 short Hinglish lines with the context in one line, 1-3 emojis, last line makes people comment or send it."""
 
-SATIRE_JUDGE = ("You are a 22-year-old Indian who follows politics memes on Instagram. Rate each political satire "
-                "Reel 1-10 for: understandable (you get the dig from the Reel alone, knowing the usual news), funny "
-                "(would you send it to your group), fresh (not a tired old line). Be strict.")
+SATIRE_JUDGE = ("You are a 22-year-old Indian on Instagram who did NOT read today's news. Rate each political satire "
+                "Reel 1-10 for: understandable (from the Reel alone you know who did what and why it's funny, and the "
+                "reality check really proves them wrong), funny (would you send it to your group), fresh (not a tired "
+                "old line). Be strict.")
 
 
 def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    """🎬 6 PM: a dig at the opposition's latest action + a REALITY CHECK with real facts."""
+    """🎬 6 PM: a dig at the opposition's latest action, the context, a REALITY CHECK with recent sourced facts
+    and a punchline."""
     from datetime import datetime, timedelta, timezone
     import carousel
     import create_post
@@ -1010,7 +1067,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     picks = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
                             f"{fun.today_context()}\n\nStories:\n{listing}\n\nRank the 3 best stories about "
                             f"{POLITICS_TARGETS} for a funny reality-check Reel. Prefer BIG stories most young Indians "
-                            f"already know (a stranger must get the joke without reading the article). Empty if none.",
+                            f"already know. Empty if none.",
                             {"type": "object", "properties": {"picks": {"type": "array", "items": {"type": "integer"}}},
                              "required": ["picks"], "additionalProperties": False},
                             CONFIG.get("membership_model", "sonnet"), purpose="satire pick")["picks"]
@@ -1019,29 +1076,37 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         raise RuntimeError("no story about the opposition today")
     songs = trending_songs()
     best = None
-    for n in picks:   # the jokes must pass the judge; else try the next story
+    for n in picks:   # the Reel must pass the judge; else try the next story
         story = stories[n - 1]
         article = carousel.article_text(carousel.page_html(story["url"])) or story["title"]
-        status.step(f"Writing 3 digs: {story['title'][:60]}", 3)
+        # Background: related recent coverage, so the Reel has real context and recent examples.
+        related = [a for a in create_post.bing_articles(story["title"][:90], limit=6) if a["url"] != story["url"]][:3]
+        background = []
+        for a in related:
+            text = carousel.article_text(carousel.page_html(a["url"]), limit=2500)
+            background.append(f"({a['site']}) {a['title']}\n{text}" if text else f"({a['site']}) {a['title']}")
+        sources = f"MAIN ({story['site']}): {story['title']}\n{article[:5000]}\n\nRELATED:\n" + "\n\n".join(background)
+        status.step(f"Writing 3 Reels: {story['title'][:60]}", 3)
         options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
-                                  f"{fun.today_context()}\n\nStory ({story['site']}): {story['title']}\n\nArticle:\n{article[:5000]}"
-                                  f"\n\nWrite exactly 3 different Reels about this story." + songs_prompt(songs),
+                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\nWrite exactly 3 different Reels "
+                                  "about the MAIN story." + songs_prompt(songs),
                                   options_schema(POLITICS_OPTION, "Exactly 3 different Reels"),
                                   CONFIG.get("membership_model", "sonnet"), purpose="satire writing")["options"][:3]
         for o in options:
             o["caption"] = unescape(o["caption"])
         try:
-            best = fun.judge_best(options, lambda o: " ".join(o["claim"]) + " -> REALITY CHECK: " + " | ".join(o["facts"]),
+            best = fun.judge_best(options, lambda o: " ".join(o["claim"]) + " | KYA HUA: " + " ".join(o["context"])
+                                  + " | REALITY CHECK: " + " / ".join(f["fact"] for f in o["facts"]) + " | " + o["punchline"],
                                   CONFIG.get("membership_model", "sonnet"), judge_system=SATIRE_JUDGE)
             break
         except fun.NoGoodJoke:
-            print(f"  jokes for '{story['title'][:50]}' weren't clear/funny enough: trying the next story")
+            print(f"  Reels for '{story['title'][:50]}' weren't clear/funny enough: trying the next story")
     if best is None:
-        raise RuntimeError("the jokes for today's opposition stories weren't clear or funny enough")
-    roman_only(best, ["caption", "pin_comment"])
+        raise RuntimeError("the Reels for today's opposition stories weren't clear or funny enough")
+    roman_only(best, ["caption", "pin_comment", "punchline"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
-    best["facts"] = best["facts"][:3]
-    cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": " ".join(best["facts"])}, state)
+    best["facts"] = best["facts"][:2]
+    cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
     clip, secs = download_clip(cid, tmp)
     clip_dur = min(4.5, secs - 0.2)
     start = max(0.0, secs - clip_dur - 0.2)
@@ -1049,9 +1114,11 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     item = {"link": story["url"], "source": story["site"], "title": story["title"]}
     status.step("Making the video + fact-checking", 5)
     frames, data, proof = proofread.run(
-        lambda d: satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["facts"], story["site"],
-                              d["post"]["highlight"], out),
-        {"post": best}, lambda d: g.full_caption(d["post"], item), article)
+        lambda d: satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
+                              d["post"]["punchline"], d["post"]["highlight"], out),
+        {"post": best}, lambda d: g.full_caption(d["post"], item),
+        sources + "\n\n(Facts may also come from certain, widely reported public record such as official election "
+        "results, if the source shown says so.)")
     post = data["post"]
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
