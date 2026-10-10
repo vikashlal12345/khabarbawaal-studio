@@ -1515,6 +1515,37 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 7,
+   "input": 16,
+   "output": 6952,
+   "cache_read": 6400,
+   "cache_write": 44823,
+   "value_usd": 0.2495,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 1,
+     "tokens": 7101
+    },
+    "satire writing": {
+     "requests": 2,
+     "tokens": 21996
+    },
+    "joke judge": {
+     "requests": 2,
+     "tokens": 12447
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 6115
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 10532
+    }
+   }
   }
  }
 }

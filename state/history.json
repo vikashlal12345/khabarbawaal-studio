@@ -248,7 +248,8 @@
   "market_preopen": "2026-10-10",
   "thought": "2026-10-10",
   "reel_clip": "2026-10-10",
-  "reel_clip_am": "2026-10-10"
+  "reel_clip_am": "2026-10-10",
+  "reel_politics": "2026-10-10"
  },
  "inbox_since": "DjwyXjauwtKk",
  "used_otps": [
@@ -341,7 +342,8 @@
   "12851",
   "50753",
   "31413",
-  "42136"
+  "42136",
+  "8741"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -360,7 +362,8 @@
   "13168": "Mixkit Restricted License",
   "36425": "Mixkit Restricted License",
   "31413": "Free",
-  "42136": "Free"
+  "42136": "Free",
+  "8741": "Free"
  },
  "create_done": [
   "1791580482",
@@ -378,5 +381,8 @@
   "Gita 6.5: Overthinking aur bechaini: man shaant nahi hota, raat ko khayal chalte rehte hain",
   "Gita 3.35: Dusron se tulna: Instagram par sabki zindagi mujhse behtar lagti hai",
   "Gita 6.17: Weekend ki thakaan: kaam aur aaram ka santulan, burnout"
+ ],
+ "reel_politics_used": [
+  "https://www.hindustantimes.com/genesis/dhami-questions-congress-led-opposition-to-sir-says-voter-roll-revision-is-not-new-101791630385158.html"
  ]
 }

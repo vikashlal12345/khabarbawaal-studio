@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_politics-2026-10-10",
+  "image": "posts/20261010-1232-reel_politics-2026-10-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261010-123219-reel_politics-2026-10-10.mp4",
+  "headline": "Congress ka formula: Jeeto toh janta ki jeet, haaro toh system ki galti",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Result mein haar, blame mein hamesha jeet 😂\nPehle EVM, ab SIR. Agla bahana kya hoga?\nApna prediction comment karo, aur dost ko bhejo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SIR #INDIAbloc #Congress #funnyreels #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/genesis/dhami-questions-congress-led-opposition-to-sir-says-voter-roll-revision-is-not-new-101791630385158.html",
+  "pin_comment": "Agla bahana kya hoga? Best guess likho 👇",
+  "songs": [
+   {
+    "title": "Boom Shaka",
+    "artist": "Dhanda Nyoliwala, KR$NA",
+    "lang": "hindi",
+    "mood": "hype, savage"
+   },
+   {
+    "title": "Teen Baan Ke Dhari",
+    "artist": "Chotu Singh Rawna",
+    "lang": "hindi",
+    "mood": "dramatic, bold"
+   },
+   {
+    "title": "Dracula",
+    "artist": "Tame Impala",
+    "lang": "english",
+    "mood": "dramatic, groovy"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "funny, upbeat"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The line 'Telangana, Karnataka mein jeet par kisi ne list pe sawal nahi uthaya' is not in the article. It is stated as fact with no attribution and no source. Verify it, attribute it, or remove it.",
+    "Slide 2: The Bihar 2025 figures (NDA 202 of 243 seats) are not in the article, but the slide credits Hindustan Times. These figures appear to match the real result, but confirm them against a source. Don't present them as coming from the HT article.",
+    "Caption: The caption says 'Source: Hindustan Times', but the Telangana/Karnataka and Bihar claims are not in that article. The sourcing is misleading unless those claims are sourced separately."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T12:32:19+00:00"
+ },
+ {
   "id": "367929ead359",
   "image": "posts/20261010-1131-367929ead359.jpg",
   "kind": "news",
@@ -757,54 +806,5 @@
    "fixed": []
   },
   "created_at": "2026-10-09T13:31:21+00:00"
- },
- {
-  "id": "ff2a2c29c259",
-  "image": "posts/20261009-1231-ff2a2c29c259.jpg",
-  "kind": "news",
-  "headline": "Indian-Origin Ex-Amazon AI Chief Rohit Prasad Named CEO Of Hyundai-Owned Boston Dynamics",
-  "tag": "TECH",
-  "caption": "Ek aur Indian-origin banda Big Tech ki kursi pe 🤖\nRohit Prasad, jo pehle Amazon mein AI executive the, ab Boston Dynamics ke naye CEO bane hain.\nYe wahi humanoid robot banane wali company hai jiske robots internet pe dance karte viral hote hain.\nCompany ab Hyundai ke ownership mein hai.\nAgar main Boston Dynamics ka CEO hota to sabse pehle robot se ____ karwata\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tech #trending #india #ai #robotics",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/who-is-rohit-prasad-the-indian-origin-former-amazon-ai-executive-now-leading-humanoid-robot-maker-boston-dynamics-101791544430837.html",
-  "pin_comment": "Kal tak Alexa sikha rahe the, ab robots sikhayenge. Career growth ho to aisi 😭🤖",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 3: The man in this photo (credited to The Hans India) looks like a different person from the Rohit Prasad on slides 1 and 2. Check that the photo really shows Prasad before posting. If it doesn't, replace it or remove the slide and keep its text."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261009-1231-ff2a2c29c259-s2.jpg",
-   "posts/20261009-1231-ff2a2c29c259-s3.jpg",
-   "posts/20261009-1231-ff2a2c29c259-s4.jpg",
-   "posts/20261009-1231-ff2a2c29c259-s5.jpg"
-  ],
-  "created_at": "2026-10-09T12:31:16+00:00"
- },
- {
-  "id": "3e51dea447a3",
-  "image": "posts/20261009-1131-3e51dea447a3.jpg",
-  "kind": "news",
-  "headline": "Ram Madhav Targets Rahul Gandhi Over Musk Post, Says No Starlink Spectrum Discrimination",
-  "tag": "POLITICS",
-  "caption": "Elon Musk ki post aayi aur Rahul Gandhi pe seedha nishana lag gaya 👀\nBJP leader Ram Madhav ne kaha ki India \"banana republic\" nahi hai.\nUnke mutabiq Starlink ke saath koi discrimination nahi ho raha.\nJio aur Airtel jaisi companies bhi spectrum allocation ka wait kar rahi hain.\n\"Banana republic\" wali line pe 🔥 ya 🤡?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#india #trending #starlink #rahulgandhi #bjp",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/starlink-india-elon-musk-license-rahul-gandhi-bjp-ram-madhav-101791542801383.html",
-  "pin_comment": "Sabse interesting part: Jio, Airtel aur Starlink, teeno line mein hain. Spectrum pe sabka number aayega ya nahi? 🤔",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The headline block starts around the speaker's mouth and chin. Part of the lower face is covered by 'RAM MADHAV TARGETS' and the lines below it. The eyes and forehead are clear. If you can, move the text lower or shift the photo up."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261009-1131-3e51dea447a3-s2.jpg",
-   "posts/20261009-1131-3e51dea447a3-s3.jpg",
-   "posts/20261009-1131-3e51dea447a3-s4.jpg"
-  ],
-  "created_at": "2026-10-09T11:31:30+00:00"
  }
 ]
