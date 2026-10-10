@@ -45,24 +45,54 @@
   .rep { display: flex; flex-direction: column; gap: 8px; }
   .rep .line { display: flex; gap: 10px; align-items: baseline; }
   .rep .line b { min-width: 24px; }
+  .slot { display: grid; grid-template-columns: 52px minmax(0,1fr) auto; gap: 8px; align-items: center;
+    padding: 9px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .slot:first-of-type { border-top: 0; }
+  .slot .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .slot .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .slot .why { grid-column: 2 / 4; color: var(--amber); font-size: 12px; margin-top: -4px; }
+  .chip { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #262626; color: var(--muted); white-space: nowrap; }
+  .chip.made { color: var(--text); } .chip.posted { background: rgba(61,220,132,.14); color: var(--green); }
+  .chip.warn { background: rgba(255,176,32,.14); color: var(--amber); } .chip.bad { background: rgba(229,9,20,.16); color: #ff6b6b; }
+  .chips { display: flex; gap: 6px; justify-content: flex-end; }
+  .sub { font-size: 14px; font-weight: 700; margin: 16px 0 6px; }
+  .chart { position: relative; margin-top: 10px; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .tip { position: absolute; pointer-events: none; background: #000; border: 1px solid var(--line); border-radius: 8px;
+    padding: 4px 8px; font-size: 12px; white-space: nowrap; transform: translate(-50%, -110%); display: none; }
+  .hbar { display: grid; grid-template-columns: 124px minmax(0,1fr) 92px; gap: 8px; align-items: center; margin: 8px 0; font-size: 14px; }
+  .hbar .track { height: 12px; background: #222; border-radius: 4px; overflow: hidden; }
+  .hbar .track i { display: block; height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+  .hbar .num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 13px; }
+  .best { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .best a { color: var(--text); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  details.more { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+  details.more summary { font-weight: 700; cursor: pointer; }
+  details.more section { border: 0; padding: 14px 0 0; background: none; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; }
+  table.data td, table.data th { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: left; }
   .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 </style>
 </head>
 <body>
 <header><a href="./" aria-label="Back">‹</a><h1>📊 Stats</h1></header>
 <main>
-  <section id="report"><h2>📋 Report</h2><div class="muted">Loading…</div></section>
-  <section id="insta"><h2>📈 Instagram</h2><div class="muted">Loading…</div></section>
-  <section id="boosts"><h2>🚀 Boosts</h2><div class="muted">Loading…</div></section>
-  <section id="plan"><h2>Claude plan usage</h2><div class="muted">Loading…</div></section>
-  <section id="capacity"><h2>Room for more posts</h2><div class="muted">Loading…</div></section>
-  <section id="robot"><h2>KhabarBawaal robot</h2><div class="muted">Loading…</div></section>
-  <section id="adhoc"><h2>Your own Claude use</h2><div class="muted">Loading…</div></section>
+  <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
+  <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
+  <section id="works"><h2>🏆 What works</h2><div class="muted">Loading…</div></section>
+  <section id="health"><h2>⚙️ Robot &amp; Claude plan</h2><div class="muted">Loading…</div></section>
+  <details class="more"><summary>Details (tokens, room for more posts, your own Claude use)</summary>
+    <section id="plan"></section>
+    <section id="capacity"></section>
+    <section id="robot"></section>
+    <section id="adhoc"></section>
+  </details>
 </main>
 <script>
-const JOB_NAMES = { news: 'News posts', fun: 'Fun posts', create: '➕ Create posts', top10_viral: 'Top 5 Viral',
-  top10_day: 'Top 5 News', thought: 'Thought of Day', market_open: 'Market Brief', market_preopen: 'Pre-open',
-  market_close: 'Closing Bell', 'fun bank': 'Joke bank', other: 'Other' };
+const JOB_NAMES = { news: '📰 News', create: '➕ Create', top10_day: '📰 Top 5 News', night_roundup: '🌅 Overnight Top 5',
+  reel_devotion: '🙏 Devotional Reel', reel_clip_am: '🎬 8 AM Reel', reel_clip: '🎬 1 PM Reel', reel_politics: '🎬 Reality check',
+  reel_meme: '🎬 Meme Reel', reel_news: '🎬 News Reel', night_ready: '📦 Ready (night)', night_calendar: '📅 Planner',
+  night_learn: '📊 Learning', calendar: '📅 Previews', fun: 'Fun (old)', other: 'Other' };
 const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(Math.round(n));
 const tokens = t => (t.input || 0) + (t.output || 0) + (t.cache_read || 0) + (t.cache_write || 0);
 // How much tokens count against the plan (same ratios as API pricing): cached reads are cheap,
@@ -82,118 +112,182 @@ function gauge(label, w) { const p = Math.round(w.pct);
     <div class="bar"><i style="width:${Math.min(p, 100)}%;background:${colour(p)}"></i></div>
     <div class="muted">Resets ${inIST(w.resets_at)}</div></div>`; }
 
+// Followers per day: one series (brand yellow), 2px line, 8px markers, recessive grid, hover tooltip, table view.
+function lineChart(pts) {
+  const W = 520, H = 160, L = 30, R = 10, T = 12, B = 26;
+  const ys = pts.map(p => p[1]), lo = Math.max(0, Math.min(...ys) - 2), hi = Math.max(...ys) + 2;
+  const x = i => L + (W - L - R) * (pts.length === 1 ? 0.5 : i / (pts.length - 1));
+  const y = v => T + (H - T - B) * (1 - (v - lo) / Math.max(1, hi - lo));
+  const ticks = [lo, Math.round((lo + hi) / 2), hi];
+  const day = d => new Date(d + 'T12:00:00+05:30').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+  const path = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p[1]).toFixed(1)}`).join('');
+  return `<div class="chart"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Followers per day, last ${pts.length} days">
+    ${ticks.map(t => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="${L - 6}" y="${y(t) + 4}" fill="#9a9a9a" font-size="11" text-anchor="end">${t}</text>`).join('')}
+    <text x="${L}" y="${H - 6}" fill="#9a9a9a" font-size="11">${day(pts[0][0])}</text>
+    <text x="${W - R}" y="${H - 6}" fill="#9a9a9a" font-size="11" text-anchor="end">${day(pts[pts.length - 1][0])}</text>
+    <path d="${path}" fill="none" stroke="#FFD400" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p[1])}" r="4" fill="#FFD400" stroke="#1a1a1a" stroke-width="2"/>`).join('')}
+    <line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="#9a9a9a" stroke-width="1" style="display:none"/>
+    <rect class="hit" x="${L}" y="0" width="${W - L - R}" height="${H}" fill="transparent"/></svg>
+    <div class="tip"></div>
+    <details style="margin-top:4px"><summary class="muted">Show as table</summary><table class="data"><tr><th>Day</th><th>Followers</th></tr>
+      ${pts.map(p => `<tr><td>${day(p[0])}</td><td>${p[1]}</td></tr>`).join('')}</table></details></div>`;
+}
+function hookChart(box, pts) {
+  if (!box) return;
+  const svg = box.querySelector('svg'), tip = box.querySelector('.tip'), cross = svg.querySelector('.cross');
+  const W = 520, L = 30, R = 10;
+  const show = ev => {
+    const r = svg.getBoundingClientRect(), px = ((ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left) / r.width * W;
+    const i = Math.max(0, Math.min(pts.length - 1, Math.round((px - L) / ((W - L - R) / Math.max(1, pts.length - 1)))));
+    const cx = L + (W - L - R) * (pts.length === 1 ? 0.5 : i / (pts.length - 1));
+    cross.setAttribute('x1', cx); cross.setAttribute('x2', cx); cross.style.display = '';
+    const d = new Date(pts[i][0] + 'T12:00:00+05:30').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+    tip.innerHTML = `<b>${pts[i][1]}</b> followers · ${d}`; tip.style.display = 'block';
+    tip.style.left = (cx / W * r.width) + 'px'; tip.style.top = '20px';
+  };
+  const hide = () => { tip.style.display = 'none'; cross.style.display = 'none'; };
+  const hit = svg.querySelector('.hit');
+  hit.addEventListener('mousemove', show); hit.addEventListener('touchstart', show, { passive: true });
+  hit.addEventListener('touchmove', show, { passive: true }); hit.addEventListener('mouseleave', hide); hit.addEventListener('touchend', hide);
+}
+
 (async () => {
   const [robot, adhoc, limits, ig, links, audience, feed] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'),
     getJSON('stats/limits.json'), getJSON('stats/instagram.json'), getJSON('stats/ig_links.json'), getJSON('stats/audience.json'), getJSON('feed.json')]);
   const boostsData = (await getJSON('stats/boosts.json')) || {};
 
-  // --- 📋 report (daily = yesterday, weekly = last 7 days), all from the collected data
-  const cleanTopic = l => (l.tag || '').replace(/[^\w &]/g, '').replace('SAMPLE', '').trim().toUpperCase() || (l.kind || 'news').toUpperCase();
-  const istHour = iso => (new Date(iso).getUTCHours() + 5 + (new Date(iso).getUTCMinutes() + 30 >= 60 ? 1 : 0)) % 24;
-  function report(period) {
-    const now = new Date();
-    const todayIST = istDay(now);
-    const start = period === 'daily' ? new Date(Date.parse(todayIST + 'T00:00:00+05:30') - 86400000)
-                                     : new Date(now.getTime() - 7 * 86400000);
-    const end = period === 'daily' ? new Date(Date.parse(todayIST + 'T00:00:00+05:30')) : now;
-    const inP = iso => iso && new Date(iso) >= start && new Date(iso) < end;
-    const days = []; for (let t = start.getTime(); t < end.getTime(); t += 86400000) days.push(istDay(new Date(t)));
-    const label = period === 'daily' ? `Yesterday (${start.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })})`
-      : `Last 7 days (${start.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })} – today)`;
-    // followers
-    const fol = (ig && ig.followers) || [];
-    const before = [...fol].reverse().find(f => new Date(f.at) <= start) || fol[0];
-    const after = [...fol].reverse().find(f => new Date(f.at) <= end) || fol[fol.length - 1];
-    // posts made / tokens
-    let made = 0, tok = 0;
-    for (const d of days) for (const j of Object.values((robot || {})[d] || {})) { made += j.posts; tok += tokens(j); }
-    // linked posts with results
-    const rows = Object.entries(links || {}).filter(([, l]) => inP(l.posted_at || l.linked_at))
-      .map(([id, l]) => ({ id, ...l, res: ((ig && ig.posts) || {})[id] })).filter(r => r.res)
-      .map(r => ({ ...r, score: r.res.likes + 2 * r.res.comments }));
-    const linkedCount = Object.values(links || {}).filter(l => inP(l.posted_at || l.linked_at)).length;
-    const best = [...rows].sort((a, b) => b.score - a.score)[0];
-    const group = key => { const m = {}; rows.forEach(r => { const k = key(r); (m[k] = m[k] || []).push(r.score); });
-      return Object.entries(m).map(([k, v]) => [k, v.reduce((a, b) => a + b, 0) / v.length, v.length]).sort((a, b) => b[1] - a[1]); };
-    const topics = group(cleanTopic);
-    const fmt2 = group(r => (r.slides || 1) > 1 ? 'Carousel' : 'Single photo');
-    const times = group(r => { const h = istHour(r.posted_at || r.linked_at);
-      return h < 11 ? 'Morning (5–11 AM)' : h < 17 ? 'Afternoon (11 AM–5 PM)' : h < 21 ? 'Evening (5–9 PM)' : 'Night (9–11 PM)'; });
-    const likes = rows.reduce((a, r) => a + r.res.likes, 0), comments = rows.reduce((a, r) => a + r.res.comments, 0);
-    const lines = [];
-    lines.push(['👥', before && after ? `Followers: <b>${before.followers} → ${after.followers}</b> (${after.followers - before.followers >= 0 ? '+' : ''}${after.followers - before.followers})` : 'Followers: not tracked yet']);
-    lines.push(['📝', `Posts: <b>${made}</b> made by the robot, <b>${linkedCount}</b> posted & linked`]);
-    if (rows.length) lines.push(['❤️', `Engagement: <b>${likes}</b> likes · <b>${comments}</b> comments on ${rows.length} linked post${rows.length > 1 ? 's' : ''}`]);
-    if (best) lines.push(['🏆', `Best post: <i>${(best.headline || best.id).replace(/</g, '&lt;')}</i> (❤️ ${best.res.likes} · 💬 ${best.res.comments})`]);
-    if (topics.length >= 2) {
-      lines.push(['👍', `Best topics: ${topics.slice(0, 3).map(t => `<b>${t[0]}</b> (${t[1].toFixed(0)})`).join(', ')}`]);
-      if (topics.length > 3) lines.push(['👎', `Weakest: ${topics.slice(-2).map(t => `${t[0]} (${t[1].toFixed(0)})`).join(', ')}: consider fewer of these`]);
-    }
-    if (fmt2.length === 2 && fmt2.every(f => f[2] >= 2)) {
-      const [a, b] = fmt2; lines.push(['🖼️', `Format: <b>${a[0]}</b> posts get ${(a[1] / Math.max(b[1], 0.1)).toFixed(1)}× more engagement than ${b[0].toLowerCase()}`]);
-    }
-    if (times.length >= 2) lines.push(['🕐', `Best time: <b>${times[0][0]}</b> (avg ${times[0][1].toFixed(0)})`]);
-    lines.push(['🤖', audience && audience.summary ? `Robot's plan: ${audience.summary.replace(/</g, '&lt;')}`
-      : `Robot's plan: learning starts after 10 linked posts with results.`]);
-    const snapNow = limits && limits.length ? limits[limits.length - 1] : null;
-    lines.push(['⚡', `Claude: robot used ${fmt(tok)} tokens${snapNow ? `; plan this week ${Math.round(snapNow.seven_day.pct)}% used` : ''}`]);
-    const note = rows.length < 3 ? '<div class="muted" style="margin-top:6px">Link more posts with 🔗 Insta link for richer insights (topics, formats, best times).</div>' : '';
-    return `<div class="muted" style="margin-bottom:8px">${label}</div><div class="rep">${lines.map(([i, t]) =>
-      `<div class="line"><b>${i}</b><span>${t}</span></div>`).join('')}</div>${note}`;
-  }
-  const repEl = document.getElementById('report');
-  let period = (() => { try { return localStorage.getItem('reportPeriod') || 'daily'; } catch { return 'daily'; } })();
-  const drawReport = () => {
-    repEl.innerHTML = `<h2>📋 Report</h2><div class="seg"><button data-p="daily" class="${period === 'daily' ? 'on' : ''}">Daily</button>
-      <button data-p="weekly" class="${period === 'weekly' ? 'on' : ''}">Weekly</button></div>${report(period)}`;
-    repEl.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
-      period = b.dataset.p; try { localStorage.setItem('reportPeriod', period); } catch {} drawReport(); }));
-  };
-  drawReport();
+  const app = (await getJSON('app.json')) || {};
+  const esc = t => String(t || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fol = (ig && ig.followers) || [];
+  const res = (ig && ig.posts) || {};
+  const nowMs = Date.now(), todayIST = istDay(new Date());
+  const inLast = (iso, days) => iso && nowMs - new Date(iso) < days * 86400000;
+  const activity = (() => { try { return JSON.parse(localStorage.getItem('activity') || '{}'); } catch { return {}; } })();
 
-  // --- 🚀 boosts: followers at the start of each boost vs now, and the post's likes
+  // --- 📈 growth: followers, change this week, likes per post, followers chart, boosts
   {
-    const fol = (ig && ig.followers) || [];
-    const at = iso => ([...fol].reverse().find(f => new Date(f.at) <= new Date(iso)) || fol[0] || {}).followers;
-    const latest = (fol[fol.length - 1] || {}).followers;
-    const rows = Object.entries(boostsData).sort((a, b) => b[1].at.localeCompare(a[1].at)).map(([id, b]) => {
-      const res = ((ig && ig.posts) || {})[id], start = at(b.at);
-      const gained = start != null && latest != null ? latest - start : null;
-      return `<div style="padding:8px 0;border-bottom:1px solid var(--line)">
-        <div style="font-weight:600">${(b.headline || id).replace(/</g, '&lt;')}</div>
-        <div class="muted">Boosted ${inIST(b.at)} · ${res ? `❤️ ${res.likes} · 💬 ${Math.max(0, res.comments - 1)}` : 'link it with 🔗 to see likes'}
-          · followers ${gained != null ? `${start} → ${latest} (<b style="color:var(--green)">${gained >= 0 ? '+' : ''}${gained}</b>)` : 'not tracked yet'}</div></div>`;
-    }).join('');
-    document.getElementById('boosts').innerHTML = `<h2>🚀 Boosts</h2>${rows ||
-      '<div class="muted">No boosted posts yet. Tap 🚀 Boost? on a post in the app after you boost it on Instagram.</div>'}
-      <div class="muted" style="margin-top:8px">Boosted posts are left out of the learning (paid reach would mislead it).
-      Followers gained counts all new followers since the boost started.</div>`;
-  }
-
-  // --- instagram
-  {
-    const fol = (ig && ig.followers) || [];
     const latest = fol[fol.length - 1];
-    const weekAgo = fol.find(f => Date.now() - new Date(f.at) < 7 * 86400000) || fol[0];
-    const results = Object.entries((ig && ig.posts) || {}).map(([id, r]) => ({ id, ...r, ...(links || {})[id],
-      score: r.likes + 2 * r.comments })).sort((a, b) => b.score - a.score);
-    const top = results.slice(0, 5).map(p => `<div class="row" style="grid-template-columns:minmax(0,1fr) 90px">
-      <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${(p.headline || p.id).replace(/</g, '&lt;')}</span>
-      <span class="num">❤️ ${p.likes} · 💬 ${p.comments}</span></div>`).join('');
-    const checks = [...fol.map(f => f.at), ...Object.values((ig && ig.posts) || {}).map(p => p.checked_at)].filter(Boolean).sort();
-    const lastCheck = checks[checks.length - 1];
-    const when = iso => iso ? `${inIST(iso)} (${ago(iso)})` : 'never';
-    document.getElementById('insta').innerHTML = `<h2>📈 Instagram @khabarbawaal</h2>
-      <div class="muted" style="margin:-4px 0 10px">🕐 Last fetched: <b>${when(lastCheck)}</b>. Your Mac checks every 3 hours while it's awake.</div>
+    const weekAgo = fol.find(f => inLast(f.at, 7)) || fol[0];
+    const recent = Object.entries(links || {}).filter(([id, l]) => inLast(l.posted_at || l.linked_at, 7) && res[id]);
+    const likesPer = recent.length ? recent.reduce((a, [id]) => a + res[id].likes, 0) / recent.length : null;
+    const change = latest && weekAgo ? latest.followers - weekAgo.followers : null;
+    // one point per day (last reading of the day), last 14 days
+    const byDay = {};
+    fol.forEach(f => { byDay[istDay(new Date(f.at))] = f.followers; });
+    const days = lastDays(14).reverse().filter(d => d >= Object.keys(byDay).sort()[0]);
+    let last = null;
+    const pts = days.map(d => { if (byDay[d] != null) last = byDay[d]; return [d, last]; }).filter(p => p[1] != null);
+    const boostRows = Object.entries(boostsData).sort((a, b) => b[1].at.localeCompare(a[1].at)).map(([id, b]) => {
+      const start = ([...fol].reverse().find(f => new Date(f.at) <= new Date(b.at)) || fol[0] || {}).followers;
+      const r = res[id];
+      return `<div class="best"><span>🚀 ${esc(b.headline || id)}</span><span class="muted">${inIST(b.at)} · ${start != null && latest ? `followers ${start} → ${latest.followers}` : ''}${r ? ` · ❤️ ${r.likes}` : ''}</span></div>`;
+    }).join('');
+    document.getElementById('growth').innerHTML = `<h2>📈 Growth</h2>
       <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers</span></div>
-        <div class="kpi"><b>${latest && weekAgo ? (latest.followers - weekAgo.followers >= 0 ? '+' : '') + (latest.followers - weekAgo.followers) : '–'}</b><span>this week</span></div>
-        <div class="kpi"><b>${Object.keys(links || {}).length}</b><span>posts linked</span></div></div>
-      <h2 style="margin-top:14px">Best posts</h2>${top || '<div class="muted">Link posts with 🔗 Insta link in the app to see their likes here.</div>'}
-      <h2 style="margin-top:14px">What the robot learned</h2>
-      <div class="muted">🕐 Last analysis: <b>${when(audience && audience.updated)}</b> (runs every night at 4 AM)</div>
-      <div class="muted" style="margin-top:6px">${audience && audience.summary ? '✅ Adjusting posts: ' + audience.summary.replace(/</g, '&lt;')
-        : audience && audience.waiting ? `⏳ Not adjusting yet: ${audience.waiting}. It starts once posts get real engagement (10+ linked posts and 30+ likes in total), so it learns from your audience, not from noise. Your own pinned comments aren't counted.`
-        : `Needs at least 10 linked posts with results (${results.length} so far). Then every night at 4 AM it learns which topics your audience likes and posts more of them.`}</div>`;
+        <div class="kpi"><b>${change == null ? '–' : (change >= 0 ? '+' : '') + change}</b><span>this week</span></div>
+        <div class="kpi"><b>${likesPer == null ? '–' : likesPer.toFixed(1)}</b><span>likes per post (7 days)</span></div></div>
+      ${pts.length >= 2 ? lineChart(pts) : '<div class="muted" style="margin-top:10px">The followers chart appears after 2 days of data.</div>'}
+      ${boostRows ? `<div class="sub">Boosts</div>${boostRows}` : ''}
+      <div class="muted" style="margin-top:8px">🕐 Instagram numbers come from your Mac (every few hours while it's awake)${latest ? `, last ${ago(latest.at)}` : ''}.</div>`;
+    hookChart(document.querySelector('#growth .chart'), pts);
+  }
+
+  // --- 🗓️ today's plan: each scheduled slot → made / posted / likes / why not
+  {
+    const plan = app.plan || [];
+    const posts = (feed || []).filter(p => istDay(new Date(p.created_at)) === todayIST);
+    const minsOf = iso => { const d = new Date(new Date(iso).getTime() + 330 * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); };
+    const istNow = minsOf(new Date().toISOString());
+    let made = 0, posted = 0;
+    const rows = plan.map(([time, kind, name]) => {
+      const [h, m] = time.split(':').map(Number), slot = h * 60 + m;
+      const inSlot = p => minsOf(p.created_at) >= slot - 5 && minsOf(p.created_at) < slot + 55;
+      let post = kind === 'news' ? posts.find(p => p.kind === 'news' && inSlot(p)) : posts.find(p => p.id === `${kind}-${todayIST}`);
+      let why = '', state = '';
+      if (!post && kind !== 'news') {
+        const fallback = posts.find(p => (p.kind === 'news' || p.kind === 'ready') && inSlot(p));
+        const a = activity[`${kind}|${todayIST}`];
+        if (fallback) { post = fallback; state = 'warn'; why = a && a.text ? a.text : 'A normal news post was made instead.'; }
+        else if (a && a.state === 'fail') { state = 'bad'; why = a.text; }
+      }
+      const link = post && (links || {})[post.id], r = post && res[post.id];
+      if (post) made++;
+      if (link) posted++;
+      const chips = slot > istNow + 2 && !post ? '<span class="chip">⏳ upcoming</span>'
+        : !post ? `<span class="chip bad">❌ not made</span>`
+        : (state === 'warn' ? '<span class="chip warn">⚠️ normal post</span>' : '<span class="chip made">✅ made</span>')
+          + (link ? `<span class="chip posted">📲 posted${r ? ` · ❤️ ${r.likes}` : ''}</span>` : '<span class="chip">not posted</span>');
+      return `<div class="slot"><span class="t">${time}</span><span class="name">${esc(name)}</span><span class="chips">${chips}</span>
+        ${why ? `<span class="why">${esc(why)}</span>` : ''}</div>`;
+    }).join('');
+    document.getElementById('today').innerHTML = `<h2>🗓️ Today's plan <span class="muted">${made} of ${plan.length} made · ${posted} posted</span></h2>
+      ${rows || '<div class="muted">The schedule appears after the next app update.</div>'}
+      <div class="muted" style="margin-top:8px">"Posted" = linked with 🔗 Insta link in the app. Reasons come from ⏳ Activity on this phone.</div>`;
+  }
+
+  // --- 🏆 what works: average likes by current post type (last 14 days), Reels vs carousels, best posts, best slot
+  {
+    const typeOf = l => {
+      const t = (l.tag || '').toUpperCase();
+      if (l.kind === 'reel' || (l.kind === 'custom' && t.includes('REEL'))) {
+        if (t.includes('TAG THAT FRIEND')) return '🎬 Tag that friend';
+        if (t.includes('MEME')) return '🎬 Meme';
+        if (t.includes('REALITY')) return '🎬 Reality check';
+        if (t.includes('🙏') || t.includes('NAVRATRI') || t.includes('JAI')) return '🙏 Devotional';
+        return '🎬 News Reel';
+      }
+      if (l.kind === 'top10') return '📰 Top 5';
+      if (l.kind === 'ready') return t.includes('GITA') ? '🙏 Gita (Ready)' : '📦 Ready';
+      if (l.kind === 'news') return '📰 News';
+      if (l.kind === 'custom') return '✍️ Your pick';
+      return null;   // old types (market, thought, fun…) are left out
+    };
+    const items = Object.entries(links || {}).filter(([id, l]) => inLast(l.posted_at || l.linked_at, 14) && res[id] && !boostsData[id])
+      .map(([id, l]) => ({ id, ...l, type: typeOf(l), likes: res[id].likes, comments: res[id].comments })).filter(x => x.type);
+    const avg = list => list.length ? list.reduce((a, x) => a + x.likes, 0) / list.length : 0;
+    const groups = {};
+    items.forEach(x => (groups[x.type] = groups[x.type] || []).push(x));
+    const rows = Object.entries(groups).map(([k, v]) => [k, avg(v), v.length]).sort((a, b) => b[1] - a[1]);
+    const max = Math.max(1, ...rows.map(r => r[1]));
+    const reels = items.filter(x => x.type.startsWith('🎬') || x.type.startsWith('🙏')), cars = items.filter(x => !reels.includes(x));
+    const best = [...items].sort((a, b) => (b.likes + 2 * b.comments) - (a.likes + 2 * a.comments)).slice(0, 3);
+    const slotOf = x => { const d = new Date(new Date(x.posted_at || x.linked_at).getTime() + 330 * 60000).getUTCHours();
+      return d < 11 ? 'Morning (6–11 AM)' : d < 17 ? 'Afternoon (11 AM–5 PM)' : d < 20 ? 'Evening (5–8 PM)' : 'Night (8–11 PM)'; };
+    const slots = {}; items.forEach(x => (slots[slotOf(x)] = slots[slotOf(x)] || []).push(x));
+    const bestSlot = Object.entries(slots).filter(([, v]) => v.length >= 3).map(([k, v]) => [k, avg(v)]).sort((a, b) => b[1] - a[1])[0];
+    document.getElementById('works').innerHTML = `<h2>🏆 What works <span class="muted">last 14 days · ${items.length} posted</span></h2>
+      ${items.length ? `<div class="kpis" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+        <div class="kpi"><b>${reels.length ? avg(reels).toFixed(1) : '–'}</b><span>avg likes · 🎬 Reels (${reels.length})</span></div>
+        <div class="kpi"><b>${cars.length ? avg(cars).toFixed(1) : '–'}</b><span>avg likes · 📰 Carousels (${cars.length})</span></div></div>
+      <div class="sub">Average likes by post type</div>
+      ${rows.map(([k, v, n]) => `<div class="hbar" title="${esc(k)}: ${v.toFixed(1)} likes on average over ${n} posts">
+        <span>${esc(k)}</span><span class="track"><i style="width:${v / max * 100}%"></i></span><span class="num">${v.toFixed(1)} · ${n} post${n > 1 ? 's' : ''}</span></div>`).join('')}
+      <div class="sub">Best posts</div>
+      ${best.map(x => `<div class="best"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.headline || x.id)}</a>
+        <span class="muted">❤️ ${x.likes} · 💬 ${x.comments}</span></div>`).join('')}
+      ${bestSlot ? `<div class="muted" style="margin-top:10px">🕐 Best time so far: <b>${bestSlot[0]}</b> (${bestSlot[1].toFixed(1)} likes on average)</div>` : ''}`
+      : '<div class="muted">Link your posts with 🔗 Insta link in the app: their likes show up here by post type.</div>'}
+      <div class="muted" style="margin-top:8px">Boosted posts are left out (paid reach would mislead).
+        ${audience && audience.summary ? 'The robot is learning from these numbers every night.' : 'The robot starts learning once posts have 30+ likes in total.'}</div>`;
+  }
+
+  // --- ⚙️ robot & plan: one glance
+  {
+    const snapH = limits && limits.length ? limits[limits.length - 1] : null;
+    const todayPosts = (feed || []).filter(p => istDay(new Date(p.created_at)) === todayIST).length;
+    const fails = Object.values(activity).filter(a => istDay(new Date(a.at * 1000)) === todayIST && (a.state === 'fail' || a.state === 'fallback'));
+    const w = snapH && snapH.seven_day, pct = w ? Math.round(w.pct) : null;
+    const verdict = pct == null ? '' : pct >= 85 ? ['over', '❌ Claude plan almost used up this week'] : pct >= 60 ? ['tight', '⚠️ Claude plan getting full this week']
+      : ['ok', '✅ All good'];
+    document.getElementById('health').innerHTML = `<h2>⚙️ Robot &amp; Claude plan</h2>
+      ${verdict ? `<div class="verdict ${verdict[0]}" style="margin:0 0 10px">${verdict[1]}</div>` : ''}
+      ${w ? gauge('Claude plan this week', w) : '<div class="muted">Plan usage comes from your Mac (hourly while it\'s on).</div>'}
+      <div class="rep">
+        <div class="line"><b>🤖</b><span><b>${todayPosts}</b> posts made today · last ${feed && feed.length ? ago(feed[0].created_at) : '–'}</span></div>
+        <div class="line"><b>${fails.length ? '⚠️' : '✅'}</b><span>${fails.length ? `${fails.length} problem${fails.length > 1 ? 's' : ''} today (see ⏳ Activity)` : 'No problems today'}</span></div>
+      </div>`;
   }
   const week = lastDays(7), today = week[0];
 
