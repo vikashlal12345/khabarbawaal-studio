@@ -1163,7 +1163,7 @@ GOLD, CREAM = "#F5C26B", "#FFF4DD"
 
 
 def vfont(name: str, size: int, weight: str = "") -> ImageFont.FreeTypeFont:
-    """Variable Google fonts (Playfair Display, Cinzel, Lora) at a named weight."""
+    """Variable Google fonts (Playfair Display, Cinzel) at a named weight."""
     from generate import FONTS
     f = ImageFont.truetype(str(FONTS / name), size)
     if weight:
@@ -1218,11 +1218,11 @@ def faded(img: Image.Image, a: float) -> Image.Image:
     return out
 
 
-def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: str, hook: str, lesson: str,
+def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: str, lesson: str,
               real_life: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
     """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
     golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
-    hook → Shri Krishna kehte hain + shloka → lesson + verse → (2nd painting) Aaj ki seekh → send this.
+    hook → Shri Krishna ka sandesh + lesson + verse → (2nd painting) Aaj ki seekh → send this. (No Sanskrit.)
     images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread."""
     import random
 
@@ -1266,7 +1266,6 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
     body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
     lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
     small_gold = vfont("Cinzel-Variable.ttf", 40, "SemiBold")
-    shloka_f = vfont("Lora-Variable.ttf", 46, "Medium")
     hl = {norm(w) for phrase in highlight for w in phrase.split()}
 
     def lines_of(text, fnt, color):
@@ -1287,15 +1286,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
     t = end + 0.5 + pause
     items, y = [], 1060
     items.append((y, glow_line("SHRI KRISHNA KA SANDESH", small_gold, GOLD), t)); y += 85
-    sh_lines = [x.strip() for x in printable(shloka).replace("|", "\n").split("\n") if x.strip()][:2]
-    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
-    for i, ln in enumerate(sh_lines):
-        size = 46
-        while size > 26 and probe.textlength(ln, font=vfont("Lora-Variable.ttf", size, "Medium")) > RW - 140:
-            size -= 2
-        items.append((y, glow_line(ln, vfont("Lora-Variable.ttf", size, "Medium"), "#FFE3A8"), t + 0.5 + i * gap)); y += 62
-    shloka_hold = 1.8 if sh_lines else 0.5
-    t2 = t + 0.5 + len(sh_lines) * gap + shloka_hold
+    t2 = t + 0.8
     y += 10
     divider_y = y
     y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
@@ -1381,8 +1372,6 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
 GITA_OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string", "description": "The life situation or trending topic this lesson is about"},
     "verse": {"type": "string", "description": "Chapter.verse of the Bhagavad Gita, e.g. 2.47"},
-    "shloka": {"type": "string", "description": "The shloka's first two half-lines in Roman letters, separated by ' | ' "
-               "(max 12 words), or empty if unsure of the exact words"},
     "hook": {"type": "string", "description": "A feeling the viewer knows, max 11 words, with a natural pause '...', e.g. "
              "'Gusse mein kuch keh diya... aur baad mein pachtaye?'"},
     "lesson": {"type": "string", "description": "What Krishna says in this verse, simple poetic Hinglish, max 20 words. "
@@ -1394,7 +1383,7 @@ GITA_OPTION = {"type": "object", "properties": {
     "caption": {"type": "string"}, "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
     "songs": SONGS},
-    "required": ["based_on", "verse", "shloka", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment",
+    "required": ["based_on", "verse", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment",
                  "hashtags", "songs"], "additionalProperties": False}
 
 GITA_SYSTEM = """You write a daily Bhagavad Gita Reel for {page}, an Indian Instagram page for 18-34s \
@@ -1402,8 +1391,7 @@ GITA_SYSTEM = """You write a daily Bhagavad Gita Reel for {page}, an Indian Inst
 (exams, jobs, breakups, money, family pressure, failure, comparison, anger, overthinking) or a widely-known \
 trending topic of the day, then ONE lesson Krishna gives Arjuna, then what it means in practice today.
 Write it like poetry, not a lecture: short lines, warm words, natural pauses ("..."). \
-Rules: the lesson must truly match the chapter.verse you cite (use well-known verses you are sure of; leave \
-shloka empty if unsure of the exact words). Reverent and warm tone: never joke about Krishna or the Gita, no \
+Rules: the lesson must truly match the chapter.verse you cite (use well-known verses you are sure of). Reverent and warm tone: never joke about Krishna or the Gita, no \
 politics, no tragedies, nothing against any religion or community. Make it something people send to a friend \
 who needs it. Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line invites a comment or a send."""
 
@@ -1435,7 +1423,7 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
         o["caption"] = unescape(o["caption"])
     best = fun.judge_best(options, lambda o: f"{o['hook']} -> Krishna: {o['lesson']} (Gita {o['verse']}) -> {o['real_life']}",
                           CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE)
-    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life", "shloka"])
+    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     out = os.path.join(tmp, "reel.mp4")
     status.step("Making the video + proofreading", 5)
@@ -1444,10 +1432,10 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
         tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
         return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily Gita Gyaan 🙏\n\n{tags}"
     frames, data, proof = proofread.run(
-        lambda d: gita_reel(images, d["post"]["verse"], d["post"]["shloka"], d["post"]["hook"], d["post"]["lesson"],
+        lambda d: gita_reel(images, d["post"]["verse"], d["post"]["hook"], d["post"]["lesson"],
                             d["post"]["real_life"], d["post"]["highlight"], out),
         {"post": best}, caption_of,
-        f"Bhagavad Gita {best['verse']}: check that the lesson and the shloka line truly match this verse.")
+        f"Bhagavad Gita {best['verse']}: check that the lesson truly matches this verse.")
     post = data["post"]
     state["recent_gita"] = (state.get("recent_gita", []) + [f"Gita {post['verse']}: {post['based_on']}"])[-60:]
     return frames[1], out, {

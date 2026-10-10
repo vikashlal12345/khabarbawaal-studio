@@ -33,8 +33,9 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide
 (originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
 If a Reel can't be made, that slot posts a news carousel. Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
-from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel (free Krishna-Arjuna paintings from Wikimedia Commons, lesson +
-verse + real life; `reel.build_gita_reel`) ·
+from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel (free Krishna-Arjuna paintings only, Wikimedia Commons; logo + "GITA GYAAN", Playfair/Cinzel
+fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh" + verse ref (no Sanskrit) → Aaj ki seekh;
+`reel.build_gita_reel`) ·
 2:00 day planner (📅 previews, only at 10/17) · 4:00 learning.
 
 ## How it runs
