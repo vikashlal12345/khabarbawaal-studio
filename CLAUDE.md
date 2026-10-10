@@ -35,7 +35,7 @@ Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search;
 19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide
 (originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
 If a Reel can't be made, that slot posts a news carousel. Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
-from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel (free Krishna-Arjuna paintings only, Wikimedia Commons; logo + "GITA GYAAN", Playfair/Cinzel
+from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel (pictures: see 🎨 below; logo + "GITA GYAAN", Playfair/Cinzel
 fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh" + verse ref (no Sanskrit) → Aaj ki seekh;
 `reel.build_gita_reel`) ·
 2:00 day planner (📅 previews, only at 10/17) · 4:00 learning.
@@ -62,6 +62,10 @@ fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh
   also uploads the video (≤14.5 MB, else re-recorded at 1280 px without sound), `make_media_reel()` burns the AI hook onto it
   (`reel.own_reel`, own sound kept). Reel without video: `make_reel()` → `reel.topic_reel()` (news → photo slideshow,
   funny idea → Tag that friend/meme). Any failure falls back to the normal post. The owner only writes context.
+- 🎨 God pictures (6 AM devotional + Gita Reels, owner 11 Oct 2026): `flux_images()` paints 2 scenes (deity alone /
+  with a young Indian today) with the free public FLUX.1-schnell demo on Hugging Face (no account, ~4-5 pictures a
+  day per IP, so 2 tries per scene), Claude checks them (looks/respect/hands, no text); if busy or none fits, the
+  old free Wikimedia Commons paintings (`pick_paintings`). Credit "AI illustration (FLUX)".
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
   (`fun.judge_best`), AI ranks Mixkit clips by title (no key); **only clips labelled "Free" licence** are used
   (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a

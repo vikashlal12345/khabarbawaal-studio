@@ -1197,6 +1197,91 @@ def commons_images(queries: list[str]) -> list[dict]:
     return out
 
 
+# 🎨 God pictures for the devotional and Gita Reels (owner, 11 Oct 2026): painted by the free public FLUX.1 [schnell]
+# demo on Hugging Face (no account) in a glowing storybook style; if it's busy or nothing looks right, the free
+# Wikimedia Commons paintings below are used as before. Without an account the demo allows only ~4-5 pictures a day
+# per internet address (each GitHub run gets a fresh one), hence 2 tries per scene.
+FLUX_SPACE = "https://black-forest-labs-flux-1-schnell.hf.space/gradio_api"
+FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divine glow, rich deep shadows, fine detail, "
+              "reverent and peaceful Indian devotional art, vertical composition with the figures in the upper half "
+              "and calm darker ground in the lower third (text goes there). ")
+FLUX_AVOID = " No text, no letters, no watermark."
+SCENE_HELP = ("English picture description for an AI painter, max 50 words. Describe the deity's traditional, "
+              "well-known look exactly (e.g. Krishna: blue skin, peacock feather crown, flute, yellow silk, garland; "
+              "Hanuman: monkey face, golden mace, orange-red; Ganesh: elephant head, one tusk, modak, mouse), the place, "
+              "the light and the mood. Fully clothed, reverent, nothing scary.")
+
+
+def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> Image.Image:
+    """One 9:16 picture from the FLUX demo. Raises if it's busy (queue full, GPU limit, timeout)."""
+    import io
+    import json
+    import requests
+    r = requests.post(f"{FLUX_SPACE}/call/infer", json={"data": [prompt, seed, False, w, h, 4]}, timeout=60)
+    r.raise_for_status()
+    text = requests.get(f"{FLUX_SPACE}/call/infer/{r.json()['event_id']}", timeout=240).text
+    event = ""
+    for line in text.splitlines():
+        if line.startswith("event:"):
+            event = line[6:].strip()
+        elif line.startswith("data:") and event == "complete":
+            img = Image.open(io.BytesIO(requests.get(json.loads(line[5:])[0]["url"], timeout=60).content))
+            img.load()
+            return img.convert("RGB")
+    raise RuntimeError(f"FLUX busy ({event or 'no answer'}: {text.strip()[-120:]})")
+
+
+def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2) -> list[tuple[Image.Image, str, float]]:
+    """Up to 2 pictures (one per scene), each painted `tries` times; the AI looks at them and keeps the best
+    correct, respectful one per scene. Returns [(image, credit, focus_x)]; raises if FLUX is busy or none fits."""
+    import random
+    import fun
+    folder = os.path.join(tmp, "flux")
+    os.makedirs(folder, exist_ok=True)
+    made, fails = [], 0
+    for n, scene in enumerate(scenes[:2], 1):
+        for k in range(1, tries + 1):
+            try:
+                img = flux_image(FLUX_STYLE + scene.strip() + FLUX_AVOID, random.randint(1, 999999))
+            except Exception as e:
+                fails += 1
+                print(f"  ! {str(e)[:160]}")
+                if not made and fails >= 2:
+                    raise RuntimeError("FLUX is busy")
+                continue
+            name = f"scene{n}_{k}.jpg"
+            thumb = img.copy()
+            thumb.thumbnail((576, 1024))
+            thumb.save(os.path.join(folder, name), quality=85)
+            made.append((name, img))
+    if not made:
+        raise RuntimeError("FLUX is busy")
+    schema = {"type": "object", "properties": {"picks": {"type": "array", "description": "At most one per scene, scene 1 first",
+              "items": {"type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
+              "description": "Horizontal position (0 = left, 1 = right) of the main figure"}},
+              "required": ["file", "focus"], "additionalProperties": False}},
+              "reason": {"type": "string", "description": "One short line: what you rejected and why"}},
+              "required": ["picks", "reason"], "additionalProperties": False}
+    listing = "\n".join(f"Scene {n}: {sc.strip()}" for n, sc in enumerate(scenes[:2], 1))
+    result = fun.claude_json(
+        "You check AI-painted pictures for a respectful Hindu devotional Instagram Reel.",
+        f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _ in made)} (sceneN_... = scene N). "
+        "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none. "
+        "Reject: the deity doesn't look like their well-known traditional form (wrong skin colour, missing or wrong "
+        "attributes, wrong animal), disrespectful, scary or revealing, broken faces, eyes or hands, extra or missing "
+        "limbs (several arms are normal for deities like Durga, Vishnu, Lakshmi or Ganesh), any text, letters or "
+        "watermark, a messy or ugly picture.",
+        schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="flux pick")
+    print(f"  FLUX check: {result['reason'][:200]}")
+    picks = result["picks"]
+    chosen = [(img, "AI illustration (FLUX)", min(1.0, max(0.0, float(p["focus"]))))
+              for p in picks for name, img in made if name == p["file"]][:2]
+    if not chosen:
+        raise RuntimeError("none of the FLUX pictures looked right")
+    print(f"  FLUX: {len(made)} painted, kept " + ", ".join(p["file"] for p in picks[:2]))
+    return chosen
+
+
 def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
     return pick_paintings(GITA_SEARCHES, "Lord Krishna with Arjuna (chariot, Kurukshetra battlefield, Gita Upadesh)",
                           "gita_images_used", state, tmp)
@@ -1491,9 +1576,15 @@ GITA_OPTION = {"type": "object", "properties": {
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "caption": {"type": "string"}, "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
-    "songs": SONGS},
+    "songs": SONGS,
+    "scene_gita": {"type": "string", "description": "Picture 1 (behind the hook and Krishna's message): Krishna and "
+                   "Arjuna in the moment of this verse, e.g. on the chariot at Kurukshetra at dawn, Krishna teaching "
+                   "calmly, Arjuna listening with folded hands. " + SCENE_HELP},
+    "scene_life": {"type": "string", "description": "Picture 2 (behind 'Aaj ki seekh'): Krishna gently beside a young "
+                   "Indian of today in this Reel's situation, e.g. sitting next to a stressed student at a desk at night "
+                   "with a hand on his shoulder. " + SCENE_HELP}},
     "required": ["based_on", "verse", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment",
-                 "hashtags", "songs"], "additionalProperties": False}
+                 "hashtags", "songs", "scene_gita", "scene_life"], "additionalProperties": False}
 
 GITA_SYSTEM = """You write a daily Bhagavad Gita Reel for {page}, an Indian Instagram page for 18-34s \
 (Hinglish in English letters only, never Devanagari). Each Reel: a real-life situation young Indians face \
@@ -1515,9 +1606,7 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
     import generate as g
     import proofread
     import status
-    status.step("Finding Krishna-Arjuna paintings (free licence)", 2)
-    images = pick_gita_images(state, tmp)
-    status.step("Writing 3 Gita lessons", 3)
+    status.step("Writing 3 Gita lessons", 2)
     songs = trending_songs()
     trends = fun.google_trends()
     options = fun.claude_json(GITA_SYSTEM.format(page=CONFIG["page_name"]),
@@ -1536,6 +1625,14 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
     for k in ("hook", "lesson", "real_life"):
         best[k] = plain_letters(best[k])
     picked_songs = checked_songs(best.pop("songs", []), songs)
+    scenes = [best.pop("scene_gita"), best.pop("scene_life")]   # kept out of the proofreader's text
+    status.step("Painting Krishna with AI (FLUX)", 3)
+    try:
+        images = flux_images(scenes, "Lord Krishna (picture 1 with Arjuna)", tmp)
+    except Exception as e:
+        print(f"  {e}: using free paintings instead")
+        status.step("FLUX busy: finding Krishna-Arjuna paintings (free licence)", 3)
+        images = pick_gita_images(state, tmp)
     out = os.path.join(tmp, "reel.mp4")
     status.step("Making the video + proofreading", 5)
 
@@ -1654,8 +1751,16 @@ DEVOTION_PLAN = {"type": "object", "properties": {
     "head": {"type": "string", "description": "Top heading, max 16 letters, e.g. 'SHUBH NAVRATRI', 'JAI HANUMAN', 'HAR HAR MAHADEV'"},
     "middle": {"type": "string", "description": "Label over the deity's meaning, e.g. 'MAA SHAILPUTRI', 'BAJRANGBALI KA BAL'"},
     "seekh": {"type": "string", "description": "Label over the blessing, e.g. 'AAJ KA ASHIRWAAD', 'AAJ KI PRARTHANA'"},
-    "cta": {"type": "string", "description": "Ending line, e.g. 'Jai Mata Di 🙏 Apni family ko bhejo' (max 7 words, no emoji)"}},
-    "required": ["deity", "image_searches", "image_subject", "family", "song_searches", "head", "middle", "seekh", "cta"],
+    "cta": {"type": "string", "description": "Ending line, e.g. 'Jai Mata Di 🙏 Apni family ko bhejo' (max 7 words, no emoji)"},
+    "scene_darshan": {"type": "string", "description": "Picture 1 (behind the greeting and who the deity is): the deity "
+                      "alone in this exact traditional form with its well-known attributes and vahana (e.g. Maa "
+                      "Shailputri: on a white bull, trident and lotus, crescent moon), in a divine setting at sunrise. "
+                      + SCENE_HELP},
+    "scene_life": {"type": "string", "description": "Picture 2 (behind the blessing): the same deity, same look, gently "
+                   "blessing or walking beside a young Indian of today in a relatable moment (exam morning, first job, "
+                   "going home, family puja). " + SCENE_HELP}},
+    "required": ["deity", "image_searches", "image_subject", "family", "song_searches", "head", "middle", "seekh", "cta",
+                 "scene_darshan", "scene_life"],
     "additionalProperties": False}
 
 DEVOTION_OPTION = {"type": "object", "properties": {
@@ -1708,10 +1813,16 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                            f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
                            f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
                            CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
-    status.step(f"Finding paintings of {plan['deity']} (free licence)", 3)
+    status.step(f"Painting {plan['deity']} with AI (FLUX)", 3)
     exact = True
     try:
-        images = pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
+        images = flux_images([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp)
+    except Exception as e:
+        print(f"  {e}: using free paintings instead")
+        status.step(f"FLUX busy: finding paintings of {plan['deity']} (free licence)", 3)
+        images = None
+    try:
+        images = images or pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
     except RuntimeError as e:   # few paintings of this exact form: use the main deity's paintings
         exact = False
         fam = plan["family"].strip() or "Durga"
