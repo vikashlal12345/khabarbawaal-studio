@@ -334,7 +334,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = min(7.5, max(3.0, 1.5 + 0.25 * len(text.split())))
+        per = min(7.5, max(3.0, read_secs(text)))
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
@@ -398,7 +398,13 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
 # make() returns False and the slot gets a regular post.
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
-CLIP_SECONDS, MEME_SECONDS = 6.5, 8.0
+CLIP_SECONDS, MEME_SECONDS = 6.5, 8.0      # shortest Tag that friend / meme Reel; longer text gets more time
+CLIP_MAX = 10.0
+
+
+def read_secs(text: str, base: float = 1.5) -> float:
+    """Time on screen to read a block of text in full: base + 0.25 s a word (owner, 11 Oct 2026, all Reels)."""
+    return base + 0.25 * len(text.split())
 CLIP_KINDS = ("reel_clip", "reel_clip_am")   # "Tag that friend" clip Reels (1 PM and 8 AM)
 
 REEL_RULES = """This joke becomes a short Instagram REEL: a free stock video clip (Mixkit) with our text on top.
@@ -723,14 +729,20 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
+    # Long enough to read the (proofread) text in full; a short stock clip caps it.
     if kind in CLIP_KINDS:
-        dur = min(CLIP_SECONDS, secs - 0.2)
-        start = max(0.0, min(1.0, secs - dur - 0.2))
-        render = lambda d: clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out)
+        def render(d):   # + 1 s for the TAG THAT FRIEND banner and the lines popping in
+            dur = min(max(CLIP_SECONDS, read_secs(d["text"], 2.5)), CLIP_MAX, secs - 0.2)
+            start = max(0.0, min(1.0, secs - dur - 0.2))
+            return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out)
     else:
-        dur = min(MEME_SECONDS, secs - 0.2)
-        start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
-        render = lambda d: meme_reel(clip, start, dur, d["setup"], d["punch"], round(dur * 0.55, 2), d["highlight"], out)
+        def render(d):   # build-up, then the punchline: each never shorter than before (4.4 s + 3.6 s)
+            setup_t = min(7.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]))))
+            punch_t = min(7.5, max(MEME_SECONDS * 0.45, read_secs(d["punch"])))
+            dur = min(setup_t + punch_t, secs - 0.2)
+            start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
+            return meme_reel(clip, start, dur, d["setup"], d["punch"], round(dur * setup_t / (setup_t + punch_t), 2),
+                             d["highlight"], out)
     status.step("Making the video + proofreading", 5)
     frames, post, proof = proofread.run(render, post, g.fun_caption)
     text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
@@ -1122,14 +1134,17 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     best["facts"] = best["facts"][:2]
     cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
     clip, secs = download_clip(cid, tmp)
-    clip_dur = min(4.5, secs - 0.2)
-    start = max(0.0, secs - clip_dur - 0.2)
     out = os.path.join(tmp, "reel.mp4")
     item = {"link": story["url"], "source": story["site"], "title": story["title"]}
+
+    def render(d):   # the dig over the clip stays until it's read (4.5-6 s); later parts time themselves
+        clip_dur = min(max(4.5, read_secs(" ".join(d["post"]["claim"]))), 6.0, secs - 0.2)
+        start = max(0.0, secs - clip_dur - 0.2)
+        return satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
+                           d["post"]["punchline"], d["post"]["highlight"], out)
     status.step("Making the video + fact-checking", 5)
     frames, data, proof = proofread.run(
-        lambda d: satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
-                              d["post"]["punchline"], d["post"]["highlight"], out),
+        render,
         {"post": best}, lambda d: g.full_caption(d["post"], item),
         sources + "\n\n" + ELECTION_RECORD + "\n\n(Facts may also come from certain, widely reported public record "
         "such as official election results, if the source shown says so.)")
