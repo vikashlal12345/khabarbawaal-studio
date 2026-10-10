@@ -140,41 +140,41 @@
   "created_at": "2026-10-09T19:33:15+00:00"
  },
  {
-  "id": "r20261010-084850-gita",
+  "id": "r20261010-092435-gita",
   "kind": "ready",
   "media": "reel",
-  "image": "posts/r20261010-084850-gita.jpg",
-  "video": "posts/r20261010-084850-gita.mp4",
-  "headline": "Gusse mein kuch keh diya aur baad mein pachtaye? Gita 2.63",
+  "image": "posts/r20261010-092435-gita.jpg",
+  "video": "posts/r20261010-092435-gita.mp4",
+  "headline": "Din bhar bhaage... phir bhi chain nahi mila? Gita 6.17",
   "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Ek pal ka gussa, saalon ka pachtawa ban sakta hai 🙏\nPehle ruko, phir bolo.\nYe us dost ko bhejo jise jaldi gussa aata hai.\n\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #anger #krishna #lifelessons",
+  "caption": "Thoda kaam, thoda aaram 🙏\nSantulan hi sukh ka raaz hai.\nApne thake hue dost ko ye bhejo.\n\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #krishna #selfcare #weekendvibes",
   "source": "Bhagavad Gita",
   "source_url": "",
-  "pin_comment": "Gussa aane par aap kya karte ho? Comment mein share karo 🙏",
+  "pin_comment": "Is weekend aap apne liye kya karoge? Comment karo 🙏",
   "songs": [
    {
-    "title": "Main Jis Din Bhulaa Du",
-    "artist": "Jubin Nautiyal, Tulsi Kumar",
+    "title": "Ehsaas",
+    "artist": "Faheem Abdullah, Duha Shah",
     "lang": "hindi",
-    "mood": "emotional, slow"
+    "mood": "chill, soft"
    },
    {
-    "title": "Mann Mera (Original Version)",
-    "artist": "Gajendra Verma",
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
     "lang": "hindi",
-    "mood": "deep, calming"
+    "mood": "gentle, dreamy"
    },
    {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
+    "title": "Ordinary",
+    "artist": "Alex Warren",
+    "lang": "english",
+    "mood": "warm, calm"
+   },
+   {
+    "title": "Sunflower (Spider-Man: Into the Spider-Verse)",
+    "artist": "Post Malone, Swae Lee",
     "lang": "english",
     "mood": "chill, easy"
-   },
-   {
-    "title": "back to friends",
-    "artist": "sombr",
-    "lang": "english",
-    "mood": "mellow, reflective"
    }
   ],
   "proof": {
@@ -182,53 +182,6 @@
    "issues": [],
    "fixed": []
   },
-  "created_at": "2026-10-10T08:48:51+00:00"
- },
- {
-  "id": "r20261010-091019-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-091019-gita.jpg",
-  "video": "posts/r20261010-091019-gita.mp4",
-  "headline": "Bura waqt aaya hai... lagta hai kabhi nahi jayega? Gita 2.14",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Yeh mushkil waqt bhi guzar jayega.\nBas thoda sabr aur thoda hausla. 🙏\nKisi apne ko yeh bhejo jise aaj iski zarurat hai.\n\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #krishna #neversaydie #positivity",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kaun sa mushkil waqt tumne paar kiya hai? Likho, kisi aur ko hausla milega 🙏",
-  "songs": [
-   {
-    "title": "Tere Bina",
-    "artist": "Arijit Singh, Aakanksha Sharma",
-    "lang": "hindi",
-    "mood": "emotional, healing"
-   },
-   {
-    "title": "Humnava Mere",
-    "artist": "Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "tender, comforting"
-   },
-   {
-    "title": "MIDDLE OF THE NIGHT",
-    "artist": "Elley Duhe",
-    "lang": "english",
-    "mood": "moody, emotional"
-   },
-   {
-    "title": "Ordinary",
-    "artist": "Alex Warren",
-    "lang": "english",
-    "mood": "hopeful, warm"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The shloka on the image has no diacritics: it shows \"sitosna\", \"dah\", \"agamapayino\" and \"nityas\". The approved text is \"śītoṣṇa\", \"dāḥ\", \"āgamāpāyino\" and \"nityās\". The words are the same, but the image text is an unmarked transliteration. Regenerate the slide with the approved diacritic text, or accept the plain spelling. The verse and the lesson match Gita 2.14."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T09:10:20+00:00"
+  "created_at": "2026-10-10T09:24:36+00:00"
  }
 ]

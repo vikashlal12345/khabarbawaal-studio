@@ -1064,8 +1064,9 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
 # ---------------------------------------------------------------- 5. 🙏 Bhagavad Gita Reel (📦 Ready, every night)
 
 SAFFRON = "#FF9933"
-GITA_SEARCHES = ["Krishna Arjuna chariot painting", "Bhagavad Gita Krishna Arjuna", "Gita Upadesh painting",
-                 "Kurukshetra Krishna Arjuna"]
+GITA_SEARCHES = ["Krishna Arjuna chariot painting", "Gita Upadesh painting", "Krishna Arjuna miniature painting",
+                 "Bhagavad Gita illustration Krishna Arjuna"]
+PAINTING_WORDS = ("painting", "miniature", "upadesh", "illustration", "school", "museum", "gita", "kurukshetra")
 FREE_LICENCES = ("public domain", "cc0", "no restrictions", "cc by")   # "cc by" also covers CC BY-SA (credit given)
 
 
@@ -1106,7 +1107,10 @@ def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, floa
     import generate as g
     import fun
     used = state.get("gita_images_used", [])
-    cands = [c for c in commons_images(GITA_SEARCHES) if c["title"] not in used] or commons_images(GITA_SEARCHES)
+    found = commons_images(GITA_SEARCHES)
+    cands = [c for c in found if c["title"] not in used] or found
+    # paintings first (photos of statues/buildings rarely look good); only a few downloads (Wikimedia rate limit)
+    cands.sort(key=lambda c: -sum(w in c["title"].lower() for w in PAINTING_WORDS))
     folder = os.path.join(tmp, "gita")
     os.makedirs(folder, exist_ok=True)
     import io
@@ -1114,9 +1118,9 @@ def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, floa
     import requests
     ua = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}   # Wikimedia blocks anonymous bursts
     loaded = []
-    for c in cands[:14]:
+    for c in cands[:9]:
         try:
-            time.sleep(1.2)
+            time.sleep(2.0)
             r = requests.get(c["url"], headers=ua, timeout=30)
             if r.status_code == 429:   # Wikimedia: too many requests, wait and try once more
                 time.sleep(6)
@@ -1141,10 +1145,10 @@ def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, floa
     best = fun.claude_json("You choose background images for a respectful Bhagavad Gita Instagram Reel.",
                            f"Candidate images: {', '.join(n for n, _, _ in loaded)}. Open each with the Read tool. "
                            "Pick the 2 most beautiful, striking images that clearly show Lord Krishna with Arjuna "
-                           "(chariot, Kurukshetra battlefield, Gita Upadesh). Reject photos of people/actors/events, "
-                           "plain buildings, book covers, manuscript pages with writing, text-heavy, blurry, side-by-side "
-                           "duplicated (stereo) or collage images. Colourful paintings with large figures are best. "
-                           "Empty list if none fits.",
+                           "(chariot, Kurukshetra battlefield, Gita Upadesh). ONLY paintings or illustrations: reject all "
+                           "photographs (statues, temples, buildings, people, events), book covers, manuscript pages with "
+                           "writing, text-heavy, blurry, side-by-side duplicated (stereo) or collage images. Colourful "
+                           "paintings with large figures are best. Empty list if none fits.",
                            schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="gita image pick")["best"]
     chosen = [(img, c, min(1.0, max(0.0, float(b["focus"])))) for b in best for name, img, c in loaded
               if name == b["file"]][:2]
@@ -1224,11 +1228,22 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
 
     def graded(img: Image.Image, focus: float) -> Image.Image:
         zmax = 1.12
+        cw, ch = int(RW * zmax), int(RH * zmax)
         k = max(RW / img.width, RH / img.height) * zmax
         big = img.resize((int(img.width * k) + 2, int(img.height * k) + 2), Image.LANCZOS)
-        cw, ch = int(RW * zmax), int(RH * zmax)
         x0 = int(min(max(0, big.width * focus - cw / 2), big.width - cw))
         big = big.crop((x0, (big.height - ch) // 2, x0 + cw, (big.height - ch) // 2 + ch))
+        if img.width > img.height * 1.15:
+            # Wide painting: a full-screen crop would cut the figures off. Show more of it in the upper part
+            # of the screen, on a blurred, darkened copy of itself.
+            bh = int(1080 * zmax)
+            fg = img.resize((int(img.width * bh / img.height), bh), Image.LANCZOS)
+            fx = int(min(max(0, fg.width * focus - cw / 2), max(0, fg.width - cw)))
+            fg = fg.crop((fx, 0, fx + min(cw, fg.width), bh))
+            back = Image.blend(big.resize((cw // 12, ch // 12)).filter(ImageFilter.GaussianBlur(2)).resize((cw, ch)),
+                               Image.new("RGB", (cw, ch), "#000000"), 0.45)
+            back.paste(fg, ((cw - fg.width) // 2, int(70 * zmax)))
+            big = back
         return Image.blend(big, Image.new("RGB", big.size, "#3a2000"), 0.18)    # warm golden grade
 
     bases = [graded(img, focus) for img, _, focus in images]
@@ -1240,13 +1255,14 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
     grad = Image.new("L", (1, RH))
     for y in range(RH):
         lower = 248 * min(1.0, max(0.0, (y - RH * 0.33) / (RH * 0.27)))   # text area: nearly black
-        top = 170 * max(0.0, 1 - y / 360)                                 # behind "GITA GYAAN"
+        top = 175 * max(0.0, 1 - y / 430)                                 # behind the logo + "GITA GYAAN"
         grad.putpixel((0, y), int(max(lower, top)))
     alpha = Image.composite(Image.new("L", (RW, RH), 255), shade, grad.resize((RW, RH)))
     overlay = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
     overlay.putalpha(alpha)
 
     head = glow_line("GITA  GYAAN", vfont("Cinzel-Variable.ttf", 58, "Bold"), GOLD)
+    logo = logo_img(400, 96)   # KhabarBawaal logo, centred above the heading
     body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
     lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
     small_gold = vfont("Cinzel-Variable.ttf", 40, "SemiBold")
@@ -1270,7 +1286,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
     parts.append((items, end))
     t = end + 0.5 + pause
     items, y = [], 1060
-    items.append((y, glow_line("SHRI KRISHNA KEHTE HAIN", small_gold, GOLD), t)); y += 85
+    items.append((y, glow_line("SHRI KRISHNA KA SANDESH", small_gold, GOLD), t)); y += 85
     sh_lines = [x.strip() for x in printable(shloka).replace("|", "\n").split("\n") if x.strip()][:2]
     probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
     for i, ln in enumerate(sh_lines):
@@ -1328,8 +1344,10 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, shloka: 
         for x, y, v, r, a in dust:                       # golden dust drifting up
             yy = (y + v * t) % 1500 + 250
             d.ellipse((x - r, yy - r, x + r, yy + r), fill=(245, 194, 107, a))
-        frame.alpha_composite(head, ((RW - head.width) // 2, 210 - head.height // 2))
-        hy = 210
+        if logo:
+            frame.alpha_composite(logo, ((RW - logo.width) // 2, 120))
+        frame.alpha_composite(head, ((RW - head.width) // 2, 285 - head.height // 2))
+        hy = 285
         d.line((250, hy, 395, hy), fill=GOLD, width=2)
         d.line((RW - 395, hy, RW - 250, hy), fill=GOLD, width=2)
         start = 0.0
@@ -1368,7 +1386,8 @@ GITA_OPTION = {"type": "object", "properties": {
     "hook": {"type": "string", "description": "A feeling the viewer knows, max 11 words, with a natural pause '...', e.g. "
              "'Gusse mein kuch keh diya... aur baad mein pachtaye?'"},
     "lesson": {"type": "string", "description": "What Krishna says in this verse, simple poetic Hinglish, max 20 words. "
-               "It is shown under 'SHRI KRISHNA KEHTE HAIN', so don't start with 'Krishna kehte hain'"},
+               "It is shown under 'SHRI KRISHNA KA SANDESH' (his message, in simple words), so don't start with "
+               "'Krishna kehte hain'; stay close to what the verse says"},
     "real_life": {"type": "string", "description": "'Aaj ki seekh': one line people want to save, max 18 words, e.g. "
                   "'Jawab kal bhi diya ja sakta hai, shabd wapas nahi aate.'"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
