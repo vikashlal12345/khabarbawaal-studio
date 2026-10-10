@@ -1,54 +1,5 @@
 [
  {
-  "id": "reel_devotion-2026-10-11",
-  "image": "posts/20261010-2133-reel_devotion-2026-10-11.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261010-213342-reel_devotion-2026-10-11.mp4",
-  "headline": "Navratri Din 1: Maa Shailputri: Aaj pehla navratra... Maa aapki har mushkil halki kare",
-  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
-  "caption": "Pehle din ki pooja, nayi shuruaat ka ashirwad 🙏\nMaa sabke ghar sukh, shanti aur himmat barsaye.\nApne parivar ko share karo ya comment karo 'Jai Mata Di'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #jaimatadi #navdurga #bhakti #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aaj ka sankalp comment mein likho, Maa sunti hain. Jai Mata Di 🙏",
-  "songs": [
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Aaja Maa Tainu Ankhiyan Udeek Diyaan (From \"Jai Maa Vaishno Devi\")",
-    "artist": "Sonu Nigam, Surinder Kohli",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri Aarti",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The 'SHUBH NAVRATRI' header sits very close to the goddess's head and neck in the painting, so it may slightly overlap her. Check the placement.",
-    "Slide 3: The gold 'SHUBH NAVRATRI' header sits over the light umbrella and wall area of the painting. Contrast is low, so it is harder to read.",
-    "Slide 4: The slide shows 'Jai Mata Di, family ko bhejo' and '@khabarbawaal', not the 'Aaj ka sankalp comment mein likho...' closing line from the text list. This is a text mismatch, not an error. Also, the photo is a repeat of slide 3."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T21:33:42+00:00"
- },
- {
   "id": "reel_devotion-2026-10-11-paintings",
   "image": "posts/20261010-2100-reel_devotion-2026-10-11.jpg",
   "kind": "reel",

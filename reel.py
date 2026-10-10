@@ -1210,8 +1210,8 @@ Z_SIZES = {(864, 1536): "864x1536 ( 9:16 )", (1088, 1360): "1120x1440 ( 7:9 )"} 
 _MODELS_DOWN: set[str] = set()
 FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divine glow, rich deep shadows, fine detail, "
               "reverent and peaceful Indian devotional art, vertical composition with the figures in the upper half "
-              "and calm darker ground in the lower third (text goes there). ")
-FLUX_AVOID = " No text, no letters, no watermark."
+              "and calm, plain darker ground in the lower third, kept empty. ")
+FLUX_AVOID = " No text, no captions, no letters, no writing, no signature, no watermark."
 SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
               "confused by busy scenes: the deity and at most one person, one setting. The painter adds extra arms to gods, "
               "so show only ONE of the deity's hands (raised in blessing, or resting on the person's head or shoulder) "
@@ -1219,7 +1219,9 @@ SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep
               "describe several arms or hands. Only the 1-2 most recognisable items, each named once (e.g. Krishna: blue "
               "skin, peacock feather crown, flute; Hanuman: monkey face, golden mace on his shoulder; Maa Durga: red saree, "
               "golden crown, her lion beside her; Maa Shailputri: white bull beside her, lotus in her one visible hand). "
-              "Then the light and the mood. Fully clothed, reverent, nothing scary.")
+              "The deity must look clearly divine, never like an ordinary person: golden crown (or Hanuman's and "
+              "Ganesh's own look) and a soft golden halo or glow around them. Then the light and the mood. Fully "
+              "clothed, reverent, nothing scary.")
 
 
 def first_url(x) -> str:
@@ -1304,7 +1306,7 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
         "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none. "
         "Gods are drawn on purpose in a simple form with one or two arms visible, even those who traditionally have "
         "more: that is correct. Reject only real problems: the deity doesn't look like their well-known form (wrong "
-        "skin colour, wrong animal), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
+        "skin colour, wrong animal) or looks like an ordinary person (no crown, halo or divine glow), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
         "merged with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, any text, "
         "letters, signature or watermark, a messy or ugly picture. Small differences from the description are fine "
         "(the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
@@ -1791,9 +1793,8 @@ DEVOTION_PLAN = {"type": "object", "properties": {
     "seekh": {"type": "string", "description": "Label over the blessing, e.g. 'AAJ KA ASHIRWAAD', 'AAJ KI PRARTHANA'"},
     "cta": {"type": "string", "description": "Ending line, e.g. 'Jai Mata Di 🙏 Apni family ko bhejo' (max 7 words, no emoji)"},
     "scene_darshan": {"type": "string", "description": "Picture 1 (behind the greeting and who the deity is): the deity "
-                      "alone in this exact traditional form with its well-known attributes and vahana (e.g. Maa "
-                      "Shailputri: on a white bull, trident and lotus, crescent moon), in a divine setting at sunrise. "
-                      + SCENE_HELP},
+                      "alone, clearly divine, with her/his vahana or one main item (e.g. Maa Shailputri: a white bull "
+                      "beside her, lotus in her one visible hand), in a divine setting at sunrise. " + SCENE_HELP},
     "scene_life": {"type": "string", "description": "Picture 2 (behind the blessing): the same deity, same look, gently "
                    "blessing or walking beside a young Indian of today in a relatable moment (exam morning, first job, "
                    "going home, family puja). " + SCENE_HELP}},

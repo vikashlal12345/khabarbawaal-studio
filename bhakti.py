@@ -15,7 +15,7 @@ W, H = 1080, 1350
 CREAM, GOLD = (255, 241, 214), (245, 194, 107)
 STYLE = ("Detailed hand-drawn storybook illustration with fine ink linework, cinematic warm golden glow, night or "
          "dusk, rich dark shadows, reverent and emotional Indian devotional art. Large calm dark empty sky in the "
-         "upper third (text goes there), the figures in the lower two-thirds. ")
+         "upper third, kept empty, the figures in the lower two-thirds. ")
 
 OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string", "description": "The relatable moment, e.g. 'walking home alone after a job rejection'"},
