@@ -1347,6 +1347,25 @@
      "tokens": 35615
     }
    }
+  },
+  "top10_viral": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 2362,
+   "cache_read": 4327,
+   "cache_write": 20971,
+   "value_usd": 0.1079,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 9629
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 18037
+    }
+   }
   }
  }
 }
