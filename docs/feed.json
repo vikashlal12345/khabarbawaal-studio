@@ -1,5 +1,26 @@
 [
  {
+  "id": "9466073c3f5b",
+  "image": "posts/20261010-0631-9466073c3f5b.jpg",
+  "kind": "fun",
+  "headline": "Ghar par koi nahi tha, toh maine poore josh mein gaana gaaya. Tabhi dekha: balcony mein padosi aunty kapde sukha rahi thi.",
+  "tag": "😂 DESI LIFE",
+  "caption": "Bathroom singer ho ya hall wale singer, risk sabko hai 😅\nPadosi ne sab suna, bas bola kuch nahi.\nAisa kab hua tumhare saath? Family group mein bhejo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #desilife #viral #trending #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aunty ne kuch nahi bola. Bas agli subah chai pe 'Beta, wo gaana wapas gao' bola.",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Caption: Only slide1.jpg exists in the folder. I reviewed slide 1 and its text and found no problems. The other slides, including the one with the 'Aunty ne kuch nahi bola...' text, could not be checked visually."
+   ],
+   "fixed": [
+    "toh maine poore josh mein gaana gaya. → toh maine poore josh mein gaana gaaya."
+   ]
+  },
+  "created_at": "2026-10-10T06:31:30+00:00"
+ },
+ {
   "id": "47ea6610ee35",
   "image": "posts/20261010-0431-47ea6610ee35.jpg",
   "kind": "news",
