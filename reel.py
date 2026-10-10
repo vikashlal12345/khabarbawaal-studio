@@ -319,9 +319,10 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
 # ---------------------------------------------------------------- 3. news photo slideshow
 
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
-              out_mp4: str, end: float = 2.5) -> list[Image.Image]:
+              out_mp4: str, end: float = 3.0) -> list[Image.Image]:
     """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
-    uncropped instead of zooming. Each photo stays long enough to read its line (2.6-4.5 s).
+    uncropped instead of zooming. Each photo stays long enough to read its line in full: 1.5 s + 0.25 s
+    a word, 3-7.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel).
     Numbers are highlighted too. Returns the frames to proofread: one per photo + the end card."""
     highlights = {norm(w) for phrase in highlight for w in phrase.split()}
     photo_h, photo_y = 760, 300
@@ -333,7 +334,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = min(4.5, max(2.6, 1.0 + 0.16 * len(text.split())))
+        per = min(7.5, max(3.0, 1.5 + 0.25 * len(text.split())))
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
