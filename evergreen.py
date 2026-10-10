@@ -1,14 +1,13 @@
-"""📦 Ready posts: evergreen carousels made at night (facts, explainers, on-this-day,
-quizzes, myth vs fact) plus 2 timeless 🎬 Reels (a "Tag that friend" clip and a meme). They wait in docs/ready.json (max 15, kept 24 hours) for the owner
+"""📦 Ready posts, made every night: one carousel in turn (Explainer → Quiz → Amazing Facts →
+Myth vs Fact), 📅 On This Day, and a 🙏 Bhagavad Gita Reel. They wait in docs/ready.json (max 15, kept 24 hours) for the owner
 to post any time, and are used automatically when the AI can't write a news post.
 """
 from __future__ import annotations
 
 import json
-import random
 import shutil
 import tempfile
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 
 from PIL import Image
 
@@ -115,39 +114,44 @@ def make_one(fmt: str, recent: list[str]) -> dict | None:
             "tag": "📦 " + data["post"]["tag"].upper()}
 
 
-def make_reel(kind: str, state: dict) -> dict | None:
-    """A timeless joke Reel for the 📦 Ready tab (video + cover saved under docs/posts)."""
+# One carousel type a night, in turn (owner's plan, 10 Oct 2026): Explainer (Sunday 11 Oct) → Quiz →
+# Amazing Facts → Myth vs Fact → Explainer… plus On This Day and a 🙏 Gita Reel every night.
+CYCLE = ["explainer", "quiz", "facts", "myth_fact"]
+CYCLE_START = date(2026, 10, 11)
+
+
+def ist_today() -> date:
+    return (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).date()
+
+
+def make_gita(state: dict) -> dict | None:
+    """🙏 Bhagavad Gita Reel for the 📦 Ready tab (video + cover saved under docs/posts)."""
     import reel
     import status
-    status.start("ready_" + kind, datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                 "📦 Ready Reel (" + ("Tag that friend" if kind == "reel_clip" else "meme") + ")", 6)
+    status.start("ready_gita", ist_today().isoformat(), "📦 🙏 Gita Reel", 6)
     try:
         with tempfile.TemporaryDirectory() as tmp:
-            cover, mp4, entry = reel.build_joke_reel(kind, state, tmp, evergreen=True)
-            pid = f"r{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-{kind}"
+            cover, mp4, entry = reel.build_gita_reel(state, tmp)
+            pid = f"r{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-gita"
             cover.save(g.DOCS / f"posts/{pid}.jpg", "JPEG", quality=88, optimize=True)
             shutil.copy(mp4, g.DOCS / f"posts/{pid}.mp4")
     except Exception as e:
-        print(f"  ! ready Reel failed: {str(e)[:200]}")
-        status.fail(f"Not made: {str(e)[:200]}. An extra carousel is made instead.", True)
+        print(f"  ! Gita Reel failed: {str(e)[:200]}")
+        status.fail(f"Gita Reel not made: {str(e)[:200]}")
         return None
-    print(f"  ready Reel: {entry['headline']}")
+    print(f"  Gita Reel: {entry['headline']}")
     status.done(f"Ready in 📦 Ready: {entry['headline'][:80]}", post=pid)
     return {"id": pid, "kind": "ready", "media": "reel", "image": f"posts/{pid}.jpg", "video": f"posts/{pid}.mp4",
             **entry, "tag": "📦 " + entry["tag"], "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
 
 
-def make_batch(state: dict, count: int = 5) -> int:
-    """count posts: up to ready_reels_per_night Reels, the rest carousels (one more carousel per failed Reel)."""
+def make_batch(state: dict, count: int = 3) -> int:
+    """Every night: today's carousel from the cycle, 📅 On This Day, and a 🙏 Gita Reel."""
     items = prune(load())
     recent = state.get("recent_ready", [])[-40:]
+    today = ist_today()
     made = 0
-    for kind in ["reel_clip", "reel_meme"][:min(count, g.CONFIG.get("ready_reels_per_night", 2))]:
-        out = make_reel(kind, state)
-        if out:
-            items.append(out)
-            made += 1
-    for fmt in random.sample(list(FORMATS), k=min(count - made, len(FORMATS))):
+    for fmt in (CYCLE[(today - CYCLE_START).days % len(CYCLE)], "on_this_day"):
         out = make_one(fmt, recent)
         if not out:
             continue
@@ -162,11 +166,14 @@ def make_batch(state: dict, count: int = 5) -> int:
                       "headline": out["headline"], "tag": out["tag"], "caption": g.limit_hashtags(out["caption"]),
                       "source": "KhabarBawaal Original", "source_url": "", "proof": out["proof"],
                       "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                      **({"valid_on": (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).date().isoformat()}
-                         if fmt == "on_this_day" else {})})
+                      **({"valid_on": today.isoformat()} if fmt == "on_this_day" else {})})
         recent.append(out["headline"])
         made += 1
         print(f"  ready post: {out['headline']}")
+    gita = make_gita(state)
+    if gita:
+        items.append(gita)
+        made += 1
     state["recent_ready"] = recent[-60:]
     save(prune(items))
     return made

@@ -1061,6 +1061,239 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
 
 
+# ---------------------------------------------------------------- 5. 🙏 Bhagavad Gita Reel (📦 Ready, every night)
+
+SAFFRON = "#FF9933"
+GITA_SEARCHES = ["Krishna Arjuna chariot painting", "Bhagavad Gita Krishna Arjuna", "Gita Upadesh painting",
+                 "Kurukshetra Krishna Arjuna"]
+FREE_LICENCES = ("public domain", "cc0", "no restrictions", "cc by")   # "cc by" also covers CC BY-SA (credit given)
+
+
+def commons_images(queries: list[str]) -> list[dict]:
+    """Free-licence images from Wikimedia Commons: [{url, title, credit, w, h}] (1080 px wide copies)."""
+    import re
+    import requests
+    ua = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}
+    out, seen = [], set()
+    for q in queries:
+        try:
+            r = requests.get("https://commons.wikimedia.org/w/api.php", headers=ua, timeout=25, params={
+                "action": "query", "format": "json", "generator": "search", "gsrsearch": q + " filetype:bitmap",
+                "gsrnamespace": 6, "gsrlimit": 15, "prop": "imageinfo", "iiprop": "url|size|extmetadata",
+                "iiurlwidth": 1080}).json()
+        except Exception as e:
+            print(f"  ! Commons search '{q}' failed: {e}")
+            continue
+        for page in (r.get("query", {}).get("pages") or {}).values():
+            ii = page["imageinfo"][0]
+            meta = ii.get("extmetadata", {})
+            lic = meta.get("LicenseShortName", {}).get("value", "")
+            if (page["title"] in seen or not lic.lower().startswith(FREE_LICENCES) or min(ii["width"], ii["height"]) < 700
+                    or ii["width"] > 2.1 * ii["height"] or "3d" in page["title"].lower()):   # no stereo/panorama pairs
+                continue
+            seen.add(page["title"])
+            artist = re.sub(r"<[^>]+>|\s+", " ", meta.get("Artist", {}).get("value", "")).strip()
+            artist = "" if "unknown" in artist.lower() else artist[:40]
+            out.append({"url": ii.get("thumburl") or ii["url"], "title": page["title"][5:],
+                        "credit": ", ".join(x for x in (artist, lic, "Wikimedia Commons") if x),
+                        "w": ii["width"], "h": ii["height"]})
+    return out
+
+
+def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str]]:
+    """The AI looks at the free Krishna-Arjuna images and picks the 2 most beautiful, on-topic ones
+    (not used recently). Returns [(image, credit)]."""
+    import generate as g
+    import fun
+    used = state.get("gita_images_used", [])
+    cands = [c for c in commons_images(GITA_SEARCHES) if c["title"] not in used] or commons_images(GITA_SEARCHES)
+    folder = os.path.join(tmp, "gita")
+    os.makedirs(folder, exist_ok=True)
+    import io
+    import time
+    import requests
+    ua = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}   # Wikimedia blocks anonymous bursts
+    loaded = []
+    for c in cands[:14]:
+        try:
+            time.sleep(0.6)
+            r = requests.get(c["url"], headers=ua, timeout=30)
+            r.raise_for_status()
+            img = Image.open(io.BytesIO(r.content))
+            img.load()
+        except Exception as e:
+            print(f"  ! Commons image skipped: {str(e)[:80]}")
+            continue
+        thumb = img.copy()
+        thumb.thumbnail((512, 512))
+        name = f"img{len(loaded) + 1}.jpg"
+        thumb.convert("RGB").save(os.path.join(folder, name), quality=80)
+        loaded.append((name, img, c))
+    if not loaded:
+        raise RuntimeError("no free Krishna-Arjuna images found on Wikimedia Commons")
+    schema = {"type": "object", "properties": {"best": {"type": "array", "items": {"type": "string"},
+              "description": "File names, best first (max 2)"}}, "required": ["best"], "additionalProperties": False}
+    best = fun.claude_json("You choose background images for a respectful Bhagavad Gita Instagram Reel.",
+                           f"Candidate images: {', '.join(n for n, _, _ in loaded)}. Open each with the Read tool. "
+                           "Pick the 2 most beautiful, striking images that clearly show Lord Krishna with Arjuna "
+                           "(chariot, Kurukshetra battlefield, Gita Upadesh). Reject photos of people/actors/events, "
+                           "plain buildings, book covers, text-heavy, blurry, side-by-side duplicated (stereo) or "
+                           "collage images. Paintings are best. Empty list if none fits.",
+                           schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="gita image pick")["best"]
+    chosen = [(img, c) for n in best for name, img, c in loaded if name == n][:2]
+    if not chosen:
+        raise RuntimeError("no suitable Krishna-Arjuna image among the free ones")
+    state["gita_images_used"] = (used + [c["title"] for _, c in chosen])[-20:]
+    print("  Gita images: " + " | ".join(c["title"][:50] for _, c in chosen))
+    return [(img.convert("RGB"), c["credit"]) for img, c in chosen]
+
+
+def gita_reel(images: list[tuple[Image.Image, str]], verse: str, shloka: str, hook: str, lesson: str, real_life: str,
+              highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """Krishna-Arjuna painting(s) slowly zooming (wide paintings sit whole on a blurred copy), with
+    1) the real-life hook, 2) Krishna's lesson + verse, 3) what it means today, 4) 'send this' ending.
+    Returns frames to proofread (one per part)."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    phases = [3.5, 6.0, 4.5, 2.0]
+    starts = [sum(phases[:i]) for i in range(len(phases) + 1)]
+    band_h, band_y, text_y = 760, 250, 1060
+
+    def background(img: Image.Image) -> tuple[Image.Image, Image.Image | None]:
+        k = max(RW / img.width, RH / img.height)
+        bg = img.resize((int(img.width * k) + 1, int(img.height * k) + 1)).crop((0, 0, RW, RH))
+        bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(30)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
+        return bg, img
+    bgs = [background(img) for img, _ in images]
+    credits = [c for _, c in images]
+    tag = pill("GITA GYAAN", font("Anton-Regular.ttf", 60), SAFFRON, "#111111", pad=(28, 8))
+    texts = []
+    for t, room in ((hook, 470), (lesson, 380), (real_life, 470)):   # the lesson shares room with its header + verse
+        lines, fnt, lh = fit_lines(t, RIGHT - LEFT, room, sizes=range(76, 40, -4))
+        texts.append((line_images(lines, fnt, lh, "#FFFFFF", SAFFRON, highlights, stroke=6), lh))
+    small = font("Poppins-SemiBold.ttf", 34)
+    cta = pill("SEND THIS TO SOMEONE WHO NEEDS IT", font("Poppins-Bold.ttf", 38), SAFFRON, "#111111", pad=(28, 16), arrow=True)
+    logo = logo_img()
+    enc, checks, frame = Encoder(out_mp4), [], None
+    for i in range(int(starts[-1] * FPS)):
+        t = i / FPS
+        ph = sum(t >= s_ for s_ in starts[1:])
+        lt = t - starts[ph]
+        n = 0 if ph < 2 or len(bgs) == 1 else 1      # 2nd painting for the 'today' part
+        bg, img = bgs[n]
+        frame = bg.convert("RGBA")
+        z = 1.0 + 0.08 * (t / starts[-1])
+        kk = min(RW / img.width, band_h / img.height) * z
+        pic = img.resize((int(img.width * kk), int(img.height * kk)), Image.BICUBIC)
+        if pic.width > RW or pic.height > band_h:   # crop the zoom to the band
+            x0, y0 = max(0, (pic.width - RW) // 2), max(0, (pic.height - band_h) // 2)
+            pic = pic.crop((x0, y0, x0 + min(RW, pic.width), y0 + min(band_h, pic.height)))
+        frame.paste(pic, ((RW - pic.width) // 2, band_y + (band_h - pic.height) // 2))
+        if n == 1 and lt < 0.6 and ph == 2:          # crossfade into the 2nd painting
+            prev = bgs[0][0].convert("RGBA")
+            frame = Image.blend(prev, frame, lt / 0.6)
+        if logo:
+            frame.alpha_composite(logo, (60, 150))
+        frame.alpha_composite(tag, (RW - tag.width - 60, 140))
+        d = ImageDraw.Draw(frame)
+        d.text((RW - 60, band_y + band_h + 8), f"Image: {credits[n]}"[:80], font=font("Poppins-SemiBold.ttf", 20),
+               fill="#BBBBBB", anchor="ra")
+        if ph < 3:
+            imgs, lh = texts[ph]
+            y = text_y
+            if ph == 1:
+                d.text((LEFT, y), "Krishna ne Arjun se kaha:", font=small, fill=SAFFRON)
+                y += 60
+                if shloka:
+                    d.text((LEFT, y), printable(shloka)[:60], font=font("Poppins-SemiBold.ttf", 30), fill="#FFE0B2")
+                    y += 52
+            for j, li in enumerate(imgs):
+                paste_pop(frame, li, LEFT, y + j * lh, (lt - 0.15 - j * 0.2) / 0.3)
+            if ph == 1:
+                d.text((LEFT, y + len(imgs) * lh + 16), f"Bhagavad Gita {verse}", font=small, fill=SAFFRON)
+            if lt >= phases[ph] - 0.15 and len(checks) == ph:
+                checks.append(frame.convert("RGB"))
+        else:
+            k = ease_out(lt / 0.4)
+            frame.alpha_composite(cta, ((RW - cta.width) // 2, int(text_y + 120 + 120 * (1 - k))))
+        handle_tag(frame, 1730)
+        enc.add(frame)
+    enc.close()
+    checks.append(frame.convert("RGB"))
+    return checks
+
+
+GITA_OPTION = {"type": "object", "properties": {
+    "based_on": {"type": "string", "description": "The life situation or trending topic this lesson is about"},
+    "verse": {"type": "string", "description": "Chapter.verse of the Bhagavad Gita, e.g. 2.47"},
+    "shloka": {"type": "string", "description": "First line of the shloka in Roman letters (max 8 words), or empty if unsure"},
+    "hook": {"type": "string", "description": "The real-life situation as a question/line, max 12 words, e.g. "
+             "'Interview mein reject ho gaye aur himmat toot gayi?'"},
+    "lesson": {"type": "string", "description": "What Krishna tells Arjuna in this verse, simple Hinglish, max 26 words"},
+    "real_life": {"type": "string", "description": "What it means for you today, practical, max 22 words"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
+    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
+    "songs": SONGS},
+    "required": ["based_on", "verse", "shloka", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment",
+                 "hashtags", "songs"], "additionalProperties": False}
+
+GITA_SYSTEM = """You write a daily Bhagavad Gita Reel for {page}, an Indian Instagram page for 18-34s \
+(Hinglish in English letters only, never Devanagari). Each Reel: a real-life situation young Indians face \
+(exams, jobs, breakups, money, family pressure, failure, comparison, anger, overthinking) or a widely-known \
+trending topic of the day, then ONE lesson Krishna gives Arjuna, then what it means in practice today.
+Rules: the lesson must truly match the chapter.verse you cite (use well-known verses you are sure of; leave \
+shloka empty if unsure of the exact words). Reverent and warm tone: never joke about Krishna or the Gita, no \
+politics, no tragedies, nothing against any religion or community. Make it something people send to a friend \
+who needs it. Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line invites a comment or a send."""
+
+GITA_JUDGE = ("You are a 22-year-old Indian who loves Gita Reels on Instagram. Rate each Reel 1-10 for: "
+              "understandable (the lesson is clear from the Reel alone), funny (here: how much it moves or helps you, "
+              "would you send it to someone), fresh (not a tired motivational line). Be strict.")
+
+
+def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
+    """🙏 Bhagavad Gita Reel for the 📦 Ready tab. Returns (cover, mp4 path, feed fields)."""
+    import fun
+    import generate as g
+    import proofread
+    import status
+    status.step("Finding Krishna-Arjuna paintings (free licence)", 2)
+    images = pick_gita_images(state, tmp)
+    status.step("Writing 3 Gita lessons", 3)
+    songs = trending_songs()
+    trends = fun.google_trends()
+    options = fun.claude_json(GITA_SYSTEM.format(page=CONFIG["page_name"]),
+                              f"{fun.today_context()}\n\nWhat India is searching today (use one only if it fits respectfully):\n"
+                              + "\n".join(f"- {t}" for t in trends[:15]) +
+                              "\n\nLessons used recently (pick other verses/situations):\n"
+                              + ("\n".join(f"- {r}" for r in state.get("recent_gita", [])[-20:]) or "(none)") +
+                              "\n\nWrite exactly 3 different Reels." + songs_prompt(songs),
+                              options_schema(GITA_OPTION, "Exactly 3 different Reels"),
+                              CONFIG.get("membership_model", "sonnet"), purpose="gita writing")["options"][:3]
+    for o in options:
+        o["caption"] = unescape(o["caption"])
+    best = fun.judge_best(options, lambda o: f"{o['hook']} -> Krishna: {o['lesson']} (Gita {o['verse']}) -> {o['real_life']}",
+                          CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE)
+    roman_only(best, ["caption", "pin_comment"])
+    picked_songs = checked_songs(best.pop("songs", []), songs)
+    out = os.path.join(tmp, "reel.mp4")
+    status.step("Making the video + proofreading", 5)
+
+    def caption_of(d):
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
+        return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily Gita Gyaan 🙏\n\n{tags}"
+    frames, data, proof = proofread.run(
+        lambda d: gita_reel(images, d["post"]["verse"], d["post"]["shloka"], d["post"]["hook"], d["post"]["lesson"],
+                            d["post"]["real_life"], d["post"]["highlight"], out),
+        {"post": best}, caption_of,
+        f"Bhagavad Gita {best['verse']}: check that the lesson and the shloka line truly match this verse.")
+    post = data["post"]
+    state["recent_gita"] = (state.get("recent_gita", []) + [f"Gita {post['verse']}: {post['based_on']}"])[-60:]
+    return frames[1], out, {
+        "headline": printable(f"{post['hook']} Gita {post['verse']}")[:140], "tag": "🙏 GITA GYAAN",
+        "caption": g.limit_hashtags(caption_of(data)), "source": "Bhagavad Gita", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
+
 def make(kind: str, state: dict, feed: list) -> bool:
     """Make today's Reel for this slot; False (with the reason printed) if it couldn't be made."""
     import tempfile
