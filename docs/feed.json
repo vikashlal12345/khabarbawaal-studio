@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-10-11",
+  "image": "posts/20261010-2139-reel_devotion-2026-10-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261010-213945-reel_devotion-2026-10-11.mp4",
+  "headline": "Navratri Din 1: Maa Shailputri: Subah ki pehli kiran... Navratri ka pehla din aa gaya",
+  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
+  "caption": "Nau din, nau roop, ek hi shakti 🙏\nAaj se nayi shuruaat karein, Maa saath hain.\nIs blessing ko family ke saath share karein, comment mein likhein 'Jai Mata Di'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #maadurga #jaimatadi #navratri2026 #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aaj kaunsi nayi shuruaat karne ja rahe ho? Comment mein batayein 🙏",
+  "songs": [
+   {
+    "title": "Maa Durga Aarti",
+    "artist": "Shoma Banerjee",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Aaja Maa Tainu Ankhiyan Udeek Diyaan (From \"Jai Maa Vaishno Devi\")",
+    "artist": "Sonu Nigam, Surinder Kohli",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri Aarti",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri (Durga Aarti)",
+    "artist": "Hari Om Sharan, Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Minor: the AI illustration shows the lotus and the bull (Nandi), but Maa Shailputri is traditionally shown with a trident in her other hand, and it is missing. The image is labelled as an AI illustration. This is optional to fix."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T21:39:45+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-11-paintings",
   "image": "posts/20261010-2100-reel_devotion-2026-10-11.jpg",
   "kind": "reel",
