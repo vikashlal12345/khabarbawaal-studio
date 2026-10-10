@@ -177,6 +177,8 @@ def ai_curate(items: list, post: dict, story_text: str, max_words: int = 26) -> 
         prompt = (f'Headline: "{post["headline"]}"\n\nFull article:\n{story_text or "(not available)"}\n\n'
                   f"Candidate photos: {', '.join(names)}. Look at each with the Read tool.\n\n"
                   f"Build the swipe slides that come after the headline card:\n"
+                  f"0. Prefer official handout material (government, party, team, company or studio photos and their "
+                  f"X posts) over news-agency photos, when it fits the story.\n"
                   f"1. Keep only real photos or social-post screenshots that clearly belong to this story. Drop logos, "
                   f"placeholders, ads, unrelated people or places, photos with a big agency watermark across them "
                   f"(Getty, Reuters, AP, PTI, ANI), and near-duplicates of a photo already kept.\n"
@@ -412,6 +414,8 @@ def plan(item: dict, post: dict, cover_photo: Image.Image | list | None) -> list
              for (kind, img, credit, _), text in picked]
     if len(extra) >= 2:
         specs.append({"type": "lines", "titles": titles, "lines": extra})
+    if post.get("take", "").strip():   # our own voice: makes the post original (Instagram 2026)
+        specs.append({"type": "text", "title": "KhabarBawaal ka take", "text": post["take"].strip()})
     specs.append({"type": "closing"})
     return specs
 

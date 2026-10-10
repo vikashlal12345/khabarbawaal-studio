@@ -27,13 +27,13 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.
 
 ## Schedule (IST) - `schedule.py`
-Quiet 11 PM-5 AM (night jobs only). Regular posts at :00 (`REGULAR_HOURS`): **hourly in Instagram's busy hours
-(7-10, 12-14, 18-22), every 2 h in slow hours** (5, 16) (every 3rd = fun).
-Specials: 5:00 overnight Top 5 roundup · 6:15 Top 5 Viral · 8:15 Market Brief · 9:09 Pre-open ·
-9:15 Thought of the Day · 15:45 Closing Bell · 21:15 Top 5 News (market posts trading days only).
-🎬 Reels replace the regular post at **8:00 and 13:00 (clip + "Tag that friend")**, **19:00 (meme)**, **20:00 (news photo
-slideshow)**; if a Reel can't be made, that slot posts a regular post.
-Night: 1:00 five 📦 ready posts (3 carousels + 2 timeless Reels) · 2:00 day planner (📅 previews) · 4:00 learning.
+**Fewer-posts plan (10 Oct 2026, ~9 a day = 5 Reels + 4 carousels).** Quiet 11 PM-5 AM (night jobs only).
+7:00 🌅 Overnight Top 5 · 8:00 🎬 Tag that friend · 10:00 📰 news carousel · 13:00 🎬 Tag that friend ·
+17:00 📰 news carousel · 18:00 🎬 political satire + REALITY CHECK (Congress/AAP/Left/Cockroach Janta Party) ·
+19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide
+(originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
+If a Reel can't be made, that slot posts a news carousel. Night: 1:00 five 📦 ready posts (3 carousels + 2 Reels) ·
+2:00 day planner (📅 previews, only at 10/17) · 4:00 learning.
 
 ## How it runs
 - `.github/workflows/hourly.yml`: a self-restarting chain. `generate` job makes the post; `next` job

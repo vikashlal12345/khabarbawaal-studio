@@ -12,7 +12,7 @@
   "keep_days": 1,
   "status_topic": "kb-status-611df8570731be7059259d19",
   "inbox_topic": "kb-inbox-d29294d0e65aa1ec00ad30e6",
-  "fun_every": 3,
+  "fun_every": 0,
   "ready_per_night": 5,
   "ready_reels_per_night": 2,
   "jokes_per_night": 10,

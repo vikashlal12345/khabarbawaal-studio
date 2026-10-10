@@ -202,14 +202,17 @@ POST_SCHEMA = {
                       "description": "3 short Hinglish facts from the story, max 14 words each"},
         "photo_query": {"type": "string", "description": "Short English news-search query for photos of this story"},
         "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
+        "take": {"type": "string", "description": "KhabarBawaal ka take: our own opinion/analysis in Hinglish, "
+                 "1-2 lines, max 30 words (see rules)"},
     },
-    "required": ["pick", "tag", "headline", "highlight", "caption", "pin_comment", "hashtags", "key_facts", "photo_query", "wiki_title"],
+    "required": ["pick", "tag", "headline", "highlight", "caption", "pin_comment", "hashtags", "key_facts", "photo_query",
+                 "wiki_title", "take"],
     "additionalProperties": False,
 }
 
 SYSTEM_PROMPT = """You run {page}, an Indian Instagram page for Gen Z that posts \
 whatever India is talking about right now: viral moments, funny and weird stories, \
-politics, cricket, Bollywood and tech. Every hour you choose ONE story from the \
+politics, cricket, Bollywood and tech. A few times a day you choose ONE story from the \
 candidates and write the post.
 
 Choosing: pick the story most likely to be shared, saved and argued about in the \
@@ -236,6 +239,14 @@ serious stories (deaths, accidents, crimes) get a respectful tone.
 {engage}
 
 Hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag.
+
+Instagram now reach-ranks posts by SENDS (shared in DMs) and SAVES: write so people want to send it \
+to a friend or family group ("ye dekh!") or save it for later (useful numbers, what it means for them).
+
+take ("KhabarBawaal ka take", its own slide): the page's own voice, not a repeat of the facts: why it \
+matters to young Indians, what most people are missing, or a sharp opinion (following the editorial line \
+for politics). It makes the post our own (Instagram favours original posts). No new facts or numbers \
+beyond the story; opinion must read as opinion.
 
 Also: key_facts (3 short Hinglish facts from the story, for a swipe slide), photo_query \
 (a short English search query that finds news photos of this exact story) and wiki_title \
@@ -862,7 +873,7 @@ def main() -> int:
     parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
                                            "market_open", "market_preopen", "market_close", "night_roundup",
                                            "night_ready", "night_calendar", "night_jokes", "night_learn",
-                                           "reel_clip_am", "reel_clip", "reel_meme", "reel_news"],
+                                           "reel_clip_am", "reel_clip", "reel_politics", "reel_meme", "reel_news"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
@@ -891,6 +902,14 @@ def main() -> int:
             return 0
         print("No Reel this time: making a regular post for this slot instead.")
 
+    # Timed runs (chain/backup timer) post a regular post only at the planned hours (schedule.REGULAR_HOURS).
+    if args.kind == "auto" and args.min_gap:
+        near = any(-3 <= (now_ist - now_ist.replace(hour=h, minute=m, second=0, microsecond=0)).total_seconds() / 60 <= 20
+                   for h, m in schedule.regular_times())
+        if not near:
+            print(f"{now_ist:%H:%M} IST is not a posting time: no post.")
+            return 0
+
     # 📅 A planned preview for this slot (made like a ➕ Create post).
     import calendar_plan
     event = calendar_plan.due(state)
@@ -910,7 +929,7 @@ def main() -> int:
         # Count only posting hours (quiet hours are expected gaps).
         steps = int(age_min // 10)
         active_min = 10 * sum(not schedule.is_quiet(now_ist - timedelta(minutes=10 * k)) for k in range(steps))
-        if active_min > 180:
+        if active_min > 360:   # posts are up to ~4 h apart now (fewer-posts plan)
             raised["gap"] = {"hours": round(active_min / 60)}
         else:
             resolved.append("gap")
