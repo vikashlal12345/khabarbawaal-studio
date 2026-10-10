@@ -1,5 +1,21 @@
 [
  {
+  "id": "thought-2026-10-10",
+  "image": "posts/20261010-0346-thought-2026-10-10.jpg",
+  "kind": "thought",
+  "headline": "Aaram bhi safar ka hissa hai. Weekend pe thoda ruko, saans lo, phir naye josh ke saath wapas daudo.",
+  "tag": "💭 THOUGHT OF THE DAY",
+  "caption": "Saturday hai, thoda ruko aur khud ko recharge karo 😌 Kal ki daud ke liye aaj ka aaram bhi zaroori hai.\nIs thought ko apne dost ke saath share karo 💛\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #motivation #ThoughtOfTheDay",
+  "source": "KhabarBawaal",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T03:46:09+00:00"
+ },
+ {
   "id": "119d9f27c7b0",
   "image": "posts/20261010-0331-119d9f27c7b0.jpg",
   "kind": "news",
@@ -717,45 +733,5 @@
    "fixed": []
   },
   "created_at": "2026-10-09T04:31:31+00:00"
- },
- {
-  "id": "thought-2026-10-09",
-  "image": "posts/20261009-0345-thought-2026-10-09.jpg",
-  "kind": "thought",
-  "headline": "Sabr ka matlab ruk jaana nahi hai. Matlab hai kaam karte rehna, bina shor machaye, jab tak waqt tumhara na ho jaye.",
-  "tag": "💭 THOUGHT OF THE DAY",
-  "caption": "Jo log chup chaap mehnat karte hain, ek din unka result bolta hai 💪\nIs Friday ye line us dost ko bhejo jise aaj sabr ki sabse zyada zarurat hai ❤️ Share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#ThoughtOfTheDay #motivation #viral #trending #india",
-  "source": "KhabarBawaal",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-09T03:45:52+00:00"
- },
- {
-  "id": "d9200b0a5a1f",
-  "image": "posts/20261009-0331-d9200b0a5a1f.jpg",
-  "kind": "news",
-  "headline": "Thailand's Queen Suthida Flies Solo In Fighter Jet, Has 1,188 Hours Of Flight Time",
-  "tag": "VIRAL",
-  "caption": "Ek taraf hum hain jo Uber ke liye bhi nervous ho jaate hain, aur doosri taraf ek Queen fighter jet solo uda rahi hai 😳\n\nThailand ki Queen Suthida ne fighter jet mein solo flight li.\nWo 2010 mein pilot bani thi.\nAb tak alag-alag aircraft mein 1,188.48 ghante ki flying kar chuki hain.\n\nFill the blank: Fighter jet ki seat pe baith ke mera pehla reaction ____ hota 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #news #thailand #queensuthida",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/thailands-queen-suthida-takes-to-the-skies-for-solo-flight-in-fighter-jet-101791514425124.html",
-  "pin_comment": "Sabse crazy part: 1,188 ghante hawa mein. Itne ghante to hum Netflix pe \"just one more episode\" mein nikaal dete hain 😭",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261009-0331-d9200b0a5a1f-s2.jpg",
-   "posts/20261009-0331-d9200b0a5a1f-s3.jpg",
-   "posts/20261009-0331-d9200b0a5a1f-s4.jpg",
-   "posts/20261009-0331-d9200b0a5a1f-s5.jpg",
-   "posts/20261009-0331-d9200b0a5a1f-s6.jpg"
-  ],
-  "created_at": "2026-10-09T03:31:38+00:00"
  }
 ]
