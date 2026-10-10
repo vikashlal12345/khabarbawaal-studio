@@ -1,5 +1,39 @@
 [
  {
+  "id": "c9eee7053520",
+  "kind": "custom",
+  "image": "posts/20261010-0853-c9eee7053520-1.jpg",
+  "options": [
+   "posts/20261010-0853-c9eee7053520-1.jpg",
+   "posts/20261010-0853-c9eee7053520-2.jpg",
+   "posts/20261010-0853-c9eee7053520-3.jpg",
+   "posts/20261010-0853-c9eee7053520-4.jpg"
+  ],
+  "slides": [
+   "posts/20261010-0853-c9eee7053520-s2.jpg",
+   "posts/20261010-0853-c9eee7053520-s3.jpg",
+   "posts/20261010-0853-c9eee7053520-s4.jpg",
+   "posts/20261010-0853-c9eee7053520-s5.jpg",
+   "posts/20261010-0853-c9eee7053520-s6.jpg"
+  ],
+  "headline": "Purported CJP Protesters' WhatsApp Chat Screenshot Shows 'Kasab Energy' Message Before Delhi Protest",
+  "tag": "POLITICS",
+  "caption": "Delhi mein CJP protest se pehle ek screenshot viral ho raha hai 👀\nClaim hai ki ye protesters ke WhatsApp chat ka screenshot hai.\nIsme ek bande ka message 'Kasab energy' wala bataya ja raha hai.\nScreenshot purported hai, abhi iski independent confirmation nahi hai.\nScreenshot asli hai to 🔥, fake hai to 🤡\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#viral #trending #india #delhi #politics",
+  "source": "Inshorts - Stay Informed",
+  "source_url": "https://shrts.in/cld5q6xbv0",
+  "pin_comment": "Sabse bada sawal: ye chat leak kaise hua? Screenshot ki sach-jhooth jaanch hone tak ek pinch of salt zaroor lena 🧂",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo looks like the well-known CCTV image of Ajmal Kasab running at CST station during the 26/11 attack. It sits beside the chat screenshot and the headline about the CJP protesters. That visually equates the protesters with the terrorist, although the story only says the screenshot is unverified. It also risks defaming the protesters and misleading readers. Use a neutral image, such as the protest or the News18 tweet, or clearly label this photo as a file photo of Kasab. I could not check the article, so I can't confirm the photo's source.",
+    "Slide 4: The caption says the photo shows barricade pushing and shoving at the Delhi protest. I could not check this against the article. Confirm the photo is from this protest and not from an earlier, unrelated one. The slide links it to the Supreme Court remark from News18, which is a separate point.",
+    "Caption: I couldn't check the article, so I couldn't confirm the names Dipke and Ranka, the detention, or the expansion of 'CJP' as 'Cockroach Janta Party'. Verify these against the source. The Dipke/Ranka slide and the Supreme Court remark are not mentioned in the caption."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T08:53:03+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-10",
   "image": "posts/20261010-0731-reel_clip-2026-10-10.jpg",
   "kind": "reel",
@@ -792,28 +826,5 @@
    "posts/20261009-1016-market_close-2026-10-09-s6.jpg"
   ],
   "created_at": "2026-10-09T10:16:01+00:00"
- },
- {
-  "id": "5a48748d423c",
-  "image": "posts/20261009-0831-5a48748d423c.jpg",
-  "kind": "news",
-  "headline": "Orkut Founder Orkut Buyukkokten Wants To Bring Back The 2004 Social Network",
-  "tag": "TECH",
-  "caption": "Throwback alert! Orkut wapas aa sakta hai 👀\nOrkut Buyukkokten ne Google mein software developer rehte hue Orkut banaya tha.\nGoogle ne isse 2004 mein officially launch kiya tha.\nAb wahi founder is platform ko dobara zinda karna chahta hai.\nOrkut wapas ya Instagram hi kaafi? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#orkut #tech #trending #viral #india",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/why-did-orkut-disappear-its-founder-now-wants-to-bring-it-back-to-life-101791531267920.html",
-  "pin_comment": "Sabse pehle kaunsa feature wapas chahiye: Scraps, Testimonials ya Communities? Apna 2000s wala Orkut status yaad karo 😭",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The photo of Buyukkokten is cropped at the right edge, so only part of his face shows. The headline's last lines sit close to the lower part of the photo. Consider recentering the crop so his face is fully visible and clear of the text."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261009-0831-5a48748d423c-s2.jpg",
-   "posts/20261009-0831-5a48748d423c-s3.jpg"
-  ],
-  "created_at": "2026-10-09T08:31:26+00:00"
  }
 ]
