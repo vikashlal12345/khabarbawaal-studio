@@ -69,5 +69,50 @@
    "fixed": []
   },
   "created_at": "2026-10-10T21:51:01+00:00"
+ },
+ {
+  "id": "r20261010-222533-gita",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261010-222533-gita.jpg",
+  "video": "posts/r20261010-222533-gita.mp4",
+  "headline": "Gita 1.1: Ek andha raja... aur ek sawaal",
+  "tag": "📦 🙏 GITA GYAAN",
+  "caption": "Gita ka pehla shlok aur pehli seekh: 'mera' aur 'paraya' ka bhed hi jhagde ki jad hai. 🙏\nRoz ek shlok, Gita Gyaan series mein.\nAapke hisaab se kaun sa bhed sabse bada hai? Comment karke batao.\n\n📖 Roz ek shlok: Bhagavad Gita 1.1 · Kal: shlok 1.2\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
+  "source": "Bhagavad Gita",
+  "source_url": "",
+  "pin_comment": "Kal aayega Gita 1.2. Follow karo taaki koi shlok miss na ho 🙏 Aapke 'mere wale' kaun hain?",
+  "songs": [
+   {
+    "title": "Narayan Mil Jayega",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "devotional, calm"
+   },
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "peaceful, divine"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "dramatic, intense"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "epic, cinematic"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T22:25:34+00:00"
  }
 ]
