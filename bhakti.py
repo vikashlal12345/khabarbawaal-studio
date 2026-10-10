@@ -1,6 +1,6 @@
 """🙏 Bhagwan ka saath: a 📦 Ready picture post made every night at 3 AM (owner, 11 Oct 2026; style like
 @radhe.krishna.prem_): a god beside a young Indian in a relatable moment, painted by the free FLUX demo
-(reel.flux_images: 3 tries, Claude checks them), with one heartfelt Hinglish line in handwriting (Kalam) in the
+(reel.flux_images: Z-Image / FLUX.2 / FLUX, 3 tries, Claude checks them), with one heartfelt Hinglish line in handwriting (Kalam) in the
 sky at the top (bottom only if the top is very bright). FLUX busy or no picture fits -> no post that night.
 """
 from __future__ import annotations
@@ -66,7 +66,9 @@ def wrap(text: str, f, max_w: int) -> list[str]:
 
 def card(img: Image.Image, address: str, line: str) -> Image.Image:
     """The picture with the line in handwriting on its darker part (top or bottom), soft shadow behind it."""
-    base = img.convert("RGB").resize((W, H), Image.LANCZOS)
+    k = max(W / img.width, H / img.height)              # fill 4:5 without stretching (models give near sizes)
+    big = img.convert("RGB").resize((round(img.width * k), round(img.height * k)), Image.LANCZOS)
+    base = big.crop(((big.width - W) // 2, (big.height - H) // 2, (big.width - W) // 2 + W, (big.height - H) // 2 + H))
     grey = base.convert("L")
     top = sum(grey.crop((0, 60, W, 480)).getdata()) / (W * 420)
     bottom = sum(grey.crop((0, 860, W, 1280)).getdata()) / (W * 420)
@@ -116,7 +118,7 @@ def build(state: dict, tmp: str) -> tuple[Image.Image, dict]:
     for k in ("address", "line"):
         best[k] = reel.plain_letters(g.printable(best[k]))
     scene = best.pop("scene")   # kept out of the proofreader's text
-    status.step(f"Painting {best['deity']} with AI (FLUX)", 3)
+    status.step(f"Painting {best['deity']} with free AI", 3)
     img = reel.flux_images([scene], f"{best['deity']} with a young Indian of today", tmp, tries=3, style=STYLE,
                            size=(1088, 1360))[0][0]
     status.step("Writing the line + proofreading", 4)

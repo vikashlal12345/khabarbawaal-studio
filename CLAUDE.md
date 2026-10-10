@@ -64,10 +64,12 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
   also uploads the video (≤14.5 MB, else re-recorded at 1280 px without sound), `make_media_reel()` burns the AI hook onto it
   (`reel.own_reel`, own sound kept). Reel without video: `make_reel()` → `reel.topic_reel()` (news → photo slideshow,
   funny idea → Tag that friend/meme). Any failure falls back to the normal post. The owner only writes context.
-- 🎨 God pictures (6 AM devotional + Gita Reels + 3 AM God picture, owner 11 Oct 2026): `flux_images()` paints 2 scenes (deity alone /
-  with a young Indian today) with the free public FLUX.1-schnell demo on Hugging Face (no account, ~4-5 pictures a
-  day per IP, so 2 tries per scene), Claude checks them (looks/respect/hands, no text); if busy or none fits, the
-  old free Wikimedia Commons paintings (`pick_paintings`). Credit "AI illustration (FLUX)".
+- 🎨 God pictures (6 AM devotional + Gita Reels + 3 AM God picture, owner 11 Oct 2026): `flux_images()` paints 2 scenes
+  (deity alone / with a young Indian today) with free public Hugging Face demos, no account or billing (owner said no
+  billing; Gemini API free tier = 0 images): Z-Image-Turbo → FLUX.2-klein → FLUX.1-schnell (~4-5 pictures a day per IP,
+  shared; 2 tries per scene). Gods always in a simple two-armed form (owner's choice: models botch multi-armed forms).
+  Claude checks them (looks/respect/hands, no text); if none fits, the old free Wikimedia paintings (`pick_paintings`).
+  Credit "AI illustration (<model>)".
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
   (`fun.judge_best`), AI ranks Mixkit clips by title (no key); **only clips labelled "Free" licence** are used
   (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a

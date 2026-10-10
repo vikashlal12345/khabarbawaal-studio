@@ -1197,40 +1197,72 @@ def commons_images(queries: list[str]) -> list[dict]:
     return out
 
 
-# 🎨 God pictures for the devotional and Gita Reels (owner, 11 Oct 2026): painted by the free public FLUX.1 [schnell]
-# demo on Hugging Face (no account) in a glowing storybook style; if it's busy or nothing looks right, the free
-# Wikimedia Commons paintings below are used as before. Without an account the demo allows only ~4-5 pictures a day
-# per internet address (each GitHub run gets a fresh one), hence 2 tries per scene.
-FLUX_SPACE = "https://black-forest-labs-flux-1-schnell.hf.space/gradio_api"
+# 🎨 God pictures for the devotional and Gita Reels (owner, 11 Oct 2026): painted by free public image demos on
+# Hugging Face (no account, no billing) in a glowing storybook style, newest model first; one that fails is skipped
+# for the rest of the run. If all are busy or nothing looks right, the free Wikimedia Commons paintings below are
+# used as before. Without an account the demos allow only ~4-5 pictures a day per internet address (shared; each
+# GitHub run gets a fresh one), hence 2 tries per scene. Gods are drawn in a simple two-armed form (owner's choice:
+# the models get multi-armed forms wrong).
+IMAGE_MODELS = [("Z-Image", "https://tongyi-mai-z-image-turbo.hf.space/gradio_api/call/generate"),
+                ("FLUX.2", "https://black-forest-labs-flux-2-klein-9b.hf.space/gradio_api/call/generate"),
+                ("FLUX", "https://black-forest-labs-flux-1-schnell.hf.space/gradio_api/call/infer")]
+Z_SIZES = {(864, 1536): "864x1536 ( 9:16 )", (1088, 1360): "1120x1440 ( 7:9 )"}   # Z-Image takes fixed sizes
+_MODELS_DOWN: set[str] = set()
 FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divine glow, rich deep shadows, fine detail, "
               "reverent and peaceful Indian devotional art, vertical composition with the figures in the upper half "
               "and calm darker ground in the lower third (text goes there). ")
 FLUX_AVOID = " No text, no letters, no watermark."
 SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
-              "confused by busy scenes: the deity and at most one person, one setting. Give the deity's traditional look "
-              "with the exact number of arms and only the 2-3 most recognisable items, each named once (e.g. Krishna: "
-              "two arms, blue skin, peacock feather crown, flute; Hanuman: monkey face, golden mace; Maa Shailputri: two "
-              "arms, trident in one hand, lotus in the other, sitting on a white bull). Then the light and the mood. "
-              "Fully clothed, reverent, nothing scary.")
+              "confused by busy scenes: the deity and at most one person, one setting. Always draw the deity in a simple "
+              "form with exactly two arms (even goddesses who traditionally have more; say 'two arms') and only the 2-3 "
+              "most recognisable items, each named once (e.g. Krishna: blue skin, peacock feather crown, flute; Hanuman: "
+              "monkey face, golden mace; Maa Durga: red saree, trident, riding a lion; Maa Shailputri: trident in one "
+              "hand, lotus in the other, sitting on a white bull). Then the light and the mood. Fully clothed, reverent, "
+              "nothing scary.")
 
 
-def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> Image.Image:
-    """One 9:16 picture from the FLUX demo. Raises if it's busy (queue full, GPU limit, timeout)."""
+def first_url(x) -> str:
+    """The first file URL in a demo's answer (a picture, or a gallery of them)."""
+    if isinstance(x, dict):
+        return x.get("url") or first_url(x.get("image")) if x.get("url") or x.get("image") else ""
+    if isinstance(x, list):
+        return next((u for u in map(first_url, x) if u), "")
+    return ""
+
+
+def demo_image(url: str, data: list) -> Image.Image:
+    """One picture from a Hugging Face demo's API. Raises if it's busy (queue full, GPU limit, timeout)."""
     import io
     import json
     import requests
-    r = requests.post(f"{FLUX_SPACE}/call/infer", json={"data": [prompt, seed, False, w, h, 4]}, timeout=60)
+    r = requests.post(url, json={"data": data}, timeout=60)
     r.raise_for_status()
-    text = requests.get(f"{FLUX_SPACE}/call/infer/{r.json()['event_id']}", timeout=240).text
+    text = requests.get(f"{url}/{r.json()['event_id']}", timeout=240).text
     event = ""
     for line in text.splitlines():
         if line.startswith("event:"):
             event = line[6:].strip()
-        elif line.startswith("data:") and event == "complete":
-            img = Image.open(io.BytesIO(requests.get(json.loads(line[5:])[0]["url"], timeout=60).content))
+        elif line.startswith("data:") and event == "complete" and first_url(json.loads(line[5:])):
+            img = Image.open(io.BytesIO(requests.get(first_url(json.loads(line[5:])), timeout=60).content))
             img.load()
             return img.convert("RGB")
-    raise RuntimeError(f"FLUX busy ({event or 'no answer'}: {text.strip()[-120:]})")
+    raise RuntimeError(f"busy ({event or 'no answer'}: {text.strip()[-120:]})")
+
+
+def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> tuple[Image.Image, str]:
+    """One picture (default 9:16) from the best free model that works: (picture, model name)."""
+    for name, url in IMAGE_MODELS:
+        if name in _MODELS_DOWN:
+            continue
+        data = {"Z-Image": [prompt, Z_SIZES.get((w, h), "864x1536 ( 9:16 )"), seed, 8, 3.0, False, []],
+                "FLUX.2": [prompt, [], "Distilled (4 steps)", seed, False, w, h, 4, 1.0, False],
+                "FLUX": [prompt, seed, False, w, h, 4]}[name]
+        try:
+            return demo_image(url, data), name
+        except Exception as e:
+            print(f"  ! {name}: {str(e)[:160]}")
+            _MODELS_DOWN.add(name)
+    raise RuntimeError("free image AI busy")
 
 
 def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style: str = FLUX_STYLE,
@@ -1245,20 +1277,19 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
     for n, scene in enumerate(scenes[:2], 1):
         for k in range(1, tries + 1):
             try:
-                img = flux_image(style + scene.strip() + FLUX_AVOID, random.randint(1, 999999), *size)
-            except Exception as e:
+                img, model = flux_image(style + scene.strip() + FLUX_AVOID, random.randint(1, 999999), *size)
+            except Exception:
                 fails += 1
-                print(f"  ! {str(e)[:160]}")
                 if not made and fails >= 2:
-                    raise RuntimeError("FLUX is busy")
+                    raise RuntimeError("free image AI busy")
                 continue
             name = f"scene{n}_{k}.jpg"
             thumb = img.copy()
             thumb.thumbnail((576, 1024))
             thumb.save(os.path.join(folder, name), quality=85)
-            made.append((name, img))
+            made.append((name, img, model))
     if not made:
-        raise RuntimeError("FLUX is busy")
+        raise RuntimeError("free image AI busy")
     schema = {"type": "object", "properties": {"picks": {"type": "array", "description": "At most one per scene, scene 1 first",
               "items": {"type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
               "description": "Horizontal position (0 = left, 1 = right) of the main figure"}},
@@ -1268,21 +1299,23 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
     listing = "\n".join(f"Scene {n}: {sc.strip()}" for n, sc in enumerate(scenes[:2], 1))
     result = fun.claude_json(
         "You check AI-painted pictures for a respectful Hindu devotional Instagram Reel.",
-        f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _ in made)} (sceneN_... = scene N). "
+        f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _, _ in made)} (sceneN_... = scene N). "
         "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none. "
-        "Reject only real problems: the deity doesn't look like their well-known form (wrong skin colour, wrong "
-        "animal, wrong number of arms for that form), an item duplicated (two tridents, two flutes), the deity merged "
-        "with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, extra limbs, any "
-        "text, letters, signature or watermark, a messy or ugly picture. Small differences from the description are "
-        "fine (the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
+        "Gods are drawn on purpose in a simple form with two arms, even those who traditionally have more: that is "
+        "correct. Reject only real problems: the deity doesn't look like their well-known form (wrong skin colour, "
+        "wrong animal), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
+        "merged with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, any text, "
+        "letters, signature or watermark, a messy or ugly picture. Small differences from the description are fine "
+        "(the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
         schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="flux pick")
-    print(f"  FLUX check: {result['reason'][:200]}")
+    print(f"  picture check: {result['reason'][:200]}")
     picks = result["picks"]
-    chosen = [(img, "AI illustration (FLUX)", min(1.0, max(0.0, float(p["focus"]))))
-              for p in picks for name, img in made if name == p["file"]][:2]
+    chosen = [(img, f"AI illustration ({model})", min(1.0, max(0.0, float(p["focus"]))))
+              for p in picks for name, img, model in made if name == p["file"]][:2]
     if not chosen:
-        raise RuntimeError("none of the FLUX pictures looked right")
-    print(f"  FLUX: {len(made)} painted, kept " + ", ".join(p["file"] for p in picks[:2]))
+        raise RuntimeError("none of the AI pictures looked right")
+    print(f"  AI pictures: {len(made)} painted ({', '.join(sorted({m for _, _, m in made}))}), kept "
+          + ", ".join(p["file"] for p in picks[:2]))
     return chosen
 
 
@@ -1630,12 +1663,12 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
         best[k] = plain_letters(best[k])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     scenes = [best.pop("scene_gita"), best.pop("scene_life")]   # kept out of the proofreader's text
-    status.step("Painting Krishna with AI (FLUX)", 3)
+    status.step("Painting Krishna with free AI", 3)
     try:
         images = flux_images(scenes, "Lord Krishna (picture 1 with Arjuna)", tmp)
     except Exception as e:
         print(f"  {e}: using free paintings instead")
-        status.step("FLUX busy: finding Krishna-Arjuna paintings (free licence)", 3)
+        status.step("AI pictures not usable: finding Krishna-Arjuna paintings (free licence)", 3)
         images = pick_gita_images(state, tmp)
     out = os.path.join(tmp, "reel.mp4")
     status.step("Making the video + proofreading", 5)
@@ -1817,13 +1850,13 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                            f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
                            f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
                            CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
-    status.step(f"Painting {plan['deity']} with AI (FLUX)", 3)
+    status.step(f"Painting {plan['deity']} with free AI", 3)
     exact = True
     try:
         images = flux_images([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp)
     except Exception as e:
         print(f"  {e}: using free paintings instead")
-        status.step(f"FLUX busy: finding paintings of {plan['deity']} (free licence)", 3)
+        status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)
         images = None
     try:
         images = images or pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
