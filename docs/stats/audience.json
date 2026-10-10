@@ -1,8 +1,8 @@
 {
- "summary": "From our last 111 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics TECH (2), MOOD (2), EXPECTATION VS REALITY (2); weakest WTF NEWS (1), REEL 33  NEWS SLIDESHOW (0). Formats: custom 3, news 1, top10 1, fun 1, ready 1, market 1, calendar 1, thought 1, reel 0. Lean toward what works, keep some variety.",
- "posts": 111,
- "likes": 144,
- "updated": "2026-10-09T22:30:59+00:00",
+ "summary": "From our last 118 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics TECH (2), MOOD (2), EXPECTATION VS REALITY (2); weakest QUIZ (1), EXPLAINER (1). Formats: custom 3, reel 2, news 1, fun 1, top10 1, ready 1, calendar 1, thought 1, market 1. Lean toward what works, keep some variety.",
+ "posts": 118,
+ "likes": 157,
+ "updated": "2026-10-10T22:30:51+00:00",
  "topics": [
   [
    "TECH",
@@ -17,12 +17,24 @@
    2.0
   ],
   [
+   "REEL 33  NEWS SLIDESHOW",
+   2.0
+  ],
+  [
    "WEB SERIES",
    2.0
   ],
   [
+   "REEL 23  MEME",
+   2.0
+  ],
+  [
    "VIRAL",
-   1.7647058823529411
+   1.7222222222222223
+  ],
+  [
+   "REEL  TAG THAT FRIEND",
+   1.6666666666666667
   ],
   [
    "BREAKING",
@@ -46,7 +58,11 @@
   ],
   [
    "TOP 5 NEWS",
-   1.3333333333333333
+   1.25
+  ],
+  [
+   "RELATABLE",
+   1.25
   ],
   [
    "POLITICS",
@@ -57,55 +73,11 @@
    1.25
   ],
   [
-   "RELATABLE",
-   1.25
-  ],
-  [
    "MYTH VS FACT",
    1.2
   ],
   [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "MARKET BRIEF",
-   1.0
-  ],
-  [
-   "PREOPEN",
-   1.0
-  ],
-  [
-   "CLOSING BELL",
-   1.0
-  ],
-  [
-   "REEL 23  MEME",
-   1.0
-  ],
-  [
-   "EXPLAINER",
-   1.0
-  ],
-  [
    "FAMILY GROUP",
-   1.0
-  ],
-  [
-   "QUIZ",
-   1.0
-  ],
-  [
-   "ON THIS DAY",
-   1.0
-  ],
-  [
-   "DESI LIFE",
-   1.0
-  ],
-  [
-   "DELHI",
    1.0
   ],
   [
@@ -113,7 +85,31 @@
    1.0
   ],
   [
+   "REEL  REALITY CHECK",
+   1.0
+  ],
+  [
+   "DELHI",
+   1.0
+  ],
+  [
+   "ON THIS DAY",
+   1.0
+  ],
+  [
+   "PREOPEN",
+   1.0
+  ],
+  [
+   "MARKET BRIEF",
+   1.0
+  ],
+  [
    "THOUGHT OF THE DAY",
+   1.0
+  ],
+  [
+   "CLOSING BELL",
    1.0
   ],
   [
@@ -121,8 +117,20 @@
    1.0
   ],
   [
-   "REEL 33  NEWS SLIDESHOW",
-   0.0
+   "GOOD NEWS",
+   1.0
+  ],
+  [
+   "DESI LIFE",
+   1.0
+  ],
+  [
+   "QUIZ",
+   1.0
+  ],
+  [
+   "EXPLAINER",
+   1.0
   ]
  ],
  "kinds": [
@@ -131,24 +139,24 @@
    2.6666666666666665
   ],
   [
-   "news",
-   1.4901960784313726
+   "reel",
+   1.6666666666666667
   ],
   [
-   "top10",
-   1.4444444444444444
+   "news",
+   1.4807692307692308
   ],
   [
    "fun",
-   1.3636363636363635
+   1.4166666666666667
+  ],
+  [
+   "top10",
+   1.4
   ],
   [
    "ready",
    1.1
-  ],
-  [
-   "market",
-   1.0
   ],
   [
    "calendar",
@@ -159,8 +167,8 @@
    1.0
   ],
   [
-   "reel",
-   0.5
+   "market",
+   1.0
   ]
  ]
 }

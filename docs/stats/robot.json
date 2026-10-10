@@ -1744,6 +1744,16 @@
      "tokens": 93836
     }
    }
+  },
+  "night_learn": {
+   "posts": 0,
+   "requests": 0,
+   "input": 0,
+   "output": 0,
+   "cache_read": 0,
+   "cache_write": 0,
+   "value_usd": 0.0,
+   "by_purpose": {}
   }
  }
 }
