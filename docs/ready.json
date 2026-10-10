@@ -183,5 +183,54 @@
    "fixed": []
   },
   "created_at": "2026-10-10T09:24:36+00:00"
+ },
+ {
+  "id": "r20261010-095625-devotion-test",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261010-095625-devotion-test.jpg",
+  "video": "posts/r20261010-095625-devotion-test.mp4",
+  "headline": "Navratri Din 1: Maa Shailputri: Jai Mata Di... Navratri ka pehla din mubarak ho",
+  "tag": "📦 TEST · 🙏 SHUBH NAVRATRI",
+  "caption": "Jai Mata Di 🙏\nNavratri ka pehla din, shraddha aur vishwas ke saath.\nMaa aapko himmat aur khushiyan dein.\nApne parivaar ke saath share kijiye ya comment mein likhiye 'Jai Mata Di'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #jaimatadi #sharadnavratri #devotional #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Is Navratri ki sabse khaas baat kya hai aapke liye? 'Jai Mata Di' likhkar bataiye 🙏",
+  "songs": [
+   {
+    "title": "Aigiri Nandini - Mahishasura Mardini Stotra",
+    "artist": "Siddharth Amit Bhavsar, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Durga Aarti",
+    "artist": "Shoma Banerjee",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri Aarti",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri (Durga Aarti)",
+    "artist": "Hari Om Sharan, Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo is a multi-armed Durga seated on a tiger. Maa Shailputri is traditionally shown with two arms, a trident and a lotus, riding a bull (Nandi). The image does not match the deity named on slide 2. Consider using a Shailputri image.",
+    "Slide 2: The caption says 'Maa Shailputri', but the painting shows a many-armed goddess on a tiger. That is an iconography mismatch, because Shailputri rides a bull.",
+    "Slide 3: The photo is a goddess riding a tiger, which is generic Durga imagery. Shailputri's vahana is a bull. It is also the same picture as slide 4. The 'SHUBH NAVRATRI' header sits close to the figure's head."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T09:56:25+00:00"
  }
 ]

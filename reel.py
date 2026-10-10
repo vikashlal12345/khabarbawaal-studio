@@ -1656,7 +1656,8 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                             d["post"]["highlight"], out, labels=labels),
         {"post": best}, caption_of,
         f"Devotional Reel for {subj['name']} ({plan['deity']}). Check the facts about the deity/festival are the "
-        "well-known traditional ones.")
+        "well-known traditional ones." + ("" if exact else f" The paintings intentionally show {plan['family']} in general "
+        "(no free painting of this exact form exists), and the text doesn't describe the form's looks: don't flag that."))
     post = data["post"]
     save_reel(feed, state, frames[1], out, f"reel_devotion-{today}", {
         "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🙏 " + labels["head"],
