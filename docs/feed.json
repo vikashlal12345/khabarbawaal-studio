@@ -1,5 +1,32 @@
 [
  {
+  "id": "top10_day-2026-10-10",
+  "image": "posts/20261010-1546-top10_day-2026-10-10.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 NEWS: 10 Oct",
+  "tag": "📰 TOP 5 NEWS",
+  "caption": "Aaj ki Top 5 khabrein aa gayi! Defence se Bollywood tak, swipe karke dekho 👀🔥\n\n1. IAF chief: No official US offer for F-35\n2. Delhi Police calls viral Jantar Mantar crowd video old\n3. Sridhar Vembu hits back at Elon Musk's sarcasm\n4. Ajay Devgn starts shooting Chauhaan in Kargil\n5. Imran Khan's comeback film eyes December release\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #viral #bollywood #ajaydevgn",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The big 'TOP 5' and 'NEWS' text covers the faces in the collage. Elon Musk's face is almost fully hidden and Ajay Devgn's face is partly hidden. Move the text or rearrange the collage.",
+    "Slide 5: The photo shows police at India Gate with a Section 163 BNSS prohibitory-order banner. It is not Jantar Mantar and not the viral crowd video. It is generic file imagery, so check that it is acceptable for this story."
+   ],
+   "fixed": []
+  },
+  "slides": [
+   "posts/20261010-1546-top10_day-2026-10-10-s2.jpg",
+   "posts/20261010-1546-top10_day-2026-10-10-s3.jpg",
+   "posts/20261010-1546-top10_day-2026-10-10-s4.jpg",
+   "posts/20261010-1546-top10_day-2026-10-10-s5.jpg",
+   "posts/20261010-1546-top10_day-2026-10-10-s6.jpg",
+   "posts/20261010-1546-top10_day-2026-10-10-s7.jpg"
+  ],
+  "created_at": "2026-10-10T15:46:14+00:00"
+ },
+ {
   "id": "reel_news-2026-10-10",
   "image": "posts/20261010-1432-reel_news-2026-10-10.jpg",
   "kind": "reel",
@@ -735,134 +762,5 @@
    "posts/20261009-1546-top10_day-2026-10-09-s7.jpg"
   ],
   "created_at": "2026-10-09T15:46:22+00:00"
- },
- {
-  "id": "reel-clip-1",
-  "image": "posts/20261009-1542-reel-clip-1.jpg",
-  "video": "posts/20261009-1542-reel-clip-1.mp4",
-  "kind": "reel",
-  "media": "reel",
-  "headline": "Wo dost jo bed se text karta hai: 'Bhai nikal gaya, 5 min mein pahunch raha hoon'",
-  "tag": "🎬 REEL 1/3 · CLIP",
-  "caption": "Har group mein ek aisa banda hota hai jiska '5 min' = 1 ghanta 😭\nTag karo usko, aaj expose karte hain 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#tagthatfriend #desimemes #relatable #dostikimasti #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Sach batao, tumhara '5 min' asli mein kitne ka hota hai? 😂👇",
-  "proof": {
-   "state": "none"
-  },
-  "created_at": "2026-10-09T15:42:33+00:00",
-  "songs": [
-   {
-    "title": "Pal Pal",
-    "artist": "Afusic, AliSoomroMusic",
-    "lang": "hindi",
-    "mood": "chill, relatable"
-   },
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "funny, bouncy"
-   },
-   {
-    "title": "Jalebi Baby",
-    "artist": "Tesher",
-    "lang": "english",
-    "mood": "funny, playful"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "dramatic, ironic"
-   }
-  ]
- },
- {
-  "id": "reel-meme-2",
-  "image": "posts/20261009-1542-reel-meme-2.jpg",
-  "video": "posts/20261009-1542-reel-meme-2.mp4",
-  "kind": "reel",
-  "media": "reel",
-  "headline": "Alarm: 6:00, 6:05, 6:10... Me at 9:45 jab office 10 baje hai",
-  "tag": "🎬 REEL 2/3 · MEME",
-  "caption": "Snooze button humara sabse loyal dost hai 😭⏰\nTag karo us dost ko jo 5 alarm lagake bhi late hota hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #officelife #desimemes #reelsindia #mondaymood",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Tumhara record kitne snooze ka hai? 😂 Comment karo 👇",
-  "proof": {
-   "state": "none"
-  },
-  "created_at": "2026-10-09T15:42:32+00:00",
-  "songs": [
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "sleepy, chill"
-   },
-   {
-    "title": "Rula Ke Gaya Ishq",
-    "artist": "Stebin Ben",
-    "lang": "hindi",
-    "mood": "dramatic, sad-funny"
-   },
-   {
-    "title": "blue",
-    "artist": "Yung Kai",
-    "lang": "english",
-    "mood": "dreamy, lazy"
-   },
-   {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
-    "lang": "english",
-    "mood": "funny, coffee-wake"
-   }
-  ]
- },
- {
-  "id": "reel-news-3",
-  "image": "posts/20261009-1542-reel-news-3.jpg",
-  "video": "posts/20261009-1542-reel-news-3.mp4",
-  "kind": "reel",
-  "media": "reel",
-  "headline": "Thailand ki Queen Suthida ne khud fighter jet udaya",
-  "tag": "🎬 REEL 3/3 · NEWS SLIDESHOW",
-  "caption": "Ek Queen fighter jet SOLO uda rahi hai aur hum Uber mein bhi nervous ho jaate hain 😭✈️\n\nThailand ki Queen Suthida ne fighter jet mein solo flight li. Wo 2010 se pilot hain aur ab tak 1,188 ghante ki flying kar chuki hain.\n\nTumhara pehla reaction fighter jet mein kya hota? 👇\n\nFollow @khabarbawaal for daily bawaal 🔥\n\n#viral #trending #reelsindia #thailand #fighterjet",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/thailands-queen-suthida-takes-to-the-skies-for-solo-flight-in-fighter-jet-101791514425124.html",
-  "pin_comment": "Sach batao, fighter jet mein baithke tumhara pehla reaction kya hota? 😂👇",
-  "proof": {
-   "state": "none"
-  },
-  "created_at": "2026-10-09T15:42:31+00:00",
-  "songs": [
-   {
-    "title": "Jaan ‘Nisaar (Arijit)",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "dramatic, epic"
-   },
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "sassy, upbeat"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "hype, powerful"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "fast, high-flying"
-   }
-  ]
  }
 ]
