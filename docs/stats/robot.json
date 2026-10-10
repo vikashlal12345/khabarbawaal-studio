@@ -1658,36 +1658,36 @@
   },
   "reel_devotion": {
    "posts": 0,
-   "requests": 12,
-   "input": 38,
-   "output": 10662,
-   "cache_read": 34216,
-   "cache_write": 60178,
-   "value_usd": 0.3508,
+   "requests": 18,
+   "input": 56,
+   "output": 15392,
+   "cache_read": 47636,
+   "cache_write": 90732,
+   "value_usd": 0.5217,
    "by_purpose": {
     "devotion plan": {
-     "requests": 2,
-     "tokens": 23756
+     "requests": 3,
+     "tokens": 31730
     },
     "flux pick": {
-     "requests": 2,
-     "tokens": 15397
+     "requests": 3,
+     "tokens": 23002
     },
     "painting pick": {
-     "requests": 2,
-     "tokens": 15170
+     "requests": 3,
+     "tokens": 23139
     },
     "devotion writing": {
-     "requests": 2,
-     "tokens": 15974
+     "requests": 3,
+     "tokens": 23670
     },
     "joke judge": {
-     "requests": 2,
-     "tokens": 13846
+     "requests": 3,
+     "tokens": 20816
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 20951
+     "requests": 3,
+     "tokens": 31459
     }
    }
   },
