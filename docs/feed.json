@@ -1,5 +1,22 @@
 [
  {
+  "id": "bf09c8f35e4c",
+  "image": "posts/20261010-0131-bf09c8f35e4c.jpg",
+  "kind": "fun",
+  "headline": "POV: Saturday ko 10 baje tak sone ka plan tha. Mummy ne 7 baje pooja ka ghanta bajaya. Main: Bhagwan ji bhi jaag gaye.",
+  "tag": "😂 MOOD",
+  "caption": "Saturday ki neend aur mummy ka ghanta, dono ka timing perfect hai 🔔\nKoi bachao.\nTumhare ghar mein Saturday ko kaun sabse pehle jagata hai? 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#saturday #viral #trending #relatable #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Alarm ko snooze kar sakte hain, ghante ko nahi.",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T01:31:03+00:00"
+ },
+ {
   "id": "top10_viral-2026-10-10",
   "image": "posts/20261010-0046-top10_viral-2026-10-10.jpg",
   "kind": "top10",
@@ -708,33 +725,5 @@
    "fixed": []
   },
   "created_at": "2026-10-09T01:31:39+00:00"
- },
- {
-  "id": "top10_viral-2026-10-09",
-  "image": "posts/20261009-0046-top10_viral-2026-10-09.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 VIRAL: 09 Oct",
-  "tag": "🔥 TOP 5 VIRAL",
-  "caption": "Nana Patekar ko nam aankhon se vidaai, aur Drishyam 3 ka box office dhamaka! 🔥\n\n1. Nana Patekar cremated with state honours in Pune\n2. Drishyam 3 nears ₹250 crore in week one\n3. FGTeeV Duddy's Insta Live rant worries fans\n4. Chinese restaurant owner gifts BMWs to top staff\n5. Mirzapur duo Abhishek Banerjee, Divyenndu reunite for new show\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #bollywood #Drishyam3",
-  "source": "Hindustan Times, Bollywood Hungama",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The article doesn't give Nana Patekar's age. The '75 saal' claim is unsupported."
-   ],
-   "fixed": [
-    "bete ne mukhagni di. Actor 75 saal ke the. → bete ne mukhagni di."
-   ]
-  },
-  "slides": [
-   "posts/20261009-0046-top10_viral-2026-10-09-s2.jpg",
-   "posts/20261009-0046-top10_viral-2026-10-09-s3.jpg",
-   "posts/20261009-0046-top10_viral-2026-10-09-s4.jpg",
-   "posts/20261009-0046-top10_viral-2026-10-09-s5.jpg",
-   "posts/20261009-0046-top10_viral-2026-10-09-s6.jpg",
-   "posts/20261009-0046-top10_viral-2026-10-09-s7.jpg"
-  ],
-  "created_at": "2026-10-09T00:46:35+00:00"
  }
 ]
