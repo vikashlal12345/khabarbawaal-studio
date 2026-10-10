@@ -1206,10 +1206,12 @@ FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divi
               "reverent and peaceful Indian devotional art, vertical composition with the figures in the upper half "
               "and calm darker ground in the lower third (text goes there). ")
 FLUX_AVOID = " No text, no letters, no watermark."
-SCENE_HELP = ("English picture description for an AI painter, max 50 words. Describe the deity's traditional, "
-              "well-known look exactly (e.g. Krishna: blue skin, peacock feather crown, flute, yellow silk, garland; "
-              "Hanuman: monkey face, golden mace, orange-red; Ganesh: elephant head, one tusk, modak, mouse), the place, "
-              "the light and the mood. Fully clothed, reverent, nothing scary.")
+SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
+              "confused by busy scenes: the deity and at most one person, one setting. Give the deity's traditional look "
+              "with the exact number of arms and only the 2-3 most recognisable items, each named once (e.g. Krishna: "
+              "two arms, blue skin, peacock feather crown, flute; Hanuman: monkey face, golden mace; Maa Shailputri: two "
+              "arms, trident in one hand, lotus in the other, sitting on a white bull). Then the light and the mood. "
+              "Fully clothed, reverent, nothing scary.")
 
 
 def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> Image.Image:
@@ -1268,10 +1270,11 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
         "You check AI-painted pictures for a respectful Hindu devotional Instagram Reel.",
         f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _ in made)} (sceneN_... = scene N). "
         "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none. "
-        "Reject: the deity doesn't look like their well-known traditional form (wrong skin colour, missing or wrong "
-        "attributes, wrong animal), disrespectful, scary or revealing, broken faces, eyes or hands, extra or missing "
-        "limbs (several arms are normal for deities like Durga, Vishnu, Lakshmi or Ganesh), any text, letters or "
-        "watermark, a messy or ugly picture.",
+        "Reject only real problems: the deity doesn't look like their well-known form (wrong skin colour, wrong "
+        "animal, wrong number of arms for that form), an item duplicated (two tridents, two flutes), the deity merged "
+        "with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, extra limbs, any "
+        "text, letters, signature or watermark, a messy or ugly picture. Small differences from the description are "
+        "fine (the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
         schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="flux pick")
     print(f"  FLUX check: {result['reason'][:200]}")
     picks = result["picks"]
