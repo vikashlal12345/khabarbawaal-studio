@@ -36,7 +36,7 @@ Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search;
 (originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
 If a Reel can't be made, that slot posts a news carousel. Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
 from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,
-`state.gita_next`; ~30 s; hook → KYA HO RAHA HAI → who says it + shlok, no Sanskrit → MATLAB → AAJ KI SEEKH →
+`state.gita_next`; ~45 s; hook → KYA HO RAHA HAI → who says it + shlok, no Sanskrit → MATLAB → AAJ KI SEEKH →
 AAJ KA SAWAAL; reference `assets/gita_ref.json` = owner's gita-shorts storyboards 1.1-2.30, 1.21-22 together;
 pictures: see 🎨 below; `--kind ready_gita` remakes only it; `reel.build_gita_reel`) ·
 2:00 day planner (📅 previews, only at 10/17) · 3:00 🙏 God picture "Bhagwan ka saath" (📦 Ready, `bhakti.py`:

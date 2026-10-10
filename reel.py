@@ -1207,12 +1207,14 @@ def commons_images(queries: list[str]) -> list[dict]:
 IMAGE_MODELS = [("Z-Image", "https://tongyi-mai-z-image-turbo.hf.space/gradio_api/call/generate"),
                 ("FLUX.2", "https://black-forest-labs-flux-2-klein-9b.hf.space/gradio_api/call/generate"),
                 ("FLUX", "https://black-forest-labs-flux-1-schnell.hf.space/gradio_api/call/infer")]
-Z_SIZES = {(864, 1536): "864x1536 ( 9:16 )", (1088, 1360): "1120x1440 ( 7:9 )"}   # Z-Image takes fixed sizes
+Z_SIZES = {(864, 1536): "1152x2048 ( 9:16 )", (1088, 1360): "1344x1728 ( 7:9 )"}   # Z-Image: fixed sizes, sharpest
 _MODELS_DOWN: set[str] = set()
-FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divine glow, rich deep shadows, fine detail, "
-              "reverent and peaceful Indian devotional art. Vertical composition: the figures in the middle of the "
-              "picture, their heads well below the top edge, with plain empty sky in the top fifth and calm, plain "
-              "darker ground in the lower third, both kept empty. ")
+FLUX_STYLE = ("Highly detailed hand-drawn storybook illustration with fine ink linework and rich painterly colour, "
+              "cinematic warm golden glow against deep blue-black shadows (night, dusk or dawn as described), glowing "
+              "light sources such as a halo, diyas or moonlight, emotional, reverent Indian devotional art, sharp and "
+              "clean. Vertical composition: the figures large in the upper-middle of the picture, their heads well "
+              "below the top edge, plain dark sky in the top fifth and calm dark ground in the lower third, both "
+              "kept empty. ")
 FLUX_AVOID = " No text, no captions, no letters, no writing, no signature, no watermark."
 SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
               "confused by busy scenes: the deity and at most one person, one setting. The painter adds extra arms to gods, "
@@ -1306,7 +1308,8 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
     result = fun.claude_json(
         "You check AI-painted pictures for a respectful Hindu devotional Instagram Reel.",
         f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _, _ in made)} (sceneN_... = scene N). "
-        "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none. "
+        "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none: "
+        "the best is a detailed, sharp, emotional storybook illustration with a warm golden glow. "
         "Gods are drawn on purpose in a simple form with one or two arms visible, even those who traditionally have "
         "more: that is correct. Reject only real problems: the deity doesn't look like their well-known form (wrong "
         "skin colour, wrong animal) or looks like an ordinary person (no crown, halo or divine glow), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
@@ -1447,10 +1450,10 @@ def faded(img: Image.Image, a: float) -> Image.Image:
     return out
 
 
-def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f, target: float = 30.0):
+def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f, target: float = 45.0):
     """🙏 Gita series layout: one step at a time ({label, text, source}), centred in the dark lower part, each
-    held long enough to read (0.6 s + 0.25 s a word after its lines appear), squeezed a little if the Reel
-    would run past ~30 s (owner, 11 Oct 2026). The last step stays while the 'send this' line comes in.
+    held long enough to read (0.6 s + 0.25 s a word after its lines appear), then stretched or squeezed so the
+    Reel lasts about 45 s (owner, 11 Oct 2026). The last step stays while the 'send this' line comes in.
     Returns (parts, divider, switch time, cta time, total) for gita_reel."""
     gap, fade = 0.3, 0.5
     blocks = []
@@ -1459,7 +1462,7 @@ def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f
         blocks.append((lines_of(st["text"], fnt, CREAM), len(st["text"].split()), int(fnt.size * 1.32)))
     fixed = 0.5 + sum(0.3 + len(ln) * gap for ln, _, _ in blocks) + fade * (len(steps) - 1) + 2.4
     holds = [0.6 + 0.25 * w for _, w, _ in blocks]
-    k = max(0.75, min(1.0, (target - fixed) / sum(holds)))
+    k = max(0.75, min(1.5, (target - fixed) / sum(holds)))
     parts, t, switch = [], 0.5, 0.0
     for n, (st, (lines, _, lh), hold) in enumerate(zip(steps, blocks, holds)):
         if n == switch_step:
@@ -1526,8 +1529,9 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     ImageDraw.Draw(shade).ellipse((-RW * 0.35, -RH * 0.15, RW * 1.35, RH * 1.05), fill=255)
     shade = shade.filter(ImageFilter.GaussianBlur(160)).point(lambda v: 255 - v)
     grad = Image.new("L", (1, RH))
+    dark_from, dark_span = (0.42, 0.18) if steps else (0.33, 0.27)   # Gita series: more of the picture shows
     for y in range(RH):
-        lower = 248 * min(1.0, max(0.0, (y - RH * 0.33) / (RH * 0.27)))   # text area: nearly black
+        lower = 248 * min(1.0, max(0.0, (y - RH * dark_from) / (RH * dark_span)))   # text area: nearly black
         top = 175 * max(0.0, 1 - y / 430)                                 # behind the logo + "GITA GYAAN"
         grad.putpixel((0, y), int(max(lower, top)))
     alpha = Image.composite(Image.new("L", (RW, RH), 255), shade, grad.resize((RW, RH)))
@@ -1674,19 +1678,19 @@ def gita_sequence() -> list[str]:
 
 GITA_OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string", "description": "One line: what happens in this shlok and today's lesson"},
-    "hook": {"type": "string", "description": "Curiosity hook, max 6 words, with a natural pause '...', e.g. "
+    "hook": {"type": "string", "description": "Curiosity hook, max 8 words, with a natural pause '...', e.g. "
              "'Ek andha raja... aur ek sawaal'"},
-    "context": {"type": "string", "description": "'KYA HO RAHA HAI': max 12 words: where we are, who speaks to whom, "
+    "context": {"type": "string", "description": "'KYA HO RAHA HAI': max 18 words: where we are, who speaks to whom, "
                 "what just happened, e.g. 'Kurukshetra mein yudh shuru hone wala hai. Mahal mein Dhritarashtra poochte "
                 "hain:'"},
     "speaker": {"type": "string", "description": "Who says this shlok, max 3 words, e.g. 'Dhritarashtra ne poocha', "
                 "'Sanjay ne bataya', 'Duryodhan ne kaha', 'Arjun ne kaha', 'Shri Krishna ne kaha'"},
     "verse_text": {"type": "string", "description": "What the shlok says, in simple Hinglish, true to its meaning "
-                   "(not word-for-word), max 18 words"},
-    "matlab": {"type": "string", "description": "'MATLAB': what it really means, like a bhavarth, 1-2 very short "
-               "sentences, max 10 words"},
-    "seekh": {"type": "string", "description": "'AAJ KI SEEKH' for life today, one line people want to save, max 8 words"},
-    "sawaal": {"type": "string", "description": "'AAJ KA SAWAAL': a question to the viewer, max 8 words, e.g. "
+                   "(not word-for-word), max 24 words"},
+    "matlab": {"type": "string", "description": "'MATLAB': what it really means, like a bhavarth: 2-3 short "
+               "sentences, max 20 words"},
+    "seekh": {"type": "string", "description": "'AAJ KI SEEKH' for life today, one line people want to save, max 12 words"},
+    "sawaal": {"type": "string", "description": "'AAJ KA SAWAAL': a question to the viewer, max 10 words, e.g. "
                "'Aapke jeevan mein mere-paraye kaun hain?'"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "caption": {"type": "string", "description": "2-4 short Hinglish lines about this shlok, 1-2 emojis (🙏 fits), "
@@ -1702,7 +1706,7 @@ GITA_OPTION = {"type": "object", "properties": {
     "required": ["based_on", "hook", "context", "speaker", "verse_text", "matlab", "seekh", "sawaal", "highlight",
                  "caption", "pin_comment", "hashtags", "songs", "scene_gita", "scene_life"], "additionalProperties": False}
 
-GITA_SYSTEM = """You write today's Reel in the daily "Gita Gyaan: roz ek shlok" series for {page}, an Indian Instagram page for 18-34s (Hinglish in English letters only, never Devanagari). The series goes through the Bhagavad Gita in order, one shlok a day, so someone who missed the earlier days must still understand it: say where we are, who speaks to whom and what is happening. Simple, warm, spoken Hinglish, like explaining to a friend; short lines, natural pauses ("..."). The shlok text must keep the shlok's true meaning (not a word-for-word translation). The whole Reel is read in about 30 seconds, so keep every part within its word limit. Reverent: never joke about Krishna or the Gita, no politics, nothing against any religion or community."""
+GITA_SYSTEM = """You write today's Reel in the daily "Gita Gyaan: roz ek shlok" series for {page}, an Indian Instagram page for 18-34s (Hinglish in English letters only, never Devanagari). The series goes through the Bhagavad Gita in order, one shlok a day, so someone who missed the earlier days must still understand it: say where we are, who speaks to whom and what is happening. Simple, warm, spoken Hinglish, like explaining to a friend; short lines, natural pauses ("..."). The shlok text must keep the shlok's true meaning (not a word-for-word translation). The whole Reel is read in about 45 seconds, so keep every part within its word limit. Reverent: never joke about Krishna or the Gita, no politics, nothing against any religion or community."""
 
 GITA_JUDGE = ("You are a 22-year-old Indian who loves Gita Reels on Instagram. Rate each Reel 1-10 for: "
               "understandable (the lesson is clear from the Reel alone), funny (here: how beautiful and moving the "

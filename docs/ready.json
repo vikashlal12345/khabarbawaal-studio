@@ -69,50 +69,5 @@
    "fixed": []
   },
   "created_at": "2026-10-10T21:51:01+00:00"
- },
- {
-  "id": "r20261010-220656-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-220656-gita.jpg",
-  "video": "posts/r20261010-220656-gita.mp4",
-  "headline": "Gita 1.1: Ek andha raja... aur ek sawaal",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Andha raja sirf aankhon se nahi, moh se andha tha. 🙏\nGita 1.1: jahan 'mere' aur 'paraye' aaya, wahin jhagda shuru.\nAapke 'mere wale' kaun hain? Comment karo ya kisi apne ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.1 · Kal: shlok 1.2\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal Gita 1.2 aayega. Roz ek shlok, follow karte rahiye! Aapke jeevan mein 'mere' aur 'paraye' kaun hain? 🙏",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional, calm"
-   },
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "peaceful, divine"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "soft, reflective"
-   },
-   {
-    "title": "blue",
-    "artist": "Yung Kai",
-    "lang": "english",
-    "mood": "chill, gentle"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T22:06:56+00:00"
  }
 ]
