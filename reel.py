@@ -1209,8 +1209,9 @@ IMAGE_MODELS = [("Z-Image", "https://tongyi-mai-z-image-turbo.hf.space/gradio_ap
 Z_SIZES = {(864, 1536): "864x1536 ( 9:16 )", (1088, 1360): "1120x1440 ( 7:9 )"}   # Z-Image takes fixed sizes
 _MODELS_DOWN: set[str] = set()
 FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divine glow, rich deep shadows, fine detail, "
-              "reverent and peaceful Indian devotional art, vertical composition with the figures in the upper half "
-              "and calm, plain darker ground in the lower third, kept empty. ")
+              "reverent and peaceful Indian devotional art. Vertical composition: the figures in the middle of the "
+              "picture, their heads well below the top edge, with plain empty sky in the top fifth and calm, plain "
+              "darker ground in the lower third, both kept empty. ")
 FLUX_AVOID = " No text, no captions, no letters, no writing, no signature, no watermark."
 SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
               "confused by busy scenes: the deity and at most one person, one setting. The painter adds extra arms to gods, "
