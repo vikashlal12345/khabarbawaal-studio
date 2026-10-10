@@ -38,7 +38,9 @@ If a Reel can't be made, that slot posts a news carousel. Night: 1:00 three 📦
 from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel (pictures: see 🎨 below; logo + "GITA GYAAN", Playfair/Cinzel
 fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh" + verse ref (no Sanskrit) → Aaj ki seekh;
 `reel.build_gita_reel`) ·
-2:00 day planner (📅 previews, only at 10/17) · 4:00 learning.
+2:00 day planner (📅 previews, only at 10/17) · 3:00 🙏 God picture "Bhagwan ka saath" (📦 Ready, `bhakti.py`:
+god beside a young Indian in a relatable moment, FLUX picture, Hinglish line in Kalam handwriting; own run = own
+FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
 
 ## How it runs
 - `.github/workflows/hourly.yml`: a self-restarting chain. `generate` job makes the post; `next` job
@@ -62,7 +64,7 @@ fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh
   also uploads the video (≤14.5 MB, else re-recorded at 1280 px without sound), `make_media_reel()` burns the AI hook onto it
   (`reel.own_reel`, own sound kept). Reel without video: `make_reel()` → `reel.topic_reel()` (news → photo slideshow,
   funny idea → Tag that friend/meme). Any failure falls back to the normal post. The owner only writes context.
-- 🎨 God pictures (6 AM devotional + Gita Reels, owner 11 Oct 2026): `flux_images()` paints 2 scenes (deity alone /
+- 🎨 God pictures (6 AM devotional + Gita Reels + 3 AM God picture, owner 11 Oct 2026): `flux_images()` paints 2 scenes (deity alone /
   with a young Indian today) with the free public FLUX.1-schnell demo on Hugging Face (no account, ~4-5 pictures a
   day per IP, so 2 tries per scene), Claude checks them (looks/respect/hands, no text); if busy or none fits, the
   old free Wikimedia Commons paintings (`pick_paintings`). Credit "AI illustration (FLUX)".

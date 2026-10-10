@@ -812,6 +812,9 @@ def night_job(kind: str, state: dict) -> None:
     if kind == "night_ready":
         import evergreen
         print(f"Ready posts made: {evergreen.make_batch(state, CONFIG.get('ready_per_night', 5))}")
+    elif kind == "night_picture":
+        import evergreen
+        evergreen.make_picture(state)
     elif kind == "night_calendar":
         import calendar_plan
         print(f"Previews planned: {calendar_plan.plan(state)}")
@@ -872,7 +875,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="skip the AI step")
     parser.add_argument("--kind", choices=["auto", "news", "fun", "top10_viral", "top10_day", "thought",
                                            "market_open", "market_preopen", "market_close", "night_roundup",
-                                           "night_ready", "night_calendar", "night_jokes", "night_learn",
+                                           "night_ready", "night_calendar", "night_picture", "night_jokes", "night_learn",
                                            "reel_devotion", "reel_clip_am", "reel_clip", "reel_politics", "reel_meme",
                                            "reel_news"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")

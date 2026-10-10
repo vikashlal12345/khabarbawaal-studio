@@ -1,5 +1,5 @@
 """📦 Ready posts, made every night: one carousel in turn (Explainer → Quiz → Amazing Facts →
-Myth vs Fact), 📅 On This Day, and a 🙏 Bhagavad Gita Reel. They wait in docs/ready.json (max 15, kept 24 hours) for the owner
+Myth vs Fact), 📅 On This Day, and a 🙏 Bhagavad Gita Reel; at 3 AM a 🙏 god picture (bhakti.py). They wait in docs/ready.json (max 15, kept 24 hours) for the owner
 to post any time, and are used automatically when the AI can't write a news post.
 """
 from __future__ import annotations
@@ -143,6 +143,29 @@ def make_gita(state: dict) -> dict | None:
     status.done(f"Ready in 📦 Ready: {entry['headline'][:80]}", post=pid)
     return {"id": pid, "kind": "ready", "media": "reel", "image": f"posts/{pid}.jpg", "video": f"posts/{pid}.mp4",
             **entry, "tag": "📦 " + entry["tag"], "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+
+
+def make_picture(state: dict) -> bool:
+    """🙏 Bhagwan ka saath picture for the 📦 Ready tab (3 AM: its own run, so FLUX has a fresh daily allowance)."""
+    import bhakti
+    import status
+    status.start("ready_bhakti", ist_today().isoformat(), "📦 🙏 God picture", 5)
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            pic, entry = bhakti.build(state, tmp)
+    except Exception as e:
+        print(f"  ! God picture not made: {str(e)[:200]}")
+        status.fail(f"God picture not made tonight: {str(e)[:200]}")
+        return False
+    pid = f"r{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-bhakti"
+    pic.save(g.DOCS / f"posts/{pid}.jpg", "JPEG", quality=90, optimize=True)
+    items = prune(load())
+    items.append({"id": pid, "kind": "ready", "image": f"posts/{pid}.jpg", **entry, "tag": "📦 " + entry["tag"],
+                  "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
+    save(prune(items))
+    print(f"  God picture: {entry['headline']}")
+    status.done(f"Ready in 📦 Ready: {entry['headline'][:80]}", post=pid)
+    return True
 
 
 def make_batch(state: dict, count: int = 3) -> int:

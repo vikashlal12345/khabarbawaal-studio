@@ -16,7 +16,7 @@ on:
         description: "Post type"
         type: choice
         options: [auto, news, fun, top10_viral, top10_day, thought, market_open, market_preopen, market_close,
-                  night_roundup, night_ready, night_calendar, night_jokes, night_learn,
+                  night_roundup, night_ready, night_calendar, night_picture, night_jokes, night_learn,
                   reel_devotion, reel_clip_am, reel_clip, reel_politics, reel_meme, reel_news]
         default: auto
       test_alert:

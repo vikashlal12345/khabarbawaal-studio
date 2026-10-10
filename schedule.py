@@ -20,8 +20,8 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🎬 🙏 festival 
             "reel_meme": (19, 0), "reel_news": (20, 0),    # 🎬 meme, news slideshow
             "top10_day": (21, 15),                         # 📰 Top 5 News carousel
             # Night work (nothing is posted): ready posts, day planning, learning from stats.
-            "night_ready": (1, 0), "night_calendar": (2, 0), "night_learn": (4, 0)}
-NIGHT_JOBS = {"night_ready", "night_calendar", "night_learn"}   # joke bank retired: jokes are trend-only
+            "night_ready": (1, 0), "night_calendar": (2, 0), "night_picture": (3, 0), "night_learn": (4, 0)}
+NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08
 

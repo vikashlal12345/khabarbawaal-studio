@@ -1231,7 +1231,8 @@ def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> Image.Ima
     raise RuntimeError(f"FLUX busy ({event or 'no answer'}: {text.strip()[-120:]})")
 
 
-def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2) -> list[tuple[Image.Image, str, float]]:
+def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style: str = FLUX_STYLE,
+                size: tuple[int, int] = (864, 1536)) -> list[tuple[Image.Image, str, float]]:
     """Up to 2 pictures (one per scene), each painted `tries` times; the AI looks at them and keeps the best
     correct, respectful one per scene. Returns [(image, credit, focus_x)]; raises if FLUX is busy or none fits."""
     import random
@@ -1242,7 +1243,7 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2) -> li
     for n, scene in enumerate(scenes[:2], 1):
         for k in range(1, tries + 1):
             try:
-                img = flux_image(FLUX_STYLE + scene.strip() + FLUX_AVOID, random.randint(1, 999999))
+                img = flux_image(style + scene.strip() + FLUX_AVOID, random.randint(1, 999999), *size)
             except Exception as e:
                 fails += 1
                 print(f"  ! {str(e)[:160]}")
