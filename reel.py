@@ -1520,6 +1520,10 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
                                Image.new("RGB", (cw, ch), "#000000"), 0.45)
             back.paste(fg, ((cw - fg.width) // 2, int(70 * zmax)))
             big = back
+        if steps:   # Gita series: picture a little lower, under a dark band, so heads stay below the heading
+            low = Image.new("RGB", big.size, "#05070c")
+            low.paste(big.crop((0, 0, big.width, big.height - 170)), (0, 170))
+            big = low
         return Image.blend(big, Image.new("RGB", big.size, "#3a2000"), 0.18)    # warm golden grade
 
     bases = [graded(img, focus) for img, _, focus in images]
@@ -1698,10 +1702,10 @@ GITA_OPTION = {"type": "object", "properties": {
     "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
     "songs": SONGS,
-    "scene_gita": {"type": "string", "description": "Picture 1 (behind the hook, context and the shlok): the exact "
+    "scene_gita": {"type": "string", "description": "Picture 1 (behind the hook, context, shlok and matlab): the exact "
                    "moment of this shlok in the Mahabharata, who speaks to whom and where (e.g. blind king Dhritarashtra "
                    "on his throne in a dark palace, asking Sanjaya). " + SCENE_HELP},
-    "scene_life": {"type": "string", "description": "Picture 2 (behind matlab, seekh and sawaal): a young Indian of "
+    "scene_life": {"type": "string", "description": "Picture 2 (behind aaj ki seekh and aaj ka sawaal): a young Indian of "
                    "today living this lesson, Krishna gently beside them. " + SCENE_HELP}},
     "required": ["based_on", "hook", "context", "speaker", "verse_text", "matlab", "seekh", "sawaal", "highlight",
                  "caption", "pin_comment", "hashtags", "songs", "scene_gita", "scene_life"], "additionalProperties": False}
@@ -1770,7 +1774,8 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
                 f"Follow {CONFIG['handle']} for daily Gita Gyaan 🙏\n\n{tags}")
     frames, data, proof = proofread.run(
         lambda d: gita_reel(images, verse, "", "", "", d["post"]["highlight"], out, labels=labels,
-                            steps=steps_of(d["post"]), handle_text=f"{CONFIG['handle']}  ·  Kal: shlok {nxt}"),
+                            steps=steps_of(d["post"]), switch_step=4,   # today's picture from AAJ KI SEEKH
+                            handle_text=f"{CONFIG['handle']}  ·  Kal: shlok {nxt}"),
         {"post": best}, caption_of,
         f"Bhagavad Gita {verse}. Check that the speaker and the situation are right and the shlok text keeps the "
         "shlok's meaning; simple Hinglish wording (not word-for-word) is correct here, don't replace it with a literal "

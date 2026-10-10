@@ -69,56 +69,5 @@
    "fixed": []
   },
   "created_at": "2026-10-10T21:51:01+00:00"
- },
- {
-  "id": "r20261010-221510-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-221510-gita.jpg",
-  "video": "posts/r20261010-221510-gita.mp4",
-  "headline": "Gita 1.1: Ek andha raja... aur ek sawaal",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Gita ka pehla shlok, aur pehle hi shlok mein poori Mahabharat chhupi hai. 🙏\nJahan 'mere' aur 'unke' ka bhed aata hai, wahin jhagda shuru hota hai.\nKya aapne kabhi ye mehsoos kiya? Comment karke batao.\n\n📖 Roz ek shlok: Bhagavad Gita 1.1 · Kal: shlok 1.2\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal aayega Gita 1.2. Roz ek shlok, follow karke saath chalo. 🙏 Aapke 'mere wale' kaun hain?",
-  "songs": [
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft, thoughtful"
-   },
-   {
-    "title": "Mann Mera (Original Version)",
-    "artist": "Gajendra Verma",
-    "lang": "hindi",
-    "mood": "deep, calm"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "sad, reflective"
-   },
-   {
-    "title": "Ordinary",
-    "artist": "Alex Warren",
-    "lang": "english",
-    "mood": "emotional, slow"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The lesson comes from 'mamakah' and 'pandavah' in the shlok, not from its first word, which is 'dharmakshetre'. Saying 'shabd' is inaccurate.",
-    "Slide 4: The text is about King Dhritarashtra and the words 'mere' and 'Pandu ke'. The picture shows Krishna and a young man looking at a smartphone. It doesn't match the text, and the phone doesn't belong in the Mahabharata. The same picture runs through slides 4 to 7. I'd consider swapping in the king-and-Sanjay picture.",
-    "Slide 7: Slide 7 is an exact duplicate of slide 6, so it is dropped."
-   ],
-   "fixed": [
-    "aur pehle hi shabd mein poori Mahabharat chhupi hai → aur pehle hi shlok mein poori Mahabharat chhupi hai"
-   ]
-  },
-  "created_at": "2026-10-10T22:15:10+00:00"
  }
 ]
