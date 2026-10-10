@@ -67,7 +67,7 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
 - 🎨 God pictures (6 AM devotional + Gita Reels + 3 AM God picture, owner 11 Oct 2026): `flux_images()` paints 2 scenes
   (deity alone / with a young Indian today) with free public Hugging Face demos, no account or billing (owner said no
   billing; Gemini API free tier = 0 images): Z-Image-Turbo → FLUX.2-klein → FLUX.1-schnell (~4-5 pictures a day per IP,
-  shared; 2 tries per scene). Gods always in a simple two-armed form (owner's choice: models botch multi-armed forms).
+  shared; 2 tries per scene). Gods shown with ONE visible hand (other arm hidden) or from behind: models add extra arms.
   Claude checks them (looks/respect/hands, no text); if none fits, the old free Wikimedia paintings (`pick_paintings`).
   Credit "AI illustration (<model>)".
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge

@@ -1213,12 +1213,13 @@ FLUX_STYLE = ("Soft painterly storybook illustration, cinematic warm golden divi
               "and calm darker ground in the lower third (text goes there). ")
 FLUX_AVOID = " No text, no letters, no watermark."
 SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
-              "confused by busy scenes: the deity and at most one person, one setting. Always draw the deity in a simple "
-              "form with exactly two arms (even goddesses who traditionally have more; say 'two arms') and only the 2-3 "
-              "most recognisable items, each named once (e.g. Krishna: blue skin, peacock feather crown, flute; Hanuman: "
-              "monkey face, golden mace; Maa Durga: red saree, trident, riding a lion; Maa Shailputri: trident in one "
-              "hand, lotus in the other, sitting on a white bull). Then the light and the mood. Fully clothed, reverent, "
-              "nothing scary.")
+              "confused by busy scenes: the deity and at most one person, one setting. The painter adds extra arms to gods, "
+              "so show only ONE of the deity's hands (raised in blessing, or resting on the person's head or shoulder) "
+              "with the other arm hidden in the saree or shawl, or show the deity from behind or from a distance; never "
+              "describe several arms or hands. Only the 1-2 most recognisable items, each named once (e.g. Krishna: blue "
+              "skin, peacock feather crown, flute; Hanuman: monkey face, golden mace on his shoulder; Maa Durga: red saree, "
+              "golden crown, her lion beside her; Maa Shailputri: white bull beside her, lotus in her one visible hand). "
+              "Then the light and the mood. Fully clothed, reverent, nothing scary.")
 
 
 def first_url(x) -> str:
@@ -1301,9 +1302,9 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
         "You check AI-painted pictures for a respectful Hindu devotional Instagram Reel.",
         f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _, _ in made)} (sceneN_... = scene N). "
         "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none. "
-        "Gods are drawn on purpose in a simple form with two arms, even those who traditionally have more: that is "
-        "correct. Reject only real problems: the deity doesn't look like their well-known form (wrong skin colour, "
-        "wrong animal), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
+        "Gods are drawn on purpose in a simple form with one or two arms visible, even those who traditionally have "
+        "more: that is correct. Reject only real problems: the deity doesn't look like their well-known form (wrong "
+        "skin colour, wrong animal), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
         "merged with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, any text, "
         "letters, signature or watermark, a messy or ugly picture. Small differences from the description are fine "
         "(the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
