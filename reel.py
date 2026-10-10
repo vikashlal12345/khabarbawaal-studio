@@ -1300,8 +1300,9 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
         raise RuntimeError("free image AI busy")
     schema = {"type": "object", "properties": {"picks": {"type": "array", "description": "At most one per scene, scene 1 first",
               "items": {"type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
-              "description": "Horizontal position (0 = left, 1 = right) of the main figure"}},
-              "required": ["file", "focus"], "additionalProperties": False}},
+              "description": "Horizontal position (0 = left, 1 = right) of the main figure"}, "face_y": {"type": "number",
+              "description": "Vertical position (0 = top, 1 = bottom) of the main face(s)"}},
+              "required": ["file", "focus", "face_y"], "additionalProperties": False}},
               "reason": {"type": "string", "description": "One short line: what you rejected and why"}},
               "required": ["picks", "reason"], "additionalProperties": False}
     listing = "\n".join(f"Scene {n}: {sc.strip()}" for n, sc in enumerate(scenes[:2], 1))
@@ -1319,7 +1320,8 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
         schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="flux pick")
     print(f"  picture check: {result['reason'][:200]}")
     picks = result["picks"]
-    chosen = [(img, f"AI illustration ({model})", min(1.0, max(0.0, float(p["focus"]))))
+    clamp = lambda v: min(1.0, max(0.0, float(v)))
+    chosen = [(img, f"AI illustration ({model})", (clamp(p["focus"]), clamp(p["face_y"])))
               for p in picks for name, img, model in made if name == p["file"]][:2]
     if not chosen:
         raise RuntimeError("none of the AI pictures looked right")
@@ -1502,7 +1504,10 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
            "seekh": "AAJ KI SEEKH", "cta": "Send this to someone who needs it", **(labels or {})}
     import random
 
-    def graded(img: Image.Image, focus: float) -> Image.Image:
+    def graded(img: Image.Image, focus) -> Image.Image:
+        """focus = x (0-1) of the figures, or (x, y) for AI pictures: then the faces are placed just below the
+        heading (screen y ~620), whatever the picture's layout; uncovered space blends into dark."""
+        focus, face_y = focus if isinstance(focus, (tuple, list)) else (focus, None)
         zmax = 1.12
         cw, ch = int(RW * zmax), int(RH * zmax)
         k = max(RW / img.width, RH / img.height) * zmax
@@ -1520,10 +1525,11 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
                                Image.new("RGB", (cw, ch), "#000000"), 0.45)
             back.paste(fg, ((cw - fg.width) // 2, int(70 * zmax)))
             big = back
-        if steps:   # Gita series: picture a little lower, under a dark band, so heads stay below the heading
-            low = Image.new("RGB", big.size, "#05070c")
-            low.paste(big.crop((0, 0, big.width, big.height - 170)), (0, 170))
-            big = low
+        elif face_y is not None:
+            shift = int(min(0.25 * ch, max(-0.35 * ch, 620 * zmax - face_y * ch)))
+            moved = Image.new("RGB", big.size, "#05070c")
+            moved.paste(big, (0, shift))
+            big = moved
         return Image.blend(big, Image.new("RGB", big.size, "#3a2000"), 0.18)    # warm golden grade
 
     bases = [graded(img, focus) for img, _, focus in images]

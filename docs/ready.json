@@ -69,53 +69,5 @@
    "fixed": []
   },
   "created_at": "2026-10-10T21:51:01+00:00"
- },
- {
-  "id": "r20261010-222001-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-222001-gita.jpg",
-  "video": "posts/r20261010-222001-gita.mp4",
-  "headline": "Gita 1.1: Ek andha raja... aur ek sawaal",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Gita ka pehla shlok, aur pehle hi shabd mein poori Mahabharat chhupi hai. 🙏\n'Mere' aur 'paraye' ka bhed hi jhagde ki jad hai.\nAapke 'mere wale' kaun hain? Comment karke batao ya kisi apne ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.1 · Kal: shlok 1.2\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal padhenge Gita 1.2. Follow karo taaki roz ka ek shlok miss na ho 🙏 Aapke jeevan mein 'mere' aur 'paraye' kaun hain?",
-  "songs": [
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft, thoughtful"
-   },
-   {
-    "title": "Mann Mera (Original Version)",
-    "artist": "Gajendra Verma",
-    "lang": "hindi",
-    "mood": "calm, emotional"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "quiet, reflective"
-   },
-   {
-    "title": "blue",
-    "artist": "Yung Kai",
-    "lang": "english",
-    "mood": "chill, gentle"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 7: Slide 7 is identical to slide 6, so it is a duplicate. Dropping it fixes this.",
-    "Slide 5: Slides 5 and 6 show Krishna with a boy, not Dhritarashtra. They are AI illustrations and are labelled as such, so this is only a mild mismatch with the slide text. No fix needed."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T22:20:01+00:00"
  }
 ]
