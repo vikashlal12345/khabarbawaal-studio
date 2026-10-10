@@ -1,119 +1,5 @@
 [
  {
-  "id": "r20261009-1931-explainer",
-  "kind": "ready",
-  "image": "posts/r20261009-1931-explainer-1.jpg",
-  "slides": [
-   "posts/r20261009-1931-explainer-2.jpg",
-   "posts/r20261009-1931-explainer-3.jpg",
-   "posts/r20261009-1931-explainer-4.jpg",
-   "posts/r20261009-1931-explainer-5.jpg",
-   "posts/r20261009-1931-explainer-6.jpg"
-  ],
-  "headline": "CIBIL Score Kya Hai? Simple Explainer",
-  "tag": "📦 EXPLAINER",
-  "caption": "CIBIL score tumhare loan aur credit card ka report card hai. Time pe EMI bharo, score apne aap sudharta hai. Kya tumne apna score check kiya hai? Save karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #cibil #personalfinance",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The big flame icon sits on top of the faded 'EXPLAINER' watermark and hides its last letters. It's only decoration and the main title is clear, so this is minor. The flame also doesn't fit a finance explainer."
-   ],
-   "fixed": [
-    "removed weak photo slide(s) [5]"
-   ]
-  },
-  "created_at": "2026-10-09T19:31:24+00:00"
- },
- {
-  "id": "r20261009-1931-quiz",
-  "kind": "ready",
-  "image": "posts/r20261009-1931-quiz-1.jpg",
-  "slides": [
-   "posts/r20261009-1931-quiz-2.jpg",
-   "posts/r20261009-1931-quiz-3.jpg",
-   "posts/r20261009-1931-quiz-4.jpg",
-   "posts/r20261009-1931-quiz-5.jpg",
-   "posts/r20261009-1931-quiz-6.jpg",
-   "posts/r20261009-1931-quiz-7.jpg"
-  ],
-  "headline": "Human Body Quiz: Kya Tum 4/4 Score Karoge?",
-  "tag": "📦 QUIZ",
-  "caption": "Body ke baare mein kitna jaante ho? Swipe karke 4 sawal try karo, answers 6th slide par hain. Apna score comment karo, aur dost ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #quiz #healthfacts",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Answers are on slide 6 of 7; the last slide (7) is just a comment prompt.",
-    "Slide 1: The cover is a da Vinci anatomical sketch that shows nude male genitals. Instagram may flag it as sensitive. Consider a cropped or different cover image.",
-    "Slide 2: The skin photo is a small, low-resolution rectangle on a heavily blurred copy of itself. It looks unpolished. I did not drop it because Q1 would then be missing and the answers slide refers to it. A larger or sharper skin photo would be better.",
-    "Slide 7: The closing slide asks \"Aap kya sochte ho?\", which doesn't fit a quiz. Something like \"Kitne sahi hue?\" would fit better. This is optional."
-   ],
-   "fixed": [
-    "answers last slide par hain → answers 6th slide par hain"
-   ]
-  },
-  "created_at": "2026-10-09T19:31:59+00:00"
- },
- {
-  "id": "r20261009-1932-facts",
-  "kind": "ready",
-  "image": "posts/r20261009-1932-facts-1.jpg",
-  "slides": [
-   "posts/r20261009-1932-facts-2.jpg",
-   "posts/r20261009-1932-facts-3.jpg",
-   "posts/r20261009-1932-facts-4.jpg",
-   "posts/r20261009-1932-facts-5.jpg",
-   "posts/r20261009-1932-facts-6.jpg",
-   "posts/r20261009-1932-facts-7.jpg"
-  ],
-  "headline": "5 Sachin Tendulkar Facts Jo Kam Log Jaante Hain",
-  "tag": "📦 AMAZING FACTS",
-  "caption": "Sachin sirf ek cricketer nahi, ek emotion hain. Ye 5 facts padh ke kitne pata the aapko?\nSave karo aur us dost ko share karo jo Sachin ka fan hai!\n\nFollow @khabarbawaal for daily updates.\n\n#cricket #sachintendulkar #india #viral #trending",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Women's cricketer Belinda Clarke scored an ODI double century (229*) in 1997, so 'first batsman' overall is inaccurate; Sachin was the first male player.",
-    "Slide 1: The faint 'AMAZING FACTS' background text is partly covered by the flame icon, so its last letters ('CTS') are hidden. The headline itself is fine. This is a minor layout flaw, so consider moving the icon or the watermark."
-   ],
-   "fixed": [
-    "pehle batsman bane jisne double century maari → pehle male batsman bane jisne double century maari",
-    "aapko?\\nSave → aapko?\nSave"
-   ]
-  },
-  "created_at": "2026-10-09T19:32:32+00:00"
- },
- {
-  "id": "r20261009-1932-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261009-1932-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261009-1932-on_this_day-2.jpg",
-   "posts/r20261009-1932-on_this_day-3.jpg",
-   "posts/r20261009-1932-on_this_day-4.jpg",
-   "posts/r20261009-1932-on_this_day-5.jpg",
-   "posts/r20261009-1932-on_this_day-6.jpg"
-  ],
-  "headline": "10 October: 4 Things Jo Itihaas Mein Hue",
-  "tag": "📦 ON THIS DAY",
-  "caption": "Ek hi tareekh, 4 badi kahaniyan. Kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #history #viral #trending #india",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The faint 'ON THIS DAY' watermark is partly covered by the flame icon, so the 'A' in DAY is hidden. It looks decorative and is not a real error. You could move the icon if you want it cleaner."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-09T19:32:55+00:00",
-  "valid_on": "2026-10-10"
- },
- {
   "id": "r20261009-1933-myth_fact",
   "kind": "ready",
   "image": "posts/r20261009-1933-myth_fact-1.jpg",
@@ -232,5 +118,57 @@
    "fixed": []
   },
   "created_at": "2026-10-10T09:56:25+00:00"
+ },
+ {
+  "id": "r20261010-1931-explainer",
+  "kind": "ready",
+  "image": "posts/r20261010-1931-explainer-1.jpg",
+  "slides": [
+   "posts/r20261010-1931-explainer-2.jpg",
+   "posts/r20261010-1931-explainer-3.jpg",
+   "posts/r20261010-1931-explainer-4.jpg",
+   "posts/r20261010-1931-explainer-5.jpg",
+   "posts/r20261010-1931-explainer-6.jpg",
+   "posts/r20261010-1931-explainer-7.jpg"
+  ],
+  "headline": "Inflation Kya Hai? Simple Explainer",
+  "tag": "📦 EXPLAINER",
+  "caption": "Mehngai ka naam sab lete hain, par woh naapi kaise jaati hai? Ab ek simple explainer mein samajh lo. Save karo aur dost ko bhejo, aapko kaunsi cheez sabse zyada mehngi lagti hai?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #inflation #finance",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover's background is a zoomed-in crop of the IMF map. The chart title and subtitle are cut off at the top and left (\"n rate among IMF members (Apr 20\", \"here inflation exceeds 100pc\"). The map's own credit line (\"…national Monetary Fund • Created with Datawrapper\") is half hidden behind the @khabarbawaal handle and the Source line. The result looks messy. Use a cleaner crop, or the full map as on slide 2."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T19:31:42+00:00"
+ },
+ {
+  "id": "r20261010-1932-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261010-1932-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261010-1932-on_this_day-2.jpg",
+   "posts/r20261010-1932-on_this_day-3.jpg",
+   "posts/r20261010-1932-on_this_day-4.jpg",
+   "posts/r20261010-1932-on_this_day-5.jpg",
+   "posts/r20261010-1932-on_this_day-6.jpg"
+  ],
+  "headline": "11 October: 4 Things Jo Yaad Rakhne Layak Hain",
+  "tag": "📦 ON THIS DAY",
+  "caption": "Ek hi tareekh, Bollywood se Chand tak ki kahaniyan! Aaj ka din itna special nikla. Aapko inme se kaunsa fact sabse zyada pasand aaya? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #amitabhbachchan #bollywood #viral #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The flame icon covers the last letters of the faint 'ON THIS DAY' background text, so 'DAY' is partly hidden. The text is only decorative and the headline is clear, so this is a minor point."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T19:32:04+00:00",
+  "valid_on": "2026-10-11"
  }
 ]

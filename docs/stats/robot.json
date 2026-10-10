@@ -1616,5 +1616,30 @@
     }
    }
   }
+ },
+ "2026-10-11": {
+  "night_ready": {
+   "posts": 0,
+   "requests": 5,
+   "input": 16,
+   "output": 4888,
+   "cache_read": 10736,
+   "cache_write": 35472,
+   "value_usd": 0.192,
+   "by_purpose": {
+    "writing": {
+     "requests": 2,
+     "tokens": 15271
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 29582
+    },
+    "painting pick": {
+     "requests": 1,
+     "tokens": 6259
+    }
+   }
+  }
  }
 }
