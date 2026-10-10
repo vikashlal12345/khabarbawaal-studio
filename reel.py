@@ -1271,14 +1271,15 @@ def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> tuple[Ima
 def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style: str = FLUX_STYLE,
                 size: tuple[int, int] = (864, 1536)) -> list[tuple[Image.Image, str, float]]:
     """Up to 2 pictures (one per scene), each painted `tries` times; the AI looks at them and keeps the best
-    correct, respectful one per scene. Returns [(image, credit, focus_x)]; raises if FLUX is busy or none fits."""
+    correct, respectful one per scene. Returns [(image, credit, focus_x)]; raises if the AI is busy or none fits."""
     import random
     import fun
     folder = os.path.join(tmp, "flux")
     os.makedirs(folder, exist_ok=True)
     made, fails = [], 0
-    for n, scene in enumerate(scenes[:2], 1):
-        for k in range(1, tries + 1):
+    # Scenes take turns (1, 2, 1, 2): only ~3 pictures a run are allowed, so each scene gets a try.
+    for k in range(1, tries + 1):
+        for n, scene in enumerate(scenes[:2], 1):
             try:
                 img, model = flux_image(style + scene.strip() + FLUX_AVOID, random.randint(1, 999999), *size)
             except Exception:
