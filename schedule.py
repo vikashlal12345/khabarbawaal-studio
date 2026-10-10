@@ -13,7 +13,8 @@ QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
 # Regular posts (news carousels with "KhabarBawaal ka take") at these hours; specials below.
 REGULAR_HOURS = [10, 17]
 # (Top 5 Viral, market posts and Thought of the Day still exist as --kind options, just not scheduled.)
-SPECIALS = {"night_roundup": (7, 0),                       # 🌅 overnight Top 5 carousel
+SPECIALS = {"reel_devotion": (6, 0),                       # 🎬 🙏 festival / Navratri goddess / god of the day
+            "night_roundup": (7, 0),                       # 🌅 overnight Top 5 carousel
             "reel_clip_am": (8, 0), "reel_clip": (13, 0),  # 🎬 Tag that friend
             "reel_politics": (18, 0),                      # 🎬 political satire + reality check
             "reel_meme": (19, 0), "reel_news": (20, 0),    # 🎬 meme, news slideshow

@@ -28,6 +28,8 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 
 ## Schedule (IST) - `schedule.py`
 **Fewer-posts plan (10 Oct 2026, ~9 a day = 5 Reels + 4 carousels).** Quiet 11 PM-5 AM (night jobs only).
+6:00 🎬 🙏 devotional (festival from Google's India holidays calendar, Navratri goddess of the day anchored on
+Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search; Gita-Reel style) ·
 7:00 🌅 Overnight Top 5 · 8:00 🎬 Tag that friend · 10:00 📰 news carousel · 13:00 🎬 Tag that friend ·
 17:00 📰 news carousel · 18:00 🎬 political satire + REALITY CHECK (Congress/AAP/Left/Cockroach Janta Party) ·
 19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide

@@ -1102,12 +1102,17 @@ def commons_images(queries: list[str]) -> list[dict]:
 
 
 def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
-    """The AI looks at the free Krishna-Arjuna images and picks the 2 most beautiful, on-topic ones
-    (not used recently). Returns [(image, credit)]."""
+    return pick_paintings(GITA_SEARCHES, "Lord Krishna with Arjuna (chariot, Kurukshetra battlefield, Gita Upadesh)",
+                          "gita_images_used", state, tmp)
+
+
+def pick_paintings(queries: list[str], subject: str, used_key: str, state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
+    """The AI looks at free Wikimedia Commons paintings of the subject and picks the 2 most beautiful,
+    on-topic ones (not used recently). Returns [(image, credit, focus_x)]."""
     import generate as g
     import fun
-    used = state.get("gita_images_used", [])
-    found = commons_images(GITA_SEARCHES)
+    used = state.get(used_key, [])
+    found = commons_images(queries)
     cands = [c for c in found if c["title"] not in used] or found
     # paintings first (photos of statues/buildings rarely look good); only a few downloads (Wikimedia rate limit)
     cands.sort(key=lambda c: -sum(w in c["title"].lower() for w in PAINTING_WORDS))
@@ -1137,25 +1142,25 @@ def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, floa
         thumb.convert("RGB").save(os.path.join(folder, name), quality=80)
         loaded.append((name, img, c))
     if not loaded:
-        raise RuntimeError("no free Krishna-Arjuna images found on Wikimedia Commons")
+        raise RuntimeError(f"no free images of {subject[:40]} found on Wikimedia Commons")
     schema = {"type": "object", "properties": {"best": {"type": "array", "description": "Best first (max 2)", "items": {
               "type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
-              "description": "Horizontal position (0 = left, 1 = right) of Krishna and Arjuna, to centre a tall crop"}},
+              "description": "Horizontal position (0 = left, 1 = right) of the main figure(s), to centre a tall crop"}},
               "required": ["file", "focus"], "additionalProperties": False}}}, "required": ["best"], "additionalProperties": False}
-    best = fun.claude_json("You choose background images for a respectful Bhagavad Gita Instagram Reel.",
+    best = fun.claude_json("You choose background images for a respectful devotional Instagram Reel.",
                            f"Candidate images: {', '.join(n for n, _, _ in loaded)}. Open each with the Read tool. "
-                           "Pick the 2 most beautiful, striking images that clearly show Lord Krishna with Arjuna "
-                           "(chariot, Kurukshetra battlefield, Gita Upadesh). ONLY paintings or illustrations: reject all "
+                           f"Pick the 2 most beautiful, striking images that clearly show {subject}. "
+                           "ONLY paintings or illustrations: reject all "
                            "photographs (statues, temples, buildings, people, events), book covers, manuscript pages with "
                            "writing, text-heavy, blurry, side-by-side duplicated (stereo) or collage images. Colourful "
                            "paintings with large figures are best. Empty list if none fits.",
-                           schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="gita image pick")["best"]
+                           schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="painting pick")["best"]
     chosen = [(img, c, min(1.0, max(0.0, float(b["focus"])))) for b in best for name, img, c in loaded
               if name == b["file"]][:2]
     if not chosen:
-        raise RuntimeError("no suitable Krishna-Arjuna image among the free ones")
-    state["gita_images_used"] = (used + [c["title"] for _, c, _ in chosen])[-20:]
-    print("  Gita images: " + " | ".join(f"{c['title'][:45]} (focus {f:.2f})" for _, c, f in chosen))
+        raise RuntimeError(f"no suitable image of {subject[:40]} among the free ones")
+    state[used_key] = (used + [c["title"] for _, c, _ in chosen])[-30:]
+    print("  paintings: " + " | ".join(f"{c['title'][:45]} (focus {f:.2f})" for _, c, f in chosen))
     return [(img.convert("RGB"), c["credit"], f) for img, c, f in chosen]
 
 
@@ -1219,11 +1224,15 @@ def faded(img: Image.Image, a: float) -> Image.Image:
 
 
 def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: str, lesson: str,
-              real_life: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+              real_life: str, highlight: list[str], out_mp4: str, labels: dict | None = None) -> list[Image.Image]:
     """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
     golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
     hook → Shri Krishna ka sandesh + lesson + verse → (2nd painting) Aaj ki seekh → send this. (No Sanskrit.)
-    images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread."""
+    images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread.
+    labels: other wording for the 🙏 6 AM devotional Reel: head, middle, source (line under the middle text,
+    '' for none), seekh, cta."""
+    lab = {"head": "GITA  GYAAN", "middle": "SHRI KRISHNA KA SANDESH", "source": f"—  Bhagavad Gita {verse}",
+           "seekh": "AAJ KI SEEKH", "cta": "Send this to someone who needs it", **(labels or {})}
     import random
 
     def graded(img: Image.Image, focus: float) -> Image.Image:
@@ -1261,7 +1270,10 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     overlay = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
     overlay.putalpha(alpha)
 
-    head = glow_line("GITA  GYAAN", vfont("Cinzel-Variable.ttf", 58, "Bold"), GOLD)
+    head_f = vfont("Cinzel-Variable.ttf", 58, "Bold")
+    while head_f.size > 34 and ImageDraw.Draw(Image.new("RGBA", (1, 1))).textlength(lab["head"], font=head_f) > RW - 560:
+        head_f = vfont("Cinzel-Variable.ttf", head_f.size - 4, "Bold")
+    head = glow_line(lab["head"], head_f, GOLD)
     logo = logo_img(400, 96)   # KhabarBawaal logo, centred above the heading
     body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
     lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
@@ -1285,7 +1297,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     parts.append((items, end))
     t = end + 0.5 + pause
     items, y = [], 1060
-    items.append((y, glow_line("SHRI KRISHNA KA SANDESH", small_gold, GOLD), t)); y += 85
+    items.append((y, glow_line(lab["middle"], small_gold, GOLD), t)); y += 85
     t2 = t + 0.8
     y += 10
     divider_y = y
@@ -1293,22 +1305,23 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     les = lines_of(lesson, lesson_f, CREAM)
     for i, im in enumerate(les):
         items.append((y, im, t2 + i * gap)); y += int(lesson_f.size * 1.32)
-    items.append((y + 20, glow_line(f"—  Bhagavad Gita {verse}", vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
-                  t2 + len(les) * gap))
+    if lab["source"]:
+        items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
+                      t2 + len(les) * gap))
     end = t2 + len(les) * gap + read_time(lesson)
     parts.append((items, end))
     divider = (divider_y, t2 - 0.2, end)
     t = end + 0.5 + pause
     switch = t - 0.2                                     # 2nd painting cross-fades in here
     items, y = [], 1200
-    items.append((y, glow_line("AAJ KI SEEKH", vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
+    items.append((y, glow_line(lab["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
     take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
     for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
         items.append((y, im, t + 0.8 + i * gap)); y += int(take_f.size * 1.3)
     end = t + 0.8 + len(items) * gap + read_time(real_life)
     parts.append((items, end))
     cta_at = end + 0.3
-    cta = glow_line("Send this to someone who needs it", vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
+    cta = glow_line(lab["cta"], vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
     handle = glow_line(CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
     total = cta_at + 3.0
 
@@ -1424,6 +1437,8 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
     best = fun.judge_best(options, lambda o: f"{o['hook']} -> Krishna: {o['lesson']} (Gita {o['verse']}) -> {o['real_life']}",
                           CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE)
     roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
+    for k in ("hook", "lesson", "real_life"):
+        best[k] = plain_letters(best[k])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     out = os.path.join(tmp, "reel.mp4")
     status.step("Making the video + proofreading", 5)
@@ -1443,6 +1458,212 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
         "caption": g.limit_hashtags(caption_of(data)), "source": "Bhagavad Gita", "source_url": "",
         "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
 
+# ---------------------------------------------------------------- 6. 🙏 6 AM devotional Reel (festival / god of the day)
+
+FESTIVAL_ICS = "https://calendar.google.com/calendar/ical/en.indian%23holiday%40group.v.calendar.google.com/public/basic.ics"
+NAVRATRI_GODDESSES = ["Maa Shailputri", "Maa Brahmacharini", "Maa Chandraghanta", "Maa Kushmanda", "Maa Skandamata",
+                      "Maa Katyayani", "Maa Kalaratri", "Maa Mahagauri", "Maa Siddhidatri"]
+# God of the day when there's no festival (common tradition), Monday first.
+WEEKDAY_GODS = ["Shiv ji", "Hanuman ji", "Ganesh ji", "Vishnu ji", "Maa Lakshmi", "Shani Dev", "Surya Dev"]
+
+
+_FESTIVALS: dict = {}
+
+
+def festivals_on(day) -> list[str]:
+    """Indian festivals on a date (Google's free public 'Holidays in India' calendar, downloaded once per run)."""
+    import re
+    import requests
+    if not _FESTIVALS:
+        try:
+            ics = requests.get(FESTIVAL_ICS, timeout=25).text
+        except Exception as e:
+            print(f"  ! festival calendar failed: {e}")
+            return []
+        for d, name in re.findall(r"DTSTART;VALUE=DATE:(\d{8}).*?SUMMARY:([^\r\n]+)", ics, re.S):
+            _FESTIVALS.setdefault(d, []).append(name.strip())
+    return _FESTIVALS.get(day.strftime("%Y%m%d"), [])
+
+
+def navratri_day(day) -> int:
+    """1-9 during Sharad/Chaitra Navratri, else 0. Counted from the first day in the calendar, but anchored on
+    Maha Saptami (7), Ashtami (8) and Navami (9) when listed: a doubled tithi can't push a day past 6 before Saptami."""
+    from datetime import timedelta
+    today = [f.lower() for f in festivals_on(day)]
+    for word, n in (("navami", 9), ("ashtami", 8), ("saptami", 7)):
+        if any(word in f for f in today):
+            return n
+    for back in range(10):
+        if any("first day of" in f.lower() and "navratri" in f.lower() for f in festivals_on(day - timedelta(days=back))):
+            count = back + 1
+            ahead = [f.lower() for k in range(1, 4) for f in festivals_on(day + timedelta(days=k))]
+            if any("saptami" in f for f in ahead) or count < 7:
+                return min(count, 6)
+            return count if count <= 9 else 0
+    return 0
+
+
+def devotion_subject(day) -> dict:
+    """What today's 6 AM Reel is about: Navratri goddess, another festival, or the god of the day."""
+    from datetime import timedelta
+    n = navratri_day(day)
+    if n:
+        goddess = NAVRATRI_GODDESSES[n - 1]
+        tomorrow = [f.lower() for f in festivals_on(day + timedelta(days=1))]
+        if n == 8 and any("dussehra" in f or "dasara" in f for f in tomorrow):   # Navami falls on Ashtami this year
+            goddess, n = "Maa Mahagauri aur Maa Siddhidatri", "8-9"
+        return {"kind": "navratri", "name": f"Navratri Din {n}: {goddess}", "deity": goddess, "festivals": festivals_on(day)}
+    fests = [f for f in festivals_on(day) if not any(w in f.lower() for w in ("gandhi", "republic", "independence",
+                                                                             "christmas", "good friday", "eid", "muharram"))]
+    if fests:
+        return {"kind": "festival", "name": fests[0], "deity": "", "festivals": fests}
+    return {"kind": "weekday", "name": f"{day:%A}: {WEEKDAY_GODS[day.weekday()]}", "deity": WEEKDAY_GODS[day.weekday()],
+            "festivals": []}
+
+
+def devotional_songs(queries: list[str]) -> list[dict]:
+    """Most-played devotional songs on JioSaavn for these searches (free search, real songs only)."""
+    import html
+    import requests
+    found = {}
+    for q in queries:
+        try:
+            r = requests.get("https://www.jiosaavn.com/api.php", headers=UA, timeout=20, params={
+                "__call": "search.getResults", "q": q, "_format": "json", "_marker": "0", "api_version": "4",
+                "ctx": "web6dot0", "n": "10", "p": "1"})
+            results = r.json().get("results", [])
+        except Exception as e:
+            print(f"  ! song search '{q}' failed: {e}")
+            continue
+        for x in results:
+            title = html.unescape(x.get("title", "")).strip()
+            artists = ", ".join(a["name"] for a in x.get("more_info", {}).get("artistMap", {}).get("primary_artists", [])[:2])
+            plays = int(x.get("play_count") or 0)
+            if title and title.lower() not in found:
+                found[title.lower()] = {"title": title, "artist": artists or html.unescape(x.get("subtitle", "")).split(" - ")[0],
+                                        "lang": "hindi", "mood": "devotional", "plays": plays}
+    return sorted(found.values(), key=lambda s: -s["plays"])
+
+
+DEVOTION_PLAN = {"type": "object", "properties": {
+    "deity": {"type": "string", "description": "The god/goddess this Reel is about (Hinglish name, e.g. 'Maa Shailputri')"},
+    "image_searches": {"type": "array", "items": {"type": "string"}, "description":
+                       "3 English Wikimedia Commons searches for classical paintings of this deity, e.g. "
+                       "'Shailaputri painting', 'Durga Raja Ravi Varma', 'Goddess Durga miniature painting'"},
+    "image_subject": {"type": "string", "description": "What the painting must clearly show, in English"},
+    "family": {"type": "string", "description": "English name of the main deity for a wider painting search if this exact "
+               "form has none, e.g. 'Durga' for any Navratri goddess, 'Shiva', 'Hanuman', 'Lakshmi', 'Rama'"},
+    "song_searches": {"type": "array", "items": {"type": "string"}, "description":
+                      "2-3 JioSaavn searches for popular devotional songs, e.g. 'Navratri bhajan', 'Durga aarti'"},
+    "head": {"type": "string", "description": "Top heading, max 16 letters, e.g. 'SHUBH NAVRATRI', 'JAI HANUMAN', 'HAR HAR MAHADEV'"},
+    "middle": {"type": "string", "description": "Label over the deity's meaning, e.g. 'MAA SHAILPUTRI', 'BAJRANGBALI KA BAL'"},
+    "seekh": {"type": "string", "description": "Label over the blessing, e.g. 'AAJ KA ASHIRWAAD', 'AAJ KI PRARTHANA'"},
+    "cta": {"type": "string", "description": "Ending line, e.g. 'Jai Mata Di 🙏 Apni family ko bhejo' (max 7 words, no emoji)"}},
+    "required": ["deity", "image_searches", "image_subject", "family", "song_searches", "head", "middle", "seekh", "cta"],
+    "additionalProperties": False}
+
+DEVOTION_OPTION = {"type": "object", "properties": {
+    "based_on": {"type": "string"},
+    "hook": {"type": "string", "description": "Morning greeting with feeling, max 11 words, natural pause '...', e.g. "
+             "'Navratri ka pehla din... Maa Shailputri ka aashirwaad aapke ghar aaye'"},
+    "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 22 words, "
+               "only well-known traditional facts"},
+    "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 18 words, people want to save it"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
+    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5 (e.g. #navratri #jaimatadi), include #reelsindia"}},
+    "required": ["based_on", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment", "hashtags"],
+    "additionalProperties": False}
+
+DEVOTION_SYSTEM = """You write the 6 AM devotional Reel for {page}, an Indian Hinglish page for 18-34s (English \
+letters only, never Devanagari). Warm, reverent, uplifting, like a blessing from family: festival or god of the day, \
+who the deity is in simple words, and a blessing or life lesson for today. Only well-known traditional facts; never \
+joke about any god, no politics, nothing against any religion or community. Write it like poetry: short lines, \
+natural pauses ("..."). Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line asks people to share \
+with family or comment 'Jai ...'."""
+
+
+def plain_letters(text: str) -> str:
+    """Drop accent marks the fonts can't draw well (e.g. 'beṭi' -> 'beti')."""
+    import unicodedata
+    return "".join(ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch))
+
+
+def screen_label(text: str) -> str:
+    """On-screen label: emojis (the fonts can't draw them) become a neat ' · ' separator."""
+    import re
+    text = re.sub(r"\s*[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F]+\s*", " · ", plain_letters(text))
+    return re.sub(r"(\s*·\s*)+$", "", re.sub(r"^(\s*·\s*)+", "", text)).strip()
+
+
+def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🙏 6 AM: festival of the day (Navratri goddess of the day) or the god of the day, in the Gita-Reel style,
+    with popular devotional songs for that god."""
+    from datetime import date
+    import fun
+    import generate as g
+    import proofread
+    import status
+    day = date.fromisoformat(today)
+    status.step("Checking today's festival", 2)
+    subj = devotion_subject(day)
+    print(f"  devotion: {subj['name']} | festivals: {subj['festivals']}")
+    plan = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
+                           f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
+                           f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
+                           CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
+    status.step(f"Finding paintings of {plan['deity']} (free licence)", 3)
+    exact = True
+    try:
+        images = pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
+    except RuntimeError as e:   # few paintings of this exact form: use the main deity's paintings
+        exact = False
+        fam = plan["family"].strip() or "Durga"
+        print(f"  {e}: trying paintings of {fam}")
+        images = pick_paintings([f"{fam} painting", f"{fam} Raja Ravi Varma", f"Goddess {fam} miniature painting"
+                                 if subj["kind"] == "navratri" else f"{fam} miniature painting"],
+                                f"{'Goddess ' if subj['kind'] == 'navratri' else ''}{fam} (any classical depiction)",
+                                "devotion_images_used", state, tmp)
+    songs = devotional_songs(plan["song_searches"])[:4]
+    status.step(f"Writing the {plan['deity']} Reel", 4)
+    options = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
+                              f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']} (deity: {plan['deity']}). "
+                              f"Festivals today: {', '.join(subj['festivals']) or 'none'}.\n"
+                              f"On screen the parts are labelled '{plan['middle']}' (lesson) and '{plan['seekh']}' (real_life), "
+                              "so don't repeat those words.\n"
+                              + ("" if exact else f"The paintings show {plan['family']} in general, not this exact form: "
+                                 "don't describe her/his vahana, weapons or looks; write about the meaning and blessing.\n")
+                              + "\nWrite exactly 3 different Reels.",
+                              options_schema(DEVOTION_OPTION, "Exactly 3 different Reels"),
+                              CONFIG.get("membership_model", "sonnet"), purpose="devotion writing")["options"][:3]
+    for o in options:
+        o["caption"] = unescape(o["caption"])
+    best = fun.judge_best(options, lambda o: f"{o['hook']} -> {o['lesson']} -> {o['real_life']}",
+                          CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE.replace("Gita", "devotional"))
+    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
+    for k in ("hook", "lesson", "real_life"):
+        best[k] = plain_letters(best[k])
+    labels = {k: screen_label(plan[k]).upper() if k != "cta" else screen_label(plan[k]) for k in ("head", "middle", "seekh", "cta")}
+    labels["source"] = f"—  {printable(subj['name'].split(':')[0])}" if subj["kind"] == "navratri" else ""
+    out = os.path.join(tmp, "reel.mp4")
+    status.step("Making the video + proofreading", 5)
+
+    def caption_of(d):
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
+        return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily darshan 🙏\n\n{tags}"
+    frames, data, proof = proofread.run(
+        lambda d: gita_reel(images, "", d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"],
+                            d["post"]["highlight"], out, labels=labels),
+        {"post": best}, caption_of,
+        f"Devotional Reel for {subj['name']} ({plan['deity']}). Check the facts about the deity/festival are the "
+        "well-known traditional ones.")
+    post = data["post"]
+    save_reel(feed, state, frames[1], out, f"reel_devotion-{today}", {
+        "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🙏 " + labels["head"],
+        "caption": g.limit_hashtags(caption_of(data)), "source": "KhabarBawaal Original", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""),
+        "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
+
 def make(kind: str, state: dict, feed: list) -> bool:
     """Make today's Reel for this slot; False (with the reason printed) if it couldn't be made."""
     import tempfile
@@ -1461,6 +1682,8 @@ def make(kind: str, state: dict, feed: list) -> bool:
                 make_news_reel(state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
+            elif kind == "reel_devotion":
+                make_devotion_reel(state, feed, today, tmp)
             else:
                 make_joke_reel(kind, state, feed, today, tmp)
         return True
