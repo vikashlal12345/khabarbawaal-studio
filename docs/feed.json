@@ -1,5 +1,53 @@
 [
  {
+  "id": "reel_clip-2026-10-10",
+  "image": "posts/20261010-0731-reel_clip-2026-10-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261010-073142-reel_clip-2026-10-10.mp4",
+  "headline": "Wo dost jo sale mein 'sirf dekh raha hoon' bolta hai: Cart mein 14 cheezein, balance 312 rupaye",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Sale ka naam sunte hi cart full ho jaata hai, salary ka naam sunte hi cart khali 😭\nBas dekh raha tha, bol ke 14 cheezein daal di.\nApne us dost ko tag karo jiska cart sabse lamba hai 👇 #reelsindia\n\nFollow @khabarbawaal for daily bawaal 😂\n\n #viral #trending #india #amazonsale",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Wishlist mein sab kuch hai, bas wallet mein kuch nahi.",
+  "songs": [
+   {
+    "title": "Casa Tupka Anthemo",
+    "artist": "Yo Yo Honey Singh",
+    "lang": "hindi",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "Boom Shaka",
+    "artist": "Dhanda Nyoliwala, KR$NA",
+    "lang": "hindi",
+    "mood": "hype, cheeky"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "playful, fun"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "chill, funny"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Only slide1.jpg was available to check. The other slides listed in the texts (online shopping, woman laptop shopping, credit card, and so on) were not reviewed. The slide 1 text is clean, with no overlap or cut-off. The phone screen shows a $59.99 price and USD shipping, so it's a US Amazon page, not Indian. That's a minor mismatch for an Indian audience.",
+    "Caption: The caption repeats #reelsindia and has no real news content. It reads as a meme post, and there is no article to fact-check against."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T07:31:42+00:00"
+ },
+ {
   "id": "9466073c3f5b",
   "image": "posts/20261010-0631-9466073c3f5b.jpg",
   "kind": "fun",
