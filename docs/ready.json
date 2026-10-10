@@ -1,31 +1,5 @@
 [
  {
-  "id": "r20261009-1933-myth_fact",
-  "kind": "ready",
-  "image": "posts/r20261009-1933-myth_fact-1.jpg",
-  "slides": [
-   "posts/r20261009-1933-myth_fact-2.jpg",
-   "posts/r20261009-1933-myth_fact-3.jpg",
-   "posts/r20261009-1933-myth_fact-4.jpg",
-   "posts/r20261009-1933-myth_fact-5.jpg",
-   "posts/r20261009-1933-myth_fact-6.jpg",
-   "posts/r20261009-1933-myth_fact-7.jpg"
-  ],
-  "headline": "4 Myths Jo Tumne School Mein Sach Maane",
-  "tag": "📦 MYTH VS FACT",
-  "caption": "School mein jo sach laga, wo shayad myth nikla! 😅 Aapne kitne myths maane the? Save karo aur dost ko share karo, kaun sabse zyada galat tha?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #factcheck #mythbusters",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The bull photo is shown small, in the middle of a blurred copy of itself. It looks a bit low-resolution but is readable and relevant. Optional: use a larger crop."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-09T19:33:15+00:00"
- },
- {
   "id": "r20261010-093019-gita",
   "kind": "ready",
   "media": "reel",
@@ -170,5 +144,22 @@
   },
   "created_at": "2026-10-10T19:32:04+00:00",
   "valid_on": "2026-10-11"
+ },
+ {
+  "id": "r20261010-210155-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261010-210155-bhakti.jpg",
+  "headline": "Maa, naye shehar mein akeli hoon, par aapka naam lete hi lagta hai koi mere saath baitha hai.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Navratri ka pehla din, naya shehar, par Maa saath hain. 🙏\nJo ghar se door hai, usse aaj ye zaroor sunao.\nComment karo Jai Mata Di\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #bhakti #explorepage #reelsindia",
+  "pin_comment": "Aaj ka pehla diya, Maa ke naam. Jai Mata Di 🙏",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T21:01:55+00:00"
  }
 ]

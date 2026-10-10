@@ -252,7 +252,8 @@
   "reel_politics": "2026-10-10",
   "reel_meme": "2026-10-10",
   "reel_news": "2026-10-10",
-  "reel_devotion": "2026-10-11"
+  "reel_devotion": "2026-10-11",
+  "night_picture": "2026-10-11"
  },
  "inbox_since": "DxFoNvcbVl5S",
  "used_otps": [
@@ -406,5 +407,8 @@
  "devotion_images_used": [
   "Godess Durga painting.JPG",
   "Portrayal of Durga Puja in Bengal through Painting.jpg"
+ ],
+ "recent_bhakti": [
+  "Maa Shailputri: first night of fasting and prayer, a young woman lighting a diya alone in her hostel room in a new city"
  ]
 }

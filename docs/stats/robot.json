@@ -1690,6 +1690,33 @@
      "tokens": 10569
     }
    }
+  },
+  "night_picture": {
+   "posts": 0,
+   "requests": 4,
+   "input": 12,
+   "output": 2498,
+   "cache_read": 9726,
+   "cache_write": 16240,
+   "value_usd": 0.0909,
+   "by_purpose": {
+    "bhakti writing": {
+     "requests": 1,
+     "tokens": 7779
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 6484
+    },
+    "flux pick": {
+     "requests": 1,
+     "tokens": 6682
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 7531
+    }
+   }
   }
  }
 }
