@@ -1,48 +1,52 @@
 [
  {
   "id": "reel_politics-2026-10-10",
-  "image": "posts/20261010-1248-reel_politics-2026-10-10.jpg",
+  "image": "posts/20261010-1258-reel_politics-2026-10-10.jpg",
   "kind": "reel",
   "media": "reel",
-  "video": "posts/20261010-124846-reel_politics-2026-10-10.mp4",
-  "headline": "Opposition ki ekta: Chunav haaro, phir Election Commission ko hatao",
+  "video": "posts/20261010-125812-reel_politics-2026-10-10.mp4",
+  "headline": "Kejriwal ka formula: Punjab jeeto toh janta, Delhi haaro toh Vote Chor",
   "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "Kharge ne kaha 'Muzzled Democracy', par Bihar mein 202 seat NDA ko mili 🤷\nOpposition ka formula: haaro toh EC ko hatao.\nUs dost ko tag karo jo exam mein fail hokar paper check karne wale ko dosh deta hai!\n\nFollow @khabarbawaal for daily updates.\nSource: The Times of India (link pinned in comments 👇)\n\n#congress #kharge #election #politicalmemes #reelsindia",
+  "caption": "Kejriwal ne CEC ko 'vote thief' kaha, par Punjab 2022 ki jeet isi EC ke under thi.\nHaar pe system ganda, jeet pe system sahi? 🤦\nApne us dost ko bhejo jo har haar pe EVM ko blame karta hai 😂\n\nFollow @khabarbawaal for daily updates.\nSource: The Times of India (link pinned in comments 👇)\n\n#reelsindia #Kejriwal #AAP #politicalmemes #IndianPolitics",
   "source": "The Times of India",
   "source_url": "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "pin_comment": "Agla bahana kya hoga? Comment karo",
+  "pin_comment": "Punjab 2022: AAP 92/117. Delhi 2025: AAP 22/70. Same Election Commission. Aapko kya lagta hai?",
   "songs": [
    {
-    "title": "Tere Bina",
-    "artist": "Arijit Singh, Aakanksha Sharma",
+    "title": "Barbaad",
+    "artist": "The Rish, Jubin Nautiyal",
     "lang": "hindi",
-    "mood": "dramatic, ironic"
+    "mood": "funny, dramatic fall"
    },
    {
     "title": "Boom Shaka",
     "artist": "Dhanda Nyoliwala, KR$NA",
     "lang": "hindi",
-    "mood": "funny, upbeat drop"
+    "mood": "hype, roast drop"
    },
    {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
     "lang": "english",
-    "mood": "hype, dramatic"
+    "mood": "hype, swagger"
    },
    {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
     "lang": "english",
-    "mood": "chill, playful"
+    "mood": "sad, ironic"
    }
   ],
   "proof": {
-   "state": "ok",
-   "issues": [],
+   "state": "check",
+   "issues": [
+    "Caption: The caption and slide 3 say Punjab 2022 was won under \"isi EC\" or \"isi Election Commission\". Gyanesh Kumar became CEC in Feb 2025, so he was not CEC for the 2022 Punjab election or the Feb 2025 Delhi election. It is the same institution but a different CEC. Consider wording it as \"Election Commission\" in general, not as the same EC under Gyanesh Kumar.",
+    "Slide 4: \"Delhi mein EC chor\" states the theft claim as fact. Kejriwal's \"vote thief\" quote was aimed at CEC Gyanesh Kumar and was an allegation. Consider attributing it, for example as Kejriwal's claim, or framing it clearly as satire.",
+    "Slide 1: The photo is a generic film still of a distressed person. It has no visible link to Kejriwal or the story, and the credit for the image is not given. It is the cover slide, so it cannot be dropped. Consider a relevant image."
+   ],
    "fixed": []
   },
-  "created_at": "2026-10-10T12:48:46+00:00"
+  "created_at": "2026-10-10T12:58:12+00:00"
  },
  {
   "id": "367929ead359",

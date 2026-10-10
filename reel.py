@@ -1000,9 +1000,11 @@ POLITICS_OPTION = {"type": "object", "properties": {
                 "first mention, e.g. 'Uttarakhand CM Pushkar Singh Dhami'), what they did, when ('is hafte', 'kal'), "
                 "and explain every term in brackets (e.g. 'SIR (voter list ki jaanch)'). Natural Hinglish: "
                 "'X ne kaha', 'X ke mutabik', never 'X ke as per'. No emojis."},
-    "facts": {"type": "array", "description": "REALITY CHECK: 2 recent facts (2024-2026, with month/year) that "
-              "CONTRADICT their claim or show their hypocrisy (e.g. their own past actions, election results, court or "
-              "official decisions). NEVER repeat their own statements, slogans or accusations as facts.",
+    "facts": {"type": "array", "description": "REALITY CHECK: 2 recent facts (2023-2026, with month/year) that PROVE "
+              "them wrong by CONTRAST, so the hypocrisy is obvious. E.g. if they blame the EC/EVMs after losing, show "
+              "elections THEY WON under the same EC/EVMs without complaining ('May 2023 Karnataka: Congress ne 135/224 "
+              "jeeti, tab EVM theek tha'). Results of only one side prove nothing. NEVER repeat their own statements, "
+              "slogans or accusations as facts.",
               "items": {"type": "object", "properties": {
                   "fact": {"type": "string", "description": "Max 14 words, Hinglish, with month/year, e.g. "
                            "'Nov 2025 Bihar chunav: NDA ne 243 mein se 202 seat jeeti'"},
@@ -1024,8 +1026,9 @@ POLITICS_OPTION = {"type": "object", "properties": {
 POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
 (English letters only, never Devanagari). The page is pro right-wing (BJP, NDA) and mocks the opposition: \
 {targets}. Structure: a sharp funny dig (hook) -> KYA HUA? (plain context so ANYONE gets it without reading the \
-news) -> REALITY CHECK (recent facts with month/year and a source that CONTRADICT their claim or expose their \
-hypocrisy, never their own lines) -> a big funny punchline. Keep it tight: the whole Reel is read in ~25 seconds. Make it something \
+news) -> REALITY CHECK (recent facts with month/year and a source that prove them wrong by CONTRAST, e.g. their \
+own wins under the same system they now blame; never their own lines, never only one side's results) -> a big \
+funny punchline. Keep it tight: the whole Reel is read in ~25 seconds. Make it something \
 people SEND to friends.
 Make it instantly clear: name people with their role, explain every term, say when it happened. Tie it to a \
 running joke young Indians already know (blaming EVMs after losing, "Sheesh Mahal", free-everything promises, \
@@ -1035,6 +1038,16 @@ official data) with the right source; quotes only if an article has them; attrib
 "X ke mutabik"). Mock their politics and actions only: never religion, caste, region, community, family, looks \
 or health; no slurs, no abuse, no calls to violence; nothing that embarrasses the BJP.
 Caption: 2-4 short Hinglish lines with the context in one line, 1-3 emojis, last line makes people comment or send it."""
+
+# Official results (Election Commission of India) for REALITY CHECK contrasts: the opposition also wins under the
+# same EC/EVMs. Update when new big results come in.
+ELECTION_RECORD = """Recent official results (Election Commission of India):
+- Lok Sabha, Jun 2024: NDA 293 (BJP 240); INDIA bloc about 234 (Congress 99). Opposition did not question the EC/EVMs then.
+- Karnataka, May 2023: Congress 135/224 (won).  - Telangana, Dec 2023: Congress 64/119 (won).
+- Himachal Pradesh, Dec 2022: Congress 40/68 (won).  - Punjab, Mar 2022: AAP 92/117 (won).
+- Jharkhand, Nov 2024: JMM-Congress alliance 56/81 (won).  - Jammu & Kashmir, Oct 2024: NC-Congress 48/90 (won).
+- Haryana, Oct 2024: BJP 48/90, Congress 37.  - Maharashtra, Nov 2024: BJP-led Mahayuti 230/288.
+- Delhi, Feb 2025: BJP 48/70, AAP 22; Arvind Kejriwal lost his New Delhi seat."""
 
 SATIRE_JUDGE = ("You are a 22-year-old Indian on Instagram who did NOT read today's news. Rate each political satire "
                 "Reel 1-10 for: understandable (from the Reel alone you know who did what and why it's funny, and the "
@@ -1088,8 +1101,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         sources = f"MAIN ({story['site']}): {story['title']}\n{article[:5000]}\n\nRELATED:\n" + "\n\n".join(background)
         status.step(f"Writing 3 Reels: {story['title'][:60]}", 3)
         options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
-                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\nWrite exactly 3 different Reels "
-                                  "about the MAIN story." + songs_prompt(songs),
+                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\n{ELECTION_RECORD}\n\n"
+                                  "Write exactly 3 different Reels about the MAIN story." + songs_prompt(songs),
                                   options_schema(POLITICS_OPTION, "Exactly 3 different Reels"),
                                   CONFIG.get("membership_model", "sonnet"), purpose="satire writing")["options"][:3]
         for o in options:
@@ -1117,8 +1130,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         lambda d: satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
                               d["post"]["punchline"], d["post"]["highlight"], out),
         {"post": best}, lambda d: g.full_caption(d["post"], item),
-        sources + "\n\n(Facts may also come from certain, widely reported public record such as official election "
-        "results, if the source shown says so.)")
+        sources + "\n\n" + ELECTION_RECORD + "\n\n(Facts may also come from certain, widely reported public record "
+        "such as official election results, if the source shown says so.)")
     post = data["post"]
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
