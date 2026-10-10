@@ -250,7 +250,8 @@
   "reel_clip": "2026-10-10",
   "reel_clip_am": "2026-10-10",
   "reel_politics": "2026-10-10",
-  "reel_meme": "2026-10-10"
+  "reel_meme": "2026-10-10",
+  "reel_news": "2026-10-10"
  },
  "inbox_since": "KEeoDtG3ID3P",
  "used_otps": [
@@ -395,5 +396,8 @@
  ],
  "reel_politics_used": [
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma"
+ ],
+ "reel_news_used": [
+  "119d9f27c7b0"
  ]
 }

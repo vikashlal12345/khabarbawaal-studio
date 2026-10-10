@@ -1,5 +1,60 @@
 [
  {
+  "id": "reel_news-2026-10-10",
+  "image": "posts/20261010-1432-reel_news-2026-10-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261010-143252-reel_news-2026-10-10.mp4",
+  "headline": "Kareena Kapoor Teaches F1 Champion Lando Norris Indian Gestures, Jokes About Saif's 'World Title'",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kareena ne Lando Norris ko sikhaye desi gestures 😂\nF1 champion Lando Norris ko Kareena Kapoor ne Indian hand gestures sikhaye.\nSaath mein Saif ki film 'Ta Ra Rum Pum' ke 'world title' pe bhi mazaak kiya.\nTumhara favourite desi gesture kaunsa hai? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kareenakapoor #landonorris #bollywood #f1 #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-teaches-f1-world-champion-lando-norris-indian-gestures-jokes-about-saif-ali-khan-racing-wins-in-ta-ra-rum-pum-singapore-gp-101791599356276.html",
+  "pin_comment": "Lando ko aur kaunsa desi gesture sikhana chahiye? Neeche batao",
+  "songs": [
+   {
+    "title": "Casa Tupka Anthemo",
+    "artist": "Yo Yo Honey Singh",
+    "lang": "hindi",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "Boom Shaka",
+    "artist": "Dhanda Nyoliwala, KR$NA",
+    "lang": "hindi",
+    "mood": "hype, swagger"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "fun, groovy"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "playful, chill"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Saif won the championship only as a character in the 2007 film Ta Ra Rum Pum, not in real life. The slide reads as if he really won it.",
+    "Fact corrected to match the article: The 'world title' was a film role, not a real win.",
+    "Many corrections were needed: please give it a quick read."
+   ],
+   "fixed": [
+    "removed weak photo slide(s) [4]",
+    "Kareena ne mazaak mein Saif ke 19 saal pehle 'world championship' jeetne ka zikr kiya. → Kareena ne mazaak mein Saif ke 19 saal pehle film 'Ta Ra Rum Pum' mein 'world championship' jeetne ka zikr kiya.",
+    "Saath mein Saif ke 'world title' pe bhi mazaak kiya. → Saath mein Saif ke film 'Ta Ra Rum Pum' ke 'world title' pe bhi mazaak kiya.",
+    "Saif ke film 'Ta Ra Rum Pum' → Saif ki film 'Ta Ra Rum Pum'",
+    "Saif ke 19 saal pehle film → Saif ki 19 saal purani film"
+   ]
+  },
+  "created_at": "2026-10-10T14:32:52+00:00"
+ },
+ {
   "id": "reel_meme-2026-10-10",
   "image": "posts/20261010-1331-reel_meme-2026-10-10.jpg",
   "kind": "reel",
@@ -809,47 +864,5 @@
     "mood": "fast, high-flying"
    }
   ]
- },
- {
-  "id": "877b6d2a7dd4",
-  "image": "posts/20261009-1431-877b6d2a7dd4.jpg",
-  "kind": "news",
-  "headline": "Study Finds Female AI Agents Were Paid 10.25% Less Than Male Ones For Identical Work",
-  "tag": "WTF NEWS",
-  "caption": "Ab AI mein bhi pay gap? Seriously? 😭\n\nEk study ke mutabiq female AI assistants ko male AI agents se 10.25% kam pay mila, jabki kaam bilkul same tha.\n\nMatlab insaano ka bias ab bots tak pahunch gaya.\n\nUnpopular opinion: agar AI ko bhi salary milti hai to equal pay ka rule unpe bhi lagna chahiye. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #AI #tech #india",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/female-ai-agents-paid-10-less-than-male-counterparts-for-same-work-study-finds-101791551954407.html",
-  "pin_comment": "Sabse funny part: bots ko na appraisal chahiye, na chai break, phir bhi pay gap mil gaya 💀 Tumhare hisaab se galti kiski hai?",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "mututabik → mutabiq"
-   ]
-  },
-  "slides": [
-   "posts/20261009-1431-877b6d2a7dd4-s2.jpg",
-   "posts/20261009-1431-877b6d2a7dd4-s3.jpg",
-   "posts/20261009-1431-877b6d2a7dd4-s4.jpg",
-   "posts/20261009-1431-877b6d2a7dd4-s5.jpg"
-  ],
-  "created_at": "2026-10-09T14:31:53+00:00"
- },
- {
-  "id": "7393a1d06285",
-  "image": "posts/20261009-1331-7393a1d06285.jpg",
-  "kind": "fun",
-  "headline": "Me after brushing at 12 AM, bed pe lete hue: Bhookh lagi hai. Brush wapas karna padega. Bhookh: Chalo, kal dekhenge.",
-  "tag": "😂 RELATABLE",
-  "caption": "Brush karne ke baad bhookh lagna sabse bada dhokha hai 😭🌙\nPhir kitchen jaana ya sab bhool jaana, bada faisla hota hai.\nAgar tumhare saath bhi hua hai to 😭 drop karo\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #midnightcravings #funny #trending #india",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aakhir mein hum dobara brush karte hain, kyunki wo biscuit chhodna namumkin tha.",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-09T13:31:21+00:00"
  }
 ]
