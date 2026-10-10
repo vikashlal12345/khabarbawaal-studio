@@ -877,7 +877,7 @@ def main() -> int:
                                            "market_open", "market_preopen", "market_close", "night_roundup",
                                            "night_ready", "night_calendar", "night_picture", "night_jokes", "night_learn",
                                            "reel_devotion", "reel_clip_am", "reel_clip", "reel_politics", "reel_meme",
-                                           "reel_news"],
+                                           "reel_news", "ready_gita"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
@@ -889,6 +889,10 @@ def main() -> int:
     raised: dict = {}
     resolved: list[str] = []
     token_expiry_check(raised, resolved)
+    if args.kind == "ready_gita":          # manual only: just the 🙏 Gita Reel for 📦 Ready
+        import evergreen
+        evergreen.add_gita(state)
+        return 0
 
     import schedule
     now_ist = schedule.ist_now()

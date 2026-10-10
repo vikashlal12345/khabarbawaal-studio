@@ -1,50 +1,5 @@
 [
  {
-  "id": "r20261010-093019-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-093019-gita.jpg",
-  "video": "posts/r20261010-093019-gita.mp4",
-  "headline": "Din bhar bhaage... phir bhi chain nahi mila? Gita 6.17",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Thoda kaam, thoda aaram 🙏\nSantulan hi sukh ka raaz hai.\nApne thake hue dost ko ye bhejo.\n\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #krishna #selfcare #weekendvibes",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Is weekend aap apne liye kya karoge? Comment karo 🙏",
-  "songs": [
-   {
-    "title": "Ehsaas",
-    "artist": "Faheem Abdullah, Duha Shah",
-    "lang": "hindi",
-    "mood": "chill, soft"
-   },
-   {
-    "title": "Sahiba",
-    "artist": "Jasleen Royal, Stebin Ben",
-    "lang": "hindi",
-    "mood": "gentle, dreamy"
-   },
-   {
-    "title": "Ordinary",
-    "artist": "Alex Warren",
-    "lang": "english",
-    "mood": "warm, calm"
-   },
-   {
-    "title": "Sunflower (Spider-Man: Into the Spider-Verse)",
-    "artist": "Post Malone, Swae Lee",
-    "lang": "english",
-    "mood": "chill, easy"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T09:24:36+00:00"
- },
- {
   "id": "r20261010-1931-explainer",
   "kind": "ready",
   "image": "posts/r20261010-1931-explainer-1.jpg",
@@ -95,58 +50,5 @@
   },
   "created_at": "2026-10-10T19:32:04+00:00",
   "valid_on": "2026-10-11"
- },
- {
-  "id": "r20261010-210155-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261010-210155-bhakti.jpg",
-  "headline": "Maa, naye shehar mein akeli hoon, par aapka naam lete hi lagta hai koi mere saath baitha hai.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Navratri ka pehla din, naya shehar, par Maa saath hain. 🙏\nJo ghar se door hai, usse aaj ye zaroor sunao.\nComment karo Jai Mata Di\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #bhakti #explorepage #reelsindia",
-  "pin_comment": "Aaj ka pehla diya, Maa ke naam. Jai Mata Di 🙏",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T21:01:55+00:00"
- },
- {
-  "id": "r20261010-212723-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261010-212723-bhakti.jpg",
-  "headline": "Kanha, ghar bahut yaad aa raha hai. aap bas mere saath rehna, taaki yahan akela mehsoos na karun.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Ghar se door hokar bhi tum akele nahi ho. Kanha har pal saath hain. 🙏\nComment karo Jai Shri Krishna\n\nFollow @khabarbawaal 🙏\n\n#radhekrishna #krishna #bhakti #explorepage #reelsindia",
-  "pin_comment": "Jo ghar se door hai, use aaj ye zaroor bhejiye.",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T21:27:23+00:00"
- },
- {
-  "id": "r20261010-213538-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261010-213538-bhakti.jpg",
-  "headline": "Maa, aaj phir reject ho gaya, par haar nahi maanunga. bas mera haath thame rehna, raasta aap dikhana.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Rejection ek raasta band karta hai, Maa doosra khol deti hai. 🙏\nHimmat mat chhodna, Maa saath hai.\nComment karo Jai Mata Di\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #motivation #explorepage #reelsindia",
-  "pin_comment": "Aaj jo thak gaya hai, usko ye bhejo. Kal naya din hai.",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The image shows a white cow beside the goddess. Maa Shailputri is traditionally shown with a bull (Nandi) and a trident and lotus. The cow may not match the 'Maa Shailputri' label, so consider checking it. The text is readable and nothing overlaps the faces."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T21:35:38+00:00"
  }
 ]

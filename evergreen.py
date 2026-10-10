@@ -145,6 +145,15 @@ def make_gita(state: dict) -> dict | None:
             **entry, "tag": "📦 " + entry["tag"], "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
 
 
+def add_gita(state: dict) -> bool:
+    """Only the 🙏 Gita Reel, into 📦 Ready (manual `--kind ready_gita`, e.g. when the 1 AM one failed)."""
+    gita = make_gita(state)
+    if gita:
+        save(prune(prune(load()) + [gita]))
+    g.save_json(g.STATE_FILE, state)
+    return bool(gita)
+
+
 def make_picture(state: dict) -> bool:
     """🙏 Bhagwan ka saath picture for the 📦 Ready tab (3 AM: its own run, so FLUX has a fresh daily allowance)."""
     import bhakti
