@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_clip_am-2026-10-10",
+  "image": "posts/20261010-0231-reel_clip_am-2026-10-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261010-023127-reel_clip_am-2026-10-10.mp4",
+  "headline": "Wo dost jo naya phone dekhne ke liye 2 ghante reviews padhta hai: 'Bas dekh raha tha.' Phir purana phone hi chalayega 6 saal aur",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Cart mein daala, wishlist mein daala, kharida kuch nahi 😅📱\nBudget aur dil ki ladai chalti rehti hai.\nEk emoji mein apna phone ka haal batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #smartphone #viral #trending #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Cover toh naya le liya, phone wahi purana 😭",
+  "songs": [
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "dramatic, sad joke"
+   },
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "chill, late night"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "sad, funny contrast"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "night scroll vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T02:31:27+00:00"
+ },
+ {
   "id": "bf09c8f35e4c",
   "image": "posts/20261010-0131-bf09c8f35e4c.jpg",
   "kind": "fun",
@@ -685,45 +730,5 @@
    "posts/20261009-0331-d9200b0a5a1f-s6.jpg"
   ],
   "created_at": "2026-10-09T03:31:38+00:00"
- },
- {
-  "id": "5fd05ab33303",
-  "image": "posts/20261009-0231-5fd05ab33303.jpg",
-  "kind": "news",
-  "headline": "Trump Honours Satya Nadella With Medal Hours After US Suspends Microsoft's Green Card Sponsorship",
-  "tag": "TECH",
-  "caption": "Ek hi din mein taali bhi aur jhatka bhi 😳\nMicrosoft CEO Satya Nadella ko Trump ne National Medal of Technology and Innovation diya.\nLekin usi din US ne Microsoft ki green card sponsorship suspend kar di.\nReports ke mutabiq, kuch ghante pehle Vance ne company par visa programmes ke misuse ka aarop lagaya tha.\nMedal mila ya message mila? Sahi move to 🔥, double game to 🤡\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #tech #microsoft #satyanadella",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/donald-trump-honours-satya-nadella-the-same-day-us-suspends-microsoft-s-green-card-sponsorship-indian-origin-ceo-reacts-101791508907792.html",
-  "pin_comment": "Sabse crazy part: medal aur visa action ek hi din. Timing coincidence hai ya signal? Apna take likho 👀",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: Trump's face is cut off by the right edge of the photo. It is a minor crop issue, and the text doesn't cover either face."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261009-0231-5fd05ab33303-s2.jpg",
-   "posts/20261009-0231-5fd05ab33303-s3.jpg"
-  ],
-  "created_at": "2026-10-09T02:31:02+00:00"
- },
- {
-  "id": "f64c24aaff62",
-  "image": "posts/20261009-0131-f64c24aaff62.jpg",
-  "kind": "fun",
-  "headline": "Me: Aaj se diet shuru. Shaadi ka card aaya. Me: Diet kal se. Pehle shagun ka lifafa dekhte hain.",
-  "tag": "😂 MOOD",
-  "caption": "Diet ka plan shaadi ke card ke saamne hamesha fail ho jaata hai 😂\nPehle paneer, phir pachtava.\nFamily group mein bhejo, dekhte hain kiski diet sabse pehle tooti\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#viral #trending #india #shaadi #relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Diet wahi sachi hai jo buffet ke baad shuru ho.",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-09T01:31:39+00:00"
  }
 ]
