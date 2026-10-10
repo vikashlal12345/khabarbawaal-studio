@@ -251,7 +251,8 @@
   "reel_clip_am": "2026-10-10",
   "reel_politics": "2026-10-10",
   "reel_meme": "2026-10-10",
-  "reel_news": "2026-10-10"
+  "reel_news": "2026-10-10",
+  "reel_devotion": "2026-10-11"
  },
  "inbox_since": "DxFoNvcbVl5S",
  "used_otps": [
@@ -401,5 +402,9 @@
  ],
  "reel_news_used": [
   "119d9f27c7b0"
+ ],
+ "devotion_images_used": [
+  "Godess Durga painting.JPG",
+  "Portrayal of Durga Puja in Bengal through Painting.jpg"
  ]
 }
