@@ -249,9 +249,10 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-10",
   "reel_clip_am": "2026-10-10",
-  "reel_politics": "2026-10-10"
+  "reel_politics": "2026-10-10",
+  "reel_meme": "2026-10-10"
  },
- "inbox_since": "DjwyXjauwtKk",
+ "inbox_since": "KEeoDtG3ID3P",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -346,19 +347,22 @@
   "8741",
   "4508",
   "25575",
-  "43846"
+  "43846",
+  "25593"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
   "Relatable desi life: alarm snooze on Saturday",
   "Relatable desi life: phone recharge / mobile launch scrolling in bed (vivo phone search)",
-  "Saturday + Amazon sale smartwatch/cart habit (big headline: Amazon sale deals)"
+  "Saturday + Amazon sale smartwatch/cart habit (big headline: Amazon sale deals)",
+  "Relatable desi life: Saturday evening plans, bhai ki khud ki dukaan, dost ka plan cancel"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
   "Wo dost jo Saturday ko bhi 6 baje ka alarm lagata hai: 'Bas check kar raha tha' Phir 11 baje tak sota hai",
   "Wo dost jo naya phone dekhne ke liye 2 ghante reviews padhta hai: 'Bas dekh raha tha.' Phir purana phone hi chalayega 6 saal aur",
-  "Wo dost jo sale mein 'sirf dekh raha hoon' bolta hai: Cart mein 14 cheezein, balance 312 rupaye"
+  "Wo dost jo sale mein 'sirf dekh raha hoon' bolta hai: Cart mein 14 cheezein, balance 312 rupaye",
+  "Saturday 7 baje, nahaya, perfume lagaya, ready hoke baitha... Dost ka msg: Bhai aaj plan cancel, kal pakka"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -369,7 +373,8 @@
   "8741": "Free",
   "4508": "Free",
   "25575": "Free",
-  "43846": "Free"
+  "43846": "Free",
+  "25593": "Free"
  },
  "create_done": [
   "1791580482",
