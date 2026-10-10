@@ -1720,28 +1720,28 @@
   },
   "other": {
    "posts": 0,
-   "requests": 14,
-   "input": 44,
-   "output": 17991,
-   "cache_read": 37132,
-   "cache_write": 91422,
-   "value_usd": 0.5492,
+   "requests": 18,
+   "input": 56,
+   "output": 23273,
+   "cache_read": 46699,
+   "cache_write": 119292,
+   "value_usd": 0.7145,
    "by_purpose": {
     "gita writing": {
-     "requests": 3,
-     "tokens": 37394
+     "requests": 4,
+     "tokens": 50025
     },
     "joke judge": {
-     "requests": 3,
-     "tokens": 21746
+     "requests": 4,
+     "tokens": 29273
     },
     "flux pick": {
-     "requests": 3,
-     "tokens": 22608
+     "requests": 4,
+     "tokens": 30614
     },
     "proofreading": {
-     "requests": 5,
-     "tokens": 64841
+     "requests": 6,
+     "tokens": 79408
     }
    }
   }
