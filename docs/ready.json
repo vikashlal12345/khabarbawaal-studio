@@ -138,5 +138,50 @@
    "fixed": []
   },
   "created_at": "2026-10-09T19:33:15+00:00"
+ },
+ {
+  "id": "r20261010-084850-gita",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261010-084850-gita.jpg",
+  "video": "posts/r20261010-084850-gita.mp4",
+  "headline": "Gusse mein kuch keh diya aur baad mein pachtaye? Gita 2.63",
+  "tag": "📦 🙏 GITA GYAAN",
+  "caption": "Ek pal ka gussa, saalon ka pachtawa ban sakta hai 🙏\nPehle ruko, phir bolo.\nYe us dost ko bhejo jise jaldi gussa aata hai.\n\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #anger #krishna #lifelessons",
+  "source": "Bhagavad Gita",
+  "source_url": "",
+  "pin_comment": "Gussa aane par aap kya karte ho? Comment mein share karo 🙏",
+  "songs": [
+   {
+    "title": "Main Jis Din Bhulaa Du",
+    "artist": "Jubin Nautiyal, Tulsi Kumar",
+    "lang": "hindi",
+    "mood": "emotional, slow"
+   },
+   {
+    "title": "Mann Mera (Original Version)",
+    "artist": "Gajendra Verma",
+    "lang": "hindi",
+    "mood": "deep, calming"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "chill, easy"
+   },
+   {
+    "title": "back to friends",
+    "artist": "sombr",
+    "lang": "english",
+    "mood": "mellow, reflective"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T08:48:51+00:00"
  }
 ]
