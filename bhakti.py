@@ -105,9 +105,11 @@ def build(state: dict, tmp: str) -> tuple[Image.Image, dict]:
     model = g.CONFIG.get("membership_model", "sonnet")
     status.step("Writing 3 moments + lines", 2)
     subj = reel.devotion_subject(schedule.ist_now().date())
+    must = (f"Today is {subj['name']}: every post MUST show {subj['deity'] or 'the god of this festival'}."
+            if subj["kind"] in ("navratri", "festival") else
+            f"God of the day: {subj['deity']} (or any god people love in this style).")
     options = fun.claude_json(SYSTEM.format(page=g.CONFIG["page_name"]),
-                              f"{fun.today_context()}\nToday's festival / god of the day: {subj['name']} (use it if it's "
-                              "a big festival or Navratri, else pick any god people love in this style).\n"
+                              f"{fun.today_context()}\n{must}\n"
                               "Posts made recently (pick a different god and moment):\n"
                               + ("\n".join(f"- {r}" for r in state.get("recent_bhakti", [])[-14:]) or "(none)")
                               + "\n\nWrite exactly 3 different posts.",
