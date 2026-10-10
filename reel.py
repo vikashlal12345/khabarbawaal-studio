@@ -22,6 +22,7 @@ import json
 import os
 import shutil
 import subprocess
+from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
@@ -1446,8 +1447,48 @@ def faded(img: Image.Image, a: float) -> Image.Image:
     return out
 
 
+def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f, target: float = 30.0):
+    """🙏 Gita series layout: one step at a time ({label, text, source}), centred in the dark lower part, each
+    held long enough to read (0.6 s + 0.25 s a word after its lines appear), squeezed a little if the Reel
+    would run past ~30 s (owner, 11 Oct 2026). The last step stays while the 'send this' line comes in.
+    Returns (parts, divider, switch time, cta time, total) for gita_reel."""
+    gap, fade = 0.3, 0.5
+    blocks = []
+    for k, st in enumerate(steps):
+        fnt = big if k == 0 else body
+        blocks.append((lines_of(st["text"], fnt, CREAM), len(st["text"].split()), int(fnt.size * 1.32)))
+    fixed = 0.5 + sum(0.3 + len(ln) * gap for ln, _, _ in blocks) + fade * (len(steps) - 1) + 2.4
+    holds = [0.6 + 0.25 * w for _, w, _ in blocks]
+    k = max(0.75, min(1.0, (target - fixed) / sum(holds)))
+    parts, t, switch = [], 0.5, 0.0
+    for n, (st, (lines, _, lh), hold) in enumerate(zip(steps, blocks, holds)):
+        if n == switch_step:
+            switch = t - 0.2                                  # 2nd picture cross-fades in here
+        # Rows as (kind, image, height of its slot); images are placed by their centre in their slot.
+        rows = ([("label", glow_line(st["label"], label_f, GOLD), 64),
+                 ("rule", Image.new("RGBA", (180, 2), GOLD), 44)] if st.get("label") else []) + \
+               [("line", im, lh) for im in lines] + \
+               ([("source", glow_line(st["source"], vfont("Cinzel-Variable.ttf", 34, "SemiBold"), GOLD), 70)]
+                if st.get("source") else [])
+        y = 1230 - sum(r[2] for r in rows) // 2
+        items, li = [], 0
+        for kind, im, slot in rows:
+            at = t if kind in ("label", "rule") else t + 0.3 + li * gap
+            li += kind == "line"
+            items.append((y + slot // 2, im, at))
+            y += slot
+        end = t + 0.3 + len(lines) * gap + hold * k
+        parts.append((items, end))
+        t = end + fade
+    cta_at = parts[-1][1] - 0.6
+    total = cta_at + 2.6
+    parts[-1] = (parts[-1][0], total)                         # the question stays until the end
+    return parts, (0, -9.0, -9.0), switch or 99.0, cta_at, total
+
+
 def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: str, lesson: str,
-              real_life: str, highlight: list[str], out_mp4: str, labels: dict | None = None) -> list[Image.Image]:
+              real_life: str, highlight: list[str], out_mp4: str, labels: dict | None = None,
+              steps: list[dict] | None = None, switch_step: int = 3, handle_text: str = "") -> list[Image.Image]:
     """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
     golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
     hook → Shri Krishna ka sandesh + lesson + verse → (2nd painting) Aaj ki seekh → send this. (No Sanskrit.)
@@ -1513,46 +1554,51 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     # Parts: (start, list of (y, image, appear_at)), plus fade-out time.
     gap, pause = 0.45, 0.35
     parts, t = [], 0.6
-    hook_l = lines_of(hook, body, CREAM)
-    y0 = 1330 - len(hook_l) * 50
-    items = [(y0 + i * int(body.size * 1.3), im, t + i * gap) for i, im in enumerate(hook_l)]
-    end = t + len(hook_l) * gap + read_time(hook)
-    parts.append((items, end))
-    t = end + 0.5 + pause
-    items, y = [], 1060
-    items.append((y, glow_line(lab["middle"], small_gold, GOLD), t)); y += 85
-    t2 = t + 0.8
-    y += 10
-    divider_y = y
-    y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
-    les = lines_of(lesson, lesson_f, CREAM)
-    for i, im in enumerate(les):
-        items.append((y, im, t2 + i * gap)); y += int(lesson_f.size * 1.32)
-    if lab["source"]:
-        items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
-                      t2 + len(les) * gap))
-    end = t2 + len(les) * gap + read_time(lesson)
-    parts.append((items, end))
-    divider = (divider_y, t2 - 0.2, end)
-    t = end + 0.5 + pause
-    switch = t - 0.2                                     # 2nd painting cross-fades in here
-    items, y = [], 1200
-    items.append((y, glow_line(lab["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
-    take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
-    for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
-        items.append((y, im, t + 0.8 + i * gap)); y += int(take_f.size * 1.3)
-    end = t + 0.8 + len(items) * gap + read_time(real_life)
-    parts.append((items, end))
-    cta_at = end + 0.3
+    cta_y, handle_y = 1380, 1470
+    if steps:
+        parts, divider, switch, cta_at, total = step_parts(steps, switch_step, lines_of, body, lesson_f, small_gold)
+        cta_y, handle_y = 1580, 1660
+    else:
+        hook_l = lines_of(hook, body, CREAM)
+        y0 = 1330 - len(hook_l) * 50
+        items = [(y0 + i * int(body.size * 1.3), im, t + i * gap) for i, im in enumerate(hook_l)]
+        end = t + len(hook_l) * gap + read_time(hook)
+        parts.append((items, end))
+        t = end + 0.5 + pause
+        items, y = [], 1060
+        items.append((y, glow_line(lab["middle"], small_gold, GOLD), t)); y += 85
+        t2 = t + 0.8
+        y += 10
+        divider_y = y
+        y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
+        les = lines_of(lesson, lesson_f, CREAM)
+        for i, im in enumerate(les):
+            items.append((y, im, t2 + i * gap)); y += int(lesson_f.size * 1.32)
+        if lab["source"]:
+            items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
+                          t2 + len(les) * gap))
+        end = t2 + len(les) * gap + read_time(lesson)
+        parts.append((items, end))
+        divider = (divider_y, t2 - 0.2, end)
+        t = end + 0.5 + pause
+        switch = t - 0.2                                     # 2nd painting cross-fades in here
+        items, y = [], 1200
+        items.append((y, glow_line(lab["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
+        take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
+        for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
+            items.append((y, im, t + 0.8 + i * gap)); y += int(take_f.size * 1.3)
+        end = t + 0.8 + len(items) * gap + read_time(real_life)
+        parts.append((items, end))
+        cta_at = end + 0.3
+        total = cta_at + 3.0
     cta = glow_line(lab["cta"], vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
-    handle = glow_line(CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
-    total = cta_at + 3.0
+    handle = glow_line(handle_text or CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
 
     random.seed(7)
     dust = [(random.uniform(0, RW), random.uniform(300, 1700), random.uniform(-14, -40), random.choice((2, 3, 4)),
              random.randint(70, 200)) for _ in range(46)]
     enc, checks, frame = Encoder(out_mp4), [], None
-    check_at = [parts[0][1] - 0.2, parts[1][1] - 0.2, parts[2][1] - 0.2, total - 0.1]
+    check_at = [min(end, total) - 0.2 for _, end in parts] + [total - 0.1]
     for i in range(int(total * FPS)):
         t = i / FPS
         n = 1 if len(bases) > 1 and t >= switch else 0
@@ -1574,9 +1620,9 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         if logo:
             frame.alpha_composite(logo, ((RW - logo.width) // 2, 120))
         frame.alpha_composite(head, ((RW - head.width) // 2, 285 - head.height // 2))
-        hy = 285
-        d.line((250, hy, 395, hy), fill=GOLD, width=2)
-        d.line((RW - 395, hy, RW - 250, hy), fill=GOLD, width=2)
+        hy, hx = 285, (RW - head.width) // 2 + 6            # side lines just outside the heading text
+        d.line((max(60, hx - 150), hy, hx - 4, hy), fill=GOLD, width=2)
+        d.line((RW - hx + 4, hy, min(RW - 60, RW - hx + 150), hy), fill=GOLD, width=2)
         start = 0.0
         for items, end in parts:
             if start - 0.1 <= t <= end + 0.5:
@@ -1592,8 +1638,8 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
             d.line((RW // 2 - 90, dy, RW // 2 + 90, dy), fill=(245, 194, 107, int(255 * a)), width=2)
         if t >= cta_at:
             a = min(1.0, (t - cta_at) / 0.7)
-            frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, 1380 - cta.height // 2))
-            frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, 1470 - handle.height // 2))
+            frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, cta_y - cta.height // 2))
+            frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, handle_y - handle.height // 2))
         ImageDraw.Draw(frame).text((RW - 40, RH - 40), f"Image: {credits[n]}"[:80], font=font("Poppins-SemiBold.ttf", 20),
                                    fill="#9a8f7a", anchor="rd")
         if len(checks) < len(check_at) and t >= check_at[len(checks)]:
@@ -1605,37 +1651,58 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     return checks
 
 
+# 🙏 "Gita Gyaan: roz ek shlok" (owner, 11 Oct 2026): one shlok a day in order from 1.1, ~30 s, explained step by step
+# like the owner's own Hindi series (gita-shorts): hook → kya ho raha hai → who says what → matlab → aaj ki seekh →
+# aaj ka sawaal. assets/gita_ref.json = that series' checked meaning/bhavarth for 1.1-2.30 (numbering as there:
+# 1.21-22 together, chapter 1 has 46); after that the AI uses the verse's well-known meaning and the proofreader checks.
+GITA_COUNTS = {2: 72, 3: 43, 4: 42, 5: 29, 6: 47, 7: 30, 8: 28, 9: 34, 10: 42, 11: 55, 12: 20, 13: 35, 14: 27, 15: 20,
+               16: 24, 17: 28, 18: 78}
+
+
+def gita_ref() -> dict:
+    return json.loads((Path(__file__).parent / "assets" / "gita_ref.json").read_text())
+
+
+def gita_sequence() -> list[str]:
+    """All shloks in order: the reference series' own list, then the rest of chapter 2 and chapters 3-18."""
+    seq = list(gita_ref())
+    last_ch, last_v = (int(x) for x in seq[-1].split("-")[0].split("."))
+    for ch in range(last_ch, 19):
+        seq += [f"{ch}.{v}" for v in range(last_v + 1 if ch == last_ch else 1, GITA_COUNTS[ch] + 1)]
+    return seq
+
+
 GITA_OPTION = {"type": "object", "properties": {
-    "based_on": {"type": "string", "description": "The life situation or trending topic this lesson is about"},
-    "verse": {"type": "string", "description": "Chapter.verse of the Bhagavad Gita, e.g. 2.47"},
-    "hook": {"type": "string", "description": "A feeling the viewer knows, max 11 words, with a natural pause '...', e.g. "
-             "'Gusse mein kuch keh diya... aur baad mein pachtaye?'"},
-    "lesson": {"type": "string", "description": "What Krishna says in this verse, simple poetic Hinglish, max 20 words. "
-               "It is shown under 'SHRI KRISHNA KA SANDESH' (his message, in simple words), so don't start with "
-               "'Krishna kehte hain'; stay close to what the verse says"},
-    "real_life": {"type": "string", "description": "'Aaj ki seekh': one line people want to save, max 18 words, e.g. "
-                  "'Jawab kal bhi diya ja sakta hai, shabd wapas nahi aate.'"},
+    "based_on": {"type": "string", "description": "One line: what happens in this shlok and today's lesson"},
+    "hook": {"type": "string", "description": "Curiosity hook, max 6 words, with a natural pause '...', e.g. "
+             "'Ek andha raja... aur ek sawaal'"},
+    "context": {"type": "string", "description": "'KYA HO RAHA HAI': max 12 words: where we are, who speaks to whom, "
+                "what just happened, e.g. 'Kurukshetra mein yudh shuru hone wala hai. Mahal mein Dhritarashtra poochte "
+                "hain:'"},
+    "speaker": {"type": "string", "description": "Who says this shlok, max 3 words, e.g. 'Dhritarashtra ne poocha', "
+                "'Sanjay ne bataya', 'Duryodhan ne kaha', 'Arjun ne kaha', 'Shri Krishna ne kaha'"},
+    "verse_text": {"type": "string", "description": "What the shlok says, in simple Hinglish, true to its meaning "
+                   "(not word-for-word), max 18 words"},
+    "matlab": {"type": "string", "description": "'MATLAB': what it really means, like a bhavarth, 1-2 very short "
+               "sentences, max 10 words"},
+    "seekh": {"type": "string", "description": "'AAJ KI SEEKH' for life today, one line people want to save, max 8 words"},
+    "sawaal": {"type": "string", "description": "'AAJ KA SAWAAL': a question to the viewer, max 8 words, e.g. "
+               "'Aapke jeevan mein mere-paraye kaun hain?'"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
-    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "caption": {"type": "string", "description": "2-4 short Hinglish lines about this shlok, 1-2 emojis (🙏 fits), "
+                "last line asks people to comment or send it"},
+    "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
     "songs": SONGS,
-    "scene_gita": {"type": "string", "description": "Picture 1 (behind the hook and Krishna's message): Krishna and "
-                   "Arjuna in the moment of this verse, e.g. on the chariot at Kurukshetra at dawn, Krishna teaching "
-                   "calmly, Arjuna listening with folded hands. " + SCENE_HELP},
-    "scene_life": {"type": "string", "description": "Picture 2 (behind 'Aaj ki seekh'): Krishna gently beside a young "
-                   "Indian of today in this Reel's situation, e.g. sitting next to a stressed student at a desk at night "
-                   "with a hand on his shoulder. " + SCENE_HELP}},
-    "required": ["based_on", "verse", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment",
-                 "hashtags", "songs", "scene_gita", "scene_life"], "additionalProperties": False}
+    "scene_gita": {"type": "string", "description": "Picture 1 (behind the hook, context and the shlok): the exact "
+                   "moment of this shlok in the Mahabharata, who speaks to whom and where (e.g. blind king Dhritarashtra "
+                   "on his throne in a dark palace, asking Sanjaya). " + SCENE_HELP},
+    "scene_life": {"type": "string", "description": "Picture 2 (behind matlab, seekh and sawaal): a young Indian of "
+                   "today living this lesson, Krishna gently beside them. " + SCENE_HELP}},
+    "required": ["based_on", "hook", "context", "speaker", "verse_text", "matlab", "seekh", "sawaal", "highlight",
+                 "caption", "pin_comment", "hashtags", "songs", "scene_gita", "scene_life"], "additionalProperties": False}
 
-GITA_SYSTEM = """You write a daily Bhagavad Gita Reel for {page}, an Indian Instagram page for 18-34s \
-(Hinglish in English letters only, never Devanagari). Each Reel: a real-life situation young Indians face \
-(exams, jobs, breakups, money, family pressure, failure, comparison, anger, overthinking) or a widely-known \
-trending topic of the day, then ONE lesson Krishna gives Arjuna, then what it means in practice today.
-Write it like poetry, not a lecture: short lines, warm words, natural pauses ("..."). \
-Rules: the lesson must truly match the chapter.verse you cite (use well-known verses you are sure of). Reverent and warm tone: never joke about Krishna or the Gita, no \
-politics, no tragedies, nothing against any religion or community. Make it something people send to a friend \
-who needs it. Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line invites a comment or a send."""
+GITA_SYSTEM = """You write today's Reel in the daily "Gita Gyaan: roz ek shlok" series for {page}, an Indian Instagram page for 18-34s (Hinglish in English letters only, never Devanagari). The series goes through the Bhagavad Gita in order, one shlok a day, so someone who missed the earlier days must still understand it: say where we are, who speaks to whom and what is happening. Simple, warm, spoken Hinglish, like explaining to a friend; short lines, natural pauses ("..."). The shlok text must keep the shlok's true meaning (not a word-for-word translation). The whole Reel is read in about 30 seconds, so keep every part within its word limit. Reverent: never joke about Krishna or the Gita, no politics, nothing against any religion or community."""
 
 GITA_JUDGE = ("You are a 22-year-old Indian who loves Gita Reels on Instagram. Rate each Reel 1-10 for: "
               "understandable (the lesson is clear from the Reel alone), funny (here: how beautiful and moving the "
@@ -1643,53 +1710,72 @@ GITA_JUDGE = ("You are a 22-year-old Indian who loves Gita Reels on Instagram. R
 
 
 def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
-    """🙏 Bhagavad Gita Reel for the 📦 Ready tab. Returns (cover, mp4 path, feed fields)."""
+    """🙏 Today's shlok of the "roz ek shlok" series for the 📦 Ready tab. Returns (cover, mp4 path, feed fields)."""
     import fun
     import generate as g
     import proofread
     import status
-    status.step("Writing 3 Gita lessons", 2)
+    seq = gita_sequence()
+    i = state.get("gita_next", 0) % len(seq)
+    verse, nxt = seq[i], seq[(i + 1) % len(seq)]
+    ref = gita_ref().get(verse)
+    ref_text = ("\n".join(f"{k}: {v}" for k, v in ref.items() if v) if ref else "")
+    status.step(f"Writing shlok {verse}", 2)
     songs = trending_songs()
-    trends = fun.google_trends()
     options = fun.claude_json(GITA_SYSTEM.format(page=CONFIG["page_name"]),
-                              f"{fun.today_context()}\n\nWhat India is searching today (use one only if it fits respectfully):\n"
-                              + "\n".join(f"- {t}" for t in trends[:15]) +
-                              "\n\nLessons used recently (pick other verses/situations):\n"
-                              + ("\n".join(f"- {r}" for r in state.get("recent_gita", [])[-20:]) or "(none)") +
-                              "\n\nWrite exactly 3 different Reels." + songs_prompt(songs),
+                              f"Today's shlok: Bhagavad Gita {verse}. Tomorrow: {nxt}.\n"
+                              + (f"Reference from our own checked Hindi series (follow its meaning and context; write it "
+                                 f"in simple Hinglish, English letters only):\n{ref_text}\n" if ref else
+                                 "Use this shlok's well-known meaning; who speaks it and the situation must be right.\n")
+                              + "\nWrite exactly 3 different Reels for this same shlok." + songs_prompt(songs),
                               options_schema(GITA_OPTION, "Exactly 3 different Reels"),
                               CONFIG.get("membership_model", "sonnet"), purpose="gita writing")["options"][:3]
     for o in options:
         o["caption"] = unescape(o["caption"])
-    best = fun.judge_best(options, lambda o: f"{o['hook']} -> Krishna: {o['lesson']} (Gita {o['verse']}) -> {o['real_life']}",
+    texts = ("hook", "context", "speaker", "verse_text", "matlab", "seekh", "sawaal")
+    best = fun.judge_best(options, lambda o: " | ".join(o[k] for k in texts),
                           CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE)
-    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
-    for k in ("hook", "lesson", "real_life"):
+    roman_only(best, ["caption", "pin_comment", *texts])
+    for k in texts:
         best[k] = plain_letters(best[k])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     scenes = [best.pop("scene_gita"), best.pop("scene_life")]   # kept out of the proofreader's text
-    status.step("Painting Krishna with free AI", 3)
+    status.step("Painting the scenes with free AI", 3)
     try:
-        images = flux_images(scenes, "Lord Krishna (picture 1 with Arjuna)", tmp)
+        images = flux_images(scenes, f"the Bhagavad Gita {verse} scene (Mahabharata characters; Krishna where shown)", tmp)
     except Exception as e:
         print(f"  {e}: using free paintings instead")
         status.step("AI pictures not usable: finding Krishna-Arjuna paintings (free licence)", 3)
         images = pick_gita_images(state, tmp)
     out = os.path.join(tmp, "reel.mp4")
     status.step("Making the video + proofreading", 5)
+    labels = {"head": f"GITA GYAAN  {verse}", "cta": "Send this to someone who needs it"}
+
+    def steps_of(p):
+        return [{"text": p["hook"]},
+                {"label": "KYA HO RAHA HAI", "text": p["context"]},
+                {"label": screen_label(p["speaker"]).upper(), "text": p["verse_text"],
+                 "source": f"—  Bhagavad Gita {verse}"},
+                {"label": "MATLAB", "text": p["matlab"]},
+                {"label": "AAJ KI SEEKH", "text": p["seekh"]},
+                {"label": "AAJ KA SAWAAL", "text": p["sawaal"]}]
 
     def caption_of(d):
         tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
-        return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily Gita Gyaan 🙏\n\n{tags}"
+        return (f"{d['post']['caption'].strip()}\n\n📖 Roz ek shlok: Bhagavad Gita {verse} · Kal: shlok {nxt}\n"
+                f"Follow {CONFIG['handle']} for daily Gita Gyaan 🙏\n\n{tags}")
     frames, data, proof = proofread.run(
-        lambda d: gita_reel(images, d["post"]["verse"], d["post"]["hook"], d["post"]["lesson"],
-                            d["post"]["real_life"], d["post"]["highlight"], out),
+        lambda d: gita_reel(images, verse, "", "", "", d["post"]["highlight"], out, labels=labels,
+                            steps=steps_of(d["post"]), handle_text=f"{CONFIG['handle']}  ·  Kal: shlok {nxt}"),
         {"post": best}, caption_of,
-        f"Bhagavad Gita {best['verse']}: check that the lesson truly matches this verse.")
+        f"Bhagavad Gita {verse}. Check that the speaker and the situation are right and the shlok text keeps the "
+        "shlok's meaning; simple Hinglish wording (not word-for-word) is correct here, don't replace it with a literal "
+        "translation." + (f"\nChecked reference (Hindi):\n{ref_text}" if ref else ""))
     post = data["post"]
-    state["recent_gita"] = (state.get("recent_gita", []) + [f"Gita {post['verse']}: {post['based_on']}"])[-60:]
-    return frames[1], out, {
-        "headline": printable(f"{post['hook']} Gita {post['verse']}")[:140], "tag": "🙏 GITA GYAAN",
+    state["gita_next"] = i + 1
+    state["recent_gita"] = (state.get("recent_gita", []) + [f"Gita {verse}: {post['based_on']}"])[-60:]
+    return frames[2], out, {
+        "headline": printable(f"Gita {verse}: {post['hook']}")[:140], "tag": "🙏 GITA GYAAN",
         "caption": g.limit_hashtags(caption_of(data)), "source": "Bhagavad Gita", "source_url": "",
         "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
 

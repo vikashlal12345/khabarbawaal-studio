@@ -35,9 +35,10 @@ Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search;
 19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide
 (originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
 If a Reel can't be made, that slot posts a news carousel. Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
-from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel (pictures: see 🎨 below; logo + "GITA GYAAN", Playfair/Cinzel
-fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh" + verse ref (no Sanskrit) → Aaj ki seekh;
-`reel.build_gita_reel`) ·
+from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,
+`state.gita_next`; ~30 s; hook → KYA HO RAHA HAI → who says it + shlok, no Sanskrit → MATLAB → AAJ KI SEEKH →
+AAJ KA SAWAAL; reference `assets/gita_ref.json` = owner's gita-shorts storyboards 1.1-2.30, 1.21-22 together;
+pictures: see 🎨 below; `--kind ready_gita` remakes only it; `reel.build_gita_reel`) ·
 2:00 day planner (📅 previews, only at 10/17) · 3:00 🙏 God picture "Bhagwan ka saath" (📦 Ready, `bhakti.py`:
 god beside a young Indian in a relatable moment, FLUX picture, Hinglish line in Kalam handwriting; own run = own
 FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.

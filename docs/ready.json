@@ -52,60 +52,6 @@
   "valid_on": "2026-10-11"
  },
  {
-  "id": "r20261010-214907-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-214907-gita.jpg",
-  "video": "posts/r20261010-214907-gita.mp4",
-  "headline": "Sab sambhalna hai... par ab thak gaye ho? Gita 18.66",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Jab sab kuch bhaari lage... 🙏\nBharosa rakho, bojh baant diya jaata hai.\nKisi thake hue dost ko bhejo. Comment mein 'Krishna' likho.\n\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #krishna #faith #peaceofmind",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Aaj kis baat ka bojh dil par hai? Likh do, halka lagega 🙏",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional, peaceful"
-   },
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "serene, devotional"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "soft, emotional"
-   },
-   {
-    "title": "People",
-    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
-    "lang": "english",
-    "mood": "calm, comforting"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Gita 18.66 speaks of surrendering to Krishna and being freed from all sins (paap), with 'do not grieve'. It does not say 'trust Me' or free from 'every burden'.",
-    "Slide 1: The 'GITA GYAAN' header line runs through Krishna's crown and forehead, so text covers part of the face area. Move the header up or shrink it.",
-    "Slide 2: The 'GITA GYAAN' header and its line cross Krishna's crown and forehead, which covers part of his face.",
-    "Slide 3: The header overlaps Krishna's crown and hair. Also, 'Koshish poori karo, phir bharosa rakho. Har bojh akele nahi uthana.' is a loose paraphrase of 18.66, which is about surrendering to Krishna and being freed from sins. The verse says nothing about effort or sharing a burden with others. Consider wording it as 'Krishna ki sharan mein bharosa rakho, tum akele nahi ho'.",
-    "Caption: The caption says 'bojh baant diya jaata hai', meaning burdens are shared. 18.66 actually promises freedom from sins and grief through surrender. The framing is a stretch but not a clear factual error.",
-    "Slide 4: The header overlaps Krishna's crown, as on slide 3. The slide uses the same photo as slide 3, so it is repetitive."
-   ],
-   "fixed": [
-    "Mujh par bharosa rakho. Chinta mat karo, main tumhe har bojh se mukt kar dunga. → Sab dharmon ko chhodkar meri sharan mein aa jao. Main tumhe sab paapon se mukt kar dunga, shok mat karo."
-   ]
-  },
-  "created_at": "2026-10-10T21:49:08+00:00"
- },
- {
   "id": "r20261010-215101-bhakti",
   "kind": "ready",
   "image": "posts/r20261010-215101-bhakti.jpg",
