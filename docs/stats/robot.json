@@ -1717,6 +1717,33 @@
      "tokens": 22033
     }
    }
+  },
+  "other": {
+   "posts": 0,
+   "requests": 5,
+   "input": 16,
+   "output": 6414,
+   "cache_read": 12904,
+   "cache_write": 28381,
+   "value_usd": 0.179,
+   "by_purpose": {
+    "gita writing": {
+     "requests": 1,
+     "tokens": 12262
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 6832
+    },
+    "flux pick": {
+     "requests": 1,
+     "tokens": 7883
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 20738
+    }
+   }
   }
  }
 }
