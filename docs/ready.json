@@ -104,5 +104,24 @@
    ]
   },
   "created_at": "2026-10-10T21:49:08+00:00"
+ },
+ {
+  "id": "r20261010-215101-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261010-215101-bhakti.jpg",
+  "headline": "Maa, main kuch nahi maangta, bas papa ko theek kar do. Aap hain, to mujhe bharosa hai.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Jab kuch haath mein na ho, Maa ka haath sar par hota hai 🙏\nComment karo Jai Mata Di\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #maashailputri #bhakti #explorepage",
+  "pin_comment": "Jiske liye dua kar rahe ho, unke liye Jai Mata Di likho 🙏",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Only slide1.jpg exists, so I checked just that one. Its text is clean and readable, and it doesn't cover any face. The illustration doesn't match how Maa Shailputri is usually shown. She normally holds a trident and a lotus and rides a bull (Vrishabha). Here she holds neither, and the animal in the corridor looks like a cow. Devotional followers may notice. Consider a more accurate image, or at least check that it's acceptable. The 'AI illustration' label is present, which is good."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T21:51:01+00:00"
  }
 ]
