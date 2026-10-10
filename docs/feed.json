@@ -1,5 +1,35 @@
 [
  {
+  "id": "47ea6610ee35",
+  "image": "posts/20261010-0431-47ea6610ee35.jpg",
+  "kind": "news",
+  "headline": "Sridhar Vembu Hits Out At Elon Musk Over Sarcastic Post Amid Starlink In India Row",
+  "tag": "TECH",
+  "caption": "Starlink row mein ab Desi Tech vs Elon ka scene ban gaya hai 👀\nElon Musk ne ek sarcastic tweet kiya, aur Zoho wale Sridhar Vembu ne seedha jawab de diya.\nYe sab India mein chal rahe Starlink controversy ke beech hua hai.\nTeam Vembu ya Team Musk? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#trending #india #elonmusk #starlink #sridharvembu",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/sridhar-vembu-hits-out-at-elon-musk-over-sarcastic-post-amid-starlink-in-india-row-101791600822822.html",
+  "pin_comment": "Sabse interesting part: Musk ke sarcasm ka jawab ek Indian tech founder ne diya. Bold take: desi founders ab chup nahi rehte 😎",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says 'among the lowest' prices/costs, not the lowest in the world.",
+    "Slide 1: Sridhar Vembu is cut off at the left edge of the cover photo. Only a sliver of his head shows, so he is hard to recognise. Use a better crop or a different photo.",
+    "Slide 1: The headline and caption call Musk's tweet 'sarcastic'. The article never describes his tweet that way. The sarcastic dig was Vembu's, aimed at the Ambanis. Consider rewording, for example 'Musk's post'.",
+    "Caption: The caption says 'Elon Musk ne ek sarcastic tweet kiya', which has the same problem as the cover. The article does not call Musk's tweet sarcastic, and the sarcasm was Vembu's."
+   ],
+   "fixed": [
+    "India mein data duniya mein sabse sasta hai, dawaiyan aur UPI bhi. → India mein data, dawaiyan aur UPI duniya ke sabse sasto mein se hain."
+   ]
+  },
+  "slides": [
+   "posts/20261010-0431-47ea6610ee35-s2.jpg",
+   "posts/20261010-0431-47ea6610ee35-s3.jpg",
+   "posts/20261010-0431-47ea6610ee35-s4.jpg",
+   "posts/20261010-0431-47ea6610ee35-s5.jpg"
+  ],
+  "created_at": "2026-10-10T04:31:32+00:00"
+ },
+ {
   "id": "thought-2026-10-10",
   "image": "posts/20261010-0346-thought-2026-10-10.jpg",
   "kind": "thought",
@@ -716,22 +746,5 @@
    "posts/20261009-0831-5a48748d423c-s3.jpg"
   ],
   "created_at": "2026-10-09T08:31:26+00:00"
- },
- {
-  "id": "2a004f81dfc7",
-  "image": "posts/20261009-0431-2a004f81dfc7.jpg",
-  "kind": "fun",
-  "headline": "Papa gaadi reverse kar rahe hain. Poori society guide kar rahi hai. Papa: Mujhe sab dikh raha hai. Gaadi: Deewar ko bhi.",
-  "tag": "😂 FAMILY GROUP",
-  "caption": "Reverse gear lagte hi poora mohalla traffic police ban jaata hai 🚗\nAur Papa ka confidence ek alag hi level pe hota hai 😅\nGhar mein gaadi kaun reverse karta hai? Mummy, Papa ya tum? 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#desi #viral #trending #india #familygoals",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Sabse bada guide wo hai jo bolta hai 'aaraam se, aaraam se' jab gaadi ruk chuki hoti hai.",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-09T04:31:31+00:00"
  }
 ]
