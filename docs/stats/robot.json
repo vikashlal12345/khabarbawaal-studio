@@ -1693,24 +1693,24 @@
   },
   "night_picture": {
    "posts": 0,
-   "requests": 4,
-   "input": 12,
-   "output": 2498,
-   "cache_read": 9726,
-   "cache_write": 16240,
-   "value_usd": 0.0909,
+   "requests": 7,
+   "input": 20,
+   "output": 5087,
+   "cache_read": 13900,
+   "cache_write": 31408,
+   "value_usd": 0.1779,
    "by_purpose": {
     "bhakti writing": {
-     "requests": 1,
-     "tokens": 7779
+     "requests": 2,
+     "tokens": 16085
     },
     "joke judge": {
-     "requests": 1,
-     "tokens": 6484
+     "requests": 2,
+     "tokens": 12999
     },
     "flux pick": {
-     "requests": 1,
-     "tokens": 6682
+     "requests": 2,
+     "tokens": 13800
     },
     "proofreading": {
      "requests": 1,
