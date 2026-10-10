@@ -50,6 +50,7 @@ jobs:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       # Paid mode, only if you ever add this secret.
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PUSH_VAPID_KEY: ${{ secrets.PUSH_VAPID_KEY }}   # 🔔 phone alerts (push.py)
       TIMED: ${{ github.event_name == 'schedule' || inputs.chain }}
     steps:
       - uses: actions/checkout@v4
@@ -81,6 +82,7 @@ jobs:
       - name: Create post
         if: steps.chain.outputs.skip != 'true'
         run: |
+          python push.py --before
           GAP=0; [ "$TIMED" = "true" ] && GAP=20
           python generate.py --kind "${{ inputs.kind || 'auto' }}" --min-gap "$GAP"
 
@@ -104,6 +106,9 @@ jobs:
           path: docs
       - id: deploy
         uses: actions/deploy-pages@v4
+
+      - name: Phone alert (🔔 new posts, now live in the app)
+        run: python push.py --after
 
   next:
     # Keeps the hourly chain going. Runs even if the post failed, so one bad hour

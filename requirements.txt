@@ -4,3 +4,4 @@ Pillow>=10.0
 requests>=2.31
 fonttools>=4.40
 imageio-ffmpeg>=0.5   # video encoder for 🎬 Reels (used only if ffmpeg is missing)
+pywebpush>=2.0         # 🔔 phone alerts from the Studio app (push.py)

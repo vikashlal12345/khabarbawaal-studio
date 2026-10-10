@@ -270,6 +270,8 @@ def main() -> int:
         state = g.load_json(g.STATE_FILE, {})
         if ts in state.get("create_done", []):   # the same request sent on twice (inbox watcher restart)
             print("This request was already handled: nothing to do.")
+            import push
+            push.skip()
             return 0
         status.start("create", ts, f"✍️ {'🎬 Reel' if reel_wanted else '📰 Post'}: {raw[:60]}", 6, "Started on GitHub")
         used = state.get("used_otps", [])

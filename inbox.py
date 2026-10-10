@@ -1,4 +1,4 @@
-"""Inbox for things sent from the app without GitHub (🔗 Insta links).
+"""Inbox for things sent from the app without GitHub (🔗 Insta links, 🗑️ deletes, 🚀 boosts, 🔔 alerts).
 
 The app posts small messages to a private ntfy.sh channel (secret random name in config.json).
 ntfy keeps messages 12 hours; the robot collects them at the start of every run (every
@@ -13,6 +13,8 @@ from datetime import datetime, timezone
 import requests
 
 import generate as g
+import push
+import schedule
 
 
 def process() -> int:
@@ -48,6 +50,14 @@ def process() -> int:
                 if gone:
                     g.save_json(g.FEED_FILE if name == "feed" else g.DOCS / "ready.json", items)
                     print(f"  inbox: deleted {msg['post']} from {name}")
+            continue
+        if msg.get("type") == "push_sub" and isinstance(msg.get("sub"), dict):
+            # 🔔 tapped in the app: keep this phone's address; first time, prove the robot can reach it
+            if push.add_sub(msg["sub"]):
+                print("  inbox: 🔔 phone alerts turned on")
+                if not schedule.is_quiet(schedule.ist_now()):
+                    push.send("🔔 Alerts are on", "The robot can reach your phone: you'll get one of these "
+                              "for every new post.", subs=[msg["sub"]])
             continue
         if msg.get("type") == "boost" and msg.get("post"):
             bpath = g.DOCS / "stats" / "boosts.json"

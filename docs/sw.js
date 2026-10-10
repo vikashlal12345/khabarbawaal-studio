@@ -1,6 +1,6 @@
 // Network-first for the feed, cache-first for post images, so the app opens
 // instantly and still shows the last posts when offline.
-const CACHE = 'studio-v28';
+const CACHE = 'studio-v29';
 const SHELL = ['./', 'index.html', 'stats.html', 'manifest.json', 'icons/apple-touch-icon.png', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {
@@ -57,3 +57,21 @@ async function cleanUp(feedResponse) {
     }
   } catch (err) { /* offline or bad JSON: try again next time */ }
 }
+
+// 🔔 Phone alerts sent by the robot (push.py) when a post is ready.
+self.addEventListener('push', e => {
+  let d = {};
+  try { d = e.data.json(); } catch { d = { body: e.data ? e.data.text() : '' }; }
+  e.waitUntil(self.registration.showNotification(d.title || 'KhabarBawaal Studio',
+    { body: d.body || '', icon: 'icons/icon-192.png', data: { post: d.post || '' } }));
+});
+
+// Tapping an alert opens the app on that post.
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  const post = (e.notification.data || {}).post || '';
+  e.waitUntil(clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+    if (list.length) { list[0].postMessage({ openPost: post }); return list[0].focus(); }
+    return clients.openWindow('./' + (post ? '#post=' + encodeURIComponent(post) : ''));
+  }));
+});

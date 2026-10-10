@@ -72,6 +72,9 @@ fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh
 - `status.py`: ⏳ Activity box in the app: Reel + ➕ Create steps/✅/❌ reasons go to ntfy topic `status_topic`
   (app polls every 10 s, keeps 24 h). `inbox_watch.py` skips requests already started; `create_done` in state stops repeats.
   ➕ Create allows duplicate posts (owner's choice); post ids include the time.
+- `push.py`: 🔔 phone alerts from the Studio app itself (Web Push, delivered free by Apple). App 🔕/🔔 button (Home Screen app only)
+  sends the phone's address to the inbox (`push_sub` → `state/push.json`, newest 3); workflows run `push.py --before` / `--after`
+  (after deploy, so the post is live when tapped; tap opens that post). Robot posts 11 PM-5 AM don't buzz; ➕ Create ✅/❌ always.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
 - App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
@@ -82,7 +85,8 @@ fonts, line-by-line fades with reading pauses; hook → "Shri Krishna ka sandesh
 
 ## Secrets / Mac pieces
 - GitHub secrets: `CLAUDE_CODE_OAUTH_TOKEN` (membership, created 2026-10-02, ~1 year; renew with
-  `python3 renew_token.py` on the Mac), `CREATE_TOTP_SECRET` (authenticator for ➕ Create).
+  `python3 renew_token.py` on the Mac), `CREATE_TOTP_SECRET` (authenticator for ➕ Create),
+  `PUSH_VAPID_KEY` (🔔 alert sending key, made 2026-10-11; public half = `docs/app.json` `push_key`, change both together).
 - Mac launchd job `com.khabarbawaal.stats` runs `mac_stats.py` hourly (only while awake): plan usage %
   (Mac keychain login), ad hoc Claude Code usage, Instagram followers + likes of linked posts.
 
