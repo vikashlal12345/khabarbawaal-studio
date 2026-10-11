@@ -1,5 +1,39 @@
 [
  {
+  "id": "top10_day-2026-10-11",
+  "image": "posts/20261011-1546-top10_day-2026-10-11.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 NEWS: 11 Oct",
+  "tag": "📰 TOP 5 NEWS",
+  "caption": "Aaj ki top 5 khabrein ek jagah! Ramayana date se lekar CJP drama tak, swipe karo.\n\n1. Ramayana Part 1 locks November 5 release\n2. BJP hits out at CJP over anti-CEC protests\n3. CISF catches 2 over alleged IIT Goa exam cheating at airport\n4. Jeff Bezos: AI could bring 3-day workweeks\n5. Salman Khan gears up for 50-day final Monster schedule\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #viral #bollywood #Ramayana",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Cheating is only alleged (2 booked); headline states it as established fact.",
+    "Fact corrected to match the article: Article says he is gearing up for the schedule, not that it has begun",
+    "Fact corrected to match the article: Article says the schedule is upcoming (gears up), not already under way",
+    "Slide 4: The photo shows Goa Police officers and a Goa Police car. The story is about CISF catching two people at Dabolim airport. It is a loosely related stock image, so consider a CISF or airport photo. It is not wrong enough to drop.",
+    "Slide 6: The headline says 'Ramayana Part 1'. The article only says 'Ramayana' and never says 'Part 1'. Confirm this against the source."
+   ],
+   "fixed": [
+    "CISF busts IIT Goa exam cheating bid at airport → CISF catches 2 over alleged IIT Goa exam cheating at airport",
+    "Salman Khan begins 50-day final Monster schedule → Salman Khan gears up for 50-day final Monster schedule",
+    "Monster ka final schedule shuru ho raha hai. → Monster ka final schedule shuru hone wala hai."
+   ]
+  },
+  "slides": [
+   "posts/20261011-1546-top10_day-2026-10-11-s2.jpg",
+   "posts/20261011-1546-top10_day-2026-10-11-s3.jpg",
+   "posts/20261011-1546-top10_day-2026-10-11-s4.jpg",
+   "posts/20261011-1546-top10_day-2026-10-11-s5.jpg",
+   "posts/20261011-1546-top10_day-2026-10-11-s6.jpg",
+   "posts/20261011-1546-top10_day-2026-10-11-s7.jpg"
+  ],
+  "created_at": "2026-10-11T15:46:50+00:00"
+ },
+ {
   "id": "reel_news-2026-10-11",
   "image": "posts/20261011-1431-reel_news-2026-10-11.jpg",
   "kind": "reel",
@@ -485,87 +519,5 @@
    "fixed": []
   },
   "created_at": "2026-10-11T00:33:12+00:00"
- },
- {
-  "id": "top10_day-2026-10-10",
-  "image": "posts/20261010-1546-top10_day-2026-10-10.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 NEWS: 10 Oct",
-  "tag": "📰 TOP 5 NEWS",
-  "caption": "Aaj ki Top 5 khabrein aa gayi! Defence se Bollywood tak, swipe karke dekho 👀🔥\n\n1. IAF chief: No official US offer for F-35\n2. Delhi Police calls viral Jantar Mantar crowd video old\n3. Sridhar Vembu hits back at Elon Musk's sarcasm\n4. Ajay Devgn starts shooting Chauhaan in Kargil\n5. Imran Khan's comeback film eyes December release\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #viral #bollywood #ajaydevgn",
-  "source": "Hindustan Times, Bollywood Hungama",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The big 'TOP 5' and 'NEWS' text covers the faces in the collage. Elon Musk's face is almost fully hidden and Ajay Devgn's face is partly hidden. Move the text or rearrange the collage.",
-    "Slide 5: The photo shows police at India Gate with a Section 163 BNSS prohibitory-order banner. It is not Jantar Mantar and not the viral crowd video. It is generic file imagery, so check that it is acceptable for this story."
-   ],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261010-1546-top10_day-2026-10-10-s2.jpg",
-   "posts/20261010-1546-top10_day-2026-10-10-s3.jpg",
-   "posts/20261010-1546-top10_day-2026-10-10-s4.jpg",
-   "posts/20261010-1546-top10_day-2026-10-10-s5.jpg",
-   "posts/20261010-1546-top10_day-2026-10-10-s6.jpg",
-   "posts/20261010-1546-top10_day-2026-10-10-s7.jpg"
-  ],
-  "created_at": "2026-10-10T15:46:14+00:00"
- },
- {
-  "id": "reel_news-2026-10-10",
-  "image": "posts/20261010-193403-reel_news-2026-10-10-v2.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261010-193403-reel_news-2026-10-10-v2.mp4",
-  "headline": "Kareena Kapoor Teaches F1 Champion Lando Norris Indian Gestures, Jokes About Saif's 'World Title'",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Kareena ne Lando Norris ko sikhaye desi gestures 😂\nF1 champion Lando Norris ko Kareena Kapoor ne Indian hand gestures sikhaye.\nSaath mein Saif ki film 'Ta Ra Rum Pum' ke 'world title' pe bhi mazaak kiya.\nTumhara favourite desi gesture kaunsa hai? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kareenakapoor #landonorris #bollywood #f1 #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-teaches-f1-world-champion-lando-norris-indian-gestures-jokes-about-saif-ali-khan-racing-wins-in-ta-ra-rum-pum-singapore-gp-101791599356276.html",
-  "pin_comment": "Lando ko aur kaunsa desi gesture sikhana chahiye? Neeche batao",
-  "songs": [
-   {
-    "title": "Casa Tupka Anthemo",
-    "artist": "Yo Yo Honey Singh",
-    "lang": "hindi",
-    "mood": "funny, upbeat drop"
-   },
-   {
-    "title": "Boom Shaka",
-    "artist": "Dhanda Nyoliwala, KR$NA",
-    "lang": "hindi",
-    "mood": "hype, swagger"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "fun, groovy"
-   },
-   {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
-    "lang": "english",
-    "mood": "playful, chill"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Saif won the championship only as a character in the 2007 film Ta Ra Rum Pum, not in real life. The slide reads as if he really won it.",
-    "Fact corrected to match the article: The 'world title' was a film role, not a real win.",
-    "Many corrections were needed: please give it a quick read."
-   ],
-   "fixed": [
-    "removed weak photo slide(s) [4]",
-    "Kareena ne mazaak mein Saif ke 19 saal pehle 'world championship' jeetne ka zikr kiya. → Kareena ne mazaak mein Saif ke 19 saal pehle film 'Ta Ra Rum Pum' mein 'world championship' jeetne ka zikr kiya.",
-    "Saath mein Saif ke 'world title' pe bhi mazaak kiya. → Saath mein Saif ke film 'Ta Ra Rum Pum' ke 'world title' pe bhi mazaak kiya.",
-    "Saif ke film 'Ta Ra Rum Pum' → Saif ki film 'Ta Ra Rum Pum'",
-    "Saif ke 19 saal pehle film → Saif ki 19 saal purani film"
-   ]
-  },
-  "created_at": "2026-10-10T14:32:52+00:00"
  }
 ]
