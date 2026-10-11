@@ -1,5 +1,47 @@
 [
  {
+  "id": "cb3b20da52c1",
+  "kind": "custom",
+  "image": "posts/20261011-0942-cb3b20da52c1-1.jpg",
+  "options": [
+   "posts/20261011-0942-cb3b20da52c1-1.jpg",
+   "posts/20261011-0942-cb3b20da52c1-2.jpg",
+   "posts/20261011-0942-cb3b20da52c1-3.jpg",
+   "posts/20261011-0942-cb3b20da52c1-4.jpg"
+  ],
+  "slides": [
+   "posts/20261011-0942-cb3b20da52c1-s2.jpg",
+   "posts/20261011-0942-cb3b20da52c1-s3.jpg"
+  ],
+  "headline": "Assam CM Says 12 Bangladeshi Nationals Held in Goalpara, Human Trafficking Angle Suspected",
+  "tag": "ASSAM",
+  "caption": "Assam ke Goalpara se badi khabar 🚨\nAssam CM ke mutabik 12 Bangladeshi pakde gaye hain.\nCM ke mutabik human trafficking ka angle bhi suspect kiya ja raha hai.\nBorder security aur trafficking, dono pe nazar tight hai.\nIs mudde pe tumhara stand: sakht action ya aur sakht action? 💪\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#assam #india #trending #news #breakingnews",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/assam-12-bangladeshi-infiltrators-nabbed-in-goalpara-human-trafficking-suspected-101791709500191.html",
+  "pin_comment": "Sabse bada sawaal: trafficking ka angle sach nikla to network kitna bada hoga? Tumhari guess kya hai? 👀",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article doesn't say police made the arrests. It reports CM Sarma saying 12 Bangladeshi nationals were apprehended. 'Infiltrators' is also stated as fact rather than attributed.",
+    "Fact corrected to match the article: The claim should be attributed to the CM, as in the article.",
+    "Fact corrected to match the article: Article calls them Bangladeshi nationals apprehended for allegedly entering illegally; 'infiltrators' is stated as fact.",
+    "Fact corrected to match the article: Match the article wording; avoid stating a label as fact.",
+    "Fact corrected to match the article: The article says the broker fled after 'allegedly' taking the money and phone, so this is an allegation.",
+    "Fact corrected to match the article: The suspicion of trafficking comes from CM Sarma, so it should be attributed to him and not to an unnamed report.",
+    "Many corrections were needed: please give it a quick read."
+   ],
+   "fixed": [
+    "Assam Police Nab 12 Bangladeshi Infiltrators in Goalpara → Assam CM Says 12 Bangladeshi Nationals Held in Goalpara",
+    "Assam ke Goalpara se badi khabar 🚨\n12 Bangladeshi infiltrators pakde gaye hain. → Assam ke Goalpara se badi khabar 🚨\nAssam CM ke mutabik 12 Bangladeshi pakde gaye hain.",
+    "12 Bangladeshi Infiltrators → 12 Bangladeshi Nationals",
+    "Goalpara, Assam mein 12 Bangladeshi infiltrators pakde gaye → Goalpara, Assam mein 12 Bangladeshi nationals pakde gaye",
+    "phir 7,000 Taka aur phone leke bhaag gaya. → phir kathit taur par 7,000 Taka aur phone leke bhaag gaya.",
+    "Report ke mutabik human trafficking ka angle bhi suspect kiya ja raha hai. → CM ke mutabik human trafficking ka angle bhi suspect kiya ja raha hai."
+   ]
+  },
+  "created_at": "2026-10-11T09:42:00+00:00"
+ },
+ {
   "id": "c2a48fe936a3",
   "image": "posts/20261011-0905-c2a48fe936a3.jpg",
   "kind": "custom",
