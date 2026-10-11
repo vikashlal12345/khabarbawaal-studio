@@ -1,5 +1,35 @@
 [
  {
+  "id": "d0cb98ca7bfd",
+  "image": "posts/20261011-1131-d0cb98ca7bfd.jpg",
+  "kind": "news",
+  "headline": "Jeff Bezos Says AI Could Bring 3-Day Workweeks And Single-Income Households",
+  "tag": "TECH",
+  "caption": "Hafte mein sirf 3 din kaam? Sapna lag raha hai, par Jeff Bezos ne yahi bola hai 😳\nAmazon founder ka kehna hai ki AI productivity badha sakta hai, jisse log kam din kaam karke bhi guzara kar sakein.\nUnke mutabik single-income households bhi possible ho sakte hain.\nSaath hi unhone kaha: \"It's going to be difficult to hire people.\"\nAgar 3-day workweek mil jaye to chauthe din main ____\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #ai #jeffbezos #india",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/jeff-bezos-says-ai-could-make-3-day-workweeks-and-single-income-households-possible-it-s-going-to-be-difficult-to-hire-people-101791702088222.html",
+  "pin_comment": "Sabse bada twist: ek taraf 3-day week ka sapna, doosri taraf \"hire karna mushkil hoga\". Offer letter pehle aayega ya AI? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Quote does not match the article, which says 'need to have a two-earner household'."
+   ],
+   "fixed": [
+    "You're not going to need a two-earner household. → You're not going to need to have a two-earner household."
+   ]
+  },
+  "slides": [
+   "posts/20261011-1131-d0cb98ca7bfd-s2.jpg",
+   "posts/20261011-1131-d0cb98ca7bfd-s3.jpg",
+   "posts/20261011-1131-d0cb98ca7bfd-s4.jpg",
+   "posts/20261011-1131-d0cb98ca7bfd-s5.jpg",
+   "posts/20261011-1131-d0cb98ca7bfd-s6.jpg",
+   "posts/20261011-1131-d0cb98ca7bfd-s7.jpg",
+   "posts/20261011-1131-d0cb98ca7bfd-s8.jpg"
+  ],
+  "created_at": "2026-10-11T11:31:36+00:00"
+ },
+ {
   "id": "c4d53edbe475",
   "kind": "custom",
   "image": "posts/20261011-0947-c4d53edbe475-1.jpg",
@@ -489,31 +519,5 @@
    "fixed": []
   },
   "created_at": "2026-10-10T12:58:12+00:00"
- },
- {
-  "id": "367929ead359",
-  "image": "posts/20261010-1131-367929ead359.jpg",
-  "kind": "news",
-  "headline": "Teen Rejected By 15 Universities Raises $10 Million For His New AI Startup",
-  "tag": "VIRAL",
-  "caption": "15 universities ne reject kiya, ab investors ne $10 million de diye 😳\nZach Yadegari ko 15 colleges se no mila.\nLekin apne naye AI startup ke liye usne $10 million ki funding raise kar li.\nDegree nahi mili, par funding mil gayi. Scene hi palat gaya.\nUnpopular opinion: aaj ke time mein college admission se zyada skills matter karti hain. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viral #trending #ai #startup #india",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/who-is-zach-yadegari-teen-rejected-by-15-universities-raises-10-million-for-new-ai-startup-101791621621236.html",
-  "pin_comment": "Sabse bada twist: 15 rejection letters ek taraf, $10 million cheque doosri taraf. Tumhari sabse badi rejection kaunsi thi? 😅",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "jisse Vine Ventures ne lead kiya → jise Vine Ventures ne lead kiya"
-   ]
-  },
-  "slides": [
-   "posts/20261010-1131-367929ead359-s2.jpg",
-   "posts/20261010-1131-367929ead359-s3.jpg",
-   "posts/20261010-1131-367929ead359-s4.jpg",
-   "posts/20261010-1131-367929ead359-s5.jpg",
-   "posts/20261010-1131-367929ead359-s6.jpg"
-  ],
-  "created_at": "2026-10-10T11:31:24+00:00"
  }
 ]
