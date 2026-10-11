@@ -1,0 +1,118 @@
+[
+ {
+  "id": "r20261010-1931-explainer",
+  "kind": "ready",
+  "image": "posts/r20261010-1931-explainer-1.jpg",
+  "slides": [
+   "posts/r20261010-1931-explainer-2.jpg",
+   "posts/r20261010-1931-explainer-3.jpg",
+   "posts/r20261010-1931-explainer-4.jpg",
+   "posts/r20261010-1931-explainer-5.jpg",
+   "posts/r20261010-1931-explainer-6.jpg",
+   "posts/r20261010-1931-explainer-7.jpg"
+  ],
+  "headline": "Inflation Kya Hai? Simple Explainer",
+  "tag": "📦 EXPLAINER",
+  "caption": "Mehngai ka naam sab lete hain, par woh naapi kaise jaati hai? Ab ek simple explainer mein samajh lo. Save karo aur dost ko bhejo, aapko kaunsi cheez sabse zyada mehngi lagti hai?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #inflation #finance",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover's background is a zoomed-in crop of the IMF map. The chart title and subtitle are cut off at the top and left (\"n rate among IMF members (Apr 20\", \"here inflation exceeds 100pc\"). The map's own credit line (\"…national Monetary Fund • Created with Datawrapper\") is half hidden behind the @khabarbawaal handle and the Source line. The result looks messy. Use a cleaner crop, or the full map as on slide 2."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T19:31:42+00:00"
+ },
+ {
+  "id": "r20261010-1932-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261010-1932-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261010-1932-on_this_day-2.jpg",
+   "posts/r20261010-1932-on_this_day-3.jpg",
+   "posts/r20261010-1932-on_this_day-4.jpg",
+   "posts/r20261010-1932-on_this_day-5.jpg",
+   "posts/r20261010-1932-on_this_day-6.jpg"
+  ],
+  "headline": "11 October: 4 Things Jo Yaad Rakhne Layak Hain",
+  "tag": "📦 ON THIS DAY",
+  "caption": "Ek hi tareekh, Bollywood se Chand tak ki kahaniyan! Aaj ka din itna special nikla. Aapko inme se kaunsa fact sabse zyada pasand aaya? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #amitabhbachchan #bollywood #viral #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The flame icon covers the last letters of the faint 'ON THIS DAY' background text, so 'DAY' is partly hidden. The text is only decorative and the headline is clear, so this is a minor point."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T19:32:04+00:00",
+  "valid_on": "2026-10-11"
+ },
+ {
+  "id": "r20261010-215101-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261010-215101-bhakti.jpg",
+  "headline": "Maa, main kuch nahi maangta, bas papa ko theek kar do. Aap hain, to mujhe bharosa hai.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Jab kuch haath mein na ho, Maa ka haath sar par hota hai 🙏\nComment karo Jai Mata Di\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #maashailputri #bhakti #explorepage",
+  "pin_comment": "Jiske liye dua kar rahe ho, unke liye Jai Mata Di likho 🙏",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Only slide1.jpg exists, so I checked just that one. Its text is clean and readable, and it doesn't cover any face. The illustration doesn't match how Maa Shailputri is usually shown. She normally holds a trident and a lotus and rides a bull (Vrishabha). Here she holds neither, and the animal in the corridor looks like a cow. Devotional followers may notice. Consider a more accurate image, or at least check that it's acceptable. The 'AI illustration' label is present, which is good."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T21:51:01+00:00"
+ },
+ {
+  "id": "r20261010-222533-gita",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261010-222533-gita.jpg",
+  "video": "posts/r20261010-222533-gita.mp4",
+  "headline": "Gita 1.1: Ek andha raja... aur ek sawaal",
+  "tag": "📦 🙏 GITA GYAAN",
+  "caption": "Gita ka pehla shlok aur pehli seekh: 'mera' aur 'paraya' ka bhed hi jhagde ki jad hai. 🙏\nRoz ek shlok, Gita Gyaan series mein.\nAapke hisaab se kaun sa bhed sabse bada hai? Comment karke batao.\n\n📖 Roz ek shlok: Bhagavad Gita 1.1 · Kal: shlok 1.2\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
+  "source": "Bhagavad Gita",
+  "source_url": "",
+  "pin_comment": "Kal aayega Gita 1.2. Follow karo taaki koi shlok miss na ho 🙏 Aapke 'mere wale' kaun hain?",
+  "songs": [
+   {
+    "title": "Narayan Mil Jayega",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "devotional, calm"
+   },
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "peaceful, divine"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "dramatic, intense"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "epic, cinematic"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-10T22:25:34+00:00"
+ }
+]

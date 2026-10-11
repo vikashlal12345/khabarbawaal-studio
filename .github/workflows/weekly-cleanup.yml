@@ -1,0 +1,34 @@
+name: Weekly storage cleanup
+
+# GitHub remembers every image ever uploaded, even after the app deletes it.
+# Every Sunday 08:30 IST this replaces the history with one fresh commit of the
+# current files, so the project stays small. Current posts and code are untouched.
+on:
+  schedule:
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hourly-post        # waits for any post being made, so nothing is lost
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Replace history with one fresh commit
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          before=$(du -sh .git | cut -f1)
+          git checkout -q --orphan fresh
+          git add -A
+          git commit -q -m "Weekly cleanup $(date -u +%Y-%m-%d): fresh history, current files kept"
+          git push --force origin fresh:main
+          echo "Done. Local .git was $before before cleanup."

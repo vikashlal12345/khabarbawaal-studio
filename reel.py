@@ -1,0 +1,2067 @@
+"""Reels: 1080x1920 videos, no music (the owner adds a trending song in Instagram).
+
+    make(kind, state, feed)   the robot's entry: reel_clip_am (8 AM) and reel_clip (1 PM) "Tag that friend",
+                              reel_meme (7 PM), reel_news (8 PM)
+
+Three styles (each writes the MP4 and returns still frames for the proofreader):
+    clip_reel(clip, start, dur, hook, text, highlight, out_mp4)
+        real video clip filling the screen, outlined meme text popping in on top
+    meme_reel(clip, start, dur, setup, punch, punch_at, highlight, out_mp4)
+        classic meme layout: white screen, text above the clip; setup text counts up,
+        punchline swaps in at punch_at seconds
+    news_reel(slides, end_text, highlight, tag, out_mp4)
+        news photos zooming/sliding with story lines, ending on a punchline card
+        slides = [(photo, credit, text), ...]
+
+Clips come from Mixkit (no sign-up); only clips under its Free licence are used. Text stays inside Instagram's safe
+zone (Reels buttons cover the bottom and the right edge).
+"""
+from __future__ import annotations
+
+import json
+import os
+import shutil
+import subprocess
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
+from generate import CONFIG, LOGO_FILE, font, norm, printable, wrap_words
+
+RW, RH, FPS = 1080, 1920, 30
+LEFT, RIGHT = 70, RW - 150              # right side holds Instagram's like/comment buttons
+YELLOW, RED = CONFIG["accent_color"], CONFIG["tag_color"]
+
+
+def ffmpeg_exe() -> str:
+    exe = os.environ.get("FFMPEG") or shutil.which("ffmpeg")
+    if exe:
+        return exe
+    import imageio_ffmpeg   # local Mac testing: pip install imageio-ffmpeg
+    return imageio_ffmpeg.get_ffmpeg_exe()
+
+
+# ---------------------------------------------------------------- video in / out
+
+def has_audio(path: str) -> bool:
+    return "Audio:" in subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
+
+
+class Encoder:
+    """Feed PIL frames in, get an Instagram-friendly MP4 (H.264 + audio: the source clip's own
+    sound when audio_from is given and has sound, else a silent track)."""
+
+    def __init__(self, out_mp4: str, audio_from: str | None = None, audio_start: float = 0.0):
+        sound = (["-ss", str(audio_start), "-i", audio_from] if audio_from and has_audio(audio_from)
+                 else ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"])   # some apps reject video-only files
+        self.p = subprocess.Popen(
+            [ffmpeg_exe(), "-y", "-loglevel", "error",
+             "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{RW}x{RH}", "-r", str(FPS), "-i", "-",
+             *sound, "-map", "0:v", "-map", "1:a",
+             "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p",
+             "-profile:v", "high", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out_mp4],
+            stdin=subprocess.PIPE)
+
+    def add(self, frame: Image.Image) -> None:
+        self.p.stdin.write(frame.convert("RGB").tobytes())
+
+    def close(self) -> None:
+        self.p.stdin.close()
+        if self.p.wait() != 0:
+            raise RuntimeError("ffmpeg failed")
+
+
+def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5):
+    """Frames of a clip, scaled to cover w x h (crop centred at crop_x of the width), 30 fps."""
+    vf = (f"scale={w}:{h}:force_original_aspect_ratio=increase,"
+          f"crop={w}:{h}:(iw-{w})*{crop_x}:(ih-{h})/2,fps={FPS}")
+    p = subprocess.Popen([ffmpeg_exe(), "-loglevel", "error", "-ss", str(start), "-t", str(dur), "-i", path,
+                          "-vf", vf, "-an", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+    size = w * h * 3
+    while True:
+        raw = p.stdout.read(size)
+        if len(raw) < size:
+            break
+        yield Image.frombytes("RGB", (w, h), raw)
+    p.wait()
+
+
+def video_info(path: str) -> tuple[int, int, float]:
+    """(width, height, seconds) as shown (phone videos are rotated by ffmpeg automatically)."""
+    import re
+    info = subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", info)
+    secs = int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else 0.0
+    size = re.search(r"Video:.*?(\d{2,5})x(\d{2,5})", info)
+    w, h = (int(size.group(1)), int(size.group(2))) if size else (RW, RH)
+    if re.search(r"rotation of -?90|rotate\s*:\s*-?90|displaymatrix: rotation of -?90", info):
+        w, h = h, w
+    return w, h, secs
+
+
+# ---------------------------------------------------------------- drawing helpers
+
+def ease_out_back(t: float) -> float:
+    """0 -> 1 with a small overshoot (a 'pop')."""
+    t = max(0.0, min(1.0, t))
+    c = 1.70158
+    return 1 + (c + 1) * (t - 1) ** 3 + c * (t - 1) ** 2
+
+
+def ease_out(t: float) -> float:
+    t = max(0.0, min(1.0, t))
+    return 1 - (1 - t) ** 3
+
+
+def fit_lines(text: str, max_w: int, max_h: int, sizes=range(88, 40, -4), name="Poppins-Bold.ttf"):
+    """Wrap text (keeping its line breaks) at the biggest size that fits; a lone last word
+    gets company from the line above."""
+    paragraphs = [p.split() for p in printable(text).split("\n") if p.strip()]
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    for size in sizes:
+        fnt = font(name, size)
+        line_h = int(size * 1.28)
+        blocks = [wrap_words(p, fnt, max_w, probe) for p in paragraphs]
+        for b in blocks:
+            if len(b) > 1 and len(b[-1]) == 1 and len(b[-2]) > 2:
+                b[-1].insert(0, b[-2].pop())
+        lines = [line for b in blocks for line in b]
+        if len(lines) * line_h <= max_h:
+            break
+    return lines, fnt, line_h
+
+
+def line_images(lines, fnt, line_h, fg, hi, highlights, stroke=0, stroke_fill="#000000"):
+    """One transparent image per line (so each line can pop in on its own)."""
+    out = []
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    space = probe.textlength(" ", font=fnt)
+    for line in lines:
+        w = int(sum(probe.textlength(x, font=fnt) for x in line) + space * (len(line) - 1)) + 2 * stroke + 8
+        img = Image.new("RGBA", (w, line_h + 2 * stroke), (0, 0, 0, 0))
+        d = ImageDraw.Draw(img)
+        x = stroke
+        for word in line:
+            d.text((x, stroke), word, font=fnt, fill=hi if norm(word) in highlights else fg,
+                   stroke_width=stroke, stroke_fill=stroke_fill)
+            x += d.textlength(word, font=fnt) + space
+        out.append(img)
+    return out
+
+
+def pill(text: str, fnt, bg: str, fg: str, pad=(36, 18), arrow: bool = False) -> Image.Image:
+    """Rounded label; arrow=True adds a hand-drawn down arrow (the fonts have no arrow glyph)."""
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    tw = probe.textlength(text, font=fnt)
+    asc, desc = fnt.getmetrics()
+    aw = int(asc * 0.8) if arrow else 0
+    img = Image.new("RGBA", (int(tw + pad[0] * 2 + (aw + 24 if arrow else 0)), asc + desc + pad[1] * 2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((0, 0, img.width - 1, img.height - 1), radius=18, fill=bg)
+    d.text((pad[0], pad[1]), text, font=fnt, fill=fg)
+    if arrow:
+        x, cy = pad[0] + tw + 24, img.height // 2
+        d.polygon([(x, cy - aw * 0.25), (x + aw, cy - aw * 0.25), (x + aw / 2, cy + aw * 0.45)], fill=fg)
+    return img
+
+
+def paste_pop(frame: Image.Image, layer: Image.Image, x: int, y: int, p: float) -> None:
+    """Paste layer at (x, y) popping in: p goes 0 -> 1 (scale 0.6 -> 1 with overshoot, fade in)."""
+    if p <= 0:
+        return
+    scale, alpha = 0.6 + 0.4 * ease_out_back(p), ease_out(p * 1.5)
+    w, h = max(1, int(layer.width * scale)), max(1, int(layer.height * scale))
+    img = layer.resize((w, h), Image.BICUBIC) if (w, h) != layer.size else layer
+    if alpha < 1:
+        img = img.copy()
+        img.putalpha(img.getchannel("A").point(lambda a: int(a * alpha)))
+    frame.alpha_composite(img, (int(x + (layer.width - w) / 2), int(y + (layer.height - h) / 2)))
+
+
+def logo_img(max_w=360, max_h=84):
+    if not LOGO_FILE.exists():
+        return None
+    logo = Image.open(LOGO_FILE).convert("RGBA")
+    logo.thumbnail((max_w, max_h))
+    return logo
+
+
+def handle_tag(frame: Image.Image, y: int, fill="#FFFFFF", stroke=3) -> None:
+    ImageDraw.Draw(frame).text((RW // 2, y), CONFIG["handle"], font=font("Poppins-SemiBold.ttf", 40),
+                               fill=fill, anchor="mm", stroke_width=stroke, stroke_fill="#000000")
+
+
+# ---------------------------------------------------------------- 1. clip + meme text
+
+def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlight: list[str],
+              out_mp4: str, crop_x: float = 0.5, text_top: int = 960) -> list[Image.Image]:
+    """Returns the frames to proofread: [cover] (all text shown)."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 470, sizes=range(80, 40, -4))
+    imgs = line_images(lines, fnt, line_h, "#FFFFFF", YELLOW, highlights, stroke=7)
+    hook_img = pill(hook, font("Anton-Regular.ttf", 84), RED, "#FFFFFF", pad=(38, 12))
+    foot = pill("TAG KARO USKO", font("Poppins-Bold.ttf", 46), YELLOW, "#111111", pad=(34, 16), arrow=True)
+    logo = logo_img()
+    # Soft dark fade behind the text so it reads on any footage.
+    shade = Image.new("RGBA", (RW, 900), (0, 0, 0, 0))
+    ImageDraw.Draw(shade).rectangle((0, 120, RW, 780), fill=(0, 0, 0, 120))
+    shade = shade.filter(ImageFilter.GaussianBlur(60))
+    step = min(0.45, 2.0 / max(len(lines), 1))
+    enc, cover, frame = Encoder(out_mp4), None, None
+    for i, frame in enumerate(clip_frames(clip, start, dur, RW, RH, crop_x)):
+        t = i / FPS
+        frame = frame.convert("RGBA")
+        frame.alpha_composite(shade, (0, text_top - 300))
+        if logo:
+            frame.alpha_composite(logo, (60, 150))
+        k = ease_out_back(t / 0.45)
+        frame.alpha_composite(hook_img, ((RW - hook_img.width) // 2, int(text_top - 150 - 300 * (1 - k))))
+        for j, img in enumerate(imgs):
+            paste_pop(frame, img, LEFT, text_top + j * line_h, (t - 0.4 - j * step) / 0.3)
+        k = ease_out((t - (dur - 1.6)) / 0.4)
+        if k > 0:
+            fy = int(text_top + len(lines) * line_h + 40 + 120 * (1 - k))
+            frame.alpha_composite(foot, ((RW - foot.width) // 2, fy))
+        handle_tag(frame, 1730)
+        if t >= dur - 1.0 and cover is None:
+            cover = frame.convert("RGB")
+        enc.add(frame)
+    enc.close()
+    return [cover or frame.convert("RGB")]
+
+
+# ---------------------------------------------------------------- 2. classic meme layout
+
+def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str, punch_at: float,
+              highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """White screen, text on top, clip in the middle. setup = short items shown one by one
+    (e.g. alarm times), punch replaces them at punch_at seconds.
+    Returns the frames to proofread: [setup complete, cover (punchline)]."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    clip_w, clip_h = RW, int(RW * 9 / 16)
+    clip_y, text_bottom = 1000, 960
+    s_lines, s_fnt, s_lh = fit_lines(" ".join(setup), RIGHT - LEFT, 480, sizes=range(76, 40, -4))
+    p_lines, p_fnt, p_lh = fit_lines(punch, RIGHT - LEFT, 480, sizes=range(96, 44, -4))
+    p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, highlights)
+    logo = logo_img()
+    every = min(0.75, (punch_at - 0.3) / max(len(setup), 1))
+    enc, before, cover, frame = Encoder(out_mp4), None, None, None
+    for i, shot in enumerate(clip_frames(clip, start, dur, clip_w, clip_h)):
+        t = i / FPS
+        frame = Image.new("RGBA", (RW, RH), "#FFFFFF")
+        if logo:
+            frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+        if t < punch_at:
+            shown = setup[: 1 + int(t / every)]
+            ls, fnt, lh = fit_lines(" ".join(shown), RIGHT - LEFT, 480, sizes=[s_fnt.size])
+            y0 = text_bottom - len(s_lines) * s_lh
+            for j, img in enumerate(line_images(ls, fnt, lh, "#111111", RED, highlights)):
+                frame.alpha_composite(img, (LEFT, y0 + j * lh))
+        else:
+            y0 = text_bottom - len(p_lines) * p_lh
+            for j, img in enumerate(p_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * p_lh, (t - punch_at - j * 0.12) / 0.3)
+        # Small zoom-punch on the clip at the punchline.
+        z = 1 + 0.08 * max(0.0, 1 - abs(t - punch_at - 0.15) / 0.25) if t >= punch_at else 1
+        if z > 1:
+            big = shot.resize((int(clip_w * z), int(clip_h * z)), Image.BICUBIC)
+            x0, y0 = (big.width - clip_w) // 2, (big.height - clip_h) // 2
+            shot = big.crop((x0, y0, x0 + clip_w, y0 + clip_h))
+        frame.paste(shot, (0, clip_y))
+        handle_tag(frame, clip_y + clip_h + 70, fill="#111111", stroke=0)
+        if t < punch_at:
+            before = frame
+        elif t >= punch_at + 0.8 and cover is None:
+            cover = frame.convert("RGB")
+        enc.add(frame)
+    enc.close()
+    return [(before or frame).convert("RGB"), cover or frame.convert("RGB")]
+
+
+# ---------------------------------------------------------------- 1b. the owner's own video
+
+def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """The owner's video as a Reel: full screen (a wide video sits on a blurred copy of itself),
+    hook text popping in at the top, logo and handle; the video's own sound is kept.
+    Returns the frames to proofread: [cover] (text shown)."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    w, h, _ = video_info(clip)
+    wide = w > h * 0.8   # landscape or square: don't crop away the sides
+    fit_h = 2 * round(RW * h / w / 2) if wide else RH
+    lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 430, sizes=range(84, 44, -4))
+    imgs = line_images(lines, fnt, line_h, "#FFFFFF", YELLOW, highlights, stroke=7)
+    logo = logo_img()
+    shade = Image.new("RGBA", (RW, 760), (0, 0, 0, 0))
+    ImageDraw.Draw(shade).rectangle((0, 0, RW, 640), fill=(0, 0, 0, 110))
+    shade = shade.filter(ImageFilter.GaussianBlur(60))
+    text_top = 300
+    enc, cover, frame = Encoder(out_mp4, audio_from=clip), None, None
+    for i, shot in enumerate(clip_frames(clip, 0, dur, RW, fit_h)):
+        t = i / FPS
+        if wide:   # blurred, darkened copy as the background (blurred small = fast)
+            bg = shot.resize((RW // 10, RH // 10)).filter(ImageFilter.GaussianBlur(3)).resize((RW, RH))
+            frame = Image.blend(bg, Image.new("RGB", (RW, RH), "#000000"), 0.45).convert("RGBA")
+            frame.paste(shot, (0, (RH - fit_h) // 2 + 120))
+        else:
+            frame = shot.convert("RGBA")
+        frame.alpha_composite(shade, (0, text_top - 160))
+        if logo:
+            frame.alpha_composite(logo, (60, 150))
+        for j, img in enumerate(imgs):
+            paste_pop(frame, img, LEFT, text_top + j * line_h, (t - 0.2 - j * 0.25) / 0.3)
+        handle_tag(frame, 1730)
+        if t >= min(1.8, dur * 0.4) and cover is None:
+            cover = frame.convert("RGB")
+        enc.add(frame)
+    enc.close()
+    return [cover or frame.convert("RGB")]
+
+
+# ---------------------------------------------------------------- 3. news photo slideshow
+
+def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
+              out_mp4: str, end: float = 3.0) -> list[Image.Image]:
+    """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
+    uncropped instead of zooming. Each photo stays long enough to read its line in full: 1.5 s + 0.25 s
+    a word, 3-7.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel).
+    Numbers are highlighted too. Returns the frames to proofread: one per photo + the end card."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    photo_h, photo_y = 760, 300
+    prepared = []
+    for photo, credit, text, whole in slides:
+        photo = photo.convert("RGB")
+        k = max(RW / photo.width, RH / photo.height)
+        bg = photo.resize((int(photo.width * k) + 1, int(photo.height * k) + 1)).crop((0, 0, RW, RH))
+        bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
+        lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
+        nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
+        per = min(7.5, max(3.0, read_secs(text)))
+        if whole:   # fit inside the photo window, on a dark card
+            card = Image.new("RGB", (RW, photo_h), "#111111")
+            fit = photo.copy()
+            fit.thumbnail((RW - 40, photo_h - 40), Image.LANCZOS)
+            card.paste(fit, ((RW - fit.width) // 2, (photo_h - fit.height) // 2))
+            photo = card
+        prepared.append((bg, photo, credit, line_images(lines, fnt, lh, "#FFFFFF", YELLOW, highlights | nums, stroke=5),
+                         lh, per, whole))
+    starts = [sum(p[5] for p in prepared[:n]) for n in range(len(prepared) + 1)]
+    tag_img = pill(printable(tag).upper(), font("Anton-Regular.ttf", 64), RED, "#FFFFFF", pad=(30, 8))
+    e_lines, e_fnt, e_lh = fit_lines(end_text, RIGHT - LEFT, 700, sizes=range(96, 48, -4))
+    e_imgs = line_images(e_lines, e_fnt, e_lh, "#111111", RED, highlights)
+    follow = pill("FOLLOW FOR DAILY BAWAAL", font("Poppins-Bold.ttf", 44), "#111111", YELLOW, pad=(34, 16))
+    logo = logo_img()
+    total = int((starts[-1] + end) * FPS)
+    enc, checks, frame = Encoder(out_mp4), [], None
+    for i in range(total):
+        t = i / FPS
+        n = sum(t >= s for s in starts[1:])
+        if n < len(prepared):
+            lt = t - starts[n]
+            bg, photo, credit, imgs, lh, per, whole = prepared[n]
+            frame = bg.convert("RGBA")
+            # Ken Burns: photo fills a 1080 x photo_h window and slowly zooms in; later photos slide in.
+            k = max(RW / photo.width, photo_h / photo.height) * (1.0 if whole else 1.0 + 0.10 * lt / per)
+            big = photo.resize((int(photo.width * k) + 1, int(photo.height * k) + 1), Image.BICUBIC)
+            x0, y0 = (big.width - RW) // 2, int((big.height - photo_h) * 0.35)
+            frame.paste(big.crop((x0, y0, x0 + RW, y0 + photo_h)),
+                        (int(RW * (1 - ease_out(lt / 0.35))) if n else 0, photo_y))
+            ImageDraw.Draw(frame).text((RW - 160, photo_y + photo_h - 16), f"Photo: {credit}",
+                                       font=font("Poppins-SemiBold.ttf", 24), fill="#FFFFFF", anchor="rd",
+                                       stroke_width=2, stroke_fill="#000000")
+            if logo:
+                frame.alpha_composite(logo, (60, 150))
+            frame.alpha_composite(tag_img, (RW - tag_img.width - 60, 140))
+            for j, img in enumerate(imgs):
+                paste_pop(frame, img, LEFT, photo_y + photo_h + 60 + j * lh, (lt - 0.35 - j * 0.15) / 0.3)
+            if len(checks) == n and lt >= per - 0.3:
+                checks.append(frame.convert("RGB"))
+        else:
+            lt = t - starts[-1]
+            frame = Image.new("RGBA", (RW, RH), YELLOW)
+            y0 = (RH - len(e_imgs) * e_lh - 200) // 2
+            for j, img in enumerate(e_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * e_lh, (lt - j * 0.15) / 0.3)
+            k = ease_out((lt - 0.8) / 0.4)
+            if k > 0:
+                frame.alpha_composite(follow, ((RW - follow.width) // 2,
+                                               int(y0 + len(e_imgs) * e_lh + 80 + 100 * (1 - k))))
+            handle_tag(frame, 1600, fill="#111111", stroke=0)
+        enc.add(frame)
+    enc.close()
+    return checks + [frame.convert("RGB")]
+
+
+# ---------------------------------------------------------------- the robot
+# 8 AM reel_clip_am + 1 PM reel_clip, 7 PM reel_meme, 8 PM reel_news (schedule.py). Jokes: 3 options, the
+# 'young Indian' judge picks (like fun posts), the AI picks a matching Mixkit clip by title.
+# News: the AI picks today's most visual story from our own news posts; photos are collected
+# and checked like carousel photos. Every Reel is proofread (still frames). If anything fails,
+# make() returns False and the slot gets a regular post.
+
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
+CLIP_SECONDS, MEME_SECONDS = 6.5, 8.0      # shortest Tag that friend / meme Reel; longer text gets more time
+CLIP_MAX = 10.0
+
+
+def read_secs(text: str, base: float = 1.5) -> float:
+    """Time on screen to read a block of text in full: base + 0.25 s a word (owner, 11 Oct 2026, all Reels)."""
+    return base + 0.25 * len(text.split())
+CLIP_KINDS = ("reel_clip", "reel_clip_am")   # "Tag that friend" clip Reels (1 PM and 8 AM)
+
+REEL_RULES = """This joke becomes a short Instagram REEL: a free stock video clip (Mixkit) with our text on top.
+The clip must be something a stock-video site has: everyday people doing everyday things (lying in bed \
+with a phone, eating, laughing, shocked face, running late, working on a laptop, dancing, sleeping, cooking, \
+studying, waiting...). No celebrities, brands or specific Indian places in the clip.
+clip_search: 3 different searches for the stock site, 1-3 plain English words each, most specific first (e.g. ["texting in bed", "man phone bed", "lazy"]). Simple words find more clips. Prefer jokes whose moment a stock clip can actually show.
+clip_wanted: one line describing the ideal clip.
+caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia)."""
+
+SONGS = {"type": "array", "description": "2 Hindi + 2 English songs that suit this Reel's mood, copied exactly "
+         "from today's trending lists",
+         "items": {"type": "object", "properties": {
+             "title": {"type": "string"}, "artist": {"type": "string"},
+             "lang": {"type": "string", "enum": ["hindi", "english"]},
+             "mood": {"type": "string", "description": "2-4 words, e.g. 'funny, upbeat drop'"}},
+             "required": ["title", "artist", "lang", "mood"], "additionalProperties": False}}
+
+_COMMON = {
+    "songs": SONGS,
+    "based_on": {"type": "string", "description": "The trend/topic or everyday moment this joke is about"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the text to colour"},
+    "clip_search": {"type": "array", "items": {"type": "string"}},
+    "clip_wanted": {"type": "string"},
+    "caption": {"type": "string"},
+    "pin_comment": {"type": "string"},
+    "hashtags": {"type": "array", "items": {"type": "string"}},
+}
+CLIP_OPTION = {"type": "object", "properties": {
+    **_COMMON,
+    "text": {"type": "string", "description": "Text shown under a big 'TAG THAT FRIEND' banner, describing that "
+             "friend, e.g. \"Wo dost jo bed se text karta hai:\\n'Bhai nikal gaya, 5 min mein pahunch raha hoon'\". "
+             "Max 22 words, no emojis, \\n line breaks allowed."}},
+    "required": list(_COMMON) + ["text"], "additionalProperties": False}
+MEME_OPTION = {"type": "object", "properties": {
+    **_COMMON,
+    "setup": {"type": "array", "items": {"type": "string"}, "description":
+              "2-7 short pieces (max 16 words in total) that appear one after another while the clip plays, "
+              "building up, e.g. [\"Alarm:\", \"6:00,\", \"6:05,\", \"6:10,\", \"6:15...\"]. No emojis."},
+    "punch": {"type": "string", "description": "Punchline (max 14 words, no emojis) that replaces the setup at the "
+              "clip's reaction moment, e.g. \"Me at 9:45 jab office 10 baje hai\". highlight words come from here."}},
+    "required": list(_COMMON) + ["setup", "punch"], "additionalProperties": False}
+
+NEWS_TAGS = ["VIRAL", "BREAKING", "BOLLYWOOD", "CRICKET", "SPORTS", "TECH", "INDIA", "WORLD", "POLITICS", "MONEY"]
+NEWS_OPTION = {"type": "object", "properties": {
+    "pick": {"type": "integer", "description": "Story number from the list"},
+    "tag": {"type": "string", "enum": NEWS_TAGS},
+    "end_text": {"type": "string", "description": "Last card, max 14 words, no emojis: a relatable Hinglish reaction "
+                 "(\"Aur hum? Uber mein baithke bhi nervous ho jaate hain\") or, for serious news, the punchy takeaway."},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from end_text"},
+    "caption": {"type": "string", "description": "Hinglish: hook line, 2-3 short fact lines, a comment prompt. 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
+    "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
+    "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
+    "songs": SONGS},
+    "required": ["pick", "tag", "end_text", "highlight", "caption", "pin_comment", "hashtags", "photo_query", "wiki_title",
+                 "songs"],
+    "additionalProperties": False}
+
+
+def options_schema(option: dict, n: str) -> dict:
+    return {"type": "object", "properties": {"options": {"type": "array", "items": option, "description": n}},
+            "required": ["options"], "additionalProperties": False}
+
+
+def unescape(s: str) -> str:
+    return s.replace("\\n", "\n").strip()
+
+
+def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "") -> dict:
+    """evergreen=True: for 📦 Ready Reels, posted any day this week, so no trends, news or dates.
+    topic: the owner's idea from ➕ Create (all 3 options are about it)."""
+    import fun
+    import generate as g
+    system = fun.FUN_SYSTEM.format(page=CONFIG["page_name"]) + "\n\n" + fun.JOKE_RULES + "\n\n" + REEL_RULES
+    style = ("Style: TAG THAT FRIEND: the text describes that one friend everyone has."
+             if kind in CLIP_KINDS else
+             "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
+             "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
+    songs = trending_songs()
+    if topic:
+        context = f"{fun.today_context()}\n\nThe page owner asked for a Reel about: {topic}"
+        ask = "Write exactly 3 different jokes, all about the owner's idea (different angles)."
+    elif evergreen:
+        context = ("This Reel may be posted on ANY day in the next week: NO trends, news, festivals, dates, "
+                   "weather or day names. Only timeless relatable desi-life moments.")
+        ask = "Write exactly 3 different jokes, each a timeless relatable desi-life moment (different situations)."
+    else:
+        searches = fun.google_trends()
+        context = (f"{fun.today_context()}\n\n"
+                   "What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
+                   "\n\nToday's big headlines (use only ones nearly everyone knows):\n" +
+                   "\n".join(f"- {t}" for t in g.trending_titles()[:15]))
+        ask = ("Write exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
+               "relatable desi-life moments (different situations).")
+    user = (f"{style}\n\n{context}" +
+            "\n\nTopics already used recently (don't reuse):\n" +
+            ("\n".join(f"- {t}" for t in (state.get("fun_topics", []) + state.get("reel_topics", []))[-30:]) or "(none)") +
+            "\n\nRecent Reels (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in state.get("recent_reels", [])[-20:]) or "(none)") +
+            f"\n\n{ask}" + songs_prompt(songs))
+    model = CONFIG.get("membership_model", "sonnet")
+    option = CLIP_OPTION if kind in CLIP_KINDS else MEME_OPTION
+    options = fun.claude_json(system, user, options_schema(option, "Exactly 3 different jokes"), model,
+                              purpose="reel writing")["options"][:3]
+    for o in options:
+        o["caption"] = unescape(o["caption"])
+        if kind in CLIP_KINDS:
+            o["text"] = unescape(o["text"])
+        else:
+            o["punch"] = unescape(o["punch"])
+    if kind in CLIP_KINDS:
+        text_of = lambda o: f"TAG THAT FRIEND: {o['text']}  [video: {o['clip_wanted']}]"
+    else:
+        text_of = lambda o: f"{' '.join(o['setup'])} -> {o['punch']}  [video: {o['clip_wanted']}]"
+    best = fun.judge_best(options, text_of, model)
+    print(f"  reel joke based on: {best['based_on']}")
+    roman_only(best, ["caption", "pin_comment"])
+    best["songs"] = checked_songs(best.get("songs", []), songs)
+    return best
+
+
+def trending_songs() -> dict[str, list[tuple[str, str]]]:
+    """Today's trending Hindi and English songs on JioSaavn (free, no key): {lang: [(title, artist)]}."""
+    import html
+    import requests
+    out = {}
+    for lang in ("hindi", "english"):
+        try:
+            r = requests.get("https://www.jiosaavn.com/api.php", headers=UA, timeout=20, params={
+                "__call": "content.getTrending", "entity_type": "song", "entity_language": lang,
+                "_format": "json", "_marker": "0", "api_version": "4", "ctx": "web6dot0"})
+            items = [s for s in r.json() if s.get("type") == "song"]
+        except Exception as e:
+            print(f"  ! trending {lang} songs failed: {e}")
+            items = []
+        out[lang] = [(html.unescape(s["title"]),
+                      ", ".join(a["name"] for a in s.get("more_info", {}).get("artistMap", {}).get("primary_artists", [])[:2])
+                      or html.unescape(s.get("subtitle", "")).split(" - ")[0])
+                     for s in items][:25]
+    return out
+
+
+def songs_prompt(songs: dict) -> str:
+    if not any(songs.values()):
+        return ""
+    lists = "\n".join(f"{lang.title()}:\n" + "\n".join(f"- {t} | {a}" for t, a in songs[lang]) for lang in songs if songs[lang])
+    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Hindi + 2 English songs from these trending "
+            "lists that suit the mood (funny, dramatic, chill, hype...). Copy title and artist exactly; no other songs.\n"
+            + lists)
+
+
+def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
+    """Keep only songs that are really on today's lists (max 2 per language), with the list's spelling."""
+    out, seen = [], set()
+    for s in picked:
+        lang = s.get("lang", "")
+        match = next(((t, a) for t, a in songs.get(lang, []) if t.lower() == s.get("title", "").strip().lower()), None)
+        if match and match[0] not in seen and sum(o["lang"] == lang for o in out) < 2:
+            seen.add(match[0])
+            out.append({"title": match[0], "artist": match[1], "lang": lang, "mood": s.get("mood", "")[:40]})
+    return out
+
+
+def roman_only(post: dict, fields: list[str]) -> None:
+    """Captions must be English (Roman) letters only: if Hindi, Urdu or other non-Roman script slipped in, the AI rewrites those fields."""
+    import re
+    import fun
+    bad = [f for f in fields if re.search(r"[\u0590-\u08FF\u0900-\u0DFF]", post.get(f, ""))]
+    if not bad:
+        return
+    schema = {"type": "object", "properties": {f: {"type": "string"} for f in bad},
+              "required": bad, "additionalProperties": False}
+    fixed = fun.claude_json("Rewrite each text exactly, but write every Hindi (Devanagari) word in English (Roman) "
+                            "letters, Hinglish style. Keep emojis, line breaks and everything else unchanged.",
+                            json.dumps({f: post[f] for f in bad}, ensure_ascii=False), schema,
+                            CONFIG.get("membership_model", "sonnet"), purpose="roman letters")
+    for f in bad:
+        if not re.search(r"[\u0590-\u08FF\u0900-\u0DFF]", fixed.get(f, "")):
+            post[f] = fixed[f]
+            print(f"  {f}: Hindi script rewritten in English letters")
+
+
+def mixkit_search(query: str) -> list[tuple[str, str]]:
+    """(clip id, title) pairs from Mixkit's free stock-video search."""
+    import html
+    import re
+    import requests
+    slug = re.sub(r"[^a-z0-9]+", "-", query.lower()).strip("-")
+    if not slug:
+        return []
+    import time
+    page = ""
+    for wait in (0, 8, 20):   # Mixkit answers 429 to quick repeated requests: wait and retry
+        time.sleep(wait)
+        try:
+            r = requests.get(f"https://mixkit.co/free-stock-video/{slug}/", headers=UA, timeout=25)
+        except Exception as e:
+            print(f"  ! Mixkit search '{query}' failed: {e}")
+            continue
+        if r.status_code != 429:
+            page = r.text
+            break
+    else:
+        print(f"  ! Mixkit search '{query}': too many requests")
+    out = []
+    for m in re.finditer(r'<div class="item-grid-video-player.*?</div>\s*</div>', page, re.S):
+        v = re.search(r"assets\.mixkit\.co/videos/(\d+)/", m.group(0))
+        t = re.search(r'title="([^"]+)"|alt="([^"]+)"', m.group(0))
+        if v and t:
+            out.append((v.group(1), html.unescape(t.group(1) or t.group(2))))
+    return out
+
+
+def clip_license(cid: str, known: dict) -> str:
+    """The clip's licence as Mixkit labels it on its own page: "Free", "Mixkit Restricted License",
+    or "" if it can't be read (treated as not free). known = remembered licences (state)."""
+    import re
+    import time
+    import requests
+    if cid in known:
+        return known[cid]
+    for wait in (0, 8, 20):   # Mixkit answers 429 to quick repeated requests: wait and retry
+        time.sleep(wait)
+        try:
+            r = requests.get(f"https://mixkit.co/free-stock-video/x-{cid}/", headers=UA, timeout=20)
+        except Exception:
+            continue
+        if r.status_code == 429:
+            continue
+        m = re.search(rf'-{cid}/#video".{{0,3000}}?"copyrightNotice":"([^"]*)"', r.text, re.S)
+        if m:
+            known[cid] = m.group(1)
+            return known[cid]
+        return ""
+    return ""
+
+
+def pick_clip(post: dict, state: dict) -> str:
+    """Search Mixkit; the AI ranks the clips whose titles fit the joke; the first one under the
+    Free licence is used (the Restricted licence forbids business social media). Returns the clip id."""
+    import fun
+    import status
+    status.step("Finding a Free-licence clip", 4)
+    used = state.get("reel_clips", [])
+    known = state.setdefault("clip_licences", {})
+    found: dict[str, str] = {}
+    queries = list(dict.fromkeys(q.strip() for q in post["clip_search"] if q.strip()))
+    if post.get("punch"):   # meme Reels land on a reaction: common reaction clips as backup
+        queries += ["shocked", "surprised", "laughing", "panic", "facepalm"]
+    for q in queries:
+        for cid, title in mixkit_search(q):
+            if cid not in used and known.get(cid, "Free") == "Free":
+                found.setdefault(cid, title)
+        if len(found) >= 60:
+            break
+    if not found:
+        raise RuntimeError(f"no Mixkit clips for {post['clip_search']}")
+    listing = "\n".join(f"{cid}: {title}" for cid, title in list(found.items())[:60])
+    schema = {"type": "object", "properties": {"ranked": {"type": "array", "description": "Best 12 clips, best first",
+              "items": {"type": "object", "properties": {"id": {"type": "string"}, "fits": {"type": "integer"}},
+                        "required": ["id", "fits"], "additionalProperties": False}}},
+              "required": ["ranked"], "additionalProperties": False}
+    ranked = fun.claude_json("You pick stock video clips for funny Instagram Reels. Rank by title the 12 clips that "
+                             "best show the wanted moment; fits = 1-10.",
+                             f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
+                             f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
+                             schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")["ranked"]
+    for r in ranked[:12]:   # many good clips are Restricted: keep going until a Free one fits
+        if r["id"] not in found or r["fits"] < 5:
+            continue
+        lic = clip_license(r["id"], known)
+        if lic == "Free":
+            print(f"  clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10, Free licence)")
+            return r["id"]
+        print(f"  skipped clip {r['id']} ({found[r['id']]}): licence '{lic or 'unknown'}'")
+    raise RuntimeError("no fitting clip under the Free licence")
+
+
+def download_clip(cid: str, folder: str) -> tuple[str, float]:
+    """Mixkit clip (720p, else 1080p/360p) -> (path, seconds)."""
+    import re
+    import requests
+    path = os.path.join(folder, f"{cid}.mp4")
+    for res in (720, 1080, 360):
+        r = requests.get(f"https://assets.mixkit.co/videos/{cid}/{cid}-{res}.mp4", headers=UA, timeout=90)
+        if r.status_code == 200 and len(r.content) > 50_000:
+            open(path, "wb").write(r.content)
+            break
+    else:
+        raise RuntimeError(f"clip {cid} download failed")
+    info = subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", info)
+    secs = int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else 0.0
+    if secs < 3:
+        raise RuntimeError(f"clip {cid} too short ({secs:.1f}s)")
+    return path, secs
+
+
+def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: str, entry: dict) -> None:
+    from datetime import datetime, timezone
+    import generate as g
+    name = f"posts/{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-{post_id}.mp4"
+    (g.DOCS / "posts").mkdir(parents=True, exist_ok=True)
+    shutil.copy(mp4, g.DOCS / name)
+    g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
+    import status
+    status.done(f"Ready: {entry['headline'][:90]}", post=post_id)
+
+
+def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
+                    topic: str = "") -> tuple[Image.Image, str, dict]:
+    """Write, judge, find a clip, render and proofread a joke Reel.
+    Returns (cover, mp4 path in tmp, feed fields); also notes the clip/topic in state."""
+    import generate as g
+    import proofread
+    import status
+    status.step("Writing 3 jokes", 2)
+    post = write_joke(kind, state, evergreen, topic)
+    status.step(f"Judge picked: {post['based_on'][:80]}", 3)
+    cid = pick_clip(post, state)
+    clip, secs = download_clip(cid, tmp)
+    out = os.path.join(tmp, "reel.mp4")
+    songs = post.pop("songs", [])   # kept out of the proofreader's text
+    # Long enough to read the (proofread) text in full; a short stock clip caps it.
+    if kind in CLIP_KINDS:
+        def render(d):   # + 1 s for the TAG THAT FRIEND banner and the lines popping in
+            dur = min(max(CLIP_SECONDS, read_secs(d["text"], 2.5)), CLIP_MAX, secs - 0.2)
+            start = max(0.0, min(1.0, secs - dur - 0.2))
+            return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out)
+    else:
+        def render(d):   # build-up, then the punchline: each never shorter than before (4.4 s + 3.6 s)
+            setup_t = min(7.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]))))
+            punch_t = min(7.5, max(MEME_SECONDS * 0.45, read_secs(d["punch"])))
+            dur = min(setup_t + punch_t, secs - 0.2)
+            start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
+            return meme_reel(clip, start, dur, d["setup"], d["punch"], round(dur * setup_t / (setup_t + punch_t), 2),
+                             d["highlight"], out)
+    status.step("Making the video + proofreading", 5)
+    frames, post, proof = proofread.run(render, post, g.fun_caption)
+    text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
+    state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
+    state["reel_topics"] = (state.get("reel_topics", []) + [post["based_on"]])[-60:]
+    state["recent_reels"] = (state.get("recent_reels", []) + [printable(text).replace("\n", " ")])[-60:]
+    return frames[-1], out, {
+        "headline": printable(text).replace("\n", " "),
+        "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind in CLIP_KINDS else "MEME"),
+        "caption": g.limit_hashtags(g.fun_caption(post)), "source": "KhabarBawaal Original", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof}
+
+
+def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
+    cover, mp4, entry = build_joke_reel(kind, state, tmp)
+    save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
+
+
+NEWS_SYSTEM = """You make the evening news REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
+English letters only, never Devanagari). From today's stories pick the 3 best for a short video made of news \
+photos: strong visuals (people, sports moments, celebrities, viral scenes, big events) and a story everyone \
+will want to watch and share. Rank them, best first.
+Rules: real facts only, no invented quotes. Never make jokes about deaths, accidents, crimes or disasters. \
+Politics: supportive of the right wing (BJP, NDA), critical of the left and opposition; never pick a story \
+that embarrasses the BJP. No hate against any community."""
+
+
+def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    from datetime import datetime, timedelta, timezone
+    import fun
+    import status
+    status.step("Picking today's most visual story", 2)
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=14)
+    used = state.get("reel_news_used", [])
+    stories = [p for p in feed if p.get("kind") == "news" and p.get("source_url") and p["id"] not in used
+               and datetime.fromisoformat(p["created_at"]) >= cutoff][:25]
+    if not stories:
+        raise RuntimeError("no news posts from today to make a Reel from")
+    listing = "\n".join(f"{n}. [{p['tag']}] {p['headline']}" for n, p in enumerate(stories, 1))
+    songs = trending_songs()
+    options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
+                              f"{fun.today_context()}\n\nToday's stories:\n{listing}\n\nGive your top 3 picks."
+                              + songs_prompt(songs),
+                              options_schema(NEWS_OPTION, "Top 3 picks, best first"),
+                              CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
+    for opt in options:
+        if not 1 <= opt["pick"] <= len(stories):
+            continue
+        story = stories[opt["pick"] - 1]
+        item = {"link": story["source_url"], "source": story["source"], "title": story["headline"]}
+        print(f"  news reel: {story['headline']}")
+        status.step(f"Collecting photos: {story['headline'][:70]}", 3)
+        photos = news_photos(item, opt)
+        if len(photos) >= 2:
+            break
+        print(f"  only {len(photos)} usable photo(s): trying the next story")
+    else:
+        raise RuntimeError("no story had 2+ good photos")
+    cover, out, entry = finish_news_reel(item, opt, photos, songs, tmp)
+    state["reel_news_used"] = (used + [story["id"]])[-60:]
+    save_reel(feed, state, cover, out, f"reel_news-{today}", {**entry, "headline": story["headline"]})
+
+
+def news_photos(item: dict, opt: dict) -> list[tuple]:
+    """Story photos checked like carousel photos, each with a short story line: [(img, credit, text, whole)]."""
+    import carousel
+    picked, _ = carousel.collect(item, {"headline": item["title"], "photo_query": opt["photo_query"],
+                                        "wiki_title": opt["wiki_title"]}, [], want=4, max_words=14)
+    return [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
+
+
+def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str,
+                     article: str | None = None) -> tuple[Image.Image, str, dict]:
+    """Render + proofread a news Reel. Returns (cover, mp4 path, feed fields)."""
+    import carousel
+    import generate as g
+    import proofread
+    import status
+    status.step("Making the video + proofreading", 5)
+    opt["caption"] = unescape(opt["caption"])
+    roman_only(opt, ["caption", "pin_comment", "end_text"])
+    picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
+    images = [(img, whole) for img, _, _, whole in photos]
+    data = {"post": opt, "slides": [{"n": i, "credit": c, "text": t} for i, (_, c, t, _) in enumerate(photos)]}
+    out = os.path.join(tmp, "reel.mp4")
+
+    def render(d):
+        return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
+                         d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out)
+
+    def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
+        keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
+        return {**d, "slides": keep} if 2 <= len(keep) < len(d["slides"]) else None
+
+    if article is None:
+        article = carousel.article_text(carousel.page_html(item["link"]))
+    caption_of = (lambda d: g.full_caption(d["post"], item)) if item["link"] else \
+        (lambda d: f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily updates.\n\n"
+                   + " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"]))
+    frames, data, proof = proofread.run(render, data, caption_of, article, drop=drop)
+    post = data["post"]
+    return frames[0], out, {
+        "headline": item["title"], "tag": "🎬 REEL · " + post["tag"],
+        "caption": g.limit_hashtags(caption_of(data)), "source": item["source"], "source_url": item["link"],
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
+
+
+# ---------------------------------------------------------------- ➕ Create: a Reel for the owner's topic
+
+TOPIC_STYLE = {"type": "object", "properties": {
+    "style": {"type": "string", "enum": ["news", "tag_friend", "meme"],
+              "description": "news: a news story or fact (photo slideshow); tag_friend: a 'Tag that friend' joke; "
+                             "meme: a setup + punchline meme"}},
+    "required": ["style"], "additionalProperties": False}
+
+
+def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
+    """A Reel for whatever the owner typed in ➕ Create: news -> photo slideshow, a funny idea ->
+    'Tag that friend' clip or meme. Returns (cover, mp4 path, feed fields)."""
+    import fun
+    import status
+    status.step("Choosing the Reel style", 2)
+    about = (f"{article.get('title', '')}. {article.get('description', '')}" if article else "") + (f" {text}" if text else "")
+    style = "news" if article else fun.claude_json(
+        "Decide what kind of Instagram Reel fits the page owner's request.", f"Request: {about.strip()}",
+        TOPIC_STYLE, CONFIG.get("membership_model", "sonnet"), purpose="reel style")["style"]
+    print(f"  Reel style: {style}")
+    status.step({"news": "News photo slideshow", "tag_friend": "Tag that friend clip",
+                 "meme": "Meme"}[style] + " Reel", 3)
+    if style != "news":
+        return build_joke_reel("reel_clip" if style == "tag_friend" else "reel_meme", state, tmp, topic=about.strip())
+    songs = trending_songs()
+    schema = {**NEWS_OPTION, "properties": {k: v for k, v in NEWS_OPTION["properties"].items() if k != "pick"},
+              "required": [k for k in NEWS_OPTION["required"] if k != "pick"]}
+    story = (f"Headline: {article['title']}\nSite: {article['site']}\n{article.get('description', '')}"
+             if article else f"The owner's news: {text}")
+    opt = fun.claude_json(NEWS_SYSTEM.split("From today's stories")[0] +
+                          "The owner sent ONE story: write the Reel for it.\n" +
+                          "Rules:" + NEWS_SYSTEM.split("Rules:")[1],
+                          f"{fun.today_context()}\n\n{story}" + songs_prompt(songs), schema,
+                          CONFIG.get("membership_model", "sonnet"), purpose="reel news script")
+    item = {"link": article["url"] if article else "", "source": article["site"] if article else "Your pick",
+            "title": (article or {}).get("title") or text[:120]}
+    status.step("Collecting photos", 4)
+    photos = news_photos(item, opt)
+    if len(photos) < 2:
+        raise RuntimeError(f"only {len(photos)} usable photo(s) found for this story")
+    return finish_news_reel(item, opt, photos, songs, tmp, article=None if article else text)
+
+
+# ---------------------------------------------------------------- 4. political satire + reality check (6 PM)
+
+def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], context: list[str],
+                facts: list[dict], punchline: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """1) the dig over a reaction clip (meme layout), 2) KYA HUA? plain context, 3) REALITY CHECK: recent
+    facts, each with its own source, 4) the punchline on yellow, 5) 'send this'. Each part stays long enough
+    to read. Returns frames to proofread: [hook, context, facts, punchline]."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    clip_w, clip_h = RW, int(RW * 9 / 16)
+    clip_y, text_bottom = 1000, 960
+    c_lines, c_fnt, c_lh = fit_lines("\n".join(claim), RIGHT - LEFT, 520, sizes=range(84, 44, -4))
+    c_imgs = line_images(c_lines, c_fnt, c_lh, "#111111", RED, highlights)
+    k_lines, k_fnt, k_lh = fit_lines("\n".join(context), RIGHT - LEFT, 760, sizes=range(64, 38, -2))
+    k_imgs = line_images(k_lines, k_fnt, k_lh, "#FFFFFF", YELLOW, highlights)
+    blocks = []
+    for f in facts:
+        lines, fnt, lh = fit_lines(f["fact"], RIGHT - LEFT - 70, 300, sizes=range(54, 34, -2))
+        nums = {norm(w) for line in lines for w in line if any(ch.isdigit() for ch in w)}
+        blocks.append((line_images(lines, fnt, lh, "#FFFFFF", YELLOW, highlights | nums), lh, printable(f["source"])[:60]))
+    p_lines, p_fnt, p_lh = fit_lines(punchline, RIGHT - LEFT, 700, sizes=range(96, 48, -4))
+    p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, highlights)
+    kya = pill("KYA HUA?", font("Anton-Regular.ttf", 84), "#FFFFFF", "#111111", pad=(36, 12))
+    head = pill("REALITY CHECK", font("Anton-Regular.ttf", 92), YELLOW, "#111111", pad=(40, 14))
+    cta = pill("SEND THIS TO THAT ONE FRIEND", font("Poppins-Bold.ttf", 40), RED, "#FFFFFF", pad=(30, 16), arrow=True)
+    src_f = font("Poppins-SemiBold.ttf", 26)
+    logo = logo_img()
+
+    def secs(text: str) -> float:          # time to read comfortably (~3.5 words/s + a short hold)
+        return max(2.0, len(text.split()) / 3.5 + 0.9)
+    t_ctx = clip_dur
+    d_ctx = 0.5 + secs(" ".join(context))
+    t_facts = t_ctx + d_ctx
+    per = [0.4 + secs(f["fact"]) for f in facts]
+    t_punch = t_facts + 0.4 + sum(per)
+    d_punch = 0.4 + secs(punchline)
+    total = t_punch + d_punch + 2.0
+    enc, checks, frame = Encoder(out_mp4), [], None
+    marks = [t_ctx - 0.2, t_facts - 0.2, t_punch - 0.2, t_punch + d_punch - 0.2]
+    shots = clip_frames(clip, start, clip_dur, clip_w, clip_h)
+    for i in range(int(total * FPS)):
+        t = i / FPS
+        if t < t_ctx:                                   # 1) the dig over the clip
+            shot = next(shots, None)
+            frame = Image.new("RGBA", (RW, RH), "#FFFFFF")
+            if logo:
+                frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+            y0 = text_bottom - len(c_imgs) * c_lh
+            for j, img in enumerate(c_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * c_lh, (t - 0.2 - j * 0.3) / 0.3)
+            if shot is not None:
+                frame.paste(shot, (0, clip_y))
+            handle_tag(frame, clip_y + clip_h + 70, fill="#111111", stroke=0)
+        elif t < t_facts:                               # 2) KYA HUA?
+            lt = t - t_ctx
+            frame = Image.new("RGBA", (RW, RH), "#1b1b1b")
+            if logo:
+                frame.alpha_composite(logo, (60, 150))
+            k = ease_out_back(lt / 0.4)
+            frame.alpha_composite(kya, ((RW - kya.width) // 2, int(330 - 160 * (1 - k))))
+            y0 = 330 + kya.height + 80
+            for j, img in enumerate(k_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * k_lh, (lt - 0.3 - j * 0.15) / 0.3)
+            handle_tag(frame, 1730)
+        elif t < t_punch:                               # 3) REALITY CHECK, one fact at a time
+            lt = t - t_facts
+            frame = Image.new("RGBA", (RW, RH), "#111111")
+            if logo:
+                frame.alpha_composite(logo, (60, 150))
+            k = ease_out_back(lt / 0.4)
+            frame.alpha_composite(head, ((RW - head.width) // 2, int(300 - 200 * (1 - k))))
+            y = 300 + head.height + 70
+            d = ImageDraw.Draw(frame)
+            at = 0.4
+            for (imgs, lh, src), dur in zip(blocks, per):
+                p = (lt - at) / 0.3
+                if p > 0:
+                    d.ellipse((LEFT, y + lh // 2 - 14, LEFT + 28, y + lh // 2 + 14), fill=YELLOW)
+                for n, img in enumerate(imgs):
+                    paste_pop(frame, img, LEFT + 60, y + n * lh, p)
+                y += len(imgs) * lh + 8
+                if p > 0.5:
+                    d.text((LEFT + 60, y), f"Source: {src}", font=src_f, fill="#9a9a9a")
+                y += 70
+                at += dur
+            handle_tag(frame, 1730)
+        else:                                           # 4) punchline, 5) send this
+            lt = t - t_punch
+            frame = Image.new("RGBA", (RW, RH), YELLOW)
+            if logo:
+                frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+            y0 = (RH - len(p_imgs) * p_lh) // 2 - 120
+            for j, img in enumerate(p_imgs):
+                paste_pop(frame, img, LEFT, y0 + j * p_lh, (lt - j * 0.15) / 0.3)
+            k = ease_out((lt - d_punch) / 0.4)
+            if k > 0:
+                frame.alpha_composite(cta, ((RW - cta.width) // 2, int(y0 + len(p_imgs) * p_lh + 90 + 100 * (1 - k))))
+            handle_tag(frame, 1730, fill="#111111", stroke=0)
+        if len(checks) < len(marks) and t >= marks[len(checks)]:
+            checks.append(frame.convert("RGB"))
+        enc.add(frame)
+    enc.close()
+    while len(checks) < 4:
+        checks.append(frame.convert("RGB"))
+    return checks
+
+
+POLITICS_TARGETS = "Congress, AAP, the Left parties (CPI, CPI-M) and the Cockroach Janta Party (CJP)"
+POLITICS_SEARCHES = ["Congress party", "Rahul Gandhi", "AAP Kejriwal", "CPI(M)", "Cockroach Janta Party"]
+
+POLITICS_OPTION = {"type": "object", "properties": {
+    "based_on": {"type": "string", "description": "The party and its action this joke is about"},
+    "party": {"type": "string"},
+    "claim": {"type": "array", "items": {"type": "string"}, "description":
+              "The hook over the clip: 1-3 short lines (max 18 words total), a funny dig at what they did, e.g. "
+              "[\"Congress ka formula:\", \"Jeeto toh janta ki jeet, haaro toh system ki galti\"]. No emojis."},
+    "context": {"type": "array", "items": {"type": "string"}, "description":
+                "'KYA HUA?': 2 short lines (max 28 words total) so a stranger understands: who (full name + role on "
+                "first mention, e.g. 'Uttarakhand CM Pushkar Singh Dhami'), what they did, when ('is hafte', 'kal'), "
+                "and explain every term in brackets (e.g. 'SIR (voter list ki jaanch)'). Natural Hinglish: "
+                "'X ne kaha', 'X ke mutabik', never 'X ke as per'. No emojis."},
+    "facts": {"type": "array", "description": "REALITY CHECK: 2 recent facts (2023-2026, with month/year) that PROVE "
+              "them wrong by CONTRAST, so the hypocrisy is obvious. E.g. if they blame the EC/EVMs after losing, show "
+              "elections THEY WON under the same EC/EVMs without complaining ('May 2023 Karnataka: Congress ne 135/224 "
+              "jeeti, tab EVM theek tha'). Results of only one side prove nothing. NEVER repeat their own statements, "
+              "slogans or accusations as facts.",
+              "items": {"type": "object", "properties": {
+                  "fact": {"type": "string", "description": "Max 14 words, Hinglish, with month/year, e.g. "
+                           "'Nov 2025 Bihar chunav: NDA ne 243 mein se 202 seat jeeti'"},
+                  "source": {"type": "string", "description": "Where it is reported: the article's site, or e.g. "
+                             "'Election Commission' for official results"}},
+                  "required": ["fact", "source"], "additionalProperties": False}},
+    "punchline": {"type": "string", "description": "The big funny closing line, max 14 words, e.g. "
+                  "'Jeet pe EVM mahaan, haar pe EVM shaitaan'. No emojis."},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
+    "clip_search": {"type": "array", "items": {"type": "string"},
+                    "description": "3 searches for a REACTION stock clip (laughing, facepalm, shocked, eye roll...)"},
+    "clip_wanted": {"type": "string"},
+    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
+    "songs": SONGS},
+    "required": ["based_on", "party", "claim", "context", "facts", "punchline", "highlight", "clip_search",
+                 "clip_wanted", "caption", "pin_comment", "hashtags", "songs"], "additionalProperties": False}
+
+POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
+(English letters only, never Devanagari). The page is pro right-wing (BJP, NDA) and mocks the opposition: \
+{targets}. Structure: a sharp funny dig (hook) -> KYA HUA? (plain context so ANYONE gets it without reading the \
+news) -> REALITY CHECK (recent facts with month/year and a source that prove them wrong by CONTRAST, e.g. their \
+own wins under the same system they now blame; never their own lines, never only one side's results) -> a big \
+funny punchline. Keep it tight: the whole Reel is read in ~25 seconds. Make it something \
+people SEND to friends.
+Make it instantly clear: name people with their role, explain every term, say when it happened. Tie it to a \
+running joke young Indians already know (blaming EVMs after losing, "Sheesh Mahal", free-everything promises, \
+foreign trips before results, U-turns) and use RECENT examples (2024-2026).
+Hard rules: real facts only, from the articles given or certain, widely reported public record (election results, \
+official data) with the right source; quotes only if an article has them; attribute claims ("X ne kaha", \
+"X ke mutabik"). Mock their politics and actions only: never religion, caste, region, community, family, looks \
+or health; no slurs, no abuse, no calls to violence; nothing that embarrasses the BJP.
+Caption: 2-4 short Hinglish lines with the context in one line, 1-3 emojis, last line makes people comment or send it."""
+
+# Official results (Election Commission of India) for REALITY CHECK contrasts: the opposition also wins under the
+# same EC/EVMs. Update when new big results come in.
+ELECTION_RECORD = """Recent official results (Election Commission of India):
+- Lok Sabha, Jun 2024: NDA 293 (BJP 240); INDIA bloc about 234 (Congress 99). Opposition did not question the EC/EVMs then.
+- Karnataka, May 2023: Congress 135/224 (won).  - Telangana, Dec 2023: Congress 64/119 (won).
+- Himachal Pradesh, Dec 2022: Congress 40/68 (won).  - Punjab, Mar 2022: AAP 92/117 (won).
+- Jharkhand, Nov 2024: JMM-Congress alliance 56/81 (won).  - Jammu & Kashmir, Oct 2024: NC-Congress 48/90 (won).
+- Haryana, Oct 2024: BJP 48/90, Congress 37.  - Maharashtra, Nov 2024: BJP-led Mahayuti 230/288.
+- Delhi, Feb 2025: BJP 48/70, AAP 22; Arvind Kejriwal lost his New Delhi seat."""
+
+SATIRE_JUDGE = ("You are a 22-year-old Indian on Instagram who did NOT read today's news. Rate each political satire "
+                "Reel 1-10 for: understandable (from the Reel alone you know who did what and why it's funny, and the "
+                "reality check really proves them wrong), funny (would you send it to your group), fresh (not a tired "
+                "old line). Be strict.")
+
+
+def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🎬 6 PM: a dig at the opposition's latest action, the context, a REALITY CHECK with recent sourced facts
+    and a punchline."""
+    from datetime import datetime, timedelta, timezone
+    import carousel
+    import create_post
+    import fun
+    import generate as g
+    import proofread
+    import status
+    status.step("Finding the opposition's latest news", 2)
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    stories = [{"title": p["headline"], "url": p["source_url"], "site": p["source"]} for p in feed
+               if p.get("kind") == "news" and p.get("source_url") and "POLITIC" in p.get("tag", "").upper()
+               and datetime.fromisoformat(p["created_at"]) >= cutoff]
+    for q in POLITICS_SEARCHES:
+        stories += [a for a in create_post.bing_articles(q, limit=5) if a.get("title")]
+    used = set(state.get("reel_politics_used", []))
+    stories = [s for s in {s["url"]: s for s in stories}.values() if s["url"] not in used][:40]
+    if not stories:
+        raise RuntimeError("no opposition news found today")
+    listing = "\n".join(f"{n}. ({s['site']}) {s['title']}" for n, s in enumerate(stories, 1))
+    picks = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
+                            f"{fun.today_context()}\n\nStories:\n{listing}\n\nRank the 3 best stories about "
+                            f"{POLITICS_TARGETS} for a funny reality-check Reel. Prefer BIG stories most young Indians "
+                            f"already know. Empty if none.",
+                            {"type": "object", "properties": {"picks": {"type": "array", "items": {"type": "integer"}}},
+                             "required": ["picks"], "additionalProperties": False},
+                            CONFIG.get("membership_model", "sonnet"), purpose="satire pick")["picks"]
+    picks = [n for n in picks if 1 <= n <= len(stories)][:3]
+    if not picks:
+        raise RuntimeError("no story about the opposition today")
+    songs = trending_songs()
+    best = None
+    for n in picks:   # the Reel must pass the judge; else try the next story
+        story = stories[n - 1]
+        article = carousel.article_text(carousel.page_html(story["url"])) or story["title"]
+        # Background: related recent coverage, so the Reel has real context and recent examples.
+        related = [a for a in create_post.bing_articles(story["title"][:90], limit=6) if a["url"] != story["url"]][:3]
+        background = []
+        for a in related:
+            text = carousel.article_text(carousel.page_html(a["url"]), limit=2500)
+            background.append(f"({a['site']}) {a['title']}\n{text}" if text else f"({a['site']}) {a['title']}")
+        sources = f"MAIN ({story['site']}): {story['title']}\n{article[:5000]}\n\nRELATED:\n" + "\n\n".join(background)
+        status.step(f"Writing 3 Reels: {story['title'][:60]}", 3)
+        options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
+                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\n{ELECTION_RECORD}\n\n"
+                                  "Write exactly 3 different Reels about the MAIN story." + songs_prompt(songs),
+                                  options_schema(POLITICS_OPTION, "Exactly 3 different Reels"),
+                                  CONFIG.get("membership_model", "sonnet"), purpose="satire writing")["options"][:3]
+        for o in options:
+            o["caption"] = unescape(o["caption"])
+        try:
+            best = fun.judge_best(options, lambda o: " ".join(o["claim"]) + " | KYA HUA: " + " ".join(o["context"])
+                                  + " | REALITY CHECK: " + " / ".join(f["fact"] for f in o["facts"]) + " | " + o["punchline"],
+                                  CONFIG.get("membership_model", "sonnet"), judge_system=SATIRE_JUDGE)
+            break
+        except fun.NoGoodJoke:
+            print(f"  Reels for '{story['title'][:50]}' weren't clear/funny enough: trying the next story")
+    if best is None:
+        raise RuntimeError("the Reels for today's opposition stories weren't clear or funny enough")
+    roman_only(best, ["caption", "pin_comment", "punchline"])
+    picked_songs = checked_songs(best.pop("songs", []), songs)
+    best["facts"] = best["facts"][:2]
+    cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
+    clip, secs = download_clip(cid, tmp)
+    out = os.path.join(tmp, "reel.mp4")
+    item = {"link": story["url"], "source": story["site"], "title": story["title"]}
+
+    def render(d):   # the dig over the clip stays until it's read (4.5-6 s); later parts time themselves
+        clip_dur = min(max(4.5, read_secs(" ".join(d["post"]["claim"]))), 6.0, secs - 0.2)
+        start = max(0.0, secs - clip_dur - 0.2)
+        return satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
+                           d["post"]["punchline"], d["post"]["highlight"], out)
+    status.step("Making the video + fact-checking", 5)
+    frames, data, proof = proofread.run(
+        render,
+        {"post": best}, lambda d: g.full_caption(d["post"], item),
+        sources + "\n\n" + ELECTION_RECORD + "\n\n(Facts may also come from certain, widely reported public record "
+        "such as official election results, if the source shown says so.)")
+    post = data["post"]
+    state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
+    state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
+    save_reel(feed, state, frames[0], out, f"reel_politics-{today}", {
+        "headline": printable(" ".join(post["claim"]))[:140], "tag": "🎬 REEL · REALITY CHECK",
+        "caption": g.limit_hashtags(g.full_caption(post, item)), "source": story["site"], "source_url": story["url"],
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+
+
+# ---------------------------------------------------------------- 5. 🙏 Bhagavad Gita Reel (📦 Ready, every night)
+
+SAFFRON = "#FF9933"
+GITA_SEARCHES = ["Krishna Arjuna chariot painting", "Gita Upadesh painting", "Krishna Arjuna miniature painting",
+                 "Bhagavad Gita illustration Krishna Arjuna"]
+PAINTING_WORDS = ("painting", "miniature", "upadesh", "illustration", "school", "museum", "gita", "kurukshetra")
+FREE_LICENCES = ("public domain", "cc0", "no restrictions", "cc by")   # "cc by" also covers CC BY-SA (credit given)
+
+
+def commons_images(queries: list[str]) -> list[dict]:
+    """Free-licence images from Wikimedia Commons: [{url, title, credit, w, h}] (1080 px wide copies)."""
+    import re
+    import requests
+    ua = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}
+    out, seen = [], set()
+    for q in queries:
+        try:
+            r = requests.get("https://commons.wikimedia.org/w/api.php", headers=ua, timeout=25, params={
+                "action": "query", "format": "json", "generator": "search", "gsrsearch": q + " filetype:bitmap",
+                "gsrnamespace": 6, "gsrlimit": 15, "prop": "imageinfo", "iiprop": "url|size|extmetadata",
+                "iiurlwidth": 1080}).json()
+        except Exception as e:
+            print(f"  ! Commons search '{q}' failed: {e}")
+            continue
+        for page in (r.get("query", {}).get("pages") or {}).values():
+            ii = page["imageinfo"][0]
+            meta = ii.get("extmetadata", {})
+            lic = meta.get("LicenseShortName", {}).get("value", "")
+            if (page["title"] in seen or not lic.lower().startswith(FREE_LICENCES) or min(ii["width"], ii["height"]) < 700
+                    or ii["width"] > 2.1 * ii["height"] or "3d" in page["title"].lower()):   # no stereo/panorama pairs
+                continue
+            seen.add(page["title"])
+            artist = re.sub(r"<[^>]+>|\s+", " ", meta.get("Artist", {}).get("value", "")).strip()
+            artist = "" if "unknown" in artist.lower() else artist[:40]
+            out.append({"url": ii.get("thumburl") or ii["url"], "title": page["title"][5:],
+                        "credit": ", ".join(x for x in (artist, lic, "Wikimedia Commons") if x),
+                        "w": ii["width"], "h": ii["height"]})
+    return out
+
+
+# 🎨 God pictures for the devotional and Gita Reels (owner, 11 Oct 2026): painted by free public image demos on
+# Hugging Face (no account, no billing) in a glowing storybook style, newest model first; one that fails is skipped
+# for the rest of the run. If all are busy or nothing looks right, the free Wikimedia Commons paintings below are
+# used as before. Without an account the demos allow only ~4-5 pictures a day per internet address (shared; each
+# GitHub run gets a fresh one), hence 2 tries per scene. Gods are drawn in a simple two-armed form (owner's choice:
+# the models get multi-armed forms wrong).
+IMAGE_MODELS = [("Z-Image", "https://tongyi-mai-z-image-turbo.hf.space/gradio_api/call/generate"),
+                ("FLUX.2", "https://black-forest-labs-flux-2-klein-9b.hf.space/gradio_api/call/generate"),
+                ("FLUX", "https://black-forest-labs-flux-1-schnell.hf.space/gradio_api/call/infer")]
+Z_SIZES = {(864, 1536): "1152x2048 ( 9:16 )", (1088, 1360): "1344x1728 ( 7:9 )"}   # Z-Image: fixed sizes, sharpest
+_MODELS_DOWN: set[str] = set()
+FLUX_STYLE = ("Highly detailed hand-drawn storybook illustration with fine ink linework and rich painterly colour, "
+              "cinematic warm golden glow against deep blue-black shadows (night, dusk or dawn as described), glowing "
+              "light sources such as a halo, diyas or moonlight, emotional, reverent Indian devotional art, sharp and "
+              "clean. Vertical composition: the figures large in the upper-middle of the picture, their heads well "
+              "below the top edge, plain dark sky in the top fifth and calm dark ground in the lower third, both "
+              "kept empty. ")
+FLUX_AVOID = " No text, no captions, no letters, no writing, no signature, no watermark."
+SCENE_HELP = ("English picture description for an AI painter, max 50 words. Keep it simple, the painter gets "
+              "confused by busy scenes: the deity and at most one person, one setting. The painter adds extra arms to gods, "
+              "so show only ONE of the deity's hands (raised in blessing, or resting on the person's head or shoulder) "
+              "with the other arm hidden in the saree or shawl, or show the deity from behind or from a distance; never "
+              "describe several arms or hands. Only the 1-2 most recognisable items, each named once (e.g. Krishna: blue "
+              "skin, peacock feather crown, flute; Hanuman: monkey face, golden mace on his shoulder; Maa Durga: red saree, "
+              "golden crown, her lion beside her; Maa Shailputri: white bull beside her, lotus in her one visible hand). "
+              "The deity must look clearly divine, never like an ordinary person: golden crown (or Hanuman's and "
+              "Ganesh's own look) and a soft golden halo or glow around them. Then the light and the mood. Fully "
+              "clothed, reverent, nothing scary.")
+
+
+def first_url(x) -> str:
+    """The first file URL in a demo's answer (a picture, or a gallery of them)."""
+    if isinstance(x, dict):
+        return x.get("url") or first_url(x.get("image")) if x.get("url") or x.get("image") else ""
+    if isinstance(x, list):
+        return next((u for u in map(first_url, x) if u), "")
+    return ""
+
+
+def demo_image(url: str, data: list) -> Image.Image:
+    """One picture from a Hugging Face demo's API. Raises if it's busy (queue full, GPU limit, timeout)."""
+    import io
+    import json
+    import requests
+    r = requests.post(url, json={"data": data}, timeout=60)
+    r.raise_for_status()
+    text = requests.get(f"{url}/{r.json()['event_id']}", timeout=240).text
+    event = ""
+    for line in text.splitlines():
+        if line.startswith("event:"):
+            event = line[6:].strip()
+        elif line.startswith("data:") and event == "complete" and first_url(json.loads(line[5:])):
+            img = Image.open(io.BytesIO(requests.get(first_url(json.loads(line[5:])), timeout=60).content))
+            img.load()
+            return img.convert("RGB")
+    raise RuntimeError(f"busy ({event or 'no answer'}: {text.strip()[-120:]})")
+
+
+def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> tuple[Image.Image, str]:
+    """One picture (default 9:16) from the best free model that works: (picture, model name)."""
+    for name, url in IMAGE_MODELS:
+        if name in _MODELS_DOWN:
+            continue
+        data = {"Z-Image": [prompt, Z_SIZES.get((w, h), "864x1536 ( 9:16 )"), seed, 8, 3.0, False, []],
+                "FLUX.2": [prompt, [], "Distilled (4 steps)", seed, False, w, h, 4, 1.0, False],
+                "FLUX": [prompt, seed, False, w, h, 4]}[name]
+        try:
+            return demo_image(url, data), name
+        except Exception as e:
+            print(f"  ! {name}: {str(e)[:160]}")
+            _MODELS_DOWN.add(name)
+    raise RuntimeError("free image AI busy")
+
+
+def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style: str = FLUX_STYLE,
+                size: tuple[int, int] = (864, 1536)) -> list[tuple[Image.Image, str, float]]:
+    """Up to 2 pictures (one per scene), each painted `tries` times; the AI looks at them and keeps the best
+    correct, respectful one per scene. Returns [(image, credit, focus_x)]; raises if the AI is busy or none fits."""
+    import random
+    import fun
+    folder = os.path.join(tmp, "flux")
+    os.makedirs(folder, exist_ok=True)
+    made, fails = [], 0
+    # Scenes take turns (1, 2, 1, 2): only ~3 pictures a run are allowed, so each scene gets a try.
+    for k in range(1, tries + 1):
+        for n, scene in enumerate(scenes[:2], 1):
+            try:
+                img, model = flux_image(style + scene.strip() + FLUX_AVOID, random.randint(1, 999999), *size)
+            except Exception:
+                fails += 1
+                if not made and fails >= 2:
+                    raise RuntimeError("free image AI busy")
+                continue
+            name = f"scene{n}_{k}.jpg"
+            thumb = img.copy()
+            thumb.thumbnail((576, 1024))
+            thumb.save(os.path.join(folder, name), quality=85)
+            made.append((name, img, model))
+    if not made:
+        raise RuntimeError("free image AI busy")
+    schema = {"type": "object", "properties": {"picks": {"type": "array", "description": "At most one per scene, scene 1 first",
+              "items": {"type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
+              "description": "Horizontal position (0 = left, 1 = right) of the main figure"}, "face_y": {"type": "number",
+              "description": "Vertical position (0 = top, 1 = bottom) of the main face(s)"}},
+              "required": ["file", "focus", "face_y"], "additionalProperties": False}},
+              "reason": {"type": "string", "description": "One short line: what you rejected and why"}},
+              "required": ["picks", "reason"], "additionalProperties": False}
+    listing = "\n".join(f"Scene {n}: {sc.strip()}" for n, sc in enumerate(scenes[:2], 1))
+    result = fun.claude_json(
+        "You check AI-painted pictures for a respectful Hindu devotional Instagram Reel.",
+        f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _, _ in made)} (sceneN_... = scene N). "
+        "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none: "
+        "the best is a detailed, sharp, emotional storybook illustration with a warm golden glow. "
+        "Gods are drawn on purpose in a simple form with one or two arms visible, even those who traditionally have "
+        "more: that is correct. Reject only real problems: the deity doesn't look like their well-known form (wrong "
+        "skin colour, wrong animal) or looks like an ordinary person (no crown, halo or divine glow), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
+        "merged with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, any text, "
+        "letters, signature or watermark, a messy or ugly picture. Small differences from the description are fine "
+        "(the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
+        schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="flux pick")
+    print(f"  picture check: {result['reason'][:200]}")
+    picks = result["picks"]
+    clamp = lambda v: min(1.0, max(0.0, float(v)))
+    chosen = [(img, f"AI illustration ({model})", (clamp(p["focus"]), clamp(p["face_y"])))
+              for p in picks for name, img, model in made if name == p["file"]][:2]
+    if not chosen:
+        raise RuntimeError("none of the AI pictures looked right")
+    print(f"  AI pictures: {len(made)} painted ({', '.join(sorted({m for _, _, m in made}))}), kept "
+          + ", ".join(p["file"] for p in picks[:2]))
+    return chosen
+
+
+def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
+    return pick_paintings(GITA_SEARCHES, "Lord Krishna with Arjuna (chariot, Kurukshetra battlefield, Gita Upadesh)",
+                          "gita_images_used", state, tmp)
+
+
+def pick_paintings(queries: list[str], subject: str, used_key: str, state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
+    """The AI looks at free Wikimedia Commons paintings of the subject and picks the 2 most beautiful,
+    on-topic ones (not used recently). Returns [(image, credit, focus_x)]."""
+    import generate as g
+    import fun
+    used = state.get(used_key, [])
+    found = commons_images(queries)
+    cands = [c for c in found if c["title"] not in used] or found
+    # paintings first (photos of statues/buildings rarely look good); only a few downloads (Wikimedia rate limit)
+    cands.sort(key=lambda c: -sum(w in c["title"].lower() for w in PAINTING_WORDS))
+    folder = os.path.join(tmp, "gita")
+    os.makedirs(folder, exist_ok=True)
+    import io
+    import time
+    import requests
+    ua = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}   # Wikimedia blocks anonymous bursts
+    loaded = []
+    for c in cands[:9]:
+        try:
+            time.sleep(2.0)
+            r = requests.get(c["url"], headers=ua, timeout=30)
+            if r.status_code == 429:   # Wikimedia: too many requests, wait and try once more
+                time.sleep(6)
+                r = requests.get(c["url"], headers=ua, timeout=30)
+            r.raise_for_status()
+            img = Image.open(io.BytesIO(r.content))
+            img.load()
+        except Exception as e:
+            print(f"  ! Commons image skipped: {str(e)[:80]}")
+            continue
+        thumb = img.copy()
+        thumb.thumbnail((512, 512))
+        name = f"img{len(loaded) + 1}.jpg"
+        thumb.convert("RGB").save(os.path.join(folder, name), quality=80)
+        loaded.append((name, img, c))
+    if not loaded:
+        raise RuntimeError(f"no free images of {subject[:40]} found on Wikimedia Commons")
+    schema = {"type": "object", "properties": {"best": {"type": "array", "description": "Best first (max 2)", "items": {
+              "type": "object", "properties": {"file": {"type": "string"}, "focus": {"type": "number",
+              "description": "Horizontal position (0 = left, 1 = right) of the main figure(s), to centre a tall crop"}},
+              "required": ["file", "focus"], "additionalProperties": False}}}, "required": ["best"], "additionalProperties": False}
+    best = fun.claude_json("You choose background images for a respectful devotional Instagram Reel.",
+                           f"Candidate images: {', '.join(n for n, _, _ in loaded)}. Open each with the Read tool. "
+                           f"Pick the 2 most beautiful, striking images that clearly show {subject}. "
+                           "ONLY paintings or illustrations: reject all "
+                           "photographs (statues, temples, buildings, people, events), book covers, manuscript pages with "
+                           "writing, text-heavy, blurry, side-by-side duplicated (stereo) or collage images. Colourful "
+                           "paintings with large figures are best. Empty list if none fits.",
+                           schema, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="painting pick")["best"]
+    chosen = [(img, c, min(1.0, max(0.0, float(b["focus"])))) for b in best for name, img, c in loaded
+              if name == b["file"]][:2]
+    if not chosen:
+        raise RuntimeError(f"no suitable image of {subject[:40]} among the free ones")
+    state[used_key] = (used + [c["title"] for _, c, _ in chosen])[-30:]
+    print("  paintings: " + " | ".join(f"{c['title'][:45]} (focus {f:.2f})" for _, c, f in chosen))
+    return [(img.convert("RGB"), c["credit"], f) for img, c, f in chosen]
+
+
+GOLD, CREAM = "#F5C26B", "#FFF4DD"
+
+
+def vfont(name: str, size: int, weight: str = "") -> ImageFont.FreeTypeFont:
+    """Variable Google fonts (Playfair Display, Cinzel) at a named weight."""
+    from generate import FONTS
+    f = ImageFont.truetype(str(FONTS / name), size)
+    if weight:
+        try:
+            f.set_variation_by_name(weight)
+        except Exception:
+            pass
+    return f
+
+
+def glow_line(text: str, fnt, fill: str, glow: int = 16) -> Image.Image:
+    """One centred text line with a soft dark glow behind it (no hard outline)."""
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    l, t, r, b = probe.textbbox((0, 0), text, font=fnt)
+    pad = glow * 3
+    img = Image.new("RGBA", (r - l + 2 * pad, b - t + 2 * pad), (0, 0, 0, 0))
+    shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).text((pad - l, pad - t), text, font=fnt, fill=(0, 0, 0, 235))
+    img.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(glow)))
+    ImageDraw.Draw(img).text((pad - l, pad - t), text, font=fnt, fill=fill)
+    return img
+
+
+def wrap_centre(text: str, fnt, max_w: int) -> list[str]:
+    probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    lines, cur = [], ""
+    for word in printable(text).split():
+        trial = (cur + " " + word).strip()
+        if cur and probe.textlength(trial, font=fnt) > max_w:
+            lines.append(cur)
+            cur = word
+        else:
+            cur = trial
+    if cur:
+        lines.append(cur)
+    if len(lines) > 1 and len(lines[-1].split()) == 1:   # no lone last word
+        prev = lines[-2].split()
+        lines[-2], lines[-1] = " ".join(prev[:-1]), prev[-1] + " " + lines[-1]
+    return lines
+
+
+def read_time(text: str) -> float:
+    """Seconds to read a line comfortably twice-ish (Hinglish ~3 words/s) + a calm hold."""
+    return max(2.4, len(text.split()) / 3.2 + 1.2)
+
+
+def faded(img: Image.Image, a: float) -> Image.Image:
+    if a >= 1:
+        return img
+    out = img.copy()
+    out.putalpha(out.getchannel("A").point(lambda v: int(v * max(0.0, a))))
+    return out
+
+
+def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f, target: float = 45.0):
+    """🙏 Gita series layout: one step at a time ({label, text, source}), centred in the dark lower part, each
+    held long enough to read (0.6 s + 0.25 s a word after its lines appear), then stretched or squeezed so the
+    Reel lasts about 45 s (owner, 11 Oct 2026). The last step stays while the 'send this' line comes in.
+    Returns (parts, divider, switch time, cta time, total) for gita_reel."""
+    gap, fade = 0.3, 0.5
+    blocks = []
+    for k, st in enumerate(steps):
+        fnt = big if k == 0 else body
+        blocks.append((lines_of(st["text"], fnt, CREAM), len(st["text"].split()), int(fnt.size * 1.32)))
+    fixed = 0.5 + sum(0.3 + len(ln) * gap for ln, _, _ in blocks) + fade * (len(steps) - 1) + 2.4
+    holds = [0.6 + 0.25 * w for _, w, _ in blocks]
+    k = max(0.75, min(1.5, (target - fixed) / sum(holds)))
+    parts, t, switch = [], 0.5, 0.0
+    for n, (st, (lines, _, lh), hold) in enumerate(zip(steps, blocks, holds)):
+        if n == switch_step:
+            switch = t - 0.2                                  # 2nd picture cross-fades in here
+        # Rows as (kind, image, height of its slot); images are placed by their centre in their slot.
+        rows = ([("label", glow_line(st["label"], label_f, GOLD), 64),
+                 ("rule", Image.new("RGBA", (180, 2), GOLD), 44)] if st.get("label") else []) + \
+               [("line", im, lh) for im in lines] + \
+               ([("source", glow_line(st["source"], vfont("Cinzel-Variable.ttf", 34, "SemiBold"), GOLD), 70)]
+                if st.get("source") else [])
+        y = 1230 - sum(r[2] for r in rows) // 2
+        items, li = [], 0
+        for kind, im, slot in rows:
+            at = t if kind in ("label", "rule") else t + 0.3 + li * gap
+            li += kind == "line"
+            items.append((y + slot // 2, im, at))
+            y += slot
+        end = t + 0.3 + len(lines) * gap + hold * k
+        parts.append((items, end))
+        t = end + fade
+    cta_at = parts[-1][1] - 0.6
+    total = cta_at + 2.6
+    parts[-1] = (parts[-1][0], total)                         # the question stays until the end
+    return parts, (0, -9.0, -9.0), switch or 99.0, cta_at, total
+
+
+def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: str, lesson: str,
+              real_life: str, highlight: list[str], out_mp4: str, labels: dict | None = None,
+              steps: list[dict] | None = None, switch_step: int = 3, handle_text: str = "") -> list[Image.Image]:
+    """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
+    golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
+    hook → Shri Krishna ka sandesh + lesson + verse → (2nd painting) Aaj ki seekh → send this. (No Sanskrit.)
+    images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread.
+    labels: other wording for the 🙏 6 AM devotional Reel: head, middle, source (line under the middle text,
+    '' for none), seekh, cta."""
+    lab = {"head": "GITA  GYAAN", "middle": "SHRI KRISHNA KA SANDESH", "source": f"—  Bhagavad Gita {verse}",
+           "seekh": "AAJ KI SEEKH", "cta": "Send this to someone who needs it", **(labels or {})}
+    import random
+
+    def graded(img: Image.Image, focus) -> Image.Image:
+        """focus = x (0-1) of the figures, or (x, y) for AI pictures: then the faces are placed just below the
+        heading (screen y ~620), whatever the picture's layout; uncovered space blends into dark."""
+        focus, face_y = focus if isinstance(focus, (tuple, list)) else (focus, None)
+        zmax = 1.12
+        cw, ch = int(RW * zmax), int(RH * zmax)
+        k = max(RW / img.width, RH / img.height) * zmax
+        big = img.resize((int(img.width * k) + 2, int(img.height * k) + 2), Image.LANCZOS)
+        x0 = int(min(max(0, big.width * focus - cw / 2), big.width - cw))
+        big = big.crop((x0, (big.height - ch) // 2, x0 + cw, (big.height - ch) // 2 + ch))
+        if img.width > img.height * 1.15:
+            # Wide painting: a full-screen crop would cut the figures off. Show more of it in the upper part
+            # of the screen, on a blurred, darkened copy of itself.
+            bh = int(1080 * zmax)
+            fg = img.resize((int(img.width * bh / img.height), bh), Image.LANCZOS)
+            fx = int(min(max(0, fg.width * focus - cw / 2), max(0, fg.width - cw)))
+            fg = fg.crop((fx, 0, fx + min(cw, fg.width), bh))
+            back = Image.blend(big.resize((cw // 12, ch // 12)).filter(ImageFilter.GaussianBlur(2)).resize((cw, ch)),
+                               Image.new("RGB", (cw, ch), "#000000"), 0.45)
+            back.paste(fg, ((cw - fg.width) // 2, int(70 * zmax)))
+            big = back
+        elif face_y is not None:
+            shift = int(min(0.25 * ch, max(-0.35 * ch, 620 * zmax - face_y * ch)))
+            moved = Image.new("RGB", big.size, "#05070c")
+            moved.paste(big, (0, shift))
+            big = moved
+        return Image.blend(big, Image.new("RGB", big.size, "#3a2000"), 0.18)    # warm golden grade
+
+    bases = [graded(img, focus) for img, _, focus in images]
+    credits = [c for _, c, _ in images]
+    # Overlay: soft dark edges + dark lower part where the text sits.
+    shade = Image.new("L", (RW, RH), 0)
+    ImageDraw.Draw(shade).ellipse((-RW * 0.35, -RH * 0.15, RW * 1.35, RH * 1.05), fill=255)
+    shade = shade.filter(ImageFilter.GaussianBlur(160)).point(lambda v: 255 - v)
+    grad = Image.new("L", (1, RH))
+    dark_from, dark_span = (0.42, 0.18) if steps else (0.33, 0.27)   # Gita series: more of the picture shows
+    for y in range(RH):
+        lower = 248 * min(1.0, max(0.0, (y - RH * dark_from) / (RH * dark_span)))   # text area: nearly black
+        top = 175 * max(0.0, 1 - y / 430)                                 # behind the logo + "GITA GYAAN"
+        grad.putpixel((0, y), int(max(lower, top)))
+    alpha = Image.composite(Image.new("L", (RW, RH), 255), shade, grad.resize((RW, RH)))
+    overlay = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    overlay.putalpha(alpha)
+
+    head_f = vfont("Cinzel-Variable.ttf", 58, "Bold")
+    while head_f.size > 34 and ImageDraw.Draw(Image.new("RGBA", (1, 1))).textlength(lab["head"], font=head_f) > RW - 560:
+        head_f = vfont("Cinzel-Variable.ttf", head_f.size - 4, "Bold")
+    head = glow_line(lab["head"], head_f, GOLD)
+    logo = logo_img(400, 96)   # KhabarBawaal logo, centred above the heading
+    body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
+    lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
+    small_gold = vfont("Cinzel-Variable.ttf", 40, "SemiBold")
+    hl = {norm(w) for phrase in highlight for w in phrase.split()}
+
+    def lines_of(text, fnt, color):
+        out = []
+        for ln in wrap_centre(text, fnt, RW - 200):
+            gold = any(norm(w) in hl for w in ln.split())
+            out.append(glow_line(ln, fnt, GOLD if gold else color))
+        return out
+
+    # Parts: (start, list of (y, image, appear_at)), plus fade-out time.
+    gap, pause = 0.45, 0.35
+    parts, t = [], 0.6
+    cta_y, handle_y = 1380, 1470
+    if steps:
+        parts, divider, switch, cta_at, total = step_parts(steps, switch_step, lines_of, body, lesson_f, small_gold)
+        cta_y, handle_y = 1580, 1660
+    else:
+        hook_l = lines_of(hook, body, CREAM)
+        y0 = 1330 - len(hook_l) * 50
+        items = [(y0 + i * int(body.size * 1.3), im, t + i * gap) for i, im in enumerate(hook_l)]
+        end = t + len(hook_l) * gap + read_time(hook)
+        parts.append((items, end))
+        t = end + 0.5 + pause
+        items, y = [], 1060
+        items.append((y, glow_line(lab["middle"], small_gold, GOLD), t)); y += 85
+        t2 = t + 0.8
+        y += 10
+        divider_y = y
+        y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
+        les = lines_of(lesson, lesson_f, CREAM)
+        for i, im in enumerate(les):
+            items.append((y, im, t2 + i * gap)); y += int(lesson_f.size * 1.32)
+        if lab["source"]:
+            items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
+                          t2 + len(les) * gap))
+        end = t2 + len(les) * gap + read_time(lesson)
+        parts.append((items, end))
+        divider = (divider_y, t2 - 0.2, end)
+        t = end + 0.5 + pause
+        switch = t - 0.2                                     # 2nd painting cross-fades in here
+        items, y = [], 1200
+        items.append((y, glow_line(lab["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
+        take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
+        for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
+            items.append((y, im, t + 0.8 + i * gap)); y += int(take_f.size * 1.3)
+        end = t + 0.8 + len(items) * gap + read_time(real_life)
+        parts.append((items, end))
+        cta_at = end + 0.3
+        total = cta_at + 3.0
+    cta = glow_line(lab["cta"], vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
+    handle = glow_line(handle_text or CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
+
+    random.seed(7)
+    dust = [(random.uniform(0, RW), random.uniform(300, 1700), random.uniform(-14, -40), random.choice((2, 3, 4)),
+             random.randint(70, 200)) for _ in range(46)]
+    enc, checks, frame = Encoder(out_mp4), [], None
+    check_at = [min(end, total) - 0.2 for _, end in parts] + [total - 0.1]
+    for i in range(int(total * FPS)):
+        t = i / FPS
+        n = 1 if len(bases) > 1 and t >= switch else 0
+        z = 1.0 + 0.10 * t / total                       # slow zoom in
+        b = bases[n]
+        cw, ch = int(RW * 1.12 / z), int(RH * 1.12 / z)
+        x0, y0 = (b.width - cw) // 2, (b.height - ch) // 2
+        bg = b.crop((x0, y0, x0 + cw, y0 + ch)).resize((RW, RH), Image.BILINEAR)
+        if n == 1 and t < switch + 1.0:                  # slow cross-fade
+            p = bases[0]
+            prev = p.crop((x0, y0, x0 + cw, y0 + ch)).resize((RW, RH), Image.BILINEAR)
+            bg = Image.blend(prev, bg, (t - switch) / 1.0)
+        frame = bg.convert("RGBA")
+        frame.alpha_composite(overlay)
+        d = ImageDraw.Draw(frame)
+        for x, y, v, r, a in dust:                       # golden dust drifting up
+            yy = (y + v * t) % 1500 + 250
+            d.ellipse((x - r, yy - r, x + r, yy + r), fill=(245, 194, 107, a))
+        if logo:
+            frame.alpha_composite(logo, ((RW - logo.width) // 2, 120))
+        frame.alpha_composite(head, ((RW - head.width) // 2, 285 - head.height // 2))
+        hy, hx = 285, (RW - head.width) // 2 + 6            # side lines just outside the heading text
+        d.line((max(60, hx - 150), hy, hx - 4, hy), fill=GOLD, width=2)
+        d.line((RW - hx + 4, hy, min(RW - 60, RW - hx + 150), hy), fill=GOLD, width=2)
+        start = 0.0
+        for items, end in parts:
+            if start - 0.1 <= t <= end + 0.5:
+                out_a = 1.0 if t <= end else 1 - (t - end) / 0.5
+                for y, im, at in items:
+                    a = min(1.0, max(0.0, (t - at) / 0.6)) * out_a
+                    if a > 0:
+                        frame.alpha_composite(faded(im, a), ((RW - im.width) // 2, int(y - im.height / 2)))
+            start = end + 0.5
+        dy, d0, d1 = divider
+        if d0 <= t <= d1 + 0.5:
+            a = min(1.0, (t - d0) / 0.6) * (1.0 if t <= d1 else 1 - (t - d1) / 0.5)
+            d.line((RW // 2 - 90, dy, RW // 2 + 90, dy), fill=(245, 194, 107, int(255 * a)), width=2)
+        if t >= cta_at:
+            a = min(1.0, (t - cta_at) / 0.7)
+            frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, cta_y - cta.height // 2))
+            frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, handle_y - handle.height // 2))
+        ImageDraw.Draw(frame).text((RW - 40, RH - 40), f"Image: {credits[n]}"[:80], font=font("Poppins-SemiBold.ttf", 20),
+                                   fill="#9a8f7a", anchor="rd")
+        if len(checks) < len(check_at) and t >= check_at[len(checks)]:
+            checks.append(frame.convert("RGB"))
+        enc.add(frame)
+    enc.close()
+    while len(checks) < 4:
+        checks.append(frame.convert("RGB"))
+    return checks
+
+
+# 🙏 "Gita Gyaan: roz ek shlok" (owner, 11 Oct 2026): one shlok a day in order from 1.1, ~30 s, explained step by step
+# like the owner's own Hindi series (gita-shorts): hook → kya ho raha hai → who says what → matlab → aaj ki seekh →
+# aaj ka sawaal. assets/gita_ref.json = that series' meaning/bhavarth for 1.1-2.30 (numbering as there: 1.21-22
+# together, chapter 1 has 46); from 2.31 the free open library vedicscriptures.github.io (same numbering for chapters
+# 2-18): Gita Press / Swami Tejomayananda / Swami Sivananda. Library down → the AI's own knowledge + proofreader.
+GITA_COUNTS = {2: 72, 3: 43, 4: 42, 5: 29, 6: 47, 7: 30, 8: 28, 9: 34, 10: 42, 11: 55, 12: 20, 13: 35, 14: 27, 15: 20,
+               16: 24, 17: 28, 18: 78}
+
+
+def gita_ref() -> dict:
+    return json.loads((Path(__file__).parent / "assets" / "gita_ref.json").read_text())
+
+
+def gita_library(verse: str) -> str:
+    """The shlok from the free open Bhagavad Gita library (no key): Sanskrit (shows who speaks), Hindi meanings
+    (Swami Tejomayananda; Swami Ramsukhdas, Gita Press, + the start of his explanation), English (Swami Sivananda).
+    '' if it can't be read."""
+    import re
+    import requests
+    ch, v = verse.split("-")[0].split(".")
+    try:
+        d = requests.get(f"https://vedicscriptures.github.io/slok/{ch}/{v}/", timeout=20).json()
+    except Exception as e:
+        print(f"  ! Gita library: {e}")
+        return ""
+    clean = lambda t: re.sub(r"\s+", " ", re.sub(r"।।\s*[\d.]+\s*।।", "", t or "")).strip()
+    parts = [("Sanskrit", d.get("slok")),
+             ("Hindi meaning (Swami Tejomayananda)", (d.get("tej") or {}).get("ht")),
+             ("Hindi meaning (Swami Ramsukhdas, Gita Press)", (d.get("rams") or {}).get("ht")),
+             ("Explanation (Swami Ramsukhdas), start", ((d.get("rams") or {}).get("hc") or "")[:700]),
+             ("English (Swami Sivananda)", (d.get("siva") or {}).get("et"))]
+    return "\n".join(f"{k}: {clean(t)}" for k, t in parts if clean(t))
+
+
+def gita_sequence() -> list[str]:
+    """All shloks in order: the reference series' own list, then the rest of chapter 2 and chapters 3-18."""
+    seq = list(gita_ref())
+    last_ch, last_v = (int(x) for x in seq[-1].split("-")[0].split("."))
+    for ch in range(last_ch, 19):
+        seq += [f"{ch}.{v}" for v in range(last_v + 1 if ch == last_ch else 1, GITA_COUNTS[ch] + 1)]
+    return seq
+
+
+GITA_OPTION = {"type": "object", "properties": {
+    "based_on": {"type": "string", "description": "One line: what happens in this shlok and today's lesson"},
+    "hook": {"type": "string", "description": "Curiosity hook, max 8 words, with a natural pause '...', e.g. "
+             "'Ek andha raja... aur ek sawaal'"},
+    "context": {"type": "string", "description": "'KYA HO RAHA HAI': max 18 words: where we are, who speaks to whom, "
+                "what just happened, e.g. 'Kurukshetra mein yudh shuru hone wala hai. Mahal mein Dhritarashtra poochte "
+                "hain:'"},
+    "speaker": {"type": "string", "description": "Who says this shlok, max 3 words, e.g. 'Dhritarashtra ne poocha', "
+                "'Sanjay ne bataya', 'Duryodhan ne kaha', 'Arjun ne kaha', 'Shri Krishna ne kaha'"},
+    "verse_text": {"type": "string", "description": "What the shlok says, in simple Hinglish, true to its meaning "
+                   "(not word-for-word), max 24 words"},
+    "matlab": {"type": "string", "description": "'MATLAB': what it really means, like a bhavarth: 2-3 short "
+               "sentences, max 20 words"},
+    "seekh": {"type": "string", "description": "'AAJ KI SEEKH' for life today, one line people want to save, max 12 words"},
+    "sawaal": {"type": "string", "description": "'AAJ KA SAWAAL': a question to the viewer, max 10 words, e.g. "
+               "'Aapke jeevan mein mere-paraye kaun hain?'"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
+    "caption": {"type": "string", "description": "2-4 short Hinglish lines about this shlok, 1-2 emojis (🙏 fits), "
+                "last line asks people to comment or send it"},
+    "pin_comment": {"type": "string"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #bhagavadgita and #reelsindia"},
+    "songs": SONGS,
+    "scene_gita": {"type": "string", "description": "Picture 1 (behind the hook, context, shlok and matlab): the exact "
+                   "moment of this shlok in the Mahabharata, who speaks to whom and where (e.g. blind king Dhritarashtra "
+                   "on his throne in a dark palace, asking Sanjaya). " + SCENE_HELP},
+    "scene_life": {"type": "string", "description": "Picture 2 (behind aaj ki seekh and aaj ka sawaal): a young Indian of "
+                   "today living this lesson, Krishna gently beside them. " + SCENE_HELP}},
+    "required": ["based_on", "hook", "context", "speaker", "verse_text", "matlab", "seekh", "sawaal", "highlight",
+                 "caption", "pin_comment", "hashtags", "songs", "scene_gita", "scene_life"], "additionalProperties": False}
+
+GITA_SYSTEM = """You write today's Reel in the daily "Gita Gyaan: roz ek shlok" series for {page}, an Indian Instagram page for 18-34s (Hinglish in English letters only, never Devanagari). The series goes through the Bhagavad Gita in order, one shlok a day, so someone who missed the earlier days must still understand it: say where we are, who speaks to whom and what is happening. Simple, warm, spoken Hinglish, like explaining to a friend; short lines, natural pauses ("..."). The shlok text must keep the shlok's true meaning (not a word-for-word translation). The whole Reel is read in about 45 seconds, so keep every part within its word limit. Reverent: never joke about Krishna or the Gita, no politics, nothing against any religion or community."""
+
+GITA_JUDGE = ("You are a 22-year-old Indian who loves Gita Reels on Instagram. Rate each Reel 1-10 for: "
+              "understandable (the lesson is clear from the Reel alone), funny (here: how beautiful and moving the "
+              "lines are, would you save it or send it to someone), fresh (not a tired motivational line). Be strict.")
+
+
+def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
+    """🙏 Today's shlok of the "roz ek shlok" series for the 📦 Ready tab. Returns (cover, mp4 path, feed fields)."""
+    import fun
+    import generate as g
+    import proofread
+    import status
+    seq = gita_sequence()
+    i = state.get("gita_next", 0) % len(seq)
+    verse, nxt = seq[i], seq[(i + 1) % len(seq)]
+    ref = gita_ref().get(verse)
+    ref_text = "\n".join(f"{k}: {v}" for k, v in ref.items() if v) if ref else gita_library(verse)
+    source = ("the owner's own Hindi series" if ref else
+              "the open Bhagavad Gita library (Gita Press / Swami Tejomayananda / Swami Sivananda)")
+    status.step(f"Writing shlok {verse}", 2)
+    songs = trending_songs()
+    options = fun.claude_json(GITA_SYSTEM.format(page=CONFIG["page_name"]),
+                              f"Today's shlok: Bhagavad Gita {verse}. Tomorrow: {nxt}.\n"
+                              + (f"Reference from {source} (follow its meaning and context; write it in simple "
+                                 f"Hinglish, English letters only):\n{ref_text}\n" if ref_text else
+                                 "Use this shlok's well-known meaning; who speaks it and the situation must be right.\n")
+                              + "\nWrite exactly 3 different Reels for this same shlok." + songs_prompt(songs),
+                              options_schema(GITA_OPTION, "Exactly 3 different Reels"),
+                              CONFIG.get("membership_model", "sonnet"), purpose="gita writing")["options"][:3]
+    for o in options:
+        o["caption"] = unescape(o["caption"])
+    texts = ("hook", "context", "speaker", "verse_text", "matlab", "seekh", "sawaal")
+    best = fun.judge_best(options, lambda o: " | ".join(o[k] for k in texts),
+                          CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE)
+    roman_only(best, ["caption", "pin_comment", *texts])
+    for k in texts:
+        best[k] = plain_letters(best[k])
+    picked_songs = checked_songs(best.pop("songs", []), songs)
+    scenes = [best.pop("scene_gita"), best.pop("scene_life")]   # kept out of the proofreader's text
+    status.step("Painting the scenes with free AI", 3)
+    try:
+        images = flux_images(scenes, f"the Bhagavad Gita {verse} scene (Mahabharata characters; Krishna where shown)", tmp)
+    except Exception as e:
+        print(f"  {e}: using free paintings instead")
+        status.step("AI pictures not usable: finding Krishna-Arjuna paintings (free licence)", 3)
+        images = pick_gita_images(state, tmp)
+    out = os.path.join(tmp, "reel.mp4")
+    status.step("Making the video + proofreading", 5)
+    labels = {"head": f"GITA GYAAN  {verse}", "cta": "Send this to someone who needs it"}
+
+    def steps_of(p):
+        return [{"text": p["hook"]},
+                {"label": "KYA HO RAHA HAI", "text": p["context"]},
+                {"label": screen_label(p["speaker"]).upper(), "text": p["verse_text"],
+                 "source": f"—  Bhagavad Gita {verse}"},
+                {"label": "MATLAB", "text": p["matlab"]},
+                {"label": "AAJ KI SEEKH", "text": p["seekh"]},
+                {"label": "AAJ KA SAWAAL", "text": p["sawaal"]}]
+
+    def caption_of(d):
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
+        return (f"{d['post']['caption'].strip()}\n\n📖 Roz ek shlok: Bhagavad Gita {verse} · Kal: shlok {nxt}\n"
+                f"Follow {CONFIG['handle']} for daily Gita Gyaan 🙏\n\n{tags}")
+    frames, data, proof = proofread.run(
+        lambda d: gita_reel(images, verse, "", "", "", d["post"]["highlight"], out, labels=labels,
+                            steps=steps_of(d["post"]), switch_step=4,   # today's picture from AAJ KI SEEKH
+                            handle_text=f"{CONFIG['handle']}  ·  Kal: shlok {nxt}"),
+        {"post": best}, caption_of,
+        f"Bhagavad Gita {verse}. Check that the speaker and the situation are right and the shlok text keeps the "
+        "shlok's meaning; simple Hinglish wording (not word-for-word) is correct here, don't replace it with a literal "
+        "translation." + (f"\nReference ({source}):\n{ref_text}" if ref_text else ""))
+    post = data["post"]
+    state["gita_next"] = i + 1
+    state["recent_gita"] = (state.get("recent_gita", []) + [f"Gita {verse}: {post['based_on']}"])[-60:]
+    return frames[2], out, {
+        "headline": printable(f"Gita {verse}: {post['hook']}")[:140], "tag": "🙏 GITA GYAAN",
+        "caption": g.limit_hashtags(caption_of(data)), "source": "Bhagavad Gita", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
+
+# ---------------------------------------------------------------- 6. 🙏 6 AM devotional Reel (festival / god of the day)
+
+FESTIVAL_ICS = "https://calendar.google.com/calendar/ical/en.indian%23holiday%40group.v.calendar.google.com/public/basic.ics"
+NAVRATRI_GODDESSES = ["Maa Shailputri", "Maa Brahmacharini", "Maa Chandraghanta", "Maa Kushmanda", "Maa Skandamata",
+                      "Maa Katyayani", "Maa Kalaratri", "Maa Mahagauri", "Maa Siddhidatri"]
+# God of the day when there's no festival (common tradition), Monday first.
+WEEKDAY_GODS = ["Shiv ji", "Hanuman ji", "Ganesh ji", "Vishnu ji", "Maa Lakshmi", "Shani Dev", "Surya Dev"]
+
+
+_FESTIVALS: dict = {}
+
+
+def festivals_on(day) -> list[str]:
+    """Indian festivals on a date (Google's free public 'Holidays in India' calendar, downloaded once per run)."""
+    import re
+    import requests
+    if not _FESTIVALS:
+        try:
+            ics = requests.get(FESTIVAL_ICS, timeout=25).text
+        except Exception as e:
+            print(f"  ! festival calendar failed: {e}")
+            return []
+        for d, name in re.findall(r"DTSTART;VALUE=DATE:(\d{8}).*?SUMMARY:([^\r\n]+)", ics, re.S):
+            _FESTIVALS.setdefault(d, []).append(name.strip())
+    return _FESTIVALS.get(day.strftime("%Y%m%d"), [])
+
+
+def navratri_day(day) -> int:
+    """1-9 during Sharad/Chaitra Navratri, else 0. Counted from the first day in the calendar, but anchored on
+    Maha Saptami (7), Ashtami (8) and Navami (9) when listed: a doubled tithi can't push a day past 6 before Saptami."""
+    from datetime import timedelta
+    today = [f.lower() for f in festivals_on(day)]
+    for word, n in (("navami", 9), ("ashtami", 8), ("saptami", 7)):
+        if any(word in f for f in today):
+            return n
+    for back in range(10):
+        if any("first day of" in f.lower() and "navratri" in f.lower() for f in festivals_on(day - timedelta(days=back))):
+            count = back + 1
+            ahead = [f.lower() for k in range(1, 4) for f in festivals_on(day + timedelta(days=k))]
+            if any("saptami" in f for f in ahead) or count < 7:
+                return min(count, 6)
+            return count if count <= 9 else 0
+    return 0
+
+
+def devotion_subject(day) -> dict:
+    """What today's 6 AM Reel is about: Navratri goddess, another festival, or the god of the day."""
+    from datetime import timedelta
+    n = navratri_day(day)
+    if n:
+        goddess = NAVRATRI_GODDESSES[n - 1]
+        tomorrow = [f.lower() for f in festivals_on(day + timedelta(days=1))]
+        if n == 8 and any("dussehra" in f or "dasara" in f for f in tomorrow):   # Navami falls on Ashtami this year
+            goddess, n = "Maa Mahagauri aur Maa Siddhidatri", "8-9"
+        return {"kind": "navratri", "name": f"Navratri Din {n}: {goddess}", "deity": goddess, "festivals": festivals_on(day)}
+    fests = [f for f in festivals_on(day) if not any(w in f.lower() for w in ("gandhi", "republic", "independence",
+                                                                             "christmas", "good friday", "eid", "muharram"))]
+    if fests:
+        return {"kind": "festival", "name": fests[0], "deity": "", "festivals": fests}
+    return {"kind": "weekday", "name": f"{day:%A}: {WEEKDAY_GODS[day.weekday()]}", "deity": WEEKDAY_GODS[day.weekday()],
+            "festivals": []}
+
+
+def devotional_songs(queries: list[str]) -> list[dict]:
+    """Most-played devotional songs on JioSaavn for these searches (free search, real songs only)."""
+    import html
+    import requests
+    found = {}
+    for q in queries:
+        try:
+            r = requests.get("https://www.jiosaavn.com/api.php", headers=UA, timeout=20, params={
+                "__call": "search.getResults", "q": q, "_format": "json", "_marker": "0", "api_version": "4",
+                "ctx": "web6dot0", "n": "10", "p": "1"})
+            results = r.json().get("results", [])
+        except Exception as e:
+            print(f"  ! song search '{q}' failed: {e}")
+            continue
+        for x in results:
+            title = html.unescape(x.get("title", "")).strip()
+            artists = ", ".join(a["name"] for a in x.get("more_info", {}).get("artistMap", {}).get("primary_artists", [])[:2])
+            plays = int(x.get("play_count") or 0)
+            if title and title.lower() not in found:
+                found[title.lower()] = {"title": title, "artist": artists or html.unescape(x.get("subtitle", "")).split(" - ")[0],
+                                        "lang": "hindi", "mood": "devotional", "plays": plays}
+    return sorted(found.values(), key=lambda s: -s["plays"])
+
+
+DEVOTION_PLAN = {"type": "object", "properties": {
+    "deity": {"type": "string", "description": "The god/goddess this Reel is about (Hinglish name, e.g. 'Maa Shailputri')"},
+    "image_searches": {"type": "array", "items": {"type": "string"}, "description":
+                       "3 English Wikimedia Commons searches for classical paintings of this deity, e.g. "
+                       "'Shailaputri painting', 'Durga Raja Ravi Varma', 'Goddess Durga miniature painting'"},
+    "image_subject": {"type": "string", "description": "What the painting must clearly show, in English"},
+    "family": {"type": "string", "description": "English name of the main deity for a wider painting search if this exact "
+               "form has none, e.g. 'Durga' for any Navratri goddess, 'Shiva', 'Hanuman', 'Lakshmi', 'Rama'"},
+    "song_searches": {"type": "array", "items": {"type": "string"}, "description":
+                      "2-3 JioSaavn searches for popular devotional songs, e.g. 'Navratri bhajan', 'Durga aarti'"},
+    "head": {"type": "string", "description": "Top heading, max 16 letters, e.g. 'SHUBH NAVRATRI', 'JAI HANUMAN', 'HAR HAR MAHADEV'"},
+    "middle": {"type": "string", "description": "Label over the deity's meaning, e.g. 'MAA SHAILPUTRI', 'BAJRANGBALI KA BAL'"},
+    "seekh": {"type": "string", "description": "Label over the blessing, e.g. 'AAJ KA ASHIRWAAD', 'AAJ KI PRARTHANA'"},
+    "cta": {"type": "string", "description": "Ending line, e.g. 'Jai Mata Di 🙏 Apni family ko bhejo' (max 7 words, no emoji)"},
+    "scene_darshan": {"type": "string", "description": "Picture 1 (behind the greeting and who the deity is): the deity "
+                      "alone, clearly divine, with her/his vahana or one main item (e.g. Maa Shailputri: a white bull "
+                      "beside her, lotus in her one visible hand), in a divine setting at sunrise. " + SCENE_HELP},
+    "scene_life": {"type": "string", "description": "Picture 2 (behind the blessing): the same deity, same look, gently "
+                   "blessing or walking beside a young Indian of today in a relatable moment (exam morning, first job, "
+                   "going home, family puja). " + SCENE_HELP}},
+    "required": ["deity", "image_searches", "image_subject", "family", "song_searches", "head", "middle", "seekh", "cta",
+                 "scene_darshan", "scene_life"],
+    "additionalProperties": False}
+
+DEVOTION_OPTION = {"type": "object", "properties": {
+    "based_on": {"type": "string"},
+    "hook": {"type": "string", "description": "Morning greeting with feeling, max 11 words, natural pause '...', e.g. "
+             "'Navratri ka pehla din... Maa Shailputri ka aashirwaad aapke ghar aaye'"},
+    "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 22 words, "
+               "only well-known traditional facts"},
+    "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 18 words, people want to save it"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
+    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5 (e.g. #navratri #jaimatadi), include #reelsindia"}},
+    "required": ["based_on", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment", "hashtags"],
+    "additionalProperties": False}
+
+DEVOTION_SYSTEM = """You write the 6 AM devotional Reel for {page}, an Indian Hinglish page for 18-34s (English \
+letters only, never Devanagari). Warm, reverent, uplifting, like a blessing from family: festival or god of the day, \
+who the deity is in simple words, and a blessing or life lesson for today. Only well-known traditional facts; never \
+joke about any god, no politics, nothing against any religion or community. Write it like poetry: short lines, \
+natural pauses ("..."). Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line asks people to share \
+with family or comment 'Jai ...'."""
+
+
+def plain_letters(text: str) -> str:
+    """Drop accent marks the fonts can't draw well (e.g. 'beṭi' -> 'beti')."""
+    import unicodedata
+    return "".join(ch for ch in unicodedata.normalize("NFKD", text) if not unicodedata.combining(ch))
+
+
+def screen_label(text: str) -> str:
+    """On-screen label: emojis (the fonts can't draw them) become a neat ' · ' separator."""
+    import re
+    text = re.sub(r"\s*[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F]+\s*", " · ", plain_letters(text))
+    return re.sub(r"(\s*·\s*)+$", "", re.sub(r"^(\s*·\s*)+", "", text)).strip()
+
+
+def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🙏 6 AM: festival of the day (Navratri goddess of the day) or the god of the day, in the Gita-Reel style,
+    with popular devotional songs for that god."""
+    from datetime import date
+    import fun
+    import generate as g
+    import proofread
+    import status
+    day = date.fromisoformat(today)
+    status.step("Checking today's festival", 2)
+    subj = devotion_subject(day)
+    print(f"  devotion: {subj['name']} | festivals: {subj['festivals']}")
+    plan = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
+                           f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
+                           f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
+                           CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
+    status.step(f"Painting {plan['deity']} with free AI", 3)
+    exact = True
+    try:
+        images = flux_images([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp)
+    except Exception as e:
+        print(f"  {e}: using free paintings instead")
+        status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)
+        images = None
+    try:
+        images = images or pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
+    except RuntimeError as e:   # few paintings of this exact form: use the main deity's paintings
+        exact = False
+        fam = plan["family"].strip() or "Durga"
+        print(f"  {e}: trying paintings of {fam}")
+        images = pick_paintings([f"{fam} painting", f"{fam} Raja Ravi Varma", f"Goddess {fam} miniature painting"
+                                 if subj["kind"] == "navratri" else f"{fam} miniature painting"],
+                                f"{'Goddess ' if subj['kind'] == 'navratri' else ''}{fam} (any classical depiction)",
+                                "devotion_images_used", state, tmp)
+    songs = devotional_songs(plan["song_searches"])[:4]
+    status.step(f"Writing the {plan['deity']} Reel", 4)
+    options = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
+                              f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']} (deity: {plan['deity']}). "
+                              f"Festivals today: {', '.join(subj['festivals']) or 'none'}.\n"
+                              f"On screen the parts are labelled '{plan['middle']}' (lesson) and '{plan['seekh']}' (real_life), "
+                              "so don't repeat those words.\n"
+                              + ("" if exact else f"The paintings show {plan['family']} in general, not this exact form: "
+                                 "don't describe her/his vahana, weapons or looks; write about the meaning and blessing.\n")
+                              + "\nWrite exactly 3 different Reels.",
+                              options_schema(DEVOTION_OPTION, "Exactly 3 different Reels"),
+                              CONFIG.get("membership_model", "sonnet"), purpose="devotion writing")["options"][:3]
+    for o in options:
+        o["caption"] = unescape(o["caption"])
+    best = fun.judge_best(options, lambda o: f"{o['hook']} -> {o['lesson']} -> {o['real_life']}",
+                          CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE.replace("Gita", "devotional"))
+    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
+    for k in ("hook", "lesson", "real_life"):
+        best[k] = plain_letters(best[k])
+    labels = {k: screen_label(plan[k]).upper() if k != "cta" else screen_label(plan[k]) for k in ("head", "middle", "seekh", "cta")}
+    labels["source"] = f"—  {printable(subj['name'].split(':')[0])}" if subj["kind"] == "navratri" else ""
+    out = os.path.join(tmp, "reel.mp4")
+    status.step("Making the video + proofreading", 5)
+
+    def caption_of(d):
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
+        return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily darshan 🙏\n\n{tags}"
+    frames, data, proof = proofread.run(
+        lambda d: gita_reel(images, "", d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"],
+                            d["post"]["highlight"], out, labels=labels),
+        {"post": best}, caption_of,
+        f"Devotional Reel for {subj['name']} ({plan['deity']}). Check the facts about the deity/festival are the "
+        "well-known traditional ones." + ("" if exact else f" The paintings intentionally show {plan['family']} in general "
+        "(no free painting of this exact form exists), and the text doesn't describe the form's looks: don't flag that."))
+    post = data["post"]
+    save_reel(feed, state, frames[1], out, f"reel_devotion-{today}", {
+        "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🙏 " + labels["head"],
+        "caption": g.limit_hashtags(caption_of(data)), "source": "KhabarBawaal Original", "source_url": "",
+        "pin_comment": post.get("pin_comment", ""),
+        "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
+
+def make(kind: str, state: dict, feed: list) -> bool:
+    """Make today's Reel for this slot; False (with the reason printed) if it couldn't be made."""
+    import tempfile
+    import schedule
+    import status
+    today = schedule.ist_now().date().isoformat()
+    h, m = schedule.SPECIALS[kind]
+    status.start(kind, today, f"🎬 {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'} Reel", 6)
+    if not (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
+        print("  Reels need the AI: skipped")
+        status.fail("Reel not made: the AI isn't available (membership token?). A normal post goes out instead.", True)
+        return False
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            if kind == "reel_news":
+                make_news_reel(state, feed, today, tmp)
+            elif kind == "reel_politics":
+                make_politics_reel(state, feed, today, tmp)
+            elif kind == "reel_devotion":
+                make_devotion_reel(state, feed, today, tmp)
+            else:
+                make_joke_reel(kind, state, feed, today, tmp)
+        return True
+    except Exception as e:
+        print(f"  ! Reel not made: {str(e)[:300]}")
+        status.fail(f"Reel not made: {str(e)[:200]}. A normal post goes out in this slot instead.", True)
+        return False
