@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_meme-2026-10-11",
+  "image": "posts/20261011-1331-reel_meme-2026-10-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261011-133139-reel_meme-2026-10-11.mp4",
+  "headline": "Sunday subah: Aaj poora din hai, Sunday dopahar: Abhi toh time hai, Sunday 7 baje: Me jab yaad aaya kal Monday hai aur kuch kiya hi nahi",
+  "tag": "🎬 REEL · MEME",
+  "caption": "Sunday shaam 7 baje ka dard sirf wahi samjhega jisne jhela hai 😭\nSunday ki battery 100% se seedha 2% ho jaati hai.\nEk emoji mein apna Sunday night mood batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#sunday #mondaymood #reelsindia #relatable #viral",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Sunday ke 24 ghante, aur Monday ke 24 ghante, barabar kyun nahi lagte?",
+  "songs": [
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "dramatic, sad"
+   },
+   {
+    "title": "Pal Pal",
+    "artist": "Afusic, AliSoomroMusic",
+    "lang": "hindi",
+    "mood": "chill, mood"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "sad, relatable"
+   },
+   {
+    "title": "Cry For Me",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "dramatic, moody"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The sentence ends at 'Sunday 7 baje:' with nothing after it. The punchline is on slide 2, so this works as a swipe hook. The sentence still reads as incomplete, and the three lines run together in one paragraph without line breaks."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-11T13:31:39+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-11",
   "image": "posts/20261011-1232-reel_politics-2026-10-11.jpg",
   "kind": "reel",
@@ -475,99 +522,5 @@
    ]
   },
   "created_at": "2026-10-10T14:32:52+00:00"
- },
- {
-  "id": "reel_meme-2026-10-10",
-  "image": "posts/20261010-1331-reel_meme-2026-10-10.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261010-133115-reel_meme-2026-10-10.mp4",
-  "headline": "Saturday 7 baje, nahaya, perfume lagaya, ready hoke baitha... Dost ka msg: Bhai aaj plan cancel, kal pakka",
-  "tag": "🎬 REEL · MEME",
-  "caption": "Naha dhoke, perfume laga ke, ready hokar baitha tha 😭\nDost ka 'plan cancel' sunne se bura kuch nahi.\nUs dost ko tag karo jo hamesha last minute cancel karta hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#friendship #relatable #reelsindia #viral #trending",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aur sabse bura: 'Kal pakka karte hain' bolke seen kar dena.",
-  "songs": [
-   {
-    "title": "Barbaad",
-    "artist": "The Rish, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "dramatic, sad funny"
-   },
-   {
-    "title": "Tu Thodi Der Aur Thehar Ja (From \"Half Girlfriend\")",
-    "artist": "Kumaar, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "dramatic, emotional"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "sad, dramatic"
-   },
-   {
-    "title": "Alone, Pt. II",
-    "artist": "Alan Walker, Ava Max",
-    "lang": "english",
-    "mood": "moody, chill"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T13:31:15+00:00"
- },
- {
-  "id": "reel_politics-2026-10-10",
-  "image": "posts/20261010-1258-reel_politics-2026-10-10.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261010-125812-reel_politics-2026-10-10.mp4",
-  "headline": "Kejriwal ka formula: Punjab jeeto toh janta, Delhi haaro toh Vote Chor",
-  "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "Kejriwal ne CEC ko 'vote thief' kaha, par Punjab 2022 ki jeet isi EC ke under thi.\nHaar pe system ganda, jeet pe system sahi? 🤦\nApne us dost ko bhejo jo har haar pe EVM ko blame karta hai 😂\n\nFollow @khabarbawaal for daily updates.\nSource: The Times of India (link pinned in comments 👇)\n\n#reelsindia #Kejriwal #AAP #politicalmemes #IndianPolitics",
-  "source": "The Times of India",
-  "source_url": "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "pin_comment": "Punjab 2022: AAP 92/117. Delhi 2025: AAP 22/70. Same Election Commission. Aapko kya lagta hai?",
-  "songs": [
-   {
-    "title": "Barbaad",
-    "artist": "The Rish, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "funny, dramatic fall"
-   },
-   {
-    "title": "Boom Shaka",
-    "artist": "Dhanda Nyoliwala, KR$NA",
-    "lang": "hindi",
-    "mood": "hype, roast drop"
-   },
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "hype, swagger"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "sad, ironic"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Caption: The caption and slide 3 say Punjab 2022 was won under \"isi EC\" or \"isi Election Commission\". Gyanesh Kumar became CEC in Feb 2025, so he was not CEC for the 2022 Punjab election or the Feb 2025 Delhi election. It is the same institution but a different CEC. Consider wording it as \"Election Commission\" in general, not as the same EC under Gyanesh Kumar.",
-    "Slide 4: \"Delhi mein EC chor\" states the theft claim as fact. Kejriwal's \"vote thief\" quote was aimed at CEC Gyanesh Kumar and was an allegation. Consider attributing it, for example as Kejriwal's claim, or framing it clearly as satire.",
-    "Slide 1: The photo is a generic film still of a distressed person. It has no visible link to Kejriwal or the story, and the credit for the image is not given. It is the cover slide, so it cannot be dropped. Consider a relevant image."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T12:58:12+00:00"
  }
 ]
