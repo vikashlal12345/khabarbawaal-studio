@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news-2026-10-11",
+  "image": "posts/20261011-1431-reel_news-2026-10-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261011-143124-reel_news-2026-10-11.mp4",
+  "headline": "Jeff Bezos Says AI Could Bring 3-Day Workweeks And Single-Income Households",
+  "tag": "🎬 REEL · TECH",
+  "caption": "Bezos ka bada daava: AI se 3-day workweek aa sakta hai 😳\nJeff Bezos ke mutabik AI se kaam ke ghante kam ho sakte hain.\nUnka kehna hai ki single-income households bhi possible ho sakte hain.\nAap kya chahoge: 3-day workweek ya zyada salary? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #jeffbezos #ai #workweek #technews",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/jeff-bezos-says-ai-could-make-3-day-workweeks-and-single-income-households-possible-it-s-going-to-be-difficult-to-hire-people-101791702088222.html",
+  "pin_comment": "3-day workweek mil jaye toh baaki 4 din kya karoge? Sabse mast plan comment karo.",
+  "songs": [
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "fun, upbeat vibe"
+   },
+   {
+    "title": "Sunflower (Spider-Man: Into the Spider-Verse)",
+    "artist": "Post Malone, Swae Lee",
+    "lang": "english",
+    "mood": "chill, easy"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "Pal Pal",
+    "artist": "Afusic, AliSoomroMusic",
+    "lang": "hindi",
+    "mood": "chill, relaxed"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-11T14:31:24+00:00"
+ },
+ {
   "id": "reel_meme-2026-10-11",
   "image": "posts/20261011-1331-reel_meme-2026-10-11.jpg",
   "kind": "reel",
