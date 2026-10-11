@@ -1852,17 +1852,17 @@
    }
   },
   "create": {
-   "posts": 2,
-   "requests": 15,
-   "input": 40,
-   "output": 10673,
-   "cache_read": 33107,
-   "cache_write": 91354,
-   "value_usd": 0.4753,
+   "posts": 3,
+   "requests": 21,
+   "input": 60,
+   "output": 16390,
+   "cache_read": 53173,
+   "cache_write": 119556,
+   "value_usd": 0.6473,
    "by_purpose": {
     "writing": {
-     "requests": 4,
-     "tokens": 36283
+     "requests": 5,
+     "tokens": 45565
     },
     "reel style": {
      "requests": 1,
@@ -1881,16 +1881,16 @@
      "tokens": 7395
     },
     "proofreading": {
-     "requests": 4,
-     "tokens": 46366
+     "requests": 6,
+     "tokens": 71768
     },
     "reel news script": {
-     "requests": 1,
-     "tokens": 8648
+     "requests": 2,
+     "tokens": 17665
     },
     "photo check": {
-     "requests": 2,
-     "tokens": 10681
+     "requests": 4,
+     "tokens": 20985
     }
    }
   }

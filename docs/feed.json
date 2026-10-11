@@ -1,5 +1,36 @@
 [
  {
+  "id": "c4d53edbe475",
+  "kind": "custom",
+  "image": "posts/20261011-0947-c4d53edbe475-1.jpg",
+  "options": [
+   "posts/20261011-0947-c4d53edbe475-1.jpg"
+  ],
+  "slides": [
+   "posts/20261011-0947-c4d53edbe475-s2.jpg",
+   "posts/20261011-0947-c4d53edbe475-s3.jpg",
+   "posts/20261011-0947-c4d53edbe475-s4.jpg"
+  ],
+  "headline": "Rajeev Mantri claims Musk, Dorsey want to help CJP protests, calls it 'war'",
+  "tag": "POLITICS",
+  "caption": "CJP protests ke peeche US billionaires? Naya claim aaya hai 👀\nNavam Capital ke founder Rajeev Mantri ne list banayi ki Elon Musk aur Jack Dorsey kaise CJP protests ki help karna chahte hain.\nUnhone isse 'war' bola hai.\nYe unka claim hai, aur bahut log isko ab discuss kar rahe hain.\nSach ya sirf online noise? Ek word mein apna verdict do 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#trending #india #viral #elonmusk #news",
+  "source": "Inshorts - Stay Informed",
+  "source_url": "https://shrts.in/fcak7b8e6a",
+  "pin_comment": "Sabse bada sawaal: protest ground pe hai ya internet pe zyada? Apna take do, par facts ke saath 👀",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Mantri's tweet says American techies 'want to help' the protesters. It doesn't say they are already helping, so the headline overstates the claim.",
+    "Fact corrected to match the article: The tweet says they 'want to help', and Dorsey is pushing BitChat. It doesn't say they are actively helping. The caption should match the claim."
+   ],
+   "fixed": [
+    "Musk, Dorsey are helping CJP protests → Musk, Dorsey want to help CJP protests",
+    "kaise CJP protests ki help kar rahe hain → kaise CJP protests ki help karna chahte hain"
+   ]
+  },
+  "created_at": "2026-10-11T09:47:46+00:00"
+ },
+ {
   "id": "cb3b20da52c1",
   "kind": "custom",
   "image": "posts/20261011-0942-cb3b20da52c1-1.jpg",
