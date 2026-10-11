@@ -1,57 +1,5 @@
 [
  {
-  "id": "r20261010-1931-explainer",
-  "kind": "ready",
-  "image": "posts/r20261010-1931-explainer-1.jpg",
-  "slides": [
-   "posts/r20261010-1931-explainer-2.jpg",
-   "posts/r20261010-1931-explainer-3.jpg",
-   "posts/r20261010-1931-explainer-4.jpg",
-   "posts/r20261010-1931-explainer-5.jpg",
-   "posts/r20261010-1931-explainer-6.jpg",
-   "posts/r20261010-1931-explainer-7.jpg"
-  ],
-  "headline": "Inflation Kya Hai? Simple Explainer",
-  "tag": "📦 EXPLAINER",
-  "caption": "Mehngai ka naam sab lete hain, par woh naapi kaise jaati hai? Ab ek simple explainer mein samajh lo. Save karo aur dost ko bhejo, aapko kaunsi cheez sabse zyada mehngi lagti hai?\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #inflation #finance",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover's background is a zoomed-in crop of the IMF map. The chart title and subtitle are cut off at the top and left (\"n rate among IMF members (Apr 20\", \"here inflation exceeds 100pc\"). The map's own credit line (\"…national Monetary Fund • Created with Datawrapper\") is half hidden behind the @khabarbawaal handle and the Source line. The result looks messy. Use a cleaner crop, or the full map as on slide 2."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T19:31:42+00:00"
- },
- {
-  "id": "r20261010-1932-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261010-1932-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261010-1932-on_this_day-2.jpg",
-   "posts/r20261010-1932-on_this_day-3.jpg",
-   "posts/r20261010-1932-on_this_day-4.jpg",
-   "posts/r20261010-1932-on_this_day-5.jpg",
-   "posts/r20261010-1932-on_this_day-6.jpg"
-  ],
-  "headline": "11 October: 4 Things Jo Yaad Rakhne Layak Hain",
-  "tag": "📦 ON THIS DAY",
-  "caption": "Ek hi tareekh, Bollywood se Chand tak ki kahaniyan! Aaj ka din itna special nikla. Aapko inme se kaunsa fact sabse zyada pasand aaya? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #amitabhbachchan #bollywood #viral #india",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The flame icon covers the last letters of the faint 'ON THIS DAY' background text, so 'DAY' is partly hidden. The text is only decorative and the headline is clear, so this is a minor point."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T19:32:04+00:00",
-  "valid_on": "2026-10-11"
- },
- {
   "id": "r20261010-215101-bhakti",
   "kind": "ready",
   "image": "posts/r20261010-215101-bhakti.jpg",
@@ -114,5 +62,101 @@
    "fixed": []
   },
   "created_at": "2026-10-10T22:25:34+00:00"
+ },
+ {
+  "id": "r20261011-1931-quiz",
+  "kind": "ready",
+  "image": "posts/r20261011-1931-quiz-1.jpg",
+  "slides": [
+   "posts/r20261011-1931-quiz-2.jpg",
+   "posts/r20261011-1931-quiz-3.jpg",
+   "posts/r20261011-1931-quiz-4.jpg",
+   "posts/r20261011-1931-quiz-5.jpg",
+   "posts/r20261011-1931-quiz-6.jpg",
+   "posts/r20261011-1931-quiz-7.jpg"
+  ],
+  "headline": "Cricket Quiz: Can You Score 4/4?",
+  "tag": "📦 QUIZ",
+  "caption": "Cricket ke sabse bade moments, 4 sawaal mein! Swipe karke answers dekho aur comment mein apna score batao. Kitne sahi kiye tumne?\n\nFollow @khabarbawaal for daily updates.\n\n#cricket #viral #trending #india #cricketquiz",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-11T19:31:28+00:00"
+ },
+ {
+  "id": "r20261011-1931-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261011-1931-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261011-1931-on_this_day-2.jpg",
+   "posts/r20261011-1931-on_this_day-3.jpg",
+   "posts/r20261011-1931-on_this_day-4.jpg",
+   "posts/r20261011-1931-on_this_day-5.jpg",
+   "posts/r20261011-1931-on_this_day-6.jpg",
+   "posts/r20261011-1931-on_this_day-7.jpg"
+  ],
+  "headline": "12 October: 4 Things That Changed The World",
+  "tag": "📦 ON THIS DAY",
+  "caption": "12 October ko duniya aur India dono ne history dekhi: Columbus se lekar RTI tak. Inme se kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ke saath share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #history #india #viral #trending",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The black flame icon covers the \"AY\" of the faint \"ON THIS DAY\" watermark. The watermark is decorative and low-contrast, so this is minor. Consider moving the icon or the watermark if you want it fully readable."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-11T19:31:49+00:00",
+  "valid_on": "2026-10-12"
+ },
+ {
+  "id": "r20261011-193507-gita",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261011-193507-gita.jpg",
+  "video": "posts/r20261011-193507-gita.mp4",
+  "headline": "Gita 1.2: Sab kuch tha... phir bhi bechain",
+  "tag": "📦 🙏 GITA GYAAN",
+  "caption": "Sab kuch tha, phir bhi mann bechain. 🙏\nGita 1.2: dar bahar ki taakat se nahi, andar ki neev se jaata hai.\nApna sabse bada dar comment mein likho ya kisi dost ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.2 · Kal: shlok 1.3\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mindset",
+  "source": "Bhagavad Gita",
+  "source_url": "",
+  "pin_comment": "Kal Gita 1.3 aayega. Roz ek shlok, saath chalte rehna 🙏",
+  "songs": [
+   {
+    "title": "Finding Her",
+    "artist": "Kushagra, Saaheal",
+    "lang": "hindi",
+    "mood": "chill, thoughtful"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "soft, calm"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "chill, introspective"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Bruno Mars, Lady Gaga",
+    "lang": "english",
+    "mood": "slow, emotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-11T19:35:07+00:00"
  }
 ]
