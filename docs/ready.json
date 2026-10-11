@@ -158,5 +158,24 @@
    "fixed": []
   },
   "created_at": "2026-10-11T19:35:07+00:00"
+ },
+ {
+  "id": "r20261011-213224-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261011-213224-bhakti.jpg",
+  "headline": "Maa, pehli salary aayi hai, ye sab aapke ashirwad aur mummy papa ki duaon ka phal hai. Bas saath rehna.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Pehli salary ki khushi mein Maa ko yaad karna mat bhoolna. Unka ashirwad hi asli kamai hai 🙏\nSend karo usko jise aaj ye sunna hai\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #bhakti #explorepage #reelsindia",
+  "pin_comment": "Pehli salary yaad hai? Maa ko batao, kitni thi? 🙏",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The last line of text, 'saath rehna.', overlaps the top of the goddess's crown. The text is still readable, but it should be moved up or the text block shrunk so it doesn't touch the figure. The goddess's face is not covered."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-11T21:32:24+00:00"
  }
 ]
