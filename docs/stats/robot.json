@@ -1893,6 +1893,37 @@
      "tokens": 20985
     }
    }
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 6,
+   "input": 18,
+   "output": 6858,
+   "cache_read": 23137,
+   "cache_write": 49982,
+   "value_usd": 0.2708,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 1,
+     "tokens": 8031
+    },
+    "satire writing": {
+     "requests": 1,
+     "tokens": 29717
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 7627
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 6941
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 27679
+    }
+   }
   }
  }
 }

@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_politics-2026-10-11",
+  "image": "posts/20261011-1232-reel_politics-2026-10-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261011-123249-reel_politics-2026-10-11.mp4",
+  "headline": "Congress ka formula: Jeeto toh janta ki jeet, haaro toh Election Commission ki chori",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Congress ka 'vote chori' march kal Delhi mein, par Karnataka aur Telangana ki jeet pe chori nahi thi 😂\nTumhe kya lagta hai, jeet pe bhi chori hoti hai?\nSend karo us dost ko jo har haar pe bahana dhundta hai 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Free Press Journal (link pinned in comments 👇)\n\n#reelsindia #votechori #congress #politicalmemes #indianpolitics",
+  "source": "Free Press Journal",
+  "source_url": "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
+  "pin_comment": "Karnataka jeete toh sab theek, Haryana haare toh chori. Aapka favourite bahana kaunsa hai?",
+  "songs": [
+   {
+    "title": "Bones",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "dramatic, ironic"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hype, dramatic"
+   },
+   {
+    "title": "Boom Shaka",
+    "artist": "Dhanda Nyoliwala, KR$NA",
+    "lang": "hindi",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "Casa Tupka Anthemo",
+    "artist": "Yo Yo Honey Singh",
+    "lang": "hindi",
+    "mood": "funny, hype"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article doesn't mention SIR. It says the demands are CEC Gyanesh Kumar's resignation and repeal of all Assembly polls held in the last two years.",
+    "Slide 1: The cover photo is a generic stock image of a shirtless, crying man with his hands in prayer. It has nothing to do with the story. It doesn't match the Congress or INDIA bloc 'vote chori' march. It also looks like it is mocking a real person. Slide 1 can't be dropped, so consider replacing the photo with a relevant news image."
+   ],
+   "fixed": [
+    "Ye march SIR (voter list ki jaanch) aur chunav dobara karwane ki maang par hai. → Ye march Gyanesh Kumar ke istife aur pichhle do saal ke saare Assembly chunav radd karne ki maang par hai."
+   ]
+  },
+  "created_at": "2026-10-11T12:32:49+00:00"
+ },
+ {
   "id": "d0cb98ca7bfd",
   "image": "posts/20261011-1131-d0cb98ca7bfd.jpg",
   "kind": "news",
