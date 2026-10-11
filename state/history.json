@@ -244,7 +244,7 @@
   "market_close": "2026-10-09",
   "top10_day": "2026-10-11",
   "night_ready": "2026-10-12",
-  "night_calendar": "2026-10-11",
+  "night_calendar": "2026-10-12",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-11",
   "top10_viral": "2026-10-10",
@@ -318,8 +318,16 @@
   "12 October: 4 Things That Changed The World"
  ],
  "calendar": {
-  "date": "2026-10-11",
-  "items": []
+  "date": "2026-10-12",
+  "items": [
+   {
+    "time": "10:00",
+    "topic": "CJP leaders at Parliament Street Police Station for Jantar Mantar protest date",
+    "brief": "CJP leaders are set to visit Delhi's Parliament Street Police Station today to seek a fresh date for their Jantar Mantar protest against CEC Gyanesh Kumar over the SIR exercise. They say Delhi Police have 24 hours to give a date. BJP has hit out at the CJP, mocking how fast its stand keeps changing.",
+    "search": "CJP leaders Parliament Street Police Station Jantar Mantar protest",
+    "done": false
+   }
+  ]
  },
  "recent_thoughts": [
   "Monday ka matlab naya mauka hai. Bade sapne ek chhote kadam se shuru hote hain, aur wo kadam aaj hi uthana hai.",
