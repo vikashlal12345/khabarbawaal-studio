@@ -2155,6 +2155,29 @@
      "tokens": 6895
     }
    }
+  },
+  "calendar": {
+   "posts": 0,
+   "requests": 5,
+   "input": 20,
+   "output": 7270,
+   "cache_read": 26901,
+   "cache_write": 46527,
+   "value_usd": 0.2615,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 9270
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 9224
+    },
+    "proofreading": {
+     "requests": 3,
+     "tokens": 62224
+    }
+   }
   }
  }
 }
