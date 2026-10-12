@@ -503,8 +503,11 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
         ask = "Write exactly 3 different jokes, each a timeless relatable desi-life moment (different situations)."
     else:
         searches = fun.google_trends()
+        xt = fun.x_trends()[:40]
         context = (f"{fun.today_context()}\n\n"
                    "What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
+                   "\n\nWhat India is talking about on X (Twitter) today (hours trending):\n" +
+                   ("\n".join(f"- {t} ({h} h)" for t, h in xt) or "(unavailable)") +
                    "\n\nToday's big headlines (use only ones nearly everyone knows):\n" +
                    "\n".join(f"- {t}" for t in g.trending_titles()[:15]))
         # Today's trends first (owner, 12 Oct 2026: the most unique Reels); everyday desi life only as backup.
@@ -732,6 +735,17 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
     status.done(f"Ready: {entry['headline'][:90]}", post=post_id)
 
 
+def topic_articles(topic: str) -> str:
+    """Today's news about a joke's trend (2 articles), so the proofreader can check its facts (dates, names)."""
+    import carousel
+    import create_post
+    out = []
+    for a in create_post.bing_articles(topic[:90], limit=4, newest=True)[:2]:
+        text = carousel.article_text(carousel.page_html(a["url"]), limit=2500)
+        out.append(f"({a['site']}, {a.get('date', '')[:10]}) {a['title']}\n{text}")
+    return "\n\n".join(out)
+
+
 def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
                     topic: str = "") -> tuple[Image.Image, str, dict]:
     """Write, judge, find a clip, render and proofread a joke Reel.
@@ -762,7 +776,8 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             hold = max(0.0, dur - (secs - 0.2))     # a short clip freezes on its last frame, the text keeps its time
             return meme_reel(clip, start, dur, d["setup"], d["punch"], round(setup_t, 2), d["highlight"], out, hold)
     status.step("Making the video + proofreading", 5)
-    frames, post, proof = proofread.run(render, post, g.fun_caption)
+    frames, post, proof = proofread.run(render, post, g.fun_caption, "" if evergreen else topic_articles(post["based_on"]),
+                                        strict=True)
     text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_topics"] = (state.get("reel_topics", []) + [post["based_on"]])[-60:]
@@ -860,7 +875,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     caption_of = (lambda d: g.full_caption(d["post"], item)) if item["link"] else \
         (lambda d: f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily updates.\n\n"
                    + " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"]))
-    frames, data, proof = proofread.run(render, data, caption_of, article, drop=drop)
+    frames, data, proof = proofread.run(render, data, caption_of, article, drop=drop, strict=True)
     post = data["post"]
     return frames[0], out, {
         "headline": item["title"], "tag": "🎬 REEL · " + post["tag"],
@@ -1018,9 +1033,10 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     return checks
 
 
-POLITICS_TARGETS = "Congress, AAP, TMC, the Left parties (CPI, CPI-M) and the Cockroach Janta Party (CJP)"
+POLITICS_TARGETS = ("Congress, AAP, TMC, the Left parties (CPI, CPI-M) and the Cockroach Janta Party (CJP, founder "
+                    "Abhijeet Dipke)")
 POLITICS_SEARCHES = ["Congress party", "Rahul Gandhi", "AAP Kejriwal", "TMC Mamata Banerjee", "Abhishek Banerjee TMC",
-                     "CPI(M)", "Cockroach Janta Party"]
+                     "CPI(M)", "Cockroach Janta Party", "Dipke CJP"]
 SATIRE_FORMATS = ["POV", "Nobody: / Party:", "Then vs Now (U-turn)", "Expectation vs Reality", "Job ad / rate card",
                   "Rules for being a ___ leader", "Breaking news parody", "WhatsApp chat"]
 
@@ -1124,13 +1140,43 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     import generate as g
     import proofread
     import status
-    status.step("Finding the opposition's latest news", 2)
+    status.step("Finding the opposition's most viral news", 2)
+    model = CONFIG.get("membership_model", "sonnet")
     now = datetime.now(timezone.utc)
     stories = [{"title": p["headline"], "url": p["source_url"], "site": p["source"], "date": p["created_at"]}
                for p in feed if p.get("kind") == "news" and p.get("source_url") and "POLITIC" in p.get("tag", "").upper()
                and datetime.fromisoformat(p["created_at"]) >= now - timedelta(hours=24)]
     for q in POLITICS_SEARCHES:   # newest first: today's stories, then backward (owner, 12 Oct 2026)
         stories += [a for a in create_post.bing_articles(q, limit=6, newest=True) if a.get("title")]
+    # Most viral first (owner, 12 Oct 2026): X trends name people, not parties (e.g. "Dipke"), so the AI turns
+    # the trends about the opposition into news searches.
+    xt = fun.x_trends()
+    hours = dict(xt)
+    if xt:
+        heads = "\n".join(f"- {s['title']}" for s in stories[:50])
+        found = fun.claude_json(
+            f"You find which of today's X (Twitter) trends in India are about {POLITICS_TARGETS}.",
+            "X trends in India, last 24 h (hours trended):\n" + "\n".join(f"{n}. {t} ({h} h)"
+                                                                        for n, (t, h) in enumerate(xt[:150], 1)) +
+            f"\n\nToday's headlines about these parties (to connect names to parties):\n{heads}\n\n"
+            "List up to 6 trends about these parties (their leaders, protests, statements, controversies), most hours "
+            "first: the trend's number, and an English news search query for what happened. Empty if none.",
+            {"type": "object", "properties": {"trends": {"type": "array", "items": {"type": "object", "properties": {
+                "n": {"type": "integer"}, "query": {"type": "string"}},
+                "required": ["n", "query"], "additionalProperties": False}}},
+             "required": ["trends"], "additionalProperties": False}, model, purpose="satire trends")["trends"]
+        for t in found[:6]:
+            if not 1 <= t["n"] <= min(150, len(xt)):
+                continue
+            term = xt[t["n"] - 1][0]
+            print(f"  X trend: {term} ({hours[term]} h) -> {t['query']}")
+            for q in dict.fromkeys([t["query"], term.lstrip("#")]):   # the AI's query + the trend word itself
+                stories += [dict(a, trend=term) for a in create_post.bing_articles(q, limit=4, newest=True)
+                            if a.get("title")]
+    for s in stories:   # a headline naming a trend (e.g. "Dipke") counts as that trend
+        if not s.get("trend"):
+            s["trend"] = max((t for t in hours if len(t) >= 4 and t.lower().lstrip("#") in s["title"].lower()),
+                             key=lambda t: hours[t], default="")
     used = set(state.get("reel_politics_used", []))
 
     def age_h(s: dict) -> float:
@@ -1139,21 +1185,26 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         except ValueError:
             return 9999.0
         return (now - (d if d.tzinfo else d.replace(tzinfo=timezone.utc))).total_seconds() / 3600
-    stories = sorted((s for s in {s["url"]: s for s in stories}.values() if s["url"] not in used), key=age_h)[:40]
+    stories = sorted((s for s in {s["url"]: s for s in stories}.values() if s["url"] not in used),
+                     key=lambda s: (-hours.get(s.get("trend", ""), 0), age_h(s)))[:45]   # most viral, then newest
     if not stories:
         raise RuntimeError("no opposition news found today")
     listing = "\n".join(f"{n}. ({'date unknown' if age_h(s) >= 9999 else f'{age_h(s):.0f} h ago' if age_h(s) < 48 else f'{age_h(s) / 24:.0f} days ago'}) "
-                        f"({s['site']}) {s['title']}" for n, s in enumerate(stories, 1))
-    trends = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
+                        + (f"[trending on X: {s['trend']}, {hours.get(s['trend'], 0)} h] " if s.get("trend") else "")
+                        + f"({s['site']}) {s['title']}" for n, s in enumerate(stories, 1))
     recent = satire_recent(state)
     picks = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
-                            f"{fun.today_context()}\n\nWhat India is searching on Google today:\n{trends}\n\n"
-                            f"Recent satire Reels (newest last):\n{recent}\n\nStories (newest first):\n{listing}\n\n"
-                            f"Rank the 3 best stories about {POLITICS_TARGETS} for a funny reality-check Reel. Go from "
+                            f"{fun.today_context()}\n\nRecent satire Reels (newest last):\n{recent}\n\n"
+                            f"Stories (most viral first, then newest):\n{listing}\n\n"
+                            f"Rank the 3 best stories about {POLITICS_TARGETS} for a funny reality-check Reel. Take "
+                            f"the MOST VIRAL story that makes them look bad first (a claim exposed, e.g. by a video, a "
+                            f"U-turn, hypocrisy, an own goal): trending on X the longest, many headlines about it. Their "
+                            f"own campaign or protest trending is not by itself a story against them. Go from "
                             f"the newest backward: TODAY's stories first, yesterday's only if today has nothing good, "
-                            f"older only if nothing newer works. Prefer what is trending right now (many headlines "
-                            f"about it, or India is searching it), a NEW topic (not the topic or angle of a recent "
-                            f"Reel) and a party that isn't in the last 2 Reels when it has a good story. Skip stories "
+                            f"older only if nothing newer works. Prefer a NEW topic (not the topic or angle of a recent "
+                            f"Reel) and a party that isn't in the last 2 Reels when it has a good story. A story "
+                            f"involving a death is fine when the joke is about a leader's claim or action (e.g. a claim "
+                            f"a video exposed), never the death itself. Skip stories "
                             f"mainly about a leader's relatives, and stories that are only allegations (FIR, ED/CBI "
                             f"case, chargesheet, no verdict). Empty if none.",
                             {"type": "object", "properties": {"picks": {"type": "array", "items": {"type": "integer"}}},
@@ -1164,7 +1215,26 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         raise RuntimeError("no story about the opposition today")
     songs = trending_songs()
     best = None
-    for n in picks:   # the Reel must pass the judge; else try the next story
+    def write(sources: str, extra: str = "") -> list[dict]:
+        options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
+                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\nOnly if the story is about "
+                                  f"elections, EVMs or the Election Commission: {ELECTION_RECORD}\n\nRecent satire "
+                                  f"Reels (yours must differ in angle, format, hook and punchline; no format from the "
+                                  f"last 7):\n{recent}\n\nWrite exactly 3 different Reels about the MAIN story, each "
+                                  "in a different format." + extra + songs_prompt(songs),
+                                  options_schema(POLITICS_OPTION, "Exactly 3 different Reels"),
+                                  model, purpose="satire writing")["options"][:3]
+        for o in options:
+            o["caption"] = unescape(o["caption"])
+        return options
+
+    def judge(options: list[dict]) -> dict:
+        return fun.judge_best(options, lambda o: f"[{o['format']}] " + " ".join(o["claim"]) + " | KYA HUA: "
+                              + " ".join(o["context"]) + " | REALITY CHECK: " + " / ".join(f["fact"] for f in o["facts"])
+                              + " | " + o["punchline"], model,
+                              judge_system=f"{SATIRE_JUDGE}\n\nRecent Reels:\n{recent}", min_fresh=6)
+
+    for i, n in enumerate(picks):   # the Reel must pass the judge; else try the next story
         story = stories[n - 1]
         article = carousel.article_text(carousel.page_html(story["url"])) or story["title"]
         # Background: related recent coverage, so the Reel has real context and recent examples.
@@ -1175,23 +1245,22 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             background.append(f"({a['site']}) {a['title']}\n{text}" if text else f"({a['site']}) {a['title']}")
         sources = f"MAIN ({story['site']}): {story['title']}\n{article[:5000]}\n\nRELATED:\n" + "\n\n".join(background)
         status.step(f"Writing 3 Reels: {story['title'][:60]}", 3)
-        options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
-                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\nOnly if the story is about "
-                                  f"elections, EVMs or the Election Commission: {ELECTION_RECORD}\n\nRecent satire "
-                                  f"Reels (yours must differ in angle, format, hook and punchline; no format from the "
-                                  f"last 7):\n{recent}\n\nWrite exactly 3 different Reels about the MAIN story, each "
-                                  "in a different format." + songs_prompt(songs),
-                                  options_schema(POLITICS_OPTION, "Exactly 3 different Reels"),
-                                  CONFIG.get("membership_model", "sonnet"), purpose="satire writing")["options"][:3]
-        for o in options:
-            o["caption"] = unescape(o["caption"])
         try:
-            best = fun.judge_best(options, lambda o: f"[{o['format']}] " + " ".join(o["claim"]) + " | KYA HUA: "
-                                  + " ".join(o["context"]) + " | REALITY CHECK: " + " / ".join(f["fact"] for f in o["facts"])
-                                  + " | " + o["punchline"], CONFIG.get("membership_model", "sonnet"),
-                                  judge_system=f"{SATIRE_JUDGE}\n\nRecent Reels:\n{recent}", min_fresh=6)
+            best = judge(write(sources))
             break
-        except fun.NoGoodJoke:
+        except fun.NoGoodJoke as e:
+            if i == 0:   # the most viral story gets one rewrite with the judge's reasons (owner, 12 Oct 2026)
+                print(f"  Reels for '{story['title'][:50]}' weren't clear/funny/fresh enough: rewriting once")
+                status.step("Rewriting with the judge's notes", 3)
+                notes = "\n".join(f"- Option {s['option']}: understandable {s['understandable']}, funny {s['funny']}, "
+                                  f"fresh {s['fresh']}: {s['why']}" for s in e.scores)
+                try:
+                    best = judge(write(sources, "\n\nA strict judge (a 22-year-old who did NOT read the news) "
+                                       f"rejected your first 3 Reels:\n{notes}\nWrite 3 new Reels that fix this: who, "
+                                       "what and why instantly clear (KYA HUA? explains it), and a joke that lands."))
+                    break
+                except fun.NoGoodJoke:
+                    pass
             print(f"  Reels for '{story['title'][:50]}' weren't clear/funny/fresh enough: trying the next story")
     if best is None:
         raise RuntimeError("the Reels for today's opposition stories weren't clear, funny or fresh enough")
@@ -1202,7 +1271,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                                "Shorten those parts to the limits (hook max 18 words, KYA HUA? max 28 words in total, "
                                "each fact max 14, punchline max 14): same joke, same facts and sources, who/what/when "
                                f"still clear. Change nothing else.\n\n{json.dumps(best, ensure_ascii=False)}",
-                               POLITICS_OPTION, CONFIG.get("membership_model", "sonnet"), purpose="satire shorten")
+                               POLITICS_OPTION, model, purpose="satire shorten")
     roman_only(best, ["caption", "pin_comment", "punchline"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     best["facts"] = best["facts"][:2]
@@ -1220,8 +1289,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     frames, data, proof = proofread.run(
         render,
         {"post": best}, lambda d: g.full_caption(d["post"], item),
-        sources + "\n\n" + ELECTION_RECORD + "\n\n(Facts may also come from certain, widely reported public record "
-        "such as official election results, if the source shown says so.)")
+        ELECTION_RECORD + "\n(Facts may also come from certain, widely reported public record such as official "
+        "election results, if the source shown says so.)\n\n" + sources, strict=True)
     post = data["post"]
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]

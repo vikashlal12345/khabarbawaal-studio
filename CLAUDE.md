@@ -23,10 +23,14 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 - Markets: data from NSE/CNBC only, **never buy/sell tips** (SEBI), "Not investment advice" on every post.
 - Carousels max **10 images** (Instagram share-sheet limit): Top posts are **Top 5** (7 slides).
 - Joke Reels (8 AM, 1 PM, 7 PM; owner 12 Oct 2026): all 3 options on today's trends/big headlines (Google Trends India
-  + `trending_titles()`); relatable desi-life jokes only as a backup round when no trend joke passes the judge.
+  + X trends + `trending_titles()`); relatable desi-life jokes only as a backup round when no trend joke passes the
+  judge; `topic_articles()` gives the proofreader today's news about the joke's trend (facts like dates checked).
 - Fun posts: single image; jokes on widely-known trends (Google Trends India, big stories, day/season) + relatable desi-life moments (first person, deadpan, e.g. @weebx_ style), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
 - Captions: max **5 hashtags** (Instagram limit), high-reach + 1-2 specific, no #KhabarBawaal; `limit_hashtags()` enforces it.
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.
+  **No claim without a fact** (owner 12 Oct 2026): the proofreader must fix (reword/remove) any claim the article
+  doesn't support instead of only flagging it; Reels use `proofread.run(strict=True)`: a claim it couldn't check
+  left → `Unverified` → the Reel is made again (REEL_TRIES). Carousels still only show ⚠️.
 
 ## Schedule (IST) - `schedule.py`
 **Fewer-posts plan (10 Oct 2026, ~9 a day = 5 Reels + 4 carousels).** Quiet 11 PM-5 AM (night jobs only).
@@ -38,7 +42,11 @@ owner 12 Oct 2026: a NEW joke daily, it kept repeating "X ka formula... EVM/vote
 rotating meme formats `SATIRE_FORMATS`, memory of the last 15 in `state.satire_recent` shown to picker/writer/judge
 (judge needs fresh ≥ 6), party not in the last 2 preferred, facts = promise vs reality / U-turns / own record /
 results; KYA HUA? ≤ 28 words, else one AI rewrite `too_long()`; stories newest first (Bing `newest=True` + dates,
-"N h ago" + Google Trends India shown; today first, then backward day by day, trending preferred); safety: skip stories
+"N h ago"; today first, then backward day by day; **most viral first**: `fun.x_trends()` = X/Twitter India trends
+from trends24.in (hours trended, free), the AI turns opposition-related trends into news searches (+1 request),
+stories sorted by trend hours then age (owner: 12 Oct the most viral was CJP founder Abhijeet Dipke vs a Delhi
+Police video, missed because searches were by party name); the trend word itself is searched too); the most viral story's jokes get
+one rewrite with the judge's reasons (`NoGoodJoke.scores`) before the next story is tried; safety: skip stories
 mainly about relatives or only allegations (FIR/ED/CBI, no verdict), REALITY CHECK = settled facts only, a death,
 illness or grief is never the joke) ·
 19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide

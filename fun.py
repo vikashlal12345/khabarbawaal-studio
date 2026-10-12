@@ -174,7 +174,8 @@ No long dialogues, max 2 speakers."""
 
 
 class NoGoodJoke(Exception):
-    pass
+    """No option passed the judge; .scores = the judge's scores and reasons (for a rewrite)."""
+    scores: list = []
 
 
 def google_trends() -> list[str]:
@@ -187,6 +188,29 @@ def google_trends() -> list[str]:
     except Exception:
         return []
     return [t for t in re.findall(r"<title>([^<]+)</title>", xml)[1:21]]
+
+
+def x_trends() -> list[tuple[str, int]]:
+    """What India talks about on X (Twitter) in the last 24 h, from trends24.in (free, no key):
+    [(trend, hours it trended)], most hours first. (owner, 12 Oct 2026: Google Trends missed the
+    day's most viral political story; it trended on X.)"""
+    import html
+    import re
+    import urllib.request
+    from collections import Counter
+    try:
+        req = urllib.request.Request("https://trends24.in/india/", headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            page = r.read().decode("utf-8", "ignore")
+    except Exception:
+        return []
+    hours, best = Counter(), {}
+    for card in re.findall(r'<ol class="?trend-card__list"?>(.*?)</ol>', page, re.S)[:24]:   # one card an hour
+        for rank, name in enumerate(re.findall(r'class="?trend-link"?>([^<]+)</a>', card), 1):
+            name = html.unescape(name).strip()
+            hours[name] += 1
+            best[name] = min(best.get(name, 99), rank)
+    return sorted(hours.items(), key=lambda kv: (-kv[1], best[kv[0]]))
 
 
 def write_fun_post(config: dict, recent: list[str], trending: list[str], used_topics: list[str],
@@ -229,7 +253,9 @@ def judge_best(options: list[dict], text_of, model: str, judge_system: str = "",
         if s["understandable"] >= 7 and s["funny"] >= 6 and s["fresh"] >= min_fresh and total > best_score:
             best, best_score = options[s["option"] - 1], total
     if best is None:
-        raise NoGoodJoke("no joke was clear and funny enough")
+        err = NoGoodJoke("no joke was clear and funny enough")
+        err.scores = scores
+        raise err
     return best
 
 

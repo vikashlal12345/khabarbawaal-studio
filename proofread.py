@@ -29,8 +29,8 @@ SCHEMA = {
             "required": ["wrong", "right", "why", "kind"], "additionalProperties": False}},
         "drop_slides": {"type": "array", "items": {"type": "integer"}},
         "issues": {"type": "array", "items": {"type": "object", "properties": {
-            "slide": {"type": "integer"}, "problem": {"type": "string"}},
-            "required": ["slide", "problem"], "additionalProperties": False}},
+            "slide": {"type": "integer"}, "problem": {"type": "string"}, "unverified": {"type": "boolean"}},
+            "required": ["slide", "problem", "unverified"], "additionalProperties": False}},
     },
     "required": ["fixes", "drop_slides", "issues"],
     "additionalProperties": False,
@@ -55,8 +55,12 @@ of the texts listed below; `right` is the replacement. Only real mistakes, not s
 Hinglish spellings vary (nahi/nahin, hai/hain): don't "fix" those.
 - drop_slides: numbers of PHOTO slides (never slide 1 or text-only slides) whose photo is unrelated \
 to the story, pixelated or badly cropped. They will be removed.
-- issues: only problems a text fix or dropping a slide can't solve (layout, photo problems, doubtful facts), with the \
-slide number (1 = first image, 0 = caption). Empty if the post is fine.
+- No claim without a fact: a claim the article doesn't support (a date, number, name, event, quote, "X will \
+happen") is NOT an issue: fix it (kind = "fact") by rewording it to what the article says, or reword the sentence \
+without that claim. Jokes, opinions and obvious exaggeration are fine.
+- issues: only problems a text fix or dropping a slide can't solve (layout, photo problems), with the slide \
+number (1 = first image, 0 = caption); unverified = true if it is a claim you could not fix that may be untrue or \
+isn't supported by the article. Empty if the post is fine.
 
 Article (for fact checks):
 {article}
@@ -66,6 +70,10 @@ Caption:
 
 Texts used on the slides:
 {texts}"""
+
+
+class Unverified(RuntimeError):
+    """A strict proofread (Reels) left a claim it couldn't check."""
 
 
 def ai_available() -> bool:
@@ -83,7 +91,7 @@ def check(slides: list[Image.Image], caption: str, texts: list[str], article: st
             im.convert("RGB").save(Path(tmp) / f"slide{n}.jpg", quality=85)
             names.append(f"slide{n}.jpg")
         prompt = PROMPT.format(page=g.CONFIG["page_name"], files=", ".join(names),
-                               article=(article or "(not available)")[:4000], caption=caption,
+                               article=(article or "(not available)")[:12000], caption=caption,
                                texts="\n".join(f"- {t}" for t in texts if t and t.strip()))
         cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json",
                "--model", g.CONFIG.get("membership_model", "sonnet"), "--tools", "Read", "--allowedTools", "Read",
@@ -153,9 +161,11 @@ def drop_photo_slides(data: dict, numbers: list[int]) -> dict | None:
     return {**data, "specs": [sp for i, sp in enumerate(data["specs"]) if i not in idx]}
 
 
-def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None):
+def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None, strict: bool = False):
     """render(data) -> slides; caption_of(data) -> caption text; drop(data, slide_numbers) -> data
     without those slides (or None when slides can't be dropped).
+    strict (Reels; owner, 12 Oct 2026: "don't claim without fact"): raises Unverified when a claim the
+    proofreader couldn't check is left (the Reel is then made again).
     Returns (slides, data, proof) where proof = {"state": ok|check|none, "issues": [...], "fixed": [...]}."""
     slides = render(data)
     fixed: list[str] = []
@@ -175,6 +185,9 @@ def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None)
             fixed.append(f"removed weak photo slide(s) {result['drop_slides']}")
             data = dropped
         if not fixes and dropped is None:
+            doubts = [i["problem"] for i in result["issues"] if i.get("unverified")]
+            if strict and doubts:
+                raise Unverified(f"a claim without a fact was left: {doubts[0][:150]}")
             issues = fact_notes + [f"Slide {i['slide']}: {i['problem']}" if i["slide"] else f"Caption: {i['problem']}"
                                    for i in result["issues"]]
             print(f"  proofread: {len(fixed)} fix(es), {len(issues)} issue(s) left")
@@ -189,7 +202,9 @@ def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None)
                 fact_notes.append(f"Fact corrected to match the article: {f['why']}")
         data = apply_fixes(data, fixes)
         slides = render(data)
-    # Still fixing after the last round: show what was done, ask for a look.
+    # Still fixing after the last round: show what was done, ask for a look (a Reel is made again).
+    if strict:
+        raise Unverified("the proofreader was still correcting facts after the last round")
     return slides, data, {"state": "check",
                           "issues": fact_notes + ["Many corrections were needed: please give it a quick read."],
                           "fixed": fixed}
