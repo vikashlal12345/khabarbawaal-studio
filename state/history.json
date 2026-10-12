@@ -246,7 +246,7 @@
   "market_close": "2026-10-09",
   "top10_day": "2026-10-12",
   "night_ready": "2026-10-13",
-  "night_calendar": "2026-10-12",
+  "night_calendar": "2026-10-13",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-12",
   "top10_viral": "2026-10-10",
@@ -322,14 +322,14 @@
   "13 October: 5 Things Jo Itihaas Mein Hue"
  ],
  "calendar": {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "items": [
    {
     "time": "10:00",
-    "topic": "CJP leaders at Parliament Street Police Station for Jantar Mantar protest date",
-    "brief": "CJP leaders are set to visit Delhi's Parliament Street Police Station today to seek a fresh date for their Jantar Mantar protest against CEC Gyanesh Kumar over the SIR exercise. They say Delhi Police have 24 hours to give a date. BJP has hit out at the CJP, mocking how fast its stand keeps changing.",
-    "search": "CJP leaders Parliament Street Police Station Jantar Mantar protest",
-    "done": true
+    "topic": "TechSparks 2026 Bengaluru day 1",
+    "brief": "YourStory's TechSparks 2026 tech summit runs October 13 to 15 in Bengaluru. It brings together entrepreneurs, policymakers, investors and innovators for three days of talks, demos and networking, and it starts today.",
+    "search": "TechSparks 2026 Bengaluru YourStory",
+    "done": false
    }
   ]
  },
