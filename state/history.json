@@ -380,7 +380,8 @@
   "25596",
   "39854",
   "28321",
-  "4837"
+  "4837",
+  "42583"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -466,7 +467,8 @@
  ],
  "reel_politics_used": [
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji"
+  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
+  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms"
  ],
  "reel_news_used": [
   "119d9f27c7b0",
@@ -505,6 +507,14 @@
    "topic": "INDIA bloc 'vote chori' march against the CEC (EC / EVM blame)",
    "hook": "Congress ka formula: Jeeto toh janta ki jeet, haaro toh Election Commission ki chori",
    "punchline": "Jeet pe EVM mahaan, haar pe EVM shaitaan"
+  },
+  {
+   "date": "2026-10-12",
+   "party": "AAP",
+   "format": "Job ad / rate card",
+   "topic": "AAP: Sanjay Singh and Saurabh Bharadwaj detained during march against CEC Gyanesh Kumar",
+   "hook": "HIRING: Full-time dharna wala. Skill: CEC ke khilaf march. Perk: police bus mein free ride.",
+   "punchline": "Seat 22 rahi, par detain hone ka target poora."
   }
  ]
 }

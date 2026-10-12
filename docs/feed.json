@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_politics-2026-10-12",
+  "image": "posts/20261012-1450-reel_politics-2026-10-12.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261012-145033-reel_politics-2026-10-12.mp4",
+  "headline": "HIRING: Full-time dharna wala. Skill: CEC ke khilaf march. Perk: police bus mein free ride.",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "AAP ke Sanjay Singh aur Saurabh Bharadwaj aaj CEC ke khilaf march mein detain hue. 🚌\nJob ad ready hai, bas CV bhejna baaki.\nKis dost ko ye role suit karega? Tag karo. 👇\n\nFollow @khabarbawaal for daily updates.\nSource: The Times of India (link pinned in comments 👇)\n\n#aap #politicalmemes #sanjaysingh #delhi #reelsindia",
+  "source": "The Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
+  "pin_comment": "Is job ka salary kya hona chahiye? Comment mein batao.",
+  "songs": [
+   {
+    "title": "Jamaican (Bam Bam)",
+    "artist": "Hugel, SOLTO (FR)",
+    "lang": "english",
+    "mood": "funny, upbeat drop"
+   },
+   {
+    "title": "Chalre Chalre Waal",
+    "artist": "Akash Khaira",
+    "lang": "english",
+    "mood": "funny, quirky"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, party"
+   },
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "chill, ironic"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-12T14:50:33+00:00"
+ },
+ {
   "id": "reel_news-2026-10-12",
   "image": "posts/20261012-1432-reel_news-2026-10-12.jpg",
   "kind": "reel",
