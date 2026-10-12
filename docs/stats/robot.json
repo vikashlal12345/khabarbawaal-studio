@@ -2228,6 +2228,33 @@
      "tokens": 33731
     }
    }
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 8,
+   "input": 16,
+   "output": 12503,
+   "cache_read": 5976,
+   "cache_write": 66950,
+   "value_usd": 0.3935,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 1,
+     "tokens": 7933
+    },
+    "satire writing": {
+     "requests": 3,
+     "tokens": 47888
+    },
+    "joke judge": {
+     "requests": 3,
+     "tokens": 22698
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 6926
+    }
+   }
   }
  }
 }
