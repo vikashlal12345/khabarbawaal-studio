@@ -2205,6 +2205,29 @@
      "tokens": 7019
     }
    }
+  },
+  "news": {
+   "posts": 1,
+   "requests": 4,
+   "input": 14,
+   "output": 3747,
+   "cache_read": 15149,
+   "cache_write": 36525,
+   "value_usd": 0.1851,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 13273
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 8431
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 33731
+    }
+   }
   }
  }
 }
