@@ -1,8 +1,8 @@
 {
- "summary": "From our last 125 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL  TECH (3), REEL  MEME (3), TECH (2); weakest ON THIS DAY (1), DELHI (1). Formats: custom 2, reel 2, news 1, fun 1, top10 1, ready 1, calendar 1, thought 1, market 1. Lean toward what works, keep some variety.",
- "posts": 125,
- "likes": 171,
- "updated": "2026-10-11T22:30:59+00:00",
+ "summary": "From our last 132 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL  TECH (3), REEL  MEME (2), TECH (2); weakest GOOD NEWS (1), THOUGHT OF THE DAY (1). Formats: custom 2, reel 2, news 1, top10 1, fun 1, ready 1, calendar 1, market 1, thought 1. Lean toward what works, keep some variety.",
+ "posts": 132,
+ "likes": 182,
+ "updated": "2026-10-12T22:30:49+00:00",
  "topics": [
   [
    "REEL  TECH",
@@ -10,14 +10,14 @@
   ],
   [
    "REEL  MEME",
-   3.0
+   2.5
   ],
   [
    "TECH",
    2.2
   ],
   [
-   "MOOD",
+   "REEL 23  MEME",
    2.0
   ],
   [
@@ -25,24 +25,36 @@
    2.0
   ],
   [
-   "EXPECTATION VS REALITY",
-   2.0
-  ],
-  [
    "REEL 33  NEWS SLIDESHOW",
    2.0
   ],
   [
-   "REEL 23  MEME",
+   "BHAGWAN KA SAATH",
    2.0
   ],
   [
-   "REEL  TAG THAT FRIEND",
-   1.8
+   "MOOD",
+   2.0
+  ],
+  [
+   "EXPECTATION VS REALITY",
+   2.0
+  ],
+  [
+   "GITA GYAAN",
+   2.0
   ],
   [
    "VIRAL",
    1.7222222222222223
+  ],
+  [
+   "REEL  TAG THAT FRIEND",
+   1.6666666666666667
+  ],
+  [
+   "RAAT KI 5 KHABREIN",
+   1.5
   ],
   [
    "TAG KARO",
@@ -57,27 +69,23 @@
    1.5
   ],
   [
-   "RAAT KI 5 KHABREIN",
-   1.5
-  ],
-  [
    "BOLLYWOOD",
    1.4285714285714286
+  ],
+  [
+   "TOP 5 NEWS",
+   1.4
   ],
   [
    "POLITICS",
    1.2857142857142858
   ],
   [
-   "RELATABLE",
-   1.25
-  ],
-  [
    "AMAZING FACTS",
    1.25
   ],
   [
-   "TOP 5 NEWS",
+   "RELATABLE",
    1.25
   ],
   [
@@ -85,51 +93,7 @@
    1.2
   ],
   [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "CLOSING BELL",
-   1.0
-  ],
-  [
-   "REEL  REALITY CHECK",
-   1.0
-  ],
-  [
-   "WTF NEWS",
-   1.0
-  ],
-  [
-   "PREOPEN",
-   1.0
-  ],
-  [
-   "QUIZ",
-   1.0
-  ],
-  [
-   "FAMILY GROUP",
-   1.0
-  ],
-  [
-   "EXPLAINER",
-   1.0
-  ],
-  [
-   "DESI LIFE",
-   1.0
-  ],
-  [
-   "THOUGHT OF THE DAY",
-   1.0
-  ],
-  [
-   "EDUCATION",
-   1.0
-  ],
-  [
-   "MARKET BRIEF",
+   "REEL  BOLLYWOOD",
    1.0
   ],
   [
@@ -137,7 +101,55 @@
    1.0
   ],
   [
+   "MARKET BRIEF",
+   1.0
+  ],
+  [
+   "FAMILY GROUP",
+   1.0
+  ],
+  [
    "DELHI",
+   1.0
+  ],
+  [
+   "REEL  REALITY CHECK",
+   1.0
+  ],
+  [
+   "EDUCATION",
+   1.0
+  ],
+  [
+   "DESI LIFE",
+   1.0
+  ],
+  [
+   "WTF NEWS",
+   1.0
+  ],
+  [
+   "QUIZ",
+   1.0
+  ],
+  [
+   "EXPLAINER",
+   1.0
+  ],
+  [
+   "PREOPEN",
+   1.0
+  ],
+  [
+   "CLOSING BELL",
+   1.0
+  ],
+  [
+   "GOOD NEWS",
+   1.0
+  ],
+  [
+   "THOUGHT OF THE DAY",
    1.0
   ]
  ],
@@ -148,34 +160,34 @@
   ],
   [
    "reel",
-   2.0
+   1.7857142857142858
   ],
   [
    "news",
    1.4814814814814814
   ],
   [
+   "top10",
+   1.4545454545454546
+  ],
+  [
    "fun",
    1.4166666666666667
   ],
   [
-   "top10",
-   1.4
-  ],
-  [
    "ready",
-   1.1
+   1.1818181818181819
   ],
   [
    "calendar",
    1.0
   ],
   [
-   "thought",
+   "market",
    1.0
   ],
   [
-   "market",
+   "thought",
    1.0
   ]
  ]
