@@ -1,165 +1,5 @@
 [
  {
-  "id": "r20261010-215101-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261010-215101-bhakti.jpg",
-  "headline": "Maa, main kuch nahi maangta, bas papa ko theek kar do. Aap hain, to mujhe bharosa hai.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Jab kuch haath mein na ho, Maa ka haath sar par hota hai 🙏\nComment karo Jai Mata Di\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #maashailputri #bhakti #explorepage",
-  "pin_comment": "Jiske liye dua kar rahe ho, unke liye Jai Mata Di likho 🙏",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: Only slide1.jpg exists, so I checked just that one. Its text is clean and readable, and it doesn't cover any face. The illustration doesn't match how Maa Shailputri is usually shown. She normally holds a trident and a lotus and rides a bull (Vrishabha). Here she holds neither, and the animal in the corridor looks like a cow. Devotional followers may notice. Consider a more accurate image, or at least check that it's acceptable. The 'AI illustration' label is present, which is good."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T21:51:01+00:00"
- },
- {
-  "id": "r20261010-222533-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261010-222533-gita.jpg",
-  "video": "posts/r20261010-222533-gita.mp4",
-  "headline": "Gita 1.1: Ek andha raja... aur ek sawaal",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Gita ka pehla shlok aur pehli seekh: 'mera' aur 'paraya' ka bhed hi jhagde ki jad hai. 🙏\nRoz ek shlok, Gita Gyaan series mein.\nAapke hisaab se kaun sa bhed sabse bada hai? Comment karke batao.\n\n📖 Roz ek shlok: Bhagavad Gita 1.1 · Kal: shlok 1.2\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal aayega Gita 1.2. Follow karo taaki koi shlok miss na ho 🙏 Aapke 'mere wale' kaun hain?",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional, calm"
-   },
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "peaceful, divine"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "dramatic, intense"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "epic, cinematic"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-10T22:25:34+00:00"
- },
- {
-  "id": "r20261011-1931-quiz",
-  "kind": "ready",
-  "image": "posts/r20261011-1931-quiz-1.jpg",
-  "slides": [
-   "posts/r20261011-1931-quiz-2.jpg",
-   "posts/r20261011-1931-quiz-3.jpg",
-   "posts/r20261011-1931-quiz-4.jpg",
-   "posts/r20261011-1931-quiz-5.jpg",
-   "posts/r20261011-1931-quiz-6.jpg",
-   "posts/r20261011-1931-quiz-7.jpg"
-  ],
-  "headline": "Cricket Quiz: Can You Score 4/4?",
-  "tag": "📦 QUIZ",
-  "caption": "Cricket ke sabse bade moments, 4 sawaal mein! Swipe karke answers dekho aur comment mein apna score batao. Kitne sahi kiye tumne?\n\nFollow @khabarbawaal for daily updates.\n\n#cricket #viral #trending #india #cricketquiz",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-11T19:31:28+00:00"
- },
- {
-  "id": "r20261011-1931-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261011-1931-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261011-1931-on_this_day-2.jpg",
-   "posts/r20261011-1931-on_this_day-3.jpg",
-   "posts/r20261011-1931-on_this_day-4.jpg",
-   "posts/r20261011-1931-on_this_day-5.jpg",
-   "posts/r20261011-1931-on_this_day-6.jpg",
-   "posts/r20261011-1931-on_this_day-7.jpg"
-  ],
-  "headline": "12 October: 4 Things That Changed The World",
-  "tag": "📦 ON THIS DAY",
-  "caption": "12 October ko duniya aur India dono ne history dekhi: Columbus se lekar RTI tak. Inme se kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ke saath share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #history #india #viral #trending",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The black flame icon covers the \"AY\" of the faint \"ON THIS DAY\" watermark. The watermark is decorative and low-contrast, so this is minor. Consider moving the icon or the watermark if you want it fully readable."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-11T19:31:49+00:00",
-  "valid_on": "2026-10-12"
- },
- {
-  "id": "r20261011-193507-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261011-193507-gita.jpg",
-  "video": "posts/r20261011-193507-gita.mp4",
-  "headline": "Gita 1.2: Sab kuch tha... phir bhi bechain",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Sab kuch tha, phir bhi mann bechain. 🙏\nGita 1.2: dar bahar ki taakat se nahi, andar ki neev se jaata hai.\nApna sabse bada dar comment mein likho ya kisi dost ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.2 · Kal: shlok 1.3\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mindset",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal Gita 1.3 aayega. Roz ek shlok, saath chalte rehna 🙏",
-  "songs": [
-   {
-    "title": "Finding Her",
-    "artist": "Kushagra, Saaheal",
-    "lang": "hindi",
-    "mood": "chill, thoughtful"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft, calm"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "chill, introspective"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "slow, emotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-11T19:35:07+00:00"
- },
- {
   "id": "r20261011-213224-bhakti",
   "kind": "ready",
   "image": "posts/r20261011-213224-bhakti.jpg",
@@ -177,5 +17,106 @@
    "fixed": []
   },
   "created_at": "2026-10-11T21:32:24+00:00"
+ },
+ {
+  "id": "r20261012-1931-facts",
+  "kind": "ready",
+  "image": "posts/r20261012-1931-facts-1.jpg",
+  "slides": [
+   "posts/r20261012-1931-facts-2.jpg",
+   "posts/r20261012-1931-facts-3.jpg",
+   "posts/r20261012-1931-facts-4.jpg",
+   "posts/r20261012-1931-facts-5.jpg",
+   "posts/r20261012-1931-facts-6.jpg",
+   "posts/r20261012-1931-facts-7.jpg"
+  ],
+  "headline": "5 Things India Ne Duniya Ko Diye",
+  "tag": "📦 AMAZING FACTS",
+  "caption": "Chess se zero tak, India ne duniya ko kaafi kuch diya. Kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#india #viral #trending #facts #indianhistory",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Isका purana roop → Iska purana roop"
+   ]
+  },
+  "created_at": "2026-10-12T19:31:29+00:00"
+ },
+ {
+  "id": "r20261012-1931-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261012-1931-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261012-1931-on_this_day-2.jpg",
+   "posts/r20261012-1931-on_this_day-3.jpg",
+   "posts/r20261012-1931-on_this_day-4.jpg",
+   "posts/r20261012-1931-on_this_day-5.jpg",
+   "posts/r20261012-1931-on_this_day-6.jpg",
+   "posts/r20261012-1931-on_this_day-7.jpg"
+  ],
+  "headline": "13 October: 5 Things Jo Itihaas Mein Hue",
+  "tag": "📦 ON THIS DAY",
+  "caption": "13 October ko Bollywood, technology aur bravery ki kitni yaadgaar kahaniyan judi hain! Kaunsa fact sabse zyada pasand aaya? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #viral #trending #india #kishorekumar",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-12T19:31:51+00:00",
+  "valid_on": "2026-10-13"
+ },
+ {
+  "id": "r20261012-193626-gita",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261012-193626-gita.jpg",
+  "video": "posts/r20261012-193626-gita.mp4",
+  "headline": "Gita 1.3: Guru ko hi taana... kyun?",
+  "tag": "📦 🙏 GITA GYAAN",
+  "caption": "Duryodhan ne apne guru ko hi taana maara... par asli wajah darr tha. 🙏\nGita 1.3 mein chhupi hai ek badi seekh.\nAapne kab darr mein taana maara? Comment karke batao ya kisi dost ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.3 · Kal: shlok 1.4\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
+  "source": "Bhagavad Gita",
+  "source_url": "",
+  "pin_comment": "Kal ka shlok 1.4: Duryodhan sena ke veer ginata hai. Follow karke roz ek shlok samjho 🙏",
+  "songs": [
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "tense, dramatic"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "moody, slow"
+   },
+   {
+    "title": "Finding Her",
+    "artist": "Kushagra, Bharath",
+    "lang": "hindi",
+    "mood": "deep, calm"
+   },
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "reflective, soft"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The small label above the main text looks like 'KYA HO,RAHA HAI'. There seems to be a comma-like mark between HO and RAHA, and the word spacing is off. Check the label rendering.",
+    "Slide 5: A stray dot or mark sits on the 'AAJ KI SEEKH' label and on 'chhupata'. It looks like a sparkle overlay hitting the text. Slides 3 and 4 have the same kind of sparkles on the text."
+   ],
+   "fixed": [
+    "Aapne kab darr mein taana mara? → Aapne kab darr mein taana maara?"
+   ]
+  },
+  "created_at": "2026-10-12T19:36:26+00:00"
  }
 ]

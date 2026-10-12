@@ -245,7 +245,7 @@
   "night_learn": "2026-10-12",
   "market_close": "2026-10-09",
   "top10_day": "2026-10-12",
-  "night_ready": "2026-10-12",
+  "night_ready": "2026-10-13",
   "night_calendar": "2026-10-12",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-12",
@@ -317,7 +317,9 @@
   "Inflation Kya Hai? Simple Explainer",
   "11 October: 4 Things Jo Yaad Rakhne Layak Hain",
   "Cricket Quiz: Can You Score 4/4?",
-  "12 October: 4 Things That Changed The World"
+  "12 October: 4 Things That Changed The World",
+  "5 Things India Ne Duniya Ko Diye",
+  "13 October: 5 Things Jo Itihaas Mein Hue"
  ],
  "calendar": {
   "date": "2026-10-12",
@@ -463,7 +465,8 @@
   "Gita 6.17: Weekend ki thakaan: kaam aur aaram ka santulan, burnout",
   "Gita 18.66: Ghar aur career ka dabaav, future ki chinta",
   "Gita 1.1: Gita 1.1: blind king Dhritarashtra asks Sanjay what his sons and the Pandavas did at Kurukshetra. Lesson: 'mera' and 'paraya' ka bhed is the root of conflict.",
-  "Gita 1.2: Gita 1.2: Duryodhan sees the Pandav army and approaches Dron. Lesson: fear hides inside even when you have everything."
+  "Gita 1.2: Gita 1.2: Duryodhan sees the Pandav army and approaches Dron. Lesson: fear hides inside even when you have everything.",
+  "Gita 1.3: Gita 1.3: Duryodhan Dronacharya se kehta hai, 'Pandavon ki badi sena dekhiye, jise aapke hi shishya Drupad-putra ne saja diya.' Lesson: taana aksar andar ke darr ko chhupata hai."
  ],
  "reel_politics_used": [
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
@@ -490,7 +493,7 @@
   "Maa Shailputri: hospital corridor, a young man waiting outside for news of his father",
   "Maa Brahmacharini: first salary day, a young woman standing on a balcony with her phone showing the credit message, thinking of her parents"
  ],
- "gita_next": 2,
+ "gita_next": 3,
  "satire_recent": [
   {
    "date": "2026-10-10",

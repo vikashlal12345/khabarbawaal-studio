@@ -2325,5 +2325,38 @@
     }
    }
   }
+ },
+ "2026-10-13": {
+  "night_ready": {
+   "posts": 0,
+   "requests": 10,
+   "input": 32,
+   "output": 12150,
+   "cache_read": 26751,
+   "cache_write": 87117,
+   "value_usd": 0.4729,
+   "by_purpose": {
+    "writing": {
+     "requests": 2,
+     "tokens": 19303
+    },
+    "proofreading": {
+     "requests": 5,
+     "tokens": 76378
+    },
+    "gita writing": {
+     "requests": 1,
+     "tokens": 13529
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 8612
+    },
+    "flux pick": {
+     "requests": 1,
+     "tokens": 8228
+    }
+   }
+  }
  }
 }
