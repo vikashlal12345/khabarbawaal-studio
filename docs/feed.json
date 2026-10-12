@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_clip_am-2026-10-12",
+  "image": "posts/20261012-0231-reel_clip_am-2026-10-12.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261012-023148-reel_clip_am-2026-10-12.mp4",
+  "headline": "Wo dost jo Monday office pahunchke bolta hai: 'Aaj sirf easy kaam karunga.' Laptop khula: 47 mails, 3 meetings.",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Monday ka 'easy din' sirf plan mein hota hai 😅\nOffice wale dost ko abhi bhej do 💼\nTumhari inbox mein Monday ko kitni mails thi? Number batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#reelsindia #viral #trending #officelife #mondaymood",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Meeting 'quick sync' bola gaya tha. Do ghante ho gaye.",
+  "songs": [
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "dramatic, hustle"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hype, intense"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "dramatic, sad joke"
+   },
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "dramatic, emotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-12T02:31:48+00:00"
+ },
+ {
   "id": "night_roundup-2026-10-12",
   "image": "posts/20261012-0131-night_roundup-2026-10-12.jpg",
   "kind": "top10",
