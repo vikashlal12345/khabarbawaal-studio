@@ -6,9 +6,9 @@
 Three styles (each writes the MP4 and returns still frames for the proofreader):
     clip_reel(clip, start, dur, hook, text, highlight, out_mp4)
         real video clip filling the screen, outlined meme text popping in on top
-    meme_reel(clip, start, dur, setup, punch, punch_at, highlight, out_mp4)
+    meme_reel(clip, start, dur, setup, punch, punch_at, highlight, out_mp4, hold)
         classic meme layout: white screen, text above the clip; setup text counts up,
-        punchline swaps in at punch_at seconds
+        punchline swaps in at punch_at seconds; a short clip freezes on its last frame for hold seconds
     news_reel(slides, end_text, highlight, tag, out_mp4)
         news photos zooming/sliding with story lines, ending on a punchline card
         slides = [(photo, credit, text), ...]
@@ -71,10 +71,13 @@ class Encoder:
             raise RuntimeError("ffmpeg failed")
 
 
-def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5):
-    """Frames of a clip, scaled to cover w x h (crop centred at crop_x of the width), 30 fps."""
+def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5, hold: float = 0.0):
+    """Frames of a clip, scaled to cover w x h (crop centred at crop_x of the width), 30 fps;
+    hold = seconds the last frame stays on after the clip (a clip shorter than the text needs)."""
     vf = (f"scale={w}:{h}:force_original_aspect_ratio=increase,"
           f"crop={w}:{h}:(iw-{w})*{crop_x}:(ih-{h})/2,fps={FPS}")
+    if hold > 0:
+        vf += f",tpad=stop_mode=clone:stop_duration={hold:.2f}"
     p = subprocess.Popen([ffmpeg_exe(), "-loglevel", "error", "-ss", str(start), "-t", str(dur), "-i", path,
                           "-vf", vf, "-an", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
     size = w * h * 3
@@ -233,9 +236,10 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
 # ---------------------------------------------------------------- 2. classic meme layout
 
 def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str, punch_at: float,
-              highlight: list[str], out_mp4: str) -> list[Image.Image]:
+              highlight: list[str], out_mp4: str, hold: float = 0.0) -> list[Image.Image]:
     """White screen, text on top, clip in the middle. setup = short items shown one by one
-    (e.g. alarm times), punch replaces them at punch_at seconds.
+    (e.g. alarm times), punch replaces them at punch_at seconds. The last `hold` seconds of dur
+    freeze the clip's last frame (the clip is shorter than the reading time).
     Returns the frames to proofread: [setup complete, cover (punchline)]."""
     highlights = {norm(w) for phrase in highlight for w in phrase.split()}
     clip_w, clip_h = RW, int(RW * 9 / 16)
@@ -246,7 +250,7 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
     logo = logo_img()
     every = min(0.75, (punch_at - 0.3) / max(len(setup), 1))
     enc, before, cover, frame = Encoder(out_mp4), None, None, None
-    for i, shot in enumerate(clip_frames(clip, start, dur, clip_w, clip_h)):
+    for i, shot in enumerate(clip_frames(clip, start, dur - hold, clip_w, clip_h, hold=hold)):
         t = i / FPS
         frame = Image.new("RGBA", (RW, RH), "#FFFFFF")
         if logo:
@@ -403,9 +407,10 @@ CLIP_SECONDS, MEME_SECONDS = 6.5, 8.0      # shortest Tag that friend / meme Ree
 CLIP_MAX = 10.0
 
 
-def read_secs(text: str, base: float = 1.5) -> float:
-    """Time on screen to read a block of text in full: base + 0.25 s a word (owner, 11 Oct 2026, all Reels)."""
-    return base + 0.25 * len(text.split())
+def read_secs(text: str, base: float = 1.5, per_word: float = 0.25) -> float:
+    """Time on screen to read a block of text in full: base + 0.25 s a word (owner, 11 Oct 2026, all Reels;
+    7 PM meme slower: 2 s + 0.4 s a word, owner 12 Oct 2026)."""
+    return base + per_word * len(text.split())
 CLIP_KINDS = ("reel_clip", "reel_clip_am")   # "Tag that friend" clip Reels (1 PM and 8 AM)
 
 REEL_RULES = """This joke becomes a short Instagram REEL: a free stock video clip (Mixkit) with our text on top.
@@ -730,20 +735,20 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
-    # Long enough to read the (proofread) text in full; a short stock clip caps it.
+    # Long enough to read the (proofread) text in full; a short stock clip caps Tag that friend (memes freeze).
     if kind in CLIP_KINDS:
         def render(d):   # + 1 s for the TAG THAT FRIEND banner and the lines popping in
             dur = min(max(CLIP_SECONDS, read_secs(d["text"], 2.5)), CLIP_MAX, secs - 0.2)
             start = max(0.0, min(1.0, secs - dur - 0.2))
             return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out)
     else:
-        def render(d):   # build-up, then the punchline: each never shorter than before (4.4 s + 3.6 s)
-            setup_t = min(7.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]))))
-            punch_t = min(7.5, max(MEME_SECONDS * 0.45, read_secs(d["punch"])))
-            dur = min(setup_t + punch_t, secs - 0.2)
+        def render(d):   # build-up, then the punchline: 2 s + 0.4 s a word each (owner, 12 Oct 2026: was too fast)
+            setup_t = min(9.0, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]), 2.0, 0.4)))
+            punch_t = min(9.0, max(MEME_SECONDS * 0.45, read_secs(d["punch"], 2.0, 0.4)))
+            dur = setup_t + punch_t
             start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
-            return meme_reel(clip, start, dur, d["setup"], d["punch"], round(dur * setup_t / (setup_t + punch_t), 2),
-                             d["highlight"], out)
+            hold = max(0.0, dur - (secs - 0.2))     # a short clip freezes on its last frame, the text keeps its time
+            return meme_reel(clip, start, dur, d["setup"], d["punch"], round(setup_t, 2), d["highlight"], out, hold)
     status.step("Making the video + proofreading", 5)
     frames, post, proof = proofread.run(render, post, g.fun_caption)
     text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"

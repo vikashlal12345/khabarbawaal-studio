@@ -79,7 +79,8 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
   visual story from today's news posts, photos via `carousel.collect(max_words=14)`. Feed entry has `video`.
   Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
   Reading time (owner, 11 Oct 2026): every text block stays `read_secs()` = 1.5 s + 0.25 s a word (news photos 3-7.5 s,
-  Tag that friend 2.5 s + 0.25/word 6.5-10 s, meme build-up/punchline each ≥ old 4.4/3.6 s, satire hook 4.5-6 s);
+  Tag that friend 2.5 s + 0.25/word 6.5-10 s, satire hook 4.5-6 s); 7 PM meme slower (owner, 12 Oct 2026: "not able
+  to read"): build-up/punchline each 2 s + 0.4 s a word (≥ 4.4/3.6 s, ≤ 9 s), a short clip freezes on its last frame;
   devotional/Gita keep their slower `read_time()`; own-video Reels = the video's length.
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
