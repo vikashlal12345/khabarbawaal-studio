@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_devotion-2026-10-12",
+  "image": "posts/20261012-0034-reel_devotion-2026-10-12.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261012-003413-reel_devotion-2026-10-12.mp4",
+  "headline": "Navratri Din 2: Maa Brahmacharini: Navratri ka doosra din... shaanti aur shraddha ke naam",
+  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
+  "caption": "Maa Brahmacharini aapke ghar shaanti aur khushiyan layein 🙏\nAaj ka din shaant mann se shuru karo.\nParivar ko bhejo ya comment karo 'Jai Maa Durga'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #brahmacharini #jaimatadi #goodmorning #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jai Maa Durga 🙏 Aapka din mangalmay ho.",
+  "songs": [
+   {
+    "title": "Maa Durga Aarti",
+    "artist": "Shoma Banerjee",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri Aarti",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri (Durga Aarti)",
+    "artist": "Hari Om Sharan, Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Navratri Bhajan",
+    "artist": "Kanchan Kiran Mishra",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The text says Maa holds a japmala and kamandal, but the AI illustration shows neither. Her raised hand is empty. This is minor. You could add a small note or leave it as is."
+   ],
+   "fixed": [
+    "Durga ma ka doosra swaroop → Maa Durga ka doosra swaroop"
+   ]
+  },
+  "created_at": "2026-10-12T00:34:13+00:00"
+ },
+ {
   "id": "top10_day-2026-10-11",
   "image": "posts/20261011-1546-top10_day-2026-10-11.jpg",
   "kind": "top10",
@@ -472,52 +521,5 @@
    "posts/20261011-0131-night_roundup-2026-10-11-s7.jpg"
   ],
   "created_at": "2026-10-11T01:31:12+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-11",
-  "image": "posts/20261011-0033-reel_devotion-2026-10-11.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261011-003312-reel_devotion-2026-10-11.mp4",
-  "headline": "Navratri Din 1: Maa Shailputri: Navratri ka pehla din... Maa Shailputri ka aashirwaad aapke ghar aaye",
-  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
-  "caption": "Navratri ka pehla din, Maa ke charan mein pranam 🙏\nMaa sabke ghar sukh, shanti aur himmat barsaye.\nShare karo apne parivaar ke saath ya comment karo 'Jai Mata Di'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #jaimatadi #maashailputri #sharadnavratri #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Jai Mata Di 🙏 Aaj Maa ke naam ek diya zaroor jalayein.",
-  "songs": [
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Main Balak Tu Mata Sheranwaliye (From \"Mamta Ka Mandir\")",
-    "artist": "Babla Mehta, Dilip Sen-Sameer Sen",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Navratri Bhajan",
-    "artist": "Kanchan Kiran Mishra",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The text says Maa holds a trishul and a kamal. The AI illustration shows only the lotus and no trident. Traditionally Shailputri holds a trident in her right hand, so the picture doesn't match the text. Consider changing the text or the image."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-11T00:33:12+00:00"
  }
 ]
