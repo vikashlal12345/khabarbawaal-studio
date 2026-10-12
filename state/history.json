@@ -252,7 +252,7 @@
   "market_open": "2026-10-10",
   "market_preopen": "2026-10-10",
   "thought": "2026-10-10",
-  "reel_clip": "2026-10-11",
+  "reel_clip": "2026-10-12",
   "reel_clip_am": "2026-10-12",
   "reel_politics": "2026-10-11",
   "reel_meme": "2026-10-11",
@@ -377,7 +377,8 @@
   "4537",
   "43842",
   "25596",
-  "39854"
+  "39854",
+  "28321"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -389,7 +390,8 @@
   "Relatable desi life: Sunday ka khana, mummy ka plan",
   "Family WhatsApp group: sab rishtedaar ek saath tumhari life choices ke khilaf",
   "Relatable desi life: Sunday evening, kal Monday hai",
-  "Relatable desi life: office Monday, laptop kholte hi meetings"
+  "Relatable desi life: office Monday, laptop kholte hi meetings",
+  "Relatable desi life: mummy ka 'bas 5 minute' dhoop mein kapde sukhane / bartan wala moment, ghar mein padhai ka natak"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -401,7 +403,8 @@
   "Wo dost jo Sunday ko bolta hai: 'Aaj to sirf aaram.' Mummy: 'Chal bazaar.' Aaram: 11 baje tak hi chala",
   "Family group mein sab ek saath bole: Tu galat kar raha hai Meri salary: Poora khandaan mere khilaf hai, lagta hai main kuch toh sahi kar raha hoon",
   "Sunday subah: Aaj poora din hai, Sunday dopahar: Abhi toh time hai, Sunday 7 baje: Me jab yaad aaya kal Monday hai aur kuch kiya hi nahi",
-  "Wo dost jo Monday office pahunchke bolta hai: 'Aaj sirf easy kaam karunga.' Laptop khula: 47 mails, 3 meetings."
+  "Wo dost jo Monday office pahunchke bolta hai: 'Aaj sirf easy kaam karunga.' Laptop khula: 47 mails, 3 meetings.",
+  "POV: Mummy ne bola 'padh le beta', maine book kholi, aur ab tak 40 minute se sirf pehla page decorate kar raha hoon"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -425,7 +428,11 @@
   "25596": "Free",
   "8894": "Mixkit Restricted License",
   "5601": "Mixkit Restricted License",
-  "39854": "Free"
+  "39854": "Free",
+  "6100": "Mixkit Restricted License",
+  "14956": "Mixkit Restricted License",
+  "13316": "Mixkit Restricted License",
+  "28321": "Free"
  },
  "create_done": [
   "1791580482",
