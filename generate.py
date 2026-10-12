@@ -828,9 +828,12 @@ def night_job(kind: str, state: dict) -> None:
     save_json(STATE_FILE, state)
 
 
+REEL_TRIES = 3   # a Reel slot tries this often before giving up (no news post instead; owner, 12 Oct 2026)
+
+
 def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: list[str]) -> bool | None:
     """Top 10 carousels, the 5 AM roundup, Thought of the Day, market posts and 🎬 Reels.
-    False means a Reel couldn't be made (the slot then gets a regular post)."""
+    A Reel slot posts Reels only: up to REEL_TRIES tries, then nothing (owner, 12 Oct 2026)."""
     import schedule
     import specials
 
@@ -840,12 +843,14 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
 
     if kind.startswith("reel_"):
         import reel
-        state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()   # one try a day
+        state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()   # one run a day
         save_json(STATE_FILE, state)
-        if not reel.make(kind, state, feed):
-            return False
-        resolved += ["token", "limit", "ai-error"]
-        return True
+        for attempt in range(1, REEL_TRIES + 1):   # each try writes afresh; Restricted clips are remembered
+            if reel.make(kind, state, feed, attempt, REEL_TRIES):
+                resolved += ["token", "limit", "ai-error"]
+                return True
+        print(f"No Reel after {REEL_TRIES} tries: nothing posted in this slot.")
+        return
 
     if kind == "thought":
         out = specials.make_thought(state)
@@ -905,10 +910,9 @@ def main() -> int:
     import fun
     if special:
         fun.CURRENT_JOB = special
-        if make_special(special, state, feed, raised, resolved) is not False:
-            write_alerts(raised, resolved)
-            return 0
-        print("No Reel this time: making a regular post for this slot instead.")
+        make_special(special, state, feed, raised, resolved)
+        write_alerts(raised, resolved)
+        return 0
 
     # Timed runs (chain/backup timer) post a regular post only at the planned hours (schedule.REGULAR_HOURS).
     if args.kind == "auto" and args.min_gap:

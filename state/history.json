@@ -487,5 +487,23 @@
   "Maa Shailputri: hospital corridor, a young man waiting outside for news of his father",
   "Maa Brahmacharini: first salary day, a young woman standing on a balcony with her phone showing the credit message, thinking of her parents"
  ],
- "gita_next": 2
+ "gita_next": 2,
+ "satire_recent": [
+  {
+   "date": "2026-10-10",
+   "party": "AAP",
+   "format": "Party ka formula",
+   "topic": "Kejriwal called the CEC a 'vote thief' (EC / vote chori)",
+   "hook": "Kejriwal ka formula: Punjab jeeto toh janta, Delhi haaro toh Vote Chor",
+   "punchline": "Punjab mein EC bhagwan, Delhi mein EC chor"
+  },
+  {
+   "date": "2026-10-11",
+   "party": "Congress",
+   "format": "Party ka formula",
+   "topic": "INDIA bloc 'vote chori' march against the CEC (EC / EVM blame)",
+   "hook": "Congress ka formula: Jeeto toh janta ki jeet, haaro toh Election Commission ki chori",
+   "punchline": "Jeet pe EVM mahaan, haar pe EVM shaitaan"
+  }
+ ]
 }

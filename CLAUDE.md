@@ -22,6 +22,8 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   the BJP. Still: real facts, no invented quotes, no hate against communities, no calls to violence.
 - Markets: data from NSE/CNBC only, **never buy/sell tips** (SEBI), "Not investment advice" on every post.
 - Carousels max **10 images** (Instagram share-sheet limit): Top posts are **Top 5** (7 slides).
+- Joke Reels (8 AM, 1 PM, 7 PM; owner 12 Oct 2026): all 3 options on today's trends/big headlines (Google Trends India
+  + `trending_titles()`); relatable desi-life jokes only as a backup round when no trend joke passes the judge.
 - Fun posts: single image; jokes on widely-known trends (Google Trends India, big stories, day/season) + relatable desi-life moments (first person, deadpan, e.g. @weebx_ style), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
 - Captions: max **5 hashtags** (Instagram limit), high-reach + 1-2 specific, no #KhabarBawaal; `limit_hashtags()` enforces it.
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.
@@ -31,10 +33,18 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 6:00 🎬 🙏 devotional (festival from Google's India holidays calendar, Navratri goddess of the day anchored on
 Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search; Gita-Reel style) ·
 7:00 🌅 Overnight Top 5 · 8:00 🎬 Tag that friend · 10:00 📰 news carousel · 13:00 🎬 Tag that friend ·
-17:00 📰 news carousel · 18:00 🎬 political satire + REALITY CHECK (Congress/AAP/Left/Cockroach Janta Party) ·
+17:00 📰 news carousel · 18:00 🎬 political satire + REALITY CHECK (Congress/AAP/TMC/Left/Cockroach Janta Party;
+owner 12 Oct 2026: a NEW joke daily, it kept repeating "X ka formula... EVM/vote chori": no ready-made example jokes,
+rotating meme formats `SATIRE_FORMATS`, memory of the last 15 in `state.satire_recent` shown to picker/writer/judge
+(judge needs fresh ≥ 6), party not in the last 2 preferred, facts = promise vs reality / U-turns / own record /
+results; KYA HUA? ≤ 28 words, else one AI rewrite `too_long()`; stories newest first (Bing `newest=True` + dates,
+"N h ago" + Google Trends India shown; today first, then backward day by day, trending preferred); safety: skip stories
+mainly about relatives or only allegations (FIR/ED/CBI, no verdict), REALITY CHECK = settled facts only, a death,
+illness or grief is never the joke) ·
 19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide
 (originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
-If a Reel can't be made, that slot posts a news carousel. Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
+If a Reel can't be made, the robot tries again (`generate.REEL_TRIES` = 3, each try writes afresh); still no Reel →
+nothing posted in that slot (owner 12 Oct 2026: Reels only; the old news-post backup never ran at Reel hours). Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
 from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,
 `state.gita_next`; ~45 s; hook → KYA HO RAHA HAI → who says it + shlok, no Sanskrit → MATLAB → AAJ KI SEEKH →
 AAJ KA SAWAAL; reference `assets/gita_ref.json` = owner's gita-shorts storyboards 1.1-2.30 (written by Claude,
@@ -78,10 +88,12 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
   (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a
   visual story from today's news posts, photos via `carousel.collect(max_words=14)`. Feed entry has `video`.
   Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
-  Reading time (owner, 11 Oct 2026): every text block stays `read_secs()` = 1.5 s + 0.25 s a word (news photos 3-7.5 s,
-  Tag that friend 2.5 s + 0.25/word 6.5-10 s, satire hook 4.5-6 s); 7 PM meme slower (owner, 12 Oct 2026: "not able
-  to read"): build-up/punchline each 2 s + 0.4 s a word (≥ 4.4/3.6 s, ≤ 9 s), a short clip freezes on its last frame;
-  devotional/Gita keep their slower `read_time()`; own-video Reels = the video's length.
+  Reading time (owner, 11 Oct 2026, `read_secs()` = 1.5 s + 0.25 s a word; 12 Oct 2026: "not able to read", then
+  1.5x was "too much": **old time + a couple of seconds, not double**): every text screen +1 s = 2.5 s + 0.25/word
+  (news photos 4-8.5 s, meme build-up/punchline ≥ 5.5/4.5 s ≤ 8.5 s, satire hook 5.5-7 s, satire parts
+  ~3.5 words/s + 1.9 s), Tag that friend (one screen) +2 s = 4.5 s + 0.25/word, 8.5-12 s; a stock clip shorter than
+  that freezes on its last frame (never cuts the text); devotional/Gita keep their slower `read_time()`;
+  own-video Reels = the video's length.
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`
   (learns only with 10+ linked posts and 30+ likes; ignores own pinned comment), `inbox.py`, `otp.py`.
 - `status.py`: ⏳ Activity box in the app: Reel + ➕ Create steps/✅/❌ reasons go to ntfy topic `status_topic`

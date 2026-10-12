@@ -98,9 +98,12 @@ def read_article(url: str) -> dict:
             "image": meta(page, "og:image", "twitter:image")}
 
 
-def bing_articles(query: str, limit: int = 6) -> list[dict]:
-    """Related news articles (real link + source name) from Bing News RSS. No key needed."""
-    url = f"https://www.bing.com/news/search?q={quote(query)}&format=rss&setlang=en-IN&cc=IN"
+def bing_articles(query: str, limit: int = 6, newest: bool = False) -> list[dict]:
+    """Related news articles (real link + source name + ISO 'date' if known) from Bing News RSS. No key needed.
+    newest=True: newest first instead of most relevant."""
+    from email.utils import parsedate_to_datetime
+    url = (f"https://www.bing.com/news/search?q={quote(query)}&format=rss&setlang=en-IN&cc=IN"
+           + ("&qft=sortbydate%3d%221%22" if newest else ""))
     try:
         xml = requests.get(url, headers={"User-Agent": g.UA}, timeout=20).text
     except requests.RequestException:
@@ -111,8 +114,13 @@ def bing_articles(query: str, limit: int = 6) -> list[dict]:
         real = parse_qs(urlsplit(link).query).get("url", [link])[0]
         src = re.search(r"<News:Source>(.*?)</News:Source>", item)
         title = re.search(r"<title>(.*?)</title>", item)
+        when = re.search(r"<pubDate>(.*?)</pubDate>", item)
+        try:
+            date = parsedate_to_datetime(when.group(1)).isoformat() if when else ""
+        except (TypeError, ValueError):
+            date = ""
         out.append({"url": real, "site": html.unescape(src.group(1)).split(" on ")[0] if src else urlsplit(real).netloc,
-                    "title": html.unescape(title.group(1)) if title else ""})
+                    "title": html.unescape(title.group(1)) if title else "", "date": date})
     return out
 
 
