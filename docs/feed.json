@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_clip_am-2026-10-13",
+  "image": "posts/20261013-0231-reel_clip_am-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-023154-reel_clip_am-2026-10-13.mp4",
+  "headline": "Wo dost jo Tuesday ko bolta hai: 'Aaj se roz subah uthke chalisa padhunga.' Alarm band, neend wapas, chalisa kal se",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Niyat pakki thi, bas subah ne dhoka de diya 😅\nEk emoji mein apna Tuesday batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #viral #trending #india #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Kal se pakka... ye line bhi toh roz wahi hai na?",
+  "songs": [
+   {
+    "title": "Pehle Bhi Main",
+    "artist": "Vishal Mishra, Raj Shekhar",
+    "lang": "hindi",
+    "mood": "chill, lazy morning"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "soft, relatable"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "funny, light"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "upbeat, playful"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T02:31:54+00:00"
+ },
+ {
   "id": "night_roundup-2026-10-13",
   "image": "posts/20261013-0131-night_roundup-2026-10-13.jpg",
   "kind": "top10",
@@ -359,81 +404,5 @@
    ]
   },
   "created_at": "2026-10-12T04:32:12+00:00"
- },
- {
-  "id": "reel_clip_am-2026-10-12",
-  "image": "posts/20261012-0231-reel_clip_am-2026-10-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261012-023148-reel_clip_am-2026-10-12.mp4",
-  "headline": "Wo dost jo Monday office pahunchke bolta hai: 'Aaj sirf easy kaam karunga.' Laptop khula: 47 mails, 3 meetings.",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Monday ka 'easy din' sirf plan mein hota hai 😅\nOffice wale dost ko abhi bhej do 💼\nTumhari inbox mein Monday ko kitni mails thi? Number batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#reelsindia #viral #trending #officelife #mondaymood",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Meeting 'quick sync' bola gaya tha. Do ghante ho gaye.",
-  "songs": [
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "dramatic, hustle"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "hype, intense"
-   },
-   {
-    "title": "Rula Ke Gaya Ishq",
-    "artist": "Stebin Ben",
-    "lang": "hindi",
-    "mood": "dramatic, sad joke"
-   },
-   {
-    "title": "Aaj Bhi 2",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "dramatic, emotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T02:31:48+00:00"
- },
- {
-  "id": "night_roundup-2026-10-12",
-  "image": "posts/20261012-0131-night_roundup-2026-10-12.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 RAAT KI KHABAR: 12 Oct",
-  "tag": "🌅 RAAT KI 5 KHABREIN",
-  "caption": "Raat bhar mein kya kya hua? Drishyam 3 ka dhamaka aur Ramayana ki date, scroll karo! 🔥\n\n1. Drishyam 3 crosses ₹300 crore in 10 days\n2. Ramayana Part 1 locks November 5 release\n3. CJI Surya Kant turns down Opposition's meeting request\n4. SSB seizes banned Pakistan-made fairness creams near Nepal border\n5. UK man splurges on gold teeth after ₹2.5 crore crypto theft\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #bollywood #viral #drishyam3",
-  "source": "Hindustan Times, Bollywood Hungama",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says SSB seized a consignment of banned cosmetics; 'busts trade' overstates it",
-    "Slide 4: The photo shows a man at a podium with no caption. I can't confirm he is CJI Surya Kant, and he may be CEC Gyanesh Kumar or someone else. Check the photo credit and identity before posting, because a wrong photo would misidentify the person.",
-    "Slide 3: The photo is a generic close-up of a dropper bottle and is blurry. It doesn't show seized Pakistan-made creams or the SSB. It is loosely related, so it is acceptable, but a photo of the seizure would be better."
-   ],
-   "fixed": [
-    "Bihar, Bangal; → Bihar, Bengal;",
-    "SSB busts Pakistan-made fairness cream trade near Nepal border → SSB seizes banned Pakistan-made fairness creams near Nepal border"
-   ]
-  },
-  "slides": [
-   "posts/20261012-0131-night_roundup-2026-10-12-s2.jpg",
-   "posts/20261012-0131-night_roundup-2026-10-12-s3.jpg",
-   "posts/20261012-0131-night_roundup-2026-10-12-s4.jpg",
-   "posts/20261012-0131-night_roundup-2026-10-12-s5.jpg",
-   "posts/20261012-0131-night_roundup-2026-10-12-s6.jpg",
-   "posts/20261012-0131-night_roundup-2026-10-12-s7.jpg"
-  ],
-  "created_at": "2026-10-12T01:31:57+00:00"
  }
 ]
