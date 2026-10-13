@@ -1,75 +1,5 @@
 [
  {
-  "id": "r20261011-213224-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261011-213224-bhakti.jpg",
-  "headline": "Maa, pehli salary aayi hai, ye sab aapke ashirwad aur mummy papa ki duaon ka phal hai. Bas saath rehna.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Pehli salary ki khushi mein Maa ko yaad karna mat bhoolna. Unka ashirwad hi asli kamai hai 🙏\nSend karo usko jise aaj ye sunna hai\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #bhakti #explorepage #reelsindia",
-  "pin_comment": "Pehli salary yaad hai? Maa ko batao, kitni thi? 🙏",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The last line of text, 'saath rehna.', overlaps the top of the goddess's crown. The text is still readable, but it should be moved up or the text block shrunk so it doesn't touch the figure. The goddess's face is not covered."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-11T21:32:24+00:00"
- },
- {
-  "id": "r20261012-1931-facts",
-  "kind": "ready",
-  "image": "posts/r20261012-1931-facts-1.jpg",
-  "slides": [
-   "posts/r20261012-1931-facts-2.jpg",
-   "posts/r20261012-1931-facts-3.jpg",
-   "posts/r20261012-1931-facts-4.jpg",
-   "posts/r20261012-1931-facts-5.jpg",
-   "posts/r20261012-1931-facts-6.jpg",
-   "posts/r20261012-1931-facts-7.jpg"
-  ],
-  "headline": "5 Things India Ne Duniya Ko Diye",
-  "tag": "📦 AMAZING FACTS",
-  "caption": "Chess se zero tak, India ne duniya ko kaafi kuch diya. Kaunsa fact tumhe pehle se pata tha? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#india #viral #trending #facts #indianhistory",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "Isका purana roop → Iska purana roop"
-   ]
-  },
-  "created_at": "2026-10-12T19:31:29+00:00"
- },
- {
-  "id": "r20261012-1931-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261012-1931-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261012-1931-on_this_day-2.jpg",
-   "posts/r20261012-1931-on_this_day-3.jpg",
-   "posts/r20261012-1931-on_this_day-4.jpg",
-   "posts/r20261012-1931-on_this_day-5.jpg",
-   "posts/r20261012-1931-on_this_day-6.jpg",
-   "posts/r20261012-1931-on_this_day-7.jpg"
-  ],
-  "headline": "13 October: 5 Things Jo Itihaas Mein Hue",
-  "tag": "📦 ON THIS DAY",
-  "caption": "13 October ko Bollywood, technology aur bravery ki kitni yaadgaar kahaniyan judi hain! Kaunsa fact sabse zyada pasand aaya? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #viral #trending #india #kishorekumar",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T19:31:51+00:00",
-  "valid_on": "2026-10-13"
- },
- {
   "id": "r20261012-193626-gita",
   "kind": "ready",
   "media": "reel",
@@ -135,5 +65,106 @@
    "fixed": []
   },
   "created_at": "2026-10-12T21:32:02+00:00"
+ },
+ {
+  "id": "r20261013-1930-myth_fact",
+  "kind": "ready",
+  "image": "posts/r20261013-1930-myth_fact-1.jpg",
+  "slides": [
+   "posts/r20261013-1930-myth_fact-2.jpg",
+   "posts/r20261013-1930-myth_fact-3.jpg",
+   "posts/r20261013-1930-myth_fact-4.jpg",
+   "posts/r20261013-1930-myth_fact-5.jpg",
+   "posts/r20261013-1930-myth_fact-6.jpg"
+  ],
+  "headline": "4 Myths Jo Sab Sach Maante Hain",
+  "tag": "📦 MYTH VS FACT",
+  "caption": "Kitne myths pe tumne bhi bharosa kiya tha? 😅 Ye 4 facts doston ko bhi batao. Kaunsa myth sabse zyada shock laga? Save karo / share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #facts #mythbusted",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T19:30:53+00:00"
+ },
+ {
+  "id": "r20261013-1931-on_this_day",
+  "kind": "ready",
+  "image": "posts/r20261013-1931-on_this_day-1.jpg",
+  "slides": [
+   "posts/r20261013-1931-on_this_day-2.jpg",
+   "posts/r20261013-1931-on_this_day-3.jpg",
+   "posts/r20261013-1931-on_this_day-4.jpg",
+   "posts/r20261013-1931-on_this_day-5.jpg",
+   "posts/r20261013-1931-on_this_day-6.jpg",
+   "posts/r20261013-1931-on_this_day-7.jpg"
+  ],
+  "headline": "14 October: 4 Events That Shaped History",
+  "tag": "📦 ON THIS DAY",
+  "caption": "14 October ko itihaas mein Deeksha, sound barrier aur Nobel Prize, sab ek hi din hua. Aapko inme se sabse zyada kaunsa surprising laga? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #history #onthisday",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: All four events happened on the same date (14 October), so they are 4 events, not 4 days.",
+    "Fact corrected to match the article: On 14 Oct 1964 the Nobel Committee announced the prize; King received it on 10 Dec 1964."
+   ],
+   "fixed": [
+    "4 Days That Shaped History → 4 Events That Shaped History",
+    "ko Nobel Peace Prize mila. → ko Nobel Peace Prize dene ki ghoshna hui."
+   ]
+  },
+  "created_at": "2026-10-13T19:31:33+00:00",
+  "valid_on": "2026-10-14"
+ },
+ {
+  "id": "r20261013-193409-gita",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261013-193409-gita.jpg",
+  "video": "posts/r20261013-193409-gita.mp4",
+  "headline": "Gita 1.4: Har dushman... Bhima-Arjun jaisa?",
+  "tag": "📦 🙏 GITA GYAAN",
+  "caption": "Duryodhan ko har veer mein Bhima-Arjun dikh raha tha. Darr aisa hi hota hai 🙏\nGita 1.4, roz ek shlok.\nAapka sabse bada darr kya hai? Comment karo ya kisi dost ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.4 · Kal: shlok 1.5\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #krishna #gitagyaan #motivation",
+  "source": "Bhagavad Gita",
+  "source_url": "",
+  "pin_comment": "Kal Gita 1.5 aayega. Follow karo, roz ek shlok. Aapke mann ka 'Bhima-Arjun' kaun hai? 🙏",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "darr aur bechaini ka mann"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "gehri soch, dar ka bojh"
+   },
+   {
+    "title": "Loser",
+    "artist": "Tame Impala",
+    "lang": "english",
+    "mood": "self-doubt, andar ka darr"
+   },
+   {
+    "title": "back to friends",
+    "artist": "sombr",
+    "lang": "english",
+    "mood": "soft, reflective vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo shows Krishna with a sad boy at a laptop. This is a modern image, not the Mahabharata scene. It is thematic, not wrong, so I left it in."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T19:34:09+00:00"
  }
 ]

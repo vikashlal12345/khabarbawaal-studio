@@ -249,7 +249,7 @@
   "night_learn": "2026-10-13",
   "market_close": "2026-10-09",
   "top10_day": "2026-10-12",
-  "night_ready": "2026-10-13",
+  "night_ready": "2026-10-14",
   "night_calendar": "2026-10-13",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-13",
@@ -267,7 +267,7 @@
   "reel_news_pm": "2026-10-13",
   "reel_top5": "2026-10-13"
  },
- "inbox_since": "pPA9w3u4SX1f",
+ "inbox_since": "A5ovqBsDuKnl",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -326,7 +326,9 @@
   "Cricket Quiz: Can You Score 4/4?",
   "12 October: 4 Things That Changed The World",
   "5 Things India Ne Duniya Ko Diye",
-  "13 October: 5 Things Jo Itihaas Mein Hue"
+  "13 October: 5 Things Jo Itihaas Mein Hue",
+  "4 Myths Jo Sab Sach Maante Hain",
+  "14 October: 4 Events That Shaped History"
  ],
  "calendar": {
   "date": "2026-10-13",
@@ -499,7 +501,8 @@
   "Gita 18.66: Ghar aur career ka dabaav, future ki chinta",
   "Gita 1.1: Gita 1.1: blind king Dhritarashtra asks Sanjay what his sons and the Pandavas did at Kurukshetra. Lesson: 'mera' and 'paraya' ka bhed is the root of conflict.",
   "Gita 1.2: Gita 1.2: Duryodhan sees the Pandav army and approaches Dron. Lesson: fear hides inside even when you have everything.",
-  "Gita 1.3: Gita 1.3: Duryodhan Dronacharya se kehta hai, 'Pandavon ki badi sena dekhiye, jise aapke hi shishya Drupad-putra ne saja diya.' Lesson: taana aksar andar ke darr ko chhupata hai."
+  "Gita 1.3: Gita 1.3: Duryodhan Dronacharya se kehta hai, 'Pandavon ki badi sena dekhiye, jise aapke hi shishya Drupad-putra ne saja diya.' Lesson: taana aksar andar ke darr ko chhupata hai.",
+  "Gita 1.4: Gita 1.4: Duryodhan Drona ko Pandav sena ke veer ginata hai, har ek ko Bhima-Arjun jaisa bolta hai. Seekh: darr hamari soch ka paimana ban jaata hai."
  ],
  "reel_politics_used": [
   "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
@@ -530,7 +533,7 @@
   "Maa Brahmacharini: first salary day, a young woman standing on a balcony with her phone showing the credit message, thinking of her parents",
   "Maa Chandraghanta: a young man living alone in a new city, eating dinner by himself on Navratri evening and missing family"
  ],
- "gita_next": 3,
+ "gita_next": 4,
  "satire_recent": [
   {
    "date": "2026-10-10",
