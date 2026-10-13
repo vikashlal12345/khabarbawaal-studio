@@ -1,7 +1,8 @@
 """Reels: 1080x1920 videos, no music (the owner adds a trending song in Instagram).
 
-    make(kind, state, feed)   the robot's entry: reel_clip_am (8 AM) and reel_clip (1 PM) "Tag that friend",
-                              reel_meme (7 PM), reel_news (8 PM)
+    make(kind, state, feed)   the robot's entry (all 9 daily posts are Reels, schedule.SPECIALS): reel_devotion,
+                              reel_top5_am / reel_top5 (Top 5 in ~30 s), reel_clip_am / reel_clip "Tag that friend",
+                              reel_news_am / reel_news_pm / reel_news (news slideshows), reel_politics, reel_meme
 
 Three styles (each writes the MP4 and returns still frames for the proofreader):
     clip_reel(clip, start, dur, hook, text, highlight, out_mp4)
@@ -794,30 +795,50 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
 
 
-NEWS_SYSTEM = """You make the evening news REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
-English letters only, never Devanagari). From today's stories pick the 3 best for a short video made of news \
-photos: strong visuals (people, sports moments, celebrities, viral scenes, big events) and a story everyone \
-will want to watch and share. Rank them, best first.
+NEWS_SYSTEM = """You make a news REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
+English letters only, never Devanagari). From the latest stories pick the 3 best for a short video made of news \
+photos: what is most viral or trending right now (see the X trends), strong visuals (people, sports moments, \
+celebrities, viral scenes, big events) and a story everyone will want to watch and share. Rank them, best first.
 Rules: real facts only, no invented quotes. Never make jokes about deaths, accidents, crimes or disasters. \
 Politics: supportive of the right wing (BJP, NDA), critical of the left and opposition; never pick a story \
 that embarrasses the BJP. No hate against any community."""
 
 
-def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    from datetime import datetime, timedelta, timezone
+NEWS_KINDS = ("reel_news_am", "reel_news_pm", "reel_news")     # 🎬 10 AM, 5 PM, 8 PM news slideshows
+TOP5_KINDS = {"reel_top5_am": "night_roundup", "reel_top5": "top10_day"}   # Top 5 Reel -> its specials.TOP10 settings
+
+
+def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
+    """🎬 The most viral, visual story of the last hours (the news feeds' lookback_hours) as a photo slideshow
+    (owner, 13 Oct 2026: all posts are Reels now; it used to pick from the day's news carousels).
+    10 AM / 5 PM: a 📅 planned preview (calendar_plan) due now is the story instead."""
+    import calendar_plan
+    import create_post
     import fun
+    import generate as g
+    import schedule
     import status
-    status.step("Picking today's most visual story", 2)
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=14)
     used = state.get("reel_news_used", [])
-    stories = [p for p in feed if p.get("kind") == "news" and p.get("source_url") and p["id"] not in used
-               and datetime.fromisoformat(p["created_at"]) >= cutoff][:25]
+    event = calendar_plan.due(state) if kind in schedule.PREVIEW_KINDS else None
+    if event:
+        status.step(f"📅 Planned preview: {event['topic'][:60]}", 2)
+        event["done"] = True
+        stories = [{"id": "", "title": a["title"], "link": a["url"], "source": a["site"], "summary": "", "category": "preview"}
+                   for a in create_post.bing_articles(event["search"], limit=8, newest=True) if a.get("title")]
+        intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
+    else:
+        status.step("Picking the most viral, visual story", 2)
+        stories = [i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used][:40]
+        intro = ""
     if not stories:
-        raise RuntimeError("no news posts from today to make a Reel from")
-    listing = "\n".join(f"{n}. [{p['tag']}] {p['headline']}" for n, p in enumerate(stories, 1))
+        raise RuntimeError("no fresh news stories to make a Reel from")
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
+                        + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
+    trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs()
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
-                              f"{fun.today_context()}\n\nToday's stories:\n{listing}\n\nGive your top 3 picks."
+                              f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
+                              f"(hours trending):\n{trends}\n\nStories:\n{listing}\n\nGive your top 3 picks."
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
@@ -825,9 +846,9 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         if not 1 <= opt["pick"] <= len(stories):
             continue
         story = stories[opt["pick"] - 1]
-        item = {"link": story["source_url"], "source": story["source"], "title": story["headline"]}
-        print(f"  news reel: {story['headline']}")
-        status.step(f"Collecting photos: {story['headline'][:70]}", 3)
+        item = {"link": story["link"], "source": story["source"], "title": story["title"]}
+        print(f"  news reel: {story['title']}")
+        status.step(f"Collecting photos: {story['title'][:70]}", 3)
         photos = news_photos(item, opt)
         if len(photos) >= 2:
             break
@@ -835,8 +856,54 @@ def make_news_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     else:
         raise RuntimeError("no story had 2+ good photos")
     cover, out, entry = finish_news_reel(item, opt, photos, songs, tmp)
-    state["reel_news_used"] = (used + [story["id"]])[-60:]
-    save_reel(feed, state, cover, out, f"reel_news-{today}", {**entry, "headline": story["headline"]})
+    state["reel_news_used"] = (used + [story["link"]])[-80:]
+    if story["id"]:
+        state["seen"] = state.get("seen", []) + [story["id"]]   # the other news Reels skip it
+    save_reel(feed, state, cover, out, f"{kind}-{today}", {**entry, "headline": story["title"]})
+
+
+def make_top5_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
+    """🎬 7 AM / 9:15 PM: Top 5 in ~30 seconds: one news photo + one short line per story, then an end card
+    (owner, 13 Oct 2026: the Top 5 carousels became Reels). Stories are picked like the old carousels."""
+    import generate as g
+    import proofread
+    import schedule
+    import specials
+    import status
+    src = TOP5_KINDS[kind]
+    cfg = specials.TOP10[src]
+    status.step("Picking the 5 biggest stories", 2)
+    items = specials.gather(src)
+    if len(items) < 5:
+        raise RuntimeError("not enough stories for a Top 5")
+    pick = specials.pick_top10(src, items)
+    status.step("Collecting photos", 3)
+    stories, photos = [], []
+    for s in pick["stories"]:
+        img = g.best_photo(s)
+        if img is not None and min(img.size) >= 300:
+            stories.append(s)
+            photos.append(img)
+    if len(stories) < 4:
+        raise RuntimeError(f"only {len(stories)} of the Top 5 stories had a usable photo")
+    data = {"stories": stories, "hook": pick["hook"], "hashtags": pick["hashtags"]}
+    out = os.path.join(tmp, "reel.mp4")
+    label = "RAAT KI TOP 5" if src == "night_roundup" else "TOP 5 NEWS"
+
+    def render(d):
+        slides = [(img, s["source"], f"{n}. {s['slide_title']}", False)
+                  for n, (img, s) in enumerate(zip(photos, d["stories"]), 1)]
+        return news_reel(slides, "Inme sabse badi khabar kaunsi? Number likho", ["Number likho"], label, out)
+    article = "\n".join(f"- {s['title']}: {s['summary'][:300]}" for s in stories)
+    status.step("Making the video + proofreading", 5)
+    frames, data, proof = proofread.run(render, data, specials.top10_caption, article, strict=True)
+    songs = trending_songs()
+    save_reel(feed, state, frames[0], out, f"{kind}-{today}", {
+        "headline": f"{cfg['title'][0]} {cfg['title'][1]}: {schedule.ist_now():%d %b}", "tag": f"🎬 REEL · {label}",
+        "caption": g.limit_hashtags(specials.top10_caption(data)),
+        "source": ", ".join(dict.fromkeys(s["source"] for s in data["stories"]))[:80], "source_url": "",
+        "pin_comment": "", "proof": proof,
+        "songs": [{"title": t, "artist": a, "lang": lang, "mood": ""} for lang in songs for t, a in songs[lang][:2]]})
 
 
 def news_photos(item: dict, opt: dict) -> list[tuple]:
@@ -2200,8 +2267,10 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
         return False
     try:
         with tempfile.TemporaryDirectory() as tmp:
-            if kind == "reel_news":
-                make_news_reel(state, feed, today, tmp)
+            if kind in NEWS_KINDS:
+                make_news_reel(kind, state, feed, today, tmp)
+            elif kind in TOP5_KINDS:
+                make_top5_reel(kind, state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
             elif kind == "reel_devotion":

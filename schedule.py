@@ -9,18 +9,20 @@ from datetime import datetime, timedelta, timezone
 
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
-# Fewer, stronger posts (owner's plan, 10 Oct 2026): ~9 a day = 5 Reels + 4 carousels.
-# Regular posts (news carousels with "KhabarBawaal ka take") at these hours; specials below.
-REGULAR_HOURS = [10, 17]
-# (Top 5 Viral, market posts and Thought of the Day still exist as --kind options, just not scheduled.)
+# All Reels (owner, 13 Oct 2026: carousels weren't getting views; Reels reach people who don't follow us):
+# 9 Reels a day. No regular carousels any more (news, Top 5s, Thought, markets still exist as --kind, see MANUAL).
+REGULAR_HOURS: list[int] = []
 SPECIALS = {"reel_devotion": (6, 0),                       # 🎬 🙏 festival / Navratri goddess / god of the day
-            "night_roundup": (7, 0),                       # 🌅 overnight Top 5 carousel
+            "reel_top5_am": (7, 0),                        # 🎬 overnight Top 5 in ~30 s
             "reel_clip_am": (8, 0), "reel_clip": (13, 0),  # 🎬 Tag that friend
+            "reel_news_am": (10, 0), "reel_news_pm": (17, 0),   # 🎬 news slideshow (or a 📅 planned preview)
             "reel_politics": (18, 0),                      # 🎬 political satire + reality check
             "reel_meme": (19, 0), "reel_news": (20, 0),    # 🎬 meme, news slideshow
-            "top10_day": (21, 15),                         # 📰 Top 5 News carousel
+            "reel_top5": (21, 15),                         # 🎬 Top 5 News in ~30 s
             # Night work (nothing is posted): ready posts, day planning, learning from stats.
             "night_ready": (1, 0), "night_calendar": (2, 0), "night_picture": (3, 0), "night_learn": (4, 0)}
+PREVIEW_KINDS = ("reel_news_am", "reel_news_pm")     # 📅 planned previews (calendar_plan) go out in these slots
+MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08
@@ -49,6 +51,11 @@ def special_due(t: datetime, done: dict) -> str | None:
 def regular_times() -> list[tuple[int, int]]:
     """hh:00 in REGULAR_HOURS (5 AM - 10 PM)."""
     return [(h, 0) for h in REGULAR_HOURS]
+
+
+def preview_times() -> list[tuple[int, int]]:
+    """Slots where a 📅 planned preview can go out (as that slot's news Reel)."""
+    return [SPECIALS[k] for k in PREVIEW_KINDS]
 
 
 def slots(day: datetime) -> list[datetime]:

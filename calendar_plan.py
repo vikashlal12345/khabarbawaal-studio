@@ -1,6 +1,6 @@
 """📅 Day planner: at night, find today's big scheduled events (matches, releases, results,
 festivals, big political events) in the news, and plan up to 3 preview posts for the right
-time. At that slot the preview is made like a ➕ Create post (photos, carousel, proofread).
+time. At that slot (10 AM / 5 PM) the preview is that slot's news Reel (reel.make_news_reel).
 """
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ def plan(state: dict) -> int:
         items = g.fetch_candidates(set())
     finally:
         g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = saved
-    slots = [f"{h:02d}:{m:02d}" for h, m in schedule.regular_times()
+    slots = [f"{h:02d}:{m:02d}" for h, m in schedule.preview_times()
              if h >= 7 and (h, m) not in schedule.SPECIALS.values()]   # not the 🎬 Reel hours
     lines = [f"- ({i['category']}) {i['title']}: {i['summary'][:160]}" for i in items[:70]]
     system = (f"You plan preview posts for {g.CONFIG['page_name']}, an Indian Instagram news page for Gen Z. "

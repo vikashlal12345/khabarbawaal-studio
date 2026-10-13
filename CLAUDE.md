@@ -33,11 +33,12 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   left → `Unverified` → the Reel is made again (REEL_TRIES). Carousels still only show ⚠️.
 
 ## Schedule (IST) - `schedule.py`
-**Fewer-posts plan (10 Oct 2026, ~9 a day = 5 Reels + 4 carousels).** Quiet 11 PM-5 AM (night jobs only).
+**All Reels (owner 13 Oct 2026: carousels weren't getting views; Reels reach non-followers): 9 Reels a day**, no regular
+carousels (`REGULAR_HOURS` = []; news/Top 5/Thought/markets still work as `--kind`, `schedule.MANUAL`). Quiet 11 PM-5 AM.
 6:00 🎬 🙏 devotional (festival from Google's India holidays calendar, Navratri goddess of the day anchored on
 Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search; Gita-Reel style) ·
-7:00 🌅 Overnight Top 5 · 8:00 🎬 Tag that friend · 10:00 📰 news carousel · 13:00 🎬 Tag that friend ·
-17:00 📰 news carousel · 18:00 🎬 political satire + REALITY CHECK (Congress/AAP/TMC/Left/Cockroach Janta Party;
+7:00 🎬 overnight Top 5 Reel (`reel_top5_am`) · 8:00 🎬 Tag that friend · 10:00 🎬 news Reel (`reel_news_am`) ·
+13:00 🎬 Tag that friend · 17:00 🎬 news Reel (`reel_news_pm`) · 18:00 🎬 political satire + REALITY CHECK (Congress/AAP/TMC/Left/Cockroach Janta Party;
 owner 12 Oct 2026: a NEW joke daily, it kept repeating "X ka formula... EVM/vote chori": no ready-made example jokes,
 rotating meme formats `SATIRE_FORMATS`, memory of the last 15 in `state.satire_recent` shown to picker/writer/judge
 (judge needs fresh ≥ 6), party not in the last 2 preferred, facts = promise vs reality / U-turns / own record /
@@ -49,8 +50,10 @@ Police video, missed because searches were by party name); the trend word itself
 one rewrite with the judge's reasons (`NoGoodJoke.scores`) before the next story is tried; safety: skip stories
 mainly about relatives or only allegations (FIR/ED/CBI, no verdict), REALITY CHECK = settled facts only, a death,
 illness or grief is never the joke) ·
-19:00 🎬 meme · 20:00 🎬 news slideshow · 21:15 📰 Top 5 News. News carousels get a "KhabarBawaal ka take" slide
-(originality). No market posts, Thought, Top 5 Viral or single-image fun posts (still available as `--kind`).
+19:00 🎬 meme · 20:00 🎬 news Reel · 21:15 🎬 Top 5 News Reel (`reel_top5`). News Reels (`make_news_reel`): the most
+viral + visual story of the feeds' last 8 h (+ X trends), not already used (`reel_news_used` links, `seen`); a 📅 planned
+preview due at 10:00/17:00 (`schedule.PREVIEW_KINDS`) is that slot's story. Top 5 Reels (`make_top5_reel`): picked like
+the old Top 5 carousels (`specials.gather/pick_top10`), one photo + "n. title" per story via `news_reel`, ~30 s.
 If a Reel can't be made, the robot tries again (`generate.REEL_TRIES` = 3, each try writes afresh); still no Reel →
 nothing posted in that slot (owner 12 Oct 2026: Reels only; the old news-post backup never ran at Reel hours). Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
 from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,

@@ -882,7 +882,8 @@ def main() -> int:
                                            "market_open", "market_preopen", "market_close", "night_roundup",
                                            "night_ready", "night_calendar", "night_picture", "night_jokes", "night_learn",
                                            "reel_devotion", "reel_clip_am", "reel_clip", "reel_politics", "reel_meme",
-                                           "reel_news", "ready_gita"],
+                                           "reel_news", "reel_news_am", "reel_news_pm", "reel_top5_am", "reel_top5",
+                                           "ready_gita"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
                         help="skip if the newest post is younger than this many minutes (timed runs)")
@@ -901,7 +902,7 @@ def main() -> int:
 
     import schedule
     now_ist = schedule.ist_now()
-    special = args.kind if args.kind in schedule.SPECIALS else None
+    special = args.kind if args.kind in schedule.SPECIALS or args.kind in schedule.MANUAL else None
     if args.kind == "auto":
         special = schedule.special_due(now_ist, state.get("specials_done", {}))
         if not special and schedule.is_quiet(now_ist):
