@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_meme-2026-10-13",
+  "image": "posts/20261013-1333-reel_meme-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-133332-reel_meme-2026-10-13.mp4",
+  "headline": "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'",
+  "tag": "🎬 REEL · MEME",
+  "caption": "Match kisi ka bhi ho, hum emotional pura hote hain 😭🏏\nGhar mein ek banda zaroor hota hai jo bina team ke bhi commentary deta hai.\nTumhare ghar mein ye kaun hai? Naam likho 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#cricket #viral #trending #india #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aur phir bolte hain, 'Bhai tu to kisi team ka fan nahi tha?'",
+  "songs": [
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "hype, funny drop"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "intense, hype"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, upbeat"
+   },
+   {
+    "title": "Pal Pal",
+    "artist": "Afusic, AliSoomroMusic",
+    "lang": "hindi",
+    "mood": "chill, relatable"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo is cropped so the person's face is cut off at the nose. Only the chin, beard and shirt show. It looks awkward, but it is not unreadable."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T13:33:32+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-13",
   "image": "posts/20261013-1234-reel_politics-2026-10-13.jpg",
   "kind": "reel",
@@ -454,50 +501,5 @@
    "fixed": []
   },
   "created_at": "2026-10-12T14:32:06+00:00"
- },
- {
-  "id": "reel_meme-2026-10-12",
-  "image": "posts/20261012-1331-reel_meme-2026-10-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261012-133143-reel_meme-2026-10-12.mp4",
-  "headline": "Dukaan par: Bhaiya, UPI kar deta hu Scan kiya Payment processing... Me jab dukaan wale ke saamne UPI pending dikha raha hai aur peeche line lambi hai",
-  "tag": "🎬 REEL · MEME",
-  "caption": "Chai wale bhaiya ke saamne ye moment sabke saath hua hai 😭📱\nSabse lamba 10 second ka intezaar.\nIsse bachne wale dost ko tag karo, sab ke saath hua hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#reelsindia #viral #upi #relatable #trending",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Pehle cash rakhte the, ab dua rakhte hain ki network chale.",
-  "songs": [
-   {
-    "title": "Jitni Dafa",
-    "artist": "Yasser Desai",
-    "lang": "hindi",
-    "mood": "dramatic, sad funny"
-   },
-   {
-    "title": "Lutt Le Gaya",
-    "artist": "Shashwat Sachdev, Simran Choudhary",
-    "lang": "hindi",
-    "mood": "funny, chill"
-   },
-   {
-    "title": "Bones",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "dramatic, tense"
-   },
-   {
-    "title": "love nwantiti (ah ah ah)",
-    "artist": "Ckay",
-    "lang": "english",
-    "mood": "chill, funny"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T13:31:43+00:00"
  }
 ]

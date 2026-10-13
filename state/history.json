@@ -259,7 +259,7 @@
   "reel_clip": "2026-10-13",
   "reel_clip_am": "2026-10-13",
   "reel_politics": "2026-10-13",
-  "reel_meme": "2026-10-12",
+  "reel_meme": "2026-10-13",
   "reel_news": "2026-10-12",
   "night_picture": "2026-10-13",
   "reel_devotion": "2026-10-13",
@@ -391,7 +391,8 @@
   "42583",
   "39786",
   "46874",
-  "43831"
+  "43831",
+  "44599"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -407,7 +408,8 @@
   "Relatable desi life: mummy ka 'bas 5 minute' dhoop mein kapde sukhane / bartan wala moment, ghar mein padhai ka natak",
   "Relatable desi life: Monday ko dost ka paisa udhaar / UPI payment wait",
   "Google trend: Chalisa, Tuesday morning",
-  "Navratri dandiya season (HT City headline)"
+  "Navratri dandiya season (HT City headline)",
+  "Google trend: Pakistan vs Sri Lanka match"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -423,7 +425,8 @@
   "POV: Mummy ne bola 'padh le beta', maine book kholi, aur ab tak 40 minute se sirf pehla page decorate kar raha hoon",
   "Dukaan par: Bhaiya, UPI kar deta hu Scan kiya Payment processing... Me jab dukaan wale ke saamne UPI pending dikha raha hai aur peeche line lambi hai",
   "Wo dost jo Tuesday ko bolta hai: 'Aaj se roz subah uthke chalisa padhunga.' Alarm band, neend wapas, chalisa kal se",
-  "Wo dost jo Navratri pe bolta hai: 'Is baar pakka dandiya seekhunga.' Garba mein teen baar ghoom ke galat taraf nikalta hai."
+  "Wo dost jo Navratri pe bolta hai: 'Is baar pakka dandiya seekhunga.' Garba mein teen baar ghoom ke galat taraf nikalta hai.",
+  "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -463,7 +466,13 @@
   "46376": "Mixkit Restricted License",
   "23839": "Mixkit Restricted License",
   "46380": "Mixkit Restricted License",
-  "43831": "Free"
+  "43831": "Free",
+  "4517": "Free",
+  "33581": "Mixkit Restricted License",
+  "24341": "Mixkit Restricted License",
+  "24339": "Mixkit Restricted License",
+  "24342": "Mixkit Restricted License",
+  "44599": "Free"
  },
  "create_done": [
   "1791580482",
