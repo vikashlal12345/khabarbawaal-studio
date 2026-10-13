@@ -99,6 +99,12 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
   (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a
   visual story from today's news posts, photos via `carousel.collect(max_words=14)`. Feed entry has `video`.
   Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
+  🎵 Song ideas (owner 13 Oct 2026: "same song every Reel, not relatable"): `trending_songs(state)` merges free charts
+  rank by rank: Shazam Top 200 India (page scrape, most looked-up), Spotify Top 50 India / Top Songs India / Top 50 Global
+  (public embed pages), Apple Music most played IN/US (free RSS), JioSaavn "Insta Trending Viral Hits" (1223482895) +
+  "Trending On Reels" (1269241159) playlists + trending; `SONG_WHERE` = where each charts. The AI picks songs whose
+  hook/lyrics/vibe fit the moment, `mood` = why it fits; repeats allowed (owner) but at least 2 of 4 not in the last
+  40 suggested (`state.songs_recent`, saved in `save_reel`). Top 5 Reels: top chart songs not suggested recently.
   Reading time (owner, 11 Oct 2026, `read_secs()` = 1.5 s + 0.25 s a word; 12 Oct 2026: "not able to read", then
   1.5x was "too much": **old time + a couple of seconds, not double**): every text screen +1 s = 2.5 s + 0.25/word
   (news photos 4-8.5 s, meme build-up/punchline ≥ 5.5/4.5 s ≤ 8.5 s, satire hook 5.5-7 s, satire parts

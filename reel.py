@@ -423,12 +423,12 @@ clip_search: 3 different searches for the stock site, 1-3 plain English words ea
 clip_wanted: one line describing the ideal clip.
 caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia)."""
 
-SONGS = {"type": "array", "description": "2 Hindi + 2 English songs that suit this Reel's mood, copied exactly "
-         "from today's trending lists",
+SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit this Reel's moment, copied exactly "
+         "from today's song lists",
          "items": {"type": "object", "properties": {
              "title": {"type": "string"}, "artist": {"type": "string"},
-             "lang": {"type": "string", "enum": ["hindi", "english"]},
-             "mood": {"type": "string", "description": "2-4 words, e.g. 'funny, upbeat drop'"}},
+             "lang": {"type": "string", "enum": ["hindi", "english"], "description": "hindi = any Indian song"},
+             "mood": {"type": "string", "description": "Max 6 words: why it fits this Reel, e.g. 'sad hook = UPI fail'"}},
              "required": ["title", "artist", "lang", "mood"], "additionalProperties": False}}
 
 _COMMON = {
@@ -493,7 +493,7 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
              if kind in CLIP_KINDS else
              "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
-    songs = trending_songs()
+    songs = trending_songs(state)
     backup = ""   # a second round if no joke passes the judge
     if topic:
         context = f"{fun.today_context()}\n\nThe page owner asked for a Reel about: {topic}"
@@ -548,43 +548,125 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
     return best
 
 
-def trending_songs() -> dict[str, list[tuple[str, str]]]:
-    """Today's trending Hindi and English songs on JioSaavn (free, no key): {lang: [(title, artist)]}."""
-    import html
+SONG_WHERE: dict[str, str] = {}   # song title (lower case) -> where it charts, e.g. "Shazam India #3, Spotify India #5"
+RECENT_SONGS: list[str] = []      # songs suggested for the last Reels (state 'songs_recent')
+
+
+def _jiosaavn(params: dict) -> list:
     import requests
+    r = requests.get("https://www.jiosaavn.com/api.php", headers=UA, timeout=20,
+                     params={"_format": "json", "_marker": "0", "api_version": "4", "ctx": "web6dot0", **params})
+    return r.json()
+
+
+def _saavn_song(s: dict) -> tuple[str, str]:
+    import html
+    artists = s.get("more_info", {}).get("artistMap", {}).get("primary_artists", [])[:2]
+    return (html.unescape(s["title"]),
+            html.unescape(", ".join(a["name"] for a in artists) or s.get("subtitle", "").split(" - ")[0]))
+
+
+def _spotify(playlist: str) -> list[tuple[str, str]]:
+    """A Spotify chart playlist through its public embed page (no account)."""
+    import re
+    import requests
+    page = requests.get(f"https://open.spotify.com/embed/playlist/{playlist}", headers=UA, timeout=20).text
+    data = json.loads(re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', page, re.S).group(1))
+    return [(t["title"], t["subtitle"]) for t in data["props"]["pageProps"]["state"]["data"]["entity"]["trackList"]]
+
+
+def _apple(country: str) -> list[tuple[str, str]]:
+    """Apple Music's most played songs (Apple's free RSS feed; new releases show up here first)."""
+    import requests
+    r = requests.get(f"https://rss.applemarketingtools.com/api/v2/{country}/music/most-played/50/songs.json",
+                     headers=UA, timeout=20)
+    return [(x["name"], x["artistName"]) for x in r.json()["feed"]["results"]]
+
+
+def _shazam(country: str) -> list[tuple[str, str]]:
+    """Shazam's Top 200 for a country: the songs people are looking up right now (often heard in Reels)."""
+    import html
+    import re
+    import requests
+    page = requests.get(f"https://www.shazam.com/charts/top-200/{country}", headers=UA, timeout=25).text
+    out = []
+    for item in re.findall(r'data-test-id="songItem"(.*?)(?=data-test-id="songItem"|$)', page, re.S):
+        title = re.search(r'charts_userevent_list_songTitle" aria-label="([^"]*)"', item)
+        artist = re.search(r'charts_userevent_list_artistName" aria-label="([^"]*)"', item)
+        if title and artist:
+            out.append((html.unescape(title.group(1)), html.unescape(artist.group(1))))
+    return out[:100]
+
+
+def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]]:
+    """Songs to suggest for a Reel (the owner adds the music in Instagram), from free charts, no accounts
+    (owner, 13 Oct 2026: the JioSaavn list alone kept giving the same old songs). {lang: [(title, artist)]}:
+    hindi = Indian songs: Shazam Top 200 India (most looked-up), Spotify Top 50 India + Top Songs India (week),
+    Apple Music most played India (new releases), JioSaavn's Reels playlists and trending;
+    english = Spotify Top 50 Global, Apple Music most played US, JioSaavn English trending.
+    Sources are merged rank by rank (each one's #1 first), duplicates removed."""
+    sources = {"hindi": [("Shazam India", lambda: _shazam("india")),
+                         ("Spotify India today", lambda: _spotify("37i9dQZEVXbLZ52XmnySJg")),
+                         ("Spotify India week", lambda: _spotify("37i9dQZEVXbMWDif5SCBJq")),
+                         ("Apple Music India", lambda: _apple("in")),
+                         ("JioSaavn Insta Viral", lambda: [_saavn_song(x) for x in _jiosaavn(
+                             {"__call": "playlist.getDetails", "listid": "1223482895", "n": 60, "p": 1})["list"]]),
+                         ("JioSaavn Reels", lambda: [_saavn_song(x) for x in _jiosaavn(
+                             {"__call": "playlist.getDetails", "listid": "1269241159", "n": 60, "p": 1})["list"]]),
+                         ("JioSaavn trending", lambda: [_saavn_song(x) for x in _jiosaavn(
+                             {"__call": "content.getTrending", "entity_type": "song", "entity_language": "hindi"})
+                             if x.get("type") == "song"])],
+               "english": [("Spotify Global today", lambda: _spotify("37i9dQZEVXbMDoHDwVN2tF")),
+                           ("Apple Music US", lambda: _apple("us")),
+                           ("JioSaavn trending", lambda: [_saavn_song(x) for x in _jiosaavn(
+                               {"__call": "content.getTrending", "entity_type": "song", "entity_language": "english"})
+                               if x.get("type") == "song"])]}
+    RECENT_SONGS[:] = (state or {}).get("songs_recent", [])[-40:]
     out = {}
-    for lang in ("hindi", "english"):
-        try:
-            r = requests.get("https://www.jiosaavn.com/api.php", headers=UA, timeout=20, params={
-                "__call": "content.getTrending", "entity_type": "song", "entity_language": lang,
-                "_format": "json", "_marker": "0", "api_version": "4", "ctx": "web6dot0"})
-            items = [s for s in r.json() if s.get("type") == "song"]
-        except Exception as e:
-            print(f"  ! trending {lang} songs failed: {e}")
-            items = []
-        out[lang] = [(html.unescape(s["title"]),
-                      ", ".join(a["name"] for a in s.get("more_info", {}).get("artistMap", {}).get("primary_artists", [])[:2])
-                      or html.unescape(s.get("subtitle", "")).split(" - ")[0])
-                     for s in items][:25]
+    for lang, srcs in sources.items():
+        lists = []
+        for name, get in srcs:
+            try:
+                lists.append((name, get()))
+            except Exception as e:
+                print(f"  ! songs from {name} failed: {str(e)[:80]}")
+        merged, seen = [], set()
+        for rank in range(max((len(l) for _, l in lists), default=0)):
+            for name, songs in lists:
+                if rank < len(songs):
+                    title, artist = songs[rank]
+                    key = title.lower().strip()
+                    SONG_WHERE[key] = (SONG_WHERE.get(key, "") + f", {name} #{rank + 1}").strip(", ")
+                    if key not in seen:
+                        seen.add(key)
+                        merged.append((title, artist))
+        out[lang] = merged[:70 if lang == "hindi" else 35]
     return out
 
 
 def songs_prompt(songs: dict) -> str:
     if not any(songs.values()):
         return ""
-    lists = "\n".join(f"{lang.title()}:\n" + "\n".join(f"- {t} | {a}" for t, a in songs[lang]) for lang in songs if songs[lang])
-    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Hindi + 2 English songs from these trending "
-            "lists that suit the mood (funny, dramatic, chill, hype...). Copy title and artist exactly; no other songs.\n"
-            + lists)
+    lists = "\n".join(("Indian songs" if lang == "hindi" else "English songs") + ":\n" + "\n".join(
+        f"- {t} | {a}   [{SONG_WHERE.get(t.lower().strip(), '')}]" for t, a in songs[lang]) for lang in songs if songs[lang])
+    recent = ("\nSuggested for recent Reels (a trending song may repeat when it fits, but at least 2 of your 4 must "
+              "not be in this list): " + "; ".join(dict.fromkeys(RECENT_SONGS))) if RECENT_SONGS else ""
+    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Indian + 2 English songs from these lists (today's "
+            "charts: what India looks up on Shazam and plays on Spotify / Apple Music, and JioSaavn's Reels playlists; "
+            "[...] says where each one charts). Pick songs whose hook, lyrics or vibe FIT THIS Reel's moment (a sad or "
+            "dramatic line for a fail, hype for a win, romantic for love, calm for serious news...); among songs that "
+            "fit, prefer the ones high on the charts and new. In mood, say in max 6 words why it fits (e.g. 'sad hook "
+            "= UPI fail'). Copy title and artist exactly; no other songs." + recent + "\n" + lists)
 
 
 def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
     """Keep only songs that are really on today's lists (max 2 per language), with the list's spelling."""
+    pool = {t.lower(): (t, a) for lang in songs for t, a in songs[lang]}
     out, seen = [], set()
     for s in picked:
         lang = s.get("lang", "")
-        match = next(((t, a) for t, a in songs.get(lang, []) if t.lower() == s.get("title", "").strip().lower()), None)
-        if match and match[0] not in seen and sum(o["lang"] == lang for o in out) < 2:
+        match = pool.get(s.get("title", "").strip().lower())
+        if match and match[0] not in seen and lang in ("hindi", "english") and sum(o["lang"] == lang for o in out) < 2:
             seen.add(match[0])
             out.append({"title": match[0], "artist": match[1], "lang": lang, "mood": s.get("mood", "")[:40]})
     return out
@@ -731,6 +813,7 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
     name = f"posts/{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-{post_id}.mp4"
     (g.DOCS / "posts").mkdir(parents=True, exist_ok=True)
     shutil.copy(mp4, g.DOCS / name)
+    state["songs_recent"] = (state.get("songs_recent", []) + [x["title"] for x in entry.get("songs", [])])[-40:]
     g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
     import status
     status.done(f"Ready: {entry['headline'][:90]}", post=post_id)
@@ -835,7 +918,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
-    songs = trending_songs()
+    songs = trending_songs(state)
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
                               f"(hours trending):\n{trends}\n\nStories:\n{listing}\n\nGive your top 3 picks."
@@ -897,13 +980,14 @@ def make_top5_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     article = "\n".join(f"- {s['title']}: {s['summary'][:300]}" for s in stories)
     status.step("Making the video + proofreading", 5)
     frames, data, proof = proofread.run(render, data, specials.top10_caption, article, strict=True)
-    songs = trending_songs()
+    songs = trending_songs(state)
     save_reel(feed, state, frames[0], out, f"{kind}-{today}", {
         "headline": f"{cfg['title'][0]} {cfg['title'][1]}: {schedule.ist_now():%d %b}", "tag": f"🎬 REEL · {label}",
         "caption": g.limit_hashtags(specials.top10_caption(data)),
         "source": ", ".join(dict.fromkeys(s["source"] for s in data["stories"]))[:80], "source_url": "",
         "pin_comment": "", "proof": proof,
-        "songs": [{"title": t, "artist": a, "lang": lang, "mood": ""} for lang in songs for t, a in songs[lang][:2]]})
+        "songs": [{"title": t, "artist": a, "lang": lang, "mood": "high on today's charts"} for lang in songs
+                  for t, a in ([x for x in songs[lang] if x[0] not in RECENT_SONGS][:2] or songs[lang][:2])]})
 
 
 def news_photos(item: dict, opt: dict) -> list[tuple]:
@@ -974,7 +1058,7 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
                  "meme": "Meme"}[style] + " Reel", 3)
     if style != "news":
         return build_joke_reel("reel_clip" if style == "tag_friend" else "reel_meme", state, tmp, topic=about.strip())
-    songs = trending_songs()
+    songs = trending_songs(state)
     schema = {**NEWS_OPTION, "properties": {k: v for k, v in NEWS_OPTION["properties"].items() if k != "pick"},
               "required": [k for k in NEWS_OPTION["required"] if k != "pick"]}
     story = (f"Headline: {article['title']}\nSite: {article['site']}\n{article.get('description', '')}"
@@ -1280,7 +1364,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     picks = [n for n in picks if 1 <= n <= len(stories)][:3]
     if not picks:
         raise RuntimeError("no story about the opposition today")
-    songs = trending_songs()
+    songs = trending_songs(state)
     best = None
     def write(sources: str, extra: str = "") -> list[dict]:
         options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
@@ -1971,7 +2055,7 @@ def build_gita_reel(state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
     source = ("the owner's own Hindi series" if ref else
               "the open Bhagavad Gita library (Gita Press / Swami Tejomayananda / Swami Sivananda)")
     status.step(f"Writing shlok {verse}", 2)
-    songs = trending_songs()
+    songs = trending_songs(state)
     options = fun.claude_json(GITA_SYSTEM.format(page=CONFIG["page_name"]),
                               f"Today's shlok: Bhagavad Gita {verse}. Tomorrow: {nxt}.\n"
                               + (f"Reference from {source} (follow its meaning and context; write it in simple "
