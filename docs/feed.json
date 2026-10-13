@@ -1,5 +1,53 @@
 [
  {
+  "id": "reel_devotion-2026-10-13",
+  "image": "posts/20261013-0033-reel_devotion-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-003332-reel_devotion-2026-10-13.mp4",
+  "headline": "Navratri Din 3: Maa Chandraghanta: Teesra navratra... Maa ki ghanti ki goonj, har chinta door kare",
+  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
+  "caption": "Maa ki kripa se aapka din mangalmay ho 🙏\nAaj ki chinta Maa ko saunp do.\nIs blessing ko family ko bhejo, ya comment karo 'Jai Maa Chandraghanta'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #chandraghanta #jaimatadi #bhakti #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jo is Reel ko dekh raha hai, Maa uske saath hain... Jai Maa Chandraghanta 🙏",
+  "songs": [
+   {
+    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
+    "artist": "Anuradha Paudwal, Sonu Nigam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Durga Aarti",
+    "artist": "Shoma Banerjee",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri Aarti",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri (Durga Aarti)",
+    "artist": "Hari Om Sharan, Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The 'SHUBH NAVRATRI' header overlaps the top of the goddess's crown. Her face is clear and the text is still readable, so this is a minor layout flaw.",
+    "Slide 4: The 'SHUBH NAVRATRI' header overlaps the top of the goddess's crown, as on slide 3. Her face is not covered and the text is readable."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T00:33:32+00:00"
+ },
+ {
   "id": "top10_day-2026-10-12",
   "image": "posts/20261012-1546-top10_day-2026-10-12.jpg",
   "kind": "top10",
@@ -407,39 +455,5 @@
    ]
   },
   "created_at": "2026-10-12T00:34:13+00:00"
- },
- {
-  "id": "top10_day-2026-10-11",
-  "image": "posts/20261011-1546-top10_day-2026-10-11.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 NEWS: 11 Oct",
-  "tag": "📰 TOP 5 NEWS",
-  "caption": "Aaj ki top 5 khabrein ek jagah! Ramayana date se lekar CJP drama tak, swipe karo.\n\n1. Ramayana Part 1 locks November 5 release\n2. BJP hits out at CJP over anti-CEC protests\n3. CISF catches 2 over alleged IIT Goa exam cheating at airport\n4. Jeff Bezos: AI could bring 3-day workweeks\n5. Salman Khan gears up for 50-day final Monster schedule\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #viral #bollywood #Ramayana",
-  "source": "Hindustan Times, Bollywood Hungama",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Cheating is only alleged (2 booked); headline states it as established fact.",
-    "Fact corrected to match the article: Article says he is gearing up for the schedule, not that it has begun",
-    "Fact corrected to match the article: Article says the schedule is upcoming (gears up), not already under way",
-    "Slide 4: The photo shows Goa Police officers and a Goa Police car. The story is about CISF catching two people at Dabolim airport. It is a loosely related stock image, so consider a CISF or airport photo. It is not wrong enough to drop.",
-    "Slide 6: The headline says 'Ramayana Part 1'. The article only says 'Ramayana' and never says 'Part 1'. Confirm this against the source."
-   ],
-   "fixed": [
-    "CISF busts IIT Goa exam cheating bid at airport → CISF catches 2 over alleged IIT Goa exam cheating at airport",
-    "Salman Khan begins 50-day final Monster schedule → Salman Khan gears up for 50-day final Monster schedule",
-    "Monster ka final schedule shuru ho raha hai. → Monster ka final schedule shuru hone wala hai."
-   ]
-  },
-  "slides": [
-   "posts/20261011-1546-top10_day-2026-10-11-s2.jpg",
-   "posts/20261011-1546-top10_day-2026-10-11-s3.jpg",
-   "posts/20261011-1546-top10_day-2026-10-11-s4.jpg",
-   "posts/20261011-1546-top10_day-2026-10-11-s5.jpg",
-   "posts/20261011-1546-top10_day-2026-10-11-s6.jpg",
-   "posts/20261011-1546-top10_day-2026-10-11-s7.jpg"
-  ],
-  "created_at": "2026-10-11T15:46:50+00:00"
  }
 ]
