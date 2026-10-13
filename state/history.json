@@ -250,7 +250,7 @@
   "market_close": "2026-10-09",
   "top10_day": "2026-10-12",
   "night_ready": "2026-10-14",
-  "night_calendar": "2026-10-13",
+  "night_calendar": "2026-10-14",
   "night_jokes": "2026-10-05",
   "night_roundup": "2026-10-13",
   "top10_viral": "2026-10-10",
@@ -331,16 +331,8 @@
   "14 October: 4 Events That Shaped History"
  ],
  "calendar": {
-  "date": "2026-10-13",
-  "items": [
-   {
-    "time": "10:00",
-    "topic": "TechSparks 2026 Bengaluru day 1",
-    "brief": "YourStory's TechSparks 2026 tech summit runs October 13 to 15 in Bengaluru. It brings together entrepreneurs, policymakers, investors and innovators for three days of talks, demos and networking, and it starts today.",
-    "search": "TechSparks 2026 Bengaluru YourStory",
-    "done": true
-   }
-  ]
+  "date": "2026-10-14",
+  "items": []
  },
  "recent_thoughts": [
   "Monday ka matlab naya mauka hai. Bade sapne ek chhote kadam se shuru hote hain, aur wo kadam aaj hi uthana hai.",

@@ -2723,6 +2723,21 @@
      "tokens": 8049
     }
    }
+  },
+  "night_calendar": {
+   "posts": 0,
+   "requests": 1,
+   "input": 2,
+   "output": 187,
+   "cache_read": 0,
+   "cache_write": 12104,
+   "value_usd": 0.0503,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 12293
+    }
+   }
   }
  }
 }
