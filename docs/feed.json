@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_clip-2026-10-13",
+  "image": "posts/20261013-0731-reel_clip-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-073154-reel_clip-2026-10-13.mp4",
+  "headline": "Wo dost jo Navratri pe bolta hai: 'Is baar pakka dandiya seekhunga.' Garba mein teen baar ghoom ke galat taraf nikalta hai.",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Outfit ready, steps zero 😅\nBas dandiya ke time sabko pata chal jaata hai kaun practice kiya.\nApna Navratri dance level ek emoji mein batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#navratri #garba #viral #trending #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Dandiya ya selfie: sabse zyada time kispe jaata hai?",
+  "songs": [
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "funny, dance"
+   },
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "upbeat, festive"
+   },
+   {
+    "title": "Jalebi Baby",
+    "artist": "Tesher",
+    "lang": "english",
+    "mood": "fun, groovy"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "party, upbeat"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The background photo is blurry and low resolution. The person is turned away, so no face is covered by text. The text is readable."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T07:31:54+00:00"
+ },
+ {
   "id": "c6160fd7eb7f",
   "kind": "custom",
   "image": "posts/20261013-0626-c6160fd7eb7f-1.jpg",
@@ -373,52 +420,5 @@
    "posts/20261012-1131-278ba311b65b-s5.jpg"
   ],
   "created_at": "2026-10-12T11:31:37+00:00"
- },
- {
-  "id": "reel_clip-2026-10-12",
-  "image": "posts/20261012-0731-reel_clip-2026-10-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261012-073129-reel_clip-2026-10-12.mp4",
-  "headline": "POV: Mummy ne bola 'padh le beta', maine book kholi, aur ab tak 40 minute se sirf pehla page decorate kar raha hoon",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Padhai shuru kar di hai, bas shuruaat mein hi atka hoon 📚\nHighlighter ka rang chunne mein hi aadha time gaya.\nTumhara pehla kaam padhne se pehle kya hota hai? 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #viral #trending #reelsindia #studentlife",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Desk saaf karna bhi padhai ka hi hissa hai, mummy ko kaun samjhaye",
-  "songs": [
-   {
-    "title": "Dance Monkey",
-    "artist": "Tones and I",
-    "lang": "english",
-    "mood": "funny, quirky"
-   },
-   {
-    "title": "Chalre Chalre Waal",
-    "artist": "Akash Khaira",
-    "lang": "english",
-    "mood": "funny, meme vibe"
-   },
-   {
-    "title": "Casa Tupka Anthemo",
-    "artist": "Yo Yo Honey Singh",
-    "lang": "hindi",
-    "mood": "fun, upbeat"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Shashwat Sachdev, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "playful, light"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The text block sits over the student's lower face and body. The face is not fully covered, but the overlay is close. Only slide 1 was available to review, so I could not check the other slides."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T07:31:29+00:00"
  }
 ]

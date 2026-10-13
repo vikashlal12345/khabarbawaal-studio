@@ -2536,6 +2536,33 @@
      "tokens": 10791
     }
    }
+  },
+  "reel_clip": {
+   "posts": 0,
+   "requests": 4,
+   "input": 14,
+   "output": 3177,
+   "cache_read": 14724,
+   "cache_write": 33929,
+   "value_usd": 0.169,
+   "by_purpose": {
+    "reel writing": {
+     "requests": 1,
+     "tokens": 14687
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 17100
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 8431
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 11626
+    }
+   }
   }
  }
 }
