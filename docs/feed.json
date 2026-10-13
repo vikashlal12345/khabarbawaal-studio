@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news-2026-10-13",
+  "image": "posts/20261013-1433-reel_news-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-143333-reel_news-2026-10-13.mp4",
+  "headline": "NASA releases Artemis II Moon images: Why the lunar surface is not just grey",
+  "tag": "🎬 REEL · WORLD",
+  "caption": "Chand sirf grey nahi hai! 🌙\nNASA ne Artemis II ki Moon images release ki hain\nAstronauts ne lunar surface par kai rang dekhe\nTumne Moon ko hamesha grey hi socha tha na? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#nasa #artemis2 #moon #space #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/nasa-releases-artemis-ii-moon-images-why-the-lunar-surface-is-not-just-grey-101791892071453.html",
+  "pin_comment": "Moon ka sabse surprising colour kaunsa laga? Comment mein batao",
+  "songs": [
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "dreamy, space vibe"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "upbeat, floaty"
+   },
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "chill, dreamy"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "soft, calm"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-13T14:33:33+00:00"
+ },
+ {
   "id": "reel_meme-2026-10-13",
   "image": "posts/20261013-1333-reel_meme-2026-10-13.jpg",
   "kind": "reel",
@@ -454,52 +499,5 @@
    "fixed": []
   },
   "created_at": "2026-10-12T14:50:33+00:00"
- },
- {
-  "id": "reel_news-2026-10-12",
-  "image": "posts/20261012-1432-reel_news-2026-10-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261012-143206-reel_news-2026-10-12.mp4",
-  "headline": "Madhuri Dixit's Husband Didn't Recognise Shah Rukh Khan, Salman Khan At Their Wedding Reception",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Shah Rukh aur Salman ko nahi pehchana? 😂\nMadhuri Dixit ke husband ne apne wedding reception mein SRK aur Salman Khan ko recognise nahi kiya.\nYe kissa ab internet pe viral hai.\nAap hote toh kya karte? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#madhuridixit #shahrukhkhan #salmankhan #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/madhuri-dixit-s-husband-dr-shriram-nene-didn-t-recognise-shah-rukh-khan-salman-khan-at-their-wedding-reception-knew-only-amitabh-bachchan-101791796221410.html",
-  "pin_comment": "Agar aapke reception mein SRK aur Salman aate, toh pehle kisko pehchaante? Comment karo!",
-  "songs": [
-   {
-    "title": "Casa Tupka Anthemo",
-    "artist": "Yo Yo Honey Singh",
-    "lang": "hindi",
-    "mood": "funny, upbeat drop"
-   },
-   {
-    "title": "Bom Diggy Diggy",
-    "artist": "Zack Knight, Jasmin Walia",
-    "lang": "hindi",
-    "mood": "party, hype"
-   },
-   {
-    "title": "Dance Monkey",
-    "artist": "Tones and I",
-    "lang": "english",
-    "mood": "funny, quirky"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "fun, upbeat"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The quote is in quotation marks, but it is a Hinglish paraphrase of what Dr Nene said. His actual words were 'I grew up on Steven Spielberg, George Lucas, and Star Wars. I didn't watch Hindi films.' It's close enough to run, but you could drop the quotation marks or use his exact words."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T14:32:06+00:00"
  }
 ]
