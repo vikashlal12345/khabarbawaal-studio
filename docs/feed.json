@@ -1,5 +1,62 @@
 [
  {
+  "id": "reel_politics-2026-10-13",
+  "image": "posts/20261013-1234-reel_politics-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-123446-reel_politics-2026-10-13.mp4",
+  "headline": "Congress, EC ke liye: 'Neutral raho!' Kerala, May 2026: Goyal ka aarop: chunav ke baad secretary ka post.",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Congress CEC se neutrality maangti hai, aur Goyal ne Kerala ka naya secretary yaad dilaya. 🤨\nChunav ke baad CM ke secretary bane Kerala ke ex-CEO Ratan Kelkar.\nTumhe kya lagta hai? Comment karo ya friend ko tag karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: India Today (link pinned in comments 👇)\n\n#reelsindia #Congress #Kerala #PiyushGoyal #PoliticalSatire",
+  "source": "India Today",
+  "source_url": "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
+  "pin_comment": "Referee aur player ek hi team mein: sahi ya galat? 😂",
+  "songs": [
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "funny, upbeat"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "chill, cheeky"
+   },
+   {
+    "title": "Pehle Bhi Main",
+    "artist": "Vishal Mishra, Raj Shekhar",
+    "lang": "hindi",
+    "mood": "dramatic, ironic"
+   },
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "chill, wry"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: UDF government formation isn't in the article; only Satheesan being CM is",
+    "Fact corrected to match the article: Invented quote attributed to Congress; Goyal's allegation should be attributed",
+    "Fact corrected to match the article: Article says Tuesday press conference; 'kal' is unsupported",
+    "Fact corrected to match the article: Article says opposition/INDIA bloc protests against CEC, not only Congress",
+    "Slide 1: The cover photo is a generic stock image of a smiling woman. It has nothing to do with the story, and the cheerful tone doesn't suit it. Slide 1 can't be dropped, so the photo should be swapped for a relevant one, such as Piyush Goyal or the press conference."
+   ],
+   "fixed": [
+    "Neutral refree bhi → Neutral referee bhi",
+    "Congress-led UDF ne sarkar banayi, VD Satheesan CM bane → VD Satheesan Kerala ke CM bane",
+    "'Chunav ke baad hamare secretary bano.' → Goyal ka aarop: chunav ke baad secretary ka post.",
+    "Union Minister Piyush Goyal ne kal kaha: → Union Minister Piyush Goyal ne Tuesday ko kaha:",
+    "Congress CEC Gyanesh Kumar par sawal utha rahi hai. → Opposition CEC Gyanesh Kumar par sawal utha raha hai."
+   ]
+  },
+  "created_at": "2026-10-13T12:34:46+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-13",
   "image": "posts/20261013-1132-reel_news_pm-2026-10-13.jpg",
   "kind": "reel",

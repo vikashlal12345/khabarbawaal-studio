@@ -2586,6 +2586,41 @@
      "tokens": 27333
     }
    }
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 10,
+   "input": 26,
+   "output": 17507,
+   "cache_read": 23361,
+   "cache_write": 96538,
+   "value_usd": 0.5636,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 1,
+     "tokens": 12162
+    },
+    "satire writing": {
+     "requests": 2,
+     "tokens": 36311
+    },
+    "joke judge": {
+     "requests": 2,
+     "tokens": 18783
+    },
+    "satire shorten": {
+     "requests": 1,
+     "tokens": 14203
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 8285
+    },
+    "proofreading": {
+     "requests": 3,
+     "tokens": 47688
+    }
+   }
   }
  }
 }

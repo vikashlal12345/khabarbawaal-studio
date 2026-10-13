@@ -258,14 +258,14 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-13",
   "reel_clip_am": "2026-10-13",
-  "reel_politics": "2026-10-12",
+  "reel_politics": "2026-10-13",
   "reel_meme": "2026-10-12",
   "reel_news": "2026-10-12",
   "night_picture": "2026-10-13",
   "reel_devotion": "2026-10-13",
   "reel_news_pm": "2026-10-13"
  },
- "inbox_since": "tv8R61tBEXWp",
+ "inbox_since": "FVhQbyoq5aKe",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -390,7 +390,8 @@
   "4837",
   "42583",
   "39786",
-  "46874"
+  "46874",
+  "43831"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -455,7 +456,14 @@
   "12837": "Mixkit Restricted License",
   "4837": "Free",
   "39786": "Free",
-  "46874": "Free"
+  "46874": "Free",
+  "45503": "Mixkit Restricted License",
+  "46379": "Mixkit Restricted License",
+  "32846": "Mixkit Restricted License",
+  "46376": "Mixkit Restricted License",
+  "23839": "Mixkit Restricted License",
+  "46380": "Mixkit Restricted License",
+  "43831": "Free"
  },
  "create_done": [
   "1791580482",
@@ -483,9 +491,10 @@
   "Gita 1.3: Gita 1.3: Duryodhan Dronacharya se kehta hai, 'Pandavon ki badi sena dekhiye, jise aapke hi shishya Drupad-putra ne saja diya.' Lesson: taana aksar andar ke darr ko chhupata hai."
  ],
  "reel_politics_used": [
-  "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
+  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
   "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
-  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms"
+  "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
+  "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13"
  ],
  "reel_news_used": [
   "119d9f27c7b0",
@@ -534,6 +543,14 @@
    "topic": "AAP: Sanjay Singh and Saurabh Bharadwaj detained during march against CEC Gyanesh Kumar",
    "hook": "HIRING: Full-time dharna wala. Skill: CEC ke khilaf march. Perk: police bus mein free ride.",
    "punchline": "Seat 22 rahi, par detain hone ka target poora."
+  },
+  {
+   "date": "2026-10-13",
+   "party": "Congress",
+   "format": "Then vs Now (U-turn)",
+   "topic": "Congress: Kerala mein Congress CM VD Satheesan ne ex-Chief Electoral Officer Ratan Kelkar ko secretary banaya, jise Goyal ne uthaya",
+   "hook": "Congress, EC ke liye: 'Neutral raho!' Kerala, May 2026: Goyal ka aarop: chunav ke baad secretary ka post.",
+   "punchline": "Neutral referee bhi ab apni hi team mein sign ho gaya."
   }
  ]
 }
