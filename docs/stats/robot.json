@@ -2738,6 +2738,33 @@
      "tokens": 12293
     }
    }
+  },
+  "night_picture": {
+   "posts": 0,
+   "requests": 5,
+   "input": 16,
+   "output": 2968,
+   "cache_read": 9610,
+   "cache_write": 28450,
+   "value_usd": 0.1445,
+   "by_purpose": {
+    "bhakti writing": {
+     "requests": 1,
+     "tokens": 10225
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 8432
+    },
+    "flux pick": {
+     "requests": 1,
+     "tokens": 7170
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 15217
+    }
+   }
   }
  }
 }

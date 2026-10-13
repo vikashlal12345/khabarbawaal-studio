@@ -1,55 +1,5 @@
 [
  {
-  "id": "r20261012-193626-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261012-193626-gita.jpg",
-  "video": "posts/r20261012-193626-gita.mp4",
-  "headline": "Gita 1.3: Guru ko hi taana... kyun?",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Duryodhan ne apne guru ko hi taana maara... par asli wajah darr tha. 🙏\nGita 1.3 mein chhupi hai ek badi seekh.\nAapne kab darr mein taana maara? Comment karke batao ya kisi dost ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.3 · Kal: shlok 1.4\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #gitagyaan #krishna #mahabharat",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal ka shlok 1.4: Duryodhan sena ke veer ginata hai. Follow karke roz ek shlok samjho 🙏",
-  "songs": [
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "tense, dramatic"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "moody, slow"
-   },
-   {
-    "title": "Finding Her",
-    "artist": "Kushagra, Bharath",
-    "lang": "hindi",
-    "mood": "deep, calm"
-   },
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "reflective, soft"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The small label above the main text looks like 'KYA HO,RAHA HAI'. There seems to be a comma-like mark between HO and RAHA, and the word spacing is off. Check the label rendering.",
-    "Slide 5: A stray dot or mark sits on the 'AAJ KI SEEKH' label and on 'chhupata'. It looks like a sparkle overlay hitting the text. Slides 3 and 4 have the same kind of sparkles on the text."
-   ],
-   "fixed": [
-    "Aapne kab darr mein taana mara? → Aapne kab darr mein taana maara?"
-   ]
-  },
-  "created_at": "2026-10-12T19:36:26+00:00"
- },
- {
   "id": "r20261012-213202-bhakti",
   "kind": "ready",
   "image": "posts/r20261012-213202-bhakti.jpg",
@@ -166,5 +116,24 @@
    "fixed": []
   },
   "created_at": "2026-10-13T19:34:09+00:00"
+ },
+ {
+  "id": "r20261013-213158-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261013-213158-bhakti.jpg",
+  "headline": "Maa, roz bhaag rahi hoon sabke liye, bas aap meri himmat ban jaana, thoda sa muskurana sikha dena.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Bheed mein bhi Maa ka saath hota hai, bas aankhein band karke yaad karna padta hai 🙏\nSend karo usko jise aaj ye sunna hai\n\nFollow @khabarbawaal 🙏\n\n#maakushmanda #navratri #jaimatadi #explorepage #reelsindia",
+  "pin_comment": "Thak gaye ho toh bas ek baar Maa ka naam lo. Sab halka lagega.",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "roz bhaag raha hoon sabke liye → roz bhaag rahi hoon sabke liye"
+   ]
+  },
+  "created_at": "2026-10-13T21:31:58+00:00"
  }
 ]
