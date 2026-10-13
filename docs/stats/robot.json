@@ -2440,6 +2440,25 @@
      "tokens": 10588
     }
    }
+  },
+  "night_roundup": {
+   "posts": 1,
+   "requests": 3,
+   "input": 10,
+   "output": 3572,
+   "cache_read": 11607,
+   "cache_write": 30755,
+   "value_usd": 0.1599,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 9985
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 35959
+    }
+   }
   }
  }
 }

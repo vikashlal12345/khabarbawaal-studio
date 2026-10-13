@@ -1,5 +1,34 @@
 [
  {
+  "id": "night_roundup-2026-10-13",
+  "image": "posts/20261013-0131-night_roundup-2026-10-13.jpg",
+  "kind": "top10",
+  "headline": "TOP 5 RAAT KI KHABAR: 13 Oct",
+  "tag": "🌅 RAAT KI 5 KHABREIN",
+  "caption": "Raat bhar mein kya kya hua? Subah ki 5 badi khabrein, ek swipe mein 👇\n\n1. SC flags 14 defects in Rahul Gandhi's petition\n2. Rahul, Kharge go 'Batman Mode' during Opposition march\n3. NSA Doval talks to Iran security chief on West Asia\n4. Nushrratt Bharuccha heals with Gerua after spine surgery\n5. BRICS Theatre Festival begins in Delhi\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #news #viral #rahulgandhi",
+  "source": "Hindustan Times",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The claim that people are asking 'protest or photo-op' is not in the article"
+   ],
+   "fixed": [
+    "apni culture ki jhalak → apne culture ki jhalak",
+    "Protest ya photo-op, log pooch rahe hain. → Rahul Gandhi ne Batman mask pakda."
+   ]
+  },
+  "slides": [
+   "posts/20261013-0131-night_roundup-2026-10-13-s2.jpg",
+   "posts/20261013-0131-night_roundup-2026-10-13-s3.jpg",
+   "posts/20261013-0131-night_roundup-2026-10-13-s4.jpg",
+   "posts/20261013-0131-night_roundup-2026-10-13-s5.jpg",
+   "posts/20261013-0131-night_roundup-2026-10-13-s6.jpg",
+   "posts/20261013-0131-night_roundup-2026-10-13-s7.jpg"
+  ],
+  "created_at": "2026-10-13T01:31:54+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-13",
   "image": "posts/20261013-0033-reel_devotion-2026-10-13.jpg",
   "kind": "reel",
@@ -406,54 +435,5 @@
    "posts/20261012-0131-night_roundup-2026-10-12-s7.jpg"
   ],
   "created_at": "2026-10-12T01:31:57+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-12",
-  "image": "posts/20261012-0034-reel_devotion-2026-10-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261012-003413-reel_devotion-2026-10-12.mp4",
-  "headline": "Navratri Din 2: Maa Brahmacharini: Navratri ka doosra din... shaanti aur shraddha ke naam",
-  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
-  "caption": "Maa Brahmacharini aapke ghar shaanti aur khushiyan layein 🙏\nAaj ka din shaant mann se shuru karo.\nParivar ko bhejo ya comment karo 'Jai Maa Durga'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #brahmacharini #jaimatadi #goodmorning #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Jai Maa Durga 🙏 Aapka din mangalmay ho.",
-  "songs": [
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri Aarti",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Navratri Bhajan",
-    "artist": "Kanchan Kiran Mishra",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The text says Maa holds a japmala and kamandal, but the AI illustration shows neither. Her raised hand is empty. This is minor. You could add a small note or leave it as is."
-   ],
-   "fixed": [
-    "Durga ma ka doosra swaroop → Maa Durga ka doosra swaroop"
-   ]
-  },
-  "created_at": "2026-10-12T00:34:13+00:00"
  }
 ]
