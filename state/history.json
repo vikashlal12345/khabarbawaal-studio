@@ -123,10 +123,10 @@
   "6a43992aee41",
   "d0cb98ca7bfd",
   "f99c7e078d3f",
-  "278ba311b65b"
+  "278ba311b65b",
+  "ea1fec80a928"
  ],
  "recent_headlines": [
-  "[POLITICS] FIR Against Rahul Gandhi, Priyanka For Allegedly Entering Akashvani Bhawan Without Permission",
   "[VIRAL] Karl Bushby Returns To UK After Walking The World For 28 Years",
   "[CRICKET] Kohli's Spokesperson Denies Claim He Was Paid Rs 5 Crore For Premanand Maharaj Visit",
   "[BOLLYWOOD] Supreme Court Directs Rajpal Yadav To Deposit ₹2 Crore By October 13 In Cheque Bounce Case",
@@ -173,7 +173,8 @@
   "[POLITICS] Rajeev Mantri claims Musk, Dorsey want to help CJP protests, calls it 'war'",
   "[TECH] Jeff Bezos Says AI Could Bring 3-Day Workweeks And Single-Income Households",
   "[POLITICS] CJP leaders head to police station seeking Jantar Mantar protest date",
-  "[BOLLYWOOD] Madhuri Dixit's Husband Didn't Recognise Shah Rukh Khan, Salman Khan At Their Wedding Reception"
+  "[BOLLYWOOD] Madhuri Dixit's Husband Didn't Recognise Shah Rukh Khan, Salman Khan At Their Wedding Reception",
+  "[TECH] YourStory's TechSparks 2026 kicks off in Bengaluru, three-day startup summit runs October 13-15"
  ],
  "turn": 154,
  "empty_runs": 0,
@@ -261,7 +262,7 @@
   "night_picture": "2026-10-13",
   "reel_devotion": "2026-10-13"
  },
- "inbox_since": "NUceQrRdJeyi",
+ "inbox_since": "AD8jHkPgOqK5",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -329,7 +330,7 @@
     "topic": "TechSparks 2026 Bengaluru day 1",
     "brief": "YourStory's TechSparks 2026 tech summit runs October 13 to 15 in Bengaluru. It brings together entrepreneurs, policymakers, investors and innovators for three days of talks, demos and networking, and it starts today.",
     "search": "TechSparks 2026 Bengaluru YourStory",
-    "done": false
+    "done": true
    }
   ]
  },
