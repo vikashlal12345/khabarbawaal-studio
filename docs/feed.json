@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_pm-2026-10-13",
+  "image": "posts/20261013-1132-reel_news_pm-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-113243-reel_news_pm-2026-10-13.mp4",
+  "headline": "Drishyam 3 worldwide box office collection: Ajay Devgn film nears ₹500 crore, collects ₹490 crore despite drop",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Drishyam 3 ₹500 crore ke bilkul kareeb pahunch gayi 🔥\nAjay Devgn ki film worldwide ₹490 crore tak collect kar chuki hai.\nMonday drop ke baad bhi film ne apni pakad banaye rakhi.\nKya aapne dekhi? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#drishyam3 #ajaydevgn #boxoffice #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-ajay-devgn-film-nears-500-crore-mohanlal-101791874664425.html",
+  "pin_comment": "Drishyam 3 ko kitne stars doge out of 5? Bina spoiler ke batao!",
+  "songs": [
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "hype, mass"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "dramatic, powerful"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "celebration, upbeat"
+   },
+   {
+    "title": "Soulmate",
+    "artist": "Badshah, Arijit Singh",
+    "lang": "hindi",
+    "mood": "dramatic, smooth"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Ye Ajay Devgn ki career ki sabse badi film bani → Ye Ajay Devgn ke career ki sabse badi film bani"
+   ]
+  },
+  "created_at": "2026-10-13T11:32:43+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-13",
   "image": "posts/20261013-0731-reel_clip-2026-10-13.jpg",
   "kind": "reel",
@@ -395,30 +442,5 @@
    "fixed": []
   },
   "created_at": "2026-10-12T13:31:43+00:00"
- },
- {
-  "id": "278ba311b65b",
-  "image": "posts/20261012-1131-278ba311b65b.jpg",
-  "kind": "news",
-  "headline": "Madhuri Dixit's Husband Didn't Recognise Shah Rukh Khan, Salman Khan At Their Wedding Reception",
-  "tag": "BOLLYWOOD",
-  "caption": "Imagine apni shaadi mein SRK aur Salman aaye aur dulha bole \"ye kaun?\" 😭\nFarah Khan ke cooking vlog mein Dr Shriram Nene ne bataya ki wo Madhuri Dixit ke baare mein jaante hi nahi the.\nReason: wo Hollywood films dekhte hue bade hue aur Hindi bolte nahi the.\nReception mein unhone sirf Amitabh Bachchan ko pehchana.\nDr Nene ka ye move: legend 🔥 ya clueless 🤡\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bollywood #madhuridixit #shahrukhkhan #viral #trending",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/madhuri-dixit-s-husband-dr-shriram-nene-didn-t-recognise-shah-rukh-khan-salman-khan-at-their-wedding-reception-knew-only-amitabh-bachchan-101791796221410.html",
-  "pin_comment": "Sabse shocking part: sirf Amitabh Bachchan ko pehchana. Big B ka aura alag hi level pe hai 😂",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "lौte → laute"
-   ]
-  },
-  "slides": [
-   "posts/20261012-1131-278ba311b65b-s2.jpg",
-   "posts/20261012-1131-278ba311b65b-s3.jpg",
-   "posts/20261012-1131-278ba311b65b-s4.jpg",
-   "posts/20261012-1131-278ba311b65b-s5.jpg"
-  ],
-  "created_at": "2026-10-12T11:31:37+00:00"
  }
 ]
