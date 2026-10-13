@@ -116,6 +116,9 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
 - App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
+  `docs/app.json` `plan` (report's 🗓️ Today's plan) + `reels` (app's "Next Reel") are hand-kept: **change them with
+  `schedule.SPECIALS`** (12 Oct 2026 they went stale after the all-Reels switch). Report's 🌙 Night posts = 📦 Ready posts
+  made 0-6 AM IST today (`ready.json` ids `r<date>-<time>-<type>`: explainer/quiz/facts/myth_fact, on_this_day, gita, bhakti).
 - Data: `docs/feed.json` (24 hours: `keep_days` 1, older posts + their files deleted; owner's choice to stop app crashes), `docs/ready.json` (also 24 hours), `state/history.json`, `docs/stats/*.json`.
 - App memory (iPhone crashes): the app shows half-size previews `docs/posts/p/` (made/cleaned by `save.py`
   `make_previews()`, needs Pillow), loads carousel slides on swipe, plays only the on-screen Reel, keeps ~12 posts' share files.

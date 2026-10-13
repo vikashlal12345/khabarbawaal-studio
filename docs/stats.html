@@ -51,6 +51,8 @@
   .slot .t { color: var(--muted); font-variant-numeric: tabular-nums; }
   .slot .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .slot .why { grid-column: 2 / 4; color: var(--amber); font-size: 12px; margin-top: -4px; }
+  .slot .sub { grid-column: 2 / 4; color: var(--muted); font-size: 12px; margin-top: -4px;
+               overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .chip { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #262626; color: var(--muted); white-space: nowrap; }
   .chip.made { color: var(--text); } .chip.posted { background: rgba(61,220,132,.14); color: var(--green); }
   .chip.warn { background: rgba(255,176,32,.14); color: var(--amber); } .chip.bad { background: rgba(229,9,20,.16); color: #ff6b6b; }
@@ -79,6 +81,7 @@
 <main>
   <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
   <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
+  <section id="night"><h2>🌙 Night posts</h2><div class="muted">Loading…</div></section>
   <section id="works"><h2>🏆 What works</h2><div class="muted">Loading…</div></section>
   <section id="health"><h2>⚙️ Robot &amp; Claude plan</h2><div class="muted">Loading…</div></section>
   <details class="more"><summary>Details (tokens, room for more posts, your own Claude use)</summary>
@@ -91,7 +94,9 @@
 <script>
 const JOB_NAMES = { news: '📰 News', create: '➕ Create', top10_day: '📰 Top 5 News', night_roundup: '🌅 Overnight Top 5',
   reel_devotion: '🙏 Devotional Reel', reel_clip_am: '🎬 8 AM Reel', reel_clip: '🎬 1 PM Reel', reel_politics: '🎬 Reality check',
-  reel_meme: '🎬 Meme Reel', reel_news: '🎬 News Reel', night_ready: '📦 Ready (night)', night_calendar: '📅 Planner',
+  reel_meme: '🎬 Meme Reel', reel_news: '🎬 8 PM News Reel', reel_news_am: '🎬 10 AM News Reel', reel_news_pm: '🎬 5 PM News Reel',
+  reel_top5_am: '🎬 Overnight Top 5', reel_top5: '🎬 Top 5 News', night_picture: '🙏 God picture (night)',
+  night_ready: '📦 Ready (night)', night_calendar: '📅 Planner',
   night_learn: '📊 Learning', calendar: '📅 Previews', fun: 'Fun (old)', other: 'Other' };
 const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(Math.round(n));
 const tokens = t => (t.input || 0) + (t.output || 0) + (t.cache_read || 0) + (t.cache_write || 0);
@@ -156,6 +161,7 @@ function hookChart(box, pts) {
 (async () => {
   const [robot, adhoc, limits, ig, links, audience, feed] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'),
     getJSON('stats/limits.json'), getJSON('stats/instagram.json'), getJSON('stats/ig_links.json'), getJSON('stats/audience.json'), getJSON('feed.json')]);
+  const ready = (await getJSON('ready.json')) || [];
   const boostsData = (await getJSON('stats/boosts.json')) || {};
 
   const app = (await getJSON('app.json')) || {};
@@ -207,9 +213,10 @@ function hookChart(box, pts) {
       let post = kind === 'news' ? posts.find(p => p.kind === 'news' && inSlot(p)) : posts.find(p => p.id === `${kind}-${todayIST}`);
       let why = '', state = '';
       if (!post && kind !== 'news') {
-        const fallback = posts.find(p => (p.kind === 'news' || p.kind === 'ready') && inSlot(p));
+        const fallback = posts.find(p => ['news', 'ready', 'calendar', 'top10'].includes(p.kind) && inSlot(p));
         const a = activity[`${kind}|${todayIST}`];
-        if (fallback) { post = fallback; state = 'warn'; why = a && a.text ? a.text : 'A normal news post was made instead.'; }
+        if (fallback && fallback.kind === 'calendar') { post = fallback; why = '📅 A planned preview was made in this slot.'; }
+        else if (fallback) { post = fallback; state = 'warn'; why = a && a.text ? a.text : 'A normal (carousel) post was made instead.'; }
         else if (a && a.state === 'fail') { state = 'bad'; why = a.text; }
       }
       const link = post && (links || {})[post.id], r = post && res[post.id];
@@ -225,6 +232,36 @@ function hookChart(box, pts) {
     document.getElementById('today').innerHTML = `<h2>🗓️ Today's plan <span class="muted">${made} of ${plan.length} made · ${posted} posted</span></h2>
       ${rows || '<div class="muted">The schedule appears after the next app update.</div>'}
       <div class="muted" style="margin-top:8px">"Posted" = linked with 🔗 Insta link in the app. Reasons come from ⏳ Activity on this phone.</div>`;
+  }
+
+  // --- 🌙 night posts (📦 Ready tab): 1 AM carousel in turn + On This Day + Gita Reel, 3 AM God picture
+  {
+    const NIGHT = [['01:00', ['explainer', 'quiz', 'facts', 'myth_fact'], '📦 Carousel (Explainer, Quiz, Facts, Myth in turn)', ''],
+                   ['01:00', ['on_this_day'], '📅 On This Day', ''],
+                   ['01:00', ['gita'], '🙏 Gita Reel', 'ready_gita'],
+                   ['03:00', ['bhakti'], '🙏 God picture', 'ready_bhakti']];
+    const istHour = iso => new Date(new Date(iso).getTime() + 330 * 60000).getUTCHours();
+    const istNowMins = (() => { const d = new Date(Date.now() + 330 * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); })();
+    const tonight = ready.filter(p => p.created_at && istDay(new Date(p.created_at)) === todayIST && istHour(p.created_at) < 6);
+    let made = 0, posted = 0;
+    const rows = NIGHT.map(([time, types, name, job]) => {
+      const post = tonight.find(p => types.includes(String(p.id).split('-').slice(2).join('-')));
+      const a = job && activity[`${job}|${todayIST}`];
+      const link = post && (links || {})[post.id], r = post && res[post.id];
+      if (post) made++;
+      if (link) posted++;
+      const [h, m] = time.split(':').map(Number);
+      const chips = !post && istNowMins < h * 60 + m + 15 ? '<span class="chip">⏳ upcoming</span>'
+        : !post ? '<span class="chip bad">❌ not made</span>'
+        : '<span class="chip made">✅ made</span>'
+          + (link ? `<span class="chip posted">📲 posted${r ? ` · ❤️ ${r.likes}` : ''}</span>` : '<span class="chip">not posted</span>');
+      const label = post && types.length > 1 ? (post.tag || name) : name;
+      return `<div class="slot"><span class="t">${time}</span><span class="name">${esc(label)}</span><span class="chips">${chips}</span>
+        ${post ? `<span class="sub">${esc(post.headline || '')}</span>` : (a && a.state === 'fail' ? `<span class="why">${esc(a.text)}</span>` : '')}</div>`;
+    }).join('');
+    document.getElementById('night').innerHTML = `<h2>🌙 Night posts <span class="muted">${made} of ${NIGHT.length} made · ${posted} posted</span></h2>
+      ${rows}
+      <div class="muted" style="margin-top:8px">Made at night for the 📦 Ready tab (they stay 24 hours). "Posted" = linked with 🔗 Insta link.</div>`;
   }
 
   // --- 🏆 what works: average likes by current post type (last 14 days), Reels vs carousels, best posts, best slot
