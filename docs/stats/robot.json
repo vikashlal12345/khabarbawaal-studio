@@ -2509,6 +2509,33 @@
      "tokens": 40900
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 7,
+   "input": 24,
+   "output": 6653,
+   "cache_read": 19151,
+   "cache_write": 45994,
+   "value_usd": 0.2525,
+   "by_purpose": {
+    "reel news script": {
+     "requests": 1,
+     "tokens": 10312
+    },
+    "photo check": {
+     "requests": 2,
+     "tokens": 13595
+    },
+    "proofreading": {
+     "requests": 3,
+     "tokens": 37124
+    },
+    "writing": {
+     "requests": 1,
+     "tokens": 10791
+    }
+   }
   }
  }
 }

@@ -1,5 +1,38 @@
 [
  {
+  "id": "c6160fd7eb7f",
+  "kind": "custom",
+  "image": "posts/20261013-0626-c6160fd7eb7f-1.jpg",
+  "options": [
+   "posts/20261013-0626-c6160fd7eb7f-1.jpg",
+   "posts/20261013-0626-c6160fd7eb7f-2.jpg",
+   "posts/20261013-0626-c6160fd7eb7f-3.jpg",
+   "posts/20261013-0626-c6160fd7eb7f-4.jpg"
+  ],
+  "slides": [
+   "posts/20261013-0626-c6160fd7eb7f-s2.jpg",
+   "posts/20261013-0626-c6160fd7eb7f-s3.jpg",
+   "posts/20261013-0626-c6160fd7eb7f-s4.jpg"
+  ],
+  "headline": "Congress, AAP, Akali Dal satisfied with Punjab SIR while Congress protests CEC in Delhi",
+  "tag": "POLITICS",
+  "caption": "Delhi mein protest, Punjab mein tareef. Ye kaisa twist hai? 😅\nCongress ne Delhi mein CEC Gyanesh Kumar ke khilaf protest kiya.\nUsi beech poll-bound Punjab mein Congress, AAP aur Akali Dal ne SIR process par satisfaction jataya.\nCongress neta Hardeep Singh Kingra ke mutabik unhone Punjab CEO Anindita Mitra ke saamne kai issues uthaye aur unhe suna gaya.\nDelhi wala protest ya Punjab wali tareef: asli Congress kaun si hai? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#india #trending #politics #congress #punjab",
+  "source": "Inshorts - Stay Informed",
+  "source_url": "https://shrts.in/33tyw7pl8b",
+  "pin_comment": "Sabse funny part: jis process par Delhi mein sadak par protest, Punjab mein wahi \"issues sun liye gaye\". Same party, do scripts 🎭",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The claim that no Congress workers' protest was seen in Punjab isn't supported by the article, and the slide photo shows a burning effigy with Congress flags. Reworded to what the article says."
+   ],
+   "fixed": [
+    "removed weak photo slide(s) [3]",
+    "Wahan Congress workers ka virodh nazar nahi aaya. → Congress neta Kingra ke mutabik unke issues sune gaye."
+   ]
+  },
+  "created_at": "2026-10-13T06:26:28+00:00"
+ },
+ {
   "id": "cdc1ee0e9b62",
   "kind": "calendar",
   "image": "posts/20261013-0431-cdc1ee0e9b62-1.jpg",
@@ -387,56 +420,5 @@
    "fixed": []
   },
   "created_at": "2026-10-12T07:31:29+00:00"
- },
- {
-  "id": "c47eda56c2bd",
-  "kind": "calendar",
-  "image": "posts/20261012-0432-c47eda56c2bd-1.jpg",
-  "options": [
-   "posts/20261012-0432-c47eda56c2bd-1.jpg",
-   "posts/20261012-0432-c47eda56c2bd-2.jpg",
-   "posts/20261012-0432-c47eda56c2bd-3.jpg",
-   "posts/20261012-0432-c47eda56c2bd-4.jpg"
-  ],
-  "slides": [
-   "posts/20261012-0432-c47eda56c2bd-s2.jpg",
-   "posts/20261012-0432-c47eda56c2bd-s3.jpg",
-   "posts/20261012-0432-c47eda56c2bd-s4.jpg",
-   "posts/20261012-0432-c47eda56c2bd-s5.jpg",
-   "posts/20261012-0432-c47eda56c2bd-s6.jpg"
-  ],
-  "headline": "CJP leaders head to police station seeking Jantar Mantar protest date",
-  "tag": "POLITICS",
-  "caption": "Protest ki date maangne ab thaane jaana pad raha hai 😅\nCJP leaders aaj Delhi ke Parliament Street Police Station jaa rahe hain, Jantar Mantar protest ke liye date maangne.\nCJP ka kehna hai ki Delhi Police ke paas 24 ghante hain date dene ke liye.\nUdhar opposition ne Supreme Court march ka plan banaya hai.\nPolice se date mil payegi? Haan ya Na? 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#india #trending #politics #delhi #news",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/cjp-leaders-to-visit-delhi-police-station-tomorrow-gyanesh-kumar-cec-row-seek-date-for-jantar-mantar-protest-dipke-ranka-saurav-das-modi-india-bloc-101791737772634.html",
-  "pin_comment": "Sabse bada sawaal: 24 ghante ka deadline police ko diya gaya hai. Aap kis side ho? 🍿",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article has no BJP mockery or stand-change claim; unsupported statement.",
-    "Fact corrected to match the article: Article doesn't say BJP taunted CJP about changing stand.",
-    "Fact corrected to match the article: BJP taunt not in article.",
-    "Fact corrected to match the article: BJP mocking is not in the article.",
-    "Fact corrected to match the article: Unsupported claim in slide text.",
-    "Fact corrected to match the article: Article does not say the Jantar Mantar protest is against CEC Gyanesh Kumar or the SIR exercise; that claim is unsupported.",
-    "Fact corrected to match the article: Unsupported claim about protest's target; the article only says leaders want a date for a peaceful protest at Jantar Mantar.",
-    "Fact corrected to match the article: Article only says they seek a date, not a 'new' date.",
-    "Fact corrected to match the article: Article only says they seek a date, not a 'new' date.",
-    "Slide 2: The crowd photo is credited to Oneindia. Nothing in it shows Delhi, Jantar Mantar, police or the Saturday detentions. It is a wide shot of a very large crowd on a tree-lined road. It could be read as showing the 7,000 detained protesters. Please confirm the photo is from this event. If not, replace it or drop the slide."
-   ],
-   "fixed": [
-    "Udhar BJP ne CJP ka mazaak udaya hai ki inka stand kitni jaldi badalta rehta hai. → Udhar opposition ne Supreme Court march ka plan banaya hai.",
-    "Sabse funny part: 24 ghante ka deadline police ko, aur stand badalne ki speed ka taana BJP ne diya. Aap kis side ho? 🍿 → Sabse bada sawaal: 24 ghante ka deadline police ko diya gaya hai. Aap kis side ho? 🍿",
-    "BJP ne CJP ka stand baar baar badalne par tana mara → CJP ne Delhi Police ko 24 ghante ka deadline diya",
-    "CJP leaders head to police station seeking new Jantar Mantar protest date, BJP mocks → CJP leaders head to police station seeking Jantar Mantar protest date",
-    "BJP mocks → Protest date",
-    "Ye protest CEC Gyanesh Kumar ke khilaf SIR exercise par hai, aur CJP ka kehna → CJP ka kehna",
-    "Protest CEC Gyanesh Kumar ke khilaf SIR exercise par hai → CJP Jantar Mantar par shaantipurn protest ki date maang rahe hain",
-    "nayi date maangne → date maangne",
-    "nayi date ke liye → date ke liye"
-   ]
-  },
-  "created_at": "2026-10-12T04:32:12+00:00"
  }
 ]
