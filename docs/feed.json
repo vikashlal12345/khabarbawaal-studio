@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_top5-2026-10-13",
+  "image": "posts/20261013-1547-reel_top5-2026-10-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261013-154746-reel_top5-2026-10-13.mp4",
+  "headline": "TOP 5 NEWS: 13 Oct",
+  "tag": "🎬 REEL · TOP 5 NEWS",
+  "caption": "Aaj ki Top 5 khabrein: Amit Shah ka Congress par vaar, SRK ka King teaser aur bahut kuch! 🔥\n\n1. Amit Shah hits back at Rahul Gandhi on EC claims\n2. BIMSTEC home ministers back anti-terror, anti-drug push\n3. SRK's birthday to get a KING teaser blast\n4. Emraan Hashmi has close call on Gunmaaster G9 set\n5. Apple TV 4K launches in India at ₹39,900\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #bollywood #amitshah #shahrukhkhan",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "pin_comment": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "BbY WOW",
+    "artist": "KAROL G, Judeline, rusowsky",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "created_at": "2026-10-13T15:47:46+00:00"
+ },
+ {
   "id": "reel_news-2026-10-13",
   "image": "posts/20261013-1433-reel_news-2026-10-13.jpg",
   "kind": "reel",
@@ -430,74 +475,5 @@
    "fixed": []
   },
   "created_at": "2026-10-13T00:33:32+00:00"
- },
- {
-  "id": "top10_day-2026-10-12",
-  "image": "posts/20261012-1546-top10_day-2026-10-12.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 NEWS: 12 Oct",
-  "tag": "📰 TOP 5 NEWS",
-  "caption": "Aaj ki Top 5 khabrein: India-UK trade deal se Drishyam 3 ke blockbuster run tak! 🔥\n\n1. India-UK FTA aims to double trade to $120 billion\n2. Drishyam 3 races past ₹480 crore worldwide\n3. ₹2 crore Hanuman Ansh crosses ₹435 crore worldwide\n4. Saif Ali Khan finally joins Instagram\n5. Satya Nadella calls for AI 'emergency brake'\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #bollywood #viral #Drishyam3",
-  "source": "Hindustan Times",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "slides": [
-   "posts/20261012-1546-top10_day-2026-10-12-s2.jpg",
-   "posts/20261012-1546-top10_day-2026-10-12-s3.jpg",
-   "posts/20261012-1546-top10_day-2026-10-12-s4.jpg",
-   "posts/20261012-1546-top10_day-2026-10-12-s5.jpg",
-   "posts/20261012-1546-top10_day-2026-10-12-s6.jpg",
-   "posts/20261012-1546-top10_day-2026-10-12-s7.jpg"
-  ],
-  "created_at": "2026-10-12T15:46:17+00:00"
- },
- {
-  "id": "reel_politics-2026-10-12",
-  "image": "posts/20261012-1450-reel_politics-2026-10-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261012-145033-reel_politics-2026-10-12.mp4",
-  "headline": "HIRING: Full-time dharna wala. Skill: CEC ke khilaf march. Perk: police bus mein free ride.",
-  "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "AAP ke Sanjay Singh aur Saurabh Bharadwaj aaj CEC ke khilaf march mein detain hue. 🚌\nJob ad ready hai, bas CV bhejna baaki.\nKis dost ko ye role suit karega? Tag karo. 👇\n\nFollow @khabarbawaal for daily updates.\nSource: The Times of India (link pinned in comments 👇)\n\n#aap #politicalmemes #sanjaysingh #delhi #reelsindia",
-  "source": "The Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
-  "pin_comment": "Is job ka salary kya hona chahiye? Comment mein batao.",
-  "songs": [
-   {
-    "title": "Jamaican (Bam Bam)",
-    "artist": "Hugel, SOLTO (FR)",
-    "lang": "english",
-    "mood": "funny, upbeat drop"
-   },
-   {
-    "title": "Chalre Chalre Waal",
-    "artist": "Akash Khaira",
-    "lang": "english",
-    "mood": "funny, quirky"
-   },
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "funny, party"
-   },
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "chill, ironic"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T14:50:33+00:00"
  }
 ]
