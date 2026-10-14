@@ -1,71 +1,5 @@
 [
  {
-  "id": "r20261013-193409-gita",
-  "kind": "ready",
-  "media": "reel",
-  "image": "posts/r20261013-193409-gita.jpg",
-  "video": "posts/r20261013-193409-gita.mp4",
-  "headline": "Gita 1.4: Har dushman... Bhima-Arjun jaisa?",
-  "tag": "📦 🙏 GITA GYAAN",
-  "caption": "Duryodhan ko har veer mein Bhima-Arjun dikh raha tha. Darr aisa hi hota hai 🙏\nGita 1.4, roz ek shlok.\nAapka sabse bada darr kya hai? Comment karo ya kisi dost ko bhejo.\n\n📖 Roz ek shlok: Bhagavad Gita 1.4 · Kal: shlok 1.5\nFollow @khabarbawaal for daily Gita Gyaan 🙏\n\n#bhagavadgita #reelsindia #krishna #gitagyaan #motivation",
-  "source": "Bhagavad Gita",
-  "source_url": "",
-  "pin_comment": "Kal Gita 1.5 aayega. Follow karo, roz ek shlok. Aapke mann ka 'Bhima-Arjun' kaun hai? 🙏",
-  "songs": [
-   {
-    "title": "Barsaat",
-    "artist": "Banjaare, Roni",
-    "lang": "hindi",
-    "mood": "darr aur bechaini ka mann"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "gehri soch, dar ka bojh"
-   },
-   {
-    "title": "Loser",
-    "artist": "Tame Impala",
-    "lang": "english",
-    "mood": "self-doubt, andar ka darr"
-   },
-   {
-    "title": "back to friends",
-    "artist": "sombr",
-    "lang": "english",
-    "mood": "soft, reflective vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 5: The photo shows Krishna with a sad boy at a laptop. This is a modern image, not the Mahabharata scene. It is thematic, not wrong, so I left it in."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-13T19:34:09+00:00"
- },
- {
-  "id": "r20261013-213158-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261013-213158-bhakti.jpg",
-  "headline": "Maa, roz bhaag rahi hoon sabke liye, bas aap meri himmat ban jaana, thoda sa muskurana sikha dena.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Bheed mein bhi Maa ka saath hota hai, bas aankhein band karke yaad karna padta hai 🙏\nSend karo usko jise aaj ye sunna hai\n\nFollow @khabarbawaal 🙏\n\n#maakushmanda #navratri #jaimatadi #explorepage #reelsindia",
-  "pin_comment": "Thak gaye ho toh bas ek baar Maa ka naam lo. Sab halka lagega.",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "roz bhaag raha hoon sabke liye → roz bhaag rahi hoon sabke liye"
-   ]
-  },
-  "created_at": "2026-10-13T21:31:58+00:00"
- },
- {
   "id": "r20261014-1931-explainer",
   "kind": "ready",
   "media": "reel",
@@ -155,5 +89,44 @@
   },
   "created_at": "2026-10-14T19:34:05+00:00",
   "valid_on": "2026-10-15"
+ },
+ {
+  "id": "r20261014-213222-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261014-213222-bhakti.jpg",
+  "headline": "Maa, aaj interview hai. mujhe jeet nahi chahiye bas himmat chahiye, baaki aap sambhal lena.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Himmat mil jaye, toh aadha kaam ho gaya. 🙏\nComment karo Jai Maa Skandamata\n\nFollow @khabarbawaal 🙏\n\n#navratri #jaimatadi #bhakti #explorepage #reelsindia",
+  "pin_comment": "Interview wale dost ko ye zaroor bhejna. All the best!",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "media": "reel",
+  "video": "posts/r20261014-213222-bhakti.mp4",
+  "songs": [
+   {
+    "title": "Maa Skandamata Aarti",
+    "artist": "Vivaan Arindam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Skandamata",
+    "artist": "Sital Kabi",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Skandamata Amritwani",
+    "artist": "Chetna Shukla",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "created_at": "2026-10-14T21:32:35+00:00"
  }
 ]
