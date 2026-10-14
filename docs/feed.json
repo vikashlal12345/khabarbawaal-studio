@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_top5_am-2026-10-14",
+  "image": "posts/20261014-0132-reel_top5_am-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-013231-reel_top5_am-2026-10-14.mp4",
+  "headline": "TOP 5 RAAT KI KHABAR: 14 Oct",
+  "tag": "🎬 REEL · RAAT KI TOP 5",
+  "caption": "Raat bhar mein kya-kya hua? Drishyam 3 ka dhamaal se Odisha ke bade faisle tak, Top 5 ek jagah 👇\n\n1. Drishyam 3 crosses ₹323 crore, jumps 41% on day 12\n2. Odisha Cabinet approves free textbooks for 28.7 lakh students\n3. Emraan Hashmi has close call during car flip stunt\n4. CJP lawyer claims members arrested after Jantar Mantar breach, police say preventive\n5. 101-year-old swears by Coke, Sprite and seafood diet\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #bollywood #Drishyam3",
+  "source": "Hindustan Times, Bollywood Hungama",
+  "source_url": "",
+  "pin_comment": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The arrest is a claim by the CJP lawyer, not confirmed fact. Delhi Police called it preventive. The article does not say 'detained'.",
+    "Slide 5: The photo is a generic stock image of an elderly man seen from behind. It is not the 101-year-old Lu from the story, and it is credited 'Photo: Hindustan Times'. The credit is probably wrong."
+   ],
+   "fixed": [
+    "CJP members detained after Jantar Mantar breach, police say preventive → CJP lawyer claims members arrested after Jantar Mantar breach, police say preventive"
+   ]
+  },
+  "songs": [
+   {
+    "title": "Ashke",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Solar Eclipse",
+    "artist": "Drake & Don Toliver",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "I Think They Call This Love (Cover)",
+    "artist": "Matthew Ifield",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "created_at": "2026-10-14T01:32:31+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-14",
   "image": "posts/20261014-0033-reel_devotion-2026-10-14.jpg",
   "kind": "reel",
@@ -445,34 +495,5 @@
    "fixed": []
   },
   "created_at": "2026-10-13T02:31:54+00:00"
- },
- {
-  "id": "night_roundup-2026-10-13",
-  "image": "posts/20261013-0131-night_roundup-2026-10-13.jpg",
-  "kind": "top10",
-  "headline": "TOP 5 RAAT KI KHABAR: 13 Oct",
-  "tag": "🌅 RAAT KI 5 KHABREIN",
-  "caption": "Raat bhar mein kya kya hua? Subah ki 5 badi khabrein, ek swipe mein 👇\n\n1. SC flags 14 defects in Rahul Gandhi's petition\n2. Rahul, Kharge go 'Batman Mode' during Opposition march\n3. NSA Doval talks to Iran security chief on West Asia\n4. Nushrratt Bharuccha heals with Gerua after spine surgery\n5. BRICS Theatre Festival begins in Delhi\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #news #viral #rahulgandhi",
-  "source": "Hindustan Times",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The claim that people are asking 'protest or photo-op' is not in the article"
-   ],
-   "fixed": [
-    "apni culture ki jhalak → apne culture ki jhalak",
-    "Protest ya photo-op, log pooch rahe hain. → Rahul Gandhi ne Batman mask pakda."
-   ]
-  },
-  "slides": [
-   "posts/20261013-0131-night_roundup-2026-10-13-s2.jpg",
-   "posts/20261013-0131-night_roundup-2026-10-13-s3.jpg",
-   "posts/20261013-0131-night_roundup-2026-10-13-s4.jpg",
-   "posts/20261013-0131-night_roundup-2026-10-13-s5.jpg",
-   "posts/20261013-0131-night_roundup-2026-10-13-s6.jpg",
-   "posts/20261013-0131-night_roundup-2026-10-13-s7.jpg"
-  ],
-  "created_at": "2026-10-13T01:31:54+00:00"
  }
 ]
