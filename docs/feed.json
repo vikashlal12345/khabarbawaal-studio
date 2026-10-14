@@ -1,5 +1,46 @@
 [
  {
+  "id": "cf266a5054c7",
+  "kind": "custom",
+  "image": "posts/20261014-0832-cf266a5054c7-1.jpg",
+  "options": [
+   "posts/20261014-0832-cf266a5054c7-1.jpg"
+  ],
+  "slides": [
+   "posts/20261014-0832-cf266a5054c7-s2.jpg",
+   "posts/20261014-0832-cf266a5054c7-s3.jpg"
+  ],
+  "headline": "US singer Mary Millben reportedly raises alarm over anti-India funding from America",
+  "tag": "POLITICS",
+  "caption": "Mary Millben ne anti-India funding par chinta jataayi 🇮🇳\nAmerican singer ne US se aane wale anti-India fund ka mudda uthaya hai.\nReport ke mutabik unhone America se aane wali is funding par chinta jataayi hai.\nDetail abhi limited hai.\nSahi mudda uthaya to 🔥, bas headline wali baat to 🤡\n\nFollow @khabarbawaal for daily updates.\n\n#india #trending #viral #news #marymillben",
+  "source": "Your pick",
+  "source_url": "",
+  "pin_comment": "Sabse interesting part: ye mudda America se uthaya gaya hai. Isko tum serious loge ya sirf noise? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: 'phir se' (again) is not supported by the article",
+    "Fact corrected to match the article: The quote is not in the article; only the headline says she raised concern",
+    "Fact corrected to match the article: Trending claim is not supported by the article",
+    "Fact corrected to match the article: Claim about the voice not coming from India is not supported by the article",
+    "Fact corrected to match the article: Claim that she is a known open supporter of India is not in the article",
+    "Fact corrected to match the article: Social media discussion claim is not in the article",
+    "Fact corrected to match the article: Internal production note should not appear in a public post"
+   ],
+   "fixed": [
+    "Mary Millben phir se India ke liye bol padi → Mary Millben ne anti-India funding par chinta jataayi",
+    "unka kehna hai ki India ke khilaf ye funding ek serious sawaal hai → unhone America se aane wali is funding par chinta jataayi hai",
+    "Detail abhi limited hai, par baat ab India mein trend kar rahi hai. → Detail abhi limited hai.",
+    "Sabse interesting part: ye awaaz India se nahi, seedha America se aayi hai. → Sabse interesting part: ye mudda America se uthaya gaya hai.",
+    "aur India ki khulkar supporter maani jaati hain → hain",
+    "Mudda social media par India mein charcha ka vishay bana hua hai → Is mudde par abhi detail limited hai",
+    "lekin article aur photos uplabdh nahi the. → lekin abhi detail limited hai.",
+    "Mary Millben American singer hain hain → Mary Millben American singer hain"
+   ]
+  },
+  "created_at": "2026-10-14T08:32:39+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-14",
   "image": "posts/20261014-0732-reel_clip-2026-10-14.jpg",
   "kind": "reel",

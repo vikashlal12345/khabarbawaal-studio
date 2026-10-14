@@ -2902,6 +2902,37 @@
      "tokens": 7489
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 10,
+   "input": 26,
+   "output": 5020,
+   "cache_read": 26418,
+   "cache_write": 60447,
+   "value_usd": 0.2945,
+   "by_purpose": {
+    "writing": {
+     "requests": 3,
+     "tokens": 32775
+    },
+    "reel style": {
+     "requests": 1,
+     "tokens": 7653
+    },
+    "reel news script": {
+     "requests": 1,
+     "tokens": 14559
+    },
+    "photo check": {
+     "requests": 2,
+     "tokens": 4554
+    },
+    "proofreading": {
+     "requests": 3,
+     "tokens": 32370
+    }
+   }
   }
  }
 }
