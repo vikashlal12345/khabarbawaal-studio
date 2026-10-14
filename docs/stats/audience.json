@@ -1,23 +1,19 @@
 {
- "summary": "From our last 143 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL  TECH (4), REEL 33  NEWS SLIDESHOW (3), REEL 23  MEME (3); weakest EDUCATION (1), REEL  WORLD (0). Formats: custom 3, reel 2, top10 2, news 2, fun 2, calendar 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
- "posts": 143,
- "likes": 235,
- "updated": "2026-10-13T22:31:02+00:00",
+ "summary": "From our last 154 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL  TECH (4), REEL 23  MEME (3), REEL 33  NEWS SLIDESHOW (3); weakest REEL  RAAT KI TOP 5 (1), REEL  WORLD (0). Formats: custom 2, reel 2, top10 2, news 2, fun 2, calendar 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
+ "posts": 154,
+ "likes": 248,
+ "updated": "2026-10-14T22:31:15+00:00",
  "topics": [
   [
    "REEL  TECH",
    4.0
   ],
   [
-   "REEL 33  NEWS SLIDESHOW",
-   3.0
-  ],
-  [
    "REEL 23  MEME",
    3.0
   ],
   [
-   "REEL   SHUBH NAVRATRI",
+   "REEL 33  NEWS SLIDESHOW",
    3.0
   ],
   [
@@ -25,7 +21,7 @@
    2.6666666666666665
   ],
   [
-   "BHAGWAN KA SAATH",
+   "MOOD",
    2.5
   ],
   [
@@ -33,15 +29,19 @@
    2.5
   ],
   [
-   "MOOD",
-   2.5
-  ],
-  [
    "REEL  TAG THAT FRIEND",
-   2.375
+   2.1
   ],
   [
-   "GITA GYAAN",
+   "REEL  BOLLYWOOD",
+   2.0
+  ],
+  [
+   "EXPECTATION VS REALITY",
+   2.0
+  ],
+  [
+   "BHAGWAN KA SAATH",
    2.0
   ],
   [
@@ -53,11 +53,7 @@
    2.0
   ],
   [
-   "REEL  BOLLYWOOD",
-   2.0
-  ],
-  [
-   "EXPECTATION VS REALITY",
+   "REEL   SHUBH NAVRATRI",
    2.0
   ],
   [
@@ -65,15 +61,31 @@
    1.8888888888888888
   ],
   [
+   "GITA GYAAN",
+   1.6666666666666667
+  ],
+  [
    "REEL  REALITY CHECK",
    1.6666666666666667
   ],
   [
    "POLITICS",
-   1.6
+   1.625
+  ],
+  [
+   "TOP 5 VIRAL",
+   1.5
   ],
   [
    "BREAKING",
+   1.5
+  ],
+  [
+   "TAG KARO",
+   1.5
+  ],
+  [
+   "AMAZING FACTS",
    1.5
   ],
   [
@@ -86,18 +98,6 @@
   ],
   [
    "BOLLYWOOD",
-   1.5
-  ],
-  [
-   "AMAZING FACTS",
-   1.5
-  ],
-  [
-   "TOP 5 VIRAL",
-   1.5
-  ],
-  [
-   "TAG KARO",
    1.5
   ],
   [
@@ -121,19 +121,15 @@
    1.2
   ],
   [
+   "EXPLAINER",
+   1.0
+  ],
+  [
    "CLOSING BELL",
    1.0
   ],
   [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "PREOPEN",
-   1.0
-  ],
-  [
-   "FAMILY GROUP",
+   "REEL  INDIA",
    1.0
   ],
   [
@@ -141,7 +137,19 @@
    1.0
   ],
   [
-   "EXPLAINER",
+   "DESI LIFE",
+   1.0
+  ],
+  [
+   "REEL  TOP 5 NEWS",
+   1.0
+  ],
+  [
+   "GOOD NEWS",
+   1.0
+  ],
+  [
+   "EDUCATION",
    1.0
   ],
   [
@@ -149,11 +157,19 @@
    1.0
   ],
   [
-   "DESI LIFE",
+   "FAMILY GROUP",
    1.0
   ],
   [
-   "EDUCATION",
+   "REEL  VIRAL",
+   1.0
+  ],
+  [
+   "PREOPEN",
+   1.0
+  ],
+  [
+   "REEL  RAAT KI TOP 5",
    1.0
   ],
   [
@@ -164,11 +180,11 @@
  "kinds": [
   [
    "custom",
-   2.6
+   2.5
   ],
   [
    "reel",
-   2.3333333333333335
+   2.0
   ],
   [
    "top10",
@@ -188,7 +204,7 @@
   ],
   [
    "ready",
-   1.4166666666666667
+   1.3846153846153846
   ],
   [
    "thought",
