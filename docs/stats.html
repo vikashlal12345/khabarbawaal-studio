@@ -236,8 +236,8 @@ function hookChart(box, pts) {
 
   // --- 🌙 night posts (📦 Ready tab, all Reels since 14 Oct 2026): 1 AM carousel-in-turn + On This Day, 3 AM God picture
   {
-    const NIGHT = [['01:00', ['explainer', 'quiz', 'facts', 'myth_fact'], '🎬 Reel (Explainer, Quiz, Facts, Myth in turn)', ''],
-                   ['01:00', ['on_this_day'], '🎬 On This Day Reel', ''],
+    const NIGHT = [['01:00', ['explainer', 'quiz', 'facts', 'myth_fact'], '🎬 Reel (Explainer, Quiz, Facts, Myth in turn)', 'ready_night'],
+                   ['01:00', ['on_this_day'], '🎬 On This Day Reel', 'ready_night'],
                    ['03:00', ['bhakti'], '🙏 God picture Reel', 'ready_bhakti']];   // Gita Reel stopped 14 Oct 2026
     const istHour = iso => new Date(new Date(iso).getTime() + 330 * 60000).getUTCHours();
     const istNowMins = (() => { const d = new Date(Date.now() + 330 * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); })();

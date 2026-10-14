@@ -166,7 +166,7 @@ def make_picture(state: dict) -> bool:
     """🙏 Bhagwan ka saath picture for the 📦 Ready tab (3 AM: its own run, so FLUX has a fresh daily allowance)."""
     import bhakti
     import status
-    status.start("ready_bhakti", ist_today().isoformat(), "📦 🙏 God picture", 5)
+    status.start("ready_bhakti", ist_today().isoformat(), "📦 🙏 God picture Reel", 5)
     try:
         with tempfile.TemporaryDirectory() as tmp:
             pic, entry = bhakti.build(state, tmp)
@@ -198,13 +198,17 @@ def make_picture(state: dict) -> bool:
 
 
 def make_batch(state: dict, count: int = 2) -> int:
-    """Every night: today's carousel from the cycle and 📅 On This Day, each as a Reel."""
+    """Every night: today's carousel from the cycle and 📅 On This Day, each as a Reel (progress in ⏳ Activity)."""
     import reel
+    import status
     items = prune(load())
     recent = state.get("recent_ready", [])[-40:]
     today = ist_today()
-    made = 0
-    for fmt in (CYCLE[(today - CYCLE_START).days % len(CYCLE)], "on_this_day"):
+    made, last, names = 0, "", []
+    fmts = (CYCLE[(today - CYCLE_START).days % len(CYCLE)], "on_this_day")
+    status.start("ready_night", today.isoformat(), "📦 1 AM Ready Reels", len(fmts) + 1)
+    for n, fmt in enumerate(fmts, 2):
+        status.step(f"Making the {fmt.replace('_', ' ').title()} Reel", n)
         out = make_one(fmt, recent)
         if not out:
             continue
@@ -229,7 +233,13 @@ def make_batch(state: dict, count: int = 2) -> int:
                       **({"valid_on": today.isoformat()} if fmt == "on_this_day" else {})})
         recent.append(out["headline"])
         made += 1
+        last = pid
+        names.append(out["headline"])
         print(f"  ready post: {out['headline']}")
+    if made:
+        status.done(f"Ready in 📦 Ready: {made} Reel(s): " + " · ".join(names)[:160], post=last)
+    else:
+        status.fail("No 1 AM Ready Reel made tonight (the AI or the video step failed; see the robot's log)")
     state["recent_ready"] = recent[-60:]
     save(prune(items))
     return made
