@@ -235,7 +235,7 @@ def write_fun_post(config: dict, recent: list[str], trending: list[str], used_to
 
 
 def judge_best(options: list[dict], text_of, model: str, judge_system: str = "", min_fresh: int = 0,
-               fallback: bool = False) -> dict:
+               fallback: bool = False, min_clear: int = 7) -> dict:
     """A strict 'young Indian' judge scores the options; the best clear (>=7) and funny (>=6) one wins.
     Raises NoGoodJoke if none passes. judge_system: a different judge (e.g. for political satire);
     min_fresh: also needs fresh >= this (satire: no repeats of recent Reels)."""
@@ -251,7 +251,7 @@ def judge_best(options: list[dict], text_of, model: str, judge_system: str = "",
             continue
         total = 0.5 * s["understandable"] + 0.35 * s["funny"] + 0.15 * s["fresh"]
         print(f"  option {s['option']}: understandable {s['understandable']}, funny {s['funny']}, fresh {s['fresh']}")
-        if s["understandable"] >= 7 and s["funny"] >= 6 and s["fresh"] >= min_fresh and total > best_score:
+        if s["understandable"] >= min_clear and s["funny"] >= 6 and s["fresh"] >= min_fresh and total > best_score:
             best, best_score = options[s["option"] - 1], total
     if best is None:
         if fallback and scores:   # the owner's own idea: the best one anyway

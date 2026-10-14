@@ -565,7 +565,11 @@
    "format": "Party ka formula",
    "topic": "Kejriwal called the CEC a 'vote thief' (EC / vote chori)",
    "hook": "Kejriwal ka formula: Punjab jeeto toh janta, Delhi haaro toh Vote Chor",
-   "punchline": "Punjab mein EC bhagwan, Delhi mein EC chor"
+   "punchline": "Punjab mein EC bhagwan, Delhi mein EC chor",
+   "issue": "Election Commission / vote chori",
+   "facts": [
+    "election results (old Reel)"
+   ]
   },
   {
    "date": "2026-10-11",
@@ -573,7 +577,11 @@
    "format": "Party ka formula",
    "topic": "INDIA bloc 'vote chori' march against the CEC (EC / EVM blame)",
    "hook": "Congress ka formula: Jeeto toh janta ki jeet, haaro toh Election Commission ki chori",
-   "punchline": "Jeet pe EVM mahaan, haar pe EVM shaitaan"
+   "punchline": "Jeet pe EVM mahaan, haar pe EVM shaitaan",
+   "issue": "Election Commission / vote chori",
+   "facts": [
+    "election results (old Reel)"
+   ]
   },
   {
    "date": "2026-10-12",
@@ -581,7 +589,11 @@
    "format": "Job ad / rate card",
    "topic": "AAP: Sanjay Singh and Saurabh Bharadwaj detained during march against CEC Gyanesh Kumar",
    "hook": "HIRING: Full-time dharna wala. Skill: CEC ke khilaf march. Perk: police bus mein free ride.",
-   "punchline": "Seat 22 rahi, par detain hone ka target poora."
+   "punchline": "Seat 22 rahi, par detain hone ka target poora.",
+   "issue": "Election Commission protests",
+   "facts": [
+    "election results (old Reel)"
+   ]
   },
   {
    "date": "2026-10-13",
@@ -589,7 +601,11 @@
    "format": "Then vs Now (U-turn)",
    "topic": "Congress: Kerala mein Congress CM VD Satheesan ne ex-Chief Electoral Officer Ratan Kelkar ko secretary banaya, jise Goyal ne uthaya",
    "hook": "Congress, EC ke liye: 'Neutral raho!' Kerala, May 2026: Goyal ka aarop: chunav ke baad secretary ka post.",
-   "punchline": "Neutral referee bhi ab apni hi team mein sign ho gaya."
+   "punchline": "Neutral referee bhi ab apni hi team mein sign ho gaya.",
+   "issue": "Election Commission / election officers",
+   "facts": [
+    "election results (old Reel)"
+   ]
   },
   {
    "date": "2026-10-14",
@@ -597,7 +613,11 @@
    "format": "Rules for being a ___ leader",
    "topic": "Congress: skipped CJP protest at Jantar Mantar, Rahul Gandhi then backed it",
    "hook": "Rules for being an opposition leader: 1. Protest mat jao. 2. Protest ke baad 'janta ka hai' bolo.",
-   "punchline": "Janta ka Jantar Mantar hai, par janta ne seat kahan di?"
+   "punchline": "Janta ka Jantar Mantar hai, par janta ne seat kahan di?",
+   "issue": "Election Commission protests",
+   "facts": [
+    "election results (old Reel)"
+   ]
   }
  ],
  "songs_recent": [

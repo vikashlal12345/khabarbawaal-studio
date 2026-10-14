@@ -44,7 +44,10 @@ Saptami/Ashtami, else god of the weekday; devotional songs from JioSaavn search;
 owner 12 Oct 2026: a NEW joke daily, it kept repeating "X ka formula... EVM/vote chori": no ready-made example jokes,
 rotating meme formats `SATIRE_FORMATS`, memory of the last 15 in `state.satire_recent` shown to picker/writer/judge
 (judge needs fresh ≥ 6), party not in the last 2 preferred, facts = promise vs reality / U-turns / own record /
-results; KYA HUA? ≤ 28 words, else one AI rewrite `too_long()`; stories newest first (Bing `newest=True` + dates,
+results; owner 14 Oct 2026: NO election results in REALITY CHECK (they came up daily; `ELECTION_RECORD` no longer
+given to writer/proofreader; facts from the story's own articles; election results only for an election-result story),
+memory now has `issue` + `facts` (picker: never the issue of the last 3 Reels; writer/judge: never recent facts), satire
+judge bar clarity 6+ (`judge_best(min_clear=6)`, jokes 7+); KYA HUA? ≤ 28 words, else one AI rewrite `too_long()`; stories newest first (Bing `newest=True` + dates,
 "N h ago"; today first, then backward day by day; **most viral first**: `fun.x_trends()` = X/Twitter India trends
 from trends24.in (hours trended, free), the AI turns opposition-related trends into news searches (+1 request),
 stories sorted by trend hours then age (owner: 12 Oct the most viral was CJP founder Abhijeet Dipke vs a Delhi

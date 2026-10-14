@@ -1487,6 +1487,8 @@ SATIRE_FORMATS = ["POV", "Nobody: / Party:", "Then vs Now (U-turn)", "Expectatio
 
 POLITICS_OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string", "description": "The party and its action this joke is about"},
+    "issue": {"type": "string", "description": "The issue in 2-4 words, e.g. 'Election Commission protests', "
+              "'free electricity promise', 'Bihar seat sharing'"},
     "party": {"type": "string"},
     "format": {"type": "string", "enum": SATIRE_FORMATS, "description": "The meme format of the hook; the 3 options "
                "use 3 different formats, none used in the last 7 Reels"},
@@ -1499,11 +1501,12 @@ POLITICS_OPTION = {"type": "object", "properties": {
                 "first mention, e.g. 'Uttarakhand CM Pushkar Singh Dhami'), what they did, when ('is hafte', 'kal'), "
                 "and explain every term in brackets (e.g. 'SIR (voter list ki jaanch)'). Natural Hinglish: "
                 "'X ne kaha', 'X ke mutabik', never 'X ke as per'. No emojis."},
-    "facts": {"type": "array", "description": "REALITY CHECK: 2 recent facts (2023-2026, with month/year) that PROVE "
-              "them wrong by CONTRAST, so the hypocrisy is obvious: their promise vs what happened, what they said "
-              "before vs now, their own record where they rule (official data), or results under the same system "
-              "they now blame. Settled facts only (never allegations, FIRs, charges or probes). Results of only one "
-              "side prove nothing. NEVER repeat their own statements, slogans or accusations as facts.",
+    "facts": {"type": "array", "description": "REALITY CHECK: 2 recent facts (2023-2026, with month/year) from THIS "
+              "story's articles that PROVE them wrong by CONTRAST, so the hypocrisy is obvious: their promise vs what "
+              "happened, what they said before vs now, their own record where they rule (official data). No "
+              "election results unless the story is itself about an election result. Settled facts only (never "
+              "allegations, FIRs, charges or probes). NEVER repeat their own statements, slogans or accusations as "
+              "facts, and never a fact a recent Reel used.",
               "items": {"type": "object", "properties": {
                   "fact": {"type": "string", "description": "Max 14 words, Hinglish, with month/year, e.g. "
                            "'<Mon YYYY> <place>: <who> ne <what, with the number>'"},
@@ -1519,26 +1522,27 @@ POLITICS_OPTION = {"type": "object", "properties": {
     "caption": {"type": "string"}, "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},
-    "required": ["based_on", "party", "format", "claim", "context", "facts", "punchline", "highlight", "clip_search",
+    "required": ["based_on", "issue", "party", "format", "claim", "context", "facts", "punchline", "highlight", "clip_search",
                  "clip_wanted", "caption", "pin_comment", "hashtags", "songs"], "additionalProperties": False}
 
 POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
 (English letters only, never Devanagari). The page is pro right-wing (BJP, NDA) and mocks the opposition: \
 {targets}. Structure: a sharp funny dig (hook) -> KYA HUA? (plain context so ANYONE gets it without reading the \
-news) -> REALITY CHECK (recent facts with month/year and a source that prove them wrong by CONTRAST: their \
-promise vs what happened, what they said before vs now, their own record where they rule, or results under the \
-same system they now blame; never their own lines, never only one side's results) -> a big funny punchline. \
+news) -> REALITY CHECK (recent facts with month/year and a source, taken from THIS story's articles, that prove \
+them wrong by CONTRAST: their promise vs what happened, what they said before vs now, their own record where they \
+rule; never their own lines) -> a big funny punchline. NO election results in REALITY CHECK (owner, 14 Oct 2026: \
+they came up every single day) unless the MAIN story is itself about an election result, and never when a recent \
+Reel's facts were election results. \
 Keep it tight: every word is read on a phone (hook max 18 words, KYA HUA? max 28, each fact max 14, punchline \
 max 14). The hook must make sense on its own and KYA HUA? must tell a stranger who did what, in plain words. \
 Make it something people SEND to friends.
 Every day is a NEW joke: a new angle from THIS story, a meme format the recent Reels didn't use, a punchline \
-nobody has heard. Never reuse a recent Reel's angle, format, hook or punchline, and no tired lines (e.g. \
+nobody has heard. Never reuse a recent Reel's issue, angle, format, hook, punchline or facts, and no tired lines (e.g. \
 "X ka formula: jeeto toh..., haaro toh...", "EVM mahaan / EVM shaitaan").
 Make it instantly clear: name people with their role, explain every term, say when it happened. Tie it to a \
 running joke young Indians already know (free-everything promises, "Sheesh Mahal", U-turns, foreign trips \
 before results, blaming EVMs after losing...) only if it fits THIS story, and use RECENT examples (2024-2026).
-Hard rules: real facts only, from the articles given or certain, widely reported public record (election results, \
-official data) with the right source; quotes only if an article has them; attribute claims ("X ne kaha", \
+Hard rules: real facts only, from the articles given (or official data they cite) with the right source; quotes only if an article has them; attribute claims ("X ne kaha", \
 "X ke mutabik"). Mock their politics and actions only: never religion, caste, region, community, family, looks \
 or health; a death, illness or grief is never the joke; no slurs, no abuse, no calls to violence; nothing that \
 embarrasses the BJP. REALITY CHECK facts must be settled (official data, results, court verdicts, their own dated \
@@ -1546,6 +1550,7 @@ promises, statements and actions on record), never allegations, FIRs, charges or
 Caption: 2-4 short Hinglish lines, the first with the searchable keywords (leader/party/issue names), the context in \
 one line, 1-3 emojis, last line makes people comment or send it."""
 
+# Not given to the satire writer since 14 Oct 2026 (owner: election results came up every day); kept for reference.
 # Official results (Election Commission of India) for REALITY CHECK contrasts: the opposition also wins under the
 # same EC/EVMs. Update when new big results come in.
 ELECTION_RECORD = """Recent official results (Election Commission of India):
@@ -1559,14 +1564,16 @@ ELECTION_RECORD = """Recent official results (Election Commission of India):
 SATIRE_JUDGE = ("You are a 22-year-old Indian on Instagram who did NOT read today's news. Rate each political satire "
                 "Reel 1-10 for: understandable (from the Reel alone you know who did what and why it's funny, and the "
                 "reality check really proves them wrong), funny (would you send it to your group), fresh (a NEW joke: "
-                "not a tired old line, not the angle, format or punchline of a recent Reel below). Be strict.")
+                "not a tired old line, not the issue, angle, format, punchline or facts of a recent Reel below; "
+                "election results as REALITY CHECK again = fresh 2). Be strict.")
 
 
 def satire_recent(state: dict) -> str:
     """The last 15 satire Reels (state 'satire_recent'), so the next one is new."""
     rows = state.get("satire_recent", [])[-15:]
-    return "\n".join(f"- {r['date']}: {r['party']} | {r['format']} | {r['topic']} | hook: {r['hook']} | "
-                     f"punchline: {r['punchline']}" for r in rows) or "(none yet)"
+    return "\n".join(f"- {r['date']}: {r['party']} | issue: {r.get('issue') or r['topic']} | {r['format']} | "
+                     f"hook: {r['hook']} | punchline: {r['punchline']}"
+                     + (f" | facts: {'; '.join(r['facts'])}" if r.get("facts") else "") for r in rows) or "(none yet)"
 
 
 def too_long(o: dict) -> list[str]:
@@ -1649,7 +1656,9 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                             f"own campaign or protest trending is not by itself a story against them. Go from "
                             f"the newest backward: TODAY's stories first, yesterday's only if today has nothing good, "
                             f"older only if nothing newer works. Prefer a NEW topic (not the topic or angle of a recent "
-                            f"Reel) and a party that isn't in the last 2 Reels when it has a good story. A story "
+                            f"Reel) and a party that isn't in the last 2 Reels when it has a good story. NEVER a story about the same "
+                            f"issue as any of the last 3 Reels (owner, 14 Oct 2026: five days of Election Commission "
+                            f"protests in a row): pick a different issue even if that one still trends. A story "
                             f"involving a death is fine when the joke is about a leader's claim or action (e.g. a claim "
                             f"a video exposed), never the death itself. Skip stories "
                             f"mainly about a leader's relatives, and stories that are only allegations (FIR, ED/CBI "
@@ -1664,8 +1673,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     best = None
     def write(sources: str, extra: str = "") -> list[dict]:
         options = fun.claude_json(POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS),
-                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\nOnly if the story is about "
-                                  f"elections, EVMs or the Election Commission: {ELECTION_RECORD}\n\nRecent satire "
+                                  f"{fun.today_context()}\n\nArticles:\n{sources}\n\nRecent satire "
                                   f"Reels (yours must differ in angle, format, hook and punchline; no format from the "
                                   f"last 7):\n{recent}\n\nWrite exactly 3 different Reels about the MAIN story, each "
                                   "in a different format." + extra + songs_prompt(songs),
@@ -1679,7 +1687,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return fun.judge_best(options, lambda o: f"[{o['format']}] " + " ".join(o["claim"]) + " | KYA HUA: "
                               + " ".join(o["context"]) + " | REALITY CHECK: " + " / ".join(f["fact"] for f in o["facts"])
                               + " | " + o["punchline"], model,
-                              judge_system=f"{SATIRE_JUDGE}\n\nRecent Reels:\n{recent}", min_fresh=6)
+                              judge_system=f"{SATIRE_JUDGE}\n\nRecent Reels:\n{recent}", min_fresh=6,
+                              min_clear=6)   # one point lower than jokes (owner, 14 Oct 2026: post more reliably)
 
     for i, n in enumerate(picks):   # the Reel must pass the judge; else try the next story
         story = stories[n - 1]
@@ -1736,14 +1745,14 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     frames, data, proof = proofread.run(
         render,
         {"post": best}, lambda d: g.full_caption(d["post"], item),
-        ELECTION_RECORD + "\n(Facts may also come from certain, widely reported public record such as official "
-        "election results, if the source shown says so.)\n\n" + sources, strict=True)
+        sources, strict=True)
     post = data["post"]
     state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
     state["satire_recent"] = (state.get("satire_recent", []) + [{
         "date": today, "party": post["party"], "format": post["format"], "topic": post["based_on"],
-        "hook": printable(" ".join(post["claim"])), "punchline": post["punchline"]}])[-15:]
+        "hook": printable(" ".join(post["claim"])), "punchline": post["punchline"], "issue": post.get("issue", ""),
+        "facts": [f["fact"] for f in post["facts"]]}])[-15:]
     save_reel(feed, state, frames[0], out, f"reel_politics-{today}", {
         "headline": printable(" ".join(post["claim"]))[:140], "tag": "🎬 REEL · REALITY CHECK",
         "caption": g.limit_hashtags(g.full_caption(post, item)), "source": story["site"], "source_url": story["url"],
