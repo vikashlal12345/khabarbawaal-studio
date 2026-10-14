@@ -261,7 +261,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-14",
   "reel_clip_am": "2026-10-14",
-  "reel_politics": "2026-10-13",
+  "reel_politics": "2026-10-14",
   "reel_meme": "2026-10-13",
   "reel_news": "2026-10-13",
   "night_picture": "2026-10-14",
@@ -271,7 +271,7 @@
   "reel_top5_am": "2026-10-14",
   "reel_news_am": "2026-10-14"
  },
- "inbox_since": "9nicbWjfyDst",
+ "inbox_since": "ZQCfVtliM0zt",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -395,7 +395,8 @@
   "43831",
   "44599",
   "12133",
-  "52078"
+  "52078",
+  "43824"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -482,7 +483,8 @@
   "44599": "Free",
   "12133": "Free",
   "9119": "Mixkit Restricted License",
-  "52078": "Free"
+  "52078": "Free",
+  "43824": "Free"
  },
  "create_done": [
   "1791580482",
@@ -512,10 +514,11 @@
   "Gita 1.4: Gita 1.4: Duryodhan Drona ko Pandav sena ke veer ginata hai, har ek ko Bhima-Arjun jaisa bolta hai. Seekh: darr hamari soch ka paimana ban jaata hai."
  ],
  "reel_politics_used": [
-  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
   "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
+  "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13"
+  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
+  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest"
  ],
  "reel_news_used": [
   "119d9f27c7b0",
@@ -576,6 +579,14 @@
    "topic": "Congress: Kerala mein Congress CM VD Satheesan ne ex-Chief Electoral Officer Ratan Kelkar ko secretary banaya, jise Goyal ne uthaya",
    "hook": "Congress, EC ke liye: 'Neutral raho!' Kerala, May 2026: Goyal ka aarop: chunav ke baad secretary ka post.",
    "punchline": "Neutral referee bhi ab apni hi team mein sign ho gaya."
+  },
+  {
+   "date": "2026-10-14",
+   "party": "Congress",
+   "format": "Rules for being a ___ leader",
+   "topic": "Congress: skipped CJP protest at Jantar Mantar, Rahul Gandhi then backed it",
+   "hook": "Rules for being an opposition leader: 1. Protest mat jao. 2. Protest ke baad 'janta ka hai' bolo.",
+   "punchline": "Janta ka Jantar Mantar hai, par janta ne seat kahan di?"
   }
  ],
  "songs_recent": [
@@ -606,6 +617,10 @@
   "Bairan",
   "Dhun",
   "Let Me Down Slowly",
-  "Patient Zero"
+  "Patient Zero",
+  "Alfaaz",
+  "Sang Rahiyo",
+  "Earrings",
+  "Love Me Not"
  ]
 }

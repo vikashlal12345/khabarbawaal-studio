@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_politics-2026-10-14",
+  "image": "posts/20261014-1234-reel_politics-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-123408-reel_politics-2026-10-14.mp4",
+  "headline": "Rules for being an opposition leader: 1. Protest mat jao. 2. Protest ke baad 'janta ka hai' bolo.",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Congress ne CJP ka protest skip kiya, phir Rahul Gandhi bole Jantar Mantar janta ka hai.\nRule book ready hai 📜\nOpposition ka rule 3 kya hoga? Comment karo aur dost ko bhejo.\n\nFollow @khabarbawaal for daily updates.\nSource: Outlook India (link pinned in comments 👇)\n\n#congress #rahulgandhi #jantarmantar #politicalmemes #reelsindia",
+  "source": "Outlook India",
+  "source_url": "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
+  "pin_comment": "Rule 3 aap likho, best comment pin hoga.",
+  "songs": [
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "sirf alfaaz, kaam nahi"
+   },
+   {
+    "title": "Sang Rahiyo",
+    "artist": "Jasleen Royal, Ranveer Allahbadia",
+    "lang": "hindi",
+    "mood": "saath rehna, bas bolne mein"
+   },
+   {
+    "title": "Earrings",
+    "artist": "Malcolm Todd",
+    "lang": "english",
+    "mood": "chill, smug rulebook vibe"
+   },
+   {
+    "title": "Love Me Not",
+    "artist": "Ravyn Lenae",
+    "lang": "english",
+    "mood": "support hai ya nahi?"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Party expansion and founder name are not in the article",
+    "Fact corrected to match the article: Bihar figures are not in the supplied article or results; replaced with a supported result"
+   ],
+   "fixed": [
+    "CJP (Cockroach Janta Party, founder Abhijeet Dipke) ke Jantar Mantar protest → CJP ke Jantar Mantar protest",
+    "Nov 2025 Bihar: Congress ne 61 lade, sirf 6 jeete → Oct 2024 Haryana: BJP 48, Congress 37"
+   ]
+  },
+  "created_at": "2026-10-14T12:34:08+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-14",
   "image": "posts/20261014-1133-reel_news_pm-2026-10-14.jpg",
   "kind": "reel",
