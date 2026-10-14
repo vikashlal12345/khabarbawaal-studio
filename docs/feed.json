@@ -1,5 +1,47 @@
 [
  {
+  "id": "reel_news-2026-10-14",
+  "image": "posts/20261014-1432-reel_news-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-143212-reel_news-2026-10-14.mp4",
+  "headline": "Kangana Ranaut backs Bittu Tabahi after river he cleaned for 8 months gets polluted again: ‘People cry about rights’",
+  "tag": "🎬 REEL · VIRAL",
+  "caption": "Jo kaam sarkar se hota nahi, woh ek banda kar raha hai 🌊\nBittu ne 8 mahine Ajnar River saaf ki, phir se gandi mili, aur usne dobara safai shuru kar di.\nKangana Ranaut ne unka saath diya.\nAapke shehar ki nadi ya talaab ka kya haal hai? Comment karo.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bittutabahi #kanganaranaut #cleanindia #viralnews #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kangana-ranaut-backs-bittu-tabahi-after-river-he-cleaned-for-8-months-gets-polluted-again-101791974779795.html",
+  "pin_comment": "Aapke area mein koi aisa hero hai jo chup-chaap safai karta hai? Tag karo.",
+  "songs": [
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "river polluted again = emotional"
+   },
+   {
+    "title": "Co2",
+    "artist": "Prateek Kuhad",
+    "lang": "english",
+    "mood": "soft, calm, feel-good story"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "heartfelt, never giving up"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The source badge in the photo (\"Outlook Explainer\") is cut off at the right edge. This is minor, and the photo is otherwise fine.",
+    "Slide 1: The Hindi caption inside the left screenshot is cut off at the left edge. It is a minor crop issue."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T14:32:12+00:00"
+ },
+ {
   "id": "reel_meme-2026-10-14",
   "image": "posts/20261014-1332-reel_meme-2026-10-14.jpg",
   "kind": "reel",
@@ -510,52 +552,5 @@
    "fixed": []
   },
   "created_at": "2026-10-13T14:33:33+00:00"
- },
- {
-  "id": "reel_meme-2026-10-13",
-  "image": "posts/20261013-1333-reel_meme-2026-10-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261013-133332-reel_meme-2026-10-13.mp4",
-  "headline": "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'",
-  "tag": "🎬 REEL · MEME",
-  "caption": "Match kisi ka bhi ho, hum emotional pura hote hain 😭🏏\nGhar mein ek banda zaroor hota hai jo bina team ke bhi commentary deta hai.\nTumhare ghar mein ye kaun hai? Naam likho 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#cricket #viral #trending #india #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aur phir bolte hain, 'Bhai tu to kisi team ka fan nahi tha?'",
-  "songs": [
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "hype, funny drop"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "intense, hype"
-   },
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "funny, upbeat"
-   },
-   {
-    "title": "Pal Pal",
-    "artist": "Afusic, AliSoomroMusic",
-    "lang": "hindi",
-    "mood": "chill, relatable"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The photo is cropped so the person's face is cut off at the nose. Only the chin, beard and shirt show. It looks awkward, but it is not unreadable."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-13T13:33:32+00:00"
  }
 ]
