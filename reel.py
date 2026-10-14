@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -52,12 +53,13 @@ class Encoder:
     """Feed PIL frames in, get an Instagram-friendly MP4 (H.264 + audio: the source clip's own
     sound when audio_from is given and has sound, else a silent track)."""
 
-    def __init__(self, out_mp4: str, audio_from: str | None = None, audio_start: float = 0.0):
+    def __init__(self, out_mp4: str, audio_from: str | None = None, audio_start: float = 0.0,
+                 size: tuple[int, int] = (RW, RH)):
         sound = (["-ss", str(audio_start), "-i", audio_from] if audio_from and has_audio(audio_from)
                  else ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"])   # some apps reject video-only files
         self.p = subprocess.Popen(
             [ffmpeg_exe(), "-y", "-loglevel", "error",
-             "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{RW}x{RH}", "-r", str(FPS), "-i", "-",
+             "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{size[0]}x{size[1]}", "-r", str(FPS), "-i", "-",
              *sound, "-map", "0:v", "-map", "1:a",
              "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p",
              "-profile:v", "high", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out_mp4],
@@ -504,6 +506,11 @@ _COMMON = {
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the text to colour"},
     "clip_search": {"type": "array", "items": {"type": "string"}},
     "clip_wanted": {"type": "string"},
+    "apps": {"type": "array", "items": {"type": "string"}, "description": "Real phone apps the joke names, as the App "
+             "Store calls them (e.g. ['Hopr', 'Tinder']); empty if none"},
+    "photo_query": {"type": "string", "description": "If the joke names a real app, brand, person, film or event: a "
+                    "short English news search for real photos of it (e.g. 'Hopr dating app Bengaluru Tinder'); "
+                    "empty for an everyday moment"},
     "caption": {"type": "string"},
     "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}},
@@ -588,7 +595,7 @@ def buzz_topics(state: dict) -> list[dict]:
     return [t for t in out if t["buzz"] >= 7][:6]
 
 
-def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "") -> dict:
+def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "", notes: str = "") -> dict:
     """evergreen=True: for 📦 Ready Reels, posted any day this week, so no trends, news or dates.
     topic: the owner's idea from ➕ Create (all 3 options are about it)."""
     import fun
@@ -600,9 +607,11 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
     songs = trending_songs(state)
     backup = ""   # a second round if no joke passes the judge
-    if topic:
-        context = f"{fun.today_context()}\n\nThe page owner asked for a Reel about: {topic}"
-        ask = "Write exactly 3 different jokes, all about the owner's idea (different angles)."
+    if topic:   # notes: what the named apps are + the latest news about the topic (build_joke_reel)
+        context = (f"{fun.today_context()}\n\nThe page owner asked for a Reel about: {topic}\nIt is the owner's own "
+                   "joke idea: keep its premise and the names in it." + (f"\n\n{notes}" if notes else ""))
+        ask = ("Write exactly 3 different jokes, all about the owner's idea (different angles). Hashtags: the names "
+               "in the owner's idea first (e.g. #hopr #tinder), then high-reach ones, exactly 5.")
     elif evergreen:
         context = ("This Reel may be posted on ANY day in the next week: NO trends, news, festivals, dates, "
                    "weather or day names. Only timeless relatable desi-life moments.")
@@ -637,8 +646,8 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
                 o["text"] = unescape(o["text"])
             else:
                 o["punch"] = unescape(o["punch"])
-        try:
-            best = fun.judge_best(options, text_of, model)
+        try:   # the owner's own idea is always made: the best option even below the judge's bar (14 Oct 2026)
+            best = fun.judge_best(options, text_of, model, fallback=bool(topic))
             break
         except fun.NoGoodJoke:
             if a == asks[-1]:
@@ -966,6 +975,118 @@ def topic_articles(topic: str) -> str:
     return "\n\n".join(out)
 
 
+APP_STOP = {"make", "create", "funny", "reel", "post", "meme", "using", "instead", "nowadays", "match", "making",
+            "people", "with", "from", "about", "that", "this", "when", "they", "them", "their", "like", "your", "have"}
+
+
+def named_apps(text: str) -> list[dict]:
+    """Phone apps named in the owner's words, from the free App Store search (India): a word counts only when an
+    app's name starts with it (e.g. 'hopr' -> 'Hopr: Carpool, Ride Share App')."""
+    import requests
+    out = []
+    for word in dict.fromkeys(w for w in re.findall(r"[A-Za-z][A-Za-z0-9]{3,}", text) if w.lower() not in APP_STOP):
+        if len(out) >= 3:
+            break
+        try:
+            res = requests.get("https://itunes.apple.com/search", timeout=15, params={
+                "term": word, "entity": "software", "country": "in", "limit": 3}).json().get("results", [])
+        except Exception:
+            continue
+        app = next((x for x in res if re.split(r"[\s:\-–]", x.get("trackName", ""))[0].lower() == word.lower()), None)
+        if app:
+            out.append({"name": word.capitalize() if word.islower() else word, "title": app["trackName"],
+                        "about": re.sub(r"\s+", " ", app.get("description", ""))[:220]})
+    return out
+
+
+def app_photos(names: list[str]) -> list[Image.Image]:
+    """Apps the owner's idea names (owner, 14 Oct 2026: 'no photos or logo of Hopr and Tinder'): their official
+    icons from the free App Store search (India), as a 'Hopr VS Tinder' card, then one screenshot of each."""
+    import re
+    import requests
+    import generate as g
+    found = []
+    for name in [n.strip() for n in names if n.strip()][:3]:
+        try:
+            res = requests.get("https://itunes.apple.com/search", timeout=20, params={
+                "term": name, "entity": "software", "country": "in", "limit": 5}).json().get("results", [])
+        except Exception:
+            continue
+        app = next((r for r in res if name.lower() in r.get("trackName", "").lower()), None)
+        icon = app and g.download_image(app.get("artworkUrl512", ""))
+        if icon:
+            big = [re.sub(r"/\d+x\d+bb\.(jpg|png)$", "/700x1400bb.jpg", u) for u in app.get("screenshotUrls", [])[:2]]
+            shot = next((s for s in (g.download_image(u) for u in big) if s), None)   # the list gives 320 px previews
+            found.append((name, icon.convert("RGBA"), shot))
+    if not found:
+        return []
+    card = Image.new("RGB", (1200, 675), "#111111")
+    d = ImageDraw.Draw(card)
+    for y in range(675):
+        d.line((0, y, 1200, y), fill=(17 + y // 30, 17, 17 + y // 25))
+    size, gap = 300, 160
+    x = (1200 - len(found) * size - (len(found) - 1) * gap) // 2
+    for i, (name, icon, _) in enumerate(found):
+        ic = icon.resize((size, size), Image.LANCZOS)
+        mask = Image.new("L", (size, size), 0)
+        ImageDraw.Draw(mask).rounded_rectangle((0, 0, size - 1, size - 1), radius=66, fill=255)
+        card.paste(ic, (x, 150), mask)
+        d.text((x + size // 2, 150 + size + 50), name, font=font("Poppins-Bold.ttf", 56), fill="#FFFFFF", anchor="mm")
+        if i < len(found) - 1:
+            d.text((x + size + gap // 2, 150 + size // 2), "VS", font=font("Anton-Regular.ttf", 110), fill=YELLOW, anchor="mm")
+        x += size + gap
+    return [card] + [shot.convert("RGB") for _, _, shot in found if shot]
+
+
+def topic_photos(query: str, want: int = 4) -> list[Image.Image]:
+    """Real photos of what the owner's idea names (apps, brands, people, events): the main images of news
+    articles about it, no repeats (➕ Create, owner 14 Oct 2026)."""
+    import create_post
+    import generate as g
+    out, seen = [], set()
+    for a in create_post.bing_articles(query[:90], limit=10):
+        img = g.best_photo({"link": a["url"], "image": ""})
+        if img is None or min(img.size) < 400:
+            continue
+        key = img.convert("L").resize((8, 8)).tobytes()
+        if key not in seen:
+            seen.add(key)
+            out.append(img.convert("RGB"))
+        if len(out) >= want:
+            break
+    return out
+
+
+def photo_clip(photos: list[Image.Image], w: int, h: int, secs: float, out_mp4: str) -> None:
+    """A 'clip' made of real photos, one after another with a slow zoom, for the joke layouts: the meme window
+    (w x h landscape: photo fills it) or full screen (whole photo on a blurred copy of itself)."""
+    enc, per = Encoder(out_mp4, size=(w, h)), secs / len(photos)
+    for i in range(int(secs * FPS)):
+        t = i / FPS
+        n = min(len(photos) - 1, int(t / per))
+        img, z = photos[n], 1.0 + 0.06 * (t - n * per) / per
+        if h > w:
+            k = max(w / img.width, h / img.height)
+            frame = Image.blend(img.resize((int(img.width * k) + 1, int(img.height * k) + 1)).crop((0, 0, w, h))
+                                .filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (w, h), "#000000"), 0.5)
+            fit = img.resize((int(w * z), int(img.height * w / img.width * z)), Image.BICUBIC)
+            frame.paste(fit.crop(((fit.width - w) // 2, 0, (fit.width - w) // 2 + w, fit.height)),
+                        (0, (h - fit.height) // 2))
+        elif img.height > img.width:   # an app screenshot: the whole screen, centred on a blurred copy
+            k = max(w / img.width, h / img.height)
+            frame = Image.blend(img.resize((int(img.width * k) + 1, int(img.height * k) + 1)).crop((0, 0, w, h))
+                                .filter(ImageFilter.GaussianBlur(30)), Image.new("RGB", (w, h), "#000000"), 0.5)
+            fit = img.resize((int(img.width * (h - 20) / img.height * z), int((h - 20) * z)), Image.BICUBIC)
+            frame.paste(fit, ((w - fit.width) // 2, (h - fit.height) // 2))
+        else:
+            k = max(w / img.width, h / img.height) * z
+            big = img.resize((int(img.width * k) + 1, int(img.height * k) + 1), Image.BICUBIC)
+            x0, y0 = (big.width - w) // 2, int((big.height - h) * 0.3)
+            frame = big.crop((x0, y0, x0 + w, y0 + h))
+        enc.add(frame)
+    enc.close()
+
+
 def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
                     topic: str = "") -> tuple[Image.Image, str, dict]:
     """Write, judge, find a clip, render and proofread a joke Reel.
@@ -974,17 +1095,38 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     import proofread
     import status
     status.step("Writing 3 jokes", 2)
-    post = write_joke(kind, state, evergreen, topic)
+    notes, apps = "", []
+    if topic:   # owner, 14 Oct 2026: Hopr is a carpool app; the writer thought it was a dating app
+        apps = named_apps(topic)
+        search = re.sub(r"(?i)^\s*(please\s+)?(make|create|bana\w*)\s+(a|an|ek)?\s*(funny\s+)?(reel|post|meme)\s+"
+                        r"(of|on|about|for|ki|ka|pe|par)?\s*", "", topic)
+        news = topic_articles(search)
+        notes = (("Apps named in the idea (App Store): " + "; ".join(f"{a['name']} = {a['title']}: {a['about']}"
+                                                                     for a in apps)) if apps else "") + \
+                (f"\n\nLatest news about it (use these facts, invent none):\n{news[:3000]}" if news else "")
+    post = write_joke(kind, state, evergreen, topic, notes)
     status.step(f"Judge picked: {post['based_on'][:80]}", 3)
-    cid = pick_clip(post, state)
-    clip, secs = download_clip(cid, tmp)
+    # ➕ Create (owner, 14 Oct 2026: "no photos or logo of Hopr and Tinder"): real photos of what the idea names
+    # (from news articles, often the app screens/logos) instead of a stock clip; stock clip if none are found.
+    photos = app_photos(list(dict.fromkeys([a["name"] for a in apps] + post.get("apps", [])))) if topic else []
+    if topic and len(photos) < 3 and post.get("photo_query", "").strip():
+        photos += topic_photos(post["photo_query"], want=3 - len(photos) + 1)
+    real = len(photos) >= 2
+    if real:
+        status.step(f"Real photos: {', '.join(post.get('apps', [])) or post.get('photo_query', '')[:60]}", 4)
+        clip, secs, cid = os.path.join(tmp, "photos.mp4"), 14.0, None
+        photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
+        print(f"  real photos: {len(photos)} (apps {post.get('apps', [])}, search '{post.get('photo_query', '')}')")
+    else:
+        cid = pick_clip(post, state)
+        clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
     # Long enough to read the (proofread) text in full; a short stock clip caps Tag that friend (memes freeze).
     if kind in CLIP_KINDS:
         def render(d):   # + 1 s for the TAG THAT FRIEND banner and the lines popping in, + 2 s to read (12 Oct)
             dur = min(max(CLIP_SECONDS, read_secs(d["text"], 4.5)), CLIP_MAX)
-            start = max(0.0, min(1.0, secs - dur - 0.2))
+            start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
             hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
             return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out, hold=hold)
     else:
@@ -992,14 +1134,19 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             setup_t = min(8.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]), 2.5)))
             punch_t = min(8.5, max(MEME_SECONDS * 0.45, read_secs(d["punch"], 2.5)))
             dur = setup_t + punch_t
-            start = max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
+            start = 0.0 if real else max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
             hold = max(0.0, dur - (secs - 0.2))     # a short clip freezes on its last frame, the text keeps its time
             return meme_reel(clip, start, dur, d["setup"], d["punch"], round(setup_t, 2), d["highlight"], out, hold)
     status.step("Making the video + proofreading", 5)
-    frames, post, proof = proofread.run(render, post, g.fun_caption, "" if evergreen else topic_articles(post["based_on"]),
-                                        strict=True)
+    if topic:   # the owner's idea is a joke premise, not a news claim: the proofreader keeps it (14 Oct 2026)
+        check = (f"THE PAGE OWNER'S OWN JOKE IDEA (a premise, not a news claim: keep its premise and the names in it, "
+                 f"including in hashtags; check only spellings and any other stated facts): {topic}\n\n{notes}")
+    else:
+        check = "" if evergreen else topic_articles(post["based_on"])
+    frames, post, proof = proofread.run(render, post, g.fun_caption, check, strict=True)
     text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
-    state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
+    if cid:
+        state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["reel_topics"] = (state.get("reel_topics", []) + [post["based_on"]])[-60:]
     state["recent_reels"] = (state.get("recent_reels", []) + [printable(text).replace("\n", " ")])[-60:]
     return frames[-1], out, {
@@ -1191,19 +1338,24 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
     import status
     status.step("Choosing the Reel style", 2)
     about = (f"{article.get('title', '')}. {article.get('description', '')}" if article else "") + (f" {text}" if text else "")
-    style = "news" if article else fun.claude_json(
-        "Decide what kind of Instagram Reel fits the page owner's request.", f"Request: {about.strip()}",
+    # Only a link -> news. The owner's words decide otherwise: something funny is a joke Reel even when a related
+    # article was found (owner, 14 Oct 2026: "funny reel about Hopr and Tinder" became a news Reel on a wrong story).
+    style = "news" if not text else fun.claude_json(
+        "Decide what kind of Instagram Reel fits the page owner's request. If they ask for something funny (a joke, "
+        "meme, 'funny reel', a relatable moment), it is tag_friend or meme, even when a news article is attached.",
+        f"Owner's words: {text}" + (f"\nAttached article: {article.get('title', '')}" if article else ""),
         TOPIC_STYLE, CONFIG.get("membership_model", "sonnet"), purpose="reel style")["style"]
     print(f"  Reel style: {style}")
     status.step({"news": "News photo slideshow", "tag_friend": "Tag that friend clip",
                  "meme": "Meme"}[style] + " Reel", 3)
-    if style != "news":
-        return build_joke_reel("reel_clip" if style == "tag_friend" else "reel_meme", state, tmp, topic=about.strip())
+    if style != "news":   # the joke is about the owner's words, not the attached article
+        return build_joke_reel("reel_clip" if style == "tag_friend" else "reel_meme", state, tmp, topic=text.strip())
     songs = trending_songs(state)
     schema = {**NEWS_OPTION, "properties": {k: v for k, v in NEWS_OPTION["properties"].items() if k != "pick"},
               "required": [k for k in NEWS_OPTION["required"] if k != "pick"]}
-    story = (f"Headline: {article['title']}\nSite: {article['site']}\n{article.get('description', '')}"
-             if article else f"The owner's news: {text}")
+    story = ((f"The owner asked: {text}\n" if text else "") +
+             (f"Headline: {article['title']}\nSite: {article['site']}\n{article.get('description', '')}"
+              if article else ""))
     opt = fun.claude_json(NEWS_SYSTEM.split("From today's stories")[0] +
                           "The owner sent ONE story: write the Reel for it.\n" +
                           "Rules:" + NEWS_SYSTEM.split("Rules:")[1],

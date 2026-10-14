@@ -600,8 +600,8 @@ def make_reel(raw: str) -> int:
         article = None
     if not urls and text:
         picked = resolve_prompt(text)   # "latest cricket news" -> a real story
-        if picked:
-            article, text = picked, ""
+        if picked:   # the owner's words stay (owner, 14 Oct 2026: a funny idea became a Reel about a wrong article)
+            article = picked
     state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
     try:
         with tempfile.TemporaryDirectory() as tmp:
