@@ -3089,6 +3089,21 @@
      "tokens": 29946
     }
    }
+  },
+  "night_calendar": {
+   "posts": 0,
+   "requests": 1,
+   "input": 2,
+   "output": 200,
+   "cache_read": 0,
+   "cache_write": 13244,
+   "value_usd": 0.055,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 13446
+    }
+   }
   }
  }
 }
