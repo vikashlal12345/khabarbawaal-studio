@@ -258,7 +258,7 @@
   "market_open": "2026-10-10",
   "market_preopen": "2026-10-10",
   "thought": "2026-10-10",
-  "reel_clip": "2026-10-13",
+  "reel_clip": "2026-10-14",
   "reel_clip_am": "2026-10-14",
   "reel_politics": "2026-10-13",
   "reel_meme": "2026-10-13",
@@ -270,7 +270,7 @@
   "reel_top5_am": "2026-10-14",
   "reel_news_am": "2026-10-14"
  },
- "inbox_since": "bMp2TeDUJ4Fd",
+ "inbox_since": "MBDj1aCUzdW7",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -392,7 +392,8 @@
   "46874",
   "43831",
   "44599",
-  "12133"
+  "12133",
+  "52078"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -410,7 +411,8 @@
   "Google trend: Chalisa, Tuesday morning",
   "Navratri dandiya season (HT City headline)",
   "Google trend: Pakistan vs Sri Lanka match",
-  "Big headline: Aneet Padda's birthday bash with goofy selfies"
+  "Big headline: Aneet Padda's birthday bash with goofy selfies",
+  "Google trend: Canara Bank share / Ellyse Perry (market and cricket chatter)"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -428,7 +430,8 @@
   "Wo dost jo Tuesday ko bolta hai: 'Aaj se roz subah uthke chalisa padhunga.' Alarm band, neend wapas, chalisa kal se",
   "Wo dost jo Navratri pe bolta hai: 'Is baar pakka dandiya seekhunga.' Garba mein teen baar ghoom ke galat taraf nikalta hai.",
   "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'",
-  "Wo dost jo birthday party mein 40 selfie khichta hai, phir bolta hai: 'Ek bhi achhi nahi aayi, bas ek aur.'"
+  "Wo dost jo birthday party mein 40 selfie khichta hai, phir bolta hai: 'Ek bhi achhi nahi aayi, bas ek aur.'",
+  "Wo dost jo share ek din upar jaye to bolta hai 'Main investor hoon.' Neeche gire to 'Market hi kharab hai.'"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -475,7 +478,9 @@
   "24339": "Mixkit Restricted License",
   "24342": "Mixkit Restricted License",
   "44599": "Free",
-  "12133": "Free"
+  "12133": "Free",
+  "9119": "Mixkit Restricted License",
+  "52078": "Free"
  },
  "create_done": [
   "1791580482",
@@ -589,6 +594,10 @@
   "Real Bad Man",
   "Ez-Ez",
   "All The Stars",
-  "Blinding Lights"
+  "Blinding Lights",
+  "Gehra Hua",
+  "Rula Ke Gaya Ishq",
+  "Die With A Smile",
+  "Loser"
  ]
 }
