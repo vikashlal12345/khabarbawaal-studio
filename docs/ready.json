@@ -1,76 +1,5 @@
 [
  {
-  "id": "r20261012-213202-bhakti",
-  "kind": "ready",
-  "image": "posts/r20261012-213202-bhakti.jpg",
-  "headline": "Maa, ghar se door hoon, aaj akele khana kha raha hoon. Bas itna bol do ki aap mere saath ho.",
-  "tag": "📦 🙏 BHAGWAN KA SAATH",
-  "caption": "Ghar se door bhi Maa ka ghar saath chalta hai. 🙏\nAaj jo akela hai, usse ye bhej do.\nComment karo Jai Maa Chandraghanta\n\nFollow @khabarbawaal 🙏\n\n#jaimatadi #navratri #maadurga #bhakti #explorepage",
-  "pin_comment": "Aap akele nahi ho, Maa har thali mein saath hain. 🙏",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-12T21:32:02+00:00"
- },
- {
-  "id": "r20261013-1930-myth_fact",
-  "kind": "ready",
-  "image": "posts/r20261013-1930-myth_fact-1.jpg",
-  "slides": [
-   "posts/r20261013-1930-myth_fact-2.jpg",
-   "posts/r20261013-1930-myth_fact-3.jpg",
-   "posts/r20261013-1930-myth_fact-4.jpg",
-   "posts/r20261013-1930-myth_fact-5.jpg",
-   "posts/r20261013-1930-myth_fact-6.jpg"
-  ],
-  "headline": "4 Myths Jo Sab Sach Maante Hain",
-  "tag": "📦 MYTH VS FACT",
-  "caption": "Kitne myths pe tumne bhi bharosa kiya tha? 😅 Ye 4 facts doston ko bhi batao. Kaunsa myth sabse zyada shock laga? Save karo / share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #facts #mythbusted",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-13T19:30:53+00:00"
- },
- {
-  "id": "r20261013-1931-on_this_day",
-  "kind": "ready",
-  "image": "posts/r20261013-1931-on_this_day-1.jpg",
-  "slides": [
-   "posts/r20261013-1931-on_this_day-2.jpg",
-   "posts/r20261013-1931-on_this_day-3.jpg",
-   "posts/r20261013-1931-on_this_day-4.jpg",
-   "posts/r20261013-1931-on_this_day-5.jpg",
-   "posts/r20261013-1931-on_this_day-6.jpg",
-   "posts/r20261013-1931-on_this_day-7.jpg"
-  ],
-  "headline": "14 October: 4 Events That Shaped History",
-  "tag": "📦 ON THIS DAY",
-  "caption": "14 October ko itihaas mein Deeksha, sound barrier aur Nobel Prize, sab ek hi din hua. Aapko inme se sabse zyada kaunsa surprising laga? Save karo aur dosto ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #history #onthisday",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: All four events happened on the same date (14 October), so they are 4 events, not 4 days.",
-    "Fact corrected to match the article: On 14 Oct 1964 the Nobel Committee announced the prize; King received it on 10 Dec 1964."
-   ],
-   "fixed": [
-    "4 Days That Shaped History → 4 Events That Shaped History",
-    "ko Nobel Peace Prize mila. → ko Nobel Peace Prize dene ki ghoshna hui."
-   ]
-  },
-  "created_at": "2026-10-13T19:31:33+00:00",
-  "valid_on": "2026-10-14"
- },
- {
   "id": "r20261013-193409-gita",
   "kind": "ready",
   "media": "reel",
@@ -135,5 +64,96 @@
    ]
   },
   "created_at": "2026-10-13T21:31:58+00:00"
+ },
+ {
+  "id": "r20261014-1931-explainer",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261014-1931-explainer.jpg",
+  "video": "posts/r20261014-1931-explainer.mp4",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "BbY WOW",
+    "artist": "KAROL G, Judeline, rusowsky",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Choosin' Texas",
+    "artist": "Ella Langley",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "headline": "SIP Kya Hai? Simple Explainer",
+  "tag": "📦 EXPLAINER",
+  "caption": "SIP naam sab ne suna hai, par kaam kaise karta hai ye kam log jaante hain. Ab clear? Not investment advice. Save karo aur dost ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #sip #mutualfunds",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The flame icon covers the last letters (\"ER\") of the faint \"EXPLAINER\" watermark in the yellow area. The watermark is only decorative and the real title is clear, so this is minor."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T19:32:53+00:00"
+ },
+ {
+  "id": "r20261014-1933-on_this_day",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261014-1933-on_this_day.jpg",
+  "video": "posts/r20261014-1933-on_this_day.mp4",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "BbY WOW",
+    "artist": "KAROL G, Judeline, rusowsky",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Choosin' Texas",
+    "artist": "Ella Langley",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "headline": "15 October: 4 Things Jo Yaad Rakhne Layak Hain",
+  "tag": "📦 ON THIS DAY",
+  "caption": "15 October ko Kalam saab ka janam hua aur Tata Airlines ne udaan bhari. Itihaas ka ek hi din, kitni kahaniyan! Tumhe inme se kaunsa sabse interesting laga? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #india #history #apjabdulkalam #viral",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T19:34:05+00:00",
+  "valid_on": "2026-10-15"
  }
 ]

@@ -3069,5 +3069,26 @@
     }
    }
   }
+ },
+ "2026-10-15": {
+  "night_ready": {
+   "posts": 0,
+   "requests": 4,
+   "input": 12,
+   "output": 4150,
+   "cache_read": 9103,
+   "cache_write": 39434,
+   "value_usd": 0.2001,
+   "by_purpose": {
+    "writing": {
+     "requests": 2,
+     "tokens": 22753
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 29946
+    }
+   }
+  }
  }
 }
