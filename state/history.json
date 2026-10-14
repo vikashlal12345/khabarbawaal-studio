@@ -262,7 +262,7 @@
   "reel_clip": "2026-10-14",
   "reel_clip_am": "2026-10-14",
   "reel_politics": "2026-10-14",
-  "reel_meme": "2026-10-13",
+  "reel_meme": "2026-10-14",
   "reel_news": "2026-10-13",
   "night_picture": "2026-10-14",
   "reel_devotion": "2026-10-14",
@@ -396,7 +396,8 @@
   "44599",
   "12133",
   "52078",
-  "43824"
+  "43824",
+  "44602"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -415,7 +416,8 @@
   "Navratri dandiya season (HT City headline)",
   "Google trend: Pakistan vs Sri Lanka match",
   "Big headline: Aneet Padda's birthday bash with goofy selfies",
-  "Google trend: Canara Bank share / Ellyse Perry (market and cricket chatter)"
+  "Google trend: Canara Bank share / Ellyse Perry (market and cricket chatter)",
+  "Google trend: Punjab vs Odisha / Wednesday + cricket match chatter"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -434,7 +436,8 @@
   "Wo dost jo Navratri pe bolta hai: 'Is baar pakka dandiya seekhunga.' Garba mein teen baar ghoom ke galat taraf nikalta hai.",
   "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'",
   "Wo dost jo birthday party mein 40 selfie khichta hai, phir bolta hai: 'Ek bhi achhi nahi aayi, bas ek aur.'",
-  "Wo dost jo share ek din upar jaye to bolta hai 'Main investor hoon.' Neeche gire to 'Market hi kharab hai.'"
+  "Wo dost jo share ek din upar jaye to bolta hai 'Main investor hoon.' Neeche gire to 'Market hi kharab hai.'",
+  "Punjab vs Odisha Mujhe ek bhi player ka naam nahi pata, Par jab wicket gira... Me jo chillaya 'Maine kaha tha ye out hoga!' jaise main hi coach hoon"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -484,7 +487,9 @@
   "12133": "Free",
   "9119": "Mixkit Restricted License",
   "52078": "Free",
-  "43824": "Free"
+  "43824": "Free",
+  "23286": "Mixkit Restricted License",
+  "44602": "Free"
  },
  "create_done": [
   "1791580482",
@@ -621,6 +626,10 @@
   "Alfaaz",
   "Sang Rahiyo",
   "Earrings",
-  "Love Me Not"
+  "Love Me Not",
+  "Thoda Thoda Pyaar",
+  "Mann Mera",
+  "Girls Like You",
+  "Favorite"
  ]
 }

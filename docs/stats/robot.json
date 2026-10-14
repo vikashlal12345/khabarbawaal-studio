@@ -2991,6 +2991,33 @@
      "tokens": 23747
     }
    }
+  },
+  "reel_meme": {
+   "posts": 0,
+   "requests": 4,
+   "input": 10,
+   "output": 3070,
+   "cache_read": 5672,
+   "cache_write": 36991,
+   "value_usd": 0.1793,
+   "by_purpose": {
+    "reel writing": {
+     "requests": 1,
+     "tokens": 19620
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 8570
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 9051
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 8502
+    }
+   }
   }
  }
 }

@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_meme-2026-10-14",
+  "image": "posts/20261014-1332-reel_meme-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-133232-reel_meme-2026-10-14.mp4",
+  "headline": "Punjab vs Odisha Mujhe ek bhi player ka naam nahi pata, Par jab wicket gira... Me jo chillaya 'Maine kaha tha ye out hoga!' jaise main hi coach hoon",
+  "tag": "🎬 REEL · MEME",
+  "caption": "Match kisi ka bhi ho, ghar mein expert hum hi hain 😂\nTeam kaunsi hai ye baad mein dekhenge.\nAaj kaunsi team ko support kar rahe ho? Ek line mein batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#cricket #punjab #reelsindia #viral #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jeet gaya to 'maine kaha tha', haar gaya to 'pitch kharab thi'",
+  "songs": [
+   {
+    "title": "Thoda Thoda Pyaar",
+    "artist": "Nilesh Ahuja, Stebin Ben",
+    "lang": "hindi",
+    "mood": "thoda interest, thoda sleep"
+   },
+   {
+    "title": "Mann Mera",
+    "artist": "Gajendra Verma",
+    "lang": "hindi",
+    "mood": "dil se team ka support"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "light fun vibe"
+   },
+   {
+    "title": "Favorite",
+    "artist": "Isabel LaRosa",
+    "lang": "english",
+    "mood": "meri favourite team wala moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo shows people in football jerseys with a football, but the story is about a cricket match (Punjab vs Odisha, 'wicket'). The photo doesn't match the sport. Slide 2 uses the same photo. Slide 1 can't be dropped, so this needs an editor's decision."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T13:32:32+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-14",
   "image": "posts/20261014-1234-reel_politics-2026-10-14.jpg",
   "kind": "reel",
@@ -510,62 +557,5 @@
    "fixed": []
   },
   "created_at": "2026-10-13T13:33:32+00:00"
- },
- {
-  "id": "reel_politics-2026-10-13",
-  "image": "posts/20261013-1234-reel_politics-2026-10-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261013-123446-reel_politics-2026-10-13.mp4",
-  "headline": "Congress, EC ke liye: 'Neutral raho!' Kerala, May 2026: Goyal ka aarop: chunav ke baad secretary ka post.",
-  "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "Congress CEC se neutrality maangti hai, aur Goyal ne Kerala ka naya secretary yaad dilaya. 🤨\nChunav ke baad CM ke secretary bane Kerala ke ex-CEO Ratan Kelkar.\nTumhe kya lagta hai? Comment karo ya friend ko tag karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: India Today (link pinned in comments 👇)\n\n#reelsindia #Congress #Kerala #PiyushGoyal #PoliticalSatire",
-  "source": "India Today",
-  "source_url": "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
-  "pin_comment": "Referee aur player ek hi team mein: sahi ya galat? 😂",
-  "songs": [
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "funny, upbeat"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "chill, cheeky"
-   },
-   {
-    "title": "Pehle Bhi Main",
-    "artist": "Vishal Mishra, Raj Shekhar",
-    "lang": "hindi",
-    "mood": "dramatic, ironic"
-   },
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "chill, wry"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: UDF government formation isn't in the article; only Satheesan being CM is",
-    "Fact corrected to match the article: Invented quote attributed to Congress; Goyal's allegation should be attributed",
-    "Fact corrected to match the article: Article says Tuesday press conference; 'kal' is unsupported",
-    "Fact corrected to match the article: Article says opposition/INDIA bloc protests against CEC, not only Congress",
-    "Slide 1: The cover photo is a generic stock image of a smiling woman. It has nothing to do with the story, and the cheerful tone doesn't suit it. Slide 1 can't be dropped, so the photo should be swapped for a relevant one, such as Piyush Goyal or the press conference."
-   ],
-   "fixed": [
-    "Neutral refree bhi → Neutral referee bhi",
-    "Congress-led UDF ne sarkar banayi, VD Satheesan CM bane → VD Satheesan Kerala ke CM bane",
-    "'Chunav ke baad hamare secretary bano.' → Goyal ka aarop: chunav ke baad secretary ka post.",
-    "Union Minister Piyush Goyal ne kal kaha: → Union Minister Piyush Goyal ne Tuesday ko kaha:",
-    "Congress CEC Gyanesh Kumar par sawal utha rahi hai. → Opposition CEC Gyanesh Kumar par sawal utha raha hai."
-   ]
-  },
-  "created_at": "2026-10-13T12:34:46+00:00"
  }
 ]
