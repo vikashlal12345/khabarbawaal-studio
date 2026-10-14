@@ -22,8 +22,10 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   the BJP. Still: real facts, no invented quotes, no hate against communities, no calls to violence.
 - Markets: data from NSE/CNBC only, **never buy/sell tips** (SEBI), "Not investment advice" on every post.
 - Carousels max **10 images** (Instagram share-sheet limit): Top posts are **Top 5** (7 slides).
-- Joke Reels (8 AM, 1 PM, 7 PM; owner 12 Oct 2026): all 3 options on today's trends/big headlines (Google Trends India
-  + X trends + `trending_titles()`); relatable desi-life jokes only as a backup round when no trend joke passes the
+- Joke Reels (8 AM, 1 PM, 7 PM; owner 12 Oct 2026): all 3 options on today's big talking points: `buzz_topics()` (owner
+  14 Oct 2026: two 7 PM memes on matches nobody cared about) = 1 AI request reads Google + X trends + the feeds' headlines and
+  rates what young Indians across India talk about (skips non-India/domestic matches, scorecards, share prices, region-only,
+  deaths/crimes, hashtag campaigns, devotional wishes); only buzz 7+ go to the writer; relatable desi-life jokes only as a backup round when no trend joke passes the
   judge; `topic_articles()` gives the proofreader today's news about the joke's trend (facts like dates checked).
 - Fun posts: single image; jokes on widely-known trends (Google Trends India, big stories, day/season) + relatable desi-life moments (first person, deadpan, e.g. @weebx_ style), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
 - Captions: max **5 hashtags** (Instagram limit), high-reach + 1-2 specific, no #KhabarBawaal; `limit_hashtags()` enforces it.

@@ -483,6 +483,40 @@ def unescape(s: str) -> str:
     return s.replace("\\n", "\n").strip()
 
 
+BUZZ_SCHEMA = {"type": "object", "properties": {"topics": {"type": "array", "items": {"type": "object", "properties": {
+    "topic": {"type": "string", "description": "Short, e.g. 'Gemini 4 launch', 'Navratri Day 4 garba nights'"},
+    "why": {"type": "string", "description": "One line from the headlines/trends: what happened, why people talk about it"},
+    "buzz": {"type": "integer", "description": "1-10: how many young Indians across India are talking about it today"}},
+    "required": ["topic", "why", "buzz"], "additionalProperties": False}}},
+    "required": ["topics"], "additionalProperties": False}
+
+
+def buzz_topics(state: dict) -> list[dict]:
+    """The topics young Indians across India are talking about right now, buzz 7+ (owner, 14 Oct 2026: two 7 PM
+    memes in a row were about matches nobody cared about; Google's list is mostly score searches, X's mostly
+    wishes and hashtag campaigns). One AI request reads Google + X trends + the feeds' headlines and rates them."""
+    import fun
+    import generate as g
+    heads = [f"[{i['category']}] {i['title']}" for i in g.fetch_candidates(set())][:45]
+    trends = ("Google searches today: " + "; ".join(fun.google_trends()) + "\n\nX (Twitter) trends, hours trended: "
+              + "; ".join(f"{t} ({h} h)" for t, h in fun.x_trends()[:70]))
+    used = (state.get("fun_topics", []) + state.get("reel_topics", []))[-20:]
+    out = fun.claude_json(
+        "You track what young Indians (18-30, all over India) are talking about TODAY: what friends would bring up "
+        "in a group chat. Counts: big Bollywood/OTT/celebrity moments, viral internet moments, festivals and their "
+        "rituals, India's big cricket moments (Team India, IPL), new phones/apps/AI launches, prices, exams, weather, "
+        "national news that affects everyone. Skip: matches without Team India or domestic matches, scorecard "
+        "searches, share prices, region-only topics, deaths/crimes/accidents/disasters, organised hashtag campaigns, "
+        "devotional wishes, foreign football. Use only facts the headlines/trends show.",
+        f"{fun.today_context()}\n\n{trends}\n\nToday's headlines:\n" + "\n".join(f"- {h}" for h in heads)
+        + "\n\nTopics our recent Reels already used (skip them):\n" + ("\n".join(f"- {u}" for u in used) or "(none)")
+        + "\n\nList the 6 biggest talking points right now, highest buzz first.",
+        BUZZ_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="buzz topics")["topics"]
+    for t in out:
+        print(f"  buzz {t['buzz']}: {t['topic']}: {t['why'][:90]}")
+    return [t for t in out if t["buzz"] >= 7][:6]
+
+
 def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "") -> dict:
     """evergreen=True: for 📦 Ready Reels, posted any day this week, so no trends, news or dates.
     topic: the owner's idea from ➕ Create (all 3 options are about it)."""
@@ -503,18 +537,14 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
                    "weather or day names. Only timeless relatable desi-life moments.")
         ask = "Write exactly 3 different jokes, each a timeless relatable desi-life moment (different situations)."
     else:
-        searches = fun.google_trends()
-        xt = fun.x_trends()[:40]
-        context = (f"{fun.today_context()}\n\n"
-                   "What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
-                   "\n\nWhat India is talking about on X (Twitter) today (hours trending):\n" +
-                   ("\n".join(f"- {t} ({h} h)" for t, h in xt) or "(unavailable)") +
-                   "\n\nToday's big headlines (use only ones nearly everyone knows):\n" +
-                   "\n".join(f"- {t}" for t in g.trending_titles()[:15]))
-        # Today's trends first (owner, 12 Oct 2026: the most unique Reels); everyday desi life only as backup.
-        ask = ("Write exactly 3 different jokes, each on a DIFFERENT one of today's trends or big headlines above "
-               "(the newest and most searched first) that nearly every young Indian already knows.")
+        topics = buzz_topics(state)
+        context = (f"{fun.today_context()}\n\nWhat young Indians across India are talking about right now "
+                   "(buzz 1-10, why):\n" + ("\n".join(f"- {t['topic']} (buzz {t['buzz']}): {t['why']}" for t in topics)
+                                          or "(nothing big today)"))
         backup = "Write exactly 3 different jokes, each a relatable desi-life moment (different situations)."
+        # Today's big talking points first (owner, 12 + 14 Oct 2026); everyday desi life only as backup.
+        ask = ("Write exactly 3 different jokes, each on a DIFFERENT topic from the list above (highest buzz first)."
+               if topics else backup)
     lead = (f"{style}\n\n{context}" +
             "\n\nTopics already used recently (don't reuse):\n" +
             ("\n".join(f"- {t}" for t in (state.get("fun_topics", []) + state.get("reel_topics", []))[-30:]) or "(none)") +
@@ -525,7 +555,8 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
         text_of = lambda o: f"TAG THAT FRIEND: {o['text']}  [video: {o['clip_wanted']}]"
     else:
         text_of = lambda o: f"{' '.join(o['setup'])} -> {o['punch']}  [video: {o['clip_wanted']}]"
-    for a in [ask] + [backup] * bool(backup):
+    asks = list(dict.fromkeys(x for x in (ask, backup) if x))   # trend jokes, then the desi-life backup
+    for a in asks:
         options = fun.claude_json(system, f"{lead}\n\n{a}" + songs_prompt(songs),
                                   options_schema(option, "Exactly 3 different jokes"), model,
                                   purpose="reel writing")["options"][:3]
@@ -539,7 +570,7 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "")
             best = fun.judge_best(options, text_of, model)
             break
         except fun.NoGoodJoke:
-            if a != ask or not backup:
+            if a == asks[-1]:
                 raise
             print("  no trend joke was clear and funny enough: relatable desi-life jokes instead")
     print(f"  reel joke based on: {best['based_on']}")
