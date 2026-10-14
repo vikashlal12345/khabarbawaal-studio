@@ -3041,6 +3041,25 @@
      "tokens": 13265
     }
    }
+  },
+  "reel_top5": {
+   "posts": 0,
+   "requests": 2,
+   "input": 6,
+   "output": 2019,
+   "cache_read": 4498,
+   "cache_write": 22069,
+   "value_usd": 0.109,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 13551
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 15041
+    }
+   }
   }
  }
 }
