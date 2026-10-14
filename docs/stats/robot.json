@@ -2775,6 +2775,37 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "reel_devotion": {
+   "posts": 0,
+   "requests": 6,
+   "input": 18,
+   "output": 4751,
+   "cache_read": 10163,
+   "cache_write": 42654,
+   "value_usd": 0.2192,
+   "by_purpose": {
+    "devotion plan": {
+     "requests": 1,
+     "tokens": 9926
+    },
+    "flux pick": {
+     "requests": 1,
+     "tokens": 8145
+    },
+    "devotion writing": {
+     "requests": 1,
+     "tokens": 9897
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 8805
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 20813
+    }
+   }
   }
  }
 }

@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-10-14",
+  "image": "posts/20261014-0033-reel_devotion-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-003356-reel_devotion-2026-10-14.mp4",
+  "headline": "Navratri Din 4: Maa Kushmanda: Navratri ka chautha din... Maa ki muskaan se aapka din roshan ho",
+  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
+  "caption": "Chautha Navratri, Maa ki muskaan ke saath shuru karein 🙏\nUnka aashirwaad aapke ghar roshni laaye.\nJai Mata Di... family ke saath share karo ya comment mein 'Jai Mata Di' likho.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #jaimatadi #maakushmanda #durga #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aaj Maa ko yaad karke ek pyaari si muskaan do 🙏 Comment mein likho: Jai Mata Di",
+  "songs": [
+   {
+    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
+    "artist": "Anuradha Paudwal, Sonu Nigam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Durga Aarti",
+    "artist": "Shoma Banerjee",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri Aarti",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri (Durga Aarti)",
+    "artist": "Hari Om Sharan, Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "the creator smile of the universe → the smile that created the universe"
+   ]
+  },
+  "created_at": "2026-10-14T00:33:56+00:00"
+ },
+ {
   "id": "reel_top5-2026-10-13",
   "image": "posts/20261013-1547-reel_top5-2026-10-13.jpg",
   "kind": "reel",
@@ -427,53 +474,5 @@
    "posts/20261013-0131-night_roundup-2026-10-13-s7.jpg"
   ],
   "created_at": "2026-10-13T01:31:54+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-13",
-  "image": "posts/20261013-0033-reel_devotion-2026-10-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261013-003332-reel_devotion-2026-10-13.mp4",
-  "headline": "Navratri Din 3: Maa Chandraghanta: Teesra navratra... Maa ki ghanti ki goonj, har chinta door kare",
-  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
-  "caption": "Maa ki kripa se aapka din mangalmay ho 🙏\nAaj ki chinta Maa ko saunp do.\nIs blessing ko family ko bhejo, ya comment karo 'Jai Maa Chandraghanta'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #chandraghanta #jaimatadi #bhakti #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Jo is Reel ko dekh raha hai, Maa uske saath hain... Jai Maa Chandraghanta 🙏",
-  "songs": [
-   {
-    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
-    "artist": "Anuradha Paudwal, Sonu Nigam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri Aarti",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 3: The 'SHUBH NAVRATRI' header overlaps the top of the goddess's crown. Her face is clear and the text is still readable, so this is a minor layout flaw.",
-    "Slide 4: The 'SHUBH NAVRATRI' header overlaps the top of the goddess's crown, as on slide 3. Her face is not covered and the text is readable."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-13T00:33:32+00:00"
  }
 ]
