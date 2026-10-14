@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_clip_am-2026-10-14",
+  "image": "posts/20261014-0233-reel_clip_am-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-023320-reel_clip_am-2026-10-14.mp4",
+  "headline": "Wo dost jo birthday party mein 40 selfie khichta hai, phir bolta hai: 'Ek bhi achhi nahi aayi, bas ek aur.'",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Birthday ho ya shaadi, selfie ka 'bas ek aur' kabhi khatam nahi hota 📸😂\nCake pighal gaya, dost ka angle nahi mila.\nGroup mein bhejo, dekhte hain kaun sabse zyada selfie leta hai 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#viral #trending #bollywood #reelsindia #birthday",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aur last mein sabse achhi photo wo aati hai jisme dost ki aankh band hai.",
+  "songs": [
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "party mood, poses ki shararat"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "party dance, selfie hype"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "party photo-shoot energy"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "squad entry hype"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T02:33:20+00:00"
+ },
+ {
   "id": "reel_top5_am-2026-10-14",
   "image": "posts/20261014-0132-reel_top5_am-2026-10-14.jpg",
   "kind": "reel",
@@ -450,50 +495,5 @@
    ]
   },
   "created_at": "2026-10-13T04:31:41+00:00"
- },
- {
-  "id": "reel_clip_am-2026-10-13",
-  "image": "posts/20261013-0231-reel_clip_am-2026-10-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261013-023154-reel_clip_am-2026-10-13.mp4",
-  "headline": "Wo dost jo Tuesday ko bolta hai: 'Aaj se roz subah uthke chalisa padhunga.' Alarm band, neend wapas, chalisa kal se",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Niyat pakki thi, bas subah ne dhoka de diya 😅\nEk emoji mein apna Tuesday batao 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#relatable #viral #trending #india #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Kal se pakka... ye line bhi toh roz wahi hai na?",
-  "songs": [
-   {
-    "title": "Pehle Bhi Main",
-    "artist": "Vishal Mishra, Raj Shekhar",
-    "lang": "hindi",
-    "mood": "chill, lazy morning"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft, relatable"
-   },
-   {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
-    "lang": "english",
-    "mood": "funny, light"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "upbeat, playful"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-13T02:31:54+00:00"
  }
 ]

@@ -258,7 +258,7 @@
   "market_preopen": "2026-10-10",
   "thought": "2026-10-10",
   "reel_clip": "2026-10-13",
-  "reel_clip_am": "2026-10-13",
+  "reel_clip_am": "2026-10-14",
   "reel_politics": "2026-10-13",
   "reel_meme": "2026-10-13",
   "reel_news": "2026-10-13",
@@ -268,7 +268,7 @@
   "reel_top5": "2026-10-13",
   "reel_top5_am": "2026-10-14"
  },
- "inbox_since": "XS65gGJUGdpJ",
+ "inbox_since": "T6qDI1rmB52W",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -389,7 +389,8 @@
   "39786",
   "46874",
   "43831",
-  "44599"
+  "44599",
+  "12133"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -406,7 +407,8 @@
   "Relatable desi life: Monday ko dost ka paisa udhaar / UPI payment wait",
   "Google trend: Chalisa, Tuesday morning",
   "Navratri dandiya season (HT City headline)",
-  "Google trend: Pakistan vs Sri Lanka match"
+  "Google trend: Pakistan vs Sri Lanka match",
+  "Big headline: Aneet Padda's birthday bash with goofy selfies"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -423,7 +425,8 @@
   "Dukaan par: Bhaiya, UPI kar deta hu Scan kiya Payment processing... Me jab dukaan wale ke saamne UPI pending dikha raha hai aur peeche line lambi hai",
   "Wo dost jo Tuesday ko bolta hai: 'Aaj se roz subah uthke chalisa padhunga.' Alarm band, neend wapas, chalisa kal se",
   "Wo dost jo Navratri pe bolta hai: 'Is baar pakka dandiya seekhunga.' Garba mein teen baar ghoom ke galat taraf nikalta hai.",
-  "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'"
+  "Pakistan vs Sri Lanka India ka match nahi hai Meri koi team nahi Phir bhi 7 baje se TV ke saamne Me jo bol raha tha mujhe match mein interest nahi, ab chillaake bol raha hoon 'Arre catch pakad!'",
+  "Wo dost jo birthday party mein 40 selfie khichta hai, phir bolta hai: 'Ek bhi achhi nahi aayi, bas ek aur.'"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -469,7 +472,8 @@
   "24341": "Mixkit Restricted License",
   "24339": "Mixkit Restricted License",
   "24342": "Mixkit Restricted License",
-  "44599": "Free"
+  "44599": "Free",
+  "12133": "Free"
  },
  "create_done": [
   "1791580482",
@@ -574,6 +578,10 @@
   "Ashke",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Solar Eclipse",
-  "I Think They Call This Love (Cover)"
+  "I Think They Call This Love (Cover)",
+  "Shararat",
+  "Thumkeshwari",
+  "Beauty And A Beat",
+  "Big Dawgs"
  ]
 }
