@@ -2904,33 +2904,41 @@
    }
   },
   "create": {
-   "posts": 1,
-   "requests": 10,
-   "input": 26,
-   "output": 5020,
-   "cache_read": 26418,
-   "cache_write": 60447,
-   "value_usd": 0.2945,
+   "posts": 2,
+   "requests": 18,
+   "input": 46,
+   "output": 11003,
+   "cache_read": 46216,
+   "cache_write": 122120,
+   "value_usd": 0.603,
    "by_purpose": {
     "writing": {
-     "requests": 3,
-     "tokens": 32775
+     "requests": 6,
+     "tokens": 65825
     },
     "reel style": {
-     "requests": 1,
-     "tokens": 7653
+     "requests": 2,
+     "tokens": 15444
     },
     "reel news script": {
      "requests": 1,
      "tokens": 14559
     },
     "photo check": {
-     "requests": 2,
-     "tokens": 4554
+     "requests": 3,
+     "tokens": 10463
     },
     "proofreading": {
-     "requests": 3,
-     "tokens": 32370
+     "requests": 4,
+     "tokens": 44457
+    },
+    "reel writing": {
+     "requests": 1,
+     "tokens": 19967
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 8670
     }
    }
   },
