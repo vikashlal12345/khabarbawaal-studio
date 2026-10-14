@@ -58,6 +58,9 @@
     font-weight: 600; text-align: center; text-decoration: none; white-space: nowrap; color: var(--text); background: #262626; }
   .actions .primary { background: var(--accent); color: #000; }
   .empty { text-align: center; color: var(--muted); padding: 60px 20px; }
+  .post-hint { margin: 8px 12px 0; padding: 9px 12px; border-radius: 10px; background: #1d1d1d; font-size: 13px; }
+  .post-hint:empty { display: none; }
+  .tip { margin: 8px 14px 0; font-size: 13px; color: var(--muted); }
   #toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 24px);
     transform: translateX(-50%) translateY(20px); opacity: 0; transition: .25s; pointer-events: none;
     background: #fff; color: #000; padding: 10px 18px; border-radius: 999px; font-weight: 600;
@@ -154,6 +157,7 @@
 </div>
 <div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-ready">📦 Ready</button><button id="tab-activity">⏳ Activity</button></div>
 <div id="activity"></div>
+<div id="post-hint" class="post-hint"></div>
 <main id="feed"></main>
 <div id="toast"></div>
 
@@ -371,9 +375,10 @@ function render() {
       ${proofHtml(p)}
       ${p.kind === 'ready' ? (p.valid_on ? '<div class="proof check">📅 Post today only: it\'s about today\'s date.</div>' : '<div class="proof none">📦 Ready post: evergreen, post it any time within 24 hours (then it is cleared).</div>') : ''}
       ${p.overlay_text ? `<div class="overlay-text"><b>🎬 Text on video:</b> ${esc(p.overlay_text)}</div>` : ''}
-      ${p.songs && p.songs.length ? `<div class="songs"><b>🎵 Song ideas</b> <small>tap to copy, then search in Instagram (↗ = trending there)</small>${
+      ${p.songs && p.songs.length ? `<div class="songs"><b>🎵 Song ideas</b> <small>tap to copy and search it in Instagram: pick one with ↗ (trending there) and start it at the drop, not the intro</small>${
         p.songs.map((s, i) => `<button data-act="song" data-song="${i}">${s.lang === 'hindi' ? '🇮🇳' : '🌍'} ${esc(s.title)}: ${esc(s.artist)}${
           s.mood ? ` <small>· ${esc(s.mood)}</small>` : ''}</button>`).join('')}</div>` : ''}
+      ${p.video && p.media !== 'video' ? '<div class="tip">🖼️ Cover: when posting, pick the frame with the big opening line.</div>' : ''}
       <div class="caption">${esc(p.caption)}</div>
       <div class="actions">
         <button class="primary" data-act="share">${p.media === 'video' ? '💾 Cover' : '📤 Post'}</button>
@@ -397,7 +402,7 @@ feedEl.addEventListener('click', e => {
   if (!card) return;
   const post = posts.find(p => p.id === card.dataset.id);
   const act = e.target.closest('[data-act]')?.dataset.act;
-  if (act === 'share') share(post);
+  if (act === 'share') { localSet('lastShare', String(Date.now())); share(post); postHint(); }
   else if (act === 'copy') copyCaption(post);
   else if (act === 'song') {
     const s = post.songs[+e.target.closest('[data-song]').dataset.song];
@@ -679,6 +684,20 @@ function localDel(k) { try { localStorage.removeItem(k); } catch {} }
 
 function localGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
 function localSet(k, v) { try { localStorage.setItem(k, v); } catch {} }
+
+// ⏱️ Posting gap (owner, 14 Oct 2026: Reels posted close together or at night got 1-7 views): the time since the
+// last 📤 Post on this phone, and night hours. Updated every 30 s.
+function postHint() {
+  const el = document.getElementById('post-hint');
+  if (!el) return;
+  const ist = new Date(Date.now() + 330 * 60000), h = ist.getUTCHours();
+  const last = +(localGet('lastShare') || 0), mins = last ? Math.floor((Date.now() - last) / 60000) : null;
+  el.textContent = h >= 23 || h < 7 ? '🌙 Night: posts now get very few views. Best to post after 7 AM.'
+    : mins !== null && mins < 60 ? `⏱️ Last post shared ${mins} min ago. Wait ${60 - mins} min for the best reach.`
+    : mins !== null ? '✅ Good time to post (more than 1 hour since the last one).' : '';
+}
+postHint();
+setInterval(postHint, 30000);
 
 let lastSig = '';
 async function load() {

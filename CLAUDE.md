@@ -57,8 +57,10 @@ viral + visual story of the feeds' last 8 h (+ X trends), not already used (`ree
 preview due at 10:00/17:00 (`schedule.PREVIEW_KINDS`) is that slot's story. Top 5 Reels (`make_top5_reel`): picked like
 the old Top 5 carousels (`specials.gather/pick_top10`), one photo + "n. title" per story via `news_reel`, ~30 s.
 If a Reel can't be made, the robot tries again (`generate.REEL_TRIES` = 3, each try writes afresh); still no Reel →
-nothing posted in that slot (owner 12 Oct 2026: Reels only; the old news-post backup never ran at Reel hours). Night: 1:00 three 📦 ready posts: one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
-from Sun 11 Oct 2026), 📅 On This Day, 🙏 Gita Reel "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,
+nothing posted in that slot (owner 12 Oct 2026: Reels only; the old news-post backup never ran at Reel hours). Night: 1:00 two 📦 ready
+REELS (14 Oct 2026: photo posts got 0-5 views): one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
+from Sun 11 Oct 2026) and 📅 On This Day, rendered as carousels then turned into Reels (`reel.slides_reel`, cover
+without SWIPE as the hook, no closing card); the 🙏 Gita Reel is NOT made any more (14 Oct 2026, ~9 views avg; old notes:) "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,
 `state.gita_next`; ~45 s; hook → KYA HO RAHA HAI → who says it + shlok, no Sanskrit → MATLAB → AAJ KI SEEKH →
 AAJ KA SAWAAL; reference `assets/gita_ref.json` = owner's gita-shorts storyboards 1.1-2.30 (written by Claude,
 owner-reviewed; 1.21-22 together), from 2.31 the free open library vedicscriptures.github.io (`gita_library()`:
@@ -66,7 +68,7 @@ Gita Press/Tejomayananda/Sivananda; same numbering for ch 2-18; down → AI know
 pictures: see 🎨 below; `--kind ready_gita` remakes only it; `reel.build_gita_reel`) ·
 2:00 day planner (📅 previews, only at 10/17) · 3:00 🙏 God picture "Bhagwan ka saath" (📦 Ready, `bhakti.py`:
 god beside a young Indian in a relatable moment, FLUX picture, Hinglish line in Kalam handwriting; own run = own
-FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
+FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Reel with that god's aartis/bhajans) · 4:00 learning.
 
 ## How it runs
 - `.github/workflows/hourly.yml`: a self-restarting chain. `generate` job makes the post; `next` job
@@ -107,6 +109,16 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
   "Trending On Reels" (1269241159) playlists + trending; `SONG_WHERE` = where each charts. The AI picks songs whose
   hook/lyrics/vibe fit the moment, `mood` = why it fits; repeats allowed (owner) but at least 2 of 4 not in the last
   40 suggested (`state.songs_recent`, saved in `save_reel`). Top 5 Reels: top chart songs not suggested recently.
+  🪝 Hook + follow (owner 14 Oct 2026, from his views screen recording: Reels avg 117 views vs photos 4; satire ~232,
+  India news ~227, jokes ~150, devotional ~60, foreign/niche news ~15, Gita ~9; hits stall at 200-280 = Instagram's first
+  test audience): the first frame always has the opening text (no pop-in/fade); news + Top 5 open on `hook_frame()`
+  (HOOK_SECS 1.8: first photo, punch-in zoom, big Anton line from `hook` (AI, 4-8 words) / fixed Top 5 line, no logo
+  or label); every Reel ends on `follow_frame()` (FOLLOW_SECS 1.5: 'Follow @khabarbawaal' + 'roz ki khabar + memes').
+  Shorter: news 3 photos max (12-word lines); satire NOT shortened (tested 14 Oct 2026: 1 fact + ≤20/24-word KYA HUA?
+  failed the judge on all 12 stories in 4 tries; kept hook ≤18 / KYA HUA? ≤28 / 2 facts ≤14 / punchline ≤14, ~35 s), Tag that friend ≤18 words, meme setup ≤12 + punch ≤10. News Reels: India-wide stories only. Clips: an
+  'indian …' search first + Indian people preferred; no meat/alcohol/smoking clips for festival/religious jokes. First caption line = search keywords. Views can't be read
+  automatically (public pages show likes only). Owner chose (14 Oct 2026) to send screen recordings of Instagram's
+  Content list now and then: `python3 tools/views_from_recording.py <video>` (Mac: Apple Vision OCR, PDT → IST). Review ~21 Oct: replace the weakest slot with a 2nd satire Reel.
   Reading time (owner, 11 Oct 2026, `read_secs()` = 1.5 s + 0.25 s a word; 12 Oct 2026: "not able to read", then
   1.5x was "too much": **old time + a couple of seconds, not double**): every text screen +1 s = 2.5 s + 0.25/word
   (news photos 4-8.5 s, meme build-up/punchline ≥ 5.5/4.5 s ≤ 8.5 s, satire hook 5.5-7 s, satire parts
@@ -122,7 +134,8 @@ FLUX allowance; FLUX busy → no picture that night) · 4:00 learning.
   sends the phone's address to the inbox (`push_sub` → `state/push.json`, newest 3); workflows run `push.py --before` / `--after`
   (after deploy, so the post is live when tapped; tap opens that post). Robot posts 11 PM-5 AM don't buzz; ➕ Create ✅/❌ always.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
-- App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link),
+- App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link; ⏱️ `postHint()`:
+  time since the last 📤 Post on this phone (`lastShare`), wait an hour / night warning; Reel cover + song tips),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
   `docs/app.json` `plan` (report's 🗓️ Today's plan) + `reels` (app's "Next Reel") are hand-kept: **change them with
   `schedule.SPECIALS`** (12 Oct 2026 they went stale after the all-Reels switch). Report's 🌙 Night posts = 📦 Ready posts

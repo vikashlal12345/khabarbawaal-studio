@@ -42,7 +42,8 @@ TOP10_SCHEMA = {
             "line": {"type": "string", "description": "Max 22 words, Hinglish: what happened"}},
             "required": ["pick", "title", "line"], "additionalProperties": False},
             "description": "Exactly the requested number of stories, #1 (biggest) first"},
-        "caption_hook": {"type": "string", "description": "1-2 Hinglish lines opening the caption"},
+        "caption_hook": {"type": "string", "description": "1-2 Hinglish lines opening the caption; the first line "
+                         "names the biggest stories' searchable keywords (names, films, events)"},
         "hashtags": {"type": "array", "items": {"type": "string"}},
     },
     "required": ["stories", "caption_hook", "hashtags"],

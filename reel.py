@@ -195,6 +195,58 @@ def handle_tag(frame: Image.Image, y: int, fill="#FFFFFF", stroke=3) -> None:
                                fill=fill, anchor="mm", stroke_width=stroke, stroke_fill="#000000")
 
 
+HOOK_SECS, FOLLOW_SECS = 1.8, 1.5
+
+
+def hook_layer(text: str, highlight: set[str]) -> Image.Image:
+    """🪝 The opening line (owner, 14 Oct 2026: viewers decide in under a second; our Reels used to open on an
+    empty text area and the logo): 4-8 words, big and bold, white with a thick outline, yellow highlights."""
+    lines, fnt, lh = fit_lines(printable(text), RIGHT - LEFT + 60, 560, sizes=range(118, 64, -4), name="Anton-Regular.ttf")
+    imgs = line_images(lines, fnt, lh, "#FFFFFF", YELLOW, highlight, stroke=9)
+    layer = Image.new("RGBA", (RW, len(imgs) * lh + 80), (0, 0, 0, 0))
+    for j, img in enumerate(imgs):
+        layer.alpha_composite(img, ((RW - img.width) // 2, 40 + j * lh))
+    return layer
+
+
+def hook_frame(photo: Image.Image, layer: Image.Image, t: float) -> Image.Image:
+    """The hook screen at time t: the whole photo (news photos are wide) in a window over a blurred copy of itself
+    with a quick punch-in zoom, the big hook line under it from the very first frame, no logo or label yet."""
+    photo = photo.convert("RGB")
+    k = max(RW / photo.width, RH / photo.height)
+    bg = photo.resize((int(photo.width * k) + 1, int(photo.height * k) + 1)).crop((0, 0, RW, RH))
+    frame = Image.blend(bg.filter(ImageFilter.GaussianBlur(50)), Image.new("RGB", (RW, RH), "#000000"), 0.75).convert("RGBA")
+    win_h = 820
+    z = max(RW / photo.width, win_h / photo.height) * (1.12 - 0.12 * ease_out(min(1.0, t / 0.45)))
+    big = photo.resize((int(photo.width * z) + 1, int(photo.height * z) + 1), Image.BICUBIC)
+    x0, y0 = (big.width - RW) // 2, int((big.height - win_h) * 0.3)
+    frame.paste(big.crop((x0, y0, x0 + RW, y0 + win_h)), (0, 240))
+    frame.alpha_composite(layer, (0, 240 + win_h + 40))
+    handle_tag(frame, 1700)
+    return frame
+
+
+def follow_frame(last: Image.Image) -> Image.Image:
+    """End card on every Reel (owner, 14 Oct 2026: ~200 people see a Reel, almost none follow): the last frame
+    dimmed, 'Follow @khabarbawaal' + 'roz ki khabar + memes'."""
+    frame = last.convert("RGBA")
+    dim = Image.new("RGBA", (RW, RH), (12, 12, 12, 225))
+    frame.alpha_composite(dim)
+    head = pill(f"Follow {CONFIG['handle']}", font("Anton-Regular.ttf", 96), YELLOW, "#111111", pad=(44, 18))
+    sub = pill("roz ki khabar + memes", font("Poppins-Bold.ttf", 52), RED, "#FFFFFF", pad=(36, 14))
+    y = (RH - head.height - sub.height - 40) // 2
+    frame.alpha_composite(head, ((RW - head.width) // 2, y))
+    frame.alpha_composite(sub, ((RW - sub.width) // 2, y + head.height + 40))
+    return frame
+
+
+def add_follow(enc, last: Image.Image) -> None:
+    """Writes the follow end card (FOLLOW_SECS) after a Reel's last frame."""
+    card = follow_frame(last)
+    for _ in range(int(FOLLOW_SECS * FPS)):
+        enc.add(card)
+
+
 # ---------------------------------------------------------------- 1. clip + meme text
 
 def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlight: list[str],
@@ -211,18 +263,20 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
     shade = Image.new("RGBA", (RW, 900), (0, 0, 0, 0))
     ImageDraw.Draw(shade).rectangle((0, 120, RW, 780), fill=(0, 0, 0, 120))
     shade = shade.filter(ImageFilter.GaussianBlur(60))
-    step = min(0.45, 2.0 / max(len(lines), 1))
     enc, cover, frame = Encoder(out_mp4), None, None
     for i, frame in enumerate(clip_frames(clip, start, dur - hold, RW, RH, crop_x, hold)):
         t = i / FPS
+        if t < 0.45:   # 🪝 quick punch-in; banner + text are on screen from the first frame (owner, 14 Oct 2026)
+            z = 1.12 - 0.12 * ease_out(t / 0.45)
+            big = frame.resize((int(RW * z), int(RH * z)), Image.BICUBIC)
+            frame = big.crop(((big.width - RW) // 2, (big.height - RH) // 2, (big.width + RW) // 2, (big.height + RH) // 2))
         frame = frame.convert("RGBA")
         frame.alpha_composite(shade, (0, text_top - 300))
         if logo:
             frame.alpha_composite(logo, (60, 150))
-        k = ease_out_back(t / 0.45)
-        frame.alpha_composite(hook_img, ((RW - hook_img.width) // 2, int(text_top - 150 - 300 * (1 - k))))
+        frame.alpha_composite(hook_img, ((RW - hook_img.width) // 2, text_top - 150))
         for j, img in enumerate(imgs):
-            paste_pop(frame, img, LEFT, text_top + j * line_h, (t - 0.4 - j * step) / 0.3)
+            frame.alpha_composite(img, (LEFT, text_top + j * line_h))
         k = ease_out((t - (dur - 1.6)) / 0.4)
         if k > 0:
             fy = int(text_top + len(lines) * line_h + 40 + 120 * (1 - k))
@@ -231,6 +285,7 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
         if t >= dur - 1.0 and cover is None:
             cover = frame.convert("RGB")
         enc.add(frame)
+    add_follow(enc, frame)
     enc.close()
     return [cover or frame.convert("RGB")]
 
@@ -280,6 +335,7 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
         elif t >= punch_at + 0.8 and cover is None:
             cover = frame.convert("RGB")
         enc.add(frame)
+    add_follow(enc, frame)
     enc.close()
     return [(before or frame).convert("RGB"), cover or frame.convert("RGB")]
 
@@ -326,7 +382,7 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
 # ---------------------------------------------------------------- 3. news photo slideshow
 
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
-              out_mp4: str, end: float = 3.0) -> list[Image.Image]:
+              out_mp4: str, end: float = 3.0, hook: str = "") -> list[Image.Image]:
     """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
     uncropped instead of zooming. Each photo stays long enough to read its line in full: 2.5 s + 0.25 s
     a word, 4-8.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel; 12 Oct: +1 s).
@@ -354,10 +410,18 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
     tag_img = pill(printable(tag).upper(), font("Anton-Regular.ttf", 64), RED, "#FFFFFF", pad=(30, 8))
     e_lines, e_fnt, e_lh = fit_lines(end_text, RIGHT - LEFT, 700, sizes=range(96, 48, -4))
     e_imgs = line_images(e_lines, e_fnt, e_lh, "#111111", RED, highlights)
-    follow = pill("FOLLOW FOR DAILY BAWAAL", font("Poppins-Bold.ttf", 44), "#111111", YELLOW, pad=(34, 16))
+    follow = pill(f"Follow {CONFIG['handle']}: roz ki khabar + memes", font("Poppins-Bold.ttf", 40), "#111111", YELLOW,
+                  pad=(30, 16))
     logo = logo_img()
     total = int((starts[-1] + end) * FPS)
-    enc, checks, frame = Encoder(out_mp4), [], None
+    enc, checks, frame, hook_check = Encoder(out_mp4), [], None, []
+    if hook:   # 🪝 the hook screen first (owner, 14 Oct 2026): first photo + a big line from the first frame
+        layer = hook_layer(hook, highlights)
+        for i in range(int(HOOK_SECS * FPS)):
+            frame = hook_frame(slides[0][0], layer, i / FPS)
+            if i == int(0.6 * FPS):
+                hook_check.append(frame.convert("RGB"))
+            enc.add(frame)
     for i in range(total):
         t = i / FPS
         n = sum(t >= s for s in starts[1:])
@@ -394,7 +458,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
             handle_tag(frame, 1600, fill="#111111", stroke=0)
         enc.add(frame)
     enc.close()
-    return checks + [frame.convert("RGB")]
+    return checks + [frame.convert("RGB")] + hook_check   # hook last: slide numbers stay the photo numbers
 
 
 # ---------------------------------------------------------------- the robot
@@ -418,10 +482,13 @@ CLIP_KINDS = ("reel_clip", "reel_clip_am")   # "Tag that friend" clip Reels (1 P
 REEL_RULES = """This joke becomes a short Instagram REEL: a free stock video clip (Mixkit) with our text on top.
 The clip must be something a stock-video site has: everyday people doing everyday things (lying in bed \
 with a phone, eating, laughing, shocked face, running late, working on a laptop, dancing, sleeping, cooking, \
-studying, waiting...). No celebrities, brands or specific Indian places in the clip.
+studying, waiting...). No celebrities, brands or specific Indian places in the clip. Prefer clips with Indian / \
+South Asian people (owner, 14 Oct 2026): make the first search 'indian ...' (e.g. 'indian man laughing'). For festival, \
+fasting or religious jokes never a clip with meat, alcohol or smoking.
 clip_search: 3 different searches for the stock site, 1-3 plain English words each, most specific first (e.g. ["texting in bed", "man phone bed", "lazy"]). Simple words find more clips. Prefer jokes whose moment a stock clip can actually show.
 clip_wanted: one line describing the ideal clip.
-caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia)."""
+caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia); the \
+caption's first line carries the searchable keywords (the trend's name, e.g. 'Navratri garba', 'Gemini 4')."""
 
 SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit this Reel's moment, copied exactly "
          "from today's song lists",
@@ -445,31 +512,35 @@ CLIP_OPTION = {"type": "object", "properties": {
     **_COMMON,
     "text": {"type": "string", "description": "Text shown under a big 'TAG THAT FRIEND' banner, describing that "
              "friend, e.g. \"Wo dost jo bed se text karta hai:\\n'Bhai nikal gaya, 5 min mein pahunch raha hoon'\". "
-             "Max 22 words, no emojis, \\n line breaks allowed."}},
+             "Max 18 words, no emojis, \\n line breaks allowed."}},
     "required": list(_COMMON) + ["text"], "additionalProperties": False}
 MEME_OPTION = {"type": "object", "properties": {
     **_COMMON,
     "setup": {"type": "array", "items": {"type": "string"}, "description":
-              "2-7 short pieces (max 16 words in total) that appear one after another while the clip plays, "
+              "2-6 short pieces (max 12 words in total) that appear one after another while the clip plays, "
               "building up, e.g. [\"Alarm:\", \"6:00,\", \"6:05,\", \"6:10,\", \"6:15...\"]. No emojis."},
-    "punch": {"type": "string", "description": "Punchline (max 14 words, no emojis) that replaces the setup at the "
+    "punch": {"type": "string", "description": "Punchline (max 10 words, no emojis) that replaces the setup at the "
               "clip's reaction moment, e.g. \"Me at 9:45 jab office 10 baje hai\". highlight words come from here."}},
     "required": list(_COMMON) + ["setup", "punch"], "additionalProperties": False}
 
 NEWS_TAGS = ["VIRAL", "BREAKING", "BOLLYWOOD", "CRICKET", "SPORTS", "TECH", "INDIA", "WORLD", "POLITICS", "MONEY"]
 NEWS_OPTION = {"type": "object", "properties": {
     "pick": {"type": "integer", "description": "Story number from the list"},
+    "hook": {"type": "string", "description": "🪝 Opening line on the first photo, 4-8 words, Hinglish, no emojis: the "
+             "most shocking/curious fact of the story so people stop scrolling, e.g. '8 mahine. 1 ladka. Poori nadi "
+             "saaf.' or 'Is case ne poore desh ko hila diya'. A fact from the story, not clickbait."},
     "tag": {"type": "string", "enum": NEWS_TAGS},
     "end_text": {"type": "string", "description": "Last card, max 14 words, no emojis: a relatable Hinglish reaction "
                  "(\"Aur hum? Uber mein baithke bhi nervous ho jaate hain\") or, for serious news, the punchy takeaway."},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from end_text"},
-    "caption": {"type": "string", "description": "Hinglish: hook line, 2-3 short fact lines, a comment prompt. 1-3 emojis."},
+    "caption": {"type": "string", "description": "Hinglish: hook line with the searchable keywords (names, film/event, "
+                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, a comment prompt. 1-3 emojis."},
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
     "songs": SONGS},
-    "required": ["pick", "tag", "end_text", "highlight", "caption", "pin_comment", "hashtags", "photo_query", "wiki_title",
+    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "hashtags", "photo_query", "wiki_title",
                  "songs"],
     "additionalProperties": False}
 
@@ -690,6 +761,36 @@ def songs_prompt(songs: dict) -> str:
             "= UPI fail'). Copy title and artist exactly; no other songs." + recent + "\n" + lists)
 
 
+def chart_songs(state: dict) -> list[dict]:
+    """2 Indian + 2 English songs from the top of today's charts not suggested recently (Reels without AI writing)."""
+    songs = trending_songs(state)
+    return [{"title": t, "artist": a, "lang": lang, "mood": "high on today's charts"} for lang in songs
+            for t, a in ([x for x in songs[lang] if x[0] not in RECENT_SONGS][:2] or songs[lang][:2])]
+
+
+def slides_reel(slides: list[Image.Image], secs: list[float], out_mp4: str) -> None:
+    """📦 A finished photo post as a Reel (owner, 14 Oct 2026: photo posts get 0-5 views, Reels ~117): each slide
+    fills the width on a blurred copy of itself with a slow zoom, the cover (big headline) is the hook from the
+    first frame, then the follow card."""
+    enc, frame = Encoder(out_mp4), None
+    for img, dur in zip(slides, secs):
+        img = img.convert("RGB")
+        k = max(RW / img.width, RH / img.height)
+        bg = img.resize((int(img.width * k) + 1, int(img.height * k) + 1)).crop((0, 0, RW, RH))
+        bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.45)
+        fit = img.resize((RW, int(img.height * RW / img.width)), Image.LANCZOS)
+        n = max(1, int(dur * FPS))
+        for i in range(n):
+            z = 1.0 + 0.04 * i / max(n - 1, 1)
+            big = fit.resize((int(fit.width * z), int(fit.height * z)), Image.BICUBIC)
+            x0 = (big.width - RW) // 2
+            frame = bg.copy().convert("RGBA")
+            frame.paste(big.crop((x0, 0, x0 + RW, big.height)), (0, (RH - big.height) // 2))
+            enc.add(frame)
+    add_follow(enc, frame)
+    enc.close()
+
+
 def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
     """Keep only songs that are really on today's lists (max 2 per language), with the list's spelling."""
     pool = {t.lower(): (t, a) for lang in songs for t, a in songs[lang]}
@@ -787,6 +888,8 @@ def pick_clip(post: dict, state: dict) -> str:
     known = state.setdefault("clip_licences", {})
     found: dict[str, str] = {}
     queries = list(dict.fromkeys(q.strip() for q in post["clip_search"] if q.strip()))
+    if queries and "indian" not in queries[0].lower():   # Indian faces first (owner, 14 Oct 2026)
+        queries.insert(0, f"indian {queries[0]}")
     if post.get("punch"):   # meme Reels land on a reaction: common reaction clips as backup
         queries += ["shocked", "surprised", "laughing", "panic", "facepalm"]
     for q in queries:
@@ -802,8 +905,10 @@ def pick_clip(post: dict, state: dict) -> str:
               "items": {"type": "object", "properties": {"id": {"type": "string"}, "fits": {"type": "integer"}},
                         "required": ["id", "fits"], "additionalProperties": False}}},
               "required": ["ranked"], "additionalProperties": False}
-    ranked = fun.claude_json("You pick stock video clips for funny Instagram Reels. Rank by title the 12 clips that "
-                             "best show the wanted moment; fits = 1-10.",
+    ranked = fun.claude_json("You pick stock video clips for funny Instagram Reels for Indian viewers. Rank by title "
+                             "the 12 clips that best show the wanted moment; fits = 1-10. When two fit equally, "
+                             "prefer the one whose title shows Indian / South Asian people. For a festival, fasting "
+                             "or religious joke never a clip with meat, alcohol or smoking (fits = 1).",
                              f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
                              f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
                              schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")["ranked"]
@@ -913,6 +1018,9 @@ NEWS_SYSTEM = """You make a news REEL for {page}, an Indian Instagram page for 1
 English letters only, never Devanagari). From the latest stories pick the 3 best for a short video made of news \
 photos: what is most viral or trending right now (see the X trends), strong visuals (people, sports moments, \
 celebrities, viral scenes, big events) and a story everyone will want to watch and share. Rank them, best first.
+Only stories most people across India care about (owner, 14 Oct 2026: Indian stories got ~227 views, foreign or niche \
+celebrity news ~15): Indian news, Bollywood/OTT, Team India and IPL, viral Indian moments, big national stories. Skip \
+foreign news unless it is about India or Indians, foreign sports and niche or foreign celebrity news.
 Rules: real facts only, no invented quotes. Never make jokes about deaths, accidents, crimes or disasters. \
 Politics: supportive of the right wing (BJP, NDA), critical of the left and opposition; never pick a story \
 that embarrasses the BJP. No hate against any community."""
@@ -1004,28 +1112,27 @@ def make_top5_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     out = os.path.join(tmp, "reel.mp4")
     label = "RAAT KI TOP 5" if src == "night_roundup" else "TOP 5 NEWS"
 
+    hook = "Raat bhar mein kya-kya hua? Top 5" if src == "night_roundup" else "Aaj ki 5 sabse badi khabrein"
+
     def render(d):
         slides = [(img, s["source"], f"{n}. {s['slide_title']}", False)
                   for n, (img, s) in enumerate(zip(photos, d["stories"]), 1)]
-        return news_reel(slides, "Inme sabse badi khabar kaunsi? Number likho", ["Number likho"], label, out)
+        return news_reel(slides, "Inme sabse badi khabar kaunsi? Number likho", ["Number likho"], label, out, hook=hook)
     article = "\n".join(f"- {s['title']}: {s['summary'][:300]}" for s in stories)
     status.step("Making the video + proofreading", 5)
     frames, data, proof = proofread.run(render, data, specials.top10_caption, article, strict=True)
-    songs = trending_songs(state)
     save_reel(feed, state, frames[0], out, f"{kind}-{today}", {
         "headline": f"{cfg['title'][0]} {cfg['title'][1]}: {schedule.ist_now():%d %b}", "tag": f"🎬 REEL · {label}",
         "caption": g.limit_hashtags(specials.top10_caption(data)),
         "source": ", ".join(dict.fromkeys(s["source"] for s in data["stories"]))[:80], "source_url": "",
-        "pin_comment": "", "proof": proof,
-        "songs": [{"title": t, "artist": a, "lang": lang, "mood": "high on today's charts"} for lang in songs
-                  for t, a in ([x for x in songs[lang] if x[0] not in RECENT_SONGS][:2] or songs[lang][:2])]})
+        "pin_comment": "", "proof": proof, "songs": chart_songs(state)})
 
 
 def news_photos(item: dict, opt: dict) -> list[tuple]:
     """Story photos checked like carousel photos, each with a short story line: [(img, credit, text, whole)]."""
     import carousel
     picked, _ = carousel.collect(item, {"headline": item["title"], "photo_query": opt["photo_query"],
-                                        "wiki_title": opt["wiki_title"]}, [], want=4, max_words=14)
+                                        "wiki_title": opt["wiki_title"]}, [], want=4, max_words=12)
     return [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
 
 
@@ -1040,13 +1147,16 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "end_text"])
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
+    photos = photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
+    roman_only(opt, ["hook"])
     images = [(img, whole) for img, _, _, whole in photos]
     data = {"post": opt, "slides": [{"n": i, "credit": c, "text": t} for i, (_, c, t, _) in enumerate(photos)]}
     out = os.path.join(tmp, "reel.mp4")
 
     def render(d):
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
-                         d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out)
+                         d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
+                         hook=d["post"].get("hook", ""))
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
@@ -1156,8 +1266,8 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
             if logo:
                 frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
             y0 = text_bottom - len(c_imgs) * c_lh
-            for j, img in enumerate(c_imgs):
-                paste_pop(frame, img, LEFT, y0 + j * c_lh, (t - 0.2 - j * 0.3) / 0.3)
+            for j, img in enumerate(c_imgs):   # 🪝 the whole dig from the first frame
+                frame.alpha_composite(img, (LEFT, y0 + j * c_lh))
             if shot is not None:
                 frame.paste(shot, (0, clip_y))
             handle_tag(frame, clip_y + clip_h + 70, fill="#111111", stroke=0)
@@ -1209,6 +1319,7 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
         if len(checks) < len(marks) and t >= marks[len(checks)]:
             checks.append(frame.convert("RGB"))
         enc.add(frame)
+    add_follow(enc, frame)
     enc.close()
     while len(checks) < 4:
         checks.append(frame.convert("RGB"))
@@ -1266,7 +1377,8 @@ news) -> REALITY CHECK (recent facts with month/year and a source that prove the
 promise vs what happened, what they said before vs now, their own record where they rule, or results under the \
 same system they now blame; never their own lines, never only one side's results) -> a big funny punchline. \
 Keep it tight: every word is read on a phone (hook max 18 words, KYA HUA? max 28, each fact max 14, punchline \
-max 14). Make it something people SEND to friends.
+max 14). The hook must make sense on its own and KYA HUA? must tell a stranger who did what, in plain words. \
+Make it something people SEND to friends.
 Every day is a NEW joke: a new angle from THIS story, a meme format the recent Reels didn't use, a punchline \
 nobody has heard. Never reuse a recent Reel's angle, format, hook or punchline, and no tired lines (e.g. \
 "X ka formula: jeeto toh..., haaro toh...", "EVM mahaan / EVM shaitaan").
@@ -1279,7 +1391,8 @@ official data) with the right source; quotes only if an article has them; attrib
 or health; a death, illness or grief is never the joke; no slurs, no abuse, no calls to violence; nothing that \
 embarrasses the BJP. REALITY CHECK facts must be settled (official data, results, court verdicts, their own dated \
 promises, statements and actions on record), never allegations, FIRs, charges or ongoing probes.
-Caption: 2-4 short Hinglish lines with the context in one line, 1-3 emojis, last line makes people comment or send it."""
+Caption: 2-4 short Hinglish lines, the first with the searchable keywords (leader/party/issue names), the context in \
+one line, 1-3 emojis, last line makes people comment or send it."""
 
 # Official results (Election Commission of India) for REALITY CHECK contrasts: the opposition also wins under the
 # same EC/EVMs. Update when new big results come in.
@@ -1309,7 +1422,7 @@ def too_long(o: dict) -> list[str]:
     def words(x) -> int:
         return len((" ".join(x) if isinstance(x, list) else x).split())
     out = [k for k, n in (("claim", 18), ("context", 28), ("punchline", 14)) if words(o[k]) > n]
-    return out + ["facts"] * any(words(f["fact"]) > 14 for f in o["facts"])
+    return out + ["facts"] * any(words(f["fact"]) > 14 for f in o["facts"][:2])
 
 
 def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
@@ -1456,7 +1569,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                                POLITICS_OPTION, model, purpose="satire shorten")
     roman_only(best, ["caption", "pin_comment", "punchline"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
-    best["facts"] = best["facts"][:2]
+    best["facts"] = best["facts"][:2]   # (a 1-fact, shorter version failed the judge on every story, 14 Oct 2026)
     cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
     clip, secs = download_clip(cid, tmp)
     out = os.path.join(tmp, "reel.mp4")
@@ -1902,7 +2015,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
     else:
         hook_l = lines_of(hook, body, CREAM)
         y0 = 1330 - len(hook_l) * 50
-        items = [(y0 + i * int(body.size * 1.3), im, t + i * gap) for i, im in enumerate(hook_l)]
+        items = [(y0 + i * int(body.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)]   # 🪝 visible at 0 s
         end = t + len(hook_l) * gap + read_time(hook)
         parts.append((items, end))
         t = end + 0.5 + pause
@@ -1986,6 +2099,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         if len(checks) < len(check_at) and t >= check_at[len(checks)]:
             checks.append(frame.convert("RGB"))
         enc.add(frame)
+    add_follow(enc, frame)
     enc.close()
     while len(checks) < 4:
         checks.append(frame.convert("RGB"))

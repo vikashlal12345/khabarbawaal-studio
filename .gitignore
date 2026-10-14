@@ -5,3 +5,4 @@ __pycache__/
 .renew_token.log
 code.txt
 .create_summary.md
+tools/.ocr

@@ -274,8 +274,10 @@ def frame(title: str, n: int) -> tuple[Image.Image, ImageDraw.ImageDraw]:
 
 
 def footer(d: ImageDraw.ImageDraw, credit: str, n: int, total: int) -> None:
+    """n = 0: no page number (a slide inside a Reel)."""
     f = g.font("Poppins-SemiBold.ttf", 26)
-    d.text((50, g.H - 58), f"{n}/{total}  ·  {g.CONFIG['handle']}", font=f, fill="white", anchor="lm")
+    d.text((50, g.H - 58), f"{n}/{total}  ·  {g.CONFIG['handle']}" if n > 0 else g.CONFIG["handle"], font=f,
+           fill="white", anchor="lm")
     if credit:
         d.text((g.W - 50, g.H - 58), f"Photo: {credit}"[:48], font=g.font("Poppins-SemiBold.ttf", 22),
                fill=(190, 190, 190), anchor="rm")
@@ -420,10 +422,12 @@ def plan(item: dict, post: dict, cover_photo: Image.Image | list | None) -> list
     return specs
 
 
-def render(specs: list[dict]) -> list[Image.Image]:
+def render(specs: list[dict], numbered: bool = True) -> list[Image.Image]:
+    """numbered=False: slides for a Reel (no "2/6" page numbers)."""
     total = 1 + len(specs)
     slides = []
     for n, sp in enumerate(specs, 2):
+        n = n if numbered else 0
         if sp["type"] == "tweet":
             slides.append(tweet_slide(sp["img"], sp["credit"], sp["text"], n, total))
         elif sp["type"] == "photo":

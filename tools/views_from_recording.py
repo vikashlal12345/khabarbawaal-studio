@@ -1,0 +1,69 @@
+"""📊 Views from the owner's screen recording of Instagram's Content list (owner's choice, 14 Oct 2026: no Meta API).
+
+    python3 tools/views_from_recording.py ~/Downloads/ScreenRecording_....MP4
+
+Mac only: pulls a frame every 1.5 s (imageio-ffmpeg), reads the text with Apple's Vision (tools/ocr.swift, compiled
+once to tools/.ocr), and prints every post with its type, IST time and views, then averages for Reels vs photos.
+The Content screen shows times in US Pacific time (PDT): +12:30 h = IST. A lone "0" is sometimes not read: those
+rows are counted as 0 views (checked by eye on 14 Oct 2026); the newest post may simply be too new.
+"""
+import collections
+import re
+import statistics
+import subprocess
+import sys
+import tempfile
+from datetime import datetime, timedelta
+from pathlib import Path
+
+HERE = Path(__file__).parent
+
+
+def main(video: str) -> None:
+    import imageio_ffmpeg
+    ocr = HERE / ".ocr"
+    if not ocr.exists():
+        subprocess.run(["swiftc", "-O", str(HERE / "ocr.swift"), "-o", str(ocr)], check=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-loglevel", "error", "-i", video, "-vf", "fps=1/1.5",
+                        "-q:v", "2", f"{tmp}/f_%03d.jpg"], check=True)
+        out = subprocess.run([str(ocr)] + sorted(str(p) for p in Path(tmp).glob("f_*.jpg")),
+                             capture_output=True, text=True).stdout
+    frames = collections.defaultdict(list)
+    for line in out.splitlines():
+        p = line.split("\t")
+        if len(p) == 4:
+            frames[p[0]].append((float(p[1]), float(p[2]), p[3].strip()))
+    meta_re = re.compile(r"(Reel|Photo).*?((Today|Yesterday|\d{1,2} \w{3}) at (\d{1,2}):(\d{2}))")
+    num_re = re.compile(r"^([\d,]+|[Oo])$")
+    today = datetime.now()
+    rows = {}
+    for f in sorted(frames):
+        items = frames[f]
+        for my, _, mt in [(y, x, t) for y, x, t in items if 0.17 < x < 0.26 and meta_re.search(t) and y > 0.22]:
+            m = meta_re.search(mt)
+            titles = [(y, t) for y, x, t in items if 0.17 < x < 0.26 and my - 0.045 < y < my - 0.01 and not meta_re.search(t)]
+            if not titles or max(titles)[1].lower().startswith("video story"):
+                continue
+            ty, title = max(titles)
+            nums = [t for y, x, t in items if x > 0.83 and num_re.match(t) and ty - 0.01 < y < my + 0.015]
+            v = None if not nums else (0 if nums[0] in "Oo" else int(nums[0].replace(",", "")))
+            day = m.group(3)
+            date = (today if day == "Today" else today - timedelta(days=1) if day == "Yesterday"
+                    else datetime.strptime(f"{day} {today.year}", "%d %b %Y"))
+            ist = date.replace(hour=int(m.group(4)), minute=int(m.group(5)), second=0, microsecond=0) + timedelta(hours=12, minutes=30)
+            r = rows.setdefault((m.group(1), ist), {"kind": m.group(1), "ist": ist, "title": title, "views": None})
+            if v is not None and (r["views"] is None or v > r["views"]):
+                r["views"] = v
+    posts = sorted(rows.values(), key=lambda r: r["ist"])
+    for r in posts:
+        r["views"] = r["views"] or 0
+        print(f"{r['ist']:%d %b %H:%M} IST  {r['kind']:5}  {r['views']:>6}  {r['title'][:70]}")
+    for kind in ("Reel", "Photo"):
+        vs = [r["views"] for r in posts if r["kind"] == kind]
+        if vs:
+            print(f"{kind}s: {len(vs)} posts, avg {sum(vs) / len(vs):.0f}, median {statistics.median(vs)}")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1])

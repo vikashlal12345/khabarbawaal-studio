@@ -1,5 +1,7 @@
-"""📦 Ready posts, made every night: one carousel in turn (Explainer → Quiz → Amazing Facts →
-Myth vs Fact), 📅 On This Day, and a 🙏 Bhagavad Gita Reel; at 3 AM a 🙏 god picture (bhakti.py). They wait in docs/ready.json (max 15, kept 24 hours) for the owner
+"""📦 Ready posts, made every night as REELS (owner, 14 Oct 2026: photo posts get 0-5 views, Reels ~117): one
+carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact) and 📅 On This Day, each turned into a Reel
+(reel.slides_reel); at 3 AM a 🙏 god picture as a short Reel (bhakti.py). The 🙏 Gita Reel stopped (avg ~9 views),
+still available as `--kind ready_gita`. They wait in docs/ready.json (max 15, kept 24 hours) for the owner
 to post any time, and are used automatically when the AI can't write a news post.
 """
 from __future__ import annotations
@@ -110,12 +112,18 @@ def make_one(fmt: str, recent: list[str]) -> dict | None:
 
     slides, data, proof = proofread.run(render, {"post": post, "specs": specs}, caption,
                                         drop=proofread.drop_photo_slides)
-    return {"slides": slides, "caption": caption(data), "proof": proof, "headline": data["post"]["headline"],
-            "tag": "📦 " + data["post"]["tag"].upper()}
+    # The Reel version (owner, 14 Oct 2026): the cover without the carousel's "SWIPE" mark, slides without
+    # "2/6" page numbers, no "Aap kya sochte ho? / COMMENT KARO" closing card (the Reel ends on the follow card).
+    body = [sp for sp in data["specs"] if sp["type"] != "closing"]
+    reel_cover = g.render_card(cover_img, data["post"], "Wikimedia Commons" if cover_img else "")
+    texts = [data["post"]["headline"]] + [sp.get("text", "") for sp in body]   # one per Reel slide
+    return {"slides": slides, "reel_slides": [reel_cover] + carousel.render(body, numbered=False), "texts": texts,
+            "caption": caption(data), "proof": proof,
+            "headline": data["post"]["headline"], "tag": "📦 " + data["post"]["tag"].upper()}
 
 
 # One carousel type a night, in turn (owner's plan, 10 Oct 2026): Explainer (Sunday 11 Oct) → Quiz →
-# Amazing Facts → Myth vs Fact → Explainer… plus On This Day and a 🙏 Gita Reel every night.
+# Amazing Facts → Myth vs Fact → Explainer… plus On This Day, every night, both as Reels (14 Oct 2026).
 CYCLE = ["explainer", "quiz", "facts", "myth_fact"]
 CYCLE_START = date(2026, 10, 11)
 
@@ -166,10 +174,22 @@ def make_picture(state: dict) -> bool:
         print(f"  ! God picture not made: {str(e)[:200]}")
         status.fail(f"God picture not made tonight: {str(e)[:200]}")
         return False
+    import reel
     pid = f"r{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-bhakti"
     pic.save(g.DOCS / f"posts/{pid}.jpg", "JPEG", quality=90, optimize=True)
+    extra = {}
+    try:   # as a short Reel (owner, 14 Oct 2026: photo posts get 0-5 views)
+        with tempfile.TemporaryDirectory() as tmp:
+            reel.slides_reel([pic], [7.0], f"{tmp}/reel.mp4")
+            shutil.copy(f"{tmp}/reel.mp4", g.DOCS / f"posts/{pid}.mp4")
+        deity = (state.get("recent_bhakti") or [""])[-1].split(":")[0]
+        songs = reel.devotional_songs([f"{deity} bhajan", f"{deity} aarti"])[:4] if deity else []
+        extra = {"media": "reel", "video": f"posts/{pid}.mp4",
+                 "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs]}
+    except Exception as e:
+        print(f"  ! God picture Reel failed, kept as a picture: {str(e)[:150]}")
     items = prune(load())
-    items.append({"id": pid, "kind": "ready", "image": f"posts/{pid}.jpg", **entry, "tag": "📦 " + entry["tag"],
+    items.append({"id": pid, "kind": "ready", "image": f"posts/{pid}.jpg", **entry, **extra, "tag": "📦 " + entry["tag"],
                   "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
     save(prune(items))
     print(f"  God picture: {entry['headline']}")
@@ -177,8 +197,9 @@ def make_picture(state: dict) -> bool:
     return True
 
 
-def make_batch(state: dict, count: int = 3) -> int:
-    """Every night: today's carousel from the cycle, 📅 On This Day, and a 🙏 Gita Reel."""
+def make_batch(state: dict, count: int = 2) -> int:
+    """Every night: today's carousel from the cycle and 📅 On This Day, each as a Reel."""
+    import reel
     items = prune(load())
     recent = state.get("recent_ready", [])[-40:]
     today = ist_today()
@@ -189,12 +210,19 @@ def make_batch(state: dict, count: int = 3) -> int:
             continue
         stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
         pid = f"r{stamp}-{fmt}"
-        names = []
-        for n, im in enumerate(out["slides"], 1):
-            name = f"posts/{pid}-{n}.jpg"
-            im.save(g.DOCS / name, "JPEG", quality=86, optimize=True)
-            names.append(name)
-        items.append({"id": pid, "kind": "ready", "image": names[0], "slides": names[1:],
+        slides = out["reel_slides"]   # no closing card: the Reel ends on the follow card instead
+        secs = [min(8.5, max(3.5 if n == 0 else 4.0, reel.read_secs(t, 2.5))) for n, t in enumerate(out["texts"])]
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                mp4 = f"{tmp}/reel.mp4"
+                reel.slides_reel(slides, secs, mp4)
+                shutil.copy(mp4, g.DOCS / f"posts/{pid}.mp4")
+        except Exception as e:
+            print(f"  ! ready Reel failed: {str(e)[:200]}")
+            continue
+        out["slides"][0].save(g.DOCS / f"posts/{pid}.jpg", "JPEG", quality=86, optimize=True)
+        items.append({"id": pid, "kind": "ready", "media": "reel", "image": f"posts/{pid}.jpg",
+                      "video": f"posts/{pid}.mp4", "songs": reel.chart_songs(state),
                       "headline": out["headline"], "tag": out["tag"], "caption": g.limit_hashtags(out["caption"]),
                       "source": "KhabarBawaal Original", "source_url": "", "proof": out["proof"],
                       "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -202,10 +230,6 @@ def make_batch(state: dict, count: int = 3) -> int:
         recent.append(out["headline"])
         made += 1
         print(f"  ready post: {out['headline']}")
-    gita = make_gita(state)
-    if gita:
-        items.append(gita)
-        made += 1
     state["recent_ready"] = recent[-60:]
     save(prune(items))
     return made
