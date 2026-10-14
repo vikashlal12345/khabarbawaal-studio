@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_pm-2026-10-14",
+  "image": "posts/20261014-1133-reel_news_pm-2026-10-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261014-113331-reel_news_pm-2026-10-14.mp4",
+  "headline": "Death penalty for Muskan, lover Sahil for 'blue drum' murder of her husband Saurabh Rajput",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Blue drum murder case mein bada faisla ⚖️\nSaurabh Rajput ki hatya mein Muskan Rastogi aur Sahil ko death penalty suna di gayi.\nYe case poore desh mein charcha mein raha.\nAapko kya lagta hai, sahi faisla hai? Comment karo.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bluedrum #breakingnews #indianews #justice #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/muskan-rastogi-lover-sahil-handed-death-penalty-for-navy-officer-saurabh-rajputs-blue-drum-murder-101791975185379.html",
+  "pin_comment": "Aapki raay kya hai is faisle par? Comment mein batao, respectfully.",
+  "songs": [
+   {
+    "title": "Bairan",
+    "artist": "Banjaare",
+    "lang": "hindi",
+    "mood": "betrayal theme = dhokha wali kahani"
+   },
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "serious, heavy tone for verdict"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "sad, calm tone for serious news"
+   },
+   {
+    "title": "Patient Zero",
+    "artist": "Taylor Swift",
+    "lang": "english",
+    "mood": "dark, moody serious news vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article: police said body was encased in cement in drum; cut-into-pieces is the prosecution's allegation, not police finding.",
+    "Fact corrected to match the article: Article says sentenced to death; hanging is not mentioned."
+   ],
+   "fixed": [
+    "police ke mutabiq body tukdon mein blue drum mein cement se seal thi. → police ke mutabiq body blue drum mein cement se seal thi; prosecution ka aarop hai ki body ke tukde kiye gaye.",
+    "dono ko fansi, ₹50,000 → dono ko maut ki saza, ₹50,000"
+   ]
+  },
+  "created_at": "2026-10-14T11:33:31+00:00"
+ },
+ {
   "id": "cf266a5054c7",
   "kind": "custom",
   "image": "posts/20261014-0832-cf266a5054c7-1.jpg",
@@ -465,52 +516,5 @@
    ]
   },
   "created_at": "2026-10-13T12:34:46+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-13",
-  "image": "posts/20261013-1132-reel_news_pm-2026-10-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261013-113243-reel_news_pm-2026-10-13.mp4",
-  "headline": "Drishyam 3 worldwide box office collection: Ajay Devgn film nears ₹500 crore, collects ₹490 crore despite drop",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Drishyam 3 ₹500 crore ke bilkul kareeb pahunch gayi 🔥\nAjay Devgn ki film worldwide ₹490 crore tak collect kar chuki hai.\nMonday drop ke baad bhi film ne apni pakad banaye rakhi.\nKya aapne dekhi? Comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#drishyam3 #ajaydevgn #boxoffice #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-ajay-devgn-film-nears-500-crore-mohanlal-101791874664425.html",
-  "pin_comment": "Drishyam 3 ko kitne stars doge out of 5? Bina spoiler ke batao!",
-  "songs": [
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "hype, mass"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "dramatic, powerful"
-   },
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "celebration, upbeat"
-   },
-   {
-    "title": "Soulmate",
-    "artist": "Badshah, Arijit Singh",
-    "lang": "hindi",
-    "mood": "dramatic, smooth"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "Ye Ajay Devgn ki career ki sabse badi film bani → Ye Ajay Devgn ke career ki sabse badi film bani"
-   ]
-  },
-  "created_at": "2026-10-13T11:32:43+00:00"
  }
 ]
