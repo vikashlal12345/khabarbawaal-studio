@@ -273,7 +273,8 @@
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-15",
-  "reel_news_noon": "2026-10-15"
+  "reel_news_noon": "2026-10-15",
+  "reel_bachpan": "2026-10-15"
  },
  "inbox_since": "5txBKAgrVnOC",
  "used_otps": [
@@ -408,7 +409,8 @@
   "43376",
   "pb1112",
   "48253",
-  "pb85004"
+  "pb85004",
+  "4536"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -456,7 +458,8 @@
   "Tinder: Bio, photos, interests. Hopr: Same route, same timing. Bangalore mein pyaar ab Hopr pe: 'Tumhara route mera route'",
   "Wo dost jo Diwali safai mein bolta hai: 'Ye purani cheez kaam aayegi.' Safai: 8 ghante. Kachra: zero.",
   "Wo dost jo Jailer 2 dekhke bolta hai: 'Spoiler nahi dunga.' Phir 10 minute mein ending, cameo, sab bata deta hai.",
-  "Wo dost jo bachpan mein bijli jaate hi sabse zor se chillata tha: 'Hooooo!' Phir bijli aate hi wahi 'Hooooo!'"
+  "Wo dost jo bachpan mein bijli jaate hi sabse zor se chillata tha: 'Hooooo!' Phir bijli aate hi wahi 'Hooooo!'",
+  "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -514,7 +517,11 @@
   "23584": "Mixkit Restricted License",
   "48253": "Free",
   "15763": "Mixkit Restricted License",
-  "14470": "Mixkit Restricted License"
+  "14470": "Mixkit Restricted License",
+  "4536": "Free",
+  "47574": "Mixkit Restricted License",
+  "12829": "Mixkit Restricted License",
+  "47991": "Mixkit Restricted License"
  },
  "create_done": [
   "1791580482",
@@ -657,10 +664,6 @@
   "Thumkeshwari",
   "Die With A Smile",
   "Jalebi Baby",
-  "Tabaahi (From \"Toxic\")",
-  "Thumkeshwari",
-  "Die With A Smile",
-  "Jalebi Baby",
   "Favorite",
   "Tu hai kahan",
   "Co2",
@@ -684,8 +687,14 @@
   "Tum Ho Toh (From \"Saiyaara\")",
   "Zara Zara",
   "Sweater Weather",
-  "blue"
+  "blue",
+  "Sahiba",
+  "Zara Zara",
+  "Let Me Down Slowly",
+  "Espresso"
  ],
  "poll_recent": [],
- "bachpan_recent": []
+ "bachpan_recent": [
+  "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam"
+ ]
 }
