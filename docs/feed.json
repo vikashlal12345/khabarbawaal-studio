@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_am-2026-10-15",
+  "image": "posts/20261015-0432-reel_news_am-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-043219-reel_news_am-2026-10-15.mp4",
+  "headline": "Karisma Kapoor reveals Salman Khan refused to shoot with her over her ‘too open, clingy’ outfit in Dulhan Hum Le Jayenge",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Karisma Kapoor Salman Khan Koffee With Karan 🎬\nSalman Khan Koffee With Karan ke final season ke pehle guest bane.\nKarisma ne bataya Dulhan Hum Le Jayenge mein outfit ko lekar Salman ne shoot se mana kiya tha.\nUnke mutabiq outfit 'too open, clingy' laga.\nAapko kya lagta hai, Salman sahi the? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#salmankhan #karismakapoor #koffeewithkaran #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/karisma-kapoor-reveals-salman-khan-refused-to-shoot-with-her-over-her-too-open-clingy-outfit-in-dulhan-hum-le-jayenge-101792035143522.html",
+  "pin_comment": "Dulhan Hum Le Jayenge ka kaun sa gaana aapka favourite hai? Neeche batao.",
+  "songs": [
+   {
+    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
+    "lang": "hindi",
+    "mood": "filmy reunion vibe, light fun"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "old-school romance, Bollywood throwback"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "fun party gossip energy"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "chill, easygoing celeb chat"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-15T04:32:19+00:00"
+ },
+ {
   "id": "reel_clip_am-2026-10-15",
   "image": "posts/20261015-0422-reel_clip_am-2026-10-15.jpg",
   "kind": "reel",
@@ -502,50 +547,5 @@
    "fixed": []
   },
   "created_at": "2026-10-14T07:32:36+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-14",
-  "image": "posts/20261014-0432-reel_news_am-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-043210-reel_news_am-2026-10-14.mp4",
-  "headline": "Randeep Hooda poses with John Cena, shares unseen glimpses of wife Lin Laishram, daughter from sets of the Matchbox movie",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "John Cena ke saath Randeep Hooda! 🔥\nRandeep ne Matchbox: The Movie ke sets se photos share ki.\nWife Lin Laishram aur beti ki unseen jhalak bhi hai.\nTumhe kaun si photo sabse achhi lagi? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#randeephooda #johncena #bollywood #matchbox #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/randeep-hooda-poses-with-john-cena-shares-unseen-glimpses-of-wife-lin-laishram-daughter-from-sets-of-the-matchbox-movie-sam-hargrave-101791947304461.html",
-  "pin_comment": "Randeep aur John Cena ki jodi dekhni thi kisne? Comment mein batao!",
-  "songs": [
-   {
-    "title": "Real Bad Man",
-    "artist": "Karan Aujla",
-    "lang": "hindi",
-    "mood": "swag entry = Hollywood vibes"
-   },
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "desi hype for Hollywood moment"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "star-studded sets, big movie feel"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "high energy celebrity montage"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-14T04:32:10+00:00"
  }
 ]
