@@ -240,7 +240,7 @@ function hookChart(box, pts) {
         : making ? '<span class="chip">⏳ in progress</span>'
         : !post ? `<span class="chip bad">❌ not made</span>`
         : (state === 'warn' ? '<span class="chip warn">⚠️ normal post</span>' : '<span class="chip made">✅ made</span>')
-          + (link ? `<span class="chip posted">📲 posted${r ? ` · ❤️ ${r.likes}` : ''}</span>` : '<span class="chip">not posted</span>');
+          + (link ? `<span class="chip posted">📲 posted${r ? `${r.views != null ? ` · 👁 ${r.views}` : ''} · ❤️ ${r.likes}` : ''}</span>` : '<span class="chip">not posted</span>');
       return `<div class="slot"><span class="t">${time}</span><span class="name">${esc(name)}</span><span class="chips">${chips}</span>
         ${why ? `<span class="why">${esc(why)}</span>` : ''}</div>`;
     }).join('');
@@ -267,14 +267,15 @@ function hookChart(box, pts) {
       return null;   // old types (market, thought, fun…) are left out
     };
     const items = Object.entries(links || {}).filter(([id, l]) => inLast(l.posted_at || l.linked_at, 14) && res[id] && !boostsData[id])
-      .map(([id, l]) => ({ id, ...l, type: typeOf(l), likes: res[id].likes, comments: res[id].comments })).filter(x => x.type);
+      .map(([id, l]) => ({ id, ...l, type: typeOf(l), likes: res[id].likes, comments: res[id].comments, views: res[id].views })).filter(x => x.type);
     const avg = list => list.length ? list.reduce((a, x) => a + x.likes, 0) / list.length : 0;
     const groups = {};
     items.forEach(x => (groups[x.type] = groups[x.type] || []).push(x));
     const rows = Object.entries(groups).map(([k, v]) => [k, avg(v), v.length]).sort((a, b) => b[1] - a[1]);
     const max = Math.max(1, ...rows.map(r => r[1]));
     const reels = items.filter(x => x.type.startsWith('🎬') || x.type.startsWith('🙏')), cars = items.filter(x => !reels.includes(x));
-    const best = [...items].sort((a, b) => (b.likes + 2 * b.comments) - (a.likes + 2 * a.comments)).slice(0, 3);
+    // 👁 views first (approx. public count, read by the Mac; owner, 15 Oct 2026), then likes + comments
+    const best = [...items].sort((a, b) => ((b.views || 0) - (a.views || 0)) || ((b.likes + 2 * b.comments) - (a.likes + 2 * a.comments))).slice(0, 5);
     const slotOf = x => { const d = new Date(new Date(x.posted_at || x.linked_at).getTime() + 330 * 60000).getUTCHours();
       return d < 11 ? 'Morning (6–11 AM)' : d < 17 ? 'Afternoon (11 AM–5 PM)' : d < 20 ? 'Evening (5–8 PM)' : 'Night (8–11 PM)'; };
     const slots = {}; items.forEach(x => (slots[slotOf(x)] = slots[slotOf(x)] || []).push(x));
@@ -288,7 +289,8 @@ function hookChart(box, pts) {
         <span>${esc(k)}</span><span class="track"><i style="width:${v / max * 100}%"></i></span><span class="num">${v.toFixed(1)} · ${n} post${n > 1 ? 's' : ''}</span></div>`).join('')}
       <div class="sub">Best posts</div>
       ${best.map(x => `<div class="best"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.headline || x.id)}</a>
-        <span class="muted">❤️ ${x.likes} · 💬 ${x.comments}</span></div>`).join('')}
+        <span class="muted">${x.views != null ? `👁 ${x.views} · ` : ''}❤️ ${x.likes} · 💬 ${x.comments}</span></div>`).join('')}
+      <div class="muted" style="margin-top:6px">👁 = approx. views from Instagram's public page (lower than the app's Views; good for ranking).</div>
       ${bestSlot ? `<div class="muted" style="margin-top:10px">🕐 Best time so far: <b>${bestSlot[0]}</b> (${bestSlot[1].toFixed(1)} likes on average)</div>` : ''}`
       : '<div class="muted">Link your posts with 🔗 Insta link in the app: their likes show up here by post type.</div>'}
       <div class="muted" style="margin-top:8px">Boosted posts are left out (paid reach would mislead).

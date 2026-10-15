@@ -608,11 +608,13 @@ def viral_memory(note: str = "") -> str:
     except Exception:
         return ""
     top, weak = data.get("top", [])[:10], data.get("weak", [])[:5]
-    if not top:
+    recorded = sorted(data.get("recorded", []), key=lambda t: -t["views"])[:5]
+    if not top and not recorded:
         return ""
     line = lambda t: f"- {t['views']} views: {t['title']}" + (f" ({t['note']})" if t.get("note") else "")
-    return ("\n\nWhat went viral for us (views on our Instagram; aim for stories, hooks and angles like these" +
-            (f"; {note}" if note else "") + "):\n" + "\n".join(line(t) for t in top) +
+    return ("\n\nWhat went viral for us (aim for stories, hooks and angles like these" + (f"; {note}" if note else "") +
+            "; the page's rules above always come first, e.g. no matches or topics the owner ruled out):" + ("\nOur best Reels (approx. views, last 30 days):\n" + "\n".join(line(t) for t in top) if top else "") +
+            ("\nThe owner's exact numbers:\n" + "\n".join(line(t) for t in recorded) if recorded else "") +
             ("\nOur weakest Reels (avoid stories and angles like these):\n" + "\n".join(line(t) for t in weak) if weak else ""))
 
 

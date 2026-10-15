@@ -68,13 +68,13 @@ def main(video: str) -> None:
 
 
 def save_viral(posts: list[dict]) -> None:
-    """📊 'What went viral for us' (owner, 15 Oct 2026): the top 10 and weakest 5 Reels (title = the caption's first
-    line, older than a day so views have settled) go to state/viral.json, merged with earlier recordings (highest
-    views kept, last 30 days); every Reel picker and writer reads it (reel.viral_memory)."""
+    """📊 The owner's exact view numbers (owner, 15 Oct 2026): Reels older than 20 h (title = the caption's first
+    line) go to state/viral.json 'recorded', merged with earlier recordings (highest views kept, last 30 days); every
+    Reel picker and writer reads it next to the daily embed ranking (reel.viral_memory)."""
     import json
     path = HERE.parent / "state" / "viral.json"
     old = json.loads(path.read_text()) if path.exists() else {}
-    seen = {r["title"]: r for r in old.get("all", [])}
+    seen = {r["title"]: r for r in old.get("recorded", [])}
     for r in posts:
         if r["kind"] != "Reel" or datetime.now() - r["ist"] < timedelta(hours=20):
             continue
@@ -83,10 +83,9 @@ def save_viral(posts: list[dict]) -> None:
                             "at": r["ist"].strftime("%Y-%m-%d %H:%M"), "note": prev.get("note", "")}
     keep = [r for r in seen.values() if datetime.now() - datetime.strptime(r["at"], "%Y-%m-%d %H:%M") < timedelta(days=30)]
     keep.sort(key=lambda r: -r["views"])
-    data = {"updated": datetime.now().strftime("%Y-%m-%d"), "top": keep[:10],
-            "weak": [r for r in keep[::-1] if r not in keep[:10]][:5], "all": keep}
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
-    print(f"Saved {len(data['top'])} top / {len(data['weak'])} weakest Reels to {path} (upload with save.py)")
+    old["recorded"] = keep   # exact 'Views' from the app; mac_stats.py fills 'top'/'weak' from embed views daily
+    path.write_text(json.dumps(old, ensure_ascii=False, indent=1))
+    print(f"Saved {len(keep)} recorded Reels (top {keep[0]['views'] if keep else 0} views) to {path} (upload with save.py)")
 
 
 if __name__ == "__main__":

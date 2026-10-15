@@ -122,10 +122,59 @@ def instagram(stats: Path, handle: str = "khabarbawaal") -> None:
             continue
         m = meta(html)
         if m:
-            data["posts"][pid] = {"likes": ig_count(m.group(1), "likes"), "comments": ig_count(m.group(1), "comments"),
+            data["posts"][pid] = {**data["posts"].get(pid, {}), "likes": ig_count(m.group(1), "likes"),
+                                  "comments": ig_count(m.group(1), "comments"),
                                   "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+        views = embed_views(info["url"], info.get("linked_at", ""))
+        if views is not None:
+            data["posts"].setdefault(pid, {})["views"] = views
     path.write_text(json.dumps(data, indent=1))
     print(f"instagram: {len(data['posts'])} posts checked, followers {data['followers'][-1]['followers'] if data['followers'] else '?'}")
+    viral_list(stats, links, data["posts"])
+
+
+def embed_views(url: str, linked_at: str) -> int | None:
+    """👁 A Reel's view count from its public embed page (owner, 15 Oct 2026). It is lower than the 'Views' in the
+    Instagram app and updates later, so it is used to RANK Reels, not as exact numbers. Only Reels linked in the
+    last 3 days (their views still change), one page a second (Instagram limits bursts)."""
+    import re
+    import time
+    m = re.search(r"/(reel|p)/([A-Za-z0-9_-]+)", url)
+    if not m or (linked_at and datetime.now(timezone.utc) - datetime.fromisoformat(linked_at) > timedelta(days=3)):
+        return None
+    time.sleep(1)
+    try:
+        html = requests.get(f"https://www.instagram.com/{m.group(1)}/{m.group(2)}/embed/captioned/",
+                            headers={"User-Agent": IG_UA}, timeout=20).text
+    except requests.RequestException:
+        return None
+    v = re.search(r'\\?"video_view_count\\?":\s*(\d+)', html)
+    return int(v.group(1)) if v else None
+
+
+def viral_list(stats: Path, links: dict, posts: dict) -> None:
+    """📈 'What went viral for us': our top 10 and weakest 5 Reels of the last 30 days by embed views (posted 12 h+
+    ago, so views have settled a bit) -> state/viral.json, which every Reel picker and writer reads
+    (reel.viral_memory). The owner's screen-recording numbers stay under 'recorded'."""
+    path = stats.parent.parent / "state" / "viral.json"
+    old = json.loads(path.read_text()) if path.exists() else {}
+    now = datetime.now(timezone.utc)
+    rows = []
+    for pid, info in links.items():
+        v = posts.get(pid, {}).get("views")
+        at = info.get("posted_at") or info.get("linked_at")
+        if v is None or not at or not 0.5 <= (now - datetime.fromisoformat(at)).total_seconds() / 86400 <= 30:
+            continue
+        kind = (info.get("tag", "").split("·")[-1].strip() or info.get("kind", "")).title()
+        rows.append({"title": f"[{kind}] {info.get('headline', '')[:110]}", "views": v, "at": at[:16].replace("T", " ")})
+    if not rows:
+        return
+    rows.sort(key=lambda r: -r["views"])
+    data = {"updated": now.strftime("%Y-%m-%d %H:%M"), "source": "embed views (approx., for ranking)",
+            "top": rows[:10], "weak": [r for r in rows[::-1] if r not in rows[:10]][:5],
+            "recorded": old.get("recorded", [])}
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
+    print(f"viral list: {len(rows)} Reels ranked, top {rows[0]['views']} views")
 
 
 def main() -> None:

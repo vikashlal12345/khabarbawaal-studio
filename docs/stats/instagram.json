@@ -870,17 +870,20 @@
   "reel_devotion-2026-10-13": {
    "likes": 3,
    "comments": 0,
-   "checked_at": "2026-10-15T17:18:58+00:00"
+   "checked_at": "2026-10-15T17:18:58+00:00",
+   "views": 2
   },
   "reel_clip_am-2026-10-13": {
    "likes": 2,
    "comments": 0,
-   "checked_at": "2026-10-15T17:18:59+00:00"
+   "checked_at": "2026-10-15T17:18:59+00:00",
+   "views": 20
   },
   "r20261012-193626-gita": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:00+00:00"
+   "checked_at": "2026-10-15T17:19:00+00:00",
+   "views": 2
   },
   "r20261012-213202-bhakti": {
    "likes": 2,
@@ -900,37 +903,44 @@
   "reel_clip-2026-10-13": {
    "likes": 2,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:03+00:00"
+   "checked_at": "2026-10-15T17:19:03+00:00",
+   "views": 33
   },
   "reel_news_pm-2026-10-13": {
    "likes": 3,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:03+00:00"
+   "checked_at": "2026-10-15T17:19:03+00:00",
+   "views": 38
   },
   "reel_news-2026-10-13": {
    "likes": 0,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:04+00:00"
+   "checked_at": "2026-10-15T17:19:04+00:00",
+   "views": 5
   },
   "reel_meme-2026-10-13": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:05+00:00"
+   "checked_at": "2026-10-15T17:19:05+00:00",
+   "views": 68
   },
   "reel_politics-2026-10-13": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:06+00:00"
+   "checked_at": "2026-10-15T17:19:06+00:00",
+   "views": 9
   },
   "reel_top5-2026-10-13": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:12+00:00"
+   "checked_at": "2026-10-15T17:19:12+00:00",
+   "views": 27
   },
   "r20261013-193409-gita": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:12+00:00"
+   "checked_at": "2026-10-15T17:19:12+00:00",
+   "views": 2
   },
   "r20261013-213158-bhakti": {
    "likes": 1,
@@ -940,27 +950,32 @@
   "reel_devotion-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:14+00:00"
+   "checked_at": "2026-10-15T17:19:14+00:00",
+   "views": 19
   },
   "reel_clip_am-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:15+00:00"
+   "checked_at": "2026-10-15T17:19:15+00:00",
+   "views": 7
   },
   "reel_top5_am-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:15+00:00"
+   "checked_at": "2026-10-15T17:19:15+00:00",
+   "views": 34
   },
   "reel_news_am-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:16+00:00"
+   "checked_at": "2026-10-15T17:19:16+00:00",
+   "views": 64
   },
   "reel_clip-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:17+00:00"
+   "checked_at": "2026-10-15T17:19:17+00:00",
+   "views": 7
   },
   "cf266a5054c7": {
    "likes": 2,
@@ -970,77 +985,92 @@
   "reel_news_pm-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:18+00:00"
+   "checked_at": "2026-10-15T17:19:18+00:00",
+   "views": 43
   },
   "reel_news-2026-10-14": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:19+00:00"
+   "checked_at": "2026-10-15T17:19:19+00:00",
+   "views": 10
   },
   "reel_devotion-2026-10-15": {
    "likes": 4,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:20+00:00"
+   "checked_at": "2026-10-15T17:19:20+00:00",
+   "views": 23
   },
   "c843a439cdd6": {
    "likes": 3,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:21+00:00"
+   "checked_at": "2026-10-15T17:19:21+00:00",
+   "views": 29
   },
   "reel_clip_am-2026-10-15": {
    "likes": 1,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:21+00:00"
+   "checked_at": "2026-10-15T17:19:21+00:00",
+   "views": 39
   },
   "reel_news_am-2026-10-15": {
    "likes": 12,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:22+00:00"
+   "checked_at": "2026-10-15T17:19:22+00:00",
+   "views": 1113
   },
   "reel_news_noon-2026-10-15": {
    "likes": 2,
    "comments": 0,
-   "checked_at": "2026-10-15T17:19:23+00:00"
+   "checked_at": "2026-10-15T17:19:23+00:00",
+   "views": 66
   },
   "reel_clip-2026-10-15": {
    "likes": 0,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:24+00:00"
+   "checked_at": "2026-10-15T17:19:24+00:00",
+   "views": 62
   },
   "c4f625ea8af8": {
    "likes": 0,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:24+00:00"
+   "checked_at": "2026-10-15T17:19:24+00:00",
+   "views": 56
   },
   "reel_bachpan-2026-10-15": {
    "likes": 0,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:26+00:00"
+   "checked_at": "2026-10-15T17:19:26+00:00",
+   "views": 33
   },
   "reel_poll-2026-10-15": {
    "likes": 0,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:26+00:00"
+   "checked_at": "2026-10-15T17:19:26+00:00",
+   "views": 2
   },
   "reel_news_pm-2026-10-15": {
    "likes": 3,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:27+00:00"
+   "checked_at": "2026-10-15T17:19:27+00:00",
+   "views": 53
   },
   "reel_politics-2026-10-15": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:28+00:00"
+   "checked_at": "2026-10-15T17:19:28+00:00",
+   "views": 22
   },
   "reel_meme-2026-10-15": {
    "likes": 2,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:29+00:00"
+   "checked_at": "2026-10-15T17:19:29+00:00",
+   "views": 89
   },
   "reel_news-2026-10-15": {
    "likes": 1,
    "comments": 1,
-   "checked_at": "2026-10-15T17:19:30+00:00"
+   "checked_at": "2026-10-15T17:19:30+00:00",
+   "views": 43
   }
  }
 }
