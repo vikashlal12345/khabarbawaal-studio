@@ -118,6 +118,7 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   also uploads the video (≤14.5 MB, else re-recorded at 1280 px without sound), `make_media_reel()` burns the AI hook onto it
   (`reel.own_reel`, own sound kept). Reel without video: `make_reel()` → `reel.topic_reel()` (news → photo slideshow,
   funny idea → Tag that friend/meme). Any failure falls back to the normal post. The owner only writes context.
+  Context first (owner 15 Oct 2026: 'bachpan' matched a school app, its screenshots showed a child's name): `understand_topic()` (1 AI request) = what the owner means + the real things named (app/person/party/team/film_show/brand/event_place); ordinary words are never apps. Pictures by kind (`named_photos`): apps → App Store logos 'VS' card + screenshots; people/parties/teams/films → Wikipedia pictures (`names_card`, credited in the caption); brands/events → news photos; nothing named (an everyday moment) → a stock video clip. Proofreader `private` issue (a private person's details in a picture) → `proofread.Private` on Reels: the Create Reel switches to a video clip, robot Reels are made again.
 - 🎨 God pictures (6 AM devotional + Gita Reels + 3 AM God picture, owner 11 Oct 2026): `flux_images()` paints 2 scenes
   (deity alone / with a young Indian today) with free public Hugging Face demos, no account or billing (owner said no
   billing; Gemini API free tier = 0 images): Z-Image-Turbo → FLUX.2-klein → FLUX.1-schnell (~4-5 pictures a day per IP,

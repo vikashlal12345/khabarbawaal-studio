@@ -29,8 +29,9 @@ SCHEMA = {
             "required": ["wrong", "right", "why", "kind"], "additionalProperties": False}},
         "drop_slides": {"type": "array", "items": {"type": "integer"}},
         "issues": {"type": "array", "items": {"type": "object", "properties": {
-            "slide": {"type": "integer"}, "problem": {"type": "string"}, "unverified": {"type": "boolean"}},
-            "required": ["slide", "problem", "unverified"], "additionalProperties": False}},
+            "slide": {"type": "integer"}, "problem": {"type": "string"}, "unverified": {"type": "boolean"},
+            "private": {"type": "boolean"}},
+            "required": ["slide", "problem", "unverified", "private"], "additionalProperties": False}},
     },
     "required": ["fixes", "drop_slides", "issues"],
     "additionalProperties": False,
@@ -46,7 +47,10 @@ Check:
 text covering someone's face.
 3. Facts on the slides and caption match the article (names, numbers, quotes); allegations are \
 attributed, not stated as fact.
-4. Nothing offensive or defamatory. The page is openly pro right-wing and critical of the left/opposition: that one-sided political tone is intentional, so do NOT flag or "fix" the slant. Flag only factual errors, invented quotes, hate against a religion/caste/community, or calls to violence.
+4. Pictures that show a private person's details: a child's name with school/class/roll number, a phone number, \
+home address, ID card, document, bank details or someone's private account screen (not the names of people the \
+story is about).
+5. Nothing offensive or defamatory. The page is openly pro right-wing and critical of the left/opposition: that one-sided political tone is intentional, so do NOT flag or "fix" the slant. Flag only factual errors, invented quotes, hate against a religion/caste/community, or calls to violence.
 
 Return:
 - fixes: corrections for mistakes in OUR texts. kind = "spelling" for spelling/grammar/names, \
@@ -60,7 +64,8 @@ happen") is NOT an issue: fix it (kind = "fact") by rewording it to what the art
 without that claim. Jokes, opinions and obvious exaggeration are fine.
 - issues: only problems a text fix or dropping a slide can't solve (layout, photo problems), with the slide \
 number (1 = first image, 0 = caption); unverified = true if it is a claim you could not fix that may be untrue or \
-isn't supported by the article. Empty if the post is fine.
+isn't supported by the article; private = true if a picture shows a private person's details (check 4). Empty if \
+the post is fine.
 
 Article (for fact checks):
 {article}
@@ -74,6 +79,11 @@ Texts used on the slides:
 
 class Unverified(RuntimeError):
     """A strict proofread (Reels) left a claim it couldn't check."""
+
+
+class Private(Unverified):
+    """A strict proofread (Reels) saw a private person's details in a picture (owner, 15 Oct 2026: an App Store
+    screenshot showed a child's name, class and roll number); the Reel is made again."""
 
 
 def ai_available() -> bool:
@@ -174,6 +184,9 @@ def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None,
         result = check(slides, caption_of(data), strings(data), article)
         if result is None:
             return slides, data, {"state": "none", "issues": [], "fixed": fixed}
+        private = [i["problem"] for i in result["issues"] if i.get("private")]
+        if strict and private:
+            raise Private(f"a picture shows a private person's details: {private[0][:150]}")
         texts = strings(data)
         fixes = [f for f in result["fixes"]
                  if f["wrong"] and f["wrong"] != f["right"] and any(f["wrong"] in t for t in texts)]

@@ -1,5 +1,50 @@
 [
  {
+  "id": "c4f625ea8af8",
+  "image": "posts/20261015-0806-c4f625ea8af8.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261015-080626-c4f625ea8af8.mp4",
+  "headline": "Wo dost jo bachpan mein bijli jaate hi sabse zor se chillata tha: 'Hooooo!' Phir bijli aate hi wahi 'Hooooo!'",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Bachpan mein aisa kaun karta tha 😂\nBijli gayi aur poori gali ek saath chillayi: 'Hooooo!'\nApni gali ka sabse zor se chillane wala kaun tha? Comment karo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#bachpan #childhoodmemories #reelsindia #relatable #india",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aur bijli aate hi wahi chillana. Bijli gayi to khushi, aayi to bhi khushi.",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "throwback vibe = purane din"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "shararat = bachpan ki masti"
+   },
+   {
+    "title": "Señorita",
+    "artist": "Shawn Mendes, Camila Cabello",
+    "lang": "english",
+    "mood": "throwback nostalgia hit"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "chill fun playful beat"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-15T08:06:26+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-15",
   "image": "posts/20261015-0736-reel_clip-2026-10-15.jpg",
   "kind": "reel",

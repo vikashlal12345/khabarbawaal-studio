@@ -502,8 +502,6 @@ _COMMON = {
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the text to colour"},
     "clip_search": {"type": "array", "items": {"type": "string"}},
     "clip_wanted": {"type": "string"},
-    "apps": {"type": "array", "items": {"type": "string"}, "description": "Real phone apps the joke names, as the App "
-             "Store calls them (e.g. ['Hopr', 'Tinder']); empty if none"},
     "photo_query": {"type": "string", "description": "If the joke names a real app, brand, person, film or event: a "
                     "short English news search for real photos of it (e.g. 'Hopr dating app Bengaluru Tinder'); "
                     "empty for an everyday moment"},
@@ -1058,6 +1056,35 @@ def named_apps(text: str) -> list[dict]:
     return out
 
 
+UNDERSTAND_SCHEMA = {"type": "object", "properties": {
+    "meaning": {"type": "string", "description": "One line: what the owner means and what the Reel should be about, "
+                "e.g. 'childhood nostalgia: kids caught by mummy after a naughty act'"},
+    "named": {"type": "array", "description": "Real things the owner names ON PURPOSE (empty for an everyday moment, "
+              "feeling or situation)", "items": {"type": "object", "properties": {
+                  "name": {"type": "string", "description": "As the owner wrote it"},
+                  "kind": {"type": "string", "enum": ["app", "person", "party", "team", "film_show", "brand", "event_place"]},
+                  "lookup": {"type": "string", "description": "app: its App Store name; person/party/team/film_show: its "
+                             "exact English Wikipedia page title; brand/event_place: a short English news search"}},
+                  "required": ["name", "kind", "lookup"], "additionalProperties": False}}},
+    "required": ["meaning", "named"], "additionalProperties": False}
+
+
+def understand_topic(topic: str, apps: list[dict], news: str) -> dict:
+    """What the owner's ➕ Create words mean, and which real things they name (owner, 15 Oct 2026: "you need to
+    understand the context every time, it cannot be an app every time": 'bachpan' matched a school app and the Reel
+    showed its screenshots). Picks the pictures: an everyday moment gets a video clip, named things their own pictures."""
+    import fun
+    found = "\n".join(f"- {a['name']}: an App Store app is called '{a['title']}'" for a in apps)
+    return fun.claude_json(
+        "You read a request from the owner of an Indian Hinglish meme page who wants a funny Reel. Understand what "
+        "they mean. List only real things they name on purpose: apps, people, parties, teams, films/shows, brands, "
+        "events or places. Ordinary Hindi/English words (bachpan, mummy, kaun, dost, office) are never apps or brands, "
+        "even when an app shares the word.",
+        f"Owner's words: {topic}\n\nWords that match an App Store app name (only a coincidence unless the owner "
+        f"means that app):\n{found or '(none)'}\n\nToday's news about it:\n{news[:2000] or '(none)'}",
+        UNDERSTAND_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="reel topic meaning")
+
+
 def stock_photos(query: str, want: int = 3) -> list[Image.Image]:
     """Free stock photos (Pixabay: free for business use, no credit needed) when no video clip fits."""
     import requests
@@ -1179,22 +1206,57 @@ def app_photos(names: list[str]) -> list[Image.Image]:
             found.append((name, icon.convert("RGBA"), shot))
     if not found:
         return []
+    return [names_card([(name, icon) for name, icon, _ in found])] + [shot.convert("RGB") for _, _, shot in found if shot]
+
+
+def names_card(items: list[tuple[str, Image.Image]]) -> Image.Image:
+    """'A VS B' card: each picture in a rounded tile with its name under it (logos sit whole on white, photos are
+    cropped to fill)."""
     card = Image.new("RGB", (1200, 675), "#111111")
     d = ImageDraw.Draw(card)
     for y in range(675):
         d.line((0, y, 1200, y), fill=(17 + y // 30, 17, 17 + y // 25))
     size, gap = 300, 160
-    x = (1200 - len(found) * size - (len(found) - 1) * gap) // 2
-    for i, (name, icon, _) in enumerate(found):
-        ic = icon.resize((size, size), Image.LANCZOS)
+    x = (1200 - len(items) * size - (len(items) - 1) * gap) // 2
+    for i, (name, pic) in enumerate(items):
+        if pic.mode == "RGBA" and pic.getextrema()[3][0] < 250:   # a logo with a see-through background
+            tile = Image.new("RGBA", (size, size), "#FFFFFF")
+            logo = pic.copy()
+            logo.thumbnail((size - 40, size - 40), Image.LANCZOS)
+            tile.alpha_composite(logo, ((size - logo.width) // 2, (size - logo.height) // 2))
+        else:
+            tile = ImageOps.fit(pic.convert("RGBA"), (size, size), Image.LANCZOS, centering=(0.5, 0.3))
         mask = Image.new("L", (size, size), 0)
         ImageDraw.Draw(mask).rounded_rectangle((0, 0, size - 1, size - 1), radius=66, fill=255)
-        card.paste(ic, (x, 150), mask)
-        d.text((x + size // 2, 150 + size + 50), name, font=font("Poppins-Bold.ttf", 56), fill="#FFFFFF", anchor="mm")
-        if i < len(found) - 1:
+        card.paste(tile, (x, 150), mask)
+        d.text((x + size // 2, 150 + size + 50), printable(name)[:16], font=font("Poppins-Bold.ttf", 56), fill="#FFFFFF",
+               anchor="mm")
+        if i < len(items) - 1:
             d.text((x + size + gap // 2, 150 + size // 2), "VS", font=font("Anton-Regular.ttf", 110), fill=YELLOW, anchor="mm")
         x += size + gap
-    return [card] + [shot.convert("RGB") for _, _, shot in found if shot]
+    return card
+
+
+def named_photos(named: list[dict]) -> tuple[list[Image.Image], list[str]]:
+    """Pictures of the real things the owner's ➕ Create idea names, by what they are (owner, 15 Oct 2026): apps ->
+    App Store icons + screenshots; people/parties/teams/films -> their free Wikipedia pictures (credited, like the
+    poll; never a random news photo, it could be someone else); brands/events -> news photos.
+    Returns (pictures, caption credits)."""
+    apps = [n["name"] for n in named if n["kind"] == "app"][:3]   # the short name labels the logo ('Hopr')
+    photos = app_photos(apps) if apps else []
+    wiki, credits = [], []
+    for n in [n for n in named if n["kind"] in ("person", "party", "team", "film_show")][:3]:
+        img, credit = wiki_thumb(n["lookup"] or n["name"], size=1200)
+        if img is not None:
+            wiki.append((n["name"], img))
+            credits.append(f"{printable(n['name'])}: {credit}")
+    if wiki:
+        photos += [names_card(wiki)] + [img.convert("RGB") for _, img in wiki
+                                        if min(img.size) >= 500 and not (img.mode == "RGBA" and img.getextrema()[3][0] < 250)]
+    for n in [n for n in named if n["kind"] in ("brand", "event_place")][:2]:
+        if len(photos) < 4:
+            photos += topic_photos(n["lookup"] or n["name"], want=2)
+    return photos, credits
 
 
 def topic_photos(query: str, want: int = 4) -> list[Image.Image]:
@@ -1254,37 +1316,54 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     import proofread
     import status
     status.step("Writing 3 jokes", 2)
-    notes, apps = "", []
-    if topic:   # owner, 14 Oct 2026: Hopr is a carpool app; the writer thought it was a dating app
-        apps = named_apps(topic)
+    notes, named = "", []
+    if topic:   # owner, 15 Oct 2026: "understand the context every time, it cannot be an app every time"
+        apps = named_apps(topic)    # App Store names matching a word: ordinary words ('bachpan') match too
         search = re.sub(r"(?i)^\s*(please\s+)?(make|create|bana\w*)\s+(a|an|ek)?\s*(funny\s+)?(reel|post|meme)\s+"
                         r"(of|on|about|for|ki|ka|pe|par)?\s*", "", topic)
         news = topic_articles(search)
-        notes = (("Apps named in the idea (App Store): " + "; ".join(f"{a['name']} = {a['title']}: {a['about']}"
-                                                                     for a in apps)) if apps else "") + \
-                (f"\n\nLatest news about it (use these facts, invent none):\n{news[:3000]}" if news else "")
+        sense = understand_topic(topic, apps, news)
+        named = sense["named"]
+        meant = {n["name"].lower() for n in named if n["kind"] == "app"} | \
+                {n["lookup"].lower() for n in named if n["kind"] == "app"}
+        apps = [a for a in apps if a["name"].lower() in meant or any(a["name"].lower() in m for m in meant)]
+        print(f"  owner means: {sense['meaning']} | named: {[(n['name'], n['kind']) for n in named]}")
+        notes = (f"What the owner means: {sense['meaning']}" +
+                 (("\nReal things the owner names: " + "; ".join(f"{n['name']} ({n['kind'].replace('_', '/')})"
+                                                              for n in named)) if named else "") +
+                 (("\nApps named in the idea (App Store; owner, 14 Oct 2026: Hopr is a carpool app, the writer thought "
+                   "it was a dating app): " + "; ".join(f"{a['name']} = {a['title']}: {a['about']}" for a in apps))
+                  if apps else "") +
+                 (f"\n\nLatest news about it (use these facts, invent none):\n{news[:3000]}" if news and named else ""))
     post = write_joke(kind, state, evergreen, topic, notes)
     status.step(f"Judge picked: {post['based_on'][:80]}", 3)
-    # ➕ Create (owner, 14 Oct 2026: "no photos or logo of Hopr and Tinder"): real photos of what the idea names
-    # (from news articles, often the app screens/logos) instead of a stock clip; stock clip if none are found.
+    # ➕ Create: pictures of the real things the idea names (owner, 14 Oct 2026: "no photos or logo of Hopr and
+    # Tinder"); an everyday moment ('bachpan me aisa kaun kiya?') gets a video clip like the daily jokes.
     art_note = ""
-    photos = app_photos(list(dict.fromkeys([a["name"] for a in apps] + post.get("apps", [])))) if topic else []
-    if topic and len(photos) < 3 and post.get("photo_query", "").strip():
-        photos += topic_photos(post["photo_query"], want=3 - len(photos) + 1)
-    real = len(photos) >= 2
-    if real:
-        status.step(f"Real photos: {', '.join(post.get('apps', [])) or post.get('photo_query', '')[:60]}", 4)
-        clip, secs, cid = os.path.join(tmp, "photos.mp4"), 14.0, None
-        photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
-        print(f"  real photos: {len(photos)} (apps {post.get('apps', [])}, search '{post.get('photo_query', '')}')")
-    else:
+    photos, credits = named_photos(named) if named else ([], [])
+    clip = secs = cid = real = None
+
+    def video():   # a stock clip; none fits: photos -> 🎨 AI picture -> branded background
+        nonlocal clip, secs, cid, real, art_note
         try:
             cid = pick_clip(post, state)
-            clip, secs = download_clip(cid, tmp)
-        except RuntimeError as e:   # no fitting clip: photos -> 🎨 AI picture -> branded background
+            (clip, secs), real = download_clip(cid, tmp), False
+        except RuntimeError as e:
             print(f"  ! {e}")
             clip, secs, art_note = fallback_visual(post, (RW, RH) if kind in CLIP_KINDS else (RW, 608), tmp)
             real, cid = True, None
+    if len(photos) >= 2:
+        status.step(f"Real photos: {', '.join(n['name'] for n in named)[:60]}", 4)
+        clip, secs, cid, real = os.path.join(tmp, "photos.mp4"), 14.0, None, True
+        photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
+        print(f"  real photos: {len(photos)} of {[n['name'] for n in named]}")
+    else:
+        photos, credits = [], []
+        video()
+
+    def caption_of(d):   # Wikipedia pictures need their photographer + licence (owner, 15 Oct 2026)
+        return g.fun_caption({**d, "caption": d["caption"].strip() + (
+            "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")})
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
     # Long enough to read the (proofread) text in full; a short stock clip caps Tag that friend (memes freeze).
@@ -1308,7 +1387,15 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
                  f"including in hashtags; check only spellings and any other stated facts): {topic}\n\n{notes}")
     else:
         check = "" if evergreen else topic_articles(post["based_on"])
-    frames, post, proof = proofread.run(render, post, g.fun_caption, check, strict=True)
+    try:
+        frames, post, proof = proofread.run(render, post, caption_of, check, strict=True)
+    except proofread.Private as e:   # e.g. a school app screenshot with a child's name: a video clip instead
+        if not photos:
+            raise
+        print(f"  ! {e}: a video clip instead of the real photos")
+        photos, credits = [], []
+        video()
+        frames, post, proof = proofread.run(render, post, caption_of, check, strict=True)
     if art_note.startswith("AI"):   # Meta asks for its "AI info" label on AI pictures
         proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
             f"🎨 The picture is an {art_note}: turn on Instagram's 'AI info' label when posting."]}
@@ -1320,7 +1407,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     return frames[-1], out, {
         "headline": printable(text).replace("\n", " "),
         "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind in CLIP_KINDS else "MEME"),
-        "caption": g.limit_hashtags(g.fun_caption(post)), "source": "KhabarBawaal Original", "source_url": "",
+        "caption": g.limit_hashtags(caption_of(post)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof}
 
 
@@ -2849,7 +2936,7 @@ POLL_BUTTONS = [("heart", "LIKE", "❤️ Like"), ("comment", "COMMENT", "💬 C
                 ("share", "SHARE", "✈️ Share")]
 
 
-def wiki_thumb(title: str) -> tuple[Image.Image | None, str]:
+def wiki_thumb(title: str, size: int = 600) -> tuple[Image.Image | None, str]:
     """The main picture of an English Wikipedia page (a PNG/JPG render: logos are SVG originals) and its credit,
     e.g. 'Bollywood Hungama (CC BY 3.0)' (owner, 15 Oct 2026: most Wikipedia photos need the photographer and licence
     credited). Non-free pictures (fair-use logos, posters) are skipped: (None, '')."""
@@ -2860,7 +2947,7 @@ def wiki_thumb(title: str) -> tuple[Image.Image | None, str]:
     try:
         page = next(iter(requests.get(api, timeout=15, headers=head, params={
             "action": "query", "format": "json", "redirects": 1, "prop": "pageimages", "piprop": "thumbnail|name",
-            "pithumbsize": 600, "titles": title}).json()["query"]["pages"].values()))
+            "pithumbsize": size, "titles": title}).json()["query"]["pages"].values()))
         src, name = page.get("thumbnail", {}).get("source", ""), page.get("pageimage", "")
         if not src or not name:
             return None, ""
