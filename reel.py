@@ -1893,7 +1893,14 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
 
 # ---------------------------------------------------------------- 4. political satire + reality check (6 PM)
 
-SATIRE_FACTS_SECS, SATIRE_PUNCH_SECS, SATIRE_FOLLOW_SECS = 10.0, 5.0, 1.0
+# Set by the owner (15 Oct 2026): REALITY CHECK 10 s, punchline + SEND THIS 5 s, follow 1 s; then hook, KYA HUA? and
+# REALITY CHECK 1 s shorter each (~29 s in all).
+SATIRE_FACTS_SECS, SATIRE_PUNCH_SECS, SATIRE_FOLLOW_SECS = 9.0, 5.0, 1.0
+
+
+def satire_hook_secs(claim: list[str]) -> float:
+    """The dig over the photos/clip: 1.5 s + 0.25 s a word, 4.5-6 s."""
+    return min(max(4.5, read_secs(" ".join(claim), 1.5)), 6.0)
 
 
 def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], context: list[str],
@@ -1925,7 +1932,7 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     def secs(text: str) -> float:          # time to read comfortably (~3.5 words/s + a hold; owner 12 Oct 2026: +1 s)
         return max(3.0, len(text.split()) / 3.5 + 1.9)
     t_ctx = clip_dur
-    d_ctx = 0.5 + secs(" ".join(context))
+    d_ctx = secs(" ".join(context)) - 0.5   # (owner, 15 Oct 2026: 1 s shorter)
     t_facts = t_ctx + d_ctx
     # Fixed by the owner (15 Oct 2026, after a 36.9 s Reel): REALITY CHECK 10 s, punchline + SEND THIS 5 s, follow 1 s.
     t_punch = t_facts + SATIRE_FACTS_SECS
@@ -2261,7 +2268,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     if credits:   # at least one real photo
         status.step(f"Photos: {', '.join(x['name'] for x in people)}", 4)
         # As long as the hook window, so every photo gets the same time (owner, 15 Oct 2026: Mann had 1.3 s)
-        secs = min(max(5.5, read_secs(" ".join(best["claim"]), 2.5)), 7.0)
+        secs = satire_hook_secs(best["claim"])
         clip, real = os.path.join(tmp, "people.mp4"), True
         photo_clip(photos[:3], RW, 608, secs, clip)
         print(f"  people photos: {len(photos[:3])} of {[x['wiki'] for x in people]}")
@@ -2280,8 +2287,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return g.full_caption({**p, "caption": p["caption"].strip() + (
             "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")}, item)
 
-    def render(d):   # the dig over the clip stays until it's read (2.5 s + 0.25 s a word, 5.5-7 s); later parts time themselves
-        clip_dur = min(max(5.5, read_secs(" ".join(d["post"]["claim"]), 2.5)), 7.0)
+    def render(d):   # the dig over the clip stays until it's read (satire_hook_secs); later parts time themselves
+        clip_dur = satire_hook_secs(d["post"]["claim"])
         start = 0.0 if real else max(0.0, secs - clip_dur - 0.2)   # a short clip freezes on its last frame
         return satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
                            d["post"]["punchline"], d["post"]["highlight"], out)
