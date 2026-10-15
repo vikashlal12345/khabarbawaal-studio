@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_bachpan-2026-10-15",
+  "image": "posts/20261015-0844-reel_bachpan-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-084410-reel_bachpan-2026-10-15.mp4",
+  "headline": "Mummy uthane aati thi toh aankhein band karke so jaane ka acting karte the... sabko pata tha",
+  "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
+  "caption": "Mummy ko lagta tha hum sach mein so rahe hain? Nahi, sab pata tha 😂\nComment karo MAINE BHI aur apni best acting batao!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#bachpan #90skids #desimemes #nostalgia #mummy",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Oscar toh us din hi banta tha, bas mummy ne diya nahi 😭",
+  "songs": [
+   {
+    "title": "Tum Ho Toh (From \"Saiyaara\")",
+    "artist": "Vishal Mishra, Hansika Pareek, Raj Shekhar",
+    "lang": "hindi",
+    "mood": "warm mummy-ghar nostalgia"
+   },
+   {
+    "title": "Zara Zara",
+    "artist": "Omkar Singh",
+    "lang": "hindi",
+    "mood": "chill lazy morning vibe"
+   },
+   {
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "lang": "english",
+    "mood": "cozy blanket morning mood"
+   },
+   {
+    "title": "blue",
+    "artist": "Yung Kai",
+    "lang": "english",
+    "mood": "calm sleepy dreamy vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-15T08:44:10+00:00"
+ },
+ {
   "id": "c4f625ea8af8",
   "image": "posts/20261015-0806-c4f625ea8af8.jpg",
   "kind": "custom",
@@ -608,46 +653,5 @@
    ]
   },
   "created_at": "2026-10-14T11:33:31+00:00"
- },
- {
-  "id": "cf266a5054c7",
-  "kind": "custom",
-  "image": "posts/20261014-0832-cf266a5054c7-1.jpg",
-  "options": [
-   "posts/20261014-0832-cf266a5054c7-1.jpg"
-  ],
-  "slides": [
-   "posts/20261014-0832-cf266a5054c7-s2.jpg",
-   "posts/20261014-0832-cf266a5054c7-s3.jpg"
-  ],
-  "headline": "US singer Mary Millben reportedly raises alarm over anti-India funding from America",
-  "tag": "POLITICS",
-  "caption": "Mary Millben ne anti-India funding par chinta jataayi 🇮🇳\nAmerican singer ne US se aane wale anti-India fund ka mudda uthaya hai.\nReport ke mutabik unhone America se aane wali is funding par chinta jataayi hai.\nDetail abhi limited hai.\nSahi mudda uthaya to 🔥, bas headline wali baat to 🤡\n\nFollow @khabarbawaal for daily updates.\n\n#india #trending #viral #news #marymillben",
-  "source": "Your pick",
-  "source_url": "",
-  "pin_comment": "Sabse interesting part: ye mudda America se uthaya gaya hai. Isko tum serious loge ya sirf noise? 🤔",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: 'phir se' (again) is not supported by the article",
-    "Fact corrected to match the article: The quote is not in the article; only the headline says she raised concern",
-    "Fact corrected to match the article: Trending claim is not supported by the article",
-    "Fact corrected to match the article: Claim about the voice not coming from India is not supported by the article",
-    "Fact corrected to match the article: Claim that she is a known open supporter of India is not in the article",
-    "Fact corrected to match the article: Social media discussion claim is not in the article",
-    "Fact corrected to match the article: Internal production note should not appear in a public post"
-   ],
-   "fixed": [
-    "Mary Millben phir se India ke liye bol padi → Mary Millben ne anti-India funding par chinta jataayi",
-    "unka kehna hai ki India ke khilaf ye funding ek serious sawaal hai → unhone America se aane wali is funding par chinta jataayi hai",
-    "Detail abhi limited hai, par baat ab India mein trend kar rahi hai. → Detail abhi limited hai.",
-    "Sabse interesting part: ye awaaz India se nahi, seedha America se aayi hai. → Sabse interesting part: ye mudda America se uthaya gaya hai.",
-    "aur India ki khulkar supporter maani jaati hain → hain",
-    "Mudda social media par India mein charcha ka vishay bana hua hai → Is mudde par abhi detail limited hai",
-    "lekin article aur photos uplabdh nahi the. → lekin abhi detail limited hai.",
-    "Mary Millben American singer hain hain → Mary Millben American singer hain"
-   ]
-  },
-  "created_at": "2026-10-14T08:32:39+00:00"
  }
 ]

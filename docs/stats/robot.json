@@ -3332,6 +3332,33 @@
      "tokens": 47662
     }
    }
+  },
+  "reel_bachpan": {
+   "posts": 0,
+   "requests": 4,
+   "input": 10,
+   "output": 2577,
+   "cache_read": 5857,
+   "cache_write": 42273,
+   "value_usd": 0.1954,
+   "by_purpose": {
+    "reel writing": {
+     "requests": 1,
+     "tokens": 18116
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 11362
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 13540
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 7699
+    }
+   }
   }
  }
 }
