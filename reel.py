@@ -203,7 +203,8 @@ HOOK_SECS, FOLLOW_SECS = 1.8, 1.5
 def hook_layer(text: str, highlight: set[str]) -> Image.Image:
     """🪝 The opening line (owner, 14 Oct 2026: viewers decide in under a second; our Reels used to open on an
     empty text area and the logo): 4-8 words, big and bold, white with a thick outline, yellow highlights."""
-    lines, fnt, lh = fit_lines(printable(text), RIGHT - LEFT + 60, 560, sizes=range(118, 64, -4), name="Anton-Regular.ttf")
+    # max 500 px tall: a 4-line hook shrinks a little instead of covering @khabarbawaal (owner, 15 Oct 2026)
+    lines, fnt, lh = fit_lines(printable(text), RIGHT - LEFT + 60, 500, sizes=range(118, 64, -4), name="Anton-Regular.ttf")
     imgs = line_images(lines, fnt, lh, "#FFFFFF", YELLOW, highlight, stroke=9)
     layer = Image.new("RGBA", (RW, len(imgs) * lh + 80), (0, 0, 0, 0))
     for j, img in enumerate(imgs):
