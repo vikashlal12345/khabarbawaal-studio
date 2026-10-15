@@ -635,8 +635,7 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "",
         text_of = lambda o: f"TAG THAT FRIEND: {o['text']}  [video: {o['clip_wanted']}]"
     else:
         text_of = lambda o: f"{' '.join(o['setup'])} -> {o['punch']}  [video: {o['clip_wanted']}]"
-    asks = list(dict.fromkeys(x for x in (ask, backup) if x))   # trend jokes, then the desi-life backup
-    for a in asks:
+    def write(a: str) -> list[dict]:
         options = fun.claude_json(system, f"{lead}\n\n{a}" + songs_prompt(songs),
                                   options_schema(option, "Exactly 3 different jokes"), model,
                                   purpose="reel writing")["options"][:3]
@@ -646,10 +645,27 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "",
                 o["text"] = unescape(o["text"])
             else:
                 o["punch"] = unescape(o["punch"])
-        try:   # the owner's own idea is always made: the best option even below the judge's bar (14 Oct 2026)
-            best = fun.judge_best(options, text_of, model, fallback=bool(topic))
+        return options
+
+    # Best Reels, never fail (owner, 15 Oct 2026): trend jokes -> one rewrite with the judge's reasons -> the
+    # desi-life backup round. The owner's own idea is always made (the best option even below the judge's bar).
+    asks = list(dict.fromkeys(x for x in (ask, backup) if x))
+    for a in asks:
+        try:
+            best = fun.judge_best(write(a), text_of, model, fallback=bool(topic))
             break
-        except fun.NoGoodJoke:
+        except fun.NoGoodJoke as e:
+            if a == ask and not topic and e.scores:
+                print("  jokes below the judge's bar: rewriting once with the judge's reasons")
+                notes = "\n".join(f"- Option {s['option']}: understandable {s['understandable']}, funny "
+                                  f"{s['funny']}, fresh {s['fresh']}: {s['why']}" for s in e.scores)
+                try:
+                    best = fun.judge_best(write(f"{a}\n\nA strict judge (a young Indian on Instagram) rejected your "
+                                                f"first 3 jokes:\n{notes}\nWrite 3 new ones that fix this."),
+                                          text_of, model)
+                    break
+                except fun.NoGoodJoke:
+                    pass
             if a == asks[-1]:
                 raise
             print("  no trend joke was clear and funny enough: relatable desi-life jokes instead")
@@ -887,29 +903,99 @@ def clip_license(cid: str, known: dict) -> str:
     return ""
 
 
+CLIP_URLS: dict[str, str] = {}   # Pexels/Pixabay clip id -> its MP4 link (found while searching)
+
+
+def pexels_videos(query: str) -> list[tuple[str, str]]:
+    """Pexels free videos (free for business use, no credit needed; free key in PEXELS_API_KEY): [(id, title)]."""
+    import requests
+    key = os.environ.get("PEXELS_API_KEY", "")
+    if not key:
+        return []
+    try:
+        res = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key}, timeout=20,
+                           params={"query": query, "per_page": 30, "size": "medium"}).json().get("videos", [])
+    except Exception as e:
+        print(f"  ! Pexels search '{query}' failed: {e}")
+        return []
+    out = []
+    for v in res:
+        files = sorted((f for f in v.get("video_files", []) if f.get("link") and (f.get("height") or 0) >= 540),
+                       key=lambda f: abs((f.get("height") or 0) - 1080))
+        if not files or (v.get("duration") or 0) < 4:
+            continue
+        cid = f"px{v['id']}"
+        CLIP_URLS[cid] = files[0]["link"]
+        title = v.get("url", "").rstrip("/").split("/")[-1].rsplit("-", 1)[0].replace("-", " ")
+        out.append((cid, title or query))
+    return out
+
+
+def pixabay_videos(query: str) -> list[tuple[str, str]]:
+    """Pixabay free videos (free for business use, no credit needed; free key in PIXABAY_API_KEY): [(id, title)]."""
+    import requests
+    key = os.environ.get("PIXABAY_API_KEY", "")
+    if not key:
+        return []
+    try:
+        res = requests.get("https://pixabay.com/api/videos/", timeout=20,
+                           params={"key": key, "q": query[:90], "per_page": 30, "safesearch": "true"}).json().get("hits", [])
+    except Exception as e:
+        print(f"  ! Pixabay search '{query}' failed: {e}")
+        return []
+    out = []
+    for v in res:
+        f = v.get("videos", {}).get("large") or v.get("videos", {}).get("medium") or {}
+        if not f.get("url") or (v.get("duration") or 0) < 4:
+            continue
+        cid = f"pb{v['id']}"
+        CLIP_URLS[cid] = f["url"]
+        out.append((cid, v.get("tags", query)))
+    return out
+
+
+def shorter(query: str) -> list[str]:
+    """A search and its shorter forms (Mixkit only matches short, simple words): 'indian woman choosing clothes'
+    -> 'woman choosing clothes' -> 'choosing clothes' -> 'clothes'."""
+    words = [w for w in query.lower().split() if w != "indian"]
+    return list(dict.fromkeys([query] + [" ".join(words[i:]) for i in range(len(words)) if words[i:]]))
+
+
 def pick_clip(post: dict, state: dict) -> str:
-    """Search Mixkit; the AI ranks the clips whose titles fit the joke; the first one under the
-    Free licence is used (the Restricted licence forbids business social media). Returns the clip id."""
+    """The best-fitting free stock clip for a joke (owner, 15 Oct 2026: 'best Reels, never fail'): Pexels videos,
+    then Pixabay, then Mixkit (only its Free licence: Restricted forbids business social media). The AI ranks the
+    clips by title; a clip must fit 5/10 or better. Raises RuntimeError if none does (the caller falls back to
+    real photos, then a branded background). Returns the clip id (Pexels 'px…', Pixabay 'pb…', Mixkit plain)."""
     import fun
     import status
-    status.step("Finding a Free-licence clip", 4)
-    used = state.get("reel_clips", [])
+    status.step("Finding the best free clip", 4)
+    used = set(state.get("reel_clips", []))
     known = state.setdefault("clip_licences", {})
     found: dict[str, str] = {}
     queries = list(dict.fromkeys(q.strip() for q in post["clip_search"] if q.strip()))
     if queries and "indian" not in queries[0].lower():   # Indian faces first (owner, 14 Oct 2026)
         queries.insert(0, f"indian {queries[0]}")
-    if post.get("punch"):   # meme Reels land on a reaction: common reaction clips as backup
-        queries += ["shocked", "surprised", "laughing", "panic", "facepalm"]
-    for q in queries:
-        for cid, title in mixkit_search(q):
-            if cid not in used and known.get(cid, "Free") == "Free":
+    backups = ["shocked", "surprised", "laughing", "panic", "facepalm"] if post.get("punch") else \
+        ["friends laughing", "people talking", "indian people"]
+    for q in queries:   # the big libraries first: they understand longer searches
+        for cid, title in pexels_videos(q)[:12] + pixabay_videos(q)[:12]:
+            if cid not in used:
                 found.setdefault(cid, title)
-        if len(found) >= 60:
+        if len(found) >= 40:
+            break
+    for q in queries + backups:
+        for short in shorter(q):   # a search with no results is retried shorter
+            hits = mixkit_search(short)
+            for cid, title in hits:
+                if cid not in used and known.get(cid, "Free") == "Free":
+                    found.setdefault(cid, title)
+            if hits:
+                break
+        if len(found) >= 70:
             break
     if not found:
-        raise RuntimeError(f"no Mixkit clips for {post['clip_search']}")
-    listing = "\n".join(f"{cid}: {title}" for cid, title in list(found.items())[:60])
+        raise RuntimeError(f"no stock clips for {post['clip_search']}")
+    listing = "\n".join(f"{cid}: {title}" for cid, title in list(found.items())[:70])
     schema = {"type": "object", "properties": {"ranked": {"type": "array", "description": "Best 12 clips, best first",
               "items": {"type": "object", "properties": {"id": {"type": "string"}, "fits": {"type": "integer"}},
                         "required": ["id", "fits"], "additionalProperties": False}}},
@@ -921,24 +1007,27 @@ def pick_clip(post: dict, state: dict) -> str:
                              f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
                              f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
                              schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")["ranked"]
-    for r in ranked[:12]:   # many good clips are Restricted: keep going until a Free one fits
+    for r in ranked[:12]:   # Mixkit: many good clips are Restricted, keep going until a Free one fits
         if r["id"] not in found or r["fits"] < 5:
             continue
-        lic = clip_license(r["id"], known)
+        lic = "Free" if r["id"][:2] in ("px", "pb") else clip_license(r["id"], known)
         if lic == "Free":
-            print(f"  clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10, Free licence)")
+            print(f"  clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10)")
             return r["id"]
         print(f"  skipped clip {r['id']} ({found[r['id']]}): licence '{lic or 'unknown'}'")
-    raise RuntimeError("no fitting clip under the Free licence")
+    raise RuntimeError("no stock clip fits this joke well enough")
 
 
 def download_clip(cid: str, folder: str) -> tuple[str, float]:
-    """Mixkit clip (720p, else 1080p/360p) -> (path, seconds)."""
+    """A stock clip -> (path, seconds): Pexels/Pixabay by the link found while searching, Mixkit 720p (else
+    1080p/360p)."""
     import re
     import requests
     path = os.path.join(folder, f"{cid}.mp4")
-    for res in (720, 1080, 360):
-        r = requests.get(f"https://assets.mixkit.co/videos/{cid}/{cid}-{res}.mp4", headers=UA, timeout=90)
+    links = [CLIP_URLS[cid]] if cid in CLIP_URLS else \
+        [f"https://assets.mixkit.co/videos/{cid}/{cid}-{res}.mp4" for res in (720, 1080, 360)]
+    for link in links:
+        r = requests.get(link, headers=UA, timeout=120)
         if r.status_code == 200 and len(r.content) > 50_000:
             open(path, "wb").write(r.content)
             break
@@ -997,6 +1086,50 @@ def named_apps(text: str) -> list[dict]:
             out.append({"name": word.capitalize() if word.islower() else word, "title": app["trackName"],
                         "about": re.sub(r"\s+", " ", app.get("description", ""))[:220]})
     return out
+
+
+def stock_photos(query: str, want: int = 3) -> list[Image.Image]:
+    """Free stock photos (Pexels, then Pixabay: free for business use, no credit needed) when no video clip fits."""
+    import requests
+    import generate as g
+    links = []
+    if os.environ.get("PEXELS_API_KEY"):
+        try:
+            links += [p["src"]["large2x"] for p in requests.get(
+                "https://api.pexels.com/v1/search", headers={"Authorization": os.environ["PEXELS_API_KEY"]}, timeout=20,
+                params={"query": query[:90], "per_page": 8}).json().get("photos", [])]
+        except Exception as e:
+            print(f"  ! Pexels photos '{query}' failed: {e}")
+    if os.environ.get("PIXABAY_API_KEY") and len(links) < want:
+        try:
+            links += [p["largeImageURL"] for p in requests.get("https://pixabay.com/api/", timeout=20, params={
+                "key": os.environ["PIXABAY_API_KEY"], "q": query[:90], "image_type": "photo", "per_page": 8,
+                "safesearch": "true"}).json().get("hits", [])]
+        except Exception as e:
+            print(f"  ! Pixabay photos '{query}' failed: {e}")
+    out = []
+    for link in links:
+        img = g.download_image(link)
+        if img is not None:
+            out.append(img.convert("RGB"))
+        if len(out) >= want:
+            break
+    return out
+
+
+def brand_background() -> Image.Image:
+    """The last resort behind a joke when no clip or photo is found: a clean dark gradient with a soft brand glow."""
+    img = Image.new("RGB", (1200, 675), "#111111")
+    d = ImageDraw.Draw(img)
+    for y in range(675):
+        d.line((0, y, 1200, y), fill=(20 + y // 25, 18 + y // 40, 26 + y // 18))
+    glow = Image.new("RGB", (1200, 675), "#000000")
+    ImageDraw.Draw(glow).ellipse((380, 120, 820, 560), fill=YELLOW)
+    img = Image.blend(img, glow.filter(ImageFilter.GaussianBlur(140)), 0.25)
+    logo = logo_img(520, 120)
+    if logo:
+        img.paste(logo, ((1200 - logo.width) // 2, (675 - logo.height) // 2), logo)
+    return img
 
 
 def app_photos(names: list[str]) -> list[Image.Image]:
@@ -1118,8 +1251,20 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
         photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
         print(f"  real photos: {len(photos)} (apps {post.get('apps', [])}, search '{post.get('photo_query', '')}')")
     else:
-        cid = pick_clip(post, state)
-        clip, secs = download_clip(cid, tmp)
+        try:
+            cid = pick_clip(post, state)
+            clip, secs = download_clip(cid, tmp)
+        except RuntimeError as e:   # no fitting clip: real photos, else a branded background (owner, 15 Oct 2026)
+            query = post.get("photo_query", "").strip() or post.get("based_on", "") or " ".join(post["clip_search"][:1])
+            print(f"  ! {e}: photos for '{query}' instead")
+            status.step("No clip fits: using photos instead", 4)
+            photos = stock_photos(query) or topic_photos(query, want=3)
+            if not photos:
+                photos = [brand_background()]
+                print("  no photos either: branded background")
+            real, cid = True, None
+            clip, secs = os.path.join(tmp, "photos.mp4"), 14.0
+            photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
     # Long enough to read the (proofread) text in full; a short stock clip caps Tag that friend (memes freeze).
@@ -2640,6 +2785,31 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
 
+def make_backup(kind: str, state: dict, feed: list) -> bool:
+    """Level 2 of 'never fail' (owner, 15 Oct 2026): the slot's Reel failed every try, so a different, reliable Reel
+    with the same checks: a news slideshow for a joke/satire/devotional slot, a Tag that friend joke for a news or
+    Top 5 slot. Saved under the slot's id. False (with the reason in ⏳ Activity) if it fails too."""
+    import tempfile
+    import schedule
+    import status
+    today = schedule.ist_now().date().isoformat()
+    news_like = kind in NEWS_KINDS or kind in TOP5_KINDS
+    status.start(kind, today, f"🎬 Backup Reel ({'Tag that friend' if news_like else 'news'})", 6,
+                 "The planned Reel failed every try: making a backup Reel")
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            if news_like:
+                cover, out, entry = build_joke_reel("reel_clip", state, tmp)
+                save_reel(feed, state, cover, out, f"{kind}-{today}", entry)
+            else:
+                make_news_reel(kind, state, feed, today, tmp)
+        return True
+    except Exception as e:
+        print(f"  ! backup Reel not made: {str(e)[:300]}")
+        status.fail(f"Backup Reel not made: {str(e)[:200]}. Trying a ready-made Reel from 📦 Ready.", True)
+        return False
+
+
 def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -> bool:
     """Make today's Reel for this slot (try `attempt` of `tries`); False (with the reason printed) if it
     couldn't be made."""
@@ -2650,7 +2820,7 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     h, m = schedule.SPECIALS[kind]
     status.start(kind, today, f"🎬 {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'} Reel", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
-    then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Nothing posted in this slot."
+    then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
     if not (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):
         print("  Reels need the AI: skipped")
         status.fail(f"Reel not made: the AI isn't available (membership token?). {then}", attempt < tries)

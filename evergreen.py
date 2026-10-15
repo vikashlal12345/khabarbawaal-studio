@@ -245,9 +245,14 @@ def make_batch(state: dict, count: int = 2) -> int:
     return made
 
 
-def take_one(feed: list, state: dict) -> bool:
-    """Move the oldest ready post into the feed (used when the AI can't write a news post)."""
+def take_one(feed: list, state: dict, reels_only: bool = False) -> bool:
+    """Move the oldest ready post into the feed (a Reel slot's last backup; reels_only: only 📦 Ready Reels)."""
     items = prune(load())
+    if reels_only:
+        items = [p for p in items if p.get("media") == "reel"] or []
+        rest = [p for p in prune(load()) if p not in items]
+    else:
+        rest = []
     if not items:
         return False
     # Today's "on this day" post first (it expires tonight), else the oldest.
@@ -256,9 +261,9 @@ def take_one(feed: list, state: dict) -> bool:
     post = items.pop(idx)
     post["created_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     post["proof"] = {**(post.get("proof") or {}), "issues": (post.get("proof") or {}).get("issues", []) +
-                     ["Used from 📦 Ready posts because the AI couldn't write a news post this time."]}
+                     ["Moved here from 📦 Ready because this slot's planned Reel couldn't be made."]}
     feed.insert(0, post)
-    save(items)
+    save(rest + items)
     g.trim_feed(feed)
     g.save_json(g.FEED_FILE, feed)
     g.save_json(g.STATE_FILE, state)

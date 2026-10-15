@@ -59,8 +59,13 @@ illness or grief is never the joke) ·
 viral + visual story of the feeds' last 8 h (+ X trends), not already used (`reel_news_used` links, `seen`); a 📅 planned
 preview due at 10:00/17:00 (`schedule.PREVIEW_KINDS`) is that slot's story. Top 5 Reels (`make_top5_reel`): picked like
 the old Top 5 carousels (`specials.gather/pick_top10`), one photo + "n. title" per story via `news_reel`, ~30 s.
-If a Reel can't be made, the robot tries again (`generate.REEL_TRIES` = 3, each try writes afresh); still no Reel →
-nothing posted in that slot (owner 12 Oct 2026: Reels only; the old news-post backup never ran at Reel hours). Night: 1:00 two 📦 ready
+**Never fail, best quality (owner 15 Oct 2026):** inside a joke Reel: clip = Pexels videos → Pixabay videos → Mixkit
+(Free licence; searches retried shorter, `shorter()`; backup searches) → if none fits 5/10: free stock photos (Pexels/Pixabay,
+`stock_photos`) → news photos of the topic → `brand_background()`; jokes = trend round → one rewrite with the judge's
+reasons → desi-life round. Slot: `generate.REEL_TRIES` = 3 tries → level 2 `reel.make_backup()` (a news Reel for a
+joke/satire/devotional slot, a Tag that friend for a news/Top 5 slot, saved under the slot's id) → level 3
+`evergreen.take_one(reels_only=True)` (a 📦 Ready Reel moved into the feed) → only then nothing. Free keys (optional,
+GitHub secrets `PEXELS_API_KEY`, `PIXABAY_API_KEY`; without them the clip chain starts at Mixkit). Night: 1:00 two 📦 ready
 REELS (14 Oct 2026: photo posts got 0-5 views): one carousel in turn (Explainer → Quiz → Amazing Facts → Myth vs Fact,
 from Sun 11 Oct 2026) and 📅 On This Day, rendered as carousels then turned into Reels (`reel.slides_reel`, cover
 without SWIPE as the hook, no closing card); the 🙏 Gita Reel is NOT made any more (14 Oct 2026, ~9 views avg; old notes:) "Gita Gyaan: roz ek shlok" (owner 11 Oct 2026: one shlok a day in order from 1.1,

@@ -35,6 +35,8 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       ISSUE: ${{ github.event.issue.number }}
       PUSH_VAPID_KEY: ${{ secrets.PUSH_VAPID_KEY }}   # 🔔 phone alerts (push.py)
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}     # 🎬 free stock videos/photos (optional)
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}   # 🎬 free stock videos/photos (optional)
     steps:
       - uses: actions/checkout@v4
         with:

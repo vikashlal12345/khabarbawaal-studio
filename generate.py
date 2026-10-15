@@ -849,7 +849,17 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
             if reel.make(kind, state, feed, attempt, REEL_TRIES):
                 resolved += ["token", "limit", "ai-error"]
                 return True
-        print(f"No Reel after {REEL_TRIES} tries: nothing posted in this slot.")
+        # Never fail (owner, 15 Oct 2026): level 2 = a different, reliable Reel for this slot; level 3 = a ready-made
+        # Reel from 📦 Ready moved into the feed.
+        if reel.make_backup(kind, state, feed):
+            return True
+        import evergreen
+        import status
+        if evergreen.take_one(feed, state, reels_only=True):
+            status.done("Backup: a ready-made Reel from 📦 Ready was moved into your feed for this slot", post=feed[0]["id"])
+            return True
+        status.fail("No Reel in this slot: the planned Reel, the backup Reel and the 📦 Ready Reels all failed")
+        print(f"No Reel after {REEL_TRIES} tries, a backup Reel and the Ready Reels: nothing posted in this slot.")
         return
 
     if kind == "thought":
