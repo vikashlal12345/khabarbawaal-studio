@@ -3456,6 +3456,41 @@
      "tokens": 41067
     }
    }
+  },
+  "reel_meme": {
+   "posts": 0,
+   "requests": 7,
+   "input": 22,
+   "output": 6344,
+   "cache_read": 21893,
+   "cache_write": 71555,
+   "value_usd": 0.3519,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 13539
+    },
+    "reel writing": {
+     "requests": 1,
+     "tokens": 23698
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 11884
+    },
+    "clip pick": {
+     "requests": 1,
+     "tokens": 14138
+    },
+    "clip look": {
+     "requests": 1,
+     "tokens": 11302
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 25253
+    }
+   }
   }
  }
 }
