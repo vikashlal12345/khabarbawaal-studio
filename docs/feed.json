@@ -1,5 +1,59 @@
 [
  {
+  "id": "reel_news-2026-10-15",
+  "image": "posts/20261015-1432-reel_news-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-143247-reel_news-2026-10-15.mp4",
+  "headline": "Exclusive: Imran Khan to move Bombay HC, challenge ‘illegal' Leave India notice",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Imran Khan leave India notice: ab kya hoga? 🔥\nFRRO ne OCI cardholder Imran Khan ko 28 October tak India chhodne ka notice diya hai. Unhe 10 October ko ek protest mein Mumbai Police ne detain kiya tha.\nWo US citizen hain aur notice ko Bombay High Court mein challenge karne ki taiyari mein hain. Unke lawyers 16 October ko urgent hearing maangne ki taiyari mein hain.\nAapko kya lagta hai, comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#imrankhan #breakingnews #bollywood #indianews #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
+  "pin_comment": "Notice sahi hai ya galat? Apni raay comment mein likho, par tameez se.",
+  "songs": [
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "calm serious tone for notice news"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "intense, dramatic build for big twist"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "serious cinematic vibe for legal fight"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "tense mood, situation heating up"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Notice was issued by the FRRO, not Mumbai Police; the article does not mention CEC Gyanesh Kumar.",
+    "Fact corrected to match the article: Article does not say the lawyers called the notice illegal.",
+    "Fact corrected to match the article: Article says lawyers are preparing to approach the court on Oct 16, not that it will definitely happen."
+   ],
+   "fixed": [
+    "Mumbai Police ne OCI cardholder Imran Khan ko 28 October tak India chhodne ko kaha, CEC Gyanesh Kumar ke khilaf protest ke baad. → FRRO ne OCI cardholder Imran Khan ko 28 October tak India chhodne ka notice diya hai. Unhe 10 October ko ek protest mein Mumbai Police ne detain kiya tha.",
+    "Unke lawyers ise illegal bol rahe hain. → Unke lawyers 16 October ko urgent hearing maangne ki taiyari mein hain.",
+    "Imran Khan ko 28 October tak India chhodna → Imran Khan ko 28 October tak India chhodne ka notice",
+    "Lawyers ke mutabiq Khan 16 October ko Bombay High Court jaayenge, urgent hearing maangenge. → Lawyers ke mutabiq Khan 16 October ko Bombay High Court jaane ki taiyari mein hain, urgent hearing maangenge."
+   ]
+  },
+  "created_at": "2026-10-15T14:32:47+00:00"
+ },
+ {
   "id": "reel_politics-photos-1937",
   "image": "posts/20261015-1407-reel_politics-photos-1937.jpg",
   "kind": "reel",
@@ -732,47 +786,5 @@
    }
   ],
   "created_at": "2026-10-14T15:47:12+00:00"
- },
- {
-  "id": "reel_news-2026-10-14",
-  "image": "posts/20261014-1432-reel_news-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-143212-reel_news-2026-10-14.mp4",
-  "headline": "Kangana Ranaut backs Bittu Tabahi after river he cleaned for 8 months gets polluted again: ‘People cry about rights’",
-  "tag": "🎬 REEL · VIRAL",
-  "caption": "Jo kaam sarkar se hota nahi, woh ek banda kar raha hai 🌊\nBittu ne 8 mahine Ajnar River saaf ki, phir se gandi mili, aur usne dobara safai shuru kar di.\nKangana Ranaut ne unka saath diya.\nAapke shehar ki nadi ya talaab ka kya haal hai? Comment karo.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bittutabahi #kanganaranaut #cleanindia #viralnews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kangana-ranaut-backs-bittu-tabahi-after-river-he-cleaned-for-8-months-gets-polluted-again-101791974779795.html",
-  "pin_comment": "Aapke area mein koi aisa hero hai jo chup-chaap safai karta hai? Tag karo.",
-  "songs": [
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "river polluted again = emotional"
-   },
-   {
-    "title": "Co2",
-    "artist": "Prateek Kuhad",
-    "lang": "english",
-    "mood": "soft, calm, feel-good story"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "heartfelt, never giving up"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The source badge in the photo (\"Outlook Explainer\") is cut off at the right edge. This is minor, and the photo is otherwise fine.",
-    "Slide 1: The Hindi caption inside the left screenshot is cut off at the left edge. It is a minor crop issue."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-14T14:32:12+00:00"
  }
 ]
