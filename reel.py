@@ -1269,10 +1269,12 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
 
 
-NEWS_SYSTEM = """You make a news REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
-English letters only, never Devanagari). From the latest stories pick the 3 best for a short video made of news \
-photos: what is most viral or trending right now (see the X trends), strong visuals (people, sports moments, \
-celebrities, viral scenes, big events) and a story everyone will want to watch and share. Rank them, best first.
+NEWS_SYSTEM = """You make a VIRAL NEWS REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
+English letters only, never Devanagari): ONE single story people are talking about right now, told over its real \
+photos (owner, 15 Oct 2026: 'like the Bittu Tabahi one': one man cleaned a river for 8 months). From the latest \
+stories pick the 3 MOST VIRAL / TRENDING, best first: trending on X or Google in India, covered by many sites, \
+viral human-interest moments (shocking, inspiring, heart-warming, unbelievable), big Bollywood/OTT/cricket moments, \
+with strong visuals. A story everyone will want to watch to the end and share.
 Only stories most people across India care about (owner, 14 Oct 2026: Indian stories got ~227 views, foreign or niche \
 celebrity news ~15): Indian news, Bollywood/OTT, Team India and IPL, viral Indian moments, big national stories. Skip \
 foreign news unless it is about India or Indians, foreign sports and niche or foreign celebrity news.
@@ -1281,7 +1283,8 @@ Politics: supportive of the right wing (BJP, NDA), critical of the left and oppo
 that embarrasses the BJP. No hate against any community."""
 
 
-NEWS_KINDS = ("reel_news_am", "reel_news_pm", "reel_news")     # 🎬 10 AM, 5 PM, 8 PM news slideshows
+NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_aft", "reel_news_pm", "reel_news",
+              "reel_news_night")     # 🔥 viral news Reels: 7, 10, 11:30 AM, 3, 5, 8, 9:15 PM (owner, 15 Oct 2026)
 TOP5_KINDS = {"reel_top5_am": "night_roundup", "reel_top5": "top10_day"}   # Top 5 Reel -> its specials.TOP10 settings
 
 
@@ -1312,10 +1315,12 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
+    searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
     songs = trending_songs(state)
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
-                              f"(hours trending):\n{trends}\n\nStories:\n{listing}\n\nGive your top 3 picks."
+                              f"(hours trending):\n{trends}\n\nWhat India is searching on Google today:\n{searches}"
+                              f"\n\nStories:\n{listing}\n\nGive your top 3 picks, the most viral first."
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
@@ -2770,9 +2775,13 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     import tempfile
     import schedule
     import status
-    today = schedule.ist_now().date().isoformat()
-    h, m = schedule.SPECIALS[kind]
-    status.start(kind, today, f"🎬 {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'} Reel", 6,
+    now = schedule.ist_now()
+    today = now.date().isoformat()
+    h, m = schedule.SPECIALS.get(kind, (now.hour, now.minute))
+    name = ("🔥 Viral news" if kind in NEWS_KINDS else "🙏 Devotional" if kind == "reel_devotion" else
+            "🎯 Satire" if kind == "reel_politics" else "😂 Meme" if kind == "reel_meme" else
+            "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else "🎬 Reel")
+    status.start(kind, today, f"{name} · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
     then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
     if not (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI")):

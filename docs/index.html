@@ -350,7 +350,7 @@ function render() {
   posts = (tab === 'feed' ? feedPosts : readyPosts).filter(p => !localGet('deleted-' + p.id));
   if (!posts.length) {
     feedEl.innerHTML = tab === 'ready'
-      ? '<div class="empty">No ready posts yet.<br>5 new evergreen posts are made every night at 1 AM.</div>'
+      ? '<div class="empty">No ready posts.<br>Night Reels are paused (since 15 Oct 2026): all 12 Reels go straight to Posts.</div>'
       : '<div class="empty">No posts yet.<br>The first one appears after the next hourly run.</div>';
     return;
   }

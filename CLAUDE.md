@@ -35,6 +35,13 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   left → `Unverified` → the Reel is made again (REEL_TRIES). Carousels still only show ⚠️.
 
 ## Schedule (IST) - `schedule.py`
+**12 Reels a day, all in the feed (owner 15 Oct 2026)**: 6:00 🙏 devotional · 7:00 🔥 viral news · 8:00 😂 Tag that friend ·
+10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🔥.
+🔥 = ONE most viral/trending India story with its real photos (`NEWS_KINDS`: reel_news_early/_am/_noon/_aft/_pm/reel_news/
+_night; owner: 'like the Bittu Tabahi one'; X + Google trends shown to the picker). The Top 5s became viral news; night
+Reels (1 AM Ready, 3 AM God picture) and the 2 AM preview planner stopped (`PREVIEW_KINDS` = (); still runnable as
+`--kind`, `schedule.MANUAL`); 📦 Ready tab stays empty; 4 AM learning stays. `docs/app.json` plan/reels match.
+Older notes below (kept for the code they describe):
 **All Reels (owner 13 Oct 2026: carousels weren't getting views; Reels reach non-followers): 9 Reels a day**, no regular
 carousels (`REGULAR_HOURS` = []; news/Top 5/Thought/markets still work as `--kind`, `schedule.MANUAL`). Quiet 11 PM-5 AM.
 6:00 🎬 🙏 devotional (festival from Google's India holidays calendar, Navratri goddess of the day anchored on

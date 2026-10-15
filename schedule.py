@@ -9,20 +9,22 @@ from datetime import datetime, timedelta, timezone
 
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
-# All Reels (owner, 13 Oct 2026: carousels weren't getting views; Reels reach people who don't follow us):
-# 9 Reels a day. No regular carousels any more (news, Top 5s, Thought, markets still exist as --kind, see MANUAL).
+# All Reels (owner, 13 Oct 2026: carousels weren't getting views; Reels reach people who don't follow us).
+# 15 Oct 2026 (owner): 12 Reels a day, all in the feed; every news slot is the single most viral / trending story
+# (the Top 5s became viral news, +11:30 AM and 3 PM); night Reels (1 AM Ready, 3 AM God picture) and the 2 AM
+# preview planner stopped. No regular carousels (news, Top 5s, Thought, markets, night jobs still exist as --kind).
 REGULAR_HOURS: list[int] = []
-SPECIALS = {"reel_devotion": (6, 0),                       # 🎬 🙏 festival / Navratri goddess / god of the day
-            "reel_top5_am": (7, 0),                        # 🎬 overnight Top 5 in ~30 s
-            "reel_clip_am": (8, 0), "reel_clip": (13, 0),  # 🎬 Tag that friend
-            "reel_news_am": (10, 0), "reel_news_pm": (17, 0),   # 🎬 news slideshow (or a 📅 planned preview)
-            "reel_politics": (18, 0),                      # 🎬 political satire + reality check
-            "reel_meme": (19, 0), "reel_news": (20, 0),    # 🎬 meme, news slideshow
-            "reel_top5": (21, 15),                         # 🎬 Top 5 News in ~30 s
-            # Night work (nothing is posted): ready posts, day planning, learning from stats.
-            "night_ready": (1, 0), "night_calendar": (2, 0), "night_picture": (3, 0), "night_learn": (4, 0)}
-PREVIEW_KINDS = ("reel_news_am", "reel_news_pm")     # 📅 planned previews (calendar_plan) go out in these slots
-MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close"}
+SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Navratri goddess / god of the day
+            "reel_news_early": (7, 0),                     # 🔥 viral news (was the overnight Top 5)
+            "reel_clip_am": (8, 0), "reel_clip": (13, 0),  # 😂 Tag that friend
+            "reel_news_am": (10, 0), "reel_news_noon": (11, 30), "reel_news_aft": (15, 0), "reel_news_pm": (17, 0),
+            "reel_politics": (18, 0),                      # 🎯 political satire + reality check
+            "reel_meme": (19, 0), "reel_news": (20, 0),    # 😂 meme, 🔥 viral news
+            "reel_news_night": (21, 15),                   # 🔥 viral news (was the Top 5 News)
+            "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
+PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
+MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",
+          "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08

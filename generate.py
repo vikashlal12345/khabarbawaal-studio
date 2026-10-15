@@ -893,6 +893,7 @@ def main() -> int:
                                            "night_ready", "night_calendar", "night_picture", "night_jokes", "night_learn",
                                            "reel_devotion", "reel_clip_am", "reel_clip", "reel_politics", "reel_meme",
                                            "reel_news", "reel_news_am", "reel_news_pm", "reel_top5_am", "reel_top5",
+                                           "reel_news_early", "reel_news_noon", "reel_news_aft", "reel_news_night",
                                            "ready_gita"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,
