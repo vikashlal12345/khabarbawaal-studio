@@ -128,7 +128,7 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   Credit "AI illustration (<model>)".
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
   (`fun.judge_best`), AI ranks Mixkit clips by title (no key); **only clips labelled "Free" licence** are used
-  (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state), proofread on still frames; news = AI picks a
+  (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state); 3D/CGI/cartoon clips skipped (`FAKE_CLIP`) and the AI LOOKS at 2 frames of the best 3 by title (`look_at_clips`: shows the moment 6+/10, real, bright, sharp; owner 15 Oct 2026 after a grey 3D 'bed' clip), none → `fallback_visual`; proofread on still frames; news = AI picks a
   visual story from today's news posts, photos via `carousel.collect(max_words=14)`. Feed entry has `video`.
   Encoder: system ffmpeg, else `imageio-ffmpeg` (pip). Captions get `roman_only()` (no Devanagari).
   🎵 Song ideas (owner 13 Oct 2026: "same song every Reel, not relatable"): `trending_songs(state)` merges free charts

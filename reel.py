@@ -935,11 +935,16 @@ def shorter(query: str) -> list[str]:
     return list(dict.fromkeys([query] + [" ".join(words[i:]) for i in range(len(words)) if words[i:]]))
 
 
+FAKE_CLIP = re.compile(r"(?i)\b(3d|cgi|animat\w*|cartoon\w*|render\w*|illustrat\w*|motion graphics?|abstract)\b")
+CLIP_FILES: dict[str, str] = {}   # clip id -> file downloaded while pick_clip looked at it (download_clip reuses it)
+
+
 def pick_clip(post: dict, state: dict) -> str:
     """The best-fitting free stock clip for a joke (owner, 15 Oct 2026: 'best Reels, never fail'): Pixabay videos,
-    then Mixkit (only its Free licence: Restricted forbids business social media). The AI ranks the clips by title;
-    a clip must fit 5/10 or better. Raises RuntimeError if none does (the caller falls back to real photos, then a
-    branded background). Returns the clip id (Pixabay 'pb…', Mixkit plain). (Pexels: no new API keys, 15 Oct 2026.)"""
+    then Mixkit (only its Free licence: Restricted forbids business social media). 3D/CGI/cartoon clips are skipped;
+    the AI ranks the clips by title (fits 5/10 or better), then looks at frames of the best 3 (`look_at_clips`).
+    Raises RuntimeError if none fits (the caller falls back to photos, then an AI picture, then a branded
+    background). Returns the clip id (Pixabay 'pb…', Mixkit plain). (Pexels: no new API keys, 15 Oct 2026.)"""
     import fun
     import status
     status.step("Finding the best free clip", 4)
@@ -967,6 +972,10 @@ def pick_clip(post: dict, state: dict) -> str:
                 break
         if len(found) >= 70:
             break
+    fake = [cid for cid, title in found.items() if FAKE_CLIP.search(title)]
+    found = {cid: title for cid, title in found.items() if cid not in fake}   # real footage only (owner, 15 Oct 2026)
+    if fake:
+        print(f"  skipped {len(fake)} 3D/CGI/cartoon clip(s)")
     if not found:
         raise RuntimeError(f"no stock clips for {post['clip_search']}")
     listing = "\n".join(f"{cid}: {title}" for cid, title in list(found.items())[:70])
@@ -981,15 +990,77 @@ def pick_clip(post: dict, state: dict) -> str:
                              f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
                              f"Wanted clip: {post['clip_wanted']}\n\nClips (id: title):\n{listing}",
                              schema, CONFIG.get("membership_model", "sonnet"), purpose="clip pick")["ranked"]
-    for r in ranked[:12]:   # Mixkit: many good clips are Restricted, keep going until a Free one fits
-        if r["id"] not in found or r["fits"] < 5:
+    picks = []
+    for r in ranked[:12]:   # Mixkit: many good clips are Restricted, keep going until 3 Free ones fit
+        if r["id"] not in found or r["fits"] < 5 or r["id"] in picks:
             continue
         lic = "Free" if r["id"].startswith("pb") else clip_license(r["id"], known)
         if lic == "Free":
-            print(f"  clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10)")
-            return r["id"]
-        print(f"  skipped clip {r['id']} ({found[r['id']]}): licence '{lic or 'unknown'}'")
-    raise RuntimeError("no stock clip fits this joke well enough")
+            print(f"  shortlisted clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10 by title)")
+            picks.append(r["id"])
+            if len(picks) == 3:
+                break
+        else:
+            print(f"  skipped clip {r['id']} ({found[r['id']]}): licence '{lic or 'unknown'}'")
+    if not picks:
+        raise RuntimeError("no stock clip fits this joke well enough")
+    return look_at_clips(post, picks, found)
+
+
+def look_at_clips(post: dict, picks: list[str], found: dict[str, str]) -> str:
+    """The AI looks at 2 frames of each shortlisted clip and keeps the one that clearly shows the moment in real,
+    bright, sharp footage (owner, 15 Oct 2026: a dull grey 3D 'person in bed' clip had been picked by its tags).
+    Raises RuntimeError if none looks right. If the check itself fails, the best clip by title is used."""
+    import tempfile
+    import fun
+    import atexit
+    folder = tempfile.mkdtemp(prefix="clips_")
+    atexit.register(shutil.rmtree, folder, True)
+    shown = []
+    for n, cid in enumerate(picks, 1):
+        try:
+            path, secs = download_clip(cid, folder)
+        except Exception as e:
+            print(f"  ! clip {cid}: {str(e)[:80]}")
+            continue
+        CLIP_FILES[cid] = path
+        for k, at in enumerate((0.3, 0.7), 1):
+            subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-ss", f"{secs * at:.2f}", "-i", path, "-frames:v", "1",
+                            "-vf", "scale=480:-2", os.path.join(folder, f"clip{n}_{k}.jpg")], capture_output=True)
+        if os.path.exists(os.path.join(folder, f"clip{n}_1.jpg")):
+            shown.append((n, cid))
+    if not shown:
+        raise RuntimeError("the shortlisted clips couldn't be downloaded")
+    schema = {"type": "object", "properties": {"clips": {"type": "array", "items": {"type": "object", "properties": {
+        "clip": {"type": "integer"},
+        "shows": {"type": "integer", "description": "1-10: how clearly the frames show the wanted moment"},
+        "clear": {"type": "boolean", "description": "Real footage (not 3D/CGI/cartoon), bright and sharp, people or "
+                  "objects easy to see; false if dark, blurry, blank, mostly grey or empty"},
+        "why": {"type": "string"}}, "required": ["clip", "shows", "clear", "why"], "additionalProperties": False}}},
+        "required": ["clips"], "additionalProperties": False}
+    listing = "\n".join(f"Clip {n}: clip{n}_1.jpg and clip{n}_2.jpg (title: {found.get(cid, '')})" for n, cid in shown)
+    try:
+        checked = fun.claude_json(
+            "You check stock video clips for funny Instagram Reels for young Indians. Open every frame with the Read "
+            "tool. A clip is the background behind the joke's text: it must clearly show the wanted moment (or a very "
+            "close one) in real, bright, sharp footage. Phones show the middle of the frame for full-screen Reels.",
+            f"Joke: {post.get('text') or ' '.join(post.get('setup', [])) + ' -> ' + post.get('punch', '')}\n"
+            f"Wanted clip: {post['clip_wanted']}\n\n{listing}",
+            schema, CONFIG.get("membership_model", "sonnet"), purpose="clip look", folder=folder)["clips"]
+    except Exception as e:
+        print(f"  ! clip look failed ({str(e)[:80]}): best clip by title")
+        return shown[0][1]
+    by_n = dict(shown)
+    for c in checked:
+        if c["clip"] in by_n:
+            print(f"  looked at clip {by_n[c['clip']]}: shows {c['shows']}/10, {'clear' if c['clear'] else 'NOT clear'}"
+                  f" ({c['why'][:90]})")
+    good = sorted((c for c in checked if c["clip"] in by_n and c["clear"] and c["shows"] >= 6), key=lambda c: -c["shows"])
+    if not good:
+        raise RuntimeError("no stock clip looks right for this joke")
+    cid = by_n[good[0]["clip"]]
+    print(f"  clip {cid}: {found.get(cid, '')} (looks {good[0]['shows']}/10)")
+    return cid
 
 
 def download_clip(cid: str, folder: str) -> tuple[str, float]:
@@ -999,13 +1070,16 @@ def download_clip(cid: str, folder: str) -> tuple[str, float]:
     path = os.path.join(folder, f"{cid}.mp4")
     links = [CLIP_URLS[cid]] if cid in CLIP_URLS else \
         [f"https://assets.mixkit.co/videos/{cid}/{cid}-{res}.mp4" for res in (720, 1080, 360)]
-    for link in links:
-        r = requests.get(link, headers=UA, timeout=120)
-        if r.status_code == 200 and len(r.content) > 50_000:
-            open(path, "wb").write(r.content)
-            break
+    if CLIP_FILES.get(cid, path) != path and os.path.exists(CLIP_FILES[cid]):
+        shutil.copy(CLIP_FILES[cid], path)   # already downloaded while pick_clip looked at it
     else:
-        raise RuntimeError(f"clip {cid} download failed")
+        for link in links:
+            r = requests.get(link, headers=UA, timeout=120)
+            if r.status_code == 200 and len(r.content) > 50_000:
+                open(path, "wb").write(r.content)
+                break
+        else:
+            raise RuntimeError(f"clip {cid} download failed")
     info = subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
     m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", info)
     secs = int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else 0.0
