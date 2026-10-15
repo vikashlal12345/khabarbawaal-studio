@@ -172,6 +172,14 @@ function hookChart(box, pts) {
   const nowMs = Date.now(), todayIST = istDay(new Date());
   const inLast = (iso, days) => iso && nowMs - new Date(iso) < days * 86400000;
   const activity = (() => { try { return JSON.parse(localStorage.getItem('activity') || '{}'); } catch { return {}; } })();
+  // The robot's latest steps straight from ⏳ Activity's ntfy topic (the app saves them only while it is open).
+  if (app.status) try {
+    const txt = await (await fetch(`https://ntfy.sh/${app.status}/json?poll=1&since=24h`, { cache: 'no-store' })).text();
+    for (const line of txt.split('\n')) {
+      try { const ev = JSON.parse(JSON.parse(line).message), k = ev.job + '|' + ev.ref;
+            if (ev.job && (!activity[k] || ev.at >= activity[k].at)) activity[k] = ev; } catch {}
+    }
+  } catch {}
 
   // --- 📈 growth: followers, change this week, likes per post, followers chart, boosts
   {
@@ -213,9 +221,9 @@ function hookChart(box, pts) {
       const inSlot = p => minsOf(p.created_at) >= slot - 5 && minsOf(p.created_at) < slot + 55;
       let post = kind === 'news' ? posts.find(p => p.kind === 'news' && inSlot(p)) : posts.find(p => p.id === `${kind}-${todayIST}`);
       let why = '', state = '';
+      const a = activity[`${kind}|${todayIST}`];
       if (!post && kind !== 'news') {
         const fallback = posts.find(p => ['news', 'ready', 'calendar', 'top10', 'reel'].includes(p.kind) && inSlot(p));
-        const a = activity[`${kind}|${todayIST}`];
         if (fallback && fallback.kind === 'calendar') { post = fallback; why = '📅 A planned preview was made in this slot.'; }
         else if (fallback && fallback.kind === 'reel') { post = fallback; why = 'A different Reel type was made in this slot.'; }
         else if (fallback) { post = fallback; state = 'warn'; why = a && a.text ? a.text : 'A normal (carousel) post was made instead.'; }
@@ -224,7 +232,12 @@ function hookChart(box, pts) {
       const link = post && (links || {})[post.id], r = post && res[post.id];
       if (post) made++;
       if (link) posted++;
+      // Still being made after its time (owner, 15 Oct 2026: it said ❌ while the Reel was in progress): the robot's
+      // last step is 'run' and fresh (< 20 min), or no news from it yet in the first 30 min.
+      const making = !post && slot <= istNow + 2 && (a ? a.state === 'run' && nowMs / 1000 - a.at < 1200 : istNow - slot < 30);
+      if (making && a && a.text) why = a.text;
       const chips = slot > istNow + 2 && !post ? '<span class="chip">⏳ upcoming</span>'
+        : making ? '<span class="chip">⏳ in progress</span>'
         : !post ? `<span class="chip bad">❌ not made</span>`
         : (state === 'warn' ? '<span class="chip warn">⚠️ normal post</span>' : '<span class="chip made">✅ made</span>')
           + (link ? `<span class="chip posted">📲 posted${r ? ` · ❤️ ${r.likes}` : ''}</span>` : '<span class="chip">not posted</span>');

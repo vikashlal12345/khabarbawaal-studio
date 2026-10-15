@@ -166,7 +166,7 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
 - App: `docs/index.html` (tabs **Posts** = not yet linked / **✅ Posted** = 🔗 Insta link pasted (`isLinked`: ig_links.json or this phone's `linked-` mark; owner 15 Oct 2026, replaced 📦 Ready) / ⏳ Activity; same 24 h clearing; ➕ Create with PIN + authenticator code, 🔗 Insta link; ⏱️ `postHint()`:
   time since the last 📤 Post on this phone (`lastShare`), wait an hour / night warning; Reel cover + song tips),
-  `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
+  `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc; 🗓️ Today's plan reads ⏳ Activity live from ntfy: a slot past its time shows ⏳ in progress while the robot's last step is fresh 'run' (< 20 min) or in its first 30 min, only then ❌ not made; owner 15 Oct 2026), `docs/sw.js` (bump CACHE on change).
   `docs/app.json` `plan` (report's 🗓️ Today's plan) + `reels` (app's "Next Reel") are hand-kept: **change them with
   `schedule.SPECIALS`** (12 Oct 2026 they went stale after the all-Reels switch). Report's 🌙 Night posts = 📦 Ready posts
   made 0-6 AM IST today (`ready.json` ids `r<date>-<time>-<type>`: explainer/quiz/facts/myth_fact, on_this_day, gita, bhakti).
