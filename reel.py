@@ -1080,6 +1080,69 @@ def stock_photos(query: str, want: int = 3) -> list[Image.Image]:
     return out
 
 
+JOKE_ART = ("Vibrant modern Indian comic illustration, bold clean lines, bright cheerful colours, expressive faces, "
+            "Gen Z meme style, one clear funny moment, the main people large in the middle of the picture. ")
+
+
+def ai_picture(scene: str, tmp: str, landscape: bool) -> tuple[Image.Image, str] | None:
+    """🎨 A free AI picture of the joke's moment (the god-picture demos: Z-Image -> FLUX.2 -> FLUX, no account) when no
+    clip or photo fits (owner, 15 Oct 2026: 'people don't like the plain KhabarBawaal page'). The AI checks it (hands,
+    text, nothing off); 2 tries. Returns (picture, model) or None (busy / not fit)."""
+    import random
+    import fun
+    folder = os.path.join(tmp, "joke_art")
+    os.makedirs(folder, exist_ok=True)
+    check = {"type": "object", "properties": {"ok": {"type": "boolean"}, "reason": {"type": "string"}},
+             "required": ["ok", "reason"], "additionalProperties": False}
+    for k in range(2):
+        try:
+            img, model = flux_image(JOKE_ART + scene.strip() + " Only the people described, ordinary young Indians, "
+                                    "no celebrities or politicians, no logos or brands." + FLUX_AVOID,
+                                    random.randint(1, 999999))
+        except Exception as e:
+            print(f"  ! AI picture: {e}")
+            return None
+        name = f"art{k + 1}.jpg"
+        thumb = img.copy()
+        thumb.thumbnail((576, 1024))
+        thumb.save(os.path.join(folder, name), quality=85)
+        ok = fun.claude_json("You check an AI picture for a funny Instagram Reel.",
+                             f"Open {name} with the Read tool. It should show: {scene}\nIs it fit to post? Reject only "
+                             "real problems: broken or extra hands, fingers, legs or faces, any text or letters, a "
+                             "celebrity or politician, anything scary, offensive or revealing, a messy picture. Small "
+                             "differences from the description are fine (extra people in the background, other "
+                             "clothes, another pose or setting).",
+                             check, CONFIG.get("membership_model", "sonnet"), folder=folder, purpose="joke art check")
+        print(f"  AI picture {k + 1} ({model}): {'ok' if ok['ok'] else 'rejected'}: {ok['reason'][:100]}")
+        if ok["ok"]:
+            img = img.convert("RGB")
+            if landscape:   # the meme window is wide: the middle band of the tall picture
+                h = int(img.width * 9 / 16)
+                y0 = max(0, int((img.height - h) * 0.45))
+                img = img.crop((0, y0, img.width, y0 + h))
+            return img, model
+    return None
+
+
+def fallback_visual(post: dict, size: tuple[int, int], tmp: str) -> tuple[str, float, str]:
+    """No stock clip fits a joke: free stock photos -> news photos of the topic -> 🎨 an AI picture of the moment ->
+    the branded background as the very last option (owner, 15 Oct 2026). Returns (clip path, seconds, note)."""
+    import status
+    query = post.get("photo_query", "").strip() or post.get("based_on", "") or " ".join(post.get("clip_search", [])[:1])
+    status.step("No clip fits: finding photos or painting a picture", 4)
+    photos, note = stock_photos(query) or topic_photos(query, want=3), "photos"
+    if not photos:
+        art = ai_picture(post.get("clip_wanted") or post.get("based_on", "") or query, tmp, landscape=size[0] > size[1])
+        if art:
+            photos, note = [art[0]], f"AI illustration ({art[1]})"
+        else:
+            photos, note = [brand_background()], "branded background"
+    print(f"  backup picture: {note}")
+    clip = os.path.join(tmp, "photos.mp4")
+    photo_clip(photos, *size, 14.0, clip)
+    return clip, 14.0, note
+
+
 def brand_background() -> Image.Image:
     """The last resort behind a joke when no clip or photo is found: a clean dark gradient with a soft brand glow."""
     img = Image.new("RGB", (1200, 675), "#111111")
@@ -1204,6 +1267,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     status.step(f"Judge picked: {post['based_on'][:80]}", 3)
     # ➕ Create (owner, 14 Oct 2026: "no photos or logo of Hopr and Tinder"): real photos of what the idea names
     # (from news articles, often the app screens/logos) instead of a stock clip; stock clip if none are found.
+    art_note = ""
     photos = app_photos(list(dict.fromkeys([a["name"] for a in apps] + post.get("apps", [])))) if topic else []
     if topic and len(photos) < 3 and post.get("photo_query", "").strip():
         photos += topic_photos(post["photo_query"], want=3 - len(photos) + 1)
@@ -1217,17 +1281,10 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
         try:
             cid = pick_clip(post, state)
             clip, secs = download_clip(cid, tmp)
-        except RuntimeError as e:   # no fitting clip: real photos, else a branded background (owner, 15 Oct 2026)
-            query = post.get("photo_query", "").strip() or post.get("based_on", "") or " ".join(post["clip_search"][:1])
-            print(f"  ! {e}: photos for '{query}' instead")
-            status.step("No clip fits: using photos instead", 4)
-            photos = stock_photos(query) or topic_photos(query, want=3)
-            if not photos:
-                photos = [brand_background()]
-                print("  no photos either: branded background")
+        except RuntimeError as e:   # no fitting clip: photos -> 🎨 AI picture -> branded background
+            print(f"  ! {e}")
+            clip, secs, art_note = fallback_visual(post, (RW, RH) if kind in CLIP_KINDS else (RW, 608), tmp)
             real, cid = True, None
-            clip, secs = os.path.join(tmp, "photos.mp4"), 14.0
-            photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
     out = os.path.join(tmp, "reel.mp4")
     songs = post.pop("songs", [])   # kept out of the proofreader's text
     # Long enough to read the (proofread) text in full; a short stock clip caps Tag that friend (memes freeze).
@@ -1252,6 +1309,9 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     else:
         check = "" if evergreen else topic_articles(post["based_on"])
     frames, post, proof = proofread.run(render, post, g.fun_caption, check, strict=True)
+    if art_note.startswith("AI"):   # Meta asks for its "AI info" label on AI pictures
+        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+            f"🎨 The picture is an {art_note}: turn on Instagram's 'AI info' label when posting."]}
     text = post["text"] if kind in CLIP_KINDS else f"{' '.join(post['setup'])} {post['punch']}"
     if cid:
         state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
@@ -1835,8 +1895,14 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     roman_only(best, ["caption", "pin_comment", "punchline"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     best["facts"] = best["facts"][:2]   # (a 1-fact, shorter version failed the judge on every story, 14 Oct 2026)
-    cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
-    clip, secs = download_clip(cid, tmp)
+    art_note = ""
+    try:
+        cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
+        clip, secs = download_clip(cid, tmp)
+    except RuntimeError as e:   # no fitting reaction clip: photos -> 🎨 AI picture -> branded background
+        print(f"  ! {e}")
+        cid = None
+        clip, secs, art_note = fallback_visual({**best, "photo_query": best.get("clip_wanted", "")}, (RW, 608), tmp)
     out = os.path.join(tmp, "reel.mp4")
     item = {"link": story["url"], "source": story["site"], "title": story["title"]}
 
@@ -1851,7 +1917,11 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         {"post": best}, lambda d: g.full_caption(d["post"], item),
         sources, strict=True)
     post = data["post"]
-    state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
+    if cid:
+        state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
+    if art_note.startswith("AI"):
+        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+            f"🎨 The picture is an {art_note}: turn on Instagram's 'AI info' label when posting."]}
     state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
     state["satire_recent"] = (state.get("satire_recent", []) + [{
         "date": today, "party": post["party"], "format": post["format"], "topic": post["based_on"],

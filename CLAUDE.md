@@ -67,8 +67,11 @@ viral + visual story of the feeds' last 8 h (+ X trends), not already used (`ree
 preview due at 10:00/17:00 (`schedule.PREVIEW_KINDS`) is that slot's story. Top 5 Reels (`make_top5_reel`): picked like
 the old Top 5 carousels (`specials.gather/pick_top10`), one photo + "n. title" per story via `news_reel`, ~30 s.
 **Never fail, best quality (owner 15 Oct 2026):** inside a joke Reel: clip = Pixabay videos → Mixkit
-(Free licence; searches retried shorter, `shorter()`; backup searches) → if none fits 5/10: free Pixabay photos (
-`stock_photos`) → news photos of the topic → `brand_background()`; jokes = trend round → one rewrite with the judge's
+(Free licence; searches retried shorter, `shorter()`; backup searches) → if none fits 5/10 (`fallback_visual`, also
+for the satire's reaction clip): free Pixabay photos (`stock_photos`) → news photos of the topic → 🎨 `ai_picture()` (owner
+15 Oct 2026: 'people don't like the plain KhabarBawaal page': a comic-style AI picture of the joke's moment via the
+god-picture demos, AI-checked for broken hands/legs/text, 2 tries, tall picture cropped for the meme window, proof note:
+turn on Instagram's 'AI info') → `brand_background()` only as the very last option; jokes = trend round → one rewrite with the judge's
 reasons → desi-life round. Slot: `generate.REEL_TRIES` = 3 tries → level 2 `reel.make_backup()` (a news Reel for a
 joke/satire/devotional slot, a Tag that friend for a news/Top 5 slot, saved under the slot's id) → level 3
 `evergreen.take_one(reels_only=True)` (a 📦 Ready Reel moved into the feed) → only then nothing. Free key: GitHub
