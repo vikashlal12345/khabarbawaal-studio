@@ -155,7 +155,7 @@
     </div>
   </div>
 </div>
-<div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-ready">📦 Ready</button><button id="tab-activity">⏳ Activity</button></div>
+<div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-ready" style="display:none">📦 Ready</button><button id="tab-activity">⏳ Activity</button></div>
 <div id="activity"></div>
 <div id="post-hint" class="post-hint"></div>
 <main id="feed"></main>
@@ -714,8 +714,11 @@ async function load() {
     boosts = bst || {};
     readyPosts = (ready || []).slice().reverse();
     igLinks = links || {}; igData = (ig && ig.posts) || {};
-    document.getElementById('tab-ready').textContent = `📦 Ready (${readyPosts.length})`;
-    if (!same) { posts = tab === 'ready' ? readyPosts : feedPosts; render(); }
+    const readyTab = document.getElementById('tab-ready');
+    readyTab.textContent = `📦 Ready (${readyPosts.length})`;
+    readyTab.style.display = readyPosts.length ? '' : 'none';   // night Reels stopped (15 Oct 2026): shown only when it has posts
+    if (tab === 'ready' && !readyPosts.length) showTab('feed');
+    else if (!same) { posts = tab === 'ready' ? readyPosts : feedPosts; render(); }
     statusEl.textContent = posts.length
       ? `${posts.length} posts · latest ${ago(posts[0].created_at)}`
       : 'Waiting for first post';

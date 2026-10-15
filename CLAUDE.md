@@ -49,7 +49,7 @@ Instagram may show 'engagement bait' less, so once a day.
 🔥 = ONE most viral/trending India story with its real photos (`NEWS_KINDS`: reel_news_early/_am/_noon/_aft/_pm/reel_news/
 _night (by hand); owner: 'like the Bittu Tabahi one'; X + Google trends shown to the picker). The Top 5s became viral news; night
 Reels (1 AM Ready, 3 AM God picture) and the 2 AM preview planner stopped (`PREVIEW_KINDS` = (); still runnable as
-`--kind`, `schedule.MANUAL`); 📦 Ready tab stays empty; 4 AM learning stays. `docs/app.json` plan/reels match.
+`--kind`, `schedule.MANUAL`); 📦 Ready tab is hidden while empty (owner 15 Oct 2026; `index.html` shows it only when `ready.json` has posts), so the level-3 backup (`evergreen.take_one`) usually finds nothing; 4 AM learning stays. `docs/app.json` plan/reels match.
 Older notes below (kept for the code they describe):
 **All Reels (owner 13 Oct 2026: carousels weren't getting views; Reels reach non-followers): 9 Reels a day**, no regular
 carousels (`REGULAR_HOURS` = []; news/Top 5/Thought/markets still work as `--kind`, `schedule.MANUAL`). Quiet 11 PM-5 AM.
