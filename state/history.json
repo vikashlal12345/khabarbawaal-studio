@@ -273,9 +273,10 @@
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-15",
-  "reel_news_noon": "2026-10-15"
+  "reel_news_noon": "2026-10-15",
+  "reel_poll": "2026-10-15"
  },
- "inbox_since": "3HNK57IuNQJ1",
+ "inbox_since": "8YYdp8IYgUYY",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -633,10 +634,6 @@
   }
  ],
  "songs_recent": [
-  "Patient Zero",
-  "Alfaaz",
-  "Sang Rahiyo",
-  "Earrings",
   "Love Me Not",
   "Thoda Thoda Pyaar",
   "Mann Mera",
@@ -672,6 +669,13 @@
   "Ez-Ez",
   "One Name",
   "Believer",
-  "Big Dawgs"
+  "Big Dawgs",
+  "Tabaahi (From \"Toxic\")",
+  "Thumkeshwari",
+  "Die With A Smile",
+  "Jalebi Baby"
+ ],
+ "poll_recent": [
+  "bollywood: Bollywood Khans face-off, with Salman in the news today"
  ]
 }

@@ -3278,6 +3278,29 @@
      "tokens": 24486
     }
    }
+  },
+  "reel_poll": {
+   "posts": 0,
+   "requests": 3,
+   "input": 8,
+   "output": 2369,
+   "cache_read": 5316,
+   "cache_write": 30518,
+   "value_usd": 0.1462,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 12424
+    },
+    "poll writing": {
+     "requests": 1,
+     "tokens": 17590
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 8197
+    }
+   }
   }
  }
 }

@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_poll-2026-10-15",
+  "image": "posts/20261015-0721-reel_poll-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-072130-reel_poll-2026-10-15.mp4",
+  "headline": "CHOOSE YOUR KHAN: Shah Rukh / Salman / Aamir / Saif",
+  "tag": "🎬 REEL · 🗳️ CHOOSE YOUR",
+  "caption": "Shah Rukh, Salman, Aamir ya Saif: kaun sabse bada Khan? 🎬 Button dabao, vote karo 👇\n\n❤️ Like = Shah Rukh\n💬 Comment = Salman\n🔁 Repost = Aamir\n✈️ Share = Saif\n\nFollow @khabarbawaal for daily bawaal\n\n#ShahRukhKhan #SalmanKhan #AamirKhan #Bollywood #Reels",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Apna Khan chuna? Ek line mein bolo kyun!",
+  "songs": [
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "swag entry = Khan power"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "masala Bollywood dance vibe"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga, Bruno Mars",
+    "lang": "english",
+    "mood": "classic stars, timeless feel"
+   },
+   {
+    "title": "Jalebi Baby",
+    "artist": "Tesher",
+    "lang": "english",
+    "mood": "fun desi vibe for voting"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-15T07:21:30+00:00"
+ },
+ {
   "id": "reel_news_noon-2026-10-15",
   "image": "posts/20261015-0603-reel_news_noon-2026-10-15.jpg",
   "kind": "reel",
