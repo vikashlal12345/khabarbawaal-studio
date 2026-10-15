@@ -1502,7 +1502,13 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             real, cid = True, None
     if len(photos) >= 2:
         status.step(f"Real photos: {', '.join(t['name'] for t in things)[:60]}", 4)
-        clip, secs, cid, real = os.path.join(tmp, "photos.mp4"), 14.0, None, True
+        # As long as the Reel's text, every photo the same time, at least 2 s each (owner, 15 Oct 2026: the
+        # Ramayana meme's 4th photo was never reached)
+        secs = (min(max(CLIP_SECONDS, read_secs(post["text"], 4.5)), CLIP_MAX) if kind in CLIP_KINDS else
+                min(8.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(post["setup"]), 2.5))) +
+                min(8.5, max(MEME_SECONDS * 0.45, read_secs(post["punch"], 2.5))))
+        photos = photos[:max(2, int(secs // 2))]
+        clip, cid, real = os.path.join(tmp, "photos.mp4"), None, True
         photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
         print(f"  real photos: {len(photos)} of {[t['name'] for t in things]}")
     else:
@@ -2254,7 +2260,9 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     photos, credits = named_photos(people, fill_missing=True) if people else ([], [])
     if credits:   # at least one real photo
         status.step(f"Photos: {', '.join(x['name'] for x in people)}", 4)
-        clip, secs, real = os.path.join(tmp, "people.mp4"), 7.0, True
+        # As long as the hook window, so every photo gets the same time (owner, 15 Oct 2026: Mann had 1.3 s)
+        secs = min(max(5.5, read_secs(" ".join(best["claim"]), 2.5)), 7.0)
+        clip, real = os.path.join(tmp, "people.mp4"), True
         photo_clip(photos[:3], RW, 608, secs, clip)
         print(f"  people photos: {len(photos[:3])} of {[x['wiki'] for x in people]}")
     else:
