@@ -266,7 +266,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-15",
   "reel_clip_am": "2026-10-15",
-  "reel_politics": "2026-10-14",
+  "reel_politics": "2026-10-15",
   "reel_meme": "2026-10-14",
   "reel_news": "2026-10-14",
   "night_picture": "2026-10-15",
@@ -280,7 +280,7 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-15"
  },
- "inbox_since": "r5Rnd2c2zyeK",
+ "inbox_since": "pUWVcpi92lLm",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -415,7 +415,8 @@
   "48253",
   "pb85004",
   "4536",
-  "4706"
+  "4706",
+  "pb83870"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -560,11 +561,12 @@
   "Gita 1.4: Gita 1.4: Duryodhan Drona ko Pandav sena ke veer ginata hai, har ek ko Bhima-Arjun jaisa bolta hai. Seekh: darr hamari soch ka paimana ban jaata hai."
  ],
  "reel_politics_used": [
-  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
-  "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
+  "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
   "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
-  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest"
+  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
+  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
+  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074"
  ],
  "reel_news_used": [
   "119d9f27c7b0",
@@ -659,13 +661,22 @@
    "facts": [
     "election results (old Reel)"
    ]
+  },
+  {
+   "date": "2026-10-15",
+   "party": "Congress",
+   "format": "WhatsApp chat",
+   "topic": "Congress aur AAP: Rahul Gandhi ka Mann sarkar par hamla",
+   "hook": "INDIA Bloc Family (2 members) Rahul: Mann ji jawab do AAP: jawab abhi pending",
+   "punchline": "Group ka naam INDIA, par Punjab wale mute pe daal diye.",
+   "issue": "INDIA bloc Punjab fight",
+   "facts": [
+    "Mansa: activist Parminder Singh Jhota ko din-dahade goli maari gayi",
+    "Rahul ka aarop: Jhota ki shikayat par police ne unhi par case kiya"
+   ]
   }
  ],
  "songs_recent": [
-  "Favorite",
-  "Tu hai kahan",
-  "Co2",
-  "Iris",
   "Pehle Bhi Main",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Harleys In Hawaii",
@@ -701,7 +712,11 @@
   "Azadi",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Believer",
-  "Solar Eclipse"
+  "Solar Eclipse",
+  "Barsaat",
+  "Samjhawan",
+  "Love Me Not",
+  "Earrings"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?"

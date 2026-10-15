@@ -1,5 +1,66 @@
 [
  {
+  "id": "reel_politics-2026-10-15",
+  "image": "posts/20261015-1239-reel_politics-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-123920-reel_politics-2026-10-15.mp4",
+  "headline": "INDIA Bloc Family (2 members) Rahul: Mann ji jawab do AAP: jawab abhi pending",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Rahul Gandhi vs Bhagwant Mann: INDIA bloc ke saathi Punjab mein aamne-saamne 📱\nCongress ne Mann sarkar se drugs par jawab maanga, AAP ka group chat mein reply pending.\nIs group chat ko apne dost ko bhejo.\n\nFollow @khabarbawaal for daily updates.\nSource: India TV News (link pinned in comments 👇)\n\n#reelsindia #indiabloc #rahulgandhi #aapvscongress #politicalmemes",
+  "source": "India TV News",
+  "source_url": "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
+  "pin_comment": "INDIA bloc mein agla jhagda kahan hoga? Comment karo.",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "sawalon ki barsaat, group chat drama"
+   },
+   {
+    "title": "Samjhawan",
+    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
+    "lang": "hindi",
+    "mood": "manane ki koshish, naraaz saathi"
+   },
+   {
+    "title": "Love Me Not",
+    "artist": "Ravyn Lenae",
+    "lang": "english",
+    "mood": "hum saath nahi, par saath hain"
+   },
+   {
+    "title": "Earrings",
+    "artist": "Malcolm Todd",
+    "lang": "english",
+    "mood": "chill reaction, group chat seen"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Invented quote attributed to Kejriwal; article has no Kejriwal statement",
+    "Fact corrected to match the article: Article gives no date for seat sharing; 'Jun' unsupported",
+    "Fact corrected to match the article: Article gives no month; 'Jun' unsupported",
+    "Fact corrected to match the article: Seat-sharing claim not in article; replaced with what the article reports",
+    "Fact corrected to match the article: Source must match the article",
+    "Fact corrected to match the article: 13-seat claim not in article; replaced with attributed allegation from the article",
+    "Fact corrected to match the article: Source must match the article"
+   ],
+   "fixed": [
+    "Kejriwal: Delhi group mein yeh sawal nahi tha → AAP: jawab abhi pending",
+    "Jun 2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante → 2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante",
+    "Jun 2024 Punjab: dono partiyan saari 13 seat par alag lade → 2024 Punjab: dono partiyan saari 13 seat par alag lade",
+    "2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante → Mansa: activist Parminder Singh Jhota ko din-dahade goli maari gayi",
+    "The Hindu → India TV News",
+    "2024 Punjab: dono partiyan saari 13 seat par alag lade → Rahul ka aarop: Jhota ki shikayat par police ne unhi par case kiya",
+    "Election Commission → India TV News"
+   ]
+  },
+  "created_at": "2026-10-15T12:39:20+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-15",
   "image": "posts/20261015-1133-reel_news_pm-2026-10-15.jpg",
   "kind": "reel",
@@ -603,107 +664,5 @@
    "fixed": []
   },
   "created_at": "2026-10-14T14:32:12+00:00"
- },
- {
-  "id": "reel_politics-2026-10-14",
-  "image": "posts/20261014-1234-reel_politics-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-123408-reel_politics-2026-10-14.mp4",
-  "headline": "Rules for being an opposition leader: 1. Protest mat jao. 2. Protest ke baad 'janta ka hai' bolo.",
-  "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "Congress ne CJP ka protest skip kiya, phir Rahul Gandhi bole Jantar Mantar janta ka hai.\nRule book ready hai 📜\nOpposition ka rule 3 kya hoga? Comment karo aur dost ko bhejo.\n\nFollow @khabarbawaal for daily updates.\nSource: Outlook India (link pinned in comments 👇)\n\n#congress #rahulgandhi #jantarmantar #politicalmemes #reelsindia",
-  "source": "Outlook India",
-  "source_url": "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
-  "pin_comment": "Rule 3 aap likho, best comment pin hoga.",
-  "songs": [
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "sirf alfaaz, kaam nahi"
-   },
-   {
-    "title": "Sang Rahiyo",
-    "artist": "Jasleen Royal, Ranveer Allahbadia",
-    "lang": "hindi",
-    "mood": "saath rehna, bas bolne mein"
-   },
-   {
-    "title": "Earrings",
-    "artist": "Malcolm Todd",
-    "lang": "english",
-    "mood": "chill, smug rulebook vibe"
-   },
-   {
-    "title": "Love Me Not",
-    "artist": "Ravyn Lenae",
-    "lang": "english",
-    "mood": "support hai ya nahi?"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Party expansion and founder name are not in the article",
-    "Fact corrected to match the article: Bihar figures are not in the supplied article or results; replaced with a supported result"
-   ],
-   "fixed": [
-    "CJP (Cockroach Janta Party, founder Abhijeet Dipke) ke Jantar Mantar protest → CJP ke Jantar Mantar protest",
-    "Nov 2025 Bihar: Congress ne 61 lade, sirf 6 jeete → Oct 2024 Haryana: BJP 48, Congress 37"
-   ]
-  },
-  "created_at": "2026-10-14T12:34:08+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-14",
-  "image": "posts/20261014-1133-reel_news_pm-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-113331-reel_news_pm-2026-10-14.mp4",
-  "headline": "Death penalty for Muskan, lover Sahil for 'blue drum' murder of her husband Saurabh Rajput",
-  "tag": "🎬 REEL · INDIA",
-  "caption": "Blue drum murder case mein bada faisla ⚖️\nSaurabh Rajput ki hatya mein Muskan Rastogi aur Sahil ko death penalty suna di gayi.\nYe case poore desh mein charcha mein raha.\nAapko kya lagta hai, sahi faisla hai? Comment karo.\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bluedrum #breakingnews #indianews #justice #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/muskan-rastogi-lover-sahil-handed-death-penalty-for-navy-officer-saurabh-rajputs-blue-drum-murder-101791975185379.html",
-  "pin_comment": "Aapki raay kya hai is faisle par? Comment mein batao, respectfully.",
-  "songs": [
-   {
-    "title": "Bairan",
-    "artist": "Banjaare",
-    "lang": "hindi",
-    "mood": "betrayal theme = dhokha wali kahani"
-   },
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "serious, heavy tone for verdict"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "sad, calm tone for serious news"
-   },
-   {
-    "title": "Patient Zero",
-    "artist": "Taylor Swift",
-    "lang": "english",
-    "mood": "dark, moody serious news vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article: police said body was encased in cement in drum; cut-into-pieces is the prosecution's allegation, not police finding.",
-    "Fact corrected to match the article: Article says sentenced to death; hanging is not mentioned."
-   ],
-   "fixed": [
-    "police ke mutabiq body tukdon mein blue drum mein cement se seal thi. → police ke mutabiq body blue drum mein cement se seal thi; prosecution ka aarop hai ki body ke tukde kiye gaye.",
-    "dono ko fansi, ₹50,000 → dono ko maut ki saza, ₹50,000"
-   ]
-  },
-  "created_at": "2026-10-14T11:33:31+00:00"
  }
 ]
