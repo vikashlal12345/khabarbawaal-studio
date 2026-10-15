@@ -1653,7 +1653,7 @@ def bachpan_style(today: str) -> str:
 
 
 def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    """🧒 9:15 PM bachpan Reel (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment under a big red
+    """🧒 9 PM bachpan Reel (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment under a big red
     banner over a clip that shows it. Two styles on alternate days (`bachpan_style`): 'BACHPAN ME AISA KAUN KIYA?'
     (the moment itself, 'COMMENT KARO: MAINE BHI') and TAG THAT FRIEND ('Wo dost jo bachpan mein...', the owner's
     favourite). A new moment every day in either style (state.bachpan_recent). Weak jokes get one rewrite with the
