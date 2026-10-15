@@ -903,32 +903,7 @@ def clip_license(cid: str, known: dict) -> str:
     return ""
 
 
-CLIP_URLS: dict[str, str] = {}   # Pexels/Pixabay clip id -> its MP4 link (found while searching)
-
-
-def pexels_videos(query: str) -> list[tuple[str, str]]:
-    """Pexels free videos (free for business use, no credit needed; free key in PEXELS_API_KEY): [(id, title)]."""
-    import requests
-    key = os.environ.get("PEXELS_API_KEY", "")
-    if not key:
-        return []
-    try:
-        res = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key}, timeout=20,
-                           params={"query": query, "per_page": 30, "size": "medium"}).json().get("videos", [])
-    except Exception as e:
-        print(f"  ! Pexels search '{query}' failed: {e}")
-        return []
-    out = []
-    for v in res:
-        files = sorted((f for f in v.get("video_files", []) if f.get("link") and (f.get("height") or 0) >= 540),
-                       key=lambda f: abs((f.get("height") or 0) - 1080))
-        if not files or (v.get("duration") or 0) < 4:
-            continue
-        cid = f"px{v['id']}"
-        CLIP_URLS[cid] = files[0]["link"]
-        title = v.get("url", "").rstrip("/").split("/")[-1].rsplit("-", 1)[0].replace("-", " ")
-        out.append((cid, title or query))
-    return out
+CLIP_URLS: dict[str, str] = {}   # Pixabay clip id -> its MP4 link (found while searching)
 
 
 def pixabay_videos(query: str) -> list[tuple[str, str]]:
@@ -962,10 +937,10 @@ def shorter(query: str) -> list[str]:
 
 
 def pick_clip(post: dict, state: dict) -> str:
-    """The best-fitting free stock clip for a joke (owner, 15 Oct 2026: 'best Reels, never fail'): Pexels videos,
-    then Pixabay, then Mixkit (only its Free licence: Restricted forbids business social media). The AI ranks the
-    clips by title; a clip must fit 5/10 or better. Raises RuntimeError if none does (the caller falls back to
-    real photos, then a branded background). Returns the clip id (Pexels 'px…', Pixabay 'pb…', Mixkit plain)."""
+    """The best-fitting free stock clip for a joke (owner, 15 Oct 2026: 'best Reels, never fail'): Pixabay videos,
+    then Mixkit (only its Free licence: Restricted forbids business social media). The AI ranks the clips by title;
+    a clip must fit 5/10 or better. Raises RuntimeError if none does (the caller falls back to real photos, then a
+    branded background). Returns the clip id (Pixabay 'pb…', Mixkit plain). (Pexels: no new API keys, 15 Oct 2026.)"""
     import fun
     import status
     status.step("Finding the best free clip", 4)
@@ -977,8 +952,8 @@ def pick_clip(post: dict, state: dict) -> str:
         queries.insert(0, f"indian {queries[0]}")
     backups = ["shocked", "surprised", "laughing", "panic", "facepalm"] if post.get("punch") else \
         ["friends laughing", "people talking", "indian people"]
-    for q in queries:   # the big libraries first: they understand longer searches
-        for cid, title in pexels_videos(q)[:12] + pixabay_videos(q)[:12]:
+    for q in queries:   # the big library first: it understands longer searches
+        for cid, title in pixabay_videos(q)[:20]:
             if cid not in used:
                 found.setdefault(cid, title)
         if len(found) >= 40:
@@ -1010,7 +985,7 @@ def pick_clip(post: dict, state: dict) -> str:
     for r in ranked[:12]:   # Mixkit: many good clips are Restricted, keep going until a Free one fits
         if r["id"] not in found or r["fits"] < 5:
             continue
-        lic = "Free" if r["id"][:2] in ("px", "pb") else clip_license(r["id"], known)
+        lic = "Free" if r["id"].startswith("pb") else clip_license(r["id"], known)
         if lic == "Free":
             print(f"  clip {r['id']}: {found[r['id']]} (fits {r['fits']}/10)")
             return r["id"]
@@ -1019,8 +994,7 @@ def pick_clip(post: dict, state: dict) -> str:
 
 
 def download_clip(cid: str, folder: str) -> tuple[str, float]:
-    """A stock clip -> (path, seconds): Pexels/Pixabay by the link found while searching, Mixkit 720p (else
-    1080p/360p)."""
+    """A stock clip -> (path, seconds): Pixabay by the link found while searching, Mixkit 720p (else 1080p/360p)."""
     import re
     import requests
     path = os.path.join(folder, f"{cid}.mp4")
@@ -1089,18 +1063,11 @@ def named_apps(text: str) -> list[dict]:
 
 
 def stock_photos(query: str, want: int = 3) -> list[Image.Image]:
-    """Free stock photos (Pexels, then Pixabay: free for business use, no credit needed) when no video clip fits."""
+    """Free stock photos (Pixabay: free for business use, no credit needed) when no video clip fits."""
     import requests
     import generate as g
     links = []
-    if os.environ.get("PEXELS_API_KEY"):
-        try:
-            links += [p["src"]["large2x"] for p in requests.get(
-                "https://api.pexels.com/v1/search", headers={"Authorization": os.environ["PEXELS_API_KEY"]}, timeout=20,
-                params={"query": query[:90], "per_page": 8}).json().get("photos", [])]
-        except Exception as e:
-            print(f"  ! Pexels photos '{query}' failed: {e}")
-    if os.environ.get("PIXABAY_API_KEY") and len(links) < want:
+    if os.environ.get("PIXABAY_API_KEY"):
         try:
             links += [p["largeImageURL"] for p in requests.get("https://pixabay.com/api/", timeout=20, params={
                 "key": os.environ["PIXABAY_API_KEY"], "q": query[:90], "image_type": "photo", "per_page": 8,
