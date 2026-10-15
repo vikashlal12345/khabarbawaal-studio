@@ -2921,7 +2921,9 @@ def button_icon(kind: str, size: int = 92, color: str = "#111111") -> Image.Imag
     return im.resize((size, size), Image.LANCZOS)
 
 
-def poll_reel(title: str, options: list[tuple[Image.Image, str]], out_mp4: str, secs: float = 7.0) -> list[Image.Image]:
+def poll_reel(title: str, options: list[tuple[Image.Image, str]], out_mp4: str, secs: float = 7.0,
+              background: str = "blur", bg_clip: str | None = None,
+              bg_image: Image.Image | None = None) -> list[Image.Image]:
     """🗳️ 1080x1920: big 'CHOOSE YOUR ___' title, 4 option cards (picture + name) and an Instagram button bar
     under them (❤️ 💬 🔁 ✈️), everything on screen from the first frame; behind it a blurred, slowly zooming mix of
     the 4 pictures; then the follow card. Returns [cover]."""
@@ -2929,7 +2931,12 @@ def poll_reel(title: str, options: list[tuple[Image.Image, str]], out_mp4: str, 
     collage = Image.new("RGB", (1080, 1920))
     for i, t in enumerate(tiles):
         collage.paste(t, ((i % 2) * 540, (i // 2) * 960))
-    bg = Image.blend(collage.filter(ImageFilter.GaussianBlur(28)), Image.new("RGB", (RW, RH), "#000000"), 0.45)
+    bg = (Image.blend(ImageOps.fit(bg_image.convert("RGB"), (RW, RH)), Image.new("RGB", (RW, RH), "#000000"), 0.25)
+          if bg_image is not None else
+          Image.blend(collage, Image.new("RGB", (RW, RH), "#000000"), 0.35) if background == "grid" else
+          Image.blend(collage.filter(ImageFilter.GaussianBlur(28)), Image.new("RGB", (RW, RH), "#000000"), 0.45))
+    shots = clip_frames(bg_clip, 0.0, secs, RW, RH, hold=secs) if bg_clip else None   # a video behind the poll
+    dim = Image.new("RGBA", (RW, RH), (0, 0, 0, 80))
     over = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
     d = ImageDraw.Draw(over)
     tf = font("Poppins-Bold.ttf", 76)
@@ -2970,10 +2977,16 @@ def poll_reel(title: str, options: list[tuple[Image.Image, str]], out_mp4: str, 
         over.alpha_composite(logo, ((RW - logo.width) // 2, 150))
     handle_tag(over, 1730)
     enc, frame = Encoder(out_mp4), None
+    shot = None
     for i in range(int(secs * FPS)):
-        z = 1.0 + 0.05 * i / (secs * FPS)
-        big = bg.resize((int(RW * z), int(RH * z)), Image.BICUBIC)
-        frame = big.crop(((big.width - RW) // 2, (big.height - RH) // 2, (big.width + RW) // 2, (big.height + RH) // 2)).convert("RGBA")
+        if shots is not None:
+            shot = next(shots, shot)
+            frame = shot.convert("RGBA")
+            frame.alpha_composite(dim)
+        else:
+            z = 1.0 + 0.05 * i / (secs * FPS)
+            big = bg.resize((int(RW * z), int(RH * z)), Image.BICUBIC)
+            frame = big.crop(((big.width - RW) // 2, (big.height - RH) // 2, (big.width + RW) // 2, (big.height + RH) // 2)).convert("RGBA")
         frame.alpha_composite(over)
         enc.add(frame)
     cover = frame.convert("RGB")
