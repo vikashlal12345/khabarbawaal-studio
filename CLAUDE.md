@@ -49,7 +49,7 @@ Instagram may show 'engagement bait' less, so once a day.
 🔥 = ONE most viral/trending India story with its real photos (`NEWS_KINDS`: reel_news_early/_am/_noon/_aft/_pm/reel_news/
 _night (by hand); owner: 'like the Bittu Tabahi one'; X + Google trends shown to the picker). The Top 5s became viral news; night
 Reels (1 AM Ready, 3 AM God picture) and the 2 AM preview planner stopped (`PREVIEW_KINDS` = (); still runnable as
-`--kind`, `schedule.MANUAL`); 📦 Ready tab is hidden while empty (owner 15 Oct 2026; `index.html` shows it only when `ready.json` has posts), so the level-3 backup (`evergreen.take_one`) usually finds nothing; 4 AM learning stays. `docs/app.json` plan/reels match.
+`--kind`, `schedule.MANUAL`); 📦 Ready tab removed from the app (owner 15 Oct 2026; `ready.json` is only written by night jobs run by hand, so the level-3 backup `evergreen.take_one` usually finds nothing); 4 AM learning stays. `docs/app.json` plan/reels match.
 Older notes below (kept for the code they describe):
 **All Reels (owner 13 Oct 2026: carousels weren't getting views; Reels reach non-followers): 9 Reels a day**, no regular
 carousels (`REGULAR_HOURS` = []; news/Top 5/Thought/markets still work as `--kind`, `schedule.MANUAL`). Quiet 11 PM-5 AM.
@@ -164,7 +164,7 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   sends the phone's address to the inbox (`push_sub` → `state/push.json`, newest 3); workflows run `push.py --before` / `--after`
   (after deploy, so the post is live when tapped; tap opens that post). Robot posts 11 PM-5 AM don't buzz; ➕ Create ✅/❌ always.
 - `inbox.py` also handles app 🗑️ delete and 🚀 boost messages. `save.py` merges feed/state clashes. `notify.py` turns alerts into GitHub issues (emails the owner).
-- App: `docs/index.html` (feed, 📦 Ready tab, ➕ Create with PIN + authenticator code, 🔗 Insta link; ⏱️ `postHint()`:
+- App: `docs/index.html` (tabs **Posts** = not yet linked / **✅ Posted** = 🔗 Insta link pasted (`isLinked`: ig_links.json or this phone's `linked-` mark; owner 15 Oct 2026, replaced 📦 Ready) / ⏳ Activity; same 24 h clearing; ➕ Create with PIN + authenticator code, 🔗 Insta link; ⏱️ `postHint()`:
   time since the last 📤 Post on this phone (`lastShare`), wait an hour / night warning; Reel cover + song tips),
   `docs/stats.html` (report, Instagram, 🚀 boosts, plan usage, robot vs ad hoc), `docs/sw.js` (bump CACHE on change).
   `docs/app.json` `plan` (report's 🗓️ Today's plan) + `reels` (app's "Next Reel") are hand-kept: **change them with

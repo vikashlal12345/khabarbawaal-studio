@@ -155,7 +155,7 @@
     </div>
   </div>
 </div>
-<div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-ready" style="display:none">📦 Ready</button><button id="tab-activity">⏳ Activity</button></div>
+<div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-posted">✅ Posted</button><button id="tab-activity">⏳ Activity</button></div>
 <div id="activity"></div>
 <div id="post-hint" class="post-hint"></div>
 <main id="feed"></main>
@@ -169,7 +169,7 @@ const files = {};      // image path -> File, ready for the share sheet
 const pending = {};    // image path -> Promise<File>
 const chosen = {};     // post id -> picked option index (posts with photo options)
 let posts = [];
-let feedPosts = [], readyPosts = [], tab = 'feed';
+let feedPosts = [], tab = 'feed';
 let igLinks = {}, igData = {}, boosts = {};
 let inboxTopic = null, pushKey = null;
 
@@ -228,7 +228,7 @@ function keepReady(post) {
   if (i >= 0) kept.splice(i, 1);
   kept.push(post.id);
   while (kept.length > KEEP_READY) {
-    const old = posts.find(p => p.id === kept.shift());
+    const old = feedPosts.find(p => p.id === kept.shift());
     if (old) for (const src of allImages(old)) { delete files[src]; delete pending[src]; }
   }
 }
@@ -323,8 +323,15 @@ function proofHtml(p) {
     pr.issues.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
 }
 
-// A ready post counts as used once you mark it or link its Instagram post.
-function isUsed(p) { return !!(localGet('used-' + p.id) || igLinks[p.id] || localGet('linked-' + p.id)); }
+// ✅ Posted (owner, 15 Oct 2026): a post moves from Posts (to do) to ✅ Posted once its Instagram link is pasted.
+// Both still clear 24 hours after the robot made them (feed.json keep_days), 🗑️ works the same in both.
+function isLinked(p) { return !!(igLinks[p.id] || localGet('linked-' + p.id)); }
+function shown() { return feedPosts.filter(p => !localGet('deleted-' + p.id)); }
+function updateTabs() {
+  const all = shown(), done = all.filter(isLinked).length;
+  document.getElementById('tab-feed').textContent = `Posts (${all.length - done})`;
+  document.getElementById('tab-posted').textContent = `✅ Posted (${done})`;
+}
 
 function instaHtml(p) {
   const local = localGet('linked-' + p.id);
@@ -347,16 +354,18 @@ function img(src, alt, later = false) {
 function render() {
   observer.disconnect(); videoNear.disconnect(); videoPlay.disconnect();   // the old cards are replaced below
   if (tab === 'activity') { feedEl.innerHTML = ''; return; }   // the ⏳ Activity tab shows only the activity list
-  posts = (tab === 'feed' ? feedPosts : readyPosts).filter(p => !localGet('deleted-' + p.id));
+  updateTabs();
+  posts = shown().filter(p => isLinked(p) === (tab === 'posted'));
   if (!posts.length) {
-    feedEl.innerHTML = tab === 'ready'
-      ? '<div class="empty">No ready posts.<br>Night Reels are paused (since 15 Oct 2026): all 12 Reels go straight to Posts.</div>'
+    feedEl.innerHTML = tab === 'posted'
+      ? '<div class="empty">Nothing posted yet.<br>After posting on Instagram, tap 🔗 Insta link on the post: it moves here.</div>'
+      : shown().length ? '<div class="empty">All done: everything is posted ✅<br>New Reels appear here when the robot makes them.</div>'
       : '<div class="empty">No posts yet.<br>The first one appears after the next hourly run.</div>';
     return;
   }
   const lastSeen = localGet('lastSeen');
   feedEl.innerHTML = posts.map(p => `
-    <article class="post${tab === 'ready' && isUsed(p) ? ' used' : ''}" data-id="${p.id}">
+    <article class="post" data-id="${p.id}">
       ${p.video ? `<video data-src="${p.video}" poster="${pv(p.image)}" muted loop playsinline preload="metadata"></video>`
       : p.options && p.options.length > 1 ? `
       <div class="carousel" data-role="options">${p.options.map((o, i) => img(o, esc(p.headline), i > 0)).join('')}</div>
@@ -389,8 +398,6 @@ function render() {
         ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
       </div>
       ${instaHtml(p)}
-      ${tab === 'ready' ? `<div class="insta"><span>${isUsed(p) ? '✓ Used (posted)' : 'Posted it? Mark it so you don\'t repeat it'}</span>
-        <button data-act="used">${localGet('used-' + p.id) ? 'Unmark' : '✓ Mark used'}</button></div>` : ''}
     </article>`).join('');
   feedEl.querySelectorAll('.post').forEach(el => observer.observe(el));
   feedEl.querySelectorAll('video[data-src]').forEach(v => { videoNear.observe(v); videoPlay.observe(v); });
@@ -416,7 +423,6 @@ feedEl.addEventListener('click', e => {
   else if (act === 'insta') linkInsta(post);
   else if (act === 'boost') toggleBoost(post);
   else if (act === 'delete') deletePost(post);
-  else if (act === 'used') { localGet('used-' + post.id) ? localDel('used-' + post.id) : localSet('used-' + post.id, '1'); render(); }
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
 
@@ -673,8 +679,7 @@ async function linkInsta(post) {
       body: JSON.stringify({ type: 'insta', post: post.id, url: m[0] }) });
     if (!r.ok) throw new Error(r.status);
     localSet('linked-' + post.id, m[0]);
-    if (post.kind === 'ready') localSet('used-' + post.id, '1');
-    toast('✅ Link saved: likes will show in a few hours');
+    toast('✅ Link saved: moved to ✅ Posted (likes show in a few hours)');
     render();
   } catch (e) {
     toast('Couldn\'t save the link (no internet?). Try again.');
@@ -706,21 +711,18 @@ async function load() {
     const res = await fetch('feed.json?t=' + Date.now(), { cache: 'no-store' });
     feedPosts = await res.json();
     const opt = async p => { try { const r = await fetch(p + '?t=' + Date.now(), { cache: 'no-store' }); return r.ok ? r.json() : null; } catch { return null; } };
-    const [ready, links, ig, bst] = await Promise.all([opt('ready.json'), opt('stats/ig_links.json'), opt('stats/instagram.json'), opt('stats/boosts.json')]);
+    const [links, ig, bst] = await Promise.all([opt('stats/ig_links.json'), opt('stats/instagram.json'), opt('stats/boosts.json')]);
     // Coming back from Instagram: only rebuild the feed if something changed (rebuilding reloads every picture).
-    const sig = JSON.stringify([feedPosts, ready, links, ig && ig.posts, bst]);
+    const sig = JSON.stringify([feedPosts, links, ig && ig.posts, bst]);
     const same = sig === lastSig && feedEl.children.length;
     lastSig = sig;
     boosts = bst || {};
-    readyPosts = (ready || []).slice().reverse();
     igLinks = links || {}; igData = (ig && ig.posts) || {};
-    const readyTab = document.getElementById('tab-ready');
-    readyTab.textContent = `📦 Ready (${readyPosts.length})`;
-    readyTab.style.display = readyPosts.length ? '' : 'none';   // night Reels stopped (15 Oct 2026): shown only when it has posts
-    if (tab === 'ready' && !readyPosts.length) showTab('feed');
-    else if (!same) { posts = tab === 'ready' ? readyPosts : feedPosts; render(); }
-    statusEl.textContent = posts.length
-      ? `${posts.length} posts · latest ${ago(posts[0].created_at)}`
+    if (!same) render();
+    else updateTabs();
+    const all = shown();
+    statusEl.textContent = all.length
+      ? `${all.length} posts · latest ${ago(all[0].created_at)}`
       : 'Waiting for first post';
   } catch {
     statusEl.textContent = 'Offline — showing saved posts';
@@ -736,11 +738,11 @@ fetch('manifest.json').then(r => r.json()).then(m => {
 
 document.getElementById('refresh').addEventListener('click', load);
 function showTab(name) {
-  tab = name; posts = tab === 'ready' ? readyPosts : feedPosts;
-  for (const t of ['feed', 'ready', 'activity']) document.getElementById('tab-' + t).classList.toggle('on', tab === t);
+  tab = name;
+  for (const t of ['feed', 'posted', 'activity']) document.getElementById('tab-' + t).classList.toggle('on', tab === t);
   render(); renderActivity(); window.scrollTo(0, 0);
 }
-for (const t of ['feed', 'ready', 'activity']) document.getElementById('tab-' + t).addEventListener('click', () => showTab(t));
+for (const t of ['feed', 'posted', 'activity']) document.getElementById('tab-' + t).addEventListener('click', () => showTab(t));
 // ⏳ Activity: each step of 🎬 Reels and ➕ Create requests, sent by the robot to a private ntfy.sh
 // topic (status.py) and checked every 10 s while the app is open. Kept 24 hours on this phone.
 let statusTopic = null, statusSince = '24h', reelTimes = [];
@@ -804,7 +806,8 @@ function renderActivity() {
   }).join('') + (next ? `<div class="act-next">Next Reel: ${esc(next)}</div>` : '');
 }
 function openPost(id) {
-  showTab(readyPosts.some(p => p.id === id) ? 'ready' : 'feed');
+  const p = feedPosts.find(x => x.id === id);
+  showTab(p && isLinked(p) ? 'posted' : 'feed');
   const card = document.querySelector(`.post[data-id="${CSS.escape(id)}"]`);
   if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
   else toast('That post is no longer in the app (deleted or older than 24 hours)');
