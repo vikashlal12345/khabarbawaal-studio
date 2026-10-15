@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_noon-2026-10-15",
+  "image": "posts/20261015-0603-reel_news_noon-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-060318-reel_news_noon-2026-10-15.mp4",
+  "headline": "BREAKING: Jailer 2 ends with the promise of third part; Hrithik Roshan's massy special appearance has a Chulbul Pandey connection (Spoilers ahead)",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Jailer 2 release Rajinikanth Hrithik Roshan cameo 🔥\nFilm aaj release hui aur great opening mili.\nEnd mein Jailer 3 ka promise hai.\nHrithik ki massy special appearance mein Chulbul Pandey connection bhi hai.\nTumne dekhi? Comment mein batao, Thalaivar ya Hrithik? 🎬\n\nFollow @khabarbawaal for daily updates.\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#jailer2 #rajinikanth #hrithikroshan #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/breaking-jailer-2-ends-with-the-promise-of-third-part-hrithik-roshans-massy-special-appearance-has-a-chulbul-pandey-connection-spoilers-ahead/",
+  "pin_comment": "Jailer 2 dekhi? Spoiler-free rating comment mein batao, Hrithik ki entry kaisi lagi?",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "mass swag = Thalaivar entry"
+   },
+   {
+    "title": "One Name",
+    "artist": "Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "Anirudh hype for Rajini film"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "power hype for blockbuster moment"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "swagger for massy cameo"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Hrithik appears at a crucial juncture, not at the end; the last scene features Vijay Sethupathi."
+   ],
+   "fixed": [
+    "Jailer 2 ke end mein Hrithik ki entry → Jailer 2 mein Hrithik ki special entry"
+   ]
+  },
+  "created_at": "2026-10-15T06:03:18+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-15",
   "image": "posts/20261015-0432-reel_news_am-2026-10-15.jpg",
   "kind": "reel",
