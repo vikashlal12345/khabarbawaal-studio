@@ -1903,6 +1903,20 @@ def satire_hook_secs(claim: list[str]) -> float:
     return min(max(4.5, read_secs(" ".join(claim), 1.5)), 6.0)
 
 
+SATIRE_BASE_WORDS = (28, 23)   # KYA HUA? and REALITY CHECK words of the owner's OK'd Reel (15 Oct 2026, 9.4 s + 9 s)
+
+
+def satire_part_secs(context: list[str], facts: list[dict]) -> tuple[float, float]:
+    """KYA HUA? and REALITY CHECK seconds (owner, 15 Oct 2026: 'for today it looks good; if content is more, only
+    increase 1 or 2 seconds accordingly'): KYA HUA? ~3.5 words/s + 1.4 s (fewer words = shorter); REALITY CHECK 9 s;
+    each + up to 2 s (1 s per 3 words) above today's words."""
+    ctx_words = len(" ".join(context).split())
+    fact_words = sum(len(f["fact"].split()) for f in facts)
+    d_ctx = min(max(2.5, ctx_words / 3.5 + 1.4), SATIRE_BASE_WORDS[0] / 3.5 + 1.4 + 2.0)
+    d_facts = SATIRE_FACTS_SECS + min(2.0, max(0, fact_words - SATIRE_BASE_WORDS[1]) / 3)
+    return round(d_ctx, 2), round(d_facts, 2)
+
+
 def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], context: list[str],
                 facts: list[dict], punchline: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
     """1) the dig over a reaction clip (meme layout), 2) KYA HUA? plain context, 3) REALITY CHECK: recent
@@ -1929,13 +1943,10 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     src_f = font("Poppins-SemiBold.ttf", 26)
     logo = logo_img()
 
-    def secs(text: str) -> float:          # time to read comfortably (~3.5 words/s + a hold; owner 12 Oct 2026: +1 s)
-        return max(3.0, len(text.split()) / 3.5 + 1.9)
     t_ctx = clip_dur
-    d_ctx = secs(" ".join(context)) - 0.5   # (owner, 15 Oct 2026: 1 s shorter)
+    d_ctx, d_facts = satire_part_secs(context, facts)
     t_facts = t_ctx + d_ctx
-    # Fixed by the owner (15 Oct 2026, after a 36.9 s Reel): REALITY CHECK 10 s, punchline + SEND THIS 5 s, follow 1 s.
-    t_punch = t_facts + SATIRE_FACTS_SECS
+    t_punch = t_facts + d_facts
     d_punch = SATIRE_PUNCH_SECS
     total = t_punch + d_punch
     enc, checks, frame = Encoder(out_mp4), [], None
