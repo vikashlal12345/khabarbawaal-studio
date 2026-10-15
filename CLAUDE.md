@@ -35,8 +35,13 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   left → `Unverified` → the Reel is made again (REEL_TRIES). Carousels still only show ⚠️.
 
 ## Schedule (IST) - `schedule.py`
-**12 Reels a day, all in the feed (owner 15 Oct 2026)**: 6:00 🙏 devotional · 7:00 🔥 viral news · 8:00 😂 Tag that friend ·
-10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🔥.
+**13 Reels a day, all in the feed (owner 15 Oct 2026)**: 6:00 🙏 devotional · 7:00 🔥 viral news · 8:00 😂 Tag that friend ·
+10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 16:00 🗳️ poll · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🔥.
+🗳️ = `make_poll_reel` (owner, after a creator's 'CHOOSE YOUR FUTURE' Reel got 16K likes / 8K comments): 'CHOOSE YOUR ___',
+4 options tied to ❤️ like / 💬 comment / 🔁 repost / ✈️ share (button list in the caption), pictures via `poll_picture`
+(Wikipedia `wiki_thumb` / App Store `app_icon` / Pixabay / news / AI / letter card), blurred collage background, topic from
+`buzz_topics` or an evergreen desi debate, category varies (`state.poll_recent`); politics in the page's line (BJP = ✈️ share);
+Instagram may show 'engagement bait' less, so once a day.
 🔥 = ONE most viral/trending India story with its real photos (`NEWS_KINDS`: reel_news_early/_am/_noon/_aft/_pm/reel_news/
 _night; owner: 'like the Bittu Tabahi one'; X + Google trends shown to the picker). The Top 5s became viral news; night
 Reels (1 AM Ready, 3 AM God picture) and the 2 AM preview planner stopped (`PREVIEW_KINDS` = (); still runnable as

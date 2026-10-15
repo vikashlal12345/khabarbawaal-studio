@@ -26,7 +26,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from generate import CONFIG, LOGO_FILE, font, norm, printable, wrap_words
 
@@ -2814,6 +2814,223 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
 
+# ---------------------------------------------------------------- 🗳️ "CHOOSE YOUR ___" poll Reel (4 PM)
+# Owner, 15 Oct 2026, after a creator's "CHOOSE YOUR FUTURE" Reel got 16K likes + 8K comments in a day: 4 options,
+# each tied to an Instagram button (❤️ like, 💬 comment, 🔁 repost, ✈️ share), so people vote by pressing them.
+
+POLL_OPTION = {"type": "object", "properties": {
+    "name": {"type": "string", "description": "Short label under the picture, max 14 characters"},
+    "image_kind": {"type": "string", "enum": ["wiki", "app", "photo"], "description": "wiki = a person, party, team, "
+                   "film or place with a Wikipedia page; app = a phone app; photo = food, objects, everyday things"},
+    "image_query": {"type": "string", "description": "The exact English Wikipedia title / App Store app name / short "
+                    "English stock-photo search"}},
+    "required": ["name", "image_kind", "image_query"], "additionalProperties": False}
+POLL_SCHEMA = {"type": "object", "properties": {
+    "title": {"type": "string", "description": "Big title, 2-4 words, starts with CHOOSE YOUR, e.g. 'CHOOSE YOUR FUTURE', "
+              "'CHOOSE YOUR CAPTAIN', 'CHOOSE YOUR BIRYANI'"},
+    "topic": {"type": "string", "description": "What today's poll is about, one short line"},
+    "category": {"type": "string", "enum": ["politics", "cricket", "bollywood", "food", "tech", "apps", "daily life",
+                                            "festival", "other"]},
+    "options": {"type": "array", "items": POLL_OPTION, "description": "Exactly 4, in button order: like, comment, "
+                "repost, share"},
+    "caption": {"type": "string", "description": "1-2 short Hinglish lines (hook + 'button dabao, vote karo' idea, first "
+                "line with the searchable names), 1-2 emojis. The button list is added automatically."},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 15 words, asks people to explain their vote"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5: the names first, then high-reach"},
+    "songs": SONGS},
+    "required": ["title", "topic", "category", "options", "caption", "pin_comment", "hashtags", "songs"],
+    "additionalProperties": False}
+POLL_BUTTONS = [("heart", "LIKE", "❤️ Like"), ("comment", "COMMENT", "💬 Comment"), ("repost", "REPOST", "🔁 Repost"),
+                ("share", "SHARE", "✈️ Share")]
+
+
+def wiki_thumb(title: str) -> Image.Image | None:
+    """The main picture of an English Wikipedia page, as a PNG/JPG render (logos are SVG originals)."""
+    import io
+    import requests
+    try:
+        pages = requests.get("https://en.wikipedia.org/w/api.php", timeout=15, headers={"User-Agent": "KhabarBawaalStudio/1.0"},
+                             params={"action": "query", "format": "json", "redirects": 1, "prop": "pageimages",
+                                     "pithumbsize": 600, "titles": title}).json()["query"]["pages"]
+        src = next((p["thumbnail"]["source"] for p in pages.values() if p.get("thumbnail")), "")
+        if src:
+            r = requests.get(src, timeout=20, headers={"User-Agent": "KhabarBawaalStudio/1.0"})
+            return Image.open(io.BytesIO(r.content)).convert("RGBA")
+    except Exception as e:
+        print(f"  ! Wikipedia picture '{title}': {str(e)[:80]}")
+    return None
+
+
+def app_icon(name: str) -> Image.Image | None:
+    """An app's official icon from the free App Store search (India)."""
+    import requests
+    import generate as g
+    try:
+        res = requests.get("https://itunes.apple.com/search", timeout=15, params={
+            "term": name, "entity": "software", "country": "in", "limit": 5}).json().get("results", [])
+    except Exception:
+        return None
+    app = next((x for x in res if name.lower() in x.get("trackName", "").lower()), res[0] if res else None)
+    img = app and g.download_image(app.get("artworkUrl512", ""))
+    return img.convert("RGBA") if img else None
+
+
+def poll_picture(opt: dict, tmp: str) -> Image.Image:
+    """The picture for one poll option: Wikipedia / App Store / free stock photo, then news photo, then an AI
+    picture, last a coloured card with the name's first letter (never fails)."""
+    img = (wiki_thumb(opt["image_query"]) if opt["image_kind"] == "wiki" else
+           app_icon(opt["image_query"]) if opt["image_kind"] == "app" else None)
+    if img is None:
+        photos = stock_photos(opt["image_query"], want=1) or topic_photos(opt["image_query"], want=1)
+        img = photos[0] if photos else None
+    if img is None:
+        art = ai_picture(opt["image_query"], tmp, landscape=False)
+        img = art[0] if art else None
+    if img is None:
+        img = Image.new("RGB", (400, 400), RED)
+        ImageDraw.Draw(img).text((200, 200), printable(opt["name"])[:1].upper(), font=font("Anton-Regular.ttf", 220),
+                                 fill="#FFFFFF", anchor="mm")
+    return img.convert("RGBA")
+
+
+def button_icon(kind: str, size: int = 92, color: str = "#111111") -> Image.Image:
+    """Instagram-style action icons drawn by hand (emoji can't be drawn): heart, comment, repost, share."""
+    s, w = size * 4, size // 3   # drawn 4x big, then shrunk smooth
+    im = Image.new("RGBA", (s, s), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    if kind == "heart":
+        r = s // 4
+        d.ellipse((s // 2 - 2 * r, s // 4, s // 2, s // 4 + 2 * r), fill=color)
+        d.ellipse((s // 2, s // 4, s // 2 + 2 * r, s // 4 + 2 * r), fill=color)
+        d.polygon([(s // 2 - 2 * r + 6, s // 4 + r + 30), (s // 2 + 2 * r - 6, s // 4 + r + 30), (s // 2, s - s // 10)], fill=color)
+    elif kind == "comment":
+        d.ellipse((s // 8, s // 8, s - s // 8, s - s // 8), outline=color, width=w)
+        d.polygon([(s // 6, s - s // 8), (s // 3, s - s // 4 - 10), (s // 6 + 40, s // 2 + 60)], fill=color)
+    elif kind == "repost":
+        m = s // 6
+        d.line((m, s // 3, s - m - 40, s // 3), fill=color, width=w)
+        d.polygon([(s - m - 80, s // 3 - 70), (s - m + 20, s // 3), (s - m - 80, s // 3 + 70)], fill=color)
+        d.line((m + 40, 2 * s // 3, s - m, 2 * s // 3), fill=color, width=w)
+        d.polygon([(m + 80, 2 * s // 3 - 70), (m - 20, 2 * s // 3), (m + 80, 2 * s // 3 + 70)], fill=color)
+        d.line((m, s // 3 - w // 2, m, s // 2), fill=color, width=w)
+        d.line((s - m, s // 2, s - m, 2 * s // 3 + w // 2), fill=color, width=w)
+    else:   # share: a paper plane
+        d.polygon([(s // 8, s // 5), (s - s // 8, s // 5), (s // 2, s - s // 8)], outline=color, width=w)
+        d.line((s // 2, s - s // 8, s * 7 // 16, s // 2 - 10), fill=color, width=w)
+        d.line((s * 7 // 16, s // 2 - 10, s - s // 8, s // 5), fill=color, width=w)
+    return im.resize((size, size), Image.LANCZOS)
+
+
+def poll_reel(title: str, options: list[tuple[Image.Image, str]], out_mp4: str, secs: float = 7.0) -> list[Image.Image]:
+    """🗳️ 1080x1920: big 'CHOOSE YOUR ___' title, 4 option cards (picture + name) and an Instagram button bar
+    under them (❤️ 💬 🔁 ✈️), everything on screen from the first frame; behind it a blurred, slowly zooming mix of
+    the 4 pictures; then the follow card. Returns [cover]."""
+    tiles = [ImageOps.fit(img.convert("RGB"), (540, 960)) for img, _ in options]
+    collage = Image.new("RGB", (1080, 1920))
+    for i, t in enumerate(tiles):
+        collage.paste(t, ((i % 2) * 540, (i // 2) * 960))
+    bg = Image.blend(collage.filter(ImageFilter.GaussianBlur(28)), Image.new("RGB", (RW, RH), "#000000"), 0.45)
+    over = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    d = ImageDraw.Draw(over)
+    tf = font("Poppins-Bold.ttf", 76)
+    while d.textlength(printable(title).upper(), font=tf) > RW - 220 and tf.size > 44:
+        tf = font("Poppins-Bold.ttf", tf.size - 4)
+    tw = d.textlength(printable(title).upper(), font=tf)
+    d.rounded_rectangle(((RW - tw) // 2 - 40, 330, (RW + tw) // 2 + 40, 330 + tf.size + 60), radius=26,
+                        fill=(255, 255, 255, 235))
+    d.text((RW // 2, 330 + (tf.size + 60) // 2), printable(title).upper(), font=tf, fill="#111111", anchor="mm")
+    card, gap = 228, 20
+    x0, y0 = (RW - 4 * card - 3 * gap) // 2, 820
+    nf = font("Poppins-Bold.ttf", 34)
+    for i, (img, name) in enumerate(options):
+        x = x0 + i * (card + gap)
+        pic = ImageOps.fit(img.convert("RGBA"), (card, card))
+        mask = Image.new("L", (card, card), 0)
+        ImageDraw.Draw(mask).rounded_rectangle((0, 0, card - 1, card - 1), radius=36, fill=255)
+        d.rounded_rectangle((x - 6, y0 - 6, x + card + 6, y0 + card + 6), radius=40, fill=(255, 255, 255, 255))
+        over.paste(pic, (x, y0), mask)
+        label = printable(name)
+        while d.textlength(label, font=nf) > card + 10 and nf.size > 22:
+            nf = font("Poppins-Bold.ttf", nf.size - 2)
+        d.text((x + card // 2, y0 + card + 46), label, font=nf, fill="#FFFFFF", anchor="mm", stroke_width=4,
+               stroke_fill="#000000")
+    by = y0 + card + 110
+    d.rounded_rectangle((x0 - 20, by, x0 + 4 * card + 3 * gap + 20, by + 200), radius=40, fill=(255, 255, 255, 235))
+    lf = font("Poppins-Bold.ttf", 26)
+    for i, (icon, label, _) in enumerate(POLL_BUTTONS):
+        cx = x0 + i * (card + gap) + card // 2
+        ic = button_icon(icon, 92, RED if icon == "heart" else "#111111")
+        over.alpha_composite(ic, (cx - 46, by + 30))
+        d.text((cx, by + 158), label, font=lf, fill="#111111", anchor="mm")
+    sub = "Button dabao, vote karo"
+    d.text((RW // 2, by + 290), sub, font=font("Poppins-Bold.ttf", 46), fill="#FFFFFF", anchor="mm", stroke_width=5,
+           stroke_fill="#000000")
+    logo = logo_img()
+    if logo:
+        over.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+    handle_tag(over, 1730)
+    enc, frame = Encoder(out_mp4), None
+    for i in range(int(secs * FPS)):
+        z = 1.0 + 0.05 * i / (secs * FPS)
+        big = bg.resize((int(RW * z), int(RH * z)), Image.BICUBIC)
+        frame = big.crop(((big.width - RW) // 2, (big.height - RH) // 2, (big.width + RW) // 2, (big.height + RH) // 2)).convert("RGBA")
+        frame.alpha_composite(over)
+        enc.add(frame)
+    cover = frame.convert("RGB")
+    add_follow(enc, frame)
+    enc.close()
+    return [cover]
+
+
+def make_poll_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🗳️ 4 PM: today's 'CHOOSE YOUR ___' poll on a talking point (politics in the page's line: BJP on ✈️ Share,
+    the button that spreads furthest), 4 real pictures, the button list in the caption."""
+    import fun
+    import generate as g
+    import proofread
+    import status
+    status.step("Choosing today's poll topic", 2)
+    topics = buzz_topics(state)
+    recent = state.get("poll_recent", [])[-10:]
+    songs = trending_songs(state)
+    poll = fun.claude_json(
+        f"You make the daily 'CHOOSE YOUR ___' poll Reel for {CONFIG['page_name']}, an Indian Hinglish page for 18-34s "
+        "(English letters only). 4 options that young Indians will fight about in the comments, each tied to an "
+        "Instagram button: 1 = like, 2 = comment, 3 = repost, 4 = share. Topic: one of today's talking points if it "
+        "makes a fun 4-way choice, else an evergreen desi debate (biryani styles, chai vs coffee, phone brands, "
+        "cricket captains, Bollywood Khans, quick-commerce apps, cities...). Vary the category: not the category of "
+        "the last 2 polls. Politics only when it is the day's big talk, in the page's line: pro BJP/NDA, BJP or Modi "
+        "as option 4 (share); respectful: no religion, caste, region or community choices, no insults. Real, "
+        "well-known options only; names short.",
+        f"{fun.today_context()}\n\nToday's talking points:\n" + ("\n".join(f"- {t['topic']}: {t['why']}" for t in topics)
+                                                                 or "(none big)") +
+        "\n\nRecent polls (don't repeat the topic or category of the last 2):\n" + ("\n".join(f"- {p}" for p in recent) or "(none)")
+        + songs_prompt(songs), POLL_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="poll writing")
+    poll["options"] = poll["options"][:4]
+    if len(poll["options"]) < 4:
+        raise RuntimeError("the poll needs 4 options")
+    roman_only(poll, ["caption", "pin_comment", "title"])
+    status.step("Finding the 4 pictures", 3)
+    pics = [poll_picture(o, tmp) for o in poll["options"]]
+    out = os.path.join(tmp, "reel.mp4")
+
+    def caption_of(d):
+        buttons = "\n".join(f"{b[2]} = {printable(o['name'])}" for b, o in zip(POLL_BUTTONS, d["options"]))
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["hashtags"])
+        return f"{d['caption'].strip()}\n\n{buttons}\n\nFollow {CONFIG['handle']} for daily bawaal\n\n{tags}"
+
+    status.step("Making the video + proofreading", 5)
+    picked_songs = checked_songs(poll.pop("songs", []), songs)
+    frames, poll, proof = proofread.run(lambda d: poll_reel(d["title"], [(p, o["name"]) for p, o in zip(pics, d["options"])], out),
+                                        poll, caption_of, f"Today's poll topic (the page's own fun poll): {poll['topic']}",
+                                        strict=True)
+    state["poll_recent"] = (state.get("poll_recent", []) + [f"{poll['category']}: {poll['topic']}"])[-20:]
+    save_reel(feed, state, frames[0], out, f"reel_poll-{today}", {
+        "headline": f"{printable(poll['title'])}: " + " / ".join(printable(o["name"]) for o in poll["options"]),
+        "tag": "🎬 REEL · 🗳️ CHOOSE YOUR", "caption": g.limit_hashtags(caption_of(poll)), "source": "KhabarBawaal Original",
+        "source_url": "", "pin_comment": poll.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+
+
 def make_backup(kind: str, state: dict, feed: list) -> bool:
     """Level 2 of 'never fail' (owner, 15 Oct 2026): the slot's Reel failed every try, so a different, reliable Reel
     with the same checks: a news slideshow for a joke/satire/devotional slot, a Tag that friend joke for a news or
@@ -2850,7 +3067,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     h, m = schedule.SPECIALS.get(kind, (now.hour, now.minute))
     name = ("🔥 Viral news" if kind in NEWS_KINDS else "🙏 Devotional" if kind == "reel_devotion" else
             "🎯 Satire" if kind == "reel_politics" else "😂 Meme" if kind == "reel_meme" else
-            "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else "🎬 Reel")
+            "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else
+            "🗳️ Choose your" if kind == "reel_poll" else "🎬 Reel")
     status.start(kind, today, f"{name} · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
     then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
@@ -2864,6 +3082,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
                 make_news_reel(kind, state, feed, today, tmp)
             elif kind in TOP5_KINDS:
                 make_top5_reel(kind, state, feed, today, tmp)
+            elif kind == "reel_poll":
+                make_poll_reel(state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
             elif kind == "reel_devotion":

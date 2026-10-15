@@ -10,7 +10,7 @@ from datetime import datetime, timedelta, timezone
 IST = timedelta(hours=5, minutes=30)
 QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
 # All Reels (owner, 13 Oct 2026: carousels weren't getting views; Reels reach people who don't follow us).
-# 15 Oct 2026 (owner): 12 Reels a day, all in the feed; every news slot is the single most viral / trending story
+# 15 Oct 2026 (owner): 13 Reels a day (incl. the 4 PM poll), all in the feed; every news slot is the single most viral / trending story
 # (the Top 5s became viral news, +11:30 AM and 3 PM); night Reels (1 AM Ready, 3 AM God picture) and the 2 AM
 # preview planner stopped. No regular carousels (news, Top 5s, Thought, markets, night jobs still exist as --kind).
 REGULAR_HOURS: list[int] = []
@@ -18,6 +18,7 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Nav
             "reel_news_early": (7, 0),                     # 🔥 viral news (was the overnight Top 5)
             "reel_clip_am": (8, 0), "reel_clip": (13, 0),  # 😂 Tag that friend
             "reel_news_am": (10, 0), "reel_news_noon": (11, 30), "reel_news_aft": (15, 0), "reel_news_pm": (17, 0),
+            "reel_poll": (16, 0),                          # 🗳️ "CHOOSE YOUR ___" poll (owner, 15 Oct 2026)
             "reel_politics": (18, 0),                      # 🎯 political satire + reality check
             "reel_meme": (19, 0), "reel_news": (20, 0),    # 😂 meme, 🔥 viral news
             "reel_news_night": (21, 15),                   # 🔥 viral news (was the Top 5 News)
