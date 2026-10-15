@@ -1495,38 +1495,59 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
 
 
-BACHPAN_BANNER, BACHPAN_FOOT = "BACHPAN ME AISA KAUN KIYA?", "COMMENT KARO: MAINE BHI"
-BACHPAN_SYSTEM = """You write the daily 'BACHPAN ME AISA KAUN KIYA?' nostalgia Reel for {page}, an Indian \
+BACHPAN_STYLES = {   # owner, 15 Oct 2026: both styles, on alternate days (bachpan_style)
+    "moment": {"banner": "BACHPAN ME AISA KAUN KIYA?", "foot": "COMMENT KARO: MAINE BHI",
+               "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
+               "text": "ONE specific, funny, very relatable thing Indian kids did or believed: a childhood myth, a naughty "
+                       "trick, a desi home/school moment that makes people say 'arre ye toh maine bhi kiya!' and comment.",
+               "field": "The childhood moment shown under the BACHPAN ME AISA KAUN KIYA? banner",
+               "caption": "ask people to comment 'MAINE BHI' / their own bachpan story"},
+    "friend": {"banner": "TAG THAT FRIEND", "foot": "TAG KARO USKO", "tag": "🎬 REEL · BACHPAN · TAG THAT FRIEND",
+               "text": "'Wo dost jo bachpan mein...': that one childhood friend (or cousin/sibling) everyone had and the "
+                       "funny thing they always did, e.g. \"Wo dost jo bachpan mein bijli jaate hi sabse zor se chillata "
+                       "tha: 'Hooooo!' Phir bijli aate hi wahi 'Hooooo!'\" (the owner's favourite: already posted, never "
+                       "reuse it). \\n line breaks allowed.",
+               "field": "Text under a big 'TAG THAT FRIEND' banner, starting 'Wo dost jo bachpan mein'",
+               "caption": "ask people to tag that friend"},
+}
+BACHPAN_SYSTEM = """You write the daily bachpan nostalgia Reel ('{banner}' style) for {page}, an Indian \
 Instagram page for 18-34s who grew up in the 90s/2000s. Hinglish in English letters only, never Devanagari.
-text = ONE specific, funny, very relatable thing Indian kids did or believed: a childhood myth, a naughty trick, a \
-desi home/school moment that makes people say 'arre ye toh maine bhi kiya!' and comment. Max 18 words, no emojis, \
-'...' before the funny twist is fine. Known across India (not one region), harmless (nothing dangerous a kid could \
-copy: no stunts, jumping, fire, medicines, electricity), no hate.
+text = {text} Max 18 words, no emojis, '...' before the funny twist is fine. Known across India (not one region), \
+harmless (nothing dangerous a kid could copy: no stunts, jumping, fire, medicines, electricity), no hate.
 The moment must be easy to show with a generic free stock video (an object or simple action, e.g. a pencil \
 sharpener, an apple, a TV remote, a sweets box, a school bag, a kid hiding under a blanket): clip_search = 3 short \
 English searches for it, clip_wanted = what the clip should show.
-caption: 2-3 Hinglish lines that ask people to comment 'MAINE BHI' / their own bachpan story. pin_comment: a funny \
-follow-up line. hashtags: exactly 5 (#bachpan #90skids style + high-reach)."""
+caption: 2-3 Hinglish lines that {caption}. pin_comment: a funny follow-up line. hashtags: exactly 5 \
+(#bachpan #90skids style + high-reach)."""
+
+
+def bachpan_style(today: str) -> str:
+    """Alternate days (owner, 15 Oct 2026): 'friend' on 16 Oct 2026, 'moment' on 17 Oct, and so on."""
+    from datetime import date
+    return "friend" if date.fromisoformat(today).toordinal() % 2 else "moment"
 
 
 def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    """🧒 9:15 PM 'BACHPAN ME AISA KAUN KIYA?' (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment
-    under a big red banner over a clip that shows it; the caption asks for 'MAINE BHI' comments. A new moment every
-    day (state.bachpan_recent). Weak jokes get one rewrite with the judge's reasons, then the slot tries again."""
+    """🧒 9:15 PM bachpan Reel (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment under a big red
+    banner over a clip that shows it. Two styles on alternate days (`bachpan_style`): 'BACHPAN ME AISA KAUN KIYA?'
+    (the moment itself, 'COMMENT KARO: MAINE BHI') and TAG THAT FRIEND ('Wo dost jo bachpan mein...', the owner's
+    favourite). A new moment every day in either style (state.bachpan_recent). Weak jokes get one rewrite with the
+    judge's reasons, then the slot tries again."""
     import fun
     import generate as g
     import proofread
     import status
-    status.step("Writing 3 childhood moments", 2)
+    style = BACHPAN_STYLES[bachpan_style(today)]
+    status.step(f"Writing 3 childhood moments ({style['banner']})", 2)
     songs = trending_songs(state)
     recent = state.get("bachpan_recent", [])
     option = {**CLIP_OPTION, "properties": {**CLIP_OPTION["properties"], "text": {"type": "string", "description":
-              "The childhood moment shown under the BACHPAN ME AISA KAUN KIYA? banner, max 18 words, no emojis"}}}
+              style["field"] + ", max 18 words, no emojis"}}}
     model = CONFIG.get("membership_model", "sonnet")
 
     def write(extra: str = "") -> list[dict]:
         options = fun.claude_json(
-            BACHPAN_SYSTEM.format(page=CONFIG["page_name"]),
+            BACHPAN_SYSTEM.format(page=CONFIG["page_name"], **style),
             "Moments already used (never repeat these or the same idea):\n" +
             ("\n".join(f"- {r}" for r in recent[-40:]) or "(none)") +
             "\n\nWrite exactly 3 different childhood moments (different kinds: a myth kids believed, a naughty trick, "
@@ -1535,7 +1556,7 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         for o in options:
             o["caption"], o["text"] = unescape(o["caption"]), unescape(o["text"])
         return options
-    text_of = lambda o: f"{BACHPAN_BANNER} {o['text']}  [video: {o['clip_wanted']}]"
+    text_of = lambda o: f"{style['banner']}: {o['text']}  [video: {o['clip_wanted']}]"
     try:
         best = fun.judge_best(write(), text_of, model)
     except fun.NoGoodJoke as e:
@@ -1564,7 +1585,7 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         dur = min(max(CLIP_SECONDS, read_secs(d["text"], 4.5)), CLIP_MAX)
         start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
         hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
-        return clip_reel(clip, start, dur, BACHPAN_BANNER, d["text"], d["highlight"], out, hold=hold, foot=BACHPAN_FOOT)
+        return clip_reel(clip, start, dur, style["banner"], d["text"], d["highlight"], out, hold=hold, foot=style["foot"])
     status.step("Making the video + proofreading", 5)
     frames, best, proof = proofread.run(render, best, g.fun_caption, "", strict=True)
     if art_note.startswith("AI"):   # Meta asks for its "AI info" label on AI pictures
@@ -1576,7 +1597,7 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     state["bachpan_recent"] = (recent + [text])[-60:]
     state["recent_reels"] = (state.get("recent_reels", []) + [text])[-60:]
     save_reel(feed, state, frames[-1], out, f"reel_bachpan-{today}", {
-        "headline": text, "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
+        "headline": text, "tag": style["tag"],
         "caption": g.limit_hashtags(g.fun_caption(best)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": best.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
 
