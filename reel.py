@@ -252,14 +252,19 @@ def add_follow(enc, last: Image.Image) -> None:
 # ---------------------------------------------------------------- 1. clip + meme text
 
 def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlight: list[str],
-              out_mp4: str, crop_x: float = 0.5, text_top: int = 960, hold: float = 0.0) -> list[Image.Image]:
+              out_mp4: str, crop_x: float = 0.5, text_top: int = 960, hold: float = 0.0,
+              foot: str = "TAG KARO USKO") -> list[Image.Image]:
     """The last `hold` seconds of dur freeze the clip's last frame (clip shorter than the reading time).
     Returns the frames to proofread: [cover] (all text shown)."""
     highlights = {norm(w) for phrase in highlight for w in phrase.split()}
     lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 470, sizes=range(80, 40, -4))
     imgs = line_images(lines, fnt, line_h, "#FFFFFF", YELLOW, highlights, stroke=7)
-    hook_img = pill(hook, font("Anton-Regular.ttf", 84), RED, "#FFFFFF", pad=(38, 12))
-    foot = pill("TAG KARO USKO", font("Poppins-Bold.ttf", 46), YELLOW, "#111111", pad=(34, 16), arrow=True)
+    size = 84
+    hook_img = pill(hook, font("Anton-Regular.ttf", size), RED, "#FFFFFF", pad=(38, 12))
+    while hook_img.width > RW - 90 and size > 48:   # a long banner ('BACHPAN ME AISA KAUN KIYA?') shrinks to fit
+        size -= 4
+        hook_img = pill(hook, font("Anton-Regular.ttf", size), RED, "#FFFFFF", pad=(38, 12))
+    foot = pill(foot, font("Poppins-Bold.ttf", 46), YELLOW, "#111111", pad=(34, 16), arrow=True)
     logo = logo_img()
     # Soft dark fade behind the text so it reads on any footage.
     shade = Image.new("RGBA", (RW, 900), (0, 0, 0, 0))
@@ -1416,6 +1421,92 @@ def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
 
 
+BACHPAN_BANNER, BACHPAN_FOOT = "BACHPAN ME AISA KAUN KIYA?", "COMMENT KARO: MAINE BHI"
+BACHPAN_SYSTEM = """You write the daily 'BACHPAN ME AISA KAUN KIYA?' nostalgia Reel for {page}, an Indian \
+Instagram page for 18-34s who grew up in the 90s/2000s. Hinglish in English letters only, never Devanagari.
+text = ONE specific, funny, very relatable thing Indian kids did or believed: a childhood myth, a naughty trick, a \
+desi home/school moment that makes people say 'arre ye toh maine bhi kiya!' and comment. Max 18 words, no emojis, \
+'...' before the funny twist is fine. Known across India (not one region), harmless (nothing dangerous a kid could \
+copy: no stunts, jumping, fire, medicines, electricity), no hate.
+The moment must be easy to show with a generic free stock video (an object or simple action, e.g. a pencil \
+sharpener, an apple, a TV remote, a sweets box, a school bag, a kid hiding under a blanket): clip_search = 3 short \
+English searches for it, clip_wanted = what the clip should show.
+caption: 2-3 Hinglish lines that ask people to comment 'MAINE BHI' / their own bachpan story. pin_comment: a funny \
+follow-up line. hashtags: exactly 5 (#bachpan #90skids style + high-reach)."""
+
+
+def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🧒 9:15 PM 'BACHPAN ME AISA KAUN KIYA?' (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment
+    under a big red banner over a clip that shows it; the caption asks for 'MAINE BHI' comments. A new moment every
+    day (state.bachpan_recent). Weak jokes get one rewrite with the judge's reasons, then the slot tries again."""
+    import fun
+    import generate as g
+    import proofread
+    import status
+    status.step("Writing 3 childhood moments", 2)
+    songs = trending_songs(state)
+    recent = state.get("bachpan_recent", [])
+    option = {**CLIP_OPTION, "properties": {**CLIP_OPTION["properties"], "text": {"type": "string", "description":
+              "The childhood moment shown under the BACHPAN ME AISA KAUN KIYA? banner, max 18 words, no emojis"}}}
+    model = CONFIG.get("membership_model", "sonnet")
+
+    def write(extra: str = "") -> list[dict]:
+        options = fun.claude_json(
+            BACHPAN_SYSTEM.format(page=CONFIG["page_name"]),
+            "Moments already used (never repeat these or the same idea):\n" +
+            ("\n".join(f"- {r}" for r in recent[-40:]) or "(none)") +
+            "\n\nWrite exactly 3 different childhood moments (different kinds: a myth kids believed, a naughty trick, "
+            "a home or school moment)." + extra + songs_prompt(songs) + "\nSongs: nostalgic picks fit best.",
+            options_schema(option, "Exactly 3 different childhood moments"), model, purpose="reel writing")["options"][:3]
+        for o in options:
+            o["caption"], o["text"] = unescape(o["caption"]), unescape(o["text"])
+        return options
+    text_of = lambda o: f"{BACHPAN_BANNER} {o['text']}  [video: {o['clip_wanted']}]"
+    try:
+        best = fun.judge_best(write(), text_of, model)
+    except fun.NoGoodJoke as e:
+        if not e.scores:
+            raise
+        print("  moments below the judge's bar: rewriting once with the judge's reasons")
+        notes = "\n".join(f"- Option {x['option']}: understandable {x['understandable']}, funny {x['funny']}, "
+                          f"fresh {x['fresh']}: {x['why']}" for x in e.scores)
+        best = fun.judge_best(write(f"\n\nA strict judge (a young Indian on Instagram) rejected your first 3:\n{notes}"
+                                    "\nWrite 3 new ones that fix this."), text_of, model)
+    print(f"  bachpan moment: {best['text']}")
+    status.step(f"Judge picked: {best['text'][:80]}", 3)
+    roman_only(best, ["caption", "pin_comment"])
+    picked_songs = checked_songs(best.pop("songs", []), songs)
+    cid, real, art_note = None, False, ""
+    try:
+        cid = pick_clip(best, state)
+        clip, secs = download_clip(cid, tmp)
+    except RuntimeError as e:   # no fitting clip: photos -> 🎨 AI picture -> branded background
+        print(f"  ! {e}")
+        clip, secs, art_note = fallback_visual(best, (RW, RH), tmp)
+        real = True
+    out = os.path.join(tmp, "reel.mp4")
+
+    def render(d):   # one screen like Tag that friend: 4.5 s + 0.25 s a word, 8.5-12 s
+        dur = min(max(CLIP_SECONDS, read_secs(d["text"], 4.5)), CLIP_MAX)
+        start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
+        hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
+        return clip_reel(clip, start, dur, BACHPAN_BANNER, d["text"], d["highlight"], out, hold=hold, foot=BACHPAN_FOOT)
+    status.step("Making the video + proofreading", 5)
+    frames, best, proof = proofread.run(render, best, g.fun_caption, "", strict=True)
+    if art_note.startswith("AI"):   # Meta asks for its "AI info" label on AI pictures
+        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+            f"🎨 The picture is an {art_note}: turn on Instagram's 'AI info' label when posting."]}
+    text = printable(best["text"]).replace("\n", " ")
+    if cid:
+        state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
+    state["bachpan_recent"] = (recent + [text])[-60:]
+    state["recent_reels"] = (state.get("recent_reels", []) + [text])[-60:]
+    save_reel(feed, state, frames[-1], out, f"reel_bachpan-{today}", {
+        "headline": text, "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
+        "caption": g.limit_hashtags(g.fun_caption(best)), "source": "KhabarBawaal Original", "source_url": "",
+        "pin_comment": best.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+
+
 NEWS_SYSTEM = """You make a VIRAL NEWS REEL for {page}, an Indian Instagram page for 18-34s (Hinglish, \
 English letters only, never Devanagari): ONE single story people are talking about right now, told over its real \
 photos (owner, 15 Oct 2026: 'like the Bittu Tabahi one': one man cleaned a river for 8 months). From the latest \
@@ -1431,7 +1522,7 @@ that embarrasses the BJP. No hate against any community."""
 
 
 NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_aft", "reel_news_pm", "reel_news",
-              "reel_news_night")     # 🔥 viral news Reels: 7, 10, 11:30 AM, 3, 5, 8, 9:15 PM (owner, 15 Oct 2026)
+              "reel_news_night")     # 🔥 viral news Reels: 7, 10, 11:30 AM, 3, 5, 8 PM (9:15 PM by hand; owner, 15 Oct 2026)
 TOP5_KINDS = {"reel_top5_am": "night_roundup", "reel_top5": "top10_day"}   # Top 5 Reel -> its specials.TOP10 settings
 
 
@@ -3208,7 +3299,7 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     name = ("🔥 Viral news" if kind in NEWS_KINDS else "🙏 Devotional" if kind == "reel_devotion" else
             "🎯 Satire" if kind == "reel_politics" else "😂 Meme" if kind == "reel_meme" else
             "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else
-            "🗳️ Choose your" if kind == "reel_poll" else "🎬 Reel")
+            "🗳️ Choose your" if kind == "reel_poll" else "🧒 Bachpan" if kind == "reel_bachpan" else "🎬 Reel")
     status.start(kind, today, f"{name} · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
     then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
@@ -3224,6 +3315,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
                 make_top5_reel(kind, state, feed, today, tmp)
             elif kind == "reel_poll":
                 make_poll_reel(state, feed, today, tmp)
+            elif kind == "reel_bachpan":
+                make_bachpan_reel(state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
             elif kind == "reel_devotion":

@@ -21,11 +21,11 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Nav
             "reel_poll": (16, 0),                          # 🗳️ "CHOOSE YOUR ___" poll (owner, 15 Oct 2026)
             "reel_politics": (18, 0),                      # 🎯 political satire + reality check
             "reel_meme": (19, 0), "reel_news": (20, 0),    # 😂 meme, 🔥 viral news
-            "reel_news_night": (21, 15),                   # 🔥 viral news (was the Top 5 News)
+            "reel_bachpan": (21, 15),                      # 🧒 "BACHPAN ME AISA KAUN KIYA?" (owner, 15 Oct 2026; was 🔥 news)
             "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",
-          "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture"}
+          "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture", "reel_news_night"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08

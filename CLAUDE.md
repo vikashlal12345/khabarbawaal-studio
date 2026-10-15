@@ -36,7 +36,8 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 
 ## Schedule (IST) - `schedule.py`
 **13 Reels a day, all in the feed (owner 15 Oct 2026)**: 6:00 🙏 devotional · 7:00 🔥 viral news · 8:00 😂 Tag that friend ·
-10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 16:00 🗳️ poll · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🔥.
+10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 16:00 🗳️ poll · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🧒 Bachpan.
+🧒 = `make_bachpan_reel` (owner 15 Oct 2026, replaced the 9:15 PM 🔥; `reel_news_night` is now `schedule.MANUAL`): big red 'BACHPAN ME AISA KAUN KIYA?' banner (`clip_reel` shrinks long banners), ONE relatable 90s/2000s Indian childhood moment (myth / naughty trick / home-school moment, harmless, all-India), a stock clip that shows it (writer told to pick easy-to-film moments; Mac has only Mixkit, GitHub also Pixabay + AI pictures), footer 'COMMENT KARO: MAINE BHI', caption asks for comments; 3 options + judge, one rewrite; never repeats (`state.bachpan_recent`).
 🗳️ = `make_poll_reel` (owner, after a creator's 'CHOOSE YOUR FUTURE' Reel got 16K likes / 8K comments): 'CHOOSE YOUR ___',
 4 options tied to ❤️ like / 💬 comment / 🔁 repost / ✈️ share (button list in the caption), pictures via `poll_picture`
 (Wikipedia `wiki_thumb` with its credit: photographer + licence in the caption, non-free skipped, GODL-India ok;
@@ -46,7 +47,7 @@ people/parties/teams never get a random news photo (once showed the wrong man as
 `buzz_topics` or an evergreen desi debate, category varies (`state.poll_recent`); politics in the page's line (BJP = ✈️ share);
 Instagram may show 'engagement bait' less, so once a day.
 🔥 = ONE most viral/trending India story with its real photos (`NEWS_KINDS`: reel_news_early/_am/_noon/_aft/_pm/reel_news/
-_night; owner: 'like the Bittu Tabahi one'; X + Google trends shown to the picker). The Top 5s became viral news; night
+_night (by hand); owner: 'like the Bittu Tabahi one'; X + Google trends shown to the picker). The Top 5s became viral news; night
 Reels (1 AM Ready, 3 AM God picture) and the 2 AM preview planner stopped (`PREVIEW_KINDS` = (); still runnable as
 `--kind`, `schedule.MANUAL`); 📦 Ready tab stays empty; 4 AM learning stays. `docs/app.json` plan/reels match.
 Older notes below (kept for the code they describe):
