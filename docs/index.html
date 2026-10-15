@@ -697,7 +697,7 @@ function postHint() {
   if (!el) return;
   const ist = new Date(Date.now() + 330 * 60000), h = ist.getUTCHours();
   const last = +(localGet('lastShare') || 0), mins = last ? Math.floor((Date.now() - last) / 60000) : null;
-  el.textContent = h >= 23 || h < 7 ? '🌙 Night: posts now get very few views. Best to post after 7 AM.'
+  el.textContent = h >= 23 || h < 6 ? '🌙 Night: posts now get very few views. Best to post after 6 AM.'
     : mins !== null && mins < 60 ? `⏱️ Last post shared ${mins} min ago. Wait ${60 - mins} min for the best reach.`
     : mins !== null ? '✅ Good time to post (more than 1 hour since the last one).' : '';
 }

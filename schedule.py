@@ -14,19 +14,24 @@ QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
 # (the Top 5s became viral news, +11:30 AM and 3 PM); night Reels (1 AM Ready, 3 AM God picture) and the 2 AM
 # preview planner stopped. No regular carousels (news, Top 5s, Thought, markets, night jobs still exist as --kind).
 REGULAR_HOURS: list[int] = []
+# 12 Reels, 1.5 h apart, then 1 h in the late evening (owner, 15 Oct 2026: 11:30 AM and 3 PM news removed).
 SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Navratri goddess / god of the day
-            "reel_news_early": (7, 0),                     # 🔥 viral news (was the overnight Top 5)
-            "reel_clip_am": (8, 0), "reel_clip": (13, 0),  # 😂 Tag that friend
-            "reel_news_am": (10, 0), "reel_news_noon": (11, 30), "reel_news_aft": (15, 0), "reel_news_pm": (17, 0),
-            "reel_poll": (16, 0),                          # 🗳️ "CHOOSE YOUR ___" poll (owner, 15 Oct 2026)
+            "reel_news_early": (7, 30),                    # 🔥 viral news
+            "reel_clip_am": (9, 0),                        # 😂 Tag that friend
+            "reel_news_am": (10, 30),                      # 🔥 viral news
+            "reel_clip": (12, 0),                          # 😂 Tag that friend
+            "reel_news_pm": (13, 30),                      # 🔥 viral news
+            "reel_meme": (15, 0),                          # 😂 meme
+            "reel_poll": (16, 30),                         # 🗳️ "CHOOSE YOUR ___" poll
             "reel_politics": (18, 0),                      # 🎯 political satire + reality check
-            "reel_meme": (19, 0), "reel_news": (20, 0),    # 😂 meme, 🔥 viral news
-            "reel_bachpan": (21, 0),                       # 🧒 "BACHPAN ME AISA KAUN KIYA?" (owner, 15 Oct 2026; 9 PM: 1 h before 10 PM)
-            "reel_official": (22, 0),                      # 🎥🔊 official X video + voice news (owner, 15 Oct 2026)
+            "reel_news": (19, 30),                         # 🔥 viral news
+            "reel_bachpan": (20, 30),                      # 🧒 "BACHPAN ME AISA KAUN KIYA?" / Tag that friend
+            "reel_official": (21, 30),                     # 🎥🔊 official X speech video + voice
             "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",
-          "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture", "reel_news_night"}
+          "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture", "reel_news_night",
+          "reel_news_noon", "reel_news_aft"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08

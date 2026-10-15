@@ -1653,7 +1653,7 @@ def bachpan_style(today: str) -> str:
 
 
 def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    """🧒 9 PM bachpan Reel (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment under a big red
+    """🧒 8:30 PM bachpan Reel (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment under a big red
     banner over a clip that shows it. Two styles on alternate days (`bachpan_style`): 'BACHPAN ME AISA KAUN KIYA?'
     (the moment itself, 'COMMENT KARO: MAINE BHI') and TAG THAT FRIEND ('Wo dost jo bachpan mein...', the owner's
     favourite). A new moment every day in either style (state.bachpan_recent). Weak jokes get one rewrite with the
@@ -1746,7 +1746,7 @@ that embarrasses the BJP. No hate against any community."""
 
 
 NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_aft", "reel_news_pm", "reel_news",
-              "reel_news_night")     # 🔥 viral news Reels: 7, 10, 11:30 AM, 3, 5, 8 PM (9:15 PM by hand; owner, 15 Oct 2026)
+              "reel_news_night")     # 🔥 viral news Reels: 7:30, 10:30 AM, 1:30, 7:30 PM (the rest by hand; owner, 15 Oct 2026)
 TOP5_KINDS = {"reel_top5_am": "night_roundup", "reel_top5": "top10_day"}   # Top 5 Reel -> its specials.TOP10 settings
 
 
@@ -1982,7 +1982,7 @@ def speech_reel(src: str, start: float, secs: float, headline: list[str], sublin
 
 
 def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    """🎥🔊 10 PM (owner, 15 Oct 2026, 'I want every 10 PM post like this' = @geowiredaily's Modi Reel): ~30 s of a
+    """🎥🔊 9:30 PM (owner, 15 Oct 2026, 'I want every 10 PM post like this' = @geowiredaily's Modi Reel): ~30 s of a
     leader's / the government's OWN speech video from their official X account, his voice inside the file (posted as
     it is, no song), a bold pro-Modi/BJP headline (`speech_reel`). Never news agencies, TV channels or films. No
     fitting video today -> a normal 🔥 viral news Reel in this slot."""
