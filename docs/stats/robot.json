@@ -3191,6 +3191,33 @@
      "tokens": 15811
     }
    }
+  },
+  "reel_clip_am": {
+   "posts": 0,
+   "requests": 13,
+   "input": 34,
+   "output": 16360,
+   "cache_read": 85186,
+   "cache_write": 148273,
+   "value_usd": 0.7652,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 3,
+     "tokens": 31663
+    },
+    "reel writing": {
+     "requests": 4,
+     "tokens": 140938
+    },
+    "joke judge": {
+     "requests": 4,
+     "tokens": 59185
+    },
+    "clip pick": {
+     "requests": 2,
+     "tokens": 18067
+    }
+   }
   }
  }
 }
