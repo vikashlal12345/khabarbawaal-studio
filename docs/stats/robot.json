@@ -3514,6 +3514,33 @@
      "tokens": 36207
     }
    }
+  },
+  "reel_official": {
+   "posts": 0,
+   "requests": 5,
+   "input": 16,
+   "output": 3619,
+   "cache_read": 17020,
+   "cache_write": 43676,
+   "value_usd": 0.2127,
+   "by_purpose": {
+    "official video pick": {
+     "requests": 1,
+     "tokens": 16472
+    },
+    "video look": {
+     "requests": 1,
+     "tokens": 11433
+    },
+    "speech reel script": {
+     "requests": 1,
+     "tokens": 15025
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 21401
+    }
+   }
   }
  }
 }

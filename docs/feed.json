@@ -1,5 +1,30 @@
 [
  {
+  "id": "reel_official-2026-10-15",
+  "image": "posts/20261015-1635-reel_official-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-163534-reel_official-2026-10-15.mp4",
+  "headline": "Amit Shah ka kadak sandesh: Naxalvad khatam: Modi sarkar ka sankalp poora hua, ab peedhiton ke zakhm par marham. Aap sehmat ho?",
+  "tag": "🎬 REEL · 🎥🔊 OFFICIAL SPEECH",
+  "caption": "Amit Shah Naxal mukt Bharat Modi sarkar sankalp poora Bastar Divyang seva 🇮🇳\nAmit Shah ne kaha ki Modi sarkar ka Naxalmukt Bharat banane ka sankalp poora hua. Ab Naxal hinsa se ghayal logon ke zakhmon par marham lagana hai.\nJagdalpur camp mein 3,600 se zyada divyangjano ko sahayak upkaran mile, jinme 1,570 se zyada akele Bastar se the.\nPaanch dashkon tak Naxalvad ka dard jhela, ab har pidit ke samman se jeevan jeene ki vyavastha karni hai.\nAap sehmat ho? Comment karo 👇\n\nVideo + voice: @AmitShah on X\n\nFollow @khabarbawaal for daily updates.\nSource: News Riveting - Chhattisgarh English News Portal (link pinned in comments 👇)\n\n#AmitShah #ModiGovernment #NaxalMuktBharat #Bastar #reelsindia",
+  "source": "News Riveting - Chhattisgarh English News Portal",
+  "source_url": "https://newsriveting.com/amit-shah-distributes-devices-to-divyangs-and-those-affected-by-naxal-violence/",
+  "pin_comment": "Naxalmukt Bharat ka sankalp poora hua. Aapke hisaab se Bastar ke liye ab sabse zaroori kya hai?",
+  "songs": [],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says five decades of Naxal suffering and a goal of dignified life for victims; it says nothing about opposition rule or victims already living in dignity."
+   ],
+   "fixed": [
+    "Vipaksh ke raj mein dashkon tak chala dard, aaj Modi sarkar mein pidit gareema se jee rahe hain. → Paanch dashkon tak Naxalvad ka dard jhela, ab har pidit ke samman se jeevan jeene ki vyavastha karni hai.",
+    "gareema → garima"
+   ]
+  },
+  "created_at": "2026-10-15T16:35:34+00:00"
+ },
+ {
   "id": "videotest-2048",
   "image": "posts/20261015-1518-videotest-2048.jpg",
   "kind": "custom",
@@ -766,50 +791,5 @@
    "fixed": []
   },
   "created_at": "2026-10-14T17:40:47+00:00"
- },
- {
-  "id": "reel_top5-2026-10-14",
-  "image": "posts/20261014-1547-reel_top5-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-154712-reel_top5-2026-10-14.mp4",
-  "headline": "TOP 5 NEWS: 14 Oct",
-  "tag": "🎬 REEL · TOP 5 NEWS",
-  "caption": "Aaj ki 5 badi khabrein, ek swipe mein! 🔥\n\n1. Saudi airport attacks disrupt Indian flights, MEA responds\n2. Salman Khan opens up on Koffee With Karan 9\n3. Drishyam The Conclusion crosses Rs 300 crore\n4. Pilot: No animosity with Gehlot, unite to defeat BJP\n5. OpenAI employee arrested for planting recording device\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#trending #india #viral #bollywood #news",
-  "source": "Hindustan Times, Bollywood Hungama",
-  "source_url": "",
-  "pin_comment": "",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "songs": [
-   {
-    "title": "Pehle Bhi Main",
-    "artist": "Vishal Mishra, Raj Shekhar",
-    "lang": "hindi",
-    "mood": "high on today's charts"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "high on today's charts"
-   },
-   {
-    "title": "Harleys In Hawaii",
-    "artist": "Katy Perry",
-    "lang": "english",
-    "mood": "high on today's charts"
-   },
-   {
-    "title": "Nicole Kidman",
-    "artist": "ADÉLA",
-    "lang": "english",
-    "mood": "high on today's charts"
-   }
-  ],
-  "created_at": "2026-10-14T15:47:12+00:00"
  }
 ]

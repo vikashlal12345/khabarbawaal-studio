@@ -279,7 +279,8 @@
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-15",
   "reel_news_aft": "2026-10-15",
-  "reel_poll": "2026-10-15"
+  "reel_poll": "2026-10-15",
+  "reel_official": "2026-10-15"
  },
  "inbox_since": "iSv5k1rxdFkm",
  "used_otps": [
@@ -584,7 +585,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/breaking-jailer-2-ends-with-the-promise-of-third-part-hrithik-roshans-massy-special-appearance-has-a-chulbul-pandey-connection-spoilers-ahead/",
   "https://www.hindustantimes.com/trending/goabased-airline-fly91-surprises-young-pilot-by-bringing-her-parents-onboard-imagine-the-pride-101792049440473.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-international-trailer-to-be-unveiled-at-bengaluru-event-ranbir-kapoor-yash-sai-pallavi-to-attend/",
-  "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html"
+  "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
+  "https://newsriveting.com/amit-shah-distributes-devices-to-divyangs-and-those-affected-by-naxal-violence/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -727,5 +729,8 @@
  ],
  "bachpan_recent": [
   "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam"
+ ],
+ "reel_official_used": [
+  "2110681709335511113"
  ]
 }
