@@ -1,6 +1,6 @@
 """📊 Views from the owner's screen recording of Instagram's Content list (owner's choice, 14 Oct 2026: no Meta API).
 
-    python3 tools/views_from_recording.py ~/Downloads/ScreenRecording_....MP4
+    python3 tools/views_from_recording.py ~/Downloads/ScreenRecording_....MP4 [--save]
 
 Mac only: pulls a frame every 1.5 s (imageio-ffmpeg), reads the text with Apple's Vision (tools/ocr.swift, compiled
 once to tools/.ocr), and prints every post with its type, IST time and views, then averages for Reels vs photos.
@@ -63,6 +63,30 @@ def main(video: str) -> None:
         vs = [r["views"] for r in posts if r["kind"] == kind]
         if vs:
             print(f"{kind}s: {len(vs)} posts, avg {sum(vs) / len(vs):.0f}, median {statistics.median(vs)}")
+    if "--save" in sys.argv:
+        save_viral(posts)
+
+
+def save_viral(posts: list[dict]) -> None:
+    """📊 'What went viral for us' (owner, 15 Oct 2026): the top 10 and weakest 5 Reels (title = the caption's first
+    line, older than a day so views have settled) go to state/viral.json, merged with earlier recordings (highest
+    views kept, last 30 days); every Reel picker and writer reads it (reel.viral_memory)."""
+    import json
+    path = HERE.parent / "state" / "viral.json"
+    old = json.loads(path.read_text()) if path.exists() else {}
+    seen = {r["title"]: r for r in old.get("all", [])}
+    for r in posts:
+        if r["kind"] != "Reel" or datetime.now() - r["ist"] < timedelta(hours=20):
+            continue
+        prev = seen.get(r["title"], {})
+        seen[r["title"]] = {"title": r["title"], "views": max(r["views"], prev.get("views", 0)),
+                            "at": r["ist"].strftime("%Y-%m-%d %H:%M"), "note": prev.get("note", "")}
+    keep = [r for r in seen.values() if datetime.now() - datetime.strptime(r["at"], "%Y-%m-%d %H:%M") < timedelta(days=30)]
+    keep.sort(key=lambda r: -r["views"])
+    data = {"updated": datetime.now().strftime("%Y-%m-%d"), "top": keep[:10],
+            "weak": [r for r in keep[::-1] if r not in keep[:10]][:5], "all": keep}
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
+    print(f"Saved {len(data['top'])} top / {len(data['weak'])} weakest Reels to {path} (upload with save.py)")
 
 
 if __name__ == "__main__":

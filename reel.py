@@ -542,8 +542,10 @@ _COMMON = {
     "photo_query": {"type": "string", "description": "If the joke names a real app, brand, person, film or event: a "
                     "short English news search for real photos of it (e.g. 'Hopr dating app Bengaluru Tinder'); "
                     "empty for an everyday moment"},
-    "caption": {"type": "string"},
-    "pin_comment": {"type": "string"},
+    "caption": {"type": "string", "description": "Hinglish, first line with the searchable keywords, ends with a "
+                "question people answer in the comments (e.g. 'Tumhare group mein kaun hai aisa? 👇')"},
+    "pin_comment": {"type": "string", "description": "A funny follow-up line + a share nudge to the right person, e.g. "
+                    "'Us dost ko bhejo jo ye karta hai 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}},
 }
 CLIP_OPTION = {"type": "object", "properties": {
@@ -566,14 +568,17 @@ NEWS_OPTION = {"type": "object", "properties": {
     "pick": {"type": "integer", "description": "Story number from the list"},
     "hook": {"type": "string", "description": "🪝 Opening line on the first photo, 4-8 words, Hinglish, no emojis: the "
              "most shocking/curious fact of the story so people stop scrolling, e.g. '8 mahine. 1 ladka. Poori nadi "
-             "saaf.' or 'Is case ne poore desh ko hila diya'. A fact from the story, not clickbait."},
+             "saaf.' or 'Is case ne poore desh ko hila diya'. Biggest name first, then the surprise: 'Salman ne Karisma ke "
+             "saath shoot se mana kiya'. A fact from the story, not clickbait."},
     "tag": {"type": "string", "enum": NEWS_TAGS},
     "end_text": {"type": "string", "description": "Last card, max 14 words, no emojis: a relatable Hinglish reaction "
                  "(\"Aur hum? Uber mein baithke bhi nervous ho jaate hain\") or, for serious news, the punchy takeaway."},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from end_text"},
     "caption": {"type": "string", "description": "Hinglish: hook line with the searchable keywords (names, film/event, "
-                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, a comment prompt. 1-3 emojis."},
-    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags"},
+                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a question that makes people take a "
+                "side ('Salman sahi the? Haan ya Na? Comment karo 👇'). 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags: a short share "
+                    "nudge to the right person, e.g. 'Kisi Salman fan ko bhejo 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
@@ -590,6 +595,25 @@ def options_schema(option: dict, n: str) -> dict:
 
 def unescape(s: str) -> str:
     return s.replace("\\n", "\n").strip()
+
+
+VIRAL_FILE = Path(__file__).parent / "state" / "viral.json"   # tools/views_from_recording.py --save
+
+
+def viral_memory(note: str = "") -> str:
+    """Our own winners and flops (views from the owner's Instagram screen recordings), shown to every picker and
+    writer so they aim for what worked (owner, 15 Oct 2026: a Salman Khan reveal got 1.6k views + shares)."""
+    try:
+        data = json.loads(VIRAL_FILE.read_text())
+    except Exception:
+        return ""
+    top, weak = data.get("top", [])[:10], data.get("weak", [])[:5]
+    if not top:
+        return ""
+    line = lambda t: f"- {t['views']} views: {t['title']}" + (f" ({t['note']})" if t.get("note") else "")
+    return ("\n\nWhat went viral for us (views on our Instagram; aim for stories, hooks and angles like these" +
+            (f"; {note}" if note else "") + "):\n" + "\n".join(line(t) for t in top) +
+            ("\nOur weakest Reels (avoid stories and angles like these):\n" + "\n".join(line(t) for t in weak) if weak else ""))
 
 
 BUZZ_SCHEMA = {"type": "object", "properties": {"topics": {"type": "array", "items": {"type": "object", "properties": {
@@ -612,7 +636,7 @@ def buzz_topics(state: dict) -> list[dict]:
     used = (state.get("fun_topics", []) + state.get("reel_topics", []))[-20:]
     out = fun.claude_json(
         "You track what young Indians (18-30, all over India) are talking about TODAY: what friends would bring up "
-        "in a group chat. Counts: big Bollywood/OTT/celebrity moments, viral internet moments, festivals and their "
+        "in a group chat. Counts most: news about the BIGGEST stars (Salman, Shah Rukh, Virat, Dhoni...), big Bollywood/OTT/celebrity moments, viral internet moments, festivals and their "
         "rituals, India's big cricket moments (Team India, IPL), new phones/apps/AI launches, prices, exams, weather, "
         "national news that affects everyone. Skip: matches without Team India or domestic matches, scorecard "
         "searches, share prices, region-only topics, deaths/crimes/accidents/disasters, organised hashtag campaigns, "
@@ -659,7 +683,8 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "",
     lead = (f"{style}\n\n{context}" +
             "\n\nTopics already used recently (don't reuse):\n" +
             ("\n".join(f"- {t}" for t in (state.get("fun_topics", []) + state.get("reel_topics", []))[-30:]) or "(none)") +
-            "\n\nRecent Reels (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in state.get("recent_reels", [])[-20:]) or "(none)"))
+            "\n\nRecent Reels (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in state.get("recent_reels", [])[-20:]) or "(none)")
+            + ("" if evergreen else viral_memory("for jokes: pick the big star/film talk of the day when you can")))
     model = CONFIG.get("membership_model", "sonnet")
     option = CLIP_OPTION if kind in CLIP_KINDS else MEME_OPTION
     if kind in CLIP_KINDS:
@@ -1614,7 +1639,10 @@ harmless (nothing dangerous a kid could copy: no stunts, jumping, fire, medicine
 The moment must be easy to show with a generic free stock video (an object or simple action, e.g. a pencil \
 sharpener, an apple, a TV remote, a sweets box, a school bag, a kid hiding under a blanket): clip_search = 3 short \
 English searches for it, clip_wanted = what the clip should show.
-caption: 2-3 Hinglish lines that {caption}. pin_comment: a funny follow-up line. hashtags: exactly 5 \
+Use 90s/2000s references everyone knows (Shaktimaan, Doordarshan, Parle-G, Nokia snake, Tazo, Pogo...) when they \
+fit: nostalgia gets shared.
+caption: 2-3 Hinglish lines that {caption}. pin_comment: a funny follow-up line + a share nudge ('Bachpan ke dost ko \
+bhejo 👇'). hashtags: exactly 5 \
 (#bachpan #90skids style + high-reach)."""
 
 
@@ -1648,7 +1676,8 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             "Moments already used (never repeat these or the same idea):\n" +
             ("\n".join(f"- {r}" for r in recent[-40:]) or "(none)") +
             "\n\nWrite exactly 3 different childhood moments (different kinds: a myth kids believed, a naughty trick, "
-            "a home or school moment)." + extra + songs_prompt(songs) + "\nSongs: nostalgic picks fit best.",
+            "a home or school moment)." + extra + viral_memory("for tone and shareability") + songs_prompt(songs)
+            + "\nSongs: nostalgic picks fit best.",
             options_schema(option, "Exactly 3 different childhood moments"), model, purpose="reel writing")["options"][:3]
         for o in options:
             o["caption"], o["text"] = unescape(o["caption"]), unescape(o["text"])
@@ -1704,7 +1733,10 @@ English letters only, never Devanagari): ONE single story people are talking abo
 photos (owner, 15 Oct 2026: 'like the Bittu Tabahi one': one man cleaned a river for 8 months). From the latest \
 stories pick the 3 MOST VIRAL / TRENDING, best first: trending on X or Google in India, covered by many sites, \
 viral human-interest moments (shocking, inspiring, heart-warming, unbelievable), big Bollywood/OTT/cricket moments, \
-with strong visuals. A story everyone will want to watch to the end and share.
+with strong visuals. A story everyone will want to watch to the end and share. Rank stories about the BIGGEST \
+names young Indians know first (owner, 15 Oct 2026: a Salman Khan + Karisma Kapoor reveal got 1.6k views and many \
+shares, most Reels ~200): A-list actors (Salman, Shah Rukh, Aamir, Akshay, Ranbir, Alia, Deepika...), top cricketers \
+(Virat, Dhoni, Rohit...), the PM, with a reveal, clash, behind-the-scenes moment or 90s/2000s nostalgia.
 Only stories most people across India care about (owner, 14 Oct 2026: Indian stories got ~227 views, foreign or niche \
 celebrity news ~15): Indian news, Bollywood/OTT, Team India and IPL, viral Indian moments, big national stories. Skip \
 foreign news unless it is about India or Indians, foreign sports and niche or foreign celebrity news.
@@ -1750,7 +1782,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
                               f"(hours trending):\n{trends}\n\nWhat India is searching on Google today:\n{searches}"
-                              f"\n\nStories:\n{listing}\n\nGive your top 3 picks, the most viral first."
+                              f"\n\nStories:\n{listing}{viral_memory()}\n\nGive your top 3 picks, the most viral first."
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
@@ -1884,7 +1916,8 @@ SPEECH_OPTION = {"type": "object", "properties": {
     "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (who + topic), "
                 "then 2-3 short news lines (what he said, why it matters, the opposition angle in the page's line), "
                 "then 'Aap sehmat ho? Comment karo 👇'. 1-3 emojis."},
-    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags"},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags, ends with a "
+                    "share nudge like 'Ye message sabko bhejo 🇮🇳'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"}},
     "required": ["headline", "subline", "highlight", "caption", "pin_comment", "hashtags"], "additionalProperties": False}
 
@@ -1979,8 +2012,9 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             "(a strong, pro-Modi/BJP/NDA speech Reel): a leader or the government SPEAKING (speech, rally, statement, "
             "press conference, interview) on one of today's big India stories; best: a strong message, an attack on "
             "the opposition, a big announcement. Skip greetings, festival/devotional wishes, condolences, ads, promos "
-            "and montages without a speaker. Never a video that attacks or embarrasses the BJP/NDA.",
-            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nOfficial videos:\n{listing}",
+            "and montages without a speaker. Never a video that attacks or embarrasses the BJP/NDA. The biggest face "
+            "first: PM Modi, then Amit Shah, then ministers and CMs.",
+            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nOfficial videos:\n{listing}{viral_memory()}",
             schema, CONFIG.get("membership_model", "sonnet"), purpose="official video pick")
         ranked, search = [n for n in res["ranked"] if 1 <= n <= len(vids)][:3], res["search"]
         print(f"  ranked: {ranked} ({res['why'][:120]})")
@@ -2357,7 +2391,9 @@ POLITICS_OPTION = {"type": "object", "properties": {
     "clip_search": {"type": "array", "items": {"type": "string"},
                     "description": "3 searches for a REACTION stock clip (laughing, facepalm, shocked, eye roll...)"},
     "clip_wanted": {"type": "string"},
-    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "caption": {"type": "string"},
+    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags: a funny line + a share nudge, e.g. "
+                    "'Ye us dost ko bhejo jo har baat pe INDIA bloc ko defend karta hai 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},
     "required": ["based_on", "issue", "party", "format", "claim", "context", "facts", "punchline", "people", "highlight", "clip_search",
@@ -2386,7 +2422,9 @@ or health; a death, illness or grief is never the joke; no slurs, no abuse, no c
 embarrasses the BJP. REALITY CHECK facts must be settled (official data, results, court verdicts, their own dated \
 promises, statements and actions on record), never allegations, FIRs, charges or ongoing probes.
 Caption: 2-4 short Hinglish lines, the first with the searchable keywords (leader/party/issue names), the context in \
-one line, 1-3 emojis, last line makes people comment or send it."""
+one line, 1-3 emojis, last line a question that makes people take a side ('Kaun sahi? Comment karo 👇'). \
+Prefer the opposition's best-known faces (Rahul Gandhi, Kejriwal, Mamata Banerjee...) when the story allows: big \
+names get the most views and shares."""
 
 # Not given to the satire writer since 14 Oct 2026 (owner: election results came up every day); kept for reference.
 # Official results (Election Commission of India) for REALITY CHECK contrasts: the opposition also wins under the
@@ -2514,7 +2552,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                                   f"{fun.today_context()}\n\nArticles:\n{sources}\n\nRecent satire "
                                   f"Reels (yours must differ in angle, format, hook and punchline; no format from the "
                                   f"last 7):\n{recent}\n\nWrite exactly 3 different Reels about the MAIN story, each "
-                                  "in a different format." + extra + songs_prompt(songs),
+                                  "in a different format." + extra + viral_memory() + songs_prompt(songs),
                                   options_schema(POLITICS_OPTION, "Exactly 3 different Reels"),
                                   model, purpose="satire writing")["options"][:3]
         for o in options:
@@ -3403,7 +3441,8 @@ DEVOTION_OPTION = {"type": "object", "properties": {
                "only well-known traditional facts"},
     "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 18 words, people want to save it"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
-    "caption": {"type": "string"}, "pin_comment": {"type": "string"},
+    "caption": {"type": "string"},
+    "pin_comment": {"type": "string", "description": "Max 15 words: a share line to family, e.g. 'Apni maa ko bhejo 🙏'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5 (e.g. #navratri #jaimatadi), include #reelsindia"}},
     "required": ["based_on", "hook", "lesson", "real_life", "highlight", "caption", "pin_comment", "hashtags"],
     "additionalProperties": False}
@@ -3412,8 +3451,9 @@ DEVOTION_SYSTEM = """You write the 6 AM devotional Reel for {page}, an Indian Hi
 letters only, never Devanagari). Warm, reverent, uplifting, like a blessing from family: festival or god of the day, \
 who the deity is in simple words, and a blessing or life lesson for today. Only well-known traditional facts; never \
 joke about any god, no politics, nothing against any religion or community. Write it like poetry: short lines, \
-natural pauses ("..."). Caption: 2-4 short Hinglish lines, 1-2 emojis (🙏 fits), last line asks people to share \
-with family or comment 'Jai ...'."""
+natural pauses ("..."). Caption: 2-4 short Hinglish lines, the first naming the god/festival (searchable), 1-2 emojis \
+(🙏 fits), last line asks people to comment 'Jai ...' (e.g. 'Jai Mata Di likho 🙏'). Pinned comment: a share line to \
+family, e.g. 'Apni maa ko bhejo, unka din ban jayega 🙏'."""
 
 
 def plain_letters(text: str) -> str:
@@ -3472,6 +3512,7 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                               "so don't repeat those words.\n"
                               + ("" if exact else f"The paintings show {plan['family']} in general, not this exact form: "
                                  "don't describe her/his vahana, weapons or looks; write about the meaning and blessing.\n")
+                              + viral_memory("for tone and shareability only: today's Reel stays about the deity")
                               + "\nWrite exactly 3 different Reels.",
                               options_schema(DEVOTION_OPTION, "Exactly 3 different Reels"),
                               CONFIG.get("membership_model", "sonnet"), purpose="devotion writing")["options"][:3]
@@ -3756,14 +3797,15 @@ def make_poll_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "(English letters only). 4 options that young Indians will fight about in the comments, each tied to an "
         "Instagram button: 1 = like, 2 = comment, 3 = repost, 4 = share. Topic: one of today's talking points if it "
         "makes a fun 4-way choice, else an evergreen desi debate (biryani styles, chai vs coffee, phone brands, "
-        "cricket captains, Bollywood Khans, quick-commerce apps, cities...). Vary the category: not the category of "
+        "cricket captains, Bollywood Khans, quick-commerce apps, cities...). Star power wins when it fits (CHOOSE YOUR "
+        "KHAN, best 90s jodi, captains): the biggest names get the most votes. Vary the category: not the category of "
         "the last 2 polls. Politics only when it is the day's big talk, in the page's line: pro BJP/NDA, BJP or Modi "
         "as option 4 (share); respectful: no religion, caste, region or community choices, no insults. Real, "
         "well-known options only; names short.",
         f"{fun.today_context()}\n\nToday's talking points:\n" + ("\n".join(f"- {t['topic']}: {t['why']}" for t in topics)
                                                                  or "(none big)") +
         "\n\nRecent polls (don't repeat the topic or category of the last 2):\n" + ("\n".join(f"- {p}" for p in recent) or "(none)")
-        + songs_prompt(songs), POLL_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="poll writing")
+        + viral_memory() + songs_prompt(songs), POLL_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="poll writing")
     poll["options"] = poll["options"][:4]
     if len(poll["options"]) < 4:
         raise RuntimeError("the poll needs 4 options")

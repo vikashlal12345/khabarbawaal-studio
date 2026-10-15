@@ -36,6 +36,8 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   doesn't support instead of only flagging it; Reels use `proofread.run(strict=True)`: a claim it couldn't check
   left → `Unverified` → the Reel is made again (REEL_TRIES). Carousels still only show ⚠️.
 
+📈 **What goes viral (owner 15 Oct 2026: a Salman Khan + Karisma reveal got 1.6k views + shares, most Reels ~200):** every picker/writer favours the BIGGEST names (A-list actors, top cricketers, PM) with a reveal / clash / behind-the-scenes / 90s nostalgia angle; hooks = star first then the surprise ('Salman ne Karisma ke saath shoot se mana kiya'); captions end with a side-taking question ('Salman sahi the? Haan ya Na?'); pinned comment = a share nudge ('Kisi Salman fan ko bhejo 👇'; devotional 'Apni maa ko bhejo'). `reel.viral_memory()` shows our own top 10 / weakest 5 Reels from `state/viral.json` to every picker and writer; refresh it from the owner's screen recordings: `python3 tools/views_from_recording.py <video> --save` (merges, 30 days), then save.py.
+
 ## Schedule (IST) - `schedule.py`
 **14 Reels a day, all in the feed (owner 15 Oct 2026)**: 6:00 🙏 devotional · 7:00 🔥 viral news · 8:00 😂 Tag that friend ·
 10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 16:00 🗳️ poll · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🧒 Bachpan · 22:00 🎥🔊 official speech.
