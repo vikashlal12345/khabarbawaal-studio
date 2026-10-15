@@ -152,8 +152,8 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   Content list now and then: `python3 tools/views_from_recording.py <video>` (Mac: Apple Vision OCR, PDT → IST). Review ~21 Oct: replace the weakest slot with a 2nd satire Reel.
   Reading time (owner, 11 Oct 2026, `read_secs()` = 1.5 s + 0.25 s a word; 12 Oct 2026: "not able to read", then
   1.5x was "too much": **old time + a couple of seconds, not double**): every text screen +1 s = 2.5 s + 0.25/word
-  (news photos 4-8.5 s, meme build-up/punchline ≥ 5.5/4.5 s ≤ 8.5 s, satire hook 5.5-7 s, satire parts
-  ~3.5 words/s + 1.9 s), Tag that friend (one screen) +2 s = 4.5 s + 0.25/word, 8.5-12 s; a stock clip shorter than
+  (news photos 4-8.5 s, meme build-up/punchline ≥ 5.5/4.5 s ≤ 8.5 s, satire hook 5.5-7 s, satire KYA HUA?
+  ~3.5 words/s + 1.9 s; satire fixed by the owner 15 Oct 2026: REALITY CHECK 10 s, punchline + SEND THIS 5 s, follow 1 s = `SATIRE_FACTS_SECS/PUNCH/FOLLOW`, other Reels' follow stays 1.5 s), Tag that friend (one screen) +2 s = 4.5 s + 0.25/word, 8.5-12 s; a stock clip shorter than
   that freezes on its last frame (never cuts the text); devotional/Gita keep their slower `read_time()`;
   own-video Reels = the video's length.
 - `create_post.py` (`make(raw, kind)`; typed requests like "latest viral news" go through `resolve_prompt` = feeds + Bing + AI pick), `evergreen.py` (ready posts), `calendar_plan.py`, `insights.py`

@@ -242,10 +242,10 @@ def follow_frame(last: Image.Image) -> Image.Image:
     return frame
 
 
-def add_follow(enc, last: Image.Image) -> None:
+def add_follow(enc, last: Image.Image, secs: float = FOLLOW_SECS) -> None:
     """Writes the follow end card (FOLLOW_SECS) after a Reel's last frame."""
     card = follow_frame(last)
-    for _ in range(int(FOLLOW_SECS * FPS)):
+    for _ in range(int(secs * FPS)):
         enc.add(card)
 
 
@@ -1887,6 +1887,9 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
 
 # ---------------------------------------------------------------- 4. political satire + reality check (6 PM)
 
+SATIRE_FACTS_SECS, SATIRE_PUNCH_SECS, SATIRE_FOLLOW_SECS = 10.0, 5.0, 1.0
+
+
 def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], context: list[str],
                 facts: list[dict], punchline: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
     """1) the dig over a reaction clip (meme layout), 2) KYA HUA? plain context, 3) REALITY CHECK: recent
@@ -1918,10 +1921,10 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     t_ctx = clip_dur
     d_ctx = 0.5 + secs(" ".join(context))
     t_facts = t_ctx + d_ctx
-    per = [0.4 + secs(f["fact"]) for f in facts]
-    t_punch = t_facts + 0.4 + sum(per)
-    d_punch = 0.4 + secs(punchline)
-    total = t_punch + d_punch + 2.0
+    # Fixed by the owner (15 Oct 2026, after a 36.9 s Reel): REALITY CHECK 10 s, punchline + SEND THIS 5 s, follow 1 s.
+    t_punch = t_facts + SATIRE_FACTS_SECS
+    d_punch = SATIRE_PUNCH_SECS
+    total = t_punch + d_punch
     enc, checks, frame = Encoder(out_mp4), [], None
     marks = [t_ctx - 0.2, t_facts - 0.2, t_punch - 0.2, t_punch + d_punch - 0.2]
     shots, shot = clip_frames(clip, start, clip_dur, clip_w, clip_h), None
@@ -1977,7 +1980,7 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
         if len(checks) < len(marks) and t >= marks[len(checks)]:
             checks.append(frame.convert("RGB"))
         enc.add(frame)
-    add_follow(enc, frame)
+    add_follow(enc, frame, SATIRE_FOLLOW_SECS)
     enc.close()
     while len(checks) < 4:
         checks.append(frame.convert("RGB"))
