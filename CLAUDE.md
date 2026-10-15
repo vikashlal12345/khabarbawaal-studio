@@ -27,6 +27,7 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
   rates what young Indians across India talk about (skips non-India/domestic matches, scorecards, share prices, region-only,
   deaths/crimes, hashtag campaigns, devotional wishes); only buzz 7+ go to the writer; relatable desi-life jokes only as a backup round when no trend joke passes the
   judge; `topic_articles()` gives the proofreader today's news about the joke's trend (facts like dates checked).
+  📸 Context photos (owner 15 Oct 2026: a Ramayana trailer meme showed Thai dancers): the writer's `about` (film_show/person/team/party/brand/event_place/app + lookup; empty for festivals, seasons, everyday moments) → `context_photos()`: today's news photos of films/events/brands, kept only if the AI sees they show it (`look_at_photos`), then credited Wikipedia people + 'A VS B' card, App Store for apps; < 2 photos → stock clip (`pick_clip`, AI-looked). ➕ Create uses the same with `understand_topic`'s named things.
 - Fun posts: single image; jokes on widely-known trends (Google Trends India, big stories, day/season) + relatable desi-life moments (first person, deadpan, e.g. @weebx_ style), short Gen Z meme formats; 3 options scored by a "young Indian" judge (understandable ≥7, funny ≥6) or the slot posts news. Joke bank retired.
 - Captions: max **5 hashtags** (Instagram limit), high-reach + 1-2 specific, no #KhabarBawaal; `limit_hashtags()` enforces it.
 - Every post is proofread by AI (spelling, names, facts vs article, layout); ✅/⚠️ shown in app.

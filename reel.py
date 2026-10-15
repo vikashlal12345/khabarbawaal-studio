@@ -503,6 +503,16 @@ SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit th
 
 _COMMON = {
     "songs": SONGS,
+    "about": {"type": "array", "description": "The specific real things this joke is about, so their photos can be "
+              "shown (owner, 15 Oct 2026: a Ramayana trailer meme showed Thai dancers): a film/show, person, team, "
+              "brand or event, e.g. Ramayana (2026 film) + Ranbir Kapoor. EMPTY for festivals, seasons, weather and "
+              "everyday desi moments (they get a stock video).", "items": {"type": "object", "properties": {
+                  "name": {"type": "string", "description": "Short name shown on screen, e.g. 'Ranbir', 'Ramayana'"},
+                  "kind": {"type": "string", "enum": ["film_show", "person", "team", "party", "brand", "event_place", "app"]},
+                  "lookup": {"type": "string", "description": "person/team/party: exact English Wikipedia page title; "
+                             "app: its App Store name; film_show/brand/event_place: a short English news search for "
+                             "today's photos of it, e.g. 'Ramayana trailer launch Bengaluru'"}},
+                  "required": ["name", "kind", "lookup"], "additionalProperties": False}},
     "based_on": {"type": "string", "description": "The trend/topic or everyday moment this joke is about"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the text to colour"},
     "clip_search": {"type": "array", "items": {"type": "string"}},
@@ -1325,6 +1335,50 @@ def name_card(name: str) -> Image.Image:
     return img
 
 
+def look_at_photos(photos: list[Image.Image], about: str, tmp: str) -> list[Image.Image]:
+    """The AI looks at news photos before a joke Reel uses them and keeps only those that clearly show what the joke
+    is about (owner, 15 Oct 2026: a Ramayana trailer meme showed Thai dancers). [] if the check fails."""
+    import fun
+    if not photos:
+        return []
+    folder = os.path.join(tmp, "photo_check")
+    os.makedirs(folder, exist_ok=True)
+    for n, img in enumerate(photos, 1):
+        small = img.convert("RGB")
+        small.thumbnail((640, 640))
+        small.save(os.path.join(folder, f"photo{n}.jpg"), quality=85)
+    schema = {"type": "object", "properties": {"keep": {"type": "array", "items": {"type": "integer"},
+              "description": "Numbers of the photos to use, best first"}, "why": {"type": "string"}},
+              "required": ["keep", "why"], "additionalProperties": False}
+    try:
+        res = fun.claude_json(
+            "You check news photos for a funny Instagram Reel for young Indians. Open every photo with the Read tool. "
+            "Keep only photos that clearly show the named film/show, person, team, brand or event (its stills, poster, "
+            "cast at its event, the person): not a different film, country or person, not unrelated stock, not a "
+            "collage or screenshot full of text, sharp enough for a phone screen.",
+            f"The joke is about: {about}\n\nPhotos: " + ", ".join(f"photo{n}.jpg" for n in range(1, len(photos) + 1)),
+            schema, CONFIG.get("membership_model", "sonnet"), purpose="photo look", folder=folder)
+    except Exception as e:
+        print(f"  ! photo look failed ({str(e)[:80]}): no news photos")
+        return []
+    keep = [photos[k - 1] for k in dict.fromkeys(res["keep"]) if 1 <= k <= len(photos)]
+    print(f"  looked at {len(photos)} news photo(s): kept {len(keep)} ({res['why'][:100]})")
+    return keep
+
+
+def context_photos(things: list[dict], about: str, tmp: str) -> tuple[list[Image.Image], list[str]]:
+    """Photos of what a joke Reel is about (owner, 15 Oct 2026: 'the post should have the context photos'):
+    films/shows/events/brands -> today's news photos, checked by the AI (`look_at_photos`), first; then
+    people/teams/parties -> their credited Wikipedia photos with an 'A VS B' card; apps -> App Store icons +
+    screens. Returns (photos, caption credits); fewer than 2 photos -> the caller uses a stock clip."""
+    news = []
+    for t in [t for t in things if t["kind"] in ("film_show", "event_place", "brand")][:2]:
+        news += topic_photos(t["lookup"] or t["name"], want=4)
+    news = look_at_photos(news, about, tmp)[:3]
+    pics, credits = named_photos([t for t in things if t["kind"] in ("app", "person", "team", "party")])
+    return (news + pics)[:5], credits
+
+
 def named_photos(named: list[dict], fill_missing: bool = False) -> tuple[list[Image.Image], list[str]]:
     """Pictures of the real things the owner's ➕ Create idea names, by what they are (owner, 15 Oct 2026): apps ->
     App Store icons + screenshots; people/parties/teams/films -> their free Wikipedia pictures (credited, like the
@@ -1431,7 +1485,10 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     # ➕ Create: pictures of the real things the idea names (owner, 14 Oct 2026: "no photos or logo of Hopr and
     # Tinder"); an everyday moment ('bachpan me aisa kaun kiya?') gets a video clip like the daily jokes.
     art_note = ""
-    photos, credits = named_photos(named) if named else ([], [])
+    # Daily trend jokes (owner, 15 Oct 2026): what the writer says the joke is about; ➕ Create: what the owner named.
+    things = named or ([] if evergreen else post.get("about", []))
+    photos, credits = context_photos(things, f"{post['based_on']} ({', '.join(t['name'] for t in things)})", tmp) \
+        if things else ([], [])
     clip = secs = cid = real = None
 
     def video():   # a stock clip; none fits: photos -> 🎨 AI picture -> branded background
@@ -1444,10 +1501,10 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             clip, secs, art_note = fallback_visual(post, (RW, RH) if kind in CLIP_KINDS else (RW, 608), tmp)
             real, cid = True, None
     if len(photos) >= 2:
-        status.step(f"Real photos: {', '.join(n['name'] for n in named)[:60]}", 4)
+        status.step(f"Real photos: {', '.join(t['name'] for t in things)[:60]}", 4)
         clip, secs, cid, real = os.path.join(tmp, "photos.mp4"), 14.0, None, True
         photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
-        print(f"  real photos: {len(photos)} of {[n['name'] for n in named]}")
+        print(f"  real photos: {len(photos)} of {[t['name'] for t in things]}")
     else:
         photos, credits = [], []
         video()
