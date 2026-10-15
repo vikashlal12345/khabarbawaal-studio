@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_top5_am-2026-10-15",
+  "image": "posts/20261015-0132-reel_top5_am-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-013226-reel_top5_am-2026-10-15.mp4",
+  "headline": "TOP 5 RAAT KI KHABAR: 15 Oct",
+  "tag": "🎬 REEL · RAAT KI TOP 5",
+  "caption": "Air India Code 7500 hijack alert, Salman Khan Koffee With Karan, MrBeast aur Drishyam 3 box office: aaj ki Top 5 khabrein 👇\n\n1. Air India Flight Gets Hijack Alert, Diverted\n2. Salman Khan Opens Up on Koffee With Karan\n3. Gujarat Woman Meets MrBeast, Wins ₹9.5 Lakh\n4. Drishyam 3 Hits Lowest Single-Day Haul\n5. Centre: CAPF Act Doesn't Override Supreme Court Verdict\n\nKaunsi khabar sabse badi lagi? Comment karo 👇\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #bollywood #salmankhan",
+  "source": "Hindustan Times",
+  "source_url": "",
+  "pin_comment": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Ashke",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "BbY WOW",
+    "artist": "KAROL G, Judeline, rusowsky",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Solar Eclipse",
+    "artist": "Drake & Don Toliver",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "created_at": "2026-10-15T01:32:26+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-15",
   "image": "posts/20261015-0033-reel_devotion-2026-10-15.jpg",
   "kind": "reel",
@@ -582,52 +627,5 @@
    }
   ],
   "created_at": "2026-10-14T01:32:31+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-14",
-  "image": "posts/20261014-0033-reel_devotion-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-003356-reel_devotion-2026-10-14.mp4",
-  "headline": "Navratri Din 4: Maa Kushmanda: Navratri ka chautha din... Maa ki muskaan se aapka din roshan ho",
-  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
-  "caption": "Chautha Navratri, Maa ki muskaan ke saath shuru karein 🙏\nUnka aashirwaad aapke ghar roshni laaye.\nJai Mata Di... family ke saath share karo ya comment mein 'Jai Mata Di' likho.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #jaimatadi #maakushmanda #durga #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aaj Maa ko yaad karke ek pyaari si muskaan do 🙏 Comment mein likho: Jai Mata Di",
-  "songs": [
-   {
-    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
-    "artist": "Anuradha Paudwal, Sonu Nigam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri Aarti",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "the creator smile of the universe → the smile that created the universe"
-   ]
-  },
-  "created_at": "2026-10-14T00:33:56+00:00"
  }
 ]

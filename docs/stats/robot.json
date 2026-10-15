@@ -3172,6 +3172,25 @@
      "tokens": 10658
     }
    }
+  },
+  "reel_top5_am": {
+   "posts": 0,
+   "requests": 2,
+   "input": 6,
+   "output": 2000,
+   "cache_read": 5847,
+   "cache_write": 19334,
+   "value_usd": 0.098,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 11376
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 15811
+    }
+   }
   }
  }
 }
