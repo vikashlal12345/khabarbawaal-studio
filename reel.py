@@ -1316,19 +1316,31 @@ def names_card(items: list[tuple[str, Image.Image]]) -> Image.Image:
     return card
 
 
-def named_photos(named: list[dict]) -> tuple[list[Image.Image], list[str]]:
+def name_card(name: str) -> Image.Image:
+    """A red card with the name's first letter: a person/party without a free photo (never a random news photo,
+    it could be someone else)."""
+    img = Image.new("RGB", (400, 400), RED)
+    ImageDraw.Draw(img).text((200, 200), printable(name)[:1].upper(), font=font("Anton-Regular.ttf", 220),
+                             fill="#FFFFFF", anchor="mm")
+    return img
+
+
+def named_photos(named: list[dict], fill_missing: bool = False) -> tuple[list[Image.Image], list[str]]:
     """Pictures of the real things the owner's ➕ Create idea names, by what they are (owner, 15 Oct 2026): apps ->
     App Store icons + screenshots; people/parties/teams/films -> their free Wikipedia pictures (credited, like the
     poll; never a random news photo, it could be someone else); brands/events -> news photos.
+    fill_missing: a person/party without a free Wikipedia picture gets a `name_card` on the 'VS' card.
     Returns (pictures, caption credits)."""
     apps = [n["name"] for n in named if n["kind"] == "app"][:3]   # the short name labels the logo ('Hopr')
     photos = app_photos(apps) if apps else []
     wiki, credits = [], []
     for n in [n for n in named if n["kind"] in ("person", "party", "team", "film_show")][:3]:
-        img, credit = wiki_thumb(n["lookup"] or n["name"], size=1200)
+        img, credit = wiki_thumb(n["lookup"] or n["name"], size=960)
         if img is not None:
             wiki.append((n["name"], img))
             credits.append(f"{printable(n['name'])}: {credit}")
+        elif fill_missing:
+            wiki.append((n["name"], name_card(n["name"])))
     if wiki:
         photos += [names_card(wiki)] + [img.convert("RGB") for _, img in wiki
                                         if min(img.size) >= 500 and not (img.mode == "RGBA" and img.getextrema()[3][0] < 250)]
@@ -1952,6 +1964,13 @@ POLITICS_OPTION = {"type": "object", "properties": {
                   "required": ["fact", "source"], "additionalProperties": False}},
     "punchline": {"type": "string", "description": "The big funny closing line, max 14 words, NEW (not a common "
                   "slogan, not like a recent Reel's). No emojis."},
+    "people": {"type": "array", "description": "1-3 real people (or parties) this joke is about, main one first; their "
+               "photos are shown instead of a stock clip, e.g. Rahul Gandhi + Bhagwant Mann",
+               "items": {"type": "object", "properties": {
+                   "name": {"type": "string", "description": "Short name shown under the photo, e.g. 'Rahul', 'Mann'"},
+                   "wiki": {"type": "string", "description": "Exact English Wikipedia page title, e.g. 'Bhagwant Mann'"},
+                   "kind": {"type": "string", "enum": ["person", "party"]}},
+                   "required": ["name", "wiki", "kind"], "additionalProperties": False}},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "clip_search": {"type": "array", "items": {"type": "string"},
                     "description": "3 searches for a REACTION stock clip (laughing, facepalm, shocked, eye roll...)"},
@@ -1959,7 +1978,7 @@ POLITICS_OPTION = {"type": "object", "properties": {
     "caption": {"type": "string"}, "pin_comment": {"type": "string"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},
-    "required": ["based_on", "issue", "party", "format", "claim", "context", "facts", "punchline", "highlight", "clip_search",
+    "required": ["based_on", "issue", "party", "format", "claim", "context", "facts", "punchline", "people", "highlight", "clip_search",
                  "clip_wanted", "caption", "pin_comment", "hashtags", "songs"], "additionalProperties": False}
 
 POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
@@ -2168,26 +2187,40 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     roman_only(best, ["caption", "pin_comment", "punchline"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
     best["facts"] = best["facts"][:2]   # (a 1-fact, shorter version failed the judge on every story, 14 Oct 2026)
-    art_note = ""
-    try:
-        cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
-        clip, secs = download_clip(cid, tmp)
-    except RuntimeError as e:   # no fitting reaction clip: photos -> 🎨 AI picture -> branded background
-        print(f"  ! {e}")
-        cid = None
-        clip, secs, art_note = fallback_visual({**best, "photo_query": best.get("clip_wanted", "")}, (RW, 608), tmp)
+    art_note, real, cid = "", False, None
+    # The people the joke is about, not a random stock face (owner, 15 Oct 2026: Rahul Gandhi + Bhagwant Mann were
+    # the story, the Reel showed a stranger): 'RAHUL VS MANN' card + their free Wikipedia photos (credited).
+    people = [{"name": x["name"], "kind": x["kind"], "lookup": x["wiki"]} for x in best.get("people", [])][:3]
+    photos, credits = named_photos(people, fill_missing=True) if people else ([], [])
+    if credits:   # at least one real photo
+        status.step(f"Photos: {', '.join(x['name'] for x in people)}", 4)
+        clip, secs, real = os.path.join(tmp, "people.mp4"), 7.0, True
+        photo_clip(photos[:3], RW, 608, secs, clip)
+        print(f"  people photos: {len(photos[:3])} of {[x['wiki'] for x in people]}")
+    else:
+        credits = []
+        try:
+            cid = pick_clip({**best, "text": " ".join(best["claim"]), "punch": best["punchline"]}, state)
+            clip, secs = download_clip(cid, tmp)
+        except RuntimeError as e:   # no fitting reaction clip: photos -> 🎨 AI picture -> branded background
+            print(f"  ! {e}")
+            clip, secs, art_note = fallback_visual({**best, "photo_query": best.get("clip_wanted", "")}, (RW, 608), tmp)
     out = os.path.join(tmp, "reel.mp4")
     item = {"link": story["url"], "source": story["site"], "title": story["title"]}
 
+    def caption_of(p):   # Wikipedia photos need their photographer + licence (owner, 15 Oct 2026)
+        return g.full_caption({**p, "caption": p["caption"].strip() + (
+            "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")}, item)
+
     def render(d):   # the dig over the clip stays until it's read (2.5 s + 0.25 s a word, 5.5-7 s); later parts time themselves
         clip_dur = min(max(5.5, read_secs(" ".join(d["post"]["claim"]), 2.5)), 7.0)
-        start = max(0.0, secs - clip_dur - 0.2)   # a short clip freezes on its last frame
+        start = 0.0 if real else max(0.0, secs - clip_dur - 0.2)   # a short clip freezes on its last frame
         return satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
                            d["post"]["punchline"], d["post"]["highlight"], out)
     status.step("Making the video + fact-checking", 5)
     frames, data, proof = proofread.run(
         render,
-        {"post": best}, lambda d: g.full_caption(d["post"], item),
+        {"post": best}, lambda d: caption_of(d["post"]),
         sources, strict=True)
     post = data["post"]
     if cid:
@@ -2202,7 +2235,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "facts": [f["fact"] for f in post["facts"]]}])[-15:]
     save_reel(feed, state, frames[0], out, f"reel_politics-{today}", {
         "headline": printable(" ".join(post["claim"]))[:140], "tag": "🎬 REEL · REALITY CHECK",
-        "caption": g.limit_hashtags(g.full_caption(post, item)), "source": story["site"], "source_url": story["url"],
+        "caption": g.limit_hashtags(caption_of(post)), "source": story["site"], "source_url": story["url"],
         "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
 
 
@@ -3122,31 +3155,61 @@ POLL_BUTTONS = [("heart", "LIKE", "❤️ Like"), ("comment", "COMMENT", "💬 C
                 ("share", "SHARE", "✈️ Share")]
 
 
+WIKI_UA = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}   # Wikimedia asks for a contact
+WIKI_WIDTHS = (330, 500, 960, 1280)   # Wikimedia only serves standard thumbnail widths quickly; others get 429
+
+
+def wiki_get(url: str, params: dict | None = None, tries: int = 3):
+    """A Wikimedia request with a polite User-Agent, retried after a pause (it answers bursts with 429)."""
+    import time
+    import requests
+    for k in range(tries):
+        try:
+            r = requests.get(url, headers=WIKI_UA, timeout=20, params=params)
+            if r.status_code == 200:
+                return r
+        except Exception:
+            pass
+        time.sleep(2 * (k + 1))
+    return None
+
+
 def wiki_thumb(title: str, size: int = 600) -> tuple[Image.Image | None, str]:
-    """The main picture of an English Wikipedia page (a PNG/JPG render: logos are SVG originals) and its credit,
-    e.g. 'Bollywood Hungama (CC BY 3.0)' (owner, 15 Oct 2026: most Wikipedia photos need the photographer and licence
+    """The main picture of an English Wikipedia page, else its Wikidata 'image' (owner, 15 Oct 2026: Rahul Gandhi's
+    page had none), as a PNG/JPG at the nearest standard width (logos are SVG originals), and its credit, e.g.
+    'Bollywood Hungama (CC BY 3.0)' (owner, 15 Oct 2026: most Wikipedia photos need the photographer and licence
     credited). Non-free pictures (fair-use logos, posters) are skipped: (None, '')."""
     import io
     import re
-    import requests
-    api, head = "https://en.wikipedia.org/w/api.php", {"User-Agent": "KhabarBawaalStudio/1.0"}
+    api = "https://en.wikipedia.org/w/api.php"
     try:
-        page = next(iter(requests.get(api, timeout=15, headers=head, params={
-            "action": "query", "format": "json", "redirects": 1, "prop": "pageimages", "piprop": "thumbnail|name",
-            "pithumbsize": size, "titles": title}).json()["query"]["pages"].values()))
-        src, name = page.get("thumbnail", {}).get("source", ""), page.get("pageimage", "")
-        if not src or not name:
+        r = wiki_get(api, {"action": "query", "format": "json", "redirects": 1, "prop": "pageimages|pageprops",
+                           "piprop": "name", "ppprop": "wikibase_item", "titles": title})
+        page = next(iter(r.json()["query"]["pages"].values())) if r else {}
+        name, qid = page.get("pageimage", ""), page.get("pageprops", {}).get("wikibase_item", "")
+        if not name and qid:
+            r = wiki_get("https://www.wikidata.org/w/api.php", {"action": "wbgetclaims", "format": "json",
+                                                                 "entity": qid, "property": "P18"})
+            claims = r.json().get("claims", {}).get("P18", []) if r else []
+            name = claims[0]["mainsnak"]["datavalue"]["value"].replace(" ", "_") if claims else ""
+        if not name:
+            print(f"  ! Wikipedia picture '{title}': none found")
             return None, ""
-        info = next(iter(requests.get(api, timeout=15, headers=head, params={
-            "action": "query", "format": "json", "prop": "imageinfo", "iiprop": "extmetadata",
-            "titles": f"File:{name}"}).json()["query"]["pages"].values()))
-        meta = (info.get("imageinfo") or [{}])[0].get("extmetadata", {})
+        width = min(WIKI_WIDTHS, key=lambda w: abs(w - size))
+        r = wiki_get(api, {"action": "query", "format": "json", "prop": "imageinfo", "iiprop": "url|extmetadata",
+                           "iiurlwidth": width, "titles": f"File:{name}"})
+        info = (next(iter(r.json()["query"]["pages"].values())).get("imageinfo") or [{}])[0] if r else {}
+        meta = info.get("extmetadata", {})
         value = lambda k: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", (meta.get(k) or {}).get("value", ""))).strip()
         lic = value("LicenseShortName")
         if value("NonFree") or not re.match(r"(?i)(cc|public domain|pd|gfdl|godl|ogl|open government|attribution)", lic):
             print(f"  ! Wikipedia picture '{title}' isn't free to reuse ({lic or 'no licence'}): skipped")
             return None, ""
-        img = Image.open(io.BytesIO(requests.get(src, timeout=20, headers=head).content)).convert("RGBA")
+        r = wiki_get(info.get("thumburl") or info.get("url", ""))
+        if r is None:
+            print(f"  ! Wikipedia picture '{title}': download refused")
+            return None, ""
+        img = Image.open(io.BytesIO(r.content)).convert("RGBA")
         artist = value("Artist")[:60]
         return img, (f"{artist} ({lic})" if artist else lic)
     except Exception as e:

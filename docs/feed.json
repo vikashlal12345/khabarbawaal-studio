@@ -1,5 +1,66 @@
 [
  {
+  "id": "reel_politics-photos-1905",
+  "image": "posts/20261015-1335-reel_politics-photos-1905.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-133532-reel_politics-photos-1905.mp4",
+  "headline": "🧪 TEST with photos: INDIA Bloc Family (2 members) Rahul: Mann ji jawab do AAP: jawab abhi pending",
+  "tag": "🧪 TEST · REALITY CHECK WITH PHOTOS",
+  "caption": "Rahul Gandhi vs Bhagwant Mann: INDIA bloc ke saathi Punjab mein aamne-saamne 📱\nCongress ne Mann sarkar se drugs par jawab maanga, AAP ka group chat mein reply pending.\nIs group chat ko apne dost ko bhejo.\n\nPhotos (Wikimedia Commons): Rahul: Himanshu Arya Khowal (CC BY 4.0); Mann: Gurvinder Singh brar GSB (CC BY-SA 4.0)\n\nFollow @khabarbawaal for daily updates.\nSource: India TV News (link pinned in comments 👇)\n\n#reelsindia #indiabloc #rahulgandhi #aapvscongress #politicalmemes",
+  "source": "India TV News",
+  "source_url": "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
+  "pin_comment": "INDIA bloc mein agla jhagda kahan hoga? Comment karo.",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "sawalon ki barsaat, group chat drama"
+   },
+   {
+    "title": "Samjhawan",
+    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
+    "lang": "hindi",
+    "mood": "manane ki koshish, naraaz saathi"
+   },
+   {
+    "title": "Love Me Not",
+    "artist": "Ravyn Lenae",
+    "lang": "english",
+    "mood": "hum saath nahi, par saath hain"
+   },
+   {
+    "title": "Earrings",
+    "artist": "Malcolm Todd",
+    "lang": "english",
+    "mood": "chill reaction, group chat seen"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Invented quote attributed to Kejriwal; article has no Kejriwal statement",
+    "Fact corrected to match the article: Article gives no date for seat sharing; 'Jun' unsupported",
+    "Fact corrected to match the article: Article gives no month; 'Jun' unsupported",
+    "Fact corrected to match the article: Seat-sharing claim not in article; replaced with what the article reports",
+    "Fact corrected to match the article: Source must match the article",
+    "Fact corrected to match the article: 13-seat claim not in article; replaced with attributed allegation from the article",
+    "Fact corrected to match the article: Source must match the article"
+   ],
+   "fixed": [
+    "Kejriwal: Delhi group mein yeh sawal nahi tha → AAP: jawab abhi pending",
+    "Jun 2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante → 2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante",
+    "Jun 2024 Punjab: dono partiyan saari 13 seat par alag lade → 2024 Punjab: dono partiyan saari 13 seat par alag lade",
+    "2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante → Mansa: activist Parminder Singh Jhota ko din-dahade goli maari gayi",
+    "The Hindu → India TV News",
+    "2024 Punjab: dono partiyan saari 13 seat par alag lade → Rahul ka aarop: Jhota ki shikayat par police ne unhi par case kiya",
+    "Election Commission → India TV News"
+   ]
+  },
+  "created_at": "2026-10-15T13:35:32+00:00"
+ },
+ {
   "id": "reel_meme-2026-10-15",
   "image": "posts/20261015-1332-reel_meme-2026-10-15.jpg",
   "kind": "reel",

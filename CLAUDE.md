@@ -63,7 +63,7 @@ rotating meme formats `SATIRE_FORMATS`, memory of the last 15 in `state.satire_r
 results; owner 14 Oct 2026: NO election results in REALITY CHECK (they came up daily; `ELECTION_RECORD` no longer
 given to writer/proofreader; facts from the story's own articles; election results only for an election-result story),
 memory now has `issue` + `facts` (picker: never the issue of the last 3 Reels; writer/judge: never recent facts), satire
-judge bar clarity 6+ (`judge_best(min_clear=6)`, jokes 7+); KYA HUA? ≤ 28 words, else one AI rewrite `too_long()`; stories newest first (Bing `newest=True` + dates,
+judge bar clarity 6+ (`judge_best(min_clear=6)`, jokes 7+); 📸 the top window shows the REAL people the joke is about (owner 15 Oct 2026: Rahul Gandhi vs Bhagwant Mann story got a random stock woman): writer field `people` (1-3, Wikipedia titles) → `named_photos(fill_missing=True)` = 'RAHUL VS MANN' `names_card` + their photos (`photo_clip`, start 0), credited in the caption; no free photo → `name_card` (never a random news photo); nobody named → reaction clip as before. `wiki_thumb`: page image, else Wikidata P18; standard widths only (`WIKI_WIDTHS`, other sizes get 429) + `WIKI_UA` with contact + retries (`wiki_get`); KYA HUA? ≤ 28 words, else one AI rewrite `too_long()`; stories newest first (Bing `newest=True` + dates,
 "N h ago"; today first, then backward day by day; **most viral first**: `fun.x_trends()` = X/Twitter India trends
 from trends24.in (hours trended, free), the AI turns opposition-related trends into news searches (+1 request),
 stories sorted by trend hours then age (owner: 12 Oct the most viral was CJP founder Abhijeet Dipke vs a Delhi
