@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-10-15",
+  "image": "posts/20261015-0033-reel_devotion-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-003318-reel_devotion-2026-10-15.mp4",
+  "headline": "Navratri Din 5: Maa Skandamata: Navratri ka paanchva din... Maa Skandamata ki godh mein sab surakshit",
+  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
+  "caption": "Navratri ke paanchve din Maa ki mamta aapke ghar barse 🙏\nMaa ka aashirwaad aapke parivar par bana rahe.\nParivar ke saath share karo, ya comment mein likho 'Jai Mata Di'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #maaskandamata #jaimatadi #navratri2026 #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jai Maa Skandamata 🙏 Aaj Maa ke naam ek diya zaroor jalao.",
+  "songs": [
+   {
+    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
+    "artist": "Anuradha Paudwal, Sonu Nigam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Durga Aarti",
+    "artist": "Shoma Banerjee",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri Aarti",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ambe Gauri (Durga Aarti)",
+    "artist": "Hari Om Sharan, Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The AI illustration shows a standing goddess with a lion. It has no baby Kartikeya on her lap and no lotus seat. Maa Skandamata is traditionally shown seated on a lotus holding Kartikeya. The captions say 'godh mein' and 'kamal par virajti hain', so the image doesn't match them. The same image is used on slides 2-4. The text and facts are correct. Consider swapping in a more accurate image if one is available."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-15T00:33:18+00:00"
+ },
+ {
   "id": "c843a439cdd6",
   "image": "posts/20261014-1740-c843a439cdd6.jpg",
   "kind": "custom",

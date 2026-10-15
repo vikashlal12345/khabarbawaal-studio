@@ -266,7 +266,7 @@
   "reel_meme": "2026-10-14",
   "reel_news": "2026-10-14",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-10-14",
+  "reel_devotion": "2026-10-15",
   "reel_news_pm": "2026-10-14",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-14",
@@ -624,10 +624,6 @@
   }
  ],
  "songs_recent": [
-  "Jai Ambe Gauri (Durga Aarti)",
-  "Ashke",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Solar Eclipse",
   "I Think They Call This Love (Cover)",
   "Shararat",
   "Thumkeshwari",
@@ -663,6 +659,10 @@
   "Sahiba",
   "Tera Hoke Rahoon",
   "Girls Like You",
-  "Sweater Weather"
+  "Sweater Weather",
+  "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
+  "Maa Durga Aarti",
+  "Jai Ambe Gauri Aarti",
+  "Jai Ambe Gauri (Durga Aarti)"
  ]
 }
