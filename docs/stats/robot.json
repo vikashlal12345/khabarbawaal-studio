@@ -3394,6 +3394,29 @@
      "tokens": 27945
     }
    }
+  },
+  "reel_news_pm": {
+   "posts": 0,
+   "requests": 4,
+   "input": 14,
+   "output": 4774,
+   "cache_read": 14618,
+   "cache_write": 38541,
+   "value_usd": 0.2033,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 1,
+     "tokens": 22025
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 8471
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 27451
+    }
+   }
   }
  }
 }

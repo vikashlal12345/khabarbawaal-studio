@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_pm-2026-10-15",
+  "image": "posts/20261015-1133-reel_news_pm-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-113303-reel_news_pm-2026-10-15.mp4",
+  "headline": "Ramayana international trailer to be unveiled at Bengaluru event; Ranbir Kapoor, Yash, Sai Pallavi to attend",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana trailer launch Bengaluru: Ranbir Kapoor, Yash, Sai Pallavi 🔥\nNitesh Tiwari ki Ramayana ka international trailer aaj 15 October ko Bengaluru mein launch.\nUS mein PG-13 rating, runtime 3 ghante se zyada.\nTum trailer ke liye kitne excited ho? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ramayana-international-trailer-to-be-unveiled-at-bengaluru-event-ranbir-kapoor-yash-sai-pallavi-to-attend/",
+  "pin_comment": "Ramayana trailer dekhne ke baad sabse pehle kiska look pasand aaya: Ranbir, Yash ya Sai Pallavi?",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "epic hype for big trailer"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "intense cinematic energy"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "epic build-up, trailer power"
+   },
+   {
+    "title": "Solar Eclipse",
+    "artist": "Drake & Don Toliver",
+    "lang": "english",
+    "mood": "dark dramatic cinematic feel"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says only that the film is 3 hours+; 15 minutes is not supported."
+   ],
+   "fixed": [
+    "runtime 3 ghante 15 minute → runtime 3 ghante se zyada"
+   ]
+  },
+  "created_at": "2026-10-15T11:33:03+00:00"
+ },
+ {
   "id": "reel_poll-2026-10-15",
   "image": "posts/20261015-1032-reel_poll-2026-10-15.jpg",
   "kind": "reel",
