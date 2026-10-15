@@ -22,6 +22,7 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Nav
             "reel_politics": (18, 0),                      # 🎯 political satire + reality check
             "reel_meme": (19, 0), "reel_news": (20, 0),    # 😂 meme, 🔥 viral news
             "reel_bachpan": (21, 15),                      # 🧒 "BACHPAN ME AISA KAUN KIYA?" (owner, 15 Oct 2026; was 🔥 news)
+            "reel_official": (22, 0),                      # 🎥🔊 official X video + voice news (owner, 15 Oct 2026)
             "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",

@@ -92,6 +92,22 @@ def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: flo
     p.wait()
 
 
+def video_stills(path: str, start: float, secs: float, width: int = 960):
+    """Whole frames of a video (no crop), `width` px wide, 30 fps: the official video under a news hook."""
+    w, h, _ = video_info(path)
+    h2 = int(h * width / w) // 2 * 2
+    p = subprocess.Popen([ffmpeg_exe(), "-loglevel", "error", "-ss", str(start), "-t", str(secs), "-i", path,
+                          "-vf", f"scale={width}:{h2},fps={FPS}", "-an", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+                         stdout=subprocess.PIPE)
+    size = width * h2 * 3
+    while True:
+        raw = p.stdout.read(size)
+        if len(raw) < size:
+            break
+        yield Image.frombytes("RGB", (width, h2), raw)
+    p.wait()
+
+
 def video_info(path: str) -> tuple[int, int, float]:
     """(width, height, seconds) as shown (phone videos are rotated by ffmpeg automatically)."""
     import re
@@ -389,7 +405,8 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
 # ---------------------------------------------------------------- 3. news photo slideshow
 
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
-              out_mp4: str, end: float = 3.0, hook: str = "") -> list[Image.Image]:
+              out_mp4: str, end: float = 3.0, hook: str = "",
+              hook_video: tuple[str, float, float] | None = None) -> list[Image.Image]:
     """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
     uncropped instead of zooming. Each photo stays long enough to read its line in full: 2.5 s + 0.25 s
     a word, 4-8.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel; 12 Oct: +1 s).
@@ -424,8 +441,12 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
     enc, checks, frame, hook_check = Encoder(out_mp4), [], None, []
     if hook:   # 🪝 the hook screen first (owner, 14 Oct 2026): first photo + a big line from the first frame
         layer = hook_layer(hook, highlights)
-        for i in range(int(HOOK_SECS * FPS)):
-            frame = hook_frame(slides[0][0], layer, i / FPS)
+        # hook_video = (path, start, secs): the official video plays under the line instead (🎥 10 PM Reel)
+        stills = video_stills(*hook_video) if hook_video else None
+        still = slides[0][0]
+        for i in range(int((hook_video[2] if hook_video else HOOK_SECS) * FPS)):
+            still = next(stills, still) if stills else still
+            frame = hook_frame(still, layer, i / FPS)
             if i == int(0.6 * FPS):
                 hook_check.append(frame.convert("RGB"))
             enc.add(frame)
@@ -1753,6 +1774,281 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     save_reel(feed, state, cover, out, f"{kind}-{today}", {**entry, "headline": story["title"]})
 
 
+# ---------------------------------------------------------------- 🎥🔊 10 PM: official video news
+
+OFFICIAL_X = ("narendramodi", "AmitShah", "rajnathsingh", "PMOIndia", "BJP4India", "JPNadda", "DrSJaishankar",
+              "nsitharaman", "nitin_gadkari", "AshwiniVaishnaw", "PiyushGoyal", "myogiadityanath", "Dev_Fadnavis",
+              "himantabiswa", "PIB_India", "RahulGandhi", "INCIndia", "ArvindKejriwal", "AamAadmiParty",
+              "BhagwantMann", "MamataOfficial", "yadavakhilesh")   # most newsworthy first; official accounts only:
+# never news agencies, TV channels or films. X allows 30 profile reads per 15 minutes from one address.
+OFFICIAL_SECS = 4.5   # the video piece under the hook line
+
+
+def official_videos(used: set[str]) -> list[dict]:
+    """Videos the official accounts posted on X in the last 20 hours (their public profile timelines, free, no
+    login), newest first: [{id, handle, text, at, secs, mp4}]."""
+    import time
+    from datetime import datetime, timedelta, timezone
+    import requests
+    since, out = datetime.now(timezone.utc) - timedelta(hours=20), []
+    for handle in OFFICIAL_X:
+        try:
+            r = requests.get(f"https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}",
+                             headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+            if r.status_code == 429:   # X's limit: wait if it resets soon, else use what we have
+                wait = int(r.headers.get("x-rate-limit-reset", "0") or 0) - time.time()
+                if 0 < wait < 180:
+                    print(f"  X limit reached: waiting {wait:.0f} s")
+                    time.sleep(wait + 2)
+                    r = requests.get(r.url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
+                if r.status_code == 429:
+                    print(f"  ! X limit reached after {OFFICIAL_X.index(handle)} accounts: using those")
+                    break
+            html = r.text
+            m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html, re.S)
+            entries = json.loads(m.group(1))["props"]["pageProps"]["timeline"]["entries"] if m else []
+        except Exception as e:
+            print(f"  ! X @{handle}: {str(e)[:60]}")
+            entries = []
+        for e in entries:
+            t = e.get("content", {}).get("tweet", {})
+            try:
+                at = datetime.strptime(t.get("created_at", ""), "%a %b %d %H:%M:%S %z %Y")
+            except ValueError:
+                continue
+            vids = [x for x in t.get("extended_entities", {}).get("media", []) if x.get("type") == "video"]
+            info = vids[0].get("video_info", {}) if vids else {}
+            mp4s = [v for v in info.get("variants", []) if v.get("content_type") == "video/mp4"]
+            secs = info.get("duration_millis", 0) / 1000
+            if at < since or not mp4s or secs < 10 or t.get("id_str") in used:
+                continue
+            out.append({"id": t["id_str"], "handle": handle, "at": at, "secs": secs,
+                        "text": re.sub(r"https://t\.co/\S+", "", t.get("full_text") or t.get("text") or "").strip(),
+                        "mp4": max(mp4s, key=lambda v: v.get("bitrate", 0))["url"]})
+        time.sleep(0.4)
+    return sorted(out, key=lambda v: v["at"], reverse=True)[:25]
+
+
+def speech_start(path: str, tmp: str, about: str) -> float | None:
+    """The AI looks at a frame every 2 s of the first 40 s and picks where the speaker is clearly talking (after
+    any title card); None if the video has no clear speaker or carries a TV channel / news agency logo."""
+    import fun
+    _, _, secs = video_info(path)
+    folder = os.path.join(tmp, "speech")
+    os.makedirs(folder, exist_ok=True)
+    times = [t for t in range(0, int(min(40, secs - OFFICIAL_SECS - 1)), 2)]
+    for n, t in enumerate(times, 1):
+        subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-ss", str(t), "-i", path, "-frames:v", "1",
+                        "-vf", "scale=480:-2", os.path.join(folder, f"f{n}.jpg")], capture_output=True)
+    schema = {"type": "object", "properties": {
+        "ok": {"type": "boolean", "description": "A real speaker clearly talking, no TV channel / news agency logo"},
+        "frame": {"type": "integer", "description": "The first frame number where the speaker is clearly talking "
+                  "(face visible, no title card or text slate)"},
+        "why": {"type": "string"}}, "required": ["ok", "frame", "why"], "additionalProperties": False}
+    try:
+        res = fun.claude_json("You check an official video before a short news Reel uses 4-5 seconds of it. Open every "
+                              "frame with the Read tool.", f"The video: {about}\nFrames (one every 2 s from the "
+                              f"start): " + ", ".join(f"f{n}.jpg = {t} s" for n, t in enumerate(times, 1)),
+                              schema, CONFIG.get("membership_model", "sonnet"), purpose="video look", folder=folder)
+    except Exception as e:
+        print(f"  ! video look failed: {str(e)[:80]}")
+        return None
+    print(f"  video look: {'ok' if res['ok'] else 'NOT ok'}, frame {res['frame']} ({res['why'][:100]})")
+    if not res["ok"] or not 1 <= res["frame"] <= len(times):
+        return None
+    return times[res["frame"] - 1] + 0.5
+
+
+def add_voice(mp4: str, source: str, start: float, out: str) -> None:
+    """The speaker's own voice under the whole Reel (owner, 15 Oct 2026: 'B', inside the file so it is posted as it
+    is): the source's sound from `start`, evened out, 48 kHz, fading in and out."""
+    _, _, secs = video_info(mp4)
+    r = subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-i", mp4, "-ss", f"{start:.2f}", "-t", f"{secs:.2f}",
+                        "-i", source, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "128k",
+                        "-ar", "48000", "-af", f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.2,"
+                        f"afade=t=out:st={max(0.0, secs - 1.2):.2f}:d=1.2", "-shortest", "-movflags", "+faststart", out],
+                       capture_output=True, text=True)
+    if r.returncode != 0 or not os.path.exists(out):
+        raise RuntimeError(f"adding the voice failed: {r.stderr[-200:]}")
+
+
+SPEECH_SECS = 30.0   # the speech part of the 10 PM Reel (owner's example @geowiredaily: 48 s)
+SPEECH_OPTION = {"type": "object", "properties": {
+    "headline": {"type": "array", "items": {"type": "string"}, "description": "2 short lines (max 26 characters each) "
+                 "shown big in red bars, Hinglish, no emojis, clearly in favour of Modi/BJP/NDA, like 'PM Modi ka "
+                 "vipaksh par' / 'seedha vaar' or 'Amit Shah ka kadak' / 'sandesh: Naxalvad khatam'"},
+    "subline": {"type": "string", "description": "Max 14 words under the bars: his message in plain Hinglish (his real "
+                "words or a faithful summary, never an invented quote) + a short question like 'Aap sehmat ho?'"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from the "
+                  "headline, shown in yellow"},
+    "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (who + topic), "
+                "then 2-3 short news lines (what he said, why it matters, the opposition angle in the page's line), "
+                "then 'Aap sehmat ho? Comment karo 👇'. 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"}},
+    "required": ["headline", "subline", "highlight", "caption", "pin_comment", "hashtags"], "additionalProperties": False}
+
+
+def speech_reel(src: str, start: float, secs: float, headline: list[str], subline: str, highlight: list[str],
+                out_mp4: str) -> list[Image.Image]:
+    """🎥🔊 10 PM layout (owner, 15 Oct 2026, like @geowiredaily's Modi Reel): the leader's video fills the top,
+    the logo top-left, a bold 2-line headline in red bars, a slanted white line with his message + a question,
+    @khabarbawaal bottom-left and 'CAPTION PADHO' bottom-right; all text on screen from the first frame, then the
+    follow card. Returns [one frame with all text] to proofread."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    vid_h = 1120
+    over = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    d = ImageDraw.Draw(over)
+    for y in range(260):   # the video fades into the black text panel
+        d.line((0, vid_h - 260 + y, RW, vid_h - 260 + y), fill=(0, 0, 0, int(255 * (y / 260) ** 1.4)))
+    d.rectangle((0, vid_h, RW, RH), fill=(0, 0, 0, 255))
+    logo = logo_img()
+    if logo:
+        over.alpha_composite(logo, (50, 150))
+    size, y = 76, vid_h - 120
+    lines = [printable(x).strip() for x in headline if x.strip()][:2]
+    bar_font = font("Poppins-Bold.ttf", size)
+    while size > 44 and max(bar_font.getlength(x) for x in lines) > RW - 2 * LEFT - 50:
+        size -= 4
+        bar_font = font("Poppins-Bold.ttf", size)
+    for line in lines:   # each line on its own red bar, highlight words in yellow
+        w = int(bar_font.getlength(line)) + 44
+        h = int(size * 1.32)
+        d.rectangle((LEFT, y, LEFT + w, y + h), fill=RED)
+        x = LEFT + 22
+        for word in line.split():
+            d.text((x, y + h // 2), word, font=bar_font, anchor="lm",
+                   fill=YELLOW if norm(word) in highlights else "#FFFFFF")
+            x += bar_font.getlength(word + " ")
+        y += h + 12
+    s_lines, s_fnt, s_lh = fit_lines(printable(subline), RIGHT - LEFT - 40, 260, sizes=range(54, 36, -2))
+    sub = Image.new("RGBA", (RW, len(s_lines) * s_lh + 20), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(sub)
+    for j, words in enumerate(s_lines):
+        sd.text((LEFT + 30, j * s_lh), " ".join(words), font=s_fnt, fill="#FFFFFF")
+    sub = sub.transform(sub.size, Image.AFFINE, (1, 0.18, -sub.height * 0.18, 0, 1, 0), Image.BICUBIC)   # slanted
+    over.alpha_composite(sub, (0, y + 24))
+    d.text((LEFT, 1700), CONFIG["handle"].upper(), font=font("Poppins-SemiBold.ttf", 30), fill="#BBBBBB", anchor="lm")
+    cp_font = font("Poppins-SemiBold.ttf", 32)
+    cx = RIGHT - 46
+    d.text((cx - 14, 1700), "CAPTION PADHO", font=cp_font, fill="#FFFFFF", anchor="rm")
+    d.polygon([(cx, 1690), (cx + 26, 1690), (cx + 13, 1712)], fill=YELLOW)   # ▼ (the fonts have no emoji)
+    enc, frame, check = Encoder(out_mp4), None, None
+    for i, shot in enumerate(clip_frames(src, start, secs, RW, vid_h)):
+        frame = Image.new("RGBA", (RW, RH), "#000000")
+        frame.paste(shot, (0, 0))
+        frame.alpha_composite(over)
+        if i == FPS:
+            check = frame.convert("RGB")
+        enc.add(frame)
+    if frame is None:
+        raise RuntimeError("the official video could not be read")
+    add_follow(enc, frame)
+    enc.close()
+    return [check or frame.convert("RGB")]
+
+
+def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🎥🔊 10 PM (owner, 15 Oct 2026, 'I want every 10 PM post like this' = @geowiredaily's Modi Reel): ~30 s of a
+    leader's / the government's OWN speech video from their official X account, his voice inside the file (posted as
+    it is, no song), a bold pro-Modi/BJP headline (`speech_reel`). Never news agencies, TV channels or films. No
+    fitting video today -> a normal 🔥 viral news Reel in this slot."""
+    import create_post
+    import fun
+    import generate as g
+    import proofread
+    import requests
+    import status
+    status.step("Finding today's official speech videos on X", 2)
+    used = set(state.get("reel_official_used", []))
+    vids = official_videos(used)
+    print(f"  official videos (20 h): {[(v['handle'], round(v['secs'])) for v in vids]}")
+    ranked, search = [], ""
+    if vids:
+        heads = "\n".join(f"- {i['title']}" for i in g.fetch_candidates(set())[:25])
+        trends = ", ".join(t for t, _ in fun.x_trends()[:20])
+        listing = "\n".join(f"{n}. @{v['handle']} ({v['at']:%d %b %H:%M} UTC, {v['secs']:.0f} s): {v['text'][:220]}"
+                            for n, v in enumerate(vids, 1))
+        schema = {"type": "object", "properties": {
+            "ranked": {"type": "array", "items": {"type": "integer"}, "description": "Up to 3 video numbers, best "
+                       "first; empty if none fits"},
+            "search": {"type": "string", "description": "Short English news search for today's articles on the best one"},
+            "why": {"type": "string"}}, "required": ["ranked", "search", "why"], "additionalProperties": False}
+        res = fun.claude_json(
+            NEWS_SYSTEM.format(page=CONFIG["page_name"]) + "\n\nNow rank official videos for tonight's 10 PM Reel "
+            "(a strong, pro-Modi/BJP/NDA speech Reel): a leader or the government SPEAKING (speech, rally, statement, "
+            "press conference, interview) on one of today's big India stories; best: a strong message, an attack on "
+            "the opposition, a big announcement. Skip greetings, festival/devotional wishes, condolences, ads, promos "
+            "and montages without a speaker. Never a video that attacks or embarrasses the BJP/NDA.",
+            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nOfficial videos:\n{listing}",
+            schema, CONFIG.get("membership_model", "sonnet"), purpose="official video pick")
+        ranked, search = [n for n in res["ranked"] if 1 <= n <= len(vids)][:3], res["search"]
+        print(f"  ranked: {ranked} ({res['why'][:120]})")
+    v = src = start = None
+    for n in ranked:   # the first one with a clear speaker
+        cand = vids[n - 1]
+        status.step(f"Official video: @{cand['handle']}", 3)
+        path = os.path.join(tmp, f"official{n}.mp4")
+        open(path, "wb").write(requests.get(cand["mp4"], timeout=120).content)
+        at = speech_start(path, tmp, f"@{cand['handle']}: {cand['text'][:200]}")
+        if at is not None and video_info(path)[2] - at >= 12:
+            v, src, start = cand, path, at
+            break
+    if v is None:
+        status.step("No fitting official speech video today: a viral news Reel instead", 3)
+        return make_news_reel("reel_official", state, feed, today, tmp)
+    secs = min(SPEECH_SECS, video_info(src)[2] - start - 0.3)
+    article = None
+    for a in create_post.bing_articles(search or v["text"][:80], limit=8, newest=True):
+        article = create_post.read_article(a["url"])
+        if article and article.get("title"):
+            break
+        article = None
+    import carousel
+    body = carousel.article_text(carousel.page_html(article["url"]), limit=2500) if article else ""
+    facts = (f"His official X post (@{v['handle']}): {v['text']}\n" +
+             (f"Article: {article['title']} ({article['site']})\n{article.get('description', '')}\n{body}"
+              if article else ""))
+    status.step("Writing the headline", 4)
+    opt = fun.claude_json(
+        NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("From today's stories")[0] + "Write tonight's 10 PM "
+        "official speech Reel: the leader's own video plays with his voice under a bold headline. Clearly in favour of "
+        "Modi, the BJP and the NDA (e.g. 'seedha vaar', 'kadak sandesh', 'muh-tod jawab') but only real facts and his "
+        "real words; no invented quotes, no hate against any community.\nRules:" +
+        NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("Rules:")[1],
+        f"{fun.today_context()}\n\n{facts}", SPEECH_OPTION, CONFIG.get("membership_model", "sonnet"),
+        purpose="speech reel script")
+    opt["caption"] = unescape(opt["caption"])
+    roman_only(opt, ["caption", "pin_comment", "subline"])
+    lines = {"headline": "\n".join(opt["headline"])}
+    roman_only(lines, ["headline"])
+    opt["headline"] = [x for x in lines["headline"].split("\n") if x.strip()][:2]
+    out = os.path.join(tmp, "speech.mp4")
+    source = article["site"] if article else f"@{v['handle']} on X"
+    credit = f"Video + voice: @{v['handle']} on X"
+
+    def caption_of(d):
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["hashtags"])
+        src_line = f"\nSource: {source} (link pinned in comments 👇)" if article else ""
+        return (f"{d['caption'].strip()}\n\n{credit}\n\nFollow {CONFIG['handle']} for daily updates.{src_line}"
+                f"\n\n{tags}")
+    status.step("Making the video + proofreading", 5)
+    frames, opt, proof = proofread.run(
+        lambda d: speech_reel(src, start, secs, d["headline"], d["subline"], d["highlight"], out), opt, caption_of,
+        facts, strict=True)
+    status.step("Adding his voice", 5)
+    voiced = os.path.join(tmp, "voiced.mp4")
+    add_voice(out, src, start, voiced)
+    state["reel_official_used"] = (list(used) + [v["id"]])[-60:]
+    if article:
+        state["reel_news_used"] = (state.get("reel_news_used", []) + [article["url"]])[-80:]
+    save_reel(feed, state, frames[0], voiced, f"reel_official-{today}", {
+        "headline": printable(" ".join(opt["headline"]) + ": " + opt["subline"]),
+        "tag": "🎬 REEL · 🎥🔊 OFFICIAL SPEECH", "caption": g.limit_hashtags(caption_of(opt)), "source": source,
+        "source_url": article["url"] if article else f"https://x.com/{v['handle']}/status/{v['id']}",
+        "pin_comment": opt.get("pin_comment", ""), "songs": [], "proof": proof})   # his voice is the sound
+
+
 def make_top5_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 7 AM / 9:15 PM: Top 5 in ~30 seconds: one news photo + one short line per story, then an end card
     (owner, 13 Oct 2026: the Top 5 carousels became Reels). Stories are picked like the old carousels."""
@@ -1806,7 +2102,8 @@ def news_photos(item: dict, opt: dict) -> list[tuple]:
 
 
 def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str,
-                     article: str | None = None) -> tuple[Image.Image, str, dict]:
+                     article: str | None = None, hook_video: tuple[str, float, float] | None = None
+                     ) -> tuple[Image.Image, str, dict]:
     """Render + proofread a news Reel. Returns (cover, mp4 path, feed fields)."""
     import carousel
     import generate as g
@@ -1825,7 +2122,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     def render(d):
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
                          d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
-                         hook=d["post"].get("hook", ""))
+                         hook=d["post"].get("hook", ""), hook_video=hook_video)
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
@@ -3544,7 +3841,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     name = ("🔥 Viral news" if kind in NEWS_KINDS else "🙏 Devotional" if kind == "reel_devotion" else
             "🎯 Satire" if kind == "reel_politics" else "😂 Meme" if kind == "reel_meme" else
             "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else
-            "🗳️ Choose your" if kind == "reel_poll" else "🧒 Bachpan" if kind == "reel_bachpan" else "🎬 Reel")
+            "🗳️ Choose your" if kind == "reel_poll" else "🧒 Bachpan" if kind == "reel_bachpan" else
+            "🎥🔊 Official video" if kind == "reel_official" else "🎬 Reel")
     status.start(kind, today, f"{name} · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
     then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
@@ -3562,6 +3860,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
                 make_poll_reel(state, feed, today, tmp)
             elif kind == "reel_bachpan":
                 make_bachpan_reel(state, feed, today, tmp)
+            elif kind == "reel_official":
+                make_official_reel(state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
             elif kind == "reel_devotion":

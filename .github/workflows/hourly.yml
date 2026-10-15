@@ -8,7 +8,7 @@ name: Hourly post
 on:
   schedule:
     # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
-    - cron: "30 0,1,2,4,7,9,10,11,12,13,14 * * *"   # IST 6, 7, 8, 10 AM, 1, 3, 4, 5, 6, 7, 8 PM (Reels)
+    - cron: "30 0,1,2,4,7,9,10,11,12,13,14,16 * * *"   # IST 6, 7, 8, 10 AM, 1, 3, 4, 5, 6, 7, 8, 10 PM (Reels)
     - cron: "0 6 * * *"                         # 11:30 AM IST viral news
     - cron: "45 15 * * *"                       # 9:15 PM IST viral news
   workflow_dispatch:
@@ -20,7 +20,7 @@ on:
                   night_roundup, night_ready, night_calendar, night_picture, night_jokes, night_learn,
                   reel_devotion, reel_clip_am, reel_clip, reel_politics, reel_meme, reel_news,
                   reel_news_am, reel_news_pm, reel_top5_am, reel_top5, ready_gita,
-                  reel_news_early, reel_news_noon, reel_news_aft, reel_news_night, reel_poll, reel_bachpan]
+                  reel_news_early, reel_news_noon, reel_news_aft, reel_news_night, reel_poll, reel_bachpan, reel_official]
         default: auto
       test_alert:
         description: "Also send a test alert email"
