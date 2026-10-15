@@ -2837,28 +2837,48 @@ POLL_SCHEMA = {"type": "object", "properties": {
                 "line with the searchable names), 1-2 emojis. The button list is added automatically."},
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 15 words, asks people to explain their vote"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5: the names first, then high-reach"},
+    "clip_search": {"type": "array", "items": {"type": "string"}, "description": "3 short English stock-video searches "
+                    "for a bright background clip that fits the topic (e.g. 'cricket fans cheering', 'people eating "
+                    "biryani', 'friends watching movie'), most specific first"},
+    "clip_wanted": {"type": "string", "description": "One line: the ideal background clip"},
     "songs": SONGS},
-    "required": ["title", "topic", "category", "options", "caption", "pin_comment", "hashtags", "songs"],
+    "required": ["title", "topic", "category", "options", "caption", "pin_comment", "hashtags", "clip_search",
+                 "clip_wanted", "songs"],
     "additionalProperties": False}
 POLL_BUTTONS = [("heart", "LIKE", "❤️ Like"), ("comment", "COMMENT", "💬 Comment"), ("repost", "REPOST", "🔁 Repost"),
                 ("share", "SHARE", "✈️ Share")]
 
 
-def wiki_thumb(title: str) -> Image.Image | None:
-    """The main picture of an English Wikipedia page, as a PNG/JPG render (logos are SVG originals)."""
+def wiki_thumb(title: str) -> tuple[Image.Image | None, str]:
+    """The main picture of an English Wikipedia page (a PNG/JPG render: logos are SVG originals) and its credit,
+    e.g. 'Bollywood Hungama (CC BY 3.0)' (owner, 15 Oct 2026: most Wikipedia photos need the photographer and licence
+    credited). Non-free pictures (fair-use logos, posters) are skipped: (None, '')."""
     import io
+    import re
     import requests
+    api, head = "https://en.wikipedia.org/w/api.php", {"User-Agent": "KhabarBawaalStudio/1.0"}
     try:
-        pages = requests.get("https://en.wikipedia.org/w/api.php", timeout=15, headers={"User-Agent": "KhabarBawaalStudio/1.0"},
-                             params={"action": "query", "format": "json", "redirects": 1, "prop": "pageimages",
-                                     "pithumbsize": 600, "titles": title}).json()["query"]["pages"]
-        src = next((p["thumbnail"]["source"] for p in pages.values() if p.get("thumbnail")), "")
-        if src:
-            r = requests.get(src, timeout=20, headers={"User-Agent": "KhabarBawaalStudio/1.0"})
-            return Image.open(io.BytesIO(r.content)).convert("RGBA")
+        page = next(iter(requests.get(api, timeout=15, headers=head, params={
+            "action": "query", "format": "json", "redirects": 1, "prop": "pageimages", "piprop": "thumbnail|name",
+            "pithumbsize": 600, "titles": title}).json()["query"]["pages"].values()))
+        src, name = page.get("thumbnail", {}).get("source", ""), page.get("pageimage", "")
+        if not src or not name:
+            return None, ""
+        info = next(iter(requests.get(api, timeout=15, headers=head, params={
+            "action": "query", "format": "json", "prop": "imageinfo", "iiprop": "extmetadata",
+            "titles": f"File:{name}"}).json()["query"]["pages"].values()))
+        meta = (info.get("imageinfo") or [{}])[0].get("extmetadata", {})
+        value = lambda k: re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", (meta.get(k) or {}).get("value", ""))).strip()
+        lic = value("LicenseShortName")
+        if value("NonFree") or not re.match(r"(?i)(cc|public domain|pd|gfdl|godl|ogl|open government|attribution)", lic):
+            print(f"  ! Wikipedia picture '{title}' isn't free to reuse ({lic or 'no licence'}): skipped")
+            return None, ""
+        img = Image.open(io.BytesIO(requests.get(src, timeout=20, headers=head).content)).convert("RGBA")
+        artist = value("Artist")[:60]
+        return img, (f"{artist} ({lic})" if artist else lic)
     except Exception as e:
         print(f"  ! Wikipedia picture '{title}': {str(e)[:80]}")
-    return None
+    return None, ""
 
 
 def app_icon(name: str) -> Image.Image | None:
@@ -2875,11 +2895,16 @@ def app_icon(name: str) -> Image.Image | None:
     return img.convert("RGBA") if img else None
 
 
-def poll_picture(opt: dict, tmp: str) -> Image.Image:
-    """The picture for one poll option: Wikipedia / App Store / free stock photo, then news photo, then an AI
-    picture, last a coloured card with the name's first letter (never fails)."""
-    img = (wiki_thumb(opt["image_query"]) if opt["image_kind"] == "wiki" else
-           app_icon(opt["image_query"]) if opt["image_kind"] == "app" else None)
+def poll_picture(opt: dict, tmp: str) -> tuple[Image.Image, str]:
+    """The picture for one poll option and its credit ('' when none is needed): Wikipedia (credited) / App Store /
+    free stock photo, then news photo, then an AI picture, last a coloured card with the name's first letter."""
+    img, credit = wiki_thumb(opt["image_query"]) if opt["image_kind"] == "wiki" else (None, "")
+    if img is None and opt["image_kind"] == "app":
+        img = app_icon(opt["image_query"])
+    if img is None and opt["image_kind"] == "wiki":   # a person/party/team: never a random photo (could be someone else)
+        img = Image.new("RGB", (400, 400), RED)
+        ImageDraw.Draw(img).text((200, 200), printable(opt["name"])[:1].upper(), font=font("Anton-Regular.ttf", 220),
+                                 fill="#FFFFFF", anchor="mm")
     if img is None:
         photos = stock_photos(opt["image_query"], want=1) or topic_photos(opt["image_query"], want=1)
         img = photos[0] if photos else None
@@ -2890,7 +2915,7 @@ def poll_picture(opt: dict, tmp: str) -> Image.Image:
         img = Image.new("RGB", (400, 400), RED)
         ImageDraw.Draw(img).text((200, 200), printable(opt["name"])[:1].upper(), font=font("Anton-Regular.ttf", 220),
                                  fill="#FFFFFF", anchor="mm")
-    return img.convert("RGBA")
+    return img.convert("RGBA"), credit
 
 
 def button_icon(kind: str, size: int = 92, color: str = "#111111") -> Image.Image:
@@ -3023,21 +3048,36 @@ def make_poll_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     if len(poll["options"]) < 4:
         raise RuntimeError("the poll needs 4 options")
     roman_only(poll, ["caption", "pin_comment", "title"])
-    status.step("Finding the 4 pictures", 3)
-    pics = [poll_picture(o, tmp) for o in poll["options"]]
+    status.step("Finding the 4 pictures + a background video", 3)
+    found = [poll_picture(o, tmp) for o in poll["options"]]
+    pics = [img for img, _ in found]
+    credits = [f"{printable(o['name'])}: {c}" for o, (_, c) in zip(poll["options"], found) if c]
+    # Background (owner, 15 Oct 2026: chose 'a video picked for the topic'): a fitting free clip, else the sharp grid.
+    clip, cid = None, None
+    try:
+        cid = pick_clip({"clip_search": poll["clip_search"], "clip_wanted": poll["clip_wanted"], "text": poll["topic"]}, state)
+        clip, _ = download_clip(cid, tmp)
+    except RuntimeError as e:
+        print(f"  ! no background video ({e}): sharp photo grid instead")
+        cid = None
     out = os.path.join(tmp, "reel.mp4")
 
     def caption_of(d):
         buttons = "\n".join(f"{b[2]} = {printable(o['name'])}" for b, o in zip(POLL_BUTTONS, d["options"]))
         tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["hashtags"])
-        return f"{d['caption'].strip()}\n\n{buttons}\n\nFollow {CONFIG['handle']} for daily bawaal\n\n{tags}"
+        photo_credits = ("\n\nPhotos (Wikimedia Commons): " + "; ".join(credits)) if credits else ""
+        return (f"{d['caption'].strip()}\n\n{buttons}\n\nFollow {CONFIG['handle']} for daily bawaal{photo_credits}"
+                f"\n\n{tags}")
 
     status.step("Making the video + proofreading", 5)
     picked_songs = checked_songs(poll.pop("songs", []), songs)
-    frames, poll, proof = proofread.run(lambda d: poll_reel(d["title"], [(p, o["name"]) for p, o in zip(pics, d["options"])], out),
+    frames, poll, proof = proofread.run(lambda d: poll_reel(d["title"], [(p, o["name"]) for p, o in zip(pics, d["options"])],
+                                                          out, background="grid", bg_clip=clip),
                                         poll, caption_of, f"Today's poll topic (the page's own fun poll): {poll['topic']}",
                                         strict=True)
     state["poll_recent"] = (state.get("poll_recent", []) + [f"{poll['category']}: {poll['topic']}"])[-20:]
+    if cid:
+        state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     save_reel(feed, state, frames[0], out, f"reel_poll-{today}", {
         "headline": f"{printable(poll['title'])}: " + " / ".join(printable(o["name"]) for o in poll["options"]),
         "tag": "🎬 REEL · 🗳️ CHOOSE YOUR", "caption": g.limit_hashtags(caption_of(poll)), "source": "KhabarBawaal Original",

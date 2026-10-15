@@ -39,7 +39,10 @@ A GitHub robot makes posts; the owner reviews them in a phone web app and posts 
 10:00 🔥 · 11:30 🔥 · 13:00 😂 Tag that friend · 15:00 🔥 · 16:00 🗳️ poll · 17:00 🔥 · 18:00 🎯 satire · 19:00 😂 meme · 20:00 🔥 · 21:15 🔥.
 🗳️ = `make_poll_reel` (owner, after a creator's 'CHOOSE YOUR FUTURE' Reel got 16K likes / 8K comments): 'CHOOSE YOUR ___',
 4 options tied to ❤️ like / 💬 comment / 🔁 repost / ✈️ share (button list in the caption), pictures via `poll_picture`
-(Wikipedia `wiki_thumb` / App Store `app_icon` / Pixabay / news / AI / letter card), blurred collage background, topic from
+(Wikipedia `wiki_thumb` with its credit: photographer + licence in the caption, non-free skipped, GODL-India ok;
+people/parties/teams never get a random news photo (once showed the wrong man as Kohli): name card instead; App Store
+`app_icon`; things: Pixabay / news / AI / letter card), background = a bright free clip picked for the topic (owner chose
+'test 3', poll schema `clip_search`/`clip_wanted`), else the sharp photo grid, topic from
 `buzz_topics` or an evergreen desi debate, category varies (`state.poll_recent`); politics in the page's line (BJP = ✈️ share);
 Instagram may show 'engagement bait' less, so once a day.
 🔥 = ONE most viral/trending India story with its real photos (`NEWS_KINDS`: reel_news_early/_am/_noon/_aft/_pm/reel_news/
