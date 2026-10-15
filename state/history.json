@@ -262,7 +262,7 @@
   "market_open": "2026-10-10",
   "market_preopen": "2026-10-10",
   "thought": "2026-10-10",
-  "reel_clip": "2026-10-14",
+  "reel_clip": "2026-10-15",
   "reel_clip_am": "2026-10-15",
   "reel_politics": "2026-10-14",
   "reel_meme": "2026-10-14",
@@ -406,7 +406,8 @@
   "52078",
   "43824",
   "44602",
-  "43376"
+  "43376",
+  "pb1112"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -428,7 +429,8 @@
   "Google trend: Canara Bank share / Ellyse Perry (market and cricket chatter)",
   "Google trend: Punjab vs Odisha / Wednesday + cricket match chatter",
   "Bangalore ke log Hopr carpool app ko Tinder ki jagah match making ke liye use kar rahe hain",
-  "Diwali safai season, purani cheezein nikalna"
+  "Diwali safai season, purani cheezein nikalna",
+  "Jailer 2 ending and cameo spoilers"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -450,7 +452,8 @@
   "Wo dost jo share ek din upar jaye to bolta hai 'Main investor hoon.' Neeche gire to 'Market hi kharab hai.'",
   "Punjab vs Odisha Mujhe ek bhi player ka naam nahi pata, Par jab wicket gira... Me jo chillaya 'Maine kaha tha ye out hoga!' jaise main hi coach hoon",
   "Tinder: Bio, photos, interests. Hopr: Same route, same timing. Bangalore mein pyaar ab Hopr pe: 'Tumhara route mera route'",
-  "Wo dost jo Diwali safai mein bolta hai: 'Ye purani cheez kaam aayegi.' Safai: 8 ghante. Kachra: zero."
+  "Wo dost jo Diwali safai mein bolta hai: 'Ye purani cheez kaam aayegi.' Safai: 8 ghante. Kachra: zero.",
+  "Wo dost jo Jailer 2 dekhke bolta hai: 'Spoiler nahi dunga.' Phir 10 minute mein ending, cameo, sab bata deta hai."
  ],
  "clip_licences": {
   "50753": "Free",
@@ -504,12 +507,8 @@
   "23286": "Mixkit Restricted License",
   "44602": "Free",
   "43376": "Free",
-  "14935": "Mixkit Restricted License",
-  "47570": "Mixkit Restricted License",
-  "9585": "Mixkit Restricted License",
-  "13141": "Mixkit Restricted License",
-  "36426": "Mixkit Restricted License",
-  "42970": "Free"
+  "16143": "Mixkit Restricted License",
+  "23584": "Mixkit Restricted License"
  },
  "create_done": [
   "1791580482",
@@ -679,7 +678,23 @@
   "Tabaahi (From \"Toxic\")",
   "Thumkeshwari",
   "Die With A Smile",
-  "Jalebi Baby"
+  "Jalebi Baby",
+  "Favorite",
+  "Tu hai kahan",
+  "Co2",
+  "Iris",
+  "Pehle Bhi Main",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Harleys In Hawaii",
+  "Nicole Kidman",
+  "Sahiba",
+  "Tera Hoke Rahoon",
+  "Girls Like You",
+  "Sweater Weather",
+  "One Sun One Moon (From \"Jailer 2\")",
+  "His Aura Hits You",
+  "Blinding Lights",
+  "APT."
  ],
  "poll_recent": [
   "bollywood: Bollywood Khans face-off, with Salman in the news today"

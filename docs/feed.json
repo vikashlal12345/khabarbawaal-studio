@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_clip-2026-10-15",
+  "image": "posts/20261015-0736-reel_clip-2026-10-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261015-073632-reel_clip-2026-10-15.mp4",
+  "headline": "Wo dost jo Jailer 2 dekhke bolta hai: 'Spoiler nahi dunga.' Phir 10 minute mein ending, cameo, sab bata deta hai.",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Jailer 2 ka ending aur cameo 🎬\nSpoiler nahi dunga, bas poori kahani bata dunga 😂\nTumhare group mein ye kaun hai? Naam comment karo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#jailer2 #viral #trending #reelsindia #bollywood",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Sabse bura wo jo bole 'bas ek hint deta hoon' aur scene by scene suna de",
+  "songs": [
+   {
+    "title": "One Sun One Moon (From \"Jailer 2\")",
+    "artist": "Anirudh Ravichander, Super Subu, M.S Krsna & HEISENBERG",
+    "lang": "hindi",
+    "mood": "Jailer 2 film song, massy vibe"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "cameo aura = hype moment"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "high energy for cameo shock"
+   },
+   {
+    "title": "APT.",
+    "artist": "Rosé, Bruno Mars",
+    "lang": "english",
+    "mood": "catchy repeat = can't stop talking"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: No source supports a Hrithik Roshan cameo in Jailer 2; the slide itself only says 'cameo'.",
+    "Fact corrected to match the article: Hrithik Roshan cameo is not supported by any article; unverified claim removed",
+    "Fact corrected to match the article: Hrithik Roshan cameo is not supported by any article; unverified claim removed"
+   ],
+   "fixed": [
+    "Jailer 2 ka ending aur Hrithik cameo 🎬 → Jailer 2 ka ending aur cameo 🎬",
+    "Jailer 2 ending and Hrithik Roshan cameo spoilers → Jailer 2 ending and cameo spoilers",
+    "Jailer 2 Hrithik Roshan cameo → Jailer 2 cameo"
+   ]
+  },
+  "created_at": "2026-10-15T07:36:32+00:00"
+ },
+ {
   "id": "polltest4-0730",
   "image": "posts/20261015-0730-polltest4-0730.jpg",
   "kind": "reel",
@@ -784,50 +837,5 @@
    ]
   },
   "created_at": "2026-10-14T08:32:39+00:00"
- },
- {
-  "id": "reel_clip-2026-10-14",
-  "image": "posts/20261014-0732-reel_clip-2026-10-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261014-073236-reel_clip-2026-10-14.mp4",
-  "headline": "Wo dost jo share ek din upar jaye to bolta hai 'Main investor hoon.' Neeche gire to 'Market hi kharab hai.'",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Profit mein main genius, loss mein market ka kasoor 😅\nHar dost ka yahi formula hai.\nTumhare group mein ye investor kaun hai? Tag karo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#reelsindia #stockmarket #viral #trending #india",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aur Dalal Street ka naam sunte hi 'Main to long term wala hoon.'",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "deep sad = market gira"
-   },
-   {
-    "title": "Rula Ke Gaya Ishq",
-    "artist": "Stebin Ben",
-    "lang": "hindi",
-    "mood": "rona = red portfolio"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Lady Gaga, Bruno Mars",
-    "lang": "english",
-    "mood": "smile through the loss"
-   },
-   {
-    "title": "Loser",
-    "artist": "Tame Impala",
-    "lang": "english",
-    "mood": "loser hook = share neeche"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-14T07:32:36+00:00"
  }
 ]

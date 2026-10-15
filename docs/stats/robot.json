@@ -3301,6 +3301,37 @@
      "tokens": 8197
     }
    }
+  },
+  "reel_clip": {
+   "posts": 0,
+   "requests": 14,
+   "input": 42,
+   "output": 13504,
+   "cache_read": 44239,
+   "cache_write": 121160,
+   "value_usd": 0.6242,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 2,
+     "tokens": 24980
+    },
+    "reel writing": {
+     "requests": 2,
+     "tokens": 47000
+    },
+    "joke judge": {
+     "requests": 2,
+     "tokens": 32985
+    },
+    "clip pick": {
+     "requests": 2,
+     "tokens": 26318
+    },
+    "proofreading": {
+     "requests": 6,
+     "tokens": 47662
+    }
+   }
   }
  }
 }
