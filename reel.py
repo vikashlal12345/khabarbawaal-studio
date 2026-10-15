@@ -307,7 +307,6 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
     p_lines, p_fnt, p_lh = fit_lines(punch, RIGHT - LEFT, 480, sizes=range(96, 44, -4))
     p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, highlights)
     logo = logo_img()
-    every = min(0.75, (punch_at - 0.3) / max(len(setup), 1))
     enc, before, cover, frame = Encoder(out_mp4), None, None, None
     for i, shot in enumerate(clip_frames(clip, start, dur - hold, clip_w, clip_h, hold=hold)):
         t = i / FPS
@@ -315,7 +314,7 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
         if logo:
             frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
         if t < punch_at:
-            shown = setup[: 1 + int(t / every)]
+            shown = setup   # all at once (owner, 15 Oct 2026: no word-by-word text in any Reel)
             ls, fnt, lh = fit_lines(" ".join(shown), RIGHT - LEFT, 480, sizes=[s_fnt.size])
             y0 = text_bottom - len(s_lines) * s_lh
             for j, img in enumerate(line_images(ls, fnt, lh, "#111111", RED, highlights)):
@@ -323,7 +322,7 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
         else:
             y0 = text_bottom - len(p_lines) * p_lh
             for j, img in enumerate(p_imgs):
-                paste_pop(frame, img, LEFT, y0 + j * p_lh, (t - punch_at - j * 0.12) / 0.3)
+                frame.alpha_composite(img, (LEFT, y0 + j * p_lh))
         # Small zoom-punch on the clip at the punchline.
         z = 1 + 0.08 * max(0.0, 1 - abs(t - punch_at - 0.15) / 0.25) if t >= punch_at else 1
         if z > 1:
@@ -372,7 +371,7 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
         if logo:
             frame.alpha_composite(logo, (60, 150))
         for j, img in enumerate(imgs):
-            paste_pop(frame, img, LEFT, text_top + j * line_h, (t - 0.2 - j * 0.25) / 0.3)
+            frame.alpha_composite(img, (LEFT, text_top + j * line_h))
         handle_tag(frame, 1730)
         if t >= min(1.8, dur * 0.4) and cover is None:
             cover = frame.convert("RGB")
@@ -444,7 +443,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
                 frame.alpha_composite(logo, (60, 150))
             frame.alpha_composite(tag_img, (RW - tag_img.width - 60, 140))
             for j, img in enumerate(imgs):
-                paste_pop(frame, img, LEFT, photo_y + photo_h + 60 + j * lh, (lt - 0.35 - j * 0.15) / 0.3)
+                frame.alpha_composite(img, (LEFT, photo_y + photo_h + 60 + j * lh))
             if len(checks) == n and lt >= per - 0.3:
                 checks.append(frame.convert("RGB"))
         else:
@@ -452,11 +451,8 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
             frame = Image.new("RGBA", (RW, RH), YELLOW)
             y0 = (RH - len(e_imgs) * e_lh - 200) // 2
             for j, img in enumerate(e_imgs):
-                paste_pop(frame, img, LEFT, y0 + j * e_lh, (lt - j * 0.15) / 0.3)
-            k = ease_out((lt - 0.8) / 0.4)
-            if k > 0:
-                frame.alpha_composite(follow, ((RW - follow.width) // 2,
-                                               int(y0 + len(e_imgs) * e_lh + 80 + 100 * (1 - k))))
+                frame.alpha_composite(img, (LEFT, y0 + j * e_lh))
+            frame.alpha_composite(follow, ((RW - follow.width) // 2, int(y0 + len(e_imgs) * e_lh + 80)))
             handle_tag(frame, 1600, fill="#111111", stroke=0)
         enc.add(frame)
     enc.close()
@@ -1540,33 +1536,26 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
             frame = Image.new("RGBA", (RW, RH), "#1b1b1b")
             if logo:
                 frame.alpha_composite(logo, (60, 150))
-            k = ease_out_back(lt / 0.4)
-            frame.alpha_composite(kya, ((RW - kya.width) // 2, int(330 - 160 * (1 - k))))
+            frame.alpha_composite(kya, ((RW - kya.width) // 2, 330))
             y0 = 330 + kya.height + 80
             for j, img in enumerate(k_imgs):
-                paste_pop(frame, img, LEFT, y0 + j * k_lh, (lt - 0.3 - j * 0.15) / 0.3)
+                frame.alpha_composite(img, (LEFT, y0 + j * k_lh))
             handle_tag(frame, 1730)
-        elif t < t_punch:                               # 3) REALITY CHECK, one fact at a time
+        elif t < t_punch:                               # 3) REALITY CHECK, all facts at once
             lt = t - t_facts
             frame = Image.new("RGBA", (RW, RH), "#111111")
             if logo:
                 frame.alpha_composite(logo, (60, 150))
-            k = ease_out_back(lt / 0.4)
-            frame.alpha_composite(head, ((RW - head.width) // 2, int(300 - 200 * (1 - k))))
+            frame.alpha_composite(head, ((RW - head.width) // 2, 300))
             y = 300 + head.height + 70
             d = ImageDraw.Draw(frame)
-            at = 0.4
-            for (imgs, lh, src), dur in zip(blocks, per):
-                p = (lt - at) / 0.3
-                if p > 0:
-                    d.ellipse((LEFT, y + lh // 2 - 14, LEFT + 28, y + lh // 2 + 14), fill=YELLOW)
+            for imgs, lh, src in blocks:   # every fact at once
+                d.ellipse((LEFT, y + lh // 2 - 14, LEFT + 28, y + lh // 2 + 14), fill=YELLOW)
                 for n, img in enumerate(imgs):
-                    paste_pop(frame, img, LEFT + 60, y + n * lh, p)
+                    frame.alpha_composite(img, (LEFT + 60, y + n * lh))
                 y += len(imgs) * lh + 8
-                if p > 0.5:
-                    d.text((LEFT + 60, y), f"Source: {src}", font=src_f, fill="#9a9a9a")
+                d.text((LEFT + 60, y), f"Source: {src}", font=src_f, fill="#9a9a9a")
                 y += 70
-                at += dur
             handle_tag(frame, 1730)
         else:                                           # 4) punchline, 5) send this
             lt = t - t_punch
@@ -1575,10 +1564,8 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
                 frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
             y0 = (RH - len(p_imgs) * p_lh) // 2 - 120
             for j, img in enumerate(p_imgs):
-                paste_pop(frame, img, LEFT, y0 + j * p_lh, (lt - j * 0.15) / 0.3)
-            k = ease_out((lt - d_punch) / 0.4)
-            if k > 0:
-                frame.alpha_composite(cta, ((RW - cta.width) // 2, int(y0 + len(p_imgs) * p_lh + 90 + 100 * (1 - k))))
+                frame.alpha_composite(img, (LEFT, y0 + j * p_lh))
+            frame.alpha_composite(cta, ((RW - cta.width) // 2, int(y0 + len(p_imgs) * p_lh + 90)))
             handle_tag(frame, 1730, fill="#111111", stroke=0)
         if len(checks) < len(marks) and t >= marks[len(checks)]:
             checks.append(frame.convert("RGB"))
@@ -2191,7 +2178,7 @@ def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f
         y = 1230 - sum(r[2] for r in rows) // 2
         items, li = [], 0
         for kind, im, slot in rows:
-            at = t if kind in ("label", "rule") else t + 0.3 + li * gap
+            at = t   # the whole section at once
             li += kind == "line"
             items.append((y + slot // 2, im, at))
             y += slot
@@ -2300,20 +2287,20 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
         les = lines_of(lesson, lesson_f, CREAM)
         for i, im in enumerate(les):
-            items.append((y, im, t2 + i * gap)); y += int(lesson_f.size * 1.32)
+            items.append((y, im, t)); y += int(lesson_f.size * 1.32)   # the whole section at once
         if lab["source"]:
             items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
-                          t2 + len(les) * gap))
+                          t))
         end = t2 + len(les) * gap + read_time(lesson)
         parts.append((items, end))
         divider = (divider_y, t2 - 0.2, end)
         t = end + 0.5 + pause
         switch = t - 0.2                                     # 2nd painting cross-fades in here
         items, y = [], 1200
-        items.append((y, glow_line(lab["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t + 0.4)); y += 110
+        items.append((y, glow_line(lab["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t)); y += 110
         take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
         for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
-            items.append((y, im, t + 0.8 + i * gap)); y += int(take_f.size * 1.3)
+            items.append((y, im, t)); y += int(take_f.size * 1.3)
         end = t + 0.8 + len(items) * gap + read_time(real_life)
         parts.append((items, end))
         cta_at = end + 0.3
@@ -2355,7 +2342,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
             if start - 0.1 <= t <= end + 0.5:
                 out_a = 1.0 if t <= end else 1 - (t - end) / 0.5
                 for y, im, at in items:
-                    a = min(1.0, max(0.0, (t - at) / 0.6)) * out_a
+                    a = min(1.0, max(0.0, (t - at) / 0.3)) * out_a
                     if a > 0:
                         frame.alpha_composite(faded(im, a), ((RW - im.width) // 2, int(y - im.height / 2)))
             start = end + 0.5

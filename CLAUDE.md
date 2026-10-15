@@ -119,7 +119,9 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   40 suggested (`state.songs_recent`, saved in `save_reel`). Top 5 Reels: top chart songs not suggested recently.
   🪝 Hook + follow (owner 14 Oct 2026, from his views screen recording: Reels avg 117 views vs photos 4; satire ~232,
   India news ~227, jokes ~150, devotional ~60, foreign/niche news ~15, Gita ~9; hits stall at 200-280 = Instagram's first
-  test audience): the first frame always has the opening text (no pop-in/fade); news + Top 5 open on `hook_frame()`
+  test audience): the first frame always has the opening text; **no word-by-word / line-by-line text anywhere** (owner
+  15 Oct 2026, 'like the Diwali safai Tag that friend Reel'): every screen shows its whole text at once (meme build-up
+  and punchline, satire parts incl. both facts, news lines, end cards; devotional sections whole with a 0.3 s fade); news + Top 5 open on `hook_frame()`
   (HOOK_SECS 1.8: first photo, punch-in zoom, big Anton line from `hook` (AI, 4-8 words) / fixed Top 5 line, no logo
   or label); every Reel ends on `follow_frame()` (FOLLOW_SECS 1.5: 'Follow @khabarbawaal' + 'roz ki khabar + memes').
   Shorter: news 3 photos max (12-word lines); satire NOT shortened (tested 14 Oct 2026: 1 fact + ≤20/24-word KYA HUA?
