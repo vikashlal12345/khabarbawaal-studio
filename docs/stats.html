@@ -229,7 +229,10 @@ function hookChart(box, pts) {
         else if (fallback) { post = fallback; state = 'warn'; why = a && a.text ? a.text : 'A normal (carousel) post was made instead.'; }
         else if (a && a.state === 'fail') { state = 'bad'; why = a.text; }
       }
-      const link = post && (links || {})[post.id], r = post && res[post.id];
+      // 📲 posted the moment the link is pasted (owner, 16 Oct 2026): this phone's own record (the app's ✅ Posted
+      // tab), until the robot saves it at its next run
+      const mine = post && (() => { try { return localStorage.getItem('linked-' + post.id); } catch { return null; } })();
+      const link = post && ((links || {})[post.id] || (mine ? { url: mine } : null)), r = post && res[post.id];
       if (post) made++;
       if (link) posted++;
       // Still being made after its time (owner, 15 Oct 2026: it said ❌ while the Reel was in progress): the robot's
