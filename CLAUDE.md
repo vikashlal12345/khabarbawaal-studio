@@ -149,7 +149,7 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   15 Oct 2026, 'like the Diwali safai Tag that friend Reel'): every screen shows its whole text at once (meme build-up
   and punchline, satire parts incl. both facts, news lines, end cards; devotional sections whole with a 0.3 s fade); news + Top 5 open on `hook_frame()`
   (HOOK_SECS 1.8: first photo, punch-in zoom, big Anton line from `hook` (AI, 4-8 words) / fixed Top 5 line, no logo
-  or label; the line is max 500 px tall so a 4-line hook never covers @khabarbawaal, owner 15 Oct 2026); every Reel ends on `follow_frame()` (FOLLOW_SECS 1.5: 'Follow @khabarbawaal' + 'roz ki khabar + memes').
+  or label; the line is max 500 px tall so a 4-line hook never covers @khabarbawaal, owner 15 Oct 2026); every Reel ends on `follow_frame()` (FOLLOW_SECS 1.5: 'Follow @khabarbawaal' + its daily series line `series_line(kind)`, e.g. 'Roz raat 8:30 baje naya Bachpan'; the caption's 'Follow …' line too, set in `save_reel`; owner 16 Oct 2026: 15,138 views in 30 days but 17 followers).
   Shorter: news 3 photos max (12-word lines); satire NOT shortened (tested 14 Oct 2026: 1 fact + ≤20/24-word KYA HUA?
   failed the judge on all 12 stories in 4 tries; kept hook ≤18 / KYA HUA? ≤28 / 2 facts ≤14 / punchline ≤14, ~35 s), Tag that friend ≤18 words, meme setup ≤12 + punch ≤10. News Reels: India-wide stories only. Clips: an
   'indian …' search first + Indian people preferred; no meat/alcohol/smoking clips for festival/religious jokes. First caption line = search keywords. Views can't be read

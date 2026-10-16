@@ -245,14 +245,46 @@ def hook_frame(photo: Image.Image, layer: Image.Image, t: float) -> Image.Image:
     return frame
 
 
+SERIES_KIND = ""   # the Reel being made (make() sets it): its end card names its daily slot
+
+
+def series_line(kind: str) -> tuple[str, str]:
+    """📅 A reason to follow (owner, 16 Oct 2026: 15,000 views in 30 days but 17 followers): each Reel names its own
+    daily slot, e.g. 'Roz raat 8:30 baje naya Bachpan'. Returns (end-card text, caption follow line)."""
+    import schedule
+    def at(k: str) -> str:
+        h, m = schedule.SPECIALS.get(k, (0, 0))
+        part = "subah" if h < 12 else "dopahar" if h < 16 else "shaam" if h < 20 else "raat"
+        return f"{part} {(h - 1) % 12 + 1}{':%02d' % m if m else ''} baje"
+    if kind == "reel_devotion":
+        return f"Roz {at(kind)} aaj ke Bhagwan", f"roz {at(kind)} aaj ke Bhagwan ka aashirwad 🙏"
+    if kind in NEWS_KINDS:
+        return "Roz ki viral khabar, sabse pehle", "roz ki viral khabar, sabse pehle 🔥"
+    if kind in CLIP_KINDS or kind == "reel_meme":
+        return "Roz naye memes: dosto ko tag karo", "roz naye memes, dosto ko tag karo 😂"
+    if kind == "reel_poll":
+        return f"Roz {at(kind)} naya poll", f"roz {at(kind)} naya poll, vote karna mat bhoolna 🗳️"
+    if kind == "reel_politics":
+        return f"Roz {at(kind)} naya Reality Check", f"roz {at(kind)} naya Reality Check 🎯"
+    if kind == "reel_bachpan":
+        return f"Roz {at(kind)} naya Bachpan", f"roz {at(kind)} naya Bachpan, miss mat karna 🧒"
+    if kind == "reel_official":
+        return f"Roz {at(kind)} neta ka kadak bayan", f"roz {at(kind)} neta ka kadak bayan 🇮🇳"
+    return "roz ki khabar + memes", "roz ki khabar + memes 🔥"
+
+
 def follow_frame(last: Image.Image) -> Image.Image:
     """End card on every Reel (owner, 14 Oct 2026: ~200 people see a Reel, almost none follow): the last frame
-    dimmed, 'Follow @khabarbawaal' + 'roz ki khabar + memes'."""
+    dimmed, 'Follow @khabarbawaal' + the Reel's daily series line (series_line)."""
     frame = last.convert("RGBA")
     dim = Image.new("RGBA", (RW, RH), (12, 12, 12, 225))
     frame.alpha_composite(dim)
     head = pill(f"Follow {CONFIG['handle']}", font("Anton-Regular.ttf", 96), YELLOW, "#111111", pad=(44, 18))
-    sub = pill("roz ki khabar + memes", font("Poppins-Bold.ttf", 52), RED, "#FFFFFF", pad=(36, 14))
+    text, size = series_line(SERIES_KIND)[0], 52
+    sub = pill(text, font("Poppins-Bold.ttf", size), RED, "#FFFFFF", pad=(36, 14))
+    while sub.width > RW - 90 and size > 34:   # a long series line shrinks to fit
+        size -= 4
+        sub = pill(text, font("Poppins-Bold.ttf", size), RED, "#FFFFFF", pad=(36, 14))
     y = (RH - head.height - sub.height - 40) // 2
     frame.alpha_composite(head, ((RW - head.width) // 2, y))
     frame.alpha_composite(sub, ((RW - sub.width) // 2, y + head.height + 40))
@@ -434,7 +466,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
     tag_img = pill(printable(tag).upper(), font("Anton-Regular.ttf", 64), RED, "#FFFFFF", pad=(30, 8))
     e_lines, e_fnt, e_lh = fit_lines(end_text, RIGHT - LEFT, 700, sizes=range(96, 48, -4))
     e_imgs = line_images(e_lines, e_fnt, e_lh, "#111111", RED, highlights)
-    follow = pill(f"Follow {CONFIG['handle']}: roz ki khabar + memes", font("Poppins-Bold.ttf", 40), "#111111", YELLOW,
+    follow = pill(f"Follow {CONFIG['handle']}: {series_line(SERIES_KIND)[0].lower()}", font("Poppins-Bold.ttf", 40), "#111111", YELLOW,
                   pad=(30, 16))
     logo = logo_img()
     total = int((starts[-1] + end) * FPS)
@@ -1151,6 +1183,9 @@ def download_clip(cid: str, folder: str) -> tuple[str, float]:
 def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: str, entry: dict) -> None:
     from datetime import datetime, timezone
     import generate as g
+    if entry.get("caption"):   # 📅 'Follow @khabarbawaal: roz raat 8:30 baje naya Bachpan 🧒' (owner, 16 Oct 2026)
+        entry = {**entry, "caption": re.sub(rf"Follow {re.escape(CONFIG['handle'])} for daily [^\n]*",
+                                            f"Follow {CONFIG['handle']}: {series_line(SERIES_KIND)[1]}", entry["caption"], count=1)}
     name = f"posts/{datetime.now(timezone.utc):%Y%m%d-%H%M%S}-{post_id}.mp4"
     (g.DOCS / "posts").mkdir(parents=True, exist_ok=True)
     shutil.copy(mp4, g.DOCS / name)
@@ -4025,6 +4060,8 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
     import tempfile
     import schedule
     import status
+    global SERIES_KIND
+    SERIES_KIND = kind
     today = schedule.ist_now().date().isoformat()
     news_like = kind in NEWS_KINDS or kind in TOP5_KINDS
     status.start(kind, today, f"🎬 Backup Reel ({'Tag that friend' if news_like else 'news'})", 6,
@@ -4049,6 +4086,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     import tempfile
     import schedule
     import status
+    global SERIES_KIND
+    SERIES_KIND = kind
     now = schedule.ist_now()
     today = now.date().isoformat()
     h, m = schedule.SPECIALS.get(kind, (now.hour, now.minute))
