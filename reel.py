@@ -612,7 +612,8 @@ def viral_memory(note: str = "") -> str:
     if not top and not recorded:
         return ""
     line = lambda t: f"- {t['views']} views: {t['title']}" + (f" ({t['note']})" if t.get("note") else "")
-    return ("\n\nWhat went viral for us (aim for stories, hooks and angles like these" + (f"; {note}" if note else "") +
+    return ("\n\nWhat went viral for us (aim for SIMILAR stories, hooks and angles, never the same stories again" +
+            (f"; {note}" if note else "") +
             "; the page's rules above always come first, e.g. no matches or topics the owner ruled out):" + ("\nOur best Reels (approx. views, last 30 days):\n" + "\n".join(line(t) for t in top) if top else "") +
             ("\nThe owner's exact numbers:\n" + "\n".join(line(t) for t in recorded) if recorded else "") +
             ("\nOur weakest Reels (avoid stories and angles like these):\n" + "\n".join(line(t) for t in weak) if weak else ""))
@@ -1752,6 +1753,18 @@ NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_af
 TOP5_KINDS = {"reel_top5_am": "night_roundup", "reel_top5": "top10_day"}   # Top 5 Reel -> its specials.TOP10 settings
 
 
+def recent_news(state: dict, today: str) -> tuple[list[dict], str]:
+    """Stories our news Reels covered in the last 2 days (owner, 16 Oct 2026: the Imran Khan notice came twice, from
+    two different sites) and the prompt text that tells the pickers to skip them."""
+    from datetime import date, timedelta
+    since = (date.fromisoformat(today) - timedelta(days=2)).isoformat()
+    recent = [r for r in state.get("reel_news_recent", []) if r.get("date", "") >= since]
+    text = ("\n\nStories our news Reels already covered in the last 2 days (skip the SAME story, even from another "
+            "site, unless there is a big new development):\n" + "\n".join(f"- {r['title']}" for r in recent[-25:])
+            if recent else "")
+    return recent, text
+
+
 def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 The most viral, visual story of the last hours (the news feeds' lookback_hours) as a photo slideshow
     (owner, 13 Oct 2026: all posts are Reels now; it used to pick from the day's news carousels).
@@ -1784,7 +1797,8 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
                               f"(hours trending):\n{trends}\n\nWhat India is searching on Google today:\n{searches}"
-                              f"\n\nStories:\n{listing}{viral_memory()}\n\nGive your top 3 picks, the most viral first."
+                              f"\n\nStories:\n{listing}{viral_memory()}{recent_news(state, today)[1]}"
+                              f"\n\nGive your top 3 picks, the most viral first."
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
@@ -1804,6 +1818,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, None,
                                           f"{story['title']}. {story.get('summary', '')}")
     state["reel_news_used"] = (used + [story["link"]])[-80:]
+    state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": story["title"], "date": today}])[-40:]
     if story["id"]:
         state["seen"] = state.get("seen", []) + [story["id"]]   # the other news Reels skip it
     save_reel(feed, state, cover, out, f"{kind}-{today}", {**entry, "headline": story["title"]})
@@ -2119,7 +2134,8 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             "the opposition, a big announcement. Skip greetings, festival/devotional wishes, condolences, ads, promos "
             "and montages without a speaker. Never a video that attacks or embarrasses the BJP/NDA. The biggest face "
             "first: PM Modi, then Amit Shah, then ministers and CMs.",
-            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nOfficial videos:\n{listing}{viral_memory()}",
+            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nOfficial videos:\n{listing}{viral_memory()}"
+            f"{recent_news(state, today)[1]}",
             schema, CONFIG.get("membership_model", "sonnet"), purpose="official video pick")
         ranked, search = [n for n in res["ranked"] if 1 <= n <= len(vids)][:3], res["search"]
         print(f"  ranked: {ranked} ({res['why'][:120]})")
@@ -2179,6 +2195,7 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     voiced = os.path.join(tmp, "voiced.mp4")
     add_voice(out, src, start, voiced)
     state["reel_official_used"] = (list(used) + [v["id"]])[-60:]
+    state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": v["text"][:140], "date": today}])[-40:]
     if article:
         state["reel_news_used"] = (state.get("reel_news_used", []) + [article["url"]])[-80:]
     save_reel(feed, state, frames[0], voiced, f"reel_official-{today}", {
