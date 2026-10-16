@@ -55,7 +55,7 @@ def main(video: str) -> None:
             r = rows.setdefault((m.group(1), ist), {"kind": m.group(1), "ist": ist, "title": title, "views": None})
             if v is not None and (r["views"] is None or v > r["views"]):
                 r["views"] = v
-    posts = sorted(rows.values(), key=lambda r: r["ist"])
+    posts = sorted(rows.values(), key=lambda r: r["ist"]) or dashboard_rows(frames, video)
     for r in posts:
         r["views"] = r["views"] or 0
         print(f"{r['ist']:%d %b %H:%M} IST  {r['kind']:5}  {r['views']:>6}  {r['title'][:70]}")
@@ -67,6 +67,34 @@ def main(video: str) -> None:
         save_viral(posts)
 
 
+def dashboard_rows(frames: dict, video: str) -> list[dict]:
+    """The other screen (Professional dashboard -> All content, owner's recording of 16 Oct 2026): each row is
+    'title... 21h' (age instead of a date) with the views on the right. Posting time = recording time - age (the
+    recording time comes from the file name 'ScreenRecording_MM-DD-YYYY HH-MM-SS', else now). Reels only (stories
+    have no title)."""
+    m = re.search(r"(\d{2})-(\d{2})-(\d{4}) (\d{2})-(\d{2})-(\d{2})", Path(video).name)
+    rec = datetime(int(m.group(3)), int(m.group(1)), int(m.group(2)), int(m.group(4)), int(m.group(5))) if m else datetime.now()
+    age_re = re.compile(r"^(.*?)\s*(\d{1,2})([mhd])$")
+    num_re = re.compile(r"^(\d[\d,.]*)(K?)$")
+    rows = {}
+    for f in sorted(frames):
+        items = frames[f]
+        for y, x, t in items:
+            g = age_re.match(t) if 0.15 < x < 0.21 else None
+            if not g or len(g.group(1)) < 6:
+                continue
+            nums = [(abs(ny - y), nt) for ny, nx, nt in items if nx > 0.8 and num_re.match(nt) and abs(ny - y) < 0.02]
+            if not nums:
+                continue
+            n = num_re.match(min(nums)[1])
+            views = int(float(n.group(1).replace(",", "")) * (1000 if n.group(2) else 1))
+            age = timedelta(minutes=int(g.group(2)) * {"m": 1, "h": 60, "d": 1440}[g.group(3)])
+            title = g.group(1).rstrip(". …")
+            r = rows.setdefault((title, g.group(2) + g.group(3)), {"kind": "Reel", "ist": rec - age, "title": title, "views": 0})
+            r["views"] = max(r["views"], views)
+    return sorted(rows.values(), key=lambda r: r["ist"])
+
+
 def save_viral(posts: list[dict]) -> None:
     """📊 The owner's exact view numbers (owner, 15 Oct 2026): Reels older than 20 h (title = the caption's first
     line) go to state/viral.json 'recorded', merged with earlier recordings (highest views kept, last 30 days); every
@@ -76,7 +104,7 @@ def save_viral(posts: list[dict]) -> None:
     old = json.loads(path.read_text()) if path.exists() else {}
     seen = {r["title"]: r for r in old.get("recorded", [])}
     for r in posts:
-        if r["kind"] != "Reel" or datetime.now() - r["ist"] < timedelta(hours=20):
+        if r["kind"] != "Reel" or datetime.now() - r["ist"] < timedelta(hours=12):
             continue
         prev = seen.get(r["title"], {})
         seen[r["title"]] = {"title": r["title"], "views": max(r["views"], prev.get("views", 0)),
