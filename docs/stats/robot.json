@@ -3837,32 +3837,32 @@
   },
   "reel_politics": {
    "posts": 0,
-   "requests": 27,
-   "input": 62,
-   "output": 47900,
-   "cache_read": 69464,
-   "cache_write": 484905,
-   "value_usd": 2.4257,
+   "requests": 34,
+   "input": 80,
+   "output": 57287,
+   "cache_read": 106709,
+   "cache_write": 570308,
+   "value_usd": 2.8649,
    "by_purpose": {
     "satire pick": {
-     "requests": 3,
-     "tokens": 60073
+     "requests": 4,
+     "tokens": 79886
     },
     "satire writing": {
-     "requests": 7,
-     "tokens": 228107
+     "requests": 8,
+     "tokens": 258301
     },
     "joke judge": {
-     "requests": 7,
-     "tokens": 137170
+     "requests": 8,
+     "tokens": 154217
     },
     "satire shorten": {
-     "requests": 2,
-     "tokens": 42386
+     "requests": 3,
+     "tokens": 63277
     },
     "quote video": {
-     "requests": 3,
-     "tokens": 46973
+     "requests": 4,
+     "tokens": 62792
     },
     "quote video pick": {
      "requests": 1,
@@ -3877,8 +3877,8 @@
      "tokens": 9650
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 30401
+     "requests": 4,
+     "tokens": 58690
     }
    }
   }
