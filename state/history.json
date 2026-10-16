@@ -140,7 +140,8 @@
   "fbe01b0e252c",
   "fbe01b0e252c",
   "590c1a5ef161",
-  "96eedd30da5d"
+  "96eedd30da5d",
+  "0bc7c4320b43"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -616,7 +617,8 @@
   "https://newsriveting.com/amit-shah-distributes-devices-to-divyangs-and-those-affected-by-naxal-violence/",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-and-karisma-kapoor-bring-back-90s-chemistry-on-koffee-with-karan-9-heres-where-to-watch-6-films-of-favourite-bollywood-pair-judwaa-jeet-101792066666462.html",
   "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -726,10 +728,6 @@
   }
  ],
  "songs_recent": [
-  "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
-  "Maa Durga Aarti",
-  "Jai Ambe Gauri Aarti",
-  "Jai Ambe Gauri (Durga Aarti)",
   "Pal Pal Dil Ke Paas - Title Track",
   "Teri Meri Kahaani",
   "Levitating",
@@ -765,7 +763,11 @@
   "Arz Kiya Hai | Coke Studio Bharat",
   "Dhun",
   "Earrings",
-  "the cure"
+  "the cure",
+  "Zaalima",
+  "Tum Hi Aana",
+  "Delicate",
+  "Love Me Not"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -816,6 +818,10 @@
   },
   {
    "title": "Kareena Kapoor Khan and Saif Ali Khan celebrate 14 years of togetherness, share unseen family moments on their wedding anniversary: ‘Forever to go’",
+   "date": "2026-10-16"
+  },
+  {
+   "title": "Saif Ali Khan makes a hilarious confession on The Great Indian Kapil Show, says their bedroom smells like dhaba at night because of Kareena Kapoor",
    "date": "2026-10-16"
   }
  ]

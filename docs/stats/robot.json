@@ -3884,20 +3884,32 @@
   },
   "reel_news": {
    "posts": 0,
-   "requests": 4,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
+   "requests": 9,
+   "input": 16,
+   "output": 5086,
+   "cache_read": 15175,
+   "cache_write": 63226,
+   "value_usd": 0.2906,
    "by_purpose": {
     "reel news pick": {
-     "requests": 3,
-     "tokens": 0
+     "requests": 4,
+     "tokens": 28680
     },
     "buzz topics": {
      "requests": 1,
      "tokens": 0
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 9204
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 15337
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 30282
     }
    }
   }

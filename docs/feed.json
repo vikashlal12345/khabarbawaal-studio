@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news-2026-10-16",
+  "image": "posts/20261016-1444-reel_news-2026-10-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261016-144429-reel_news-2026-10-16.mp4",
+  "headline": "Saif Ali Khan makes a hilarious confession on The Great Indian Kapil Show, says their bedroom smells like dhaba at night because of Kareena Kapoor",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Saif Ali Khan Kareena Kapoor Great Indian Kapil Show confession 😂\n\nSaif ne Kapil Sharma ke show par haste hue bataya ki raat ko unke bedroom mein dhaba jaisi smell aati hai, Kareena ki wajah se.\nDono ne apne young aur fresh looks ka secret bhi share kiya.\n\nYe confession sunke Kareena ka kya reaction hoga? Saif sahi bole ya mazaak tha? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #kareenakapoor #kapilsharma #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
+  "pin_comment": "Apne dhaba wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "couple vibe, romantic-funny"
+   },
+   {
+    "title": "Tum Hi Aana",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "married life, soft love"
+   },
+   {
+    "title": "Delicate",
+    "artist": "Taylor Swift",
+    "lang": "english",
+    "mood": "cute couple confession"
+   },
+   {
+    "title": "Love Me Not",
+    "artist": "Ravyn Lenae",
+    "lang": "english",
+    "mood": "playful love banter"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Smell comes from Kareena rubbing ghee on her feet at night (per Saif), not from what she eats."
+   ],
+   "fixed": [
+    "Kareena ke khane ka asar, Saif ka confession → Kareena ki ghee wali aadat, Saif ka confession"
+   ]
+  },
+  "created_at": "2026-10-16T14:44:29+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-16",
   "image": "posts/20261016-1255-reel_politics-2026-10-16.jpg",
   "kind": "reel",
@@ -468,108 +517,5 @@
    ]
   },
   "created_at": "2026-10-15T16:35:34+00:00"
- },
- {
-  "id": "reel_news-2026-10-15",
-  "image": "posts/20261015-1432-reel_news-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-143247-reel_news-2026-10-15.mp4",
-  "headline": "Exclusive: Imran Khan to move Bombay HC, challenge ‘illegal' Leave India notice",
-  "tag": "🎬 REEL · INDIA",
-  "caption": "Imran Khan leave India notice: ab kya hoga? 🔥\nFRRO ne OCI cardholder Imran Khan ko 28 October tak India chhodne ka notice diya hai. Unhe 10 October ko ek protest mein Mumbai Police ne detain kiya tha.\nWo US citizen hain aur notice ko Bombay High Court mein challenge karne ki taiyari mein hain. Unke lawyers 16 October ko urgent hearing maangne ki taiyari mein hain.\nAapko kya lagta hai, comment mein batao 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#imrankhan #breakingnews #bollywood #indianews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
-  "pin_comment": "Notice sahi hai ya galat? Apni raay comment mein likho, par tameez se.",
-  "songs": [
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "calm serious tone for notice news"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "intense, dramatic build for big twist"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "serious cinematic vibe for legal fight"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "tense mood, situation heating up"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Notice was issued by the FRRO, not Mumbai Police; the article does not mention CEC Gyanesh Kumar.",
-    "Fact corrected to match the article: Article does not say the lawyers called the notice illegal.",
-    "Fact corrected to match the article: Article says lawyers are preparing to approach the court on Oct 16, not that it will definitely happen."
-   ],
-   "fixed": [
-    "Mumbai Police ne OCI cardholder Imran Khan ko 28 October tak India chhodne ko kaha, CEC Gyanesh Kumar ke khilaf protest ke baad. → FRRO ne OCI cardholder Imran Khan ko 28 October tak India chhodne ka notice diya hai. Unhe 10 October ko ek protest mein Mumbai Police ne detain kiya tha.",
-    "Unke lawyers ise illegal bol rahe hain. → Unke lawyers 16 October ko urgent hearing maangne ki taiyari mein hain.",
-    "Imran Khan ko 28 October tak India chhodna → Imran Khan ko 28 October tak India chhodne ka notice",
-    "Lawyers ke mutabiq Khan 16 October ko Bombay High Court jaayenge, urgent hearing maangenge. → Lawyers ke mutabiq Khan 16 October ko Bombay High Court jaane ki taiyari mein hain, urgent hearing maangenge."
-   ]
-  },
-  "created_at": "2026-10-15T14:32:47+00:00"
- },
- {
-  "id": "reel_meme-2026-10-15",
-  "image": "posts/20261015-1402-reel_meme-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-140215-reel_meme-2026-10-15.mp4",
-  "headline": "Ramayana trailer aaya: Me: sirf 2 minute dekhunga Me, 3 ghante baad, trailer ka 14th reaction video dekhte hue",
-  "tag": "🎬 REEL · MEME",
-  "caption": "Ramayana trailer launch 🎬 Bengaluru mein Ranbir, Yash aur Sai Pallavi ka event!\nBas 2 minute dekhne baitha tha...\nTrailer ke baad kitne reaction videos dekhe, sach batao 😭 👇\n\nPhotos (Wikimedia Commons): Ranbir: Bollywood Hungama (CC BY 3.0); Yash: Bollywood Hungama (CC BY 3.0)\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#ramayana #bollywood #trending #viral #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Trailer aaya, reactions ne poori shaam kha li.",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "epic trailer hype vibe"
-   },
-   {
-    "title": "One Name",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "big film energy, mass hype"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "smooth, trending, fits time-pass scroll"
-   },
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "hype beat for shocked reaction"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The article doesn't give the trailer's length, so the '2 min' claim is unsupported."
-   ],
-   "fixed": [
-    "Trailer 2 min ka tha, reactions ne poori shaam kha li. → Trailer aaya, reactions ne poori shaam kha li."
-   ]
-  },
-  "created_at": "2026-10-15T14:02:15+00:00"
  }
 ]
