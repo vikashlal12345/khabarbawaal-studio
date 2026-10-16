@@ -541,8 +541,11 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
     tag_img = pill(printable(tag).upper(), font("Anton-Regular.ttf", 64), RED, "#FFFFFF", pad=(30, 8))
     e_lines, e_fnt, e_lh = fit_lines(end_text, RIGHT - LEFT, 700, sizes=range(96, 48, -4))
     e_imgs = line_images(e_lines, e_fnt, e_lh, "#111111", RED, highlights)
-    follow = pill(f"Follow {CONFIG['handle']}: {series_line(SERIES_KIND)[0].lower()}", font("Poppins-Bold.ttf", 40), "#111111", YELLOW,
-                  pad=(30, 16))
+    follow_text, fsize = f"Follow {CONFIG['handle']}: {series_line(SERIES_KIND)[0].lower()}", 40
+    follow = pill(follow_text, font("Poppins-Bold.ttf", fsize), "#111111", YELLOW, pad=(30, 16))
+    while follow.width > RW - 80 and fsize > 26:   # always fits on screen (16 Oct 2026: cut off -> proofreader blocked)
+        fsize -= 2
+        follow = pill(follow_text, font("Poppins-Bold.ttf", fsize), "#111111", YELLOW, pad=(30, 16))
     logo = logo_img()
     total = int((starts[-1] + end) * FPS)
     enc, checks, frame, hook_check = Encoder(out_mp4), [], None, []
@@ -3057,7 +3060,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         secs = satire_hook_secs(best["claim"])
         clip, real = os.path.join(tmp, "people.mp4"), True
         photo_clip(photos[:3], RW, 608, secs, clip)
-        print(f"  people photos: {len(photos[:3])} of {[x['wiki'] for x in people]}")
+        print(f"  people photos: {len(photos[:3])} of {[x['lookup'] for x in people]}")
     else:
         credits = []
         try:
@@ -4302,9 +4305,9 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
     import schedule
     import status
     global SERIES_KIND
-    SERIES_KIND = kind
     today = schedule.ist_now().date().isoformat()
     news_like = kind in NEWS_KINDS or kind in TOP5_KINDS
+    SERIES_KIND = "reel_clip" if news_like else "reel_news"   # the backup's own series line, not the slot's
     status.start(kind, today, f"🎬 Backup Reel ({'Tag that friend' if news_like else 'news'})", 6,
                  "The planned Reel failed every try: making a backup Reel")
     try:

@@ -50,7 +50,10 @@ attributed, not stated as fact.
 4. Pictures that show a private person's details: a child's name with school/class/roll number, a phone number, \
 home address, ID card, document, bank details or someone's private account screen (not the names of people the \
 story is about).
-5. Nothing offensive or defamatory. The page is openly pro right-wing and critical of the left/opposition: that one-sided political tone is intentional, so do NOT flag or "fix" the slant. Flag only factual errors, invented quotes, hate against a religion/caste/community, or calls to violence.
+5. The page's own fixed labels are NOT claims and never an issue: the handle / logo, 'Follow @khabarbawaal…', the daily \
+series lines ('roz shaam 6 baje naya Reality Check', 'roz ki viral khabar…'), 'TAG KARO USKO', 'CAPTION PADHO', \
+'SEND THIS TO THAT ONE FRIEND', 'COMMENT KARO: MAINE BHI'.
+6. Nothing offensive or defamatory. The page is openly pro right-wing and critical of the left/opposition: that one-sided political tone is intentional, so do NOT flag or "fix" the slant. Flag only factual errors, invented quotes, hate against a religion/caste/community, or calls to violence.
 
 Return:
 - fixes: corrections for mistakes in OUR texts. kind = "spelling" for spelling/grammar/names, \
