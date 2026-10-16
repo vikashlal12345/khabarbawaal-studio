@@ -271,7 +271,7 @@
   "reel_meme": "2026-10-14",
   "reel_news": "2026-10-15",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-10-15",
+  "reel_devotion": "2026-10-16",
   "reel_news_pm": "2026-10-15",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -683,10 +683,6 @@
   }
  ],
  "songs_recent": [
-  "Azadi",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Believer",
-  "Solar Eclipse",
   "Barsaat",
   "Samjhawan",
   "Love Me Not",
@@ -722,7 +718,11 @@
   "Azadi",
   "Tabaahi (From \"Toxic\")",
   "Blinding Lights",
-  "Let Me Down Slowly"
+  "Let Me Down Slowly",
+  "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
+  "Maa Durga Aarti",
+  "Jai Ambe Gauri Aarti",
+  "Jai Ambe Gauri (Durga Aarti)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?"
