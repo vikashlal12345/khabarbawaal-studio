@@ -1,5 +1,65 @@
 [
  {
+  "id": "reel_clip_am-2026-10-16",
+  "image": "posts/20261016-0334-reel_clip_am-2026-10-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261016-033401-reel_clip_am-2026-10-16.mp4",
+  "headline": "Wo dost jo Navratri pe bolta hai 'Main bhi help karunga.' Mummy ne poori banane ko kaha, wo bola 'Pehle chai.'",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Navratri Day 6 ka asli sach 😂\nMummy ki Navratri ki taiyari subah 4 baje shuru, humari neend 4 baje khatam.\nGhar mein ye kaun karta hai? Mummy ya Didi? 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#katyayani #navratri #viral #trending #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aur phir bolti hain 'Tum log toh kuch karte hi nahi.' Kis mummy ko bhejoge? 👇",
+  "songs": [
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "calm morning with mummy"
+   },
+   {
+    "title": "Zara Zara",
+    "artist": "Omkar Singh",
+    "lang": "hindi",
+    "mood": "slow sleepy morning energy"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "chai first, work later"
+   },
+   {
+    "title": "Favorite",
+    "artist": "Isabel LaRosa",
+    "lang": "english",
+    "mood": "lazy casual mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Oct 16 (Friday) is Navratri Day 6 (Maa Katyayani), not Day 8/Ashtami",
+    "Fact corrected to match the article: Article says Friday Oct 16 is Day 6",
+    "Fact corrected to match the article: Consistent with Day 6, not Ashtami",
+    "Fact corrected to match the article: Consistent with Day 6, not Ashtami",
+    "Fact corrected to match the article: Navratri Day 6 is Shashthi (Maa Katyayani); Ashtami is Day 8",
+    "Fact corrected to match the article: Day 6 is not Ashtami; hashtag contradicts the article",
+    "Slide 1: The red 'TAG THAT FRIEND' banner covers the lower half of the goddess's face in the image, and the white text sits over the rest of her body. The top third of the slide is only blurred background, which looks empty. Move the banner and text off the face."
+   ],
+   "fixed": [
+    "Ashtami Navratri Day 8 ka asli sach → Navratri Day 6 ka asli sach",
+    "Ashtami / Navratri Day 8, Friday → Navratri Day 6, Friday",
+    "Mummy ki Ashtami ki taiyari → Mummy ki Navratri ki taiyari",
+    "Wo dost jo Ashtami pe → Wo dost jo Navratri pe",
+    "Ashtami → Shashthi",
+    "#ashtami → #katyayani"
+   ]
+  },
+  "created_at": "2026-10-16T03:34:01+00:00"
+ },
+ {
   "id": "c3f9ec06f4eb",
   "kind": "custom",
   "image": "posts/20261016-0255-c3f9ec06f4eb-1.jpg",
