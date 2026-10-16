@@ -1900,11 +1900,18 @@ QUOTE_SCHEMA = {"type": "object", "properties": {
     "person": {"type": "string"},
     "handle": {"type": "string", "description": "That person's own X handle without @ if you are sure (e.g. "
                "'prakashraaj'), else ''"},
+    "party_handle": {"type": "string", "description": "The official X handle of the party / organisation they speak for "
+                     "(e.g. 'INCIndia', 'AamAadmiParty', 'BJP4India', 'AITCofficial'; a state unit like 'INCPunjab' if "
+                     "the event is in that state), '' if none or unsure"},
     "search": {"type": "string", "description": "Short English news search for that exact moment"},
     "side": {"type": "string", "enum": ["government_right", "left_opposition", "neutral"], "description": "Where the "
              "person stands for this page (left/opposition includes left-leaning activists and celebrities)"},
     "remark": {"type": "string", "description": "The exact remark/reaction the story is about, in a few words"}},
-    "required": ["speech", "person", "handle", "search", "side", "remark"], "additionalProperties": False}
+    "required": ["speech", "person", "handle", "party_handle", "search", "side", "remark"], "additionalProperties": False}
+PARTY_X = {"bjp4india", "incindia", "incsandesh", "aamaadmiparty", "aitcofficial", "samajwadiparty", "rjdforindia",
+           "cpimspeak", "ncpspeaks", "shivsenaubt_", "tdpofficial", "ysrcparty", "brsparty", "jmmjharkhand",
+           "arivalayam", "jduonline"}   # parties post their own press conferences: they want them spread
+QUOTE_SECS = 6.0   # the exact moment's clip in a news Reel (owner, 16 Oct 2026: party press-conference videos)
 
 
 def quote_video(title: str, facts: str, tmp: str) -> dict | None:
@@ -1927,7 +1934,11 @@ def quote_video(title: str, facts: str, tmp: str) -> dict | None:
     if not q["speech"]:
         return None
     handle = q["handle"].strip().lstrip("@")
-    cands = [dict(v, own=True) for v in (official_videos(set(), (handle,), hours=96) if handle else [])][:8]
+    # Allowed as video (owner, 16 Oct 2026): the person's own account and their party's official account; agencies
+    # and TV channels only as a screenshot
+    handles = [h for h in (handle, q["party_handle"].strip().lstrip("@")) if h]
+    allowed = {h.lower() for h in handles} | PARTY_X
+    cands = [dict(v, own=True) for v in (official_videos(set(), tuple(handles), hours=96) if handles else [])][:10]
     seen = {c["id"] for c in cands}
     for a in create_post.bing_articles(q["search"] or title, limit=6, newest=True):
         page = carousel.page_html(a["url"]) or ""
@@ -1939,7 +1950,7 @@ def quote_video(title: str, facts: str, tmp: str) -> dict | None:
             seen.add(tid)
             mp4s = [v for v in vids[0].get("video_info", {}).get("variants", []) if v.get("content_type") == "video/mp4"]
             who = d["user"]["screen_name"]
-            cands.append({"id": tid, "handle": who, "own": bool(handle) and who.lower() == handle.lower(),
+            cands.append({"id": tid, "handle": who, "own": who.lower() in allowed,
                           "text": d.get("text", ""), "mp4": max(mp4s, key=lambda v: v.get("bitrate", 0))["url"] if mp4s else ""})
         if len(cands) >= 12:
             break
@@ -1952,7 +1963,7 @@ def quote_video(title: str, facts: str, tmp: str) -> dict | None:
                      "and the same event ('' if none)"},
         "line": {"type": "string", "description": "Max 12 words, Hinglish: what the video shows, for the screen"},
         "why": {"type": "string"}}, "required": ["pick", "evidence", "line", "why"], "additionalProperties": False}
-    listing = "\n".join(f"{n}. @{c['handle']}{' (his/her own account)' if c['own'] else ''}: {c['text'][:200]}"
+    listing = "\n".join(f"{n}. @{c['handle']}{' (own / party account)' if c['own'] else ''}: {c['text'][:200]}"
                         for n, c in enumerate(cands, 1))
     try:
         res = fun.claude_json("Pick the X post whose video shows this EXACT remark at this exact event. The post text "
@@ -2280,7 +2291,7 @@ def finish_with_quote(item: dict, opt: dict, photos: list[tuple], songs: dict, t
     qv = quote_video(item["title"], facts, tmp)
     credit, hook_video = "", None
     if qv and qv["own"]:
-        hook_video, credit = (qv["path"], qv["start"], OFFICIAL_SECS), f"Video + voice: @{qv['handle']} on X"
+        hook_video, credit = (qv["path"], qv["start"], QUOTE_SECS), f"Video + voice: @{qv['handle']} on X"
     elif qv:
         photos = [(qv["shot"], f"@{qv['handle']} on X", qv["line"], True)] + photos
         credit = f"Video: @{qv['handle']} on X"
@@ -2292,7 +2303,7 @@ def finish_with_quote(item: dict, opt: dict, photos: list[tuple], songs: dict, t
         status.step("Adding the speaker's voice", 5)
         voiced = os.path.join(tmp, "voiced.mp4")
         if qv["side"] == "left_opposition":   # their words only in their clip, the rest is ours (song added as usual)
-            add_voice(out, qv["path"], qv["start"], voiced, only=OFFICIAL_SECS)
+            add_voice(out, qv["path"], qv["start"], voiced, only=QUOTE_SECS)
             out = voiced
         else:
             add_voice(out, qv["path"], qv["start"], voiced)
