@@ -306,7 +306,7 @@ SATIRE_OPEN_SECS = 2.0   # 🎯 satire opens like the news (73% skipped the meme
 
 def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlight: list[str],
               out_mp4: str, crop_x: float = 0.5, text_top: int = 960, hold: float = 0.0,
-              foot: str = "TAG KARO USKO", opener: str = "") -> list[Image.Image]:
+              foot: str = "TAG KARO USKO", opener: str = "", framed: bool = False) -> list[Image.Image]:
     """The last `hold` seconds of dur freeze the clip's last frame (clip shorter than the reading time).
     opener: 2-5 words shown BIG alone over the clip for the first OPENER_SECS, then the banner + full text get
     their whole `dur` to be read. Returns the frames to proofread: [cover] (all text shown) (+ the opener)."""
@@ -324,6 +324,8 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
     shade = Image.new("RGBA", (RW, 900), (0, 0, 0, 0))
     ImageDraw.Draw(shade).rectangle((0, 120, RW, 780), fill=(0, 0, 0, 120))
     shade = shade.filter(ImageFilter.GaussianBlur(60))
+    if framed:
+        return framed_reel(clip, start, dur, hook_img, imgs, line_h, foot, out_mp4, opener, highlights)
     enc, cover, frame, opened = Encoder(out_mp4), None, None, None
     lead = OPENER_SECS if opener else 0.0
     if lead:   # the clip runs on under the opener; whatever it lacks at the end freezes on its last frame
@@ -356,6 +358,49 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
             fy = int(text_top + len(lines) * line_h + 40 + 120 * (1 - k))
             frame.alpha_composite(foot, ((RW - foot.width) // 2, fy))
         handle_tag(frame, 1730)
+        if t >= dur - 1.0 and cover is None:
+            cover = frame.convert("RGB")
+        enc.add(frame)
+    add_follow(enc, frame)
+    enc.close()
+    return [cover or frame.convert("RGB")] + ([opened] if opened else [])
+
+
+FRAME_W, FRAME_H = 1020, 574   # 🖼️ photos behind a joke sit whole in this window (owner, 16 Oct 2026)
+
+
+def framed_reel(clip: str, start: float, dur: float, banner: Image.Image, imgs: list[Image.Image], line_h: int,
+                foot: Image.Image, out_mp4: str, opener: str, highlights: set[str]) -> list[Image.Image]:
+    """Tag that friend / Bachpan when the picture is PHOTOS, not a video (owner, 16 Oct 2026: 'blur image and half
+    photo, not attractive'): dark screen, banner + the joke on top, the photos whole and sharp in a rounded window
+    (FRAME_W x FRAME_H, slow zoom), 'TAG KARO USKO', the handle; the opener first, big, above the window."""
+    win_y = 470 + len(imgs) * line_h + 50
+    mask = Image.new("L", (FRAME_W, FRAME_H), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, FRAME_W - 1, FRAME_H - 1), radius=28, fill=255)
+    logo = logo_img()
+    base = Image.new("RGBA", (RW, RH), "#101010")
+    if logo:
+        base.alpha_composite(logo, (60, 150))
+    lead = OPENER_SECS if opener else 0.0
+    layer = hook_layer(opener, highlights) if opener else None
+    hold = max(0.0, dur + lead - (video_info(clip)[2] - start - 0.2))
+    enc, cover, frame, opened = Encoder(out_mp4), None, None, None
+    for i, shot in enumerate(clip_frames(clip, start, dur + lead - hold, FRAME_W, FRAME_H, hold=hold)):
+        t = i / FPS - lead
+        frame = base.copy()
+        if t < 0:   # 🪝 the opener alone, big, above the photo
+            frame.alpha_composite(layer, (0, max(260, win_y - layer.height - 10)))
+        else:
+            frame.alpha_composite(banner, ((RW - banner.width) // 2, 330))
+            for j, img in enumerate(imgs):
+                frame.alpha_composite(img, (LEFT, 470 + j * line_h))
+        frame.paste(shot, ((RW - FRAME_W) // 2, win_y), mask)
+        k = ease_out((t - (dur - 1.6)) / 0.4) if t >= 0 else 0
+        if k > 0:
+            frame.alpha_composite(foot, ((RW - foot.width) // 2, int(win_y + FRAME_H + 40 + 80 * (1 - k))))
+        handle_tag(frame, min(1760, win_y + FRAME_H + 170))
+        if t < 0 and opened is None and t >= -lead / 2:
+            opened = frame.convert("RGB")
         if t >= dur - 1.0 and cover is None:
             cover = frame.convert("RGB")
         enc.add(frame)
@@ -1064,7 +1109,31 @@ FAKE_CLIP = re.compile(r"(?i)\b(3d|cgi|animat\w*|cartoon\w*|render\w*|illustrat\
 CLIP_FILES: dict[str, str] = {}   # clip id -> file downloaded while pick_clip looked at it (download_clip reuses it)
 
 
-def pick_clip(post: dict, state: dict) -> str:
+def pick_clip(post: dict, state: dict, _retry: bool = False) -> str:
+    """See pick_clip_once; when no clip fits, ONE more search with simpler, everyday words (owner, 16 Oct 2026:
+    videos keep people watching better than photos) before the caller falls back to photos."""
+    try:
+        return pick_clip_once(post, state)
+    except RuntimeError as e:
+        if _retry or not post.get("clip_wanted"):
+            raise
+        import fun
+        schema = {"type": "object", "properties": {"searches": {"type": "array", "items": {"type": "string"},
+                  "description": "3 searches, 1-3 common English words each"}}, "required": ["searches"],
+                  "additionalProperties": False}
+        try:
+            simple = fun.claude_json("Give 3 very simple stock-video searches (1-3 common English words) that show the "
+                                     "same everyday scene or feeling in a generic way, e.g. 'woman cooking', 'family "
+                                     "festival', 'man laughing phone'.", f"Wanted clip: {post['clip_wanted']}\nTried: "
+                                     f"{post.get('clip_search', [])}", schema, CONFIG.get("membership_model", "sonnet"),
+                                     purpose="clip search retry")["searches"][:3]
+        except Exception:
+            raise e
+        print(f"  ! {e}: one more video search with simpler words {simple}")
+        return pick_clip({**post, "clip_search": simple}, state, _retry=True)
+
+
+def pick_clip_once(post: dict, state: dict) -> str:
     """The best-fitting free stock clip for a joke (owner, 15 Oct 2026: 'best Reels, never fail'): Pixabay videos,
     then Mixkit (only its Free licence: Restricted forbids business social media). 3D/CGI/cartoon clips are skipped;
     the AI ranks the clips by title (fits 5/10 or better), then looks at frames of the best 3 (`look_at_clips`).
@@ -1373,7 +1442,7 @@ def fallback_visual(post: dict, size: tuple[int, int], tmp: str) -> tuple[str, f
             photos, note = [brand_background()], "branded background"
     print(f"  backup picture: {note}")
     clip = os.path.join(tmp, "photos.mp4")
-    photo_clip(photos, *size, 14.0, clip)
+    photo_clip(photos, *size, 14.0, clip, fill=size[0] > size[1])
     return clip, 14.0, note
 
 
@@ -1541,7 +1610,7 @@ def topic_photos(query: str, want: int = 4) -> list[Image.Image]:
     return out
 
 
-def photo_clip(photos: list[Image.Image], w: int, h: int, secs: float, out_mp4: str) -> None:
+def photo_clip(photos: list[Image.Image], w: int, h: int, secs: float, out_mp4: str, fill: bool = False) -> None:
     """A 'clip' made of real photos, one after another with a slow zoom, for the joke layouts: the meme window
     (w x h landscape: photo fills it) or full screen (whole photo on a blurred copy of itself)."""
     enc, per = Encoder(out_mp4, size=(w, h)), secs / len(photos)
@@ -1549,7 +1618,12 @@ def photo_clip(photos: list[Image.Image], w: int, h: int, secs: float, out_mp4: 
         t = i / FPS
         n = min(len(photos) - 1, int(t / per))
         img, z = photos[n], 1.0 + 0.06 * (t - n * per) / per
-        if h > w:
+        if fill:   # framed windows: the photo fills it (top-biased crop), never a blurred copy (owner, 16 Oct 2026)
+            k = max(w / img.width, h / img.height) * z
+            big = img.resize((int(img.width * k) + 1, int(img.height * k) + 1), Image.BICUBIC)
+            x0, y0 = (big.width - w) // 2, int((big.height - h) * 0.3)
+            frame = big.crop((x0, y0, x0 + w, y0 + h))
+        elif h > w:
             k = max(w / img.width, h / img.height)
             frame = Image.blend(img.resize((int(img.width * k) + 1, int(img.height * k) + 1)).crop((0, 0, w, h))
                                 .filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (w, h), "#000000"), 0.5)
@@ -1608,16 +1682,17 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     photos, credits = context_photos(things, f"{post['based_on']} ({', '.join(t['name'] for t in things)})", tmp) \
         if things else ([], [])
     clip = secs = cid = real = None
+    framed = False   # 🖼️ photos (not a video) behind a Tag that friend joke: the framed layout
 
     def video():   # a stock clip; none fits: photos -> 🎨 AI picture -> branded background
-        nonlocal clip, secs, cid, real, art_note
+        nonlocal clip, secs, cid, real, art_note, framed
         try:
             cid = pick_clip(post, state)
             (clip, secs), real = download_clip(cid, tmp), False
         except RuntimeError as e:
             print(f"  ! {e}")
-            clip, secs, art_note = fallback_visual(post, (RW, RH) if kind in CLIP_KINDS else (RW, 608), tmp)
-            real, cid = True, None
+            clip, secs, art_note = fallback_visual(post, (FRAME_W, FRAME_H) if kind in CLIP_KINDS else (RW, 608), tmp)
+            real, cid, framed = True, None, kind in CLIP_KINDS
     if len(photos) >= 2:
         status.step(f"Real photos: {', '.join(t['name'] for t in things)[:60]}", 4)
         # As long as the Reel's text, every photo the same time, at least 2 s each (owner, 15 Oct 2026: the
@@ -1626,8 +1701,8 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
                 min(8.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(post["setup"]), 2.5))) +
                 min(8.5, max(MEME_SECONDS * 0.45, read_secs(post["punch"], 2.5))))
         photos = photos[:max(2, int(secs // 2))]
-        clip, cid, real = os.path.join(tmp, "photos.mp4"), None, True
-        photo_clip(photos, *((RW, RH) if kind in CLIP_KINDS else (RW, 608)), secs, clip)
+        clip, cid, real, framed = os.path.join(tmp, "photos.mp4"), None, True, kind in CLIP_KINDS
+        photo_clip(photos, *((FRAME_W, FRAME_H) if kind in CLIP_KINDS else (RW, 608)), secs, clip, fill=True)
         print(f"  real photos: {len(photos)} of {[t['name'] for t in things]}")
     else:
         photos, credits = [], []
@@ -1645,7 +1720,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
             hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
             return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out, hold=hold,
-                             opener=d.get("opener", ""))
+                             opener=d.get("opener", ""), framed=framed)
     else:
         def render(d):   # build-up, then the punchline: each 2.5 s + 0.25 s a word (owner, 12 Oct 2026: +1 s)
             setup_t = min(8.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]), 2.5)))
@@ -1770,14 +1845,14 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     status.step(f"Judge picked: {best['text'][:80]}", 3)
     roman_only(best, ["caption", "pin_comment"])
     picked_songs = checked_songs(best.pop("songs", []), songs)
-    cid, real, art_note = None, False, ""
+    cid, real, art_note, framed = None, False, "", False
     try:
         cid = pick_clip(best, state)
         clip, secs = download_clip(cid, tmp)
-    except RuntimeError as e:   # no fitting clip: photos -> 🎨 AI picture -> branded background
+    except RuntimeError as e:   # no fitting clip: photos -> 🎨 AI picture -> branded background, framed
         print(f"  ! {e}")
-        clip, secs, art_note = fallback_visual(best, (RW, RH), tmp)
-        real = True
+        clip, secs, art_note = fallback_visual(best, (FRAME_W, FRAME_H), tmp)
+        real, framed = True, True
     out = os.path.join(tmp, "reel.mp4")
 
     def render(d):   # one screen like Tag that friend: 4.5 s + 0.25 s a word, 8.5-12 s
@@ -1785,7 +1860,7 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
         hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
         return clip_reel(clip, start, dur, style["banner"], d["text"], d["highlight"], out, hold=hold, foot=style["foot"],
-                         opener=d.get("opener", ""))
+                         opener=d.get("opener", ""), framed=framed)
     status.step("Making the video + proofreading", 5)
     frames, best, proof = proofread.run(render, best, g.fun_caption, "", strict=True)
     if art_note.startswith("AI"):   # Meta asks for its "AI info" label on AI pictures
