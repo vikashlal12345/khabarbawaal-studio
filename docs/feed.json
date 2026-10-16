@@ -1,5 +1,41 @@
 [
  {
+  "id": "c3f9ec06f4eb",
+  "kind": "custom",
+  "image": "posts/20261016-0255-c3f9ec06f4eb-1.jpg",
+  "options": [
+   "posts/20261016-0255-c3f9ec06f4eb-1.jpg",
+   "posts/20261016-0255-c3f9ec06f4eb-2.jpg",
+   "posts/20261016-0255-c3f9ec06f4eb-3.jpg"
+  ],
+  "slides": [
+   "posts/20261016-0255-c3f9ec06f4eb-s2.jpg",
+   "posts/20261016-0255-c3f9ec06f4eb-s3.jpg",
+   "posts/20261016-0255-c3f9ec06f4eb-s4.jpg",
+   "posts/20261016-0255-c3f9ec06f4eb-s5.jpg"
+  ],
+  "headline": "Prakash Raj laughs when asked about protesters allegedly assaulting women police officers",
+  "tag": "POLITICS",
+  "caption": "Ek reporter ne sawaal pucha, aur jawab mein mili hansi 😬\nPrakash Raj CEC Gyanesh Kumar ke khilaf protests ko support kar rahe hain.\nReporter ne pucha ki protesters ne kathit taur par women police officers ko assault kiya, uspe kya kehna hai.\nReports ke mutabik Prakash Raj hans pade.\nUnpopular opinion: Women officers ki safety pe sawaal ho to hansi nahi, seedha jawab chahiye. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#trending #india #viral #prakashraj #politics",
+  "source": "Inshorts - Stay Informed",
+  "source_url": "https://shrts.in/dx3uuijdt7",
+  "pin_comment": "Sabse shocking part: sawaal women officers ki safety ka tha, jawab mein hansi mili. Ye serious sawaal tha ya joke? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Slide exposes internal note about missing article; replace with a reported claim.",
+    "Fact corrected to match the article: The 'Nice joke' quote is not supported by the article (the slides themselves say the exact quote is unconfirmed).",
+    "Fact corrected to match the article: Unsupported quote removed."
+   ],
+   "fixed": [
+    "Full article uplabdh nahi hai, isliye Prakash Raj ka exact quote aur latest update abhi confirm nahi hua. → Reports ke mutabik Prakash Raj sawaal par hans pade.",
+    "Reports ke mutabik Prakash Raj hans pade, aur kaha 'Nice joke'. → Reports ke mutabik Prakash Raj hans pade.",
+    "Reports ke mutabik Prakash Raj hans pade, bole 'Nice joke' → Reports ke mutabik Prakash Raj hans pade"
+   ]
+  },
+  "created_at": "2026-10-16T02:55:29+00:00"
+ },
+ {
   "id": "c98c1433bc92",
   "kind": "custom",
   "image": "posts/20261016-0252-c98c1433bc92-1.jpg",
