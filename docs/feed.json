@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_meme-2026-10-16",
+  "image": "posts/20261016-0932-reel_meme-2026-10-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261016-093218-reel_meme-2026-10-16.mp4",
+  "headline": "Amazon sale: Maine socha 2000 bachaunga Order total: 18,000 Me jab SMS aaya: Your balance is now 312",
+  "tag": "🎬 REEL · MEME",
+  "caption": "Amazon Great Indian Festival sale 2026 🛒 Discount ke chakkar mein budget gaya.\nSale mein bachat nahi, bas bill badhta hai.\nAbhi tak kitna ka order kiya? Comment mein batao 👇\n\nFollow @khabarbawaal: roz naye memes, dosto ko tag karo 😂\n\n#viral #trending #india #amazonsale #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Cart mein 'save for later' bhi ek tarah ki therapy hai 😭",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "barsaat = cart mein items ki baarish"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "sad = order cancel hone ka dukh"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "light fun = sale ki shopping"
+   },
+   {
+    "title": "Cold Shoulder",
+    "artist": "Drake, Don Toliver & Yebba",
+    "lang": "english",
+    "mood": "cold = bank ka SMS"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the sale started a few days ago; nothing says it is the last day."
+   ],
+   "fixed": [
+    "Amazon sale ka last din → Amazon sale abhi chal rahi hai"
+   ]
+  },
+  "created_at": "2026-10-16T09:32:18+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-16",
   "image": "posts/20261016-0803-reel_news_pm-2026-10-16.jpg",
   "kind": "reel",
@@ -581,95 +630,5 @@
    "fixed": []
   },
   "created_at": "2026-10-15T10:32:14+00:00"
- },
- {
-  "id": "reel_bachpan-2026-10-15",
-  "image": "posts/20261015-0851-reel_bachpan-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-085114-reel_bachpan-2026-10-15.mp4",
-  "headline": "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam",
-  "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
-  "caption": "School na jaana ho toh pet dard sabse bada hathiyar tha 😂\nKitni baar pakde gaye? Comment karo MAINE BHI!\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#bachpan #90skids #schoollife #relatable #reels",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Mummy ko hamesha pata hota tha, X-ray machine thi woh 😭",
-  "songs": [
-   {
-    "title": "Sahiba",
-    "artist": "Aditya Rikhari",
-    "lang": "hindi",
-    "mood": "soft hook = bahana bana ke bhi pyaar"
-   },
-   {
-    "title": "Zara Zara",
-    "artist": "Omkar Singh",
-    "lang": "hindi",
-    "mood": "slow nostalgic = bed me chhupe din"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "sad hook = pakde gaye"
-   },
-   {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
-    "lang": "english",
-    "mood": "playful vibe = masti bhara natak"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-15T08:51:14+00:00"
- },
- {
-  "id": "c4f625ea8af8",
-  "image": "posts/20261015-0806-c4f625ea8af8.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261015-080626-c4f625ea8af8.mp4",
-  "headline": "Wo dost jo bachpan mein bijli jaate hi sabse zor se chillata tha: 'Hooooo!' Phir bijli aate hi wahi 'Hooooo!'",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Bachpan mein aisa kaun karta tha 😂\nBijli gayi aur poori gali ek saath chillayi: 'Hooooo!'\nApni gali ka sabse zor se chillane wala kaun tha? Comment karo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#bachpan #childhoodmemories #reelsindia #relatable #india",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aur bijli aate hi wahi chillana. Bijli gayi to khushi, aayi to bhi khushi.",
-  "songs": [
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "throwback vibe = purane din"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "shararat = bachpan ki masti"
-   },
-   {
-    "title": "Señorita",
-    "artist": "Shawn Mendes, Camila Cabello",
-    "lang": "english",
-    "mood": "throwback nostalgia hit"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "chill fun playful beat"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-15T08:06:26+00:00"
  }
 ]

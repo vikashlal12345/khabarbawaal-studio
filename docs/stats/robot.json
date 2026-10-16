@@ -3768,6 +3768,37 @@
      "tokens": 29756
     }
    }
+  },
+  "reel_meme": {
+   "posts": 0,
+   "requests": 6,
+   "input": 18,
+   "output": 4689,
+   "cache_read": 13430,
+   "cache_write": 75541,
+   "value_usd": 0.3505,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 17159
+    },
+    "reel writing": {
+     "requests": 1,
+     "tokens": 28498
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 15459
+    },
+    "photo look": {
+     "requests": 1,
+     "tokens": 5824
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 26738
+    }
+   }
   }
  }
 }
