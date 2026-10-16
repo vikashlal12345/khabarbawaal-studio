@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_early-2026-10-16",
+  "image": "posts/20261016-0203-reel_news_early-2026-10-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261016-020345-reel_news_early-2026-10-16.mp4",
+  "headline": "Salman Khan and Karisma Kapoor bring back 90s chemistry on Koffee With Karan 9: Here's where to watch 6 films of favourite Bollywood pair",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Salman Khan Karisma Kapoor Koffee With Karan 9 pe 90s chemistry wapas 🔥\nKoffee With Karan 9 pe dono ne purani jodi ki yaad taza kar di.\nHindustan Times ne unki 6 films ki list di hai jo stream kar sakte ho.\nAapki favourite Salman-Karisma film kaun si hai? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#salmankhan #karismakapoor #koffeewithkaran #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-and-karisma-kapoor-bring-back-90s-chemistry-on-koffee-with-karan-9-heres-where-to-watch-6-films-of-favourite-bollywood-pair-judwaa-jeet-101792066666462.html",
+  "pin_comment": "Kisi Salman ya Karisma fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "romantic retro-vibe jodi nostalgia"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "purani jodi ki kahaani"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "fun, throwback chemistry vibe"
+   },
+   {
+    "title": "STAY",
+    "artist": "Justin Bieber, The Kid Laroi",
+    "lang": "english",
+    "mood": "jodi wapas, stay together"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article does not call all six films hits (Andaz Apna Apna was not an immediate box office success)",
+    "Fact corrected to match the article: Article text never names Dulhan Hum Le Jayenge in a way that supports this claim; reworded to what the article says (six old films to watch)."
+   ],
+   "fixed": [
+    "ab 6 purani hit films watchlist → ab 6 purani films watchlist",
+    "Ab Dulhan Hum Le Jayenge dobara dekhni padegi → Ab ye purani films dobara dekhni padegi"
+   ]
+  },
+  "created_at": "2026-10-16T02:03:45+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-16",
   "image": "posts/20261016-0033-reel_devotion-2026-10-16.jpg",
   "kind": "reel",
@@ -719,52 +770,5 @@
    "fixed": []
   },
   "created_at": "2026-10-15T04:22:33+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-15",
-  "image": "posts/20261015-0033-reel_devotion-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-003318-reel_devotion-2026-10-15.mp4",
-  "headline": "Navratri Din 5: Maa Skandamata: Navratri ka paanchva din... Maa Skandamata ki godh mein sab surakshit",
-  "tag": "🎬 REEL · 🙏 SHUBH NAVRATRI",
-  "caption": "Navratri ke paanchve din Maa ki mamta aapke ghar barse 🙏\nMaa ka aashirwaad aapke parivar par bana rahe.\nParivar ke saath share karo, ya comment mein likho 'Jai Mata Di'.\n\nFollow @khabarbawaal for daily darshan 🙏\n\n#navratri #maaskandamata #jaimatadi #navratri2026 #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Jai Maa Skandamata 🙏 Aaj Maa ke naam ek diya zaroor jalao.",
-  "songs": [
-   {
-    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
-    "artist": "Anuradha Paudwal, Sonu Nigam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri Aarti",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The AI illustration shows a standing goddess with a lion. It has no baby Kartikeya on her lap and no lotus seat. Maa Skandamata is traditionally shown seated on a lotus holding Kartikeya. The captions say 'godh mein' and 'kamal par virajti hain', so the image doesn't match them. The same image is used on slides 2-4. The text and facts are correct. Consider swapping in a more accurate image if one is available."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-15T00:33:18+00:00"
  }
 ]
