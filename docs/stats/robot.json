@@ -3881,6 +3881,25 @@
      "tokens": 58690
     }
    }
+  },
+  "reel_news": {
+   "posts": 0,
+   "requests": 4,
+   "input": 0,
+   "output": 0,
+   "cache_read": 0,
+   "cache_write": 0,
+   "value_usd": 0.0,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 3,
+     "tokens": 0
+    },
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 0
+    }
+   }
   }
  }
 }
