@@ -139,7 +139,8 @@
   "fa64911a6805",
   "fbe01b0e252c",
   "fbe01b0e252c",
-  "590c1a5ef161"
+  "590c1a5ef161",
+  "96eedd30da5d"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -276,7 +277,7 @@
   "reel_news": "2026-10-15",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-16",
-  "reel_news_pm": "2026-10-15",
+  "reel_news_pm": "2026-10-16",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-16",
@@ -287,7 +288,7 @@
   "reel_official": "2026-10-15",
   "reel_news_early": "2026-10-16"
  },
- "inbox_since": "bFuzIt2VJINL",
+ "inbox_since": "k08VPsbvrwTM",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -603,7 +604,8 @@
   "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
   "https://newsriveting.com/amit-shah-distributes-devices-to-divyangs-and-those-affected-by-naxal-violence/",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-and-karisma-kapoor-bring-back-90s-chemistry-on-koffee-with-karan-9-heres-where-to-watch-6-films-of-favourite-bollywood-pair-judwaa-jeet-101792066666462.html",
-  "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html"
+  "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -700,10 +702,6 @@
   }
  ],
  "songs_recent": [
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "One Name",
-  "Die With A Smile",
-  "Big Dawgs",
   "Barsaat",
   "Samjhawan",
   "Love Me Not",
@@ -739,7 +737,11 @@
   "Heeriye (feat. Arijit Singh)",
   "Madhosh",
   "Man I Need",
-  "Beauty And A Beat"
+  "Beauty And A Beat",
+  "Tera Hoke Rahoon",
+  "Tum Ho Toh (From \"Saiyaara\")",
+  "Sweater Weather",
+  "back to friends"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?"
@@ -785,6 +787,10 @@
   },
   {
    "title": "Why FRRO asked Imran Khan to leave India: The law, the notice, and the actor's options",
+   "date": "2026-10-16"
+  },
+  {
+   "title": "Kareena Kapoor Khan and Saif Ali Khan celebrate 14 years of togetherness, share unseen family moments on their wedding anniversary: ‘Forever to go’",
    "date": "2026-10-16"
   }
  ]

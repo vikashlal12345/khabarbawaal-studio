@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_news_pm-2026-10-16",
+  "image": "posts/20261016-0803-reel_news_pm-2026-10-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261016-080317-reel_news_pm-2026-10-16.mp4",
+  "headline": "Kareena Kapoor Khan and Saif Ali Khan celebrate 14 years of togetherness, share unseen family moments on their wedding anniversary: ‘Forever to go’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kareena Kapoor Saif Ali Khan wedding anniversary 14 years 💍\nTashan (2008) ke set par dosti, 5 saal dating, aur 16 Oct 2012 ko shaadi.\nAaj dono ne apni zindagi ke purane family moments share kiye: 'Forever to go'.\nSaif-Kareena aaj bhi Bollywood ka favourite couple hai ya nahi? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kareenakapoor #saifalikhan #bollywood #anniversary #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html",
+  "pin_comment": "Kisi Saif-Kareena fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "romantic = anniversary vibe"
+   },
+   {
+    "title": "Tum Ho Toh (From \"Saiyaara\")",
+    "artist": "Vishal Mishra, Hansika Pareek, Raj Shekhar",
+    "lang": "hindi",
+    "mood": "couple love, soft and sweet"
+   },
+   {
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "lang": "english",
+    "mood": "cosy couple moments"
+   },
+   {
+    "title": "back to friends",
+    "artist": "sombr",
+    "lang": "english",
+    "mood": "friends-turned-lovers story"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say the photos were unseen; they were moments from their life together.",
+    "Fact corrected to match the article: 14 years refers to marriage (2012), not time since Tashan (2008).",
+    "Slide 4: The black ticker strip text is cut off at both edges ('ollow' ... 'sabse pehl'). It looks like a marquee design, but it reads as cropped text."
+   ],
+   "fixed": [
+    "Aaj dono ne unseen family moments share kiye → Aaj dono ne apni zindagi ke purane family moments share kiye",
+    "Saif-Kareena: Tashan se 14 saal ka pyaar → Saif-Kareena: shaadi ke 14 saal"
+   ]
+  },
+  "created_at": "2026-10-16T08:03:17+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-16",
   "image": "posts/20261016-0633-reel_clip-2026-10-16.jpg",
   "kind": "reel",
@@ -619,58 +671,5 @@
    "fixed": []
   },
   "created_at": "2026-10-15T08:06:26+00:00"
- },
- {
-  "id": "reel_clip-2026-10-15",
-  "image": "posts/20261015-0736-reel_clip-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-073632-reel_clip-2026-10-15.mp4",
-  "headline": "Wo dost jo Jailer 2 dekhke bolta hai: 'Spoiler nahi dunga.' Phir 10 minute mein ending, cameo, sab bata deta hai.",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Jailer 2 ka ending aur cameo 🎬\nSpoiler nahi dunga, bas poori kahani bata dunga 😂\nTumhare group mein ye kaun hai? Naam comment karo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#jailer2 #viral #trending #reelsindia #bollywood",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Sabse bura wo jo bole 'bas ek hint deta hoon' aur scene by scene suna de",
-  "songs": [
-   {
-    "title": "One Sun One Moon (From \"Jailer 2\")",
-    "artist": "Anirudh Ravichander, Super Subu, M.S Krsna & HEISENBERG",
-    "lang": "hindi",
-    "mood": "Jailer 2 film song, massy vibe"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "cameo aura = hype moment"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "high energy for cameo shock"
-   },
-   {
-    "title": "APT.",
-    "artist": "Rosé, Bruno Mars",
-    "lang": "english",
-    "mood": "catchy repeat = can't stop talking"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: No source supports a Hrithik Roshan cameo in Jailer 2; the slide itself only says 'cameo'.",
-    "Fact corrected to match the article: Hrithik Roshan cameo is not supported by any article; unverified claim removed",
-    "Fact corrected to match the article: Hrithik Roshan cameo is not supported by any article; unverified claim removed"
-   ],
-   "fixed": [
-    "Jailer 2 ka ending aur Hrithik cameo 🎬 → Jailer 2 ka ending aur cameo 🎬",
-    "Jailer 2 ending and Hrithik Roshan cameo spoilers → Jailer 2 ending and cameo spoilers",
-    "Jailer 2 Hrithik Roshan cameo → Jailer 2 cameo"
-   ]
-  },
-  "created_at": "2026-10-15T07:36:32+00:00"
  }
 ]
