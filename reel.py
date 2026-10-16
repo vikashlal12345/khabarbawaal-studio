@@ -1898,10 +1898,13 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
 # ---------------------------------------------------------------- 🎥🔊 10 PM: official video news
 
 OFFICIAL_X = ("narendramodi", "AmitShah", "rajnathsingh", "PMOIndia", "BJP4India", "JPNadda", "DrSJaishankar",
-              "nsitharaman", "nitin_gadkari", "AshwiniVaishnaw", "PiyushGoyal", "myogiadityanath", "Dev_Fadnavis",
-              "himantabiswa", "PIB_India", "RahulGandhi", "INCIndia", "ArvindKejriwal", "AamAadmiParty",
-              "BhagwantMann", "MamataOfficial", "yadavakhilesh")   # most newsworthy first; official accounts only:
-# never news agencies, TV channels or films. X allows 30 profile reads per 15 minutes from one address.
+              "nitin_gadkari", "myogiadityanath", "Dev_Fadnavis", "himantabiswa", "PIB_India",
+              # right-leaning public voices on their OWN accounts (owner, 16 Oct 2026: Anupam Kher's video hitting
+              # back at protesters got 450k views on another page)
+              "AnupamPKher", "SirPareshRawal", "KanganaTeam", "vivekagnihotri", "pradip103", "Shehzad_Ind",
+              "sambitswaraj", "amitmalviya", "annamalai_k", "Tejasvi_Surya", "smritiirani", "KapilMishra_IND")
+# Most newsworthy first; their own accounts only: never news agencies, TV channels, podcasts or films. 24 accounts:
+# X allows 30 profile reads per 15 minutes from one address.
 OFFICIAL_SECS = 4.5   # the video piece under the hook line
 
 
@@ -2088,132 +2091,218 @@ def add_voice(mp4: str, source: str, start: float, out: str, only: float | None 
     r = subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-i", mp4, "-ss", f"{start:.2f}", "-t", f"{voice:.2f}",
                         "-i", source, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "128k",
                         "-ar", "48000", "-af", f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.2,"
-                        f"afade=t=out:st={max(0.0, voice - (0.4 if only else 1.2)):.2f}:d={0.4 if only else 1.2},apad",
-                        "-shortest", "-movflags", "+faststart", out],
+                        f"afade=t=out:st={max(0.0, voice - (0.4 if only else 1.2)):.2f}:d={0.4 if only else 1.2},"
+                        f"apad=whole_dur={secs:.2f}",   # silence up to the video's length, then stop (an open-ended
+                        "-t", f"{secs:.2f}", "-movflags", "+faststart", out],   # apad never ended: 16 Oct 2026)
                        capture_output=True, text=True)
     if r.returncode != 0 or not os.path.exists(out):
         raise RuntimeError(f"adding the voice failed: {r.stderr[-200:]}")
 
 
-SPEECH_SECS = 30.0   # the speech part of the 10 PM Reel (owner's example @geowiredaily: 48 s)
+SPEECH_MAX, SPEECH_MIN = 60.0, 25.0   # the speech part of the 9:30 PM Reel (owner's examples: 48-90 s)
+DRAMA_SONGS = ["Sam Dam Dand Bhed: Kailash Kher", "Toofan (KGF Chapter 2): Ravi Basrur", "Arjan Vailly (Animal): "
+               "Bhupinder Babbal", "Aarambh Hai Prachand (Gulaal): Piyush Mishra", "Dhurandhar Title Track: Shashwat "
+               "Sachdev", "Lehra Do (83): Arijit Singh", "Teri Mitti (Kesari): B Praak", "Kar Har Maidaan Fateh "
+               "(Sanju): Sukhwinder Singh", "Ziddi Dil (Mary Kom): Vishal Dadlani", "Sultan Title Track: Sukhwinder "
+               "Singh", "Rang De Basanti Title Track: Daler Mehndi", "Bharat Ka Bachcha Bachcha Jai Shri Ram Bolega: "
+               "Lakhbir Singh Lakha"]   # dramatic / patriotic tracks to play LOW under the voice (owner, 16 Oct 2026)
 SPEECH_OPTION = {"type": "object", "properties": {
-    "headline": {"type": "array", "items": {"type": "string"}, "description": "2 short lines (max 26 characters each) "
-                 "shown big in red bars, Hinglish, no emojis, clearly in favour of Modi/BJP/NDA, like 'PM Modi ka "
-                 "vipaksh par' / 'seedha vaar' or 'Amit Shah ka kadak' / 'sandesh: Naxalvad khatam'"},
-    "subline": {"type": "string", "description": "Max 14 words under the bars: his message in plain Hinglish (his real "
-                "words or a faithful summary, never an invented quote) + a short question like 'Aap sehmat ho?'"},
-    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from the "
-                  "headline, shown in yellow"},
+    "headline": {"type": "array", "items": {"type": "string"}, "description": "2 lines on top: line 1 = 2-4 words of "
+                 "punch in caps feel (e.g. 'RESPECT SIR!', 'KADAK JAWAB', 'SEEDHA VAAR'), line 2 = who + what in max "
+                 "40 characters (e.g. 'Anupam Kher ka protesters ko jawab'); Hinglish, no emojis, clearly in favour "
+                 "of Modi/BJP/NDA"},
+    "from_seg": {"type": "integer", "description": "First transcript segment of the clip (0 if no transcript)"},
+    "to_seg": {"type": "integer", "description": "Last transcript segment: the clip is the most compelling "
+               "CONTINUOUS 25-60 s with the key message, starting at the start of a sentence (0 if no transcript)"},
     "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (who + topic), "
-                "then 2-3 short news lines (what he said, why it matters, the opposition angle in the page's line), "
-                "then 'Aap sehmat ho? Comment karo 👇'. 1-3 emojis."},
+                "2-3 short news lines (what he said, why it matters, the opposition angle in the page's line), "
+                "then a side-taking question like 'Aap sehmat ho? Comment karo 👇'. 1-3 emojis."},
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags, ends with a "
                     "share nudge like 'Ye message sabko bhejo 🇮🇳'"},
-    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"}},
-    "required": ["headline", "subline", "highlight", "caption", "pin_comment", "hashtags"], "additionalProperties": False}
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
+    "songs": {"type": "array", "items": {"type": "object", "properties": {
+        "title": {"type": "string"}, "artist": {"type": "string"}, "lang": {"type": "string", "enum": ["hindi", "english"]},
+        "mood": {"type": "string", "description": "Max 6 words: why it fits, e.g. 'attack mode, play it low'"}},
+        "required": ["title", "artist", "lang", "mood"], "additionalProperties": False},
+        "description": "4 tracks from the given list that fit the speech's mood"}},
+    "required": ["headline", "from_seg", "to_seg", "caption", "pin_comment", "hashtags", "songs"],
+    "additionalProperties": False}
 
 
-def speech_reel(src: str, start: float, secs: float, headline: list[str], subline: str, highlight: list[str],
+def transcribe(path: str, start: float, secs: float) -> list[dict]:
+    """🗣️ Free speech-to-text (faster-whisper 'large-v3-turbo' on the computer itself, no account; owner, 16 Oct 2026:
+    subtitles for the 9:30 PM speech Reel; the small model garbled Hindi). Installed on first use. Returns segments
+    [{start, end, text, words: [(start, end, word)]}] with times in the video; [] if it isn't available."""
+    import sys
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        subprocess.run([sys.executable, "-m", "pip", "install", "-q", "faster-whisper"], capture_output=True)
+        try:
+            from faster_whisper import WhisperModel
+        except ImportError:
+            print("  ! speech-to-text not available: no subtitles")
+            return []
+    wav = path + ".wav"
+    subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-ss", f"{start:.2f}", "-t", f"{secs:.2f}", "-i", path, "-vn",
+                    "-ac", "1", "-ar", "16000", wav], capture_output=True)
+    try:
+        model = WhisperModel("large-v3-turbo", device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
+        segs, info = model.transcribe(wav, language="hi", word_timestamps=True, vad_filter=True)
+        out = [{"start": x.start + start, "end": x.end + start, "text": x.text.strip(),
+                "words": [(w.start + start, w.end + start, w.word.strip()) for w in (x.words or [])]} for x in segs]
+    except Exception as e:
+        print(f"  ! speech-to-text failed: {str(e)[:100]}")
+        return []
+    print(f"  transcript: {len(out)} segment(s), {sum(len(x['words']) for x in out)} words")
+    return out
+
+
+def subtitle_lines(segs: list[dict], tmp_model: str = "") -> list[tuple[float, float, str]]:
+    """Short phrases (max 5 words / 2.2 s) of the chosen segments, then the AI writes each in Roman Hinglish (the
+    fonts can't draw Devanagari; obvious speech-to-text slips are corrected, the meaning is never changed)."""
+    import fun
+    phrases, cur = [], []
+    for x in segs:
+        for w in x["words"]:
+            if cur and (len(cur) >= 5 or w[1] - cur[0][0] > 2.2 or w[0] - cur[-1][1] > 0.6):
+                phrases.append(cur)
+                cur = []
+            cur.append(w)
+        if cur:
+            phrases.append(cur)
+            cur = []
+    if not phrases:
+        return []
+    schema = {"type": "object", "properties": {"lines": {"type": "array", "items": {"type": "string"},
+              "description": "Exactly one Roman Hinglish line per phrase, same order"}},
+              "required": ["lines"], "additionalProperties": False}
+    listing = "\n".join(f"{n}. {' '.join(w[2] for w in ph)}" for n, ph in enumerate(phrases, 1))
+    try:
+        lines = fun.claude_json("Write each phrase of a Hindi speech transcript in Roman Hinglish letters (e.g. 'Naxalvad "
+                                "khatam ho chuka hai'), for subtitles. Fix only obvious speech-to-text spelling slips "
+                                "(e.g. 'desh' heard as 'dekh'); never add, drop or change the meaning of words. Keep "
+                                "English words in English. One line per phrase, same count and order.",
+                                f"Phrases:\n{listing}", schema, CONFIG.get("membership_model", "sonnet"),
+                                purpose="subtitles")["lines"]
+    except Exception as e:
+        print(f"  ! subtitles failed: {str(e)[:80]}")
+        return []
+    if len(lines) != len(phrases):
+        print(f"  ! subtitles: {len(lines)} lines for {len(phrases)} phrases, skipped")
+        return []
+    return [(ph[0][0], ph[-1][1], printable(roman_text(line))) for ph, line in zip(phrases, lines)]
+
+
+def roman_text(text: str) -> str:
+    """Drops any non-Roman script left in a subtitle (the fonts can't draw it)."""
+    return re.sub(r"[֐-ࣿऀ-෿]+", "", text).strip()
+
+
+def speech_reel(src: str, start: float, secs: float, headline: list[str], subs: list[tuple[float, float, str]],
                 out_mp4: str) -> list[Image.Image]:
-    """🎥🔊 10 PM layout (owner, 15 Oct 2026, like @geowiredaily's Modi Reel): the leader's video fills the top,
-    the logo top-left, a bold 2-line headline in red bars, a slanted white line with his message + a question,
-    @khabarbawaal bottom-left and 'CAPTION PADHO' bottom-right; all text on screen from the first frame, then the
-    follow card. Returns [one frame with all text] to proofread."""
-    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
-    vid_h = 1120
+    """🎥🔊 9:30 PM layout (owner, 16 Oct 2026, like @bold_nationx7's Anupam Kher Reel: 450k views): a bold 2-line
+    headline on top (yellow punch + white who/what), the speaker's video in the middle, subtitles of his words in
+    sync with the voice (the one place text follows speech, owner's OK), @khabarbawaal under it, then the follow
+    card. Returns [a frame with the headline + a subtitle] to proofread."""
+    vid_y, vid_h = 430, 1140
     over = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
     d = ImageDraw.Draw(over)
-    for y in range(260):   # the video fades into the black text panel
-        d.line((0, vid_h - 260 + y, RW, vid_h - 260 + y), fill=(0, 0, 0, int(255 * (y / 260) ** 1.4)))
-    d.rectangle((0, vid_h, RW, RH), fill=(0, 0, 0, 255))
     logo = logo_img()
     if logo:
-        over.alpha_composite(logo, (50, 150))
-    size, y = 76, vid_h - 120
-    lines = [printable(x).strip() for x in headline if x.strip()][:2]
-    bar_font = font("Poppins-Bold.ttf", size)
-    while size > 44 and max(bar_font.getlength(x) for x in lines) > RW - 2 * LEFT - 50:
-        size -= 4
-        bar_font = font("Poppins-Bold.ttf", size)
-    for line in lines:   # each line on its own red bar, highlight words in yellow
-        w = int(bar_font.getlength(line)) + 44
-        h = int(size * 1.32)
-        d.rectangle((LEFT, y, LEFT + w, y + h), fill=RED)
-        x = LEFT + 22
-        for word in line.split():
-            d.text((x, y + h // 2), word, font=bar_font, anchor="lm",
-                   fill=YELLOW if norm(word) in highlights else "#FFFFFF")
-            x += bar_font.getlength(word + " ")
-        y += h + 12
-    s_lines, s_fnt, s_lh = fit_lines(printable(subline), RIGHT - LEFT - 40, 260, sizes=range(54, 36, -2))
-    sub = Image.new("RGBA", (RW, len(s_lines) * s_lh + 20), (0, 0, 0, 0))
-    sd = ImageDraw.Draw(sub)
-    for j, words in enumerate(s_lines):
-        sd.text((LEFT + 30, j * s_lh), " ".join(words), font=s_fnt, fill="#FFFFFF")
-    sub = sub.transform(sub.size, Image.AFFINE, (1, 0.18, -sub.height * 0.18, 0, 1, 0), Image.BICUBIC)   # slanted
-    over.alpha_composite(sub, (0, y + 24))
-    d.text((LEFT, 1700), CONFIG["handle"].upper(), font=font("Poppins-SemiBold.ttf", 30), fill="#BBBBBB", anchor="lm")
-    cp_font = font("Poppins-SemiBold.ttf", 32)
-    cx = RIGHT - 46
-    d.text((cx - 14, 1700), "CAPTION PADHO", font=cp_font, fill="#FFFFFF", anchor="rm")
-    d.polygon([(cx, 1690), (cx + 26, 1690), (cx + 13, 1712)], fill=YELLOW)   # ▼ (the fonts have no emoji)
+        small = logo.copy()
+        small.thumbnail((260, 90))
+        over.alpha_composite(small, (RW - small.width - 50, 70))
+    lines = [printable(x).strip() for x in headline if x.strip()][:2] or [""]
+    y = 180
+    for n, line in enumerate(lines):
+        size = 78 if n == 0 else 60
+        f = font("Anton-Regular.ttf", size)
+        while f.getlength(line) > RW - 2 * LEFT and size > 36:
+            size -= 4
+            f = font("Anton-Regular.ttf", size)
+        d.text((RW // 2, y), line.upper() if n == 0 else line, font=f, fill=YELLOW if n == 0 else "#FFFFFF",
+               anchor="mt", stroke_width=3, stroke_fill="#000000")
+        y += int(size * 1.25)
+    sub_font = font("Poppins-Bold.ttf", 54)
+    handle = font("Poppins-SemiBold.ttf", 32)
+    d.text((RW // 2, vid_y + vid_h + 40), CONFIG["handle"], font=handle, fill="#CCCCCC", anchor="mt")
     enc, frame, check = Encoder(out_mp4), None, None
     for i, shot in enumerate(clip_frames(src, start, secs, RW, vid_h)):
+        t = start + i / FPS
         frame = Image.new("RGBA", (RW, RH), "#000000")
-        frame.paste(shot, (0, 0))
+        frame.paste(shot, (0, vid_y))
         frame.alpha_composite(over)
-        if i == FPS:
-            check = frame.convert("RGB")
+        line = next((txt for a, b, txt in subs if a - 0.05 <= t <= b + 0.35), "")
+        if line:
+            ls, sf, lh = fit_lines(line, RW - 160, 200, sizes=range(54, 36, -4))
+            pad = 20
+            box_h = len(ls) * lh + 2 * pad
+            box_y = vid_y + vid_h - box_h - 60
+            fd = ImageDraw.Draw(frame)
+            for j, words in enumerate(ls):
+                txt = " ".join(words)
+                w = sf.getlength(txt)
+                fd.rounded_rectangle(((RW - w) // 2 - pad, box_y + j * lh, (RW + w) // 2 + pad, box_y + (j + 1) * lh + 2 * pad - 8),
+                                     radius=14, fill=(0, 0, 0, 200))
+                fd.text((RW // 2, box_y + j * lh + pad), txt, font=sf, fill="#FFFFFF", anchor="mt")
+            if check is None and i > FPS:
+                check = frame.convert("RGB")
         enc.add(frame)
     if frame is None:
-        raise RuntimeError("the official video could not be read")
+        raise RuntimeError("the speaker's video could not be read")
     add_follow(enc, frame)
     enc.close()
     return [check or frame.convert("RGB")]
 
 
 def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
-    """🎥🔊 9:30 PM (owner, 15 Oct 2026, 'I want every 10 PM post like this' = @geowiredaily's Modi Reel): ~30 s of a
-    leader's / the government's OWN speech video from their official X account, his voice inside the file (posted as
-    it is, no song), a bold pro-Modi/BJP headline (`speech_reel`). Never news agencies, TV channels or films. No
-    fitting video today -> a normal 🔥 viral news Reel in this slot."""
+    """🎥🔊 9:30 PM (owner, 15-16 Oct 2026, like @geowiredaily's Modi Reel and @bold_nationx7's Anupam Kher Reel):
+    the strongest 25-60 s of a leader's or right-leaning public figure's OWN video from their X account, with his
+    voice (posted as it is; dramatic music suggested to play low), a bold headline on top and subtitles of his words.
+    Never news agencies, TV channels, podcasts or films. No fresh video today -> the best unused one of the last 3
+    days -> only then a normal 🔥 viral news Reel."""
+    import carousel
     import create_post
     import fun
     import generate as g
     import proofread
     import requests
     import status
-    status.step("Finding today's official speech videos on X", 2)
+    status.step("Finding speech videos on X (leaders + right-leaning voices)", 2)
     used = set(state.get("reel_official_used", []))
-    vids = official_videos(used)
-    print(f"  official videos (20 h): {[(v['handle'], round(v['secs'])) for v in vids]}")
+    vids = official_videos(used, hours=72)
+    print(f"  speech videos (3 days): {[(v['handle'], round(v['secs'])) for v in vids]}")
     ranked, search = [], ""
     if vids:
         heads = "\n".join(f"- {i['title']}" for i in g.fetch_candidates(set())[:25])
         trends = ", ".join(t for t, _ in fun.x_trends()[:20])
-        listing = "\n".join(f"{n}. @{v['handle']} ({v['at']:%d %b %H:%M} UTC, {v['secs']:.0f} s): {v['text'][:220]}"
-                            for n, v in enumerate(vids, 1))
+        from datetime import datetime, timezone
+        now = datetime.now(timezone.utc)
+        listing = "\n".join(f"{n}. @{v['handle']} ({(now - v['at']).total_seconds() / 3600:.0f} h ago, {v['secs']:.0f} s): "
+                            f"{v['text'][:220]}" for n, v in enumerate(vids, 1))
         schema = {"type": "object", "properties": {
             "ranked": {"type": "array", "items": {"type": "integer"}, "description": "Up to 3 video numbers, best "
                        "first; empty if none fits"},
-            "search": {"type": "string", "description": "Short English news search for today's articles on the best one"},
+            "search": {"type": "string", "description": "Short English news search for articles on the best one"},
             "why": {"type": "string"}}, "required": ["ranked", "search", "why"], "additionalProperties": False}
         res = fun.claude_json(
-            NEWS_SYSTEM.format(page=CONFIG["page_name"]) + "\n\nNow rank official videos for tonight's 10 PM Reel "
-            "(a strong, pro-Modi/BJP/NDA speech Reel): a leader or the government SPEAKING (speech, rally, statement, "
-            "press conference, interview) on one of today's big India stories; best: a strong message, an attack on "
-            "the opposition, a big announcement. Skip greetings, festival/devotional wishes, condolences, ads, promos "
-            "and montages without a speaker. Never a video that attacks or embarrasses the BJP/NDA. The biggest face "
-            "first: PM Modi, then Amit Shah, then ministers and CMs.",
-            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nOfficial videos:\n{listing}{viral_memory()}"
-            f"{recent_news(state, today)[1]}",
-            schema, CONFIG.get("membership_model", "sonnet"), purpose="official video pick")
+            NEWS_SYSTEM.format(page=CONFIG["page_name"]) + "\n\nNow rank speaker videos for tonight's 9:30 PM Reel: "
+            "a leader, minister or right-leaning public figure SPEAKING on camera (speech, statement, press "
+            "conference, interview, a selfie message) on one of today's big India debates, with a strong message: "
+            "hitting back at the opposition or protesters, a big announcement, a moving appeal. Prefer the last 20 "
+            "hours; older (up to 3 days) only if nothing today is strong. Skip greetings, festival/devotional wishes, "
+            "condolences, ads, promos and montages without a speaker. Never a video that attacks or embarrasses the "
+            "BJP/NDA. The biggest face and the most talked-about debate first.",
+            f"Today's headlines:\n{heads}\n\nTrending on X: {trends}\n\nSpeaker videos:\n{listing}{viral_memory()}"
+            f"{recent_news(state, today)[1]}", schema, CONFIG.get("membership_model", "sonnet"),
+            purpose="official video pick")
         ranked, search = [n for n in res["ranked"] if 1 <= n <= len(vids)][:3], res["search"]
         print(f"  ranked: {ranked} ({res['why'][:120]})")
     v = src = start = None
     for n in ranked:   # the first one with a clear speaker
         cand = vids[n - 1]
-        status.step(f"Official video: @{cand['handle']}", 3)
+        status.step(f"Speaker video: @{cand['handle']}", 3)
         path = os.path.join(tmp, f"official{n}.mp4")
         open(path, "wb").write(requests.get(cand["mp4"], timeout=120).content)
         at = speech_start(path, tmp, f"@{cand['handle']}: {cand['text'][:200]}")
@@ -2221,34 +2310,49 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             v, src, start = cand, path, at
             break
     if v is None:
-        status.step("No fitting official speech video today: a viral news Reel instead", 3)
+        status.step("No fitting speaker video: a viral news Reel instead", 3)
         return make_news_reel("reel_official", state, feed, today, tmp)
-    secs = min(SPEECH_SECS, video_info(src)[2] - start - 0.3)
+    length = video_info(src)[2]
+    status.step("Writing subtitles of his words", 4)
+    segs = transcribe(src, start, min(120.0, length - start))
     article = None
     for a in create_post.bing_articles(search or v["text"][:80], limit=8, newest=True):
         article = create_post.read_article(a["url"])
         if article and article.get("title"):
             break
         article = None
-    import carousel
-    body = carousel.article_text(carousel.page_html(article["url"]), limit=2500) if article else ""
-    facts = (f"His official X post (@{v['handle']}): {v['text']}\n" +
-             (f"Article: {article['title']} ({article['site']})\n{article.get('description', '')}\n{body}"
-              if article else ""))
+    body = carousel.story_text(article["url"], article["title"], article.get("description", "")) if article else ""
+    transcript = "\n".join(f"{n}. [{x['start'] - start:.0f}-{x['end'] - start:.0f} s] {x['text']}" for n, x in enumerate(segs))
+    facts = (f"His own X post (@{v['handle']}): {v['text']}\n" + (f"Article: {article['title']} ({article['site']})\n"
+             f"{body[:3000]}\n" if article else "") + (f"\nWhat he says in the video (speech-to-text, numbered "
+             f"segments):\n{transcript}" if transcript else ""))
     status.step("Writing the headline", 4)
     opt = fun.claude_json(
-        NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("From today's stories")[0] + "Write tonight's 10 PM "
-        "official speech Reel: the leader's own video plays with his voice under a bold headline. Clearly in favour of "
-        "Modi, the BJP and the NDA (e.g. 'seedha vaar', 'kadak sandesh', 'muh-tod jawab') but only real facts and his "
-        "real words; no invented quotes, no hate against any community.\nRules:" +
-        NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("Rules:")[1],
+        NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("From today's stories")[0] + "Write tonight's 9:30 PM "
+        "speaker Reel: his own video plays with his voice and subtitles under a bold headline. Clearly in favour of "
+        "Modi, the BJP and the NDA (e.g. 'seedha vaar', 'kadak jawab', 'RESPECT SIR!') but only real facts and his "
+        "real words; no invented quotes, no hate against any community. Pick the most compelling continuous part of "
+        "his speech (from_seg..to_seg, 25-60 s). Songs: 4 from this list that fit the mood (they are played LOW "
+        "under his voice): " + "; ".join(DRAMA_SONGS) + "\nRules:" + NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("Rules:")[1],
         f"{fun.today_context()}\n\n{facts}", SPEECH_OPTION, CONFIG.get("membership_model", "sonnet"),
         purpose="speech reel script")
     opt["caption"] = unescape(opt["caption"])
-    roman_only(opt, ["caption", "pin_comment", "subline"])
+    roman_only(opt, ["caption", "pin_comment"])
     lines = {"headline": "\n".join(opt["headline"])}
     roman_only(lines, ["headline"])
     opt["headline"] = [x for x in lines["headline"].split("\n") if x.strip()][:2]
+    if segs:   # the chosen part of the speech, at least 25 s, at most 60 s
+        a_, b_ = sorted((max(0, min(opt["from_seg"], len(segs) - 1)), max(0, min(opt["to_seg"], len(segs) - 1))))
+        while b_ < len(segs) - 1 and segs[b_]["end"] - segs[a_]["start"] < SPEECH_MIN:
+            b_ += 1
+        while b_ > a_ and segs[b_]["end"] - segs[a_]["start"] > SPEECH_MAX:
+            b_ -= 1
+        clip_start, clip_end = segs[a_]["start"], segs[b_]["end"] + 0.3
+        subs = subtitle_lines(segs[a_:b_ + 1])
+    else:
+        clip_start, clip_end, subs = start, start + min(30.0, length - start - 0.3), []
+    secs = min(clip_end, length - 0.2) - clip_start
+    songs = opt.pop("songs", [])
     out = os.path.join(tmp, "speech.mp4")
     source = article["site"] if article else f"@{v['handle']} on X"
     credit = f"Video + voice: @{v['handle']} on X"
@@ -2259,21 +2363,23 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return (f"{d['caption'].strip()}\n\n{credit}\n\nFollow {CONFIG['handle']} for daily updates.{src_line}"
                 f"\n\n{tags}")
     status.step("Making the video + proofreading", 5)
+    check_note = ("The SUBTITLES on the video are the speaker's own words (speech-to-text): they are his quote, not our "
+                  "claim; check only their spelling.\n\n")
     frames, opt, proof = proofread.run(
-        lambda d: speech_reel(src, start, secs, d["headline"], d["subline"], d["highlight"], out), opt, caption_of,
-        facts, strict=True)
+        lambda d: speech_reel(src, clip_start, secs, d["headline"], subs, out), opt, caption_of,
+        check_note + facts, strict=True)
     status.step("Adding his voice", 5)
     voiced = os.path.join(tmp, "voiced.mp4")
-    add_voice(out, src, start, voiced)
+    add_voice(out, src, clip_start, voiced)
     state["reel_official_used"] = (list(used) + [v["id"]])[-60:]
     state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": v["text"][:140], "date": today}])[-40:]
     if article:
         state["reel_news_used"] = (state.get("reel_news_used", []) + [article["url"]])[-80:]
     save_reel(feed, state, frames[0], voiced, f"reel_official-{today}", {
-        "headline": printable(" ".join(opt["headline"]) + ": " + opt["subline"]),
-        "tag": "🎬 REEL · 🎥🔊 OFFICIAL SPEECH", "caption": g.limit_hashtags(caption_of(opt)), "source": source,
+        "headline": printable(" · ".join(opt["headline"])),
+        "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO", "caption": g.limit_hashtags(caption_of(opt)), "source": source,
         "source_url": article["url"] if article else f"https://x.com/{v['handle']}/status/{v['id']}",
-        "pin_comment": opt.get("pin_comment", ""), "songs": [], "proof": proof})   # his voice is the sound
+        "pin_comment": opt.get("pin_comment", ""), "songs": songs, "proof": proof})
 
 
 def make_top5_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:

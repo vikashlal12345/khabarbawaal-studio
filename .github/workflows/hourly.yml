@@ -40,7 +40,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 70
     concurrency:
       group: hourly-post        # takes turns with "Create post" requests
       cancel-in-progress: false
