@@ -191,10 +191,9 @@ def main() -> None:
         path.write_text(json.dumps((hist + [snap])[-700:], indent=1))
         print("plan:", snap["five_hour"], snap["seven_day"])
     (stats / "adhoc.json").write_text(json.dumps(adhoc_usage(), indent=1))
-    try:
-        instagram(stats)
-    except Exception as e:
-        print("instagram:", e)
+    # Instagram page reading switched OFF (owner, 16 Oct 2026): automated reading of Instagram pages is against
+    # Instagram's Terms. Numbers now come only from the owner's screen recordings (tools/views_from_recording.py).
+    # instagram(stats) and its helpers are kept, unused, in case the owner sets up Meta's official API instead.
     git("config", "user.name", "stats-bot")
     git("config", "user.email", "stats-bot@users.noreply.github.com")
     r = subprocess.run(["python3", "save.py", "Stats update from Mac"], cwd=CLONE, capture_output=True, text=True)

@@ -205,7 +205,7 @@ function hookChart(box, pts) {
         <div class="kpi"><b>${likesPer == null ? '–' : likesPer.toFixed(1)}</b><span>likes per post (7 days)</span></div></div>
       ${pts.length >= 2 ? lineChart(pts) : '<div class="muted" style="margin-top:10px">The followers chart appears after 2 days of data.</div>'}
       ${boostRows ? `<div class="sub">Boosts</div>${boostRows}` : ''}
-      <div class="muted" style="margin-top:8px">🕐 Instagram numbers come from your Mac (every few hours while it's awake)${latest ? `, last ${ago(latest.at)}` : ''}.</div>`;
+      <div class="muted" style="margin-top:8px">🕐 Instagram numbers: automatic reading switched off on 16 Oct 2026 (Instagram's rules); they update from your screen recordings${latest ? `, last ${ago(latest.at)}` : ''}.</div>`;
     hookChart(document.querySelector('#growth .chart'), pts);
   }
 
