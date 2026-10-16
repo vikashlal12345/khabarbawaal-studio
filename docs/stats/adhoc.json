@@ -154,10 +154,17 @@
   "cache_write": 3018741
  },
  "2026-10-15": {
-  "replies": 582,
-  "input": 1174,
-  "output": 578265,
-  "cache_read": 206025769,
-  "cache_write": 4243131
+  "replies": 610,
+  "input": 1230,
+  "output": 611514,
+  "cache_read": 221416897,
+  "cache_write": 4286843
+ },
+ "2026-10-16": {
+  "replies": 6,
+  "input": 12,
+  "output": 3953,
+  "cache_read": 2898986,
+  "cache_write": 555049
  }
 }
