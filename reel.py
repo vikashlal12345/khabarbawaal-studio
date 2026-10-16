@@ -300,11 +300,16 @@ def add_follow(enc, last: Image.Image, secs: float = FOLLOW_SECS) -> None:
 
 # ---------------------------------------------------------------- 1. clip + meme text
 
+OPENER_SECS = 1.5        # 😂 joke Reels open on the trigger alone (owner, 16 Oct 2026: 48% skipped the joke hook)
+SATIRE_OPEN_SECS = 2.0   # 🎯 satire opens like the news (73% skipped the meme-text opening)
+
+
 def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlight: list[str],
               out_mp4: str, crop_x: float = 0.5, text_top: int = 960, hold: float = 0.0,
-              foot: str = "TAG KARO USKO") -> list[Image.Image]:
+              foot: str = "TAG KARO USKO", opener: str = "") -> list[Image.Image]:
     """The last `hold` seconds of dur freeze the clip's last frame (clip shorter than the reading time).
-    Returns the frames to proofread: [cover] (all text shown)."""
+    opener: 2-5 words shown BIG alone over the clip for the first OPENER_SECS, then the banner + full text get
+    their whole `dur` to be read. Returns the frames to proofread: [cover] (all text shown) (+ the opener)."""
     highlights = {norm(w) for phrase in highlight for w in phrase.split()}
     lines, fnt, line_h = fit_lines(text, RIGHT - LEFT, 470, sizes=range(80, 40, -4))
     imgs = line_images(lines, fnt, line_h, "#FFFFFF", YELLOW, highlights, stroke=7)
@@ -319,9 +324,22 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
     shade = Image.new("RGBA", (RW, 900), (0, 0, 0, 0))
     ImageDraw.Draw(shade).rectangle((0, 120, RW, 780), fill=(0, 0, 0, 120))
     shade = shade.filter(ImageFilter.GaussianBlur(60))
-    enc, cover, frame = Encoder(out_mp4), None, None
-    for i, frame in enumerate(clip_frames(clip, start, dur - hold, RW, RH, crop_x, hold)):
-        t = i / FPS
+    enc, cover, frame, opened = Encoder(out_mp4), None, None, None
+    lead = OPENER_SECS if opener else 0.0
+    if lead:   # the clip runs on under the opener; whatever it lacks at the end freezes on its last frame
+        layer = hook_layer(opener, highlights)
+        hold = max(0.0, dur + lead - (video_info(clip)[2] - start - 0.2))
+    for i, frame in enumerate(clip_frames(clip, start, dur + lead - hold, RW, RH, crop_x, hold)):
+        t = i / FPS - lead
+        if t < 0:   # 🪝 the opener alone, big, over the clip
+            frame = frame.convert("RGBA")
+            frame.alpha_composite(Image.new("RGBA", (RW, RH), (0, 0, 0, 90)))
+            frame.alpha_composite(layer, (0, (RH - layer.height) // 2))
+            handle_tag(frame, 1730)
+            if opened is None and t >= -lead / 2:
+                opened = frame.convert("RGB")
+            enc.add(frame)
+            continue
         if t < 0.45:   # 🪝 quick punch-in; banner + text are on screen from the first frame (owner, 14 Oct 2026)
             z = 1.12 - 0.12 * ease_out(t / 0.45)
             big = frame.resize((int(RW * z), int(RH * z)), Image.BICUBIC)
@@ -343,13 +361,13 @@ def clip_reel(clip: str, start: float, dur: float, hook: str, text: str, highlig
         enc.add(frame)
     add_follow(enc, frame)
     enc.close()
-    return [cover or frame.convert("RGB")]
+    return [cover or frame.convert("RGB")] + ([opened] if opened else [])
 
 
 # ---------------------------------------------------------------- 2. classic meme layout
 
 def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str, punch_at: float,
-              highlight: list[str], out_mp4: str, hold: float = 0.0) -> list[Image.Image]:
+              highlight: list[str], out_mp4: str, hold: float = 0.0, opener: str = "") -> list[Image.Image]:
     """White screen, text on top, clip in the middle. setup = short items shown one by one
     (e.g. alarm times), punch replaces them at punch_at seconds. The last `hold` seconds of dur
     freeze the clip's last frame (the clip is shorter than the reading time).
@@ -361,12 +379,24 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
     p_lines, p_fnt, p_lh = fit_lines(punch, RIGHT - LEFT, 480, sizes=range(96, 44, -4))
     p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, highlights)
     logo = logo_img()
-    enc, before, cover, frame = Encoder(out_mp4), None, None, None
-    for i, shot in enumerate(clip_frames(clip, start, dur - hold, clip_w, clip_h, hold=hold)):
-        t = i / FPS
+    enc, before, cover, frame, opened = Encoder(out_mp4), None, None, None, None
+    lead = OPENER_SECS if opener else 0.0   # 🪝 the trigger alone, big, for the first 1.5 s (owner, 16 Oct 2026)
+    if lead:
+        layer = hook_layer(opener, highlights)
+        hold = max(0.0, dur + lead - (video_info(clip)[2] - start - 0.2))
+    for i, shot in enumerate(clip_frames(clip, start, dur + lead - hold, clip_w, clip_h, hold=hold)):
+        t = i / FPS - lead
         frame = Image.new("RGBA", (RW, RH), "#FFFFFF")
         if logo:
             frame.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+        if t < 0:
+            frame.alpha_composite(layer, (0, text_bottom - layer.height + 30))
+            frame.paste(shot, (0, clip_y))
+            handle_tag(frame, clip_y + clip_h + 70, fill="#111111", stroke=0)
+            if opened is None and t >= -lead / 2:
+                opened = frame.convert("RGB")
+            enc.add(frame)
+            continue
         if t < punch_at:
             shown = setup   # all at once (owner, 15 Oct 2026: no word-by-word text in any Reel)
             ls, fnt, lh = fit_lines(" ".join(shown), RIGHT - LEFT, 480, sizes=[s_fnt.size])
@@ -392,7 +422,7 @@ def meme_reel(clip: str, start: float, dur: float, setup: list[str], punch: str,
         enc.add(frame)
     add_follow(enc, frame)
     enc.close()
-    return [(before or frame).convert("RGB"), cover or frame.convert("RGB")]
+    return [(before or frame).convert("RGB"), cover or frame.convert("RGB")] + ([opened] if opened else [])
 
 
 # ---------------------------------------------------------------- 1b. the owner's own video
@@ -557,6 +587,9 @@ SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit th
 
 _COMMON = {
     "songs": SONGS,
+    "opener": {"type": "string", "description": "2-5 words shown BIG alone for the first 1.5 s, before the joke: the "
+               "relatable trigger that makes people stop scrolling, e.g. 'Diwali safai ka asli sach', 'Exam se ek raat "
+               "pehle', 'Mummy ka phone aaya'. No emojis."},
     "about": {"type": "array", "description": "The specific real things this joke is about, so their photos can be "
               "shown (owner, 15 Oct 2026: a Ramayana trailer meme showed Thai dancers): a film/show, person, team, "
               "brand or event, e.g. Ramayana (2026 film) + Ranbir Kapoor. EMPTY for festivals, seasons, weather and "
@@ -1611,7 +1644,8 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             dur = min(max(CLIP_SECONDS, read_secs(d["text"], 4.5)), CLIP_MAX)
             start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
             hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
-            return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out, hold=hold)
+            return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out, hold=hold,
+                             opener=d.get("opener", ""))
     else:
         def render(d):   # build-up, then the punchline: each 2.5 s + 0.25 s a word (owner, 12 Oct 2026: +1 s)
             setup_t = min(8.5, max(MEME_SECONDS * 0.55, read_secs(" ".join(d["setup"]), 2.5)))
@@ -1619,7 +1653,8 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             dur = setup_t + punch_t
             start = 0.0 if real else max(0.0, secs - dur - 0.2)      # reactions usually come late in a clip
             hold = max(0.0, dur - (secs - 0.2))     # a short clip freezes on its last frame, the text keeps its time
-            return meme_reel(clip, start, dur, d["setup"], d["punch"], round(setup_t, 2), d["highlight"], out, hold)
+            return meme_reel(clip, start, dur, d["setup"], d["punch"], round(setup_t, 2), d["highlight"], out, hold,
+                             opener=d.get("opener", ""))
     status.step("Making the video + proofreading", 5)
     if topic:   # the owner's idea is a joke premise, not a news claim: the proofreader keeps it (14 Oct 2026)
         check = (f"THE PAGE OWNER'S OWN JOKE IDEA (a premise, not a news claim: keep its premise and the names in it, "
@@ -1749,7 +1784,8 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         dur = min(max(CLIP_SECONDS, read_secs(d["text"], 4.5)), CLIP_MAX)
         start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
         hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
-        return clip_reel(clip, start, dur, style["banner"], d["text"], d["highlight"], out, hold=hold, foot=style["foot"])
+        return clip_reel(clip, start, dur, style["banner"], d["text"], d["highlight"], out, hold=hold, foot=style["foot"],
+                         opener=d.get("opener", ""))
     status.step("Making the video + proofreading", 5)
     frames, best, proof = proofread.run(render, best, g.fun_caption, "", strict=True)
     if art_note.startswith("AI"):   # Meta asks for its "AI info" label on AI pictures
@@ -2448,7 +2484,9 @@ def satire_part_secs(context: list[str], facts: list[dict]) -> tuple[float, floa
 
 
 def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], context: list[str],
-                facts: list[dict], punchline: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+                facts: list[dict], punchline: str, highlight: list[str], out_mp4: str, opener: str = "",
+                opener_still: Image.Image | None = None, opener_video: tuple[str, float] | None = None
+                ) -> list[Image.Image]:
     """1) the dig over a reaction clip (meme layout), 2) KYA HUA? plain context, 3) REALITY CHECK: recent
     facts, each with its own source, 4) the punchline on yellow, 5) 'send this'. Each part stays long enough
     to read; a clip shorter than clip_dur freezes on its last frame. Returns frames to proofread:
@@ -2480,6 +2518,19 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     d_punch = SATIRE_PUNCH_SECS
     total = t_punch + d_punch
     enc, checks, frame = Encoder(out_mp4), [], None
+    opened = None
+    if opener and (opener_still is not None or opener_video):   # 🪝 like the news: the leader full-size + a big line
+        layer = hook_layer(opener, highlights)
+        stills = video_stills(opener_video[0], opener_video[1], SATIRE_OPEN_SECS) if opener_video else None
+        still = opener_still
+        for i in range(int(SATIRE_OPEN_SECS * FPS)):
+            still = next(stills, still) if stills else still
+            if still is None:
+                break
+            f = hook_frame(still, layer, i / FPS)
+            if i == int(0.8 * FPS):
+                opened = f.convert("RGB")
+            enc.add(f)
     marks = [t_ctx - 0.2, t_facts - 0.2, t_punch - 0.2, t_punch + d_punch - 0.2]
     shots, shot = clip_frames(clip, start, clip_dur, clip_w, clip_h), None
     for i in range(int(total * FPS)):
@@ -2538,7 +2589,7 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     enc.close()
     while len(checks) < 4:
         checks.append(frame.convert("RGB"))
-    return checks
+    return checks + ([opened] if opened else [])
 
 
 POLITICS_TARGETS = ("Congress, AAP, TMC, the Left parties (CPI, CPI-M), the Cockroach Janta Party (CJP, founder "
@@ -2578,6 +2629,8 @@ POLITICS_OPTION = {"type": "object", "properties": {
                   "required": ["fact", "source"], "additionalProperties": False}},
     "punchline": {"type": "string", "description": "The big funny closing line, max 14 words, NEW (not a common "
                   "slogan, not like a recent Reel's). No emojis."},
+    "hook": {"type": "string", "description": "4-8 words shown BIG over the leader's photo/video for the first 2 s, "
+             "like a news hook: who + what in plain words, e.g. 'Rahul ne Mann se jawab maanga, AAP chup'. No emojis."},
     "people": {"type": "array", "description": "1-3 real people (or parties) this joke is about, main one first; their "
                "photos are shown instead of a stock clip, e.g. Rahul Gandhi + Bhagwant Mann",
                "items": {"type": "object", "properties": {
@@ -2594,7 +2647,7 @@ POLITICS_OPTION = {"type": "object", "properties": {
                     "'Ye us dost ko bhejo jo har baat pe INDIA bloc ko defend karta hai 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},
-    "required": ["based_on", "issue", "party", "format", "claim", "context", "facts", "punchline", "people", "highlight", "clip_search",
+    "required": ["based_on", "issue", "party", "format", "hook", "claim", "context", "facts", "punchline", "people", "highlight", "clip_search",
                  "clip_wanted", "caption", "pin_comment", "hashtags", "songs"], "additionalProperties": False}
 
 POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
@@ -2840,12 +2893,19 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "") +
             (f"\n\n{video_credit}" if video_credit else "")}, item)
 
+    # 🪝 Opening like the news (owner, 16 Oct 2026: 73% skipped the meme-text opening): the leader full-size —
+    # their own video, else their photo (not the VS card), else the clip's first frame — under the big `hook` line
+    opener_video = (clip, video_start) if video_start is not None else None
+    opener_still = None if opener_video else (photos[1] if len(photos) > 1 else photos[0] if photos else
+                                              next(video_stills(clip, 0.0, 0.1, 1280), None))
+
     def render(d):   # the dig over the clip stays until it's read (satire_hook_secs); later parts time themselves
         clip_dur = satire_hook_secs(d["post"]["claim"])
-        start = video_start if video_start is not None else \
+        start = video_start + SATIRE_OPEN_SECS if video_start is not None else \
             0.0 if real else max(0.0, secs - clip_dur - 0.2)   # a short clip freezes on its last frame
         return satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
-                           d["post"]["punchline"], d["post"]["highlight"], out)
+                           d["post"]["punchline"], d["post"]["highlight"], out, opener=d["post"].get("hook", ""),
+                           opener_still=opener_still, opener_video=opener_video)
     status.step("Making the video + fact-checking", 5)
     frames, data, proof = proofread.run(
         render,
