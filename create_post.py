@@ -416,7 +416,7 @@ def make(raw: str, kind: str = "custom") -> int:
         card = g.render_card(first_img, d["post"], first_site)
         return [carousel.mark_cover(card)] + carousel.render(d["specs"]) if d["specs"] else [card]
 
-    article_txt = carousel.article_text(carousel.page_html(item["link"])) if item["link"] else text
+    article_txt = carousel.story_text(item["link"], item.get("title", ""), item.get("summary", "")) if item["link"] else text
     note("Proofreading", 5)
     checked, data, proof = proofread.run(render, {"post": post, "specs": specs},
                                          lambda d: caption(d["post"], article["site"] if article else None),

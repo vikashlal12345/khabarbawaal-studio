@@ -28,7 +28,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
-from generate import CONFIG, LOGO_FILE, font, norm, printable, wrap_words
+from generate import CONFIG, LOGO_FILE, RIGHT_LENS, font, norm, printable, wrap_words
 
 RW, RH, FPS = 1080, 1920, 30
 LEFT, RIGHT = 70, RW - 150              # right side holds Instagram's like/comment buttons
@@ -1744,7 +1744,7 @@ celebrity news ~15): Indian news, Bollywood/OTT, Team India and IPL, viral India
 foreign news unless it is about India or Indians, foreign sports and niche or foreign celebrity news.
 Rules: real facts only, no invented quotes. Never make jokes about deaths, accidents, crimes or disasters. \
 Politics: supportive of the right wing (BJP, NDA), critical of the left and opposition; never pick a story \
-that embarrasses the BJP. No hate against any community."""
+that embarrasses the BJP. No hate against any community. """ + RIGHT_LENS
 
 
 NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_aft", "reel_news_pm", "reel_news",
@@ -1801,7 +1801,8 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
         raise RuntimeError("no story had 2+ good photos")
-    cover, out, entry = finish_news_reel(item, opt, photos, songs, tmp)
+    cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, None,
+                                          f"{story['title']}. {story.get('summary', '')}")
     state["reel_news_used"] = (used + [story["link"]])[-80:]
     if story["id"]:
         state["seen"] = state.get("seen", []) + [story["id"]]   # the other news Reels skip it
@@ -1818,14 +1819,14 @@ OFFICIAL_X = ("narendramodi", "AmitShah", "rajnathsingh", "PMOIndia", "BJP4India
 OFFICIAL_SECS = 4.5   # the video piece under the hook line
 
 
-def official_videos(used: set[str]) -> list[dict]:
-    """Videos the official accounts posted on X in the last 20 hours (their public profile timelines, free, no
-    login), newest first: [{id, handle, text, at, secs, mp4}]."""
+def official_videos(used: set[str], handles: tuple[str, ...] = OFFICIAL_X, hours: int = 20) -> list[dict]:
+    """Videos these accounts posted on X in the last `hours` (their public profile timelines, free, no login),
+    newest first: [{id, handle, text, at, secs, mp4}]."""
     import time
     from datetime import datetime, timedelta, timezone
     import requests
-    since, out = datetime.now(timezone.utc) - timedelta(hours=20), []
-    for handle in OFFICIAL_X:
+    since, out = datetime.now(timezone.utc) - timedelta(hours=hours), []
+    for handle in handles:
         try:
             r = requests.get(f"https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}",
                              headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
@@ -1836,7 +1837,7 @@ def official_videos(used: set[str]) -> list[dict]:
                     time.sleep(wait + 2)
                     r = requests.get(r.url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
                 if r.status_code == 429:
-                    print(f"  ! X limit reached after {OFFICIAL_X.index(handle)} accounts: using those")
+                    print(f"  ! X limit reached after {handles.index(handle)} accounts: using those")
                     break
             html = r.text
             m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html, re.S)
@@ -1893,14 +1894,105 @@ def speech_start(path: str, tmp: str, about: str) -> float | None:
     return times[res["frame"] - 1] + 0.5
 
 
-def add_voice(mp4: str, source: str, start: float, out: str) -> None:
+QUOTE_SCHEMA = {"type": "object", "properties": {
+    "speech": {"type": "boolean", "description": "True if the story is mainly about something a person SAID or how they "
+               "reacted on camera (remark, statement, interview, press conference, speech)"},
+    "person": {"type": "string"},
+    "handle": {"type": "string", "description": "That person's own X handle without @ if you are sure (e.g. "
+               "'prakashraaj'), else ''"},
+    "search": {"type": "string", "description": "Short English news search for that exact moment"},
+    "side": {"type": "string", "enum": ["government_right", "left_opposition", "neutral"], "description": "Where the "
+             "person stands for this page (left/opposition includes left-leaning activists and celebrities)"},
+    "remark": {"type": "string", "description": "The exact remark/reaction the story is about, in a few words"}},
+    "required": ["speech", "person", "handle", "search", "side", "remark"], "additionalProperties": False}
+
+
+def quote_video(title: str, facts: str, tmp: str) -> dict | None:
+    """🎥 For a story about what someone SAID (owner, 16 Oct 2026: 'first search for the video where Prakash Raj said
+    it'): the person's OWN X video of that moment (used as the hook video, with the voice) or a news agency /
+    channel X post with it in the story's articles (used as a credited screenshot + its text as the proof of the
+    quote; never re-uploaded: copyright, Instagram's repost rule). Returns {own, handle, id, text, line, path,
+    start | shot} or None."""
+    import carousel
+    import create_post
+    import fun
+    import requests
+    model = CONFIG.get("membership_model", "sonnet")
+    try:
+        q = fun.claude_json("You read an Indian news story.", f"Story: {title}\n\n{facts[:1500]}", QUOTE_SCHEMA, model,
+                            purpose="quote video")
+    except Exception as e:
+        print(f"  ! quote check failed: {str(e)[:80]}")
+        return None
+    if not q["speech"]:
+        return None
+    handle = q["handle"].strip().lstrip("@")
+    cands = [dict(v, own=True) for v in (official_videos(set(), (handle,), hours=96) if handle else [])][:8]
+    seen = {c["id"] for c in cands}
+    for a in create_post.bing_articles(q["search"] or title, limit=6, newest=True):
+        page = carousel.page_html(a["url"]) or ""
+        for tid in list(dict.fromkeys(re.findall(r"(?:twitter|x)\.com/\w+/status/(\d+)", page)))[:6]:
+            d = carousel.tweet_data(tid) if tid not in seen else None
+            vids = [m for m in (d or {}).get("mediaDetails", []) if m.get("type") == "video"]
+            if not vids:
+                continue
+            seen.add(tid)
+            mp4s = [v for v in vids[0].get("video_info", {}).get("variants", []) if v.get("content_type") == "video/mp4"]
+            who = d["user"]["screen_name"]
+            cands.append({"id": tid, "handle": who, "own": bool(handle) and who.lower() == handle.lower(),
+                          "text": d.get("text", ""), "mp4": max(mp4s, key=lambda v: v.get("bitrate", 0))["url"] if mp4s else ""})
+        if len(cands) >= 12:
+            break
+    if not cands:
+        print(f"  quote video: none found for {q['person']}")
+        return None
+    schema = {"type": "object", "properties": {
+        "pick": {"type": "integer", "description": "The post whose video shows THIS exact remark, 0 if none"},
+        "evidence": {"type": "string", "description": "Words from that post's text that show it is the same remark "
+                     "and the same event ('' if none)"},
+        "line": {"type": "string", "description": "Max 12 words, Hinglish: what the video shows, for the screen"},
+        "why": {"type": "string"}}, "required": ["pick", "evidence", "line", "why"], "additionalProperties": False}
+    listing = "\n".join(f"{n}. @{c['handle']}{' (his/her own account)' if c['own'] else ''}: {c['text'][:200]}"
+                        for n, c in enumerate(cands, 1))
+    try:
+        res = fun.claude_json("Pick the X post whose video shows this EXACT remark at this exact event. The post text "
+                              "must clearly describe the same remark (owner, 16 Oct 2026: the robot once picked the "
+                              "same person's different speech). Another statement, speech or event by the same person "
+                              "= 0. When unsure, 0.", f"Story: {title}\nPerson: {q['person']}\nThe remark: "
+                              f"{q['remark']}\n\nX posts with a video:\n{listing}",
+                              schema, model, purpose="quote video pick")
+    except Exception as e:
+        print(f"  ! quote video pick failed: {str(e)[:80]}")
+        return None
+    if not 1 <= res["pick"] <= len(cands) or not res["evidence"].strip():
+        print(f"  quote video: no post shows the moment ({res['why'][:80]})")
+        return None
+    c = cands[res["pick"] - 1]
+    out = {"own": c["own"], "handle": c["handle"], "id": c["id"], "text": c["text"], "line": res["line"],
+           "side": q["side"]}
+    print(f"  quote video: @{c['handle']} ({'own video' if c['own'] else 'screenshot'}): {c['text'][:80]}")
+    if c["own"] and c["mp4"]:
+        path = os.path.join(tmp, f"quote{c['id']}.mp4")
+        open(path, "wb").write(requests.get(c["mp4"], timeout=120).content)
+        start = speech_start(path, tmp, f"@{c['handle']}: {c['text'][:200]}")
+        if start is not None:
+            return {**out, "path": path, "start": start}
+    shot = carousel.tweet_screenshot(c["id"])
+    return {**out, "own": False, "shot": shot} if shot is not None else None
+
+
+def add_voice(mp4: str, source: str, start: float, out: str, only: float | None = None) -> None:
     """The speaker's own voice under the whole Reel (owner, 15 Oct 2026: 'B', inside the file so it is posted as it
-    is): the source's sound from `start`, evened out, 48 kHz, fading in and out."""
+    is): the source's sound from `start`, evened out, 48 kHz, fading in and out. only = seconds: the voice only for
+    that long (their own clip), then silence (a left/opposition speaker the Reel calls out: never their message
+    under our whole Reel; owner, 16 Oct 2026)."""
     _, _, secs = video_info(mp4)
-    r = subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-i", mp4, "-ss", f"{start:.2f}", "-t", f"{secs:.2f}",
+    voice = min(secs, only) if only else secs
+    r = subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-i", mp4, "-ss", f"{start:.2f}", "-t", f"{voice:.2f}",
                         "-i", source, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "128k",
                         "-ar", "48000", "-af", f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.2,"
-                        f"afade=t=out:st={max(0.0, secs - 1.2):.2f}:d=1.2", "-shortest", "-movflags", "+faststart", out],
+                        f"afade=t=out:st={max(0.0, voice - (0.4 if only else 1.2)):.2f}:d={0.4 if only else 1.2},apad",
+                        "-shortest", "-movflags", "+faststart", out],
                        capture_output=True, text=True)
     if r.returncode != 0 or not os.path.exists(out):
         raise RuntimeError(f"adding the voice failed: {r.stderr[-200:]}")
@@ -2165,7 +2257,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
         return {**d, "slides": keep} if 2 <= len(keep) < len(d["slides"]) else None
 
     if article is None:
-        article = carousel.article_text(carousel.page_html(item["link"]))
+        article = carousel.story_text(item["link"], item["title"], item.get("summary", ""))
     caption_of = (lambda d: g.full_caption(d["post"], item)) if item["link"] else \
         (lambda d: f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily updates.\n\n"
                    + " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"]))
@@ -2175,6 +2267,41 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
         "headline": item["title"], "tag": "🎬 REEL · " + post["tag"],
         "caption": g.limit_hashtags(caption_of(data)), "source": item["source"], "source_url": item["link"],
         "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof}
+
+
+def finish_with_quote(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str, article: str | None,
+                      facts: str) -> tuple[Image.Image, str, dict]:
+    """finish_news_reel + 🎥 the video of the moment for a 'X said' story (quote_video): the person's own video
+    opens the Reel with the voice under the whole Reel (posted as it is), or an agency/channel post is the first,
+    credited screenshot and its text joins the facts the proofreader checks."""
+    import carousel
+    import status
+    status.step("Looking for the video of the moment", 4)
+    qv = quote_video(item["title"], facts, tmp)
+    credit, hook_video = "", None
+    if qv and qv["own"]:
+        hook_video, credit = (qv["path"], qv["start"], OFFICIAL_SECS), f"Video + voice: @{qv['handle']} on X"
+    elif qv:
+        photos = [(qv["shot"], f"@{qv['handle']} on X", qv["line"], True)] + photos
+        credit = f"Video: @{qv['handle']} on X"
+    if qv:
+        base = article if article is not None else carousel.story_text(item["link"], item["title"], item.get("summary", ""))
+        article = f"{base}\n\nX post by @{qv['handle']} (with the video): {qv['text']}"
+    cover, out, entry = finish_news_reel(item, opt, photos, songs, tmp, article=article, hook_video=hook_video)
+    if hook_video:
+        status.step("Adding the speaker's voice", 5)
+        voiced = os.path.join(tmp, "voiced.mp4")
+        if qv["side"] == "left_opposition":   # their words only in their clip, the rest is ours (song added as usual)
+            add_voice(out, qv["path"], qv["start"], voiced, only=OFFICIAL_SECS)
+            out = voiced
+        else:
+            add_voice(out, qv["path"], qv["start"], voiced)
+            out, entry = voiced, {**entry, "songs": []}   # the voice is the sound: no song
+    if credit:
+        cap = entry["caption"]
+        entry["caption"] = cap.replace("\n\nFollow ", f"\n\n{credit}\n\nFollow ", 1) if "\n\nFollow " in cap \
+            else f"{cap}\n\n{credit}"
+    return cover, out, entry
 
 
 # ---------------------------------------------------------------- ➕ Create: a Reel for the owner's topic
@@ -2208,9 +2335,13 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
     songs = trending_songs(state)
     schema = {**NEWS_OPTION, "properties": {k: v for k, v in NEWS_OPTION["properties"].items() if k != "pick"},
               "required": [k for k in NEWS_OPTION["required"] if k != "pick"]}
+    import carousel
+    # The writer sees the same full story the proofreader checks (owner, 16 Oct 2026: from a 1-line Inshorts summary
+    # it filled gaps with unsupported lines and the Reel was blocked)
+    facts = carousel.story_text(article["url"], article["title"], article.get("description", "")) if article else ""
     story = ((f"The owner asked: {text}\n" if text else "") +
              (f"Headline: {article['title']}\nSite: {article['site']}\n{article.get('description', '')}"
-              if article else ""))
+              f"\n\nFull story (use ONLY these facts):\n{facts[:4500]}" if article else ""))
     opt = fun.claude_json(NEWS_SYSTEM.split("From today's stories")[0] +
                           "The owner sent ONE story: write the Reel for it.\n" +
                           "Rules:" + NEWS_SYSTEM.split("Rules:")[1],
@@ -2219,10 +2350,12 @@ def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[
     item = {"link": article["url"] if article else "", "source": article["site"] if article else "Your pick",
             "title": (article or {}).get("title") or text[:120]}
     status.step("Collecting photos", 4)
+    item["summary"] = (article or {}).get("description", "")
     photos = news_photos(item, opt)
     if len(photos) < 2:
         raise RuntimeError(f"only {len(photos)} usable photo(s) found for this story")
-    return finish_news_reel(item, opt, photos, songs, tmp, article=None if article else text)
+    return finish_with_quote(item, opt, photos, songs, tmp, facts if article else text,
+                             f"{item['title']}. {item['summary']} {text}")
 
 
 # ---------------------------------------------------------------- 4. political satire + reality check (6 PM)
@@ -2345,8 +2478,8 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
     return checks
 
 
-POLITICS_TARGETS = ("Congress, AAP, TMC, the Left parties (CPI, CPI-M) and the Cockroach Janta Party (CJP, founder "
-                    "Abhijeet Dipke)")
+POLITICS_TARGETS = ("Congress, AAP, TMC, the Left parties (CPI, CPI-M), the Cockroach Janta Party (CJP, founder "
+                    "Abhijeet Dipke) and left-leaning activists/celebrities campaigning with them (e.g. Prakash Raj)")
 POLITICS_SEARCHES = ["Congress party", "Rahul Gandhi", "AAP Kejriwal", "TMC Mamata Banerjee", "Abhishek Banerjee TMC",
                      "CPI(M)", "Cockroach Janta Party", "Dipke CJP"]
 SATIRE_FORMATS = ["POV", "Nobody: / Party:", "Then vs Now (U-turn)", "Expectation vs Reality", "Job ad / rate card",
@@ -2570,7 +2703,7 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
 
     for i, n in enumerate(picks):   # the Reel must pass the judge; else try the next story
         story = stories[n - 1]
-        article = carousel.article_text(carousel.page_html(story["url"])) or story["title"]
+        article = carousel.story_text(story["url"], story["title"]) or story["title"]
         # Background: related recent coverage, so the Reel has real context and recent examples.
         related = [a for a in create_post.bing_articles(story["title"][:90], limit=6) if a["url"] != story["url"]][:3]
         background = []
@@ -2613,8 +2746,15 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     # The people the joke is about, not a random stock face (owner, 15 Oct 2026: Rahul Gandhi + Bhagwant Mann were
     # the story, the Reel showed a stranger): 'RAHUL VS MANN' card + their free Wikipedia photos (credited).
     people = [{"name": x["name"], "kind": x["kind"], "lookup": x["wiki"]} for x in best.get("people", [])][:3]
-    photos, credits = named_photos(people, fill_missing=True) if people else ([], [])
-    if credits:   # at least one real photo
+    # 🎥 Their OWN video of the moment first (owner, 16 Oct 2026), playing in the window (no sound, the song is added)
+    qv = quote_video(story["title"], sources[:1500], tmp)
+    video_start, video_credit = None, ""
+    photos, credits = ([], []) if qv and qv["own"] else (named_photos(people, fill_missing=True) if people else ([], []))
+    if qv and qv["own"]:
+        clip, secs, video_start = qv["path"], video_info(qv["path"])[2], qv["start"]
+        video_credit = f"Video: @{qv['handle']} on X"
+        status.step(f"Their own video: @{qv['handle']}", 4)
+    elif credits:   # at least one real photo
         status.step(f"Photos: {', '.join(x['name'] for x in people)}", 4)
         # As long as the hook window, so every photo gets the same time (owner, 15 Oct 2026: Mann had 1.3 s)
         secs = satire_hook_secs(best["claim"])
@@ -2634,11 +2774,13 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
 
     def caption_of(p):   # Wikipedia photos need their photographer + licence (owner, 15 Oct 2026)
         return g.full_caption({**p, "caption": p["caption"].strip() + (
-            "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")}, item)
+            "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "") +
+            (f"\n\n{video_credit}" if video_credit else "")}, item)
 
     def render(d):   # the dig over the clip stays until it's read (satire_hook_secs); later parts time themselves
         clip_dur = satire_hook_secs(d["post"]["claim"])
-        start = 0.0 if real else max(0.0, secs - clip_dur - 0.2)   # a short clip freezes on its last frame
+        start = video_start if video_start is not None else \
+            0.0 if real else max(0.0, secs - clip_dur - 0.2)   # a short clip freezes on its last frame
         return satire_reel(clip, start, clip_dur, d["post"]["claim"], d["post"]["context"], d["post"]["facts"],
                            d["post"]["punchline"], d["post"]["highlight"], out)
     status.step("Making the video + fact-checking", 5)

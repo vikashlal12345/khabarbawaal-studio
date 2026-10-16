@@ -1,5 +1,56 @@
 [
  {
+  "id": "cc5c8905c4ab",
+  "image": "posts/20261016-0454-cc5c8905c4ab.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261016-045437-cc5c8905c4ab.mp4",
+  "headline": "Prakash Raj laughs when asked about protesters assaulting women officers, says",
+  "tag": "🎬 REEL · POLITICS",
+  "caption": "Prakash Raj nice joke video | Prakash Raj women police Delhi protest\n\nReporter ne poocha ki protest mein mahila police officers par kathit taur par hamle hue. Prakash Raj hanse aur bole: \"Nice joke, very nice joke.\"\n\nDelhi Police ke mutabik protest ke dauran unki mahila officers ke saath badtameezi aur maarpit hui. Prakash Raj CEC Gyanesh Kumar ke khilaf protest ka samarthan kar rahe hain.\n\nKya mahila police par hamla mazaak hai? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#PrakashRaj #DelhiPolice #reelsindia #BreakingNews #India",
+  "source": "Inshorts - Stay Informed",
+  "source_url": "https://shrts.in/dx3uuijdt7",
+  "pin_comment": "Jo kehta hai ye mazaak nahi, use bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "protest vibe, serious tone"
+   },
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "toxic reaction = laughing at it"
+   },
+   {
+    "title": "Loser",
+    "artist": "Tame Impala",
+    "lang": "english",
+    "mood": "mocking, call-out feel"
+   },
+   {
+    "title": "Cold Shoulder",
+    "artist": "Drake, Don Toliver & Yebba",
+    "lang": "english",
+    "mood": "cold reaction to serious question"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Assault is only alleged (Delhi Police claim); slide stated it as fact.",
+    "Fact corrected to match the article: Article gives his reply; the 'not available' line is wrong and reads like an internal note."
+   ],
+   "fixed": [
+    "Mahila police ki pitai par hansi? → Mahila police par kathit hamle ke sawaal par hansi?",
+    "unka poora jawab article mein uplabdh nahi. → phir bole: Nice joke, very nice joke."
+   ]
+  },
+  "created_at": "2026-10-16T04:54:37+00:00"
+ },
+ {
   "id": "reel_clip_am-2026-10-16",
   "image": "posts/20261016-0334-reel_clip_am-2026-10-16.jpg",
   "kind": "reel",
@@ -803,95 +854,5 @@
    ]
   },
   "created_at": "2026-10-15T06:03:18+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-15",
-  "image": "posts/20261015-0432-reel_news_am-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-043219-reel_news_am-2026-10-15.mp4",
-  "headline": "Karisma Kapoor reveals Salman Khan refused to shoot with her over her ‘too open, clingy’ outfit in Dulhan Hum Le Jayenge",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Karisma Kapoor Salman Khan Koffee With Karan 🎬\nSalman Khan Koffee With Karan ke final season ke pehle guest bane.\nKarisma ne bataya Dulhan Hum Le Jayenge mein outfit ko lekar Salman ne shoot se mana kiya tha.\nUnke mutabiq outfit 'too open, clingy' laga.\nAapko kya lagta hai, Salman sahi the? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#salmankhan #karismakapoor #koffeewithkaran #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/karisma-kapoor-reveals-salman-khan-refused-to-shoot-with-her-over-her-too-open-clingy-outfit-in-dulhan-hum-le-jayenge-101792035143522.html",
-  "pin_comment": "Dulhan Hum Le Jayenge ka kaun sa gaana aapka favourite hai? Neeche batao.",
-  "songs": [
-   {
-    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
-    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
-    "lang": "hindi",
-    "mood": "filmy reunion vibe, light fun"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "old-school romance, Bollywood throwback"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "fun party gossip energy"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "chill, easygoing celeb chat"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-15T04:32:19+00:00"
- },
- {
-  "id": "reel_clip_am-2026-10-15",
-  "image": "posts/20261015-0422-reel_clip_am-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-042233-reel_clip_am-2026-10-15.mp4",
-  "headline": "Wo dost jo Diwali safai mein bolta hai: 'Ye purani cheez kaam aayegi.' Safai: 8 ghante. Kachra: zero.",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Diwali safai ka asli sach 🧹\nGhar chamka ya nahi, purani cheezein wapas almari mein 😂\nApne ghar mein ye kaun karta hai? Tag karo 👇\n\nFollow @khabarbawaal for daily bawaal 😂\n\n#diwali #diwalicleaning #viral #relatable #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Purana charger milega aur 'ye to kaam aayega' phir se aayega.",
-  "songs": [
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "playful, sneaky 'sirf dekh raha tha'"
-   },
-   {
-    "title": "Kiliye Kiliye - Afrobeat Mix",
-    "artist": "The Independeners, S. Janaki",
-    "lang": "hindi",
-    "mood": "upbeat festive cleaning energy"
-   },
-   {
-    "title": "lovely",
-    "artist": "Billie Eilish, Khalid",
-    "lang": "english",
-    "mood": "sad-funny, 8 ghante barbaad"
-   },
-   {
-    "title": "Headlights (feat. KIDDO)",
-    "artist": "Alok, Alan Walker",
-    "lang": "english",
-    "mood": "hype start, tired end"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-15T04:22:33+00:00"
  }
 ]

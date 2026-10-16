@@ -180,6 +180,8 @@ def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None,
     slides = render(data)
     fixed: list[str] = []
     fact_notes: list[str] = []
+    if strict:   # Reels: one more round, a dropped photo also takes one (owner, 16 Oct 2026)
+        rounds += 1
     for _ in range(rounds):
         result = check(slides, caption_of(data), strings(data), article)
         if result is None:
@@ -199,6 +201,17 @@ def run(render, data, caption_of, article: str = "", rounds: int = 3, drop=None,
             data = dropped
         if not fixes and dropped is None:
             doubts = [i["problem"] for i in result["issues"] if i.get("unverified")]
+            # A doubtful PHOTO (e.g. an unnamed person in a collage) costs that photo, not the whole Reel
+            # (owner, 16 Oct 2026: a Prakash Raj Reel fell back to a post over one collage).
+            photo_doubts = sorted({i["slide"] for i in result["issues"] if i.get("unverified") and i["slide"] >= 1})
+            if strict and doubts and drop and len(photo_doubts) == len(doubts):
+                retry = drop(data, photo_doubts)
+                if retry is not None:
+                    print(f"  proofread: dropped doubtful photo slide(s) {photo_doubts}")
+                    fixed.append(f"removed doubtful photo slide(s) {photo_doubts}")
+                    data = retry
+                    slides = render(data)
+                    continue
             if strict and doubts:
                 raise Unverified(f"a claim without a fact was left: {doubts[0][:150]}")
             issues = fact_notes + [f"Slide {i['slide']}: {i['problem']}" if i["slide"] else f"Caption: {i['problem']}"

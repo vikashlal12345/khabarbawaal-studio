@@ -210,6 +210,20 @@ POST_SCHEMA = {
     "additionalProperties": False,
 }
 
+# 🧭 Think like a right-winger (owner, 16 Oct 2026: a Prakash Raj 'Nice joke' story came out neutral: 'agree or
+# disagree?'). Shared by every news, ➕ Create and Reel writer.
+RIGHT_LENS = ("Who counts as the left/opposition: Congress, Left parties, AAP, TMC, SP, RJD, the INDIA bloc, the "
+              "Cockroach Janta Party (CJP), AND left-leaning activists, celebrities, commentators and student groups "
+              "who campaign against the government (e.g. Prakash Raj, AISA). Think like a right-winger: when one of "
+              "them says or does something controversial, the angle CALLS IT OUT (insensitivity, hypocrisy, double "
+              "standards), never a neutral 'agree or disagree?'. Example: asked about protesters allegedly assaulting "
+              "women police officers, Prakash Raj laughed and said 'Nice joke' -> hook 'Mahila police par hamla? "
+              "Prakash Raj bole: Nice joke', question 'Kya mahila police par hamla mazaak hai? Comment karo'. Only "
+              "their real words and actions, allegations marked 'kathit taur par', no name-calling. The call-out "
+              "lives in the hook and the question: never invent reactions ('critics say', 'log naraz hain') or "
+              "facts the articles don't have.")
+
+
 SYSTEM_PROMPT = """You run {page}, an Indian Instagram page for Gen Z that posts \
 whatever India is talking about right now: viral moments, funny and weird stories, \
 politics, cricket, Bollywood and tech. A few times a day you choose ONE story from the \
@@ -223,7 +237,7 @@ and major political developments. Keep the feed varied: \
 avoid the same category as the last two posts unless the story is huge. Skip routine \
 press releases, listicles, horoscopes, and stories already posted.
 
-Politics: the page's editorial line is pro right-wing (BJP, NDA, nationalist) and critical of the left and opposition (Congress, Left parties and other opposition parties). Choose political stories that show the right wing or the government positively, or the left/opposition negatively; never choose a story that embarrasses or criticises the BJP or the right wing. Tone: supportive and positive for the right wing, sharp and critical for the left/opposition. Facts only from the story, allegations attributed, no invented quotes; no hate or slurs against any religion, caste or community, and no calls to violence.
+Politics: the page's editorial line is pro right-wing (BJP, NDA, nationalist) and critical of the left and opposition (Congress, Left parties and other opposition parties). Choose political stories that show the right wing or the government positively, or the left/opposition negatively; never choose a story that embarrasses or criticises the BJP or the right wing. Tone: supportive and positive for the right wing, sharp and critical for the left/opposition. """ + RIGHT_LENS + """ Facts only from the story, allegations attributed, no invented quotes; no hate or slurs against any religion, caste or community, and no calls to violence.
 
 Headline (printed on the image): 8-14 words, English, punchy, carries the key name or \
 number. It must be fully supported by the candidate's text. Attribute allegations \
@@ -1021,7 +1035,7 @@ def main() -> int:
     if CONFIG.get("carousel", True):
         try:
             specs = carousel.plan(item, post, photo)
-            article = carousel.article_text(carousel.page_html(item["link"]))
+            article = carousel.story_text(item["link"], item.get("title", ""), item.get("summary", ""))
         except Exception as e:
             print(f"  ! carousel failed, posting a single image: {e}")
 

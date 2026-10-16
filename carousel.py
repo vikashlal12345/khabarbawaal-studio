@@ -143,6 +143,35 @@ class Collector:
         return len(self.items)
 
 
+def story_text(url: str, title: str = "", summary: str = "", limit: int = 6000) -> str:
+    """A story's text for the writer and the proofreader. App / short-news pages the reader can't open (owner,
+    16 Oct 2026: an Inshorts link gave 0 words, so a Prakash Raj Reel was blocked as 'unchecked') -> the summary
+    inside the page + the same story from 2 news sites."""
+    page = page_html(url) if url else ""
+    text = article_text(page, limit) if page else ""
+    if len(text) >= 400:
+        return text
+    m = re.search(r'"content"\s*:\s*"((?:[^"\\]|\\.){80,}?)"', page or "")
+    try:
+        inner = json.loads(f'"{m.group(1)}"') if m else ""
+    except ValueError:
+        inner = ""
+    parts = [text, inner or summary]
+    if title:
+        import create_post
+        own = urlsplit(url).netloc if url else ""
+        for a in create_post.bing_articles(title[:90], limit=6, newest=True):
+            if own and urlsplit(a["url"]).netloc == own:
+                continue
+            t = article_text(page_html(a["url"]), 2500)
+            if len(t) > 300:
+                parts.append(f"({a['site']}) {a['title']}\n{t}")
+            if len(parts) >= 4:
+                break
+    print(f"  story text: page gave {len(text)} chars, added summary + {len(parts) - 2} news article(s)")
+    return "\n\n".join(x for x in parts if x)[:limit + 5000]
+
+
 def article_text(page: str, limit: int = 6000) -> str:
     """Main story text: the article's paragraphs, joined."""
     body = page
