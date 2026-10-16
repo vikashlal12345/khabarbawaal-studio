@@ -284,7 +284,7 @@
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-15",
   "reel_news_aft": "2026-10-15",
-  "reel_poll": "2026-10-15",
+  "reel_poll": "2026-10-16",
   "reel_official": "2026-10-15",
   "reel_news_early": "2026-10-16"
  },
@@ -426,7 +426,8 @@
   "pb85004",
   "4536",
   "4706",
-  "pb83870"
+  "pb83870",
+  "4655"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -550,7 +551,14 @@
   "10441": "Free",
   "4594": "Free",
   "51385": "Free",
-  "47572": "Mixkit Restricted License"
+  "47572": "Mixkit Restricted License",
+  "25478": "Mixkit Restricted License",
+  "33243": "Mixkit Restricted License",
+  "24575": "Mixkit Restricted License",
+  "4655": "Free",
+  "21830": "Mixkit Restricted License",
+  "44591": "Free",
+  "44590": "Free"
  },
  "create_done": [
   "1791580482",
@@ -704,10 +712,6 @@
   }
  ],
  "songs_recent": [
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Gehra Hua",
-  "All The Stars",
-  "Heat Waves",
   "Azadi",
   "Tabaahi (From \"Toxic\")",
   "Blinding Lights",
@@ -743,10 +747,15 @@
   "Barsaat",
   "Rula Ke Gaya Ishq",
   "Espresso",
-  "Cold Shoulder"
+  "Cold Shoulder",
+  "His Aura Hits You",
+  "Boom Shaka",
+  "Die With A Smile",
+  "Believer"
  ],
  "poll_recent": [
-  "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?"
+  "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
+  "bollywood: Bollywood Khans: Saif's Kapil Show moment sparks the big Khan debate"
  ],
  "bachpan_recent": [
   "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam"

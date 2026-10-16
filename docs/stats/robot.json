@@ -3799,6 +3799,41 @@
      "tokens": 26738
     }
    }
+  },
+  "reel_poll": {
+   "posts": 0,
+   "requests": 8,
+   "input": 22,
+   "output": 4074,
+   "cache_read": 9787,
+   "cache_write": 99360,
+   "value_usd": 0.4392,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 17270
+    },
+    "poll writing": {
+     "requests": 1,
+     "tokens": 23894
+    },
+    "clip pick": {
+     "requests": 2,
+     "tokens": 35191
+    },
+    "clip look": {
+     "requests": 2,
+     "tokens": 14087
+    },
+    "clip search retry": {
+     "requests": 1,
+     "tokens": 14773
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 8028
+    }
+   }
   }
  }
 }
