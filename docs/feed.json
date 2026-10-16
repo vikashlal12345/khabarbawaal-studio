@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_am-2026-10-16",
+  "image": "posts/20261016-0503-reel_news_am-2026-10-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261016-050313-reel_news_am-2026-10-16.mp4",
+  "headline": "Why FRRO asked Imran Khan to leave India: The law, the notice, and the actor's options",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Imran Khan FRRO notice leave India explained 🚨\n10 October ke anti-CEC pradarshan ke paanch din baad FRRO ne Imran Khan ko notice bheja.\nNotice naye Immigration and Foreigners Act 2025 ke tahat hai.\nKya videshi nagrik ko pradarshan mein hissa lena chahiye? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#imrankhan #frro #breakingnews #india #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html",
+  "pin_comment": "Isse bahas karne wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Darkhaast",
+    "artist": "Mithoon, Arijit Singh, Sunidhi Chauhan, Sayeed Quadri",
+    "lang": "hindi",
+    "mood": "serious notice, tense mood"
+   },
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "protest theme, sharp contrast"
+   },
+   {
+    "title": "Under The Influence",
+    "artist": "Chris Brown",
+    "lang": "english",
+    "mood": "consequences, dramatic turn"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "serious, emotional news tone"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-16T05:03:13+00:00"
+ },
+ {
   "id": "cc5c8905c4ab",
   "image": "posts/20261016-0454-cc5c8905c4ab.jpg",
   "kind": "custom",
@@ -109,69 +154,6 @@
    ]
   },
   "created_at": "2026-10-16T03:34:01+00:00"
- },
- {
-  "id": "c3f9ec06f4eb",
-  "kind": "custom",
-  "image": "posts/20261016-0255-c3f9ec06f4eb-1.jpg",
-  "options": [
-   "posts/20261016-0255-c3f9ec06f4eb-1.jpg",
-   "posts/20261016-0255-c3f9ec06f4eb-2.jpg",
-   "posts/20261016-0255-c3f9ec06f4eb-3.jpg"
-  ],
-  "slides": [
-   "posts/20261016-0255-c3f9ec06f4eb-s2.jpg",
-   "posts/20261016-0255-c3f9ec06f4eb-s3.jpg",
-   "posts/20261016-0255-c3f9ec06f4eb-s4.jpg",
-   "posts/20261016-0255-c3f9ec06f4eb-s5.jpg"
-  ],
-  "headline": "Prakash Raj laughs when asked about protesters allegedly assaulting women police officers",
-  "tag": "POLITICS",
-  "caption": "Ek reporter ne sawaal pucha, aur jawab mein mili hansi 😬\nPrakash Raj CEC Gyanesh Kumar ke khilaf protests ko support kar rahe hain.\nReporter ne pucha ki protesters ne kathit taur par women police officers ko assault kiya, uspe kya kehna hai.\nReports ke mutabik Prakash Raj hans pade.\nUnpopular opinion: Women officers ki safety pe sawaal ho to hansi nahi, seedha jawab chahiye. Agree ya disagree?\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#trending #india #viral #prakashraj #politics",
-  "source": "Inshorts - Stay Informed",
-  "source_url": "https://shrts.in/dx3uuijdt7",
-  "pin_comment": "Sabse shocking part: sawaal women officers ki safety ka tha, jawab mein hansi mili. Ye serious sawaal tha ya joke? 🤔",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Slide exposes internal note about missing article; replace with a reported claim.",
-    "Fact corrected to match the article: The 'Nice joke' quote is not supported by the article (the slides themselves say the exact quote is unconfirmed).",
-    "Fact corrected to match the article: Unsupported quote removed."
-   ],
-   "fixed": [
-    "Full article uplabdh nahi hai, isliye Prakash Raj ka exact quote aur latest update abhi confirm nahi hua. → Reports ke mutabik Prakash Raj sawaal par hans pade.",
-    "Reports ke mutabik Prakash Raj hans pade, aur kaha 'Nice joke'. → Reports ke mutabik Prakash Raj hans pade.",
-    "Reports ke mutabik Prakash Raj hans pade, bole 'Nice joke' → Reports ke mutabik Prakash Raj hans pade"
-   ]
-  },
-  "created_at": "2026-10-16T02:55:29+00:00"
- },
- {
-  "id": "c98c1433bc92",
-  "kind": "custom",
-  "image": "posts/20261016-0252-c98c1433bc92-1.jpg",
-  "options": [
-   "posts/20261016-0252-c98c1433bc92-1.jpg",
-   "posts/20261016-0252-c98c1433bc92-2.jpg",
-   "posts/20261016-0252-c98c1433bc92-3.jpg"
-  ],
-  "slides": [
-   "posts/20261016-0252-c98c1433bc92-s2.jpg",
-   "posts/20261016-0252-c98c1433bc92-s3.jpg",
-   "posts/20261016-0252-c98c1433bc92-s4.jpg"
-  ],
-  "headline": "Prakash Raj laughs, says 'Nice joke' when asked about protesters allegedly assaulting women officers",
-  "tag": "POLITICS",
-  "caption": "Ek reporter ne sawal poocha, Prakash Raj ne hansi mein uda diya 😬\nWoh CEC Gyanesh Kumar ke khilaf protests ko support kar rahe hain.\nSawal tha ki protesters ne women police officers ko allegedly assault kiya, uspe kya kehna hai.\nReport ke mutabik unka jawab tha 'Nice joke'.\nHasna sahi tha to 🔥, galat tha to 🤡\n\nFollow @khabarbawaal for daily updates.\nSource: Inshorts - Stay Informed (link pinned in comments 👇)\n\n#trending #india #viral #prakashraj #politics",
-  "source": "Inshorts - Stay Informed",
-  "source_url": "https://shrts.in/dx3uuijdt7",
-  "pin_comment": "Sabse awkward part: sawal women officers ke alleged assault ka tha, aur jawab mein hansi aayi. Tum is reaction ko kya rating doge? 🤔",
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-16T02:52:35+00:00"
  },
  {
   "id": "reel_news_early-2026-10-16",
@@ -347,67 +329,6 @@
    ]
   },
   "created_at": "2026-10-15T14:32:47+00:00"
- },
- {
-  "id": "reel_politics-photos-1937",
-  "image": "posts/20261015-1407-reel_politics-photos-1937.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-140749-reel_politics-photos-1937.mp4",
-  "headline": "📸 Photo version: INDIA Bloc Family (2 members) Rahul: Mann ji jawab do AAP: jawab abhi pending",
-  "tag": "📸 PHOTO VERSION · REALITY CHECK",
-  "caption": "Rahul Gandhi vs Bhagwant Mann: INDIA bloc ke saathi Punjab mein aamne-saamne 📱\nCongress ne Mann sarkar se drugs par jawab maanga, AAP ka group chat mein reply pending.\nIs group chat ko apne dost ko bhejo.\n\nPhotos (Wikimedia Commons): Rahul: Himanshu Arya Khowal (CC BY 4.0); Mann: Gurvinder Singh brar GSB (CC BY-SA 4.0)\n\nFollow @khabarbawaal for daily updates.\nSource: India TV News (link pinned in comments 👇)\n\n#reelsindia #indiabloc #rahulgandhi #aapvscongress #politicalmemes",
-  "source": "India TV News",
-  "source_url": "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
-  "pin_comment": "INDIA bloc mein agla jhagda kahan hoga? Comment karo.",
-  "songs": [
-   {
-    "title": "Barsaat",
-    "artist": "Banjaare, Roni",
-    "lang": "hindi",
-    "mood": "sawalon ki barsaat, group chat drama"
-   },
-   {
-    "title": "Samjhawan",
-    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "manane ki koshish, naraaz saathi"
-   },
-   {
-    "title": "Love Me Not",
-    "artist": "Ravyn Lenae",
-    "lang": "english",
-    "mood": "hum saath nahi, par saath hain"
-   },
-   {
-    "title": "Earrings",
-    "artist": "Malcolm Todd",
-    "lang": "english",
-    "mood": "chill reaction, group chat seen"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Invented quote attributed to Kejriwal; article has no Kejriwal statement",
-    "Fact corrected to match the article: Article gives no date for seat sharing; 'Jun' unsupported",
-    "Fact corrected to match the article: Article gives no month; 'Jun' unsupported",
-    "Fact corrected to match the article: Seat-sharing claim not in article; replaced with what the article reports",
-    "Fact corrected to match the article: Source must match the article",
-    "Fact corrected to match the article: 13-seat claim not in article; replaced with attributed allegation from the article",
-    "Fact corrected to match the article: Source must match the article"
-   ],
-   "fixed": [
-    "Kejriwal: Delhi group mein yeh sawal nahi tha → AAP: jawab abhi pending",
-    "Jun 2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante → 2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante",
-    "Jun 2024 Punjab: dono partiyan saari 13 seat par alag lade → 2024 Punjab: dono partiyan saari 13 seat par alag lade",
-    "2024 Delhi: Congress aur AAP ne Lok Sabha ke liye seat baante → Mansa: activist Parminder Singh Jhota ko din-dahade goli maari gayi",
-    "The Hindu → India TV News",
-    "2024 Punjab: dono partiyan saari 13 seat par alag lade → Rahul ka aarop: Jhota ki shikayat par police ne unhi par case kiya",
-    "Election Commission → India TV News"
-   ]
-  },
-  "created_at": "2026-10-15T14:07:49+00:00"
  },
  {
   "id": "reel_meme-2026-10-15",
@@ -612,56 +533,6 @@
    "fixed": []
   },
   "created_at": "2026-10-15T10:32:14+00:00"
- },
- {
-  "id": "reel_news_aft-2026-10-15",
-  "image": "posts/20261015-0934-reel_news_aft-2026-10-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261015-093403-reel_news_aft-2026-10-15.mp4",
-  "headline": "Goa-based airline Fly91 surprises young pilot by bringing her parents onboard: ‘Imagine the pride’",
-  "tag": "🎬 REEL · VIRAL",
-  "caption": "Fly91 pilot parents surprise ❤️\nGoa ki airline Fly91 ne apni young pilot ko surprise diya.\nUske parents ko uski pehli flights mein se ek par onboard bulaya gaya.\nIski photos dekh ke aankhein nam ho jaayengi. Apne parents ko tag karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: Hindustan Times (link pinned in comments 👇)\n\n#fly91 #pilot #heartwarming #viral #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/goabased-airline-fly91-surprises-young-pilot-by-bringing-her-parents-onboard-imagine-the-pride-101792049440473.html",
-  "pin_comment": "Apne maa-baap ko tag karo jinhe tumne proud feel karaya ya karwaoge!",
-  "songs": [
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "warm, emotional family moment"
-   },
-   {
-    "title": "Tenu Sang Rakhna (From \"Jigra\")",
-    "artist": "Varun Grover, Achint",
-    "lang": "hindi",
-    "mood": "bond with family, heart-warming"
-   },
-   {
-    "title": "People",
-    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
-    "lang": "english",
-    "mood": "soft feel-good emotion"
-   },
-   {
-    "title": "I Think They Call This Love (Cover)",
-    "artist": "Matthew Ifield",
-    "lang": "english",
-    "mood": "gentle, touching love for parents"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The article mentions only pictures shared on X, not a video"
-   ],
-   "fixed": [
-    "gurur → garv",
-    "Iska video dekh ke → Iski photos dekh ke"
-   ]
-  },
-  "created_at": "2026-10-15T09:34:03+00:00"
  },
  {
   "id": "reel_bachpan-2026-10-15",
