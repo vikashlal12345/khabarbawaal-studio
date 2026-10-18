@@ -1,0 +1,157 @@
+name: Hourly post
+
+# Two ways this runs every hour:
+#  1. A chain: after each post, the "next" job waits until the next :07 and starts
+#     this workflow again (workflow_dispatch from GITHUB_TOKEN is allowed to do that).
+#  2. GitHub's own timer (schedule) as a backup. It also restarts the chain if it broke.
+# --min-gap 40 on timed runs stops double posts when both fire in the same hour.
+on:
+  schedule:
+    # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
+    - cron: "30 0,3,6,9,12 * * *"               # IST 6, 9 AM, 12, 3, 6 PM (Reels)
+    - cron: "0 2,5,8,11,14,15,16 * * *"         # IST 7:30, 10:30 AM, 1:30, 4:30, 7:30, 8:30, 9:30 PM (Reels)
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: "Post type"
+        type: choice
+        options: [auto, news, fun, top10_viral, top10_day, thought, market_open, market_preopen, market_close,
+                  night_roundup, night_ready, night_calendar, night_picture, night_jokes, night_learn,
+                  reel_devotion, reel_clip_am, reel_clip, reel_politics, reel_meme, reel_news,
+                  reel_news_am, reel_news_pm, reel_top5_am, reel_top5, ready_gita,
+                  reel_news_early, reel_news_noon, reel_news_aft, reel_news_night, reel_poll, reel_bachpan, reel_official]
+        default: auto
+      test_alert:
+        description: "Also send a test alert email"
+        type: boolean
+        default: false
+      chain:
+        description: "Timed run from the chain (leave unticked for an instant post)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+  actions: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    concurrency:
+      group: hourly-post        # takes turns with "Create post" requests
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      # Membership mode: token from `claude setup-token` (uses your Claude plan, no API bill).
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      # Paid mode, only if you ever add this secret.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PUSH_VAPID_KEY: ${{ secrets.PUSH_VAPID_KEY }}   # 🔔 phone alerts (push.py)
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}   # 🎬 free stock videos/photos
+      TIMED: ${{ github.event_name == 'schedule' || inputs.chain }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Install Claude Code (membership mode)
+        if: env.CLAUDE_CODE_OAUTH_TOKEN != ''
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Is the chain alive? (backup timer runs only step in if not)
+        id: chain
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          busy=$(gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 20 --json databaseId,status \
+            -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and .status != \"completed\")] | length")
+          echo "skip=$([ "$busy" != "0" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          [ "$busy" != "0" ] && echo "Chain is running: backup timer does nothing." || true
+
+      - name: Create post
+        if: steps.chain.outputs.skip != 'true'
+        run: |
+          python push.py --before
+          GAP=0; [ "$TIMED" = "true" ] && GAP=20
+          python generate.py --kind "${{ inputs.kind || 'auto' }}" --min-gap "$GAP"
+
+      - name: Email alerts (as GitHub issues)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python notify.py
+          if [ "${{ inputs.test_alert }}" = "true" ]; then python notify.py --test; fi
+
+      - name: Save post to repo
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "New post $(date -u +%Y-%m-%dT%H:%MZ)"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Phone alert (🔔 new posts, now live in the app)
+        run: python push.py --after
+
+  next:
+    # Keeps the hourly chain going. Runs even if the post failed, so one bad hour
+    # doesn't stop the robot.
+    needs: generate
+    if: always() && (github.event_name == 'schedule' || inputs.chain)
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Wait for the next posting slot, then start the next run
+        run: |
+          busy() {   # other hourly runs that are running or waiting (any trigger)
+            gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 20 --json databaseId,status \
+              -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and .status != \"completed\")] | length"
+          }
+          queued_chain() {   # a chain run already dispatched and waiting to start
+            gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -e workflow_dispatch -L 20 --json databaseId,status \
+              -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and (.status == \"queued\" or .status == \"pending\" or .status == \"waiting\"))] | length"
+          }
+          # A timer run only (re)starts the chain if nothing else is running (the chain sleeps
+          # inside a running job, so a live chain always shows up here).
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(busy)" != "0" ]; then
+            echo "Chain already running: nothing to do."; exit 0
+          fi
+          wait=$(python3 schedule.py next-wait)   # next posting slot (IST); skips quiet hours
+          [ "$wait" -gt 19800 ] && wait=19800   # a job can run 6 hours max: hand over after 5h30m
+          echo "Next run in $((wait / 60)) minutes (checking the inbox for ➕ Create requests meanwhile)"
+          python3 inbox_watch.py "$wait"
+          # Watchdog: a run stuck "queued" (GitHub never gave it a computer) blocks every post behind it.
+          gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -L 30 --json databaseId,status,createdAt \
+            -q ".[] | select(.databaseId != $GITHUB_RUN_ID and (.status == \"queued\" or .status == \"pending\" or .status == \"waiting\") and ((now - (.createdAt | fromdateiso8601)) > 1200)) | .databaseId" |
+            while read -r stuck; do echo "Cancelling stuck run $stuck"; gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$stuck/force-cancel" || true; done
+          # If two chains ever run side by side, only one may continue: wait a random moment,
+          # then step aside if another run was started in the last 5 minutes.
+          sleep $((RANDOM % 40))
+          recent=$(gh run list -R "$GITHUB_REPOSITORY" -w hourly.yml -e workflow_dispatch -L 10 --json databaseId,createdAt \
+            -q "[.[] | select(.databaseId != $GITHUB_RUN_ID and ((now - (.createdAt | fromdateiso8601)) < 300))] | length")
+          if [ "$(queued_chain)" != "0" ] || [ "$recent" != "0" ]; then echo "Another chain run already started."; exit 0; fi
+          gh workflow run hourly.yml -R "$GITHUB_REPOSITORY" -f chain=true

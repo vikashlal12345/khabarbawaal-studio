@@ -1,0 +1,309 @@
+"""Fun posts: original, family-friendly Hinglish humour made to be forwarded.
+
+Written by Claude on the membership (same CLI as news posts), riffing on today's
+trending headlines. When that is unavailable, a fresh (under fun_bank_max_age_days)
+unused post from assets/fun_bank.json is used; if none is fresh, a news post is made.
+    python fun.py --bank 25   -> drop expired bank posts, add 25 new ones (uses the membership)
+"""
+from __future__ import annotations
+
+import json
+import os
+import random
+import subprocess
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).parent
+BANK_FILE = ROOT / "assets" / "fun_bank.json"
+
+FUN_TAGS = ["TAG KARO", "RELATABLE", "DESI LIFE", "MOOD", "EXPECTATION VS REALITY",
+            "THIS OR THAT", "FAMILY GROUP", "DOSTI", "OFFICE LIFE", "STUDENT LIFE"]
+
+FUN_POST = {
+    "type": "object",
+    "properties": {
+        "tag": {"type": "string", "enum": FUN_TAGS},
+        "card_text": {"type": "string",
+                      "description": "Text printed on the image. Max 30 words, no emojis, "
+                                     "use \\n line breaks for structure (e.g. Expectation:/Reality:)."},
+        "highlight": {"type": "array", "items": {"type": "string"},
+                      "description": "1-3 words copied exactly from card_text to colour"},
+        "caption": {"type": "string"},
+        "pin_comment": {"type": "string",
+                        "description": "First comment we pin under the post: a funny follow-up line for THIS joke"},
+        "hashtags": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["tag", "card_text", "highlight", "caption", "pin_comment", "hashtags"],
+    "additionalProperties": False,
+}
+
+FUN_SYSTEM = """You write original funny posts for {page}, an Indian Instagram page \
+for 18-35 year olds. Each post must make people laugh and want to forward it to friends, \
+siblings, cousins, office groups and family WhatsApp groups.
+
+Style: Hinglish (Hindi in English letters only, never Devanagari script mixed with simple English), short, punchy, \
+instantly relatable everyday Indian life — moms, dads, siblings, dosti, padosi, \
+relatives, office, college, exams, traffic, weddings, food, cricket, Monday, salary day, \
+online shopping, festivals, weather. Mix the formats: "tag that friend who...", \
+relatable observations, expectation vs reality, this-or-that questions, mood posts.
+
+Freshness is everything: every post must feel new today. Never use classic or \
+recycled jokes — no Santa-Banta, Pappu, husband-wife or mother-in-law jokes, no old \
+WhatsApp forwards, no joke formats people have seen a hundred times.
+
+Rules (the page must stay safe to share with family):
+- Clean humour only. No jokes about religion, caste, region, skin colour, body shape, \
+gender stereotypes, disabilities, politicians or real private people. No adult jokes.
+- Trending topics: joke about the situation everyone is talking about, never insult a \
+real person, and never joke about deaths, accidents, crimes or disasters.
+- Original: do not copy famous jokes or memes word for word.
+- card_text: max 30 words, NO emojis (the image font can't show them).
+- caption: 2-3 short Hinglish lines with 1-3 emojis. The last line makes people comment, tag \
+or share, and must be specific to this joke. Vary it, don't always use "Tag karo us dost ko...": \
+e.g. "Ghar mein ye kaun karta hai? Mummy ya Papa? 👇", "Ek emoji mein apna Monday batao", \
+"Agar tumhare saath bhi hua hai to 😭 drop karo", "Family group mein bhejo, dekhte hain kaun pakda jaata hai".
+- pin_comment: our pinned first comment, max 20 words: a funny follow-up line or twist on THIS \
+joke (like a friend replying in the comments), or a quick this-or-that question. Not a copy of \
+the caption's last line, no hashtags.
+- hashtags: exactly 5, the most popular high-reach hashtags relevant to the post (mix big ones like #viral #trending #india #bollywood #cricket with 1-2 specific ones), no brand tag."""
+
+
+# ---------------------------------------------------------------- usage stats
+# Every Claude call reports its exact token usage; it's collected here per run and
+# added to docs/stats/robot.json (shown on the app's Stats page).
+CURRENT_JOB = "other"
+USAGE: list[dict] = []
+
+
+def log_usage(result: dict, purpose: str) -> None:
+    u = result.get("usage") or {}
+    USAGE.append({"job": CURRENT_JOB, "purpose": purpose,
+                  "input": u.get("input_tokens", 0), "output": u.get("output_tokens", 0),
+                  "cache_read": u.get("cache_read_input_tokens", 0),
+                  "cache_write": u.get("cache_creation_input_tokens", 0),
+                  "value_usd": result.get("total_cost_usd", 0) or 0})
+
+
+def flush_usage(posts: int = 1) -> None:
+    """Add this run's usage to today's totals (IST) in docs/stats/robot.json; keeps 35 days."""
+    path = ROOT / "docs" / "stats" / "robot.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    stats = json.loads(path.read_text()) if path.exists() else {}
+    day = (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).date().isoformat()
+    jobs = stats.setdefault(day, {})
+    job = jobs.setdefault(CURRENT_JOB, {"posts": 0, "requests": 0, "input": 0, "output": 0,
+                                        "cache_read": 0, "cache_write": 0, "value_usd": 0.0, "by_purpose": {}})
+    job["posts"] += posts
+    for u in USAGE:
+        job["requests"] += 1
+        for k in ("input", "output", "cache_read", "cache_write"):
+            job[k] += u[k]
+        job["value_usd"] = round(job["value_usd"] + u["value_usd"], 4)
+        p = job["by_purpose"].setdefault(u["purpose"], {"requests": 0, "tokens": 0})
+        p["requests"] += 1
+        p["tokens"] += u["input"] + u["output"] + u["cache_read"] + u["cache_write"]
+    for old in sorted(stats)[:-35]:
+        del stats[old]
+    path.write_text(json.dumps(stats, indent=1))
+    USAGE.clear()
+
+
+def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300, purpose: str = "writing",
+                folder: str | None = None) -> dict:
+    """folder: a directory with images the model may open (Read tool), e.g. video frames."""
+    tools = ["--tools", "Read", "--allowedTools", "Read"] if folder else ["--tools", ""]
+    cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json", *tools,
+           "--model", model, "--system-prompt", system, "--json-schema", json.dumps(schema)]
+    proc = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=timeout, cwd=folder)
+    try:
+        result = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        raise RuntimeError(f"Claude CLI failed: {(proc.stderr or proc.stdout)[:300]}")
+    log_usage(result, purpose)
+    if result.get("is_error") or not result.get("structured_output"):
+        raise RuntimeError(f"Claude CLI error: {str(result.get('result'))[:300]}")
+    return result["structured_output"]
+
+
+def normalize(post: dict) -> dict:
+    """The model sometimes writes line breaks as a literal backslash-n; make them real."""
+    post["card_text"] = post["card_text"].replace("\\n", "\n").strip()
+    post["caption"] = post["caption"].replace("\\n", "\n").strip()
+    return post
+
+
+def today_context() -> str:
+    ist = datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)
+    return f"Today in India: {ist.strftime('%A, %d %B %Y')}, around {ist.strftime('%I %p')}."
+
+
+OPTIONS_SCHEMA = {
+    "type": "object",
+    "properties": {"options": {"type": "array", "items": {
+        "type": "object",
+        "properties": {"based_on": {"type": "string", "description": "The big trend/topic this joke is about"},
+                       **FUN_POST["properties"]},
+        "required": ["based_on"] + FUN_POST["required"], "additionalProperties": False},
+        "description": "Exactly 3 different jokes"}},
+    "required": ["options"], "additionalProperties": False,
+}
+
+JUDGE_SCHEMA = {
+    "type": "object",
+    "properties": {"scores": {"type": "array", "items": {
+        "type": "object",
+        "properties": {"option": {"type": "integer"}, "understandable": {"type": "integer"},
+                       "funny": {"type": "integer"}, "fresh": {"type": "integer"}, "why": {"type": "string"}},
+        "required": ["option", "understandable", "funny", "fresh", "why"], "additionalProperties": False}}},
+    "required": ["scores"], "additionalProperties": False,
+}
+
+JOKE_RULES = """Write jokes ONLY about things almost every young Indian already knows today: what India is \
+searching (Google Trends), the biggest stories everyone is talking about, the day of the week, the season \
+or festival, exams, cricket matches, big movie releases, weather, prices. NEVER joke about a small or niche \
+news story the reader would need explained: if a stranger can't get the joke without reading an article, don't.
+Second style (also great): RELATABLE DESI-LIFE MOMENTS that need no news at all, told first person and \
+deadpan, with unexpected timing. Example that did well: "Ghar mein jhagda chal raha tha, aur beech mein hi \
+meri half-hour wali potty aa gayi." Think: awkward timing, ghar ke jhagde, mummy logic, siblings, sleep, \
+food cravings, phone at 1%, office/college moments. Light awkward or toilet humour is fine, nothing gross.
+Format: short and punchy, max 20 words on the card, ONE clear punchline. Use Gen Z meme formats: \
+"POV: ...", "Nobody: ... / Me: ...", "Me after ...", "Expectation: ... / Reality: ...", "Tag that friend who ...". \
+No long dialogues, max 2 speakers."""
+
+
+class NoGoodJoke(Exception):
+    """No option passed the judge; .scores = the judge's scores and reasons (for a rewrite)."""
+    scores: list = []
+
+
+def google_trends() -> list[str]:
+    """What India is searching today (Google Trends daily RSS, free)."""
+    import re
+    import urllib.request
+    try:
+        with urllib.request.urlopen("https://trends.google.com/trending/rss?geo=IN", timeout=15) as r:
+            xml = r.read().decode("utf-8", "ignore")
+    except Exception:
+        return []
+    return [t for t in re.findall(r"<title>([^<]+)</title>", xml)[1:21]]
+
+
+def x_trends() -> list[tuple[str, int]]:
+    """What India talks about on X (Twitter) in the last 24 h, from trends24.in (free, no key):
+    [(trend, hours it trended)], most hours first. (owner, 12 Oct 2026: Google Trends missed the
+    day's most viral political story; it trended on X.)"""
+    import html
+    import re
+    import urllib.request
+    from collections import Counter
+    try:
+        req = urllib.request.Request("https://trends24.in/india/", headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            page = r.read().decode("utf-8", "ignore")
+    except Exception:
+        return []
+    hours, best = Counter(), {}
+    for card in re.findall(r'<ol class="?trend-card__list"?>(.*?)</ol>', page, re.S)[:24]:   # one card an hour
+        for rank, name in enumerate(re.findall(r'class="?trend-link"?>([^<]+)</a>', card), 1):
+            name = html.unescape(name).strip()
+            hours[name] += 1
+            best[name] = min(best.get(name, 99), rank)
+    return sorted(hours.items(), key=lambda kv: (-kv[1], best[kv[0]]))
+
+
+def write_fun_post(config: dict, recent: list[str], trending: list[str], used_topics: list[str],
+                   endings: str = "") -> dict:
+    """3 options on big, widely-known trends; a 'young Indian' judge scores them; the best is used.
+    Raises NoGoodJoke if none is clear and funny enough (the slot then posts news)."""
+    system = FUN_SYSTEM.format(page=config["page_name"]) + "\n\n" + JOKE_RULES
+    searches = google_trends()
+    user = (f"{today_context()}\n\n"
+            f"What India is searching on Google today:\n" + ("\n".join(f"- {t}" for t in searches) or "(unavailable)") +
+            f"\n\nToday's big headlines (use only ones nearly everyone knows):\n" + "\n".join(f"- {t}" for t in trending[:15]) +
+            f"\n\nTopics already joked about recently (don't reuse):\n" + ("\n".join(f"- {t}" for t in used_topics[-30:]) or "(none)") +
+            f"\n\nRecent fun posts (don't repeat ideas):\n" + ("\n".join(f"- {r}" for r in recent[-20:]) or "(none)") +
+            (f"\n\nOur recent caption endings (use a different style):\n{endings}" if endings else "") +
+            "\n\nWrite exactly 3 different jokes: option 1 on a widely-known trend, options 2 and 3 as "
+            "relatable desi-life moments (different situations).")
+    model = config.get("membership_model", "sonnet")
+    options = [normalize(o) for o in claude_json(system, user, OPTIONS_SCHEMA, model)["options"]][:3]
+    best = judge_best(options, lambda o: o["card_text"], model)
+    print(f"  joke based on: {best['based_on']}")
+    return best
+
+
+def judge_best(options: list[dict], text_of, model: str, judge_system: str = "", min_fresh: int = 0,
+               fallback: bool = False, min_clear: int = 7) -> dict:
+    """A strict 'young Indian' judge scores the options; the best clear (>=7) and funny (>=6) one wins.
+    Raises NoGoodJoke if none passes. judge_system: a different judge (e.g. for political satire);
+    min_fresh: also needs fresh >= this (satire: no repeats of recent Reels)."""
+    judge_system = judge_system or (
+        "You are a 21-year-old from Delhi who lives on Instagram memes. Rate each joke 1-10 for: "
+        "understandable (instantly gets it without any context or article), funny (would you actually "
+        "laugh / send it to your group), fresh (feels new, not an old forward). Be strict.")
+    listing = "\n\n".join(f"Option {n}: {text_of(o)}\n(topic: {o['based_on']})" for n, o in enumerate(options, 1))
+    scores = claude_json(judge_system, listing, JUDGE_SCHEMA, model, purpose="joke judge")["scores"]
+    best, best_score = None, -1
+    for s in scores:
+        if not 1 <= s["option"] <= len(options):
+            continue
+        total = 0.5 * s["understandable"] + 0.35 * s["funny"] + 0.15 * s["fresh"]
+        print(f"  option {s['option']}: understandable {s['understandable']}, funny {s['funny']}, fresh {s['fresh']}")
+        if s["understandable"] >= min_clear and s["funny"] >= 6 and s["fresh"] >= min_fresh and total > best_score:
+            best, best_score = options[s["option"] - 1], total
+    if best is None:
+        if fallback and scores:   # the owner's own idea: the best one anyway
+            top = max((s for s in scores if 1 <= s["option"] <= len(options)),
+                      key=lambda s: 0.5 * s["understandable"] + 0.35 * s["funny"] + 0.15 * s["fresh"], default=None)
+            if top:
+                print(f"  below the judge's bar, but it's the owner's idea: option {top['option']}")
+                return options[top["option"] - 1]
+        err = NoGoodJoke("no joke was clear and funny enough")
+        err.scores = scores
+        raise err
+    return best
+
+
+def post_key(post: dict) -> str:
+    import hashlib
+    return hashlib.sha1(post["card_text"].strip().encode()).hexdigest()[:12]
+
+
+def bank_post(used: set[str], max_age_days: int) -> dict | None:
+    """An unused bank post written within max_age_days, or None (then post news instead)."""
+    bank = json.loads(BANK_FILE.read_text()) if BANK_FILE.exists() else []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=max_age_days)).date().isoformat()
+    fresh = [p for p in bank if p.get("added", "") >= cutoff and post_key(p) not in used]
+    return normalize(dict(random.choice(fresh))) if fresh else None
+
+
+def grow_bank(count: int, config: dict) -> None:
+    bank = json.loads(BANK_FILE.read_text()) if BANK_FILE.exists() else []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=config.get("fun_bank_max_age_days", 14))).date().isoformat()
+    bank = [p for p in bank if p.get("added", "") >= cutoff]  # expired jokes go
+    schema = {"type": "object", "properties": {"posts": {"type": "array", "items": FUN_POST}},
+              "required": ["posts"], "additionalProperties": False}
+    system = FUN_SYSTEM.format(page=config["page_name"])
+    while count > 0:
+        n = min(count, 25)
+        existing = "\n".join(f"- {p['card_text']}" for p in bank[-60:]) or "(none)"
+        user = (f"Write {n} different posts, spread across all formats ({', '.join(FUN_TAGS)}). "
+                f"Avoid seasonal or date-specific jokes: these are kept in a bank and used any day.\n\n"
+                f"Already in the bank (don't repeat):\n{existing}")
+        posts = claude_json(system, user, schema, config.get("membership_model", "sonnet"), timeout=900)["posts"]
+        today = datetime.now(timezone.utc).date().isoformat()
+        bank += [dict(normalize(p), added=today) for p in posts]
+        count -= len(posts)
+        BANK_FILE.write_text(json.dumps(bank, ensure_ascii=False, indent=1))
+        print(f"bank: {len(bank)} posts")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[1] == "--bank":
+        CURRENT_JOB = "fun bank"
+        grow_bank(int(sys.argv[2]), json.loads((ROOT / "config.json").read_text()))
+        flush_usage(posts=0)
+    else:
+        print(__doc__)
