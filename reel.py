@@ -270,6 +270,8 @@ def series_line(kind: str) -> tuple[str, str]:
         return f"Roz {at(kind)} naya Reality Check", f"roz {at(kind)} naya Reality Check 🎯"
     if kind == "reel_bachpan":
         return f"Roz {at(kind)} naya Bachpan", f"roz {at(kind)} naya Bachpan, miss mat karna 🧒"
+    if kind == "reel_rotate":
+        return f"Roz {at(kind)} naya comedy", f"roz {at(kind)} naya comedy: bachpan, memes, tag karo 😂"
     if kind == "reel_official":
         return f"Roz {at(kind)} neta ka kadak bayan", f"roz {at(kind)} neta ka kadak bayan 🇮🇳"
     return "roz ki khabar + memes", "roz ki khabar + memes 🔥"
@@ -614,7 +616,7 @@ def read_secs(text: str, base: float = 1.5, per_word: float = 0.25) -> float:
     """Time on screen to read a block of text in full: base + 0.25 s a word (owner, 11 Oct 2026, all Reels;
     12 Oct 2026: "a couple of seconds more, not double": callers add 1 s a text screen, 2 s to Tag that friend)."""
     return base + per_word * len(text.split())
-CLIP_KINDS = ("reel_clip", "reel_clip_am")   # "Tag that friend" clip Reels (1 PM and 8 AM)
+CLIP_KINDS = ("reel_clip", "reel_clip_am", "reel_comedy")   # clip Reels: Tag that friend + 🎭 comedy (rotating slot)
 
 REEL_RULES = """This joke becomes a short Instagram REEL: a free stock video clip (Mixkit) with our text on top.
 The clip must be something a stock-video site has: everyday people doing everyday things (lying in bed \
@@ -774,7 +776,10 @@ def write_joke(kind: str, state: dict, evergreen: bool = False, topic: str = "",
     import fun
     import generate as g
     system = fun.FUN_SYSTEM.format(page=CONFIG["page_name"]) + "\n\n" + fun.JOKE_RULES + "\n\n" + REEL_RULES
-    style = ("Style: TAG THAT FRIEND: the text describes that one friend everyone has."
+    style = ("Style: DESI COMEDY: a short, funny, relatable desi-life situation told in 2 lines: the setup, then a "
+             "deadpan punchline (family, office, college, trains, weddings, phones, food). Not 'that friend' and not "
+             "a meme template. The text is the whole joke." if kind == "reel_comedy" else
+             "Style: TAG THAT FRIEND: the text describes that one friend everyone has."
              if kind in CLIP_KINDS else
              "Style: classic meme Reel: a setup that builds up, then a punchline (\"Me at...\", \"Me after...\", "
              "\"POV: ...\") landing on a REACTION clip (shocked, panicking, laughing, crying, facepalm, dancing...).")
@@ -1724,7 +1729,8 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
             dur = min(max(CLIP_SECONDS, read_secs(d["text"], 4.5)), CLIP_MAX)
             start = 0.0 if real else max(0.0, min(1.0, secs - dur - 0.2))
             hold = max(0.0, dur - (secs - 0.2 - start))   # a short clip freezes on its last frame
-            return clip_reel(clip, start, dur, "TAG THAT FRIEND", d["text"], d["highlight"], out, hold=hold,
+            return clip_reel(clip, start, dur, "DESI COMEDY" if kind == "reel_comedy" else "TAG THAT FRIEND", d["text"],
+                             d["highlight"], out, hold=hold,
                              opener=d.get("opener", ""), framed=framed)
     else:
         def render(d):   # build-up, then the punchline: each 2.5 s + 0.25 s a word (owner, 12 Oct 2026: +1 s)
@@ -1760,7 +1766,7 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     state["recent_reels"] = (state.get("recent_reels", []) + [printable(text).replace("\n", " ")])[-60:]
     return frames[-1], out, {
         "headline": printable(text).replace("\n", " "),
-        "tag": "🎬 REEL · " + ("TAG THAT FRIEND" if kind in CLIP_KINDS else "MEME"),
+        "tag": "🎬 REEL · " + ("DESI COMEDY" if kind == "reel_comedy" else "TAG THAT FRIEND" if kind in CLIP_KINDS else "MEME"),
         "caption": g.limit_hashtags(caption_of(post)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": post.get("pin_comment", ""), "songs": songs, "proof": proof}
 
@@ -1768,6 +1774,27 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
 def make_joke_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     cover, mp4, entry = build_joke_reel(kind, state, tmp)
     save_reel(feed, state, cover, mp4, f"{kind}-{today}", entry)
+
+
+ROTATE_FORMATS = ("bachpan", "friend", "meme", "comedy")   # 7:45 PM, one per day (owner, 19 Oct 2026)
+
+
+def rotate_format(today: str) -> str:
+    """4-day cycle starting Tue 20 Oct 2026 with Bachpan: Bachpan -> Tag that friend -> Meme -> Comedy."""
+    from datetime import date
+    return ROTATE_FORMATS[(date.fromisoformat(today).toordinal() - date(2026, 10, 20).toordinal()) % 4]
+
+
+def make_rotate_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+    """🎭 7:45 PM rotating slot (owner, 19 Oct 2026: 'try alternate options bachpan / Tag a friend / meme / comedy'),
+    saved as reel_rotate-<date> whichever format it is."""
+    fmt = rotate_format(today)
+    print(f"  rotating slot today: {fmt}")
+    if fmt == "bachpan":
+        return make_bachpan_reel(state, feed, today, tmp, style_name="moment", save_id=f"reel_rotate-{today}")
+    kind = {"friend": "reel_clip", "meme": "reel_meme", "comedy": "reel_comedy"}[fmt]
+    cover, mp4, entry = build_joke_reel(kind, state, tmp)
+    save_reel(feed, state, cover, mp4, f"reel_rotate-{today}", entry)
 
 
 BACHPAN_STYLES = {   # owner, 15 Oct 2026: both styles, on alternate days (bachpan_style)
@@ -1805,7 +1832,7 @@ def bachpan_style(today: str) -> str:
     return "friend" if date.fromisoformat(today).toordinal() % 2 else "moment"
 
 
-def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
+def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str, style_name: str = "", save_id: str = "") -> None:
     """🧒 8:30 PM bachpan Reel (owner, 15 Oct 2026): one relatable 90s/2000s Indian childhood moment under a big red
     banner over a clip that shows it. Two styles on alternate days (`bachpan_style`): 'BACHPAN ME AISA KAUN KIYA?'
     (the moment itself, 'COMMENT KARO: MAINE BHI') and TAG THAT FRIEND ('Wo dost jo bachpan mein...', the owner's
@@ -1815,7 +1842,7 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     import generate as g
     import proofread
     import status
-    style = BACHPAN_STYLES[bachpan_style(today)]
+    style = BACHPAN_STYLES[style_name or bachpan_style(today)]
     status.step(f"Writing 3 childhood moments ({style['banner']})", 2)
     songs = trending_songs(state)
     recent = state.get("bachpan_recent", [])
@@ -1876,7 +1903,7 @@ def make_bachpan_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         state["reel_clips"] = (state.get("reel_clips", []) + [cid])[-80:]
     state["bachpan_recent"] = (recent + [text])[-60:]
     state["recent_reels"] = (state.get("recent_reels", []) + [text])[-60:]
-    save_reel(feed, state, frames[-1], out, f"reel_bachpan-{today}", {
+    save_reel(feed, state, frames[-1], out, save_id or f"reel_bachpan-{today}", {
         "headline": text, "tag": style["tag"],
         "caption": g.limit_hashtags(g.fun_caption(best)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": best.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
@@ -4546,7 +4573,7 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
             "🎯 Satire" if kind == "reel_politics" else "😂 Meme" if kind == "reel_meme" else
             "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else
             "🗳️ Choose your" if kind == "reel_poll" else "🧒 Bachpan" if kind == "reel_bachpan" else
-            "🎥🔊 Official video" if kind == "reel_official" else "⚡ Breaking" if kind in BREAK_KINDS else "🎬 Reel")
+            "🎥🔊 Official video" if kind == "reel_official" else "⚡ Breaking" if kind in BREAK_KINDS else "🎭 Rotating" if kind == "reel_rotate" else "🎬 Reel")
     status.start(kind, today, f"{name} · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
     then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
@@ -4568,6 +4595,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
                 make_official_reel(state, feed, today, tmp)
             elif kind in BREAK_KINDS:
                 make_breaking_reel(kind, state, feed, today, tmp)
+            elif kind == "reel_rotate":
+                make_rotate_reel(state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
             elif kind == "reel_devotion":
