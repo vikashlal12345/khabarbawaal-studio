@@ -1737,7 +1737,9 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     # Tinder"); an everyday moment ('bachpan me aisa kaun kiya?') gets a video clip like the daily jokes.
     art_note = ""
     # Daily trend jokes (owner, 15 Oct 2026): what the writer says the joke is about; ➕ Create: what the owner named.
-    things = named or ([] if evergreen else post.get("about", []))
+    joke_text = " ".join([post.get("text", ""), " ".join(post.get("setup", [])), post.get("punch", ""), post.get("opener", "")])
+    things = named or ([] if evergreen else [t for t in post.get("about", [])
+                                              if named_in([t["name"], t["lookup"]], joke_text)])   # only what the joke names
     photos, credits = context_photos(things, f"{post['based_on']} ({', '.join(t['name'] for t in things)})", tmp,
                                      vs=versus if named else post.get("versus", True)) if things else ([], [])
     clip = secs = cid = real = None
@@ -1842,7 +1844,7 @@ def make_rotate_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     if fmt == "bachpan":
         return make_bachpan_reel(state, feed, today, tmp, style_name="moment", save_id=f"reel_rotate-{today}")
     kind = {"friend": "reel_clip", "meme": "reel_meme", "comedy": "reel_comedy"}[fmt]
-    cover, mp4, entry = build_joke_reel(kind, state, tmp)
+    cover, mp4, entry = build_joke_reel(kind, state, tmp, evergreen=(kind == "reel_comedy"))   # comedy: everyday life only
     save_reel(feed, state, cover, mp4, f"reel_rotate-{today}", entry)
 
 
@@ -3322,6 +3324,40 @@ def squash(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", text.lower())
 
 
+def named_in(names: list[str], text: str) -> bool:
+    """True if a person/thing is actually named in the text (the last word of its name, 4+ letters, or the whole name)."""
+    low = text.lower()
+    for n in names:
+        parts = [w for w in re.findall(r"[A-Za-z]+", n) if len(w) >= 4]
+        if n.lower() in low or (parts and parts[-1].lower() in low):
+            return True
+    return False
+
+
+def sense_check(kind: str, texts: str, shown: str = "") -> tuple[bool, str]:
+    """Does this Reel make sense? (owner, 19 Oct 2026: a satire showed Mann + Kejriwal photos for a Kejriwal-vs-Centre
+    story and mixed in another incident; a comedy had Aamir Khan and Thackeray photos for an everyday joke): ONE clear
+    story or joke, hook / text / punchline fit together, no unrelated names or incidents, and the people or photos
+    shown are the ones it is about. On any doubt the Reel is rewritten or the next story tried."""
+    import fun
+    schema = {"type": "object", "properties": {"ok": {"type": "boolean"}, "problem": {"type": "string"}},
+              "required": ["ok", "problem"], "additionalProperties": False}
+    try:
+        res = fun.claude_json(
+            "You are a 22-year-old Indian who sees a short Instagram Reel for the first time and did not read the news. "
+            "Does it make sense? ok = true only if: it tells ONE clear story or joke; the hook, the text and the "
+            "punchline belong together; no unrelated person, film or incident is mixed in (e.g. a different news event "
+            "dropped into the hook); and the people/photos shown are the ones the text is about. Be strict.",
+            f"Reel kind: {kind}\n\nText on the Reel:\n{texts}\n\nPeople/photos shown: {shown or '(none specific)'}",
+            schema, CONFIG.get("membership_model", "sonnet"), purpose="sense check")
+        if not res["ok"]:
+            print(f"  sense check FAILED: {res['problem'][:160]}")
+        return res["ok"], res["problem"]
+    except Exception as e:
+        print(f"  ! sense check failed to run ({str(e)[:80]}): accepted")
+        return True, ""
+
+
 def roast_format_today(today: str) -> str:
     """Even days a NEW card format in turn, odd days the classic Reel (starts Tue 20 Oct 2026 with the scoreboard)."""
     from datetime import date
@@ -3379,19 +3415,24 @@ def roast_card(fmt: str, post: dict, photo: Image.Image | None, out_mp4: str, ho
         sources = "Source: " + ", ".join(dict.fromkeys(printable(r["source"]) for r in post["rows"][:4] if r["source"]))
     elif fmt == "quote_trap":
         if photo is not None:
-            win = ImageOps.fit(photo.convert("RGB"), (920, 380), Image.LANCZOS, centering=(0.5, 0.3))
+            win = ImageOps.fit(photo.convert("RGB"), (920, 300), Image.LANCZOS, centering=(0.5, 0.3))
             m = Image.new("L", win.size, 0)
             ImageDraw.Draw(m).rounded_rectangle((0, 0, win.width - 1, win.height - 1), radius=26, fill=255)
             card.paste(win, (80, y), m)
-            y += 420
+            y += 335
         q = "“" + printable(post["quote_text"]).strip("\"“” ") + "”"
-        ls, qf, qlh = fit_lines(q, RW - 2 * LEFT - 20, 470, sizes=range(70, 34, -2))
+        ls, qf, qlh = fit_lines(q, RW - 2 * LEFT - 20, 400, sizes=range(66, 34, -2))
         for j, wds in enumerate(ls):
             cd.text((LEFT + 10, y + j * qlh), " ".join(wds), font=qf, fill="#FFFFFF")
         y += len(ls) * qlh + 36
-        cd.text((LEFT + 10, y), "- " + printable(post["quote_speaker"]), font=font("Poppins-Bold.ttf", 50), fill=YELLOW)
-        cd.text((LEFT + 10, y + 70), printable(post["quote_when"])[:80], font=font("Poppins-SemiBold.ttf", 34), fill="#9A9AA5")
-        y += 140
+        sl, sf2, slh = fit_lines("- " + printable(post["quote_speaker"]), RW - 2 * LEFT - 20, 110, sizes=range(50, 30, -2))
+        for j, wds in enumerate(sl):   # wrapped, never cut off at the edge
+            cd.text((LEFT + 10, y + j * slh), " ".join(wds), font=sf2, fill=YELLOW)
+        y += len(sl) * slh + 8
+        wl, wf, wlh = fit_lines(printable(post["quote_when"]), RW - 2 * LEFT - 20, 110, sizes=range(34, 22, -2))
+        for j, wds in enumerate(wl):
+            cd.text((LEFT + 10, y + j * wlh), " ".join(wds), font=wf, fill="#9A9AA5")
+        y += len(wl) * wlh + 90
         words = len(q.split()) + 6
         sources = ""
     else:   # counter
@@ -3412,7 +3453,7 @@ def roast_card(fmt: str, post: dict, photo: Image.Image | None, out_mp4: str, ho
         sd.rounded_rectangle((4, 4, w - 5, 185), radius=18, outline=RED, width=10)
         sd.text((w // 2, 95), txt, font=sf, fill=RED, anchor="mm")
         stamp = stamp.rotate(8, expand=True, resample=Image.BICUBIC)
-        card.alpha_composite(stamp, ((RW - stamp.width) // 2, max(y + 30, 260) if y + 30 + stamp.height < 1640
+        card.alpha_composite(stamp, ((RW - stamp.width) // 2, max(y + 150, 260) if y + 150 + stamp.height < 1640
                                       else 1640 - stamp.height))
     if sources:
         cd.text((50, 1700), sources[:90], font=font("Poppins-SemiBold.ttf", 26), fill="#888890")
@@ -3497,6 +3538,13 @@ def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories:
             best = fun.judge_best(options, lambda o: f"[{fmt}] {o['hook']} | {o['title']} | " + " / ".join(
                 " + ".join(r["cells"]) for r in o["rows"]) + f" | {o['quote_text']} {o['counter_number']} | {o['punchline']}",
                 model, judge_system=ROAST_JUDGE + f"\n\nRecent Reels:\n{recent}", min_fresh=5, min_clear=6)
+            blob = " ".join([best["hook"], best["title"], best["quote_text"], best["punchline"], best["counter_label"]]
+                            + [c for r in best["rows"] for c in r["cells"]])
+            best["people"] = [x for x in best.get("people", []) if named_in([x["name"], x["wiki"]], blob + " " + best["quote_speaker"])]
+            ok, why = sense_check("political roast card (" + fmt + ")", blob, ", ".join(x["name"] for x in best["people"]))
+            if not ok:
+                print("  roast card doesn't make sense: next story")
+                continue
             break
         except fun.NoGoodJoke:
             print("  roast card below the judge's bar: next story")
@@ -3647,11 +3695,21 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return options
 
     def judge(options: list[dict]) -> dict:
-        return fun.judge_best(options, lambda o: f"[{o['format']}] " + " ".join(o["claim"]) + " | KYA HUA: "
+        best = fun.judge_best(options, lambda o: f"[{o['format']}] " + " ".join(o["claim"]) + " | KYA HUA: "
                               + " ".join(o["context"]) + " | REALITY CHECK: " + " / ".join(f["fact"] for f in o["facts"])
                               + " | " + o["punchline"], model,
                               judge_system=f"{SATIRE_JUDGE}\n\nRecent Reels:\n{recent}", min_fresh=6,
                               min_clear=6)   # one point lower than jokes (owner, 14 Oct 2026: post more reliably)
+        blob = " ".join(best["claim"] + best["context"] + [f["fact"] for f in best["facts"]] + [best["punchline"], best.get("hook", "")])
+        best["people"] = [x for x in best.get("people", []) if named_in([x["name"], x["wiki"]], blob)]   # only who is named
+        ok, why = sense_check("political satire", f"Hook: {best.get('hook', '')}\nDig: {' '.join(best['claim'])}\n"
+                              f"KYA HUA: {' '.join(best['context'])}\nFacts: " + " / ".join(f["fact"] for f in best["facts"])
+                              + f"\nPunchline: {best['punchline']}", ", ".join(x["name"] for x in best["people"]))
+        if not ok:
+            err = fun.NoGoodJoke("the Reel does not make sense: " + why)
+            err.scores = [{"option": 1, "understandable": 4, "funny": 5, "fresh": 5, "why": why}]
+            raise err
+        return best
 
     for i, n in enumerate(picks):   # the Reel must pass the judge; else try the next story
         story = stories[n - 1]
