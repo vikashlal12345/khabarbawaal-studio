@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_clip-2026-10-19",
+  "image": "posts/20261019-0633-reel_clip-2026-10-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261019-063319-reel_clip-2026-10-19.mp4",
+  "headline": "Wo dost jo Diwali ke ticket pe bolta hai: 'Dekh lenge.' Aaj waitlist lambi hai. Ab bolta hai: 'Bus se chala jaunga.'",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Diwali ghar jaane ka ticket 🚆 waitlist wala dard sabko pata hai\nBook karne mein sabse aalsi wahi hota hai, har saal 😭\nTumhare group mein ye kaun hai? Tag karo 👇\n\nFollow @khabarbawaal: roz naye memes, dosto ko tag karo 😂\n\n#diwali #diwali2026 #viral #trending #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Aur Diwali pe bolega: 'Ghar ki yaad aa rahi hai.' Us dost ko ticket ke saath tag karo 👇",
+  "songs": [
+   {
+    "title": "Pardesiya (From \"Param Sundari\")",
+    "artist": "Sonu Nigam, Krishnakali Saha",
+    "lang": "hindi",
+    "mood": "pardesi wants to go home"
+   },
+   {
+    "title": "Tenu Sang Rakhna (From \"Jigra\")",
+    "artist": "Varun Grover, Achint",
+    "lang": "hindi",
+    "mood": "family ke paas jaane ki chahat"
+   },
+   {
+    "title": "STAY",
+    "artist": "Justin Bieber, The Kid Laroi",
+    "lang": "english",
+    "mood": "please stay, ticket confirm ho"
+   },
+   {
+    "title": "Señorita",
+    "artist": "Shawn Mendes, Camila Cabello",
+    "lang": "english",
+    "mood": "light fun travel vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The waitlist number 187 isn't in the article, so it is an unsupported claim."
+   ],
+   "fixed": [
+    "Aaj waitlist 187. → Aaj waitlist lambi hai."
+   ]
+  },
+  "created_at": "2026-10-19T06:33:19+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-19",
   "image": "posts/20261019-0504-reel_news_am-2026-10-19.jpg",
   "kind": "reel",
