@@ -141,7 +141,8 @@
   "fbe01b0e252c",
   "590c1a5ef161",
   "96eedd30da5d",
-  "0bc7c4320b43"
+  "0bc7c4320b43",
+  "fd724f9ea96f"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -287,7 +288,7 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-18",
   "reel_official": "2026-10-18",
-  "reel_news_early": "2026-10-18"
+  "reel_news_early": "2026-10-19"
  },
  "inbox_since": "kgvU9vuhdNgb",
  "used_otps": [
@@ -618,7 +619,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-and-karisma-kapoor-bring-back-90s-chemistry-on-koffee-with-karan-9-heres-where-to-watch-6-films-of-favourite-bollywood-pair-judwaa-jeet-101792066666462.html",
   "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
+  "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -728,10 +730,6 @@
   }
  ],
  "songs_recent": [
-  "Jo Tum Mere Ho",
-  "Zara Zara",
-  "Espresso",
-  "Favorite",
   "Azadi",
   "Toxic",
   "Loser",
@@ -767,7 +765,11 @@
   "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
   "Maa Durga Aarti",
   "Jai Ambe Gauri Aarti",
-  "Jai Ambe Gauri (Durga Aarti)"
+  "Jai Ambe Gauri (Durga Aarti)",
+  "Gehra Hua",
+  "Kabhi Shaam Dhale",
+  "Heat Waves",
+  "Blinding Lights"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -781,48 +783,8 @@
  ],
  "reel_news_recent": [
   {
-   "title": "Death penalty for Muskan, lover Sahil for 'blue drum' murder of her husband Saurabh Rajput",
-   "date": "2026-10-14"
-  },
-  {
-   "title": "Kangana Ranaut backs Bittu Tabahi after river he cleaned for 8 months gets polluted again: ‘People cry about rights’",
-   "date": "2026-10-14"
-  },
-  {
-   "title": "Karisma Kapoor reveals Salman Khan refused to shoot with her over her ‘too open, clingy’ outfit in Dulhan Hum Le Jayenge",
-   "date": "2026-10-15"
-  },
-  {
-   "title": "BREAKING: Jailer 2 ends with the promise of third part; Hrithik Roshan's massy special appearance has a Chulbul Pandey connection (Spoilers ahead)",
-   "date": "2026-10-15"
-  },
-  {
-   "title": "Ramayana international trailer to be unveiled at Bengaluru event; Ranbir Kapoor, Yash, Sai Pallavi to attend",
-   "date": "2026-10-15"
-  },
-  {
-   "title": "Exclusive: Imran Khan to move Bombay HC, challenge ‘illegal' Leave India notice",
-   "date": "2026-10-15"
-  },
-  {
-   "title": "Amit Shah ka kadak sandesh: Naxalvad khatam: Modi sarkar ka sankalp poora hua, ab peedhiton ke zakhm par marham. Aap sehmat ho?",
-   "date": "2026-10-15"
-  },
-  {
-   "title": "Salman Khan and Karisma Kapoor bring back 90s chemistry on Koffee With Karan 9: Here's where to watch 6 films of favourite Bollywood pair",
-   "date": "2026-10-16"
-  },
-  {
-   "title": "Why FRRO asked Imran Khan to leave India: The law, the notice, and the actor's options",
-   "date": "2026-10-16"
-  },
-  {
-   "title": "Kareena Kapoor Khan and Saif Ali Khan celebrate 14 years of togetherness, share unseen family moments on their wedding anniversary: ‘Forever to go’",
-   "date": "2026-10-16"
-  },
-  {
-   "title": "Saif Ali Khan makes a hilarious confession on The Great Indian Kapil Show, says their bedroom smells like dhaba at night because of Kareena Kapoor",
-   "date": "2026-10-16"
+   "title": "Tiger Shroff in car, 5 shots fired, then 3 men flee on bike: New video of attack bid surfaces",
+   "date": "2026-10-19"
   }
  ]
 }
