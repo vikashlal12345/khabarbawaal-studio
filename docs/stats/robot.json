@@ -4650,6 +4650,49 @@
      "tokens": 30795
     }
    }
+  },
+  "reel_meme": {
+   "posts": 0,
+   "requests": 10,
+   "input": 28,
+   "output": 6019,
+   "cache_read": 11364,
+   "cache_write": 119949,
+   "value_usd": 0.5412,
+   "by_purpose": {
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 16994
+    },
+    "reel writing": {
+     "requests": 1,
+     "tokens": 28823
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 15561
+    },
+    "clip pick": {
+     "requests": 2,
+     "tokens": 35173
+    },
+    "clip look": {
+     "requests": 2,
+     "tokens": 11514
+    },
+    "clip search retry": {
+     "requests": 1,
+     "tokens": 14761
+    },
+    "joke art check": {
+     "requests": 1,
+     "tokens": 4786
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 9748
+    }
+   }
   }
  }
 }
