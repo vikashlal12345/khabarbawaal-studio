@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_poll-2026-10-19",
+  "image": "posts/20261019-1103-reel_poll-2026-10-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261019-110302-reel_poll-2026-10-19.mp4",
+  "headline": "CHOOSE YOUR CAPTAIN: Virat Kohli / MS Dhoni / Rohit Sharma / Ruturaj",
+  "tag": "🎬 REEL · 🗳️ CHOOSE YOUR",
+  "caption": "Kohli, Dhoni, Rohit ya Ruturaj: kiski captaincy mein khelna hai? 🏏 Button dabao, vote karo, comment mein bolo kyun!\n\n❤️ Like = Virat Kohli\n💬 Comment = MS Dhoni\n🔁 Repost = Rohit Sharma\n✈️ Share = Ruturaj\n\nFollow @khabarbawaal: roz shaam 4:30 baje naya poll, vote karna mat bhoolna 🗳️\n\nPhotos (Wikimedia Commons): Virat Kohli: Prime Minister's Office (GODL-India); MS Dhoni: RIGI (CC BY 3.0); Rohit Sharma: Prime Minister's Office (GODL-India); Ruturaj: Prime Minister's Office (GODL-India)\n\n#ViratKohli #MSDhoni #RohitSharma #RuturajGaikwad #Cricket",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Apna captain chuno aur batao kyun. Kisi cricket fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "hype beat = captain showdown"
+   },
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "swag energy for debate"
+   },
+   {
+    "title": "APT.",
+    "artist": "Rosé, Bruno Mars",
+    "lang": "english",
+    "mood": "catchy, fast vote vibe"
+   },
+   {
+    "title": "Solar Eclipse",
+    "artist": "Drake & Don Toliver",
+    "lang": "english",
+    "mood": "cool confident captain energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The background shows four large faces, and overlays cover parts of them. The action-button panel hides the top half of Rohit's and Ruturaj's faces, and the 'Button dabao, vote karo' text sits over their lower faces. The logo and the title banner also touch Kohli's and Dhoni's faces. The text is readable, but the faces are partly covered."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-19T11:03:02+00:00"
+ },
+ {
   "id": "reel_meme-2026-10-19",
   "image": "posts/20261019-0933-reel_meme-2026-10-19.jpg",
   "kind": "reel",
