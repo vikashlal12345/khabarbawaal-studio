@@ -213,7 +213,7 @@ def handle_tag(frame: Image.Image, y: int, fill="#FFFFFF", stroke=3) -> None:
                                fill=fill, anchor="mm", stroke_width=stroke, stroke_fill="#000000")
 
 
-HOOK_SECS, FOLLOW_SECS = 1.8, 1.5
+HOOK_SECS, FOLLOW_SECS, COVER_SECS = 1.8, 1.5, 2.2
 
 
 def hook_layer(text: str, highlight: set[str]) -> Image.Image:
@@ -226,6 +226,51 @@ def hook_layer(text: str, highlight: set[str]) -> Image.Image:
     for j, img in enumerate(imgs):
         layer.alpha_composite(img, ((RW - img.width) // 2, 40 + j * lh))
     return layer
+
+
+COVER_PINK = "#FF3D8B"
+
+
+def auto_highlight(text: str) -> set[str]:
+    """Names in the hook (Capitalised words after the first, and the first word if it is a name-like word of 4+
+    letters) get the pink colour (owner's own posts: 'Kriti Sanon ka palatwaar', pink on the name)."""
+    words = re.findall(r"[A-Za-z][A-Za-z'-]+", text)
+    out = {norm(w) for w in words[1:] if w[:1].isupper() and len(w) > 2}
+    if words and words[0][:1].isupper() and len(words[0]) > 3:
+        out.add(norm(words[0]))
+    return out
+
+
+def cover_hook_frame(photo: Image.Image, hook: str, tag: str, credit: str, t: float, highlight: set[str] | None = None,
+                     dur: float = 2.5) -> Image.Image:
+    """⭐ The standard opening of every photo Reel (owner, 19 Oct 2026: his own posts, big photo + big hook, got 14.4K
+    and 6.4K views): ONE sharp photo fills the screen (slow zoom), a dark fade at the bottom, a huge Anton hook with
+    the names in pink, a red tag badge top-left, the photo credit and the handle."""
+    fx, fy = photo.info.get("focus", (0.5, None))   # where the person's face is (pick_cover_photo), 0-1
+    photo = photo.convert("RGB")
+    z = 1.0 + 0.06 * min(1.0, t / dur)
+    k = max(RW / photo.width, RH / photo.height) * z
+    big = photo.resize((int(photo.width * k) + 1, int(photo.height * k) + 1), Image.BICUBIC)
+    x0 = max(0, min(big.width - RW, int(fx * big.width - RW / 2)))   # centre the crop on the face
+    y0 = int((big.height - RH) * 0.28) if fy is None else max(0, min(big.height - RH, int(fy * big.height - RH * 0.38)))
+    frame = big.crop((x0, y0, x0 + RW, y0 + RH)).convert("RGBA")
+    shade = Image.new("RGBA", (RW, 900), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shade)
+    for y in range(900):
+        sd.line((0, y, RW, y), fill=(0, 0, 0, int(235 * (y / 900) ** 1.5)))
+    frame.alpha_composite(shade, (0, RH - 900))
+    lines, fnt, lh = fit_lines(printable(hook), RIGHT - LEFT + 60, 560, sizes=range(118, 64, -4), name="Anton-Regular.ttf")
+    imgs = line_images(lines, fnt, lh, "#FFFFFF", COVER_PINK, highlight if highlight is not None else auto_highlight(hook),
+                       stroke=9)
+    y = RH - 330 - len(imgs) * lh
+    for j, img in enumerate(imgs):
+        frame.alpha_composite(img, ((RW - img.width) // 2, y + j * lh))
+    if tag:
+        frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
+    if credit:
+        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")
+    handle_tag(frame, 1790)
+    return frame
 
 
 def hook_frame(photo: Image.Image, layer: Image.Image, t: float) -> Image.Image:
@@ -517,7 +562,7 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
 
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
               out_mp4: str, end: float = 3.0, hook: str = "",
-              hook_video: tuple[str, float, float] | None = None) -> list[Image.Image]:
+              hook_video: tuple[str, float, float] | None = None, hook_photo: Image.Image | None = None) -> list[Image.Image]:
     """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
     uncropped instead of zooming. Each photo stays long enough to read its line in full: 2.5 s + 0.25 s
     a word, 4-8.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel; 12 Oct: +1 s).
@@ -557,10 +602,11 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         layer = hook_layer(hook, highlights)
         # hook_video = (path, start, secs): the official video plays under the line instead (🎥 10 PM Reel)
         stills = video_stills(*hook_video) if hook_video else None
-        still = slides[0][0]
-        for i in range(int((hook_video[2] if hook_video else HOOK_SECS) * FPS)):
+        still = hook_photo if hook_photo is not None else slides[0][0]
+        for i in range(int((hook_video[2] if hook_video else COVER_SECS) * FPS)):
             still = next(stills, still) if stills else still
-            frame = hook_frame(still, layer, i / FPS)
+            frame = hook_frame(still, layer, i / FPS) if hook_video else \
+                cover_hook_frame(still, hook, tag, f"Photo: {slides[0][1]}" if slides[0][1] else "", i / FPS, dur=COVER_SECS)
             if i == int(0.6 * FPS):
                 hook_check.append(frame.convert("RGB"))
             enc.add(frame)
@@ -639,6 +685,8 @@ SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit th
 
 _COMMON = {
     "songs": SONGS,
+    "versus": {"type": "boolean", "description": "true only if the people/things in 'about' are rivals or being "
+               "compared (e.g. Hopr vs Tinder, Ram vs Ravan); false for co-stars, a person and his own team/film"},
     "opener": {"type": "string", "description": "2-5 words shown BIG alone for the first 1.5 s, before the joke: the "
                "relatable trigger that makes people stop scrolling, e.g. 'Diwali safai ka asli sach', 'Exam se ek raat "
                "pehle', 'Mummy ka phone aaya'. No emojis."},
@@ -1345,6 +1393,7 @@ def named_apps(text: str) -> list[dict]:
 UNDERSTAND_SCHEMA = {"type": "object", "properties": {
     "meaning": {"type": "string", "description": "One line: what the owner means and what the Reel should be about, "
                 "e.g. 'childhood nostalgia: kids caught by mummy after a naughty act'"},
+    "versus": {"type": "boolean", "description": "true only if the named things are rivals or being compared"},
     "named": {"type": "array", "description": "Real things the owner names ON PURPOSE (empty for an everyday moment, "
               "feeling or situation)", "items": {"type": "object", "properties": {
                   "name": {"type": "string", "description": "As the owner wrote it"},
@@ -1352,7 +1401,7 @@ UNDERSTAND_SCHEMA = {"type": "object", "properties": {
                   "lookup": {"type": "string", "description": "app: its App Store name; person/party/team/film_show: its "
                              "exact English Wikipedia page title; brand/event_place: a short English news search"}},
                   "required": ["name", "kind", "lookup"], "additionalProperties": False}}},
-    "required": ["meaning", "named"], "additionalProperties": False}
+    "required": ["meaning", "versus", "named"], "additionalProperties": False}
 
 
 def understand_topic(topic: str, apps: list[dict], news: str) -> dict:
@@ -1471,7 +1520,7 @@ def brand_background() -> Image.Image:
     return img
 
 
-def app_photos(names: list[str]) -> list[Image.Image]:
+def app_photos(names: list[str], vs: bool = True) -> list[Image.Image]:
     """Apps the owner's idea names (owner, 14 Oct 2026: 'no photos or logo of Hopr and Tinder'): their official
     icons from the free App Store search (India), as a 'Hopr VS Tinder' card, then one screenshot of each."""
     import re
@@ -1492,12 +1541,12 @@ def app_photos(names: list[str]) -> list[Image.Image]:
             found.append((name, icon.convert("RGBA"), shot))
     if not found:
         return []
-    return [names_card([(name, icon) for name, icon, _ in found])] + [shot.convert("RGB") for _, _, shot in found if shot]
+    return [names_card([(name, icon) for name, icon, _ in found], vs)] + [shot.convert("RGB") for _, _, shot in found if shot]
 
 
-def names_card(items: list[tuple[str, Image.Image]]) -> Image.Image:
+def names_card(items: list[tuple[str, Image.Image]], vs: bool = True) -> Image.Image:
     """'A VS B' card: each picture in a rounded tile with its name under it (logos sit whole on white, photos are
-    cropped to fill)."""
+    cropped to fill). vs=False (owner, 16 Oct 2026: 'Dipke VS CJP' for a leader and his own party): no 'VS'."""
     card = Image.new("RGB", (1200, 675), "#111111")
     d = ImageDraw.Draw(card)
     for y in range(675):
@@ -1517,7 +1566,7 @@ def names_card(items: list[tuple[str, Image.Image]]) -> Image.Image:
         card.paste(tile, (x, 150), mask)
         d.text((x + size // 2, 150 + size + 50), printable(name)[:16], font=font("Poppins-Bold.ttf", 56), fill="#FFFFFF",
                anchor="mm")
-        if i < len(items) - 1:
+        if i < len(items) - 1 and vs:
             d.text((x + size + gap // 2, 150 + size // 2), "VS", font=font("Anton-Regular.ttf", 110), fill=YELLOW, anchor="mm")
         x += size + gap
     return card
@@ -1563,7 +1612,7 @@ def look_at_photos(photos: list[Image.Image], about: str, tmp: str) -> list[Imag
     return keep
 
 
-def context_photos(things: list[dict], about: str, tmp: str) -> tuple[list[Image.Image], list[str]]:
+def context_photos(things: list[dict], about: str, tmp: str, vs: bool = True) -> tuple[list[Image.Image], list[str]]:
     """Photos of what a joke Reel is about (owner, 15 Oct 2026: 'the post should have the context photos'):
     films/shows/events/brands -> today's news photos, checked by the AI (`look_at_photos`), first; then
     people/teams/parties -> their credited Wikipedia photos with an 'A VS B' card; apps -> App Store icons +
@@ -1572,18 +1621,18 @@ def context_photos(things: list[dict], about: str, tmp: str) -> tuple[list[Image
     for t in [t for t in things if t["kind"] in ("film_show", "event_place", "brand")][:2]:
         news += topic_photos(t["lookup"] or t["name"], want=4)
     news = look_at_photos(news, about, tmp)[:3]
-    pics, credits = named_photos([t for t in things if t["kind"] in ("app", "person", "team", "party")])
+    pics, credits = named_photos([t for t in things if t["kind"] in ("app", "person", "team", "party")], vs=vs)
     return (news + pics)[:5], credits
 
 
-def named_photos(named: list[dict], fill_missing: bool = False) -> tuple[list[Image.Image], list[str]]:
+def named_photos(named: list[dict], fill_missing: bool = False, vs: bool = True) -> tuple[list[Image.Image], list[str]]:
     """Pictures of the real things the owner's ➕ Create idea names, by what they are (owner, 15 Oct 2026): apps ->
     App Store icons + screenshots; people/parties/teams/films -> their free Wikipedia pictures (credited, like the
     poll; never a random news photo, it could be someone else); brands/events -> news photos.
     fill_missing: a person/party without a free Wikipedia picture gets a `name_card` on the 'VS' card.
     Returns (pictures, caption credits)."""
     apps = [n["name"] for n in named if n["kind"] == "app"][:3]   # the short name labels the logo ('Hopr')
-    photos = app_photos(apps) if apps else []
+    photos = app_photos(apps, vs) if apps else []
     wiki, credits = [], []
     for n in [n for n in named if n["kind"] in ("person", "party", "team", "film_show")][:3]:
         img, credit = wiki_thumb(n["lookup"] or n["name"], size=960)
@@ -1593,7 +1642,7 @@ def named_photos(named: list[dict], fill_missing: bool = False) -> tuple[list[Im
         elif fill_missing:
             wiki.append((n["name"], name_card(n["name"])))
     if wiki:
-        photos += [names_card(wiki)] + [img.convert("RGB") for _, img in wiki
+        photos += [names_card(wiki, vs)] + [img.convert("RGB") for _, img in wiki
                                         if min(img.size) >= 500 and not (img.mode == "RGBA" and img.getextrema()[3][0] < 250)]
     for n in [n for n in named if n["kind"] in ("brand", "event_place")][:2]:
         if len(photos) < 4:
@@ -1663,14 +1712,14 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     import proofread
     import status
     status.step("Writing 3 jokes", 2)
-    notes, named = "", []
+    notes, named, versus = "", [], True
     if topic:   # owner, 15 Oct 2026: "understand the context every time, it cannot be an app every time"
         apps = named_apps(topic)    # App Store names matching a word: ordinary words ('bachpan') match too
         search = re.sub(r"(?i)^\s*(please\s+)?(make|create|bana\w*)\s+(a|an|ek)?\s*(funny\s+)?(reel|post|meme)\s+"
                         r"(of|on|about|for|ki|ka|pe|par)?\s*", "", topic)
         news = topic_articles(search)
         sense = understand_topic(topic, apps, news)
-        named = sense["named"]
+        named, versus = sense["named"], sense.get("versus", True)
         meant = {n["name"].lower() for n in named if n["kind"] == "app"} | \
                 {n["lookup"].lower() for n in named if n["kind"] == "app"}
         apps = [a for a in apps if a["name"].lower() in meant or any(a["name"].lower() in m for m in meant)]
@@ -1689,8 +1738,8 @@ def build_joke_reel(kind: str, state: dict, tmp: str, evergreen: bool = False,
     art_note = ""
     # Daily trend jokes (owner, 15 Oct 2026): what the writer says the joke is about; ➕ Create: what the owner named.
     things = named or ([] if evergreen else post.get("about", []))
-    photos, credits = context_photos(things, f"{post['based_on']} ({', '.join(t['name'] for t in things)})", tmp) \
-        if things else ([], [])
+    photos, credits = context_photos(things, f"{post['based_on']} ({', '.join(t['name'] for t in things)})", tmp,
+                                     vs=versus if named else post.get("versus", True)) if things else ([], [])
     clip = secs = cid = real = None
     framed = False   # 🖼️ photos (not a video) behind a Tag that friend joke: the framed layout
 
@@ -2084,15 +2133,7 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
         x0, y0 = (big.width - w) // 2, int((big.height - h) * cy)
         return big.crop((x0, y0, x0 + w, y0 + h))
     for i in range(int(d1 * FPS)):
-        z = 1.0 + 0.06 * (i / FPS) / d1
-        frame = cover_of(first, RW, RH, z).convert("RGBA")
-        frame.alpha_composite(shade)
-        frame.alpha_composite(tag_img, (50, 150))
-        y0 = RH - 330 - len(h_imgs) * h_lh
-        for j, img in enumerate(h_imgs):
-            frame.alpha_composite(img, ((RW - img.width) // 2, y0 + j * h_lh))
-        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=cred, fill="#CCCCCC")
-        handle_tag(frame, 1790)
+        frame = cover_hook_frame(first, hook, tag, credit, i / FPS, highlights or None, d1)
         if i == int(1.2 * FPS):
             c1 = frame.convert("RGB")
         enc.add(frame)
@@ -2148,7 +2189,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                               "breaking first." + songs_prompt(songs),
                               options_schema(BREAK_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="breaking pick")["options"]
-    opt = story = photos = None
+    cands = []   # up to 3 stories with a sharp photo; the next one is tried when a Reel can't be proofread
     for o in options:
         if not 1 <= o["pick"] <= len(stories):
             continue
@@ -2158,14 +2199,31 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         ph = news_photos(item, o)
         good = [x for x in ph if min(x[0].size) >= 480]
         if good:
-            opt, story, photos, it = o, st, good, item
-            break
-        print(f"  no sharp photo for: {st['title'][:70]}")
-    if opt is None:
+            cands.append((o, st, good, item))
+        else:
+            print(f"  no sharp photo for: {st['title'][:70]}")
+    if not cands:
         raise RuntimeError("no breaking story had a sharp photo")
+    last_err = None
+    for opt, story, photos, it in cands:
+        try:
+            return _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs)
+        except proofread.Unverified as e:   # e.g. every photo implies an injury the story doesn't state: next story
+            print(f"  ! breaking card for '{story['title'][:50]}' blocked ({str(e)[:100]}): next story")
+            last_err = e
+    raise last_err
+
+
+def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs) -> None:
+    import fun
+    import generate as g
+    import proofread
+    import status
+    used = state.get("reel_news_used", [])
     # the first frame wants a tall, sharp photo of the star; the second frame another one
     photos.sort(key=lambda x: (x[0].height / x[0].width < 0.9, -min(x[0].size)))
-    pics = [photos[0], photos[1] if len(photos) > 1 else photos[0]]
+    cover_i = pick_cover_photo([x[0] for x in photos], story["title"], tmp)   # 📸 photo contest
+    other_i = next((k for k in range(len(photos)) if k != cover_i), cover_i)
     import carousel
     facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
     # Second writing step from the FULL story (19 Oct 2026: written from the headline alone it invented a bystander,
@@ -2177,6 +2235,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                             f"Headline: {story['title']}\n\nFull story:\n{facts[:5500]}", BREAK_WRITE,
                             CONFIG.get("membership_model", "sonnet"), purpose="breaking card write")
     opt = {**opt, **final}
+    opt["hook"] = pick_hook(story["title"], facts, opt["hook"])   # 🪝 hook contest
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "hook", "headline", "question"])
     bl = {"bullets_text": "\n".join(opt["bullets"])}
@@ -2194,7 +2253,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         k = "p1" if 1 in numbers else "p2"
         return {**d, k: d[k] + 1} if d[k] + 1 < len(photos) else None
     status.step("Making the video + proofreading", 5)
-    frames, data, proof = proofread.run(render, {"post": opt, "p1": 0, "p2": 1 if len(photos) > 1 else 0},
+    frames, data, proof = proofread.run(render, {"post": opt, "p1": cover_i, "p2": other_i},
                                         lambda d: g.full_caption(d["post"], it), facts, drop=swap, strict=True)
     post = data["post"]
     state["reel_news_used"] = (used + [story["link"]])[-80:]
@@ -2746,6 +2805,71 @@ def news_photos(item: dict, opt: dict) -> list[tuple]:
     return [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
 
 
+def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
+    """📸 Photo contest (owner, 19 Oct 2026: 'the first image should be very attractive'): the AI looks at the
+    candidate photos and picks the cover: a sharp close-up with a clear face or strong emotion that fits the story,
+    not a crowd, a collage, a screenshot, or text-heavy. Returns the index (0 if there is one photo or the check fails)."""
+    import fun
+    if not photos:
+        return 0
+    folder = os.path.join(tmp, "cover_check")
+    os.makedirs(folder, exist_ok=True)
+    for n, img in enumerate(photos[:6], 1):
+        small = img.convert("RGB")
+        small.thumbnail((640, 640))
+        small.save(os.path.join(folder, f"photo{n}.jpg"), quality=85)
+    schema = {"type": "object", "properties": {"best": {"type": "integer", "description": "Photo number"},
+              "face_x": {"type": "number", "description": "0-1: horizontal position of the main person's face in that "
+                         "photo (0 = left edge, 1 = right edge)"},
+              "face_y": {"type": "number", "description": "0-1: vertical position of the main person's face"},
+              "why": {"type": "string"}}, "required": ["best", "face_x", "face_y", "why"], "additionalProperties": False}
+    try:
+        res = fun.claude_json("You pick the COVER photo of a short news Reel for young Indians. Open every photo with the "
+                              "Read tool. The best cover stops a scroll: a sharp close-up of the main person with a clear "
+                              "face and strong emotion, bright and high contrast, tall or square, showing the story's "
+                              "star; never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
+                              "shows injuries, bandages, blood, a hospital, handcuffs, weapons or another event than the story "
+                              "(it would suggest facts the story does not state).",
+                              f"The story: {about}\nPhotos: " + ", ".join(f"photo{n}.jpg" for n in range(1, min(len(photos), 6) + 1)),
+                              schema, CONFIG.get("membership_model", "sonnet"), purpose="cover photo", folder=folder)
+    except Exception as e:
+        print(f"  ! cover photo check failed ({str(e)[:80]}): first photo")
+        return 0
+    k = res["best"] - 1
+    print(f"  cover photo: {res['best']} face at ({res['face_x']:.2f}, {res['face_y']:.2f}) ({res['why'][:80]})")
+    k = k if 0 <= k < min(len(photos), 6) else 0
+    photos[k].info["focus"] = (min(1.0, max(0.0, float(res["face_x"]))), min(1.0, max(0.0, float(res["face_y"]))))
+    return k
+
+
+HOOKS_SCHEMA = {"type": "object", "properties": {
+    "hooks": {"type": "array", "items": {"type": "string"}, "description": "5 different hooks, 4-9 words each"},
+    "best": {"type": "integer", "description": "Index (0-4) of the hook most likely to stop a scroll"}},
+    "required": ["hooks", "best"], "additionalProperties": False}
+
+
+def pick_hook(title: str, facts: str, current: str, tmp_note: str = "") -> str:
+    """🪝 Hook contest (owner, 19 Oct 2026): the AI writes 5 hooks from the full story and picks the strongest, using
+    the pattern of the owner's best posts: the biggest name first, then the shock or twist, a fact from the story
+    (no invented details, no clickbait lies). Falls back to the current hook."""
+    import fun
+    try:
+        res = fun.claude_json(
+            "You write the opening line of a short Instagram news Reel for young Indians (Hinglish, English letters, no "
+            "emojis, 4-9 words). The owner's best hooks: 'Salman ne Karisma ke saath shoot se mana kiya', 'Kriti Sanon ka "
+            "palatwaar', 'Tiger Shroff firing: Kota mein teeno aaropi pakde gaye'. Biggest name FIRST, then the shock, "
+            "twist or new development; a fact from the story only; concrete, never vague ('Ye dekh ke hairan reh jaoge' is "
+            "bad). " + tmp_note, f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\nCurrent hook: {current}{viral_memory()}",
+            HOOKS_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="hook contest")
+        hooks = [h.strip() for h in res["hooks"] if h.strip()]
+        best = hooks[res["best"]] if 0 <= res["best"] < len(hooks) else (hooks[0] if hooks else current)
+        print(f"  hook: '{best}' (was '{current}')")
+        return best or current
+    except Exception as e:
+        print(f"  ! hook contest failed ({str(e)[:80]})")
+        return current
+
+
 def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str,
                      article: str | None = None, hook_video: tuple[str, float, float] | None = None
                      ) -> tuple[Image.Image, str, dict]:
@@ -2758,6 +2882,11 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "end_text"])
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
+    cover = None
+    if not hook_video and opt.get("hook"):   # ⭐ the standard cover: the best photo + the best hook (owner, 19 Oct 2026)
+        cover = photos[pick_cover_photo([x[0] for x in photos], item["title"], tmp)][0]
+        article_text = article if article else __import__("carousel").story_text(item["link"], item["title"], item.get("summary", ""))
+        opt["hook"] = pick_hook(item["title"], article_text, opt["hook"])
     photos = photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
     roman_only(opt, ["hook"])
     images = [(img, whole) for img, _, _, whole in photos]
@@ -2767,7 +2896,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     def render(d):
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
                          d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
-                         hook=d["post"].get("hook", ""), hook_video=hook_video)
+                         hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover)
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
@@ -2945,7 +3074,8 @@ def satire_reel(clip: str, start: float, clip_dur: float, claim: list[str], cont
             still = next(stills, still) if stills else still
             if still is None:
                 break
-            f = hook_frame(still, layer, i / FPS)
+            f = hook_frame(still, layer, i / FPS) if opener_video else \
+                cover_hook_frame(still, opener, "ROAST", "", i / FPS, dur=SATIRE_OPEN_SECS)   # ⭐ standard cover
             if i == int(0.8 * FPS):
                 opened = f.convert("RGB")
             enc.add(f)
@@ -3047,6 +3177,8 @@ POLITICS_OPTION = {"type": "object", "properties": {
                   "required": ["fact", "source"], "additionalProperties": False}},
     "punchline": {"type": "string", "description": "The big funny closing line, max 14 words, NEW (not a common "
                   "slogan, not like a recent Reel's). No emojis."},
+    "versus": {"type": "boolean", "description": "true only if the people in 'people' are OPPONENTS in this story (e.g. "
+               "Rahul Gandhi vs Bhagwant Mann); false for a leader and his own party or allies"},
     "hook": {"type": "string", "description": "4-8 words shown BIG over the leader's photo/video for the first 2 s, "
              "like a news hook: who + what in plain words, e.g. 'Rahul ne Mann se jawab maanga, AAP chup'. No emojis."},
     "people": {"type": "array", "description": "1-3 real people (or parties) this joke is about, main one first; their "
@@ -3065,7 +3197,7 @@ POLITICS_OPTION = {"type": "object", "properties": {
                     "'Ye us dost ko bhejo jo har baat pe INDIA bloc ko defend karta hai 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},
-    "required": ["based_on", "issue", "party", "format", "hook", "claim", "context", "facts", "punchline", "people", "highlight", "clip_search",
+    "required": ["based_on", "issue", "party", "format", "versus", "hook", "claim", "context", "facts", "punchline", "people", "highlight", "clip_search",
                  "clip_wanted", "caption", "pin_comment", "hashtags", "songs"], "additionalProperties": False}
 
 POLITICS_SYSTEM = """You write the daily political satire Reel for {page}, an Indian Hinglish page for 18-34s \
@@ -3127,6 +3259,281 @@ def too_long(o: dict) -> list[str]:
         return len((" ".join(x) if isinstance(x, list) else x).split())
     out = [k for k, n in (("claim", 18), ("context", 28), ("punchline", 14)) if words(o[k]) > n]
     return out + ["facts"] * any(words(f["fact"]) > 14 for f in o["facts"][:2])
+
+
+# ---------------------------------------------------------------- 🎯 roast card formats (owner, 19 Oct 2026)
+
+ROAST_FORMATS = ["scoreboard", "quote_trap", "report_card", "then_now", "counter"]   # new ones; 'classic' = the old Reel
+ROAST_HELP = {
+    "scoreboard": "A SCOREBOARD of promise vs record: columns like ['Kaha', 'Hua'], 3-4 rows, each a dated, checkable item "
+                  "from the articles (a number, a deadline, an own-record figure); the contrast is the joke.",
+    "quote_trap": "A QUOTE TRAP: the leader's EXACT words from the articles (quote_text, in quotes), who said it "
+                  "(quote_speaker) and where/when (quote_when). The hook mocks the quote itself ('Reporter: Court "
+                  "jaoge? Leader: ...'). No rows.",
+    "report_card": "A REPORT CARD of the leader's/party's promises: columns ['Wada', 'Hua kya', 'Marks'], 3-4 rows, "
+                   "marks like '2/10' (a joke grade, but the 'hua kya' must be a documented fact).",
+    "then_now": "THEN vs NOW: columns ['Tab', 'Ab'], 3 rows contrasting the SAME leader/party's earlier stand with "
+                "today's, each dated, from the articles.",
+    "counter": "A DAY COUNTER: counter_number = days since a dated promise/claim in the articles ('31'), counter_label "
+               "= what it was ('Din se 'sabut jald saamne aayenge''). Compute the days from the dates in the articles. No rows.",
+}
+ROAST_OPTION = {"type": "object", "properties": {
+    "feasible": {"type": "boolean", "description": "false if the articles do NOT contain what this format needs "
+                 "(dated checkable items, an exact quote, a dated promise): then the other fields can be empty"},
+    "based_on": {"type": "string"}, "issue": {"type": "string", "description": "2-4 words"}, "party": {"type": "string"},
+    "hook": {"type": "string", "description": "4-9 words, huge on the leader's photo: the leader/party first, then the "
+             "roast ('Rahul bole: Mera kaam loktantra bachana thodi hai'). Hinglish, no emojis, a fact"},
+    "title": {"type": "string", "description": "Max 6 words, the card's title in a red bar, no emojis"},
+    "columns": {"type": "array", "items": {"type": "string"}, "description": "2-3 column heads (empty if no table)"},
+    "rows": {"type": "array", "description": "3-4 table rows (empty if no table)", "items": {"type": "object", "properties": {
+        "cells": {"type": "array", "items": {"type": "string"}, "description": "one text per column, max 9 words each"},
+        "source": {"type": "string", "description": "the article's site for this row"}},
+        "required": ["cells", "source"], "additionalProperties": False}},
+    "quote_text": {"type": "string"}, "quote_speaker": {"type": "string"}, "quote_when": {"type": "string"},
+    "counter_number": {"type": "string"}, "counter_label": {"type": "string"},
+    "verdict": {"type": "string", "description": "A stamp of max 3 words over the card, e.g. 'PROMISE FAIL', 'GRADE: F', "
+                "'SAB RECORD PE'. Roasts the record, never the person's looks or family"},
+    "punchline": {"type": "string", "description": "Max 14 words, the big funny closing line. No emojis"},
+    "people": {"type": "array", "description": "1-2 real people (or the party) shown on the cover, main first", "items": {
+        "type": "object", "properties": {"name": {"type": "string"}, "wiki": {"type": "string"},
+                                         "kind": {"type": "string", "enum": ["person", "party"]}},
+        "required": ["name", "wiki", "kind"], "additionalProperties": False}},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied from the hook"},
+    "caption": {"type": "string", "description": "2-4 short Hinglish lines, the first with the searchable names, last line "
+                "a side-taking question ('Kaun sahi? Comment karo 👇'). 1-3 emojis"},
+    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags, a funny line + a share nudge"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
+    "songs": SONGS},
+    "required": ["feasible", "based_on", "issue", "party", "hook", "title", "columns", "rows", "quote_text", "quote_speaker",
+                 "quote_when", "counter_number", "counter_label", "verdict", "punchline", "people", "highlight", "caption",
+                 "pin_comment", "hashtags", "songs"], "additionalProperties": False}
+
+
+ROAST_JUDGE = ("You are a 22-year-old Indian on Instagram who did NOT read today's news. Rate each political roast CARD "
+               "Reel (a scoreboard, quote, report card, then-vs-now or day counter with a big hook and a punchline) 1-10 "
+               "for: understandable (from the card alone you see who did what and the facts prove the point), funny "
+               "(a sharp, shareable roast: the contrast, the quote or the punchline makes you smirk; a clean, factual "
+               "burn counts), fresh (not the issue, angle, hook or punchline of a recent Reel below). Be fair, not harsh: "
+               "a well-sourced roast that lands is a 7.")
+
+
+def squash(text: str) -> str:
+    """Lower-case letters and digits only, for checking that a quote is word for word in an article."""
+    return re.sub(r"[^a-z0-9]+", "", text.lower())
+
+
+def roast_format_today(today: str) -> str:
+    """Even days a NEW card format in turn, odd days the classic Reel (starts Tue 20 Oct 2026 with the scoreboard)."""
+    from datetime import date
+    d = date.fromisoformat(today).toordinal() - date(2026, 10, 20).toordinal()
+    return "classic" if d % 2 else ROAST_FORMATS[(d // 2) % len(ROAST_FORMATS)]
+
+
+def roast_card(fmt: str, post: dict, photo: Image.Image | None, out_mp4: str, hook: str, credit: str) -> list[Image.Image]:
+    """🧾 The new satire Reel: 1) the standard cover (the leader full-screen + the roast hook, 2.2 s), 2) the card of
+    this format (scoreboard / then-vs-now / report card table, quote card, day counter) with the verdict stamp, 3) the
+    punchline + SEND THIS (5 s), then Follow (1 s). Returns [cover, card, punchline] to proofread."""
+    highlights = {norm(w) for phrase in post.get("highlight", []) for w in phrase.split()}
+    BG, PANEL = "#0E0E12", "#1B1B24"
+    logo = logo_img()
+    card = Image.new("RGBA", (RW, RH), BG)
+    if logo:
+        card.alpha_composite(logo, (60, 110))
+    cd = ImageDraw.Draw(card)
+    title = printable(post["title"]).upper()
+    tsize = 66
+    tf = font("Anton-Regular.ttf", tsize)
+    while tf.getlength(title) > RW - 2 * LEFT - 60 and tsize > 40:
+        tsize -= 4
+        tf = font("Anton-Regular.ttf", tsize)
+    tbar = pill(title, tf, RED, "#FFFFFF", pad=(28, 12))
+    card.alpha_composite(tbar, ((RW - tbar.width) // 2, 250))
+    y = 250 + tbar.height + 50
+    words = 0
+    sources = ""
+    if fmt in ("scoreboard", "then_now", "report_card"):
+        cols = [printable(c) for c in post["columns"]][:3]
+        n = len(cols)
+        widths = {2: [490, 490], 3: [360, 400, 220]}.get(n, [980])
+        x0 = 50
+        hf = font("Poppins-Bold.ttf", 40)
+        xs = [x0 + sum(widths[:i]) for i in range(n)]
+        for c, cx in zip(cols, xs):
+            cd.text((cx + 20, y), c.upper(), font=hf, fill=YELLOW)
+        y += 78
+        for row in post["rows"][:4]:
+            cells = [printable(c) for c in row["cells"]][:n]
+            laid = []
+            for c, w in zip(cells, widths):
+                ls, cf, clh = fit_lines(c, w - 44, 330, sizes=range(54, 34, -2))
+                laid.append((ls, cf, clh))
+                words += len(c.split())
+            h = max(len(ls) * clh for ls, cf, clh in laid) + 66
+            cd.rounded_rectangle((x0, y, x0 + sum(widths), y + h), radius=22, fill=PANEL)
+            for (ls, cf, clh), cx, ci in zip(laid, xs, range(n)):
+                last = (fmt == "report_card" and ci == n - 1)
+                for j, wds in enumerate(ls):
+                    cd.text((cx + 22, y + 33 + j * clh), " ".join(wds), font=cf,
+                            fill=COVER_PINK if last else "#FFFFFF")
+            y += h + 24
+        sources = "Source: " + ", ".join(dict.fromkeys(printable(r["source"]) for r in post["rows"][:4] if r["source"]))
+    elif fmt == "quote_trap":
+        if photo is not None:
+            win = ImageOps.fit(photo.convert("RGB"), (920, 380), Image.LANCZOS, centering=(0.5, 0.3))
+            m = Image.new("L", win.size, 0)
+            ImageDraw.Draw(m).rounded_rectangle((0, 0, win.width - 1, win.height - 1), radius=26, fill=255)
+            card.paste(win, (80, y), m)
+            y += 420
+        q = "“" + printable(post["quote_text"]).strip("\"“” ") + "”"
+        ls, qf, qlh = fit_lines(q, RW - 2 * LEFT - 20, 470, sizes=range(70, 34, -2))
+        for j, wds in enumerate(ls):
+            cd.text((LEFT + 10, y + j * qlh), " ".join(wds), font=qf, fill="#FFFFFF")
+        y += len(ls) * qlh + 36
+        cd.text((LEFT + 10, y), "- " + printable(post["quote_speaker"]), font=font("Poppins-Bold.ttf", 50), fill=YELLOW)
+        cd.text((LEFT + 10, y + 70), printable(post["quote_when"])[:80], font=font("Poppins-SemiBold.ttf", 34), fill="#9A9AA5")
+        y += 140
+        words = len(q.split()) + 6
+        sources = ""
+    else:   # counter
+        num = printable(post["counter_number"])
+        nf = font("Anton-Regular.ttf", 420)
+        cd.text((RW // 2, y + 250), num, font=nf, fill=COVER_PINK, anchor="mm", stroke_width=6, stroke_fill="#000000")
+        y += 520
+        ls, lf, llh = fit_lines(printable(post["counter_label"]), RW - 2 * LEFT, 400, sizes=range(70, 40, -4))
+        for j, wds in enumerate(ls):
+            cd.text((RW // 2, y + j * llh), " ".join(wds), font=lf, fill="#FFFFFF", anchor="mt")
+        words = len(post["counter_label"].split()) + 4
+    if post.get("verdict"):   # the stamp: red outline, tilted
+        sf = font("Anton-Regular.ttf", 110)
+        txt = printable(post["verdict"]).upper()
+        w = int(sf.getlength(txt)) + 80
+        stamp = Image.new("RGBA", (w, 190), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(stamp)
+        sd.rounded_rectangle((4, 4, w - 5, 185), radius=18, outline=RED, width=10)
+        sd.text((w // 2, 95), txt, font=sf, fill=RED, anchor="mm")
+        stamp = stamp.rotate(8, expand=True, resample=Image.BICUBIC)
+        card.alpha_composite(stamp, ((RW - stamp.width) // 2, max(y + 30, 260) if y + 30 + stamp.height < 1640
+                                      else 1640 - stamp.height))
+    if sources:
+        cd.text((50, 1700), sources[:90], font=font("Poppins-SemiBold.ttf", 26), fill="#888890")
+    handle_tag(card, 1790)
+    # punchline screen
+    pl = Image.new("RGBA", (RW, RH), YELLOW)
+    if logo:
+        pl.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+    p_lines, p_fnt, p_lh = fit_lines(printable(post["punchline"]), RIGHT - LEFT, 700, sizes=range(96, 48, -4))
+    p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, highlights)
+    py = (RH - len(p_imgs) * p_lh) // 2 - 120
+    for j, img in enumerate(p_imgs):
+        pl.alpha_composite(img, (LEFT, py + j * p_lh))
+    cta = pill("SEND THIS TO THAT ONE FRIEND", font("Poppins-Bold.ttf", 40), RED, "#FFFFFF", pad=(30, 16), arrow=True)
+    pl.alpha_composite(cta, ((RW - cta.width) // 2, int(py + len(p_imgs) * p_lh + 90)))
+    handle_tag(pl, 1730, fill="#111111", stroke=0)
+    d_cover, d_card, d_punch = COVER_SECS, min(11.0, max(6.5, 4.0 + 0.25 * words)), SATIRE_PUNCH_SECS
+    enc, c1, last = Encoder(out_mp4), None, None
+    base = photo if photo is not None else brand_background()
+    for i in range(int(d_cover * FPS)):
+        last = cover_hook_frame(base, hook, "ROAST", credit, i / FPS, dur=d_cover)
+        if i == int(1.0 * FPS):
+            c1 = last.convert("RGB")
+        enc.add(last)
+    for i in range(int(d_card * FPS)):
+        enc.add(card)
+    for i in range(int(d_punch * FPS)):
+        enc.add(pl)
+    add_follow(enc, pl, SATIRE_FOLLOW_SECS)
+    enc.close()
+    return [c1 or last.convert("RGB"), card.convert("RGB"), pl.convert("RGB")]
+
+
+def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories: list, picks: list, recent: str,
+                         fmt: str) -> bool:
+    """🧾 6 PM on its new-format days (owner, 19 Oct 2026: 'explore new ideas to roast the left'): one story, one card
+    format, every row/quote/number from the articles, the standard cover. False (reason printed) if nothing fits,
+    then the classic Reel is made instead."""
+    import carousel
+    import create_post
+    import fun
+    import generate as g
+    import proofread
+    import status
+    model = CONFIG.get("membership_model", "sonnet")
+    songs = trending_songs(state)
+    used = set(state.get("reel_politics_used", []))
+    best = story = sources = None
+    for n in picks:
+        story = stories[n - 1]
+        article = carousel.story_text(story["url"], story["title"]) or story["title"]
+        related = [a for a in create_post.bing_articles(story["title"][:90], limit=6) if a["url"] != story["url"]][:3]
+        background = []
+        for a in related:
+            t = carousel.article_text(carousel.page_html(a["url"]), limit=2500)
+            background.append(f"({a['site']}) {a['title']}\n{t}" if t else f"({a['site']}) {a['title']}")
+        sources = f"MAIN ({story['site']}): {story['title']}\n{article[:5000]}\n\nRELATED:\n" + "\n\n".join(background)
+        status.step(f"Writing the {fmt.replace('_', ' ')} card: {story['title'][:50]}", 3)
+        try:
+            options = fun.claude_json(
+                POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS) + "\n\nTHIS Reel is a CARD "
+                "Reel, not the usual KYA HUA?/REALITY CHECK one: " + ROAST_HELP[fmt] + " Every row, quote, number and date "
+                "must be in the articles below (right source); if they are not, set feasible=false. Roast actions, "
+                "promises and own words, never looks, family or religion. The hook is huge on the leader's photo.",
+                f"{fun.today_context()}\n\nArticles:\n{sources}\n\nRecent satire Reels (new angle, hook, punchline):\n"
+                f"{recent}\n\nWrite exactly 2 different {fmt} cards about the MAIN story, format = {fmt}."
+                f"{viral_memory()}{songs_prompt(songs)}",
+                options_schema(ROAST_OPTION, "Exactly 2 cards"), model, purpose="roast card writing")["options"][:2]
+        except Exception as e:
+            print(f"  ! roast card writing failed: {str(e)[:100]}")
+            continue
+        options = [o for o in options if o.get("feasible") and o.get("punchline") and (
+            o["rows"] if fmt in ("scoreboard", "then_now", "report_card") else
+            # a quote card shows ONLY words that are word for word in the articles (19 Oct 2026 test: a minister's
+            # word was put in the leader's mouth)
+            (o["quote_text"] and len(squash(o["quote_text"])) > 12 and squash(o["quote_text"]) in squash(sources))
+            if fmt == "quote_trap" else o["counter_number"])]
+        if not options:
+            print(f"  roast card: the articles don't fit the {fmt} format: next story")
+            continue
+        try:
+            best = fun.judge_best(options, lambda o: f"[{fmt}] {o['hook']} | {o['title']} | " + " / ".join(
+                " + ".join(r["cells"]) for r in o["rows"]) + f" | {o['quote_text']} {o['counter_number']} | {o['punchline']}",
+                model, judge_system=ROAST_JUDGE + f"\n\nRecent Reels:\n{recent}", min_fresh=5, min_clear=6)
+            break
+        except fun.NoGoodJoke:
+            print("  roast card below the judge's bar: next story")
+    if best is None:
+        return False
+    roman_only(best, ["caption", "pin_comment", "punchline", "hook", "title"])
+    picked_songs = checked_songs(best.pop("songs", []), songs)
+    people = [{"name": x["name"], "kind": x["kind"], "lookup": x["wiki"]} for x in best.get("people", [])
+              if x["kind"] == "person"][:2]   # a party's logo or flag is never the cover (19 Oct 2026 test)
+    photos, credits = named_photos(people, fill_missing=True, vs=False) if people else ([], [])
+    real = [x for x in (photos[1:] if len(photos) > 1 else photos) if min(x.size) >= 400]
+    photo = real[pick_cover_photo(real, story["title"], tmp)] if real else None   # 📸 photo contest
+    best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.")
+    item = {"link": story["url"], "source": story["site"], "title": story["title"]}
+    out = os.path.join(tmp, "reel.mp4")
+
+    def caption_of(d):
+        d = d["post"]
+        return g.full_caption({**d, "caption": d["caption"].strip() + (
+            "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")}, item)
+    status.step("Making the card + fact-checking", 5)
+    frames, data, proof = proofread.run(
+        lambda d: roast_card(fmt, d["post"], photo, out, d["post"]["hook"], credits[0].split(":")[-1].strip()[:50] if credits else ""),
+        {"post": best}, caption_of, sources, strict=True)
+    post = data["post"]
+    if fmt == "quote_trap" and squash(post["quote_text"]) not in squash(sources):   # the proofreader changed the words
+        raise proofread.Unverified("the quote on the card is not word for word in the articles")
+    state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
+    state["satire_recent"] = (state.get("satire_recent", []) + [{
+        "date": today, "party": post["party"], "format": fmt, "topic": post["based_on"], "hook": printable(post["hook"]),
+        "punchline": post["punchline"], "issue": post.get("issue", ""),
+        "facts": [" + ".join(r["cells"]) for r in post["rows"]][:3] or [post["quote_text"] or post["counter_label"]]}])[-15:]
+    save_reel(feed, state, frames[0], out, f"reel_politics-{today}", {
+        "headline": printable(post["hook"]), "tag": f"🎬 REEL · ROAST · {fmt.replace('_', ' ').upper()}",
+        "caption": g.limit_hashtags(caption_of(data)), "source": story["site"], "source_url": story["url"],
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+    return True
 
 
 def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
@@ -3214,6 +3621,17 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     picks = [n for n in picks if 1 <= n <= len(stories)][:3]
     if not picks:
         raise RuntimeError("no story about the opposition today")
+    fmt = roast_format_today(today)
+    if fmt != "classic":   # 🧾 a new card format today (then the next one in the cycle); else the classic Reel below
+        order = [fmt, ROAST_FORMATS[(ROAST_FORMATS.index(fmt) + 1) % len(ROAST_FORMATS)]]
+        for f in order:
+            try:
+                if make_roast_card_reel(state, feed, today, tmp, stories, picks, recent, f):
+                    return
+            except Exception as e:   # never lose the 6 PM slot over a new format
+                print(f"  ! roast card {f} failed ({type(e).__name__}: {str(e)[:120]})")
+            status.step(f"The {f.replace('_', ' ')} card didn't fit today", 3)
+        status.step("No card format fit today: the classic Reel", 3)
     songs = trending_songs(state)
     best = None
     def write(sources: str, extra: str = "") -> list[dict]:
@@ -3283,7 +3701,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     # 🎥 Their OWN video of the moment first (owner, 16 Oct 2026), playing in the window (no sound, the song is added)
     qv = quote_video(story["title"], sources[:1500], tmp)
     video_start, video_credit = None, ""
-    photos, credits = ([], []) if qv and qv["own"] else (named_photos(people, fill_missing=True) if people else ([], []))
+    photos, credits = ([], []) if qv and qv["own"] else (
+        named_photos(people, fill_missing=True, vs=best.get("versus", False)) if people else ([], []))
     if qv and qv["own"]:
         clip, secs, video_start = qv["path"], video_info(qv["path"])[2], qv["start"]
         video_credit = f"Video: @{qv['handle']} on X"
@@ -3314,8 +3733,12 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     # 🪝 Opening like the news (owner, 16 Oct 2026: 73% skipped the meme-text opening): the leader full-size —
     # their own video, else their photo (not the VS card), else the clip's first frame — under the big `hook` line
     opener_video = (clip, video_start) if video_start is not None else None
-    opener_still = None if opener_video else (photos[1] if len(photos) > 1 else photos[0] if photos else
-                                              next(video_stills(clip, 0.0, 0.1, 1280), None))
+    real_photos = photos[1:] if len(photos) > 1 else photos   # photos[0] is the 'A VS B' card
+    opener_still = None if opener_video else (
+        real_photos[pick_cover_photo(real_photos, story["title"], tmp)] if real_photos else
+        next(video_stills(clip, 0.0, 0.1, 1280), None))   # 📸 photo contest
+    if best.get("hook"):   # 🪝 hook contest
+        best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.")
 
     def render(d):   # the dig over the clip stays until it's read (satire_hook_secs); later parts time themselves
         clip_dur = satire_hook_secs(d["post"]["claim"])
@@ -4265,6 +4688,11 @@ POLL_BUTTONS = [("heart", "LIKE", "❤️ Like"), ("comment", "COMMENT", "💬 C
                 ("share", "SHARE", "✈️ Share")]
 
 
+def html_unescape(text: str) -> str:
+    import html as _html
+    return _html.unescape(_html.unescape(text))   # Wikimedia credits come double-escaped ('&amp;amp;')
+
+
 WIKI_UA = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}   # Wikimedia asks for a contact
 WIKI_WIDTHS = (330, 500, 960, 1280)   # Wikimedia only serves standard thumbnail widths quickly; others get 429
 
@@ -4320,7 +4748,7 @@ def wiki_thumb(title: str, size: int = 600) -> tuple[Image.Image | None, str]:
             print(f"  ! Wikipedia picture '{title}': download refused")
             return None, ""
         img = Image.open(io.BytesIO(r.content)).convert("RGBA")
-        artist = value("Artist")[:60]
+        artist = html_unescape(value("Artist"))[:60]
         return img, (f"{artist} ({lic})" if artist else lic)
     except Exception as e:
         print(f"  ! Wikipedia picture '{title}': {str(e)[:80]}")
