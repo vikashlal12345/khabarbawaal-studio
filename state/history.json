@@ -142,7 +142,8 @@
   "590c1a5ef161",
   "96eedd30da5d",
   "0bc7c4320b43",
-  "fd724f9ea96f"
+  "fd724f9ea96f",
+  "e12977588e06"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -282,7 +283,7 @@
   "reel_news_pm": "2026-10-18",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-18",
+  "reel_news_am": "2026-10-19",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -290,7 +291,7 @@
   "reel_official": "2026-10-18",
   "reel_news_early": "2026-10-19"
  },
- "inbox_since": "UZEoIqxYUqJB",
+ "inbox_since": "HCZZXiE5FDhS",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -626,7 +627,8 @@
   "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
-  "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html"
+  "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
+  "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -736,10 +738,6 @@
   }
  ],
  "songs_recent": [
-  "Darkhaast",
-  "Azadi",
-  "Under The Influence",
-  "Iris",
   "Heeriye (feat. Arijit Singh)",
   "Madhosh",
   "Man I Need",
@@ -775,7 +773,11 @@
   "Thumkeshwari",
   "Shararat",
   "Jalebi Baby",
-  "Housewife"
+  "Housewife",
+  "Jaan ‘Nisaar (Arijit)",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "All The Stars",
+  "Lies (feat. Lana Del Rey)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -790,6 +792,10 @@
  "reel_news_recent": [
   {
    "title": "Tiger Shroff in car, 5 shots fired, then 3 men flee on bike: New video of attack bid surfaces",
+   "date": "2026-10-19"
+  },
+  {
+   "title": "Bike used for firing at Tiger Shroff recovered by police, two detained",
    "date": "2026-10-19"
   }
  ]

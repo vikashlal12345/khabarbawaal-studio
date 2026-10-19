@@ -1,5 +1,61 @@
 [
  {
+  "id": "reel_news_am-2026-10-19",
+  "image": "posts/20261019-0504-reel_news_am-2026-10-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261019-050402-reel_news_am-2026-10-19.mp4",
+  "headline": "Bike used for firing at Tiger Shroff recovered by police, two detained",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tiger Shroff firing case update: bike mil gayi, 2 detained 🚨\n\nVile Parle mein Tiger Shroff par 5 round fire hue the. Police ne 15 teams banayi hain.\nSources ke mutabik, firing mein use hui bike Andheri Railway Station ke paas se baramad hui aur do log hirasat mein hain.\nBishnoi gang ke do alleged operatives ne hamle ki zimmedari li hai.\n\nKya film stars ko Mumbai mein aur suraksha milni chahiye? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tigershroff #bollywood #mumbai #bollywoodnews #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
+  "pin_comment": "Kisi Tiger Shroff fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jaan ‘Nisaar (Arijit)",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "serious, tense, concern for Tiger"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "intense thriller vibe for manhunt"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "star-power, dramatic tone"
+   },
+   {
+    "title": "Lies (feat. Lana Del Rey)",
+    "artist": "Zach Bryan & Lana Del Rey",
+    "lang": "english",
+    "mood": "calm serious news backdrop"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Vile Parle, not Juhu; nothing about car or FIR",
+    "Fact corrected to match the article: Disha Patani, FWICE, and Tiger's scratches are not in the article; the driver and an autorickshaw driver were hurt",
+    "Fact corrected to match the article: Location was Vile Parle per article",
+    "Fact corrected to match the article: The firing happened in Vile Parle, not Juhu."
+   ],
+   "fixed": [
+    "Juhu mein Tiger Shroff ki car par 5 round fire hue the. Police ne FIR darj ki aur 15 teams banayi hain. → Vile Parle mein Tiger Shroff par 5 round fire hue the. Police ne 15 teams banayi hain.",
+    "Disha Patani unke ghar pahunchi, aur FWICE ne suraksha ki maang ki hai. Tiger ko halki kharonchein aayi hain. → Bishnoi gang ke do alleged operatives ne hamle ki zimmedari li hai.",
+    "Juhu ke beech sadak par goli. → Vile Parle mein sadak par goli.",
+    "Tiger Shroff firing Juhu bike recovered police → Tiger Shroff firing Vile Parle bike recovered police",
+    "Police ne firing mein use bike Andheri station ke paas se baraamad ki → Police ne firing mein use hui bike Andheri station ke paas se baraamad ki"
+   ]
+  },
+  "created_at": "2026-10-19T05:04:02+00:00"
+ },
+ {
   "id": "reel_clip_am-2026-10-19",
   "image": "posts/20261019-0332-reel_clip_am-2026-10-19.jpg",
   "kind": "reel",
