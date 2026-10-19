@@ -31,7 +31,7 @@ MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open",
           "reel_news_noon", "reel_news_aft", "reel_clip_am", "reel_clip", "reel_meme", "reel_poll", "reel_news",
           "reel_break_aft", "reel_bachpan"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
-SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
+SPECIAL_WINDOW = (-3, 55)                             # minutes around a special's time that count as its run (19 Oct 2026: GitHub started the 9:30 PM run 25 min late and the slot was lost)
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08
 
 
