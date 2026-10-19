@@ -17,11 +17,11 @@ REGULAR_HOURS: list[int] = []
 # 12 Reels, 1.5 h apart, then 1 h in the late evening (owner, 15 Oct 2026: 11:30 AM and 3 PM news removed).
 SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Navratri goddess / god of the day
             "reel_news_early": (7, 30),                    # 🔥 viral news
-            "reel_clip_am": (9, 0),                        # 😂 Tag that friend
+            "reel_break_am": (9, 0),                       # ⚡ breaking card (owner, 19 Oct 2026; was 😂 Tag that friend)
             "reel_news_am": (10, 30),                      # 🔥 viral news
-            "reel_clip": (12, 0),                          # 😂 Tag that friend
+            "reel_break_noon": (12, 0),                    # ⚡ breaking card (was 😂 Tag that friend)
             "reel_news_pm": (13, 30),                      # 🔥 viral news
-            "reel_meme": (15, 0),                          # 😂 meme
+            "reel_break_aft": (15, 0),                     # ⚡ breaking card (was 😂 meme)
             "reel_poll": (16, 30),                         # 🗳️ "CHOOSE YOUR ___" poll
             "reel_politics": (18, 0),                      # 🎯 political satire + reality check
             "reel_news": (19, 30),                         # 🔥 viral news
@@ -31,7 +31,7 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Nav
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",
           "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture", "reel_news_night",
-          "reel_news_noon", "reel_news_aft"}
+          "reel_news_noon", "reel_news_aft", "reel_clip_am", "reel_clip", "reel_meme"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 12)                             # minutes around a special's time that count as its run
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08

@@ -260,6 +260,8 @@ def series_line(kind: str) -> tuple[str, str]:
         return f"Roz {at(kind)} aaj ke Bhagwan", f"roz {at(kind)} aaj ke Bhagwan ka aashirwad 🙏"
     if kind in NEWS_KINDS:
         return "Roz ki viral khabar, sabse pehle", "roz ki viral khabar, sabse pehle 🔥"
+    if kind in BREAK_KINDS:
+        return "Roz ki breaking khabar, sabse pehle", "roz ki breaking khabar, sabse pehle ⚡"
     if kind in CLIP_KINDS or kind == "reel_meme":
         return "Roz naye memes: dosto ko tag karo", "roz naye memes, dosto ko tag karo 😂"
     if kind == "reel_poll":
@@ -1971,6 +1973,211 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     if story["id"]:
         state["seen"] = state.get("seen", []) + [story["id"]]   # the other news Reels skip it
     save_reel(feed, state, cover, out, f"{kind}-{today}", {**entry, "headline": story["title"]})
+
+
+# ---------------------------------------------------------------- ⚡ Breaking card Reels (9 AM, 12 PM, 3 PM)
+
+BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft")
+BREAK_TAGS = ["BREAKING", "UPDATE", "FILM NEWS", "VIRAL", "CRICKET", "POLITICS", "BOLLYWOOD"]
+BREAK_PINK = "#FF3D8B"
+BREAK_OPTION = {"type": "object", "properties": {
+    "pick": {"type": "integer", "description": "Story number from the list"},
+    "tag": {"type": "string", "enum": BREAK_TAGS},
+    "hook": {"type": "string", "description": "4-9 words, huge on the photo: the biggest name first, then the shock "
+             "('Kriti Sanon ka palatwaar', 'Gurmeet-Isha ka kissing poster ne machaya internet par shor'). Hinglish, "
+             "no emojis, a fact from the story"},
+    "headline": {"type": "string", "description": "Max 6 words in the details frame's red bar, e.g. 'KRITI SANON KA "
+                 "BADA ACTION'. No emojis"},
+    "bullets": {"type": "array", "items": {"type": "string"}, "description": "3-4 short lines (max 10 words each), "
+                "the key facts of the story in plain Hinglish, no emojis, each supported by the story text"},
+    "question": {"type": "string", "description": "Max 9 words, a question that takes a side ('Sahi hai ya galat?')"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the "
+                  "hook, shown in pink"},
+    "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (names + event), "
+                "2-3 short fact lines, then the side-taking question. 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags: ends with a share nudge like 'Kisi "
+                    "___ fan ko bhejo 👇'"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
+    "photo_query": {"type": "string", "description": "Short English news search that finds photos of this exact story"},
+    "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person, or empty"},
+    "songs": SONGS},
+    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment",
+                 "hashtags", "photo_query", "wiki_title", "songs"], "additionalProperties": False}
+BREAK_WRITE = {"type": "object", "properties": {k: v for k, v in BREAK_OPTION["properties"].items()
+                                                if k not in ("pick", "photo_query", "wiki_title", "songs")},
+               "required": [k for k in BREAK_OPTION["required"] if k not in ("pick", "photo_query", "wiki_title", "songs")],
+               "additionalProperties": False}
+BREAK_EXTRA = """
+This is a BREAKING CARD REEL (owner, 19 Oct 2026: his own posts of this kind got 14,400 and 6,400 views): frame 1 = one \\
+big striking photo of the star with a huge hook, frame 2 = the news details. Pick the story that is BREAKING right now \\
+(today, the last hours) about the BIGGEST names (A-list actors, top cricketers, the PM, viral personalities): police \\
+action, a controversy, a clash, a reveal, a viral moment, a big announcement. Follow-ups on a story we already ran are \\
+welcome ONLY with a genuinely new development (name it in the hook), e.g. 'Tiger Shroff firing: bike mil gayi'. Never \\
+a story about a death, accident or tragedy told for shock; never invent facts: every bullet must be in the story text."""
+
+
+def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str, hook: str, headline: str,
+                  bullets: list[str], question: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+    """⚡ Frame 1 (2.5 s): the star's photo fills the screen, a huge hook in colour, the BREAKING tag. Frame 2: the
+    photo smaller on top, a red headline bar, 3-4 bullet facts, a side-taking question. Then the Follow card.
+    Returns [frame 1, frame 2] to proofread."""
+    highlights = {norm(w) for phrase in highlight for w in phrase.split()}
+    first, second = first.convert("RGB"), second.convert("RGB")
+    h_lines, h_fnt, h_lh = fit_lines(printable(hook), RIGHT - LEFT + 60, 560, sizes=range(118, 64, -4), name="Anton-Regular.ttf")
+    h_imgs = line_images(h_lines, h_fnt, h_lh, "#FFFFFF", BREAK_PINK, highlights, stroke=9)
+    tag_img = pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8))
+    shade = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shade)
+    for y in range(900):
+        sd.line((0, RH - 900 + y, RW, RH - 900 + y), fill=(0, 0, 0, int(235 * (y / 900) ** 1.5)))
+    cred = font("Poppins-SemiBold.ttf", 24)
+    logo = logo_img()
+    # frame 2 content
+    head_size, head_f = 66, font("Anton-Regular.ttf", 66)
+    while head_f.getlength(printable(headline).upper()) > RW - 2 * LEFT - 50 and head_size > 40:
+        head_size -= 4
+        head_f = font("Anton-Regular.ttf", head_size)
+    head_img = pill(printable(headline).upper(), head_f, RED, "#FFFFFF", pad=(26, 10))
+    blocks = []
+    for b in bullets[:4]:
+        ls, bf, blh = fit_lines(printable(b), RIGHT - LEFT - 70, 150, sizes=range(46, 34, -2))
+        blocks.append((line_images(ls, bf, blh, "#FFFFFF", YELLOW, set(), stroke=0), blh))
+    q_lines, q_fnt, q_lh = fit_lines(printable(question), RIGHT - LEFT, 160, sizes=range(54, 38, -2))
+    q_imgs = line_images(q_lines, q_fnt, q_lh, "#7CFF9B", "#7CFF9B", set(), stroke=0)
+    win_w, win_h = 1000, 520
+    mask = Image.new("L", (win_w, win_h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, win_w - 1, win_h - 1), radius=26, fill=255)
+    words = len(" ".join(bullets[:4] + [question]).split())
+    d1, d2 = 2.5, min(9.0, max(6.0, read_secs(" ".join(bullets[:4] + [question]), 2.5)))
+    enc, frame, c1, c2 = Encoder(out_mp4), None, None, None
+
+    def cover_of(img: Image.Image, w: int, h: int, z: float, cy: float = 0.28) -> Image.Image:
+        k = max(w / img.width, h / img.height) * z
+        big = img.resize((int(img.width * k) + 1, int(img.height * k) + 1), Image.BICUBIC)
+        x0, y0 = (big.width - w) // 2, int((big.height - h) * cy)
+        return big.crop((x0, y0, x0 + w, y0 + h))
+    for i in range(int(d1 * FPS)):
+        z = 1.0 + 0.06 * (i / FPS) / d1
+        frame = cover_of(first, RW, RH, z).convert("RGBA")
+        frame.alpha_composite(shade)
+        frame.alpha_composite(tag_img, (50, 150))
+        y0 = RH - 330 - len(h_imgs) * h_lh
+        for j, img in enumerate(h_imgs):
+            frame.alpha_composite(img, ((RW - img.width) // 2, y0 + j * h_lh))
+        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=cred, fill="#CCCCCC")
+        handle_tag(frame, 1790)
+        if i == int(1.2 * FPS):
+            c1 = frame.convert("RGB")
+        enc.add(frame)
+    for i in range(int(d2 * FPS)):
+        z = 1.0 + 0.05 * (i / FPS) / d2
+        frame = Image.new("RGBA", (RW, RH), "#0E0E12")
+        if logo:
+            frame.alpha_composite(logo, (60, 110))
+        frame.alpha_composite(tag_img, (RW - tag_img.width - 60, 120))
+        frame.paste(cover_of(second, win_w, win_h, z), ((RW - win_w) // 2, 250), mask)
+        y = 250 + win_h + 40
+        frame.alpha_composite(head_img, ((RW - head_img.width) // 2, y))
+        y += head_img.height + 40
+        d = ImageDraw.Draw(frame)
+        for imgs, lh in blocks:
+            d.ellipse((LEFT, y + lh // 2 - 11, LEFT + 22, y + lh // 2 + 11), fill=YELLOW)
+            for n, img in enumerate(imgs):
+                frame.alpha_composite(img, (LEFT + 50, y + n * lh))
+            y += len(imgs) * lh + 22
+        y += 14
+        for n, img in enumerate(q_imgs):
+            frame.alpha_composite(img, (LEFT, y + n * q_lh))
+        d.text((50, 1700), printable(credit)[:60], font=cred, fill="#888888")
+        handle_tag(frame, 1790)
+        if i == int(d2 * FPS) - 2:
+            c2 = frame.convert("RGB")
+        enc.add(frame)
+    add_follow(enc, frame)
+    enc.close()
+    return [c1 or frame.convert("RGB"), c2 or frame.convert("RGB")]
+
+
+def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
+    """⚡ 9 AM / 12 PM / 3 PM (owner, 19 Oct 2026: 'replace with this type of breaking news'): the biggest BREAKING
+    story of the last hours about the biggest names, as a breaking card Reel (`breaking_reel`), like his own Kriti
+    Sanon / Anjali Arora / Tiger Shroff posts. Proofread strictly; fails -> the normal news Reel backup."""
+    import fun
+    import generate as g
+    import proofread
+    import status
+    used = state.get("reel_news_used", [])
+    status.step("Picking the biggest breaking story", 2)
+    stories = [i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used][:45]
+    if not stories:
+        raise RuntimeError("no fresh news stories to make a Reel from")
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
+                        + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
+    trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
+    songs = trending_songs(state)
+    options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA,
+                              f"{fun.today_context()}\n\nTrending on X today (hours):\n{trends}\n\nStories:\n{listing}"
+                              f"{viral_memory()}{recent_news(state, today)[1]}\n\nGive your top 3 picks, the most "
+                              "breaking first." + songs_prompt(songs),
+                              options_schema(BREAK_OPTION, "Top 3 picks, best first"),
+                              CONFIG.get("membership_model", "sonnet"), purpose="breaking pick")["options"]
+    opt = story = photos = None
+    for o in options:
+        if not 1 <= o["pick"] <= len(stories):
+            continue
+        st = stories[o["pick"] - 1]
+        item = {"link": st["link"], "source": st["source"], "title": st["title"]}
+        status.step(f"Collecting photos: {st['title'][:70]}", 3)
+        ph = news_photos(item, o)
+        good = [x for x in ph if min(x[0].size) >= 480]
+        if good:
+            opt, story, photos, it = o, st, good, item
+            break
+        print(f"  no sharp photo for: {st['title'][:70]}")
+    if opt is None:
+        raise RuntimeError("no breaking story had a sharp photo")
+    # the first frame wants a tall, sharp photo of the star; the second frame another one
+    photos.sort(key=lambda x: (x[0].height / x[0].width < 0.9, -min(x[0].size)))
+    pics = [photos[0], photos[1] if len(photos) > 1 else photos[0]]
+    import carousel
+    facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
+    # Second writing step from the FULL story (19 Oct 2026: written from the headline alone it invented a bystander,
+    # a date and a name): same fields, only facts that are in the text
+    status.step("Writing the card from the full story", 4)
+    final = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA,
+                            f"{fun.today_context()}\n\nWrite the breaking card for THIS story, using ONLY facts that are "
+                            f"in the text below (no names, numbers, dates or injuries that are not there).\n\n"
+                            f"Headline: {story['title']}\n\nFull story:\n{facts[:5500]}", BREAK_WRITE,
+                            CONFIG.get("membership_model", "sonnet"), purpose="breaking card write")
+    opt = {**opt, **final}
+    opt["caption"] = unescape(opt["caption"])
+    roman_only(opt, ["caption", "pin_comment", "hook", "headline", "question"])
+    bl = {"bullets_text": "\n".join(opt["bullets"])}
+    roman_only(bl, ["bullets_text"])
+    opt["bullets"] = [x for x in bl["bullets_text"].split("\n") if x.strip()][:4]
+    songs_picked = checked_songs(opt.pop("songs", []), songs)
+    out = os.path.join(tmp, "reel.mp4")
+
+    def render(d):   # d["p1"], d["p2"]: which photo is on frame 1 / frame 2 (a doubtful photo is swapped, not the Reel)
+        a_, b_ = photos[min(d["p1"], len(photos) - 1)], photos[min(d["p2"], len(photos) - 1)]
+        return breaking_reel(a_[0], b_[0], f"Photo: {a_[1]}", d["post"]["tag"], d["post"]["hook"], d["post"]["headline"],
+                             d["post"]["bullets"], d["post"]["question"], d["post"]["highlight"], out)
+
+    def swap(d, numbers):   # the proofreader doubts a photo: use the next one for that frame
+        k = "p1" if 1 in numbers else "p2"
+        return {**d, k: d[k] + 1} if d[k] + 1 < len(photos) else None
+    status.step("Making the video + proofreading", 5)
+    frames, data, proof = proofread.run(render, {"post": opt, "p1": 0, "p2": 1 if len(photos) > 1 else 0},
+                                        lambda d: g.full_caption(d["post"], it), facts, drop=swap, strict=True)
+    post = data["post"]
+    state["reel_news_used"] = (used + [story["link"]])[-80:]
+    state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": story["title"], "date": today}])[-40:]
+    if story["id"]:
+        state["seen"] = state.get("seen", []) + [story["id"]]
+    save_reel(feed, state, frames[0], out, f"{kind}-{today}", {
+        "headline": story["title"], "tag": "🎬 REEL · ⚡ BREAKING CARD", "caption": g.limit_hashtags(g.full_caption(post, it)),
+        "source": story["source"], "source_url": story["link"], "pin_comment": post.get("pin_comment", ""),
+        "songs": songs_picked, "proof": proof})
 
 
 # ---------------------------------------------------------------- 🎥🔊 10 PM: official video news
@@ -4339,7 +4546,7 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
             "🎯 Satire" if kind == "reel_politics" else "😂 Meme" if kind == "reel_meme" else
             "😂 Tag that friend" if kind in CLIP_KINDS else "🎬 Top 5" if kind in TOP5_KINDS else
             "🗳️ Choose your" if kind == "reel_poll" else "🧒 Bachpan" if kind == "reel_bachpan" else
-            "🎥🔊 Official video" if kind == "reel_official" else "🎬 Reel")
+            "🎥🔊 Official video" if kind == "reel_official" else "⚡ Breaking" if kind in BREAK_KINDS else "🎬 Reel")
     status.start(kind, today, f"{name} · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 6,
                  "Started" if attempt == 1 else f"Trying again ({attempt} of {tries})")
     then = f"Trying again ({attempt + 1} of {tries})." if attempt < tries else "Making a backup Reel instead."
@@ -4359,6 +4566,8 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
                 make_bachpan_reel(state, feed, today, tmp)
             elif kind == "reel_official":
                 make_official_reel(state, feed, today, tmp)
+            elif kind in BREAK_KINDS:
+                make_breaking_reel(kind, state, feed, today, tmp)
             elif kind == "reel_politics":
                 make_politics_reel(state, feed, today, tmp)
             elif kind == "reel_devotion":
