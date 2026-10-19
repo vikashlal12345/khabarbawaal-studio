@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_pm-2026-10-19",
+  "image": "posts/20261019-0803-reel_news_pm-2026-10-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261019-080324-reel_news_pm-2026-10-19.mp4",
+  "headline": "Lawrence Bishnoi gang's Bollywood hit-list: Enmity with Salman Khan to firing on Tiger Shroff, threats to Rohit Shetty, Ranveer Singh, Kapil Sharma",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tiger Shroff firing Lawrence Bishnoi hit list 🔥\nSunday shaam Tiger Shroff ki car par firing hui, driver aur ek bystander ghayal hue.\nBishnoi gang ne zimmedari li. Pehle Salman Khan, Gippy Grewal, AP Dhillon, aur ab Tiger.\nRohit Shetty, Ranveer Singh, Kapil Sharma ko bhi threats mile the.\nKya Bollywood stars ki security aur sakht honi chahiye? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tigershroff #salmankhan #bollywoodnews #lawrencebishnoi #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
+  "pin_comment": "Kisi Salman fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "dark dramatic vibe = gang threat"
+   },
+   {
+    "title": "Real Bad Man",
+    "artist": "Karan Aujla",
+    "lang": "hindi",
+    "mood": "gangster tone, high on charts"
+   },
+   {
+    "title": "Under The Influence",
+    "artist": "Chris Brown",
+    "lang": "english",
+    "mood": "tense, moody build-up"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "hard-hitting desi rap energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Baba Siddique is not mentioned in the article; replaced with people the article says were targeted."
+   ],
+   "fixed": [
+    "Pehle Salman Khan, Baba Siddique, aur ab Tiger. → Pehle Salman Khan, Gippy Grewal, AP Dhillon, aur ab Tiger."
+   ]
+  },
+  "created_at": "2026-10-19T08:03:24+00:00"
+ },
+ {
   "id": "reel_clip-2026-10-19",
   "image": "posts/20261019-0633-reel_clip-2026-10-19.jpg",
   "kind": "reel",

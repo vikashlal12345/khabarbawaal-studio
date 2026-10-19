@@ -143,7 +143,8 @@
   "96eedd30da5d",
   "0bc7c4320b43",
   "fd724f9ea96f",
-  "e12977588e06"
+  "e12977588e06",
+  "89cdd35bc57c"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -280,7 +281,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-19",
-  "reel_news_pm": "2026-10-18",
+  "reel_news_pm": "2026-10-19",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-19",
@@ -632,7 +633,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
   "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
-  "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html"
+  "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -742,10 +744,6 @@
   }
  ],
  "songs_recent": [
-  "Tera Hoke Rahoon",
-  "Tum Ho Toh (From \"Saiyaara\")",
-  "Sweater Weather",
-  "back to friends",
   "Barsaat",
   "Rula Ke Gaya Ishq",
   "Espresso",
@@ -781,7 +779,11 @@
   "Pardesiya (From \"Param Sundari\")",
   "Tenu Sang Rakhna (From \"Jigra\")",
   "STAY",
-  "Señorita"
+  "Señorita",
+  "Tabaahi (From \"Toxic\")",
+  "Real Bad Man",
+  "Under The Influence",
+  "Big Dawgs"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -800,6 +802,10 @@
   },
   {
    "title": "Bike used for firing at Tiger Shroff recovered by police, two detained",
+   "date": "2026-10-19"
+  },
+  {
+   "title": "Lawrence Bishnoi gang's Bollywood hit-list: Enmity with Salman Khan to firing on Tiger Shroff, threats to Rohit Shetty, Ranveer Singh, Kapil Sharma",
    "date": "2026-10-19"
   }
  ]
