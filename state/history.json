@@ -147,7 +147,8 @@
   "89cdd35bc57c",
   "c5c786a73a4e",
   "22082a204fc8",
-  "2ca0b36b355d"
+  "2ca0b36b355d",
+  "240df1981fcc"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -295,9 +296,10 @@
   "reel_official": "2026-10-18",
   "reel_news_early": "2026-10-20",
   "reel_rotate": "2026-10-19",
-  "reel_break_am": "2026-10-20"
+  "reel_break_am": "2026-10-20",
+  "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "5aeZMvyjDVx0",
+ "inbox_since": "VJo32npIf6jn",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -658,7 +660,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
   "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
   "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
-  "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/"
+  "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
+  "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -781,10 +784,6 @@
   }
  ],
  "songs_recent": [
-  "Pardesiya (From \"Param Sundari\")",
-  "Tenu Sang Rakhna (From \"Jigra\")",
-  "STAY",
-  "Señorita",
   "Tabaahi (From \"Toxic\")",
   "Real Bad Man",
   "Under The Influence",
@@ -820,7 +819,11 @@
   "Bindaas",
   "Ala Bolelo",
   "stupid song",
-  "Beauty And A Beat"
+  "Beauty And A Beat",
+  "Hukum Reloaded",
+  "Gehra Hua",
+  "Lies (feat. Lana Del Rey)",
+  "Cold Shoulder"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -856,6 +859,10 @@
   },
   {
    "title": "Dil Raju calls Ranbir Kapoor ‘Ranveer Singh’ at Ramayana’s grand Hyderabad event; immediately apologizes: “Sorry, Ranbir Kapoor garu!”",
+   "date": "2026-10-20"
+  },
+  {
+   "title": "Sharad Kelkar says he spoke to Tiger Shroff after firing incident, trusts Mumbai Police to get to the bottom of the case",
    "date": "2026-10-20"
   }
  ]
