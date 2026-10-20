@@ -144,7 +144,8 @@
   "0bc7c4320b43",
   "fd724f9ea96f",
   "e12977588e06",
-  "89cdd35bc57c"
+  "89cdd35bc57c",
+  "c5c786a73a4e"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -290,10 +291,10 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-18",
-  "reel_news_early": "2026-10-19",
+  "reel_news_early": "2026-10-20",
   "reel_rotate": "2026-10-19"
  },
- "inbox_since": "zMypN4tboxra",
+ "inbox_since": "hUIgRPdbzhA0",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -647,7 +648,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
   "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
   "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
+  "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -770,10 +772,6 @@
   }
  ],
  "songs_recent": [
-  "Gehra Hua",
-  "Kabhi Shaam Dhale",
-  "Heat Waves",
-  "Blinding Lights",
   "Thumkeshwari",
   "Shararat",
   "Jalebi Baby",
@@ -809,7 +807,11 @@
   "Sankatmochan Hanuman Ashtak (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
   "Hanuman Aarti",
   "Aarti Keeje Hanuman Lala Ki (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
-  "Shri Ram Chandra Kripalu Bhajuman"
+  "Shri Ram Chandra Kripalu Bhajuman",
+  "Toxic",
+  "Straight Up",
+  "Stop The Wedding!",
+  "Harleys In Hawaii"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -834,6 +836,10 @@
   {
    "title": "Lawrence Bishnoi gang's Bollywood hit-list: Enmity with Salman Khan to firing on Tiger Shroff, threats to Rohit Shetty, Ranveer Singh, Kapil Sharma",
    "date": "2026-10-19"
+  },
+  {
+   "title": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
+   "date": "2026-10-20"
   }
  ]
 }

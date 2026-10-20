@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_early-2026-10-20",
+  "image": "posts/20261020-0234-reel_news_early-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-023406-reel_news_early-2026-10-20.mp4",
+  "headline": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tu Hai Meri Kiran Sonakshi Sinha Bombay High Court 🎬\n\nBombay High Court ne 19 October ko kaha ki Echelon Productions film ko release ya exploit nahi kar sakte.\nPehle Rs. 8.85 crore deposit karne honge.\nFilm mein Sonakshi Sinha hain.\n\nKya release se pehle ye sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#sonakshisinha #bombayhighcourt #tuhaimerikiran #bollywoodnews #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
+  "pin_comment": "Kisi Sonakshi fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "drama, messy film trouble"
+   },
+   {
+    "title": "Straight Up",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "serious, court verdict tone"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "release stopped = stop moment"
+   },
+   {
+    "title": "Harleys In Hawaii",
+    "artist": "Katy Perry",
+    "lang": "english",
+    "mood": "breezy contrast to legal drama"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Headline was ambiguous; the court ordered Echelon (the makers) to deposit the money."
+   ],
+   "fixed": [
+    "Sonakshi Sinha ki film release se pehle 8.85 crore deposit → Sonakshi Sinha ki film ke release se pehle makers ko 8.85 crore deposit karne honge"
+   ]
+  },
+  "created_at": "2026-10-20T02:34:06+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-20",
   "image": "posts/20261020-0032-reel_devotion-2026-10-20.jpg",
   "kind": "reel",
@@ -338,103 +387,5 @@
    "fixed": []
   },
   "created_at": "2026-10-19T03:32:36+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-19",
-  "image": "posts/20261019-0203-reel_news_early-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-020347-reel_news_early-2026-10-19.mp4",
-  "headline": "Tiger Shroff in car, 5 shots fired, then 3 men flee on bike: New video of attack bid surfaces",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tiger Shroff firing video aaya saamne 🚨\nVideo mein do hamlawar Tiger ki car par goli chalate dikhte hain, phir teesre aadmi ke saath bike par bhaag jaate hain.\nTiger ko minor abrasions aaye, driver Firdos ke haath mein goli lagi. Do kathit Bishnoi gang operatives ne zimmedari li hai, police ki 15 teams talaash mein.\nAapke hisaab se Bollywood stars ki security aur tight honi chahiye? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tigershroff #bollywood #breakingnews #mumbai #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
-  "pin_comment": "Kisi Tiger Shroff fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "serious, tense mood for shocking news"
-   },
-   {
-    "title": "Kabhi Shaam Dhale",
-    "artist": "Jaani, Mohammad Faiz",
-    "lang": "hindi",
-    "mood": "calm, heavy tone after the incident"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "slow, moody background for serious story"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "fast pulse = chase and escape"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says several rounds were fired, no count of 5",
-    "Fact corrected to match the article: Claim is by alleged operatives, must be attributed",
-    "Fact corrected to match the article: Police station and Eknath Shinde meeting not in article"
-   ],
-   "fixed": [
-    "Tiger Shroff ki car par 5 goliyan chali → Tiger Shroff ki car par kai goliyan chali",
-    "Bishnoi gang ke Anil Pandit, Harman Sandhu ne zimmedari li; police ki 15 teams talaash mein → Bishnoi gang ke kathit sadasya Anil Pandit, Harman Sandhu ne zimmedari li (daava); police ki 15 teams talaash mein",
-    "Juhu Police Station ke under aaya case, Tiger safe hain. Pehli tasveeron mein wo bandage mein Eknath Shinde se mile. → Tiger ko minor abrasions aaye, driver Firdos ke haath mein goli lagi. Do kathit Bishnoi gang operatives ne zimmedari li hai, police ki 15 teams talaash mein."
-   ]
-  },
-  "created_at": "2026-10-19T02:03:47+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-19",
-  "image": "posts/20261019-0033-reel_devotion-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-003328-reel_devotion-2026-10-19.mp4",
-  "headline": "Navratri Din 8-9: Maa Mahagauri aur Maa Siddhidatri: Maha Ashtami... aaj ghar ki har beti mein Maa ka roop dikhe",
-  "tag": "🎬 REEL · 🙏 MAHA ASHTAMI",
-  "caption": "Maha Ashtami kanya pujan 🙏\nAaj nau kanyaon mein Maa ka roop dekha jata hai.\nBeti ki izzat hi sabse badi pooja hai.\nJai Mata Di likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#kanyapujan #mahaashtami #navratri #jaimatadi #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Ghar ki betiyon ko ye Reel bhejo 🙏",
-  "songs": [
-   {
-    "title": "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
-    "artist": "Anuradha Paudwal, Sonu Nigam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Maa Durga Aarti",
-    "artist": "Shoma Banerjee",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri Aarti",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ambe Gauri (Durga Aarti)",
-    "artist": "Hari Om Sharan, Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-19T00:33:28+00:00"
  }
 ]
