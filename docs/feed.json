@@ -1,5 +1,47 @@
 [
  {
+  "id": "c4d103345735",
+  "kind": "custom",
+  "image": "posts/20261020-0706-c4d103345735-1.jpg",
+  "options": [
+   "posts/20261020-0706-c4d103345735-1.jpg",
+   "posts/20261020-0706-c4d103345735-2.jpg",
+   "posts/20261020-0706-c4d103345735-3.jpg"
+  ],
+  "slides": [
+   "posts/20261020-0706-c4d103345735-s2.jpg",
+   "posts/20261020-0706-c4d103345735-s3.jpg",
+   "posts/20261020-0706-c4d103345735-s4.jpg",
+   "posts/20261020-0706-c4d103345735-s5.jpg"
+  ],
+  "headline": "Umar Khalid, accused in 2020 Delhi riots conspiracy case under UAPA, back in news",
+  "tag": "DELHI RIOTS",
+  "caption": "Umar Khalid ka naam phir se sunai de raha hai 👀\nWo 2020 Delhi dangon ki kathit \"badi saazish\" wale case mein aaropi hain, UAPA ke tahat.\nYe sirf aaropon ka maamla hai.\nCase court mein hai, isliye faisla aane tak sirf court ki baat final hai.\nEk word mein batao: is case ko aap kya kahoge? 👇\n\nFollow @khabarbawaal for daily updates.\n\n#umarkhalid #delhiriots #india #trending #news",
+  "source": "Your pick",
+  "source_url": "",
+  "pin_comment": "Sabse bada sawaal: Delhi dange jaise case mein court ka faisla aane tak hum kitna sabr rakh sakte hain? 🤔",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Arrest date/police claim is not supported by the article.",
+    "Fact corrected to match the article: Arrest date is not in the article.",
+    "Fact corrected to match the article: Other accused (Sharjeel Imam) is not mentioned in the article.",
+    "Fact corrected to match the article: Internal note about missing article shouldn't be shown; promise of future update is unsupported.",
+    "Fact corrected to match the article: Allegation should be attributed as alleged, not stated as fact",
+    "Many corrections were needed: please give it a quick read."
+   ],
+   "fixed": [
+    "Police ke mutabiq unhe September 2020 mein giraftaar kiya gaya tha. → Ye sirf aaropon ka maamla hai.",
+    "September 2020 mein giraftari, case court mein chal raha hai → Case court mein chal raha hai",
+    "Is case mein Sharjeel Imam jaise aur aaropi bhi hain. Aaropon par faisla ab adalat ko karna hai. → Aaropon par faisla ab adalat ko karna hai.",
+    "Poora article uplabdh nahi tha, isliye naye update ki details confirm hote hi batayi jayengi. → Naye update ki details abhi confirm nahi hain.",
+    "Woh 2020 Delhi dange ki badi saazish ke case mein aaropi hai. → Woh 2020 Delhi dangon ki kathit 'badi saazish' ke case mein aaropi hai.",
+    "removed weak photo slide(s) [4]"
+   ]
+  },
+  "created_at": "2026-10-20T07:06:46+00:00"
+ },
+ {
   "id": "c73df1c8dcf1",
   "kind": "custom",
   "image": "posts/20261020-0658-c73df1c8dcf1-1.jpg",

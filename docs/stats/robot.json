@@ -4970,25 +4970,45 @@
    }
   },
   "create": {
-   "posts": 1,
-   "requests": 5,
-   "input": 16,
-   "output": 5262,
-   "cache_read": 14286,
-   "cache_write": 61617,
-   "value_usd": 0.3006,
+   "posts": 2,
+   "requests": 22,
+   "input": 70,
+   "output": 20693,
+   "cache_read": 84375,
+   "cache_write": 229335,
+   "value_usd": 1.1329,
    "by_purpose": {
     "writing": {
-     "requests": 2,
-     "tokens": 39071
+     "requests": 5,
+     "tokens": 97291
     },
     "photo check": {
-     "requests": 1,
-     "tokens": 7590
+     "requests": 3,
+     "tokens": 22785
     },
     "proofreading": {
-     "requests": 2,
-     "tokens": 34520
+     "requests": 9,
+     "tokens": 132263
+    },
+    "reel style": {
+     "requests": 1,
+     "tokens": 16125
+    },
+    "reel news script": {
+     "requests": 1,
+     "tokens": 25143
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 16553
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 6235
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 18078
     }
    }
   }
