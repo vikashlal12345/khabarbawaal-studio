@@ -1,5 +1,48 @@
 [
  {
+  "id": "cd8def1b6177",
+  "image": "posts/20261020-1238-cd8def1b6177.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261020-123844-cd8def1b6177.mp4",
+  "headline": "Meerut court sentences woman, lover to death for strangling husband, staging snakebite death",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Meerut court death sentence Ravita Amardeep snakebite murder case 🐍\nMeerut ki court ne Ravita aur uske premi Amardeep ko pati Amit Kashyap ke qatl mein maut ki saza sunayi.\nKathit taur par 17 April 2025 ko Amit ka gala ghonta gaya, phir bistar par saanp chhodkar use saanp ka kaatna dikhaya gaya. Post-mortem mein gala ghontne ki baat saamne aayi aur saanp ke daant bhi nahi the.\n551 din ke trial, 87 sunwai aur 12 gawahon ke baad faisla aaya. Court ne DM ko teeno bachchon ki dekhbhal ka nirdesh bhi diya.\nKya yeh saza sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: The New Indian Express (link pinned in comments 👇)\n\n#reelsindia #meerut #breakingnews #indianews #courtverdict",
+  "source": "The New Indian Express",
+  "source_url": "https://www.newindianexpress.com/amp/story/states/uttar-pradesh/2026/Oct/16/meerut-court-sentences-woman-lover-to-death-for-strangling-husband-staging-snakebite-death",
+  "pin_comment": "Is khabar ko apne doston ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "sombre mood for betrayal story"
+   },
+   {
+    "title": "Quebec",
+    "artist": "Drake",
+    "lang": "english",
+    "mood": "dark moody backdrop for crime verdict"
+   },
+   {
+    "title": "The One That Got Away",
+    "artist": "Katy Perry",
+    "lang": "english",
+    "mood": "broken trust, tragic ending"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Killing was described as alleged in the article; attribute it, and note the court's guilty finding."
+   ],
+   "fixed": [
+    "aashiq Amardeep ne pati Amit ko maara. → aashiq Amardeep ne kathit taur par pati Amit ko maara; court ne doshi paya."
+   ]
+  },
+  "created_at": "2026-10-20T12:38:44+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-20",
   "image": "posts/20261020-1235-reel_politics-2026-10-20.jpg",
   "kind": "reel",
