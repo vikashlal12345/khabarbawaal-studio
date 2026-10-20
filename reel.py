@@ -602,7 +602,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         layer = hook_layer(hook, highlights)
         # hook_video = (path, start, secs): the official video plays under the line instead (🎥 10 PM Reel)
         stills = video_stills(*hook_video) if hook_video else None
-        still = hook_photo if hook_photo is not None else slides[0][0]
+        still = hook_photo if hook_photo is not None else next((x[0] for x in slides if not x[3]), slides[0][0])
         for i in range(int((hook_video[2] if hook_video else COVER_SECS) * FPS)):
             still = next(stills, still) if stills else still
             frame = hook_frame(still, layer, i / FPS) if hook_video else \
@@ -2095,7 +2095,8 @@ a story about a death, accident or tragedy told for shock; never invent facts: e
 
 
 def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str, hook: str, headline: str,
-                  bullets: list[str], question: str, highlight: list[str], out_mp4: str) -> list[Image.Image]:
+                  bullets: list[str], question: str, highlight: list[str], out_mp4: str,
+                  second_whole: bool = False) -> list[Image.Image]:
     """⚡ Frame 1 (2.5 s): the star's photo fills the screen, a huge hook in colour, the BREAKING tag. Frame 2: the
     photo smaller on top, a red headline bar, 3-4 bullet facts, a side-taking question. Then the Follow card.
     Returns [frame 1, frame 2] to proofread."""
@@ -2145,7 +2146,14 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
         if logo:
             frame.alpha_composite(logo, (60, 110))
         frame.alpha_composite(tag_img, (RW - tag_img.width - 60, 120))
-        frame.paste(cover_of(second, win_w, win_h, z), ((RW - win_w) // 2, 250), mask)
+        if second_whole:   # an X post screenshot: shown whole, never cropped or zoomed (owner, 20 Oct 2026)
+            card_win = Image.new("RGB", (win_w, win_h), "#1A1A22")
+            fit = second.copy()
+            fit.thumbnail((win_w - 30, win_h - 30), Image.LANCZOS)
+            card_win.paste(fit, ((win_w - fit.width) // 2, (win_h - fit.height) // 2))
+            frame.paste(card_win, ((RW - win_w) // 2, 250), mask)
+        else:
+            frame.paste(cover_of(second, win_w, win_h, z), ((RW - win_w) // 2, 250), mask)
         y = 250 + win_h + 40
         frame.alpha_composite(head_img, ((RW - head_img.width) // 2, y))
         y += head_img.height + 40
@@ -2200,7 +2208,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         status.step(f"Collecting photos: {st['title'][:70]}", 3)
         ph = news_photos(item, o)
         good = [x for x in ph if min(x[0].size) >= 480]
-        if good:
+        if any(not x[3] for x in good):   # at least one real photo for the cover (a tweet screenshot never is the cover)
             cands.append((o, st, good, item))
         else:
             print(f"  no sharp photo for: {st['title'][:70]}")
@@ -2224,8 +2232,10 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     used = state.get("reel_news_used", [])
     # the first frame wants a tall, sharp photo of the star; the second frame another one
     photos.sort(key=lambda x: (x[0].height / x[0].width < 0.9, -min(x[0].size)))
-    cover_i = pick_cover_photo([x[0] for x in photos], story["title"], tmp)   # 📸 photo contest
-    other_i = next((k for k in range(len(photos)) if k != cover_i), cover_i)
+    photos.sort(key=lambda x: x[3])   # real photos first, X post screenshots last (stable: keeps the size order)
+    real_n = sum(1 for x in photos if not x[3])
+    cover_i = pick_cover_photo([x[0] for x in photos[:real_n]], story["title"], tmp)   # 📸 photo contest, real photos only
+    other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel
     facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
     # Second writing step from the FULL story (19 Oct 2026: written from the headline alone it invented a bystander,
@@ -2250,11 +2260,12 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     def render(d):   # d["p1"], d["p2"]: which photo is on frame 1 / frame 2 (a doubtful photo is swapped, not the Reel)
         a_, b_ = photos[min(d["p1"], len(photos) - 1)], photos[min(d["p2"], len(photos) - 1)]
         return breaking_reel(a_[0], b_[0], f"Photo: {a_[1]}", d["post"]["tag"], d["post"]["hook"], d["post"]["headline"],
-                             d["post"]["bullets"], d["post"]["question"], d["post"]["highlight"], out)
+                             d["post"]["bullets"], d["post"]["question"], d["post"]["highlight"], out, second_whole=b_[3])
 
     def swap(d, numbers):   # the proofreader doubts a photo: use the next one for that frame
         k = "p1" if 1 in numbers else "p2"
-        return {**d, k: d[k] + 1} if d[k] + 1 < len(photos) else None
+        limit = real_n if k == "p1" else len(photos)   # the cover is never a screenshot
+        return {**d, k: d[k] + 1} if d[k] + 1 < limit else None
     status.step("Making the video + proofreading", 5)
     frames, data, proof = proofread.run(render, {"post": opt, "p1": cover_i, "p2": other_i},
                                         lambda d: g.full_caption(d["post"], it), facts, drop=swap, strict=True)
@@ -2902,7 +2913,8 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
     cover = None
     if not hook_video and opt.get("hook"):   # ⭐ the standard cover: the best photo + the best hook (owner, 19 Oct 2026)
-        cover = photos[pick_cover_photo([x[0] for x in photos], item["title"], tmp)][0]
+        real = [x for x in photos if not x[3]] or photos   # an X post screenshot is never the cover
+        cover = real[pick_cover_photo([x[0] for x in real], item["title"], tmp)][0]
         article_text = article if article else __import__("carousel").story_text(item["link"], item["title"], item.get("summary", ""))
         opt["hook"] = pick_hook(item["title"], article_text, opt["hook"],
                                 card_text=" ".join([item["title"]] + [x[2] for x in photos] + [opt.get("end_text", "")]))
