@@ -296,11 +296,11 @@
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-18",
   "reel_news_early": "2026-10-20",
-  "reel_rotate": "2026-10-19",
+  "reel_rotate": "2026-10-20",
   "reel_break_am": "2026-10-20",
   "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "PITojyX7YqEF",
+ "inbox_since": "5DJ5Czlg94tu",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -443,7 +443,8 @@
   "4706",
   "pb83870",
   "4655",
-  "pb61298"
+  "pb61298",
+  "43357"
  ],
  "reel_topics": [
   "Relatable desi life: dost jo cricket match mein har ball pe expert ban jaata hai",
@@ -508,7 +509,8 @@
   "Wo chhoti behen jo kanya pujan ke din bolti hai: 'Aaj mujhse kuch mat bolna.' Baaki 364 din: 'Chhotu, paani la.'",
   "Wo dost jo Diwali ke ticket pe bolta hai: 'Dekh lenge.' Aaj waitlist lambi hai. Ab bolta hai: 'Bus se chala jaunga.'",
   "Mummy: bas ek dukaan Time: 2 baje Ab 6 baj gaye Mummy: ek last, bas yahi Me, 4 ghante baad, thaila uthaye zinda laash",
-  "Bachpan ka dost 10 saal baad ghar aaya. Mummy ne 5 minute mein uski salary, shaadi aur mere saare raaz bata diye."
+  "Bachpan ka dost 10 saal baad ghar aaya. Mummy ne 5 minute mein uski salary, shaadi aur mere saare raaz bata diye.",
+  "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi"
  ],
  "clip_licences": {
   "50753": "Free",
@@ -594,7 +596,11 @@
   "5146": "Free",
   "23249": "Mixkit Restricted License",
   "9585": "Mixkit Restricted License",
-  "21304": "Mixkit Restricted License"
+  "21304": "Mixkit Restricted License",
+  "15146": "Mixkit Restricted License",
+  "22071": "Mixkit Restricted License",
+  "43357": "Free",
+  "15016": "Mixkit Restricted License"
  },
  "create_done": [
   "1791580482",
@@ -801,10 +807,6 @@
   }
  ],
  "songs_recent": [
-  "I Think They Call This Love (Cover)",
-  "Sankatmochan Hanuman Ashtak (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
-  "Hanuman Aarti",
-  "Aarti Keeje Hanuman Lala Ki (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
   "Shri Ram Chandra Kripalu Bhajuman",
   "Toxic",
   "Straight Up",
@@ -840,7 +842,11 @@
   "Arz Kiya Hai | Coke Studio Bharat",
   "Putaapu Gang",
   "Die With A Smile",
-  "Woman"
+  "Woman",
+  "Madhosh",
+  "Kabhi Shaam Dhale",
+  "Girls Like You",
+  "Levitating"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -848,7 +854,8 @@
   "cricket: Ruturaj Gaikwad trending: Dhoni, Kohli, Rohit or Ruturaj as India's captain?"
  ],
  "bachpan_recent": [
-  "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam"
+  "Exam wale din subah pet dard ka natak... mummy ne bas thermometer nikala aur sab khatam",
+  "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi"
  ],
  "reel_official_used": [
   "2110681709335511113"

@@ -5120,6 +5120,41 @@
      "tokens": 26416
     }
    }
+  },
+  "reel_rotate": {
+   "posts": 0,
+   "requests": 8,
+   "input": 26,
+   "output": 7453,
+   "cache_read": 53249,
+   "cache_write": 114284,
+   "value_usd": 0.5371,
+   "by_purpose": {
+    "reel writing": {
+     "requests": 1,
+     "tokens": 57373
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 37099
+    },
+    "clip pick": {
+     "requests": 2,
+     "tokens": 41091
+    },
+    "clip look": {
+     "requests": 2,
+     "tokens": 13239
+    },
+    "clip search retry": {
+     "requests": 1,
+     "tokens": 17465
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 8745
+    }
+   }
   }
  }
 }
