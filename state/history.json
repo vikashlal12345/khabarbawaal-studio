@@ -148,7 +148,8 @@
   "c5c786a73a4e",
   "22082a204fc8",
   "2ca0b36b355d",
-  "240df1981fcc"
+  "240df1981fcc",
+  "d9b3cc4980d1"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -285,7 +286,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-20",
-  "reel_news_pm": "2026-10-19",
+  "reel_news_pm": "2026-10-20",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-20",
@@ -299,7 +300,7 @@
   "reel_break_am": "2026-10-20",
   "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "VJo32npIf6jn",
+ "inbox_since": "rBaQxjaqJb1z",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -661,7 +662,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
   "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
   "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
-  "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -784,10 +786,6 @@
   }
  ],
  "songs_recent": [
-  "Tabaahi (From \"Toxic\")",
-  "Real Bad Man",
-  "Under The Influence",
-  "Big Dawgs",
   "Pal Pal",
   "Shararat",
   "Calm Down",
@@ -823,7 +821,11 @@
   "Hukum Reloaded",
   "Gehra Hua",
   "Lies (feat. Lana Del Rey)",
-  "Cold Shoulder"
+  "Cold Shoulder",
+  "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
+  "Paisa Hai Toh",
+  "All The Stars",
+  "Timeless"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -863,6 +865,10 @@
   },
   {
    "title": "Sharad Kelkar says he spoke to Tiger Shroff after firing incident, trusts Mumbai Police to get to the bottom of the case",
+   "date": "2026-10-20"
+  },
+  {
+   "title": "SCOOP: Ramayana advance booking may get DELAYED due to revenue-sharing tussle; distributors demand 60% share in Week 1",
    "date": "2026-10-20"
   }
  ]

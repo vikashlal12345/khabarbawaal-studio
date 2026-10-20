@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_pm-2026-10-20",
+  "image": "posts/20261020-1033-reel_news_pm-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-103324-reel_news_pm-2026-10-20.mp4",
+  "headline": "SCOOP: Ramayana advance booking may get DELAYED due to revenue-sharing tussle; distributors demand 60% share in Week 1",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana advance booking delay? Ranbir Kapoor, Yash, Sai Pallavi\n\nDussehra, 20 October ko advance booking khulni thi\nBollywood Hungama ke scoop ke mutabik revenue-sharing par atka hai maamla\nDistributors kathit taur par Week 1 mein 60% share maang rahe hain\n\nRanbir ki Ramayana ke liye aap kitna wait kar sakte ho? Pehle din ka ticket lenge? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/",
+  "pin_comment": "Kisi Ranbir fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
+    "artist": "Kumaar, Mellow D",
+    "lang": "hindi",
+    "mood": "Ram naam, Dussehra vibe"
+   },
+   {
+    "title": "Paisa Hai Toh",
+    "artist": "Jigar Saraiya, Sachin-Jigar",
+    "lang": "hindi",
+    "mood": "paise ki ladai = revenue tussle"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "big star-studded epic feel"
+   },
+   {
+    "title": "Timeless",
+    "artist": "The Weeknd, Playboi Carti",
+    "lang": "english",
+    "mood": "dramatic, high-stakes tension"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Demand is only reported by a trade source, so it must be attributed as alleged.",
+    "Fact corrected to match the article: Reported disagreement over the share is unconfirmed, so it should be attributed."
+   ],
+   "fixed": [
+    "Source: distributors Week 1 mein 60% share maang rahe, normal 52.5% hota hai. → Source: distributors kathit taur par Week 1 mein 60% share maang rahe, normal 52.5% hota hai.",
+    "Bhagwan Ram ki film, aur baat 60% share par atki → Bhagwan Ram ki film, aur kathit taur par baat 60% share par atki"
+   ]
+  },
+  "created_at": "2026-10-20T10:33:24+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-20",
   "image": "posts/20261020-0833-reel_break_noon-2026-10-20.jpg",
   "kind": "reel",
@@ -364,52 +415,5 @@
    "fixed": []
   },
   "created_at": "2026-10-19T11:03:02+00:00"
- },
- {
-  "id": "reel_meme-2026-10-19",
-  "image": "posts/20261019-0933-reel_meme-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-093319-reel_meme-2026-10-19.mp4",
-  "headline": "Mummy: bas ek dukaan Time: 2 baje Ab 6 baj gaye Mummy: ek last, bas yahi Me, 4 ghante baad, thaila uthaye zinda laash",
-  "tag": "🎬 REEL · MEME",
-  "caption": "Diwali shopping mummy ke saath 🛍️ 'Bas ek dukaan' ka matlab kya hota hai?\nPaon jawab de chuke, mummy ka energy abhi bhi full.\nMummy ka sabse lamba shopping time kitna tha? Comment karo 👇\n\nFollow @khabarbawaal: roz naye memes, dosto ko tag karo 😂\n\n#reelsindia #diwali #viral #trending #relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Papa ka 'main gaadi mein baitha hoon' wala escape plan bhi batao 😂",
-  "songs": [
-   {
-    "title": "Pal Pal",
-    "artist": "Afusic, AliSoomroMusic",
-    "lang": "hindi",
-    "mood": "intezaar wala vibe, dukaan dukaan"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "shopping ka masti mood"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "calm down, bas ek dukaan"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "hopeful start, phir thakaan"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "🎨 The picture is an AI illustration (Z-Image): turn on Instagram's 'AI info' label when posting."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-19T09:33:19+00:00"
  }
 ]
