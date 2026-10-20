@@ -1,5 +1,42 @@
 [
  {
+  "id": "c73df1c8dcf1",
+  "kind": "custom",
+  "image": "posts/20261020-0658-c73df1c8dcf1-1.jpg",
+  "options": [
+   "posts/20261020-0658-c73df1c8dcf1-1.jpg",
+   "posts/20261020-0658-c73df1c8dcf1-2.jpg"
+  ],
+  "slides": [
+   "posts/20261020-0658-c73df1c8dcf1-s2.jpg",
+   "posts/20261020-0658-c73df1c8dcf1-s3.jpg",
+   "posts/20261020-0658-c73df1c8dcf1-s4.jpg",
+   "posts/20261020-0658-c73df1c8dcf1-s5.jpg",
+   "posts/20261020-0658-c73df1c8dcf1-s6.jpg",
+   "posts/20261020-0658-c73df1c8dcf1-s7.jpg"
+  ],
+  "headline": "Jailed Delhi riots UAPA accused Umar Khalid reportedly gets human rights award",
+  "tag": "POLITICS",
+  "caption": "Delhi dange ke UAPA aaropi ko human rights award? Ye kya scene hai 😳\nUmar Khalid jail mein hai, UAPA ke tahat kathit taur par aaropi, aur uska trial abhi jaari hai.\nAb unhe human rights award milne ki khabar aayi hai.\nSawal ye hai: jis case mein dange ke aarop lage hain, usi naam ko \"human rights\" ka taj kyun?\nAaropi ko award: sahi to ✅, galat to 🤡\n\nFollow @khabarbawaal for daily updates.\n\n#umarkhalid #india #trending #news #delhiriots",
+  "source": "Your pick",
+  "source_url": "",
+  "pin_comment": "Sabse bada sawal: dange ke victims ke liye kaun si award ceremony hui? 🤔 Ye post us dost ko bhejo jo \"human rights\" pe gyaan deta hai.",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Internal production note ('article not available') leaked onto the slide; reworded to what is actually known.",
+    "Fact corrected to match the article: The article says nothing about a statement from Khalid or his family; unsupported claim.",
+    "Fact corrected to match the article: Reader-facing text should not refer to 'the article'; reworded to what is known."
+   ],
+   "fixed": [
+    "Article uplabdh nahi tha, isliye award ka naam, dene wali sanstha aur koi quote confirm nahi ho paaya. → Award ka naam aur dene wali sanstha abhi confirm nahi hai.",
+    "lekin Khalid ya unke parivar ka koi bayan abhi available nahi hai. → lekin is report ki pushti abhi baaki hai.",
+    "ki jaankari article mein nahi hai. → ki jaankari abhi confirm nahi hai."
+   ]
+  },
+  "created_at": "2026-10-20T06:58:01+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-20",
   "image": "posts/20261020-0633-reel_news_am-2026-10-20.jpg",
   "kind": "reel",
