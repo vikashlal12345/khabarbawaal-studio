@@ -2298,7 +2298,7 @@ OFFICIAL_X = ("narendramodi", "AmitShah", "rajnathsingh", "PMOIndia", "BJP4India
 OFFICIAL_SECS = 4.5   # the video piece under the hook line
 
 
-def official_videos(used: set[str], handles: tuple[str, ...] = OFFICIAL_X, hours: int = 20) -> list[dict]:
+def official_videos(used: set[str], handles: tuple[str, ...] = OFFICIAL_X, hours: int = 20, max_wait: int = 180) -> list[dict]:
     """Videos these accounts posted on X in the last `hours` (their public profile timelines, free, no login),
     newest first: [{id, handle, text, at, secs, mp4}]."""
     import time
@@ -2311,7 +2311,7 @@ def official_videos(used: set[str], handles: tuple[str, ...] = OFFICIAL_X, hours
                              headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
             if r.status_code == 429:   # X's limit: wait if it resets soon, else use what we have
                 wait = int(r.headers.get("x-rate-limit-reset", "0") or 0) - time.time()
-                if 0 < wait < 180:
+                if 0 < wait <= max_wait:   # the 9:30 PM speaker slot waits out a whole 15-min window (owner, 20 Oct 2026)
                     print(f"  X limit reached: waiting {wait:.0f} s")
                     time.sleep(wait + 2)
                     r = requests.get(r.url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
@@ -2661,7 +2661,7 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     import status
     status.step("Finding speech videos on X (leaders + right-leaning voices)", 2)
     used = set(state.get("reel_official_used", []))
-    vids = official_videos(used, hours=72)
+    vids = official_videos(used, hours=72, max_wait=960)
     print(f"  speech videos (3 days): {[(v['handle'], round(v['secs'])) for v in vids]}")
     ranked, search = [], ""
     if vids:

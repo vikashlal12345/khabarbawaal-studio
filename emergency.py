@@ -295,7 +295,7 @@ def make_speaker(kind: str, state: dict, feed: list) -> bool:
     try:
         status.step("Finding a leader's own video on X", 2)
         used = set(state.get("reel_official_used", []))
-        vids = [v for v in reel.official_videos(used, hours=72) if 20 <= v["secs"] <= 300 and not SPEECH_SKIP.search(v["text"])
+        vids = [v for v in reel.official_videos(used, hours=72, max_wait=960) if 20 <= v["secs"] <= 300 and not SPEECH_SKIP.search(v["text"])
                 and roman(v["text"]) and v["handle"].lower() in NAMES]
         if not vids:
             status.fail("Auto mode: no suitable speaker video was found on X")
