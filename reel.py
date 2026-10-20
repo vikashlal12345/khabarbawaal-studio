@@ -2305,14 +2305,16 @@ def official_videos(used: set[str], handles: tuple[str, ...] = OFFICIAL_X, hours
     from datetime import datetime, timedelta, timezone
     import requests
     since, out = datetime.now(timezone.utc) - timedelta(hours=hours), []
+    budget = max_wait   # total waiting for X's limit, over all accounts (one 429 wait can use all of it)
     for handle in handles:
         try:
             r = requests.get(f"https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}",
                              headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
             if r.status_code == 429:   # X's limit: wait if it resets soon, else use what we have
                 wait = int(r.headers.get("x-rate-limit-reset", "0") or 0) - time.time()
-                if 0 < wait <= max_wait:   # the 9:30 PM speaker slot waits out a whole 15-min window (owner, 20 Oct 2026)
+                if 0 < wait <= budget:   # the 9:30 PM speaker slot waits out a whole 15-min window (owner, 20 Oct 2026)
                     print(f"  X limit reached: waiting {wait:.0f} s")
+                    budget -= wait + 2
                     time.sleep(wait + 2)
                     r = requests.get(r.url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
                 if r.status_code == 429:
