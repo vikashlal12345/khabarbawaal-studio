@@ -290,6 +290,7 @@ def hook_frame(photo: Image.Image, layer: Image.Image, t: float) -> Image.Image:
     return frame
 
 
+LIMIT_HIT: list[str] = []   # set when Claude's plan limit was hit during this run (see make)
 SERIES_KIND = ""   # the Reel being made (make() sets it): its end card names its daily slot
 
 
@@ -2096,7 +2097,7 @@ a story about a death, accident or tragedy told for shock; never invent facts: e
 
 def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str, hook: str, headline: str,
                   bullets: list[str], question: str, highlight: list[str], out_mp4: str,
-                  second_whole: bool = False) -> list[Image.Image]:
+                  second_whole: bool = False, cover_window: bool = False) -> list[Image.Image]:
     """⚡ Frame 1 (2.5 s): the star's photo fills the screen, a huge hook in colour, the BREAKING tag. Frame 2: the
     photo smaller on top, a red headline bar, 3-4 bullet facts, a side-taking question. Then the Follow card.
     Returns [frame 1, frame 2] to proofread."""
@@ -2136,7 +2137,11 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
         x0, y0 = (big.width - w) // 2, int((big.height - h) * cy)
         return big.crop((x0, y0, x0 + w, y0 + h))
     for i in range(int(d1 * FPS)):
-        frame = cover_hook_frame(first, hook, tag, credit, i / FPS, highlights or None, d1)
+        if cover_window:   # ⚙️ auto mode: no AI to centre on a face, so the whole (wide) photo sits in a window
+            frame = hook_frame(first, hook_layer(hook, highlights), i / FPS)
+            frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
+        else:
+            frame = cover_hook_frame(first, hook, tag, credit, i / FPS, highlights or None, d1)
         if i == int(1.2 * FPS):
             c1 = frame.convert("RGB")
         enc.add(frame)
@@ -5072,6 +5077,8 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
                 make_news_reel(kind, state, feed, today, tmp)
         return True
     except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":
+            LIMIT_HIT.append(str(e))
         print(f"  ! backup Reel not made: {str(e)[:300]}")
         status.fail(f"Backup Reel not made: {str(e)[:200]}. Trying a ready-made Reel from 📦 Ready.", True)
         return False
@@ -5124,6 +5131,11 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
                 make_joke_reel(kind, state, feed, today, tmp)
         return True
     except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":   # the plan limit: no more tries, the robot switches mode
+            LIMIT_HIT.append(str(e))
+            print(f"  ! Claude limit reached: {str(e)[:200]}")
+            status.fail(f"Claude's limit is reached ({str(e)[:140]}). Switching to auto mode.", True)
+            return False
         print(f"  ! Reel not made (try {attempt} of {tries}): {str(e)[:300]}")
         status.fail(f"Reel not made: {str(e)[:200]}. {then}", attempt < tries)
         return False

@@ -8,6 +8,7 @@ unused post from assets/fun_bank.json is used; if none is fresh, a news post is 
 from __future__ import annotations
 
 import json
+import re
 import os
 import random
 import subprocess
@@ -110,6 +111,19 @@ def flush_usage(posts: int = 1) -> None:
     USAGE.clear()
 
 
+class ClaudeLimit(RuntimeError):
+    """Claude's plan limit / balance is used up (owner, 20 Oct 2026: two days without Reels): the message says when it
+    resets. The robot stops retrying and switches to ⚙️ emergency mode (emergency.py) for news slots."""
+
+
+LIMIT_RE = re.compile(r"(hit|reached|exceeded) your .{0,30}limit|usage limit|credit balance|out of (extra )?usage|"
+                      r"weekly limit|rate.?limit", re.I)
+
+
+def is_limit(text: str) -> bool:
+    return bool(LIMIT_RE.search(text or ""))
+
+
 def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300, purpose: str = "writing",
                 folder: str | None = None) -> dict:
     """folder: a directory with images the model may open (Read tool), e.g. video frames."""
@@ -123,6 +137,8 @@ def claude_json(system: str, user: str, schema: dict, model: str, timeout: int =
         raise RuntimeError(f"Claude CLI failed: {(proc.stderr or proc.stdout)[:300]}")
     log_usage(result, purpose)
     if result.get("is_error") or not result.get("structured_output"):
+        if is_limit(str(result.get("result"))):
+            raise ClaudeLimit(str(result.get("result"))[:200])
         raise RuntimeError(f"Claude CLI error: {str(result.get('result'))[:300]}")
     return result["structured_output"]
 

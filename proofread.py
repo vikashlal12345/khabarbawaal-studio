@@ -115,8 +115,12 @@ def check(slides: list[Image.Image], caption: str, texts: list[str], article: st
             result = json.loads(proc.stdout)
             import fun
             fun.log_usage(result, "proofreading")
+            if result.get("is_error") and fun.is_limit(str(result.get("result"))):
+                raise fun.ClaudeLimit(str(result.get("result"))[:200])
             return result["structured_output"]
         except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":   # the plan limit: never publish unchecked, let the robot switch mode
+                raise
             print(f"  ! proofread failed: {str(e)[:120]}")
             return None
 

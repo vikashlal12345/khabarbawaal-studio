@@ -845,6 +845,31 @@ def night_job(kind: str, state: dict) -> None:
 REEL_TRIES = 3   # a Reel slot tries this often before giving up (no news post instead; owner, 12 Oct 2026)
 
 
+def limit_mode(kind: str, state: dict, feed: list) -> bool | None:
+    """Claude's plan limit is used up: one phone alert (not at night), then a no-AI Reel for news / breaking slots
+    (emergency.py); other slots are skipped until the limit resets."""
+    import emergency
+    import reel
+    import schedule
+    import status
+    lim = state.setdefault("claude_limit", {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "msg": "", "alerted": False})
+    now = schedule.ist_now()
+    if not lim.get("alerted") and 5 <= now.hour < 23:
+        try:
+            import push
+            push.send("⚠️ Claude limit reached", f"{lim.get('msg', '')[:120]}. News slots switch to auto mode (no AI); the rest wait.")
+            lim["alerted"] = True
+        except Exception as e:
+            print(f"  ! limit alert failed: {e}")
+    if kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS:
+        if emergency.make_reel(kind, state, feed):
+            return True
+        return None
+    status.start(kind, now.date().isoformat(), "⏸️ Skipped: Claude limit reached", 1)
+    status.fail(f"Claude's limit is reached ({lim.get('msg', '')[:100]}): this slot waits until it resets (auto mode covers only news slots)")
+    return None
+
+
 def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: list[str]) -> bool | None:
     """Top 10 carousels, the 5 AM roundup, Thought of the Day, market posts and 🎬 Reels.
     A Reel slot posts Reels only: up to REEL_TRIES tries, then nothing (owner, 12 Oct 2026)."""
@@ -859,10 +884,25 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
         import reel
         state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()   # one run a day
         save_json(STATE_FILE, state)
+        # Claude's plan limit (owner, 20 Oct 2026): remembered for 2 h so slots don't waste tries; then Claude is tried again
+        lim = state.get("claude_limit") or {}
+        limited = bool(lim) and (datetime.now(timezone.utc) - datetime.fromisoformat(lim["at"])).total_seconds() < 7200
+        reel.LIMIT_HIT.clear()
         for attempt in range(1, REEL_TRIES + 1):   # each try writes afresh; Restricted clips are remembered
+            if limited:
+                break
             if reel.make(kind, state, feed, attempt, REEL_TRIES):
+                state.pop("claude_limit", None)
                 resolved += ["token", "limit", "ai-error"]
                 return True
+            if reel.LIMIT_HIT:
+                limited, msg = True, reel.LIMIT_HIT[-1]
+                first = not lim
+                state["claude_limit"] = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "msg": msg,
+                                         "alerted": lim.get("alerted", False)}
+                break
+        if limited:
+            return limit_mode(kind, state, feed)
         # Never fail (owner, 15 Oct 2026): level 2 = a different, reliable Reel for this slot; level 3 = a ready-made
         # Reel from 📦 Ready moved into the feed.
         if reel.make_backup(kind, state, feed):
