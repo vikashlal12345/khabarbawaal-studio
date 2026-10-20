@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_break_am-2026-10-20",
+  "image": "posts/20261020-0433-reel_break_am-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-043338-reel_break_am-2026-10-20.mp4",
+  "headline": "Jackie Shroff attends event with Maharashtra CM Devendra Fadnavis a day after attack on son Tiger Shroff",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Jackie Shroff Tiger Shroff firing Devendra Fadnavis Bappi Lahiri Marg event\nTiger par firing ke ek din baad Jackie Shroff Mumbai me CM Fadnavis aur Suniel Shetty ke saath dikhe.\nYe firing ke baad Jackie ki pehli public appearance thi. Teeno aropi Rajasthan Police ne Kota Junction par train se pakde.\nFadnavis bole: hamla karne wale kayar bakhshe nahi jayenge. Aapko kya lagta hai, sakht action hona chahiye? 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #jackieshroff #bollywoodnews #devendrafadnavis",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
+  "pin_comment": "Suniel Shetty bole: Tiger aur Jackie Dada se sab pyaar karte hain. Kisi Tiger Shroff fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "serious family moment, emotional support"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "dosti aur parivar ka saath"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "calm, tense after the attack"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "relief after scare, soft mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Headline is ambiguous; article says it was his first public appearance since the firing.",
+    "Slide 1: The embedded ANI tweet screenshot is cropped. Its text is cut off at the left and right edges, so it reads \"CM D...\" and \"attends the nar...\". The headline text also sits over the people at the bottom of the photo. The handle overlaps the \"Read 53 replies\" line."
+   ],
+   "fixed": [
+    "JACKIE SHROFF PEHLI BAAR DIKHE → FIRING KE BAAD JACKIE PEHLI BAAR DIKHE"
+   ]
+  },
+  "created_at": "2026-10-20T04:33:38+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-20",
   "image": "posts/20261020-0234-reel_news_early-2026-10-20.jpg",
   "kind": "reel",
@@ -340,52 +390,5 @@
    ]
   },
   "created_at": "2026-10-19T05:04:02+00:00"
- },
- {
-  "id": "reel_clip_am-2026-10-19",
-  "image": "posts/20261019-0332-reel_clip_am-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-033236-reel_clip_am-2026-10-19.mp4",
-  "headline": "Wo chhoti behen jo kanya pujan ke din bolti hai: 'Aaj mujhse kuch mat bolna.' Baaki 364 din: 'Chhotu, paani la.'",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Maha Navami kanya pujan ka sach 😂\nEk din ki VIP, baaki din 'chhotu paani la'.\nTumhare ghar mein ye kaun hai? Behen ya cousin? 👇\n\nFollow @khabarbawaal: roz naye memes, dosto ko tag karo 😂\n\n#viral #trending #india #navratri #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aaj ek din ke liye sab 'ji didi' bol rahe hain, kal se phir wahi. Us behen ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "festive vibe, ghar ka mahaul"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "chhoti behen ki shararat"
-   },
-   {
-    "title": "Jalebi Baby",
-    "artist": "Tesher",
-    "lang": "english",
-    "mood": "playful, sweet-sounding drama"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "sudden VIP treatment"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The photo is an ancient Egyptian stone relief. It has nothing to do with a little sister or kanya pujan. Slide 1 can't be dropped, so the image needs replacing."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-19T03:32:36+00:00"
  }
 ]

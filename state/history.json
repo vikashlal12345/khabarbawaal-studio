@@ -145,7 +145,8 @@
   "fd724f9ea96f",
   "e12977588e06",
   "89cdd35bc57c",
-  "c5c786a73a4e"
+  "c5c786a73a4e",
+  "22082a204fc8"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -292,9 +293,10 @@
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-18",
   "reel_news_early": "2026-10-20",
-  "reel_rotate": "2026-10-19"
+  "reel_rotate": "2026-10-19",
+  "reel_break_am": "2026-10-20"
  },
- "inbox_since": "hUIgRPdbzhA0",
+ "inbox_since": "9AoZgeODuwgS",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -649,7 +651,8 @@
   "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
   "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
-  "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/"
+  "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
+  "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -772,10 +775,6 @@
   }
  ],
  "songs_recent": [
-  "Thumkeshwari",
-  "Shararat",
-  "Jalebi Baby",
-  "Housewife",
   "Jaan ‘Nisaar (Arijit)",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "All The Stars",
@@ -811,7 +810,11 @@
   "Toxic",
   "Straight Up",
   "Stop The Wedding!",
-  "Harleys In Hawaii"
+  "Harleys In Hawaii",
+  "Zihaal e Miskin",
+  "Teri Meri Kahaani",
+  "Heat Waves",
+  "Let Me Down Slowly"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -839,6 +842,10 @@
   },
   {
    "title": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
+   "date": "2026-10-20"
+  },
+  {
+   "title": "Jackie Shroff attends event with Maharashtra CM Devendra Fadnavis a day after attack on son Tiger Shroff",
    "date": "2026-10-20"
   }
  ]
