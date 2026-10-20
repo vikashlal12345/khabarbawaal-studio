@@ -149,7 +149,8 @@
   "22082a204fc8",
   "2ca0b36b355d",
   "240df1981fcc",
-  "d9b3cc4980d1"
+  "d9b3cc4980d1",
+  "cf50966c6c42"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -294,13 +295,13 @@
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
-  "reel_official": "2026-10-18",
+  "reel_official": "2026-10-20",
   "reel_news_early": "2026-10-20",
   "reel_rotate": "2026-10-20",
   "reel_break_am": "2026-10-20",
   "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "5DJ5Czlg94tu",
+ "inbox_since": "ffnoroJRrJI7",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -672,7 +673,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
   "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
   "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
-  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/"
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/",
+  "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -807,10 +809,6 @@
   }
  ],
  "songs_recent": [
-  "Shri Ram Chandra Kripalu Bhajuman",
-  "Toxic",
-  "Straight Up",
-  "Stop The Wedding!",
   "Harleys In Hawaii",
   "Zihaal e Miskin",
   "Teri Meri Kahaani",
@@ -846,7 +844,11 @@
   "Madhosh",
   "Kabhi Shaam Dhale",
   "Girls Like You",
-  "Levitating"
+  "Levitating",
+  "Tu Hi Disda (From \"Bhooth Bangla\")",
+  "Zaalima",
+  "As It Was",
+  "Housewife"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -891,6 +893,10 @@
   },
   {
    "title": "SCOOP: Ramayana advance booking may get DELAYED due to revenue-sharing tussle; distributors demand 60% share in Week 1",
+   "date": "2026-10-20"
+  },
+  {
+   "title": "Prince William calls Karan Johar an ‘icon’, promises to watch Kabhi Khushi Kabhie Gham after meeting filmmaker in London",
    "date": "2026-10-20"
   }
  ]
