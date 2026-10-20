@@ -280,7 +280,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-10-19",
+  "reel_devotion": "2026-10-20",
   "reel_news_pm": "2026-10-19",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -770,10 +770,6 @@
   }
  ],
  "songs_recent": [
-  "O Aaye Tere Bhawan (From \"Jai Maa Vaishno Devi\")",
-  "Maa Durga Aarti",
-  "Jai Ambe Gauri Aarti",
-  "Jai Ambe Gauri (Durga Aarti)",
   "Gehra Hua",
   "Kabhi Shaam Dhale",
   "Heat Waves",
@@ -809,7 +805,11 @@
   "Teri Meri Kahaani",
   "Jo Tum Mere Ho",
   "Girls Like You",
-  "I Think They Call This Love (Cover)"
+  "I Think They Call This Love (Cover)",
+  "Sankatmochan Hanuman Ashtak (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
+  "Hanuman Aarti",
+  "Aarti Keeje Hanuman Lala Ki (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
+  "Shri Ram Chandra Kripalu Bhajuman"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
