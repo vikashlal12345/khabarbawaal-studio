@@ -1,8 +1,8 @@
 {
- "summary": "From our last 170 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL   CHOOSE YOUR (0), REEL  WORLD (0). Formats: reel 2, custom 2, top10 2, news 2, fun 2, calendar 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
+ "summary": "From our last 170 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  WORLD (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 2, custom 2, top10 2, news 2, fun 2, calendar 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
  "posts": 170,
  "likes": 292,
- "updated": "2026-10-19T22:31:17+00:00",
+ "updated": "2026-10-20T22:30:57+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -41,6 +41,10 @@
    2.25
   ],
   [
+   "TOP 5 NEWS",
+   2.0
+  ],
+  [
    "WEB SERIES",
    2.0
   ],
@@ -50,10 +54,6 @@
   ],
   [
    "EXPECTATION VS REALITY",
-   2.0
-  ],
-  [
-   "TOP 5 NEWS",
    2.0
   ],
   [
@@ -77,7 +77,7 @@
    1.625
   ],
   [
-   "WTF NEWS",
+   "RAAT KI 5 KHABREIN",
    1.5
   ],
   [
@@ -85,19 +85,7 @@
    1.5
   ],
   [
-   "RAAT KI 5 KHABREIN",
-   1.5
-  ],
-  [
-   "TOP 5 VIRAL",
-   1.5
-  ],
-  [
    "BREAKING",
-   1.5
-  ],
-  [
-   "TAG KARO",
    1.5
   ],
   [
@@ -105,12 +93,20 @@
    1.5
   ],
   [
-   "MYTH VS FACT",
-   1.4
+   "WTF NEWS",
+   1.5
   ],
   [
-   "MARKET BRIEF",
-   1.25
+   "TOP 5 VIRAL",
+   1.5
+  ],
+  [
+   "TAG KARO",
+   1.5
+  ],
+  [
+   "MYTH VS FACT",
+   1.4
   ],
   [
    "THOUGHT OF THE DAY",
@@ -121,11 +117,19 @@
    1.25
   ],
   [
+   "MARKET BRIEF",
+   1.25
+  ],
+  [
    "ON THIS DAY",
    1.2
   ],
   [
-   "DELHI",
+   "CLOSING BELL",
+   1.0
+  ],
+  [
+   "REEL  RAAT KI TOP 5",
    1.0
   ],
   [
@@ -133,19 +137,15 @@
    1.0
   ],
   [
-   "QUIZ",
-   1.0
-  ],
-  [
    "EDUCATION",
    1.0
   ],
   [
-   "FAMILY GROUP",
+   "DELHI",
    1.0
   ],
   [
-   "REEL  INDIA",
+   "QUIZ",
    1.0
   ],
   [
@@ -157,19 +157,7 @@
    1.0
   ],
   [
-   "EXPLAINER",
-   1.0
-  ],
-  [
-   "REEL  RAAT KI TOP 5",
-   1.0
-  ],
-  [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "CLOSING BELL",
+   "REEL  INDIA",
    1.0
   ],
   [
@@ -177,8 +165,16 @@
    1.0
   ],
   [
-   "REEL  BACHPAN ME AISA KAUN KIYA",
-   0.0
+   "EXPLAINER",
+   1.0
+  ],
+  [
+   "FAMILY GROUP",
+   1.0
+  ],
+  [
+   "GOOD NEWS",
+   1.0
   ],
   [
    "REEL   CHOOSE YOUR",
@@ -186,6 +182,10 @@
   ],
   [
    "REEL  WORLD",
+   0.0
+  ],
+  [
+   "REEL  BACHPAN ME AISA KAUN KIYA",
    0.0
   ]
  ],
