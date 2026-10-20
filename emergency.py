@@ -141,7 +141,7 @@ def make_reel(kind: str, state: dict, feed: list) -> bool:
         question = QUESTIONS[int(hashlib.sha1(title.encode()).hexdigest(), 16) % len(QUESTIONS)]
         hook = hook_of(it["title"])
         status.step("Making the video", 3)
-        reel.SERIES_KIND = kind
+        reel.SERIES_KIND = kind if kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS else "reel_news"   # satire / joke slots: a news card
         with tempfile.TemporaryDirectory() as tmp:
             out = os.path.join(tmp, "reel.mp4")
             frames = reel.breaking_reel(first[0], second[0], f"Photo: {first[1]}", "BREAKING" if kind in reel.BREAK_KINDS else "UPDATE",
@@ -165,5 +165,175 @@ def make_reel(kind: str, state: dict, feed: list) -> bool:
         return True
     except Exception as e:
         print(f"  ! auto mode failed: {type(e).__name__}: {str(e)[:200]}")
+        status.fail(f"Auto mode failed: {str(e)[:160]}")
+        return False
+
+
+# ------------------------------------------------------------------ 🙏 devotional (6 AM) without AI
+def _devotion_data() -> dict:
+    import json
+    return json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "auto_devotion.json"), encoding="utf-8"))
+
+
+def _painting(queries: list[str], state: dict, tmp: str, n: int = 2) -> list[tuple]:
+    """Free Wikimedia Commons paintings chosen without AI (title says painting / miniature): [(img, credit, focus_x)]."""
+    import io
+    import time
+    import requests
+    import reel
+    used = state.get("devotion_images_used", [])
+    found = reel.commons_images(queries)
+    cands = [c for c in found if c["title"] not in used] or found
+    cands = [c for c in cands if any(w in c["title"].lower() for w in ("painting", "miniature", "ravi varma", "illustration", "lithograph"))
+             and not re.search(r"(?i)\b(statue|temple|idol|book|cover|manuscript|page|stamp|coin|poster)\b", c["title"])]
+    cands.sort(key=lambda c: -min(c["w"], c["h"]))
+    ua = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}
+    out = []
+    for c in cands[:8]:
+        try:
+            time.sleep(2.0)
+            r = requests.get(c["url"], headers=ua, timeout=30)
+            if r.status_code == 429:
+                time.sleep(6)
+                r = requests.get(c["url"], headers=ua, timeout=30)
+            r.raise_for_status()
+            img = reel.Image.open(io.BytesIO(r.content))
+            img.load()
+        except Exception as e:
+            print(f"  ! painting skipped: {str(e)[:80]}")
+            continue
+        out.append((img.convert("RGB"), c["credit"], 0.5, c["title"]))
+        if len(out) >= n:
+            break
+    if out:
+        state["devotion_images_used"] = (used + [o[3] for o in out])[-30:]
+    return [o[:3] for o in out]
+
+
+def make_devotion(kind: str, state: dict, feed: list) -> bool:
+    """A no-AI 🙏 6 AM devotional Reel: written blessing (assets/auto_devotion.json), a free Wikimedia painting, free songs."""
+    import reel
+    import schedule
+    import status
+    from datetime import date
+    today = schedule.ist_now().date().isoformat()
+    status.start(kind, today, "⚙️ Auto mode · 6 AM devotional", 4, "Claude's limit is reached: making a Reel without AI")
+    try:
+        data = _devotion_data()
+        day = date.fromisoformat(today)
+        subj = reel.devotion_subject(day)
+        status.step("Choosing today's blessing", 2)
+        cm = data["navratri_common"]
+        if subj["kind"] == "navratri" and subj["deity"] in data["navratri"]:
+            d = data["navratri"][subj["deity"]]
+            head, cta, seekh, tags, songs_q = cm["head"], cm["cta"], cm["seekh"], cm["tags"], cm["songs"]
+            middle, label = d["middle"], subj["name"].split(":")[0]
+        else:
+            deity = subj["deity"]
+            if subj["kind"] == "festival":
+                low = subj["name"].lower()
+                deity = next((v for k, v in data["festival_deity"].items() if re.search(k, low)), "")
+            deity = deity or reel.WEEKDAY_GODS[day.weekday()]
+            d = data["weekday"].get(deity) or data["extra"].get(deity) or data["weekday"][reel.WEEKDAY_GODS[day.weekday()]]
+            head, cta, seekh, tags, songs_q = d["head"], d["cta"], data["defaults"]["seekh"], d["tags"], d["songs"]
+            middle, label = d["middle"], ""
+        status.step("Finding a free painting", 3)
+        fam = d["family"]
+        images = _painting(d["searches"], state, tempfile.gettempdir(), 2) or \
+            _painting([f"{fam} painting", f"{fam} Raja Ravi Varma", f"{fam} miniature painting"], state, tempfile.gettempdir(), 2)
+        if not images:
+            status.fail("Auto mode: no free painting of the deity was found")
+            return False
+        songs = reel.devotional_songs(songs_q)[:4]
+        status.step("Making the video", 4)
+        hook, lesson, real_life = d["hook"], d["lesson"], d["real_life"]
+        highlight = [w for w in re.findall(r"(?:Maa|Shri|Bhagwan|Hanuman|Ganesh|Shiv|Ram|Krishna|Lakshmi|Surya|Shani|Vishnu|Mahadev|Bajrangbali|Ganpati)\s?\w*", hook)][:2]
+        labels = {"head": head, "middle": middle, "seekh": seekh, "cta": cta, "source": f"—  {label}" if label else ""}
+        with tempfile.TemporaryDirectory() as tmp:
+            out = os.path.join(tmp, "reel.mp4")
+            reel.SERIES_KIND = kind
+            frames = reel.gita_reel(images, "", hook, lesson, real_life, highlight, out, labels=labels)
+            credits = "; ".join(dict.fromkeys(c for _, c, _ in images))
+            hashtags = " ".join(f"#{t}" for t in tags + ["bhakti", "devotional", "india"])
+            caption = (f"{hook}\n{lesson}\n\n{cta} 🙏\n\nPainting: {credits}\nFollow {g.CONFIG['handle']} for daily darshan 🙏\n\n{hashtags}")
+            proof = {"state": "check", "fixed": [], "issues": [
+                "⚙️ AUTO MODE: Claude's limit was reached. This blessing was written in advance (traditional facts only) and the "
+                "painting was picked without AI: please look at the painting before posting."]}
+            reel.save_reel(feed, state, frames[1], out, f"{kind}-{today}", {
+                "headline": f"{subj['name']}: {hook}"[:140], "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI) · 🙏 " + head,
+                "caption": g.limit_hashtags(caption), "source": "KhabarBawaal Original", "source_url": "",
+                "pin_comment": data["defaults"]["pin"],
+                "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
+        return True
+    except Exception as e:
+        print(f"  ! auto devotion failed: {type(e).__name__}: {str(e)[:200]}")
+        status.fail(f"Auto mode failed: {str(e)[:160]}")
+        return False
+
+
+# ------------------------------------------------------------------ 🎥🔊 speaker video (9:30 PM) without AI
+NAMES = {"narendramodi": "MODI JI", "amitshah": "AMIT SHAH", "rajnathsingh": "RAJNATH SINGH", "pmoindia": "PM MODI",
+         "bjp4india": "BJP", "jpnadda": "JP NADDA", "drsjaishankar": "JAISHANKAR", "nitin_gadkari": "GADKARI",
+         "myogiadityanath": "YOGI JI", "dev_fadnavis": "FADNAVIS", "himantabiswa": "HIMANTA", "pib_india": "SARKAR",
+         "anupampkher": "ANUPAM KHER", "sirpareshrawal": "PARESH RAWAL", "kanganateam": "KANGANA", "vivekagnihotri": "VIVEK AGNIHOTRI",
+         "pradip103": "PRADIP BHANDARI", "shehzad_ind": "SHEHZAD", "sambitswaraj": "SAMBIT PATRA", "amitmalviya": "AMIT MALVIYA",
+         "annamalai_k": "ANNAMALAI", "tejasvi_surya": "TEJASVI SURYA", "smritiirani": "SMRITI IRANI", "kapilmishra_ind": "KAPIL MISHRA"}
+SPEECH_SKIP = re.compile(r"(?i)\b(wish|wishes|greeting|greetings|happy|shubh|badhai|congratulat|condolence|tribute|rip|"
+                         r"shraddhanjali|bhavpurn|punyatithi|jayanti|navratri|diwali|dussehra|durga|puja|birthday|janmadin|"
+                         r"died|death|demise|passed away|accident|killed|attack|terror|trailer|teaser|song|movie|film)\b")
+
+
+def make_speaker(kind: str, state: dict, feed: list) -> bool:
+    """A no-AI 🎥🔊 9:30 PM speaker video: the strongest-looking recent video of a leader's own X account (a plain
+    'NAME KA BAYAN' headline, his voice, no subtitles). Greetings / tributes / film posts are skipped by keywords."""
+    import reel
+    import requests
+    import schedule
+    import status
+    today = schedule.ist_now().date().isoformat()
+    status.start(kind, today, "⚙️ Auto mode · 9:30 PM speaker video", 4, "Claude's limit is reached: making a Reel without AI")
+    try:
+        status.step("Finding a leader's own video on X", 2)
+        used = set(state.get("reel_official_used", []))
+        vids = [v for v in reel.official_videos(used, hours=72) if 20 <= v["secs"] <= 300 and not SPEECH_SKIP.search(v["text"])
+                and roman(v["text"]) and v["handle"].lower() in NAMES]
+        if not vids:
+            status.fail("Auto mode: no suitable speaker video was found on X")
+            return False
+        v = vids[0]   # newest first
+        with tempfile.TemporaryDirectory() as tmp:
+            src = os.path.join(tmp, "speaker.mp4")
+            open(src, "wb").write(requests.get(v["mp4"], timeout=120).content)
+            length = reel.video_info(src)[2]
+            start = 1.0
+            secs = min(35.0, length - start - 0.5)
+            if secs < 12:
+                status.fail("Auto mode: the speaker video was too short")
+                return False
+            name = NAMES[v["handle"].lower()]
+            headline = ["AAJ KA KADAK BAYAN", "Poora video dekhein"]   # no AI: who speaks is not known, so no name
+            status.step("Making the video", 4)
+            out = os.path.join(tmp, "speech.mp4")
+            reel.SERIES_KIND = kind
+            frames = reel.speech_reel(src, start, secs, headline, [], out)
+            voiced = os.path.join(tmp, "voiced.mp4")
+            reel.add_voice(out, src, start, voiced)
+            said = v["text"][:220]
+            credit = f"Video + voice: posted by @{v['handle']} on X"
+            tags = " ".join(f"#{t}" for t in ["india", "trending", "reelsindia", "viral", re.sub(r"\W", "", name.lower())])
+            caption = (f"@{v['handle']} ne ye video share kiya:\n{said}\n\nAap kya sochte ho? Comment karo 👇\n\n{credit}\n"
+                       f"Follow {g.CONFIG['handle']} for daily updates.\n\n{tags}")
+            proof = {"state": "check", "fixed": [], "issues": [
+                "⚙️ AUTO MODE: Claude's limit was reached. The video posted by a leader's X account is used as it is (the speaker may be someone else, so the headline names nobody), with "
+                "no subtitles: please watch it before posting (no AI checked it)."]}
+            state["reel_official_used"] = (list(used) + [v["id"]])[-60:]
+            reel.save_reel(feed, state, frames[0], voiced, f"{kind}-{today}", {
+                "headline": " · ".join(headline), "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI) · 🎥🔊 SPEAKER VIDEO",
+                "caption": g.limit_hashtags(caption), "source": f"@{v['handle']} on X",
+                "source_url": f"https://x.com/{v['handle']}/status/{v['id']}", "pin_comment": "Kisi dost ko bhejo 👇",
+                "songs": [], "proof": proof})
+        return True
+    except Exception as e:
+        print(f"  ! auto speaker failed: {type(e).__name__}: {str(e)[:200]}")
         status.fail(f"Auto mode failed: {str(e)[:160]}")
         return False

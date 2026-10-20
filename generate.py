@@ -857,16 +857,21 @@ def limit_mode(kind: str, state: dict, feed: list) -> bool | None:
     if not lim.get("alerted") and 5 <= now.hour < 23:
         try:
             import push
-            push.send("⚠️ Claude limit reached", f"{lim.get('msg', '')[:120]}. News slots switch to auto mode (no AI); the rest wait.")
+            push.send("⚠️ Claude limit reached", f"{lim.get('msg', '')[:120]}. Reels switch to auto mode (no AI): news, breaking, devotional, speaker video; satire and jokes become news cards.")
             lim["alerted"] = True
         except Exception as e:
             print(f"  ! limit alert failed: {e}")
-    if kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS:
+    if kind == "reel_devotion":
+        return True if emergency.make_devotion(kind, state, feed) else None
+    if kind == "reel_official":
+        return True if emergency.make_speaker(kind, state, feed) else None
+    if kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS or kind in ("reel_politics", "reel_rotate"):
+        # satire and the rotating joke slot are not written without AI: a news / breaking card takes their place
         if emergency.make_reel(kind, state, feed):
             return True
         return None
     status.start(kind, now.date().isoformat(), "⏸️ Skipped: Claude limit reached", 1)
-    status.fail(f"Claude's limit is reached ({lim.get('msg', '')[:100]}): this slot waits until it resets (auto mode covers only news slots)")
+    status.fail(f"Claude's limit is reached ({lim.get('msg', '')[:100]}): this slot waits until it resets")
     return None
 
 
