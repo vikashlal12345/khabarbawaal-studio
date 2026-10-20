@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_politics-2026-10-20",
+  "image": "posts/20261020-1235-reel_politics-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-123520-reel_politics-2026-10-20.mp4",
+  "headline": "Mamata ne CJP netaon ke liye kaha: state-sponsored terrorism",
+  "tag": "🎬 REEL · ROAST · QUOTE TRAP",
+  "caption": "Mamata Banerjee ka CJP custody par bada daava 🎤\nDidi ne kaha Kolkata se Delhi tak atrocities unprecedented hain.\nKolkata ka naam pehle number par, former CM ke muh se 😅\nKaun sahi? Comment karo 👇\n\nPhotos (Wikimedia Commons): Mamata Banerjee: Chief Minister's Office, Government of West Bengal (CC BY 1.0)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: Times Now (link pinned in comments 👇)\n\n#mamatabanerjee #tmc #cjp #politicalmemes #reelsindia",
+  "source": "Times Now",
+  "source_url": "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641",
+  "pin_comment": "Kolkata wale dost ko ye bhejo aur unka reaction batao 👇",
+  "songs": [
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "arz kiya = dramatic claim line"
+   },
+   {
+    "title": "Putaapu Gang",
+    "artist": "Anirudh Ravichander & Thamizh Aadhavan",
+    "lang": "hindi",
+    "mood": "gang of leaders backing CJP"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga, Bruno Mars",
+    "lang": "english",
+    "mood": "smiling through the drama"
+   },
+   {
+    "title": "Woman",
+    "artist": "Doja Cat",
+    "lang": "english",
+    "mood": "Didi energy, bold statement"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article gives only 'Tuesday', not the date 20 Oct 2026.",
+    "Slide 1: The photo credit text at the bottom left runs into the @khabarbawaal handle and is low contrast on the photo. It is small and hard to read."
+   ],
+   "fixed": [
+    "Statement on X, Tuesday 20 Oct 2026 (Times Now) → Statement on X, Tuesday (Times Now)"
+   ]
+  },
+  "created_at": "2026-10-20T12:35:20+00:00"
+ },
+ {
   "id": "automode-sample",
   "image": "posts/20261020-1216-automode-sample.jpg",
   "kind": "reel",
@@ -169,85 +219,6 @@
    "fixed": []
   },
   "created_at": "2026-10-20T08:33:57+00:00"
- },
- {
-  "id": "c4d103345735",
-  "kind": "custom",
-  "image": "posts/20261020-0706-c4d103345735-1.jpg",
-  "options": [
-   "posts/20261020-0706-c4d103345735-1.jpg",
-   "posts/20261020-0706-c4d103345735-2.jpg",
-   "posts/20261020-0706-c4d103345735-3.jpg"
-  ],
-  "slides": [
-   "posts/20261020-0706-c4d103345735-s2.jpg",
-   "posts/20261020-0706-c4d103345735-s3.jpg",
-   "posts/20261020-0706-c4d103345735-s4.jpg",
-   "posts/20261020-0706-c4d103345735-s5.jpg"
-  ],
-  "headline": "Umar Khalid, accused in 2020 Delhi riots conspiracy case under UAPA, back in news",
-  "tag": "DELHI RIOTS",
-  "caption": "Umar Khalid ka naam phir se sunai de raha hai 👀\nWo 2020 Delhi dangon ki kathit \"badi saazish\" wale case mein aaropi hain, UAPA ke tahat.\nYe sirf aaropon ka maamla hai.\nCase court mein hai, isliye faisla aane tak sirf court ki baat final hai.\nEk word mein batao: is case ko aap kya kahoge? 👇\n\nFollow @khabarbawaal for daily updates.\n\n#umarkhalid #delhiriots #india #trending #news",
-  "source": "Your pick",
-  "source_url": "",
-  "pin_comment": "Sabse bada sawaal: Delhi dange jaise case mein court ka faisla aane tak hum kitna sabr rakh sakte hain? 🤔",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Arrest date/police claim is not supported by the article.",
-    "Fact corrected to match the article: Arrest date is not in the article.",
-    "Fact corrected to match the article: Other accused (Sharjeel Imam) is not mentioned in the article.",
-    "Fact corrected to match the article: Internal note about missing article shouldn't be shown; promise of future update is unsupported.",
-    "Fact corrected to match the article: Allegation should be attributed as alleged, not stated as fact",
-    "Many corrections were needed: please give it a quick read."
-   ],
-   "fixed": [
-    "Police ke mutabiq unhe September 2020 mein giraftaar kiya gaya tha. → Ye sirf aaropon ka maamla hai.",
-    "September 2020 mein giraftari, case court mein chal raha hai → Case court mein chal raha hai",
-    "Is case mein Sharjeel Imam jaise aur aaropi bhi hain. Aaropon par faisla ab adalat ko karna hai. → Aaropon par faisla ab adalat ko karna hai.",
-    "Poora article uplabdh nahi tha, isliye naye update ki details confirm hote hi batayi jayengi. → Naye update ki details abhi confirm nahi hain.",
-    "Woh 2020 Delhi dange ki badi saazish ke case mein aaropi hai. → Woh 2020 Delhi dangon ki kathit 'badi saazish' ke case mein aaropi hai.",
-    "removed weak photo slide(s) [4]"
-   ]
-  },
-  "created_at": "2026-10-20T07:06:46+00:00"
- },
- {
-  "id": "c73df1c8dcf1",
-  "kind": "custom",
-  "image": "posts/20261020-0658-c73df1c8dcf1-1.jpg",
-  "options": [
-   "posts/20261020-0658-c73df1c8dcf1-1.jpg",
-   "posts/20261020-0658-c73df1c8dcf1-2.jpg"
-  ],
-  "slides": [
-   "posts/20261020-0658-c73df1c8dcf1-s2.jpg",
-   "posts/20261020-0658-c73df1c8dcf1-s3.jpg",
-   "posts/20261020-0658-c73df1c8dcf1-s4.jpg",
-   "posts/20261020-0658-c73df1c8dcf1-s5.jpg",
-   "posts/20261020-0658-c73df1c8dcf1-s6.jpg",
-   "posts/20261020-0658-c73df1c8dcf1-s7.jpg"
-  ],
-  "headline": "Jailed Delhi riots UAPA accused Umar Khalid reportedly gets human rights award",
-  "tag": "POLITICS",
-  "caption": "Delhi dange ke UAPA aaropi ko human rights award? Ye kya scene hai 😳\nUmar Khalid jail mein hai, UAPA ke tahat kathit taur par aaropi, aur uska trial abhi jaari hai.\nAb unhe human rights award milne ki khabar aayi hai.\nSawal ye hai: jis case mein dange ke aarop lage hain, usi naam ko \"human rights\" ka taj kyun?\nAaropi ko award: sahi to ✅, galat to 🤡\n\nFollow @khabarbawaal for daily updates.\n\n#umarkhalid #india #trending #news #delhiriots",
-  "source": "Your pick",
-  "source_url": "",
-  "pin_comment": "Sabse bada sawal: dange ke victims ke liye kaun si award ceremony hui? 🤔 Ye post us dost ko bhejo jo \"human rights\" pe gyaan deta hai.",
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Internal production note ('article not available') leaked onto the slide; reworded to what is actually known.",
-    "Fact corrected to match the article: The article says nothing about a statement from Khalid or his family; unsupported claim.",
-    "Fact corrected to match the article: Reader-facing text should not refer to 'the article'; reworded to what is known."
-   ],
-   "fixed": [
-    "Article uplabdh nahi tha, isliye award ka naam, dene wali sanstha aur koi quote confirm nahi ho paaya. → Award ka naam aur dene wali sanstha abhi confirm nahi hai.",
-    "lekin Khalid ya unke parivar ka koi bayan abhi available nahi hai. → lekin is report ki pushti abhi baaki hai.",
-    "ki jaankari article mein nahi hai. → ki jaankari abhi confirm nahi hai."
-   ]
-  },
-  "created_at": "2026-10-20T06:58:01+00:00"
  },
  {
   "id": "reel_news_am-2026-10-20",

@@ -5081,6 +5081,45 @@
      "tokens": 27902
     }
    }
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 16,
+   "input": 38,
+   "output": 20746,
+   "cache_read": 31384,
+   "cache_write": 295716,
+   "value_usd": 1.3935,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 1,
+     "tokens": 22963
+    },
+    "roast card writing": {
+     "requests": 5,
+     "tokens": 161485
+    },
+    "joke judge": {
+     "requests": 4,
+     "tokens": 77040
+    },
+    "sense check": {
+     "requests": 2,
+     "tokens": 35187
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 4777
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 20016
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 26416
+    }
+   }
   }
  }
 }

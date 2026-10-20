@@ -281,7 +281,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-19",
   "reel_clip_am": "2026-10-19",
-  "reel_politics": "2026-10-19",
+  "reel_politics": "2026-10-20",
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
@@ -300,7 +300,7 @@
   "reel_break_am": "2026-10-20",
   "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "rBaQxjaqJb1z",
+ "inbox_since": "PITojyX7YqEF",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -629,13 +629,14 @@
  ],
  "reel_politics_used": [
   "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
-  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
+  "https://timesofindia.indiatimes.com/city/delhi/made-lawrence-bishnoi-their-son-in-law-kejriwal-targets-centre-after-firing-at-tiger-shroffs-car/articleshow/135044108.cms",
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
-  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
   "https://www.thedailyjagran.com/india/news/abhijeet-dipke-detained-before-reaching-connaught-place-for-cjp-tiranga-march-what-delhi-police-14-point-notice-said-10332980",
+  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
   "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
-  "https://timesofindia.indiatimes.com/city/delhi/made-lawrence-bishnoi-their-son-in-law-kejriwal-targets-centre-after-firing-at-tiger-shroffs-car/articleshow/135044108.cms"
+  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
+  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
+  "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641"
  ],
  "reel_news_used": [
   "119d9f27c7b0",
@@ -783,13 +784,21 @@
     "Kejriwal ka aarop: Centre ne Bishnoi ko 'damaad' bana rakha hai",
     "Ye bayan Tiger Shroff ki car par firing ke baad aaya"
    ]
+  },
+  {
+   "date": "2026-10-20",
+   "party": "TMC",
+   "format": "quote_trap",
+   "topic": "Times Now: 'State-Sponsored Terrorism': Mamata Backs Jailed CJP Leaders as Custody Extended",
+   "hook": "Mamata ne CJP netaon ke liye kaha: state-sponsored terrorism",
+   "punchline": "Delhi aur Mumbai ke saath Kolkata ka naam khud list mein daal diya.",
+   "issue": "Atrocities claim",
+   "facts": [
+    "\"From Kolkata to Delhi to Mumbai - throughout the country, atrocities have reached unprecedented levels.\""
+   ]
   }
  ],
  "songs_recent": [
-  "Ez-Ez",
-  "Azadi",
-  "APT.",
-  "Solar Eclipse",
   "Barsaat",
   "Alfaaz",
   "Nicole Kidman",
@@ -825,7 +834,11 @@
   "Khat",
   "Mann Mera",
   "Iris",
-  "Infinity"
+  "Infinity",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Putaapu Gang",
+  "Die With A Smile",
+  "Woman"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
