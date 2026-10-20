@@ -1,6 +1,53 @@
 [
  {
   "id": "reel_official-2026-10-20",
+  "image": "posts/20261020-1656-reel_official-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-165635-reel_official-2026-10-20.mp4",
+  "headline": "SEEDHA VAAR! · Amit Shah ka Mann sarkar se sawaal",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "Amit Shah Punjab drugs Bhagwant Mann sawaal 🔥\nAmit Shah ne X par likha: Bhagwant Mann sarkar ne 3 mahine mein nasha khatam karne ka vaada kiya tha, 5 saal baad bhi Punjab mein nashe ka karobar badhta hi gaya.\nShah aaj Punjab mein nashe ke khilaf awaaz uthane wale pariwaron se mile. Mann ne Jhota case CBI ko dene ka faisla kiya, unki sarkar ke vaade par sawaal abhi bhi baaki hai.\nKya 3 mahine ke vaade ka jawab AAP sarkar ko dena chahiye? Haan ya Na? Comment karo 👇\n\nVideo + voice: @AmitShah on X\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: https://www.oneindia.com (link pinned in comments 👇)\n\n#reelsindia #AmitShah #Punjab #BhagwantMann #NashaMuktPunjab",
+  "source": "https://www.oneindia.com",
+  "source_url": "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
+  "pin_comment": "3 mahine ka vaada, 5 saal baad bhi jawab nahi. Punjab ke har dost ko ye bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Sam Dam Dand Bhed",
+    "artist": "Kailash Kher",
+    "lang": "hindi",
+    "mood": "attack mode, play it low"
+   },
+   {
+    "title": "Dhurandhar Title Track",
+    "artist": "Shashwat Sachdev",
+    "lang": "hindi",
+    "mood": "serious, hard-hitting power"
+   },
+   {
+    "title": "Toofan (KGF Chapter 2)",
+    "artist": "Ravi Basrur",
+    "lang": "hindi",
+    "mood": "intense build, strong statement"
+   },
+   {
+    "title": "Aarambh Hai Prachand (Gulaal)",
+    "artist": "Piyush Mishra",
+    "lang": "hindi",
+    "mood": "fiery call for accountability"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The video subtitle (Punjabi/Hindi script) is cut off on both the left and right edges, so the first and last letters are missing. It overflows the frame."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-20T16:56:35+00:00"
+ },
+ {
+  "id": "reel_official-2026-10-20",
   "image": "posts/20261020-1602-reel_official-2026-10-20.jpg",
   "kind": "reel",
   "media": "reel",

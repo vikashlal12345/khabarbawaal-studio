@@ -5158,12 +5158,12 @@
   },
   "reel_official": {
    "posts": 0,
-   "requests": 7,
-   "input": 20,
-   "output": 4699,
-   "cache_read": 10634,
-   "cache_write": 101652,
-   "value_usd": 0.4548,
+   "requests": 11,
+   "input": 32,
+   "output": 8529,
+   "cache_read": 19479,
+   "cache_write": 160638,
+   "value_usd": 0.73,
    "by_purpose": {
     "reel news pick": {
      "requests": 1,
@@ -5190,8 +5190,20 @@
      "tokens": 18713
     },
     "proofreading": {
+     "requests": 2,
+     "tokens": 26059
+    },
+    "official video pick": {
      "requests": 1,
-     "tokens": 14357
+     "tokens": 25892
+    },
+    "video look": {
+     "requests": 1,
+     "tokens": 11625
+    },
+    "speech reel script": {
+     "requests": 1,
+     "tokens": 22454
     }
    }
   }
