@@ -2878,6 +2878,37 @@ def hook_names_ok(hook: str, card_text: str) -> bool:
     return all(n.lower() in low for n in names)
 
 
+MEANING_SCHEMA = {"type": "object", "properties": {
+    "who_does_what": {"type": "string", "description": "In one line: who does/says what to or about whom, as the hook alone says it"},
+    "matches": {"type": "boolean", "description": "True if that is exactly what the story says"},
+    "wrong_target": {"type": "boolean", "description": "True if a reader could think the wrong person/group is accused, "
+                     "insulted, blamed or praised (e.g. the accuser looks like the accused)"}},
+    "required": ["who_does_what", "matches", "wrong_target"], "additionalProperties": False}
+
+
+def hook_meaning_ok(hook: str, title: str, facts: str) -> bool:
+    """🪝 Meaning check (owner, 20 Oct 2026: 'Mamata ne CJP netaon ke liye kaha: state-sponsored terrorism' read as if
+    Mamata called the CJP leaders terrorists; she called their custody that): the AI reads only the hook and says who does
+    what to whom, then compares it with the story. A failed check = the next hook. Errors (not a limit) count as OK."""
+    import fun
+    try:
+        res = fun.claude_json(
+            "You check the opening line of a news Reel. Read ONLY the hook first and say who does or says what to or "
+            "about whom, the way a quick scroller would understand it (especially who is accused, insulted, blamed or "
+            "praised; a harsh word like terrorism / gaddar / fraud must clearly attach to the right target). Then compare "
+            "with the story.", f"Hook: {hook}\n\nHeadline: {title}\n\nStory:\n{facts[:3000]}", MEANING_SCHEMA,
+            CONFIG.get("membership_model", "sonnet"), purpose="hook meaning")
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":
+            raise
+        print(f"  ! hook meaning check failed ({str(e)[:80]}): kept")
+        return True
+    ok = res["matches"] and not res["wrong_target"]
+    if not ok:
+        print(f"  hook rejected ('{hook}'): reads as '{res['who_does_what'][:100]}'")
+    return ok
+
+
 def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_text: str = "") -> str:
     """🪝 Hook contest (owner, 19 Oct 2026): the AI writes 5 hooks from the full story and picks the strongest, using
     the pattern of the owner's best posts: the biggest name first, then the shock or twist, a fact from the story
@@ -2889,14 +2920,21 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "emojis, 4-9 words). The owner's best hooks: 'Salman ne Karisma ke saath shoot se mana kiya', 'Kriti Sanon ka "
             "palatwaar', 'Tiger Shroff firing: Kota mein teeno aaropi pakde gaye'. Biggest name FIRST, then the shock, "
             "twist or new development; a fact from the story only; concrete, never vague ('Ye dekh ke hairan reh jaoge' is "
-            "bad). " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
+            "bad). WHO DOES WHAT: when someone accuses, criticises or quotes someone else, the hook must make clear who "
+            "says it and who it is about; never put a harsh word (terrorism, gaddar, fraud, ...) next to a name that is "
+            "only the accuser or that the story does not say it about (e.g. 'Mamata: CJP custody state-sponsored "
+            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
                                     "not on the card." if card_text else ""),
             f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\n" + (f"THE CARD (the hook must match it):\n{card_text}\n\n"
                                                                        if card_text else "") + f"Current hook: {current}{viral_memory()}",
             HOOKS_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="hook contest")
         hooks = [h.strip() for h in res["hooks"] if h.strip()]
         order = ([hooks[res["best"]]] if 0 <= res["best"] < len(hooks) else []) + [h for k, h in enumerate(hooks) if k != res["best"]]
-        best = next((h for h in order if not card_text or hook_names_ok(h, card_text)), current)   # only names on the card
+        order = [h for h in order if not card_text or hook_names_ok(h, card_text)]   # only names on the card
+        best = next((h for h in order[:3] if hook_meaning_ok(h, title, facts)), None)   # and it must say the right thing
+        if best is None:   # the writer's own hook, if it passes; else the headline's own words
+            safe = " ".join(re.split(r"\s+[|\-–—]\s+(?=[A-Z][\w .&]+$)", title)[0].split()[:9])
+            best = current if current and hook_meaning_ok(current, title, facts) else safe
         print(f"  hook: '{best}' (was '{current}')")
         return best or current
     except Exception as e:
