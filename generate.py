@@ -884,9 +884,9 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
         import reel
         state.setdefault("specials_done", {})[kind] = schedule.ist_now().date().isoformat()   # one run a day
         save_json(STATE_FILE, state)
-        # Claude's plan limit (owner, 20 Oct 2026): remembered for 2 h so slots don't waste tries; then Claude is tried again
+        # Claude's plan limit (owner, 20 Oct 2026): checked on the first try of every slot
         lim = state.get("claude_limit") or {}
-        limited = bool(lim) and (datetime.now(timezone.utc) - datetime.fromisoformat(lim["at"])).total_seconds() < 7200
+        limited = False   # every slot FIRST tries Claude (owner, 20 Oct 2026); auto mode only if Claude says the limit is reached
         reel.LIMIT_HIT.clear()
         for attempt in range(1, REEL_TRIES + 1):   # each try writes afresh; Restricted clips are remembered
             if limited:

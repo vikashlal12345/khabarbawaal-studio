@@ -1,5 +1,27 @@
 [
  {
+  "id": "automode-sample",
+  "image": "posts/20261020-1216-automode-sample.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-121600-automode-sample.mp4",
+  "headline": "🧪 Auto-mode sample: Bastar Dussehra: Chhattisgarh's 75-day festival where Ravana's effigy is never burnt",
+  "tag": "🧪 SAMPLE · ⚙️ AUTO MODE (no AI)",
+  "caption": "Bastar Dussehra: Chhattisgarh's 75-day festival where Ravana's effigy is never burnt\nIn Bastar, Dussehra is not associated with Lord Rama’s victory over Ravana.\nAnother important ritual, Kachhin Gadi, involves seeking the symbolic permission of Kachhin Devi.\nSahi ya galat? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #breakingnews #trending #india #viral",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/bastar-dussehra-chhattisgarhs-75-day-festival-where-ravanas-effigy-is-never-burnt-101792494991576.html",
+  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
+  "songs": [],
+  "proof": {
+   "state": "check",
+   "fixed": [],
+   "issues": [
+    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
+   ]
+  },
+  "created_at": "2026-10-20T12:16:00+00:00"
+ },
+ {
   "id": "c0bec7db1757",
   "image": "posts/20261020-1133-c0bec7db1757.jpg",
   "kind": "custom",
