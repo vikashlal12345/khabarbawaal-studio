@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_am-2026-10-20",
+  "image": "posts/20261020-0633-reel_news_am-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-063353-reel_news_am-2026-10-20.mp4",
+  "headline": "Dil Raju calls Ranbir Kapoor ‘Ranveer Singh’ at Ramayana’s grand Hyderabad event; immediately apologizes: “Sorry, Ranbir Kapoor garu!”",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Dil Raju Ranbir Kapoor Ranveer Singh Ramayana event 🎬\nHyderabad mein Ramayana ke grand event par Dil Raju ne Ranbir Kapoor ki tareef karte hue unhe 'Ranveer Singh' bol diya.\nGalti ka ehsaas hote hi turant bole: 'Sorry, Ranbir Kapoor garu!'\nStage par Yash, Sai Pallavi aur director Nitesh Tiwari bhi maujood the.\nYe galti maafi layak thi ya nahi? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #dilraju #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
+  "pin_comment": "Apne us dost ko bhejo jo hamesha naam galat bolta hai 👇",
+  "songs": [
+   {
+    "title": "Bindaas",
+    "artist": "Deepthi Suresh, Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "bindaas slip, quick sorry vibe"
+   },
+   {
+    "title": "Ala Bolelo",
+    "artist": "Anirudh Ravichander, Arunraja Kamaraj",
+    "lang": "hindi",
+    "mood": "fun, light-hearted mix-up"
+   },
+   {
+    "title": "stupid song",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "silly mistake = stupid song"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "upbeat comedy moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: He said 'hopefully' it will be a hattrick; it is not a certain claim.",
+    "Fact corrected to match the article: Internet reaction is not in the article; unsupported claim."
+   ],
+   "fixed": [
+    "Dil Raju bole: Brahmastra aur Animal ke baad Ramayana hattrick hogi. → Dil Raju bole: Brahmastra aur Animal ke baad umeed hai Ramayana hattrick hogi.",
+    " Internet hass hass ke lot-pot. → "
+   ]
+  },
+  "created_at": "2026-10-20T06:33:53+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-20",
   "image": "posts/20261020-0433-reel_break_am-2026-10-20.jpg",
   "kind": "reel",
@@ -285,110 +336,5 @@
    ]
   },
   "created_at": "2026-10-19T08:03:24+00:00"
- },
- {
-  "id": "reel_clip-2026-10-19",
-  "image": "posts/20261019-0633-reel_clip-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-063319-reel_clip-2026-10-19.mp4",
-  "headline": "Wo dost jo Diwali ke ticket pe bolta hai: 'Dekh lenge.' Aaj waitlist lambi hai. Ab bolta hai: 'Bus se chala jaunga.'",
-  "tag": "🎬 REEL · TAG THAT FRIEND",
-  "caption": "Diwali ghar jaane ka ticket 🚆 waitlist wala dard sabko pata hai\nBook karne mein sabse aalsi wahi hota hai, har saal 😭\nTumhare group mein ye kaun hai? Tag karo 👇\n\nFollow @khabarbawaal: roz naye memes, dosto ko tag karo 😂\n\n#diwali #diwali2026 #viral #trending #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Aur Diwali pe bolega: 'Ghar ki yaad aa rahi hai.' Us dost ko ticket ke saath tag karo 👇",
-  "songs": [
-   {
-    "title": "Pardesiya (From \"Param Sundari\")",
-    "artist": "Sonu Nigam, Krishnakali Saha",
-    "lang": "hindi",
-    "mood": "pardesi wants to go home"
-   },
-   {
-    "title": "Tenu Sang Rakhna (From \"Jigra\")",
-    "artist": "Varun Grover, Achint",
-    "lang": "hindi",
-    "mood": "family ke paas jaane ki chahat"
-   },
-   {
-    "title": "STAY",
-    "artist": "Justin Bieber, The Kid Laroi",
-    "lang": "english",
-    "mood": "please stay, ticket confirm ho"
-   },
-   {
-    "title": "Señorita",
-    "artist": "Shawn Mendes, Camila Cabello",
-    "lang": "english",
-    "mood": "light fun travel vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The waitlist number 187 isn't in the article, so it is an unsupported claim."
-   ],
-   "fixed": [
-    "Aaj waitlist 187. → Aaj waitlist lambi hai."
-   ]
-  },
-  "created_at": "2026-10-19T06:33:19+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-19",
-  "image": "posts/20261019-0504-reel_news_am-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-050402-reel_news_am-2026-10-19.mp4",
-  "headline": "Bike used for firing at Tiger Shroff recovered by police, two detained",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tiger Shroff firing case update: bike mil gayi, 2 detained 🚨\n\nVile Parle mein Tiger Shroff par 5 round fire hue the. Police ne 15 teams banayi hain.\nSources ke mutabik, firing mein use hui bike Andheri Railway Station ke paas se baramad hui aur do log hirasat mein hain.\nBishnoi gang ke do alleged operatives ne hamle ki zimmedari li hai.\n\nKya film stars ko Mumbai mein aur suraksha milni chahiye? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tigershroff #bollywood #mumbai #bollywoodnews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
-  "pin_comment": "Kisi Tiger Shroff fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jaan ‘Nisaar (Arijit)",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "serious, tense, concern for Tiger"
-   },
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "intense thriller vibe for manhunt"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "star-power, dramatic tone"
-   },
-   {
-    "title": "Lies (feat. Lana Del Rey)",
-    "artist": "Zach Bryan & Lana Del Rey",
-    "lang": "english",
-    "mood": "calm serious news backdrop"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says Vile Parle, not Juhu; nothing about car or FIR",
-    "Fact corrected to match the article: Disha Patani, FWICE, and Tiger's scratches are not in the article; the driver and an autorickshaw driver were hurt",
-    "Fact corrected to match the article: Location was Vile Parle per article",
-    "Fact corrected to match the article: The firing happened in Vile Parle, not Juhu."
-   ],
-   "fixed": [
-    "Juhu mein Tiger Shroff ki car par 5 round fire hue the. Police ne FIR darj ki aur 15 teams banayi hain. → Vile Parle mein Tiger Shroff par 5 round fire hue the. Police ne 15 teams banayi hain.",
-    "Disha Patani unke ghar pahunchi, aur FWICE ne suraksha ki maang ki hai. Tiger ko halki kharonchein aayi hain. → Bishnoi gang ke do alleged operatives ne hamle ki zimmedari li hai.",
-    "Juhu ke beech sadak par goli. → Vile Parle mein sadak par goli.",
-    "Tiger Shroff firing Juhu bike recovered police → Tiger Shroff firing Vile Parle bike recovered police",
-    "Police ne firing mein use bike Andheri station ke paas se baraamad ki → Police ne firing mein use hui bike Andheri station ke paas se baraamad ki"
-   ]
-  },
-  "created_at": "2026-10-19T05:04:02+00:00"
  }
 ]

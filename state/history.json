@@ -146,7 +146,8 @@
   "e12977588e06",
   "89cdd35bc57c",
   "c5c786a73a4e",
-  "22082a204fc8"
+  "22082a204fc8",
+  "2ca0b36b355d"
  ],
  "recent_headlines": [
   "[VIRAL] Kanpur Stray Dog Runs 38 km With Runners, Takes Hydration Breaks Along The Way",
@@ -286,7 +287,7 @@
   "reel_news_pm": "2026-10-19",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-19",
+  "reel_news_am": "2026-10-20",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -296,7 +297,7 @@
   "reel_rotate": "2026-10-19",
   "reel_break_am": "2026-10-20"
  },
- "inbox_since": "9AoZgeODuwgS",
+ "inbox_since": "5aeZMvyjDVx0",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -652,7 +653,8 @@
   "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
   "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
-  "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
+  "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -775,10 +777,6 @@
   }
  ],
  "songs_recent": [
-  "Jaan ‘Nisaar (Arijit)",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "All The Stars",
-  "Lies (feat. Lana Del Rey)",
   "Pardesiya (From \"Param Sundari\")",
   "Tenu Sang Rakhna (From \"Jigra\")",
   "STAY",
@@ -814,7 +812,11 @@
   "Zihaal e Miskin",
   "Teri Meri Kahaani",
   "Heat Waves",
-  "Let Me Down Slowly"
+  "Let Me Down Slowly",
+  "Bindaas",
+  "Ala Bolelo",
+  "stupid song",
+  "Beauty And A Beat"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -846,6 +848,10 @@
   },
   {
    "title": "Jackie Shroff attends event with Maharashtra CM Devendra Fadnavis a day after attack on son Tiger Shroff",
+   "date": "2026-10-20"
+  },
+  {
+   "title": "Dil Raju calls Ranbir Kapoor ‘Ranveer Singh’ at Ramayana’s grand Hyderabad event; immediately apologizes: “Sorry, Ranbir Kapoor garu!”",
    "date": "2026-10-20"
   }
  ]
