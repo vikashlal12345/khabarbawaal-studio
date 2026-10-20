@@ -1,5 +1,58 @@
 [
  {
+  "id": "c0bec7db1757",
+  "image": "posts/20261020-1133-c0bec7db1757.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261020-113326-c0bec7db1757.mp4",
+  "headline": "Activist Umar Khalid Given International Human Rights Defender Award | Outlook India",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Umar Khalid award 2026: Front Line Defenders ne Umar Khalid ko Asia ka winner chuna 🏆\nUmar September 2020 se jail mein hain. Delhi Police Special Cell ne unhe 2020 Delhi dange ki kathit saazish case mein giraftar kiya tha. UAPA aur IPC ki kai dhaaraon mein aarop hain, abhi trial ka faisla nahi aaya.\nAward Dublin mein 8 Oct ko diya gaya, Umar Tihar Jail se aa nahi paye.\nKya dange ke case mein trial pura hone se pehle aise award dena sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Outlook India (link pinned in comments 👇)\n\n#UmarKhalid #DelhiRiots #IndiaNews #BreakingNews #reelsindia",
+  "source": "Outlook India",
+  "source_url": "https://www.outlookindia.com/international/activist-umar-khalid-given-international-human-rights-defender-award",
+  "pin_comment": "Is behes mein shaamil hona chahiye, kisi dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Khat",
+    "artist": "Navjot Ahuja",
+    "lang": "hindi",
+    "mood": "serious, calm news tone"
+   },
+   {
+    "title": "Mann Mera",
+    "artist": "Gajendra Verma",
+    "lang": "hindi",
+    "mood": "heavy, reflective mood"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "serious, emotional backdrop"
+   },
+   {
+    "title": "Infinity",
+    "artist": "Jaymes Young",
+    "lang": "english",
+    "mood": "slow, dramatic, years pass"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The two articles give different arrest dates (Sept 14 vs Sept 13, 2020), so the exact date is not reliably supported.",
+    "Fact corrected to match the article: The article is from The Hans India and lawstreet, not Outlook India, so the attribution on the slide must match it.",
+    "Fact corrected to match the article: The article's reports are from The Hans India and lawstreet, not Outlook India."
+   ],
+   "fixed": [
+    "Umar 14 Sep 2020 se jail mein hain. → Umar September 2020 se jail mein hain.",
+    "Outlook India ke mutabik activist Umar Khalid ko international samman mila. → The Hans India ke mutabik activist Umar Khalid ko international samman mila.",
+    "Award ki baaki details abhi Outlook India ki report ke hawale se hain. → Award ki baaki details abhi The Hans India aur lawstreet ki reports ke hawale se hain."
+   ]
+  },
+  "created_at": "2026-10-20T11:33:26+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-20",
   "image": "posts/20261020-1033-reel_news_pm-2026-10-20.jpg",
   "kind": "reel",
@@ -368,52 +421,5 @@
    "fixed": []
   },
   "created_at": "2026-10-20T00:32:39+00:00"
- },
- {
-  "id": "reel_poll-2026-10-19",
-  "image": "posts/20261019-1103-reel_poll-2026-10-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261019-110302-reel_poll-2026-10-19.mp4",
-  "headline": "CHOOSE YOUR CAPTAIN: Virat Kohli / MS Dhoni / Rohit Sharma / Ruturaj",
-  "tag": "🎬 REEL · 🗳️ CHOOSE YOUR",
-  "caption": "Kohli, Dhoni, Rohit ya Ruturaj: kiski captaincy mein khelna hai? 🏏 Button dabao, vote karo, comment mein bolo kyun!\n\n❤️ Like = Virat Kohli\n💬 Comment = MS Dhoni\n🔁 Repost = Rohit Sharma\n✈️ Share = Ruturaj\n\nFollow @khabarbawaal: roz shaam 4:30 baje naya poll, vote karna mat bhoolna 🗳️\n\nPhotos (Wikimedia Commons): Virat Kohli: Prime Minister's Office (GODL-India); MS Dhoni: RIGI (CC BY 3.0); Rohit Sharma: Prime Minister's Office (GODL-India); Ruturaj: Prime Minister's Office (GODL-India)\n\n#ViratKohli #MSDhoni #RohitSharma #RuturajGaikwad #Cricket",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Apna captain chuno aur batao kyun. Kisi cricket fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "hype beat = captain showdown"
-   },
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "swag energy for debate"
-   },
-   {
-    "title": "APT.",
-    "artist": "Rosé, Bruno Mars",
-    "lang": "english",
-    "mood": "catchy, fast vote vibe"
-   },
-   {
-    "title": "Solar Eclipse",
-    "artist": "Drake & Don Toliver",
-    "lang": "english",
-    "mood": "cool confident captain energy"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The background shows four large faces, and overlays cover parts of them. The action-button panel hides the top half of Rohit's and Ruturaj's faces, and the 'Button dabao, vote karo' text sits over their lower faces. The logo and the title banner also touch Kohli's and Dhoni's faces. The text is readable, but the faces are partly covered."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-19T11:03:02+00:00"
  }
 ]

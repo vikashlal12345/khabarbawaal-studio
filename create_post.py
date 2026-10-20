@@ -583,6 +583,67 @@ def has_ai() -> bool:
     return bool(os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"))
 
 
+def earlier_post_topic(text: str) -> str:
+    """'For Umar khalid post, create reel.' (owner, 20 Oct 2026) means the post he just made about him: if one of the
+    ➕ Create posts of the last 24 h shares a name with the words, its headline is the topic (same story as that post)."""
+    skip = {"create", "reel", "post", "make", "this", "that", "with", "from", "about", "please", "video", "story", "news"}
+    words = {w.lower() for w in re.findall(r"[A-Za-z]{4,}", text)} - skip
+    if not words:
+        return ""
+    feed = g.load_json(g.FEED_FILE, [])
+    now = datetime.now(timezone.utc)
+    # the OLDEST match of the last 12 h: the post the owner first wrote about it (a later one may be a fallback made
+    # from the Reel request itself)
+    for p in sorted(feed, key=lambda x: x.get("created_at", "")):
+        try:
+            fresh = (now - datetime.fromisoformat(p["created_at"])).total_seconds() < 12 * 3600
+        except (KeyError, ValueError):
+            fresh = False
+        if fresh and p.get("kind") == "custom" and p.get("media") != "reel" and words & {w.lower() for w in re.findall(r"[A-Za-z]{4,}", p.get("headline", ""))}:
+            print(f"  earlier post of yours matches: {p['headline'][:90]}")
+            return p["headline"]
+    return ""
+
+
+def topic_article(text: str) -> dict | None:
+    """A Reel request without a link ('For Umar khalid post, create reel.'; owner, 20 Oct 2026: it became a normal post
+    because the strict proofreader had only those words as facts): find the news the owner means, newest first, and
+    return its article (title/site/url/description), or None if the words aren't about a news story."""
+    import fun
+    schema = {"type": "object", "properties": {
+        "news": {"type": "boolean", "description": "true if the words are about a real person, event or news story"},
+        "query": {"type": "string", "description": "A short English news search for it (names + the event)"}},
+        "required": ["news", "query"], "additionalProperties": False}
+    try:
+        q = fun.claude_json("The owner of a news/meme page asked for a Reel and gave no link. If the words are about a real "
+                            "news story or person, give the news search that finds it.", f"Owner's words: {text}", schema,
+                            g.CONFIG.get("membership_model", "sonnet"), purpose="topic search")
+    except Exception as e:
+        print(f"  ! topic search failed: {str(e)[:80]}")
+        return None
+    if not q["news"] or not q["query"].strip():
+        return None
+    arts = [a for a in bing_articles(q["query"], limit=8, newest=True) if a.get("title")]
+    print(f"  topic search '{q['query']}': {len(arts)} article(s)")
+    if not arts:
+        return None
+    # the article that is about THIS story, not just the same person (20 Oct 2026: 'human rights award' got a bail story)
+    pick_schema = {"type": "object", "properties": {"pick": {"type": "integer", "description": "Number of the article about "
+                   "the same story as the owner's words; 0 if none is"}}, "required": ["pick"], "additionalProperties": False}
+    try:
+        n = fun.claude_json("Pick the news article that is about the SAME story the owner means.",
+                            f"The story: {text}\n\nArticles:\n" + "\n".join(f"{i}. ({a['site']}) {a['title']}"
+                                                                           for i, a in enumerate(arts, 1)),
+                            pick_schema, g.CONFIG.get("membership_model", "sonnet"), purpose="topic article pick")["pick"]
+    except Exception:
+        n = 1
+    if not 1 <= n <= len(arts):
+        print("  no article is about that exact story")
+        return None
+    art = read_article(arts[n - 1]["url"])
+    return art if art and art.get("title") else None
+
+
 def make_reel(raw: str) -> int:
     """🎬 Reel for a topic/link/news typed in ➕ Create (no video): news -> photo slideshow,
     a funny idea -> 'Tag that friend' clip or meme. Falls back to a normal post if no Reel can be made."""
@@ -599,9 +660,14 @@ def make_reel(raw: str) -> int:
     if article and not (article.get("title") or article.get("description")):
         article = None
     if not urls and text:
-        picked = resolve_prompt(text)   # "latest cricket news" -> a real story
-        if picked:   # the owner's words stay (owner, 14 Oct 2026: a funny idea became a Reel about a wrong article)
+        earlier = earlier_post_topic(text)   # 'For Umar khalid post, create reel.' = the post he just made (20 Oct 2026)
+        picked = None if earlier else resolve_prompt(text)   # "latest cricket news" -> a real story
+        if earlier:
+            article = topic_article(earlier)
+        elif picked:   # the owner's words stay (owner, 14 Oct 2026: a funny idea became a Reel about a wrong article)
             article = picked
+        else:   # no link and not a "find me a story" request: search the news for what the words are about
+            article = topic_article(text)
     state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
     try:
         with tempfile.TemporaryDirectory() as tmp:
