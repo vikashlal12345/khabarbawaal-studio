@@ -3574,7 +3574,9 @@ def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories:
     photos, credits = named_photos(people, fill_missing=True, vs=False) if people else ([], [])
     real = [x for x in (photos[1:] if len(photos) > 1 else photos) if min(x.size) >= 400]
     photo = real[pick_cover_photo(real, story["title"], tmp)] if real else None   # 📸 photo contest
-    best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.")
+    best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.",
+                             card_text=" ".join([best["title"], best["quote_text"], best["quote_speaker"], best["punchline"],
+                                                 best["counter_label"]] + [c for r in best["rows"] for c in r["cells"]]))
     item = {"link": story["url"], "source": story["site"], "title": story["title"]}
     out = os.path.join(tmp, "reel.mp4")
 
@@ -3813,7 +3815,9 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         real_photos[pick_cover_photo(real_photos, story["title"], tmp)] if real_photos else
         next(video_stills(clip, 0.0, 0.1, 1280), None))   # 📸 photo contest
     if best.get("hook"):   # 🪝 hook contest
-        best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.")
+        best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.",
+                                 card_text=" ".join(best["claim"] + best["context"] + [f["fact"] for f in best["facts"]]
+                                                    + [best["punchline"]]))
 
     def render(d):   # the dig over the clip stays until it's read (satire_hook_secs); later parts time themselves
         clip_dur = satire_hook_secs(d["post"]["claim"])
