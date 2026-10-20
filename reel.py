@@ -2237,7 +2237,8 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
                             f"Headline: {story['title']}\n\nFull story:\n{facts[:5500]}", BREAK_WRITE,
                             CONFIG.get("membership_model", "sonnet"), purpose="breaking card write")
     opt = {**opt, **final}
-    opt["hook"] = pick_hook(story["title"], facts, opt["hook"])   # 🪝 hook contest
+    opt["hook"] = pick_hook(story["title"], facts, opt["hook"],   # 🪝 hook contest: only names that are on the card
+                            card_text=" ".join([opt["headline"]] + opt["bullets"] + [opt["question"]]))
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "hook", "headline", "question"])
     bl = {"bullets_text": "\n".join(opt["bullets"])}
@@ -2850,7 +2851,18 @@ HOOKS_SCHEMA = {"type": "object", "properties": {
     "required": ["hooks", "best"], "additionalProperties": False}
 
 
-def pick_hook(title: str, facts: str, current: str, tmp_note: str = "") -> str:
+def hook_names_ok(hook: str, card_text: str) -> bool:
+    """Every name in the hook (Capitalised words, not the first word) must also be on the card (19-20 Oct 2026: the 2 PM
+    hook named Vidyut Jammwal, the details were about Sharad Kelkar)."""
+    low = card_text.lower()
+    names = [w for w in re.findall(r"[A-Za-z][A-Za-z'-]+", hook)[1:] if w[:1].isupper() and len(w) > 3]
+    first = re.findall(r"[A-Za-z][A-Za-z'-]+", hook)[:1]
+    if first and first[0][:1].isupper() and len(first[0]) > 3:
+        names.append(first[0])
+    return all(n.lower() in low for n in names)
+
+
+def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_text: str = "") -> str:
     """🪝 Hook contest (owner, 19 Oct 2026): the AI writes 5 hooks from the full story and picks the strongest, using
     the pattern of the owner's best posts: the biggest name first, then the shock or twist, a fact from the story
     (no invented details, no clickbait lies). Falls back to the current hook."""
@@ -2861,10 +2873,14 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "") -> str:
             "emojis, 4-9 words). The owner's best hooks: 'Salman ne Karisma ke saath shoot se mana kiya', 'Kriti Sanon ka "
             "palatwaar', 'Tiger Shroff firing: Kota mein teeno aaropi pakde gaye'. Biggest name FIRST, then the shock, "
             "twist or new development; a fact from the story only; concrete, never vague ('Ye dekh ke hairan reh jaoge' is "
-            "bad). " + tmp_note, f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\nCurrent hook: {current}{viral_memory()}",
+            "bad). " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
+                                    "not on the card." if card_text else ""),
+            f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\n" + (f"THE CARD (the hook must match it):\n{card_text}\n\n"
+                                                                       if card_text else "") + f"Current hook: {current}{viral_memory()}",
             HOOKS_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="hook contest")
         hooks = [h.strip() for h in res["hooks"] if h.strip()]
-        best = hooks[res["best"]] if 0 <= res["best"] < len(hooks) else (hooks[0] if hooks else current)
+        order = ([hooks[res["best"]]] if 0 <= res["best"] < len(hooks) else []) + [h for k, h in enumerate(hooks) if k != res["best"]]
+        best = next((h for h in order if not card_text or hook_names_ok(h, card_text)), current)   # only names on the card
         print(f"  hook: '{best}' (was '{current}')")
         return best or current
     except Exception as e:
@@ -2888,7 +2904,8 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     if not hook_video and opt.get("hook"):   # ⭐ the standard cover: the best photo + the best hook (owner, 19 Oct 2026)
         cover = photos[pick_cover_photo([x[0] for x in photos], item["title"], tmp)][0]
         article_text = article if article else __import__("carousel").story_text(item["link"], item["title"], item.get("summary", ""))
-        opt["hook"] = pick_hook(item["title"], article_text, opt["hook"])
+        opt["hook"] = pick_hook(item["title"], article_text, opt["hook"],
+                                card_text=" ".join([item["title"]] + [x[2] for x in photos] + [opt.get("end_text", "")]))
     photos = photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
     roman_only(opt, ["hook"])
     images = [(img, whole) for img, _, _, whole in photos]

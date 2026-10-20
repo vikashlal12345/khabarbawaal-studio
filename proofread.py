@@ -52,7 +52,8 @@ home address, ID card, document, bank details or someone's private account scree
 story is about).
 5. The page's own fixed labels are NOT claims and never an issue: the handle / logo, 'Follow @khabarbawaal…', the daily \
 series lines ('roz shaam 6 baje naya Reality Check', 'roz ki viral khabar…'), 'TAG KARO USKO', 'CAPTION PADHO', \
-'SEND THIS TO THAT ONE FRIEND', 'COMMENT KARO: MAINE BHI'.
+'SEND THIS TO THAT ONE FRIEND', 'COMMENT KARO: MAINE BHI'. Credits are not claims either: 'Photo: <outlet>' on a photo and 'Source: <site>' in the caption only say where a photo \
+or the story came from (photos often come from other outlets than the article); never flag or 'fix' them.
 6. Nothing offensive or defamatory. The page is openly pro right-wing and critical of the left/opposition: that one-sided political tone is intentional, so do NOT flag or "fix" the slant. Flag only factual errors, invented quotes, hate against a religion/caste/community, or calls to violence.
 
 Return:
