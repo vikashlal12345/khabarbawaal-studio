@@ -153,7 +153,8 @@
   "cf50966c6c42",
   "a09d0effc633",
   "a5b04a59ab2c",
-  "4dded87bbc14"
+  "4dded87bbc14",
+  "ea769317eb55"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -302,9 +303,9 @@
   "reel_news_early": "2026-10-21",
   "reel_rotate": "2026-10-20",
   "reel_break_am": "2026-10-21",
-  "reel_break_noon": "2026-10-20"
+  "reel_break_noon": "2026-10-21"
  },
- "inbox_since": "NgNc01UChhrB",
+ "inbox_since": "kyT59lMyvUFv",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -687,7 +688,8 @@
   "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
   "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-seen-without-bandages-in-new-photos-with-minister-ashish-shelar-after-mumbai-firing-incident-101792567526513.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -824,13 +826,6 @@
   }
  ],
  "songs_recent": [
-  "Madhosh",
-  "Kabhi Shaam Dhale",
-  "Girls Like You",
-  "Levitating",
-  "Tu Hi Disda (From \"Bhooth Bangla\")",
-  "Zaalima",
-  "As It Was",
   "Housewife",
   "Sam Dam Dand Bhed",
   "Dhurandhar Title Track",
@@ -866,7 +861,11 @@
   "Nicole Kidman",
   "Hukum Reloaded",
   "All The Stars",
-  "APT."
+  "APT.",
+  "Gehra Hua",
+  "Ghana Kasoota",
+  "Escapism.",
+  "Die With A Smile"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -932,6 +931,10 @@
   },
   {
    "title": "Ramayana records a stellar start, advance booking collection crosses ₹3 crore 15 days before release; even tickets worth ₹2,700 are sold out in Mumbai",
+   "date": "2026-10-21"
+  },
+  {
+   "title": "Tiger Shroff seen without bandages in new photos with minister Ashish Shelar after Mumbai firing incident",
    "date": "2026-10-21"
   }
  ]

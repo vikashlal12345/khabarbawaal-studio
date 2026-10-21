@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_noon-2026-10-21",
+  "image": "posts/20261021-0834-reel_break_noon-2026-10-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261021-083406-reel_break_noon-2026-10-21.mp4",
+  "headline": "Tiger Shroff seen without bandages in new photos with minister Ashish Shelar after Mumbai firing incident",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Tiger Shroff firing case: Ashish Shelar ki nayi photos 🔥\nMinister Ashish Shelar ne Tiger se mulakat ki, nayi photos mein Tiger bina bandage dikhe.\nDelhi Police ne mangalvaar ko 4 logon ko giraftar kiya, Kota mein 3 log pehle hi hirasat mein hain.\nTiger ki team ne AI videos aur jhooti khabron par legal action ki chetavani di hai.\nAise hamlawaron ko kadi saza milni chahiye? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #bollywood #mumbai #breakingnews",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-seen-without-bandages-in-new-photos-with-minister-ashish-shelar-after-mumbai-firing-incident-101792567526513.html",
+  "pin_comment": "Tiger Shroff ke fans ko ye update zaroor bhejo 👇",
+  "songs": [
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "serious tone, comeback feel"
+   },
+   {
+    "title": "Ghana Kasoota",
+    "artist": "Raftaar, Avvy Sra",
+    "lang": "hindi",
+    "mood": "hype, strong star energy"
+   },
+   {
+    "title": "Escapism.",
+    "artist": "Raye, 070 Shake",
+    "lang": "english",
+    "mood": "trending, calm after storm"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga, Bruno Mars",
+    "lang": "english",
+    "mood": "emotional, relief vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-21T08:34:06+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-21",
   "image": "posts/20261021-0633-reel_news_am-2026-10-21.jpg",
   "kind": "reel",
@@ -598,50 +643,5 @@
    ]
   },
   "created_at": "2026-10-20T10:33:24+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-20",
-  "image": "posts/20261020-0833-reel_break_noon-2026-10-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261020-083357-reel_break_noon-2026-10-20.mp4",
-  "headline": "Sharad Kelkar says he spoke to Tiger Shroff after firing incident, trusts Mumbai Police to get to the bottom of the case",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Tiger Shroff firing Sharad Kelkar reaction Mumbai Police 🔥\nSharad Kelkar ne kaha desh mein aisi anarchy kabhi nahi honi chahiye.\nUnhone Jackie Shroff ko message bhi kiya, aur Mumbai Police par bharosa jataya.\nPolice ne Kota se 3 aaropi pakde hain, Lawrence Bishnoi gang link ki jaanch jaari hai.\nAapko kya lagta hai, police sahi track par hai? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #bollywood #mumbaipolice #sharadkelkar",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
-  "pin_comment": "Police ka kaam sahi laga ya nahi? Kisi Tiger Shroff fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Hukum Reloaded",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "intense action beat = arrests"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "dark serious mood, case update"
-   },
-   {
-    "title": "Lies (feat. Lana Del Rey)",
-    "artist": "Zach Bryan & Lana Del Rey",
-    "lang": "english",
-    "mood": "tense, serious crime news"
-   },
-   {
-    "title": "Cold Shoulder",
-    "artist": "Drake, Don Toliver & Yebba",
-    "lang": "english",
-    "mood": "cold, dramatic tone"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-20T08:33:57+00:00"
  }
 ]
