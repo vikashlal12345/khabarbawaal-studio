@@ -1,5 +1,58 @@
 [
  {
+  "id": "c8c914fe17e3",
+  "image": "posts/20261021-1433-c8c914fe17e3.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261021-143317-c8c914fe17e3.mp4",
+  "headline": "Delhi court orders release of Saurav Das, Ashutosh Ranka after 7 days in Jantar Mantar trespassing case",
+  "tag": "🎬 REEL · POLITICS",
+  "caption": "Saurav Das Ashutosh Ranka release: Delhi court ne CJP netaon ko 7 din baad choda, par Delhi HC ne kaha \"aap Gen Z nahi ho\" 👀\n\n- Jantar Mantar mein kathit taur par security todne ke case mein 13 Oct se custody mein the\n- SEM court ne kaha: unke conduct se kanoon ke prati respect ki kami dikhti hai, aur \"habitualness\" in de-notified areas mein protest bulane ki\n- Delhi HC ne kaha: barricade ek purpose ke liye hota hai, permission isiliye li jaati hai\n- Umar poocha gaya: Das 27, Ranka 32. Court bola: \"Then you are not Gen Z\"\n\nBarricade todkar protest karna kya sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #CJP #SauravDas #DelhiHighCourt #JantarMantar",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/sem-court-orders-release-of-cjp-leaders-saurav-das-ashutosh-ranka-trespassing-jantar-mantar-site-abhijeet-dipke-101792587526788.html",
+  "pin_comment": "Kisi aise dost ko bhejo jo \"Gen Z protest\" ka matlab samjhta hai 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "release after 7 din = azadi"
+   },
+   {
+    "title": "Qayde Se (From \"Metro ... In Dino\")",
+    "artist": "Pritam, Arijit Singh",
+    "lang": "hindi",
+    "mood": "qayde = court ke rules"
+   },
+   {
+    "title": "Aura Farming",
+    "artist": "Mustafa Saboori",
+    "lang": "english",
+    "mood": "Gen Z remark pe vibe"
+   },
+   {
+    "title": "Great Expectation",
+    "artist": "SIENNA SPIRO",
+    "lang": "english",
+    "mood": "badi umeedein, court ka jawab"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Court did not say breaking barricades is not protest; it said barricades exist for a purpose and questioned the petitioners' conduct.",
+    "Fact corrected to match the article: Article says police only sought an extension (3 days); the SEM extended custody by 2 days.",
+    "Fact corrected to match the article: Barricade breach is an allegation (HC said they 'allegedly' breached barricades), so it must be attributed, not stated as fact."
+   ],
+   "fixed": [
+    "Barricade todna protest nahi hota, court ne bhi yahi poocha → Barricade todne par Delhi HC ne sawal uthaye",
+    "Police ne custody badhwayi; SEM ne 'peace disturb' khatre par 19 October ko 2 din badhaye. → Police ne custody badhane ki maang ki; SEM ne 'peace disturb' khatre par 19 October ko 2 din badhaye.",
+    "Barricade todne par Delhi HC ne sawal uthaye → Kathit barricade todne par Delhi HC ne sawal uthaye"
+   ]
+  },
+  "created_at": "2026-10-21T14:33:17+00:00"
+ },
+ {
   "id": "reel_rotate-2026-10-21",
   "image": "posts/20261021-1418-reel_rotate-2026-10-21.jpg",
   "kind": "reel",
@@ -527,50 +580,5 @@
    "fixed": []
   },
   "created_at": "2026-10-20T16:02:43+00:00"
- },
- {
-  "id": "reel_rotate-2026-10-20",
-  "image": "posts/20261020-1418-reel_rotate-2026-10-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261020-141837-reel_rotate-2026-10-20.mp4",
-  "headline": "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi",
-  "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
-  "caption": "Bachpan me tiffin interval se pehle khaya? Aloo paratha ki khushboo poori class ko pata chal jaati thi 😂\nTumne kitni baar kiya? MAINE BHI likho 👇\n\nFollow @khabarbawaal: roz shaam 7:45 baje naya comedy: bachpan, memes, tag karo 😂\n\n#bachpan #90skids #schoollife #nostalgia #relatable",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Last bench wala tiffin chor sabko yaad hai 😭 Us dost ko bhejo jo tiffin pehle hi khatam karta tha 👇",
-  "songs": [
-   {
-    "title": "Madhosh",
-    "artist": "Tanishk Bagchi, Arslan Nizami",
-    "lang": "hindi",
-    "mood": "chori chori sweet kaam"
-   },
-   {
-    "title": "Kabhi Shaam Dhale",
-    "artist": "Jaani, Mohammad Faiz",
-    "lang": "hindi",
-    "mood": "shaam ki tiffin wali yaadein"
-   },
-   {
-    "title": "Girls Like You",
-    "artist": "Maroon 5",
-    "lang": "english",
-    "mood": "light nostalgic groove"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "sneaky happy vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-20T14:18:37+00:00"
  }
 ]
