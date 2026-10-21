@@ -1,38 +1,38 @@
 [
   {
     "id": "cbdf29686376",
-    "image": "posts/20261021-0619-cbdf29686376.jpg",
+    "image": "posts/20261021-0630-cbdf29686376.jpg",
     "kind": "custom",
     "media": "reel",
-    "video": "posts/20261021-061942-cbdf29686376.mp4",
-    "headline": "Bishnoi bhai : My manager is also Salman Khan's friend",
+    "video": "posts/20261021-063050-cbdf29686376.mp4",
+    "headline": "Bishnoi bhai : My manager is also Salman Khan’s friend",
     "tag": "🎬 REEL · YOUR LINE · SALMAN KHAN + LAWRENCE BISHNOI + TIGER SHROFF",
-    "caption": "Salman Khan, Bishnoi bhai aur Tiger Shroff ka funny connection 😂\nManager bhi nikla VIP, sabka bachav ho gaya\n\nPhotos (Wikimedia Commons): Salman Khan: Bollywood Hungama (CC BY 3.0); Tiger Shroff: Bollywood Hungama (CC BY 3.0)\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#SalmanKhan #LawrenceBishnoi #TigerShroff #BollywoodMeme #ViralReel",
+    "caption": "Salman Khan, Bishnoi bhai aur Tiger Shroff ka naya scene 😂\nAb toh manager bhi \"Salman ka dost\" bann gaya, bachna mushkil hai\n\nPhotos: Salman Khan: Bollywood Hungama (CC BY 3.0); Tiger Shroff: Bollywood Hungama (CC BY 3.0)\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#SalmanKhan #LawrenceBishnoi #TigerShroff #BollywoodMemes #ComedyReels",
     "source": "KhabarBawaal Original",
     "source_url": "",
-    "pin_comment": "Haha reaction do aur us dost ko tag karo jiska bhi 'connection' hai 👇",
+    "pin_comment": "Tag that dost jo apna manager bhi Salman ka friend bata de 😂",
     "songs": [
       {
-        "title": "Alfaaz",
-        "artist": "Hamza Malik & Zain Zohaib",
+        "title": "Ashke",
+        "artist": "Karan Aujla & MXRCI",
         "lang": "hindi",
         "mood": "high on today's charts"
       },
       {
-        "title": "Barsaat",
-        "artist": "Banjaare, Roni",
+        "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+        "artist": "Shashwat Sachdev, Shahzad Ali",
         "lang": "hindi",
         "mood": "high on today's charts"
       },
       {
-        "title": "BbY WOW",
-        "artist": "KAROL G, Judeline, rusowsky",
+        "title": "People",
+        "artist": "Libianca Kenzonkinboum Fonji, Libianca",
         "lang": "english",
         "mood": "high on today's charts"
       },
       {
-        "title": "Go Down Deh (feat. Sean Paul & Shaggy)",
-        "artist": "Spice",
+        "title": "Nicole Kidman",
+        "artist": "ADÉLA",
         "lang": "english",
         "mood": "high on today's charts"
       }
@@ -40,11 +40,12 @@
     "proof": {
       "state": "check",
       "issues": [
+        "Slide 1: Lawrence Bishnoi's photo could not be sourced; the middle panel just shows a placeholder silhouette icon with 'PHOTO NAHI MILI' instead of his actual photo, which looks broken/incomplete in the 3-photo layout the owner asked for.",
         "No free photo of Lawrence Bishnoi exists, so its tile shows a silhouette (never a guessed photo): add a photo by hand if you like."
       ],
       "fixed": []
     },
-    "created_at": "2026-10-21T06:19:42+00:00"
+    "created_at": "2026-10-21T06:30:50+00:00"
   },
   {
     "id": "reel_break_am-2026-10-21",
