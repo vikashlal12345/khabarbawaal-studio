@@ -3066,126 +3066,168 @@ def parse_brief(text: str) -> dict:
     return {"given_line": line, "photo_strip": bool(res["photo_strip"]), "people": [x.strip() for x in res["people"] if x.strip()]}
 
 
-def person_news_photo(name: str, context: str, tmp: str, others: tuple = ()) -> tuple[Image.Image, str] | None:
-    """A person with no free Wikipedia photo (owner, 21 Oct 2026: 'check for photo like you are doing for breaking and latest
-    news, and write the source'): the lead photo of a recent news article about THEM (their name in its headline), the way
-    breaking/news Reels get theirs, checked by the AI. Returns (photo, source site) or None."""
+def person_photos(name: str, context: str, tmp: str, others: tuple = (), want: int = 3) -> list[tuple[Image.Image, str]]:
+    """Recent news photos of a person (owner, 21 Oct 2026: 'take 3 pictures of all the 3, like you do for breaking and viral
+    news, with the source'): lead photos of the newest articles that are ABOUT them (their name in the headline, and before
+    any other person of the Reel: 'Tiger Shroff attacked, Bishnoi blamed' is about Tiger), each AI-checked: one sharp
+    person, whole face, no collage / split picture / injury, and a face position for the tall crop.
+    Returns up to `want` [(photo with info['focus'], source site)]."""
     import create_post
+    import fun
     import generate as g
     last = norm(name.split()[-1]) if name.split() else ""
-    seen, found = set(), []
-    for q in (name, f"{name} {context}"[:90]):
-        for a in create_post.bing_articles(q, limit=10, newest=True):
-            if a["url"] in seen or not last or last not in norm(a["title"]):
+    other_last = [norm(o.split()[-1]) for o in others if o.split()]
+    seen, found, hashes = set(), [], set()
+    for q in (name, f"{name} latest news", f"{name} {context}"[:90]):
+        for a in create_post.bing_articles(q, limit=12, newest=True):
+            title = norm(a["title"])
+            if a["url"] in seen or not last or last not in title:
                 continue
-            if any(norm(o.split()[-1]) in norm(a["title"]) for o in others if o.split()):
-                continue   # an article about several of the Reel's people: its photo may show another one (21 Oct 2026)
             seen.add(a["url"])
+            pos = title.find(last)
+            if any(0 <= title.find(o) < pos for o in other_last):
+                continue   # the article is about someone else first: its photo may show them
             img = g.best_photo({"link": a["url"], "image": ""})
             if img is None or min(img.size) < 400:
                 continue
+            key = img.convert("L").resize((8, 8)).tobytes()
+            if key in hashes:
+                continue
+            hashes.add(key)
             found.append((img.convert("RGB"), a["site"]))
-            if len(found) >= 4:
+            if len(found) >= 8:
                 break
-        if len(found) >= 4:
+        if len(found) >= 8:
             break
     if not found:
-        return None
-    keep = look_at_photos([f[0] for f in found], f"{name}, the ONE person the photo must show clearly: a sharp, ordinary, healthy-looking photo of a single person. REJECT "
-                          f"any split or side-by-side picture, collage, crowd, poster with text, a photo of someone else, and any photo with injuries, "
-                          f"bandages, blood, a hospital or a custody scene: {context}", tmp)
-    import fun
-    folder = os.path.join(tmp, "face_check")
+        return []
+    folder = os.path.join(tmp, f"people_{god_slug(name)}")
     os.makedirs(folder, exist_ok=True)
-    cands = [f for f in found if any(f[0] is k for k in keep)][:3]
-    for n, (img, site) in enumerate(cands, 1):
+    for n, (img, site) in enumerate(found, 1):
         small = img.copy()
         small.thumbnail((640, 640))
         small.save(os.path.join(folder, f"p{n}.jpg"), quality=85)
-    if not cands:
-        return None
-    schema = {"type": "object", "properties": {"picks": {"type": "array", "items": {"type": "object", "properties": {
-        "photo": {"type": "integer"}, "face_x": {"type": "number", "description": "0-1 horizontal centre of the face"},
-        "face_y": {"type": "number", "description": "0-1 vertical centre of the face"},
-        "tall_crop_ok": {"type": "boolean", "description": "True if a tall narrow crop (about 1:2.4) centred on the face shows "
-                         "ONE clear, whole face of the person, not cut off, not a collage or split picture, no other face in the crop, "
-                         "no injury or bandage, and you are sure it is the named person from the photo's context"}},
-        "required": ["photo", "face_x", "face_y", "tall_crop_ok"], "additionalProperties": False}}},
-        "required": ["picks"], "additionalProperties": False}
+    schema = {"type": "object", "properties": {"photos": {"type": "array", "items": {"type": "object", "properties": {
+        "photo": {"type": "integer"}, "usable": {"type": "boolean", "description": "ONE sharp person looking toward the camera (front-facing, both eyes visible, the whole "
+                  "face and forehead inside the picture, not a side profile or a face cut by the edge), looking like an ordinary press / event / interview photo; NOT a split, side-by-side or collage picture, "
+                  "NOT several people, NOT a crowd, no injuries, bandages, blood or hospital, no text poster, and you believe it "
+                  "shows the named person"},
+        "face_x": {"type": "number", "description": "0-1 horizontal centre of the face"},
+        "face_y": {"type": "number", "description": "0-1 vertical centre of the face"}},
+        "required": ["photo", "usable", "face_x", "face_y"], "additionalProperties": False}}},
+        "required": ["photos"], "additionalProperties": False}
     try:
-        res = fun.claude_json("You check photos before a tall narrow crop is made from them. Open each photo with the Read tool.",
-                              f"Person: {name}. Photos: " + ", ".join(f"p{n}.jpg" for n in range(1, len(cands) + 1)) + ". For each "
-                              "photo give where the person's face is and whether a tall narrow crop on that face looks good.",
-                              schema, CONFIG.get("membership_model", "sonnet"), purpose="face crop", folder=folder)
+        res = fun.claude_json("You pick photos of one named person from news articles for a tall narrow tile. Open every photo "
+                              "with the Read tool and judge each.",
+                              f"Person: {name} ({context})\nPhotos: " + ", ".join(f"p{n}.jpg" for n in range(1, len(found) + 1)),
+                              schema, CONFIG.get("membership_model", "sonnet"), purpose="people photos", folder=folder)
     except Exception as e:
         if type(e).__name__ == "ClaudeLimit":
             raise
-        print(f"  ! face check failed ({str(e)[:80]}): no news photo")
-        return None
-    for pk in res["picks"]:
-        if pk["tall_crop_ok"] and 1 <= pk["photo"] <= len(cands):
-            img, site = cands[pk["photo"] - 1]
+        print(f"  ! people photo check failed ({str(e)[:80]}): none")
+        return []
+    out = []
+    for pk in res["photos"]:
+        if pk["usable"] and 1 <= pk["photo"] <= len(found) and len(out) < want:
+            img, site = found[pk["photo"] - 1]
             img.info["focus"] = (min(1.0, max(0.0, float(pk["face_x"]))), min(1.0, max(0.0, float(pk["face_y"]))))
-            print(f"  news photo of {name}: {site}, face at {img.info['focus']}")
-            return img, site
-    print(f"  no news photo of {name} gives a clear tall crop")
-    return None
+            out.append((img, site))
+    if out:   # look at the REAL tall crops: a photo can pass as a photo and still crop badly (a side view, a cut face)
+        for k, (img, site) in enumerate(out, 1):
+            fx, fy = img.info["focus"]
+            ImageOps.fit(img.convert("RGB"), (320, 770), Image.LANCZOS, centering=(fx, max(0.15, fy - 0.1))).save(
+                os.path.join(folder, f"crop{k}.jpg"), quality=88)
+        cschema = {"type": "object", "properties": {"crops": {"type": "array", "items": {"type": "object", "properties": {
+            "crop": {"type": "integer"}, "good": {"type": "boolean", "description": "The tall crop shows ONE sharp, front-facing "
+                     "whole face (forehead to chin, both eyes) large and clear: not blurry, not a side or back view, not cut by the edge"}},
+            "required": ["crop", "good"], "additionalProperties": False}}}, "required": ["crops"], "additionalProperties": False}
+        try:
+            cres = fun.claude_json("You look at tall narrow tiles cropped from news photos and say which are good enough to post. "
+                                   "Open each with the Read tool.", f"Person: {name}. Crops: " + ", ".join(
+                                       f"crop{k}.jpg" for k in range(1, len(out) + 1)), cschema,
+                                   CONFIG.get("membership_model", "sonnet"), purpose="people crops", folder=folder)
+            good = {c["crop"] for c in cres["crops"] if c["good"]}
+            out = [o for k, o in enumerate(out, 1) if k in good]
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! crop check failed ({str(e)[:80]}): none")
+            out = []
+    print(f"  news photos of {name}: {len(out)} of {len(found)} usable ({', '.join(site for _, site in out)})")
+    return out
 
 
-def strip_reel(line: str, tiles: list[tuple[str, Image.Image | None]], out_mp4: str, secs: float, highlight: list[str],
+def strip_reel(line: str, tiles: list[tuple[str, list[Image.Image]]], out_mp4: str, secs: float, highlight: list[str],
                sources: str = "") -> list[Image.Image]:
-    """The owner's line big on top, then his photos side by side as tall rounded tiles in ONE frame, each with its name."""
+    """The owner's line big on top, then his people side by side as tall rounded tiles in ONE frame, each with its name; a
+    person with several photos shows them one after another (all tiles change together)."""
     BG = "#0E0E12"
-    card = Image.new("RGBA", (RW, RH), BG)
     logo = logo_img()
-    if logo:
-        card.alpha_composite(logo, ((RW - logo.width) // 2, 90))
     highlights = {norm(w) for ph in highlight for w in ph.split()}
     lines, fnt, lh = fit_lines(printable(line), RW - 2 * LEFT, 420, sizes=range(76, 40, -4))
-    y = 230
-    for img in line_images(lines, fnt, lh, "#FFFFFF", COVER_PINK, highlights):
-        card.alpha_composite(img, ((RW - img.width) // 2, y))
-        y += lh
-    y += 50
     n = len(tiles)
     gap, margin = 24, 40
     tw = (RW - 2 * margin - (n - 1) * gap) // n
-    th = min(int(tw * 2.4), 1690 - y - 90)   # tall tiles that wikipedia portraits (~450 px wide) still fill sharply
-    y += max(0, (1690 - y - 90 - th) // 2)
-    d = ImageDraw.Draw(card)
-    for i, (name, pic) in enumerate(tiles):
-        x = margin + i * (tw + gap)
-        if pic is None:   # no free photo exists: a clear silhouette, never a guessed picture
-            tile = Image.new("RGB", (tw, th), "#2A1218")
-            td = ImageDraw.Draw(tile)
-            cx, cy = tw // 2, int(th * 0.40)
-            r = int(tw * 0.24)
-            td.ellipse((cx - r, cy - r, cx + r, cy + r), fill="#5A2A33")
-            td.ellipse((cx - int(tw * 0.46), cy + int(r * 1.25), cx + int(tw * 0.46), cy + int(r * 1.25) + int(tw * 0.95)), fill="#5A2A33")
-            td.text((cx, int(th * 0.80)), "PHOTO NAHI MILI", font=font("Poppins-Bold.ttf", 26), fill="#C9A0A8", anchor="mm")
-        else:
-            fx, fy = pic.info.get("focus", (0.5, 0.25))
-            tile = ImageOps.fit(pic.convert("RGB"), (tw, th), Image.LANCZOS, centering=(fx, max(0.15, fy - 0.1)))
-        mask = Image.new("L", (tw, th), 0)
-        ImageDraw.Draw(mask).rounded_rectangle((0, 0, tw - 1, th - 1), radius=36, fill=255)
-        card.paste(tile, (x, y), mask)
-        size = 44
-        f = font("Poppins-Bold.ttf", size)
-        while f.getlength(printable(name).upper()) > tw - 10 and size > 22:
-            size -= 2
+    phases = max(1, max(len(pics) for _, pics in tiles))
+
+    def card_for(phase: int) -> Image.Image:
+        card = Image.new("RGBA", (RW, RH), BG)
+        if logo:
+            card.alpha_composite(logo, ((RW - logo.width) // 2, 90))
+        y = 230
+        for img in line_images(lines, fnt, lh, "#FFFFFF", COVER_PINK, highlights):
+            card.alpha_composite(img, ((RW - img.width) // 2, y))
+            y += lh
+        y += 50
+        th = min(int(tw * 2.4), 1690 - y - 90)
+        y += max(0, (1690 - y - 90 - th) // 2)
+        d = ImageDraw.Draw(card)
+        for i, (name, pics) in enumerate(tiles):
+            x = margin + i * (tw + gap)
+            if not pics:   # no usable photo at all: a bold name card (never a guessed picture)
+                tile = Image.new("RGB", (tw, th), RED)
+                td = ImageDraw.Draw(tile)
+                for yy in range(th):   # red to deep red, top to bottom
+                    td.line((0, yy, tw, yy), fill=(200 - yy * 110 // th, 10, 20 + yy * 10 // th))
+                words = printable(name).upper().split()
+                size = 120
+                while size > 40 and max(font("Anton-Regular.ttf", size).getlength(w) for w in words) > tw - 40:
+                    size -= 6
+                nf = font("Anton-Regular.ttf", size)
+                y0 = th // 2 - (len(words) * int(size * 1.15)) // 2
+                for k, w in enumerate(words):
+                    td.text((tw // 2, y0 + k * int(size * 1.15)), w, font=nf, fill="#FFFFFF", anchor="mt", stroke_width=3, stroke_fill="#000000")
+                tag = pill("IN NEWS TODAY", font("Poppins-Bold.ttf", 28), "#FFFFFF", RED, pad=(20, 10))
+                tile.paste(tag, ((tw - tag.width) // 2, int(th * 0.86)), tag)
+            else:
+                pic = pics[phase % len(pics)]
+                fx, fy = pic.info.get("focus", (0.5, 0.25))
+                tile = ImageOps.fit(pic.convert("RGB"), (tw, th), Image.LANCZOS, centering=(fx, max(0.15, fy - 0.1)))
+            mask = Image.new("L", (tw, th), 0)
+            ImageDraw.Draw(mask).rounded_rectangle((0, 0, tw - 1, th - 1), radius=36, fill=255)
+            card.paste(tile, (x, y), mask)
+            size = 44
             f = font("Poppins-Bold.ttf", size)
-        d.text((x + tw // 2, y + th + 40), printable(name).upper(), font=f, fill="#FFFFFF", anchor="mm")
-    if sources:   # where each photo comes from
-        sl, sf, slh = fit_lines(sources, RW - 2 * margin, 120, sizes=range(30, 20, -2), name="Poppins-SemiBold.ttf")
-        for j, words in enumerate(sl):
-            d.text((RW // 2, y + th + 105 + j * slh), " ".join(words), font=sf, fill="#9A9AA5", anchor="mt")
-    handle_tag(card, 1810)
+            while f.getlength(printable(name).upper()) > tw - 10 and size > 22:
+                size -= 2
+                f = font("Poppins-Bold.ttf", size)
+            d.text((x + tw // 2, y + th + 40), printable(name).upper(), font=f, fill="#FFFFFF", anchor="mm")
+        if sources:   # where each photo comes from
+            sl, sf, slh = fit_lines(sources, RW - 2 * margin, 120, sizes=range(30, 20, -2), name="Poppins-SemiBold.ttf")
+            for j, words in enumerate(sl):
+                d.text((RW // 2, y + th + 105 + j * slh), " ".join(words), font=sf, fill="#9A9AA5", anchor="mt")
+        handle_tag(card, 1810)
+        return card
+
+    cards = [card_for(k) for k in range(phases)]
     enc = Encoder(out_mp4)
-    for _ in range(int(secs * FPS)):
-        enc.add(card)
-    add_follow(enc, card)
+    per = int(secs * FPS / phases)
+    for card in cards:
+        for _ in range(per):
+            enc.add(card)
+    add_follow(enc, cards[-1])
     enc.close()
-    return [card.convert("RGB")]
+    return [c.convert("RGB") for c in cards]
 
 
 BRIEF_COPY = {"type": "object", "properties": {
@@ -3215,24 +3257,22 @@ def build_brief_reel(text: str, brief: dict, state: dict, tmp: str) -> tuple[Ima
     if not people:
         raise RuntimeError("the Reel needs photos of people but none were named clearly")
     status.step(f"Photos: {', '.join(n['name'] for n in people)[:60]}", 3)
-    tiles, credits, cards, news_src, wiki_src = [], [], [], [], []
-    for n in people:
-        label = re.sub(r"\s*\(.*?\)", "", n["lookup"] or n["name"]).strip() or n["name"]
-        img, credit = wiki_thumb(n["lookup"] or n["name"], size=960)
-        if img is not None and min(img.size) >= 300 and not (img.mode == "RGBA" and img.getextrema()[3][0] < 250):
-            tiles.append((label, img.convert("RGB")))
-            credits.append(f"{printable(label)}: {credit}")
-            wiki_src.append(f"{printable(label)}: {credit}")
-        else:   # no free Wikipedia photo: the lead photo of a recent news article about them, with its source
-            hit = person_news_photo(label, sense["meaning"][:120], tmp, others=tuple(t[0] for t in tiles if t[0] != label) + tuple(
-                re.sub(r'\s*\(.*?\)', '', o['lookup'] or o['name']).strip() for o in people if o is not n))
-            if hit:
-                tiles.append((label, hit[0]))
-                credits.append(f"{printable(label)}: {hit[1]} (news photo)")
-                news_src.append(f"{printable(label)}: {hit[1]}")
-            else:
-                tiles.append((label, None))
-                cards.append(label)
+    tiles, credits, cards, src_lines = [], [], [], []
+    names = [re.sub(r"\s*\(.*?\)", "", n["lookup"] or n["name"]).strip() or n["name"] for n in people]
+    for n, label in zip(people, names):
+        got = person_photos(label, sense["meaning"][:120], tmp, others=tuple(x for x in names if x != label), want=3)
+        pics, sites = [g_[0] for g_ in got], [g_[1] for g_ in got]
+        img, credit = wiki_thumb(n["lookup"] or n["name"], size=960)   # a free Wikipedia portrait fills up to 3 photos
+        if len(pics) < 3 and img is not None and min(img.size) >= 300 and not (img.mode == "RGBA" and img.getextrema()[3][0] < 250):
+            pics.append(img.convert("RGB"))
+            sites.append(credit)
+        if pics:
+            tiles.append((label, pics))
+            credits.append(f"{printable(label)}: " + ", ".join(dict.fromkeys(sites)))
+            src_lines.append(f"{printable(label)}: " + ", ".join(dict.fromkeys(sites)))
+        else:
+            tiles.append((label, []))
+            cards.append(label)
     print(f"  brief reel: line '{line[:60]}' | tiles {[t[0] for t in tiles]} | name cards {cards}")
     copy = fun.claude_json(
         "You write the caption of a funny Instagram Reel for an Indian Hinglish page. The Reel's line and photos are the "
@@ -3242,17 +3282,17 @@ def build_brief_reel(text: str, brief: dict, state: dict, tmp: str) -> tuple[Ima
         f"What it is about: {sense['meaning']}", BRIEF_COPY, CONFIG.get("membership_model", "sonnet"), purpose="brief copy")
     copy["caption"] = unescape(copy["caption"])
     roman_only(copy, ["caption", "pin_comment"])
-    secs = min(max(6.5, read_secs(line, 3.5)), 11.0)
+    secs = max(min(max(6.5, read_secs(line, 3.5)), 11.0), 3.0 * max(len(t[1]) for t in tiles))   # up to 3 photos each, 3 s apiece
     out = os.path.join(tmp, "reel.mp4")
 
     def caption_of(d):
         return g.fun_caption({**d, "caption": d["caption"].strip() + ("\n\nPhotos: " + "; ".join(credits) if credits else "")})
     check = (f"THE PAGE OWNER'S OWN REQUEST (his line and photos are his instruction, keep them as they are; the line is a "
              f"joke premise, not a news claim; check only spellings): {text}\n\nThe owner means: {sense['meaning']}")
-    frames, copy, proof = proofread.run(lambda d: strip_reel(line, tiles, out, secs, d["highlight"], "Photos - " + " | ".join(wiki_src + news_src)), copy, caption_of, check, strict=True)
-    if news_src:
-        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
-            f"The photo of {', '.join(x.split(':')[0] for x in news_src)} is from a news article ({'; '.join(news_src)}): the AI checked it, but please look that it really shows them before posting."]}
+    frames, copy, proof = proofread.run(lambda d: strip_reel(line, tiles, out, secs, d["highlight"], "Photos - " + " | ".join(src_lines)), copy, caption_of, check, strict=True)
+    proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+        "The photos come from recent news articles about each person (sources are on the Reel): the AI checked them, but please look "
+        "that each tile really shows the person named before posting."]}
     if cards:
         proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
             f"No free photo of {', '.join(cards)} exists, so its tile shows a silhouette (never a guessed photo): add a photo by hand if you like."]}
