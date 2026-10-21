@@ -4083,6 +4083,61 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
     return chosen
 
 
+GOD_BANK = Path(__file__).resolve().parent / "assets" / "god_bank"   # saved AI god pictures (owner, 21 Oct 2026)
+
+
+def god_slug(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")[:40]
+
+
+def save_god_bank(deity: str, family: str, images: list, today: str) -> None:
+    """Every day's AI god pictures are kept (3 sets per god, oldest dropped): on a day the free painters are busy the
+    Reel reuses an earlier picture of the same god instead of a plain painting."""
+    import json
+    GOD_BANK.mkdir(parents=True, exist_ok=True)
+    index_file = GOD_BANK / "index.json"
+    index = json.loads(index_file.read_text()) if index_file.exists() else {}
+    slug = god_slug(deity)
+    files = []
+    for n, (img, credit, focus) in enumerate(images[:2], 1):
+        name = f"{slug}-{today}-{n}.jpg"
+        img.convert("RGB").save(GOD_BANK / name, "JPEG", quality=88)
+        files.append({"file": name, "credit": credit, "focus": list(focus) if isinstance(focus, (tuple, list)) else [focus, None]})
+    sets = [x for x in index.get(slug, []) if x["date"] != today] + [{"date": today, "family": family, "last_used": "", "images": files}]
+    for old in sets[:-3]:
+        for f in old["images"]:
+            (GOD_BANK / f["file"]).unlink(missing_ok=True)
+    index[slug] = sets[-3:]
+    index_file.write_text(json.dumps(index, ensure_ascii=False, indent=1))
+    print(f"  god bank: saved {len(files)} pictures of {deity}")
+
+
+def load_god_bank(deity: str, family: str, today: str) -> tuple[list, bool] | None:
+    """An earlier AI picture set: the same god's least recently used set, else another god of the same family
+    (Durga forms). Returns (images [(img, credit, focus)], exact) or None."""
+    import json
+    index_file = GOD_BANK / "index.json"
+    if not index_file.exists():
+        return None
+    index = json.loads(index_file.read_text())
+    slug = god_slug(deity)
+    cands = [(x, True) for x in index.get(slug, [])] + [
+        (x, False) for k, v in index.items() if k != slug for x in v if family and x.get("family", "").lower() == family.lower()]
+    cands = [(x, ex) for x, ex in cands if all((GOD_BANK / f["file"]).exists() for f in x["images"])]
+    if not cands:
+        return None
+    x, exact = min(cands, key=lambda c: (not c[1], c[0].get("last_used", ""), c[0]["date"]))
+    x["last_used"] = today
+    index_file.write_text(json.dumps(index, ensure_ascii=False, indent=1))
+    imgs = []
+    for f in x["images"]:
+        img = Image.open(GOD_BANK / f["file"]).convert("RGB")
+        fx, fy = f["focus"]
+        imgs.append((img, f["credit"], (fx, fy) if fy is not None else fx))
+    print(f"  god bank: reusing the pictures of {x['date']} ({'same god' if exact else 'same family'})")
+    return imgs, exact
+
+
 def flux_images_patient(scenes: list[str], subject: str, tmp: str, deity: str, minutes: int = 35) -> list[tuple[Image.Image, str, float]]:
     """🙏 The 6 AM Reel wants the glowing AI pictures (owner, 21 Oct 2026: today's Ganesh Reel fell back to a plain folk
     painting because the free painters were busy for a minute): when they are busy, wait 5 minutes and ask again, for up
@@ -4765,8 +4820,15 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         images = flux_images_patient([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp, plan["deity"])
     except Exception as e:
         print(f"  {e}: using free paintings instead")
-        status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)
-        images = None
+        banked = load_god_bank(plan["deity"], plan["family"], today)
+        if banked:   # an earlier AI picture of this god beats a plain painting (owner, 21 Oct 2026)
+            images, exact = banked[0], banked[1]
+            status.step(f"AI painters busy: reusing an earlier AI picture of {plan['deity']}", 3)
+        else:
+            status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)
+            images = None
+    else:
+        save_god_bank(plan["deity"], plan["family"], images, today)
     try:
         images = images or pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
     except RuntimeError as e:   # few paintings of this exact form: use the main deity's paintings

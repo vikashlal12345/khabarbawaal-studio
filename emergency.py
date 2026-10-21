@@ -239,7 +239,8 @@ def make_devotion(kind: str, state: dict, feed: list) -> bool:
             middle, label = d["middle"], ""
         status.step("Finding a free painting", 3)
         fam = d["family"]
-        images = _painting(d["searches"], state, tempfile.gettempdir(), 2) or \
+        banked = reel.load_god_bank(deity if subj["kind"] != "navratri" else subj["deity"], fam, today)   # an earlier AI picture first
+        images = (banked[0] if banked else None) or _painting(d["searches"], state, tempfile.gettempdir(), 2) or \
             _painting([f"{fam} painting", f"{fam} Raja Ravi Varma", f"{fam} miniature painting"], state, tempfile.gettempdir(), 2)
         if not images:
             status.fail("Auto mode: no free painting of the deity was found")
