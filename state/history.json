@@ -151,7 +151,8 @@
   "240df1981fcc",
   "d9b3cc4980d1",
   "cf50966c6c42",
-  "a09d0effc633"
+  "a09d0effc633",
+  "a5b04a59ab2c"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -299,10 +300,10 @@
   "reel_official": "2026-10-20",
   "reel_news_early": "2026-10-21",
   "reel_rotate": "2026-10-20",
-  "reel_break_am": "2026-10-20",
+  "reel_break_am": "2026-10-21",
   "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "OFebswf1b6cU",
+ "inbox_since": "eBV7yxCBjzzS",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -683,7 +684,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/",
   "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html",
   "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -820,10 +822,6 @@
   }
  ],
  "songs_recent": [
-  "Infinity",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Putaapu Gang",
-  "Die With A Smile",
   "Woman",
   "Dhun",
   "Quebec",
@@ -859,7 +857,11 @@
   "Azadi",
   "Pal Pal",
   "Lies (feat. Lana Del Rey)",
-  "Believer"
+  "Believer",
+  "Narayan Mil Jayega",
+  "His Aura Hits You",
+  "Blinding Lights",
+  "Calm Down"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -917,6 +919,10 @@
   },
   {
    "title": "Faisal Malik tells audience to wait and watch Ramayana Part 2, says making it gave him flashback of Hollywood BTS videos",
+   "date": "2026-10-21"
+  },
+  {
+   "title": "Ranbir Kapoor, Yash and Sai Pallavi's Ramayana made tax-free in West Bengal ahead of release, CM Suvendu Adhikari announces on Dussehra",
    "date": "2026-10-21"
   }
  ]
