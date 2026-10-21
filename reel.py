@@ -74,10 +74,12 @@ class Encoder:
             raise RuntimeError("ffmpeg failed")
 
 
-def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5, hold: float = 0.0):
+def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5, hold: float = 0.0,
+                crop_bottom: float = 0.0):
     """Frames of a clip, scaled to cover w x h (crop centred at crop_x of the width), 30 fps;
     hold = seconds the last frame stays on after the clip (a clip shorter than the text needs)."""
-    vf = (f"scale={w}:{h}:force_original_aspect_ratio=increase,"
+    vf = ((f"crop=iw:ih*{1 - crop_bottom:.3f}:0:0," if crop_bottom > 0 else "") +   # cuts a video's own bottom captions
+          f"scale={w}:{h}:force_original_aspect_ratio=increase,"
           f"crop={w}:{h}:(iw-{w})*{crop_x}:(ih-{h})/2,fps={FPS}")
     if hold > 0:
         vf += f",tpad=stop_mode=clone:stop_duration={hold:.2f}"
@@ -2473,16 +2475,20 @@ def quote_video(title: str, facts: str, tmp: str) -> dict | None:
     return {**out, "own": False, "shot": shot} if shot is not None else None
 
 
-def add_voice(mp4: str, source: str, start: float, out: str, only: float | None = None) -> None:
+def add_voice(mp4: str, source: str, start: float, out: str, only: float | None = None, loud: bool = False) -> None:
     """The speaker's own voice under the whole Reel (owner, 15 Oct 2026: 'B', inside the file so it is posted as it
     is): the source's sound from `start`, evened out, 48 kHz, fading in and out. only = seconds: the voice only for
     that long (their own clip), then silence (a left/opposition speaker the Reel calls out: never their message
     under our whole Reel; owner, 16 Oct 2026)."""
     _, _, secs = video_info(mp4)
     voice = min(secs, only) if only else secs
+    # loud=True (the 9:30 PM speaker Reel; owner, 21 Oct 2026: 'make the voice louder so I can add a song with music only in the
+    # background'): rumble cut, speech compressed so every word is as loud as the peaks, then pushed to -11 LUFS with a limiter
+    level = ("highpass=f=90,acompressor=threshold=0.09:ratio=4:attack=5:release=120:makeup=4,"
+             "loudnorm=I=-11:TP=-1.0:LRA=6,alimiter=limit=0.97") if loud else "loudnorm=I=-14:TP=-1.5:LRA=11"
     r = subprocess.run([ffmpeg_exe(), "-v", "error", "-y", "-i", mp4, "-ss", f"{start:.2f}", "-t", f"{voice:.2f}",
                         "-i", source, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "128k",
-                        "-ar", "48000", "-af", f"loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=0.2,"
+                        "-ar", "48000", "-af", f"{level},afade=t=in:st=0:d=0.2,"
                         f"afade=t=out:st={max(0.0, voice - (0.4 if only else 1.2)):.2f}:d={0.4 if only else 1.2},"
                         f"apad=whole_dur={secs:.2f}",   # silence up to the video's length, then stop (an open-ended
                         "-t", f"{secs:.2f}", "-movflags", "+faststart", out],   # apad never ended: 16 Oct 2026)
@@ -2503,6 +2509,8 @@ SPEECH_OPTION = {"type": "object", "properties": {
                  "punch in caps feel (e.g. 'RESPECT SIR!', 'KADAK JAWAB', 'SEEDHA VAAR'), line 2 = who + what in max "
                  "40 characters (e.g. 'Anupam Kher ka protesters ko jawab'); Hinglish, no emojis, clearly in favour "
                  "of Modi/BJP/NDA"},
+    "question": {"type": "string", "description": "A side-taking question for the slanted line under the headline bars, "
+                 "Hinglish or English, 6-12 words, e.g. 'Kya aap Modi ji se sehmat hain? Comment karo' / 'Do you agree with him?'"},
     "from_seg": {"type": "integer", "description": "First transcript segment of the clip (0 if no transcript)"},
     "to_seg": {"type": "integer", "description": "Last transcript segment: the clip is the most compelling "
                "CONTINUOUS 25-60 s with the key message, starting at the start of a sentence (0 if no transcript)"},
@@ -2517,7 +2525,7 @@ SPEECH_OPTION = {"type": "object", "properties": {
         "mood": {"type": "string", "description": "Max 6 words: why it fits, e.g. 'attack mode, play it low'"}},
         "required": ["title", "artist", "lang", "mood"], "additionalProperties": False},
         "description": "4 tracks from the given list that fit the speech's mood"}},
-    "required": ["headline", "from_seg", "to_seg", "caption", "pin_comment", "hashtags", "songs"],
+    "required": ["headline", "question", "from_seg", "to_seg", "caption", "pin_comment", "hashtags", "songs"],
     "additionalProperties": False}
 
 
@@ -2591,46 +2599,85 @@ def roman_text(text: str) -> str:
     return re.sub(r"[֐-ࣿऀ-෿]+", "", text).strip()
 
 
+def slanted_lines(text: str, max_w: int, size: int = 50, fill: str = "#FFFFFF") -> list[Image.Image]:
+    """White slanted (italic-looking) text lines, wrapped to max_w: the question line under the red bars."""
+    lines, fnt, lh = fit_lines(printable(text), max_w, 260, sizes=range(size, 34, -2), name="Poppins-SemiBold.ttf")
+    out = []
+    for words in lines:
+        txt = " ".join(words)
+        w = int(fnt.getlength(txt)) + 40
+        hh = lh + 16   # room for the letter tails (g, y, p)
+        img = Image.new("RGBA", (w, hh), (0, 0, 0, 0))
+        ImageDraw.Draw(img).text((20, 4), txt, font=fnt, fill=fill)
+        out.append(img.transform(img.size, Image.AFFINE, (1, 0.22, -0.22 * hh, 0, 1, 0), resample=Image.BICUBIC))
+    return out
+
+
+def loudness_by_second(path: str, start: float, secs: float) -> dict[int, float]:
+    """Average loudness (dB, closer to 0 = louder) of every second of a video's sound, from `start`: so the speech Reel can pick the
+    loudest, most emphatic stretch (owner, 21 Oct 2026: 'I want that energy')."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        meta = os.path.join(tmp, "rms.txt")
+        subprocess.run([ffmpeg_exe(), "-v", "error", "-ss", f"{start:.2f}", "-t", f"{secs:.2f}", "-i", path, "-vn", "-ac", "1", "-ar", "16000",
+                        "-af", f"astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file={meta}",
+                        "-f", "null", "-"], capture_output=True)
+        text = open(meta).read() if os.path.exists(meta) else ""
+    buckets: dict[int, list[float]] = {}
+    for t, v in re.findall(r"pts_time:([\d.]+)\s+lavfi\.astats\.Overall\.RMS_level=(-?[\d.]+|-inf)", text):
+        if v != "-inf":
+            buckets.setdefault(int(float(t)), []).append(float(v))
+    return {k: sum(v) / len(v) for k, v in buckets.items()}
+
+
 def speech_reel(src: str, start: float, secs: float, headline: list[str], subs: list[tuple[float, float, str]],
-                out_mp4: str) -> list[Image.Image]:
-    """🎥🔊 9:30 PM layout (owner, 16 Oct 2026, like @bold_nationx7's Anupam Kher Reel: 450k views): a bold 2-line
-    headline on top (yellow punch + white who/what), the speaker's video in the middle, subtitles of his words in
-    sync with the voice (the one place text follows speech, owner's OK), @khabarbawaal under it, then the follow
-    card. Returns [a frame with the headline + a subtitle] to proofread."""
-    vid_y, vid_h = 430, 1140
+                out_mp4: str, question: str = "", crop_bottom: float = 0.2) -> list[Image.Image]:
+    """🎥🔊 9:30 PM layout (owner, 21 Oct 2026, after @geowiredaily's Modi Reel: 115K likes, 18K shares): the speaker's video
+    fills the top ~70% of the screen (its own bottom captions, e.g. Punjabi subtitles burned in by the source, are cropped
+    off: crop_bottom), two bold red headline bars under it, a slanted white question line, 'CHECK CAPTION' and the handle at
+    the bottom, our Roman-Hinglish subtitles on the video, then the follow card. Returns [a frame] to proofread."""
+    vid_h = 1390
     over = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
     d = ImageDraw.Draw(over)
     logo = logo_img()
     if logo:
         small = logo.copy()
-        small.thumbnail((260, 90))
-        over.alpha_composite(small, (RW - small.width - 50, 70))
-    lines = [printable(x).strip() for x in headline if x.strip()][:2] or [""]
-    y = 180
-    for n, line in enumerate(lines):
-        size = 78 if n == 0 else 60
-        f = font("Anton-Regular.ttf", size)
-        while f.getlength(line) > RW - 2 * LEFT and size > 36:
-            size -= 4
-            f = font("Anton-Regular.ttf", size)
-        d.text((RW // 2, y), line.upper() if n == 0 else line, font=f, fill=YELLOW if n == 0 else "#FFFFFF",
-               anchor="mt", stroke_width=3, stroke_fill="#000000")
-        y += int(size * 1.25)
+        small.thumbnail((250, 80))
+        over.alpha_composite(small, (40, 50))
+    lines = [printable(x).strip().upper() for x in headline if x.strip()][:2] or [""]
+    y = vid_h - 60   # the bars overlap the bottom of the video, like the example
+    for line in lines:
+        size = 66
+        f = font("Poppins-Bold.ttf", size)
+        while f.getlength(line) > RW - 130 and size > 36:
+            size -= 2
+            f = font("Poppins-Bold.ttf", size)
+        w, h = int(f.getlength(line)) + 48, size + 36
+        d.rectangle((40, y, 40 + w, y + h), fill=RED)
+        d.text((64, y + h // 2), line, font=f, fill="#FFFFFF", anchor="lm")
+        y += h + 8
+    y += 22
+    for img in slanted_lines(question or "Aap sehmat ho? Comment karo", RW - 150, 50):
+        over.alpha_composite(img, (40, y))
+        y += img.height + 2
+    base_y = min(max(y + 40, 1790), 1850)
+    d.text((40, base_y), CONFIG["handle"].upper(), font=font("Poppins-SemiBold.ttf", 30), fill="#9A9AA5", anchor="lm")
+    cf = font("Poppins-Bold.ttf", 34)
+    d.text((RW - 150, base_y), "CHECK CAPTION", font=cf, fill="#FFFFFF", anchor="rm")
+    d.polygon([(RW - 134, base_y - 10), (RW - 104, base_y - 10), (RW - 119, base_y + 12)], fill="#FFFFFF")
     sub_font = font("Poppins-Bold.ttf", 54)
-    handle = font("Poppins-SemiBold.ttf", 32)
-    d.text((RW // 2, vid_y + vid_h + 40), CONFIG["handle"], font=handle, fill="#CCCCCC", anchor="mt")
     enc, frame, check = Encoder(out_mp4), None, None
-    for i, shot in enumerate(clip_frames(src, start, secs, RW, vid_h)):
+    for i, shot in enumerate(clip_frames(src, start, secs, RW, vid_h, crop_bottom=crop_bottom)):
         t = start + i / FPS
         frame = Image.new("RGBA", (RW, RH), "#000000")
-        frame.paste(shot, (0, vid_y))
+        frame.paste(shot, (0, 0))
         frame.alpha_composite(over)
         line = next((txt for a, b, txt in subs if a - 0.05 <= t <= b + 0.35), "")
         if line:
             ls, sf, lh = fit_lines(line, RW - 160, 200, sizes=range(54, 36, -4))
             pad = 20
             box_h = len(ls) * lh + 2 * pad
-            box_y = vid_y + vid_h - box_h - 60
+            box_y = vid_h - 150 - box_h
             fd = ImageDraw.Draw(frame)
             for j, words in enumerate(ls):
                 txt = " ".join(words)
@@ -2714,7 +2761,13 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
             break
         article = None
     body = carousel.story_text(article["url"], article["title"], article.get("description", "")) if article else ""
-    transcript = "\n".join(f"{n}. [{x['start'] - start:.0f}-{x['end'] - start:.0f} s] {x['text']}" for n, x in enumerate(segs))
+    loud = loudness_by_second(src, start, min(120.0, length - start)) if segs else {}
+    def seg_db(x):
+        vals = [loud[k] for k in range(int(x["start"] - start), int(x["end"] - start) + 1) if k in loud]
+        return sum(vals) / len(vals) if vals else None
+    top = max((seg_db(x) for x in segs if seg_db(x) is not None), default=None)
+    transcript = "\n".join(f"{n}. [{x['start'] - start:.0f}-{x['end'] - start:.0f} s" + (f", {seg_db(x):.0f} dB" + (" LOUD" if top is not None and seg_db(x) >= top - 2.5 else "")
+                            if seg_db(x) is not None else "") + f"] {x['text']}" for n, x in enumerate(segs))
     facts = (f"His own X post (@{v['handle']}): {v['text']}\n" + (f"Article: {article['title']} ({article['site']})\n"
              f"{body[:3000]}\n" if article else "") + (f"\nWhat he says in the video (speech-to-text, numbered "
              f"segments):\n{transcript}" if transcript else ""))
@@ -2724,13 +2777,14 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "speaker Reel: his own video plays with his voice and subtitles under a bold headline. Clearly in favour of "
         "Modi, the BJP and the NDA (e.g. 'seedha vaar', 'kadak jawab', 'RESPECT SIR!') but only real facts and his "
         "real words; no invented quotes, no hate against any community. Pick the most compelling continuous part of "
-        "his speech (from_seg..to_seg, 25-60 s). Songs: 4 from this list that fit the mood (they are played LOW "
+        "his speech (from_seg..to_seg, 25-60 s): prefer the stretch with the LOUDEST, most emphatic delivery (segments marked LOUD, dB closer to 0), starting on a strong sentence, never a calm intro. Songs: 4 from this list that fit the mood (they are played LOW "
         "under his voice): " + "; ".join(DRAMA_SONGS) + "\nRules:" + NEWS_SYSTEM.format(page=CONFIG["page_name"]).split("Rules:")[1],
         f"{fun.today_context()}\n\n{facts}", SPEECH_OPTION, CONFIG.get("membership_model", "sonnet"),
         purpose="speech reel script")
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment"])
     lines = {"headline": "\n".join(opt["headline"])}
+    roman_only(opt, ["question"])
     roman_only(lines, ["headline"])
     opt["headline"] = [x for x in lines["headline"].split("\n") if x.strip()][:2]
     if segs:   # the chosen part of the speech, at least 25 s, at most 60 s
@@ -2758,11 +2812,11 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     check_note = ("The SUBTITLES on the video are the speaker's own words (speech-to-text): they are his quote, not our "
                   "claim; check only their spelling.\n\n")
     frames, opt, proof = proofread.run(
-        lambda d: speech_reel(src, clip_start, secs, d["headline"], subs, out), opt, caption_of,
+        lambda d: speech_reel(src, clip_start, secs, d["headline"], subs, out, question=d.get("question", "")), opt, caption_of,
         check_note + facts, strict=True)
     status.step("Adding his voice", 5)
     voiced = os.path.join(tmp, "voiced.mp4")
-    add_voice(out, src, clip_start, voiced)
+    add_voice(out, src, clip_start, voiced, loud=True)
     state["reel_official_used"] = (list(used) + [v["id"]])[-60:]
     state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": v["text"][:140], "date": today}])[-40:]
     if article:

@@ -316,9 +316,9 @@ def make_speaker(kind: str, state: dict, feed: list) -> bool:
             status.step("Making the video", 4)
             out = os.path.join(tmp, "speech.mp4")
             reel.SERIES_KIND = kind
-            frames = reel.speech_reel(src, start, secs, headline, [], out)
+            frames = reel.speech_reel(src, start, secs, headline, [], out, question="Aap sehmat ho? Comment karo")
             voiced = os.path.join(tmp, "voiced.mp4")
-            reel.add_voice(out, src, start, voiced)
+            reel.add_voice(out, src, start, voiced, loud=True)
             said = v["text"][:220]
             credit = f"Video + voice: posted by @{v['handle']} on X"
             tags = " ".join(f"#{t}" for t in ["india", "trending", "reelsindia", "viral", re.sub(r"\W", "", name.lower())])
