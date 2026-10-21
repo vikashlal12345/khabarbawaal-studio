@@ -5513,6 +5513,61 @@
      "tokens": 44306
     }
    }
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 43,
+   "input": 100,
+   "output": 76684,
+   "cache_read": 117478,
+   "cache_write": 902783,
+   "value_usd": 4.3897,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 3,
+     "tokens": 73663
+    },
+    "satire writing": {
+     "requests": 12,
+     "tokens": 459125
+    },
+    "joke judge": {
+     "requests": 12,
+     "tokens": 281683
+    },
+    "sense check": {
+     "requests": 6,
+     "tokens": 116922
+    },
+    "reel news pick": {
+     "requests": 1,
+     "tokens": 37066
+    },
+    "photo check": {
+     "requests": 3,
+     "tokens": 28334
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 19283
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 6328
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 21850
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 19957
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 32834
+    }
+   }
   }
  }
 }

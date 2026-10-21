@@ -155,7 +155,8 @@
   "a5b04a59ab2c",
   "4dded87bbc14",
   "ea769317eb55",
-  "437aad74ebb1"
+  "437aad74ebb1",
+  "1516b0df2416"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -287,7 +288,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-19",
   "reel_clip_am": "2026-10-19",
-  "reel_politics": "2026-10-20",
+  "reel_politics": "2026-10-21",
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
@@ -306,7 +307,7 @@
   "reel_break_am": "2026-10-21",
   "reel_break_noon": "2026-10-21"
  },
- "inbox_since": "Yj7xpGuBqLMD",
+ "inbox_since": "jL710o9uBBl4",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -691,7 +692,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html",
   "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-seen-without-bandages-in-new-photos-with-minister-ashish-shelar-after-mumbai-firing-incident-101792567526513.html",
-  "https://www.bollywoodhungama.com/news/bollywood/were-salman-khan-aamir-khan-and-akshay-kumar-on-the-target-list-police-official-clarifies-after-tiger-shroff-firing-incident/"
+  "https://www.bollywoodhungama.com/news/bollywood/were-salman-khan-aamir-khan-and-akshay-kumar-on-the-target-list-police-official-clarifies-after-tiger-shroff-firing-incident/",
+  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-king-box-office-expectations-pathaan-jawan/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -828,10 +830,6 @@
   }
  ],
  "songs_recent": [
-  "Jai Ganesh Jai Ganesh Deva",
-  "Ram Siya Ram",
-  "Tabaahi (From \"Toxic\")",
-  "Believer",
   "Big Dawgs",
   "Azadi",
   "Pal Pal",
@@ -867,7 +865,11 @@
   "Shaitaan",
   "Toxic",
   "Solar Eclipse",
-  "Beggin'"
+  "Beggin'",
+  "Dhun",
+  "Aavan Jaavan (From \"WAR 2\")",
+  "Iris",
+  "Infinity"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -941,6 +943,10 @@
   },
   {
    "title": "Were Salman Khan, Aamir Khan and Akshay Kumar on the target list? Police official CLARIFIES after Tiger Shroff firing incident",
+   "date": "2026-10-21"
+  },
+  {
+   "title": "The biggest competitor for King is not another superstar or another film. It is Shah Rukh Khan's own box-office history",
    "date": "2026-10-21"
   }
  ]
