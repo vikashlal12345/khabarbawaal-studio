@@ -152,7 +152,8 @@
   "d9b3cc4980d1",
   "cf50966c6c42",
   "a09d0effc633",
-  "a5b04a59ab2c"
+  "a5b04a59ab2c",
+  "4dded87bbc14"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -292,7 +293,7 @@
   "reel_news_pm": "2026-10-20",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-20",
+  "reel_news_am": "2026-10-21",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -303,7 +304,7 @@
   "reel_break_am": "2026-10-21",
   "reel_break_noon": "2026-10-20"
  },
- "inbox_since": "eBV7yxCBjzzS",
+ "inbox_since": "NgNc01UChhrB",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -685,7 +686,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html",
   "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
   "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -861,7 +863,10 @@
   "Ashke",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "People",
-  "Nicole Kidman"
+  "Nicole Kidman",
+  "Hukum Reloaded",
+  "All The Stars",
+  "APT."
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -923,6 +928,10 @@
   },
   {
    "title": "Ranbir Kapoor, Yash and Sai Pallavi's Ramayana made tax-free in West Bengal ahead of release, CM Suvendu Adhikari announces on Dussehra",
+   "date": "2026-10-21"
+  },
+  {
+   "title": "Ramayana records a stellar start, advance booking collection crosses ₹3 crore 15 days before release; even tickets worth ₹2,700 are sold out in Mumbai",
    "date": "2026-10-21"
   }
  ]
