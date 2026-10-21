@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_official-2026-10-21",
+  "image": "posts/20261021-1613-reel_official-2026-10-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261021-161338-reel_official-2026-10-21.mp4",
+  "headline": "SEEDHA VAAR! · Shah ka Mann par nashe par vaar",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "Amit Shah Bhagwant Mann Punjab drugs NCORD par seedha vaar 🔥\n\nAmit Shah ne X par likha: nashe ki samasya khatam karne ke liye bani NCORD ki desh bhar mein 48 baithkein hui, par Punjab ke mukhyamantri ne ek bhi baithak nahi ki.\n\nShah ke mutabik, Bhagwant Mann ka Punjab mein nashe ko rokne ka na irada hai, na gambhirta. Punjab ke yuva nashe se jhoojh rahe hain, aur AAP sarkar par ye sawal uthta hai.\n\nAap sehmat ho? Comment karo 👇\n\nVideo + voice: @AmitShah on X\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: msn.com (link pinned in comments 👇)\n\n#reelsindia #AmitShah #Punjab #BhagwantMann #NCORD",
+  "source": "msn.com",
+  "source_url": "https://www.msn.com/en-in/news/other/shah-says-mann-unserious-on-drugs-cm-asks-bjp-why-it-failed-to-curb-menace-at-source/ar-AA2fFws0",
+  "pin_comment": "Punjab ke bacchon ka future nashe se bachana zaroori hai. Ye message sabko bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Sam Dam Dand Bhed",
+    "artist": "Kailash Kher",
+    "lang": "hindi",
+    "mood": "attack mode, play it low"
+   },
+   {
+    "title": "Dhurandhar Title Track",
+    "artist": "Shashwat Sachdev",
+    "lang": "hindi",
+    "mood": "intense, serious political vaar"
+   },
+   {
+    "title": "Toofan (KGF Chapter 2)",
+    "artist": "Ravi Basrur",
+    "lang": "hindi",
+    "mood": "heavy, powerful build-up"
+   },
+   {
+    "title": "Aarambh Hai Prachand (Gulaal)",
+    "artist": "Piyush Mishra",
+    "lang": "hindi",
+    "mood": "fiery, call-out energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Small cut-off fragments of text (looks like the top of video subtitle letters) show at the top edge of the black caption band, to the right of 'SEEDHA VAAR!'. It looks like a leftover from the video subtitles."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-21T16:13:38+00:00"
+ },
+ {
   "id": "c8c914fe17e3",
   "image": "posts/20261021-1433-c8c914fe17e3.jpg",
   "kind": "custom",
@@ -535,50 +582,5 @@
    "fixed": []
   },
   "created_at": "2026-10-20T16:56:35+00:00"
- },
- {
-  "id": "reel_news-2026-10-20",
-  "image": "posts/20261020-1602-reel_official-2026-10-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261020-160243-reel_official-2026-10-20.mp4",
-  "headline": "Prince William calls Karan Johar an ‘icon’, promises to watch Kabhi Khushi Kabhie Gham after meeting filmmaker in London",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Prince William Karan Johar meeting: Kabhi Khushi Kabhie Gham dekhne ka wada 🔥\n\nLondon mein Earthshot Prize event ke dauran Prince William Karan Johar se mile.\nWilliam ne KJo ko 'icon' kaha.\nUnhone Kabhi Khushi Kabhie Gham dekhne ka promise bhi kiya.\n\nK3G ka dialogue royal family tak pahunch gaya. Aapko kya lagta hai, William ko pehle kaunsa scene pasand aayega? Comment karo 👇\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: Hindustan Times (link pinned in comments 👇)\n\n#karanjohar #princewilliam #k3g #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html",
-  "pin_comment": "Apne K3G wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tu Hi Disda (From \"Bhooth Bangla\")",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "grand filmy vibe, royal meets Bollywood"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "romantic Bollywood nostalgia feel"
-   },
-   {
-    "title": "As It Was",
-    "artist": "Harry Styles",
-    "lang": "english",
-    "mood": "British vibe for London meeting"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "trending global hit, upbeat"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-20T16:02:43+00:00"
  }
 ]
