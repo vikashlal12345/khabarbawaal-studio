@@ -1,5 +1,54 @@
 [
  {
+  "id": "cbdf29686376",
+  "image": "posts/20261021-0342-cbdf29686376.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261021-034255-cbdf29686376.mp4",
+  "headline": "Pehle: Salman ke saath photo daalna status pe Ab: contacts check Bishnoi bhai: My manager is also Salman Khan's friend",
+  "tag": "🎬 REEL · MEME",
+  "caption": "Salman Khan Tiger Shroff Bishnoi meme: Salman ke doston ki list achanak chhoti ho gayi 😅\nSabke status ab 'Salman kaun?' ho gaye!\nTumhare group mein sabse pehle 'main nahi jaanta' kaun bolega? 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#salmankhan #lawrencebishnoi #tigershroff #bollywood #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Contacts mein 'Salman Bhai' ab 'Wrong Number' ho gaya. Us dost ko bhejo jo sabse pehle mukar jayega 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "sab Salman se azaad hona chahte"
+   },
+   {
+    "title": "Pal Pal",
+    "artist": "Afusic, AliSoomroMusic",
+    "lang": "hindi",
+    "mood": "har pal darr = doston ka haal"
+   },
+   {
+    "title": "Lies (feat. Lana Del Rey)",
+    "artist": "Zach Bryan & Lana Del Rey",
+    "lang": "english",
+    "mood": "jhooth bolke bachne wala mood"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "dramatic beat = shocking news reaction"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo is a stock close-up of a real tiger, not of Salman Khan, Bishnoi or Tiger Shroff. It only works as a pun, and the 3-photo meme frame in the brief is not shown. Slide 1 can't be dropped."
+   ],
+   "fixed": [
+    "Ab: contacts check, → Ab: contacts check"
+   ]
+  },
+  "created_at": "2026-10-21T03:42:55+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-21",
   "image": "posts/20261021-0233-reel_news_early-2026-10-21.jpg",
   "kind": "reel",
@@ -597,54 +646,5 @@
    ]
   },
   "created_at": "2026-10-20T04:33:38+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-20",
-  "image": "posts/20261020-0234-reel_news_early-2026-10-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261020-023406-reel_news_early-2026-10-20.mp4",
-  "headline": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tu Hai Meri Kiran Sonakshi Sinha Bombay High Court 🎬\n\nBombay High Court ne 19 October ko kaha ki Echelon Productions film ko release ya exploit nahi kar sakte.\nPehle Rs. 8.85 crore deposit karne honge.\nFilm mein Sonakshi Sinha hain.\n\nKya release se pehle ye sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#sonakshisinha #bombayhighcourt #tuhaimerikiran #bollywoodnews #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
-  "pin_comment": "Kisi Sonakshi fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Toxic",
-    "artist": "Vishal Mishra, Hanita Bhambri",
-    "lang": "hindi",
-    "mood": "drama, messy film trouble"
-   },
-   {
-    "title": "Straight Up",
-    "artist": "Karan Aujla & MXRCI",
-    "lang": "hindi",
-    "mood": "serious, court verdict tone"
-   },
-   {
-    "title": "Stop The Wedding!",
-    "artist": "Ashe",
-    "lang": "english",
-    "mood": "release stopped = stop moment"
-   },
-   {
-    "title": "Harleys In Hawaii",
-    "artist": "Katy Perry",
-    "lang": "english",
-    "mood": "breezy contrast to legal drama"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Headline was ambiguous; the court ordered Echelon (the makers) to deposit the money."
-   ],
-   "fixed": [
-    "Sonakshi Sinha ki film release se pehle 8.85 crore deposit → Sonakshi Sinha ki film ke release se pehle makers ko 8.85 crore deposit karne honge"
-   ]
-  },
-  "created_at": "2026-10-20T02:34:06+00:00"
  }
 ]
