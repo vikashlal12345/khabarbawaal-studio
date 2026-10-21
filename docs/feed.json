@@ -1,601 +1,650 @@
 [
-  {
-    "id": "reel_devotion-2026-10-21",
-    "image": "posts/20261021-0159-reel_devotion-2026-10-21.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261021-015953-reel_devotion-2026-10-21.mp4",
-    "headline": "Wednesday: Ganesh ji: Bappa ke bade kaan... ek badi seekh dete hain",
-    "tag": "🎬 REEL · 🙏 JAI GANESH",
-    "caption": "Ganesh ji ka Budhwaar 🙏\nBappa ke bade kaan: sunne ki shakti.\nAaj kisi apne ko dil se suno.\nGanpati Bappa Morya likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappamorya #ganeshji #budhwaar #bhakti #reelsindia",
-    "source": "KhabarBawaal Original",
-    "source_url": "",
-    "pin_comment": "Ghar ke sabse bade ko bhejo 🙏",
-    "songs": [
-      {
-        "title": "Vakratunda Mahakaya (Ganpati Shlok)",
-        "artist": "Lata Mangeshkar",
-        "lang": "hindi",
-        "mood": "devotional"
-      },
-      {
-        "title": "Vakrathunda Mahakaya",
-        "artist": "Vandemataram Srinivas, S.P. Balasubrahmanyam",
-        "lang": "hindi",
-        "mood": "devotional"
-      },
-      {
-        "title": "Ganesh Aarti",
-        "artist": "Sanjay Dutt",
-        "lang": "hindi",
-        "mood": "devotional"
-      },
-      {
-        "title": "Jai Ganesh Jai Ganesh Deva",
-        "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
-        "lang": "hindi",
-        "mood": "devotional"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Slide 3: The 'JAI GANESH' header sits on top of Ganesh ji's golden crown. The gold text on gold is harder to read, but it doesn't cover the face.",
-        "Slide 4: The 'JAI GANESH' header sits on top of Ganesh ji's golden crown. The gold text on gold is harder to read, but it doesn't cover the face."
-      ],
-      "fixed": []
-    },
-    "created_at": "2026-10-21T01:59:53+00:00"
+ {
+  "id": "reel_news_early-2026-10-21",
+  "image": "posts/20261021-0233-reel_news_early-2026-10-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261021-023323-reel_news_early-2026-10-21.mp4",
+  "headline": "Faisal Malik tells audience to wait and watch Ramayana Part 2, says making it gave him flashback of Hollywood BTS videos",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana Part 2 Faisal Malik Kumbhakarna ❤️\n\nFaisal Malik Nitesh Tiwari ki Ramayana mein Kumbhakarna bane hain.\nRanbir Kapoor aur Yash film ke lead hain.\nFaisal ne kaha: Part 2 ka wait karo aur dekho.\nUnhe film banate waqt Hollywood ke BTS videos ka flashback aaya.\n\nRamayana Part 1 se zyada Part 2 ka hype? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
+  "pin_comment": "Kisi Ranbir ya Yash fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "Ramayana vibe, devotional epic feel"
+   },
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "Yash hype, massy energy"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "epic battle hype"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "Kumbhakarna size power"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says nothing about the wait for Part 2 getting longer; Part 2 is still set for Diwali 2027."
+   ],
+   "fixed": [
+    "Ab Part 2 ka intezaar aur lamba ho gaya → Faisal Malik ke mutabik Part 2 mein bahut kuch baaki hai"
+   ]
   },
-  {
-    "id": "reel_official-2026-10-20",
-    "image": "posts/20261020-1656-reel_official-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-165635-reel_official-2026-10-20.mp4",
-    "headline": "SEEDHA VAAR! · Amit Shah ka Mann sarkar se sawaal",
-    "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
-    "caption": "Amit Shah Punjab drugs Bhagwant Mann sawaal 🔥\nAmit Shah ne X par likha: Bhagwant Mann sarkar ne 3 mahine mein nasha khatam karne ka vaada kiya tha, 5 saal baad bhi Punjab mein nashe ka karobar badhta hi gaya.\nShah aaj Punjab mein nashe ke khilaf awaaz uthane wale pariwaron se mile. Mann ne Jhota case CBI ko dene ka faisla kiya, unki sarkar ke vaade par sawaal abhi bhi baaki hai.\nKya 3 mahine ke vaade ka jawab AAP sarkar ko dena chahiye? Haan ya Na? Comment karo 👇\n\nVideo + voice: @AmitShah on X\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: https://www.oneindia.com (link pinned in comments 👇)\n\n#reelsindia #AmitShah #Punjab #BhagwantMann #NashaMuktPunjab",
-    "source": "https://www.oneindia.com",
-    "source_url": "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
-    "pin_comment": "3 mahine ka vaada, 5 saal baad bhi jawab nahi. Punjab ke har dost ko ye bhejo 🇮🇳",
-    "songs": [
-      {
-        "title": "Sam Dam Dand Bhed",
-        "artist": "Kailash Kher",
-        "lang": "hindi",
-        "mood": "attack mode, play it low"
-      },
-      {
-        "title": "Dhurandhar Title Track",
-        "artist": "Shashwat Sachdev",
-        "lang": "hindi",
-        "mood": "serious, hard-hitting power"
-      },
-      {
-        "title": "Toofan (KGF Chapter 2)",
-        "artist": "Ravi Basrur",
-        "lang": "hindi",
-        "mood": "intense build, strong statement"
-      },
-      {
-        "title": "Aarambh Hai Prachand (Gulaal)",
-        "artist": "Piyush Mishra",
-        "lang": "hindi",
-        "mood": "fiery call for accountability"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Slide 1: The video subtitle (Punjabi/Hindi script) is cut off on both the left and right edges, so the first and last letters are missing. It overflows the frame."
-      ],
-      "fixed": []
-    },
-    "created_at": "2026-10-20T16:56:35+00:00"
+  "created_at": "2026-10-21T02:33:23+00:00"
+ },
+ {
+  "id": "reel_devotion-2026-10-21",
+  "image": "posts/20261021-0159-reel_devotion-2026-10-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261021-015953-reel_devotion-2026-10-21.mp4",
+  "headline": "Wednesday: Ganesh ji: Bappa ke bade kaan... ek badi seekh dete hain",
+  "tag": "🎬 REEL · 🙏 JAI GANESH",
+  "caption": "Ganesh ji ka Budhwaar 🙏\nBappa ke bade kaan: sunne ki shakti.\nAaj kisi apne ko dil se suno.\nGanpati Bappa Morya likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappamorya #ganeshji #budhwaar #bhakti #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Ghar ke sabse bade ko bhejo 🙏",
+  "songs": [
+   {
+    "title": "Vakratunda Mahakaya (Ganpati Shlok)",
+    "artist": "Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Vakrathunda Mahakaya",
+    "artist": "Vandemataram Srinivas, S.P. Balasubrahmanyam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Ganesh Aarti",
+    "artist": "Sanjay Dutt",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ganesh Jai Ganesh Deva",
+    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The 'JAI GANESH' header sits on top of Ganesh ji's golden crown. The gold text on gold is harder to read, but it doesn't cover the face.",
+    "Slide 4: The 'JAI GANESH' header sits on top of Ganesh ji's golden crown. The gold text on gold is harder to read, but it doesn't cover the face."
+   ],
+   "fixed": []
   },
-  {
-    "id": "reel_news-2026-10-20",
-    "image": "posts/20261020-1602-reel_official-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-160243-reel_official-2026-10-20.mp4",
-    "headline": "Prince William calls Karan Johar an ‘icon’, promises to watch Kabhi Khushi Kabhie Gham after meeting filmmaker in London",
-    "tag": "🎬 REEL · BOLLYWOOD",
-    "caption": "Prince William Karan Johar meeting: Kabhi Khushi Kabhie Gham dekhne ka wada 🔥\n\nLondon mein Earthshot Prize event ke dauran Prince William Karan Johar se mile.\nWilliam ne KJo ko 'icon' kaha.\nUnhone Kabhi Khushi Kabhie Gham dekhne ka promise bhi kiya.\n\nK3G ka dialogue royal family tak pahunch gaya. Aapko kya lagta hai, William ko pehle kaunsa scene pasand aayega? Comment karo 👇\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: Hindustan Times (link pinned in comments 👇)\n\n#karanjohar #princewilliam #k3g #bollywood #reelsindia",
-    "source": "Hindustan Times",
-    "source_url": "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html",
-    "pin_comment": "Apne K3G wale dost ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Tu Hi Disda (From \"Bhooth Bangla\")",
-        "artist": "Pritam, Arijit Singh",
-        "lang": "hindi",
-        "mood": "grand filmy vibe, royal meets Bollywood"
-      },
-      {
-        "title": "Zaalima",
-        "artist": "Arijit Singh, Harshdeep Kaur",
-        "lang": "hindi",
-        "mood": "romantic Bollywood nostalgia feel"
-      },
-      {
-        "title": "As It Was",
-        "artist": "Harry Styles",
-        "lang": "english",
-        "mood": "British vibe for London meeting"
-      },
-      {
-        "title": "Housewife",
-        "artist": "Tate McRae",
-        "lang": "english",
-        "mood": "trending global hit, upbeat"
-      }
-    ],
-    "proof": {
-      "state": "ok",
-      "issues": [],
-      "fixed": []
-    },
-    "created_at": "2026-10-20T16:02:43+00:00"
+  "created_at": "2026-10-21T01:59:53+00:00"
+ },
+ {
+  "id": "reel_official-2026-10-20",
+  "image": "posts/20261020-1656-reel_official-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-165635-reel_official-2026-10-20.mp4",
+  "headline": "SEEDHA VAAR! · Amit Shah ka Mann sarkar se sawaal",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "Amit Shah Punjab drugs Bhagwant Mann sawaal 🔥\nAmit Shah ne X par likha: Bhagwant Mann sarkar ne 3 mahine mein nasha khatam karne ka vaada kiya tha, 5 saal baad bhi Punjab mein nashe ka karobar badhta hi gaya.\nShah aaj Punjab mein nashe ke khilaf awaaz uthane wale pariwaron se mile. Mann ne Jhota case CBI ko dene ka faisla kiya, unki sarkar ke vaade par sawaal abhi bhi baaki hai.\nKya 3 mahine ke vaade ka jawab AAP sarkar ko dena chahiye? Haan ya Na? Comment karo 👇\n\nVideo + voice: @AmitShah on X\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: https://www.oneindia.com (link pinned in comments 👇)\n\n#reelsindia #AmitShah #Punjab #BhagwantMann #NashaMuktPunjab",
+  "source": "https://www.oneindia.com",
+  "source_url": "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
+  "pin_comment": "3 mahine ka vaada, 5 saal baad bhi jawab nahi. Punjab ke har dost ko ye bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Sam Dam Dand Bhed",
+    "artist": "Kailash Kher",
+    "lang": "hindi",
+    "mood": "attack mode, play it low"
+   },
+   {
+    "title": "Dhurandhar Title Track",
+    "artist": "Shashwat Sachdev",
+    "lang": "hindi",
+    "mood": "serious, hard-hitting power"
+   },
+   {
+    "title": "Toofan (KGF Chapter 2)",
+    "artist": "Ravi Basrur",
+    "lang": "hindi",
+    "mood": "intense build, strong statement"
+   },
+   {
+    "title": "Aarambh Hai Prachand (Gulaal)",
+    "artist": "Piyush Mishra",
+    "lang": "hindi",
+    "mood": "fiery call for accountability"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The video subtitle (Punjabi/Hindi script) is cut off on both the left and right edges, so the first and last letters are missing. It overflows the frame."
+   ],
+   "fixed": []
   },
-  {
-    "id": "reel_rotate-2026-10-20",
-    "image": "posts/20261020-1418-reel_rotate-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-141837-reel_rotate-2026-10-20.mp4",
-    "headline": "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi",
-    "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
-    "caption": "Bachpan me tiffin interval se pehle khaya? Aloo paratha ki khushboo poori class ko pata chal jaati thi 😂\nTumne kitni baar kiya? MAINE BHI likho 👇\n\nFollow @khabarbawaal: roz shaam 7:45 baje naya comedy: bachpan, memes, tag karo 😂\n\n#bachpan #90skids #schoollife #nostalgia #relatable",
-    "source": "KhabarBawaal Original",
-    "source_url": "",
-    "pin_comment": "Last bench wala tiffin chor sabko yaad hai 😭 Us dost ko bhejo jo tiffin pehle hi khatam karta tha 👇",
-    "songs": [
-      {
-        "title": "Madhosh",
-        "artist": "Tanishk Bagchi, Arslan Nizami",
-        "lang": "hindi",
-        "mood": "chori chori sweet kaam"
-      },
-      {
-        "title": "Kabhi Shaam Dhale",
-        "artist": "Jaani, Mohammad Faiz",
-        "lang": "hindi",
-        "mood": "shaam ki tiffin wali yaadein"
-      },
-      {
-        "title": "Girls Like You",
-        "artist": "Maroon 5",
-        "lang": "english",
-        "mood": "light nostalgic groove"
-      },
-      {
-        "title": "Levitating",
-        "artist": "Dua Lipa",
-        "lang": "english",
-        "mood": "sneaky happy vibe"
-      }
-    ],
-    "proof": {
-      "state": "ok",
-      "issues": [],
-      "fixed": []
-    },
-    "created_at": "2026-10-20T14:18:37+00:00"
+  "created_at": "2026-10-20T16:56:35+00:00"
+ },
+ {
+  "id": "reel_news-2026-10-20",
+  "image": "posts/20261020-1602-reel_official-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-160243-reel_official-2026-10-20.mp4",
+  "headline": "Prince William calls Karan Johar an ‘icon’, promises to watch Kabhi Khushi Kabhie Gham after meeting filmmaker in London",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Prince William Karan Johar meeting: Kabhi Khushi Kabhie Gham dekhne ka wada 🔥\n\nLondon mein Earthshot Prize event ke dauran Prince William Karan Johar se mile.\nWilliam ne KJo ko 'icon' kaha.\nUnhone Kabhi Khushi Kabhie Gham dekhne ka promise bhi kiya.\n\nK3G ka dialogue royal family tak pahunch gaya. Aapko kya lagta hai, William ko pehle kaunsa scene pasand aayega? Comment karo 👇\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: Hindustan Times (link pinned in comments 👇)\n\n#karanjohar #princewilliam #k3g #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html",
+  "pin_comment": "Apne K3G wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tu Hi Disda (From \"Bhooth Bangla\")",
+    "artist": "Pritam, Arijit Singh",
+    "lang": "hindi",
+    "mood": "grand filmy vibe, royal meets Bollywood"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "romantic Bollywood nostalgia feel"
+   },
+   {
+    "title": "As It Was",
+    "artist": "Harry Styles",
+    "lang": "english",
+    "mood": "British vibe for London meeting"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "trending global hit, upbeat"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
   },
-  {
-    "id": "reel_politics-2026-10-20",
-    "image": "posts/20261020-1240-reel_politics-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-124056-reel_politics-2026-10-20.mp4",
-    "tag": "🎬 REEL · ROAST · QUOTE TRAP",
-    "source": "Times Now",
-    "source_url": "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641",
-    "pin_comment": "Kolkata wale dost ko ye bhejo aur unka reaction batao 👇",
-    "songs": [
-      {
-        "title": "Arz Kiya Hai | Coke Studio Bharat",
-        "artist": "Anuv Jain",
-        "lang": "hindi",
-        "mood": "arz kiya = dramatic claim line"
-      },
-      {
-        "title": "Putaapu Gang",
-        "artist": "Anirudh Ravichander & Thamizh Aadhavan",
-        "lang": "hindi",
-        "mood": "gang of leaders backing CJP"
-      },
-      {
-        "title": "Die With A Smile",
-        "artist": "Lady Gaga, Bruno Mars",
-        "lang": "english",
-        "mood": "smiling through the drama"
-      },
-      {
-        "title": "Woman",
-        "artist": "Doja Cat",
-        "lang": "english",
-        "mood": "Didi energy, bold statement"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: The article gives only 'Tuesday', not the date 20 Oct 2026.",
-        "Slide 1: The photo credit text at the bottom left runs into the @khabarbawaal handle and is low contrast on the photo. It is small and hard to read."
-      ],
-      "fixed": [
-        "Statement on X, Tuesday 20 Oct 2026 (Times Now) → Statement on X, Tuesday (Times Now)"
-      ]
-    },
-    "headline": "Mamata ne CJP custody ko kaha: state-sponsored terrorism",
-    "caption": "Mamata Banerjee ka CJP custody par bada daava 🎤\nUnhone CJP netaon ki custody ko 'state-sponsored terrorism' kaha.\nDidi ne kaha Kolkata se Delhi tak atrocities unprecedented hain.\nKolkata ka naam pehle number par, former CM ke muh se 😅\nKaun sahi? Comment karo 👇\n\nPhotos (Wikimedia Commons): Mamata Banerjee: Chief Minister's Office, Government of West Bengal (CC BY 1.0)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: Times Now (link pinned in comments 👇)\n\n#mamatabanerjee #tmc #cjp #politicalmemes #reelsindia",
-    "created_at": "2026-10-20T12:40:56+00:00"
+  "created_at": "2026-10-20T16:02:43+00:00"
+ },
+ {
+  "id": "reel_rotate-2026-10-20",
+  "image": "posts/20261020-1418-reel_rotate-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-141837-reel_rotate-2026-10-20.mp4",
+  "headline": "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi",
+  "tag": "🎬 REEL · BACHPAN ME AISA KAUN KIYA",
+  "caption": "Bachpan me tiffin interval se pehle khaya? Aloo paratha ki khushboo poori class ko pata chal jaati thi 😂\nTumne kitni baar kiya? MAINE BHI likho 👇\n\nFollow @khabarbawaal: roz shaam 7:45 baje naya comedy: bachpan, memes, tag karo 😂\n\n#bachpan #90skids #schoollife #nostalgia #relatable",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Last bench wala tiffin chor sabko yaad hai 😭 Us dost ko bhejo jo tiffin pehle hi khatam karta tha 👇",
+  "songs": [
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "chori chori sweet kaam"
+   },
+   {
+    "title": "Kabhi Shaam Dhale",
+    "artist": "Jaani, Mohammad Faiz",
+    "lang": "hindi",
+    "mood": "shaam ki tiffin wali yaadein"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "light nostalgic groove"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "sneaky happy vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
   },
-  {
-    "id": "cd8def1b6177",
-    "image": "posts/20261020-1238-cd8def1b6177.jpg",
-    "kind": "custom",
-    "media": "reel",
-    "video": "posts/20261020-123844-cd8def1b6177.mp4",
-    "headline": "Meerut court sentences woman, lover to death for strangling husband, staging snakebite death",
-    "tag": "🎬 REEL · INDIA",
-    "caption": "Meerut court death sentence Ravita Amardeep snakebite murder case 🐍\nMeerut ki court ne Ravita aur uske premi Amardeep ko pati Amit Kashyap ke qatl mein maut ki saza sunayi.\nKathit taur par 17 April 2025 ko Amit ka gala ghonta gaya, phir bistar par saanp chhodkar use saanp ka kaatna dikhaya gaya. Post-mortem mein gala ghontne ki baat saamne aayi aur saanp ke daant bhi nahi the.\n551 din ke trial, 87 sunwai aur 12 gawahon ke baad faisla aaya. Court ne DM ko teeno bachchon ki dekhbhal ka nirdesh bhi diya.\nKya yeh saza sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: The New Indian Express (link pinned in comments 👇)\n\n#reelsindia #meerut #breakingnews #indianews #courtverdict",
-    "source": "The New Indian Express",
-    "source_url": "https://www.newindianexpress.com/amp/story/states/uttar-pradesh/2026/Oct/16/meerut-court-sentences-woman-lover-to-death-for-strangling-husband-staging-snakebite-death",
-    "pin_comment": "Is khabar ko apne doston ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Dhun",
-        "artist": "Mithoon, Arijit Singh",
-        "lang": "hindi",
-        "mood": "sombre mood for betrayal story"
-      },
-      {
-        "title": "Quebec",
-        "artist": "Drake",
-        "lang": "english",
-        "mood": "dark moody backdrop for crime verdict"
-      },
-      {
-        "title": "The One That Got Away",
-        "artist": "Katy Perry",
-        "lang": "english",
-        "mood": "broken trust, tragic ending"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: Killing was described as alleged in the article; attribute it, and note the court's guilty finding."
-      ],
-      "fixed": [
-        "aashiq Amardeep ne pati Amit ko maara. → aashiq Amardeep ne kathit taur par pati Amit ko maara; court ne doshi paya."
-      ]
-    },
-    "created_at": "2026-10-20T12:38:44+00:00"
+  "created_at": "2026-10-20T14:18:37+00:00"
+ },
+ {
+  "id": "reel_politics-2026-10-20",
+  "image": "posts/20261020-1240-reel_politics-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-124056-reel_politics-2026-10-20.mp4",
+  "tag": "🎬 REEL · ROAST · QUOTE TRAP",
+  "source": "Times Now",
+  "source_url": "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641",
+  "pin_comment": "Kolkata wale dost ko ye bhejo aur unka reaction batao 👇",
+  "songs": [
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "arz kiya = dramatic claim line"
+   },
+   {
+    "title": "Putaapu Gang",
+    "artist": "Anirudh Ravichander & Thamizh Aadhavan",
+    "lang": "hindi",
+    "mood": "gang of leaders backing CJP"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga, Bruno Mars",
+    "lang": "english",
+    "mood": "smiling through the drama"
+   },
+   {
+    "title": "Woman",
+    "artist": "Doja Cat",
+    "lang": "english",
+    "mood": "Didi energy, bold statement"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article gives only 'Tuesday', not the date 20 Oct 2026.",
+    "Slide 1: The photo credit text at the bottom left runs into the @khabarbawaal handle and is low contrast on the photo. It is small and hard to read."
+   ],
+   "fixed": [
+    "Statement on X, Tuesday 20 Oct 2026 (Times Now) → Statement on X, Tuesday (Times Now)"
+   ]
   },
-  {
-    "id": "automode-sample",
-    "image": "posts/20261020-1216-automode-sample.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-121600-automode-sample.mp4",
-    "headline": "🧪 Auto-mode sample: Bastar Dussehra: Chhattisgarh's 75-day festival where Ravana's effigy is never burnt",
-    "tag": "🧪 SAMPLE · ⚙️ AUTO MODE (no AI)",
-    "caption": "Bastar Dussehra: Chhattisgarh's 75-day festival where Ravana's effigy is never burnt\nIn Bastar, Dussehra is not associated with Lord Rama’s victory over Ravana.\nAnother important ritual, Kachhin Gadi, involves seeking the symbolic permission of Kachhin Devi.\nSahi ya galat? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #breakingnews #trending #india #viral",
-    "source": "Hindustan Times",
-    "source_url": "https://www.hindustantimes.com/trending/bastar-dussehra-chhattisgarhs-75-day-festival-where-ravanas-effigy-is-never-burnt-101792494991576.html",
-    "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
-    "songs": [],
-    "proof": {
-      "state": "check",
-      "fixed": [],
-      "issues": [
-        "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
-      ]
-    },
-    "created_at": "2026-10-20T12:16:00+00:00"
+  "headline": "Mamata ne CJP custody ko kaha: state-sponsored terrorism",
+  "caption": "Mamata Banerjee ka CJP custody par bada daava 🎤\nUnhone CJP netaon ki custody ko 'state-sponsored terrorism' kaha.\nDidi ne kaha Kolkata se Delhi tak atrocities unprecedented hain.\nKolkata ka naam pehle number par, former CM ke muh se 😅\nKaun sahi? Comment karo 👇\n\nPhotos (Wikimedia Commons): Mamata Banerjee: Chief Minister's Office, Government of West Bengal (CC BY 1.0)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: Times Now (link pinned in comments 👇)\n\n#mamatabanerjee #tmc #cjp #politicalmemes #reelsindia",
+  "created_at": "2026-10-20T12:40:56+00:00"
+ },
+ {
+  "id": "cd8def1b6177",
+  "image": "posts/20261020-1238-cd8def1b6177.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261020-123844-cd8def1b6177.mp4",
+  "headline": "Meerut court sentences woman, lover to death for strangling husband, staging snakebite death",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Meerut court death sentence Ravita Amardeep snakebite murder case 🐍\nMeerut ki court ne Ravita aur uske premi Amardeep ko pati Amit Kashyap ke qatl mein maut ki saza sunayi.\nKathit taur par 17 April 2025 ko Amit ka gala ghonta gaya, phir bistar par saanp chhodkar use saanp ka kaatna dikhaya gaya. Post-mortem mein gala ghontne ki baat saamne aayi aur saanp ke daant bhi nahi the.\n551 din ke trial, 87 sunwai aur 12 gawahon ke baad faisla aaya. Court ne DM ko teeno bachchon ki dekhbhal ka nirdesh bhi diya.\nKya yeh saza sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: The New Indian Express (link pinned in comments 👇)\n\n#reelsindia #meerut #breakingnews #indianews #courtverdict",
+  "source": "The New Indian Express",
+  "source_url": "https://www.newindianexpress.com/amp/story/states/uttar-pradesh/2026/Oct/16/meerut-court-sentences-woman-lover-to-death-for-strangling-husband-staging-snakebite-death",
+  "pin_comment": "Is khabar ko apne doston ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "sombre mood for betrayal story"
+   },
+   {
+    "title": "Quebec",
+    "artist": "Drake",
+    "lang": "english",
+    "mood": "dark moody backdrop for crime verdict"
+   },
+   {
+    "title": "The One That Got Away",
+    "artist": "Katy Perry",
+    "lang": "english",
+    "mood": "broken trust, tragic ending"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Killing was described as alleged in the article; attribute it, and note the court's guilty finding."
+   ],
+   "fixed": [
+    "aashiq Amardeep ne pati Amit ko maara. → aashiq Amardeep ne kathit taur par pati Amit ko maara; court ne doshi paya."
+   ]
   },
-  {
-    "id": "c0bec7db1757",
-    "image": "posts/20261020-1133-c0bec7db1757.jpg",
-    "kind": "custom",
-    "media": "reel",
-    "video": "posts/20261020-113326-c0bec7db1757.mp4",
-    "headline": "Activist Umar Khalid Given International Human Rights Defender Award | Outlook India",
-    "tag": "🎬 REEL · INDIA",
-    "caption": "Umar Khalid award 2026: Front Line Defenders ne Umar Khalid ko Asia ka winner chuna 🏆\nUmar September 2020 se jail mein hain. Delhi Police Special Cell ne unhe 2020 Delhi dange ki kathit saazish case mein giraftar kiya tha. UAPA aur IPC ki kai dhaaraon mein aarop hain, abhi trial ka faisla nahi aaya.\nAward Dublin mein 8 Oct ko diya gaya, Umar Tihar Jail se aa nahi paye.\nKya dange ke case mein trial pura hone se pehle aise award dena sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Outlook India (link pinned in comments 👇)\n\n#UmarKhalid #DelhiRiots #IndiaNews #BreakingNews #reelsindia",
-    "source": "Outlook India",
-    "source_url": "https://www.outlookindia.com/international/activist-umar-khalid-given-international-human-rights-defender-award",
-    "pin_comment": "Is behes mein shaamil hona chahiye, kisi dost ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Khat",
-        "artist": "Navjot Ahuja",
-        "lang": "hindi",
-        "mood": "serious, calm news tone"
-      },
-      {
-        "title": "Mann Mera",
-        "artist": "Gajendra Verma",
-        "lang": "hindi",
-        "mood": "heavy, reflective mood"
-      },
-      {
-        "title": "Iris",
-        "artist": "The Goo Goo Dolls",
-        "lang": "english",
-        "mood": "serious, emotional backdrop"
-      },
-      {
-        "title": "Infinity",
-        "artist": "Jaymes Young",
-        "lang": "english",
-        "mood": "slow, dramatic, years pass"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: The two articles give different arrest dates (Sept 14 vs Sept 13, 2020), so the exact date is not reliably supported.",
-        "Fact corrected to match the article: The article is from The Hans India and lawstreet, not Outlook India, so the attribution on the slide must match it.",
-        "Fact corrected to match the article: The article's reports are from The Hans India and lawstreet, not Outlook India."
-      ],
-      "fixed": [
-        "Umar 14 Sep 2020 se jail mein hain. → Umar September 2020 se jail mein hain.",
-        "Outlook India ke mutabik activist Umar Khalid ko international samman mila. → The Hans India ke mutabik activist Umar Khalid ko international samman mila.",
-        "Award ki baaki details abhi Outlook India ki report ke hawale se hain. → Award ki baaki details abhi The Hans India aur lawstreet ki reports ke hawale se hain."
-      ]
-    },
-    "created_at": "2026-10-20T11:33:26+00:00"
+  "created_at": "2026-10-20T12:38:44+00:00"
+ },
+ {
+  "id": "automode-sample",
+  "image": "posts/20261020-1216-automode-sample.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-121600-automode-sample.mp4",
+  "headline": "🧪 Auto-mode sample: Bastar Dussehra: Chhattisgarh's 75-day festival where Ravana's effigy is never burnt",
+  "tag": "🧪 SAMPLE · ⚙️ AUTO MODE (no AI)",
+  "caption": "Bastar Dussehra: Chhattisgarh's 75-day festival where Ravana's effigy is never burnt\nIn Bastar, Dussehra is not associated with Lord Rama’s victory over Ravana.\nAnother important ritual, Kachhin Gadi, involves seeking the symbolic permission of Kachhin Devi.\nSahi ya galat? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #breakingnews #trending #india #viral",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/bastar-dussehra-chhattisgarhs-75-day-festival-where-ravanas-effigy-is-never-burnt-101792494991576.html",
+  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
+  "songs": [],
+  "proof": {
+   "state": "check",
+   "fixed": [],
+   "issues": [
+    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
+   ]
   },
-  {
-    "id": "reel_news_pm-2026-10-20",
-    "image": "posts/20261020-1033-reel_news_pm-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-103324-reel_news_pm-2026-10-20.mp4",
-    "headline": "SCOOP: Ramayana advance booking may get DELAYED due to revenue-sharing tussle; distributors demand 60% share in Week 1",
-    "tag": "🎬 REEL · BOLLYWOOD",
-    "caption": "Ramayana advance booking delay? Ranbir Kapoor, Yash, Sai Pallavi\n\nDussehra, 20 October ko advance booking khulni thi\nBollywood Hungama ke scoop ke mutabik revenue-sharing par atka hai maamla\nDistributors kathit taur par Week 1 mein 60% share maang rahe hain\n\nRanbir ki Ramayana ke liye aap kitna wait kar sakte ho? Pehle din ka ticket lenge? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia",
-    "source": "Bollywood Hungama",
-    "source_url": "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/",
-    "pin_comment": "Kisi Ranbir fan ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
-        "artist": "Kumaar, Mellow D",
-        "lang": "hindi",
-        "mood": "Ram naam, Dussehra vibe"
-      },
-      {
-        "title": "Paisa Hai Toh",
-        "artist": "Jigar Saraiya, Sachin-Jigar",
-        "lang": "hindi",
-        "mood": "paise ki ladai = revenue tussle"
-      },
-      {
-        "title": "All The Stars",
-        "artist": "Kendrick Lamar, SZA",
-        "lang": "english",
-        "mood": "big star-studded epic feel"
-      },
-      {
-        "title": "Timeless",
-        "artist": "The Weeknd, Playboi Carti",
-        "lang": "english",
-        "mood": "dramatic, high-stakes tension"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: Demand is only reported by a trade source, so it must be attributed as alleged.",
-        "Fact corrected to match the article: Reported disagreement over the share is unconfirmed, so it should be attributed."
-      ],
-      "fixed": [
-        "Source: distributors Week 1 mein 60% share maang rahe, normal 52.5% hota hai. → Source: distributors kathit taur par Week 1 mein 60% share maang rahe, normal 52.5% hota hai.",
-        "Bhagwan Ram ki film, aur baat 60% share par atki → Bhagwan Ram ki film, aur kathit taur par baat 60% share par atki"
-      ]
-    },
-    "created_at": "2026-10-20T10:33:24+00:00"
+  "created_at": "2026-10-20T12:16:00+00:00"
+ },
+ {
+  "id": "c0bec7db1757",
+  "image": "posts/20261020-1133-c0bec7db1757.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261020-113326-c0bec7db1757.mp4",
+  "headline": "Activist Umar Khalid Given International Human Rights Defender Award | Outlook India",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Umar Khalid award 2026: Front Line Defenders ne Umar Khalid ko Asia ka winner chuna 🏆\nUmar September 2020 se jail mein hain. Delhi Police Special Cell ne unhe 2020 Delhi dange ki kathit saazish case mein giraftar kiya tha. UAPA aur IPC ki kai dhaaraon mein aarop hain, abhi trial ka faisla nahi aaya.\nAward Dublin mein 8 Oct ko diya gaya, Umar Tihar Jail se aa nahi paye.\nKya dange ke case mein trial pura hone se pehle aise award dena sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Outlook India (link pinned in comments 👇)\n\n#UmarKhalid #DelhiRiots #IndiaNews #BreakingNews #reelsindia",
+  "source": "Outlook India",
+  "source_url": "https://www.outlookindia.com/international/activist-umar-khalid-given-international-human-rights-defender-award",
+  "pin_comment": "Is behes mein shaamil hona chahiye, kisi dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Khat",
+    "artist": "Navjot Ahuja",
+    "lang": "hindi",
+    "mood": "serious, calm news tone"
+   },
+   {
+    "title": "Mann Mera",
+    "artist": "Gajendra Verma",
+    "lang": "hindi",
+    "mood": "heavy, reflective mood"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "serious, emotional backdrop"
+   },
+   {
+    "title": "Infinity",
+    "artist": "Jaymes Young",
+    "lang": "english",
+    "mood": "slow, dramatic, years pass"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The two articles give different arrest dates (Sept 14 vs Sept 13, 2020), so the exact date is not reliably supported.",
+    "Fact corrected to match the article: The article is from The Hans India and lawstreet, not Outlook India, so the attribution on the slide must match it.",
+    "Fact corrected to match the article: The article's reports are from The Hans India and lawstreet, not Outlook India."
+   ],
+   "fixed": [
+    "Umar 14 Sep 2020 se jail mein hain. → Umar September 2020 se jail mein hain.",
+    "Outlook India ke mutabik activist Umar Khalid ko international samman mila. → The Hans India ke mutabik activist Umar Khalid ko international samman mila.",
+    "Award ki baaki details abhi Outlook India ki report ke hawale se hain. → Award ki baaki details abhi The Hans India aur lawstreet ki reports ke hawale se hain."
+   ]
   },
-  {
-    "id": "reel_break_noon-2026-10-20",
-    "image": "posts/20261020-0833-reel_break_noon-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-083357-reel_break_noon-2026-10-20.mp4",
-    "headline": "Sharad Kelkar says he spoke to Tiger Shroff after firing incident, trusts Mumbai Police to get to the bottom of the case",
-    "tag": "🎬 REEL · ⚡ BREAKING CARD",
-    "caption": "Tiger Shroff firing Sharad Kelkar reaction Mumbai Police 🔥\nSharad Kelkar ne kaha desh mein aisi anarchy kabhi nahi honi chahiye.\nUnhone Jackie Shroff ko message bhi kiya, aur Mumbai Police par bharosa jataya.\nPolice ne Kota se 3 aaropi pakde hain, Lawrence Bishnoi gang link ki jaanch jaari hai.\nAapko kya lagta hai, police sahi track par hai? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #bollywood #mumbaipolice #sharadkelkar",
-    "source": "Hindustan Times",
-    "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
-    "pin_comment": "Police ka kaam sahi laga ya nahi? Kisi Tiger Shroff fan ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Hukum Reloaded",
-        "artist": "Anirudh Ravichander & Super Subu",
-        "lang": "hindi",
-        "mood": "intense action beat = arrests"
-      },
-      {
-        "title": "Gehra Hua",
-        "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-        "lang": "hindi",
-        "mood": "dark serious mood, case update"
-      },
-      {
-        "title": "Lies (feat. Lana Del Rey)",
-        "artist": "Zach Bryan & Lana Del Rey",
-        "lang": "english",
-        "mood": "tense, serious crime news"
-      },
-      {
-        "title": "Cold Shoulder",
-        "artist": "Drake, Don Toliver & Yebba",
-        "lang": "english",
-        "mood": "cold, dramatic tone"
-      }
-    ],
-    "proof": {
-      "state": "ok",
-      "issues": [],
-      "fixed": []
-    },
-    "created_at": "2026-10-20T08:33:57+00:00"
+  "created_at": "2026-10-20T11:33:26+00:00"
+ },
+ {
+  "id": "reel_news_pm-2026-10-20",
+  "image": "posts/20261020-1033-reel_news_pm-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-103324-reel_news_pm-2026-10-20.mp4",
+  "headline": "SCOOP: Ramayana advance booking may get DELAYED due to revenue-sharing tussle; distributors demand 60% share in Week 1",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana advance booking delay? Ranbir Kapoor, Yash, Sai Pallavi\n\nDussehra, 20 October ko advance booking khulni thi\nBollywood Hungama ke scoop ke mutabik revenue-sharing par atka hai maamla\nDistributors kathit taur par Week 1 mein 60% share maang rahe hain\n\nRanbir ki Ramayana ke liye aap kitna wait kar sakte ho? Pehle din ka ticket lenge? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/",
+  "pin_comment": "Kisi Ranbir fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
+    "artist": "Kumaar, Mellow D",
+    "lang": "hindi",
+    "mood": "Ram naam, Dussehra vibe"
+   },
+   {
+    "title": "Paisa Hai Toh",
+    "artist": "Jigar Saraiya, Sachin-Jigar",
+    "lang": "hindi",
+    "mood": "paise ki ladai = revenue tussle"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "big star-studded epic feel"
+   },
+   {
+    "title": "Timeless",
+    "artist": "The Weeknd, Playboi Carti",
+    "lang": "english",
+    "mood": "dramatic, high-stakes tension"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Demand is only reported by a trade source, so it must be attributed as alleged.",
+    "Fact corrected to match the article: Reported disagreement over the share is unconfirmed, so it should be attributed."
+   ],
+   "fixed": [
+    "Source: distributors Week 1 mein 60% share maang rahe, normal 52.5% hota hai. → Source: distributors kathit taur par Week 1 mein 60% share maang rahe, normal 52.5% hota hai.",
+    "Bhagwan Ram ki film, aur baat 60% share par atki → Bhagwan Ram ki film, aur kathit taur par baat 60% share par atki"
+   ]
   },
-  {
-    "id": "reel_news_am-2026-10-20",
-    "image": "posts/20261020-0633-reel_news_am-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-063353-reel_news_am-2026-10-20.mp4",
-    "headline": "Dil Raju calls Ranbir Kapoor ‘Ranveer Singh’ at Ramayana’s grand Hyderabad event; immediately apologizes: “Sorry, Ranbir Kapoor garu!”",
-    "tag": "🎬 REEL · BOLLYWOOD",
-    "caption": "Dil Raju Ranbir Kapoor Ranveer Singh Ramayana event 🎬\nHyderabad mein Ramayana ke grand event par Dil Raju ne Ranbir Kapoor ki tareef karte hue unhe 'Ranveer Singh' bol diya.\nGalti ka ehsaas hote hi turant bole: 'Sorry, Ranbir Kapoor garu!'\nStage par Yash, Sai Pallavi aur director Nitesh Tiwari bhi maujood the.\nYe galti maafi layak thi ya nahi? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #dilraju #bollywood #reelsindia",
-    "source": "Bollywood Hungama",
-    "source_url": "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
-    "pin_comment": "Apne us dost ko bhejo jo hamesha naam galat bolta hai 👇",
-    "songs": [
-      {
-        "title": "Bindaas",
-        "artist": "Deepthi Suresh, Anirudh Ravichander & Super Subu",
-        "lang": "hindi",
-        "mood": "bindaas slip, quick sorry vibe"
-      },
-      {
-        "title": "Ala Bolelo",
-        "artist": "Anirudh Ravichander, Arunraja Kamaraj",
-        "lang": "hindi",
-        "mood": "fun, light-hearted mix-up"
-      },
-      {
-        "title": "stupid song",
-        "artist": "Olivia Rodrigo",
-        "lang": "english",
-        "mood": "silly mistake = stupid song"
-      },
-      {
-        "title": "Beauty And A Beat",
-        "artist": "Justin Bieber, Nicki Minaj",
-        "lang": "english",
-        "mood": "upbeat comedy moment"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: He said 'hopefully' it will be a hattrick; it is not a certain claim.",
-        "Fact corrected to match the article: Internet reaction is not in the article; unsupported claim."
-      ],
-      "fixed": [
-        "Dil Raju bole: Brahmastra aur Animal ke baad Ramayana hattrick hogi. → Dil Raju bole: Brahmastra aur Animal ke baad umeed hai Ramayana hattrick hogi.",
-        " Internet hass hass ke lot-pot. → "
-      ]
-    },
-    "created_at": "2026-10-20T06:33:53+00:00"
+  "created_at": "2026-10-20T10:33:24+00:00"
+ },
+ {
+  "id": "reel_break_noon-2026-10-20",
+  "image": "posts/20261020-0833-reel_break_noon-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-083357-reel_break_noon-2026-10-20.mp4",
+  "headline": "Sharad Kelkar says he spoke to Tiger Shroff after firing incident, trusts Mumbai Police to get to the bottom of the case",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Tiger Shroff firing Sharad Kelkar reaction Mumbai Police 🔥\nSharad Kelkar ne kaha desh mein aisi anarchy kabhi nahi honi chahiye.\nUnhone Jackie Shroff ko message bhi kiya, aur Mumbai Police par bharosa jataya.\nPolice ne Kota se 3 aaropi pakde hain, Lawrence Bishnoi gang link ki jaanch jaari hai.\nAapko kya lagta hai, police sahi track par hai? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #bollywood #mumbaipolice #sharadkelkar",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
+  "pin_comment": "Police ka kaam sahi laga ya nahi? Kisi Tiger Shroff fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Hukum Reloaded",
+    "artist": "Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "intense action beat = arrests"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "dark serious mood, case update"
+   },
+   {
+    "title": "Lies (feat. Lana Del Rey)",
+    "artist": "Zach Bryan & Lana Del Rey",
+    "lang": "english",
+    "mood": "tense, serious crime news"
+   },
+   {
+    "title": "Cold Shoulder",
+    "artist": "Drake, Don Toliver & Yebba",
+    "lang": "english",
+    "mood": "cold, dramatic tone"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
   },
-  {
-    "id": "reel_break_am-2026-10-20",
-    "image": "posts/20261020-0433-reel_break_am-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-043338-reel_break_am-2026-10-20.mp4",
-    "headline": "Jackie Shroff attends event with Maharashtra CM Devendra Fadnavis a day after attack on son Tiger Shroff",
-    "tag": "🎬 REEL · ⚡ BREAKING CARD",
-    "caption": "Jackie Shroff Tiger Shroff firing Devendra Fadnavis Bappi Lahiri Marg event\nTiger par firing ke ek din baad Jackie Shroff Mumbai me CM Fadnavis aur Suniel Shetty ke saath dikhe.\nYe firing ke baad Jackie ki pehli public appearance thi. Teeno aropi Rajasthan Police ne Kota Junction par train se pakde.\nFadnavis bole: hamla karne wale kayar bakhshe nahi jayenge. Aapko kya lagta hai, sakht action hona chahiye? 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #jackieshroff #bollywoodnews #devendrafadnavis",
-    "source": "Hindustan Times",
-    "source_url": "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
-    "pin_comment": "Suniel Shetty bole: Tiger aur Jackie Dada se sab pyaar karte hain. Kisi Tiger Shroff fan ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Zihaal e Miskin",
-        "artist": "Javed-Mohsin, Vishal Mishra",
-        "lang": "hindi",
-        "mood": "serious family moment, emotional support"
-      },
-      {
-        "title": "Teri Meri Kahaani",
-        "artist": "Arijit Singh, Palak Muchhal",
-        "lang": "hindi",
-        "mood": "dosti aur parivar ka saath"
-      },
-      {
-        "title": "Heat Waves",
-        "artist": "Glass Animals",
-        "lang": "english",
-        "mood": "calm, tense after the attack"
-      },
-      {
-        "title": "Let Me Down Slowly",
-        "artist": "Alec Benjamin",
-        "lang": "english",
-        "mood": "relief after scare, soft mood"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: Headline is ambiguous; article says it was his first public appearance since the firing.",
-        "Slide 1: The embedded ANI tweet screenshot is cropped. Its text is cut off at the left and right edges, so it reads \"CM D...\" and \"attends the nar...\". The headline text also sits over the people at the bottom of the photo. The handle overlaps the \"Read 53 replies\" line."
-      ],
-      "fixed": [
-        "JACKIE SHROFF PEHLI BAAR DIKHE → FIRING KE BAAD JACKIE PEHLI BAAR DIKHE"
-      ]
-    },
-    "created_at": "2026-10-20T04:33:38+00:00"
+  "created_at": "2026-10-20T08:33:57+00:00"
+ },
+ {
+  "id": "reel_news_am-2026-10-20",
+  "image": "posts/20261020-0633-reel_news_am-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-063353-reel_news_am-2026-10-20.mp4",
+  "headline": "Dil Raju calls Ranbir Kapoor ‘Ranveer Singh’ at Ramayana’s grand Hyderabad event; immediately apologizes: “Sorry, Ranbir Kapoor garu!”",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Dil Raju Ranbir Kapoor Ranveer Singh Ramayana event 🎬\nHyderabad mein Ramayana ke grand event par Dil Raju ne Ranbir Kapoor ki tareef karte hue unhe 'Ranveer Singh' bol diya.\nGalti ka ehsaas hote hi turant bole: 'Sorry, Ranbir Kapoor garu!'\nStage par Yash, Sai Pallavi aur director Nitesh Tiwari bhi maujood the.\nYe galti maafi layak thi ya nahi? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #dilraju #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
+  "pin_comment": "Apne us dost ko bhejo jo hamesha naam galat bolta hai 👇",
+  "songs": [
+   {
+    "title": "Bindaas",
+    "artist": "Deepthi Suresh, Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "bindaas slip, quick sorry vibe"
+   },
+   {
+    "title": "Ala Bolelo",
+    "artist": "Anirudh Ravichander, Arunraja Kamaraj",
+    "lang": "hindi",
+    "mood": "fun, light-hearted mix-up"
+   },
+   {
+    "title": "stupid song",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "silly mistake = stupid song"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "upbeat comedy moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: He said 'hopefully' it will be a hattrick; it is not a certain claim.",
+    "Fact corrected to match the article: Internet reaction is not in the article; unsupported claim."
+   ],
+   "fixed": [
+    "Dil Raju bole: Brahmastra aur Animal ke baad Ramayana hattrick hogi. → Dil Raju bole: Brahmastra aur Animal ke baad umeed hai Ramayana hattrick hogi.",
+    " Internet hass hass ke lot-pot. → "
+   ]
   },
-  {
-    "id": "reel_news_early-2026-10-20",
-    "image": "posts/20261020-0234-reel_news_early-2026-10-20.jpg",
-    "kind": "reel",
-    "media": "reel",
-    "video": "posts/20261020-023406-reel_news_early-2026-10-20.mp4",
-    "headline": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
-    "tag": "🎬 REEL · BOLLYWOOD",
-    "caption": "Tu Hai Meri Kiran Sonakshi Sinha Bombay High Court 🎬\n\nBombay High Court ne 19 October ko kaha ki Echelon Productions film ko release ya exploit nahi kar sakte.\nPehle Rs. 8.85 crore deposit karne honge.\nFilm mein Sonakshi Sinha hain.\n\nKya release se pehle ye sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#sonakshisinha #bombayhighcourt #tuhaimerikiran #bollywoodnews #reelsindia",
-    "source": "Bollywood Hungama",
-    "source_url": "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
-    "pin_comment": "Kisi Sonakshi fan ko bhejo 👇",
-    "songs": [
-      {
-        "title": "Toxic",
-        "artist": "Vishal Mishra, Hanita Bhambri",
-        "lang": "hindi",
-        "mood": "drama, messy film trouble"
-      },
-      {
-        "title": "Straight Up",
-        "artist": "Karan Aujla & MXRCI",
-        "lang": "hindi",
-        "mood": "serious, court verdict tone"
-      },
-      {
-        "title": "Stop The Wedding!",
-        "artist": "Ashe",
-        "lang": "english",
-        "mood": "release stopped = stop moment"
-      },
-      {
-        "title": "Harleys In Hawaii",
-        "artist": "Katy Perry",
-        "lang": "english",
-        "mood": "breezy contrast to legal drama"
-      }
-    ],
-    "proof": {
-      "state": "check",
-      "issues": [
-        "Fact corrected to match the article: Headline was ambiguous; the court ordered Echelon (the makers) to deposit the money."
-      ],
-      "fixed": [
-        "Sonakshi Sinha ki film release se pehle 8.85 crore deposit → Sonakshi Sinha ki film ke release se pehle makers ko 8.85 crore deposit karne honge"
-      ]
-    },
-    "created_at": "2026-10-20T02:34:06+00:00"
-  }
+  "created_at": "2026-10-20T06:33:53+00:00"
+ },
+ {
+  "id": "reel_break_am-2026-10-20",
+  "image": "posts/20261020-0433-reel_break_am-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-043338-reel_break_am-2026-10-20.mp4",
+  "headline": "Jackie Shroff attends event with Maharashtra CM Devendra Fadnavis a day after attack on son Tiger Shroff",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Jackie Shroff Tiger Shroff firing Devendra Fadnavis Bappi Lahiri Marg event\nTiger par firing ke ek din baad Jackie Shroff Mumbai me CM Fadnavis aur Suniel Shetty ke saath dikhe.\nYe firing ke baad Jackie ki pehli public appearance thi. Teeno aropi Rajasthan Police ne Kota Junction par train se pakde.\nFadnavis bole: hamla karne wale kayar bakhshe nahi jayenge. Aapko kya lagta hai, sakht action hona chahiye? 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #jackieshroff #bollywoodnews #devendrafadnavis",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
+  "pin_comment": "Suniel Shetty bole: Tiger aur Jackie Dada se sab pyaar karte hain. Kisi Tiger Shroff fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "serious family moment, emotional support"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "dosti aur parivar ka saath"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "calm, tense after the attack"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "relief after scare, soft mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Headline is ambiguous; article says it was his first public appearance since the firing.",
+    "Slide 1: The embedded ANI tweet screenshot is cropped. Its text is cut off at the left and right edges, so it reads \"CM D...\" and \"attends the nar...\". The headline text also sits over the people at the bottom of the photo. The handle overlaps the \"Read 53 replies\" line."
+   ],
+   "fixed": [
+    "JACKIE SHROFF PEHLI BAAR DIKHE → FIRING KE BAAD JACKIE PEHLI BAAR DIKHE"
+   ]
+  },
+  "created_at": "2026-10-20T04:33:38+00:00"
+ },
+ {
+  "id": "reel_news_early-2026-10-20",
+  "image": "posts/20261020-0234-reel_news_early-2026-10-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261020-023406-reel_news_early-2026-10-20.mp4",
+  "headline": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tu Hai Meri Kiran Sonakshi Sinha Bombay High Court 🎬\n\nBombay High Court ne 19 October ko kaha ki Echelon Productions film ko release ya exploit nahi kar sakte.\nPehle Rs. 8.85 crore deposit karne honge.\nFilm mein Sonakshi Sinha hain.\n\nKya release se pehle ye sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#sonakshisinha #bombayhighcourt #tuhaimerikiran #bollywoodnews #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
+  "pin_comment": "Kisi Sonakshi fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "drama, messy film trouble"
+   },
+   {
+    "title": "Straight Up",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "serious, court verdict tone"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "release stopped = stop moment"
+   },
+   {
+    "title": "Harleys In Hawaii",
+    "artist": "Katy Perry",
+    "lang": "english",
+    "mood": "breezy contrast to legal drama"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Headline was ambiguous; the court ordered Echelon (the makers) to deposit the money."
+   ],
+   "fixed": [
+    "Sonakshi Sinha ki film release se pehle 8.85 crore deposit → Sonakshi Sinha ki film ke release se pehle makers ko 8.85 crore deposit karne honge"
+   ]
+  },
+  "created_at": "2026-10-20T02:34:06+00:00"
+ }
 ]
