@@ -4019,8 +4019,11 @@ def flux_image(prompt: str, seed: int, w: int = 864, h: int = 1536) -> tuple[Ima
     raise RuntimeError("free image AI busy")
 
 
+MULTI_ARM = {"ganesh": 4, "vishnu": 4, "lakshmi": 4}   # gods whose well-known form has 4 arms (owner, 21 Oct 2026)
+
+
 def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style: str = FLUX_STYLE,
-                size: tuple[int, int] = (864, 1536)) -> list[tuple[Image.Image, str, float]]:
+                size: tuple[int, int] = (864, 1536), arms: int = 0) -> list[tuple[Image.Image, str, float]]:
     """Up to 2 pictures (one per scene), each painted `tries` times; the AI looks at them and keeps the best
     correct, respectful one per scene. Returns [(image, credit, focus_x)]; raises if the AI is busy or none fits."""
     import random
@@ -4058,9 +4061,12 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
         f"The pictures should show {subject}.\n{listing}\nFiles: {', '.join(n for n, _, _ in made)} (sceneN_... = scene N). "
         "Open each with the Read tool. For each scene pick the most beautiful picture that is fit to post, or none: "
         "the best is a detailed, sharp, emotional storybook illustration with a warm golden glow. "
-        "Gods are drawn on purpose in a simple form with one or two arms visible, even those who traditionally have "
-        "more: that is correct. Reject only real problems: the deity doesn't look like their well-known form (wrong "
-        "skin colour, wrong animal) or looks like an ordinary person (no crown, halo or divine glow), more than two arms or extra hands, an item duplicated (two tridents, two flutes), the deity "
+        + (f"This deity's well-known form has {arms} arms: {arms} clean arms are correct and fine (no extra or broken hands). "
+           if arms else "Gods are drawn on purpose in a simple form with one or two arms visible, even those who traditionally have "
+           "more: that is correct. ") +
+        "Reject only real problems: the deity doesn't look like their well-known form (wrong "
+        "skin colour, wrong animal) or looks like an ordinary person (no crown, halo or divine glow), "
+        + (f"more than {arms} arms or extra hands" if arms else "more than two arms or extra hands") + ", an item duplicated (two tridents, two flutes), the deity "
         "merged with an animal or person, disrespectful, scary or revealing, broken faces, eyes or hands, any text, "
         "letters, signature or watermark, a messy or ugly picture. Small differences from the description are fine "
         "(the person's clothes, a small item like a crescent moon not visible, a different pose or setting).",
@@ -4075,6 +4081,30 @@ def flux_images(scenes: list[str], subject: str, tmp: str, tries: int = 2, style
     print(f"  AI pictures: {len(made)} painted ({', '.join(sorted({m for _, _, m in made}))}), kept "
           + ", ".join(p["file"] for p in picks[:2]))
     return chosen
+
+
+def flux_images_patient(scenes: list[str], subject: str, tmp: str, deity: str, minutes: int = 35) -> list[tuple[Image.Image, str, float]]:
+    """🙏 The 6 AM Reel wants the glowing AI pictures (owner, 21 Oct 2026: today's Ganesh Reel fell back to a plain folk
+    painting because the free painters were busy for a minute): when they are busy, wait 5 minutes and ask again, for up
+    to `minutes`; when none of the pictures looked right, paint once more. Raises like flux_images at the end."""
+    import time
+    arms = next((n for k, n in MULTI_ARM.items() if k in deity.lower()), 0)
+    deadline, rounds = time.time() + minutes * 60, 0
+    while True:
+        rounds += 1
+        try:
+            return flux_images(scenes, subject, tmp, arms=arms)
+        except RuntimeError as e:
+            busy = "busy" in str(e)
+            if (busy and time.time() + 300 < deadline) or (not busy and rounds < 2):
+                import status
+                status.step(f"Free AI painters {'busy' if busy else 'gave nothing usable'}: trying again" + (" in 5 minutes" if busy else ""), 3)
+                print(f"  {e}: round {rounds} failed, trying again")
+                if busy:
+                    time.sleep(300)
+                _MODELS_DOWN.clear()
+                continue
+            raise
 
 
 def pick_gita_images(state: dict, tmp: str) -> list[tuple[Image.Image, str, float]]:
@@ -4732,7 +4762,7 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     status.step(f"Painting {plan['deity']} with free AI", 3)
     exact = True
     try:
-        images = flux_images([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp)
+        images = flux_images_patient([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp, plan["deity"])
     except Exception as e:
         print(f"  {e}: using free paintings instead")
         status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)

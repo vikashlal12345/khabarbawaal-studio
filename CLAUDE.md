@@ -139,7 +139,7 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
   billing; Gemini API free tier = 0 images): Z-Image-Turbo → FLUX.2-klein → FLUX.1-schnell (~4-5 pictures a day per IP,
   shared; 2 tries per scene). Gods shown with ONE visible hand (other arm hidden) or from behind: models add extra arms.
   Claude checks them (looks/respect/hands, no text); if none fits, the old free Wikimedia paintings (`pick_paintings`).
-  Credit "AI illustration (<model>)".
+  Credit "AI illustration (<model>)". Owner 21 Oct 2026 (the Ganesh Reel fell back to a plain Wikimedia folk painting: painters busy, then the check rejected 4-armed Ganesha): `flux_images_patient()` for the 6 AM Reel = when the painters are busy wait 5 min and ask again (up to 35 min), one repaint if none looked right; `MULTI_ARM` (Ganesh, Vishnu, Lakshmi: 4 clean arms accepted by the picture check).
 - `reel.py`: 🎬 Reels (1080x1920 MP4, no music: owner adds a trending song). `make(kind)`: jokes = 3 options + judge
   (`fun.judge_best`), AI ranks Mixkit clips by title (no key); **only clips labelled "Free" licence** are used
   (Restricted = no business social media; checked one by one, Mixkit 429s bursts, licences remembered in state); 3D/CGI/cartoon clips skipped (`FAKE_CLIP`) and the AI LOOKS at 2 frames of the best 3 by title (`look_at_clips`: shows the moment 6+/10, real, bright, sharp; owner 15 Oct 2026 after a grey 3D 'bed' clip), none → `fallback_visual`; proofread on still frames; news = AI picks a
