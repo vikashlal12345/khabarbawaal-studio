@@ -1,6 +1,54 @@
 [
  {
   "id": "reel_devotion-2026-10-21",
+  "image": "posts/20261021-0159-reel_devotion-2026-10-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261021-015953-reel_devotion-2026-10-21.mp4",
+  "headline": "Wednesday: Ganesh ji: Bappa ke bade kaan... ek badi seekh dete hain",
+  "tag": "🎬 REEL · 🙏 JAI GANESH",
+  "caption": "Ganesh ji ka Budhwaar 🙏\nBappa ke bade kaan: sunne ki shakti.\nAaj kisi apne ko dil se suno.\nGanpati Bappa Morya likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappamorya #ganeshji #budhwaar #bhakti #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Ghar ke sabse bade ko bhejo 🙏",
+  "songs": [
+   {
+    "title": "Vakratunda Mahakaya (Ganpati Shlok)",
+    "artist": "Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Vakrathunda Mahakaya",
+    "artist": "Vandemataram Srinivas, S.P. Balasubrahmanyam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Ganesh Aarti",
+    "artist": "Sanjay Dutt",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ganesh Jai Ganesh Deva",
+    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The 'JAI GANESH' header sits on top of Ganesh ji's golden crown. The gold text on gold is harder to read, but it doesn't cover the face.",
+    "Slide 4: The 'JAI GANESH' header sits on top of Ganesh ji's golden crown. The gold text on gold is harder to read, but it doesn't cover the face."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-21T01:59:53+00:00"
+ },
+ {
+  "id": "reel_devotion-2026-10-21",
   "image": "posts/20261021-0033-reel_devotion-2026-10-21.jpg",
   "kind": "reel",
   "media": "reel",
