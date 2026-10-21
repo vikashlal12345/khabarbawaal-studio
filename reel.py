@@ -3035,11 +3035,161 @@ TOPIC_STYLE = {"type": "object", "properties": {
     "required": ["style"], "additionalProperties": False}
 
 
+BRIEF_SCHEMA = {"type": "object", "properties": {
+    "given_line": {"type": "string", "description": "The EXACT words the owner wants written on the Reel (usually in quotes), "
+                   "copied letter for letter; '' if they gave no line"},
+    "photo_strip": {"type": "boolean", "description": "True if the owner asks for several photos shown together in one frame "
+                    "(side by side / vertical / collage)"},
+    "people": {"type": "array", "items": {"type": "string"}, "description": "The people/things whose photos the owner wants, in "
+               "the order they wrote them, spelled correctly"}},
+    "required": ["given_line", "photo_strip", "people"], "additionalProperties": False}
+
+
+def parse_brief(text: str) -> dict:
+    """➕ Create (owner, 21 Oct 2026: 'one funny reel with 3 photos in one frame ... on that funny line write \"Bishnoi bhai: ...\"'
+    came out as a different joke on a stock tiger): an explicit instruction is a spec, not a topic. Returns
+    {given_line, photo_strip, people}; the line must really be inside the owner's words."""
+    import fun
+    try:
+        res = fun.claude_json("You read a request from the owner of an Indian meme page and extract ONLY what they explicitly "
+                              "ask for: the exact line to write on the Reel, and whether they want several photos together "
+                              "in one frame, and of whom.", f"Owner's words: {text}", BRIEF_SCHEMA,
+                              CONFIG.get("membership_model", "sonnet"), purpose="reel brief")
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":
+            raise
+        print(f"  ! brief check failed ({str(e)[:80]})")
+        return {"given_line": "", "photo_strip": False, "people": []}
+    line = res["given_line"].strip().strip("\"“”'")
+    if line and squash(line) not in squash(text):
+        line = ""   # not really the owner's words
+    return {"given_line": line, "photo_strip": bool(res["photo_strip"]), "people": [x.strip() for x in res["people"] if x.strip()]}
+
+
+def strip_reel(line: str, tiles: list[tuple[str, Image.Image | None]], out_mp4: str, secs: float, highlight: list[str]) -> list[Image.Image]:
+    """The owner's line big on top, then his photos side by side as tall rounded tiles in ONE frame, each with its name."""
+    BG = "#0E0E12"
+    card = Image.new("RGBA", (RW, RH), BG)
+    logo = logo_img()
+    if logo:
+        card.alpha_composite(logo, ((RW - logo.width) // 2, 90))
+    highlights = {norm(w) for ph in highlight for w in ph.split()}
+    lines, fnt, lh = fit_lines(printable(line), RW - 2 * LEFT, 420, sizes=range(76, 40, -4))
+    y = 230
+    for img in line_images(lines, fnt, lh, "#FFFFFF", COVER_PINK, highlights):
+        card.alpha_composite(img, ((RW - img.width) // 2, y))
+        y += lh
+    y += 50
+    n = len(tiles)
+    gap, margin = 24, 40
+    tw = (RW - 2 * margin - (n - 1) * gap) // n
+    th = min(int(tw * 2.4), 1690 - y - 90)   # tall tiles that wikipedia portraits (~450 px wide) still fill sharply
+    y += max(0, (1690 - y - 90 - th) // 2)
+    d = ImageDraw.Draw(card)
+    for i, (name, pic) in enumerate(tiles):
+        x = margin + i * (tw + gap)
+        if pic is None:   # no free photo exists: a clear silhouette, never a guessed picture
+            tile = Image.new("RGB", (tw, th), "#2A1218")
+            td = ImageDraw.Draw(tile)
+            cx, cy = tw // 2, int(th * 0.40)
+            r = int(tw * 0.24)
+            td.ellipse((cx - r, cy - r, cx + r, cy + r), fill="#5A2A33")
+            td.ellipse((cx - int(tw * 0.46), cy + int(r * 1.25), cx + int(tw * 0.46), cy + int(r * 1.25) + int(tw * 0.95)), fill="#5A2A33")
+            td.text((cx, int(th * 0.80)), "PHOTO NAHI MILI", font=font("Poppins-Bold.ttf", 26), fill="#C9A0A8", anchor="mm")
+        else:
+            tile = ImageOps.fit(pic.convert("RGB"), (tw, th), Image.LANCZOS, centering=(0.5, 0.25))
+        mask = Image.new("L", (tw, th), 0)
+        ImageDraw.Draw(mask).rounded_rectangle((0, 0, tw - 1, th - 1), radius=36, fill=255)
+        card.paste(tile, (x, y), mask)
+        size = 44
+        f = font("Poppins-Bold.ttf", size)
+        while f.getlength(printable(name).upper()) > tw - 10 and size > 22:
+            size -= 2
+            f = font("Poppins-Bold.ttf", size)
+        d.text((x + tw // 2, y + th + 40), printable(name).upper(), font=f, fill="#FFFFFF", anchor="mm")
+    handle_tag(card, 1810)
+    enc = Encoder(out_mp4)
+    for _ in range(int(secs * FPS)):
+        enc.add(card)
+    add_follow(enc, card)
+    enc.close()
+    return [card.convert("RGB")]
+
+
+BRIEF_COPY = {"type": "object", "properties": {
+    "caption": {"type": "string", "description": "2 short Hinglish lines (English letters, first line has the names), 1-2 emojis"},
+    "pin_comment": {"type": "string", "description": "Pinned comment, max 14 words, asks people to react / tag a friend"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, names first"},
+    "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied from the line to colour"}},
+    "required": ["caption", "pin_comment", "hashtags", "highlight"], "additionalProperties": False}
+
+
+def build_brief_reel(text: str, brief: dict, state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
+    """➕ Create Reel that follows the owner's brief to the letter: his exact line, his photos side by side in one frame
+    (Wikipedia, credited; a person without a free photo gets a name card, never a stock photo or a guess)."""
+    import fun
+    import generate as g
+    import proofread
+    import status
+    line = brief["given_line"]
+    status.step("Understanding who is in the photos", 2)
+    sense = understand_topic(text, [], topic_articles(re.sub(r"[\"“”].*?[\"“”]", " ", text)[:150]))
+    people = [n for n in sense["named"] if n["kind"] in ("person", "party", "team", "film_show")]
+    if brief["people"]:   # in the owner's order
+        order = {squash(p): k for k, p in enumerate(brief["people"])}
+        people.sort(key=lambda n: min((v for k, v in order.items() if k and (k in squash(n["name"]) or squash(n["name"]) in k
+                                                                              or k in squash(n["lookup"] or ""))), default=99))
+    people = people[:4]
+    if not people:
+        raise RuntimeError("the Reel needs photos of people but none were named clearly")
+    status.step(f"Photos: {', '.join(n['name'] for n in people)[:60]}", 3)
+    tiles, credits, cards = [], [], []
+    for n in people:
+        label = re.sub(r"\s*\(.*?\)", "", n["lookup"] or n["name"]).strip() or n["name"]
+        img, credit = wiki_thumb(n["lookup"] or n["name"], size=960)
+        if img is not None and min(img.size) >= 300 and not (img.mode == "RGBA" and img.getextrema()[3][0] < 250):
+            tiles.append((label, img.convert("RGB")))
+            credits.append(f"{printable(label)}: {credit}")
+        else:   # never a random news photo or stock picture: it could be someone else
+            tiles.append((label, None))
+            cards.append(label)
+    print(f"  brief reel: line '{line[:60]}' | tiles {[t[0] for t in tiles]} | name cards {cards}")
+    copy = fun.claude_json(
+        "You write the caption of a funny Instagram Reel for an Indian Hinglish page. The Reel's line and photos are the "
+        "owner's own; you only write the caption, pinned comment, hashtags (5, no #KhabarBawaal) and which words of the line to "
+        "colour. Real facts only, no invented quotes, no hate, no calls to violence.",
+        f"Owner's request: {text}\n\nThe line on the Reel: {line}\nPhotos (left to right): {', '.join(t[0] for t in tiles)}\n"
+        f"What it is about: {sense['meaning']}", BRIEF_COPY, CONFIG.get("membership_model", "sonnet"), purpose="brief copy")
+    copy["caption"] = unescape(copy["caption"])
+    roman_only(copy, ["caption", "pin_comment"])
+    secs = min(max(6.5, read_secs(line, 3.5)), 11.0)
+    out = os.path.join(tmp, "reel.mp4")
+
+    def caption_of(d):
+        return g.fun_caption({**d, "caption": d["caption"].strip() + ("\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")})
+    check = (f"THE PAGE OWNER'S OWN REQUEST (his line and photos are his instruction, keep them as they are; the line is a "
+             f"joke premise, not a news claim; check only spellings): {text}\n\nThe owner means: {sense['meaning']}")
+    frames, copy, proof = proofread.run(lambda d: strip_reel(line, tiles, out, secs, d["highlight"]), copy, caption_of, check, strict=True)
+    if cards:
+        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+            f"No free photo of {', '.join(cards)} exists, so its tile shows a silhouette (never a guessed photo): add a photo by hand if you like."]}
+    return frames[-1], out, {
+        "headline": printable(line), "tag": "🎬 REEL · YOUR LINE · " + " + ".join(t[0].upper() for t in tiles)[:60],
+        "caption": g.limit_hashtags(caption_of(copy)), "source": "KhabarBawaal Original", "source_url": "",
+        "pin_comment": copy.get("pin_comment", ""), "songs": chart_songs(state), "proof": proof}
+
+
 def topic_reel(text: str, article: dict | None, state: dict, tmp: str) -> tuple[Image.Image, str, dict]:
     """A Reel for whatever the owner typed in ➕ Create: news -> photo slideshow, a funny idea ->
     'Tag that friend' clip or meme. Returns (cover, mp4 path, feed fields)."""
     import fun
     import status
+    brief = parse_brief(text) if text else {"given_line": "", "photo_strip": False, "people": []}
+    if brief["given_line"] or brief["photo_strip"]:   # the owner's instructions are followed to the letter (21 Oct 2026)
+        status.step("Making the Reel exactly as you asked", 2)
+        print(f"  brief: line={brief['given_line'][:70]!r} photo_strip={brief['photo_strip']} people={brief['people']}")
+        if brief["given_line"]:   # a layout without a line (photo_strip only) is written like any other idea below
+            return build_brief_reel(text, brief, state, tmp)
     status.step("Choosing the Reel style", 2)
     about = (f"{article.get('title', '')}. {article.get('description', '')}" if article else "") + (f" {text}" if text else "")
     # Only a link -> news. The owner's words decide otherwise: something funny is a joke Reel even when a related
