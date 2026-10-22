@@ -1,59 +1,26 @@
 {
- "at": "2026-10-22T11:46:27+00:00",
- "x": [
-  {
-   "term": "Conte",
-   "hours": 6
-  },
-  {
-   "term": "Ravan",
-   "hours": 3
-  },
-  {
-   "term": "Ranbir Kapoor",
-   "hours": 1
-  },
-  {
-   "term": "Daler",
-   "hours": 1
-  },
-  {
-   "term": "South Africa",
-   "hours": 1
-  }
- ],
+ "at": "2026-10-22T12:35:07+00:00",
+ "x": [],
  "google": [
-  "will jacks",
-  "elena rybakina"
+  "itbp",
+  "mlc",
+  "pre-trial detention",
+  "will jacks"
  ],
  "stories": [
   {
-   "title": "Mumbai Man Quits 9-To-6 Job To Become Content Creator, Now Earns Rs 2.5 Lakh A Month: ‘I Used To Feel Low’",
-   "source": "News18",
-   "link": "https://www.news18.com/viral/mumbai-man-quits-9-to-6-job-to-become-content-creator-now-earns-rs-2-5-lakh-a-month-i-used-to-feel-low-ws-l-10393017.html",
-   "category": "viral",
-   "hours": 6
-  },
-  {
-   "title": "Daler Mehndi controversy: FWICE writes to PM Narendra Modi, Uttarakhand CM Pushkar Singh Dhami after minister’s alcohol allegation",
+   "title": "Rs. 549 cr. in JUST 7 DAYS! Rajinikanth’s Jailer 2 rewrites Tamil cinema HISTORY; sets an UNBEATEN first-week record",
    "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/daler-mehndi-controversy-fwice-writes-to-pm-narendra-modi-uttarakhand-cm-pushkar-singh-dhami-after-ministers-alcohol-allegation/",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/rs-549-cr-in-just-7-days-rajinikanths-jailer-2-rewrites-tamil-cinema-history-sets-an-unbeaten-first-week-record/",
    "category": "entertainment",
-   "hours": 1
+   "hours": 0
   },
   {
-   "title": "South Africa Vs Australia Live Score, 2nd Test Day 5: Follow Scorecard And Match Action From Gqeberha",
-   "source": "News18",
-   "link": "https://www.news18.com/cricket/south-africa-vs-australia-live-score-2nd-test-day-5-follow-scorecard-and-match-action-from-gqeberha-liveblog-ws-l-10392607.html",
-   "category": "cricket",
-   "hours": 1
-  },
-  {
-   "title": "Ranbir Kapoor and Yash’s film Ramayana crosses ₹5.33 crore in advance booking 14 days before release, sells 1.28 lakh tickets",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-yash-film-ramayana-crosses-5-40-crore-in-advance-booking-14-days-before-release-sells-1-28-lakh-tickets-sai-pallavi-nitesh-tiwari-101792659823758.html",
+   "title": "Sonu Sood rents out commercial unit in Mumbai’s Versova for Rs 3.52 crores",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/sonu-sood-rents-out-commercial-unit-in-mumbais-versova-for-rs-3-52-crores/",
    "category": "entertainment",
-   "hours": 1
+   "hours": 0
   },
   {
    "title": "Tu Hai Meri Kiran to release in cinemas tomorrow as scheduled, producers Vishal Rana and Sarvesh Goel confirm",
@@ -70,31 +37,45 @@
    "hours": 0
   },
   {
-   "title": "Tiger Shroff resumes shooting of Lag Jaa Gale two days after firing incident: Report",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-resumes-shooting-of-lag-jaa-gale-two-days-after-firing-incident-report/",
+   "title": "Rajkummar Rao to make a cameo in Luv Ranjan's Phela Pyaar Doosri Baar | HT Exclusive",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/rajkummar-rao-to-make-a-cameo-in-luv-ranjans-phela-pyaar-doosri-baar-ht-exclusive-101792665938393.html",
    "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "Viral Video: Lightning Strikes LATAM Airlines Flight Before Landing In Chile, Passengers Land Unharmed",
-   "source": "News18",
-   "link": "https://www.news18.com/viral/viral-video-lightning-strikes-latam-airlines-flight-before-landing-in-chile-passengers-land-unharmed-ws-l-10393158.html",
+   "title": "‘Unacceptable’: India slams Houthi strikes in Saudi Arabia, moves to help stranded pilgrims",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/india-condemns-strikes-on-civil-infrastructure-in-saudi-arabia-after-death-of-indian-national-101792669157963.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "At St Andrews University in Scotland, students hold a shaving-foam fight to thank senior mentors",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/at-st-andrews-university-in-scotland-students-hold-a-shaving-foam-fight-to-thank-senior-mentors-101792662221128.html",
    "category": "viral",
    "hours": 0
   },
   {
-   "title": "ICC Officials Report Bangladesh Spinner For 'Suspect' Bowling Action",
-   "source": "News18",
-   "link": "https://www.news18.com/cricket/icc-officials-report-bangladesh-spinner-for-suspect-bowling-action-ws-l-10393122.html",
-   "category": "cricket",
+   "title": "NCPCR can't just forward complaints and await replies: CIC on child abuse claims",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/ncpcr-can-t-just-forward-complaints-and-await-replies-cic-on-child-abuse-claims-101792668866757.html",
+   "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Sri Lanka Vs England Live Score, 3rd Tri-Series ODI: Follow Scorecard And Match Action From Rawalpindi",
-   "source": "News18",
-   "link": "https://www.news18.com/cricket/sri-lanka-vs-england-live-score-3rd-tri-series-odi-follow-scorecard-and-match-action-from-rawalpindi-liveblog-ws-l-10392668.html",
-   "category": "cricket",
+   "title": "Fresh voter drive in Uttarakhand from Nov 12: CEO holds all-party meet",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/fresh-voter-drive-in-uttarakhand-from-nov-12-ceo-holds-all-party-meet-101792668797269.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "SC criticises Allahabad HC over 'misplaced sympathy' for releasing 2 convicts on probation",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/sc-criticises-allahabad-hc-over-misplaced-sympathy-for-releasing-2-convicts-on-probation-101792668464965.html",
+   "category": "india/politics",
    "hours": 0
   }
  ]

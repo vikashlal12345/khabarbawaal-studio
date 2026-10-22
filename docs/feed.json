@@ -1,5 +1,83 @@
 [
  {
+  "id": "reel_politics-2026-10-22",
+  "image": "posts/20261022-1235-reel_politics-2026-10-22.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261022-123502-reel_politics-2026-10-22.mp4",
+  "headline": "Decision on 20 rebel TMC MPs after receiving responses:",
+  "tag": "🎬 REEL · ROAST · QUOTE TRAP",
+  "caption": "20 baagi TMC saansadon par faisla jawab milne ke baad: Speaker Om Birla 🔥\nOm Birla ne kaha ki jawab aane par disqualification petitions par process tez karenge.\nAbhishek Banerjee ne 20 alag petitions di thi, matter Supreme Court mein bhi hai.\nAapki kya raay hai? Comment karo 👇\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: News18 (link pinned in comments 👇)\n\n#reelsindia #omBirla #tmc #bjp #lokSabha",
+  "source": "News18",
+  "source_url": "https://www.msn.com/en-in/news/other/decision-on-20-rebel-tmc-mps-after-receiving-responses-speaker-om-birla/ar-AA2fNY6d",
+  "pin_comment": "Aapki kya raay hai? Kisi dost ko bhejo aur poochho 👇",
+  "songs": [
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "toxic tulna, toxic bayan"
+   },
+   {
+    "title": "Bairan",
+    "artist": "Banjaare",
+    "lang": "hindi",
+    "mood": "dramatic bayan ka mood"
+   },
+   {
+    "title": "stupid song",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "stupid tulna = stupid song"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "over-the-top drama"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Caption was about an unrelated Sanjay Singh story; article is about Om Birla and the 20 rebel TMC MPs",
+    "Fact corrected to match the article: Match article",
+    "Fact corrected to match the article: Unsupported claim unrelated to article",
+    "Fact corrected to match the article: Match article",
+    "Fact corrected to match the article: Match article",
+    "Fact corrected to match the article: Invented quote about Sanjay Singh; the article's quote is by Om Birla",
+    "Fact corrected to match the article: Quote was said by Om Birla, not Sanjay Singh",
+    "Fact corrected to match the article: Unrelated to the article",
+    "Fact corrected to match the article: Unrelated to the article",
+    "Fact corrected to match the article: Heroin figure is not in the article; story is about 20 rebel TMC MPs",
+    "Fact corrected to match the article: Unsupported claim not in the article",
+    "Fact corrected to match the article: Refers to a comparison not in this story",
+    "Fact corrected to match the article: Unrelated hashtag",
+    "Fact corrected to match the article: Unrelated hashtag",
+    "Fact corrected to match the article: Unrelated hashtag",
+    "Slide 1: Background image is an unrelated 'S' app logo with 'Sanjay Singh' text, not related to Om Birla or the TMC story; the headline text overlaps and covers the 'Sanjay Singh' text, making the slide look messy."
+   ],
+   "fixed": [
+    "Sanjay Singh AAP ka BJP par Osama wala bayan 😳\nAmit Shah ke drug campaign par AAP MP ne BJP ko Osama bin Laden se jod diya.\nPunjab mein AAP sarkar ka khud ka drug record sawalon mein hai 🔥\nTulna sahi ya galat? Comment karo 👇 → 20 baagi TMC saansadon par faisla jawab milne ke baad: Speaker Om Birla 🔥\nOm Birla ne kaha ki jawab aane par disqualification petitions par process tez karenge.\nAbhishek Banerjee ne 20 alag petitions di thi, matter Supreme Court mein bhi hai.\nAapki kya raay hai? Comment karo 👇",
+    "On Amit Shah's drug campaign, reported by Patiala Politics, Oct 2026 → At a press conference on the 20 rebel TMC MPs, Oct 22",
+    "Punjab ka drug hisaab dena tha, Sanjay ji Osama pe pahunch gaye. → Birla bole: dono taraf ki sunenge, jawab aate hi process tez hoga.",
+    "SANJAY SINGH KI TULNA → SPEAKER OM BIRLA KA BAYAN",
+    "TULNA FAIL → FAISLA JAWAB KE BAAD",
+    "When the BJP speaks about drugs, it is like Osama bin Laden preaching non-violence. → We will hear from both sides. When the responses come from the members, we will expedite the process.",
+    "Sanjay Singh, AAP Rajya Sabha MP → Om Birla, Lok Sabha Speaker",
+    "Patiala Politics: Sanjay Singh on BJP and drugs → Speaker Om Birla on 20 rebel TMC MPs",
+    "Sanjay Singh Osama remark → Om Birla press conference",
+    "7,260 kg → 20",
+    "heroin seized in Punjab since 2022, AAP ke daave ke mutabik → baagi TMC saansad, Abhishek Banerjee ne di 20 alag petitions",
+    "Ye tulna kaisi lagi? Kisi dost ko bhejo aur poochho 👇 → Aapki kya raay hai? Kisi dost ko bhejo aur poochho 👇",
+    "#sanjaysingh → #omBirla",
+    "#aap → #tmc",
+    "#punjabdrugs → #lokSabha"
+   ]
+  },
+  "created_at": "2026-10-22T12:35:02+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-22",
   "image": "posts/20261022-1033-reel_news_pm-2026-10-22.jpg",
   "kind": "reel",
@@ -482,56 +560,5 @@
    ]
   },
   "created_at": "2026-10-21T12:46:16+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-21",
-  "image": "posts/20261021-1034-reel_news_pm-2026-10-21.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261021-103428-reel_news_pm-2026-10-21.mp4",
-  "headline": "Were Salman Khan, Aamir Khan and Akshay Kumar on the target list? Police official CLARIFIES after Tiger Shroff firing incident",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tiger Shroff firing case: Salman, Aamir, Akshay target list par the? Police ka saaf jawab 🚨\n\nPolice official ne clarify kiya ki 4 giraftar logon ki poochtaach ko lekar chal rahi khabrein sahi tarah se samjhi jaayein.\nTiger Shroff ki car par firing ke case mein jaanch jaari hai.\nBada sawaal: Bollywood stars ki suraksha kitni pakki honi chahiye?\n\nStars ki security aur strict honi chahiye? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#tigershroff #salmankhan #bollywoodnews #breakingnews #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/were-salman-khan-aamir-khan-and-akshay-kumar-on-the-target-list-police-official-clarifies-after-tiger-shroff-firing-incident/",
-  "pin_comment": "Kisi Salman ya Tiger fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Shaitaan",
-    "artist": "Anirudh Ravichander, Romy, Vivek & Super Subu",
-    "lang": "hindi",
-    "mood": "dark, tense vibe for firing case"
-   },
-   {
-    "title": "Toxic",
-    "artist": "Vishal Mishra, Hanita Bhambri",
-    "lang": "hindi",
-    "mood": "dangerous mood, thriller feel"
-   },
-   {
-    "title": "Solar Eclipse",
-    "artist": "Drake & Don Toliver",
-    "lang": "english",
-    "mood": "dark, moody suspense"
-   },
-   {
-    "title": "Beggin'",
-    "artist": "Måneskin",
-    "lang": "english",
-    "mood": "intense, high-tension energy"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Police said only that nothing about another celebrity being targeted emerged from questioning the four; the original wording implies Salman was confirmed/denied as target broadly."
-   ],
-   "fixed": [
-    "Police: poochtach mein kuch nahi nikla → Police: 4 giraftar logon ki poochtach mein doosre celebrity ko nishana banane ki baat nahi nikli",
-    "aropiyon → aaropiyon",
-    "removed doubtful photo slide(s) [2]"
-   ]
-  },
-  "created_at": "2026-10-21T10:34:28+00:00"
  }
 ]
