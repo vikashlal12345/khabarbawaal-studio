@@ -1,5 +1,45 @@
 [
  {
+  "id": "c70b675bf991",
+  "kind": "custom",
+  "image": "posts/20261022-1258-c70b675bf991-1.jpg",
+  "options": [
+   "posts/20261022-1258-c70b675bf991-1.jpg",
+   "posts/20261022-1258-c70b675bf991-2.jpg"
+  ],
+  "slides": [
+   "posts/20261022-1258-c70b675bf991-s2.jpg",
+   "posts/20261022-1258-c70b675bf991-s3.jpg"
+  ],
+  "headline": "Rebel MPs in the spotlight",
+  "tag": "POLITICS",
+  "caption": "Rebel MPs ka mudda charcha mein hai 👀\nAbhi is story ki verified details available nahi hain.\nPoori details ke liye source link dekho, article ke facts yahan update honge.\nIs mudde par aapki kya raay hai? 🅰️/🅱️\n\nFollow @khabarbawaal for daily updates.\n\n#india #politics #trending #breaking #news",
+  "source": "Your pick",
+  "source_url": "",
+  "pin_comment": "Is story ka sabse bada twist kya hai? Ek line mein batao, sabse spicy jawab pin karenge 🔥",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article gives no details; 'grabs India's attention today' is unsupported",
+    "Fact corrected to match the article: 'phir garma', 'halchal tez', 'sabki nazar' are unsupported claims",
+    "Fact corrected to match the article: 'aaj' date claim not supported by article",
+    "Fact corrected to match the article: The article has no details, so nothing about a 'political drama' is supported",
+    "Fact corrected to match the article: Presumes a government-vs-rebels drama that the article doesn't support",
+    "Slide 1: The cover photo shows one man in a Parliament-like setting. The article gives no names and no photo details, so it is not confirmed that he is connected to 'rebel MPs'. Readers may take him to be a rebel MP. Check the photo or swap it for a generic one.",
+    "Caption: The article has no facts, only a request for photos of rebel MPs. The whole post is a placeholder with no real story. It makes no false claims, but consider holding it until there is a real article."
+   ],
+   "fixed": [
+    "Rebel MPs in the spotlight: political drama grabs India's attention today → Rebel MPs in the spotlight",
+    "Rebel MPs ka mudda phir garma gaya hai 👀\nSiyasat mein halchal tez hai aur sabki nazar is par hai. → Rebel MPs ka mudda chaid gaya hai 👀\nAbhi is story ki verified details available nahi hain.",
+    "Rebel MPs ka mudda aaj charcha mein hai → Rebel MPs ka mudda charcha mein hai",
+    "Rebel MPs ka mudda chaid gaya hai → Rebel MPs ka mudda charcha mein hai",
+    "Headline ke mutabik rebel MPs ko lekar political drama chal raha hai, lekin naam, bayaan aur latest update confirm nahi hue. → Rebel MPs ko lekar naam, bayaan aur latest update abhi confirm nahi hue hain.",
+    "Is drama ka winner kaun? Sarkar ya baaghi? → Is mudde par aapki kya raay hai?"
+   ]
+  },
+  "created_at": "2026-10-22T12:58:52+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-22",
   "image": "posts/20261022-1235-reel_politics-2026-10-22.jpg",
   "kind": "reel",
@@ -509,56 +549,5 @@
    "fixed": []
   },
   "created_at": "2026-10-21T14:18:30+00:00"
- },
- {
-  "id": "reel_politics-2026-10-21",
-  "image": "posts/20261021-1246-reel_politics-2026-10-21.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261021-124616-reel_politics-2026-10-21.mp4",
-  "headline": "The biggest competitor for King is not another superstar or another film. It is Shah Rukh Khan's own box-office history",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Shah Rukh Khan King box office 🔥\n\n2023 mein 4 saal baad Shah Rukh ne Pathaan se wapsi ki.\nAb King ke saamne sabse bada competitor unka apna box-office record hai.\nBar bahut ooncha hai.\n\nKya King SRK ka khud ka record todegi? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#shahrukhkhan #king #srk #bollywood #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-king-box-office-expectations-pathaan-jawan/",
-  "pin_comment": "Kisi SRK fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "romantic king vibe = SRK"
-   },
-   {
-    "title": "Aavan Jaavan (From \"WAR 2\")",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "big-film energy"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "nostalgic = SRK's romantic era"
-   },
-   {
-    "title": "Infinity",
-    "artist": "Jaymes Young",
-    "lang": "english",
-    "mood": "timeless superstar feel"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article only imagines a 600-700 crore scenario and asks if it would be seen as a disappointment.",
-    "Slide 5: The headline text sits over the lower half of Shah Rukh Khan's face (nose, mouth and chin). The photo is also cropped very tightly.",
-    "Slide 5: The 'Photo: Bollywood Hungama' credit overlaps and collides with the '@khabarbawaal' handle at the bottom, so both are hard to read."
-   ],
-   "fixed": [
-    "King 600 crore kamaye to bhi flop? SRK → King 600-700 crore kamaye to bhi flop? SRK"
-   ]
-  },
-  "created_at": "2026-10-21T12:46:16+00:00"
  }
 ]

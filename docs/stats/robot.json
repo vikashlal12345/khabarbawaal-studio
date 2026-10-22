@@ -5957,6 +5957,49 @@
      "tokens": 55714
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 13,
+   "input": 34,
+   "output": 6713,
+   "cache_read": 41400,
+   "cache_write": 172661,
+   "value_usd": 0.762,
+   "by_purpose": {
+    "writing": {
+     "requests": 3,
+     "tokens": 70050
+    },
+    "topic search": {
+     "requests": 1,
+     "tokens": 20285
+    },
+    "topic article pick": {
+     "requests": 1,
+     "tokens": 20505
+    },
+    "reel brief": {
+     "requests": 1,
+     "tokens": 20139
+    },
+    "reel style": {
+     "requests": 1,
+     "tokens": 20003
+    },
+    "reel news script": {
+     "requests": 1,
+     "tokens": 28465
+    },
+    "photo check": {
+     "requests": 2,
+     "tokens": 7290
+    },
+    "proofreading": {
+     "requests": 3,
+     "tokens": 34071
+    }
+   }
   }
  }
 }
