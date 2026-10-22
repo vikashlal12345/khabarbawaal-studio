@@ -1,11 +1,4 @@
 {
- "2026-09-17": {
-  "replies": 57,
-  "input": 114,
-  "output": 54438,
-  "cache_read": 46711945,
-  "cache_write": 897706
- },
  "2026-09-18": {
   "replies": 144,
   "input": 302,
@@ -168,10 +161,10 @@
   "cache_write": 4052944
  },
  "2026-10-22": {
-  "replies": 337,
-  "input": 692,
-  "output": 457886,
-  "cache_read": 90086556,
-  "cache_write": 5619488
+  "replies": 396,
+  "input": 816,
+  "output": 592845,
+  "cache_read": 101746208,
+  "cache_write": 6365303
  }
 }
