@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_news_am-2026-10-22",
+  "image": "posts/20261022-0634-reel_news_am-2026-10-22.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261022-063405-reel_news_am-2026-10-22.mp4",
+  "headline": "AR Rahman reveals fan's email from 2014 that predicted he would create music for Ramayana",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "AR Rahman Ramayana fan email 2014 🤯\nRahman ne bataya ki 2014 mein Sathish naam ke ek fan ne unhe email kiya tha.\nUsne sapna bataya tha ki Rahman Ramayana ka music banayenge.\nAaj wahi Ramayana ka music Rahman bana rahe hain.\nYe destiny thi ya coincidence? Comment karo 👇\n\nVideo: @CinemaWithAB on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #ARRahman #Ramayana #Bollywood #Viral",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
+  "pin_comment": "Us dost ko bhejo jo sapno par vishwas karta hai 👇",
+  "songs": [
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "dreamy, magical coincidence feel"
+   },
+   {
+    "title": "Pehle Bhi Main",
+    "artist": "Vishal Mishra, Raj Shekhar",
+    "lang": "hindi",
+    "mood": "emotional, heart-warming reveal"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "gentle storytelling mood"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "light, happy surprise"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Rahman read out the email on stage, not showed it",
+    "Fact corrected to match the article: Article says Rahman read out the message at the event",
+    "Slide 5: The photo credit 'Photo: @CinemaWithAB on X' at the bottom left runs into the '@khabarbawaal' handle, so the two overlap and are hard to read."
+   ],
+   "fixed": [
+    "AR Rahman ne Ramayana ka sapna dekhne wale fan ka email dikhaya → AR Rahman ne Ramayana ka sapna dekhne wale fan ka email padha",
+    "AR Rahman ne fan ka 2014 ka email dikhaya: Ramayana music → AR Rahman ne fan ka 2014 ka email padha: Ramayana music"
+   ]
+  },
+  "created_at": "2026-10-22T06:34:05+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-22",
   "image": "posts/20261022-0433-reel_break_am-2026-10-22.jpg",
   "kind": "reel",
@@ -474,59 +526,5 @@
    "fixed": []
   },
   "created_at": "2026-10-21T08:34:06+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-21",
-  "image": "posts/20261021-0633-reel_news_am-2026-10-21.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261021-063349-reel_news_am-2026-10-21.mp4",
-  "headline": "Ramayana records a stellar start, advance booking collection crosses ₹3 crore 15 days before release; even tickets worth ₹2,700 are sold out in Mumbai",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana advance booking collection: Ranbir Kapoor ki film ne macha diya 🔥\n\nPehle 24 ghante mein ₹3.13 crore ki advance booking\n86,187 tickets, 3,537 shows, 104 cities\nMumbai ke PVR Phoenix Palladium IMAX show ka ₹2,770 wala ticket sold out\n\nRelease se 15 din pehle ye start. Aap pehle din dekhoge? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #bollywood #boxoffice #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html",
-  "pin_comment": "Apne Ramayana dekhne wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Hukum Reloaded",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "massy hype = record booking"
-   },
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ramayana devotion vibe"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "epic big-screen feel"
-   },
-   {
-    "title": "APT.",
-    "artist": "Rosé, Bruno Mars",
-    "lang": "english",
-    "mood": "high-energy celebration"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says the sold-out IMAX ticket was priced at ₹2,770, not ₹2,700.",
-    "Fact corrected to match the article: Article says only that one IMAX screening's ₹2,770 tickets are sold out, not all Mumbai tickets",
-    "Fact corrected to match the article: Article refers to one PVR Phoenix Palladium IMAX screening, not all Mumbai shows"
-   ],
-   "fixed": [
-    "removed weak photo slide(s) [3]",
-    "Mumbai mein ₹2,700 ke tickets bhi sold out → Mumbai mein ₹2,770 ke tickets bhi sold out",
-    "Mumbai mein ₹2,770 ke tickets bhi sold out → Mumbai ke PVR Phoenix Palladium IMAX show ka ₹2,770 wala ticket sold out",
-    "Ramayana: Mumbai mein 2,770 wala ticket bhi sold out → Ramayana: Mumbai ke IMAX show ka 2,770 wala ticket sold out"
-   ]
-  },
-  "created_at": "2026-10-21T06:33:49+00:00"
  }
 ]

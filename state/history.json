@@ -158,7 +158,8 @@
   "437aad74ebb1",
   "1516b0df2416",
   "8a73dbf98649",
-  "cdfe48c62390"
+  "cdfe48c62390",
+  "14f9ae44c8cc"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -298,7 +299,7 @@
   "reel_news_pm": "2026-10-21",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-21",
+  "reel_news_am": "2026-10-22",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -309,7 +310,7 @@
   "reel_break_am": "2026-10-22",
   "reel_break_noon": "2026-10-21"
  },
- "inbox_since": "X6xRrncApYk3",
+ "inbox_since": "DzfCsEMIgB73",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -702,7 +703,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-king-box-office-expectations-pathaan-jawan/",
   "https://www.msn.com/en-in/news/other/shah-says-mann-unserious-on-drugs-cm-asks-bjp-why-it-failed-to-curb-menace-at-source/ar-AA2fFws0",
   "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
-  "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/"
+  "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
+  "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -839,10 +841,6 @@
   }
  ],
  "songs_recent": [
-  "Yakkai Thiri",
-  "One Sun One Moon (From \"Jailer 2\")",
-  "Heat Waves",
-  "Timeless",
   "Barbaad",
   "Zaalima",
   "Housewife",
@@ -878,7 +876,11 @@
   "Alfaaz",
   "Ram Siya Ram",
   "Blinding Lights",
-  "Girls Like You"
+  "Girls Like You",
+  "Zihaal e Miskin",
+  "Pehle Bhi Main",
+  "Let Me Down Slowly",
+  "Calm Down"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -957,6 +959,10 @@
   },
   {
    "title": "Ramayana Chennai event: Ranbir Kapoor apologizes for achhai-burai slip of tongue; says “Jo bhi main kehna chahoon, barbaad karein alfaaz mere!”",
+   "date": "2026-10-22"
+  },
+  {
+   "title": "AR Rahman reveals fan's email from 2014 that predicted he would create music for Ramayana",
    "date": "2026-10-22"
   }
  ]
