@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-10-22",
+  "image": "posts/20261022-0433-reel_break_am-2026-10-22.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261022-043312-reel_break_am-2026-10-22.mp4",
+  "headline": "Ramayana Chennai event: Ranbir Kapoor apologizes for achhai-burai slip of tongue; says “Jo bhi main kehna chahoon, barbaad karein alfaaz mere!”",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ranbir Kapoor Ramayana Chennai event maafi slip of tongue 🎬\nKolkata Dussehra event mein Ranbir se galat line bol di gayi, video viral hua.\nChennai mein A R Rahman ke event par unhone maafi maangi.\nSahi line: \"jeet sachhai aur achhai ki hi hogi\".\nRanbir ki maafi kaafi hai ya nahi? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #ranbirkapoor #ramayana #bollywoodnews #arrahman",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
+  "pin_comment": "Ranbir ne Rockstar ka dialogue bolkar maafi maangi. Kisi Ranbir fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "alfaaz wali line = same word"
+   },
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "Ramayana event ka vibe"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "stage lights, big event energy"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "light, easy mood after sorry"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-22T04:33:12+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-22",
   "image": "posts/20261022-0233-reel_news_early-2026-10-22.jpg",
   "kind": "reel",
@@ -483,99 +528,5 @@
    ]
   },
   "created_at": "2026-10-21T06:33:49+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-21",
-  "image": "posts/20261021-0432-reel_break_am-2026-10-21.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261021-043244-reel_break_am-2026-10-21.mp4",
-  "headline": "Ranbir Kapoor, Yash and Sai Pallavi's Ramayana made tax-free in West Bengal ahead of release, CM Suvendu Adhikari announces on Dussehra",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ramayana tax-free West Bengal Ranbir Kapoor Yash Suvendu Adhikari 🎬\nCM Suvendu Adhikari ne Dussehra par Ramayana ko tax-free kiya.\nNitesh Tiwari ki film mein Ranbir Rama, Yash Ravana aur Sai Pallavi Sita hain.\nFilm 5 November 2026 ko theatres mein aayegi.\nAapko kya lagta hai, har badi film tax-free honi chahiye? Haan ya Na? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #Ramayana #RanbirKapoor #Yash #BollywoodNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
-  "pin_comment": "Ramayana pehle din kaun dekhne jayega? Kisi Ranbir ya Yash fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional Ramayana vibe"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "hype for big film news"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "big celebratory energy"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "feel-good good-news vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-21T04:32:44+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-21",
-  "image": "posts/20261021-0233-reel_news_early-2026-10-21.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261021-023323-reel_news_early-2026-10-21.mp4",
-  "headline": "Faisal Malik tells audience to wait and watch Ramayana Part 2, says making it gave him flashback of Hollywood BTS videos",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana Part 2 Faisal Malik Kumbhakarna ❤️\n\nFaisal Malik Nitesh Tiwari ki Ramayana mein Kumbhakarna bane hain.\nRanbir Kapoor aur Yash film ke lead hain.\nFaisal ne kaha: Part 2 ka wait karo aur dekho.\nUnhe film banate waqt Hollywood ke BTS videos ka flashback aaya.\n\nRamayana Part 1 se zyada Part 2 ka hype? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
-  "pin_comment": "Kisi Ranbir ya Yash fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ramayana vibe, devotional epic feel"
-   },
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "Yash hype, massy energy"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "epic battle hype"
-   },
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "Kumbhakarna size power"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says nothing about the wait for Part 2 getting longer; Part 2 is still set for Diwali 2027."
-   ],
-   "fixed": [
-    "Ab Part 2 ka intezaar aur lamba ho gaya → Faisal Malik ke mutabik Part 2 mein bahut kuch baaki hai"
-   ]
-  },
-  "created_at": "2026-10-21T02:33:23+00:00"
  }
 ]

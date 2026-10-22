@@ -157,7 +157,8 @@
   "ea769317eb55",
   "437aad74ebb1",
   "1516b0df2416",
-  "8a73dbf98649"
+  "8a73dbf98649",
+  "cdfe48c62390"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -305,10 +306,10 @@
   "reel_official": "2026-10-21",
   "reel_news_early": "2026-10-22",
   "reel_rotate": "2026-10-21",
-  "reel_break_am": "2026-10-21",
+  "reel_break_am": "2026-10-22",
   "reel_break_noon": "2026-10-21"
  },
- "inbox_since": "rfCLKlqk9JNR",
+ "inbox_since": "X6xRrncApYk3",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -700,7 +701,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/were-salman-khan-aamir-khan-and-akshay-kumar-on-the-target-list-police-official-clarifies-after-tiger-shroff-firing-incident/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-king-box-office-expectations-pathaan-jawan/",
   "https://www.msn.com/en-in/news/other/shah-says-mann-unserious-on-drugs-cm-asks-bjp-why-it-failed-to-curb-menace-at-source/ar-AA2fFws0",
-  "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
+  "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -837,10 +839,6 @@
   }
  ],
  "songs_recent": [
-  "Gehra Hua",
-  "Ghana Kasoota",
-  "Escapism.",
-  "Die With A Smile",
   "Yakkai Thiri",
   "One Sun One Moon (From \"Jailer 2\")",
   "Heat Waves",
@@ -876,7 +874,11 @@
   "His Aura Hits You",
   "Jailer 2 Theme",
   "Believer",
-  "Big Dawgs"
+  "Big Dawgs",
+  "Alfaaz",
+  "Ram Siya Ram",
+  "Blinding Lights",
+  "Girls Like You"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -951,6 +953,10 @@
   },
   {
    "title": "National Award-winning VFX expert Arun Kumar says criticism around Ramayana, Jailer 2 visuals based on growing confusion on CGI vs AI | HT Exclusive",
+   "date": "2026-10-22"
+  },
+  {
+   "title": "Ramayana Chennai event: Ranbir Kapoor apologizes for achhai-burai slip of tongue; says “Jo bhi main kehna chahoon, barbaad karein alfaaz mere!”",
    "date": "2026-10-22"
   }
  ]
