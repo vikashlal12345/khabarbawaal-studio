@@ -73,6 +73,20 @@ def process() -> int:
             bpath.write_text(json.dumps(boosts, ensure_ascii=False, indent=1))
             print(f"  inbox: boost {'on' if msg.get('on') else 'off'} for {msg['post']}")
             continue
+        if msg.get("type") in ("posted", "unposted") and msg.get("post"):
+            # ✅ Mark as posted / ↩️ Undo in the app (owner, 22 Oct 2026): one tap, no Instagram link. Kept in
+            # ig_links.json (url "") so everything that asks "is it posted?" still works.
+            if msg["type"] == "posted":
+                post = next((p for p in feed + ready if p["id"] == msg["post"]), {})
+                links[msg["post"]] = {"url": "", "kind": post.get("kind", "news"), "tag": post.get("tag", ""),
+                                      "headline": post.get("headline", ""), "posted_at": post.get("created_at", ""),
+                                      "slides": 1 + len(post.get("slides", [])),
+                                      "linked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+            else:
+                links.pop(msg["post"], None)
+            print(f"  inbox: {msg['post']} {'marked as posted' if msg['type'] == 'posted' else 'moved back to Posts'}")
+            done += 1
+            continue
         url = re.search(r"https://(?:www\.)?instagram\.com/(?:p|reel)/[A-Za-z0-9_-]+", msg.get("url", ""))
         if msg.get("type") != "insta" or not url or not msg.get("post"):
             continue
@@ -85,6 +99,6 @@ def process() -> int:
     if done:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(links, ensure_ascii=False, indent=1))
-        print(f"  inbox: saved {done} Instagram link(s)")
+        print(f"  inbox: saved {done} posted mark(s)")
     g.save_json(g.STATE_FILE, state)
     return done

@@ -1114,7 +1114,7 @@ def run() -> int:
     import inbox
     import limits
     try:
-        inbox.process()          # 🔗 Insta links sent from the app
+        inbox.process()          # ✅ posted marks, 🗑️ deletes, 🚀 boosts sent from the app
     except Exception as e:
         print(f"  inbox failed: {e}")
     try:

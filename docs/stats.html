@@ -232,7 +232,8 @@ function hookChart(box, pts) {
       // 📲 posted the moment the link is pasted (owner, 16 Oct 2026): this phone's own record (the app's ✅ Posted
       // tab), until the robot saves it at its next run
       const mine = post && (() => { try { return localStorage.getItem('linked-' + post.id); } catch { return null; } })();
-      const link = post && ((links || {})[post.id] || (mine ? { url: mine } : null)), r = post && res[post.id];
+      const undone = post && (() => { try { return localStorage.getItem('unposted-' + post.id); } catch { return null; } })();   // ↩️ Undo in the app
+      const link = post && !undone && ((links || {})[post.id] || (mine ? { url: mine } : null)), r = post && res[post.id];
       if (post) made++;
       if (link) posted++;
       // Still being made after its time (owner, 15 Oct 2026: it said ❌ while the Reel was in progress): the robot's
@@ -249,7 +250,7 @@ function hookChart(box, pts) {
     }).join('');
     document.getElementById('today').innerHTML = `<h2>🗓️ Today's plan <span class="muted">${made} of ${plan.length} made · ${posted} posted</span></h2>
       ${rows || '<div class="muted">The schedule appears after the next app update.</div>'}
-      <div class="muted" style="margin-top:8px">"Posted" = linked with 🔗 Insta link in the app. Reasons come from ⏳ Activity on this phone.</div>`;
+      <div class="muted" style="margin-top:8px">"Posted" = marked with ✅ Mark as posted in the app. Reasons come from ⏳ Activity on this phone.</div>`;
   }
 
   // --- 🏆 what works: average likes by current post type (last 14 days), Reels vs carousels, best posts, best slot
@@ -295,7 +296,7 @@ function hookChart(box, pts) {
         <span class="muted">${x.views != null ? `👁 ${x.views} · ` : ''}❤️ ${x.likes} · 💬 ${x.comments}</span></div>`).join('')}
       <div class="muted" style="margin-top:6px">👁 = approx. views from Instagram's public page (lower than the app's Views; good for ranking).</div>
       ${bestSlot ? `<div class="muted" style="margin-top:10px">🕐 Best time so far: <b>${bestSlot[0]}</b> (${bestSlot[1].toFixed(1)} likes on average)</div>` : ''}`
-      : '<div class="muted">Link your posts with 🔗 Insta link in the app: their likes show up here by post type.</div>'}
+      : '<div class="muted">No Instagram numbers yet: likes by post type show up here once numbers come in (automatic reading is off since 16 Oct).</div>'}
       <div class="muted" style="margin-top:8px">Boosted posts are left out (paid reach would mislead).
         ${audience && audience.summary ? 'The robot is learning from these numbers every night.' : 'The robot starts learning once posts have 30+ likes in total.'}</div>`;
   }

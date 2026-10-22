@@ -170,7 +170,7 @@ const pending = {};    // image path -> Promise<File>
 const chosen = {};     // post id -> picked option index (posts with photo options)
 let posts = [];
 let feedPosts = [], tab = 'feed';
-let igLinks = {}, igData = {}, boosts = {};
+let igLinks = {}, boosts = {};
 let inboxTopic = null, pushKey = null;
 
 function currentImage(post) {
@@ -323,9 +323,10 @@ function proofHtml(p) {
     pr.issues.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
 }
 
-// ✅ Posted (owner, 15 Oct 2026): a post moves from Posts (to do) to ✅ Posted once its Instagram link is pasted.
-// Both still clear 24 hours after the robot made them (feed.json keep_days), 🗑️ works the same in both.
-function isLinked(p) { return !!(igLinks[p.id] || localGet('linked-' + p.id)); }
+// ✅ Posted (owner, 15 Oct 2026; 22 Oct 2026: one tap, no Instagram link): ✅ Mark as posted moves a post from
+// Posts (to do) to ✅ Posted and ↩️ Undo moves it back. The robot keeps the mark in stats/ig_links.json.
+// Both tabs still clear 24 hours after the robot made the post (feed.json keep_days), 🗑️ works the same in both.
+function isLinked(p) { return !localGet('unposted-' + p.id) && !!(igLinks[p.id] || localGet('linked-' + p.id)); }
 function shown() { return feedPosts.filter(p => !localGet('deleted-' + p.id)); }
 function updateTabs() {
   const all = shown(), done = all.filter(isLinked).length;
@@ -334,13 +335,11 @@ function updateTabs() {
 }
 
 function instaHtml(p) {
-  const local = localGet('linked-' + p.id);
-  const link = igLinks[p.id] || (local ? { url: local } : null), res = igData[p.id];
   const boosted = localGet('boost-' + p.id) === '1' || (boosts[p.id] && localGet('boost-' + p.id) !== '0');
   const boostBtn = `<button data-act="boost" style="${boosted ? 'background:var(--accent);color:#000;border-color:var(--accent)' : ''}">🚀 ${boosted ? 'Boosted' : 'Boost?'}</button>`;
-  if (!link) return `<div class="insta"><span>Posted it? Link it to track likes</span><span style="display:flex;gap:6px">${boostBtn}<button data-act="insta">🔗 Insta link</button></span></div>`;
-  return `<div class="insta"><span>${res ? `❤️ ${res.likes} · 💬 ${res.comments}` : '🔗 Linked: likes appear within a few hours'}</span>
-    <span style="display:flex;gap:6px;align-items:center">${boostBtn}<a href="${link.url}" target="_blank" rel="noopener" style="color:var(--muted)">Open ↗</a></span></div>`;
+  return isLinked(p)
+    ? `<div class="insta"><span>✅ Posted</span><span style="display:flex;gap:6px">${boostBtn}<button data-act="unpost">↩️ Undo</button></span></div>`
+    : `<div class="insta"><span>Posted it on Instagram?</span><span style="display:flex;gap:6px">${boostBtn}<button data-act="posted">✅ Mark as posted</button></span></div>`;
 }
 
 // The app shows small preview copies (docs/posts/p/, made by save.py); 📤 Post still shares the
@@ -358,7 +357,7 @@ function render() {
   posts = shown().filter(p => isLinked(p) === (tab === 'posted'));
   if (!posts.length) {
     feedEl.innerHTML = tab === 'posted'
-      ? '<div class="empty">Nothing posted yet.<br>After posting on Instagram, tap 🔗 Insta link on the post: it moves here.</div>'
+      ? '<div class="empty">Nothing posted yet.<br>After posting on Instagram, tap ✅ Mark as posted on the post: it moves here.</div>'
       : shown().length ? '<div class="empty">All done: everything is posted ✅<br>New Reels appear here when the robot makes them.</div>'
       : '<div class="empty">No posts yet.<br>The first one appears after the next hourly run.</div>';
     return;
@@ -420,7 +419,8 @@ feedEl.addEventListener('click', e => {
   else if (act === 'overlay') navigator.clipboard.writeText(post.overlay_text)
     .then(() => toast('Text copied: add it on the video with Instagram\'s Aa tool'), () => toast('Could not copy'));
   else if (act === 'whatsapp') share(post);
-  else if (act === 'insta') linkInsta(post);
+  else if (act === 'posted') markPosted(post, true);
+  else if (act === 'unpost') markPosted(post, false);
   else if (act === 'boost') toggleBoost(post);
   else if (act === 'delete') deletePost(post);
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
@@ -640,8 +640,8 @@ document.getElementById('create-go').addEventListener('click', async () => {
   }
 });
 
-// 🔗 Insta link: sent to the robot's private inbox (no GitHub screen). The robot collects
-// it on its next run (every 30-60 min).
+// ✅ Mark as posted, 🗑️ Delete and 🚀 Boost go to the robot's private inbox (no GitHub screen). The robot collects
+// them on its next run (every 30-60 min).
 // 🗑️ Delete: hidden on this phone at once; the robot removes it (and its images) on its next run.
 async function deletePost(post) {
   if (!confirm('Delete this post from the app?')) return;
@@ -668,21 +668,20 @@ async function toggleBoost(post) {
   } catch { toast('Couldn\'t save (no internet?). Try again.'); }
 }
 
-async function linkInsta(post) {
-  const url = prompt('Paste the Instagram link of this post (in Instagram: ⋯ → Copy link):');
-  if (!url) return;
-  const m = url.match(/https:\/\/(www\.)?instagram\.com\/(p|reel)\/[A-Za-z0-9_-]+/);
-  if (!m) { toast('That doesn\'t look like an Instagram post link'); return; }
+// ✅ Mark as posted (on = true) / ↩️ Undo (on = false), owner 22 Oct 2026: moves at once on this phone; the robot
+// keeps it (stats/ig_links.json) on its next run.
+async function markPosted(post, on) {
   try {
     if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
     const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST',
-      body: JSON.stringify({ type: 'insta', post: post.id, url: m[0] }) });
+      body: JSON.stringify({ type: on ? 'posted' : 'unposted', post: post.id }) });
     if (!r.ok) throw new Error(r.status);
-    localSet('linked-' + post.id, m[0]);
-    toast('✅ Link saved: moved to ✅ Posted (likes show in a few hours)');
+    if (on) { localSet('linked-' + post.id, 'posted'); localDel('unposted-' + post.id); }
+    else { localDel('linked-' + post.id); localSet('unposted-' + post.id, '1'); }
+    toast(on ? '✅ Moved to Posted' : '↩️ Moved back to Posts');
     render();
   } catch (e) {
-    toast('Couldn\'t save the link (no internet?). Try again.');
+    toast('Could not save (no internet?). Try again.');
   }
 }
 function localDel(k) { try { localStorage.removeItem(k); } catch {} }
@@ -711,13 +710,13 @@ async function load() {
     const res = await fetch('feed.json?t=' + Date.now(), { cache: 'no-store' });
     feedPosts = await res.json();
     const opt = async p => { try { const r = await fetch(p + '?t=' + Date.now(), { cache: 'no-store' }); return r.ok ? r.json() : null; } catch { return null; } };
-    const [links, ig, bst] = await Promise.all([opt('stats/ig_links.json'), opt('stats/instagram.json'), opt('stats/boosts.json')]);
+    const [links, bst] = await Promise.all([opt('stats/ig_links.json'), opt('stats/boosts.json')]);
     // Coming back from Instagram: only rebuild the feed if something changed (rebuilding reloads every picture).
-    const sig = JSON.stringify([feedPosts, links, ig && ig.posts, bst]);
+    const sig = JSON.stringify([feedPosts, links, bst]);
     const same = sig === lastSig && feedEl.children.length;
     lastSig = sig;
     boosts = bst || {};
-    igLinks = links || {}; igData = (ig && ig.posts) || {};
+    igLinks = links || {};
     if (!same) render();
     else updateTabs();
     const all = shown();
