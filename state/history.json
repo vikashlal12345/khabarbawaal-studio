@@ -156,7 +156,8 @@
   "4dded87bbc14",
   "ea769317eb55",
   "437aad74ebb1",
-  "1516b0df2416"
+  "1516b0df2416",
+  "8a73dbf98649"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Kareena Kapoor Khan's Mystery Helmet Post Reportedly Linked To Lando Norris, Google Android Collab",
@@ -302,12 +303,12 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-21",
-  "reel_news_early": "2026-10-21",
+  "reel_news_early": "2026-10-22",
   "reel_rotate": "2026-10-21",
   "reel_break_am": "2026-10-21",
   "reel_break_noon": "2026-10-21"
  },
- "inbox_since": "AuP14hhAqXvv",
+ "inbox_since": "rfCLKlqk9JNR",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -698,7 +699,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-seen-without-bandages-in-new-photos-with-minister-ashish-shelar-after-mumbai-firing-incident-101792567526513.html",
   "https://www.bollywoodhungama.com/news/bollywood/were-salman-khan-aamir-khan-and-akshay-kumar-on-the-target-list-police-official-clarifies-after-tiger-shroff-firing-incident/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-king-box-office-expectations-pathaan-jawan/",
-  "https://www.msn.com/en-in/news/other/shah-says-mann-unserious-on-drugs-cm-asks-bjp-why-it-failed-to-curb-menace-at-source/ar-AA2fFws0"
+  "https://www.msn.com/en-in/news/other/shah-says-mann-unserious-on-drugs-cm-asks-bjp-why-it-failed-to-curb-menace-at-source/ar-AA2fFws0",
+  "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -835,10 +837,6 @@
   }
  ],
  "songs_recent": [
-  "Nicole Kidman",
-  "Hukum Reloaded",
-  "All The Stars",
-  "APT.",
   "Gehra Hua",
   "Ghana Kasoota",
   "Escapism.",
@@ -874,7 +872,11 @@
   "Vishnu Sahasranamam",
   "Jai Ganesh Jai Ganesh Deva",
   "Om Jai Jagdish Hare",
-  "Vishnu Sahasranamam (Version 1)"
+  "Vishnu Sahasranamam (Version 1)",
+  "His Aura Hits You",
+  "Jailer 2 Theme",
+  "Believer",
+  "Big Dawgs"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -891,18 +893,6 @@
   "2112578088056000762"
  ],
  "reel_news_recent": [
-  {
-   "title": "Tiger Shroff in car, 5 shots fired, then 3 men flee on bike: New video of attack bid surfaces",
-   "date": "2026-10-19"
-  },
-  {
-   "title": "Bike used for firing at Tiger Shroff recovered by police, two detained",
-   "date": "2026-10-19"
-  },
-  {
-   "title": "Lawrence Bishnoi gang's Bollywood hit-list: Enmity with Salman Khan to firing on Tiger Shroff, threats to Rohit Shetty, Ranveer Singh, Kapil Sharma",
-   "date": "2026-10-19"
-  },
   {
    "title": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
    "date": "2026-10-20"
@@ -958,6 +948,10 @@
   {
    "title": "नशे की समस्या समाप्त करने के लिए बनी NCORD की देशभर में 48 बैठकें हुईं, पर पंजाब के मुख्यमंत्री ने एक भी बैठक नहीं की। भगवंत मान का पंजाब मे",
    "date": "2026-10-21"
+  },
+  {
+   "title": "National Award-winning VFX expert Arun Kumar says criticism around Ramayana, Jailer 2 visuals based on growing confusion on CGI vs AI | HT Exclusive",
+   "date": "2026-10-22"
   }
  ]
 }
