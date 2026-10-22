@@ -1,13 +1,20 @@
 {
- "at": "2026-10-22T14:23:46+00:00",
+ "at": "2026-10-22T15:58:46+00:00",
  "x": [],
  "google": [
-  "sa vs aus live",
-  "israel independence day",
-  "manoj bajpayee",
-  "wiaan mulder"
+  "veto",
+  "sam curran",
+  "ultraviolette x47 venom",
+  "taylor fritz"
  ],
  "stories": [
+  {
+   "title": "Saif Ali Khan sells Bandra west apartment for Rs 4.11 crores",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-sells-bandra-west-apartment-for-rs-4-11-crores/",
+   "category": "entertainment",
+   "hours": 0
+  },
   {
    "title": "Rs. 3,170 for ONE ticket! Ranbir Kapoor’s Ramayana commands SHOCKING prices for IMAX recliners in Mumbai; Insignia rates touch Rs. 2,370",
    "source": "Bollywood Hungama",
@@ -23,6 +30,13 @@
    "hours": 0
   },
   {
+   "title": "Four Samsung smartwatches, prices starting at ₹3,999 and savings up to ₹14,190. Which one should you buy?",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/technology/four-samsung-smartwatches-prices-starting-at-3-999-and-savings-up-to-14-190-which-one-should-you-buy-101792683612067.html",
+   "category": "tech",
+   "hours": 0
+  },
+  {
    "title": "Rs. 549 cr. in JUST 7 DAYS! Rajinikanth’s Jailer 2 rewrites Tamil cinema HISTORY; sets an UNBEATEN first-week record",
    "source": "Bollywood Hungama",
    "link": "https://www.bollywoodhungama.com/news/bollywood/rs-549-cr-in-just-7-days-rajinikanths-jailer-2-rewrites-tamil-cinema-history-sets-an-unbeaten-first-week-record/",
@@ -30,51 +44,37 @@
    "hours": 0
   },
   {
-   "title": "Sonu Sood rents out commercial unit in Mumbai’s Versova for Rs 3.52 crores",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/sonu-sood-rents-out-commercial-unit-in-mumbais-versova-for-rs-3-52-crores/",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Yemen's Houthis say they are rescuing 14 Indians from boat attacked by Saudi in Red Sea",
+   "title": "Cong is fine when it wins, blames BJP and EC when it loses: Bhupender Yadav",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/yemens-houthis-say-they-are-rescuing-14-indians-from-boat-attacked-by-saudi-in-red-sea-101792675725055.html",
+   "link": "https://www.hindustantimes.com/india-news/cong-is-fine-when-it-wins-blames-bjp-and-ec-when-it-loses-bhupender-yadav-101792684045700.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "OPPO Find X10 series makes its debut alongside a new tablet and earbuds built for a connected experience",
+   "title": "'Protests seeking accountability are important but Congress destroys them': PM Modi",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
-   "category": "tech",
-   "hours": 0
-  },
-  {
-   "title": "‘Deprived of democracy’: Wangchuk says cancelled home ministry meeting has broken Ladakh’s trust",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/deprived-of-democracy-wangchuk-says-cancelled-home-ministry-meeting-has-broken-ladakh-s-trust-101792676840485.html",
+   "link": "https://www.hindustantimes.com/india-news/protests-seeking-accountability-are-important-but-congress-destroys-them-pm-modi-101792683871533.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "‘Nothing wrong with regime change’, Neha Bora tells Delhi HC; cops counter her",
+   "title": "Delhi HC refuses to stay release of Sourav Ganguly-inspired film Doosra",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/nothing-wrong-with-regime-change-neha-bora-says-tells-delhi-hc-cops-counter-her-delhi-police-101792672448696.html",
+   "link": "https://www.hindustantimes.com/india-news/delhi-hc-refuses-to-stay-release-of-sourav-ganguly-inspired-film-doosra-101792683025206.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Karnataka CM Shivakumar orders probe after police stop 3 Dalit ministers at Mysuru Palace Dasara puja",
+   "title": "Govt proposes mandatory automatic emergency braking in new car models from October 2030",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/karnataka-cm-shivakumar-orders-probe-after-police-stop-3-dalit-ministers-at-mysuru-palace-dasara-puja-101792676421729.html",
+   "link": "https://www.hindustantimes.com/india-news/india-proposes-mandatory-advanced-emergency-braking-system-ae-bs-new-car-models-october-2030-all-models-2032-road-safety-101792677920257.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Tiger Shroff's team shares video of his burn marks after firing, explaining his bandages in first pictures after attack",
+   "title": "Delhi HC refuses to stay the release of the film Doosra on Sourav Ganguly’s plea alleging personality rights violation",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-team-shares-video-gun-shot-powder-residue-burn-marks-after-firing-attack-bandages-ayesha-jackie-krishna-shroff-101792672778571.html",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/delhi-hc-refuses-to-stay-the-release-of-the-film-doosra-on-sourav-ganguly-s-plea-alleging-personality-rights-violation-101792680213329.html",
    "category": "entertainment",
    "hours": 0
   }
