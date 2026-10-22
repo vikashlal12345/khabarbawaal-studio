@@ -6018,16 +6018,28 @@
   },
   "reel_official": {
    "posts": 0,
-   "requests": 1,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
+   "requests": 6,
+   "input": 16,
+   "output": 5434,
+   "cache_read": 9342,
+   "cache_write": 67919,
+   "value_usd": 0.3269,
    "by_purpose": {
     "official video pick": {
+     "requests": 2,
+     "tokens": 26967
+    },
+    "video look": {
+     "requests": 2,
+     "tokens": 22861
+    },
+    "speech reel script": {
      "requests": 1,
-     "tokens": 0
+     "tokens": 23800
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 9083
     }
    }
   }

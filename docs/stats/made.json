@@ -71,6 +71,11 @@
    "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
    "at": "2026-10-22T14:23:43+00:00",
    "auto": true
+  },
+  "reel_official-2026-10-22": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-22T17:30:56+00:00",
+   "auto": false
   }
  }
 }

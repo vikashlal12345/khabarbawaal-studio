@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_official-2026-10-22",
+  "image": "posts/20261022-1730-reel_official-2026-10-22.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261022-173056-reel_official-2026-10-22.mp4",
+  "headline": "BADA PLAN! · Nadda ji ka Chemical Park master plan",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "JP Nadda Chemical Park scheme: India ka 2040 tak $1 trillion chemical market ka target 🇮🇳\nNadda ji ne X par bataya: Bhavya Rasayan Park yojana ke tahat Centre ₹1,000 crore tak aur state minimum ₹500 crore lagayegi. Har park kam se kam 2,000 acre zameen aur behtar connectivity ke saath banega.\nModi sarkar ka focus saaf hai: Make in India, naye jobs aur bada manufacturing hub. Opposition sirf sawal uthata hai, NDA kaam karke dikhata hai.\nAap sehmat ho? Comment karo 👇\n\nVideo + voice: @JPNadda on X\n\nFollow @khabarbawaal: roz raat 9 baje neta ka kadak bayan 🇮🇳\n\n#reelsindia #JPNadda #MakeInIndia #ModiGovernment #IndiaGrowth",
+  "source": "@JPNadda on X",
+  "source_url": "https://x.com/JPNadda/status/2113208967744905665",
+  "pin_comment": "Modi sarkar ka chemical hub plan 2040 tak $1 trillion ka sapna. Ye message sabko bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Dhurandhar Title Track",
+    "artist": "Shashwat Sachdev",
+    "lang": "hindi",
+    "mood": "big vision, powerful, play low"
+   },
+   {
+    "title": "Sam Dam Dand Bhed",
+    "artist": "Kailash Kher",
+    "lang": "hindi",
+    "mood": "strong govt-power energy, play low"
+   },
+   {
+    "title": "Teri Mitti (Kesari)",
+    "artist": "B Praak",
+    "lang": "hindi",
+    "mood": "proud desh feeling, soft under voice"
+   },
+   {
+    "title": "Kar Har Maidaan Fateh (Sanju)",
+    "artist": "Sukhwinder Singh",
+    "lang": "hindi",
+    "mood": "victory and growth mood"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-22T17:30:56+00:00"
+ },
+ {
   "id": "reel_rotate-2026-10-22",
   "image": "posts/20261022-1423-reel_rotate-2026-10-22.jpg",
   "kind": "reel",
@@ -384,105 +429,5 @@
    "fixed": []
   },
   "created_at": "2026-10-22T01:03:29+00:00"
- },
- {
-  "id": "reel_official-2026-10-21",
-  "image": "posts/20261021-1613-reel_official-2026-10-21.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261021-161338-reel_official-2026-10-21.mp4",
-  "headline": "SEEDHA VAAR! · Shah ka Mann par nashe par vaar",
-  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
-  "caption": "Amit Shah Bhagwant Mann Punjab drugs NCORD par seedha vaar 🔥\n\nAmit Shah ne X par likha: nashe ki samasya khatam karne ke liye bani NCORD ki desh bhar mein 48 baithkein hui, par Punjab ke mukhyamantri ne ek bhi baithak nahi ki.\n\nShah ke mutabik, Bhagwant Mann ka Punjab mein nashe ko rokne ka na irada hai, na gambhirta. Punjab ke yuva nashe se jhoojh rahe hain, aur AAP sarkar par ye sawal uthta hai.\n\nAap sehmat ho? Comment karo 👇\n\nVideo + voice: @AmitShah on X\n\nFollow @khabarbawaal: roz raat 9:30 baje neta ka kadak bayan 🇮🇳\nSource: msn.com (link pinned in comments 👇)\n\n#reelsindia #AmitShah #Punjab #BhagwantMann #NCORD",
-  "source": "msn.com",
-  "source_url": "https://www.msn.com/en-in/news/other/shah-says-mann-unserious-on-drugs-cm-asks-bjp-why-it-failed-to-curb-menace-at-source/ar-AA2fFws0",
-  "pin_comment": "Punjab ke bacchon ka future nashe se bachana zaroori hai. Ye message sabko bhejo 🇮🇳",
-  "songs": [
-   {
-    "title": "Sam Dam Dand Bhed",
-    "artist": "Kailash Kher",
-    "lang": "hindi",
-    "mood": "attack mode, play it low"
-   },
-   {
-    "title": "Dhurandhar Title Track",
-    "artist": "Shashwat Sachdev",
-    "lang": "hindi",
-    "mood": "intense, serious political vaar"
-   },
-   {
-    "title": "Toofan (KGF Chapter 2)",
-    "artist": "Ravi Basrur",
-    "lang": "hindi",
-    "mood": "heavy, powerful build-up"
-   },
-   {
-    "title": "Aarambh Hai Prachand (Gulaal)",
-    "artist": "Piyush Mishra",
-    "lang": "hindi",
-    "mood": "fiery, call-out energy"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: Small cut-off fragments of text (looks like the top of video subtitle letters) show at the top edge of the black caption band, to the right of 'SEEDHA VAAR!'. It looks like a leftover from the video subtitles."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-21T16:13:38+00:00"
- },
- {
-  "id": "c8c914fe17e3",
-  "image": "posts/20261021-1433-c8c914fe17e3.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261021-143317-c8c914fe17e3.mp4",
-  "headline": "Delhi court orders release of Saurav Das, Ashutosh Ranka after 7 days in Jantar Mantar trespassing case",
-  "tag": "🎬 REEL · POLITICS",
-  "caption": "Saurav Das Ashutosh Ranka release: Delhi court ne CJP netaon ko 7 din baad choda, par Delhi HC ne kaha \"aap Gen Z nahi ho\" 👀\n\n- Jantar Mantar mein kathit taur par security todne ke case mein 13 Oct se custody mein the\n- SEM court ne kaha: unke conduct se kanoon ke prati respect ki kami dikhti hai, aur \"habitualness\" in de-notified areas mein protest bulane ki\n- Delhi HC ne kaha: barricade ek purpose ke liye hota hai, permission isiliye li jaati hai\n- Umar poocha gaya: Das 27, Ranka 32. Court bola: \"Then you are not Gen Z\"\n\nBarricade todkar protest karna kya sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #CJP #SauravDas #DelhiHighCourt #JantarMantar",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/sem-court-orders-release-of-cjp-leaders-saurav-das-ashutosh-ranka-trespassing-jantar-mantar-site-abhijeet-dipke-101792587526788.html",
-  "pin_comment": "Kisi aise dost ko bhejo jo \"Gen Z protest\" ka matlab samjhta hai 👇",
-  "songs": [
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "release after 7 din = azadi"
-   },
-   {
-    "title": "Qayde Se (From \"Metro ... In Dino\")",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "qayde = court ke rules"
-   },
-   {
-    "title": "Aura Farming",
-    "artist": "Mustafa Saboori",
-    "lang": "english",
-    "mood": "Gen Z remark pe vibe"
-   },
-   {
-    "title": "Great Expectation",
-    "artist": "SIENNA SPIRO",
-    "lang": "english",
-    "mood": "badi umeedein, court ka jawab"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Court did not say breaking barricades is not protest; it said barricades exist for a purpose and questioned the petitioners' conduct.",
-    "Fact corrected to match the article: Article says police only sought an extension (3 days); the SEM extended custody by 2 days.",
-    "Fact corrected to match the article: Barricade breach is an allegation (HC said they 'allegedly' breached barricades), so it must be attributed, not stated as fact."
-   ],
-   "fixed": [
-    "Barricade todna protest nahi hota, court ne bhi yahi poocha → Barricade todne par Delhi HC ne sawal uthaye",
-    "Police ne custody badhwayi; SEM ne 'peace disturb' khatre par 19 October ko 2 din badhaye. → Police ne custody badhane ki maang ki; SEM ne 'peace disturb' khatre par 19 October ko 2 din badhaye.",
-    "Barricade todne par Delhi HC ne sawal uthaye → Kathit barricade todne par Delhi HC ne sawal uthaye"
-   ]
-  },
-  "created_at": "2026-10-21T14:33:17+00:00"
  }
 ]

@@ -863,10 +863,6 @@
   }
  ],
  "songs_recent": [
-  "Azadi",
-  "Qayde Se (From \"Metro ... In Dino\")",
-  "Aura Farming",
-  "Great Expectation",
   "Sam Dam Dand Bhed",
   "Dhurandhar Title Track",
   "Toofan (KGF Chapter 2)",
@@ -902,7 +898,11 @@
   "Khat",
   "Dhoonde Akhiyaan",
   "Been By Now",
-  "The One That Got Away"
+  "The One That Got Away",
+  "Dhurandhar Title Track",
+  "Sam Dam Dand Bhed",
+  "Teri Mitti (Kesari)",
+  "Kar Har Maidaan Fateh (Sanju)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -914,9 +914,10 @@
   "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi"
  ],
  "reel_official_used": [
-  "2110681709335511113",
+  "2112578088056000762",
   "2112577476677587445",
-  "2112578088056000762"
+  "2110681709335511113",
+  "2113208967744905665"
  ],
  "reel_news_recent": [
   {
@@ -997,6 +998,10 @@
   },
   {
    "title": "OPPO Find X10 series makes its debut alongside a new tablet and earbuds built for a connected experience",
+   "date": "2026-10-22"
+  },
+  {
+   "title": "भव्य रसायन पार्क योजना के तहत केंद्र सरकार ₹1,000 करोड़ तक और राज्य सरकार न्यूनतम ₹500 करोड़ का निवेश करेगी। कम से कम 2,000 एकड़ भूमि और बेह",
    "date": "2026-10-22"
   }
  ],
