@@ -1,13 +1,27 @@
 {
- "at": "2026-10-22T12:35:07+00:00",
+ "at": "2026-10-22T14:23:46+00:00",
  "x": [],
  "google": [
-  "itbp",
-  "mlc",
-  "pre-trial detention",
-  "will jacks"
+  "sa vs aus live",
+  "israel independence day",
+  "manoj bajpayee",
+  "wiaan mulder"
  ],
  "stories": [
+  {
+   "title": "Rs. 3,170 for ONE ticket! Ranbir Kapoor’s Ramayana commands SHOCKING prices for IMAX recliners in Mumbai; Insignia rates touch Rs. 2,370",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/rs-3170-for-one-ticket-ranbir-kapoors-ramayana-commands-shocking-prices-for-imax-recliners-in-mumbai-insignia-rates-touch-rs-2370/",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Diljit Dosanjh’s Aura India Tour hits roadblock as Delhi Police deny permission for October 30 concert",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjhs-aura-india-tour-hits-roadblock-as-delhi-police-deny-permission-for-october-30-concert/",
+   "category": "entertainment",
+   "hours": 0
+  },
   {
    "title": "Rs. 549 cr. in JUST 7 DAYS! Rajinikanth’s Jailer 2 rewrites Tamil cinema HISTORY; sets an UNBEATEN first-week record",
    "source": "Bollywood Hungama",
@@ -23,59 +37,45 @@
    "hours": 0
   },
   {
-   "title": "Tu Hai Meri Kiran to release in cinemas tomorrow as scheduled, producers Vishal Rana and Sarvesh Goel confirm",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/tu-hai-meri-kiran-to-release-in-cinemas-tomorrow-as-scheduled-producers-vishal-rana-and-sarvesh-goel-confirm/",
+   "title": "Yemen's Houthis say they are rescuing 14 Indians from boat attacked by Saudi in Red Sea",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/yemens-houthis-say-they-are-rescuing-14-indians-from-boat-attacked-by-saudi-in-red-sea-101792675725055.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "OPPO Find X10 series makes its debut alongside a new tablet and earbuds built for a connected experience",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
+   "category": "tech",
+   "hours": 0
+  },
+  {
+   "title": "‘Deprived of democracy’: Wangchuk says cancelled home ministry meeting has broken Ladakh’s trust",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/deprived-of-democracy-wangchuk-says-cancelled-home-ministry-meeting-has-broken-ladakh-s-trust-101792676840485.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "‘Nothing wrong with regime change’, Neha Bora tells Delhi HC; cops counter her",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/nothing-wrong-with-regime-change-neha-bora-says-tells-delhi-hc-cops-counter-her-delhi-police-101792672448696.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Karnataka CM Shivakumar orders probe after police stop 3 Dalit ministers at Mysuru Palace Dasara puja",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/karnataka-cm-shivakumar-orders-probe-after-police-stop-3-dalit-ministers-at-mysuru-palace-dasara-puja-101792676421729.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Tiger Shroff's team shares video of his burn marks after firing, explaining his bandages in first pictures after attack",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-team-shares-video-gun-shot-powder-residue-burn-marks-after-firing-attack-bandages-ayesha-jackie-krishna-shroff-101792672778571.html",
    "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Amitabh Bachchan takes a break from social media for a few days following medical advice",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Rajkummar Rao to make a cameo in Luv Ranjan's Phela Pyaar Doosri Baar | HT Exclusive",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/rajkummar-rao-to-make-a-cameo-in-luv-ranjans-phela-pyaar-doosri-baar-ht-exclusive-101792665938393.html",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "‘Unacceptable’: India slams Houthi strikes in Saudi Arabia, moves to help stranded pilgrims",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/india-condemns-strikes-on-civil-infrastructure-in-saudi-arabia-after-death-of-indian-national-101792669157963.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "At St Andrews University in Scotland, students hold a shaving-foam fight to thank senior mentors",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/at-st-andrews-university-in-scotland-students-hold-a-shaving-foam-fight-to-thank-senior-mentors-101792662221128.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "NCPCR can't just forward complaints and await replies: CIC on child abuse claims",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/ncpcr-can-t-just-forward-complaints-and-await-replies-cic-on-child-abuse-claims-101792668866757.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Fresh voter drive in Uttarakhand from Nov 12: CEO holds all-party meet",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/fresh-voter-drive-in-uttarakhand-from-nov-12-ceo-holds-all-party-meet-101792668797269.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "SC criticises Allahabad HC over 'misplaced sympathy' for releasing 2 convicts on probation",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/sc-criticises-allahabad-hc-over-misplaced-sympathy-for-releasing-2-convicts-on-probation-101792668464965.html",
-   "category": "india/politics",
    "hours": 0
   }
  ]

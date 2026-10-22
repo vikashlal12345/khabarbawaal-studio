@@ -161,7 +161,8 @@
   "cdfe48c62390",
   "14f9ae44c8cc",
   "19ffe1054dd8",
-  "297207ad3d43"
+  "297207ad3d43",
+  "6f2fe6c74908"
  ],
  "recent_headlines": [
   "[TECH] Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
@@ -308,7 +309,7 @@
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-21",
   "reel_news_early": "2026-10-22",
-  "reel_rotate": "2026-10-21",
+  "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-22",
   "reel_break_noon": "2026-10-22"
  },
@@ -711,7 +712,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
-  "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/"
+  "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
+  "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -991,6 +993,15 @@
   {
    "title": "Amitabh Bachchan takes a break from social media for a few days following medical advice",
    "date": "2026-10-22"
+  },
+  {
+   "title": "OPPO Find X10 series makes its debut alongside a new tablet and earbuds built for a connected experience",
+   "date": "2026-10-22"
   }
- ]
+ ],
+ "claude_limit": {
+  "at": "2026-10-22T14:23:09+00:00",
+  "msg": "You've hit your session limit · resets 4:30pm (UTC)",
+  "alerted": true
+ }
 }
