@@ -3857,7 +3857,10 @@ def roast_card(fmt: str, post: dict, photo: Image.Image | None, out_mp4: str, ho
         for j, wds in enumerate(ls):
             cd.text((RW // 2, y + j * llh), " ".join(wds), font=lf, fill="#FFFFFF", anchor="mt")
         words = len(post["counter_label"].split()) + 4
-    if post.get("verdict"):   # the stamp: red outline, tilted
+    if post.get("verdict") and fmt in ("scoreboard", "then_now", "report_card"):   # tables: a pill under the table (a stamp hid a row, 22 Oct 2026)
+        vp = pill(printable(post["verdict"]).upper(), font("Anton-Regular.ttf", 54), RED, "#FFFFFF", pad=(30, 8))
+        card.alpha_composite(vp, ((RW - vp.width) // 2, min(y + 4, 1722 - vp.height)))
+    elif post.get("verdict"):   # the stamp: red outline, tilted
         sf = font("Anton-Regular.ttf", 110)
         txt = printable(post["verdict"]).upper()
         w = int(sf.getlength(txt)) + 80
@@ -3898,6 +3901,58 @@ def roast_card(fmt: str, post: dict, photo: Image.Image | None, out_mp4: str, ho
     add_follow(enc, pl, SATIRE_FOLLOW_SECS)
     enc.close()
     return [c1 or last.convert("RGB"), card.convert("RGB"), pl.convert("RGB")]
+
+
+def story_photos(story: dict, about: str, tmp: str, want: int = 4) -> list[tuple[Image.Image, str]]:
+    """Recent news photos of a satire story itself (owner, 21-22 Oct 2026: 'I want the photos and mention the source or
+    courtesy'): the lead photos of the story's article and of 5 articles on the same story, AI-checked (a sharp press / event
+    photo of the people or the event the story is about; no collage / split picture / injury / text poster).
+    Returns [(photo, source site)]."""
+    import create_post
+    import fun
+    import generate as g
+    seen, found, hashes = set(), [], set()
+    cands = [{"url": story["url"], "site": story["site"], "title": story["title"]}] + [
+        a for a in create_post.bing_articles(story["title"][:90], limit=8, newest=True)]
+    for a in cands:
+        if a["url"] in seen:
+            continue
+        seen.add(a["url"])
+        img = g.best_photo({"link": a["url"], "image": ""})
+        if img is None or min(img.size) < 400:
+            continue
+        key = img.convert("L").resize((8, 8)).tobytes()
+        if key in hashes:
+            continue
+        hashes.add(key)
+        found.append((img.convert("RGB"), a["site"]))
+        if len(found) >= 6:
+            break
+    if not found:
+        return []
+    folder = os.path.join(tmp, "story_photos")
+    os.makedirs(folder, exist_ok=True)
+    for n, (img, site) in enumerate(found, 1):
+        small = img.copy()
+        small.thumbnail((640, 640))
+        small.save(os.path.join(folder, f"p{n}.jpg"), quality=85)
+    schema = {"type": "object", "properties": {"photos": {"type": "array", "items": {"type": "object", "properties": {
+        "photo": {"type": "integer"}, "usable": {"type": "boolean", "description": "A sharp, ordinary press / event / interview "
+                  "photo that shows the people or the event this story is about; NOT a split or side-by-side picture, NOT a "
+                  "collage, no injuries, bandages, blood or hospital, not a poster full of text, not an unrelated story"}},
+        "required": ["photo", "usable"], "additionalProperties": False}}}, "required": ["photos"], "additionalProperties": False}
+    try:
+        res = fun.claude_json("You pick news photos that belong to ONE story, for a satire Reel. Open every photo with the Read tool.",
+                              f"The story: {story['title']}\n{about[:600]}\nPhotos: " + ", ".join(f"p{n}.jpg" for n in range(1, len(found) + 1)),
+                              schema, CONFIG.get("membership_model", "sonnet"), purpose="story photos", folder=folder)
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":
+            raise
+        print(f"  ! story photo check failed ({str(e)[:80]}): none")
+        return []
+    out = [found[pk["photo"] - 1] for pk in res["photos"] if pk["usable"] and 1 <= pk["photo"] <= len(found)][:want]
+    print(f"  story photos: {len(out)} of {len(found)} usable ({', '.join(site for _, site in out)})")
+    return out
 
 
 def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories: list, picks: list, recent: str,
@@ -3969,7 +4024,13 @@ def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories:
               if x["kind"] == "person"][:2]   # a party's logo or flag is never the cover (19 Oct 2026 test)
     photos, credits = named_photos(people, fill_missing=True, vs=False) if people else ([], [])
     real = [x for x in (photos[1:] if len(photos) > 1 else photos) if min(x.size) >= 400]
-    photo = real[pick_cover_photo(real, story["title"], tmp)] if real else None   # 📸 photo contest
+    news = story_photos(story, sources[:900], tmp)   # the story's own news photos, with their source (owner, 22 Oct 2026)
+    # the owner wants the story's own news photos (with the courtesy) up front; the Wikipedia portrait only when there are none
+    pool = [n[0] for n in news] or real
+    photo = pool[pick_cover_photo(pool, story["title"], tmp)] if pool else None   # 📸 photo contest
+    news_site = next((site for img, site in news if img is photo), "")
+    if news_site:
+        credits = credits + [f"{news_site} (news photo)"]
     best["hook"] = pick_hook(story["title"], sources, best["hook"], "A roast of the left/opposition: punchy, fair.",
                              card_text=" ".join([best["title"], best["quote_text"], best["quote_speaker"], best["punchline"],
                                                  best["counter_label"]] + [c for r in best["rows"] for c in r["cells"]]))
@@ -3979,10 +4040,10 @@ def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories:
     def caption_of(d):
         d = d["post"]
         return g.full_caption({**d, "caption": d["caption"].strip() + (
-            "\n\nPhotos (Wikimedia Commons): " + "; ".join(credits) if credits else "")}, item)
+            "\n\nPhotos: " + "; ".join(credits) if credits else "")}, item)
     status.step("Making the card + fact-checking", 5)
     frames, data, proof = proofread.run(
-        lambda d: roast_card(fmt, d["post"], photo, out, d["post"]["hook"], credits[0].split(":")[-1].strip()[:50] if credits else ""),
+        lambda d: roast_card(fmt, d["post"], photo, out, d["post"]["hook"], (news_site or credits[0].split(":")[-1].strip())[:50] if (news_site or credits) else ""),
         {"post": best}, caption_of, sources, strict=True)
     post = data["post"]
     if fmt == "quote_trap" and squash(post["quote_text"]) not in squash(sources):   # the proofreader changed the words
