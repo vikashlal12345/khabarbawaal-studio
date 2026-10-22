@@ -155,6 +155,19 @@
     </div>
   </div>
 </div>
+<div class="sheet" id="remake-sheet" hidden>
+  <div class="sheet-box">
+    <h2>🔄 Make this Reel again</h2>
+    <p id="remake-what"></p>
+    <input id="remake-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="Your PIN" class="field">
+    <textarea id="remake-input" placeholder="What didn't you like? e.g. the hook is boring, the photo is wrong, make it shorter, choose another story"></textarea>
+    <input id="remake-otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6-digit code from Google Authenticator" class="field">
+    <div class="row">
+      <button type="button" id="remake-cancel">Cancel</button>
+      <button type="button" class="primary" id="remake-go">Make it again</button>
+    </div>
+  </div>
+</div>
 <div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-posted">✅ Posted</button><button id="tab-activity">⏳ Activity</button></div>
 <div id="activity"></div>
 <div id="post-hint" class="post-hint"></div>
@@ -334,6 +347,14 @@ function updateTabs() {
   document.getElementById('tab-posted').textContent = `✅ Posted (${done})`;
 }
 
+// 🔄 Remake (owner, 22 Oct 2026): only Reels made by the robot that are not marked posted. While it is being remade the button says so.
+function remakeBtn(p) {
+  if (!p.video || p.media === 'video' || isLinked(p)) return '';
+  const t = +(localGet('remaking-' + p.id) || 0);
+  if (t && new Date(p.created_at).getTime() < t) return '<button disabled title="Being remade">🔄 Remaking…</button>';
+  return '<button data-act="remake" title="Make this Reel again with your feedback">🔄 Remake</button>';
+}
+
 function instaHtml(p) {
   const boosted = localGet('boost-' + p.id) === '1' || (boosts[p.id] && localGet('boost-' + p.id) !== '0');
   const boostBtn = `<button data-act="boost" style="${boosted ? 'background:var(--accent);color:#000;border-color:var(--accent)' : ''}">🚀 ${boosted ? 'Boosted' : 'Boost?'}</button>`;
@@ -393,6 +414,7 @@ function render() {
         ${p.overlay_text ? '<button data-act="overlay">🎬 Text</button>' : ''}
         <button data-act="copy">📋 Caption</button>
         <button data-act="comment">💬 Comment</button>
+        ${remakeBtn(p)}
         <button data-act="delete" title="Delete">🗑️ Delete</button>
         ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
       </div>
@@ -423,6 +445,7 @@ feedEl.addEventListener('click', e => {
   else if (act === 'unpost') markPosted(post, false);
   else if (act === 'boost') toggleBoost(post);
   else if (act === 'delete') deletePost(post);
+  else if (act === 'remake') openRemake(post);
   else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
 });
 
@@ -635,6 +658,51 @@ document.getElementById('create-go').addEventListener('click', async () => {
     media = null; mediaEl.value = ''; mediaPreview.innerHTML = '';
     toast(req.format === 'reel' ? '✅ Request sent: your Reel will be ready in about 4–6 minutes'
                                 : '✅ Request sent: your post will be ready in about 3–5 minutes');
+  } catch (e) {
+    toast('Couldn\'t send (no internet?). Try again.');
+  }
+});
+
+// 🔄 Remake: your feedback + the authenticator code (like ➕ Create) go to the robot, which makes that Reel again and replaces it.
+const remakeSheet = document.getElementById('remake-sheet'), remakeInput = document.getElementById('remake-input');
+const remakePin = document.getElementById('remake-pin'), remakeOtp = document.getElementById('remake-otp');
+let remakePost = null;
+function openRemake(post) {
+  remakePost = post;
+  document.getElementById('remake-what').textContent = (post.headline || '').slice(0, 110) + ' — ready in about 5–15 minutes; the new Reel takes its place here.';
+  const hasPin = !!localGet('pinHash'), unlocked = localGet('pinOk') === todayKey();
+  remakePin.hidden = hasPin && unlocked;
+  remakePin.placeholder = hasPin ? 'Your PIN' : 'Create a PIN (4–8 digits)';
+  remakePin.value = ''; remakeOtp.value = ''; remakeInput.value = '';
+  remakeSheet.hidden = false; (remakePin.hidden ? remakeInput : remakePin).focus();
+}
+document.getElementById('remake-cancel').addEventListener('click', () => { remakeSheet.hidden = true; });
+document.getElementById('remake-go').addEventListener('click', async () => {
+  const text = remakeInput.value.trim(), code = remakeOtp.value.trim();
+  if (!remakePost) return;
+  if (!remakePin.hidden) {
+    const pin = remakePin.value.trim();
+    if (!/^\d{4,8}$/.test(pin)) { toast('PIN must be 4–8 digits'); return; }
+    if (!localGet('pinHash')) {
+      if (prompt('Type the new PIN again to confirm') !== pin) { toast('PINs didn\'t match'); return; }
+      localSet('pinHash', await sha(pin));
+    } else if (await sha(pin) !== localGet('pinHash')) { toast('Wrong PIN'); return; }
+    localSet('pinOk', todayKey());
+  }
+  if (text.length < 5) { toast('Write what you didn\'t like (a few words)'); return; }
+  if (!/^\d{6}$/.test(code)) { toast('Enter the 6-digit code from Google Authenticator'); return; }
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const req = { type: 'create', text: text.slice(0, 1500), otp: code, ts: Math.floor(Date.now() / 1000), format: 'reel', remake: remakePost.id };
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify(req) });
+    if (!r.ok) throw new Error(r.status);
+    localSet('remaking-' + remakePost.id, String(Date.now()));
+    actAdd({ job: 'create', ref: String(req.ts), title: `🔄 Remake: ${text.slice(0, 60)}`, state: 'run', n: 1, of: 6,
+             text: '📨 Sent: waiting for the robot to pick it up (usually within a minute)', at: req.ts });
+    remakeSheet.hidden = true; remakeInput.value = ''; remakeOtp.value = '';
+    toast('✅ Sent: the new Reel replaces this one in about 5–15 minutes');
+    showTab('activity');
+    render();
   } catch (e) {
     toast('Couldn\'t send (no internet?). Try again.');
   }

@@ -12,6 +12,7 @@ on:
       ts: { description: "When the request was sent (unix time)", required: true }
       media: { description: "🎬 Frames of your video/photos (inbox file link)", required: false, default: "" }
       format: { description: "post or reel", required: false, default: "post" }
+      remake: { description: "🔄 Post id of the Reel to make again (text = what you did not like)", required: false, default: "" }
 
 permissions:
   contents: write
@@ -57,6 +58,7 @@ jobs:
           CREATE_TS: ${{ inputs.ts }}
           MEDIA: ${{ inputs.media }}
           FORMAT: ${{ inputs.format || 'post' }}
+          REMAKE: ${{ inputs.remake }}
           CREATE_TOTP_SECRET: ${{ secrets.CREATE_TOTP_SECRET }}
           SUMMARY_FILE: ${{ runner.temp }}/summary.md
         run: |

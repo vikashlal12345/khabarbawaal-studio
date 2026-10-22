@@ -281,7 +281,7 @@ def main() -> int:
             import push
             push.skip()
             return 0
-        status.start("create", ts, f"✍️ {'🎬 Reel' if reel_wanted else '📰 Post'}: {raw[:60]}", 6, "Started on GitHub")
+        status.start("create", ts, (f"🔄 Remake: {raw[:60]}" if os.environ.get("REMAKE") else f"✍️ {'🎬 Reel' if reel_wanted else '📰 Post'}: {raw[:60]}"), 6, "Started on GitHub")
         used = state.get("used_otps", [])
         try:
             sent_at = float(ts or "0")
@@ -300,6 +300,9 @@ def main() -> int:
         g.save_json(g.STATE_FILE, state)
         print("One-time code OK")
         status.step("Code OK: working on it", 2)
+    if os.environ.get("REMAKE"):   # 🔄 the app's Remake button: make that Reel again with the owner's comment
+        import remake
+        return remake.run(os.environ["REMAKE"].strip(), raw)
     if os.environ.get("MEDIA"):
         media = json.loads(os.environ["MEDIA"])
         if reel_wanted and media.get("video"):
@@ -674,7 +677,7 @@ def make_reel(raw: str) -> int:
             cover, mp4, entry = reel.topic_reel(text, article, state, tmp)
             feed = g.load_json(g.FEED_FILE, [])
             post_id = "c" + g.hashlib.sha1((raw + "|reel" + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
-            reel.save_reel(feed, state, cover, mp4, post_id, {**entry, "kind": "custom"})
+            reel.save_reel(feed, state, cover, mp4, post_id, {**entry, "kind": "custom", "request": raw[:1500]})
     except Exception as e:
         print(f"  ! Reel not made ({str(e)[:200]}): making a normal post instead.")
         FALLBACK.append(f"Reel not possible: {str(e)[:150]}")

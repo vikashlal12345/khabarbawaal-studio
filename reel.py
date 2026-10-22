@@ -1997,6 +1997,9 @@ def recent_news(state: dict, today: str) -> tuple[list[dict], str]:
     return recent, text
 
 
+REMAKE: dict = {}   # 🔄 a Remake keeps the same story / video: {'link', 'title', 'source', 'video_id'} (remake.py)
+
+
 def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 The most viral, visual story of the last hours (the news feeds' lookback_hours) as a photo slideshow
     (owner, 13 Oct 2026: all posts are Reels now; it used to pick from the day's news carousels).
@@ -2019,6 +2022,9 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         status.step("Picking the most viral, visual story", 2)
         stories = [i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used][:40]
         intro = ""
+        if REMAKE.get("link"):   # 🔄 remake: the same story again
+            stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
+                        "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
@@ -2194,6 +2200,9 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
     stories = [i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used][:45]
+    if REMAKE.get("link"):   # 🔄 remake: the same story again
+        stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
+                    "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
@@ -2710,7 +2719,10 @@ def make_official_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     import status
     status.step("Finding speech videos on X (leaders + right-leaning voices)", 2)
     used = set(state.get("reel_official_used", []))
-    vids = official_videos(used, hours=72, max_wait=960)
+    forced = REMAKE.get("video_id")   # 🔄 remake: the same speaker video again
+    vids = official_videos(used - {forced} if forced else used, hours=96 if forced else 72, max_wait=960)
+    if forced and any(v["id"] == forced for v in vids):
+        vids = [v for v in vids if v["id"] == forced]
     print(f"  speech videos (3 days): {[(v['handle'], round(v['secs'])) for v in vids]}")
     ranked, search = [], ""
     if vids:

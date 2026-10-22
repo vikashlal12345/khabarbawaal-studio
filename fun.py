@@ -124,9 +124,15 @@ def is_limit(text: str) -> bool:
     return bool(LIMIT_RE.search(text or ""))
 
 
+OWNER_FEEDBACK = ""   # 🔄 a Remake in progress (owner, 22 Oct 2026): what he did not like, added to the writing / picking prompts
+NO_FEEDBACK = {"proofreading", "joke judge", "hook meaning", "flux pick", "painting pick", "face crop", "people crops"}
+
+
 def claude_json(system: str, user: str, schema: dict, model: str, timeout: int = 300, purpose: str = "writing",
                 folder: str | None = None) -> dict:
     """folder: a directory with images the model may open (Read tool), e.g. video frames."""
+    if OWNER_FEEDBACK and purpose not in NO_FEEDBACK:   # the fact-checker and the judges never see it
+        user = f"{user}\n\n{OWNER_FEEDBACK}"
     tools = ["--tools", "Read", "--allowedTools", "Read"] if folder else ["--tools", ""]
     cmd = [os.environ.get("CLAUDE_BIN", "claude"), "-p", "--output-format", "json", *tools,
            "--model", model, "--system-prompt", system, "--json-schema", json.dumps(schema)]

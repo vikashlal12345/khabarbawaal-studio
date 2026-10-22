@@ -67,12 +67,14 @@ def main(wait: int) -> None:
                 continue
             print(f"Create request received: {m['text'][:60]}")
             reel = m.get("format") == "reel"
-            status.start("create", m.get("ts", ""), f"✍️ {'🎬 Reel' if reel else '📰 Post'}: {m['text'][:60]}", 6,
+            status.start("create", m.get("ts", ""), (f"🔄 Remake: {m['text'][:60]}" if m.get("remake") else
+                                                    f"✍️ {'🎬 Reel' if reel else '📰 Post'}: {m['text'][:60]}"), 6,
                          "Robot received your request")
             subprocess.run(["gh", "workflow", "run", "create-post.yml", "-R", REPO,
                             "-f", f"text={m['text'][:2000]}", "-f", f"otp={m.get('otp', '')}",
                             "-f", f"ts={m.get('ts', 0)}", "-f", f"format={m.get('format', 'post')}",
-                            "-f", f"media={json.dumps(m['media']) if m.get('media') else ''}"], check=False)
+                            "-f", f"media={json.dumps(m['media']) if m.get('media') else ''}",
+                            "-f", f"remake={str(m.get('remake', ''))[:80]}"], check=False)
         time.sleep(max(1, min(60, end - time.time())))
 
 
