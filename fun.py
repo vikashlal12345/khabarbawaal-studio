@@ -276,7 +276,7 @@ def judge_best(options: list[dict], text_of, model: str, judge_system: str = "",
             if top:
                 print(f"  below the judge's bar, but it's the owner's idea: option {top['option']}")
                 return options[top["option"] - 1]
-        err = NoGoodJoke("no joke was clear and funny enough")
+        err = NoGoodJoke("none of the drafts was clear and good enough")
         err.scores = scores
         raise err
     return best

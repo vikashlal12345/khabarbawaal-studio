@@ -5125,6 +5125,9 @@ def screen_label(text: str) -> str:
     return re.sub(r"(\s*·\s*)+$", "", re.sub(r"^(\s*·\s*)+", "", text)).strip()
 
 
+_DEVOTION_PICTURES: dict = {}   # (day, subject) -> (pictures, exact): the 6 AM retries reuse the first try's pictures
+
+
 def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     """🙏 6 AM: festival of the day (Navratri goddess of the day) or the god of the day, in the Gita-Reel style,
     with popular devotional songs for that god."""
@@ -5141,21 +5144,27 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                            f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
                            f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
                            CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
-    status.step(f"Painting {plan['deity']} with free AI", 3)
     exact = True
-    try:
-        images = flux_images_patient([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp, plan["deity"])
-    except Exception as e:
-        print(f"  {e}: using free paintings instead")
-        banked = load_god_bank(plan["deity"], plan["family"], today)
-        if banked:   # an earlier AI picture of this god beats a plain painting (owner, 21 Oct 2026)
-            images, exact = banked[0], banked[1]
-            status.step(f"AI painters busy: reusing an earlier AI picture of {plan['deity']}", 3)
-        else:
-            status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)
-            images = None
+    reuse = _DEVOTION_PICTURES.get((today, subj["name"]))
+    if reuse:   # a retry: this morning's earlier try already has the pictures (owner, 22 Oct 2026: the retry painted
+        # again and waited 20+ min on busy painters)
+        images, exact = [(img.copy(), credit, focus) for img, credit, focus in reuse[0]], reuse[1]
+        status.step(f"Reusing this morning's pictures of {plan['deity']}", 3)
     else:
-        save_god_bank(plan["deity"], plan["family"], images, today)
+        status.step(f"Painting {plan['deity']} with free AI", 3)
+        try:
+            images = flux_images_patient([plan["scene_darshan"], plan["scene_life"]], plan["image_subject"], tmp, plan["deity"])
+        except Exception as e:
+            print(f"  {e}: using free paintings instead")
+            banked = load_god_bank(plan["deity"], plan["family"], today)
+            if banked:   # an earlier AI picture of this god beats a plain painting (owner, 21 Oct 2026)
+                images, exact = banked[0], banked[1]
+                status.step(f"AI painters busy: reusing an earlier AI picture of {plan['deity']}", 3)
+            else:
+                status.step(f"AI pictures not usable: finding paintings of {plan['deity']} (free licence)", 3)
+                images = None
+        else:
+            save_god_bank(plan["deity"], plan["family"], images, today)
     try:
         images = images or pick_paintings(plan["image_searches"], plan["image_subject"], "devotion_images_used", state, tmp)
     except RuntimeError as e:   # few paintings of this exact form: use the main deity's paintings
@@ -5166,6 +5175,7 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                                  if subj["kind"] == "navratri" else f"{fam} miniature painting"],
                                 f"{'Goddess ' if subj['kind'] == 'navratri' else ''}{fam} (any classical depiction)",
                                 "devotion_images_used", state, tmp)
+    _DEVOTION_PICTURES[(today, subj["name"])] = ([(img.copy(), credit, focus) for img, credit, focus in images], exact)
     songs = devotional_songs(plan["song_searches"])[:4]
     status.step(f"Writing the {plan['deity']} Reel", 4)
     options = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
@@ -5182,7 +5192,8 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     for o in options:
         o["caption"] = unescape(o["caption"])
     best = fun.judge_best(options, lambda o: f"{o['hook']} -> {o['lesson']} -> {o['real_life']}",
-                          CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE.replace("Gita", "devotional"))
+                          CONFIG.get("membership_model", "sonnet"), judge_system=GITA_JUDGE.replace("Gita", "devotional"),
+                          fallback=True)   # never fail the 6 AM slot over the score: the best of the 3 drafts (owner, 22 Oct 2026)
     roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
     for k in ("hook", "lesson", "real_life"):
         best[k] = plain_letters(best[k])
