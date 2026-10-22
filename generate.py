@@ -1122,6 +1122,11 @@ def run() -> int:
     finally:
         fun.flush_usage(posts=POSTED)
         limits.record()
+        try:
+            import stats_snapshot   # trends + made-ledger for the stats page (no Instagram access)
+            stats_snapshot.run()
+        except Exception as e:
+            print(f"  stats snapshot failed: {e}")
 
 
 if __name__ == "__main__":

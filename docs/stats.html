@@ -81,6 +81,8 @@
 <main>
   <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
   <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
+  <section id="habit"><h2>📮 Your posting habit</h2><div class="muted">Loading…</div></section>
+  <section id="trending"><h2>🔥 Trending now vs our Reels</h2><div class="muted">Loading…</div></section>
   <section id="works"><h2>🏆 What works</h2><div class="muted">Loading…</div></section>
   <section id="health"><h2>⚙️ Robot &amp; Claude plan</h2><div class="muted">Loading…</div></section>
   <details class="more"><summary>Details (tokens, room for more posts, your own Claude use)</summary>
@@ -200,7 +202,7 @@ function hookChart(box, pts) {
       return `<div class="best"><span>🚀 ${esc(b.headline || id)}</span><span class="muted">${inIST(b.at)} · ${start != null && latest ? `followers ${start} → ${latest.followers}` : ''}${r ? ` · ❤️ ${r.likes}` : ''}</span></div>`;
     }).join('');
     document.getElementById('growth').innerHTML = `<h2>📈 Growth</h2>
-      <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers</span></div>
+      <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers${latest ? ' · last known ' + new Date(latest.at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }) : ''}</span></div>
         <div class="kpi"><b>${change == null ? '–' : (change >= 0 ? '+' : '') + change}</b><span>this week</span></div>
         <div class="kpi"><b>${likesPer == null ? '–' : likesPer.toFixed(1)}</b><span>likes per post (7 days)</span></div></div>
       ${pts.length >= 2 ? lineChart(pts) : '<div class="muted" style="margin-top:10px">The followers chart appears after 2 days of data.</div>'}
@@ -284,7 +286,7 @@ function hookChart(box, pts) {
       return d < 11 ? 'Morning (6–11 AM)' : d < 17 ? 'Afternoon (11 AM–5 PM)' : d < 20 ? 'Evening (5–8 PM)' : 'Night (8–11 PM)'; };
     const slots = {}; items.forEach(x => (slots[slotOf(x)] = slots[slotOf(x)] || []).push(x));
     const bestSlot = Object.entries(slots).filter(([, v]) => v.length >= 3).map(([k, v]) => [k, avg(v)]).sort((a, b) => b[1] - a[1])[0];
-    document.getElementById('works').innerHTML = `<h2>🏆 What works <span class="muted">last 14 days · ${items.length} posted</span></h2>
+    document.getElementById('works').innerHTML = `<h2>🏆 What works <span class="muted">Instagram numbers as of 16 Oct · ${items.length} posts</span></h2>
       ${items.length ? `<div class="kpis" style="grid-template-columns:repeat(2,minmax(0,1fr))">
         <div class="kpi"><b>${reels.length ? avg(reels).toFixed(1) : '–'}</b><span>avg likes · 🎬 Reels (${reels.length})</span></div>
         <div class="kpi"><b>${cars.length ? avg(cars).toFixed(1) : '–'}</b><span>avg likes · 📰 Carousels (${cars.length})</span></div></div>
@@ -299,6 +301,79 @@ function hookChart(box, pts) {
       : '<div class="muted">No Instagram numbers yet: likes by post type show up here once numbers come in (automatic reading is off since 16 Oct).</div>'}
       <div class="muted" style="margin-top:8px">Boosted posts are left out (paid reach would mislead).
         ${audience && audience.summary ? 'The robot is learning from these numbers every night.' : 'The robot starts learning once posts have 30+ likes in total.'}</div>`;
+  }
+
+  if (!Object.entries(links || {}).some(([id, l]) => inLast(l.posted_at || l.linked_at, 14) && res[id] && !boostsData[id])) {
+    const w = document.getElementById('works'); if (w) w.style.display = 'none';   // no likes numbers since 16 Oct
+  }
+
+  // --- 📮 your posting habit (from your ✅ Mark as posted taps: no Instagram access needed)
+  {
+    const plan = app.plan || [], days = lastDays(7), made = (await getJSON('stats/made.json')) || {};
+    const isReel = id => id.startsWith('reel_');
+    const postedOn = d => Object.keys(links || {}).filter(id => isReel(id) && id.endsWith('-' + d)).length;
+    const perDay = days.map(d => [d, postedOn(d), Object.keys(made[d] || {}).filter(isReel).length]);
+    const total = perDay.reduce((a, x) => a + x[1], 0), slots = Math.max(1, plan.length);
+    const rate = Math.round(total / (slots * 7) * 100);
+    const dayName = d => new Date(d + 'T12:00:00+05:30').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+    const maxPost = Math.max(slots, ...perDay.map(x => x[1]));
+    const minsNow = (() => { const d = new Date(Date.now() + 330 * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); })();
+    const slotRows = plan.map(([time, kind, name]) => {
+      const [h, m] = time.split(':').map(Number);
+      const first = Object.keys(links || {}).filter(id => id.startsWith(kind + '-20')).map(id => id.slice(kind.length + 1)).sort()[0];
+      // only days the slot already existed and was due (a new slot is not "skipped" on its first days)
+      const due = days.filter(d => (d !== todayIST || h * 60 + m + 45 < minsNow) && (!first || d >= first));
+      const n = due.filter(d => (links || {})[`${kind}-${d}`]).length;
+      return { time, name, n, of: Math.max(1, due.length) };
+    });
+    const frac = r => r.n / r.of;
+    const best = [...slotRows].sort((a, b) => frac(b) - frac(a))[0], worst = [...slotRows].sort((a, b) => frac(a) - frac(b))[0];
+    const autoDays = Object.entries(made).filter(([d, v]) => days.includes(d) && Object.values(v).some(x => x.auto)).length;
+    const tips = [];
+    if (slotRows.length && frac(best) > frac(worst)) tips.push(`✅ You post <b>${esc(best.name)}</b> most (${best.n} of ${best.of} days) and <b>${esc(worst.name)}</b> least (${worst.n} of ${worst.of}).`);
+    if (rate < 60) tips.push('⚠️ You posted less than 6 of every 10 Reels this week: more posts = more chances for one to take off.');
+    else if (rate >= 85) tips.push('🔥 You are posting almost every Reel the robot makes: keep this rhythm.');
+    if (autoDays) tips.push(`⚙️ Auto mode (no Claude) made Reels on ${autoDays} of the last 7 days.`);
+    document.getElementById('habit').innerHTML = `<h2>📮 Your posting habit <span class="muted">last 7 days · from your ✅ taps</span></h2>
+      <div class="kpis"><div class="kpi"><b>${perDay[0][1]}/${slots}</b><span>Reels posted today</span></div>
+        <div class="kpi"><b>${(total / 7).toFixed(1)}</b><span>posted per day (7 days)</span></div>
+        <div class="kpi"><b>${rate}%</b><span>of all slots posted</span></div></div>
+      <div class="sub">Reels posted per day</div>
+      ${perDay.map(([d, n, m]) => `<div class="hbar"><span>${dayName(d)}</span><span class="track"><i style="width:${n / maxPost * 100}%"></i></span>
+        <span class="num">${n}${m && d === todayIST ? ` of ${m} made` : ''}</span></div>`).join('')}
+      <div class="sub">Which slots you post (of the days each slot has run)</div>
+      ${slotRows.map(r => `<div class="hbar"><span>${r.time} ${esc(r.name)}</span><span class="track"><i style="width:${frac(r) * 100}%"></i></span><span class="num">${r.n}/${r.of}</span></div>`).join('')}
+      ${tips.length ? `<div class="sub">What it says</div>${tips.map(t => `<div class="muted" style="margin:4px 0">${t}</div>`).join('')}` : ''}
+      <div class="muted" style="margin-top:8px">"Made" counts start on 22 Oct 2026 (the robot keeps a log from then). Views and likes are not shown: automatic reading of Instagram is off.</div>`;
+  }
+
+  // --- 🔥 trending now vs what our Reels covered (from the robot's own feed reading; no Instagram access)
+  {
+    const tr = await getJSON('stats/trends.json');
+    const box = document.getElementById('trending');
+    if (!tr) { box.innerHTML = '<h2>🔥 Trending now vs our Reels</h2><div class="muted">Appears after the next robot run.</div>'; }
+    else {
+      // what we covered: headlines + captions of the last 3 days
+      const ourText = [...Object.values(links || {}).filter(l => inLast(l.posted_at || l.linked_at, 3)).map(l => l.headline),
+        ...(feed || []).map(p => (p.headline || '') + ' ' + (p.caption || '').slice(0, 400))].join(' ').toLowerCase();
+      const words = t => (t.toLowerCase().match(/[a-z0-9]{3,}/g) || []).filter(w => !['the', 'and', 'for', 'with', 'from', 'that', 'this'].includes(w));
+      const termCovered = t => { const w = words(t); return w.length > 0 && w.every(x => ourText.includes(x)); };
+      const storyCovered = t => { const w = words(t).filter(x => x.length >= 4); if (!w.length) return false; const hit = w.filter(x => ourText.includes(x)).length; return hit >= Math.min(3, w.length) && hit / w.length >= 0.5; };
+      const chip = c => c ? '<span class="chip made">✅ covered</span>' : '<span class="chip warn">➕ not yet</span>';
+      const copyBtn = t => `<button class="copy" data-t="${esc('Make a Reel on: ' + t)}" style="margin-left:6px;background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 8px;font-size:12px">📋 copy</button>`;
+      const xs = (tr.x || []).slice(0, 10), st = (tr.stories || []).slice(0, 8);
+      const miss = xs.filter(x => !termCovered(x.term)).length + st.filter(x => !storyCovered(x.title)).length;
+      box.innerHTML = `<h2>🔥 Trending now vs our Reels <span class="muted">updated ${ago(tr.at)}</span></h2>
+        <div class="muted" style="margin-bottom:6px">${miss ? `${miss} trending topics not covered yet: tap 📋 copy, then paste it in ➕ Create.` : 'Everything trending is covered.'}</div>
+        <div class="sub">Big stories right now</div>
+        ${st.map(x => `<div class="best" style="gap:8px;align-items:flex-start"><span style="flex:1;min-width:0;overflow-wrap:anywhere"><a style="white-space:normal;overflow:visible" href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a> <span class="muted">${esc(x.source)}</span></span><span style="white-space:nowrap">${chip(storyCovered(x.title))}${copyBtn(x.title)}</span></div>`).join('') || '<div class="muted">No stories yet.</div>'}
+        <div class="sub">Trending on X in India (hours trending)</div>
+        ${xs.map(x => `<div class="best"><span>${esc(x.term)} <span class="muted">${x.hours} h</span></span><span>${chip(termCovered(x.term))}${copyBtn(x.term)}</span></div>`).join('') || '<div class="muted">No trends yet.</div>'}
+        ${(tr.google || []).length ? `<div class="sub">Google trends</div><div class="muted">${tr.google.slice(0, 8).map(esc).join(' · ')}</div>` : ''}
+        <div class="muted" style="margin-top:8px">"Covered" = one of our Reels or posts of the last 3 days has the same words. Politics and crime stories are left out of this list.</div>`;
+      box.querySelectorAll('button.copy').forEach(b => b.onclick = async () => {
+        try { await navigator.clipboard.writeText(b.dataset.t); b.textContent = '✅ copied'; } catch { prompt('Copy this:', b.dataset.t); } });
+    }
   }
 
   // --- ⚙️ robot & plan: one glance
