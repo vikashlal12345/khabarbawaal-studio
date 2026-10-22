@@ -4056,6 +4056,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return (now - (d if d.tzinfo else d.replace(tzinfo=timezone.utc))).total_seconds() / 3600
     stories = sorted((s for s in {s["url"]: s for s in stories}.values() if s["url"] not in used),
                      key=lambda s: (-hours.get(s.get("trend", ""), 0), age_h(s)))[:45]   # most viral, then newest
+    if REMAKE.get("link"):   # 🔄 remake: the same story again
+        stories = [{"title": REMAKE["title"], "url": REMAKE["link"], "site": REMAKE.get("source", ""), "date": now.isoformat()}]
     if not stories:
         raise RuntimeError("no opposition news found today")
     listing = "\n".join(f"{n}. ({'date unknown' if age_h(s) >= 9999 else f'{age_h(s):.0f} h ago' if age_h(s) < 48 else f'{age_h(s) / 24:.0f} days ago'}) "
@@ -4082,6 +4084,8 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                              "required": ["picks"], "additionalProperties": False},
                             CONFIG.get("membership_model", "sonnet"), purpose="satire pick")["picks"]
     picks = [n for n in picks if 1 <= n <= len(stories)][:3]
+    if REMAKE.get("link"):
+        picks = [1]
     if not picks:
         raise RuntimeError("no story about the opposition today")
     fmt = roast_format_today(today)

@@ -73,7 +73,7 @@ def run(post_id: str, comment: str, check_posted: bool = True) -> int:
         f"story text): headline '{old.get('headline', '')[:200]}', caption '{old.get('caption', '')[:500]}'.\n"
         f"HIS COMMENT (do exactly this; change only what he complained about and keep everything else that was fine; real facts "
         f"only, never invent anything): {comment}")
-    if old.get("source_url") and kind in reel.NEWS_KINDS + reel.BREAK_KINDS and same:
+    if old.get("source_url") and kind in reel.NEWS_KINDS + reel.BREAK_KINDS + ("reel_politics",) and same:
         reel.REMAKE.update({"link": old["source_url"], "title": old.get("headline", ""), "source": old.get("source", "")})
     if kind == "reel_official" and old.get("source_url") and same:
         mm = re.search(r"/status/(\d+)", old["source_url"])
