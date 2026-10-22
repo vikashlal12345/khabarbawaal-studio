@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_news_pm-2026-10-22",
+  "image": "posts/20261022-1033-reel_news_pm-2026-10-22.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261022-103320-reel_news_pm-2026-10-22.mp4",
+  "headline": "Amitabh Bachchan takes a break from social media for a few days following medical advice",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Amitabh Bachchan social media break 🙏\nDoctors ki salah par Big B ne kuch din ka break liya.\nUnhone Wednesday ko ye announce kiya.\nUnhone kaha ki aaram aur recovery ke liye unhe kuch din off lene ki salah di gayi hai.\nBig B ke liye ek dua? Comment mein 🙏 likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #AmitabhBachchan #BigB #Bollywood #GetWellSoon",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
+  "pin_comment": "Apne Amitabh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "warm, caring, calm"
+   },
+   {
+    "title": "Mann Mera",
+    "artist": "Gajendra Verma",
+    "lang": "hindi",
+    "mood": "soft, emotional wishes"
+   },
+   {
+    "title": "lovely",
+    "artist": "Billie Eilish, Khalid",
+    "lang": "english",
+    "mood": "gentle, calm mood"
+   },
+   {
+    "title": "Sailor Song",
+    "artist": "Gigi Perez",
+    "lang": "english",
+    "mood": "soft, heartfelt tone"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say fans started sending prayers; unsupported claim",
+    "Slide 4: The photo is a blurry, enlarged copy of the slide 1 photo. The 'Photo: Bollywood Hungama' credit also overlaps the @khabarbawaal handle at the bottom. Dropping the slide fixes both."
+   ],
+   "fixed": [
+    "Fans ne unki sehat ke liye duayein bhejna shuru kiya. → Unhone kaha ki aaram aur recovery ke liye unhe kuch din off lene ki salah di gayi hai."
+   ]
+  },
+  "created_at": "2026-10-22T10:33:20+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-22",
   "image": "posts/20261022-0834-reel_break_noon-2026-10-22.jpg",
   "kind": "reel",
@@ -483,52 +533,5 @@
    ]
   },
   "created_at": "2026-10-21T10:34:28+00:00"
- },
- {
-  "id": "cbdf29686376",
-  "image": "posts/20261021-1018-cbdf29686376.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261021-101834-cbdf29686376.mp4",
-  "headline": "Bishnoi bhai : My manager is also Salman Khan's friend",
-  "tag": "🎬 REEL · YOUR LINE · SALMAN KHAN + LAWRENCE BISHNOI + TIGER SHROFF",
-  "caption": "Salman Khan, Bishnoi bhai aur Tiger Shroff ka connection kuch zyada hi deep hai 😂\nAb toh har manager \"Salman ka dost\" nikal raha hai bhai\n\nPhotos: Salman Khan: Moneycontrol, Bollywood Hungama (CC BY 3.0); Lawrence Bishnoi: India Today; Tiger Shroff: Moneycontrol, Bollywood Hungama, Bollywood Hungama (CC BY 3.0)\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#SalmanKhan #LawrenceBishnoi #TigerShroff #Bollywood #ViralReel",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Tumhara manager bhi Salman ka dost hai kya? Tag karo usko 😂",
-  "songs": [
-   {
-    "title": "Barbaad",
-    "artist": "The Rish, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "high on today's charts"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "high on today's charts"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "high on today's charts"
-   },
-   {
-    "title": "FE!N",
-    "artist": "Travis Scott",
-    "lang": "english",
-    "mood": "high on today's charts"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "The photos come from recent news articles about each person (sources are on the Reel): the AI checked them, but please look that each tile really shows the person named before posting."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-21T10:18:34+00:00"
  }
 ]
