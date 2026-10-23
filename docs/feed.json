@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-10-23",
+  "image": "posts/20261023-0033-reel_devotion-2026-10-23.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261023-003345-reel_devotion-2026-10-23.mp4",
+  "headline": "Friday: Maa Lakshmi: Aaj Shukravaar hai... Maa Lakshmi ko dhanyavaad kehne ka din",
+  "tag": "🎬 REEL · 🙏 SHUBH SHUKRAVAR",
+  "caption": "Maa Lakshmi, Shukravaar ka shubh aashirwaad 🙏\nSabse bada dhan hai swasthya, parivaar aur shukrana.\nComment mein 'Jai Maa Lakshmi' likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#maalakshmi #jaimalakshmi #shukravaar #devotional #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jis ghar mein khushi chahiye, usko bhejo 🙏",
+  "songs": [
+   {
+    "title": "Aarti Laxmi Ji Ki",
+    "artist": "Somalika Das",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Om Jai Lakshmi Mata - Alka Yagnik",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Mahalakshmi Ashtakam",
+    "artist": "Rajalakshmee Sanjay",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Laxmi Ji Ki Aarti",
+    "artist": "Anuradha Paudwal, Hariom Sharan",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The label reads 'AAJ KA ASHIRWAAD'. The caption spells it 'aashirwaad', so the spelling is inconsistent. This label isn't in the editable text list, so I couldn't give an exact fix."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-23T00:33:45+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-22",
   "image": "posts/20261022-1749-reel_politics-2026-10-22.jpg",
   "kind": "reel",

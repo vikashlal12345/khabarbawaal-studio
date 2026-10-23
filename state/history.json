@@ -298,7 +298,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-10-22",
+  "reel_devotion": "2026-10-23",
   "reel_news_pm": "2026-10-22",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -863,10 +863,6 @@
   }
  ],
  "songs_recent": [
-  "Sam Dam Dand Bhed",
-  "Dhurandhar Title Track",
-  "Toofan (KGF Chapter 2)",
-  "Aarambh Hai Prachand (Gulaal)",
   "Vishnu Sahasranamam",
   "Jai Ganesh Jai Ganesh Deva",
   "Om Jai Jagdish Hare",
@@ -902,7 +898,11 @@
   "Dhurandhar Title Track",
   "Sam Dam Dand Bhed",
   "Teri Mitti (Kesari)",
-  "Kar Har Maidaan Fateh (Sanju)"
+  "Kar Har Maidaan Fateh (Sanju)",
+  "Aarti Laxmi Ji Ki",
+  "Om Jai Lakshmi Mata - Alka Yagnik",
+  "Mahalakshmi Ashtakam",
+  "Laxmi Ji Ki Aarti"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
