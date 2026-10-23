@@ -1,53 +1,86 @@
 {
- "at": "2026-10-23T02:34:20+00:00",
+ "at": "2026-10-23T04:33:33+00:00",
  "x": [],
  "google": [
-  "23/10/2026",
-  "haryana news",
-  "bears vs patriots",
-  "gold rate today hyderabad"
+  "cyient share price",
+  "zetwerk ipo",
+  "pc jeweller share price",
+  "wipro share price",
+  "eternal share price",
+  "zomato share price",
+  "adani power share",
+  "hindustan zinc share price",
+  "brent crude price"
  ],
  "stories": [
   {
-   "title": "21,900 digital arrest complaints registered till Sept: MHA to SC",
+   "title": "IMA seeks review of Sunny Deol starrer Suryaa: Ant Se Aarambh Tak; raises concerns over portrayal of doctors and hospital violence",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/ima-seeks-review-of-sunny-deol-starrer-suryaa-ant-se-aarambh-tak-raises-concerns-over-portrayal-of-doctors-and-hospital-violence/",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "‘You are responsible for this mess’: Piyush Goyal slams West over carbon emissions, climate finance failures",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
+   "link": "https://www.hindustantimes.com/india-news/you-are-responsible-for-this-mess-piyush-goyal-slams-west-over-carbon-emissions-climate-finance-failures-101792723932578.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Sonia joins Instagram, shares first look of her upcoming memoir",
+   "title": "Kashi Tamil Sangamam 5.0 to focus on promotion of classical text Thirukkural",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/sonia-joins-instagram-shares-first-look-of-her-upcoming-memoir-101792696590445.html",
+   "link": "https://www.hindustantimes.com/india-news/kashi-tamil-sangamam-5-0-to-focus-on-promotion-of-classical-text-thirukkural-101792728588889.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "YS Jagan Mohan Reddy refuses to allow niece’s wedding on family property citing security concerns",
+   "title": "Himachal local fund accounts committee emphasises transparent use of public money",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/ys-jagan-mohan-reddy-refuses-to-allow-niece-s-wedding-on-family-property-citing-security-concerns-101792696531043.html",
+   "link": "https://www.hindustantimes.com/india-news/himachal-local-fund-accounts-committee-emphasises-transparent-use-of-public-money-101792728234968.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Procedures to be followed if fresh CEC impeachment motion filed: LS Speaker",
+   "title": "Aamir Khan breaks down in tears talking about career's weakest moments, says he lost relationships, time with kids by working like a ‘madman",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/procedures-to-be-followed-if-fresh-cec-impeachment-motion-filed-ls-speaker-101792696470027.html",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Delhi’s AQI remains ‘poor’; minimum temperature recorded at 19°C",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/delhis-aqi-remains-poor-minimum-temperature-recorded-at-19c-101792727625324.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Norwegians fall for wild investment scam: Buying gold and leaving it in the forest",
+   "title": "Kareena Kapoor greets Shahid Kapoor with a warm hug at IIFA 2027 event; fans reminded of their ‘Aditya-Geet’ chemistry",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/norwegians-fall-for-wild-investment-scam-buying-gold-and-leaving-it-in-the-forest-101792718499671.html",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-greets-shahid-kapoor-with-a-warm-hug-at-iifa-2027-event-jab-we-met-salman-khan-101792723077080.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Varun Dhawan laments lack of recognition for technicians in Bollywood awards at IIFA 2027 press meet, says ‘we talk about everything but fil",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-laments-there-is-lack-of-recognition-for-technicians-in-bollywood-says-we-talk-about-everything-but-films-iifa-2027-salman-khan-101792722869233.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Scottish museum removes Egyptian mummies from exhibition over lack of ‘consent from the deceased individual'",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/scottish-museum-removes-egyptian-mummies-from-exhibition-over-lack-of-consent-from-the-deceased-individual-101792724275859.html",
    "category": "viral",
    "hours": 0
   },
   {
-   "title": "BREAKING: Rajkummar Rao has a hilarious cameo in Pehla Pyaar Doosri Baar",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/breaking-rajkummar-rao-has-a-hilarious-cameo-in-pehla-pyaar-doosri-baar/",
-   "category": "entertainment",
+   "title": "San Francisco startup Marathon Fusion claims it has turned mercury into gold",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/san-francisco-startup-marathon-fusion-claims-it-has-turned-mercury-into-gold-101792721615945.html",
+   "category": "viral",
    "hours": 0
   }
  ]

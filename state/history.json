@@ -163,7 +163,8 @@
   "19ffe1054dd8",
   "297207ad3d43",
   "6f2fe6c74908",
-  "dd7eccae4001"
+  "dd7eccae4001",
+  "945f0f7d1106"
  ],
  "recent_headlines": [
   "[TECH] Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
@@ -311,10 +312,10 @@
   "reel_official": "2026-10-22",
   "reel_news_early": "2026-10-23",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-22",
+  "reel_break_am": "2026-10-23",
   "reel_break_noon": "2026-10-22"
  },
- "inbox_since": "ZSJgLJSgmhcX",
+ "inbox_since": "Km8QZqvceMqf",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -716,7 +717,8 @@
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
   "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
-  "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html"
+  "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -865,10 +867,6 @@
   }
  ],
  "songs_recent": [
-  "His Aura Hits You",
-  "Jailer 2 Theme",
-  "Believer",
-  "Big Dawgs",
   "Alfaaz",
   "Ram Siya Ram",
   "Blinding Lights",
@@ -904,7 +902,11 @@
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Madhosh",
   "Loser",
-  "Just Give Me a Reason (feat. Nate Ruess)"
+  "Just Give Me a Reason (feat. Nate Ruess)",
+  "Chhod Diya",
+  "Tera Zikr",
+  "Infinity",
+  "Arcade"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -980,6 +982,10 @@
   },
   {
    "title": "21,900 digital arrest complaints registered till Sept: MHA to SC",
+   "date": "2026-10-23"
+  },
+  {
+   "title": "Aamir Khan breaks down in tears talking about career's weakest moments, says he lost relationships, time with kids by working like a ‘madman’",
    "date": "2026-10-23"
   }
  ],
