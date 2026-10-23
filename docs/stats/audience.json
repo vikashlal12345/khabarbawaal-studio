@@ -2,7 +2,7 @@
  "summary": "From our last 170 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  BACHPAN ME AISA KAUN KIYA (0), REEL   CHOOSE YOUR (0). Formats: reel 2, custom 2, top10 2, news 2, calendar 2, fun 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
  "posts": 170,
  "likes": 292,
- "updated": "2026-10-22T22:30:42+00:00",
+ "updated": "2026-10-23T22:31:04+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -29,11 +29,11 @@
    2.8
   ],
   [
-   "MOOD",
+   "TECH",
    2.5
   ],
   [
-   "TECH",
+   "MOOD",
    2.5
   ],
   [
@@ -41,15 +41,15 @@
    2.25
   ],
   [
+   "TOP 5 NEWS",
+   2.0
+  ],
+  [
    "EXPECTATION VS REALITY",
    2.0
   ],
   [
    "WEB SERIES",
-   2.0
-  ],
-  [
-   "TOP 5 NEWS",
    2.0
   ],
   [
@@ -77,6 +77,10 @@
    1.625
   ],
   [
+   "WTF NEWS",
+   1.5
+  ],
+  [
    "AMAZING FACTS",
    1.5
   ],
@@ -85,11 +89,7 @@
    1.5
   ],
   [
-   "WTF NEWS",
-   1.5
-  ],
-  [
-   "TOP 5 VIRAL",
+   "TAG KARO",
    1.5
   ],
   [
@@ -97,11 +97,11 @@
    1.5
   ],
   [
-   "BOLLYWOOD",
+   "TOP 5 VIRAL",
    1.5
   ],
   [
-   "TAG KARO",
+   "BOLLYWOOD",
    1.5
   ],
   [
@@ -109,7 +109,7 @@
    1.4
   ],
   [
-   "RELATABLE",
+   "THOUGHT OF THE DAY",
    1.25
   ],
   [
@@ -117,7 +117,7 @@
    1.25
   ],
   [
-   "THOUGHT OF THE DAY",
+   "RELATABLE",
    1.25
   ],
   [
@@ -125,23 +125,7 @@
    1.2
   ],
   [
-   "PREOPEN",
-   1.0
-  ],
-  [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "CLOSING BELL",
-   1.0
-  ],
-  [
    "REEL  TOP 5 NEWS",
-   1.0
-  ],
-  [
-   "EXPLAINER",
    1.0
   ],
   [
@@ -149,19 +133,7 @@
    1.0
   ],
   [
-   "QUIZ",
-   1.0
-  ],
-  [
    "FAMILY GROUP",
-   1.0
-  ],
-  [
-   "EDUCATION",
-   1.0
-  ],
-  [
-   "REEL  VIRAL",
    1.0
   ],
   [
@@ -169,7 +141,35 @@
    1.0
   ],
   [
+   "GOOD NEWS",
+   1.0
+  ],
+  [
+   "REEL  VIRAL",
+   1.0
+  ],
+  [
+   "QUIZ",
+   1.0
+  ],
+  [
+   "CLOSING BELL",
+   1.0
+  ],
+  [
+   "PREOPEN",
+   1.0
+  ],
+  [
    "DELHI",
+   1.0
+  ],
+  [
+   "EXPLAINER",
+   1.0
+  ],
+  [
+   "EDUCATION",
    1.0
   ],
   [
