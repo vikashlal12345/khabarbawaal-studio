@@ -168,7 +168,8 @@
   "47ce823bb744",
   "ae0e68a73ea0",
   "4ff25cb02a3f",
-  "7e7ec3d277ad"
+  "7e7ec3d277ad",
+  "a16ec4fae4b9"
  ],
  "recent_headlines": [
   "[TECH] Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
@@ -317,9 +318,10 @@
   "reel_news_early": "2026-10-23",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-23",
-  "reel_break_noon": "2026-10-23"
+  "reel_break_noon": "2026-10-23",
+  "reel_break_aft": "2026-10-23"
  },
- "inbox_since": "NDQ0bxQQ2jpw",
+ "inbox_since": "1I40tV5gChVs",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -726,7 +728,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
   "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
-  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/"
+  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
+  "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -875,10 +878,6 @@
   }
  ],
  "songs_recent": [
-  "Toxic",
-  "Bairan",
-  "stupid song",
-  "Stop The Wedding!",
   "Khat",
   "Dhoonde Akhiyaan",
   "Been By Now",
@@ -914,7 +913,11 @@
   "Tera Hoke Rahoon",
   "Pal Pal Dil Ke Paas - Title Track",
   "Iris",
-  "Heat Waves"
+  "Heat Waves",
+  "Paisa Hai Toh",
+  "Deewaniyat (From \"Ek Deewane Ki Deewaniyat\") (Original Motion Picture Soundtrack)",
+  "Housewife",
+  "Espresso"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1010,6 +1013,10 @@
   },
   {
    "title": "Shah Rukh Khan, Deepika Padukone set to shoot grand song for King in Mumbai from October 26: Report",
+   "date": "2026-10-23"
+  },
+  {
+   "title": "Family Full House: Geeta Kapur says Rohit Sharma has qualities she wants in an ideal partner; Mukesh Chhabra names Vicky Kaushal, Ranbir Kapoor for biopic",
    "date": "2026-10-23"
   }
  ],

@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_break_aft-2026-10-23",
+  "image": "posts/20261023-1418-reel_break_aft-2026-10-23.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261023-141840-reel_break_aft-2026-10-23.mp4",
+  "headline": "Family Full House: Geeta Kapur says Rohit Sharma has qualities she wants in an ideal partner; Mukesh Chhabra names Vicky Kaushal, Ranbir Kapoor for biopic",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Rohit Sharma biopic Vicky Kaushal Ranbir Kapoor Mukesh Chhabra Geeta Kapur\n\nFamily Full House mein Mukesh Chhabra ne Rohit ke role ke liye Vicky Kaushal ya Ranbir Kapoor ka naam liya.\nGeeta Kapur ne kaha Rohit endearing, witty, smart aur respectful hain.\nBiopic ka koi announcement nahi hua hai.\n\nAapke hisaab se Rohit ka role kaun karega? Vicky ya Ranbir? 🏏🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#rohitsharma #bollywood #vickykaushal #ranbirkapoor #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
+  "pin_comment": "Rohit ka role kaun karega? Kisi Rohit fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Paisa Hai Toh",
+    "artist": "Jigar Saraiya, Sachin-Jigar",
+    "lang": "hindi",
+    "mood": "swag hype = Rohit ka jalwa"
+   },
+   {
+    "title": "Deewaniyat (From \"Ek Deewane Ki Deewaniyat\") (Original Motion Picture Soundtrack)",
+    "artist": "Vishal Mishra, Kaushik-Guddu",
+    "lang": "hindi",
+    "mood": "fida hone wali feeling"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "ideal partner chatter, fun vibe"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "light flirty tone"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: She used Rohit as an example of qualities she admires; she did not call him an ideal partner.",
+    "Slide 1: The photo credit 'Photo: The Free Press Journal' at the bottom left runs into the '@khabarbawaal' handle, and the two texts overlap slightly."
+   ],
+   "fixed": [
+    "Geeta Kapur ne Rohit ko ideal partner jaisa bataya → Geeta Kapur ne ideal partner ki qualities mein Rohit ka example diya"
+   ]
+  },
+  "created_at": "2026-10-23T14:18:40+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-23",
   "image": "posts/20261023-1245-reel_politics-2026-10-23.jpg",
   "kind": "reel",
