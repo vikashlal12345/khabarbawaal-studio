@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_politics-2026-10-23",
+  "image": "posts/20261023-1245-reel_politics-2026-10-23.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261023-124508-reel_politics-2026-10-23.mp4",
+  "headline": "Shah Rukh Khan, Deepika Padukone set to shoot grand song for King in Mumbai from October 26: Report",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Shah Rukh Khan Deepika Padukone King song shoot 🔥\nReport ke mutabiq SRK aur Deepika King ke ek grand song ke liye Mumbai mein shoot karenge.\nShoot 26 October se shuru hoga.\nDono ki jodi ne Om Shanti Om se Pathaan tak dhamaal kiya hai.\nSRK-Deepika ki best film kaunsi? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#shahrukhkhan #deepikapadukone #king #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
+  "pin_comment": "Kisi SRK-Deepika fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "romantic jodi reunion vibe"
+   },
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "classic love-story feel"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "timeless romantic reunion"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "dreamy, chart favourite"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-23T12:45:08+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-23",
   "image": "posts/20261023-1033-reel_news_pm-2026-10-23.jpg",
   "kind": "reel",
@@ -394,55 +439,5 @@
    ]
   },
   "created_at": "2026-10-22T14:23:43+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-22",
-  "image": "posts/20261022-1033-reel_news_pm-2026-10-22.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261022-103320-reel_news_pm-2026-10-22.mp4",
-  "headline": "Amitabh Bachchan takes a break from social media for a few days following medical advice",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Amitabh Bachchan social media break 🙏\nDoctors ki salah par Big B ne kuch din ka break liya.\nUnhone Wednesday ko ye announce kiya.\nUnhone kaha ki aaram aur recovery ke liye unhe kuch din off lene ki salah di gayi hai.\nBig B ke liye ek dua? Comment mein 🙏 likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #AmitabhBachchan #BigB #Bollywood #GetWellSoon",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
-  "pin_comment": "Apne Amitabh fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "warm, caring, calm"
-   },
-   {
-    "title": "Mann Mera",
-    "artist": "Gajendra Verma",
-    "lang": "hindi",
-    "mood": "soft, emotional wishes"
-   },
-   {
-    "title": "lovely",
-    "artist": "Billie Eilish, Khalid",
-    "lang": "english",
-    "mood": "gentle, calm mood"
-   },
-   {
-    "title": "Sailor Song",
-    "artist": "Gigi Perez",
-    "lang": "english",
-    "mood": "soft, heartfelt tone"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't say fans started sending prayers; unsupported claim",
-    "Slide 4: The photo is a blurry, enlarged copy of the slide 1 photo. The 'Photo: Bollywood Hungama' credit also overlaps the @khabarbawaal handle at the bottom. Dropping the slide fixes both."
-   ],
-   "fixed": [
-    "Fans ne unki sehat ke liye duayein bhejna shuru kiya. → Unhone kaha ki aaram aur recovery ke liye unhe kuch din off lene ki salah di gayi hai."
-   ]
-  },
-  "created_at": "2026-10-22T10:33:20+00:00"
  }
 ]
