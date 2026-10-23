@@ -166,7 +166,8 @@
   "dd7eccae4001",
   "945f0f7d1106",
   "47ce823bb744",
-  "ae0e68a73ea0"
+  "ae0e68a73ea0",
+  "4ff25cb02a3f"
  ],
  "recent_headlines": [
   "[TECH] Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
@@ -303,7 +304,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-23",
-  "reel_news_pm": "2026-10-22",
+  "reel_news_pm": "2026-10-23",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-23",
@@ -317,7 +318,7 @@
   "reel_break_am": "2026-10-23",
   "reel_break_noon": "2026-10-23"
  },
- "inbox_since": "FV1g3cVpKP8D",
+ "inbox_since": "Tf2KbEJIt8Jp",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -722,7 +723,8 @@
   "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
+  "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -871,10 +873,6 @@
   }
  ],
  "songs_recent": [
-  "Gehra Hua",
-  "Tabaahi (From \"Toxic\")",
-  "Heat Waves",
-  "Under The Influence",
   "Jo Tum Mere Ho",
   "Mann Mera",
   "lovely",
@@ -910,7 +908,11 @@
   "One Name",
   "His Aura Hits You",
   "Solar Eclipse",
-  "End of Beginning"
+  "End of Beginning",
+  "Zaalima",
+  "Teri Meri Kahaani",
+  "Sunflower (Spider-Man: Into the Spider-Verse)",
+  "Sweater Weather"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -998,6 +1000,10 @@
   },
   {
    "title": "Ramayana vs Adipurush: Ranbir Kapoor, Yash-starrer dwarfs Prabhas film, outpaces it by 120% in advance bookings",
+   "date": "2026-10-23"
+  },
+  {
+   "title": "Aamir Khan says, ‘Rajkumar Hirani will narrate 3 Idiots sequel’s final script in the coming weeks’",
    "date": "2026-10-23"
   }
  ],

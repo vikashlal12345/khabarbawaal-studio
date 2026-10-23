@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_pm-2026-10-23",
+  "image": "posts/20261023-1033-reel_news_pm-2026-10-23.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261023-103319-reel_news_pm-2026-10-23.mp4",
+  "headline": "Aamir Khan says, ‘Rajkumar Hirani will narrate 3 Idiots sequel’s final script in the coming weeks’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Aamir Khan 3 Idiots sequel update 🎬\n\nAamir ne bataya ki director Rajkumar Hirani sequel ki final script par kaam kar rahe hain.\nAane wale hafton mein Hirani Aamir ko final script narrate karenge.\nFans ko saalon se is film ka intezaar hai.\n\n3 Idiots 2 dekhne ke liye excited ho? Haan ya Na? Comment karo 👇\n\nVideo: @SAMTHEBESTEST_ on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#aamirkhan #3idiots #bollywood #rajkumarhirani #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
+  "pin_comment": "Apne 3 Idiots wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "nostalgic filmy vibe for big return"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "yaadon wali nostalgia"
+   },
+   {
+    "title": "Sunflower (Spider-Man: Into the Spider-Verse)",
+    "artist": "Post Malone, Swae Lee",
+    "lang": "english",
+    "mood": "feel-good throwback energy"
+   },
+   {
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "lang": "english",
+    "mood": "chill college-days feel"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The '@khabarbawaal' handle overlaps the photo credit '@SAMTHEBESTEST_ on X' at the bottom left. The credit text is partly cut off and hard to read."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-23T10:33:19+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-23",
   "image": "posts/20261023-0833-reel_break_noon-2026-10-23.jpg",
   "kind": "reel",
@@ -397,54 +444,5 @@
    ]
   },
   "created_at": "2026-10-22T10:33:20+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-22",
-  "image": "posts/20261022-0834-reel_break_noon-2026-10-22.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261022-083411-reel_break_noon-2026-10-22.mp4",
-  "headline": "Tiger Shroff firing suspect left Bihar two years ago, worked as a cook, bike-taxi driver: Police",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Tiger Shroff firing suspect Hrithik Kumar Bihar police Mumbai Juhu 🚨\n\nPolice ke mutabiq 22 saal ka suspect Begusarai ka hai, Delhi me catering aur Mumbai me cook, bike-taxi driver tha.\nLawrence Bishnoi gang ke do kathit operatives ne zimmedari li. Teeno Kota station se pakde gaye.\nMaa ka kehna hai beta begunah hai.\n\nAapko kya lagta hai, sakht saza milni chahiye? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #tigershroff #bollywood #breakingnews #mumbaipolice",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
-  "pin_comment": "Is par aapki kya raay hai? Kisi Tiger Shroff fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "suspense, serious investigation vibe"
-   },
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "dark, tense twist feel"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "calm, serious news tone"
-   },
-   {
-    "title": "Under The Influence",
-    "artist": "Chris Brown",
-    "lang": "english",
-    "mood": "moody, trending, dramatic undertone"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The headline sits over the lower half of Tiger Shroff's face (nose, mouth and chin). The eyes are clear, so this is minor."
-   ],
-   "fixed": [
-    "Tiger Shroff firing suspect left Bihar two years ago, → Tiger Shroff firing suspect left Bihar two years ago"
-   ]
-  },
-  "created_at": "2026-10-22T08:34:11+00:00"
  }
 ]
