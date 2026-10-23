@@ -1980,6 +1980,14 @@ Politics: supportive of the right wing (BJP, NDA), critical of the left and oppo
 that embarrasses the BJP. No hate against any community. """ + RIGHT_LENS
 
 
+FACE_RULE = """
+VIEWS RULE (owner, 23 Oct 2026, from his own numbers: the best Reels opened on a famous, clear face): rank first the stories whose \
+lead is a FAMOUS Bollywood / film actor or actress that most young Indians know at a glance (A-list stars, top cricketers, the PM); a \
+story with an actor AND an actress together, or an actress as the lead, goes even higher. Stories whose lead is an unknown person, \
+an official, an institution or a court order (e.g. a Supreme Court order) rank low: take them only when a famous star or leader is \
+clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names."""
+
+
 NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_aft", "reel_news_pm", "reel_news",
               "reel_news_night")     # 🔥 viral news Reels: 7:30, 10:30 AM, 1:30, 7:30 PM (the rest by hand; owner, 15 Oct 2026)
 TOP5_KINDS = {"reel_top5_am": "night_roundup", "reel_top5": "top10_day"}   # Top 5 Reel -> its specials.TOP10 settings
@@ -2032,7 +2040,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
     songs = trending_songs(state)
-    options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]),
+    options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + FACE_RULE,
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
                               f"(hours trending):\n{trends}\n\nWhat India is searching on Google today:\n{searches}"
                               f"\n\nStories:\n{listing}{viral_memory()}{recent_news(state, today)[1]}"
@@ -2209,7 +2217,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs(state)
-    options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA,
+    options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA + FACE_RULE,
                               f"{fun.today_context()}\n\nTrending on X today (hours):\n{trends}\n\nStories:\n{listing}"
                               f"{viral_memory()}{recent_news(state, today)[1]}\n\nGive your top 3 picks, the most "
                               "breaking first." + songs_prompt(songs),
@@ -2899,6 +2907,14 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
     import fun
     if not photos:
         return 0
+    # 🔍 Clarity (owner, 23 Oct 2026: an Aamir Khan cover was soft and got ~300 views): a photo fills the 1080x1920 screen, so a
+    # small LANDSCAPE photo is blown up 3x or more. Photos enlarged more than 2.6x only compete when nothing else is sharper.
+    scale = lambda im: max(RW / im.width, RH / im.height)
+    sharp_ok = [i for i, im in enumerate(photos[:6]) if scale(im) <= 2.6]
+    if sharp_ok and len(sharp_ok) < len(photos[:6]):
+        print(f"  cover: {len(photos[:6]) - len(sharp_ok)} photo(s) would be enlarged too much: left out")
+        sub = pick_cover_photo([photos[i] for i in sharp_ok], about, tmp)   # the AI contest among the sharp ones (sets the face position)
+        return sharp_ok[sub]
     folder = os.path.join(tmp, "cover_check")
     os.makedirs(folder, exist_ok=True)
     for n, img in enumerate(photos[:6], 1):
@@ -2914,7 +2930,8 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
         res = fun.claude_json("You pick the COVER photo of a short news Reel for young Indians. Open every photo with the "
                               "Read tool. The best cover stops a scroll: a sharp close-up of the main person with a clear "
                               "face and strong emotion, bright and high contrast, tall or square, showing the story's "
-                              "star; never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
+                              "star (the best-known, most recognisable face; an actress, or an actor and actress together, beats "
+                              "an unknown person; a soft, blurry or low-resolution face is never the cover); never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
                               "shows injuries, bandages, blood, a hospital, handcuffs, weapons or another event than the story "
                               "(it would suggest facts the story does not state).",
                               f"The story: {about}\nPhotos: " + ", ".join(f"photo{n}.jpg" for n in range(1, min(len(photos), 6) + 1)),

@@ -22,14 +22,14 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Nav
             "reel_break_noon": (14, 0),                    # ⚡ breaking card
             "reel_news_pm": (16, 0),                       # 🔥 viral news
             "reel_politics": (18, 0),                      # 🎯 political satire + reality check
-            "reel_rotate": (19, 45),                       # 🎭 rotating: Bachpan / Tag that friend / meme / comedy
+            "reel_break_aft": (19, 45),                    # ⚡ breaking card (owner, 23 Oct 2026: replaces the 🎭 rotating joke slot, it did not go well)
             "reel_official": (21, 0),                      # 🎥🔊 speaker video + voice + subtitles (made at 9 PM so it is ready to post by 9:30 PM; owner, 21 Oct 2026)
             "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",
           "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture", "reel_news_night",
           "reel_news_noon", "reel_news_aft", "reel_clip_am", "reel_clip", "reel_meme", "reel_poll", "reel_news",
-          "reel_break_aft", "reel_bachpan"}
+          "reel_rotate", "reel_bachpan"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 55)                             # minutes around a special's time that count as its run (19 Oct 2026: GitHub started the 9:30 PM run 25 min late and the slot was lost)
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08
