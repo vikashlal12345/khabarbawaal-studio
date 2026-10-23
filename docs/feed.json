@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_official-2026-10-23",
+  "image": "posts/20261023-1538-reel_official-2026-10-23.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261023-153856-reel_official-2026-10-23.mp4",
+  "headline": "NARI SHAKTI! · Gadkari ka Mahila Leaders ko salaam",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "Nitin Gadkari Business Today Most Powerful Women in Business Awards Mumbai 🇮🇳\nUnion Minister Nitin Gadkari ne Mumbai me award ceremony ko address kiya aur India ki economic growth me mahila leaders ke yogdaan ko saraha.\nUnka kehna tha ki mahilaon ko lead karne ke liye enabling ecosystem banana zaroori hai. Nari shakti ko aage badhane ki soch.\nAap sehmat ho? Comment karo 👇\n\nVideo + voice: @nitin_gadkari on X\n\nFollow @khabarbawaal: roz raat 9 baje neta ka kadak bayan 🇮🇳\n\n#reelsindia #NitinGadkari #NariShakti #BJP #ViksitBharat",
+  "source": "@nitin_gadkari on X",
+  "source_url": "https://x.com/nitin_gadkari/status/2113644459791675393",
+  "pin_comment": "Mahilaon ke bina viksit Bharat adhura hai. Ye message sabko bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Teri Mitti (Kesari)",
+    "artist": "B Praak",
+    "lang": "hindi",
+    "mood": "proud, emotional, play it low"
+   },
+   {
+    "title": "Kar Har Maidaan Fateh (Sanju)",
+    "artist": "Sukhwinder Singh",
+    "lang": "hindi",
+    "mood": "victory and achievement vibe"
+   },
+   {
+    "title": "Ziddi Dil (Mary Kom)",
+    "artist": "Vishal Dadlani",
+    "lang": "hindi",
+    "mood": "women power, determination"
+   },
+   {
+    "title": "Lehra Do (83)",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "proud India, uplifting"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Claim that this is the NDA government's focus is not in the article."
+   ],
+   "fixed": [
+    "Nari shakti ko aage badhane ki soch, NDA sarkar ka focus. → Nari shakti ko aage badhane ki soch."
+   ]
+  },
+  "created_at": "2026-10-23T15:38:56+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-10-23",
   "image": "posts/20261023-1418-reel_break_aft-2026-10-23.jpg",
   "kind": "reel",
@@ -467,27 +516,5 @@
    "fixed": []
   },
   "created_at": "2026-10-22T17:30:56+00:00"
- },
- {
-  "id": "reel_rotate-2026-10-22",
-  "image": "posts/20261022-1423-reel_rotate-2026-10-22.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261022-142343-reel_rotate-2026-10-22.mp4",
-  "headline": "OPPO Find X10 series makes its debut alongside a new tablet and earbuds built for a connected experience",
-  "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
-  "caption": "OPPO Find X10 series makes its debut alongside a new tablet and earbuds built for a connected experience\nHe holds a BSc in Physical Science with Computer Science from the University of Delhi.\nThe battery and display have received their share of upgrades, making them class-leading on paper.\nKya ye sahi hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #breakingnews #trending #india #tech",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
-  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "fixed": [],
-   "issues": [
-    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
-   ]
-  },
-  "created_at": "2026-10-22T14:23:43+00:00"
  }
 ]

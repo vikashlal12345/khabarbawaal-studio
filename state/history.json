@@ -314,14 +314,14 @@
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
-  "reel_official": "2026-10-22",
+  "reel_official": "2026-10-23",
   "reel_news_early": "2026-10-23",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-23",
   "reel_break_noon": "2026-10-23",
   "reel_break_aft": "2026-10-23"
  },
- "inbox_since": "1I40tV5gChVs",
+ "inbox_since": "D0inCWywK9DO",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -878,10 +878,6 @@
   }
  ],
  "songs_recent": [
-  "Khat",
-  "Dhoonde Akhiyaan",
-  "Been By Now",
-  "The One That Got Away",
   "Dhurandhar Title Track",
   "Sam Dam Dand Bhed",
   "Teri Mitti (Kesari)",
@@ -917,7 +913,11 @@
   "Paisa Hai Toh",
   "Deewaniyat (From \"Ek Deewane Ki Deewaniyat\") (Original Motion Picture Soundtrack)",
   "Housewife",
-  "Espresso"
+  "Espresso",
+  "Teri Mitti (Kesari)",
+  "Kar Har Maidaan Fateh (Sanju)",
+  "Ziddi Dil (Mary Kom)",
+  "Lehra Do (83)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -929,10 +929,11 @@
   "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi"
  ],
  "reel_official_used": [
-  "2112578088056000762",
-  "2112577476677587445",
+  "2113208967744905665",
   "2110681709335511113",
-  "2113208967744905665"
+  "2112577476677587445",
+  "2112578088056000762",
+  "2113644459791675393"
  ],
  "reel_news_recent": [
   {
@@ -1017,6 +1018,10 @@
   },
   {
    "title": "Family Full House: Geeta Kapur says Rohit Sharma has qualities she wants in an ideal partner; Mukesh Chhabra names Vicky Kaushal, Ranbir Kapoor for biopic",
+   "date": "2026-10-23"
+  },
+  {
+   "title": "📍 Mumbai\n\nAddressed the Business Today Most Powerful Women in Business Awards ceremony in Mumbai today.\n\nRecognised the invaluable contribut",
    "date": "2026-10-23"
   }
  ],
