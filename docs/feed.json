@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_am-2026-10-23",
+  "image": "posts/20261023-0633-reel_news_am-2026-10-23.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261023-063352-reel_news_am-2026-10-23.mp4",
+  "headline": "Tiger Shroff team shares video of his injuries after Juhu firing incident; actor reportedly sustained cuts and bruises",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tiger Shroff injuries video: Juhu firing incident ke baad actor ki team ne video share kiya 🎬\n\nJuhu firing ke kuch din baad Tiger Shroff ki team ne official social media par video dala.\nVideo mein unki chotein dikhayi gayi hain.\nReports ke mutabik actor ko cuts aur bruises aaye.\n\nTiger ke liye aap kya kahenge? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#tigershroff #bollywood #bollywoodnews #breakingnews #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
+  "pin_comment": "Kisi Tiger Shroff fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "intense, fighter vibe"
+   },
+   {
+    "title": "Tu Aake Dekhle",
+    "artist": "King",
+    "lang": "hindi",
+    "mood": "challenge to attackers"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "serious, dramatic tone"
+   },
+   {
+    "title": "FE!N",
+    "artist": "Travis Scott",
+    "lang": "english",
+    "mood": "dark, tense energy"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "removed weak photo slide(s) [2]"
+   ]
+  },
+  "created_at": "2026-10-23T06:33:52+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-23",
   "image": "posts/20261023-0433-reel_break_am-2026-10-23.jpg",
   "kind": "reel",
