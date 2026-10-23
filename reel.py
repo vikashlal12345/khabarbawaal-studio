@@ -249,7 +249,12 @@ def cover_hook_frame(photo: Image.Image, hook: str, tag: str, credit: str, t: fl
     and 6.4K views): ONE sharp photo fills the screen (slow zoom), a dark fade at the bottom, a huge Anton hook with
     the names in pink, a red tag badge top-left, the photo credit and the handle."""
     fx, fy = photo.info.get("focus", (0.5, None))   # where the person's face is (pick_cover_photo), 0-1
+    focus = photo.info.get("focus", (0.5, None))
     photo = photo.convert("RGB")
+    # 🔍 Sharpness (owner, 23 Oct 2026: the Shah Rukh + Deepika cover was blurry again): a small / landscape photo filling the tall
+    # screen is enlarged 3-4x. Over 2.2x it is shown WHOLE in a window instead (no stretching, no blurred copy).
+    if max(RW / photo.width, RH / photo.height) > COVER_MAX_ENLARGE:
+        return cover_window_frame(photo, focus, hook, tag, credit, highlight)
     z = 1.0 + 0.06 * min(1.0, t / dur)
     k = max(RW / photo.width, RH / photo.height) * z
     big = photo.resize((int(photo.width * k) + 1, int(photo.height * k) + 1), Image.BICUBIC)
@@ -267,6 +272,42 @@ def cover_hook_frame(photo: Image.Image, hook: str, tag: str, credit: str, t: fl
     y = RH - 330 - len(imgs) * lh
     for j, img in enumerate(imgs):
         frame.alpha_composite(img, ((RW - img.width) // 2, y + j * lh))
+    if tag:
+        frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
+    if credit:
+        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")
+    handle_tag(frame, 1790)
+    return frame
+
+
+COVER_MAX_ENLARGE = 2.2   # a cover photo may be enlarged at most this much to fill the 1080x1920 screen
+
+
+def cover_window_frame(photo: Image.Image, focus: tuple, hook: str, tag: str, credit: str,
+                       highlight: set[str] | None = None) -> Image.Image:
+    """The cover for a photo too small / wide to fill the screen sharply: the photo whole at the top (enlarged at most 1.8x, at
+    full width when it can), the same huge hook under it, on a dark background."""
+    frame = Image.new("RGBA", (RW, RH), "#0B0B10")
+    bgd = ImageDraw.Draw(frame)
+    for y in range(RH):
+        bgd.line((0, y, RW, y), fill=(11 + y // 90, 11, 16 + y // 70))
+    w_t = min(RW, int(photo.width * 1.8))
+    h_t = int(photo.height * w_t / photo.width)
+    img = photo.resize((w_t, h_t), Image.LANCZOS)
+    if h_t > 1000:   # a tall photo: keep the face, cut the rest
+        fy = focus[1] if focus and focus[1] is not None else 0.3
+        top = max(0, min(h_t - 1000, int(fy * h_t - 420)))
+        img, h_t = img.crop((0, top, w_t, top + 1000)), 1000
+    x, y0 = (RW - w_t) // 2, 250
+    mask = Image.new("L", (w_t, h_t), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, w_t - 1, h_t - 1), radius=0 if w_t == RW else 28, fill=255)
+    frame.paste(img.convert("RGB"), (x, y0), mask)
+    lines, fnt, lh = fit_lines(printable(hook), RIGHT - LEFT + 60, max(300, RH - 330 - (y0 + h_t + 50)),
+                               sizes=range(118, 64, -4), name="Anton-Regular.ttf")
+    imgs = line_images(lines, fnt, lh, "#FFFFFF", COVER_PINK, highlight if highlight is not None else auto_highlight(hook), stroke=9)
+    y = y0 + h_t + 50
+    for j, im in enumerate(imgs):
+        frame.alpha_composite(im, ((RW - im.width) // 2, y + j * lh))
     if tag:
         frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
     if credit:
@@ -2910,7 +2951,13 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
     # 🔍 Clarity (owner, 23 Oct 2026: an Aamir Khan cover was soft and got ~300 views): a photo fills the 1080x1920 screen, so a
     # small LANDSCAPE photo is blown up 3x or more. Photos enlarged more than 2.6x only compete when nothing else is sharper.
     scale = lambda im: max(RW / im.width, RH / im.height)
-    sharp_ok = [i for i, im in enumerate(photos[:6]) if scale(im) <= 2.6]
+    sharp_ok = [i for i, im in enumerate(photos[:6]) if scale(im) <= COVER_MAX_ENLARGE]
+    if not sharp_ok and len(photos[:6]) > 1:   # all small: only the biggest ones compete (the window cover shows them whole)
+        best = min(scale(im) for im in photos[:6])
+        near = [i for i, im in enumerate(photos[:6]) if scale(im) <= best * 1.25]
+        if len(near) < len(photos[:6]):
+            print(f"  cover: all photos are small: only the {len(near)} biggest compete")
+            return near[pick_cover_photo([photos[i] for i in near], about, tmp)]
     if sharp_ok and len(sharp_ok) < len(photos[:6]):
         print(f"  cover: {len(photos[:6]) - len(sharp_ok)} photo(s) would be enlarged too much: left out")
         sub = pick_cover_photo([photos[i] for i in sharp_ok], about, tmp)   # the AI contest among the sharp ones (sets the face position)
@@ -4236,6 +4283,14 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                 except fun.NoGoodJoke:
                     pass
             print(f"  Reels for '{story['title'][:50]}' weren't clear/funny/fresh enough: trying the next story")
+    if best is None and fmt == "classic":   # 23 Oct 2026: the classic Reel failed all 3 tries and the 6 PM slot became a news Reel
+        status.step("The classic Reel didn't pass the judge: trying a card format", 3)
+        for f in ("report_card", "quote_trap"):   # card formats need only facts that are in the articles
+            try:
+                if make_roast_card_reel(state, feed, today, tmp, stories, picks, recent, f):
+                    return
+            except Exception as e:
+                print(f"  ! roast card {f} failed ({type(e).__name__}: {str(e)[:120]})")
     if best is None:
         raise RuntimeError("the Reels for today's opposition stories weren't clear, funny or fresh enough")
     if too_long(best):   # one rewrite to the word limits, so every line can be read
