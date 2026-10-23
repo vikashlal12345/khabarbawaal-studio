@@ -162,7 +162,8 @@
   "14f9ae44c8cc",
   "19ffe1054dd8",
   "297207ad3d43",
-  "6f2fe6c74908"
+  "6f2fe6c74908",
+  "dd7eccae4001"
  ],
  "recent_headlines": [
   "[TECH] Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
@@ -308,12 +309,12 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-22",
-  "reel_news_early": "2026-10-22",
+  "reel_news_early": "2026-10-23",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-22",
   "reel_break_noon": "2026-10-22"
  },
- "inbox_since": "yK044aBVi8EF",
+ "inbox_since": "ZSJgLJSgmhcX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -714,7 +715,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
-  "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html"
+  "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
+  "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -863,10 +865,6 @@
   }
  ],
  "songs_recent": [
-  "Vishnu Sahasranamam",
-  "Jai Ganesh Jai Ganesh Deva",
-  "Om Jai Jagdish Hare",
-  "Vishnu Sahasranamam (Version 1)",
   "His Aura Hits You",
   "Jailer 2 Theme",
   "Believer",
@@ -902,7 +900,11 @@
   "Aarti Laxmi Ji Ki",
   "Om Jai Lakshmi Mata - Alka Yagnik",
   "Mahalakshmi Ashtakam",
-  "Laxmi Ji Ki Aarti"
+  "Laxmi Ji Ki Aarti",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Madhosh",
+  "Loser",
+  "Just Give Me a Reason (feat. Nate Ruess)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -920,34 +922,6 @@
   "2113208967744905665"
  ],
  "reel_news_recent": [
-  {
-   "title": "Bombay High Court directs makers of Tu Hai Meri Kiran to deposit Rs. 8.85 crores before release",
-   "date": "2026-10-20"
-  },
-  {
-   "title": "Jackie Shroff attends event with Maharashtra CM Devendra Fadnavis a day after attack on son Tiger Shroff",
-   "date": "2026-10-20"
-  },
-  {
-   "title": "Dil Raju calls Ranbir Kapoor ‘Ranveer Singh’ at Ramayana’s grand Hyderabad event; immediately apologizes: “Sorry, Ranbir Kapoor garu!”",
-   "date": "2026-10-20"
-  },
-  {
-   "title": "Sharad Kelkar says he spoke to Tiger Shroff after firing incident, trusts Mumbai Police to get to the bottom of the case",
-   "date": "2026-10-20"
-  },
-  {
-   "title": "SCOOP: Ramayana advance booking may get DELAYED due to revenue-sharing tussle; distributors demand 60% share in Week 1",
-   "date": "2026-10-20"
-  },
-  {
-   "title": "Prince William calls Karan Johar an ‘icon’, promises to watch Kabhi Khushi Kabhie Gham after meeting filmmaker in London",
-   "date": "2026-10-20"
-  },
-  {
-   "title": "भगवंत मान सरकार ने तीन महीने में नशा समाप्त करने का वादा किया था, पाँच साल बीत जाने के बाद भी पंजाब में नशे का कारोबार लगातार बढ़ता ही गया।\n",
-   "date": "2026-10-20"
-  },
   {
    "title": "Faisal Malik tells audience to wait and watch Ramayana Part 2, says making it gave him flashback of Hollywood BTS videos",
    "date": "2026-10-21"
@@ -1003,6 +977,10 @@
   {
    "title": "भव्य रसायन पार्क योजना के तहत केंद्र सरकार ₹1,000 करोड़ तक और राज्य सरकार न्यूनतम ₹500 करोड़ का निवेश करेगी। कम से कम 2,000 एकड़ भूमि और बेह",
    "date": "2026-10-22"
+  },
+  {
+   "title": "21,900 digital arrest complaints registered till Sept: MHA to SC",
+   "date": "2026-10-23"
   }
  ],
  "claude_limit": {
