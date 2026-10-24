@@ -1,5 +1,59 @@
 [
  {
+  "id": "reel_news_pm-2026-10-24",
+  "image": "posts/20261024-1033-reel_news_pm-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-103351-reel_news_pm-2026-10-24.mp4",
+  "headline": "Koffee with Karan: Varun Dhawan, Janhvi Kapoor spill secrets about Karan Johar while Arjun Kapoor joins them for a fun rapid fire round",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Koffee with Karan Varun Dhawan Janhvi Kapoor promo 🔥\nPromo mein Varun aur Janhvi secrets spill karte dikhe.\nEpisode mein Arjun Kapoor bhi fun rapid fire round ke liye judte hain.\nKaran Johar ne Saturday ko promo release kiya.\nSabse bada secret kiska nikla? Varun ya Janhvi? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#koffeewithkaran #varundhawan #janhvikapoor #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
+  "pin_comment": "Apne Koffee with Karan wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "fun gossip vibe"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "naughty rapid fire energy"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "party glam couch vibe"
+   },
+   {
+    "title": "Jalebi Baby",
+    "artist": "Tesher",
+    "lang": "english",
+    "mood": "playful desi fun"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say they revealed Karan's secrets; promo only hints at secrets being spilled",
+    "Fact corrected to match the article: Article only says promo suggests they will spill secrets, not Karan's secrets",
+    "Fact corrected to match the article: Article doesn't say the promo is viral; it says Karan dropped it on Saturday"
+   ],
+   "fixed": [
+    "Varun Dhawan Janhvi ne Karan Johar ke raaz khole → Varun Dhawan Janhvi promo mein raaz kholte dikhe",
+    "Varun aur Janhvi ne Karan Johar ke secrets spill kiye. → Promo mein Varun aur Janhvi secrets spill karte dikhe.",
+    "Promo ab viral hai. → Karan Johar ne Saturday ko promo release kiya.",
+    "Varun Dhawan Janhvi promo mein raaz kholte dikhe → Varun Dhawan aur Janhvi promo mein raaz kholte dikhe"
+   ]
+  },
+  "created_at": "2026-10-24T10:33:51+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-24",
   "image": "posts/20261024-0833-reel_break_noon-2026-10-24.jpg",
   "kind": "reel",
@@ -407,97 +461,5 @@
    "fixed": []
   },
   "created_at": "2026-10-23T12:45:08+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-23",
-  "image": "posts/20261023-1033-reel_news_pm-2026-10-23.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261023-103319-reel_news_pm-2026-10-23.mp4",
-  "headline": "Aamir Khan says, ‘Rajkumar Hirani will narrate 3 Idiots sequel’s final script in the coming weeks’",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Aamir Khan 3 Idiots sequel update 🎬\n\nAamir ne bataya ki director Rajkumar Hirani sequel ki final script par kaam kar rahe hain.\nAane wale hafton mein Hirani Aamir ko final script narrate karenge.\nFans ko saalon se is film ka intezaar hai.\n\n3 Idiots 2 dekhne ke liye excited ho? Haan ya Na? Comment karo 👇\n\nVideo: @SAMTHEBESTEST_ on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#aamirkhan #3idiots #bollywood #rajkumarhirani #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
-  "pin_comment": "Apne 3 Idiots wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "nostalgic filmy vibe for big return"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "yaadon wali nostalgia"
-   },
-   {
-    "title": "Sunflower (Spider-Man: Into the Spider-Verse)",
-    "artist": "Post Malone, Swae Lee",
-    "lang": "english",
-    "mood": "feel-good throwback energy"
-   },
-   {
-    "title": "Sweater Weather",
-    "artist": "The Neighbourhood",
-    "lang": "english",
-    "mood": "chill college-days feel"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 5: The '@khabarbawaal' handle overlaps the photo credit '@SAMTHEBESTEST_ on X' at the bottom left. The credit text is partly cut off and hard to read."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-23T10:33:19+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-23",
-  "image": "posts/20261023-0833-reel_break_noon-2026-10-23.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261023-083311-reel_break_noon-2026-10-23.mp4",
-  "headline": "Ramayana vs Adipurush: Ranbir Kapoor, Yash-starrer dwarfs Prabhas film, outpaces it by 120% in advance bookings",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ranbir Kapoor Ramayana advance booking Adipurush record 🔥\nPehle din 65K se zyada tickets bike, Rs 3.13 crore gross.\nAdipurush ke same period se 123% zyada.\nAb tak Rs 6.25 crore, film 5 November ko release.\nRanbir ki Ramayana Adipurush se aage nikli, aap kya sochte ho? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #ranbirkapoor #ramayana #yash #bollywood",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
-  "pin_comment": "Kya Ramayana blockbuster banegi? Kisi Ranbir ya Yash fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "One Name",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "hype = record advance booking"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "epic aura = Ramayana scale"
-   },
-   {
-    "title": "Solar Eclipse",
-    "artist": "Drake & Don Toliver",
-    "lang": "english",
-    "mood": "big, dark, powerful entry"
-   },
-   {
-    "title": "End of Beginning",
-    "artist": "Djo",
-    "lang": "english",
-    "mood": "new chapter begins"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-23T08:33:11+00:00"
  }
 ]
