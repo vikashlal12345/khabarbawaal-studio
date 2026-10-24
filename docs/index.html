@@ -184,6 +184,7 @@ const chosen = {};     // post id -> picked option index (posts with photo optio
 let posts = [];
 let feedPosts = [], tab = 'feed';
 let igLinks = {}, boosts = {};
+let remoteMarks = {}, inboxSince = '12h';   // ✅ taps from ALL phones, read from the robot's inbox (owner, 24 Oct 2026)
 let inboxTopic = null, pushKey = null;
 
 function currentImage(post) {
@@ -339,7 +340,31 @@ function proofHtml(p) {
 // ✅ Posted (owner, 15 Oct 2026; 22 Oct 2026: one tap, no Instagram link): ✅ Mark as posted moves a post from
 // Posts (to do) to ✅ Posted and ↩️ Undo moves it back. The robot keeps the mark in stats/ig_links.json.
 // Both tabs still clear 24 hours after the robot made the post (feed.json keep_days), 🗑️ works the same in both.
-function isLinked(p) { return !localGet('unposted-' + p.id) && !!(igLinks[p.id] || localGet('linked-' + p.id)); }
+// 24 Oct 2026 (owner has two phones): a tap on one phone shows on the other. Every tap is in the robot's inbox (ntfy keeps ~12 h);
+// each phone reads it (pollMarks) and the NEWEST tap wins, this phone's own (markt-) or another phone's; older ones come from the
+// robot's list (igLinks).
+function isLinked(p) {
+  const r = remoteMarks[p.id], mine = +(localGet('markt-' + p.id) || 0);
+  if (r && r.t >= mine) return r.on;
+  return !localGet('unposted-' + p.id) && !!(igLinks[p.id] || localGet('linked-' + p.id));
+}
+async function pollMarks() {
+  if (document.hidden) return;
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const r = await fetch(`https://ntfy.sh/${inboxTopic}/json?poll=1&since=${inboxSince}`);
+    const before = JSON.stringify(shown().map(p => isLinked(p)));
+    for (const line of (await r.text()).split('\n')) {
+      if (!line.trim()) continue;
+      let m; try { m = JSON.parse(line); } catch { continue; }
+      inboxSince = m.id || inboxSince;
+      let ev; try { ev = JSON.parse(m.message); } catch { continue; }
+      if ((ev.type === 'posted' || ev.type === 'unposted') && ev.post && (!remoteMarks[ev.post] || m.time >= remoteMarks[ev.post].t))
+        remoteMarks[ev.post] = { on: ev.type === 'posted', t: m.time };
+    }
+    if (JSON.stringify(shown().map(p => isLinked(p))) !== before) { render(); updateTabs(); }
+  } catch {}
+}
 function shown() { return feedPosts.filter(p => !localGet('deleted-' + p.id)); }
 function updateTabs() {
   const all = shown(), done = all.filter(isLinked).length;
@@ -746,6 +771,8 @@ async function markPosted(post, on) {
     if (!r.ok) throw new Error(r.status);
     if (on) { localSet('linked-' + post.id, 'posted'); localDel('unposted-' + post.id); }
     else { localDel('linked-' + post.id); localSet('unposted-' + post.id, '1'); }
+    localSet('markt-' + post.id, String(Math.floor(Date.now() / 1000)));   // so the newest tap wins over another phone's
+    delete remoteMarks[post.id];
     toast(on ? '✅ Moved to Posted' : '↩️ Moved back to Posts');
     render();
   } catch (e) {
@@ -787,6 +814,7 @@ async function load() {
     igLinks = links || {};
     if (!same) render();
     else updateTabs();
+    pollMarks();   // taps made on the other phone
     const all = shown();
     statusEl.textContent = all.length
       ? `${all.length} posts · latest ${ago(all[0].created_at)}`
@@ -884,6 +912,7 @@ document.getElementById('activity').addEventListener('click', e => {   // tap a 
   if (row) openPost(row.dataset.post);
 });
 setInterval(pollStatus, 10000);
+setInterval(pollMarks, 30000);
 
 document.addEventListener('visibilitychange', () => { if (!document.hidden) { load(); pollStatus(); } });
 // 🔔 Phone alerts: the robot (push.py) notifies this phone when a post is ready. iPhone allows it only
