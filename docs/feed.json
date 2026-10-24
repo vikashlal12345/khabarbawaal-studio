@@ -1,5 +1,35 @@
 [
  {
+  "id": "c6ef73dd1fb8",
+  "kind": "custom",
+  "image": "posts/20261024-0625-c6ef73dd1fb8-1.jpg",
+  "options": [
+   "posts/20261024-0625-c6ef73dd1fb8-1.jpg",
+   "posts/20261024-0625-c6ef73dd1fb8-2.jpg",
+   "posts/20261024-0625-c6ef73dd1fb8-3.jpg"
+  ],
+  "slides": [
+   "posts/20261024-0625-c6ef73dd1fb8-s2.jpg",
+   "posts/20261024-0625-c6ef73dd1fb8-s3.jpg"
+  ],
+  "headline": "Viral video of the day: KhabarBawaal ka sharper version is here, watch till end",
+  "tag": "VIRAL",
+  "caption": "Ye video internet pe ghoom raha hai, ab KhabarBawaal ke naye look mein 🔥\nSame video, better text, aur hamara logo ke saath.\nPoora dekho, kyunki details caption ke baad aur clear hongi.\nIs video ko ek word mein describe karo 👇\n\nFollow @khabarbawaal for daily updates.\nSource: instagram.com (link pinned in comments 👇)\n\n#viral #trending #india #reels #news",
+  "source": "instagram.com",
+  "source_url": "https://www.instagram.com/reel/De3XNdZPQd6/?xtok=MTNuczVyNXdxNHIzcQ%3D%3D",
+  "pin_comment": "Sabse pehle kis dost ko ye video bhejoge? Usko abhi DM karo 👇",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Our headline text sits on top of the headline already burned into the photo (\"Bengaluru restaurant ... people ... food, triggers fierce debate\"). The two overlap and the photo's text is half hidden and hard to read.",
+    "Caption: The articles supplied are about a Manx designer and black poplar trees. Neither matches this post, which is about a viral video that shows a Bengaluru restaurant queue. The post's claims (viral on Instagram, who, what, when) can't be checked against the article. The slides themselves say the details are unverified.",
+    "Slide 2: The slide says the article is not available and the content is unverified. That makes the post empty of facts, and the photo's headline about a Bengaluru restaurant is not explained anywhere."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-24T06:25:19+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-24",
   "image": "posts/20261024-0432-reel_break_am-2026-10-24.jpg",
   "kind": "reel",
@@ -416,54 +446,5 @@
    ]
   },
   "created_at": "2026-10-23T06:33:52+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-23",
-  "image": "posts/20261023-0433-reel_break_am-2026-10-23.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261023-043330-reel_break_am-2026-10-23.mp4",
-  "headline": "Aamir Khan breaks down in tears talking about career's weakest moments, says he lost relationships, time with kids by working like a ‘madman’",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Aamir Khan Singapore International Film Festival tears Screen Icon Award\n\nAamir ko Singapore film festival mein Screen Icon Award mila.\nWeakest moment batate hue wo stage par ro pade aur audience se maafi maangi.\nUnhone kaha 30 saal ke kaam mein rishte aur bachchon ke saath time kho diya.\n\nAamir ka family ko time dena sahi faisla? Comment karo 👇🥹\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #aamirkhan #bollywood #bollywoodnews #screenicon",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
-  "pin_comment": "Aamir ne kaha: 56 mein samajh aaya, 86 mein nahi. Kisi Aamir fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Chhod Diya",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "emotional, lost time = sad vibe"
-   },
-   {
-    "title": "Tera Zikr",
-    "artist": "Darshan Raval",
-    "lang": "hindi",
-    "mood": "bhavuk yaadon wala mood"
-   },
-   {
-    "title": "Infinity",
-    "artist": "Jaymes Young",
-    "lang": "english",
-    "mood": "soft, emotional confession"
-   },
-   {
-    "title": "Arcade",
-    "artist": "Duncan Laurence",
-    "lang": "english",
-    "mood": "heartbreak, regret tone"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover photo is blurry and pixelated because it is enlarged too much. The headline text also sits over his chin and neck area."
-   ],
-   "fixed": [
-    "Aamir Khan stage par roye, kaam ne bachon ka time cheena → Aamir Khan stage par roye, kaam ne bachchon ka time cheena"
-   ]
-  },
-  "created_at": "2026-10-23T04:33:30+00:00"
  }
 ]

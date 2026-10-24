@@ -6546,6 +6546,41 @@
      "tokens": 12162
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 7,
+   "input": 20,
+   "output": 3944,
+   "cache_read": 10331,
+   "cache_write": 105529,
+   "value_usd": 0.4627,
+   "by_purpose": {
+    "reel brief": {
+     "requests": 1,
+     "tokens": 20798
+    },
+    "reel style": {
+     "requests": 1,
+     "tokens": 20710
+    },
+    "reel news script": {
+     "requests": 1,
+     "tokens": 30630
+    },
+    "photo check": {
+     "requests": 2,
+     "tokens": 9784
+    },
+    "writing": {
+     "requests": 1,
+     "tokens": 24060
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 13842
+    }
+   }
   }
  }
 }
