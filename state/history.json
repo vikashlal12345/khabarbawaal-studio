@@ -172,7 +172,8 @@
   "a16ec4fae4b9",
   "e06171ae353a",
   "20022c603e12",
-  "3b0341d1f4a0"
+  "3b0341d1f4a0",
+  "cee78210d916"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -312,7 +313,7 @@
   "reel_news_pm": "2026-10-23",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-23",
+  "reel_news_am": "2026-10-24",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -324,7 +325,7 @@
   "reel_break_noon": "2026-10-23",
   "reel_break_aft": "2026-10-23"
  },
- "inbox_since": "pi61KBsO7zhl",
+ "inbox_since": "eopDGYSld74I",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -736,7 +737,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
   "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
-  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -885,10 +887,6 @@
   }
  ],
  "songs_recent": [
-  "Just Give Me a Reason (feat. Nate Ruess)",
-  "Chhod Diya",
-  "Tera Zikr",
-  "Infinity",
   "Arcade",
   "Azadi",
   "Tu Aake Dekhle",
@@ -924,7 +922,11 @@
   "Believer",
   "Alfaaz",
   "People",
-  "Beggin'"
+  "Beggin'",
+  "Tabaahi (From \"Toxic\")",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Big Dawgs",
+  "Blinding Lights"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1009,6 +1011,10 @@
   },
   {
    "title": "Manoj Bajpayee says he felt offended, helpless when 'faceless, nameless' trolls attacked his wife and daughter over Ghooskhor Pandat row",
+   "date": "2026-10-24"
+  },
+  {
+   "title": "SCOOP: Ranbir Kapoor SECRETLY tipped off Sandeep Reddy Vanga about Ramayana 2's delay; helped Prabhas' Spirit grab Diwali 2027!",
    "date": "2026-10-24"
   }
  ],
