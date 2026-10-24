@@ -1,12 +1,12 @@
 {
- "at": "2026-10-24T10:33:55+00:00",
+ "at": "2026-10-24T12:34:26+00:00",
  "x": [],
  "google": [
-  "elena rybakina",
-  "tamil nadu",
-  "tilak varma",
-  "shreyas iyer",
-  "loan waiver"
+  "como vs sassuolo",
+  "nicolas jackson",
+  "deepinder goyal",
+  "luton town vs leicester city",
+  "aditya kumar cat disciplinary proceedings"
  ],
  "stories": [
   {
@@ -24,10 +24,38 @@
    "hours": 0
   },
   {
+   "title": "Trump invokes Operation Sindoor at US midterm poll rallies, claims 250% tariff threat stopped India-Pakistan war",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/trump-invokes-operation-sindoor-at-us-midterm-poll-rallies-claims-250-tariff-threat-stopped-india-pakistan-war-101792837156172.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Google DeepMind employees resign over Pentagon AI deals, citing ethical concerns",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/google-deepmind-employees-resign-over-pentagon-ai-deals-citing-ethical-concerns-101792837956410.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
    "title": "Karan Johar to host ELITE most influential 2026 at Oxford University on December 14",
    "source": "Bollywood Hungama",
    "link": "https://www.bollywoodhungama.com/news/bollywood/karan-johar-to-host-elite-most-influential-2026-at-oxford-university-on-december-14/",
    "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Amrita Puri says she has no regrets about taking break from acting to pursue master's, reveals parents were against her becoming an actor",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/amrita-puri-says-she-has-no-regrets-about-taking-break-from-acting-to-pursue-masters-reveals-parents-were-against-her-becoming-an-actor-101792841166421.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Iran’s parliament speaker Mohammad Bagher Ghalibaf to skip Brics forum in New Delhi",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/irans-parliament-speaker-mohammad-bagher-ghalibaf-to-skip-brics-forum-in-new-delhi-unforeseen-circumstances-101792840172755.html",
+   "category": "india/politics",
    "hours": 0
   },
   {
@@ -38,45 +66,17 @@
    "hours": 0
   },
   {
-   "title": "India condemns ‘heinous’ attack that killed 7 in Jordan church, reaffirms ‘fight against terrorism’",
+   "title": "Sumo Didi review: This sweet, simple story about India's first female sumo wrestler entertains and inspires",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/india-condemns-heinous-attack-that-killed-7-in-jordan-church-reaffirms-fight-against-terrorism-101792836452822.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Andhra Pradesh, Odisha on alert as IMD warns of possible cyclone over Bay of Bengal by October 26",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/andhra-pradesh-odisha-on-alert-as-imd-warns-of-possible-cyclone-over-bay-of-bengal-by-october-26-sunday-101792830961854.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Piyush Goyal identifies India's ‘AI-proof’ sectors, says ministry working on jobs AI can't replace",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/piyush-goyal-identifies-indias-ai-proof-sectors-says-ministry-working-on-jobs-ai-cant-replace-101792824044852.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "NCERT releases AI module for Classes 9 to 12; deepfakes, ethical usage in focus",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/ncert-releases-ai-module-for-classes-9-to-12-deepfakes-ethical-usage-in-focus-101792833870613.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Koffee with Karan: Varun Dhawan, Janhvi Kapoor spill secrets about Karan Johar while Arjun Kapoor joins them for a fun rapid fire round",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/sumo-didi-review-this-sweet-simple-story-about-indias-first-female-sumo-wrestler-entertains-and-inspires-hetal-dave-shriyam-bhagnani-101792838328206.html",
    "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "Spanish reporter covering rough seas knocked off balance by giant wave on live TV",
+   "title": "Tiger Shroff's shooters received real-time updates, instructions based on media coverage",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/spanish-reporter-covering-rough-seas-knocked-off-balance-by-giant-wave-on-live-tv-101792828205169.html",
-   "category": "viral",
+   "link": "https://www.hindustantimes.com/india-news/tiger-shroffs-shooters-received-real-time-updates-instructions-based-on-media-coverage-101792832941919.html",
+   "category": "india/politics",
    "hours": 0
   }
  ]
