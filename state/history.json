@@ -173,7 +173,8 @@
   "e06171ae353a",
   "20022c603e12",
   "3b0341d1f4a0",
-  "cee78210d916"
+  "cee78210d916",
+  "1cd4c37bfc88"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -322,10 +323,10 @@
   "reel_news_early": "2026-10-24",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-24",
-  "reel_break_noon": "2026-10-23",
+  "reel_break_noon": "2026-10-24",
   "reel_break_aft": "2026-10-23"
  },
- "inbox_since": "eopDGYSld74I",
+ "inbox_since": "maT4RteHTbeO",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -738,7 +739,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
-  "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/"
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
+  "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -887,10 +889,6 @@
   }
  ],
  "songs_recent": [
-  "Arcade",
-  "Azadi",
-  "Tu Aake Dekhle",
-  "All The Stars",
   "FE!N",
   "One Name",
   "His Aura Hits You",
@@ -926,7 +924,11 @@
   "Tabaahi (From \"Toxic\")",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Big Dawgs",
-  "Blinding Lights"
+  "Blinding Lights",
+  "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+  "Madhosh",
+  "Levitating",
+  "Girls Like You"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1015,6 +1017,10 @@
   },
   {
    "title": "SCOOP: Ranbir Kapoor SECRETLY tipped off Sandeep Reddy Vanga about Ramayana 2's delay; helped Prabhas' Spirit grab Diwali 2027!",
+   "date": "2026-10-24"
+  },
+  {
+   "title": "Udta Teer box office collection day 1: Ayushmann Khurrana and Sara Ali Khan’s film opens at ₹4.10 crore, narrowly edges Pati Patni Aur Woh Do",
    "date": "2026-10-24"
   }
  ],

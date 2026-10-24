@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_noon-2026-10-24",
+  "image": "posts/20261024-0833-reel_break_noon-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-083302-reel_break_noon-2026-10-24.mp4",
+  "headline": "Udta Teer box office collection day 1: Ayushmann Khurrana and Sara Ali Khan’s film opens at ₹4.10 crore, narrowly edges Pati Patni Aur Woh Do",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Udta Teer box office day 1 Ayushmann Khurrana Sara Ali Khan 🎬\nSacnilk ke mutabik film ne 4.10 crore net kamaye.\nAyushmann ki Pati Patni Aur Woh Do (around 4 crore) se thodi aage.\nRaat ke shows mein occupancy 13% se badhkar 25% hui.\nAapko kya lagta hai, weekend mein film pakdegi? Haan ya Na? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #bollywood #UdtaTeer #AyushmannKhurrana #SaraAliKhan",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
+  "pin_comment": "Udta Teer dekhoge ya nahi? Kisi Ayushmann fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
+    "lang": "hindi",
+    "mood": "jodi ka film release vibe"
+   },
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "romantic jodi, film promotion vibe"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "upbeat opening day energy"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "hero-heroine pairing vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo is a tightly zoomed crop of the film poster. It looks pixelated and blurry, and the title is cut off. Slide 1 can't be dropped, so a sharper or wider image is needed."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-24T08:33:03+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-24",
   "image": "posts/20261024-0634-reel_news_am-2026-10-24.jpg",
   "kind": "reel",
