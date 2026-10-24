@@ -1,13 +1,43 @@
 {
- "at": "2026-10-24T00:33:38+00:00",
+ "at": "2026-10-24T02:33:34+00:00",
  "x": [],
  "google": [
-  "celtics vs knicks",
-  "ind a vs nz a",
-  "manoj jarange",
-  "luca van assche"
+  "ca foundation result september 2026",
+  "weather update",
+  "tim david",
+  "australia one-day cup",
+  "brewers vs rays",
+  "spurs vs rockets"
  ],
  "stories": [
+  {
+   "title": "SEM court orders CJP's Saurav Das to submit proof of Delhi address in peace bond violation case",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/sem-court-orders-cjp-saurav-das-to-submit-proof-of-delhi-address-in-alleged-peace-bond-violation-case-101792800610836.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Indian-American donors give Republicans 4:1 funding edge over Democrats ahead of US midterms",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/indianamerican-donors-give-republicans-4-1-funding-edge-over-democrats-ahead-of-us-midterms-101792807625746.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Prince William says he once wanted to become a policeman, then a DJ called 'DJ Xara’",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/prince-william-says-he-once-wanted-to-become-a-policeman-then-a-dj-called-dj-xara-101792804296009.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "4.76 million names dropped from Delhi voter rolls, but just 250,000 Form 6 applications filed",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/sir-special-intensive-revision-election-commission-eci-delhi-4-million-names-dropped-voter-rolls-250000-form-6-applications-filed-101792799991018.html",
+   "category": "india/politics",
+   "hours": 0
+  },
   {
    "title": "SCOOP: Ramayana 2 delayed to 2028; Ranbir Kapoor & Yash starrer to release on Diwali 2028",
    "source": "Bollywood Hungama",
@@ -16,45 +46,10 @@
    "hours": 0
   },
   {
-   "title": "Nirmala Sitharaman urges regulators to speed up refunds of unclaimed bank deposits, shares and funds",
+   "title": "SC rolls back blanket rule on death-penalty reports",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/nirmala-sitharaman-urges-regulators-to-speed-up-refunds-of-unclaimed-bank-deposits-shares-and-funds-101792776238920.html",
+   "link": "https://www.hindustantimes.com/india-news/sc-rolls-back-blanket-rule-on-death-penalty-reports-101792780798780.html",
    "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "TN school principal, teacher, 2 students booked after Class 11 Dalit boy found dead in Coimbatore",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/tn-school-principal-teacher-2-students-booked-after-class-11-dalit-boy-found-dead-in-coimbatore-101792775766447.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "World's youngest self-made female billionaire says $2.6 billion fortune hasn't changed her life, still works 14 hours a day",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/worlds-youngest-self-made-female-billionaire-says-2-6-billion-fortune-hasnt-changed-her-life-still-works-14-hours-a-day-101792774371984.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Govt to issue consultation paper on a new AI law in ‘coming weeks’: Ashwini Vaishnaw",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/govt-to-issue-consultation-paper-on-a-new-ai-law-in-coming-weeks-ashwini-vaishnaw-101792770159277.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Shivakumar alleges ‘industrialist’ attempted sting op on him, Kerala CM using Meta glasses",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/shivakumar-alleges-industrialist-attempted-sting-op-on-him-kerala-cm-using-meta-glasses-101792772888619.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Alia Bhatt, Sharvari-starrer Alpha to premiere on Sony MAX at 8 PM on October 31",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/alia-bhatt-sharvari-starrer-alpha-to-premiere-on-sony-max-at-8-pm-on-october-31/",
-   "category": "entertainment",
    "hours": 0
   }
  ]
