@@ -170,7 +170,8 @@
   "4ff25cb02a3f",
   "7e7ec3d277ad",
   "a16ec4fae4b9",
-  "e06171ae353a"
+  "e06171ae353a",
+  "20022c603e12"
  ],
  "recent_headlines": [
   "[TECH] Meta launches Muse AI agent that turns saved Instagram recipe reels into grocery lists",
@@ -318,11 +319,11 @@
   "reel_official": "2026-10-23",
   "reel_news_early": "2026-10-24",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-23",
+  "reel_break_am": "2026-10-24",
   "reel_break_noon": "2026-10-23",
   "reel_break_aft": "2026-10-23"
  },
- "inbox_since": "aMbWDJaeBhZN",
+ "inbox_since": "pi61KBsO7zhl",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -731,7 +732,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
   "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
-  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/"
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
+  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -880,9 +882,6 @@
   }
  ],
  "songs_recent": [
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Madhosh",
-  "Loser",
   "Just Give Me a Reason (feat. Nate Ruess)",
   "Chhod Diya",
   "Tera Zikr",
@@ -919,7 +918,10 @@
   "Jai Jai Ram (From \"Ramayana\")",
   "Jitni Dafa",
   "Let Me Down Slowly",
-  "Believer"
+  "Believer",
+  "Alfaaz",
+  "People",
+  "Beggin'"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1000,6 +1002,10 @@
   },
   {
    "title": "SCOOP: Ramayana 2 delayed to 2028; Ranbir Kapoor & Yash starrer to release on Diwali 2028",
+   "date": "2026-10-24"
+  },
+  {
+   "title": "Manoj Bajpayee says he felt offended, helpless when 'faceless, nameless' trolls attacked his wife and daughter over Ghooskhor Pandat row",
    "date": "2026-10-24"
   }
  ],

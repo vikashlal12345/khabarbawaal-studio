@@ -1,5 +1,46 @@
 [
  {
+  "id": "reel_break_am-2026-10-24",
+  "image": "posts/20261024-0432-reel_break_am-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-043237-reel_break_am-2026-10-24.mp4",
+  "headline": "Manoj Bajpayee says he felt offended, helpless when 'faceless, nameless' trolls attacked his wife and daughter over Ghooskhor Pandat row",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Manoj Bajpayee Ghooskhor Pandat row Gajab Raat trolls family 😔\nManoj ne PTI interview mein kaha ki family ki photos chhapne se woh offended hue.\nUnke mutabik trolls 'nameless' the, isliye confront nahi kar sakte the.\nFilm ka naam badalkar Gajab Raat hua, jo 23 October ko Netflix par aayi.\nAapko kya lagta hai, kisi ki family ko trolling mein ghasitna sahi hai? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #manojbajpayee #gajabraat #bollywood #netflix",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
+  "pin_comment": "Gajab Raat dekhi kya? Kisi Manoj Bajpayee fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "words hurt = alfaaz"
+   },
+   {
+    "title": "People",
+    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
+    "lang": "english",
+    "mood": "hurt by people, sad vibe"
+   },
+   {
+    "title": "Beggin'",
+    "artist": "Måneskin",
+    "lang": "english",
+    "mood": "helpless feeling, dramatic"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo credit 'Photo: Wikimedia Commons' at bottom left sits very close to the '@khabarbawaal' handle and may slightly overlap it."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-24T04:32:37+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-24",
   "image": "posts/20261024-0233-reel_news_early-2026-10-24.jpg",
   "kind": "reel",
@@ -424,54 +465,5 @@
    ]
   },
   "created_at": "2026-10-23T04:33:30+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-23",
-  "image": "posts/20261023-0234-reel_news_early-2026-10-23.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261023-023418-reel_news_early-2026-10-23.mp4",
-  "headline": "21,900 digital arrest complaints registered till Sept: MHA to SC",
-  "tag": "🎬 REEL · INDIA",
-  "caption": "Digital arrest fraud complaints MHA Supreme Court 😳\n\nMHA ne Supreme Court ko bataya: 1 January se 31 August 2026 tak 21,900 se zyada digital arrest fraud complaints darj hui.\nIn cases mein ₹647 crore se zyada ki raqam shamil hai.\nYaani sirf 8 mahine mein itna bada scam.\n\nKya aapke ya aapke ghar mein kisi ke paas aisa fraud call aaya hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#digitalarrest #cyberfraud #supremecourt #indianews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
-  "pin_comment": "Apne mummy-papa ko ye zaroor bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "dramatic, tense scam alert"
-   },
-   {
-    "title": "Madhosh",
-    "artist": "Tanishk Bagchi, Arslan Nizami",
-    "lang": "hindi",
-    "mood": "victims in a trance of fear"
-   },
-   {
-    "title": "Loser",
-    "artist": "Tame Impala",
-    "lang": "english",
-    "mood": "scammer wins, victim loses"
-   },
-   {
-    "title": "Just Give Me a Reason (feat. Nate Ruess)",
-    "artist": "P!nk, Nate Ruess",
-    "lang": "english",
-    "mood": "serious, think twice before trusting"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article calls December 2026 only a tentative timeline, subject to technical work; the slide states it as a firm deadline."
-   ],
-   "fixed": [
-    "RBI SOP December 2026 tak. → RBI SOP ka tentative timeline December 2026."
-   ]
-  },
-  "created_at": "2026-10-23T02:34:18+00:00"
  }
 ]
