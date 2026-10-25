@@ -1,10 +1,10 @@
 {
  "2026-09-20": {
-  "replies": 95,
-  "input": 190,
-  "output": 42204,
-  "cache_read": 74825788,
-  "cache_write": 66062
+  "replies": 80,
+  "input": 160,
+  "output": 37261,
+  "cache_read": 63422405,
+  "cache_write": 57287
  },
  "2026-09-21": {
   "replies": 155,
