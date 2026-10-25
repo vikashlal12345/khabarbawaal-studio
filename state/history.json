@@ -327,14 +327,14 @@
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
-  "reel_official": "2026-10-24",
+  "reel_official": "2026-10-25",
   "reel_news_early": "2026-10-25",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-25",
   "reel_break_noon": "2026-10-25",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "sOCNRDlmAfEB",
+ "inbox_since": "msyw30WMbdB0",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -970,11 +970,12 @@
  ],
  "reel_official_used": [
   "2112578088056000762",
-  "2112577476677587445",
   "2110681709335511113",
   "2113208967744905665",
   "2113644459791675393",
-  "2113861736721752067"
+  "2113861736721752067",
+  "2112577476677587445",
+  "2114374820439970106"
  ],
  "reel_news_recent": [
   {
@@ -1063,7 +1064,7 @@
   }
  ],
  "claude_limit": {
-  "at": "2026-10-25T14:16:17+00:00",
+  "at": "2026-10-25T15:34:12+00:00",
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  }
