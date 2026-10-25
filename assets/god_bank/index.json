@@ -1,0 +1,102 @@
+{
+ "bhagwan-vishnu": [
+  {
+   "date": "2026-10-22",
+   "family": "Vishnu",
+   "last_used": "",
+   "images": [
+    {
+     "file": "bhagwan-vishnu-2026-10-22-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.52,
+      0.21
+     ]
+    },
+    {
+     "file": "bhagwan-vishnu-2026-10-22-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.47,
+      0.17
+     ]
+    }
+   ]
+  }
+ ],
+ "maa-lakshmi": [
+  {
+   "date": "2026-10-23",
+   "family": "Lakshmi",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-lakshmi-2026-10-23-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    },
+    {
+     "file": "maa-lakshmi-2026-10-23-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    }
+   ]
+  }
+ ],
+ "shani-dev": [
+  {
+   "date": "2026-10-24",
+   "family": "Shani",
+   "last_used": "",
+   "images": [
+    {
+     "file": "shani-dev-2026-10-24-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    },
+    {
+     "file": "shani-dev-2026-10-24-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.22
+     ]
+    }
+   ]
+  }
+ ],
+ "surya-dev": [
+  {
+   "date": "2026-10-25",
+   "family": "Surya",
+   "last_used": "",
+   "images": [
+    {
+     "file": "surya-dev-2026-10-25-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.26
+     ]
+    },
+    {
+     "file": "surya-dev-2026-10-25-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.17
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,454 @@
+[
+ {
+  "id": "reel_news_am-2026-10-25",
+  "image": "posts/20261025-0635-reel_news_am-2026-10-25.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261025-063539-reel_news_am-2026-10-25.mp4",
+  "headline": "Saif Ali Khan attack trial begins, nurse says intruder demanded ₹1 crore, recalls actor overpowering him",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Saif Ali Khan attack trial begins: nurse ne court mein kya bataya 😳\n\nSaif Ali Khan, Kareena Kapoor ke staff nurse ne court mein Mohammed Shariful ko hamlawar ke roop mein pehchaana.\nNurse ke mutabik hamlawar ne ₹1 crore maange.\nNurse ne yaad kiya ki Saif ne use kaise kaabu kiya.\nHamla Bandra ke ghar mein January last year hua tha.\n\nAapko kya lagta hai, Saif ki himmat ko salaam banta hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #kareenakapoor #bollywoodnews #trending #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
+  "pin_comment": "Kisi Saif ya Kareena fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Kabhi Shaam Dhale",
+    "artist": "Jaani, Mohammad Faiz",
+    "lang": "hindi",
+    "mood": "serious, tense court moment"
+   },
+   {
+    "title": "Tere Liye",
+    "artist": "Atif Aslam, Shreya Ghoshal, Sachin Gupta, Sameer Anjaan",
+    "lang": "hindi",
+    "mood": "Saif-Kareena family, emotional"
+   },
+   {
+    "title": "Lies (feat. Lana Del Rey)",
+    "artist": "Zach Bryan & Lana Del Rey",
+    "lang": "english",
+    "mood": "truth coming out in court"
+   },
+   {
+    "title": "Solar Eclipse",
+    "artist": "Drake & Don Toliver",
+    "lang": "english",
+    "mood": "dark, suspense crime tone"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Attribute the claim to the nurse's court testimony instead of stating it as fact",
+    "Slide 3: The photo credit 'Photo: The Free Press Journal' overlaps the 'ACCUSED SHARIFUL' label in the photo. The label is also cut off at the edges ('ACCUS', 'R KHAN'). Move the credit so it doesn't cover the label."
+   ],
+   "fixed": [
+    "Jeh ke paas pahunchा → Jeh ke paas pahunch gaya",
+    "Saif ke hamlawar ne maange the ₹1 crore → Nurse ke mutabik Saif ke hamlawar ne maange the ₹1 crore",
+    "laga marr jaunga → laga mar jaunga"
+   ]
+  },
+  "created_at": "2026-10-25T06:35:39+00:00"
+ },
+ {
+  "id": "reel_break_am-2026-10-25",
+  "image": "posts/20261025-0433-reel_break_am-2026-10-25.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261025-043305-reel_break_am-2026-10-25.mp4",
+  "headline": "Rohit Shetty refers to firing incidents involving him, Tiger Shroff; scolds Bigg Boss 20 contestants for ‘trying to be gangsters’",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Rohit Shetty Bigg Boss 20 Weekend Ka Vaar firing Tiger Shroff Salman Khan 🔥\nSalman ki jagah host bane Rohit ne Scout OP, Asif aur Yung DSA ko fatkaara.\nBole: \"Yahan humare ghar par goliyan chal rahi hain, tum kya gangster banke ghoom rahe ho?\"\nTiger Shroff firing case mein Andheri ka hotel room sealed hua hai.\nRohit Shetty sahi the? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #rohitshetty #biggboss20 #tigershroff #salmankhan",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
+  "pin_comment": "Rohit ki baat sahi lagi? Kisi Bigg Boss fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "gangster talk = street swagger beat"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "serious firing talk, intense vibe"
+   },
+   {
+    "title": "Under The Influence",
+    "artist": "Chris Brown",
+    "lang": "english",
+    "mood": "dark swagger for gangster angle"
+   },
+   {
+    "title": "PUSH 2 START",
+    "artist": "Tyla",
+    "lang": "english",
+    "mood": "high energy, scolding moment"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-25T04:33:05+00:00"
+ },
+ {
+  "id": "reel_news_early-2026-10-25",
+  "image": "posts/20261025-0233-reel_news_early-2026-10-25.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261025-023328-reel_news_early-2026-10-25.mp4",
+  "headline": "Manoj Bajpayee, Neeraj Pandey weren't worried about Ghooskhor Pandat title row affecting Gajab Raat, say they ‘moved away’ quickly | Interview",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Manoj Bajpayee Gajab Raat Ghooskhor Pandat title row 🎬\n\nNeeraj Pandey ki produce ki hui film Gajab Raat pehle Ghooskhor Pandat naam se thi.\nNeeraj Pandey ne kaha ki unhone title row se 'moved away' kar liya, aur Manoj Bajpayee ne kaha ki title slate launch par aaya tha jab film post-production mein thi.\nInterview mein Neeraj Pandey ne kaha ki unhe is row ke film par hawi hone ki chinta nahi thi.\n\nKya title badalna sahi faisla tha? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#manojbajpayee #gajabraat #neerajpandey #reelsindia #bollywood",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
+  "pin_comment": "Kisi Manoj Bajpayee fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "intense, dramatic film vibe"
+   },
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "moody night feel = Gajab Raat"
+   },
+   {
+    "title": "Dracula",
+    "artist": "Tame Impala",
+    "lang": "english",
+    "mood": "dark night thriller mood"
+   },
+   {
+    "title": "DARKSIDE",
+    "artist": "Neoni",
+    "lang": "english",
+    "mood": "dark, suspense edge"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says a cop with no morals trying to do the right thing; 'beparwah' (careless) is not what it says.",
+    "Fact corrected to match the article: Only the title changed, not the film.",
+    "Fact corrected to match the article: Film is directed by Ritesh Shah; Neeraj Pandey is writer-producer.",
+    "Fact corrected to match the article: The 'moved away' quote is only Neeraj's; Manoj spoke about slate launch and post-production.",
+    "Fact corrected to match the article: Only Neeraj said he wasn't nervous; Manoj did not say this."
+   ],
+   "fixed": [
+    "ek beparwah cop bane hain, jo sahi karne nikla. → ek be-usool cop bane hain, jo sahi karne nikla.",
+    "Naam badla, film badli, ab dekhna hai Gajab Raat → Naam badla, film wahi, ab dekhna hai Gajab Raat",
+    "Neeraj Pandey ki nayi film Gajab Raat pehle → Neeraj Pandey ki produce ki hui film Gajab Raat pehle",
+    "Manoj Bajpayee aur Neeraj Pandey ne kaha ki woh title row se jaldi 'moved away' ho gaye. → Neeraj Pandey ne kaha ki unhone title row se 'moved away' kar liya, aur Manoj Bajpayee ne kaha ki title slate launch par aaya tha jab film post-production mein thi.",
+    "Interview mein dono ne kaha ki unhe film par asar ki chinta nahi thi. → Interview mein Neeraj Pandey ne kaha ki unhe is row ke film par hawi hone ki chinta nahi thi."
+   ]
+  },
+  "created_at": "2026-10-25T02:33:28+00:00"
+ },
+ {
+  "id": "reel_devotion-2026-10-25",
+  "image": "posts/20261025-0033-reel_devotion-2026-10-25.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261025-003345-reel_devotion-2026-10-25.mp4",
+  "headline": "Sunday: Surya Dev: Ravivaar ka din... Surya Dev ko pranaam, jinse har subah shuru hoti hai",
+  "tag": "🎬 REEL · 🙏 JAI SURYA DEV",
+  "caption": "Surya Dev ko Ravivaar ka pranaam 🙏\nJal, roshni aur shukriya, bas itna kaafi hai.\nAaj ka din aapke liye shubh ho.\nJai Surya Dev likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#suryadev #ravivaarspecial #suryanamaskar #jaisuryadev #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Ghar ke badon ko bhejo, unka din ban jayega 🙏",
+  "songs": [
+   {
+    "title": "Mahamritunjay Mantra",
+    "artist": "Urmila Mohanty, Chandra-Surya",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Gaytri Mantra",
+    "artist": "Urmila Mohanty",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Surya Mantra 108 Times - Om Hrim Suryay Namah",
+    "artist": "Ketan Patwardhan",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Surya Mantra - Japa Kusum",
+    "artist": "Various Artists",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-25T00:33:45+00:00"
+ },
+ {
+  "id": "reel_official-2026-10-24",
+  "image": "posts/20261024-1549-reel_official-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-154936-reel_official-2026-10-24.mp4",
+  "headline": "HIMACHAL KO TOHFA! · Nadda: 320 nayi PG seats Himachal ko",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "JP Nadda Himachal Pradesh 320 nayi PG medical seats Modi sarkar 🇮🇳\nKendriya Swasthya Mantri JP Nadda ne X par likha ki PM Modi ke netritva mein Himachal ke 6 sarkari medical colleges mein 320 nayi PG medical seats ka faisla hua hai.\nMatlab Himachal mein medical education aur specialist health services ko seedha boost.\nAap sehmat ho? Comment karo 👇\n\nVideo + voice: @JPNadda on X\n\nFollow @khabarbawaal: roz raat 9 baje neta ka kadak bayan 🇮🇳\n\n#reelsindia #JPNadda #NarendraModi #Himachal #BJP",
+  "source": "@JPNadda on X",
+  "source_url": "https://x.com/JPNadda/status/2113861736721752067",
+  "pin_comment": "Medical education aur health services par kaam dikh raha hai. Ye message sabko bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Teri Mitti (Kesari)",
+    "artist": "B Praak",
+    "lang": "hindi",
+    "mood": "proud, nation-building, play it low"
+   },
+   {
+    "title": "Lehra Do (83)",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "victory, proud Bharat feel"
+   },
+   {
+    "title": "Kar Har Maidaan Fateh (Sanju)",
+    "artist": "Sukhwinder Singh",
+    "lang": "hindi",
+    "mood": "winning, upbeat achievement"
+   },
+   {
+    "title": "Rang De Basanti Title Track",
+    "artist": "Daler Mehndi",
+    "lang": "hindi",
+    "mood": "energetic, patriotic, low volume"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article doesn't call him BJP president. The photo's backdrop reads Ministry of Health, and the post announces a central government decision."
+   ],
+   "fixed": [
+    "BJP adhyaksh JP Nadda ne X par → Kendriya Swasthya Mantri JP Nadda ne X par"
+   ]
+  },
+  "created_at": "2026-10-24T15:49:36+00:00"
+ },
+ {
+  "id": "reel_break_aft-2026-10-24",
+  "image": "posts/20261024-1418-reel_break_aft-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-141850-reel_break_aft-2026-10-24.mp4",
+  "headline": "Kriti Sanon says the same people who talk about culture used abusive language in comments on her parents’ and sister’s posts during Rakhi ad row",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Kriti Sanon Rakhi ad controversy par pehli baar bolin, Kareena Kapoor ke show What Women Want par 🔥\nKriti ne kaha, jo log culture aur respect ki baat karte hain, unhone hi unke parents aur sister ke posts par abusive language mein comments kiye.\nJewellery brand ne ad baad mein hata diya tha.\nKriti sahi bol rahi hain ya nahi? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #kritisanon #bollywood #kareenakapoor #rakhi",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
+  "pin_comment": "Kriti ka point sahi laga? Comment karo. Kisi Kriti Sanon fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "trolls ko jawab, bold attitude"
+   },
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "toxic comments = toxic vibe"
+   },
+   {
+    "title": "stupid song",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "gussa aur frustration ka mood"
+   },
+   {
+    "title": "the cure",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "trolling ke baad strong return"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the brand eventually took down the ad after the backlash, not earlier.",
+    "Fact corrected to match the article: Article says people who talk about culture commented abusively on her parents' and sister's posts; she did not say all culture people abuse.",
+    "Fact corrected to match the article: Matches what Kriti said about people commenting on her family's posts."
+   ],
+   "fixed": [
+    "Brand ne ad pehle hi hata diya tha → Brand ne ad baad mein hata diya",
+    "Kriti Sanon: culture wale hi gaali dete hain → Kriti Sanon: culture ki baat karne walon ne hi family par abusive comments kiye",
+    "Kaha: culture wale hi gaali dete hain → Kaha: culture ki baat karne walon ne hi family ko abuse kiya"
+   ]
+  },
+  "created_at": "2026-10-24T14:18:50+00:00"
+ },
+ {
+  "id": "reel_politics-2026-10-24",
+  "image": "posts/20261024-1234-reel_politics-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-123421-reel_politics-2026-10-24.mp4",
+  "headline": "RATE CARD: INDIA bloc anti-SIR rally Entry free. Daav par: Rs 10,000 cr (traders ke mutabik) Refund: Dukaan wale adjust karein (hamara tanz)",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Rahul Gandhi ki rally ka rate card 💸\nDelhi traders ne INDIA bloc se anti-SIR rally defer karne ko kaha, Rs 10,000 cr ka kaarobar daav par bataya.\nKaun sahi, rally ya vyapari? Comment karo 👇\n\nPhotos (Wikimedia Commons): Rahul: Himanshu Arya Khowal (CC BY 4.0)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: The Financial Express (link pinned in comments 👇)\n\n#rahulgandhi #delhi #indiabloc #rate #reelsindia",
+  "source": "The Financial Express",
+  "source_url": "https://www.financialexpress.com/india-news/delhi-traders-urge-rahul-gandhi-to-defer-india-blocs-anti-sir-rally-over-diwali-rush/4368724/",
+  "pin_comment": "Ye us dost ko bhejo jo har bandh mein dukaan kholne ka risk leta hai 👇",
+  "songs": [
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "rally se pehle calm down"
+   },
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "dukaan chhod ke jaana mushkil"
+   },
+   {
+    "title": "STAY",
+    "artist": "Justin Bieber, The Kid Laroi",
+    "lang": "english",
+    "mood": "traders: please stay home rally"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Invented quote in quotation marks; article has no such statement, so make it clearly our own joke",
+    "Fact corrected to match the article: Article text gives no date (Oct 2026 unsupported)",
+    "Fact corrected to match the article: Date unsupported; article says Rs 10,000 cr at stake, not a loss already incurred",
+    "Fact corrected to match the article: Article says Rs 10,000 cr at stake, per traders; attribute it",
+    "Slide 1: The photo of Rahul Gandhi is letterboxed. There are grey bars on both sides of a small white-background photo, so it looks unfinished. Slide 1 can't be dropped, so the photo needs a different crop or fill."
+   ],
+   "fixed": [
+    "Refund: 'Dukaan wale adjust kar lo' → Refund: Dukaan wale adjust karein (hamara tanz)",
+    "Oct 2026 Delhi: vyapariyon ne Rahul Gandhi se rally taalne ki maang rakhi → Delhi: vyapariyon ne Rahul Gandhi se rally taalne ki maang rakhi",
+    "Oct 2026: traders ne Rs 10,000 cr ke kaarobar ke nuksan ki baat kahi → Traders ne Rs 10,000 cr ke kaarobar ke daav par hone ki baat kahi",
+    "Entry free. Nuksan: Rs 10,000 cr → Entry free. Daav par: Rs 10,000 cr (traders ke mutabik)"
+   ]
+  },
+  "created_at": "2026-10-24T12:34:21+00:00"
+ },
+ {
+  "id": "reel_news_pm-2026-10-24",
+  "image": "posts/20261024-1033-reel_news_pm-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-103351-reel_news_pm-2026-10-24.mp4",
+  "headline": "Koffee with Karan: Varun Dhawan, Janhvi Kapoor spill secrets about Karan Johar while Arjun Kapoor joins them for a fun rapid fire round",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Koffee with Karan Varun Dhawan Janhvi Kapoor promo 🔥\nPromo mein Varun aur Janhvi secrets spill karte dikhe.\nEpisode mein Arjun Kapoor bhi fun rapid fire round ke liye judte hain.\nKaran Johar ne Saturday ko promo release kiya.\nSabse bada secret kiska nikla? Varun ya Janhvi? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#koffeewithkaran #varundhawan #janhvikapoor #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
+  "pin_comment": "Apne Koffee with Karan wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "fun gossip vibe"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "naughty rapid fire energy"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "party glam couch vibe"
+   },
+   {
+    "title": "Jalebi Baby",
+    "artist": "Tesher",
+    "lang": "english",
+    "mood": "playful desi fun"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say they revealed Karan's secrets; promo only hints at secrets being spilled",
+    "Fact corrected to match the article: Article only says promo suggests they will spill secrets, not Karan's secrets",
+    "Fact corrected to match the article: Article doesn't say the promo is viral; it says Karan dropped it on Saturday"
+   ],
+   "fixed": [
+    "Varun Dhawan Janhvi ne Karan Johar ke raaz khole → Varun Dhawan Janhvi promo mein raaz kholte dikhe",
+    "Varun aur Janhvi ne Karan Johar ke secrets spill kiye. → Promo mein Varun aur Janhvi secrets spill karte dikhe.",
+    "Promo ab viral hai. → Karan Johar ne Saturday ko promo release kiya.",
+    "Varun Dhawan Janhvi promo mein raaz kholte dikhe → Varun Dhawan aur Janhvi promo mein raaz kholte dikhe"
+   ]
+  },
+  "created_at": "2026-10-24T10:33:51+00:00"
+ },
+ {
+  "id": "reel_break_noon-2026-10-24",
+  "image": "posts/20261024-0833-reel_break_noon-2026-10-24.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261024-083302-reel_break_noon-2026-10-24.mp4",
+  "headline": "Udta Teer box office collection day 1: Ayushmann Khurrana and Sara Ali Khan’s film opens at ₹4.10 crore, narrowly edges Pati Patni Aur Woh Do",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Udta Teer box office day 1 Ayushmann Khurrana Sara Ali Khan 🎬\nSacnilk ke mutabik film ne 4.10 crore net kamaye.\nAyushmann ki Pati Patni Aur Woh Do (around 4 crore) se thodi aage.\nRaat ke shows mein occupancy 13% se badhkar 25% hui.\nAapko kya lagta hai, weekend mein film pakdegi? Haan ya Na? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #bollywood #UdtaTeer #AyushmannKhurrana #SaraAliKhan",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
+  "pin_comment": "Udta Teer dekhoge ya nahi? Kisi Ayushmann fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
+    "lang": "hindi",
+    "mood": "jodi ka film release vibe"
+   },
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "romantic jodi, film promotion vibe"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "upbeat opening day energy"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "hero-heroine pairing vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo is a tightly zoomed crop of the film poster. It looks pixelated and blurry, and the title is cut off. Slide 1 can't be dropped, so a sharper or wider image is needed."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-24T08:33:03+00:00"
+ }
+]

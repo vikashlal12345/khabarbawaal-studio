@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KhabarBawaal Stats</title>
+<meta name="theme-color" content="#0d0d0d">
+<style>
+  :root { --bg: #0d0d0d; --card: #1a1a1a; --line: #2a2a2a; --text: #f2f2f2; --muted: #9a9a9a;
+    --accent: #FFD400; --red: #E50914; --green: #3ddc84; --amber: #ffb020; --blue: #4ea1ff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: rgba(13,13,13,.94); backdrop-filter: blur(10px);
+    padding: calc(env(safe-area-inset-top) + 10px) 16px 10px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 12px; }
+  header a { color: var(--text); text-decoration: none; font-size: 22px; padding: 4px 8px; }
+  header h1 { font-size: 19px; margin: 0; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(env(safe-area-inset-bottom) + 30px);
+    display: flex; flex-direction: column; gap: 16px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+  h2 { margin: 0 0 10px; font-size: 16px; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .gauge { margin: 10px 0 14px; }
+  .gauge .top { display: flex; justify-content: space-between; font-weight: 600; }
+  .bar { height: 12px; background: #262626; border-radius: 999px; overflow: hidden; margin-top: 6px; }
+  .bar i { display: block; height: 100%; border-radius: 999px; }
+  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .kpi { background: #222; border-radius: 10px; padding: 10px; }
+  .kpi b { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+  .kpi span { color: var(--muted); font-size: 12px; }
+  .row { display: grid; grid-template-columns: 110px minmax(0,1fr) 72px; gap: 8px; align-items: center; margin: 7px 0; font-size: 14px; }
+  .row .bar { margin: 0; height: 10px; }
+  .row .num { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .verdict { padding: 12px; border-radius: 10px; font-weight: 600; margin-top: 8px; }
+  .ok { background: rgba(61,220,132,.12); color: var(--green); }
+  .tight { background: rgba(255,176,32,.14); color: var(--amber); }
+  .over { background: rgba(229,9,20,.16); color: #ff6b6b; }
+  a.link { color: var(--blue); }
+  .legend { display: flex; gap: 14px; font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .seg { display: flex; gap: 6px; margin-bottom: 12px; }
+  .seg button { flex: 1; border: 1px solid var(--line); background: #222; color: var(--text); border-radius: 999px;
+    padding: 8px; font-weight: 700; }
+  .seg button.on { background: var(--accent); color: #000; border-color: var(--accent); }
+  .rep { display: flex; flex-direction: column; gap: 8px; }
+  .rep .line { display: flex; gap: 10px; align-items: baseline; }
+  .rep .line b { min-width: 24px; }
+  .slot { display: grid; grid-template-columns: 52px minmax(0,1fr) auto; gap: 8px; align-items: center;
+    padding: 9px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .slot:first-of-type { border-top: 0; }
+  .slot .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .slot .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .slot .why { grid-column: 2 / 4; color: var(--amber); font-size: 12px; margin-top: -4px; }
+  .slot .sub { grid-column: 2 / 4; color: var(--muted); font-size: 12px; margin-top: -4px;
+               overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chip { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #262626; color: var(--muted); white-space: nowrap; }
+  .chip.made { color: var(--text); } .chip.posted { background: rgba(61,220,132,.14); color: var(--green); }
+  .chip.warn { background: rgba(255,176,32,.14); color: var(--amber); } .chip.bad { background: rgba(229,9,20,.16); color: #ff6b6b; }
+  .chips { display: flex; gap: 6px; justify-content: flex-end; }
+  .sub { font-size: 14px; font-weight: 700; margin: 16px 0 6px; }
+  .chart { position: relative; margin-top: 10px; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .tip { position: absolute; pointer-events: none; background: #000; border: 1px solid var(--line); border-radius: 8px;
+    padding: 4px 8px; font-size: 12px; white-space: nowrap; transform: translate(-50%, -110%); display: none; }
+  .hbar { display: grid; grid-template-columns: 124px minmax(0,1fr) 92px; gap: 8px; align-items: center; margin: 8px 0; font-size: 14px; }
+  .hbar .track { height: 12px; background: #222; border-radius: 4px; overflow: hidden; }
+  .hbar .track i { display: block; height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+  .hbar .num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 13px; }
+  .best { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .best a { color: var(--text); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  details.more { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+  details.more summary { font-weight: 700; cursor: pointer; }
+  details.more section { border: 0; padding: 14px 0 0; background: none; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; }
+  table.data td, table.data th { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: left; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<header><a href="./" aria-label="Back">‹</a><h1>📊 Stats</h1></header>
+<main>
+  <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
+  <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
+  <section id="habit"><h2>📮 Your posting habit</h2><div class="muted">Loading…</div></section>
+  <section id="trending"><h2>🔥 Trending now vs our Reels</h2><div class="muted">Loading…</div></section>
+  <section id="works"><h2>🏆 What works</h2><div class="muted">Loading…</div></section>
+  <section id="health"><h2>⚙️ Robot &amp; Claude plan</h2><div class="muted">Loading…</div></section>
+  <details class="more"><summary>Details (tokens, room for more posts, your own Claude use)</summary>
+    <section id="plan"></section>
+    <section id="capacity"></section>
+    <section id="robot"></section>
+    <section id="adhoc"></section>
+  </details>
+</main>
+<script>
+const JOB_NAMES = { news: '📰 News', create: '➕ Create', top10_day: '📰 Top 5 News', night_roundup: '🌅 Overnight Top 5',
+  reel_devotion: '🙏 6 AM Devotional', reel_clip_am: '😂 Tag that friend (old)', reel_clip: '😂 Tag that friend (old)', reel_break_am: '⚡ 10 AM Breaking card', reel_break_noon: '⚡ 2 PM Breaking card', reel_break_aft: '⚡ Breaking card (old)', reel_politics: '🎯 6 PM Satire',
+  reel_meme: '😂 Meme (old)', reel_news_early: '🔥 8 AM Viral news', reel_news_am: '🔥 12 PM Viral news',
+  reel_news_noon: '🔥 11:30 Viral news (old)', reel_news_aft: '🔥 3 PM Viral news (old)', reel_news_pm: '🔥 4 PM Viral news',
+  reel_news: '🔥 Viral news (old)', reel_news_night: '🔥 9:15 PM Viral news (old)', reel_poll: '🗳️ Choose your poll (old)', reel_bachpan: '🧒 Bachpan (old)', reel_rotate: '🎭 7:45 PM Rotating (Bachpan / Tag / Meme / Comedy)', reel_official: '🎥🔊 9:30 PM Speaker video',
+  reel_top5_am: '🎬 Overnight Top 5 (old)', reel_top5: '🎬 Top 5 News (old)', night_picture: '🙏 God picture (old)',
+  night_ready: '📦 Ready (night)', night_calendar: '📅 Planner',
+  night_learn: '📊 Learning', calendar: '📅 Previews', fun: 'Fun (old)', other: 'Other' };
+const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(Math.round(n));
+const tokens = t => (t.input || 0) + (t.output || 0) + (t.cache_read || 0) + (t.cache_write || 0);
+// How much tokens count against the plan (same ratios as API pricing): cached reads are cheap,
+// output is expensive. Used for the robot-vs-you split and the capacity estimate.
+const weighted = t => (t.input || 0) + 5 * (t.output || 0) + 1.25 * (t.cache_write || 0) + 0.1 * (t.cache_read || 0);
+const istDay = d => new Date(d.getTime() + 330 * 60000).toISOString().slice(0, 10);
+const lastDays = n => [...Array(n)].map((_, i) => istDay(new Date(Date.now() - i * 86400000)));
+const colour = p => p >= 85 ? 'var(--red)' : p >= 60 ? 'var(--amber)' : 'var(--green)';
+function ago(iso) { const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  return m < 60 ? m + ' min ago' : Math.round(m / 60) + 'h ago'; }
+function inIST(iso) { return new Date(iso).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata',
+  weekday: 'short', hour: 'numeric', minute: '2-digit' }); }
+async function getJSON(path) { try { const r = await fetch(path + '?t=' + Date.now(), { cache: 'no-store' });
+  return r.ok ? r.json() : null; } catch { return null; } }
+function gauge(label, w) { const p = Math.round(w.pct);
+  return `<div class="gauge"><div class="top"><span>${label}</span><span style="color:${colour(p)}">${p}% used</span></div>
+    <div class="bar"><i style="width:${Math.min(p, 100)}%;background:${colour(p)}"></i></div>
+    <div class="muted">Resets ${inIST(w.resets_at)}</div></div>`; }
+
+// Followers per day: one series (brand yellow), 2px line, 8px markers, recessive grid, hover tooltip, table view.
+function lineChart(pts) {
+  const W = 520, H = 160, L = 30, R = 10, T = 12, B = 26;
+  const ys = pts.map(p => p[1]), lo = Math.max(0, Math.min(...ys) - 2), hi = Math.max(...ys) + 2;
+  const x = i => L + (W - L - R) * (pts.length === 1 ? 0.5 : i / (pts.length - 1));
+  const y = v => T + (H - T - B) * (1 - (v - lo) / Math.max(1, hi - lo));
+  const ticks = [lo, Math.round((lo + hi) / 2), hi];
+  const day = d => new Date(d + 'T12:00:00+05:30').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+  const path = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p[1]).toFixed(1)}`).join('');
+  return `<div class="chart"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Followers per day, last ${pts.length} days">
+    ${ticks.map(t => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="${L - 6}" y="${y(t) + 4}" fill="#9a9a9a" font-size="11" text-anchor="end">${t}</text>`).join('')}
+    <text x="${L}" y="${H - 6}" fill="#9a9a9a" font-size="11">${day(pts[0][0])}</text>
+    <text x="${W - R}" y="${H - 6}" fill="#9a9a9a" font-size="11" text-anchor="end">${day(pts[pts.length - 1][0])}</text>
+    <path d="${path}" fill="none" stroke="#FFD400" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p[1])}" r="4" fill="#FFD400" stroke="#1a1a1a" stroke-width="2"/>`).join('')}
+    <line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="#9a9a9a" stroke-width="1" style="display:none"/>
+    <rect class="hit" x="${L}" y="0" width="${W - L - R}" height="${H}" fill="transparent"/></svg>
+    <div class="tip"></div>
+    <details style="margin-top:4px"><summary class="muted">Show as table</summary><table class="data"><tr><th>Day</th><th>Followers</th></tr>
+      ${pts.map(p => `<tr><td>${day(p[0])}</td><td>${p[1]}</td></tr>`).join('')}</table></details></div>`;
+}
+function hookChart(box, pts) {
+  if (!box) return;
+  const svg = box.querySelector('svg'), tip = box.querySelector('.tip'), cross = svg.querySelector('.cross');
+  const W = 520, L = 30, R = 10;
+  const show = ev => {
+    const r = svg.getBoundingClientRect(), px = ((ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left) / r.width * W;
+    const i = Math.max(0, Math.min(pts.length - 1, Math.round((px - L) / ((W - L - R) / Math.max(1, pts.length - 1)))));
+    const cx = L + (W - L - R) * (pts.length === 1 ? 0.5 : i / (pts.length - 1));
+    cross.setAttribute('x1', cx); cross.setAttribute('x2', cx); cross.style.display = '';
+    const d = new Date(pts[i][0] + 'T12:00:00+05:30').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+    tip.innerHTML = `<b>${pts[i][1]}</b> followers · ${d}`; tip.style.display = 'block';
+    tip.style.left = (cx / W * r.width) + 'px'; tip.style.top = '20px';
+  };
+  const hide = () => { tip.style.display = 'none'; cross.style.display = 'none'; };
+  const hit = svg.querySelector('.hit');
+  hit.addEventListener('mousemove', show); hit.addEventListener('touchstart', show, { passive: true });
+  hit.addEventListener('touchmove', show, { passive: true }); hit.addEventListener('mouseleave', hide); hit.addEventListener('touchend', hide);
+}
+
+(async () => {
+  const [robot, adhoc, limits, ig, links, audience, feed] = await Promise.all([getJSON('stats/robot.json'), getJSON('stats/adhoc.json'),
+    getJSON('stats/limits.json'), getJSON('stats/instagram.json'), getJSON('stats/ig_links.json'), getJSON('stats/audience.json'), getJSON('feed.json')]);
+  const ready = (await getJSON('ready.json')) || [];
+  const boostsData = (await getJSON('stats/boosts.json')) || {};
+
+  const app = (await getJSON('app.json')) || {};
+  const esc = t => String(t || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fol = (ig && ig.followers) || [];
+  const res = (ig && ig.posts) || {};
+  const nowMs = Date.now(), todayIST = istDay(new Date());
+  const inLast = (iso, days) => iso && nowMs - new Date(iso) < days * 86400000;
+  const activity = (() => { try { return JSON.parse(localStorage.getItem('activity') || '{}'); } catch { return {}; } })();
+  // The robot's latest steps straight from ⏳ Activity's ntfy topic (the app saves them only while it is open).
+  if (app.status) try {
+    const txt = await (await fetch(`https://ntfy.sh/${app.status}/json?poll=1&since=24h`, { cache: 'no-store' })).text();
+    for (const line of txt.split('\n')) {
+      try { const ev = JSON.parse(JSON.parse(line).message), k = ev.job + '|' + ev.ref;
+            if (ev.job && (!activity[k] || ev.at >= activity[k].at)) activity[k] = ev; } catch {}
+    }
+  } catch {}
+
+  // --- 📈 growth: followers, change this week, likes per post, followers chart, boosts
+  {
+    const latest = fol[fol.length - 1];
+    const weekAgo = fol.find(f => inLast(f.at, 7)) || fol[0];
+    const recent = Object.entries(links || {}).filter(([id, l]) => inLast(l.posted_at || l.linked_at, 7) && res[id]);
+    const likesPer = recent.length ? recent.reduce((a, [id]) => a + res[id].likes, 0) / recent.length : null;
+    const change = latest && weekAgo ? latest.followers - weekAgo.followers : null;
+    // one point per day (last reading of the day), last 14 days
+    const byDay = {};
+    fol.forEach(f => { byDay[istDay(new Date(f.at))] = f.followers; });
+    const days = lastDays(14).reverse().filter(d => d >= Object.keys(byDay).sort()[0]);
+    let last = null;
+    const pts = days.map(d => { if (byDay[d] != null) last = byDay[d]; return [d, last]; }).filter(p => p[1] != null);
+    const boostRows = Object.entries(boostsData).sort((a, b) => b[1].at.localeCompare(a[1].at)).map(([id, b]) => {
+      const start = ([...fol].reverse().find(f => new Date(f.at) <= new Date(b.at)) || fol[0] || {}).followers;
+      const r = res[id];
+      return `<div class="best"><span>🚀 ${esc(b.headline || id)}</span><span class="muted">${inIST(b.at)} · ${start != null && latest ? `followers ${start} → ${latest.followers}` : ''}${r ? ` · ❤️ ${r.likes}` : ''}</span></div>`;
+    }).join('');
+    document.getElementById('growth').innerHTML = `<h2>📈 Growth</h2>
+      <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers${latest ? ' · last known ' + new Date(latest.at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }) : ''}</span></div>
+        <div class="kpi"><b>${change == null ? '–' : (change >= 0 ? '+' : '') + change}</b><span>this week</span></div>
+        <div class="kpi"><b>${likesPer == null ? '–' : likesPer.toFixed(1)}</b><span>likes per post (7 days)</span></div></div>
+      ${pts.length >= 2 ? lineChart(pts) : '<div class="muted" style="margin-top:10px">The followers chart appears after 2 days of data.</div>'}
+      ${boostRows ? `<div class="sub">Boosts</div>${boostRows}` : ''}
+      <div class="muted" style="margin-top:8px">🕐 Instagram numbers: automatic reading switched off on 16 Oct 2026 (Instagram's rules); they update from your screen recordings${latest ? `, last ${ago(latest.at)}` : ''}.</div>`;
+    hookChart(document.querySelector('#growth .chart'), pts);
+  }
+
+  // --- 🗓️ today's plan: each scheduled slot → made / posted / likes / why not
+  {
+    const plan = app.plan || [];
+    const posts = (feed || []).filter(p => istDay(new Date(p.created_at)) === todayIST);
+    const minsOf = iso => { const d = new Date(new Date(iso).getTime() + 330 * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); };
+    const istNow = minsOf(new Date().toISOString());
+    let made = 0, posted = 0;
+    const rows = plan.map(([time, kind, name]) => {
+      const [h, m] = time.split(':').map(Number), slot = h * 60 + m;
+      const inSlot = p => minsOf(p.created_at) >= slot - 5 && minsOf(p.created_at) < slot + 55;
+      let post = kind === 'news' ? posts.find(p => p.kind === 'news' && inSlot(p)) : posts.find(p => p.id === `${kind}-${todayIST}`);
+      let why = '', state = '';
+      const a = activity[`${kind}|${todayIST}`];
+      if (!post && kind !== 'news') {
+        const fallback = posts.find(p => ['news', 'ready', 'calendar', 'top10', 'reel'].includes(p.kind) && inSlot(p));
+        if (fallback && fallback.kind === 'calendar') { post = fallback; why = '📅 A planned preview was made in this slot.'; }
+        else if (fallback && fallback.kind === 'reel') { post = fallback; why = 'A different Reel type was made in this slot.'; }
+        else if (fallback) { post = fallback; state = 'warn'; why = a && a.text ? a.text : 'A normal (carousel) post was made instead.'; }
+        else if (a && a.state === 'fail') { state = 'bad'; why = a.text; }
+      }
+      // 📲 posted the moment the link is pasted (owner, 16 Oct 2026): this phone's own record (the app's ✅ Posted
+      // tab), until the robot saves it at its next run
+      const mine = post && (() => { try { return localStorage.getItem('linked-' + post.id); } catch { return null; } })();
+      const undone = post && (() => { try { return localStorage.getItem('unposted-' + post.id); } catch { return null; } })();   // ↩️ Undo in the app
+      const link = post && !undone && ((links || {})[post.id] || (mine ? { url: mine } : null)), r = post && res[post.id];
+      if (post) made++;
+      if (link) posted++;
+      // Still being made after its time (owner, 15 Oct 2026: it said ❌ while the Reel was in progress): the robot's
+      // last step is 'run' and fresh (< 20 min), or no news from it yet in the first 30 min.
+      const making = !post && slot <= istNow + 2 && (a ? a.state === 'run' && nowMs / 1000 - a.at < 1200 : istNow - slot < 30);
+      if (making && a && a.text) why = a.text;
+      const chips = slot > istNow + 2 && !post ? '<span class="chip">⏳ upcoming</span>'
+        : making ? '<span class="chip">⏳ in progress</span>'
+        : !post ? `<span class="chip bad">❌ not made</span>`
+        : (state === 'warn' ? '<span class="chip warn">⚠️ normal post</span>' : '<span class="chip made">✅ made</span>')
+          + (link ? `<span class="chip posted">📲 posted${r ? `${r.views != null ? ` · 👁 ${r.views}` : ''} · ❤️ ${r.likes}` : ''}</span>` : '<span class="chip">not posted</span>');
+      return `<div class="slot"><span class="t">${time}</span><span class="name">${esc(name)}</span><span class="chips">${chips}</span>
+        ${why ? `<span class="why">${esc(why)}</span>` : ''}</div>`;
+    }).join('');
+    document.getElementById('today').innerHTML = `<h2>🗓️ Today's plan <span class="muted">${made} of ${plan.length} made · ${posted} posted</span></h2>
+      ${rows || '<div class="muted">The schedule appears after the next app update.</div>'}
+      <div class="muted" style="margin-top:8px">"Posted" = marked with ✅ Mark as posted in the app. Reasons come from ⏳ Activity on this phone.</div>`;
+  }
+
+  // --- 🏆 what works: average likes by current post type (last 14 days), Reels vs carousels, best posts, best slot
+  {
+    const typeOf = l => {
+      const t = (l.tag || '').toUpperCase();
+      if (l.kind === 'reel' || (l.kind === 'custom' && t.includes('REEL'))) {
+        if (t.includes('TAG THAT FRIEND')) return '🎬 Tag that friend';
+        if (t.includes('MEME')) return '🎬 Meme';
+        if (t.includes('REALITY')) return '🎬 Reality check';
+        if (t.includes('🙏') || t.includes('NAVRATRI') || t.includes('JAI')) return '🙏 Devotional';
+        return '🎬 News Reel';
+      }
+      if (l.kind === 'top10') return '📰 Top 5';
+      if (l.kind === 'ready') return t.includes('GITA') ? '🙏 Gita (Ready)' : '📦 Ready';
+      if (l.kind === 'news') return '📰 News';
+      if (l.kind === 'custom') return '✍️ Your pick';
+      return null;   // old types (market, thought, fun…) are left out
+    };
+    const items = Object.entries(links || {}).filter(([id, l]) => inLast(l.posted_at || l.linked_at, 14) && res[id] && !boostsData[id])
+      .map(([id, l]) => ({ id, ...l, type: typeOf(l), likes: res[id].likes, comments: res[id].comments, views: res[id].views })).filter(x => x.type);
+    const avg = list => list.length ? list.reduce((a, x) => a + x.likes, 0) / list.length : 0;
+    const groups = {};
+    items.forEach(x => (groups[x.type] = groups[x.type] || []).push(x));
+    const rows = Object.entries(groups).map(([k, v]) => [k, avg(v), v.length]).sort((a, b) => b[1] - a[1]);
+    const max = Math.max(1, ...rows.map(r => r[1]));
+    const reels = items.filter(x => x.type.startsWith('🎬') || x.type.startsWith('🙏')), cars = items.filter(x => !reels.includes(x));
+    // 👁 views first (approx. public count, read by the Mac; owner, 15 Oct 2026), then likes + comments
+    const best = [...items].sort((a, b) => ((b.views || 0) - (a.views || 0)) || ((b.likes + 2 * b.comments) - (a.likes + 2 * a.comments))).slice(0, 5);
+    const slotOf = x => { const d = new Date(new Date(x.posted_at || x.linked_at).getTime() + 330 * 60000).getUTCHours();
+      return d < 11 ? 'Morning (6–11 AM)' : d < 17 ? 'Afternoon (11 AM–5 PM)' : d < 20 ? 'Evening (5–8 PM)' : 'Night (8–11 PM)'; };
+    const slots = {}; items.forEach(x => (slots[slotOf(x)] = slots[slotOf(x)] || []).push(x));
+    const bestSlot = Object.entries(slots).filter(([, v]) => v.length >= 3).map(([k, v]) => [k, avg(v)]).sort((a, b) => b[1] - a[1])[0];
+    document.getElementById('works').innerHTML = `<h2>🏆 What works <span class="muted">Instagram numbers as of 16 Oct · ${items.length} posts</span></h2>
+      ${items.length ? `<div class="kpis" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+        <div class="kpi"><b>${reels.length ? avg(reels).toFixed(1) : '–'}</b><span>avg likes · 🎬 Reels (${reels.length})</span></div>
+        <div class="kpi"><b>${cars.length ? avg(cars).toFixed(1) : '–'}</b><span>avg likes · 📰 Carousels (${cars.length})</span></div></div>
+      <div class="sub">Average likes by post type</div>
+      ${rows.map(([k, v, n]) => `<div class="hbar" title="${esc(k)}: ${v.toFixed(1)} likes on average over ${n} posts">
+        <span>${esc(k)}</span><span class="track"><i style="width:${v / max * 100}%"></i></span><span class="num">${v.toFixed(1)} · ${n} post${n > 1 ? 's' : ''}</span></div>`).join('')}
+      <div class="sub">Best posts</div>
+      ${best.map(x => `<div class="best"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.headline || x.id)}</a>
+        <span class="muted">${x.views != null ? `👁 ${x.views} · ` : ''}❤️ ${x.likes} · 💬 ${x.comments}</span></div>`).join('')}
+      <div class="muted" style="margin-top:6px">👁 = approx. views from Instagram's public page (lower than the app's Views; good for ranking).</div>
+      ${bestSlot ? `<div class="muted" style="margin-top:10px">🕐 Best time so far: <b>${bestSlot[0]}</b> (${bestSlot[1].toFixed(1)} likes on average)</div>` : ''}`
+      : '<div class="muted">No Instagram numbers yet: likes by post type show up here once numbers come in (automatic reading is off since 16 Oct).</div>'}
+      <div class="muted" style="margin-top:8px">Boosted posts are left out (paid reach would mislead).
+        ${audience && audience.summary ? 'The robot is learning from these numbers every night.' : 'The robot starts learning once posts have 30+ likes in total.'}</div>`;
+  }
+
+  if (!Object.entries(links || {}).some(([id, l]) => inLast(l.posted_at || l.linked_at, 14) && res[id] && !boostsData[id])) {
+    const w = document.getElementById('works'); if (w) w.style.display = 'none';   // no likes numbers since 16 Oct
+  }
+
+  // --- 📮 your posting habit (from your ✅ Mark as posted taps: no Instagram access needed)
+  {
+    const plan = app.plan || [], days = lastDays(7), made = (await getJSON('stats/made.json')) || {};
+    const isReel = id => id.startsWith('reel_');
+    const postedOn = d => Object.keys(links || {}).filter(id => isReel(id) && id.endsWith('-' + d)).length;
+    const perDay = days.map(d => [d, postedOn(d), Object.keys(made[d] || {}).filter(isReel).length]);
+    const total = perDay.reduce((a, x) => a + x[1], 0), slots = Math.max(1, plan.length);
+    const rate = Math.round(total / (slots * 7) * 100);
+    const dayName = d => new Date(d + 'T12:00:00+05:30').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+    const maxPost = Math.max(slots, ...perDay.map(x => x[1]));
+    const minsNow = (() => { const d = new Date(Date.now() + 330 * 60000); return d.getUTCHours() * 60 + d.getUTCMinutes(); })();
+    const slotRows = plan.map(([time, kind, name]) => {
+      const [h, m] = time.split(':').map(Number);
+      const first = Object.keys(links || {}).filter(id => id.startsWith(kind + '-20')).map(id => id.slice(kind.length + 1)).sort()[0];
+      // only days the slot already existed and was due (a new slot is not "skipped" on its first days)
+      const due = days.filter(d => (d !== todayIST || h * 60 + m + 45 < minsNow) && (!first || d >= first));
+      const n = due.filter(d => (links || {})[`${kind}-${d}`]).length;
+      return { time, name, n, of: Math.max(1, due.length) };
+    });
+    const frac = r => r.n / r.of;
+    const best = [...slotRows].sort((a, b) => frac(b) - frac(a))[0], worst = [...slotRows].sort((a, b) => frac(a) - frac(b))[0];
+    const autoDays = Object.entries(made).filter(([d, v]) => days.includes(d) && Object.values(v).some(x => x.auto)).length;
+    const tips = [];
+    if (slotRows.length && frac(best) > frac(worst)) tips.push(`✅ You post <b>${esc(best.name)}</b> most (${best.n} of ${best.of} days) and <b>${esc(worst.name)}</b> least (${worst.n} of ${worst.of}).`);
+    if (rate < 60) tips.push('⚠️ You posted less than 6 of every 10 Reels this week: more posts = more chances for one to take off.');
+    else if (rate >= 85) tips.push('🔥 You are posting almost every Reel the robot makes: keep this rhythm.');
+    if (autoDays) tips.push(`⚙️ Auto mode (no Claude) made Reels on ${autoDays} of the last 7 days.`);
+    document.getElementById('habit').innerHTML = `<h2>📮 Your posting habit <span class="muted">last 7 days · from your ✅ taps</span></h2>
+      <div class="kpis"><div class="kpi"><b>${perDay[0][1]}/${slots}</b><span>Reels posted today</span></div>
+        <div class="kpi"><b>${(total / 7).toFixed(1)}</b><span>posted per day (7 days)</span></div>
+        <div class="kpi"><b>${rate}%</b><span>of all slots posted</span></div></div>
+      <div class="sub">Reels posted per day</div>
+      ${perDay.map(([d, n, m]) => `<div class="hbar"><span>${dayName(d)}</span><span class="track"><i style="width:${n / maxPost * 100}%"></i></span>
+        <span class="num">${n}${m && d === todayIST ? ` of ${m} made` : ''}</span></div>`).join('')}
+      <div class="sub">Which slots you post (of the days each slot has run)</div>
+      ${slotRows.map(r => `<div class="hbar"><span>${r.time} ${esc(r.name)}</span><span class="track"><i style="width:${frac(r) * 100}%"></i></span><span class="num">${r.n}/${r.of}</span></div>`).join('')}
+      ${tips.length ? `<div class="sub">What it says</div>${tips.map(t => `<div class="muted" style="margin:4px 0">${t}</div>`).join('')}` : ''}
+      <div class="muted" style="margin-top:8px">"Made" counts start on 22 Oct 2026 (the robot keeps a log from then). Views and likes are not shown: automatic reading of Instagram is off.</div>`;
+  }
+
+  // --- 🔥 trending now vs what our Reels covered (from the robot's own feed reading; no Instagram access)
+  {
+    const tr = await getJSON('stats/trends.json');
+    const box = document.getElementById('trending');
+    if (!tr) { box.innerHTML = '<h2>🔥 Trending now vs our Reels</h2><div class="muted">Appears after the next robot run.</div>'; }
+    else {
+      // what we covered: headlines + captions of the last 3 days
+      const ourText = [...Object.values(links || {}).filter(l => inLast(l.posted_at || l.linked_at, 3)).map(l => l.headline),
+        ...(feed || []).map(p => (p.headline || '') + ' ' + (p.caption || '').slice(0, 400))].join(' ').toLowerCase();
+      const words = t => (t.toLowerCase().match(/[a-z0-9]{3,}/g) || []).filter(w => !['the', 'and', 'for', 'with', 'from', 'that', 'this'].includes(w));
+      const termCovered = t => { const w = words(t); return w.length > 0 && w.every(x => ourText.includes(x)); };
+      const storyCovered = t => { const w = words(t).filter(x => x.length >= 4); if (!w.length) return false; const hit = w.filter(x => ourText.includes(x)).length; return hit >= Math.min(3, w.length) && hit / w.length >= 0.5; };
+      const chip = c => c ? '<span class="chip made">✅ covered</span>' : '<span class="chip warn">➕ not yet</span>';
+      const copyBtn = t => `<button class="copy" data-t="${esc('Make a Reel on: ' + t)}" style="margin-left:6px;background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 8px;font-size:12px">📋 copy</button>`;
+      const xs = (tr.x || []).slice(0, 10), st = (tr.stories || []).slice(0, 8);
+      const miss = xs.filter(x => !termCovered(x.term)).length + st.filter(x => !storyCovered(x.title)).length;
+      box.innerHTML = `<h2>🔥 Trending now vs our Reels <span class="muted">updated ${ago(tr.at)}</span></h2>
+        <div class="muted" style="margin-bottom:6px">${miss ? `${miss} trending topics not covered yet: tap 📋 copy, then paste it in ➕ Create.` : 'Everything trending is covered.'}</div>
+        <div class="sub">Big stories right now</div>
+        ${st.map(x => `<div class="best" style="gap:8px;align-items:flex-start"><span style="flex:1;min-width:0;overflow-wrap:anywhere"><a style="white-space:normal;overflow:visible" href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a> <span class="muted">${esc(x.source)}</span></span><span style="white-space:nowrap">${chip(storyCovered(x.title))}${copyBtn(x.title)}</span></div>`).join('') || '<div class="muted">No stories yet.</div>'}
+        <div class="sub">Trending on X in India (hours trending)</div>
+        ${xs.map(x => `<div class="best"><span>${esc(x.term)} <span class="muted">${x.hours} h</span></span><span>${chip(termCovered(x.term))}${copyBtn(x.term)}</span></div>`).join('') || '<div class="muted">No trends yet.</div>'}
+        ${(tr.google || []).length ? `<div class="sub">Google trends</div><div class="muted">${tr.google.slice(0, 8).map(esc).join(' · ')}</div>` : ''}
+        <div class="muted" style="margin-top:8px">"Covered" = one of our Reels or posts of the last 3 days has the same words. Politics and crime stories are left out of this list.</div>`;
+      box.querySelectorAll('button.copy').forEach(b => b.onclick = async () => {
+        try { await navigator.clipboard.writeText(b.dataset.t); b.textContent = '✅ copied'; } catch { prompt('Copy this:', b.dataset.t); } });
+    }
+  }
+
+  // --- ⚙️ robot & plan: one glance
+  {
+    const snapH = limits && limits.length ? limits[limits.length - 1] : null;
+    const todayPosts = (feed || []).filter(p => istDay(new Date(p.created_at)) === todayIST).length;
+    const fails = Object.values(activity).filter(a => istDay(new Date(a.at * 1000)) === todayIST && (a.state === 'fail' || a.state === 'fallback'));
+    const w = snapH && snapH.seven_day, pct = w ? Math.round(w.pct) : null;
+    const verdict = pct == null ? '' : pct >= 85 ? ['over', '❌ Claude plan almost used up this week'] : pct >= 60 ? ['tight', '⚠️ Claude plan getting full this week']
+      : ['ok', '✅ All good'];
+    document.getElementById('health').innerHTML = `<h2>⚙️ Robot &amp; Claude plan</h2>
+      ${verdict ? `<div class="verdict ${verdict[0]}" style="margin:0 0 10px">${verdict[1]}</div>` : ''}
+      ${w ? gauge('Claude plan this week', w) : '<div class="muted">Plan usage comes from your Mac (hourly while it\'s on).</div>'}
+      <div class="rep">
+        <div class="line"><b>🤖</b><span><b>${todayPosts}</b> posts made today · last ${feed && feed.length ? ago(feed[0].created_at) : '–'}</span></div>
+        <div class="line"><b>${fails.length ? '⚠️' : '✅'}</b><span>${fails.length ? `${fails.length} problem${fails.length > 1 ? 's' : ''} today (see ⏳ Activity)` : 'No problems today'}</span></div>
+      </div>`;
+  }
+  const week = lastDays(7), today = week[0];
+
+  // --- plan
+  const snap = limits && limits.length ? limits[limits.length - 1] : null;
+  document.getElementById('plan').innerHTML = '<h2>Claude plan usage (Pro)</h2>' + (snap
+    ? gauge('5-hour window', snap.five_hour) + gauge('This week', snap.seven_day) +
+      `<div class="muted">Includes everything: robot, Claude Code and claude.ai chats.<br>🕐 Last fetched: <b>${inIST(snap.at)} (${ago(snap.at)})</b>, from your Mac hourly while it's awake.</div>`
+    : '<div class="muted">Not available yet. It comes from your Mac every hour while it\'s on.</div>');
+
+  // --- robot
+  const robotWeek = { posts: 0, requests: 0, tokens: 0, weighted: 0, value: 0, jobs: {}, purposes: {} };
+  const robotToday = { posts: 0, tokens: 0, requests: 0 };
+  for (const day of week) {
+    for (const [job, j] of Object.entries((robot || {})[day] || {})) {
+      const t = tokens(j);
+      robotWeek.posts += j.posts; robotWeek.requests += j.requests; robotWeek.tokens += t; robotWeek.value += j.value_usd || 0;
+      robotWeek.weighted += weighted(j);
+      const r = robotWeek.jobs[job] = robotWeek.jobs[job] || { posts: 0, tokens: 0 };
+      r.posts += j.posts; r.tokens += t;
+      for (const [p, v] of Object.entries(j.by_purpose || {})) robotWeek.purposes[p] = (robotWeek.purposes[p] || 0) + v.tokens;
+      if (day === today) { robotToday.posts += j.posts; robotToday.tokens += t; robotToday.requests += j.requests; }
+    }
+  }
+  const maxJob = Math.max(1, ...Object.values(robotWeek.jobs).map(j => j.tokens));
+  const jobRows = Object.entries(robotWeek.jobs).sort((a, b) => b[1].tokens - a[1].tokens).map(([job, j]) =>
+    `<div class="row"><span>${JOB_NAMES[job] || job}</span><div class="bar"><i style="width:${j.tokens / maxJob * 100}%;background:var(--accent)"></i></div>
+     <span class="num">${fmt(j.tokens)} · ${j.posts}</span></div>`).join('');
+  const maxP = Math.max(1, ...Object.values(robotWeek.purposes));
+  const purposeRows = Object.entries(robotWeek.purposes).sort((a, b) => b[1] - a[1]).map(([p, t]) =>
+    `<div class="row"><span>${p[0].toUpperCase() + p.slice(1)}</span><div class="bar"><i style="width:${t / maxP * 100}%;background:var(--blue)"></i></div>
+     <span class="num">${fmt(t)}</span></div>`).join('');
+  document.getElementById('robot').innerHTML = `<h2>KhabarBawaal robot</h2>
+    <div class="kpis"><div class="kpi"><b>${robotToday.posts}</b><span>${robotToday.posts === 1 ? 'post' : 'posts'} today</span></div>
+      <div class="kpi"><b>${fmt(robotToday.tokens)}</b><span>tokens today</span></div>
+      <div class="kpi"><b>${robotToday.requests}</b><span>AI requests today</span></div></div>
+    <div class="muted" style="margin-top:8px">🕐 Last post made: <b>${feed && feed.length ? inIST(feed[0].created_at) + ' (' + ago(feed[0].created_at) + ')' : '–'}</b></div>
+    <h2 style="margin-top:16px">Last 7 days by job <span class="muted">(tokens · posts)</span></h2>${jobRows || '<div class="muted">No data yet.</div>'}
+    <h2 style="margin-top:16px">What the tokens are spent on</h2>${purposeRows || '<div class="muted">No data yet.</div>'}
+    <div class="muted" style="margin-top:10px">7 days: ${robotWeek.posts} posts, ${robotWeek.requests} AI requests, ${fmt(robotWeek.tokens)} tokens.
+      Same usage on the paid API would cost about $${robotWeek.value.toFixed(2)}. You don't pay this: it's covered by your plan.</div>`;
+
+  // --- ad hoc
+  const adhocWeek = week.reduce((s, d) => s + tokens((adhoc || {})[d] || {}), 0);
+  const adhocWeekW = week.reduce((s, d) => s + weighted((adhoc || {})[d] || {}), 0);
+  const adhocToday = tokens((adhoc || {})[today] || {});
+  const totalW = robotWeek.weighted + adhocWeekW;
+  const robotShare = totalW ? robotWeek.weighted / totalW : 0;
+  document.getElementById('adhoc').innerHTML = `<h2>Your own Claude use (Claude Code on your Mac)</h2>
+    <div class="kpis"><div class="kpi"><b>${fmt(adhocToday)}</b><span>tokens today</span></div>
+      <div class="kpi"><b>${fmt(adhocWeek)}</b><span>last 7 days</span></div>
+      <div class="kpi"><b>${Math.round((1 - robotShare) * 100)}%</b><span>of tracked use*</span></div></div>
+    <div class="bar" style="margin-top:12px;height:14px"><i style="width:${robotShare * 100}%;background:var(--accent)"></i></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Robot ${Math.round(robotShare * 100)}%</span>
+      <span><i style="background:#262626"></i>You ${Math.round((1 - robotShare) * 100)}%</span></div>
+    <div class="muted" style="margin-top:10px">*Weighted by how much tokens count against your plan (cached tokens count about a tenth).
+      ${adhoc ? '' : 'Not available yet (sent from your Mac hourly while it\'s on). '}
+      claude.ai website and phone chats can't be tracked here. See them at
+      <a class="link" href="https://claude.ai/settings/usage" target="_blank" rel="noopener">claude.ai → Settings → Usage</a>.</div>`;
+
+  // --- capacity estimate
+  const cap = document.getElementById('capacity');
+  if (!snap || robotWeek.posts < 10) {
+    cap.innerHTML = `<h2>Room for more posts</h2><div class="muted">Collecting data (${robotWeek.posts}/10 robot posts tracked).
+      The estimate appears once at least 10 posts and your plan usage are recorded.</div>`;
+    return;
+  }
+  const w = snap.seven_day, reset = new Date(w.resets_at).getTime(), now = Date.now();
+  const elapsed = Math.min(1, Math.max(0.05, 1 - (reset - now) / (7 * 86400000)));
+  const robotPct = w.pct * robotShare, youPct = w.pct - robotPct;   // split of the week's usage so far
+  const split = `<div class="muted" style="margin-top:8px">This week so far: 🤖 robot ≈ <b>${robotPct.toFixed(1)}%</b> · 👤 you ≈ <b>${youPct.toFixed(1)}%</b>
+    (robot alone ≈ ${(robotPct / elapsed).toFixed(0)}% by the weekly reset at this pace)</div>`;
+  if (elapsed < 1 / 7) {   // first day: one busy chat would make any projection look alarming
+    cap.innerHTML = `<h2>Room for more posts</h2>
+      <div class="kpis"><div class="kpi"><b>${Math.round(w.pct)}%</b><span>week used so far</span></div>
+        <div class="kpi"><b>–</b><span>projection after day 1</span></div>
+        <div class="kpi"><b>${inIST(w.resets_at)}</b><span>weekly reset</span></div></div>${split}
+      <div class="muted" style="margin-top:6px">The week only just started, so the projection appears after the first day.</div>`;
+    return;
+  }
+  const projected = w.pct / elapsed;                              // where this week ends at today's pace
+  const daysLeft = Math.max(0.5, (reset - now) / 86400000);
+  const perPost = (w.pct * robotShare) / robotWeek.posts;          // % of weekly limit per robot post (approx.)
+  const headroom = 90 - projected;                                 // keep 10% spare for your own chats
+  const extraPerDay = perPost > 0 ? Math.floor(headroom / perPost / daysLeft) : 0;
+  const cls = projected >= 100 ? 'over' : projected >= 80 ? 'tight' : 'ok';
+  const msg = cls === 'over' ? (youPct > robotPct * 2
+      ? `❌ At this pace you'd run out before the reset, mostly from your own chats. Start fresh chats to save.`
+      : `❌ At this pace you'd run out before the weekly reset. Consider fewer posts.`)
+    : cls === 'tight' ? `⚠️ Tight: little room left this week.` : `✅ Safe: current schedule fits comfortably.`;
+  cap.innerHTML = `<h2>Room for more posts</h2>
+    <div class="kpis"><div class="kpi"><b>${Math.round(w.pct)}%</b><span>week used so far</span></div>
+      <div class="kpi"><b>${Math.round(projected)}%</b><span>projected by reset</span></div>
+      <div class="kpi"><b>${extraPerDay > 0 ? '+' + extraPerDay : 0}</b><span>more posts/day fit</span></div></div>
+    <div class="verdict ${cls}">${msg}</div>${split}
+    <div class="muted" style="margin-top:8px">Estimate: one robot post ≈ ${perPost.toFixed(2)}% of the weekly limit. Keeps 10% spare
+      for your own chats. claude.ai chats aren't tracked, so heavy chatting there makes this optimistic.</div>`;
+})();
+</script>
+</body>
+</html>
