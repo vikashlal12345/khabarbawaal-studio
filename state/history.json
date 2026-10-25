@@ -180,7 +180,8 @@
   "6a135ad1f41d",
   "6e2d630e9524",
   "6050a88938ea",
-  "6ccb1f7c2e8b"
+  "6ccb1f7c2e8b",
+  "1f7827249ca5"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -317,7 +318,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-25",
-  "reel_news_pm": "2026-10-24",
+  "reel_news_pm": "2026-10-25",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-25",
@@ -332,7 +333,7 @@
   "reel_break_noon": "2026-10-25",
   "reel_break_aft": "2026-10-24"
  },
- "inbox_since": "6mVUVDdiMOuf",
+ "inbox_since": "bJ3WDKQgrUZs",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -752,7 +753,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
+  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -914,10 +916,6 @@
   }
  ],
  "songs_recent": [
-  "Blinding Lights",
-  "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
-  "Madhosh",
-  "Levitating",
   "Girls Like You",
   "Peek A Boo",
   "Shararat",
@@ -953,7 +951,11 @@
   "Thumkeshwari",
   "His Aura Hits You",
   "Espresso",
-  "Housewife"
+  "Housewife",
+  "Putaapu Gang",
+  "Tabaahi (From \"Toxic\")",
+  "Big Dawgs",
+  "APT."
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1047,6 +1049,10 @@
   },
   {
    "title": "Amitabh Bachchan’s Diwali confession on KBC leaves Ramayana stars Ranbir Kapoor, Sai Pallavi in split",
+   "date": "2026-10-25"
+  },
+  {
+   "title": "Tiger Shroff sells Mumbai’s Khar apartment for Rs 9 crores",
    "date": "2026-10-25"
   }
  ],

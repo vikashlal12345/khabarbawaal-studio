@@ -7028,6 +7028,45 @@
      "tokens": 12615
     }
    }
+  },
+  "reel_news_pm": {
+   "posts": 0,
+   "requests": 8,
+   "input": 26,
+   "output": 6259,
+   "cache_read": 21273,
+   "cache_write": 120232,
+   "value_usd": 0.5457,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 1,
+     "tokens": 33841
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 14781
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 21344
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 4770
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 23087
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 22105
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 27862
+    }
+   }
   }
  }
 }
