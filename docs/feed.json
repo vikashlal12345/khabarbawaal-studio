@@ -1,5 +1,27 @@
 [
  {
+  "id": "reel_break_aft-2026-10-25",
+  "image": "posts/20261025-1416-reel_break_aft-2026-10-25.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261025-141639-reel_break_aft-2026-10-25.mp4",
+  "headline": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales",
+  "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
+  "caption": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales\nChick-fil-A generated $23.9 billion in US sales in 2025 while keeping its restaurants closed every Sunday.\nTruett Cathy, became CEO in 2021, succeeding his father, Dan Cathy.\nAap kiske saath ho? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #breakingnews #trending #india #viral",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
+  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
+  "songs": [],
+  "proof": {
+   "state": "check",
+   "fixed": [],
+   "issues": [
+    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
+   ]
+  },
+  "created_at": "2026-10-25T14:16:39+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-25",
   "image": "posts/20261025-1033-reel_news_pm-2026-10-25.jpg",
   "kind": "reel",
@@ -393,109 +415,5 @@
    ]
   },
   "created_at": "2026-10-24T14:18:50+00:00"
- },
- {
-  "id": "reel_politics-2026-10-24",
-  "image": "posts/20261024-1234-reel_politics-2026-10-24.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261024-123421-reel_politics-2026-10-24.mp4",
-  "headline": "RATE CARD: INDIA bloc anti-SIR rally Entry free. Daav par: Rs 10,000 cr (traders ke mutabik) Refund: Dukaan wale adjust karein (hamara tanz)",
-  "tag": "🎬 REEL · REALITY CHECK",
-  "caption": "Rahul Gandhi ki rally ka rate card 💸\nDelhi traders ne INDIA bloc se anti-SIR rally defer karne ko kaha, Rs 10,000 cr ka kaarobar daav par bataya.\nKaun sahi, rally ya vyapari? Comment karo 👇\n\nPhotos (Wikimedia Commons): Rahul: Himanshu Arya Khowal (CC BY 4.0)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: The Financial Express (link pinned in comments 👇)\n\n#rahulgandhi #delhi #indiabloc #rate #reelsindia",
-  "source": "The Financial Express",
-  "source_url": "https://www.financialexpress.com/india-news/delhi-traders-urge-rahul-gandhi-to-defer-india-blocs-anti-sir-rally-over-diwali-rush/4368724/",
-  "pin_comment": "Ye us dost ko bhejo jo har bandh mein dukaan kholne ka risk leta hai 👇",
-  "songs": [
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "rally se pehle calm down"
-   },
-   {
-    "title": "Sahiba",
-    "artist": "Jasleen Royal, Stebin Ben",
-    "lang": "hindi",
-    "mood": "dukaan chhod ke jaana mushkil"
-   },
-   {
-    "title": "STAY",
-    "artist": "Justin Bieber, The Kid Laroi",
-    "lang": "english",
-    "mood": "traders: please stay home rally"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Invented quote in quotation marks; article has no such statement, so make it clearly our own joke",
-    "Fact corrected to match the article: Article text gives no date (Oct 2026 unsupported)",
-    "Fact corrected to match the article: Date unsupported; article says Rs 10,000 cr at stake, not a loss already incurred",
-    "Fact corrected to match the article: Article says Rs 10,000 cr at stake, per traders; attribute it",
-    "Slide 1: The photo of Rahul Gandhi is letterboxed. There are grey bars on both sides of a small white-background photo, so it looks unfinished. Slide 1 can't be dropped, so the photo needs a different crop or fill."
-   ],
-   "fixed": [
-    "Refund: 'Dukaan wale adjust kar lo' → Refund: Dukaan wale adjust karein (hamara tanz)",
-    "Oct 2026 Delhi: vyapariyon ne Rahul Gandhi se rally taalne ki maang rakhi → Delhi: vyapariyon ne Rahul Gandhi se rally taalne ki maang rakhi",
-    "Oct 2026: traders ne Rs 10,000 cr ke kaarobar ke nuksan ki baat kahi → Traders ne Rs 10,000 cr ke kaarobar ke daav par hone ki baat kahi",
-    "Entry free. Nuksan: Rs 10,000 cr → Entry free. Daav par: Rs 10,000 cr (traders ke mutabik)"
-   ]
-  },
-  "created_at": "2026-10-24T12:34:21+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-24",
-  "image": "posts/20261024-1033-reel_news_pm-2026-10-24.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261024-103351-reel_news_pm-2026-10-24.mp4",
-  "headline": "Koffee with Karan: Varun Dhawan, Janhvi Kapoor spill secrets about Karan Johar while Arjun Kapoor joins them for a fun rapid fire round",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Koffee with Karan Varun Dhawan Janhvi Kapoor promo 🔥\nPromo mein Varun aur Janhvi secrets spill karte dikhe.\nEpisode mein Arjun Kapoor bhi fun rapid fire round ke liye judte hain.\nKaran Johar ne Saturday ko promo release kiya.\nSabse bada secret kiska nikla? Varun ya Janhvi? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#koffeewithkaran #varundhawan #janhvikapoor #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
-  "pin_comment": "Apne Koffee with Karan wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Peek A Boo",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "fun gossip vibe"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "naughty rapid fire energy"
-   },
-   {
-    "title": "Beauty And A Beat",
-    "artist": "Justin Bieber, Nicki Minaj",
-    "lang": "english",
-    "mood": "party glam couch vibe"
-   },
-   {
-    "title": "Jalebi Baby",
-    "artist": "Tesher",
-    "lang": "english",
-    "mood": "playful desi fun"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't say they revealed Karan's secrets; promo only hints at secrets being spilled",
-    "Fact corrected to match the article: Article only says promo suggests they will spill secrets, not Karan's secrets",
-    "Fact corrected to match the article: Article doesn't say the promo is viral; it says Karan dropped it on Saturday"
-   ],
-   "fixed": [
-    "Varun Dhawan Janhvi ne Karan Johar ke raaz khole → Varun Dhawan Janhvi promo mein raaz kholte dikhe",
-    "Varun aur Janhvi ne Karan Johar ke secrets spill kiye. → Promo mein Varun aur Janhvi secrets spill karte dikhe.",
-    "Promo ab viral hai. → Karan Johar ne Saturday ko promo release kiya.",
-    "Varun Dhawan Janhvi promo mein raaz kholte dikhe → Varun Dhawan aur Janhvi promo mein raaz kholte dikhe"
-   ]
-  },
-  "created_at": "2026-10-24T10:33:51+00:00"
  }
 ]

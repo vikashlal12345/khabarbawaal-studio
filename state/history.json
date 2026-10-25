@@ -181,7 +181,8 @@
   "6e2d630e9524",
   "6050a88938ea",
   "6ccb1f7c2e8b",
-  "1f7827249ca5"
+  "1f7827249ca5",
+  "1acf844e45d5"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -331,7 +332,7 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-25",
   "reel_break_noon": "2026-10-25",
-  "reel_break_aft": "2026-10-24"
+  "reel_break_aft": "2026-10-25"
  },
  "inbox_since": "sOCNRDlmAfEB",
  "used_otps": [
@@ -754,7 +755,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
-  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/"
+  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
+  "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1054,11 +1056,15 @@
   {
    "title": "Tiger Shroff sells Mumbai’s Khar apartment for Rs 9 crores",
    "date": "2026-10-25"
+  },
+  {
+   "title": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales",
+   "date": "2026-10-25"
   }
  ],
  "claude_limit": {
-  "at": "2026-10-22T14:23:09+00:00",
-  "msg": "You've hit your session limit · resets 4:30pm (UTC)",
+  "at": "2026-10-25T14:16:17+00:00",
+  "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  }
 }
