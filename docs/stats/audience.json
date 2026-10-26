@@ -1,8 +1,8 @@
 {
- "summary": "From our last 163 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL   CHOOSE YOUR (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 2, custom 2, top10 2, news 2, calendar 2, fun 1, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
- "posts": 163,
- "likes": 281,
- "updated": "2026-10-25T22:30:37+00:00",
+ "summary": "From our last 137 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  BACHPAN ME AISA KAUN KIYA (0), REEL  WORLD (0). Formats: reel 2, custom 2, top10 2, fun 2, news 2, calendar 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
+ "posts": 137,
+ "likes": 250,
+ "updated": "2026-10-26T22:30:43+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -29,11 +29,11 @@
    2.8
   ],
   [
-   "MOOD",
+   "TECH",
    2.5
   ],
   [
-   "TECH",
+   "MOOD",
    2.5
   ],
   [
@@ -41,7 +41,7 @@
    2.25
   ],
   [
-   "EXPECTATION VS REALITY",
+   "BHAGWAN KA SAATH",
    2.0
   ],
   [
@@ -53,15 +53,35 @@
    2.0
   ],
   [
-   "BHAGWAN KA SAATH",
+   "WTF NEWS",
+   2.0
+  ],
+  [
+   "EXPECTATION VS REALITY",
+   2.0
+  ],
+  [
+   "TOP 5 VIRAL",
+   2.0
+  ],
+  [
+   "TAG KARO",
    2.0
   ],
   [
    "VIRAL",
-   1.8235294117647058
+   1.8461538461538463
+  ],
+  [
+   "POLITICS",
+   1.7692307692307692
   ],
   [
    "REEL  REALITY CHECK",
+   1.75
+  ],
+  [
+   "BOLLYWOOD",
    1.75
   ],
   [
@@ -69,95 +89,43 @@
    1.6923076923076923
   ],
   [
-   "POLITICS",
-   1.6666666666666667
-  ],
-  [
    "GITA GYAAN",
    1.6666666666666667
   ],
   [
-   "BOLLYWOOD",
-   1.5833333333333333
+   "RAAT KI 5 KHABREIN",
+   1.6666666666666667
   ],
   [
    "BREAKING",
    1.5
   ],
   [
-   "WTF NEWS",
-   1.5
-  ],
-  [
-   "RAAT KI 5 KHABREIN",
-   1.5
-  ],
-  [
-   "TAG KARO",
-   1.5
-  ],
-  [
-   "TOP 5 VIRAL",
-   1.5
-  ],
-  [
    "AMAZING FACTS",
-   1.5
+   1.3333333333333333
   ],
   [
    "MYTH VS FACT",
-   1.25
-  ],
-  [
-   "THOUGHT OF THE DAY",
-   1.25
-  ],
-  [
-   "MARKET BRIEF",
-   1.25
+   1.3333333333333333
   ],
   [
    "ON THIS DAY",
-   1.25
+   1.3333333333333333
   ],
   [
-   "REEL  VIRAL",
-   1.0
+   "MARKET BRIEF",
+   1.3333333333333333
   ],
   [
-   "CLOSING BELL",
-   1.0
+   "THOUGHT OF THE DAY",
+   1.3333333333333333
   ],
   [
-   "GOOD NEWS",
-   1.0
-  ],
-  [
-   "DELHI",
-   1.0
-  ],
-  [
-   "DESI LIFE",
-   1.0
-  ],
-  [
-   "EXPLAINER",
-   1.0
-  ],
-  [
-   "FAMILY GROUP",
-   1.0
-  ],
-  [
-   "EDUCATION",
+   "REEL  INDIA",
    1.0
   ],
   [
    "PREOPEN",
-   1.0
-  ],
-  [
-   "RELATABLE",
    1.0
   ],
   [
@@ -169,16 +137,32 @@
    1.0
   ],
   [
+   "EXPLAINER",
+   1.0
+  ],
+  [
+   "DELHI",
+   1.0
+  ],
+  [
+   "CLOSING BELL",
+   1.0
+  ],
+  [
    "REEL  TOP 5 NEWS",
    1.0
   ],
   [
-   "REEL  INDIA",
+   "FAMILY GROUP",
    1.0
   ],
   [
-   "REEL  WORLD",
-   0.0
+   "REEL  VIRAL",
+   1.0
+  ],
+  [
+   "RELATABLE",
+   1.0
   ],
   [
    "REEL   CHOOSE YOUR",
@@ -186,6 +170,10 @@
   ],
   [
    "REEL  BACHPAN ME AISA KAUN KIYA",
+   0.0
+  ],
+  [
+   "REEL  WORLD",
    0.0
   ]
  ],
@@ -200,31 +188,31 @@
   ],
   [
    "top10",
-   1.7272727272727273
+   1.8888888888888888
+  ],
+  [
+   "fun",
+   1.8333333333333333
   ],
   [
    "news",
-   1.66
+   1.7837837837837838
   ],
   [
    "calendar",
    1.5
   ],
   [
-   "fun",
-   1.4545454545454546
-  ],
-  [
    "ready",
-   1.375
+   1.380952380952381
   ],
   [
    "thought",
-   1.25
+   1.3333333333333333
   ],
   [
    "market",
-   1.1
+   1.125
   ]
  ]
 }
