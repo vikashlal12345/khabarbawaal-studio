@@ -7246,37 +7246,57 @@
    }
   },
   "create": {
-   "posts": 0,
-   "requests": 6,
-   "input": 14,
-   "output": 1557,
-   "cache_read": 2142,
-   "cache_write": 123470,
-   "value_usd": 0.5097,
+   "posts": 1,
+   "requests": 17,
+   "input": 42,
+   "output": 5399,
+   "cache_read": 15822,
+   "cache_write": 319631,
+   "value_usd": 1.3341,
    "by_purpose": {
     "writing": {
-     "requests": 1,
-     "tokens": 24717
+     "requests": 2,
+     "tokens": 49817
     },
     "topic search": {
-     "requests": 1,
-     "tokens": 22241
+     "requests": 2,
+     "tokens": 44494
     },
     "reel brief": {
-     "requests": 1,
-     "tokens": 22389
+     "requests": 2,
+     "tokens": 44769
     },
     "reel style": {
-     "requests": 1,
-     "tokens": 22244
+     "requests": 2,
+     "tokens": 44486
     },
     "reel news script": {
-     "requests": 1,
-     "tokens": 30589
+     "requests": 2,
+     "tokens": 61666
     },
     "photo check": {
+     "requests": 2,
+     "tokens": 10754
+    },
+    "quote video": {
      "requests": 1,
-     "tokens": 5003
+     "tokens": 22730
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 4729
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 23334
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 22530
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 11585
     }
    }
   },

@@ -1,5 +1,53 @@
 [
  {
+  "id": "cf08033f6142",
+  "image": "posts/20261026-0921-cf08033f6142.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261026-092158-cf08033f6142.mp4",
+  "headline": "Create one reel of RSS 101 YEARS. Video of RSS members walking and doing their parade",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "RSS 101 years: swayamsevakon ka path sanchalan dekhke josh high 🇮🇳 RSS ki sthapna 1925 mein Nagpur mein Dr. K.B. Hedgewar ne ki thi. Ab sangathan 101 saal ka ho chuka hai. Path sanchalan mein swayamsevak ek line mein ganvesh pehne chalte dikhe. Aap kya kehte ho, yeh anushasan dekhne layak hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#RSS #RSS101 #India #reelsindia #PathSanchalan",
+  "source": "Your pick",
+  "source_url": "",
+  "pin_comment": "Kisi swayamsevak ya desh premi dost ko bhejo 👇 Anushasan sahi laga? HAAN / NA",
+  "songs": [
+   {
+    "title": "Dhurandhar - Title Track",
+    "artist": "Shashwat Sachdev, Hanumankind",
+    "lang": "hindi",
+    "mood": "damdaar beat = parade ka josh"
+   },
+   {
+    "title": "Ala Bolelo",
+    "artist": "Anirudh Ravichander, Arunraja Kamaraj",
+    "lang": "hindi",
+    "mood": "high energy marching vibe"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "epic, grand feel for 101 saal"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "heavy hype for march scenes"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The big headline text sits over the faces of the swayamsevaks in the middle of the photo. The '@khabarbawaal' handle also overlaps the 'Photo: Wikimedia Commons' credit at the bottom."
+   ],
+   "fixed": []
+  },
+  "request": "Create one reel of RSS 101 YEARS. Video of RSS members walking and doing their parade",
+  "created_at": "2026-10-26T09:21:58+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-26",
   "image": "posts/20261026-0832-reel_break_noon-2026-10-26.jpg",
   "kind": "reel",
@@ -320,50 +368,5 @@
    ]
   },
   "created_at": "2026-10-25T10:33:00+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-25",
-  "image": "posts/20261025-0832-reel_break_noon-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-083240-reel_break_noon-2026-10-25.mp4",
-  "headline": "Amitabh Bachchan’s Diwali confession on KBC leaves Ramayana stars Ranbir Kapoor, Sai Pallavi in split",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Amitabh Bachchan KBC Ranbir Kapoor Sai Pallavi Ramayana Diwali confession\n\nKBC ke naye promo mein Ramayana cast Ranbir, Sai Pallavi aur Ravi Dubey aaye.\nAmitabh bole: padosi ke yahan bomb fate, toh humara usse tez hona chahiye.\nRanbir, Ravi aur Sai hans hans ke lot-pot ho gaye. Ramayana part 1 5 November ko aa rahi hai.\n\nDiwali par aapka bomb bhi padosi se tez hota tha? Haan ya Na? 😂🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #AmitabhBachchan #RanbirKapoor #Ramayana #KBC",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
-  "pin_comment": "Bachpan ka Diwali yaad aa gaya? Kisi Amitabh fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "fun KBC moment = party vibe"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "Big B aura = hype"
-   },
-   {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
-    "lang": "english",
-    "mood": "light, playful celeb moment"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "top chart, trending vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-25T08:32:40+00:00"
  }
 ]
