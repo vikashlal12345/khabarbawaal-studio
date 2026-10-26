@@ -124,6 +124,7 @@ def is_limit(text: str) -> bool:
     return bool(LIMIT_RE.search(text or ""))
 
 
+LIMIT_SEEN = False   # set when ANY call hit Claude's limit, even if the caller swallowed the error (➕ Create then switches to auto mode)
 OWNER_FEEDBACK = ""   # 🔄 a Remake in progress (owner, 22 Oct 2026): what he did not like, added to the writing / picking prompts
 NO_FEEDBACK = {"proofreading", "joke judge", "hook meaning", "flux pick", "painting pick", "face crop", "people crops"}
 
@@ -144,6 +145,7 @@ def claude_json(system: str, user: str, schema: dict, model: str, timeout: int =
     log_usage(result, purpose)
     if result.get("is_error") or not result.get("structured_output"):
         if is_limit(str(result.get("result"))):
+            globals()["LIMIT_SEEN"] = True
             raise ClaudeLimit(str(result.get("result"))[:200])
         raise RuntimeError(f"Claude CLI error: {str(result.get('result'))[:300]}")
     return result["structured_output"]

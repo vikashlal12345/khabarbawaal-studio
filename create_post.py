@@ -308,7 +308,27 @@ def main() -> int:
         if reel_wanted and media.get("video"):
             return make_media_reel(raw, media)
         return make_media(raw, media)
-    return make_reel(raw) if reel_wanted else make(raw)
+    known = {p["id"] for p in g.load_json(g.FEED_FILE, [])}
+    try:
+        code = make_reel(raw) if reel_wanted else make(raw)
+        if fun.LIMIT_SEEN and not os.environ.get("MEDIA"):   # a limit error was swallowed on the way: the result is not trustworthy
+            feed = g.load_json(g.FEED_FILE, [])
+            import remake
+            for p in [p for p in feed if p["id"] not in known]:
+                remake._drop(feed, p)
+            g.save_json(g.FEED_FILE, feed)
+            print("  Claude's limit was hit during the request: auto mode")
+            import emergency
+            return emergency.make_create(raw, reel_wanted, ts)
+        return code
+    except Exception as e:
+        # Claude's limit (owner, 26 Oct 2026: a ➕ Create request failed on the weekly limit): the story is found and the Reel / post
+        # made without AI from the article's own words (emergency.make_create)
+        if type(e).__name__ == "ClaudeLimit" or fun.is_limit(str(e)):
+            print(f"  Claude's limit reached ({str(e)[:100]}): auto mode")
+            import emergency
+            return emergency.make_create(raw, reel_wanted, ts)
+        raise
 
 
 PROMPT_SCHEMA = {
@@ -390,6 +410,8 @@ def make(raw: str, kind: str = "custom") -> int:
             post = fun.normalize({**write_post(text, article), "card_text": ""})
             print("Mode: membership")
         except Exception as e:
+            if fun.LIMIT_SEEN:
+                raise   # Claude's limit: ➕ Create's auto mode (emergency.make_create), not a post made from the owner's own words
             print(f"  ! AI failed, using free mode: {e}")
     if post is None:
         post = free_post(text, article)
@@ -679,6 +701,8 @@ def make_reel(raw: str) -> int:
             post_id = "c" + g.hashlib.sha1((raw + "|reel" + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
             reel.save_reel(feed, state, cover, mp4, post_id, {**entry, "kind": "custom", "request": raw[:1500]})
     except Exception as e:
+        if fun.LIMIT_SEEN:
+            raise
         print(f"  ! Reel not made ({str(e)[:200]}): making a normal post instead.")
         FALLBACK.append(f"Reel not possible: {str(e)[:150]}")
         note("Reel not possible: making a normal post instead", 3)

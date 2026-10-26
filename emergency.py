@@ -17,7 +17,12 @@ from datetime import datetime, timezone
 
 import generate as g
 
-ALLOWED = {"viral", "entertainment", "cricket", "sports", "tech", "funny/offbeat"}
+ALLOWED = {"entertainment"}   # owner, 24 Oct 2026: auto mode = ONLY the latest Bollywood news (the 23 Oct 7:45 PM Reel did not go well)
+STARS = re.compile(r"(?i)\b(shah ?rukh|srk|salman|aamir|akshay|ranbir|alia|deepika|katrina|kareena|hrithik|ranveer|priyanka|amitabh|"
+                   r"abhishek bachchan|aishwarya|tiger shroff|varun dhawan|kiara|shraddha|janhvi|sara ali|kartik|ajay devgn|prabhas|"
+                   r"yash|allu arjun|vicky kaushal|rashmika|shahid|saif|anushka|madhuri|kriti|sidharth|jackie shroff|karisma|"
+                   r"sonam|ananya|ayushmann|rajkummar|taapsee|tamannaah|samantha|nayanthara|ram charan|jr ntr|mahesh babu|vijay|"
+                   r"king|ramayana|pathaan|jawan|dhurandhar)\b")
 SKIP_WORDS = re.compile(
     r"(?i)\b(bjp|congress|aap|tmc|cpi|modi|rahul|kejriwal|mamata|yogi|shah|opposition|minister|election|poll|parliament|"
     r"lok sabha|rajya sabha|supreme court|high court|court|cbi|ed|police|arrest|arrested|murder|killed|kill|dies|dead|death|"
@@ -28,7 +33,8 @@ QUESTIONS = ["Aapka kya kehna hai? Comment karo", "Sahi ya galat? Comment karo",
 HEADLINES = {"entertainment": "FILM NEWS", "cricket": "CRICKET UPDATE", "sports": "SPORTS UPDATE", "tech": "TECH UPDATE",
              "viral": "VIRAL NOW", "funny/offbeat": "VIRAL NOW"}
 NOISE = re.compile(r"(?i)(also read|read more|follow us|click here|subscribe|advertisement|sign up|photo:|image:|"
-                   r"copyright|all rights|download the app|whatsapp)")
+                   r"copyright|all rights|download the app|whatsapp|outdated browser|upgrade your browser|enable javascript|cookie|"
+                   r"privacy policy|log ?in|newsletter|terms of use|install the app|push notification|allow notifications)")
 
 
 def roman(text: str) -> bool:
@@ -101,7 +107,7 @@ def pick_story(state: dict, today: str):
     items = [i for i in g.fetch_candidates(set(state.get("seen", [])))
              if i["link"] not in used and i.get("category", "") in ALLOWED and roman(i["title"])
              and not SKIP_WORDS.search(i["title"] + " " + i.get("summary", ""))]
-    items.sort(key=lambda i: -hours(i["title"]))
+    items.sort(key=lambda i: (-bool(STARS.search(i["title"])), -hours(i["title"])))   # famous Bollywood names first
     for it in items[:12]:
         words = set(re.findall(r"[a-z]{4,}", it["title"].lower()))
         if any(len(words & set(re.findall(r"[a-z]{4,}", r))) >= max(3, len(words) * 0.6) for r in recent):
@@ -118,6 +124,42 @@ def pick_story(state: dict, today: str):
     return None
 
 
+def build_reel(it: dict, sents: list, photos: list, series_kind: str, state: dict, feed: list, save_id: str, extra: dict,
+               tag_text: str) -> None:
+    """The no-AI breaking-card Reel of one story: every word copied from the article. Saved under save_id (a slot id, or a
+    ➕ Create post id with extra={'kind': 'custom', ...})."""
+    import reel
+    import schedule
+    today = schedule.ist_now().date().isoformat()
+    first, second = photos[0], photos[1] if len(photos) > 1 else photos[0]
+    title = clean_title(it["title"])
+    cat = it.get("category", "viral")
+    bullets = sents[:4]
+    question = QUESTIONS[int(hashlib.sha1(title.encode()).hexdigest(), 16) % len(QUESTIONS)]
+    hook = hook_of(it["title"])
+    reel.SERIES_KIND = series_kind if series_kind in reel.NEWS_KINDS or series_kind in reel.BREAK_KINDS else "reel_news"
+    with tempfile.TemporaryDirectory() as tmp:
+        out = os.path.join(tmp, "reel.mp4")
+        frames = reel.breaking_reel(first[0], second[0], f"Photo: {first[1]}", tag_text,
+                                    hook, HEADLINES.get(cat, "LATEST UPDATE"), bullets, question, [], out,
+                                    cover_window=first[0].width >= first[0].height)   # a wide photo is shown whole
+        tags = " ".join(f"#{t}" for t in ["reelsindia", "bollywood", "trending", "india", re.sub(r"\W", "", cat) or "viral"])
+        caption = (f"{title}\n{sents[0]}\n{sents[1]}\n{question} 👇\n\nFollow {g.CONFIG['handle']} for daily updates.\n"
+                   f"Source: {it['source']} (link pinned in comments 👇)\n\n{tags}")
+        proof = {"state": "check", "fixed": [], "issues": [
+            "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the "
+            "article and nothing was fact-checked or reworded: please read it before posting."]}
+        used = state.get("reel_news_used", [])
+        state["reel_news_used"] = (used + [it["link"]])[-80:]
+        state["reel_news_recent"] = (reel.recent_news(state, today)[0] + [{"title": it["title"], "date": today}])[-40:]
+        if it.get("id"):
+            state["seen"] = state.get("seen", []) + [it["id"]]
+        reel.save_reel(feed, state, frames[0], out, save_id, {
+            "headline": it["title"], "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)", "caption": g.limit_hashtags(caption),
+            "source": it["source"], "source_url": it["link"], "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
+            "songs": [], "proof": proof, **extra})
+
+
 def make_reel(kind: str, state: dict, feed: list) -> bool:
     """A no-AI breaking-card Reel for a news / breaking slot. False (reason in ⏳ Activity) if nothing safe was found."""
     import reel
@@ -128,40 +170,13 @@ def make_reel(kind: str, state: dict, feed: list) -> bool:
     status.start(kind, today, f"⚙️ Auto mode · {(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'AM' if h < 12 else 'PM'}", 4,
                  "Claude's limit is reached: making a Reel without AI")
     try:
-        status.step("Finding a safe trending story (no politics, crime or deaths)", 2)
+        status.step("Finding the latest Bollywood story (no politics, crime or deaths)", 2)
         found = pick_story(state, today)
         if not found:
             status.fail("Auto mode: no safe, trending story with photos was found for this slot")
             return False
         it, sents, photos = found
-        first, second = photos[0], photos[1] if len(photos) > 1 else photos[0]
-        title = clean_title(it["title"])
-        cat = it.get("category", "viral")
-        bullets = sents[:4]
-        question = QUESTIONS[int(hashlib.sha1(title.encode()).hexdigest(), 16) % len(QUESTIONS)]
-        hook = hook_of(it["title"])
-        status.step("Making the video", 3)
-        reel.SERIES_KIND = kind if kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS else "reel_news"   # satire / joke slots: a news card
-        with tempfile.TemporaryDirectory() as tmp:
-            out = os.path.join(tmp, "reel.mp4")
-            frames = reel.breaking_reel(first[0], second[0], f"Photo: {first[1]}", "BREAKING" if kind in reel.BREAK_KINDS else "UPDATE",
-                                        hook, HEADLINES.get(cat, "LATEST UPDATE"), bullets, question, [], out,
-                                        cover_window=first[0].width >= first[0].height)   # a wide photo is shown whole
-            tags = " ".join(f"#{t}" for t in ["reelsindia", "breakingnews", "trending", "india", re.sub(r"\W", "", cat) or "viral"])
-            caption = (f"{title}\n{sents[0]}\n{sents[1]}\n{question} 👇\n\nFollow {g.CONFIG['handle']} for daily updates.\n"
-                       f"Source: {it['source']} (link pinned in comments 👇)\n\n{tags}")
-            proof = {"state": "check", "fixed": [], "issues": [
-                "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the "
-                "article and nothing was fact-checked or reworded: please read it before posting."]}
-            used = state.get("reel_news_used", [])
-            state["reel_news_used"] = (used + [it["link"]])[-80:]
-            state["reel_news_recent"] = (reel.recent_news(state, today)[0] + [{"title": it["title"], "date": today}])[-40:]
-            if it.get("id"):
-                state["seen"] = state.get("seen", []) + [it["id"]]
-            reel.save_reel(feed, state, frames[0], out, f"{kind}-{today}", {
-                "headline": it["title"], "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)", "caption": g.limit_hashtags(caption),
-                "source": it["source"], "source_url": it["link"], "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
-                "songs": [], "proof": proof})
+        build_reel(it, sents, photos, kind, state, feed, f"{kind}-{today}", {}, "BREAKING" if kind in reel.BREAK_KINDS else "UPDATE")
         return True
     except Exception as e:
         print(f"  ! auto mode failed: {type(e).__name__}: {str(e)[:200]}")
@@ -338,3 +353,141 @@ def make_speaker(kind: str, state: dict, feed: list) -> bool:
         print(f"  ! auto speaker failed: {type(e).__name__}: {str(e)[:200]}")
         status.fail(f"Auto mode failed: {str(e)[:160]}")
         return False
+
+
+# ------------------------------------------------------------------ ➕ Create without AI (owner, 26 Oct 2026)
+STOP_WORDS = set("create make reel post latest new news auto mode please the and for about with from that this video story viral "
+                 "trending today now give want write kar karo bana banao ek ka ki ke par pe".split())
+GENERIC = {"bollywood", "film", "films", "movie", "movies", "cinema", "actor", "actress", "celebrity", "celebrities", "star", "stars",
+           "entertainment", "gossip", "box", "office"}
+NEEDS_AI = re.compile(r"[\"“”]|(?i:\b(in one frame|side by side|exact line|write this|on that line|photos? in|vertical)\b)")
+
+
+def keywords(text: str) -> list[str]:
+    return [w for w in re.findall(r"[a-z0-9]+", text.lower()) if len(w) > 2 and w not in STOP_WORDS]
+
+
+def find_story(text: str, state: dict):
+    """The best story for the owner's words, no AI: feeds (24 h) + Bing News searched with his keywords, scored by how many of his
+    words the headline has, famous Bollywood names and X trend hours. Returns (item, sentences, photos) or None."""
+    import carousel
+    import create_post
+    import fun
+    kws = keywords(text)
+    specific = [w for w in kws if w not in GENERIC]
+    generic_request = not specific   # 'Bollywood latest reel': the page's Bollywood feeds
+    saved = g.CONFIG["lookback_hours"], g.CONFIG["per_feed"]
+    g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = 24, 6
+    try:
+        items = [dict(i) for i in g.fetch_candidates(set())]
+    finally:
+        g.CONFIG["lookback_hours"], g.CONFIG["per_feed"] = saved
+    if generic_request:
+        items = [i for i in items if i.get("category", "") in ALLOWED]
+    else:
+        for a in create_post.bing_articles(" ".join(specific)[:80] + " news", limit=10, newest=True):
+            if a.get("title"):
+                items.append({"title": a["title"], "link": a["url"], "source": a["site"], "summary": "", "category": "entertainment", "id": ""})
+    try:
+        trends = fun.x_trends()
+    except Exception:
+        trends = []
+    hours = lambda t: max((h for term, h in trends if len(term) >= 4 and term.lower().lstrip("#") in t.lower()), default=0)
+    scored = []
+    for i in items:
+        blob = (i["title"] + " " + i.get("summary", "")).lower()
+        overlap = sum(1 for w in specific if w in blob)
+        if specific and not overlap:
+            continue
+        if generic_request and SKIP_WORDS.search(i["title"] + " " + i.get("summary", "")):
+            continue   # no AI to judge deaths / crime / politics when the owner did not name a topic
+        if not roman(i["title"]):
+            continue
+        scored.append((3 * overlap + 3 * bool(STARS.search(i["title"])) + hours(i["title"]) / 10, i))
+    scored.sort(key=lambda x: -x[0])
+    seen_links = set()
+    for _, it in scored[:10]:
+        if it["link"] in seen_links:
+            continue
+        seen_links.add(it["link"])
+        text_ = carousel.article_text(carousel.page_html(it["link"]), limit=3500)
+        tw = set(re.findall(r"[a-z]{4,}", it["title"].lower()))
+        sents = [x for x in sentences(text_) if len(tw & set(re.findall(r"[a-z]{4,}", x.lower()))) < 0.7 * max(len(tw), 1)]
+        if len(sents) < 3:
+            continue
+        photos = photos_of(it["link"])
+        if photos:
+            return it, sents[:4], photos
+    return None
+
+
+def make_create(raw: str, reel_wanted: bool, ts: str) -> int:
+    """➕ Create when Claude's limit is reached: find the story for the owner's keywords and make a no-AI Reel (breaking card) or
+    post (cover cards) from the article's own words. Exact-line / layout requests need Claude: they are kept for later."""
+    import create_post
+    import schedule
+    import status
+    text = re.sub(r"https?://\S+", "", raw).strip()
+    urls = re.findall(r"https?://\S+", raw)
+    status.step("Claude's limit is reached: finding the story without AI", 2)
+    if NEEDS_AI.search(text):
+        status.fail("Claude's limit is reached and your request has an exact line or layout that needs Claude. Send it again after the "
+                    "limit resets (usually 3:30 AM IST).")
+        return 0
+    state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
+    feed = g.load_json(g.FEED_FILE, [])
+    found = None
+    if urls:
+        import carousel
+        art = create_post.read_article(urls[0])
+        if art and art.get("title"):
+            it = {"title": art["title"], "link": art["url"], "source": art["site"], "summary": art.get("description", ""), "category": "entertainment", "id": ""}
+            sents = sentences(carousel.article_text(carousel.page_html(art["url"]), limit=3500))
+            ph = photos_of(art["url"])
+            if len(sents) >= 3 and ph:
+                found = (it, sents[:4], ph)
+    else:
+        found = find_story(text, state)
+    if not found:
+        status.fail("Claude's limit is reached and no story with photos was found for your words. Try different words, or send again "
+                    "after the limit resets (usually 3:30 AM IST).")
+        return 0
+    it, sents, photos = found
+    status.step(f"Making it from: {it['title'][:60]}", 3)
+    post_id = "c" + hashlib.sha1((raw + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
+    if reel_wanted:
+        build_reel(it, sents, photos, "reel_news", state, feed, post_id, {"kind": "custom", "request": raw[:1500]}, "BREAKING")
+    else:
+        _make_post(it, sents, photos, state, feed, post_id, raw)
+    return 0
+
+
+def _make_post(it: dict, sents: list, photos: list, state: dict, feed: list, post_id: str, raw: str) -> None:
+    """The no-AI image post: cover cards from the article's photos + the brand card, a caption of the article's own sentences."""
+    import status
+    title = clean_title(it["title"])
+    post = {"tag": "BOLLYWOOD", "headline": g.short_headline(title), "highlight": [w for w in title.split() if w[:1].isupper()][:2] or title.split()[:2]}
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+    g.POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    cards = [g.render_card(img, post, site) for img, site in photos[:3]] + [g.render_card(None, post, it["source"])]
+    options = []
+    for n, card in enumerate(cards, 1):
+        name = f"posts/{stamp}-{post_id}-{n}.jpg"
+        card.save(g.DOCS / name, "JPEG", quality=88, optimize=True)
+        options.append(name)
+    question = QUESTIONS[int(hashlib.sha1(title.encode()).hexdigest(), 16) % len(QUESTIONS)]
+    tags = " ".join(f"#{t}" for t in ["bollywood", "bollywoodnews", "trending", "india", "viral"])
+    caption = (f"{title}\n{sents[0]}\n{sents[1]}\n{question} 👇\n\nFollow {g.CONFIG['handle']} for daily updates.\n"
+               f"Source: {it['source']} (link pinned in comments 👇)\n\n{tags}")
+    proof = {"state": "check", "fixed": [], "issues": [
+        "⚙️ AUTO MODE: Claude's limit was reached, so this post was made WITHOUT AI: the words are copied from the article and nothing "
+        "was fact-checked. Please read it before posting."]}
+    feed.insert(0, {"id": post_id, "kind": "custom", "image": options[0], "options": options, "slides": [], "headline": it["title"],
+                    "tag": "⚙️ AUTO MODE (no AI)", "caption": g.limit_hashtags(caption), "source": it["source"], "source_url": it["link"],
+                    "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇", "proof": proof, "request": raw[:1500],
+                    "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
+    g.trim_feed(feed)
+    state["reel_news_used"] = (state.get("reel_news_used", []) + [it["link"]])[-80:]
+    g.save_json(g.FEED_FILE, feed)
+    g.save_json(g.STATE_FILE, state)
+    status.done(f"Ready (auto mode): {title[:80]}", post=post_id)
