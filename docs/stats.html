@@ -389,21 +389,32 @@ function hookChart(box, pts) {
       const miss = xs.filter(x => !termCovered(x.term)).length + st.filter(x => !storyCovered(x.title)).length;
       box.innerHTML = `<h2>🔥 Trending now vs our Reels <span class="muted">updated ${ago(tr.at)}</span></h2>
         <div class="muted" style="margin-bottom:6px">${miss ? `${miss} trending topics not covered yet: tap 📋 copy, then paste it in ➕ Create.` : 'Everything trending is covered.'}</div>
-        ${pins.length ? `<div style="margin:6px 0">${pins.map(v => `<div class="best" style="gap:8px;align-items:center"><span style="flex:1;min-width:0;overflow-wrap:anywhere">📌 <b>${slotOf[v.k].t} ${esc(slotOf[v.k].n)}</b>: ${esc(v.title)}</span><button class="unpin" data-slot="${esc(v.k)}" style="background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 8px;font-size:12px">↩️ Undo</button></div>`).join('')}</div>` : ''}
+        ${pins.length ? `<div class="pinlist" style="margin:6px 0">${pins.map(v => `<div class="best" style="gap:8px;align-items:center"><span style="flex:1;min-width:0;overflow-wrap:anywhere">📌 <b>${slotOf[v.k].t} ${esc(slotOf[v.k].n)}</b>: ${esc(v.title)}</span><button class="unpin" data-slot="${esc(v.k)}" style="background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 8px;font-size:12px">↩️ Undo</button></div>`).join('')}</div>` : ''}
         <div class="sub">Big stories right now</div>
         ${st.map(x => `<div class="best" style="gap:8px;align-items:flex-start"><span style="flex:1;min-width:0;overflow-wrap:anywhere"><a style="white-space:normal;overflow:visible" href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a> <span class="muted">${esc(x.source)}</span></span><span style="white-space:nowrap">${chip(storyCovered(x.title))}${copyBtn(x.title)}${pinSel(x)}</span></div>`).join('') || '<div class="muted">No stories yet.</div>'}
         <div class="sub">Trending on X in India (hours trending)</div>
         ${xs.map(x => `<div class="best"><span>${esc(x.term)} <span class="muted">${x.hours} h</span></span><span>${chip(termCovered(x.term))}${copyBtn(x.term)}</span></div>`).join('') || '<div class="muted">No trends yet.</div>'}
         ${(tr.google || []).length ? `<div class="sub">Google trends</div><div class="muted">${tr.google.slice(0, 8).map(esc).join(' · ')}</div>` : ''}
         <div class="muted" style="margin-top:8px">"Covered" = one of our Reels or posts of the last 3 days has the same words. Politics and crime stories are left out of this list.</div>`;
-      box.querySelectorAll('button.unpin').forEach(b => b.onclick = async () => {
+      const wireUndo = b => b.onclick = async () => {
         if (!confirm('Take this story off that slot? The slot will pick its own story again.')) return;
         try {
           const r = await fetch('https://ntfy.sh/' + app.inbox, { method: 'POST', body: JSON.stringify({ type: 'unpin_story', slot: b.dataset.slot }) });
           if (!r.ok) throw new Error(r.status);
           b.closest('.best').remove(); alert('↩️ Undone: that slot will pick its own story.');
         } catch { alert('Could not send (no internet?). Try again.'); }
-      });
+      };
+      box.querySelectorAll('button.unpin').forEach(wireUndo);
+      // a pin made just now shows its row (with Undo) at once, without reloading the page
+      const addPinRow = (kind, title) => {
+        box.querySelectorAll(`button.unpin[data-slot="${kind}"]`).forEach(b => b.closest('.best').remove());   // one pin per slot
+        const row = document.createElement('div');
+        row.className = 'best'; row.style.cssText = 'gap:8px;align-items:center';
+        row.innerHTML = `<span style="flex:1;min-width:0;overflow-wrap:anywhere">📌 <b>${slotOf[kind].t} ${esc(slotOf[kind].n)}</b>: ${esc(title)}</span><button class="unpin" data-slot="${esc(kind)}" style="background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 8px;font-size:12px">↩️ Undo</button>`;
+        let holder = box.querySelector('.pinlist');
+        if (!holder) { holder = document.createElement('div'); holder.className = 'pinlist'; holder.style.margin = '6px 0'; box.querySelector('.sub').before(holder); }
+        holder.append(row); wireUndo(row.querySelector('button.unpin'));
+      };
       box.querySelectorAll('select.pin').forEach(sel => sel.onchange = async () => {
         const kind = sel.value; if (!kind) return;
         const opt = sel.selectedOptions[0], when = nextWhen(opt.dataset.time);
@@ -412,7 +423,8 @@ function hookChart(box, pts) {
           const r = await fetch('https://ntfy.sh/' + app.inbox, { method: 'POST', body: JSON.stringify({ type: 'pin_story', slot: kind,
             link: sel.dataset.link, title: sel.dataset.title, source: sel.dataset.source }) });
           if (!r.ok) throw new Error(r.status);
-          alert(`📌 Sent. The ${opt.dataset.time} slot will make this story at its next run (${when}). The robot reads it when that slot starts.`);
+          addPinRow(kind, sel.dataset.title);
+          alert(`📌 Sent. The ${opt.dataset.time} slot will make this story at its next run (${when}). You can undo it below until the slot starts.`);
         } catch { alert('Could not send (no internet?). Try again.'); }
         sel.value = '';
       });
