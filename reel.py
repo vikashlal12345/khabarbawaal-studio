@@ -4174,8 +4174,9 @@ TOON_OPTION = {"type": "object", "properties": {
 TOON_HELP = ("\n\nTHIS Reel is a CARTOON ROAST: a 3-picture 3D cartoon (like India Today's 'So Sorry!'): picture 1 sets up who and what, "
              "picture 2 shows the contradiction / own goal in the story, picture 3 the twist, then a punchline card. Each picture has "
              "a narrator caption (the roast) based on a FACT from the articles; the characters never speak in made-up quotes. Roast "
-             "their actions and promises, never looks, family, religion, caste or health. If the story has no clear funny contrast, "
-             "set feasible=false.")
+             "their actions and promises, never looks, family, religion, caste or health. The painter cannot write: NO banners, signs, "
+             "maps, posters, screens, buses with boards or anything carrying words in any picture; show only the characters, their "
+             "faces, hands and simple props. If the story has no clear funny contrast, set feasible=false.")
 
 
 def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = "", tag: str = "SATIRE · AI CARTOON") -> Image.Image:
@@ -4236,6 +4237,10 @@ def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_
     return shots + [pl.convert("RGB")]
 
 
+TEXT_THINGS = re.compile(r"\b(banners?|signs?|signboards?|posters?|placards?|maps?|boards?|newspapers?|headlines?|labels?|flags? with|"
+                         r"text|writing|letters?|words?|slogans?|billboards?|screens?|bus(?:es)?|trucks?|license plates?)\b", re.I)
+
+
 def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]]:
     """Paints the scenes (free painters), the AI checks each picture; a bad one is painted once more. Returns
     [(picture, narrator line, model)] for the pictures that passed (at least 2), else raises."""
@@ -4247,7 +4252,9 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     made: dict[int, tuple[Image.Image, str]] = {}
 
     def paint(n: int) -> None:
-        prompt = TOON_STYLE + f"Characters: {looks} Scene: {best['scenes'][n]['paint']}" + FLUX_AVOID
+        # painters write gibberish on anything that could carry words: take those things out of the scene
+        scene = re.sub(r"\s+", " ", TEXT_THINGS.sub("", best['scenes'][n]['paint']))
+        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + " Plain background without any signs, boards or writing."
         img, model = flux_image(prompt, random.randint(1, 999999))
         made[n] = (img, model)
         thumb = img.copy()
@@ -4277,13 +4284,16 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     if len(made) < 2:
         raise RuntimeError("the free painters are busy: cartoon not possible")
     good = check(sorted(made))
-    for n in sorted(set(made) - good):   # one more try for each rejected picture
-        try:
-            paint(n)
-            if n in check([n]):
-                good.add(n)
-        except Exception:
-            pass
+    for _ in range(2):   # up to two more tries for each rejected picture (stray lettering is the usual fault)
+        for n in sorted(set(made) - good):
+            try:
+                paint(n)
+                if n in check([n]):
+                    good.add(n)
+            except Exception as e:
+                print(f"  ! cartoon scene {n + 1} repaint failed: {str(e)[:80]}")
+        if len(good) >= 3:
+            break
     if len(good) < 2:
         raise RuntimeError("fewer than 2 cartoon pictures looked right")
     return [(made[n][0], best["scenes"][n]["line"], made[n][1]) for n in sorted(good)]
