@@ -784,10 +784,10 @@ NEWS_OPTION = {"type": "object", "properties": {
                  "(\"Aur hum? Uber mein baithke bhi nervous ho jaate hain\") or, for serious news, the punchy takeaway."},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from end_text"},
     "caption": {"type": "string", "description": "Hinglish: hook line with the searchable keywords (names, film/event, "
-                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a question that makes people take a "
-                "side ('Salman sahi the? Haan ya Na? Comment karo 👇'). 1-3 emojis."},
+                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a ONE-WORD comment vote that takes a side "
+                "('Salman sahi the? HAAN ya NA likho 👇', the words to type in CAPITALS). 1-3 emojis."},
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags: a short share "
-                    "nudge to the right person, e.g. 'Kisi Salman fan ko bhejo 👇'"},
+                    "nudge to the right person, e.g. 'Kisi Salman fan ko bhejo 👇', plus the one-word vote to comment (HAAN / NA)"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
@@ -2049,6 +2049,14 @@ def recent_news(state: dict, today: str) -> tuple[list[dict], str]:
 REMAKE: dict = {}   # 🔄 a Remake keeps the same story / video: {'link', 'title', 'source', 'video_id'} (remake.py)
 
 
+def bollywood_first(stories: list) -> list:
+    """Owner, 26 Oct 2026 (Bollywood news Reels avg ~1,500 views, devotional ~270, other topics weaker): the viral news and breaking
+    pickers choose among Bollywood / film stories whenever there are at least 3 of them, otherwise among all (then FACE_RULE still ranks famous faces first)."""
+    import emergency
+    b = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
+    return b if len(b) >= 3 else stories
+
+
 def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 The most viral, visual story of the last hours (the news feeds' lookback_hours) as a photo slideshow
     (owner, 13 Oct 2026: all posts are Reels now; it used to pick from the day's news carousels).
@@ -2069,7 +2077,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
     else:
         status.step("Picking the most viral, visual story", 2)
-        stories = [i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used][:40]
+        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used])[:40]
         intro = ""
         if REMAKE.get("link"):   # 🔄 remake: the same story again
             stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
@@ -2126,13 +2134,14 @@ BREAK_OPTION = {"type": "object", "properties": {
                  "BADA ACTION'. No emojis"},
     "bullets": {"type": "array", "items": {"type": "string"}, "description": "3-4 short lines (max 10 words each), "
                 "the key facts of the story in plain Hinglish, no emojis, each supported by the story text"},
-    "question": {"type": "string", "description": "Max 9 words, a question that takes a side ('Sahi hai ya galat?')"},
+    "question": {"type": "string", "description": "Max 9 words, a one-word comment vote that takes a side, the words to type in CAPITALS "
+                 "('Sahi? HAAN ya NA likho', 'SRK ya SALMAN? Comment karo')"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the "
                   "hook, shown in pink"},
     "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (names + event), "
-                "2-3 short fact lines, then the side-taking question. 1-3 emojis."},
-    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags: ends with a share nudge like 'Kisi "
-                    "___ fan ko bhejo 👇'"},
+                "2-3 short fact lines, then the same one-word comment vote as the question ('HAAN ya NA likho 👇'). 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags: the one-word vote to comment + a share nudge like "
+                    "'Kisi ___ fan ko bhejo 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news search that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person, or empty"},
@@ -2248,7 +2257,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     import status
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
-    stories = [i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used][:45]
+    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used])[:45]
     if REMAKE.get("link"):   # 🔄 remake: the same story again
         stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                     "summary": "", "category": "remake"}]
@@ -2567,15 +2576,15 @@ SPEECH_OPTION = {"type": "object", "properties": {
                  "punch in caps feel (e.g. 'RESPECT SIR!', 'KADAK JAWAB', 'SEEDHA VAAR'), line 2 = who + what in max "
                  "40 characters (e.g. 'Anupam Kher ka protesters ko jawab'); Hinglish, no emojis, clearly in favour "
                  "of Modi/BJP/NDA"},
-    "question": {"type": "string", "description": "A side-taking question for the slanted line under the headline bars, "
-                 "Hinglish or English, 6-12 words, e.g. 'Kya aap Modi ji se sehmat hain? Comment karo' / 'Do you agree with him?'"},
+    "question": {"type": "string", "description": "A one-word comment vote for the slanted line under the headline bars, the words to "
+                 "type in CAPITALS, 6-12 words, e.g. 'Modi ji se sehmat? Ek word mein YES ya NO likho'"},
     "from_seg": {"type": "integer", "description": "First transcript segment of the clip (0 if no transcript)"},
     "to_seg": {"type": "integer", "description": "Last transcript segment: the clip is the most compelling "
                "CONTINUOUS 25-60 s with the key message, starting at the start of a sentence (0 if no transcript)"},
     "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (who + topic), "
                 "2-3 short news lines (what he said, why it matters, the opposition angle in the page's line), "
-                "then a side-taking question like 'Aap sehmat ho? Comment karo 👇'. 1-3 emojis."},
-    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags, ends with a "
+                "then the same one-word comment vote ('Sehmat ho toh YES, nahi toh NO likho 👇'). 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags: the one-word vote + a "
                     "share nudge like 'Ye message sabko bhejo 🇮🇳'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": {"type": "array", "items": {"type": "object", "properties": {
@@ -3702,7 +3711,7 @@ or health; a death, illness or grief is never the joke; no slurs, no abuse, no c
 embarrasses the BJP. REALITY CHECK facts must be settled (official data, results, court verdicts, their own dated \
 promises, statements and actions on record), never allegations, FIRs, charges or ongoing probes.
 Caption: 2-4 short Hinglish lines, the first with the searchable keywords (leader/party/issue names), the context in \
-one line, 1-3 emojis, last line a question that makes people take a side ('Kaun sahi? Comment karo 👇'). \
+one line, 1-3 emojis, last line a ONE-WORD comment vote that makes people take a side ('Kaun sahi? Ek word likho: BJP ya CONGRESS 👇', the words to type in CAPITALS). \
 Prefer the opposition's best-known faces (Rahul Gandhi, Kejriwal, Mamata Banerjee...) when the story allows: big \
 names get the most views and shares."""
 
@@ -3779,7 +3788,7 @@ ROAST_OPTION = {"type": "object", "properties": {
         "required": ["name", "wiki", "kind"], "additionalProperties": False}},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied from the hook"},
     "caption": {"type": "string", "description": "2-4 short Hinglish lines, the first with the searchable names, last line "
-                "a side-taking question ('Kaun sahi? Comment karo 👇'). 1-3 emojis"},
+                "a ONE-WORD comment vote ('Kaun sahi? Ek word likho: HAAN ya NA 👇'). 1-3 emojis"},
     "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags, a funny line + a share nudge"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": SONGS},

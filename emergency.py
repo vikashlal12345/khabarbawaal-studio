@@ -28,8 +28,8 @@ SKIP_WORDS = re.compile(
     r"lok sabha|rajya sabha|supreme court|high court|court|cbi|ed|police|arrest|arrested|murder|killed|kill|dies|dead|death|"
     r"died|accident|crash|rape|attack|blast|terror|firing|shot|shooting|stabbed|suicide|tragedy|protest|riot|riots|bail|"
     r"jail|ukraine|gaza|war)\b")
-QUESTIONS = ["Aapka kya kehna hai? Comment karo", "Sahi ya galat? Comment karo", "Aap kiske saath ho? Comment karo",
-             "Kya ye sahi hai? Haan ya Na? Comment karo", "Aapko ye kaisa laga? Comment karo"]
+QUESTIONS = ["Sahi ho toh HAAN likho, galat ho toh NA", "Aap kiske saath ho? Ek word likho: HAAN ya NA",
+             "Kya ye sahi hai? Comment karo HAAN ya NA", "Pasand aaya? Comment karo YES ya NO", "Sahi ya galat? Ek word likho"]
 HEADLINES = {"entertainment": "FILM NEWS", "cricket": "CRICKET UPDATE", "sports": "SPORTS UPDATE", "tech": "TECH UPDATE",
              "viral": "VIRAL NOW", "funny/offbeat": "VIRAL NOW"}
 NOISE = re.compile(r"(?i)(also read|read more|follow us|click here|subscribe|advertisement|sign up|photo:|image:|"
@@ -331,13 +331,13 @@ def make_speaker(kind: str, state: dict, feed: list) -> bool:
             status.step("Making the video", 4)
             out = os.path.join(tmp, "speech.mp4")
             reel.SERIES_KIND = kind
-            frames = reel.speech_reel(src, start, secs, headline, [], out, question="Aap sehmat ho? Comment karo")
+            frames = reel.speech_reel(src, start, secs, headline, [], out, question="Sehmat ho? Ek word likho: YES ya NO")
             voiced = os.path.join(tmp, "voiced.mp4")
             reel.add_voice(out, src, start, voiced, loud=True)
             said = v["text"][:220]
             credit = f"Video + voice: posted by @{v['handle']} on X"
             tags = " ".join(f"#{t}" for t in ["india", "trending", "reelsindia", "viral", re.sub(r"\W", "", name.lower())])
-            caption = (f"@{v['handle']} ne ye video share kiya:\n{said}\n\nAap kya sochte ho? Comment karo 👇\n\n{credit}\n"
+            caption = (f"@{v['handle']} ne ye video share kiya:\n{said}\n\nSehmat ho toh YES, nahi toh NO likho 👇\n\n{credit}\n"
                        f"Follow {g.CONFIG['handle']} for daily updates.\n\n{tags}")
             proof = {"state": "check", "fixed": [], "issues": [
                 "⚙️ AUTO MODE: Claude's limit was reached. The video posted by a leader's X account is used as it is (the speaker may be someone else, so the headline names nobody), with "
