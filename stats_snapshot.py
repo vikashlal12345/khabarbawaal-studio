@@ -58,8 +58,12 @@ def trends(max_age_min: int = 40) -> None:
         print(f"  stats trends: stories failed ({str(e)[:80]})")
     if not (x or google or stories):
         return
+    now_iso = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    cutoff = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat(timespec="seconds")
+    known = {k: v for k, v in (old.get("known") or {}).items() if v >= cutoff}   # every story link shown on the stats page in 24 h
+    known.update({st["link"]: now_iso for st in stories})   # (📌 pins are accepted only for these: the robot's own list)
     STATS.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps({"at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    path.write_text(json.dumps({"at": now_iso, "known": known,
                                 "x": [{"term": t, "hours": h} for t, h in (india if len(india) >= 3 else x)[:15]],   # trends that also appear in India news headlines
                                 "google": [t for t in google if not re.search(r"[\u0900-\u097F\u0980-\u0DFF]", t)][:10], "stories": stories},
                                ensure_ascii=False, indent=1))

@@ -5704,6 +5704,26 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
 
 
 def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -> bool:
+    """Make today's Reel for this slot (try `attempt` of `tries`). 📌 A story the owner pinned to this slot on the stats page
+    (owner, 26 Oct 2026) is the story: used for news / breaking / satire slots, removed once the Reel is made (or on the last try)."""
+    pin = (state.get("pinned") or {}).get(kind)
+    used_pin = bool(pin) and (kind in NEWS_KINDS or kind in BREAK_KINDS or kind == "reel_politics")
+    if used_pin:
+        REMAKE.update({"link": pin["link"], "title": pin["title"], "source": pin.get("source", "")})
+        print(f"  📌 pinned story for this slot: {pin['title'][:80]}")
+    try:
+        ok = _make(kind, state, feed, attempt, tries)
+    finally:
+        if used_pin:
+            REMAKE.clear()
+    if used_pin and (ok or attempt >= tries):
+        state["pinned"].pop(kind, None)
+        import generate as g
+        g.save_json(g.STATE_FILE, state)
+    return ok
+
+
+def _make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -> bool:
     """Make today's Reel for this slot (try `attempt` of `tries`); False (with the reason printed) if it
     couldn't be made."""
     import tempfile

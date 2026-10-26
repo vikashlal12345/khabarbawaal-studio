@@ -73,6 +73,19 @@ def process() -> int:
             bpath.write_text(json.dumps(boosts, ensure_ascii=False, indent=1))
             print(f"  inbox: boost {'on' if msg.get('on') else 'off'} for {msg['post']}")
             continue
+        if msg.get("type") == "pin_story":
+            # 📌 a story picked on the stats page for a slot (owner, 26 Oct 2026): only the robot's own big-story list is accepted
+            import reel
+            kind, link = str(msg.get("slot", "")), str(msg.get("link", ""))
+            known = (g.load_json(g.DOCS / "stats" / "trends.json", {}) or {}).get("known", {})
+            if kind in schedule.SPECIALS and (kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS or kind == "reel_politics") and link in known:
+                state.setdefault("pinned", {})[kind] = {"link": link, "title": str(msg.get("title", ""))[:200],
+                                                        "source": str(msg.get("source", ""))[:60],
+                                                        "at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+                print(f"  inbox: 📌 {kind} will use: {str(msg.get('title', ''))[:80]}")
+            else:
+                print(f"  inbox: 📌 pin ignored (slot {kind!r} or a story that is not on the stats list)")
+            continue
         if msg.get("type") in ("posted", "unposted") and msg.get("post"):
             # ✅ Mark as posted / ↩️ Undo in the app (owner, 22 Oct 2026): one tap, no Instagram link. Kept in
             # ig_links.json (url "") so everything that asks "is it posted?" still works.
