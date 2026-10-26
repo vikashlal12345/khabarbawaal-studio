@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_aft-2026-10-26",
+  "image": "posts/20261026-1419-reel_break_aft-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-141925-reel_break_aft-2026-10-26.mp4",
+  "headline": "Kriti Sanon, Varun Dhawan reunite with Bhediya director Amar Kaushik, tease fans with ‘Obsessed’ post",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Kriti Sanon Varun Dhawan Amar Kaushik reunion Obsessed post Bhediya\nKriti ne Varun aur Amar Kaushik ke saath video share kiya 🎬\nCaption: \"An unexpected reunion that will get you 'Obsessed'! Stay Tuned!!\"\nNaye project ki koi official confirmation nahi hai.\nKya ye naya project hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #kritisanon #varundhawan #bhediya #bollywoodnews",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
+  "pin_comment": "Naya project aa raha hai toh HAAN likho, nahi toh NA. Kisi Varun Dhawan fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "obsessed vibe, jodi ka tease"
+   },
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "peekaboo = tease for fans"
+   },
+   {
+    "title": "APT.",
+    "artist": "Rosé, Bruno Mars",
+    "lang": "english",
+    "mood": "fun hype reunion"
+   },
+   {
+    "title": "Señorita",
+    "artist": "Shawn Mendes, Camila Cabello",
+    "lang": "english",
+    "mood": "jodi ka romantic touch"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Naye film ki officially koi confirmation nahi → Nayi film ki officially koi confirmation nahi"
+   ]
+  },
+  "created_at": "2026-10-26T14:19:25+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-26",
   "image": "posts/20261026-1341-reel_politics-2026-10-26.jpg",
   "kind": "reel",
@@ -455,27 +502,5 @@
    ]
   },
   "created_at": "2026-10-25T15:50:04+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-25",
-  "image": "posts/20261025-1416-reel_break_aft-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-141639-reel_break_aft-2026-10-25.mp4",
-  "headline": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales",
-  "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
-  "caption": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales\nChick-fil-A generated $23.9 billion in US sales in 2025 while keeping its restaurants closed every Sunday.\nTruett Cathy, became CEO in 2021, succeeding his father, Dan Cathy.\nAap kiske saath ho? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #breakingnews #trending #india #viral",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
-  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "fixed": [],
-   "issues": [
-    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
-   ]
-  },
-  "created_at": "2026-10-25T14:16:39+00:00"
  }
 ]

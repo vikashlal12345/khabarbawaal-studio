@@ -190,7 +190,8 @@
   "2d9ea1a18dd9",
   "4ce0569b37ad",
   "fe87c35fbf11",
-  "34c6bac175a6"
+  "34c6bac175a6",
+  "78dc66f330af"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -340,7 +341,7 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-26",
   "reel_break_noon": "2026-10-26",
-  "reel_break_aft": "2026-10-25"
+  "reel_break_aft": "2026-10-26"
  },
  "inbox_since": "Z0FtBurKekoq",
  "used_otps": [
@@ -777,7 +778,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
+  "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -952,10 +954,6 @@
   }
  ],
  "songs_recent": [
-  "Narayan Mil Jayega",
-  "Soulmate",
-  "Just Give Me a Reason (feat. Nate Ruess)",
-  "Girls Like You",
   "Ashke",
   "Alfaaz",
   "Believer",
@@ -991,7 +989,11 @@
   "Tabaahi (From \"Toxic\")",
   "Gehra Hua",
   "BbY WOW",
-  "Espresso"
+  "Espresso",
+  "Madhosh",
+  "Peek A Boo",
+  "APT.",
+  "Señorita"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1094,6 +1096,10 @@
   },
   {
    "title": "Ahaan Panday’s action film with Ali Abbas Zafar, Sharvari titled Beparwah; Yash Raj Films shares first poster, announces release date",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Kriti Sanon, Varun Dhawan reunite with Bhediya director Amar Kaushik, tease fans with ‘Obsessed’ post",
    "date": "2026-10-26"
   }
  ],
