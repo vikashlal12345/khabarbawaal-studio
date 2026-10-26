@@ -336,7 +336,7 @@
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
-  "reel_official": "2026-10-25",
+  "reel_official": "2026-10-26",
   "reel_news_early": "2026-10-26",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-26",
@@ -779,7 +779,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
-  "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/"
+  "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
+  "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -954,10 +955,6 @@
   }
  ],
  "songs_recent": [
-  "Ashke",
-  "Alfaaz",
-  "Believer",
-  "Beauty And A Beat",
   "Jo Tum Mere Ho",
   "Teri Meri Kahaani",
   "expectations (feat. Chappell Roan)",
@@ -993,7 +990,11 @@
   "Madhosh",
   "Peek A Boo",
   "APT.",
-  "Señorita"
+  "Señorita",
+  "Sam Dam Dand Bhed",
+  "Toofan (KGF Chapter 2)",
+  "Dhurandhar Title Track",
+  "Aarambh Hai Prachand (Gulaal)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1005,13 +1006,14 @@
   "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi"
  ],
  "reel_official_used": [
-  "2112578088056000762",
+  "2114374820439970106",
   "2110681709335511113",
+  "2112577476677587445",
   "2113208967744905665",
   "2113644459791675393",
+  "2112578088056000762",
   "2113861736721752067",
-  "2112577476677587445",
-  "2114374820439970106"
+  "2114610471890460745"
  ],
  "reel_news_recent": [
   {
@@ -1100,6 +1102,10 @@
   },
   {
    "title": "Kriti Sanon, Varun Dhawan reunite with Bhediya director Amar Kaushik, tease fans with ‘Obsessed’ post",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "कल पटना में कांग्रेस अध्यक्ष मल्लिकार्जुन खरगे जी द्वारा, प्रधानमंत्री श्री नरेंद्र मोदी जी के स्वर्गीय पिताजी के उपर की गई टिप्पणी ने मुझे ",
    "date": "2026-10-26"
   }
  ],
