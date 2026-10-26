@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_am-2026-10-26",
+  "image": "posts/20261026-0632-reel_news_am-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-063240-reel_news_am-2026-10-26.mp4",
+  "headline": "Govinda claims someone is influencing Sunita Ahuja amid cheating allegations, says he's always had a ‘bad reputation’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Govinda Sunita Ahuja cheating allegations latest 🔥\nSunita ne infidelity ke aarop lagaye the.\nGovinda ka jawab: koi Sunita ko influence kar raha hai.\nUnhone ye bhi kaha ki unki 'bad reputation' hamesha rahi hai.\nGovinda ki baat sahi lagti hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#govinda #sunitaahuja #bollywood #bollywoodnews #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
+  "pin_comment": "Kisi Govinda fan ko bhejo 👇 Aapka vote: HAAN ya NA",
+  "songs": [
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "rishte ki dooriyan, emotional"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "do logon ki kahaani"
+   },
+   {
+    "title": "expectations (feat. Chappell Roan)",
+    "artist": "Olivia Rodrigo, Chappell Roan",
+    "lang": "english",
+    "mood": "toote bharose ka mood"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "drama ka perfect vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-26T06:32:40+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-26",
   "image": "posts/20261026-0433-reel_break_am-2026-10-26.jpg",
   "kind": "reel",
@@ -327,50 +372,5 @@
    ]
   },
   "created_at": "2026-10-25T06:35:39+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-25",
-  "image": "posts/20261025-0433-reel_break_am-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-043305-reel_break_am-2026-10-25.mp4",
-  "headline": "Rohit Shetty refers to firing incidents involving him, Tiger Shroff; scolds Bigg Boss 20 contestants for ‘trying to be gangsters’",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Rohit Shetty Bigg Boss 20 Weekend Ka Vaar firing Tiger Shroff Salman Khan 🔥\nSalman ki jagah host bane Rohit ne Scout OP, Asif aur Yung DSA ko fatkaara.\nBole: \"Yahan humare ghar par goliyan chal rahi hain, tum kya gangster banke ghoom rahe ho?\"\nTiger Shroff firing case mein Andheri ka hotel room sealed hua hai.\nRohit Shetty sahi the? Comment karo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #rohitshetty #biggboss20 #tigershroff #salmankhan",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
-  "pin_comment": "Rohit ki baat sahi lagi? Kisi Bigg Boss fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "gangster talk = street swagger beat"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "serious firing talk, intense vibe"
-   },
-   {
-    "title": "Under The Influence",
-    "artist": "Chris Brown",
-    "lang": "english",
-    "mood": "dark swagger for gangster angle"
-   },
-   {
-    "title": "PUSH 2 START",
-    "artist": "Tyla",
-    "lang": "english",
-    "mood": "high energy, scolding moment"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-25T04:33:05+00:00"
  }
 ]

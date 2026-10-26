@@ -184,7 +184,8 @@
   "1f7827249ca5",
   "1acf844e45d5",
   "50c0bf50f8bf",
-  "7cfd66f7e952"
+  "7cfd66f7e952",
+  "36348bedf68d"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -324,7 +325,7 @@
   "reel_news_pm": "2026-10-25",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-25",
+  "reel_news_am": "2026-10-26",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -336,7 +337,7 @@
   "reel_break_noon": "2026-10-25",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "YRdRCQPOrEfF",
+ "inbox_since": "06AcvL9q2NQh",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -762,7 +763,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
   "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
   "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -924,10 +926,6 @@
   }
  ],
  "songs_recent": [
-  "Teri Mitti (Kesari)",
-  "Lehra Do (83)",
-  "Kar Har Maidaan Fateh (Sanju)",
-  "Rang De Basanti Title Track",
   "Mahamritunjay Mantra",
   "Gaytri Mantra",
   "Surya Mantra 108 Times - Om Hrim Suryay Namah",
@@ -963,7 +961,11 @@
   "Ashke",
   "Alfaaz",
   "Believer",
-  "Beauty And A Beat"
+  "Beauty And A Beat",
+  "Jo Tum Mere Ho",
+  "Teri Meri Kahaani",
+  "expectations (feat. Chappell Roan)",
+  "Stop The Wedding!"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1042,6 +1044,10 @@
   },
   {
    "title": "Diljit Dosanjh hints at Koffee With Karan 9 appearance, says he will do only one interview this year",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Govinda claims someone is influencing Sunita Ahuja amid cheating allegations, says he's always had a ‘bad reputation’",
    "date": "2026-10-26"
   }
  ],
