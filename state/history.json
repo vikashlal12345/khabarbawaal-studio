@@ -185,7 +185,8 @@
   "1acf844e45d5",
   "50c0bf50f8bf",
   "7cfd66f7e952",
-  "36348bedf68d"
+  "36348bedf68d",
+  "008a55348028"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -334,10 +335,10 @@
   "reel_news_early": "2026-10-26",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-26",
-  "reel_break_noon": "2026-10-25",
+  "reel_break_noon": "2026-10-26",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "06AcvL9q2NQh",
+ "inbox_since": "Qdr6kYMCxLPK",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -764,7 +765,8 @@
   "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
   "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
   "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -926,10 +928,6 @@
   }
  ],
  "songs_recent": [
-  "Mahamritunjay Mantra",
-  "Gaytri Mantra",
-  "Surya Mantra 108 Times - Om Hrim Suryay Namah",
-  "Surya Mantra - Japa Kusum",
   "Zihaal e Miskin",
   "Tu hai kahan",
   "Dracula",
@@ -965,7 +963,11 @@
   "Jo Tum Mere Ho",
   "Teri Meri Kahaani",
   "expectations (feat. Chappell Roan)",
-  "Stop The Wedding!"
+  "Stop The Wedding!",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Shararat",
+  "the cure",
+  "Nicole Kidman"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1048,6 +1050,10 @@
   },
   {
    "title": "Govinda claims someone is influencing Sunita Ahuja amid cheating allegations, says he's always had a ‘bad reputation’",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Madhoo is in love with Rashmika Mandanna owning her South Indian accent on Koffee With Karan; recalls being judged for it in Bollywood",
    "date": "2026-10-26"
   }
  ],

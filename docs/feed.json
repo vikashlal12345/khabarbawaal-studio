@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_noon-2026-10-26",
+  "image": "posts/20261026-0832-reel_break_noon-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-083230-reel_break_noon-2026-10-26.mp4",
+  "headline": "Madhoo is in love with Rashmika Mandanna owning her South Indian accent on Koffee With Karan; recalls being judged for it in Bollywood",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Madhoo Rashmika Mandanna accent Koffee With Karan\nMadhoo ne Rashmika ke accent own karne ki tareef ki\nBollywood mein accent chhupane ke liye unhone bahut mehnat ki\nMadhoo bolin: Rashmika, great power to you, girl\nAccent par judge karna galat hai? HAAN ya NA likho 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #rashmikamandanna #madhoo #koffeewithkaran #bollywood",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
+  "pin_comment": "Accent par judge karna galat? HAAN ya NA likho. Kisi Rashmika fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "calm confident reply vibe"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "sassy attitude = accent jawab"
+   },
+   {
+    "title": "the cure",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "owning yourself, chart hit"
+   },
+   {
+    "title": "Nicole Kidman",
+    "artist": "ADÉLA",
+    "lang": "english",
+    "mood": "bold star energy"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-26T08:32:30+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-26",
   "image": "posts/20261026-0632-reel_news_am-2026-10-26.jpg",
   "kind": "reel",
@@ -320,57 +365,5 @@
    "fixed": []
   },
   "created_at": "2026-10-25T08:32:40+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-25",
-  "image": "posts/20261025-0635-reel_news_am-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-063539-reel_news_am-2026-10-25.mp4",
-  "headline": "Saif Ali Khan attack trial begins, nurse says intruder demanded ₹1 crore, recalls actor overpowering him",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Saif Ali Khan attack trial begins: nurse ne court mein kya bataya 😳\n\nSaif Ali Khan, Kareena Kapoor ke staff nurse ne court mein Mohammed Shariful ko hamlawar ke roop mein pehchaana.\nNurse ke mutabik hamlawar ne ₹1 crore maange.\nNurse ne yaad kiya ki Saif ne use kaise kaabu kiya.\nHamla Bandra ke ghar mein January last year hua tha.\n\nAapko kya lagta hai, Saif ki himmat ko salaam banta hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #kareenakapoor #bollywoodnews #trending #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
-  "pin_comment": "Kisi Saif ya Kareena fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Kabhi Shaam Dhale",
-    "artist": "Jaani, Mohammad Faiz",
-    "lang": "hindi",
-    "mood": "serious, tense court moment"
-   },
-   {
-    "title": "Tere Liye",
-    "artist": "Atif Aslam, Shreya Ghoshal, Sachin Gupta, Sameer Anjaan",
-    "lang": "hindi",
-    "mood": "Saif-Kareena family, emotional"
-   },
-   {
-    "title": "Lies (feat. Lana Del Rey)",
-    "artist": "Zach Bryan & Lana Del Rey",
-    "lang": "english",
-    "mood": "truth coming out in court"
-   },
-   {
-    "title": "Solar Eclipse",
-    "artist": "Drake & Don Toliver",
-    "lang": "english",
-    "mood": "dark, suspense crime tone"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Attribute the claim to the nurse's court testimony instead of stating it as fact",
-    "Slide 3: The photo credit 'Photo: The Free Press Journal' overlaps the 'ACCUSED SHARIFUL' label in the photo. The label is also cut off at the edges ('ACCUS', 'R KHAN'). Move the credit so it doesn't cover the label."
-   ],
-   "fixed": [
-    "Jeh ke paas pahunchा → Jeh ke paas pahunch gaya",
-    "Saif ke hamlawar ne maange the ₹1 crore → Nurse ke mutabik Saif ke hamlawar ne maange the ₹1 crore",
-    "laga marr jaunga → laga mar jaunga"
-   ]
-  },
-  "created_at": "2026-10-25T06:35:39+00:00"
  }
 ]
