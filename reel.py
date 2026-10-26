@@ -356,7 +356,7 @@ def series_line(kind: str) -> tuple[str, str]:
     if kind == "reel_poll":
         return f"Roz {at(kind)} naya poll", f"roz {at(kind)} naya poll, vote karna mat bhoolna 🗳️"
     if kind == "reel_politics":
-        return f"Roz {at(kind)} naya Reality Check", f"roz {at(kind)} naya Reality Check 🎯"
+        return f"Roz {at(kind)} naya Cartoon Roast", f"roz {at(kind)} naya Cartoon Roast 🎨"
     if kind == "reel_bachpan":
         return f"Roz {at(kind)} naya Bachpan", f"roz {at(kind)} naya Bachpan, miss mat karna 🧒"
     if kind == "reel_rotate":
@@ -4133,6 +4133,245 @@ def make_roast_card_reel(state: dict, feed: list, today: str, tmp: str, stories:
     return True
 
 
+# ---------------------------------------------------------------- 🎨 Cartoon roast (6 PM, owner, 26 Oct 2026)
+# The 6 PM satire did not roast or get forwarded (satire avg ~550 views vs ~1,500 for Bollywood news; cards and the classic Reel
+# failed the judge): a 3-picture motion comic in the style of India Today's 'So Sorry!' 3D cartoons: the opposition leader as a
+# friendly big-head caricature, a narrator caption on each picture (never invented quotes), a punchline card. No strong story that
+# day -> a Bollywood breaking card holds the slot.
+CARTOON_ROAST = True
+TOON_STYLE = ("3D animated cartoon caricature in the style of an Indian TV political satire show: big-head friendly caricatures "
+              "with expressive faces, glossy Pixar-like render, bright colours, vertical composition with the characters large "
+              "in the middle and a calm uncluttered background. No text, no letters, no writing, no signs with words, no "
+              "watermark, no logos. ")
+TOON_OPTION = {"type": "object", "properties": {
+    "feasible": {"type": "boolean", "description": "false if THIS story has no clear, funny contrast / own-goal / U-turn that "
+                 "anyone gets in 20 seconds, or the articles lack the facts: then the other fields can be empty"},
+    "based_on": {"type": "string"}, "issue": {"type": "string", "description": "2-4 words"}, "party": {"type": "string"},
+    "hook": {"type": "string", "description": "4-9 words, huge over picture 1: the leader/party first, then the roast. Hinglish, "
+             "no emojis, a fact from the story"},
+    "characters": {"type": "array", "description": "1-2 real people in the cartoon, main first", "items": {"type": "object", "properties": {
+        "name": {"type": "string"}, "look": {"type": "string", "description": "English, for the painter: the friendly caricature "
+                 "of this person: clothes and the usual public look (e.g. 'white kurta, short grey beard'); never mocking "
+                 "looks, body, age or health"}},
+        "required": ["name", "look"], "additionalProperties": False}},
+    "scenes": {"type": "array", "description": "EXACTLY 3 pictures that tell the story: setup, the problem / contradiction, the "
+               "twist", "items": {"type": "object", "properties": {
+        "paint": {"type": "string", "description": "English, max 45 words, for the painter: who is shown (the characters above, by "
+                  "their look), what they do, their expression, the simple setting. One clear funny moment, at most 2 people, no text "
+                  "anywhere in the picture"},
+        "line": {"type": "string", "description": "The NARRATOR caption under the picture, max 14 words, Hinglish, no emojis: "
+                 "a sharp roast of what the article says happened (a fact or its obvious joke). Never a made-up quote"},
+        "fact": {"type": "string", "description": "The fact from the articles this line rests on, max 14 words"}},
+        "required": ["paint", "line", "fact"], "additionalProperties": False}},
+    "punchline": {"type": "string", "description": "Max 14 words, the big funny closing line on the last card. No emojis"},
+    "caption": {"type": "string", "description": "2-4 short Hinglish lines, the first with the searchable names, one line of "
+                "context, last line a ONE-WORD comment vote ('Kaun sahi? Ek word likho: HAAN ya NA 👇'). 1-3 emojis"},
+    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags, a funny line + a share nudge"},
+    "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
+    "songs": SONGS},
+    "required": ["feasible", "based_on", "issue", "party", "hook", "characters", "scenes", "punchline", "caption", "pin_comment",
+                 "hashtags", "songs"], "additionalProperties": False}
+TOON_HELP = ("\n\nTHIS Reel is a CARTOON ROAST: a 3-picture 3D cartoon (like India Today's 'So Sorry!'): picture 1 sets up who and what, "
+             "picture 2 shows the contradiction / own goal in the story, picture 3 the twist, then a punchline card. Each picture has "
+             "a narrator caption (the roast) based on a FACT from the articles; the characters never speak in made-up quotes. Roast "
+             "their actions and promises, never looks, family, religion, caste or health. If the story has no clear funny contrast, "
+             "set feasible=false.")
+
+
+def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = "", tag: str = "SATIRE · AI CARTOON") -> Image.Image:
+    """One picture of the cartoon roast: the painting full-screen with a slow zoom, the narrator caption in a dark box at the bottom,
+    the hook huge on top of picture 1, a small 'AI CARTOON' tag."""
+    img = img.convert("RGB")
+    k = max(RW / img.width, RH / img.height) * (1.0 + 0.05 * min(1.0, t / max(dur, 0.1)))
+    big = img.resize((int(img.width * k) + 1, int(img.height * k) + 1), Image.BICUBIC)
+    x0, y0 = (big.width - RW) // 2, int((big.height - RH) * 0.4)
+    frame = big.crop((x0, y0, x0 + RW, y0 + RH)).convert("RGBA")
+    shade = Image.new("RGBA", (RW, 760), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shade)
+    for y in range(760):
+        sd.line((0, y, RW, y), fill=(0, 0, 0, int(215 * (y / 760) ** 1.6)))
+    frame.alpha_composite(shade, (0, RH - 760))
+    d = ImageDraw.Draw(frame)
+    lines, fnt, lh = fit_lines(printable(line), RIGHT - LEFT + 60, 300, sizes=range(62, 40, -4), name="Poppins-Bold.ttf")
+    box_h = len(lines) * lh + 50
+    by = RH - 250 - box_h
+    d.rounded_rectangle((LEFT - 20, by, RIGHT + 40, by + box_h), radius=26, fill=(10, 10, 14, 215))
+    for j, words in enumerate(lines):
+        d.text((RW // 2 - 30, by + 25 + j * lh), " ".join(words), font=fnt, fill="#FFFFFF", anchor="mt")
+    if hook:
+        hl, hf, hlh = fit_lines(printable(hook), RIGHT - LEFT + 60, 480, sizes=range(112, 64, -4), name="Anton-Regular.ttf")
+        for j, im in enumerate(line_images(hl, hf, hlh, "#FFFFFF", COVER_PINK, auto_highlight(hook), stroke=9)):
+            frame.alpha_composite(im, ((RW - im.width) // 2, 250 + j * hlh))
+    frame.alpha_composite(pill(tag, font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(22, 8)), (50, 120))
+    handle_tag(frame, 1790)
+    return frame
+
+
+def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_mp4: str) -> list[Image.Image]:
+    """The cartoon roast: each picture ~3.5-6 s, then the punchline card + SEND THIS (5 s), then Follow. Returns frames to proofread."""
+    logo = logo_img()
+    pl = Image.new("RGBA", (RW, RH), YELLOW)
+    if logo:
+        pl.alpha_composite(logo, ((RW - logo.width) // 2, 150))
+    p_lines, p_fnt, p_lh = fit_lines(printable(punch), RIGHT - LEFT, 700, sizes=range(96, 48, -4))
+    p_imgs = line_images(p_lines, p_fnt, p_lh, "#111111", RED, set())
+    py = (RH - len(p_imgs) * p_lh) // 2 - 120
+    for j, im in enumerate(p_imgs):
+        pl.alpha_composite(im, (LEFT, py + j * p_lh))
+    cta = pill("SEND THIS TO THAT ONE FRIEND", font("Poppins-Bold.ttf", 40), RED, "#FFFFFF", pad=(30, 16), arrow=True)
+    pl.alpha_composite(cta, ((RW - cta.width) // 2, int(py + len(p_imgs) * p_lh + 90)))
+    handle_tag(pl, 1730, fill="#111111", stroke=0)
+    enc, shots = Encoder(out_mp4), []
+    for n, (img, line) in enumerate(scenes):
+        dur = min(6.0, max(3.8 if n else 4.8, read_secs(line + (" " + hook if n == 0 else ""), 2.0)))
+        for i in range(int(dur * FPS)):
+            f = toon_frame(img, line, i / FPS, dur, hook if n == 0 else "")
+            if i == int(1.2 * FPS):
+                shots.append(f.convert("RGB"))
+            enc.add(f)
+    for _ in range(int(SATIRE_PUNCH_SECS * FPS)):
+        enc.add(pl)
+    add_follow(enc, pl, SATIRE_FOLLOW_SECS)
+    enc.close()
+    return shots + [pl.convert("RGB")]
+
+
+def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]]:
+    """Paints the scenes (free painters), the AI checks each picture; a bad one is painted once more. Returns
+    [(picture, narrator line, model)] for the pictures that passed (at least 2), else raises."""
+    import random
+    import fun
+    looks = " ".join(f"{c['name']}: {c['look']}." for c in best["characters"][:2])
+    folder = os.path.join(tmp, "toon")
+    os.makedirs(folder, exist_ok=True)
+    made: dict[int, tuple[Image.Image, str]] = {}
+
+    def paint(n: int) -> None:
+        prompt = TOON_STYLE + f"Characters: {looks} Scene: {best['scenes'][n]['paint']}" + FLUX_AVOID
+        img, model = flux_image(prompt, random.randint(1, 999999))
+        made[n] = (img, model)
+        thumb = img.copy()
+        thumb.thumbnail((576, 1024))
+        thumb.save(os.path.join(folder, f"scene{n + 1}.jpg"), quality=85)
+    schema = {"type": "object", "properties": {"scenes": {"type": "array", "items": {"type": "object", "properties": {
+        "n": {"type": "integer"}, "ok": {"type": "boolean"}, "problem": {"type": "string"}},
+        "required": ["n", "ok", "problem"], "additionalProperties": False}}}, "required": ["scenes"], "additionalProperties": False}
+
+    def check(ns: list[int]) -> set[int]:
+        res = fun.claude_json("You check AI-painted cartoon pictures for a political satire Reel. Open each picture with the Read tool.",
+                              "Pictures: " + ", ".join(f"scene{n + 1}.jpg = {best['scenes'][n]['paint'][:160]}" for n in ns) +
+                              ". A picture is OK if it is a clean, friendly 3D cartoon that shows the described moment: faces and hands "
+                              "not broken, no extra limbs, NO text / letters / signs with words anywhere, nothing scary, hateful, "
+                              "religious-symbol-mocking or indecent.", schema, CONFIG.get("membership_model", "sonnet"),
+                              purpose="toon check", folder=folder)
+        bad = {r["n"] - 1 for r in res["scenes"] if not r["ok"]}
+        for r in res["scenes"]:
+            if not r["ok"]:
+                print(f"  cartoon scene {r['n']} rejected: {r['problem'][:100]}")
+        return {n for n in ns if n not in bad}
+    for n in range(len(best["scenes"][:3])):
+        try:
+            paint(n)
+        except Exception as e:
+            print(f"  ! cartoon scene {n + 1} not painted: {str(e)[:100]}")
+    if len(made) < 2:
+        raise RuntimeError("the free painters are busy: cartoon not possible")
+    good = check(sorted(made))
+    for n in sorted(set(made) - good):   # one more try for each rejected picture
+        try:
+            paint(n)
+            if n in check([n]):
+                good.add(n)
+        except Exception:
+            pass
+    if len(good) < 2:
+        raise RuntimeError("fewer than 2 cartoon pictures looked right")
+    return [(made[n][0], best["scenes"][n]["line"], made[n][1]) for n in sorted(good)]
+
+
+def make_cartoon_roast_reel(state: dict, feed: list, today: str, tmp: str, stories: list, picks: list, recent: str) -> bool:
+    """🎨 6 PM cartoon roast of the most viral opposition story. False (reason printed) if no story gives a roast that passes the
+    judge and the pictures; the slot then makes a Bollywood breaking card."""
+    import carousel
+    import create_post
+    import fun
+    import generate as g
+    import proofread
+    import status
+    model = CONFIG.get("membership_model", "sonnet")
+    songs = trending_songs(state)
+    used = set(state.get("reel_politics_used", []))
+    best = story = sources = None
+    for n in picks[:2]:   # the 2 most viral stories at most (the AI budget)
+        story = stories[n - 1]
+        article = carousel.story_text(story["url"], story["title"]) or story["title"]
+        related = [a for a in create_post.bing_articles(story["title"][:90], limit=6) if a["url"] != story["url"]][:3]
+        background = []
+        for a in related:
+            t = carousel.article_text(carousel.page_html(a["url"]), limit=2500)
+            background.append(f"({a['site']}) {a['title']}\n{t}" if t else f"({a['site']}) {a['title']}")
+        sources = f"MAIN ({story['site']}): {story['title']}\n{article[:5000]}\n\nRELATED:\n" + "\n\n".join(background)
+        status.step(f"Writing the cartoon roast: {story['title'][:50]}", 3)
+        try:
+            options = fun.claude_json(
+                POLITICS_SYSTEM.format(page=CONFIG["page_name"], targets=POLITICS_TARGETS) + TOON_HELP,
+                f"{fun.today_context()}\n\nArticles:\n{sources}\n\nRecent satire Reels (new angle, hook, punchline):\n{recent}\n\n"
+                f"Write exactly 2 different cartoon roasts about the MAIN story.{viral_memory()}{songs_prompt(songs)}",
+                options_schema(TOON_OPTION, "Exactly 2 cartoon roasts"), model, purpose="cartoon roast writing")["options"][:2]
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! cartoon roast writing failed: {str(e)[:100]}")
+            continue
+        options = [o for o in options if o.get("feasible") and len(o.get("scenes", [])) >= 3 and o.get("punchline") and o.get("characters")]
+        if not options:
+            print("  cartoon roast: this story has no clear funny contrast: next story")
+            continue
+        try:
+            best = fun.judge_best(options, lambda o: f"[cartoon] {o['hook']} | " + " / ".join(s["line"] for s in o["scenes"]) + f" | {o['punchline']}",
+                                  model, judge_system=ROAST_JUDGE + f"\n\nRecent Reels:\n{recent}", min_fresh=5, min_clear=6)
+            break
+        except fun.NoGoodJoke:
+            print("  cartoon roast below the judge's bar: next story")
+            best = None
+    if best is None:
+        return False
+    roman_only(best, ["caption", "pin_comment", "punchline", "hook"])
+    for sc in best["scenes"]:
+        sc["line"] = plain_letters(sc["line"])
+    picked_songs = checked_songs(best.pop("songs", []), songs)
+    best["hook"] = pick_hook(story["title"], sources, best["hook"], "A cartoon roast of the opposition: punchy, fair.",
+                             card_text=" ".join([best["punchline"]] + [s["line"] for s in best["scenes"]]))
+    status.step("Painting the cartoon (free AI painters)", 4)
+    scenes = paint_toon_scenes(best, tmp)
+    models = ", ".join(dict.fromkeys(m for _, _, m in scenes))
+    item = {"link": story["url"], "source": story["site"], "title": story["title"]}
+    out = os.path.join(tmp, "reel.mp4")
+
+    def caption_of(d):
+        d = d["post"]
+        return g.full_caption({**d, "caption": d["caption"].strip() + f"\n\n🎨 AI cartoon (satire), pictures: AI illustration ({models})"}, item)
+
+    def render(d):
+        lines = [d["post"]["scenes"][i]["line"] if i < len(d["post"]["scenes"]) else scenes[i][1] for i in range(len(scenes))]
+        return toon_reel([(img, lines[i]) for i, (img, _, _) in enumerate(scenes)], d["post"]["hook"], d["post"]["punchline"], out)
+    status.step("Making the cartoon + fact-checking", 5)
+    frames, data, proof = proofread.run(render, {"post": best}, caption_of, sources, strict=True)
+    post = data["post"]
+    proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+        f"🎨 The pictures are AI cartoons ({models}): turn on Instagram's 'AI info' label when posting. It is satire: the captions "
+        "are jokes about what the article says, not real quotes."]}
+    state["reel_politics_used"] = (list(used) + [story["url"]])[-60:]
+    state["satire_recent"] = (state.get("satire_recent", []) + [{
+        "date": today, "party": post["party"], "format": "cartoon", "topic": post["based_on"], "hook": printable(post["hook"]),
+        "punchline": post["punchline"], "issue": post.get("issue", ""), "facts": [s["fact"] for s in post["scenes"]][:3]}])[-15:]
+    save_reel(feed, state, frames[0], out, f"reel_politics-{today}", {
+        "headline": printable(post["hook"]), "tag": "🎬 REEL · 🎨 CARTOON ROAST",
+        "caption": g.limit_hashtags(caption_of(data)), "source": story["site"], "source_url": story["url"],
+        "pin_comment": post.get("pin_comment", ""), "songs": picked_songs, "proof": proof})
+    return True
+
+
 def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 6 PM: a dig at the opposition's latest action, the context, a REALITY CHECK with recent sourced facts
     and a punchline."""
@@ -4222,6 +4461,18 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         picks = [1]
     if not picks:
         raise RuntimeError("no story about the opposition today")
+    if CARTOON_ROAST and not REMAKE.get("link"):   # 🎨 the 6 PM cartoon roast (owner, 26 Oct 2026); a pinned / remade story keeps the old formats
+        try:
+            if make_cartoon_roast_reel(state, feed, today, tmp, stories, picks, recent):
+                return
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! cartoon roast failed ({type(e).__name__}: {str(e)[:150]})")
+        status.step("No strong cartoon roast today: a Bollywood breaking card holds the slot", 3)
+        global SERIES_KIND
+        SERIES_KIND = "reel_news"
+        return make_news_reel("reel_politics", state, feed, today, tmp)
     fmt = roast_format_today(today)
     if fmt != "classic":   # 🧾 a new card format today (then the next one in the cycle); else the classic Reel below
         order = [fmt, ROAST_FORMATS[(ROAST_FORMATS.index(fmt) + 1) % len(ROAST_FORMATS)]]
