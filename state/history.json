@@ -186,7 +186,8 @@
   "50c0bf50f8bf",
   "7cfd66f7e952",
   "36348bedf68d",
-  "008a55348028"
+  "008a55348028",
+  "2d9ea1a18dd9"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -323,7 +324,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-26",
-  "reel_news_pm": "2026-10-25",
+  "reel_news_pm": "2026-10-26",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-26",
@@ -338,7 +339,7 @@
   "reel_break_noon": "2026-10-26",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "Qdr6kYMCxLPK",
+ "inbox_since": "I8ZwqnwOSk5y",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -768,7 +769,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
   "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
   "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -930,10 +932,6 @@
   }
  ],
  "songs_recent": [
-  "Ez-Ez",
-  "Gehra Hua",
-  "Under The Influence",
-  "PUSH 2 START",
   "Kabhi Shaam Dhale",
   "Tere Liye",
   "Lies (feat. Lana Del Rey)",
@@ -969,7 +967,11 @@
   "Dhurandhar - Title Track",
   "Ala Bolelo",
   "All The Stars",
-  "Big Dawgs"
+  "Big Dawgs",
+  "Tera Hoke Rahoon",
+  "Zaalima",
+  "Die With A Smile",
+  "Heat Waves"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1056,6 +1058,10 @@
   },
   {
    "title": "Madhoo is in love with Rashmika Mandanna owning her South Indian accent on Koffee With Karan; recalls being judged for it in Bollywood",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Nick Jonas shares sweet family moments with Priyanka Chopra, daughter Malti Marie runs to hug him backstage",
    "date": "2026-10-26"
   }
  ],

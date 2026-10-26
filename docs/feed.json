@@ -1,5 +1,60 @@
 [
  {
+  "id": "reel_news_pm-2026-10-26",
+  "image": "posts/20261026-1033-reel_news_pm-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-103338-reel_news_pm-2026-10-26.mp4",
+  "headline": "Nick Jonas shares sweet family moments with Priyanka Chopra, daughter Malti Marie runs to hug him backstage",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Priyanka Chopra Nick Jonas Malti Marie family photos 🥹\nNick Jonas ne concert ke cozy family moments share kiye\nNick ne beti Malti ko goad mein uthaya\nSabse cute moment kaunsa laga? Sahi mein pyaara hai toh HAAN likho, nahi toh NA 👇❤️\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#priyankachopra #nickjonas #bollywood #viral #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
+  "pin_comment": "Kisi Priyanka fan ko bhejo 👇 Cute laga toh HAAN likho",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "family love, soft romantic vibe"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "couple moment, romantic"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Bruno Mars, Lady Gaga",
+    "lang": "english",
+    "mood": "romantic couple, happy feel"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "dreamy cosy family moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Nick picked up his daughter; it doesn't say she ran and hugged him backstage",
+    "Fact corrected to match the article: Running to papa is not in the article; it says Nick picked up Malti",
+    "Fact corrected to match the article: Article says Nick picked up Malti; no running or backstage hug is mentioned",
+    "Fact corrected to match the article: Article describes an Instagram photo carousel, not a video"
+   ],
+   "fixed": [
+    "Nick Jonas ki beti Malti backstage daud kar lipti → Nick Jonas ne beti Malti ko goad mein uthaya",
+    "Papa ko dekhte hi daudna, yeh feeling sabse pyaari hai → Papa ki goad mein beti, yeh feeling sabse pyaari hai",
+    "Backstage Malti daudkar papa se lipat gayi → Nick ne beti Malti ko goad mein uthaya",
+    "backstage video → family photos"
+   ]
+  },
+  "created_at": "2026-10-26T10:33:38+00:00"
+ },
+ {
   "id": "cf08033f6142",
   "image": "posts/20261026-0921-cf08033f6142.jpg",
   "kind": "custom",
@@ -319,54 +374,5 @@
    ]
   },
   "created_at": "2026-10-25T14:16:39+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-25",
-  "image": "posts/20261025-1033-reel_news_pm-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-103300-reel_news_pm-2026-10-25.mp4",
-  "headline": "Tiger Shroff sells Mumbai’s Khar apartment for Rs 9 crores",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tiger Shroff apartment sale Khar 9 crore 🏠\n\nTiger Shroff ne Mumbai ke Khar West ka apartment Rs 9 crore mein bech diya.\nProperty registration documents ke mutabik ye deal hui.\nTiger pichhle kuch dino se firing case ki wajah se bhi khabron mein hain.\n\nTiger ka ye flat bechna sahi decision? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#tigershroff #bollywood #mumbai #bollywoodnews #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
-  "pin_comment": "Kisi Tiger Shroff fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Putaapu Gang",
-    "artist": "Anirudh Ravichander & Thamizh Aadhavan",
-    "lang": "hindi",
-    "mood": "swag hype = star's big deal"
-   },
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "bold filmy vibe for Tiger"
-   },
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "money flex = 9 crore sale"
-   },
-   {
-    "title": "APT.",
-    "artist": "Rosé, Bruno Mars",
-    "lang": "english",
-    "mood": "fun upbeat catchy filler"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The photo credit 'Photo: Bollywood Hungama' at bottom left runs into the '@khabarbawaal' handle, so the two texts touch or overlap."
-   ],
-   "fixed": [
-    "mein beche diya → mein bech diya"
-   ]
-  },
-  "created_at": "2026-10-25T10:33:00+00:00"
  }
 ]
