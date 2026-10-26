@@ -183,7 +183,8 @@
   "6ccb1f7c2e8b",
   "1f7827249ca5",
   "1acf844e45d5",
-  "50c0bf50f8bf"
+  "50c0bf50f8bf",
+  "7cfd66f7e952"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -331,11 +332,11 @@
   "reel_official": "2026-10-25",
   "reel_news_early": "2026-10-26",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-25",
+  "reel_break_am": "2026-10-26",
   "reel_break_noon": "2026-10-25",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "rR8kGAxfQsiJ",
+ "inbox_since": "YRdRCQPOrEfF",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -760,7 +761,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
   "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -922,10 +924,6 @@
   }
  ],
  "songs_recent": [
-  "Azadi",
-  "Toxic",
-  "stupid song",
-  "the cure",
   "Teri Mitti (Kesari)",
   "Lehra Do (83)",
   "Kar Har Maidaan Fateh (Sanju)",
@@ -961,7 +959,11 @@
   "Narayan Mil Jayega",
   "Soulmate",
   "Just Give Me a Reason (feat. Nate Ruess)",
-  "Girls Like You"
+  "Girls Like You",
+  "Ashke",
+  "Alfaaz",
+  "Believer",
+  "Beauty And A Beat"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1036,6 +1038,10 @@
   },
   {
    "title": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
+   "date": "2026-10-26"
+  },
+  {
+   "title": "Diljit Dosanjh hints at Koffee With Karan 9 appearance, says he will do only one interview this year",
    "date": "2026-10-26"
   }
  ],

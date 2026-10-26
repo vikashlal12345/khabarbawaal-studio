@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-10-26",
+  "image": "posts/20261026-0433-reel_break_am-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-043300-reel_break_am-2026-10-26.mp4",
+  "headline": "Diljit Dosanjh hints at Koffee With Karan 9 appearance, says he will do only one interview this year",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Diljit Dosanjh Koffee With Karan 9 hint, sirf ek interview is saal\nInstagram Live par Diljit ne surprise ka vaada kiya\nBole: is saal sirf ek interview karunga\nShow ka naam nahi liya, abhi confirm nahi hua\nDiljit KWK 9 mein aayenge? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #diljitdosanjh #koffeewithkaran #karanjohar #bollywood",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
+  "pin_comment": "Aapko kya lagta hai, aayenge? HAAN ya NA. Kisi Diljit fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ashke",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "Punjabi swag = Diljit vibe"
+   },
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "top chart, big-news energy"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hype for a big reveal"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "party show vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-26T04:33:00+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-26",
   "image": "posts/20261026-0232-reel_news_early-2026-10-26.jpg",
   "kind": "reel",
@@ -327,62 +372,5 @@
    "fixed": []
   },
   "created_at": "2026-10-25T04:33:05+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-25",
-  "image": "posts/20261025-0233-reel_news_early-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-023328-reel_news_early-2026-10-25.mp4",
-  "headline": "Manoj Bajpayee, Neeraj Pandey weren't worried about Ghooskhor Pandat title row affecting Gajab Raat, say they ‘moved away’ quickly | Interview",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Manoj Bajpayee Gajab Raat Ghooskhor Pandat title row 🎬\n\nNeeraj Pandey ki produce ki hui film Gajab Raat pehle Ghooskhor Pandat naam se thi.\nNeeraj Pandey ne kaha ki unhone title row se 'moved away' kar liya, aur Manoj Bajpayee ne kaha ki title slate launch par aaya tha jab film post-production mein thi.\nInterview mein Neeraj Pandey ne kaha ki unhe is row ke film par hawi hone ki chinta nahi thi.\n\nKya title badalna sahi faisla tha? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#manojbajpayee #gajabraat #neerajpandey #reelsindia #bollywood",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
-  "pin_comment": "Kisi Manoj Bajpayee fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zihaal e Miskin",
-    "artist": "Javed-Mohsin, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "intense, dramatic film vibe"
-   },
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "moody night feel = Gajab Raat"
-   },
-   {
-    "title": "Dracula",
-    "artist": "Tame Impala",
-    "lang": "english",
-    "mood": "dark night thriller mood"
-   },
-   {
-    "title": "DARKSIDE",
-    "artist": "Neoni",
-    "lang": "english",
-    "mood": "dark, suspense edge"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says a cop with no morals trying to do the right thing; 'beparwah' (careless) is not what it says.",
-    "Fact corrected to match the article: Only the title changed, not the film.",
-    "Fact corrected to match the article: Film is directed by Ritesh Shah; Neeraj Pandey is writer-producer.",
-    "Fact corrected to match the article: The 'moved away' quote is only Neeraj's; Manoj spoke about slate launch and post-production.",
-    "Fact corrected to match the article: Only Neeraj said he wasn't nervous; Manoj did not say this."
-   ],
-   "fixed": [
-    "ek beparwah cop bane hain, jo sahi karne nikla. → ek be-usool cop bane hain, jo sahi karne nikla.",
-    "Naam badla, film badli, ab dekhna hai Gajab Raat → Naam badla, film wahi, ab dekhna hai Gajab Raat",
-    "Neeraj Pandey ki nayi film Gajab Raat pehle → Neeraj Pandey ki produce ki hui film Gajab Raat pehle",
-    "Manoj Bajpayee aur Neeraj Pandey ne kaha ki woh title row se jaldi 'moved away' ho gaye. → Neeraj Pandey ne kaha ki unhone title row se 'moved away' kar liya, aur Manoj Bajpayee ne kaha ki title slate launch par aaya tha jab film post-production mein thi.",
-    "Interview mein dono ne kaha ki unhe film par asar ki chinta nahi thi. → Interview mein Neeraj Pandey ne kaha ki unhe is row ke film par hawi hone ki chinta nahi thi."
-   ]
-  },
-  "created_at": "2026-10-25T02:33:28+00:00"
  }
 ]

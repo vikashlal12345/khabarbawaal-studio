@@ -1,40 +1,88 @@
 {
- "at": "2026-10-26T02:32:24+00:00",
+ "at": "2026-10-26T04:33:03+00:00",
+ "known": {
+  "https://www.bollywoodhungama.com/news/bollywood/daler-mehndi-controversy-ends-as-uttarakhand-minister-subodh-uniyal-apologises-mika-singhs-team-reacts/": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/trending/karnataka-artist-sets-guinness-world-record-with-175-82-sq-metre-spice-painting-101792985143488.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/india-news/after-naseeruddin-shah-alleges-vendetta-kolkata-film-institute-clarifies-on-students-rustication-srfti-disciplinary-action-101792984083425.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/india-news/cyclone-arnab-live-updates-imd-alert-andhra-pradesh-odisha-rains-cyclone-tracker-landfall-date-time-weather-today-101792986502571.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/india-news/ruling-tdp-led-bloc-wins-17-of-87-andhra-pradesh-urban-local-bodies-uncontested-101792986100691.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/trending/compass-ceo-kabir-nath-quit-high-paying-job-to-work-on-psychedelic-pill-for-treating-depression-101792985268832.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-on-kbc-says-he-feared-playing-lord-ram-in-ramayana-when-first-approached-ravie-dubey-sai-pallavi-amitabh-bachchan-101792980616323.html": "2026-10-26T04:33:03+00:00",
+  "https://www.hindustantimes.com/trending/us/new-ufo-files-include-strange-drawings-of-alleged-skinwalker-aliens-seen-in-utah-101792979403080.html": "2026-10-26T04:33:03+00:00"
+ },
  "x": [],
  "google": [
-  "nicki minaj",
-  "ethan klein",
-  "lafc vs la galaxy",
-  "today is holiday",
-  "brent crude price today"
+  "sterlite technologies share",
+  "today gold rate chennai",
+  "kotak bank share price",
+  "dr reddy share price",
+  "manorama online",
+  "infosys share price"
  ],
  "stories": [
   {
-   "title": "Ranbir Kapoor on KBC says he feared playing Lord Ram in Ramayana when first approached, calls it a ‘big responsibility’",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-on-kbc-says-he-feared-playing-lord-ram-in-ramayana-when-first-approached-ravie-dubey-sai-pallavi-amitabh-bachchan-101792980616323.html",
+   "title": "Daler Mehndi controversy ends as Uttarakhand Minister Subodh Uniyal apologises; Mika Singh’s team reacts",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/daler-mehndi-controversy-ends-as-uttarakhand-minister-subodh-uniyal-apologises-mika-singhs-team-reacts/",
    "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "Justice Lalit changed case listing approach as CJI, says Justice Kaul in memoir",
+   "title": "Karnataka artist sets Guinness World Record with 175.82-sq-metre spice painting",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/justice-lalit-changed-case-listing-approach-as-cji-says-justice-kaul-in-memoir-101792953692096.html",
+   "link": "https://www.hindustantimes.com/trending/karnataka-artist-sets-guinness-world-record-with-175-82-sq-metre-spice-painting-101792985143488.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "After Naseeruddin Shah alleges ‘vendetta’, Kolkata film institute clarifies 6 students' rustication",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/after-naseeruddin-shah-alleges-vendetta-kolkata-film-institute-clarifies-on-students-rustication-srfti-disciplinary-action-101792984083425.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "First batch of 18,300 Agniveers set to leave armed forces by December 31 as 4-year tenure ends",
+   "title": "Diljit Dosanjh hints at Koffee With Karan 9 appearance, says he will do only one interview this year",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/first-batch-of-18-300-agniveers-set-to-leave-armed-forces-by-december-31-as-4-year-tenure-ends-101792978955839.html",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Cyclone ‘Arnab’ LIVE: Deep depression turns into Cyclone ‘Arnab’, says IMD; warning for Andhra, South Odisha coast",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/cyclone-arnab-live-updates-imd-alert-andhra-pradesh-odisha-rains-cyclone-tracker-landfall-date-time-weather-today-101792986502571.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Delhi plans to extend PM-Uday application deadline for ownership in unauthorised colonies amid tepid response",
+   "title": "Ruling TDP-led bloc wins 17 of 87 Andhra Pradesh urban local bodies uncontested",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/delhi-plans-to-extend-pm-uday-application-deadline-for-ownership-in-unauthorised-colonies-amid-tepid-response-101792979229802.html",
+   "link": "https://www.hindustantimes.com/india-news/ruling-tdp-led-bloc-wins-17-of-87-andhra-pradesh-urban-local-bodies-uncontested-101792986100691.html",
    "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Compass CEO Kabir Nath quit high-paying job to work on psychedelic pill for treating depression",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/compass-ceo-kabir-nath-quit-high-paying-job-to-work-on-psychedelic-pill-for-treating-depression-101792985268832.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "LIVE: Amid EC row, BJP calls nationwide protests over Kharge’s remark on PM Modi",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Ranbir Kapoor says playing Lord Ram in Ramayana gave him a chance to become a better human",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-on-kbc-says-he-feared-playing-lord-ram-in-ramayana-when-first-approached-ravie-dubey-sai-pallavi-amitabh-bachchan-101792980616323.html",
+   "category": "entertainment",
    "hours": 0
   },
   {
@@ -42,34 +90,6 @@
    "source": "Hindustan Times",
    "link": "https://www.hindustantimes.com/trending/us/new-ufo-files-include-strange-drawings-of-alleged-skinwalker-aliens-seen-in-utah-101792979403080.html",
    "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Park for over 24 hours in New Delhi? Expect towing, storage fees",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/hike-in-night-parking-charges-monthly-passes-ndmc-s-proposed-parking-mgmt-system-101792978779196.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "AR Rahman is amused by people criticising Ramayana songs, then apologising; reveals he once let go of Hans Zimmer collab to 'chill' | HT Exc",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-was-amused-by-people-first-criticising-ramayana-songs-then-apologising-collab-with-hans-zimmer-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-101792919105741.html",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Kriti Sanon was tired of playing good girl roles early in her career, says it is refreshing to see more realistic roles for women being writ",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-was-tired-of-playing-good-girl-roles-early-in-her-career-says-it-is-refreshing-to-see-more-realistic-roles-for-women-being-written-101792945326124.html",
-   "category": "entertainment",
    "hours": 0
   }
  ]
