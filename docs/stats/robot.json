@@ -7458,16 +7458,16 @@
   },
   "reel_politics": {
    "posts": 0,
-   "requests": 36,
-   "input": 92,
-   "output": 40005,
-   "cache_read": 112843,
-   "cache_write": 817970,
-   "value_usd": 3.6833,
+   "requests": 51,
+   "input": 132,
+   "output": 51922,
+   "cache_read": 148032,
+   "cache_write": 1090968,
+   "value_usd": 4.8981,
    "by_purpose": {
     "satire pick": {
-     "requests": 2,
-     "tokens": 57817
+     "requests": 3,
+     "tokens": 86846
     },
     "roast card writing": {
      "requests": 6,
@@ -7478,8 +7478,8 @@
      "tokens": 169071
     },
     "joke judge": {
-     "requests": 4,
-     "tokens": 128101
+     "requests": 5,
+     "tokens": 153415
     },
     "sense check": {
      "requests": 1,
@@ -7490,36 +7490,40 @@
      "tokens": 29287
     },
     "quote video": {
-     "requests": 2,
-     "tokens": 46392
+     "requests": 3,
+     "tokens": 69459
     },
     "cover photo": {
-     "requests": 2,
-     "tokens": 10015
+     "requests": 3,
+     "tokens": 14794
     },
     "hook contest": {
-     "requests": 2,
-     "tokens": 50387
+     "requests": 4,
+     "tokens": 99757
     },
     "hook meaning": {
-     "requests": 2,
-     "tokens": 47598
+     "requests": 5,
+     "tokens": 117983
     },
     "proofreading": {
-     "requests": 5,
-     "tokens": 81322
+     "requests": 7,
+     "tokens": 110472
     },
     "cartoon roast writing": {
-     "requests": 2,
-     "tokens": 65764
+     "requests": 3,
+     "tokens": 102282
     },
     "reel news pick": {
-     "requests": 1,
-     "tokens": 35745
+     "requests": 2,
+     "tokens": 71973
     },
     "photo check": {
-     "requests": 2,
-     "tokens": 18138
+     "requests": 3,
+     "tokens": 27165
+    },
+    "toon check": {
+     "requests": 1,
+     "tokens": 7277
     }
    }
   }

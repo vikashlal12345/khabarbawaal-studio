@@ -1,6 +1,58 @@
 [
  {
   "id": "reel_politics-2026-10-26",
+  "image": "posts/20261026-1341-reel_politics-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-134106-reel_politics-2026-10-26.mp4",
+  "headline": "Kriti Sanon, Varun Dhawan wolf howl as they reunite with Bhediya director Amar Kaushik; fans wonder if sequel is underway",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kriti Sanon Varun Dhawan Amar Kaushik reunion Bhediya sequel 🐺\nKriti aur Varun ne Bhediya director Amar Kaushik ke saath reunion kiya.\nKriti ne wolf howl wala 'Obsessed' video share kiya, Varun ne repost kiya.\nFans ko lag raha hai Bhediya sequel ki taiyaari hai, par kuch confirm nahi hua.\nBhediya 2 chahiye? HAAN ya NA likho 👇 🔥\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kritisanon #varundhawan #bhediya #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
+  "pin_comment": "Kisi Bhediya fan ko bhejo 👇 Sequel chahiye toh HAAN, nahi toh NA likho",
+  "songs": [
+   {
+    "title": "Akhiyaan Gulaab",
+    "artist": "Mitraz",
+    "lang": "hindi",
+    "mood": "romantic jodi vibe, reunion"
+   },
+   {
+    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
+    "lang": "hindi",
+    "mood": "Bollywood jodi, fun energy"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "trending global, fresh energy"
+   },
+   {
+    "title": "Loser",
+    "artist": "Tame Impala",
+    "lang": "english",
+    "mood": "moody howl, mystery tease"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Quote must match Kriti's actual words",
+    "Fact corrected to match the article: Article says Kriti shared the video and Varun reposted it",
+    "Slide 4: The 'Photo: Bollywood Hungama' credit at bottom left runs into the @khabarbawaal handle text, so they slightly overlap and crowd each other."
+   ],
+   "fixed": [
+    "'Unexpected reunion that will get you Obsessed! Stay Tuned!!' → 'An unexpected reunion that will get you 'Obsessed'! Stay Tuned!!'",
+    "Dono ne wolf howl wala 'Obsessed' post daala. → Kriti ne wolf howl wala 'Obsessed' video share kiya, Varun ne repost kiya."
+   ]
+  },
+  "created_at": "2026-10-26T13:41:06+00:00"
+ },
+ {
+  "id": "reel_politics-2026-10-26",
   "image": "posts/20261026-1326-reel_politics-2026-10-26.jpg",
   "kind": "reel",
   "media": "reel",
