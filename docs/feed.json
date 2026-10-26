@@ -1,6 +1,57 @@
 [
  {
   "id": "reel_politics-2026-10-26",
+  "image": "posts/20261026-1326-reel_politics-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-132640-reel_politics-2026-10-26.mp4",
+  "headline": "Raveena Tandon turns 54: When she cleaned studio floors as an intern, rejected films with Shah Rukh Khan, Ajay Devgn",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Raveena Tandon birthday 54 Shah Rukh Khan Ajay Devgn films rejected 🎂\nIntern thi tab studio ka farsh saaf kiya.\nDarr, Prem Qaidi, Phool Aur Kaante mana ki.\nDebut Salman Khan ke saath Patthar Ke Phool mein.\nRaveena ka 90s ka jalwa best tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#raveenatandon #salmankhan #shahrukhkhan #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
+  "pin_comment": "Kisi 90s ke fan ko bhejo 👇 Raveena best thi? HAAN / NA",
+  "songs": [
+   {
+    "title": "Lae Dooba by Sunidhi Chauhan",
+    "artist": "Rochak Kohli, Manoj Muntashir",
+    "lang": "hindi",
+    "mood": "retro star comeback energy"
+   },
+   {
+    "title": "Zara Zara",
+    "artist": "Omkar Singh",
+    "lang": "hindi",
+    "mood": "nostalgic birthday feel"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "nostalgia 90s feels"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Bruno Mars, Lady Gaga",
+    "lang": "english",
+    "mood": "classic celebration vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Original wording was unclear. Per the article, Darr starred Juhi Chawla, Shah Rukh Khan and Sunny Deol."
+   ],
+   "fixed": [
+    "removed weak photo slide(s) [3]",
+    "Uncomfortable scenes ki wajah se Darr, Prem Qaidi aur Ajay Devgn ki Phool Aur Kaante ठुकराई. → Uncomfortable scenes ki wajah se Darr, Prem Qaidi aur Ajay Devgn ki Phool Aur Kaante mana ki.",
+    "Darr pehle unhe offer hui, Juhi Chawla ne ki. → Darr pehle unhe offer hui, baad mein film mein Juhi Chawla thin."
+   ]
+  },
+  "created_at": "2026-10-26T13:26:40+00:00"
+ },
+ {
+  "id": "reel_politics-2026-10-26",
   "image": "posts/20261026-1238-reel_politics-2026-10-26.jpg",
   "kind": "reel",
   "media": "reel",
