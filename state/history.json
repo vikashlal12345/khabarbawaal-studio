@@ -319,7 +319,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-19",
   "reel_clip_am": "2026-10-19",
-  "reel_politics": "2026-10-25",
+  "reel_politics": "2026-10-26",
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
@@ -339,7 +339,7 @@
   "reel_break_noon": "2026-10-26",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "I8ZwqnwOSk5y",
+ "inbox_since": "nzCdl7M4aloJ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -694,16 +694,17 @@
  ],
  "reel_politics_used": [
   "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
-  "https://www.msn.com/en-in/news/other/decision-on-20-rebel-tmc-mps-after-receiving-responses-speaker-om-birla/ar-AA2fNY6d",
   "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
-  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
-  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
-  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
-  "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641",
   "https://www.thedailyjagran.com/india/news/abhijeet-dipke-detained-before-reaching-connaught-place-for-cjp-tiranga-march-what-delhi-police-14-point-notice-said-10332980",
-  "https://timesofindia.indiatimes.com/city/delhi/made-lawrence-bishnoi-their-son-in-law-kejriwal-targets-centre-after-firing-at-tiger-shroffs-car/articleshow/135044108.cms",
   "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "https://www.financialexpress.com/india-news/delhi-traders-urge-rahul-gandhi-to-defer-india-blocs-anti-sir-rally-over-diwali-rush/4368724/"
+  "https://timesofindia.indiatimes.com/city/delhi/made-lawrence-bishnoi-their-son-in-law-kejriwal-targets-centre-after-firing-at-tiger-shroffs-car/articleshow/135044108.cms",
+  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
+  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
+  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
+  "https://www.msn.com/en-in/news/other/decision-on-20-rebel-tmc-mps-after-receiving-responses-speaker-om-birla/ar-AA2fNY6d",
+  "https://www.financialexpress.com/india-news/delhi-traders-urge-rahul-gandhi-to-defer-india-blocs-anti-sir-rally-over-diwali-rush/4368724/",
+  "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641",
+  "https://northdesk.in/punjab-pilgrim-bus-safety-row-the-nhrc-vs-aap/"
  ],
  "reel_news_used": [
   "119d9f27c7b0",
@@ -929,13 +930,22 @@
     "Delhi: vyapariyon ne Rahul Gandhi se rally taalne ki maang rakhi",
     "Traders ne Rs 10,000 cr ke kaarobar ke daav par hone ki baat kahi"
    ]
+  },
+  {
+   "date": "2026-10-26",
+   "party": "AAP",
+   "format": "Nobody: / Party:",
+   "topic": "AAP Punjab govt and Arvind Kejriwal: NHRC notice on Mukh Mantri Tirath Yatra buses",
+   "hook": "Nobody: NHRC: Buses mein fire safety kahan hai? Kejriwal: Ye BJP ki saazish hai",
+   "punchline": "Bus safety par sawal uthe, bahana turant mil gaya.",
+   "issue": "Punjab pilgrim bus safety",
+   "facts": [
+    "Punjab: NHRC ne Chief Secretary, MoRTH ko bus safety notice bheja",
+    "NHRC ne Chief Secretary se 7 din mein report maangi"
+   ]
   }
  ],
  "songs_recent": [
-  "Kabhi Shaam Dhale",
-  "Tere Liye",
-  "Lies (feat. Lana Del Rey)",
-  "Solar Eclipse",
   "Thumkeshwari",
   "His Aura Hits You",
   "Espresso",
@@ -971,7 +981,11 @@
   "Tera Hoke Rahoon",
   "Zaalima",
   "Die With A Smile",
-  "Heat Waves"
+  "Heat Waves",
+  "Barsaat",
+  "Bairan",
+  "Levitating",
+  "Under The Influence"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",

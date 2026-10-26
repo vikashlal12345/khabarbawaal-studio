@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_politics-2026-10-26",
+  "image": "posts/20261026-1238-reel_politics-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-123805-reel_politics-2026-10-26.mp4",
+  "headline": "Nobody: NHRC: Buses mein fire safety kahan hai? Kejriwal: Ye BJP ki saazish hai",
+  "tag": "🎬 REEL · REALITY CHECK",
+  "caption": "Kejriwal vs NHRC: Punjab Tirath Yatra bus safety notice 🚌\nNHRC ne AAP sarkar ki yatra buses par 7 din mein report maangi, Kejriwal ne kaha politics hai.\nSawal safety ka, jawab saazish ka 😅\nKaun sahi? Ek word likho: NHRC ya KEJRIWAL 👇\n\nPhotos (Wikimedia Commons): Kejriwal: Vice President's Secretariat (GODL-India)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Reality Check 🎯\nSource: northdesk.in (link pinned in comments 👇)\n\n#reelsindia #Kejriwal #AAP #NHRC #Punjab",
+  "source": "northdesk.in",
+  "source_url": "https://northdesk.in/punjab-pilgrim-bus-safety-row-the-nhrc-vs-aap/",
+  "pin_comment": "Ye us dost ko bhejo jo har notice ko saazish bolta hai 👇",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "safar ka mood, bus yatra"
+   },
+   {
+    "title": "Bairan",
+    "artist": "Banjaare",
+    "lang": "hindi",
+    "mood": "dramatic bahana = bairan notice"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "hawa mein udta jawab"
+   },
+   {
+    "title": "Under The Influence",
+    "artist": "Chris Brown",
+    "lang": "english",
+    "mood": "saazish ke nashe mein"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article gives no date, so 'Oct 2026' is unsupported.",
+    "Fact corrected to match the article: The article gives no date, so 'Oct 2026' is unsupported.",
+    "Fact corrected to match the article: Article doesn't say these buses lacked an emergency exit; it only flags fire-safety violations and illegal modifications (alleged)."
+   ],
+   "fixed": [
+    "Oct 2026 Punjab: → Punjab:",
+    "Oct 2026: NHRC → NHRC",
+    "Bus ka emergency exit nahi mila, bahana turant mil gaya. → Bus safety par sawal uthe, bahana turant mil gaya."
+   ]
+  },
+  "created_at": "2026-10-26T12:38:05+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-26",
   "image": "posts/20261026-1033-reel_news_pm-2026-10-26.jpg",
   "kind": "reel",
