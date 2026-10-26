@@ -86,6 +86,11 @@ def process() -> int:
             else:
                 print(f"  inbox: 📌 pin ignored (slot {kind!r} or a story that is not on the stats list)")
             continue
+        if msg.get("type") == "unpin_story":
+            # ↩️ Undo of a pin on the stats page (owner, 26 Oct 2026): messages are processed in order, so pin then undo = no pin
+            if (state.get("pinned") or {}).pop(str(msg.get("slot", "")), None):
+                print(f"  inbox: 📌 pin for {msg.get('slot')} undone")
+            continue
         if msg.get("type") in ("posted", "unposted") and msg.get("post"):
             # ✅ Mark as posted / ↩️ Undo in the app (owner, 22 Oct 2026): one tap, no Instagram link. Kept in
             # ig_links.json (url "") so everything that asks "is it posted?" still works.

@@ -369,17 +369,41 @@ function hookChart(box, pts) {
       const pinSel = x => `<select class="pin" data-title="${esc(x.title)}" data-link="${esc(x.link)}" data-source="${esc(x.source)}"
         style="margin-left:6px;background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 4px;font-size:12px;max-width:120px">
         <option value="">📌 Pin to a slot…</option>${slotsAll.map(([t, k, n]) => `<option value="${k}" data-time="${t}"${NOSTORY.includes(k) ? ' disabled' : ''}>${t} ${esc(n)}${NOSTORY.includes(k) ? ' (no story)' : k === 'reel_politics' ? ' (opposition stories work best)' : ''}</option>`).join('')}</select>`;
-      const pins = slotsAll.map(([t, k, n]) => { try { const v = JSON.parse(localStorage.getItem('pin-' + k) || 'null'); return v && nowMs - v.at < 86400000 ? `${t} ${n}: ${v.title}` : ''; } catch { return ''; } }).filter(Boolean);
+      // pins from ALL phones: read from the robot's inbox (ntfy keeps ~12 h); a pin is active until its slot's next run has started
+      const slotOf = Object.fromEntries(slotsAll.map(([t, k, n]) => [k, { t, n }]));
+      const occurrence = (timeStr, fromMs) => { const [h, m] = timeStr.split(':').map(Number), d = new Date(fromMs + 330 * 60000);
+        d.setUTCHours(h, m, 0, 0); if (d.getTime() <= fromMs + 330 * 60000) d.setUTCDate(d.getUTCDate() + 1); return d.getTime() - 330 * 60000; };
+      const pinMap = {};
+      try {
+        const rr = await fetch(`https://ntfy.sh/${app.inbox}/json?poll=1&since=12h`);
+        for (const line of (await rr.text()).split('\n')) {
+          if (!line.trim()) continue;
+          let mm, ev; try { mm = JSON.parse(line); ev = JSON.parse(mm.message); } catch { continue; }
+          if (ev.type === 'pin_story' && slotOf[ev.slot]) pinMap[ev.slot] = { title: ev.title || '', at: mm.time * 1000 };
+          else if (ev.type === 'unpin_story') delete pinMap[ev.slot];
+        }
+      } catch {}
+      const activePins = Object.entries(pinMap).map(([k, v]) => ({ k, ...v, when: occurrence(slotOf[k].t, v.at) }))
+        .filter(v => Date.now() < v.when);   // the slot has not started yet: still pinned, still undoable
+      const pins = activePins;
       const miss = xs.filter(x => !termCovered(x.term)).length + st.filter(x => !storyCovered(x.title)).length;
       box.innerHTML = `<h2>🔥 Trending now vs our Reels <span class="muted">updated ${ago(tr.at)}</span></h2>
         <div class="muted" style="margin-bottom:6px">${miss ? `${miss} trending topics not covered yet: tap 📋 copy, then paste it in ➕ Create.` : 'Everything trending is covered.'}</div>
-        ${pins.length ? `<div class="muted" style="margin:6px 0">📌 Pinned: ${pins.map(esc).join(' · ')}</div>` : ''}
+        ${pins.length ? `<div style="margin:6px 0">${pins.map(v => `<div class="best" style="gap:8px;align-items:center"><span style="flex:1;min-width:0;overflow-wrap:anywhere">📌 <b>${slotOf[v.k].t} ${esc(slotOf[v.k].n)}</b>: ${esc(v.title)}</span><button class="unpin" data-slot="${esc(v.k)}" style="background:#2a2a2a;color:#eee;border:1px solid #444;border-radius:8px;padding:3px 8px;font-size:12px">↩️ Undo</button></div>`).join('')}</div>` : ''}
         <div class="sub">Big stories right now</div>
         ${st.map(x => `<div class="best" style="gap:8px;align-items:flex-start"><span style="flex:1;min-width:0;overflow-wrap:anywhere"><a style="white-space:normal;overflow:visible" href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a> <span class="muted">${esc(x.source)}</span></span><span style="white-space:nowrap">${chip(storyCovered(x.title))}${copyBtn(x.title)}${pinSel(x)}</span></div>`).join('') || '<div class="muted">No stories yet.</div>'}
         <div class="sub">Trending on X in India (hours trending)</div>
         ${xs.map(x => `<div class="best"><span>${esc(x.term)} <span class="muted">${x.hours} h</span></span><span>${chip(termCovered(x.term))}${copyBtn(x.term)}</span></div>`).join('') || '<div class="muted">No trends yet.</div>'}
         ${(tr.google || []).length ? `<div class="sub">Google trends</div><div class="muted">${tr.google.slice(0, 8).map(esc).join(' · ')}</div>` : ''}
         <div class="muted" style="margin-top:8px">"Covered" = one of our Reels or posts of the last 3 days has the same words. Politics and crime stories are left out of this list.</div>`;
+      box.querySelectorAll('button.unpin').forEach(b => b.onclick = async () => {
+        if (!confirm('Take this story off that slot? The slot will pick its own story again.')) return;
+        try {
+          const r = await fetch('https://ntfy.sh/' + app.inbox, { method: 'POST', body: JSON.stringify({ type: 'unpin_story', slot: b.dataset.slot }) });
+          if (!r.ok) throw new Error(r.status);
+          b.closest('.best').remove(); alert('↩️ Undone: that slot will pick its own story.');
+        } catch { alert('Could not send (no internet?). Try again.'); }
+      });
       box.querySelectorAll('select.pin').forEach(sel => sel.onchange = async () => {
         const kind = sel.value; if (!kind) return;
         const opt = sel.selectedOptions[0], when = nextWhen(opt.dataset.time);
@@ -388,7 +412,6 @@ function hookChart(box, pts) {
           const r = await fetch('https://ntfy.sh/' + app.inbox, { method: 'POST', body: JSON.stringify({ type: 'pin_story', slot: kind,
             link: sel.dataset.link, title: sel.dataset.title, source: sel.dataset.source }) });
           if (!r.ok) throw new Error(r.status);
-          localStorage.setItem('pin-' + kind, JSON.stringify({ title: sel.dataset.title, at: Date.now() }));
           alert(`📌 Sent. The ${opt.dataset.time} slot will make this story at its next run (${when}). The robot reads it when that slot starts.`);
         } catch { alert('Could not send (no internet?). Try again.'); }
         sel.value = '';
