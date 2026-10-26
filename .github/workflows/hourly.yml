@@ -10,7 +10,7 @@ on:
     # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
     - cron: "30 0,2,4,6,8,10,12 * * *"          # IST 6, 8, 10 AM, 12, 2, 4, 6 PM (Reels)
     - cron: "15 14 * * *"                       # IST 7:45 PM (breaking card)
-    - cron: "30 15 * * *"                       # IST 9:00 PM (speaker video, ready to post by 9:30 PM)
+    - cron: "45 14 * * *"                       # IST 8:15 PM (speaker video)
   workflow_dispatch:
     inputs:
       kind:
