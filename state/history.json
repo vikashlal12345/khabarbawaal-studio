@@ -182,7 +182,8 @@
   "6050a88938ea",
   "6ccb1f7c2e8b",
   "1f7827249ca5",
-  "1acf844e45d5"
+  "1acf844e45d5",
+  "50c0bf50f8bf"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -328,13 +329,13 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-25",
-  "reel_news_early": "2026-10-25",
+  "reel_news_early": "2026-10-26",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-25",
   "reel_break_noon": "2026-10-25",
   "reel_break_aft": "2026-10-25"
  },
- "inbox_since": "zEuGRc0sn9q3",
+ "inbox_since": "rR8kGAxfQsiJ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -756,7 +757,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
-  "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html"
+  "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -918,10 +920,6 @@
   }
  ],
  "songs_recent": [
-  "Jalebi Baby",
-  "Calm Down",
-  "Sahiba",
-  "STAY",
   "Azadi",
   "Toxic",
   "stupid song",
@@ -957,7 +955,11 @@
   "Raghunandan Raghav Ram Hare",
   "Jai Shree Ram",
   "Ramayan Chaupai",
-  "Shri Ram Chandra Kripalu Bhajuman"
+  "Shri Ram Chandra Kripalu Bhajuman",
+  "Narayan Mil Jayega",
+  "Soulmate",
+  "Just Give Me a Reason (feat. Nate Ruess)",
+  "Girls Like You"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -978,38 +980,6 @@
   "2114374820439970106"
  ],
  "reel_news_recent": [
-  {
-   "title": "21,900 digital arrest complaints registered till Sept: MHA to SC",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "Aamir Khan breaks down in tears talking about career's weakest moments, says he lost relationships, time with kids by working like a ‘madman’",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "Tiger Shroff team shares video of his injuries after Juhu firing incident; actor reportedly sustained cuts and bruises",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "Ramayana vs Adipurush: Ranbir Kapoor, Yash-starrer dwarfs Prabhas film, outpaces it by 120% in advance bookings",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "Aamir Khan says, ‘Rajkumar Hirani will narrate 3 Idiots sequel’s final script in the coming weeks’",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "Shah Rukh Khan, Deepika Padukone set to shoot grand song for King in Mumbai from October 26: Report",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "Family Full House: Geeta Kapur says Rohit Sharma has qualities she wants in an ideal partner; Mukesh Chhabra names Vicky Kaushal, Ranbir Kapoor for biopic",
-   "date": "2026-10-23"
-  },
-  {
-   "title": "📍 Mumbai\n\nAddressed the Business Today Most Powerful Women in Business Awards ceremony in Mumbai today.\n\nRecognised the invaluable contribut",
-   "date": "2026-10-23"
-  },
   {
    "title": "SCOOP: Ramayana 2 delayed to 2028; Ranbir Kapoor & Yash starrer to release on Diwali 2028",
    "date": "2026-10-24"
@@ -1061,6 +1031,10 @@
   {
    "title": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales",
    "date": "2026-10-25"
+  },
+  {
+   "title": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
+   "date": "2026-10-26"
   }
  ],
  "claude_limit": {

@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_early-2026-10-26",
+  "image": "posts/20261026-0232-reel_news_early-2026-10-26.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261026-023219-reel_news_early-2026-10-26.mp4",
+  "headline": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Virat Kohli Anushka Sharma Krishna Das concert Mumbai 🙏\n\nVirat aur Anushka Mumbai mein American musician Krishna Das ke devotional kirtan concert mein pahunche.\nDono bhakti ki dhun mein doobe dikhe.\nDono ke videos aur photos social media par vaayral ho rahe hain.\n\nVirat-Anushka ki ye jodi aapko kaisi lagti hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viratkohli #anushkasharma #virushka #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
+  "pin_comment": "Kisi Virat-Anushka fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Narayan Mil Jayega",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "devotional kirtan vibe, calm"
+   },
+   {
+    "title": "Soulmate",
+    "artist": "Badshah, Arijit Singh",
+    "lang": "hindi",
+    "mood": "couple goals, romantic"
+   },
+   {
+    "title": "Just Give Me a Reason (feat. Nate Ruess)",
+    "artist": "P!nk, Nate Ruess",
+    "lang": "english",
+    "mood": "power couple, love story"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "sweet couple moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say fans like this side; it says videos and photos are doing the rounds on social media."
+   ],
+   "fixed": [
+    "Fans ko ye simple, shaant side bahut pasand aa rahi hai. → Dono ke videos aur photos social media par vaayral ho rahe hain."
+   ]
+  },
+  "created_at": "2026-10-26T02:32:19+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-26",
   "image": "posts/20261026-0033-reel_devotion-2026-10-26.jpg",
   "kind": "reel",
@@ -335,50 +384,5 @@
    ]
   },
   "created_at": "2026-10-25T02:33:28+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-25",
-  "image": "posts/20261025-0033-reel_devotion-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-003345-reel_devotion-2026-10-25.mp4",
-  "headline": "Sunday: Surya Dev: Ravivaar ka din... Surya Dev ko pranaam, jinse har subah shuru hoti hai",
-  "tag": "🎬 REEL · 🙏 JAI SURYA DEV",
-  "caption": "Surya Dev ko Ravivaar ka pranaam 🙏\nJal, roshni aur shukriya, bas itna kaafi hai.\nAaj ka din aapke liye shubh ho.\nJai Surya Dev likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#suryadev #ravivaarspecial #suryanamaskar #jaisuryadev #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Ghar ke badon ko bhejo, unka din ban jayega 🙏",
-  "songs": [
-   {
-    "title": "Mahamritunjay Mantra",
-    "artist": "Urmila Mohanty, Chandra-Surya",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Gaytri Mantra",
-    "artist": "Urmila Mohanty",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Surya Mantra 108 Times - Om Hrim Suryay Namah",
-    "artist": "Ketan Patwardhan",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Surya Mantra - Japa Kusum",
-    "artist": "Various Artists",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-25T00:33:45+00:00"
  }
 ]
