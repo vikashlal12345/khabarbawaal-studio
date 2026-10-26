@@ -547,5 +547,19 @@ function hookChart(box, pts) {
       for your own chats. claude.ai chats aren't tracked, so heavy chatting there makes this optimistic.</div>`;
 })();
 </script>
+<script>
+// Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
+// sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
+const PAGE_V = 55;
+document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
+  const m = t.match(/studio-v(\d+)/);
+  if (m && +m[1] > PAGE_V) {
+    try { if (sessionStorage.getItem('stats-reloaded-' + m[1])) return; sessionStorage.setItem('stats-reloaded-' + m[1], '1'); } catch {}
+    location.replace(location.pathname + '?v=' + m[1] + '&t=' + Date.now());
+  }
+}).catch(() => {});
+</script>
 </body>
 </html>
