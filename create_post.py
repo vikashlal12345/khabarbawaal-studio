@@ -226,6 +226,23 @@ def write_post(text: str, article: dict | None) -> dict:
     return fun.claude_json(system, user, CUSTOM_POST, g.CONFIG.get("membership_model", "sonnet"))
 
 
+def retry_ai(fn, tries: int = 2):
+    """An AI step that failed for a passing reason (timeout, bad reply) is tried once more; Claude's limit is never retried
+    (owner, 26 Oct 2026: a failed step must not quietly turn the owner's own sentence into the post)."""
+    import time
+    for k in range(tries):
+        try:
+            return fn()
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit" or fun.is_limit(str(e)) or k == tries - 1:
+                raise
+            print(f"  ! AI step failed ({str(e)[:100]}): trying once more")
+            time.sleep(3)
+
+
+REQUEST_LIKE = re.compile(r"(?i)\b(latest|viral|trending|news|reel|post|create|make|find|best|top|bana|banao|karo)\b")
+
+
 def free_post(text: str, article: dict | None) -> dict:
     title = (article or {}).get("title") or text
     return {"tag": "BREAKING", "headline": g.short_headline(title), "highlight": title.split()[:2],
@@ -363,9 +380,13 @@ def resolve_prompt(text: str) -> dict | None:
               f"news to post. If it's a request, pick the candidate that best fits it and would go most viral with "
               f"young Indians (follow the page's political line: {g.SYSTEM_PROMPT.split('Politics: ')[1].split(chr(10))[0][:250]}).")
     try:
-        out = fun.claude_json(system, f"Owner's message: {text}\n\nCandidates:\n{lines}", PROMPT_SCHEMA,
-                              g.CONFIG.get("membership_model", "sonnet"))
+        out = retry_ai(lambda: fun.claude_json(system, f"Owner's message: {text}\n\nCandidates:\n{lines}", PROMPT_SCHEMA,
+                                               g.CONFIG.get("membership_model", "sonnet")))
     except Exception as e:
+        if type(e).__name__ == "ClaudeLimit" or fun.LIMIT_SEEN:
+            raise
+        if REQUEST_LIKE.search(text):   # a request ('latest viral news') must never become the news itself
+            raise RuntimeError("couldn't check what your words ask for (the AI step failed twice): send it again, or paste the story link")
         print(f"  ! prompt check failed, treating text as the news: {e}")
         return None
     if not out["is_request"] or not 1 <= out["pick"] <= len(cands):
@@ -407,15 +428,22 @@ def make(raw: str, kind: str = "custom") -> int:
     note("Writing the post", 3)
     if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("USE_CLAUDE_CLI"):
         try:
-            post = fun.normalize({**write_post(text, article), "card_text": ""})
+            post = fun.normalize({**retry_ai(lambda: write_post(text, article)), "card_text": ""})
             print("Mode: membership")
         except Exception as e:
             if fun.LIMIT_SEEN:
                 raise   # Claude's limit: ➕ Create's auto mode (emergency.make_create), not a post made from the owner's own words
             print(f"  ! AI failed, using free mode: {e}")
+    free_note = False
     if post is None:
+        if not (article and (article.get("title") or article.get("description"))):
+            # no real article behind the words: a post made from the owner's own sentence would be junk (26 Oct 2026)
+            failed("The AI writer failed twice and there is no story link or article behind your words, so no post was made. "
+                   "Send the story link, or try again in a few minutes.")
+            return 0
         post = free_post(text, article)
-        print("Mode: free (no AI)")
+        free_note = True
+        print("Mode: free (no AI), from the article's own title and description")
     print(f"Headline: {post['headline']}")
 
     note("Finding photos + making the slides", 4)
@@ -447,6 +475,9 @@ def make(raw: str, kind: str = "custom") -> int:
                                          lambda d: caption(d["post"], article["site"] if article else None),
                                          article_txt, drop=proofread.drop_photo_slides)
     post = data["post"]
+    if free_note:
+        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+            "⚠️ The AI writer failed, so this post uses the article's own title and description: please read it before posting."]}
     slides = checked[1:]
     cards = [g.render_card(img, post, site) for img, site in photos] + [g.render_card(None, post, banner_source)]
 
@@ -549,6 +580,7 @@ def make_media(text: str, media: dict) -> int:
             print("Mode: membership")
         except Exception as e:
             print(f"  ! AI failed, using free mode: {e}")
+    free_media = post is None   # the AI failed: the owner's own context becomes the on-video text (flagged below)
     if post is None:
         post = {"tag": "VIRAL", "headline": g.short_headline(text), "highlight": text.split()[:2],
                 "overlay_text": g.short_headline(text), "caption": text + "\n\nAap kya sochte ho? 👇",
@@ -568,6 +600,9 @@ def make_media(text: str, media: dict) -> int:
     _, data, proof = proofread.run(render, {"post": post}, lambda d: caption(d["post"], None),
                                    f"Owner's context: {text}\nOn-video text: {post['overlay_text']}")
     post = data["post"]
+    if free_media:
+        proof = {**proof, "state": "check", "issues": proof.get("issues", []) + [
+            "⚠️ The AI step failed, so the text on the video is just your own words: please change it before posting."]}
     cards = [g.render_card(img, post, source) for img in picks] + [g.render_card(None, post, source)]
 
     post_id = "v" + g.hashlib.sha1((text + media.get("url", "") + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
@@ -640,10 +675,12 @@ def topic_article(text: str) -> dict | None:
         "query": {"type": "string", "description": "A short English news search for it (names + the event)"}},
         "required": ["news", "query"], "additionalProperties": False}
     try:
-        q = fun.claude_json("The owner of a news/meme page asked for a Reel and gave no link. If the words are about a real "
+        q = retry_ai(lambda: fun.claude_json("The owner of a news/meme page asked for a Reel and gave no link. If the words are about a real "
                             "news story or person, give the news search that finds it.", f"Owner's words: {text}", schema,
-                            g.CONFIG.get("membership_model", "sonnet"), purpose="topic search")
+                            g.CONFIG.get("membership_model", "sonnet"), purpose="topic search"))
     except Exception as e:
+        if type(e).__name__ == "ClaudeLimit" or fun.LIMIT_SEEN:
+            raise
         print(f"  ! topic search failed: {str(e)[:80]}")
         return None
     if not q["news"] or not q["query"].strip():
@@ -656,12 +693,15 @@ def topic_article(text: str) -> dict | None:
     pick_schema = {"type": "object", "properties": {"pick": {"type": "integer", "description": "Number of the article about "
                    "the same story as the owner's words; 0 if none is"}}, "required": ["pick"], "additionalProperties": False}
     try:
-        n = fun.claude_json("Pick the news article that is about the SAME story the owner means.",
+        n = retry_ai(lambda: fun.claude_json("Pick the news article that is about the SAME story the owner means.",
                             f"The story: {text}\n\nArticles:\n" + "\n".join(f"{i}. ({a['site']}) {a['title']}"
                                                                            for i, a in enumerate(arts, 1)),
-                            pick_schema, g.CONFIG.get("membership_model", "sonnet"), purpose="topic article pick")["pick"]
-    except Exception:
-        n = 1
+                            pick_schema, g.CONFIG.get("membership_model", "sonnet"), purpose="topic article pick"))["pick"]
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit" or fun.LIMIT_SEEN:
+            raise
+        print(f"  ! couldn't confirm which article is about your story ({str(e)[:80]}): none used, no guessing")
+        return None
     if not 1 <= n <= len(arts):
         print("  no article is about that exact story")
         return None
@@ -703,6 +743,11 @@ def make_reel(raw: str) -> int:
     except Exception as e:
         if fun.LIMIT_SEEN:
             raise
+        if article is None:   # no real story behind the words: a normal post would just be the owner's own sentence
+            print(f"  ! Reel not made ({str(e)[:200]}) and no article: not making a post from the words")
+            failed(f"The Reel couldn't be made ({str(e)[:130]}) and no story was found behind your words, so nothing was made. "
+                   "Send the story link or clearer words.")
+            return 0
         print(f"  ! Reel not made ({str(e)[:200]}): making a normal post instead.")
         FALLBACK.append(f"Reel not possible: {str(e)[:150]}")
         note("Reel not possible: making a normal post instead", 3)
