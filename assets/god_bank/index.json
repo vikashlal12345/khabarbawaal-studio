@@ -123,5 +123,30 @@
     }
    ]
   }
+ ],
+ "hanuman-ji": [
+  {
+   "date": "2026-10-27",
+   "family": "Hanuman",
+   "last_used": "",
+   "images": [
+    {
+     "file": "hanuman-ji-2026-10-27-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.23
+     ]
+    },
+    {
+     "file": "hanuman-ji-2026-10-27-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.25
+     ]
+    }
+   ]
+  }
  ]
 }

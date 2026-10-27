@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_devotion-2026-10-27",
+  "image": "posts/20261027-0032-reel_devotion-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-003233-reel_devotion-2026-10-27.mp4",
+  "headline": "Tuesday: Hanuman ji: Subah ki pehli kiran... Hanuman Chalisa ka ek naam kaafi hai",
+  "tag": "🎬 REEL · 🙏 JAI HANUMAN",
+  "caption": "Hanuman Chalisa ke saath Mangalvaar shuru karo 🙏\nMann ko shanti, ghar ko sukoon.\nBajrangbali sabka bhala karein.\nJai Bajrangbali likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#hanumanchalisa #bajrangbali #mangalvaar #jaihanuman #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Ghar ke sabse bade ko bhejo 🙏",
+  "songs": [
+   {
+    "title": "Shree Hanuman Chalisa",
+    "artist": "Hariharan, Lalit Sen",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa",
+    "artist": "Anup Jalota",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa (From \"Hanuman Chalisa - Zee Music Devotional\")",
+    "artist": "Anup Jalota, Sanjeev-Ajay",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa (Lofi)",
+    "artist": "Rasraj Ji Maharaj",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-27T00:32:33+00:00"
+ },
+ {
   "id": "reel_official-2026-10-26",
   "image": "posts/20261026-1504-reel_official-2026-10-26.jpg",
   "kind": "reel",
@@ -525,27 +570,5 @@
    "fixed": []
   },
   "created_at": "2026-10-26T00:33:34+00:00"
- },
- {
-  "id": "reel_official-2026-10-25",
-  "image": "posts/20261025-1550-reel_official-2026-10-25.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261025-155004-reel_official-2026-10-25.mp4",
-  "headline": "AAJ KA KADAK BAYAN · Poora video dekhein",
-  "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI) · 🎥🔊 SPEAKER VIDEO",
-  "caption": "@Tejasvi_Surya ne ye video share kiya:\nWhen Congress cannot challenge PM Modi Ji’s track record, it resorts to personal attacks.\n\nIndeed shameful that Congress Party National President Mallikarjun Kharge to use such derogatory language and drag Modi Ji's fath\n\nAap kya sochte ho? Comment karo 👇\n\nVideo + voice: posted by @Tejasvi_Surya on X\nFollow @khabarbawaal: roz raat 9 baje neta ka kadak bayan 🇮🇳\n\n#india #trending #reelsindia #viral #tejasvisurya",
-  "source": "@Tejasvi_Surya on X",
-  "source_url": "https://x.com/Tejasvi_Surya/status/2114374820439970106",
-  "pin_comment": "Kisi dost ko bhejo 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "fixed": [],
-   "issues": [
-    "⚙️ AUTO MODE: Claude's limit was reached. The video posted by a leader's X account is used as it is (the speaker may be someone else, so the headline names nobody), with no subtitles: please watch it before posting (no AI checked it)."
-   ]
-  },
-  "created_at": "2026-10-25T15:50:04+00:00"
  }
 ]
