@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_early-2026-10-27",
+  "image": "posts/20261027-0233-reel_news_early-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-023337-reel_news_early-2026-10-27.mp4",
+  "headline": "Twisha case: HC reserves order on Giribala bail plea",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Twisha Sharma case Giribala Singh bail plea 😔\nMP High Court ne purva sessions judge Giribala Singh ki bail yachika par order reserve kiya\nCase model Twisha Sharma ki aatmahatya se juda hai\nAb sabki nazar court ke faisle par hai\nKya sach saamne aana chahiye? HAAN likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#twishasharma #madhyapradesh #breakingnews #indianews #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
+  "pin_comment": "Is khabar ko un doston ko bhejo jo yeh case follow kar rahe hain 👇 HAAN likho",
+  "songs": [
+   {
+    "title": "Chhod Diya",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "sad, serious tone"
+   },
+   {
+    "title": "Khat",
+    "artist": "Navjot Ahuja",
+    "lang": "hindi",
+    "mood": "emotional, calm"
+   },
+   {
+    "title": "Just Give Me a Reason (feat. Nate Ruess)",
+    "artist": "P!nk, Nate Ruess",
+    "lang": "english",
+    "mood": "questions, seriousness"
+   },
+   {
+    "title": "Lies (feat. Lana Del Rey)",
+    "artist": "Zach Bryan & Lana Del Rey",
+    "lang": "english",
+    "mood": "truth awaited, somber"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "removed weak photo slide(s) [3]"
+   ]
+  },
+  "created_at": "2026-10-27T02:33:37+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-27",
   "image": "posts/20261027-0032-reel_devotion-2026-10-27.jpg",
   "kind": "reel",
@@ -476,99 +523,5 @@
    "fixed": []
   },
   "created_at": "2026-10-26T04:33:00+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-26",
-  "image": "posts/20261026-0232-reel_news_early-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-023219-reel_news_early-2026-10-26.mp4",
-  "headline": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Virat Kohli Anushka Sharma Krishna Das concert Mumbai 🙏\n\nVirat aur Anushka Mumbai mein American musician Krishna Das ke devotional kirtan concert mein pahunche.\nDono bhakti ki dhun mein doobe dikhe.\nDono ke videos aur photos social media par vaayral ho rahe hain.\n\nVirat-Anushka ki ye jodi aapko kaisi lagti hai? Haan ya Na? Comment karo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#viratkohli #anushkasharma #virushka #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
-  "pin_comment": "Kisi Virat-Anushka fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional kirtan vibe, calm"
-   },
-   {
-    "title": "Soulmate",
-    "artist": "Badshah, Arijit Singh",
-    "lang": "hindi",
-    "mood": "couple goals, romantic"
-   },
-   {
-    "title": "Just Give Me a Reason (feat. Nate Ruess)",
-    "artist": "P!nk, Nate Ruess",
-    "lang": "english",
-    "mood": "power couple, love story"
-   },
-   {
-    "title": "Girls Like You",
-    "artist": "Maroon 5",
-    "lang": "english",
-    "mood": "sweet couple moment"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't say fans like this side; it says videos and photos are doing the rounds on social media."
-   ],
-   "fixed": [
-    "Fans ko ye simple, shaant side bahut pasand aa rahi hai. → Dono ke videos aur photos social media par vaayral ho rahe hain."
-   ]
-  },
-  "created_at": "2026-10-26T02:32:19+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-26",
-  "image": "posts/20261026-0033-reel_devotion-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-003334-reel_devotion-2026-10-26.mp4",
-  "headline": "Maharishi Valmiki Jayanti: Adikavi ko pranam... Valmiki Jayanti ka aashirwaad aapke ghar aaye",
-  "tag": "🎬 REEL · 🙏 VALMIKI JAYANTI",
-  "caption": "Valmiki Jayanti par Adikavi Maharishi Valmiki ko pranam 🙏\nUnki Ramayan ne sadiyon ko raasta dikhaya.\nAaj kisi apne ko meethi baat zaroor kehna.\nJai Shri Ram likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#valmikijayanti #adikavi #ramayana #jaishriram #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Ye blessing us ko bhejo jo aapko rasta dikhata hai 🙏",
-  "songs": [
-   {
-    "title": "Raghunandan Raghav Ram Hare",
-    "artist": "Hariharan",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Shree Ram",
-    "artist": "Shekhar Astitwa, Vikram Montrose",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Ramayan Chaupai",
-    "artist": "Navin Tripathi",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Shri Ram Chandra Kripalu Bhajuman",
-    "artist": "Vipin Aneja, Amjad Nadeem Aamir",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-26T00:33:34+00:00"
  }
 ]
