@@ -194,7 +194,8 @@
   "78dc66f330af",
   "c9ba348031ef",
   "cd644c0f8c38",
-  "66b7bbd6de63"
+  "66b7bbd6de63",
+  "80ae0712b029"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -343,10 +344,10 @@
   "reel_news_early": "2026-10-27",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-27",
-  "reel_break_noon": "2026-10-26",
+  "reel_break_noon": "2026-10-27",
   "reel_break_aft": "2026-10-26"
  },
- "inbox_since": "3W0IO2gfUZx1",
+ "inbox_since": "vR5hccbnyw1a",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -786,7 +787,8 @@
   "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
   "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
   "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
-  "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/"
+  "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
+  "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -961,10 +963,6 @@
   }
  ],
  "songs_recent": [
-  "Barsaat",
-  "Bairan",
-  "Levitating",
-  "Under The Influence",
   "Lae Dooba by Sunidhi Chauhan",
   "Zara Zara",
   "Iris",
@@ -1000,7 +998,11 @@
   "Pal Pal Dil Ke Paas - Title Track",
   "Samjhawan",
   "Sailor Song",
-  "I Think They Call This Love (Cover)"
+  "I Think They Call This Love (Cover)",
+  "Heeriye (feat. Arijit Singh)",
+  "Zaalima",
+  "Blinding Lights",
+  "All The Stars"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1096,6 +1098,10 @@
   },
   {
    "title": "Saif Ali Khan and Vidya Balan reunite for Ritesh Batra’s Long Years Ago; Mélanie Laurent joins cast",
+   "date": "2026-10-27"
+  },
+  {
+   "title": "King new poster out: Shah Rukh Khan plays a ‘lover’ again at 60",
    "date": "2026-10-27"
   }
  ],

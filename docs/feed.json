@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_noon-2026-10-27",
+  "image": "posts/20261027-0832-reel_break_noon-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-083254-reel_break_noon-2026-10-27.mp4",
+  "headline": "King new poster out: Shah Rukh Khan plays a ‘lover’ again at 60",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Shah Rukh Khan King new poster out, Qaatil nahi Aashiq hoon\nSRK ne King ka naya poster share kiya: aag ke beech gun aur munh mein rose.\nFilm 24 December 2026 ko cinemas mein aayegi, Siddharth Anand ka direction.\nCast mein Suhana Khan, Deepika Padukone, Abhishek Bachchan, Rani Mukerji.\nSRK ka lover look pasand aaya? HAAN ya NA likho 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #king #srk #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
+  "pin_comment": "Poster pasand aaya toh HAAN likho. Kisi SRK fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Heeriye (feat. Arijit Singh)",
+    "artist": "Jasleen Royal, Arijit Singh",
+    "lang": "hindi",
+    "mood": "SRK romantic lover vibe"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "classic SRK romance feel"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "stylish hype for star poster"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "star-studded cast = big reveal"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-27T08:32:54+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-27",
   "image": "posts/20261027-0633-reel_news_am-2026-10-27.jpg",
   "kind": "reel",
@@ -482,50 +527,5 @@
   },
   "request": "Create one reel of RSS 101 YEARS. Video of RSS members walking and doing their parade",
   "created_at": "2026-10-26T09:21:58+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-26",
-  "image": "posts/20261026-0832-reel_break_noon-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-083230-reel_break_noon-2026-10-26.mp4",
-  "headline": "Madhoo is in love with Rashmika Mandanna owning her South Indian accent on Koffee With Karan; recalls being judged for it in Bollywood",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Madhoo Rashmika Mandanna accent Koffee With Karan\nMadhoo ne Rashmika ke accent own karne ki tareef ki\nBollywood mein accent chhupane ke liye unhone bahut mehnat ki\nMadhoo bolin: Rashmika, great power to you, girl\nAccent par judge karna galat hai? HAAN ya NA likho 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #rashmikamandanna #madhoo #koffeewithkaran #bollywood",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
-  "pin_comment": "Accent par judge karna galat? HAAN ya NA likho. Kisi Rashmika fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "calm confident reply vibe"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "sassy attitude = accent jawab"
-   },
-   {
-    "title": "the cure",
-    "artist": "Olivia Rodrigo",
-    "lang": "english",
-    "mood": "owning yourself, chart hit"
-   },
-   {
-    "title": "Nicole Kidman",
-    "artist": "ADÉLA",
-    "lang": "english",
-    "mood": "bold star energy"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-26T08:32:30+00:00"
  }
 ]
