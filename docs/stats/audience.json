@@ -1,8 +1,8 @@
 {
- "summary": "From our last 137 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  BACHPAN ME AISA KAUN KIYA (0), REEL  WORLD (0). Formats: reel 2, custom 2, top10 2, fun 2, news 2, calendar 2, ready 1, thought 1, market 1. Lean toward what works, keep some variety.",
- "posts": 137,
- "likes": 250,
- "updated": "2026-10-26T22:30:43+00:00",
+ "summary": "From our last 124 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  WORLD (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 2, fun 2, top10 2, news 2, custom 2, thought 2, calendar 2, ready 1, market 1. Lean toward what works, keep some variety.",
+ "posts": 124,
+ "likes": 231,
+ "updated": "2026-10-27T22:31:02+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -17,20 +17,16 @@
    4.0
   ],
   [
-   "REEL 23  MEME",
+   "REEL 33  NEWS SLIDESHOW",
    3.0
   ],
   [
-   "REEL 33  NEWS SLIDESHOW",
+   "REEL 23  MEME",
    3.0
   ],
   [
    "REEL  MEME",
    2.8
-  ],
-  [
-   "TECH",
-   2.5
   ],
   [
    "MOOD",
@@ -41,15 +37,11 @@
    2.25
   ],
   [
-   "BHAGWAN KA SAATH",
-   2.0
-  ],
-  [
    "TOP 5 NEWS",
-   2.0
+   2.25
   ],
   [
-   "WEB SERIES",
+   "TAG KARO",
    2.0
   ],
   [
@@ -57,7 +49,15 @@
    2.0
   ],
   [
+   "BHAGWAN KA SAATH",
+   2.0
+  ],
+  [
    "EXPECTATION VS REALITY",
+   2.0
+  ],
+  [
+   "WEB SERIES",
    2.0
   ],
   [
@@ -65,28 +65,24 @@
    2.0
   ],
   [
-   "TAG KARO",
-   2.0
-  ],
-  [
-   "VIRAL",
-   1.8461538461538463
-  ],
-  [
    "POLITICS",
-   1.7692307692307692
+   1.9
+  ],
+  [
+   "TECH",
+   1.8
   ],
   [
    "REEL  REALITY CHECK",
    1.75
   ],
   [
-   "BOLLYWOOD",
-   1.75
-  ],
-  [
    "REEL  TAG THAT FRIEND",
    1.6923076923076923
+  ],
+  [
+   "BOLLYWOOD",
+   1.6666666666666667
   ],
   [
    "GITA GYAAN",
@@ -97,11 +93,23 @@
    1.6666666666666667
   ],
   [
+   "VIRAL",
+   1.6363636363636365
+  ],
+  [
+   "THOUGHT OF THE DAY",
+   1.5
+  ],
+  [
    "BREAKING",
    1.5
   ],
   [
-   "AMAZING FACTS",
+   "MARKET BRIEF",
+   1.5
+  ],
+  [
+   "ON THIS DAY",
    1.3333333333333333
   ],
   [
@@ -109,39 +117,11 @@
    1.3333333333333333
   ],
   [
-   "ON THIS DAY",
+   "AMAZING FACTS",
    1.3333333333333333
   ],
   [
-   "MARKET BRIEF",
-   1.3333333333333333
-  ],
-  [
-   "THOUGHT OF THE DAY",
-   1.3333333333333333
-  ],
-  [
-   "REEL  INDIA",
-   1.0
-  ],
-  [
-   "PREOPEN",
-   1.0
-  ],
-  [
-   "REEL  RAAT KI TOP 5",
-   1.0
-  ],
-  [
-   "QUIZ",
-   1.0
-  ],
-  [
-   "EXPLAINER",
-   1.0
-  ],
-  [
-   "DELHI",
+   "REEL  TOP 5 NEWS",
    1.0
   ],
   [
@@ -149,11 +129,7 @@
    1.0
   ],
   [
-   "REEL  TOP 5 NEWS",
-   1.0
-  ],
-  [
-   "FAMILY GROUP",
+   "REEL  RAAT KI TOP 5",
    1.0
   ],
   [
@@ -161,7 +137,27 @@
    1.0
   ],
   [
+   "EXPLAINER",
+   1.0
+  ],
+  [
    "RELATABLE",
+   1.0
+  ],
+  [
+   "QUIZ",
+   1.0
+  ],
+  [
+   "REEL  INDIA",
+   1.0
+  ],
+  [
+   "DELHI",
+   1.0
+  ],
+  [
+   "PREOPEN",
    1.0
   ],
   [
@@ -169,11 +165,11 @@
    0.0
   ],
   [
-   "REEL  BACHPAN ME AISA KAUN KIYA",
+   "REEL  WORLD",
    0.0
   ],
   [
-   "REEL  WORLD",
+   "REEL  BACHPAN ME AISA KAUN KIYA",
    0.0
   ]
  ],
@@ -183,20 +179,24 @@
    2.3488372093023258
   ],
   [
-   "custom",
-   2.25
+   "fun",
+   2.0
   ],
   [
    "top10",
-   1.8888888888888888
-  ],
-  [
-   "fun",
-   1.8333333333333333
+   2.0
   ],
   [
    "news",
-   1.7837837837837838
+   1.7333333333333334
+  ],
+  [
+   "custom",
+   1.7142857142857142
+  ],
+  [
+   "thought",
+   1.5
   ],
   [
    "calendar",
@@ -207,12 +207,8 @@
    1.380952380952381
   ],
   [
-   "thought",
-   1.3333333333333333
-  ],
-  [
    "market",
-   1.125
+   1.1666666666666667
   ]
  ]
 }
