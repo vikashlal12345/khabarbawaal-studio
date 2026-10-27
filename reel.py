@@ -2988,7 +2988,10 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
                               "Read tool. The best cover stops a scroll: a sharp close-up of the main person with a clear "
                               "face and strong emotion, bright and high contrast, tall or square, showing the story's "
                               "star (the best-known, most recognisable face; an actress, or an actor and actress together, beats "
-                              "an unknown person; a soft, blurry or low-resolution face is never the cover); never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
+                              "an unknown person; when the story is about a model, actress, influencer or other glamorous young person "
+                              "(even as the victim or the person at the centre of a case), HER photo is the cover, never a lawyer, "
+                              "judge, official, relative or elderly person standing in for the story (owner 27 Oct 2026: a lawyer was "
+                              "the cover of a model's case Reel and it got few views); a soft, blurry or low-resolution face is never the cover); never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
                               "shows injuries, bandages, blood, a hospital, handcuffs, weapons or another event than the story "
                               "(it would suggest facts the story does not state).",
                               f"The story: {about}\nPhotos: " + ", ".join(f"photo{n}.jpg" for n in range(1, min(len(photos), 6) + 1)),
@@ -3060,7 +3063,8 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
         res = fun.claude_json(
             "You write the opening line of a short Instagram news Reel for young Indians (Hinglish, English letters, no "
             "emojis, 4-9 words). The owner's best hooks: 'Salman ne Karisma ke saath shoot se mana kiya', 'Kriti Sanon ka "
-            "palatwaar', 'Tiger Shroff firing: Kota mein teeno aaropi pakde gaye'. Biggest name FIRST, then the shock, "
+            "palatwaar', 'Tiger Shroff firing: Kota mein teeno aaropi pakde gaye'. Biggest name FIRST (a model, actress or "
+            "influencer at the centre of a case comes before her lawyer, relatives or officials), then the shock, "
             "twist or new development; a fact from the story only; concrete, never vague ('Ye dekh ke hairan reh jaoge' is "
             "bad). WHO DOES WHAT: when someone accuses, criticises or quotes someone else, the hook must make clear who "
             "says it and who it is about; never put a harsh word (terrorism, gaddar, fraud, ...) next to a name that is "
