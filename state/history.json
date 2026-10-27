@@ -197,7 +197,8 @@
   "66b7bbd6de63",
   "80ae0712b029",
   "85313dd62688",
-  "34eec6a0b1d5"
+  "34eec6a0b1d5",
+  "a6870efbdb82"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -347,9 +348,9 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-27",
   "reel_break_noon": "2026-10-27",
-  "reel_break_aft": "2026-10-26"
+  "reel_break_aft": "2026-10-27"
  },
- "inbox_since": "2x4oW16uWxfT",
+ "inbox_since": "D62UUJR7LdS7",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -792,7 +793,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
   "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
+  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -967,10 +969,6 @@
   }
  ],
  "songs_recent": [
-  "Tabaahi (From \"Toxic\")",
-  "Gehra Hua",
-  "BbY WOW",
-  "Espresso",
   "Madhosh",
   "Peek A Boo",
   "APT.",
@@ -1006,7 +1004,11 @@
   "Jo Tum Mere Ho",
   "Teri Meri Kahaani",
   "Let Me Down Slowly",
-  "Iris"
+  "Iris",
+  "Chaleya",
+  "Shararat",
+  "Beauty And A Beat",
+  "Woman"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1114,6 +1116,10 @@
   },
   {
    "title": "Janhvi Kapoor says Shikhar Pahariya took break from studies in London and moved to Juhu to be near her after Sridevi’s death",
+   "date": "2026-10-27"
+  },
+  {
+   "title": "Shah Rukh Khan and Kareena Kapoor Khan to recreate 'Chammak Challo'-style energy for King song: Report",
    "date": "2026-10-27"
   }
  ],

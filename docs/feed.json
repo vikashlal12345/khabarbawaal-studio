@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_break_aft-2026-10-27",
+  "image": "posts/20261027-1419-reel_break_aft-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-141930-reel_break_aft-2026-10-27.mp4",
+  "headline": "Shah Rukh Khan and Kareena Kapoor Khan to recreate 'Chammak Challo'-style energy for King song: Report",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Shah Rukh Khan Kareena Kapoor King dance number Chammak Challo\nReport ke mutabiq Kareena King mein Shah Rukh ke saath special song karengi.\nShooting Mumbai mein 27 October se, choreographer Vaibhavi Merchant. Official confirmation abhi nahi.\nChammak Challo wali jodi hit? HAAN ya NA likho 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#shahrukhkhan #kareenakapoor #king #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
+  "pin_comment": "HAAN ya NA likho. Kisi Shah Rukh fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Chaleya",
+    "artist": "Anirudh Ravichander, Arijit Singh",
+    "lang": "hindi",
+    "mood": "SRK romance hype"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "dance number vibe"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "glam dance energy"
+   },
+   {
+    "title": "Woman",
+    "artist": "Doja Cat",
+    "lang": "english",
+    "mood": "Kareena swag"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Shoot date is only reported/expected in the article, so it must be attributed.",
+    "Fact corrected to match the article: Choreographer's role is also only reported, not officially confirmed; attribute it."
+   ],
+   "fixed": [
+    "Song ki shooting Mumbai mein 27 October se hogi → Report ke mutabiq song ki shooting Mumbai mein 27 October se hogi",
+    "Choreographer Vaibhavi Merchant sequence sambhalengi → Report ke mutabiq choreographer Vaibhavi Merchant sequence sambhalengi"
+   ]
+  },
+  "created_at": "2026-10-27T14:19:30+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-27",
   "image": "posts/20261027-1238-reel_politics-2026-10-27.jpg",
   "kind": "reel",
@@ -367,155 +418,5 @@
    "fixed": []
   },
   "created_at": "2026-10-26T15:04:47+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-26",
-  "image": "posts/20261026-1419-reel_break_aft-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-141925-reel_break_aft-2026-10-26.mp4",
-  "headline": "Kriti Sanon, Varun Dhawan reunite with Bhediya director Amar Kaushik, tease fans with ‘Obsessed’ post",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Kriti Sanon Varun Dhawan Amar Kaushik reunion Obsessed post Bhediya\nKriti ne Varun aur Amar Kaushik ke saath video share kiya 🎬\nCaption: \"An unexpected reunion that will get you 'Obsessed'! Stay Tuned!!\"\nNaye project ki koi official confirmation nahi hai.\nKya ye naya project hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #kritisanon #varundhawan #bhediya #bollywoodnews",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
-  "pin_comment": "Naya project aa raha hai toh HAAN likho, nahi toh NA. Kisi Varun Dhawan fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Madhosh",
-    "artist": "Tanishk Bagchi, Arslan Nizami",
-    "lang": "hindi",
-    "mood": "obsessed vibe, jodi ka tease"
-   },
-   {
-    "title": "Peek A Boo",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "peekaboo = tease for fans"
-   },
-   {
-    "title": "APT.",
-    "artist": "Rosé, Bruno Mars",
-    "lang": "english",
-    "mood": "fun hype reunion"
-   },
-   {
-    "title": "Señorita",
-    "artist": "Shawn Mendes, Camila Cabello",
-    "lang": "english",
-    "mood": "jodi ka romantic touch"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "Naye film ki officially koi confirmation nahi → Nayi film ki officially koi confirmation nahi"
-   ]
-  },
-  "created_at": "2026-10-26T14:19:25+00:00"
- },
- {
-  "id": "reel_politics-2026-10-26",
-  "image": "posts/20261026-1341-reel_politics-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-134106-reel_politics-2026-10-26.mp4",
-  "headline": "Kriti Sanon, Varun Dhawan wolf howl as they reunite with Bhediya director Amar Kaushik; fans wonder if sequel is underway",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Kriti Sanon Varun Dhawan Amar Kaushik reunion Bhediya sequel 🐺\nKriti aur Varun ne Bhediya director Amar Kaushik ke saath reunion kiya.\nKriti ne wolf howl wala 'Obsessed' video share kiya, Varun ne repost kiya.\nFans ko lag raha hai Bhediya sequel ki taiyaari hai, par kuch confirm nahi hua.\nBhediya 2 chahiye? HAAN ya NA likho 👇 🔥\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kritisanon #varundhawan #bhediya #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
-  "pin_comment": "Kisi Bhediya fan ko bhejo 👇 Sequel chahiye toh HAAN, nahi toh NA likho",
-  "songs": [
-   {
-    "title": "Akhiyaan Gulaab",
-    "artist": "Mitraz",
-    "lang": "hindi",
-    "mood": "romantic jodi vibe, reunion"
-   },
-   {
-    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
-    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
-    "lang": "hindi",
-    "mood": "Bollywood jodi, fun energy"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "trending global, fresh energy"
-   },
-   {
-    "title": "Loser",
-    "artist": "Tame Impala",
-    "lang": "english",
-    "mood": "moody howl, mystery tease"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Quote must match Kriti's actual words",
-    "Fact corrected to match the article: Article says Kriti shared the video and Varun reposted it",
-    "Slide 4: The 'Photo: Bollywood Hungama' credit at bottom left runs into the @khabarbawaal handle text, so they slightly overlap and crowd each other."
-   ],
-   "fixed": [
-    "'Unexpected reunion that will get you Obsessed! Stay Tuned!!' → 'An unexpected reunion that will get you 'Obsessed'! Stay Tuned!!'",
-    "Dono ne wolf howl wala 'Obsessed' post daala. → Kriti ne wolf howl wala 'Obsessed' video share kiya, Varun ne repost kiya."
-   ]
-  },
-  "created_at": "2026-10-26T13:41:06+00:00"
- },
- {
-  "id": "reel_politics-2026-10-26",
-  "image": "posts/20261026-1326-reel_politics-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-132640-reel_politics-2026-10-26.mp4",
-  "headline": "Raveena Tandon turns 54: When she cleaned studio floors as an intern, rejected films with Shah Rukh Khan, Ajay Devgn",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Raveena Tandon birthday 54 Shah Rukh Khan Ajay Devgn films rejected 🎂\nIntern thi tab studio ka farsh saaf kiya.\nDarr, Prem Qaidi, Phool Aur Kaante mana ki.\nDebut Salman Khan ke saath Patthar Ke Phool mein.\nRaveena ka 90s ka jalwa best tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#raveenatandon #salmankhan #shahrukhkhan #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
-  "pin_comment": "Kisi 90s ke fan ko bhejo 👇 Raveena best thi? HAAN / NA",
-  "songs": [
-   {
-    "title": "Lae Dooba by Sunidhi Chauhan",
-    "artist": "Rochak Kohli, Manoj Muntashir",
-    "lang": "hindi",
-    "mood": "retro star comeback energy"
-   },
-   {
-    "title": "Zara Zara",
-    "artist": "Omkar Singh",
-    "lang": "hindi",
-    "mood": "nostalgic birthday feel"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "nostalgia 90s feels"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "classic celebration vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Original wording was unclear. Per the article, Darr starred Juhi Chawla, Shah Rukh Khan and Sunny Deol."
-   ],
-   "fixed": [
-    "removed weak photo slide(s) [3]",
-    "Uncomfortable scenes ki wajah se Darr, Prem Qaidi aur Ajay Devgn ki Phool Aur Kaante ठुकराई. → Uncomfortable scenes ki wajah se Darr, Prem Qaidi aur Ajay Devgn ki Phool Aur Kaante mana ki.",
-    "Darr pehle unhe offer hui, Juhi Chawla ne ki. → Darr pehle unhe offer hui, baad mein film mein Juhi Chawla thin."
-   ]
-  },
-  "created_at": "2026-10-26T13:26:40+00:00"
  }
 ]
