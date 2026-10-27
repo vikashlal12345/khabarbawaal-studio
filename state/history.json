@@ -195,7 +195,8 @@
   "c9ba348031ef",
   "cd644c0f8c38",
   "66b7bbd6de63",
-  "80ae0712b029"
+  "80ae0712b029",
+  "85313dd62688"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -332,7 +333,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-27",
-  "reel_news_pm": "2026-10-26",
+  "reel_news_pm": "2026-10-27",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-27",
@@ -347,7 +348,7 @@
   "reel_break_noon": "2026-10-27",
   "reel_break_aft": "2026-10-26"
  },
- "inbox_since": "vR5hccbnyw1a",
+ "inbox_since": "St5YRY3RuZRh",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -788,7 +789,8 @@
   "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
   "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
   "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
-  "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -963,10 +965,6 @@
   }
  ],
  "songs_recent": [
-  "Lae Dooba by Sunidhi Chauhan",
-  "Zara Zara",
-  "Iris",
-  "Die With A Smile",
   "Akhiyaan Gulaab",
   "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
   "Housewife",
@@ -1002,7 +1000,11 @@
   "Heeriye (feat. Arijit Singh)",
   "Zaalima",
   "Blinding Lights",
-  "All The Stars"
+  "All The Stars",
+  "Tu Hi Disda (From \"Bhooth Bangla\")",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "All The Stars",
+  "Show Me Love"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1102,6 +1104,10 @@
   },
   {
    "title": "King new poster out: Shah Rukh Khan plays a ‘lover’ again at 60",
+   "date": "2026-10-27"
+  },
+  {
+   "title": "Shah Rukh's 'King' poster sparks online debate, netizens draw parallels with 'Dhurandhar 2'",
    "date": "2026-10-27"
   }
  ],

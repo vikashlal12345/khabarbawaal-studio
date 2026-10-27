@@ -1,5 +1,53 @@
 [
  {
+  "id": "reel_news_pm-2026-10-27",
+  "image": "posts/20261027-1034-reel_news_pm-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-103404-reel_news_pm-2026-10-27.mp4",
+  "headline": "Shah Rukh's 'King' poster sparks online debate, netizens draw parallels with 'Dhurandhar 2'",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Shah Rukh Khan King poster Dhurandhar 2 comparison 🔥\nKing ke naye poster ne online behas chhed di hai.\nNetizens poster ki tulna Dhurandhar 2 se kar rahe hain.\nKya SRK ka poster dhamaka hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #king #srk #bollywoodnews #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
+  "pin_comment": "Kisi SRK fan ko bhejo 👇 Poster pasand aaya? HAAN ya NA likho",
+  "songs": [
+   {
+    "title": "Tu Hi Disda (From \"Bhooth Bangla\")",
+    "artist": "Pritam, Arijit Singh",
+    "lang": "hindi",
+    "mood": "romantic king-of-romance vibe"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "Dhurandhar comparison = same energy"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "superstar poster feel"
+   },
+   {
+    "title": "Show Me Love",
+    "artist": "WizTheMc, bees & honey",
+    "lang": "english",
+    "mood": "romantic lover-boy angle"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "chheD → chhed",
+    "trol hua → troll hua"
+   ]
+  },
+  "created_at": "2026-10-27T10:34:04+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-27",
   "image": "posts/20261027-0832-reel_break_noon-2026-10-27.jpg",
   "kind": "reel",
@@ -424,108 +472,5 @@
    ]
   },
   "created_at": "2026-10-26T13:26:40+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-26",
-  "image": "posts/20261026-1033-reel_news_pm-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-103338-reel_news_pm-2026-10-26.mp4",
-  "headline": "Nick Jonas shares sweet family moments with Priyanka Chopra, daughter Malti Marie runs to hug him backstage",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Priyanka Chopra Nick Jonas Malti Marie family photos 🥹\nNick Jonas ne concert ke cozy family moments share kiye\nNick ne beti Malti ko goad mein uthaya\nSabse cute moment kaunsa laga? Sahi mein pyaara hai toh HAAN likho, nahi toh NA 👇❤️\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#priyankachopra #nickjonas #bollywood #viral #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
-  "pin_comment": "Kisi Priyanka fan ko bhejo 👇 Cute laga toh HAAN likho",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "family love, soft romantic vibe"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "couple moment, romantic"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "romantic couple, happy feel"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "dreamy cosy family moment"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says Nick picked up his daughter; it doesn't say she ran and hugged him backstage",
-    "Fact corrected to match the article: Running to papa is not in the article; it says Nick picked up Malti",
-    "Fact corrected to match the article: Article says Nick picked up Malti; no running or backstage hug is mentioned",
-    "Fact corrected to match the article: Article describes an Instagram photo carousel, not a video"
-   ],
-   "fixed": [
-    "Nick Jonas ki beti Malti backstage daud kar lipti → Nick Jonas ne beti Malti ko goad mein uthaya",
-    "Papa ko dekhte hi daudna, yeh feeling sabse pyaari hai → Papa ki goad mein beti, yeh feeling sabse pyaari hai",
-    "Backstage Malti daudkar papa se lipat gayi → Nick ne beti Malti ko goad mein uthaya",
-    "backstage video → family photos"
-   ]
-  },
-  "created_at": "2026-10-26T10:33:38+00:00"
- },
- {
-  "id": "cf08033f6142",
-  "image": "posts/20261026-0921-cf08033f6142.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261026-092158-cf08033f6142.mp4",
-  "headline": "Create one reel of RSS 101 YEARS. Video of RSS members walking and doing their parade",
-  "tag": "🎬 REEL · INDIA",
-  "caption": "RSS 101 years: swayamsevakon ka path sanchalan dekhke josh high 🇮🇳 RSS ki sthapna 1925 mein Nagpur mein Dr. K.B. Hedgewar ne ki thi. Ab sangathan 101 saal ka ho chuka hai. Path sanchalan mein swayamsevak ek line mein ganvesh pehne chalte dikhe. Aap kya kehte ho, yeh anushasan dekhne layak hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#RSS #RSS101 #India #reelsindia #PathSanchalan",
-  "source": "Your pick",
-  "source_url": "",
-  "pin_comment": "Kisi swayamsevak ya desh premi dost ko bhejo 👇 Anushasan sahi laga? HAAN / NA",
-  "songs": [
-   {
-    "title": "Dhurandhar - Title Track",
-    "artist": "Shashwat Sachdev, Hanumankind",
-    "lang": "hindi",
-    "mood": "damdaar beat = parade ka josh"
-   },
-   {
-    "title": "Ala Bolelo",
-    "artist": "Anirudh Ravichander, Arunraja Kamaraj",
-    "lang": "hindi",
-    "mood": "high energy marching vibe"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "epic, grand feel for 101 saal"
-   },
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "heavy hype for march scenes"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The big headline text sits over the faces of the swayamsevaks in the middle of the photo. The '@khabarbawaal' handle also overlaps the 'Photo: Wikimedia Commons' credit at the bottom."
-   ],
-   "fixed": []
-  },
-  "request": "Create one reel of RSS 101 YEARS. Video of RSS members walking and doing their parade",
-  "created_at": "2026-10-26T09:21:58+00:00"
  }
 ]
