@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-10-27",
+  "image": "posts/20261027-0633-reel_news_am-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-063352-reel_news_am-2026-10-27.mp4",
+  "headline": "Saif Ali Khan and Vidya Balan reunite for Ritesh Batra’s Long Years Ago; Mélanie Laurent joins cast",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Saif Ali Khan Vidya Balan Long Years Ago Ritesh Batra 🎬\nParineeta aur Eklavya ke baad Saif aur Vidya phir saath.\nRitesh Batra ki Long Years Ago mein saath aayenge.\nMélanie Laurent bhi cast mein shamil.\nYeh jodi dekhne ko excited ho? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#saifalikhan #vidyabalan #bollywood #longyearsago #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
+  "pin_comment": "Parineeta ke fan ko bhejo 👇 HAAN ya NA comment karo",
+  "songs": [
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "retro romantic reunion"
+   },
+   {
+    "title": "Samjhawan",
+    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
+    "lang": "hindi",
+    "mood": "nostalgic jodi comeback"
+   },
+   {
+    "title": "Sailor Song",
+    "artist": "Gigi Perez",
+    "lang": "english",
+    "mood": "soft nostalgic love"
+   },
+   {
+    "title": "I Think They Call This Love (Cover)",
+    "artist": "Matthew Ifield",
+    "lang": "english",
+    "mood": "gentle reunion romance"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo credit 'Photo: Bollywood Hungama' at the bottom left runs into the '@khabarbawaal' handle, so the two overlap slightly. Move or shorten one of them."
+   ],
+   "fixed": [
+    "Ritesh Batra ki Long Years Ago mein aayengi. → Ritesh Batra ki Long Years Ago mein saath aayenge."
+   ]
+  },
+  "created_at": "2026-10-27T06:33:52+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-27",
   "image": "posts/20261027-0432-reel_break_am-2026-10-27.jpg",
   "kind": "reel",
@@ -478,95 +527,5 @@
    "fixed": []
   },
   "created_at": "2026-10-26T08:32:30+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-26",
-  "image": "posts/20261026-0632-reel_news_am-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-063240-reel_news_am-2026-10-26.mp4",
-  "headline": "Govinda claims someone is influencing Sunita Ahuja amid cheating allegations, says he's always had a ‘bad reputation’",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Govinda Sunita Ahuja cheating allegations latest 🔥\nSunita ne infidelity ke aarop lagaye the.\nGovinda ka jawab: koi Sunita ko influence kar raha hai.\nUnhone ye bhi kaha ki unki 'bad reputation' hamesha rahi hai.\nGovinda ki baat sahi lagti hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#govinda #sunitaahuja #bollywood #bollywoodnews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
-  "pin_comment": "Kisi Govinda fan ko bhejo 👇 Aapka vote: HAAN ya NA",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "rishte ki dooriyan, emotional"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "do logon ki kahaani"
-   },
-   {
-    "title": "expectations (feat. Chappell Roan)",
-    "artist": "Olivia Rodrigo, Chappell Roan",
-    "lang": "english",
-    "mood": "toote bharose ka mood"
-   },
-   {
-    "title": "Stop The Wedding!",
-    "artist": "Ashe",
-    "lang": "english",
-    "mood": "drama ka perfect vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-26T06:32:40+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-26",
-  "image": "posts/20261026-0433-reel_break_am-2026-10-26.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261026-043300-reel_break_am-2026-10-26.mp4",
-  "headline": "Diljit Dosanjh hints at Koffee With Karan 9 appearance, says he will do only one interview this year",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Diljit Dosanjh Koffee With Karan 9 hint, sirf ek interview is saal\nInstagram Live par Diljit ne surprise ka vaada kiya\nBole: is saal sirf ek interview karunga\nShow ka naam nahi liya, abhi confirm nahi hua\nDiljit KWK 9 mein aayenge? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #diljitdosanjh #koffeewithkaran #karanjohar #bollywood",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
-  "pin_comment": "Aapko kya lagta hai, aayenge? HAAN ya NA. Kisi Diljit fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ashke",
-    "artist": "Karan Aujla & MXRCI",
-    "lang": "hindi",
-    "mood": "Punjabi swag = Diljit vibe"
-   },
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "top chart, big-news energy"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "hype for a big reveal"
-   },
-   {
-    "title": "Beauty And A Beat",
-    "artist": "Justin Bieber, Nicki Minaj",
-    "lang": "english",
-    "mood": "party show vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-26T04:33:00+00:00"
  }
 ]

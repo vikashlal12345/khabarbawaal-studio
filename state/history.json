@@ -193,7 +193,8 @@
   "34c6bac175a6",
   "78dc66f330af",
   "c9ba348031ef",
-  "cd644c0f8c38"
+  "cd644c0f8c38",
+  "66b7bbd6de63"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -333,7 +334,7 @@
   "reel_news_pm": "2026-10-26",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-26",
+  "reel_news_am": "2026-10-27",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -345,7 +346,7 @@
   "reel_break_noon": "2026-10-26",
   "reel_break_aft": "2026-10-26"
  },
- "inbox_since": "sBJGjs6c6Oux",
+ "inbox_since": "3W0IO2gfUZx1",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -784,7 +785,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
   "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
   "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
-  "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/"
+  "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
+  "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -959,10 +961,6 @@
   }
  ],
  "songs_recent": [
-  "Tera Hoke Rahoon",
-  "Zaalima",
-  "Die With A Smile",
-  "Heat Waves",
   "Barsaat",
   "Bairan",
   "Levitating",
@@ -998,7 +996,11 @@
   "Pehle Bhi Main",
   "Soulmate",
   "Janice STFU",
-  "Beggin'"
+  "Beggin'",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Samjhawan",
+  "Sailor Song",
+  "I Think They Call This Love (Cover)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1090,6 +1092,10 @@
   },
   {
    "title": "Vijay Deverakonda and Rashmika Mandanna’s team files cyber crime complaint in Hyderabad over alleged fake claims and online harassment",
+   "date": "2026-10-27"
+  },
+  {
+   "title": "Saif Ali Khan and Vidya Balan reunite for Ritesh Batra’s Long Years Ago; Mélanie Laurent joins cast",
    "date": "2026-10-27"
   }
  ],
