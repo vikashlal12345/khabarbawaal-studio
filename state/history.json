@@ -192,7 +192,8 @@
   "fe87c35fbf11",
   "34c6bac175a6",
   "78dc66f330af",
-  "c9ba348031ef"
+  "c9ba348031ef",
+  "cd644c0f8c38"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -340,11 +341,11 @@
   "reel_official": "2026-10-26",
   "reel_news_early": "2026-10-27",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-26",
+  "reel_break_am": "2026-10-27",
   "reel_break_noon": "2026-10-26",
   "reel_break_aft": "2026-10-26"
  },
- "inbox_since": "uFCSKNIaRFj4",
+ "inbox_since": "sBJGjs6c6Oux",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -782,7 +783,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
   "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
   "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
-  "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html"
+  "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
+  "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -957,10 +959,6 @@
   }
  ],
  "songs_recent": [
-  "Dhurandhar - Title Track",
-  "Ala Bolelo",
-  "All The Stars",
-  "Big Dawgs",
   "Tera Hoke Rahoon",
   "Zaalima",
   "Die With A Smile",
@@ -996,7 +994,11 @@
   "Chhod Diya",
   "Khat",
   "Just Give Me a Reason (feat. Nate Ruess)",
-  "Lies (feat. Lana Del Rey)"
+  "Lies (feat. Lana Del Rey)",
+  "Pehle Bhi Main",
+  "Soulmate",
+  "Janice STFU",
+  "Beggin'"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1084,6 +1086,10 @@
   },
   {
    "title": "Twisha case: HC reserves order on Giribala bail plea",
+   "date": "2026-10-27"
+  },
+  {
+   "title": "Vijay Deverakonda and Rashmika Mandanna’s team files cyber crime complaint in Hyderabad over alleged fake claims and online harassment",
    "date": "2026-10-27"
   }
  ],
