@@ -1,13 +1,6 @@
 {
- "2026-09-21": {
-  "replies": 104,
-  "input": 208,
-  "output": 52687,
-  "cache_read": 93133313,
-  "cache_write": 925940
- },
  "2026-09-22": {
-  "replies": 140,
+  "replies": 139,
   "input": 278,
   "output": 57120,
   "cache_read": 36890043,
@@ -161,10 +154,17 @@
   "cache_write": 710648
  },
  "2026-10-26": {
-  "replies": 298,
-  "input": 604,
-  "output": 256970,
-  "cache_read": 101894222,
-  "cache_write": 3038012
+  "replies": 316,
+  "input": 644,
+  "output": 262961,
+  "cache_read": 103438532,
+  "cache_write": 3050179
+ },
+ "2026-10-27": {
+  "replies": 18,
+  "input": 36,
+  "output": 6629,
+  "cache_read": 1723386,
+  "cache_write": 169803
  }
 }
