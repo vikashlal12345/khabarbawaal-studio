@@ -216,6 +216,7 @@ def handle_tag(frame: Image.Image, y: int, fill="#FFFFFF", stroke=3) -> None:
 
 
 HOOK_SECS, FOLLOW_SECS, COVER_SECS = 1.8, 1.5, 2.2
+NEWS_COVER_SECS, NEWS_PHOTO_SECS = 3.0, 5.5   # news Reels (owner 27 Oct 2026: the cover could not be read; photo frames 5.5 s)
 
 
 def hook_layer(text: str, highlight: set[str]) -> Image.Image:
@@ -621,7 +622,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = min(8.5, max(4.0, read_secs(text, 2.5)))
+        per = NEWS_PHOTO_SECS
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
@@ -647,10 +648,10 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         # hook_video = (path, start, secs): the official video plays under the line instead (🎥 10 PM Reel)
         stills = video_stills(*hook_video) if hook_video else None
         still = hook_photo if hook_photo is not None else next((x[0] for x in slides if not x[3]), slides[0][0])
-        for i in range(int((hook_video[2] if hook_video else COVER_SECS) * FPS)):
+        for i in range(int((hook_video[2] if hook_video else NEWS_COVER_SECS) * FPS)):
             still = next(stills, still) if stills else still
             frame = hook_frame(still, layer, i / FPS) if hook_video else \
-                cover_hook_frame(still, hook, tag, f"Photo: {slides[0][1]}" if slides[0][1] else "", i / FPS, dur=COVER_SECS)
+                cover_hook_frame(still, hook, tag, f"Photo: {slides[0][1]}" if slides[0][1] else "", i / FPS, dur=NEWS_COVER_SECS)
             if i == int(0.6 * FPS):
                 hook_check.append(frame.convert("RGB"))
             enc.add(frame)
