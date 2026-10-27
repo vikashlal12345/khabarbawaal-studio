@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_official-2026-10-27",
+  "image": "posts/20261027-1455-reel_official-2026-10-27.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261027-145559-reel_official-2026-10-27.mp4",
+  "headline": "SEEDHA VAAR · Nadda ka Congress aur INDI par tanz",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "JP Nadda Congress INDI Alliance Rahul Gandhi vote chori par tanz 🇮🇳\nBJP neta JP Nadda ne X par likha ki Congress aur uske neta pratipaksh ek abodh balak ki tarah vyavahar karte hain.\nUnke mutabik jaise school ka bachcha galti se pass ho jaye toh khud ko hoshiyar kehta hai, aur fail ho toh master ko kharab bolta hai, INDI Alliance bhi aisa hi karta hai.\nINDI bloc ke saansad 'vote chori' ke virodh mein Parliament se Rashtrapati Bhavan tak march nikaal chuke hain. Jeet par khushi, haar par system ko dosh: kya yahi double standard hai?\nSehmat ho toh YES, nahi toh NO likho 👇\n\nVideo + voice: @JPNadda on X\n\nFollow @khabarbawaal: roz raat 8:15 baje neta ka kadak bayan 🇮🇳\nSource: India Blooms (link pinned in comments 👇)\n\n#JPNadda #BJP #INDIAlliance #SaveDemocracyRemoveAnarchy #reelsindia",
+  "source": "India Blooms",
+  "source_url": "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
+  "pin_comment": "Sehmat ho toh YES, nahi toh NO likho. Ye message sabko bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Sam Dam Dand Bhed",
+    "artist": "Kailash Kher",
+    "lang": "hindi",
+    "mood": "seedha vaar, play it low"
+   },
+   {
+    "title": "Dhurandhar Title Track",
+    "artist": "Shashwat Sachdev",
+    "lang": "hindi",
+    "mood": "attack mode, intense"
+   },
+   {
+    "title": "Toofan (KGF Chapter 2)",
+    "artist": "Ravi Basrur",
+    "lang": "hindi",
+    "mood": "heavy, powerful build"
+   },
+   {
+    "title": "Aarambh Hai Prachand (Gulaal)",
+    "artist": "Piyush Mishra",
+    "lang": "hindi",
+    "mood": "fiery, loud political energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article does not give Nadda's current post; adhyaksh title unsupported",
+    "Fact corrected to match the article: Article does not say Nadda's post came right after the march; timing link unsupported"
+   ],
+   "fixed": [
+    "uske netaa pratipaksh → uske neta pratipaksh",
+    "BJP adhyaksh JP Nadda → BJP neta JP Nadda",
+    "Ye bayan tab aaya jab INDI bloc ke saansad 'vote chori' ke virodh mein Rashtrapati Bhavan tak march kar chuke hain. → INDI bloc ke saansad 'vote chori' ke virodh mein Parliament se Rashtrapati Bhavan tak march nikaal chuke hain."
+   ]
+  },
+  "created_at": "2026-10-27T14:55:59+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-10-27",
   "image": "posts/20261027-1419-reel_break_aft-2026-10-27.jpg",
   "kind": "reel",
