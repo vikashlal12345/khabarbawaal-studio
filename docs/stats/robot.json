@@ -7983,6 +7983,37 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "reel_devotion": {
+   "posts": 0,
+   "requests": 5,
+   "input": 14,
+   "output": 3529,
+   "cache_read": 5834,
+   "cache_write": 82576,
+   "value_usd": 0.3662,
+   "by_purpose": {
+    "devotion plan": {
+     "requests": 1,
+     "tokens": 24726
+    },
+    "flux pick": {
+     "requests": 1,
+     "tokens": 7897
+    },
+    "devotion writing": {
+     "requests": 1,
+     "tokens": 24722
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 23479
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 11129
+    }
+   }
   }
  }
 }
