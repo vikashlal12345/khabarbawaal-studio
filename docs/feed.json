@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_official-2026-10-28",
+  "image": "posts/20261028-1457-reel_official-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-145717-reel_official-2026-10-28.mp4",
+  "headline": "SEEDHA VAAR! · Nadda ka Congress par kadak hamla",
+  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+  "caption": "JP Nadda Congress Kharge PM Modi father remark 🇮🇳\nBJP neta JP Nadda ne X par kaha ki Congress ka rajnitik diwaliyapan saamne aa chuka hai. Unke mutabik teen din pehle Congress adhyaksh Mallikarjun Kharge ne PM Modi ke swargiya pita ke baare mein jo tippani ki, woh behad durbhagyapurn hai.\nNadda ne yaad dilaya ki janta ne Congress ko pehle bhi jawab diya hai. Kya PM ke swargiya pita par tippani sahi thi? 🤔\nSehmat ho toh YES, nahi toh NO likho 👇\n\nVideo + voice: @JPNadda on X\n\nFollow @khabarbawaal: roz raat 8:15 baje neta ka kadak bayan 🇮🇳\nSource: thenewsmill.com (link pinned in comments 👇)\n\n#jpnadda #bjp #narendramodi #congress #reelsindia",
+  "source": "thenewsmill.com",
+  "source_url": "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
+  "pin_comment": "Sehmat ho toh YES, nahi toh NO likho. Ye message sabko bhejo 🇮🇳",
+  "songs": [
+   {
+    "title": "Sam Dam Dand Bhed",
+    "artist": "Kailash Kher",
+    "lang": "hindi",
+    "mood": "attack mode, play it low"
+   },
+   {
+    "title": "Dhurandhar Title Track",
+    "artist": "Shashwat Sachdev",
+    "lang": "hindi",
+    "mood": "heavy, powerful political punch"
+   },
+   {
+    "title": "Toofan (KGF Chapter 2)",
+    "artist": "Ravi Basrur",
+    "lang": "hindi",
+    "mood": "storm of anger, intense"
+   },
+   {
+    "title": "Aarambh Hai Prachand (Gulaal)",
+    "artist": "Piyush Mishra",
+    "lang": "hindi",
+    "mood": "fiery, loud call-out energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article doesn't give Nadda the title of BJP president, and he may no longer hold that post. His title is unsupported, so use a neutral description."
+   ],
+   "fixed": [
+    "BJP adhyaksh JP Nadda → BJP neta JP Nadda"
+   ]
+  },
+  "created_at": "2026-10-28T14:57:17+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-10-28",
   "image": "posts/20261028-1419-reel_break_aft-2026-10-28.jpg",
   "kind": "reel",
@@ -392,108 +441,5 @@
    "fixed": []
   },
   "created_at": "2026-10-28T00:33:28+00:00"
- },
- {
-  "id": "reel_official-2026-10-27",
-  "image": "posts/20261027-1455-reel_official-2026-10-27.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261027-145559-reel_official-2026-10-27.mp4",
-  "headline": "SEEDHA VAAR · Nadda ka Congress aur INDI par tanz",
-  "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
-  "caption": "JP Nadda Congress INDI Alliance Rahul Gandhi vote chori par tanz 🇮🇳\nBJP neta JP Nadda ne X par likha ki Congress aur uske neta pratipaksh ek abodh balak ki tarah vyavahar karte hain.\nUnke mutabik jaise school ka bachcha galti se pass ho jaye toh khud ko hoshiyar kehta hai, aur fail ho toh master ko kharab bolta hai, INDI Alliance bhi aisa hi karta hai.\nINDI bloc ke saansad 'vote chori' ke virodh mein Parliament se Rashtrapati Bhavan tak march nikaal chuke hain. Jeet par khushi, haar par system ko dosh: kya yahi double standard hai?\nSehmat ho toh YES, nahi toh NO likho 👇\n\nVideo + voice: @JPNadda on X\n\nFollow @khabarbawaal: roz raat 8:15 baje neta ka kadak bayan 🇮🇳\nSource: India Blooms (link pinned in comments 👇)\n\n#JPNadda #BJP #INDIAlliance #SaveDemocracyRemoveAnarchy #reelsindia",
-  "source": "India Blooms",
-  "source_url": "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
-  "pin_comment": "Sehmat ho toh YES, nahi toh NO likho. Ye message sabko bhejo 🇮🇳",
-  "songs": [
-   {
-    "title": "Sam Dam Dand Bhed",
-    "artist": "Kailash Kher",
-    "lang": "hindi",
-    "mood": "seedha vaar, play it low"
-   },
-   {
-    "title": "Dhurandhar Title Track",
-    "artist": "Shashwat Sachdev",
-    "lang": "hindi",
-    "mood": "attack mode, intense"
-   },
-   {
-    "title": "Toofan (KGF Chapter 2)",
-    "artist": "Ravi Basrur",
-    "lang": "hindi",
-    "mood": "heavy, powerful build"
-   },
-   {
-    "title": "Aarambh Hai Prachand (Gulaal)",
-    "artist": "Piyush Mishra",
-    "lang": "hindi",
-    "mood": "fiery, loud political energy"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article does not give Nadda's current post; adhyaksh title unsupported",
-    "Fact corrected to match the article: Article does not say Nadda's post came right after the march; timing link unsupported"
-   ],
-   "fixed": [
-    "uske netaa pratipaksh → uske neta pratipaksh",
-    "BJP adhyaksh JP Nadda → BJP neta JP Nadda",
-    "Ye bayan tab aaya jab INDI bloc ke saansad 'vote chori' ke virodh mein Rashtrapati Bhavan tak march kar chuke hain. → INDI bloc ke saansad 'vote chori' ke virodh mein Parliament se Rashtrapati Bhavan tak march nikaal chuke hain."
-   ]
-  },
-  "created_at": "2026-10-27T14:55:59+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-27",
-  "image": "posts/20261027-1419-reel_break_aft-2026-10-27.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261027-141930-reel_break_aft-2026-10-27.mp4",
-  "headline": "Shah Rukh Khan and Kareena Kapoor Khan to recreate 'Chammak Challo'-style energy for King song: Report",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Shah Rukh Khan Kareena Kapoor King dance number Chammak Challo\nReport ke mutabiq Kareena King mein Shah Rukh ke saath special song karengi.\nShooting Mumbai mein 27 October se, choreographer Vaibhavi Merchant. Official confirmation abhi nahi.\nChammak Challo wali jodi hit? HAAN ya NA likho 👇🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#shahrukhkhan #kareenakapoor #king #bollywood #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
-  "pin_comment": "HAAN ya NA likho. Kisi Shah Rukh fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Chaleya",
-    "artist": "Anirudh Ravichander, Arijit Singh",
-    "lang": "hindi",
-    "mood": "SRK romance hype"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "dance number vibe"
-   },
-   {
-    "title": "Beauty And A Beat",
-    "artist": "Justin Bieber, Nicki Minaj",
-    "lang": "english",
-    "mood": "glam dance energy"
-   },
-   {
-    "title": "Woman",
-    "artist": "Doja Cat",
-    "lang": "english",
-    "mood": "Kareena swag"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Shoot date is only reported/expected in the article, so it must be attributed.",
-    "Fact corrected to match the article: Choreographer's role is also only reported, not officially confirmed; attribute it."
-   ],
-   "fixed": [
-    "Song ki shooting Mumbai mein 27 October se hogi → Report ke mutabiq song ki shooting Mumbai mein 27 October se hogi",
-    "Choreographer Vaibhavi Merchant sequence sambhalengi → Report ke mutabiq choreographer Vaibhavi Merchant sequence sambhalengi"
-   ]
-  },
-  "created_at": "2026-10-27T14:19:30+00:00"
  }
 ]
