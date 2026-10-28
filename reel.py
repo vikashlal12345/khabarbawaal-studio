@@ -4195,6 +4195,16 @@ def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = ""
     big = img.resize((int(img.width * k) + 1, int(img.height * k) + 1), Image.BICUBIC)
     x0, y0 = (big.width - RW) // 2, int((big.height - RH) * 0.4)
     frame = big.crop((x0, y0, x0 + RW, y0 + RH)).convert("RGBA")
+    if hook:   # picture 1: the picture sits lower so the huge hook is above the head, never on the face (28 Oct 2026)
+        off = 470
+        kk = RW / img.width * (1.0 + 0.03 * min(1.0, t / max(dur, 0.1)))
+        pic = img.resize((int(img.width * kk) + 1, int(img.height * kk) + 1), Image.BICUBIC)
+        px = (pic.width - RW) // 2
+        top = pic.crop((px, 0, px + RW, 6)).resize((RW, off), Image.BICUBIC).filter(ImageFilter.GaussianBlur(30))
+        frame = Image.new("RGBA", (RW, RH))
+        frame.paste(top, (0, 0))
+        frame.paste(pic.crop((px, 0, px + RW, RH - off)), (0, off))
+        frame = frame.convert("RGBA")
     shade = Image.new("RGBA", (RW, 760), (0, 0, 0, 0))
     sd = ImageDraw.Draw(shade)
     for y in range(760):
