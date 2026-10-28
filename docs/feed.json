@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_break_am-2026-10-28",
+  "image": "posts/20261028-0433-reel_break_am-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-043355-reel_break_am-2026-10-28.mp4",
+  "headline": "Ranbir Kapoor and Sai Pallavi pose with fans, Yash arrives with wife Radhika Pandit at Ramayana's grand world premiere in Los Angeles",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ranbir Kapoor Ramayana world premiere Los Angeles\nRanbir, Sai Pallavi aur Yash red carpet par pahunche.\nFilm ka pehla part 5 November ko release hoga.\nRamayana blockbuster hogi? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #ranbirkapoor #ramayana #saipallavi #yash",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
+  "pin_comment": "Ramayana blockbuster hogi? HAAN ya NA likho. Kisi Ranbir fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "epic romantic film premiere vibe"
+   },
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "trending, star glam moment"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Bruno Mars, Lady Gaga",
+    "lang": "english",
+    "mood": "red carpet glamour"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "trending upbeat celebration"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Photo on slide 1 shows Yash with his wife Radhika Pandit, not Ranbir and Sai Pallavi."
+   ],
+   "fixed": [
+    "Ranbir aur Sai Pallavi Los Angeles red carpet par → Yash aur Radhika Pandit Los Angeles red carpet par"
+   ]
+  },
+  "created_at": "2026-10-28T04:33:55+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-28",
   "image": "posts/20261028-0234-reel_news_early-2026-10-28.jpg",
   "kind": "reel",
@@ -383,50 +432,5 @@
    ]
   },
   "created_at": "2026-10-27T06:33:52+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-27",
-  "image": "posts/20261027-0432-reel_break_am-2026-10-27.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261027-043238-reel_break_am-2026-10-27.mp4",
-  "headline": "Vijay Deverakonda and Rashmika Mandanna’s team files cyber crime complaint in Hyderabad over alleged fake claims and online harassment",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Vijay Deverakonda Rashmika Mandanna cyber crime complaint Hyderabad\nTeam ne KWK Season 9 ke baad fake claims aur online harassment par shikayat ki.\nComplaint manager P. Nishanth Kumar ne di. Team ke mutabiq maqsad criticism rokna nahi hai.\nAbhi koi galti saabit nahi hui hai, jaanch baaki hai.\nSahi kadam? HAAN ya NA likho 👇 🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#vijaydeverakonda #rashmikamandanna #bollywoodnews #koffeewithkaran #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
-  "pin_comment": "Sahi kadam? HAAN ya NA likho. Kisi Vijay-Rashmika fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Pehle Bhi Main",
-    "artist": "Vishal Mishra, Raj Shekhar",
-    "lang": "hindi",
-    "mood": "jodi ke saath khade, soft vibe"
-   },
-   {
-    "title": "Soulmate",
-    "artist": "Badshah, Arijit Singh",
-    "lang": "hindi",
-    "mood": "dono ek saath, romantic tone"
-   },
-   {
-    "title": "Janice STFU",
-    "artist": "Drake",
-    "lang": "english",
-    "mood": "trolls ko jawab, attitude"
-   },
-   {
-    "title": "Beggin'",
-    "artist": "Måneskin",
-    "lang": "english",
-    "mood": "high energy, action wala mood"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-27T04:32:38+00:00"
  }
 ]

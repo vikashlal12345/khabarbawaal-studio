@@ -199,7 +199,8 @@
   "85313dd62688",
   "34eec6a0b1d5",
   "a6870efbdb82",
-  "8af7b5f81fda"
+  "8af7b5f81fda",
+  "8dc801434cc8"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -347,7 +348,7 @@
   "reel_official": "2026-10-27",
   "reel_news_early": "2026-10-28",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-27",
+  "reel_break_am": "2026-10-28",
   "reel_break_noon": "2026-10-27",
   "reel_break_aft": "2026-10-27"
  },
@@ -798,7 +799,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
-  "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html"
+  "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -987,10 +989,6 @@
   }
  ],
  "songs_recent": [
-  "Pehle Bhi Main",
-  "Soulmate",
-  "Janice STFU",
-  "Beggin'",
   "Pal Pal Dil Ke Paas - Title Track",
   "Samjhawan",
   "Sailor Song",
@@ -1026,7 +1024,11 @@
   "Tabaahi (From \"Toxic\")",
   "Alfaaz",
   "The One That Got Away",
-  "stupid song"
+  "stupid song",
+  "Dhun",
+  "Sahiba",
+  "Die With A Smile",
+  "Espresso"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1123,6 +1125,10 @@
   },
   {
    "title": "Captain Smit Machchhar, flydubai crew honoured by UAE President for mid-air heroism",
+   "date": "2026-10-28"
+  },
+  {
+   "title": "Ranbir Kapoor and Sai Pallavi pose with fans, Yash arrives with wife Radhika Pandit at Ramayana's grand world premiere in Los Angeles",
    "date": "2026-10-28"
   }
  ],
