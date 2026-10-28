@@ -201,7 +201,8 @@
   "a6870efbdb82",
   "8af7b5f81fda",
   "8dc801434cc8",
-  "5b2f0b4dbb5c"
+  "5b2f0b4dbb5c",
+  "609943b83895"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -350,10 +351,10 @@
   "reel_news_early": "2026-10-28",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-28",
-  "reel_break_noon": "2026-10-27",
+  "reel_break_noon": "2026-10-28",
   "reel_break_aft": "2026-10-27"
  },
- "inbox_since": "hjSskWQBfV44",
+ "inbox_since": "0k17gvDNwljx",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -722,7 +723,6 @@
   "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
  ],
  "reel_news_used": [
-  "d0cb98ca7bfd",
   "278ba311b65b",
   "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-ajay-devgn-film-nears-500-crore-mohanlal-101791874664425.html",
   "https://www.hindustantimes.com/trending/nasa-releases-artemis-ii-moon-images-why-the-lunar-surface-is-not-just-grey-101791892071453.html",
@@ -801,7 +801,8 @@
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -990,10 +991,6 @@
   }
  ],
  "songs_recent": [
-  "Heeriye (feat. Arijit Singh)",
-  "Zaalima",
-  "Blinding Lights",
-  "All The Stars",
   "Tu Hi Disda (From \"Bhooth Bangla\")",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "All The Stars",
@@ -1029,7 +1026,11 @@
   "Dhun",
   "Aavan Jaavan (From \"WAR 2\")",
   "Believer",
-  "APT."
+  "APT.",
+  "Ram Siya Ram",
+  "His Aura Hits You",
+  "Levitating",
+  "Heat Waves"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1134,6 +1135,10 @@
   },
   {
    "title": "Yash takes pride in Kannada roots at Ramayana's Los Angeles premiere, Namit Malhotra says film wouldn't have happened without him",
+   "date": "2026-10-28"
+  },
+  {
+   "title": "Ramayana first reactions: Viewers compare Ranbir Kapoor-Yash's film to Lord of the Rings, music receives mixed response",
    "date": "2026-10-28"
   }
  ],
