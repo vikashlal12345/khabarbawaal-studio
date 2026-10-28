@@ -204,7 +204,8 @@
   "5b2f0b4dbb5c",
   "609943b83895",
   "f4268a829154",
-  "395fee2c2209"
+  "395fee2c2209",
+  "cf972ba374be"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -354,7 +355,7 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-28",
   "reel_break_noon": "2026-10-28",
-  "reel_break_aft": "2026-10-27"
+  "reel_break_aft": "2026-10-28"
  },
  "inbox_since": "PtC1tgkguTk6",
  "used_otps": [
@@ -725,7 +726,6 @@
   "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/trending/nasa-releases-artemis-ii-moon-images-why-the-lunar-surface-is-not-just-grey-101791892071453.html",
   "https://www.hindustantimes.com/entertainment/bollywood/randeep-hooda-poses-with-john-cena-shares-unseen-glimpses-of-wife-lin-laishram-daughter-from-sets-of-the-matchbox-movie-sam-hargrave-101791947304461.html",
   "https://www.hindustantimes.com/india-news/muskan-rastogi-lover-sahil-handed-death-penalty-for-navy-officer-saurabh-rajputs-blue-drum-murder-101791975185379.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kangana-ranaut-backs-bittu-tabahi-after-river-he-cleaned-for-8-months-gets-polluted-again-101791974779795.html",
@@ -804,7 +804,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
   "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -993,10 +994,6 @@
   }
  ],
  "songs_recent": [
-  "Chaleya",
-  "Shararat",
-  "Beauty And A Beat",
-  "Woman",
   "Sam Dam Dand Bhed",
   "Dhurandhar Title Track",
   "Toofan (KGF Chapter 2)",
@@ -1032,7 +1029,11 @@
   "Narayan Mil Jayega",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Blinding Lights",
-  "Calm Down"
+  "Calm Down",
+  "Heeriye (feat. Arijit Singh)",
+  "Zaalima",
+  "All The Stars",
+  "Iris"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1149,6 +1150,10 @@
   },
   {
    "title": "‘Ravana is not all bad’: Sai Pallavi says key takeaway from Ramayana is to spot the Ravana in us and make changes over time",
+   "date": "2026-10-28"
+  },
+  {
+   "title": "Ranbir Kapoor meets content creator on California streets a day after Ramayana premiere, shares simple success advice",
    "date": "2026-10-28"
   }
  ],

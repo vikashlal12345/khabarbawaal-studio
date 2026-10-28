@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_break_aft-2026-10-28",
+  "image": "posts/20261028-1419-reel_break_aft-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-141901-reel_break_aft-2026-10-28.mp4",
+  "headline": "Ranbir Kapoor meets content creator on California streets a day after Ramayana premiere, shares simple success advice",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ranbir Kapoor Beverly Hills fan video Ramayana premiere\nPeter Fouaad ne Ranbir se sadak par mulakat ka video share kiya.\nRanbir ki advice: \"Just work hard and be a good person.\"\nNext film mein chhota role maangne par bole: \"Of course.\"\nRanbir ki advice sahi lagi? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #bollywood #viral #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
+  "pin_comment": "Ranbir ki advice pe HAAN ya NA likho. Kisi Ranbir fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Heeriye (feat. Arijit Singh)",
+    "artist": "Jasleen Royal, Arijit Singh",
+    "lang": "hindi",
+    "mood": "calm, warm celebrity street moment"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "Ranbir charm, soft romantic vibe"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "star power after big premiere"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "gentle fan meeting moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say the meeting was one day after the premiere; it only says he was in LA for the premiere.",
+    "Fact corrected to match the article: \"Of course\" was Ranbir's reply to Peter asking for a small role in his next film, not a comment on his role in Ramayana."
+   ],
+   "fixed": [
+    "Ramayana premiere ke ek din baad Ranbir Beverly Hills mein mile → Ramayana premiere ke liye Los Angeles mein the Ranbir, Beverly Hills mein mile",
+    "Role ki baat par bole: \"Of course.\" → Next film mein chhota role maangne par bole: \"Of course.\""
+   ]
+  },
+  "created_at": "2026-10-28T14:19:01+00:00"
+ },
+ {
   "id": "reel_politics-2026-10-28",
   "image": "posts/20261028-1253-reel_politics-2026-10-28.jpg",
   "kind": "reel",
