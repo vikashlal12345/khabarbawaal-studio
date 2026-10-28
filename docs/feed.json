@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_early-2026-10-28",
+  "image": "posts/20261028-0234-reel_news_early-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-023419-reel_news_early-2026-10-28.mp4",
+  "headline": "Captain Smit Machchhar, flydubai crew honoured by UAE President for mid-air heroism",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Captain Smit Machchhar flydubai UAE honour 🇮🇳\nUAE President Sheikh Mohamed bin Zayed ne Captain Smit Machchhar aur flydubai crew ko First Class Order of Zayed II diya.\nIs sammaan ki wajah mid-air emergency mein unki bahaduri aur quick action bataya gaya.\nCaptain Smit ko salute banta hai? HAAN ya NA likho 👇 ✈️\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#flydubai #captainsmit #indianpride #uae #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
+  "pin_comment": "Kisi pilot dost ko bhejo 👇 Salute ke liye HAAN comment karo",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "desi pride, hype"
+   },
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "emotional proud moment"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hero rising under pressure"
+   },
+   {
+    "title": "On My Way",
+    "artist": "Alan Walker, Sabrina Carpenter",
+    "lang": "english",
+    "mood": "uplifting flight vibes"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "Is sammaan ki wajah mid-air heroism bataya gaya. → Is sammaan ki wajah mid-air emergency mein unki bahaduri aur quick action bataya gaya."
+   ]
+  },
+  "created_at": "2026-10-28T02:34:19+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-28",
   "image": "posts/20261028-0033-reel_devotion-2026-10-28.jpg",
   "kind": "reel",
@@ -381,52 +428,5 @@
    "fixed": []
   },
   "created_at": "2026-10-27T04:32:38+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-27",
-  "image": "posts/20261027-0233-reel_news_early-2026-10-27.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261027-023337-reel_news_early-2026-10-27.mp4",
-  "headline": "Twisha case: HC reserves order on Giribala bail plea",
-  "tag": "🎬 REEL · INDIA",
-  "caption": "Twisha Sharma case Giribala Singh bail plea 😔\nMP High Court ne purva sessions judge Giribala Singh ki bail yachika par order reserve kiya\nCase model Twisha Sharma ki aatmahatya se juda hai\nAb sabki nazar court ke faisle par hai\nKya sach saamne aana chahiye? HAAN likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#twishasharma #madhyapradesh #breakingnews #indianews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
-  "pin_comment": "Is khabar ko un doston ko bhejo jo yeh case follow kar rahe hain 👇 HAAN likho",
-  "songs": [
-   {
-    "title": "Chhod Diya",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "sad, serious tone"
-   },
-   {
-    "title": "Khat",
-    "artist": "Navjot Ahuja",
-    "lang": "hindi",
-    "mood": "emotional, calm"
-   },
-   {
-    "title": "Just Give Me a Reason (feat. Nate Ruess)",
-    "artist": "P!nk, Nate Ruess",
-    "lang": "english",
-    "mood": "questions, seriousness"
-   },
-   {
-    "title": "Lies (feat. Lana Del Rey)",
-    "artist": "Zach Bryan & Lana Del Rey",
-    "lang": "english",
-    "mood": "truth awaited, somber"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "removed weak photo slide(s) [3]"
-   ]
-  },
-  "created_at": "2026-10-27T02:33:37+00:00"
  }
 ]

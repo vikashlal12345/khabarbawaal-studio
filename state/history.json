@@ -198,7 +198,8 @@
   "80ae0712b029",
   "85313dd62688",
   "34eec6a0b1d5",
-  "a6870efbdb82"
+  "a6870efbdb82",
+  "8af7b5f81fda"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -344,13 +345,13 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-27",
-  "reel_news_early": "2026-10-27",
+  "reel_news_early": "2026-10-28",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-27",
   "reel_break_noon": "2026-10-27",
   "reel_break_aft": "2026-10-27"
  },
- "inbox_since": "AXDSXKL2Wng3",
+ "inbox_since": "M2EviTsTpu2b",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -795,7 +796,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
-  "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details"
+  "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
+  "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -970,10 +972,6 @@
   }
  ],
  "songs_recent": [
-  "Shree Hanuman Chalisa",
-  "Hanuman Chalisa",
-  "Hanuman Chalisa (From \"Hanuman Chalisa - Zee Music Devotional\")",
-  "Hanuman Chalisa (Lofi)",
   "Chhod Diya",
   "Khat",
   "Just Give Me a Reason (feat. Nate Ruess)",
@@ -1009,7 +1007,11 @@
   "Vakratunda Mahakaya (Ganpati Shlok)",
   "Vakrathunda Mahakaya",
   "Ganesh Aarti",
-  "Jai Ganesh Jai Ganesh Deva"
+  "Jai Ganesh Jai Ganesh Deva",
+  "Azadi",
+  "Dhun",
+  "Believer",
+  "On My Way"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1032,30 +1034,6 @@
   "2115093178533687581"
  ],
  "reel_news_recent": [
-  {
-   "title": "Manoj Bajpayee, Neeraj Pandey weren't worried about Ghooskhor Pandat title row affecting Gajab Raat, say they ‘moved away’ quickly | Interview",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Rohit Shetty refers to firing incidents involving him, Tiger Shroff; scolds Bigg Boss 20 contestants for ‘trying to be gangsters’",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Saif Ali Khan attack trial begins, nurse says intruder demanded ₹1 crore, recalls actor overpowering him",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Amitabh Bachchan’s Diwali confession on KBC leaves Ramayana stars Ranbir Kapoor, Sai Pallavi in split",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Tiger Shroff sells Mumbai’s Khar apartment for Rs 9 crores",
-   "date": "2026-10-25"
-  },
-  {
-   "title": "Chick-fil-A made $23.9 billion despite shutting every Sunday. Its CEO says staff well-being matters more than sales",
-   "date": "2026-10-25"
-  },
   {
    "title": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
    "date": "2026-10-26"
@@ -1127,6 +1105,10 @@
   {
    "title": "कांग्रेस पार्टी और उसके नेता प्रतिपक्ष एक अबोध बालक की तरह व्यवहार करते हैं। \n\nजिस तरह स्कूल का कोई बच्चा गलती से पास हो जाता है, तो कहता है",
    "date": "2026-10-27"
+  },
+  {
+   "title": "Captain Smit Machchhar, flydubai crew honoured by UAE President for mid-air heroism",
+   "date": "2026-10-28"
   }
  ],
  "claude_limit": {
