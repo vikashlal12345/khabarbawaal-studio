@@ -4150,7 +4150,8 @@ TOON_STYLE = ("3D animated cartoon caricature in the style of an Indian TV polit
               "watermark, no logos. ")
 TOON_OPTION = {"type": "object", "properties": {
     "feasible": {"type": "boolean", "description": "false if THIS story has no clear, funny contrast / own-goal / U-turn that "
-                 "anyone gets in 20 seconds, or the articles lack the facts: then the other fields can be empty"},
+                 "anyone gets in 20 seconds, or the articles lack the facts: then the other fields can be empty. A mild, fair roast of "
+                 "what someone said or did is enough: say false only when the story has nothing to joke about"},
     "based_on": {"type": "string"}, "issue": {"type": "string", "description": "2-4 words"}, "party": {"type": "string"},
     "hook": {"type": "string", "description": "4-9 words, huge over picture 1: the leader/party first, then the roast. Hinglish, "
              "no emojis, a fact from the story"},
@@ -4162,8 +4163,9 @@ TOON_OPTION = {"type": "object", "properties": {
     "scenes": {"type": "array", "description": "EXACTLY 3 pictures that tell the story: setup, the problem / contradiction, the "
                "twist", "items": {"type": "object", "properties": {
         "paint": {"type": "string", "description": "English, max 45 words, for the painter: who is shown (the characters above, by "
-                  "their look), what they do, their expression, the simple setting. One clear funny moment, at most 2 people, no text "
-                  "anywhere in the picture"},
+                  "their look), what they do, their expression, the simple setting. ONE person per picture (waist up, a simple pose "
+                  "and a big expression: smug, angry, shocked, shrugging, pointing), plain background, no crowds, no props that "
+                  "need exactness (scales, maps, papers, screens, vehicles, buildings with signs), no text anywhere"},
         "line": {"type": "string", "description": "The NARRATOR caption under the picture, max 14 words, Hinglish, no emojis: "
                  "a sharp roast of what the article says happened (a fact or its obvious joke). Never a made-up quote"},
         "fact": {"type": "string", "description": "The fact from the articles this line rests on, max 14 words"}},
@@ -4181,7 +4183,8 @@ TOON_HELP = ("\n\nTHIS Reel is a CARTOON ROAST: a 3-picture 3D cartoon (like Ind
              "a narrator caption (the roast) based on a FACT from the articles; the characters never speak in made-up quotes. Roast "
              "their actions and promises, never looks, family, religion, caste or health. The painter cannot write: NO banners, signs, "
              "maps, posters, screens, buses with boards or anything carrying words in any picture; show only the characters, their "
-             "faces, hands and simple props. If the story has no clear funny contrast, set feasible=false.")
+             "faces, hands and simple props. The free painter also fails on busy scenes: ONE person per picture, a clear pose, a "
+             "plain background; the narrator caption (not the picture) carries the story. If the story has no clear funny contrast, set feasible=false.")
 
 
 def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = "", tag: str = "SATIRE · AI CARTOON") -> Image.Image:
@@ -4272,9 +4275,10 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     def check(ns: list[int]) -> set[int]:
         res = fun.claude_json("You check AI-painted cartoon pictures for a political satire Reel. Open each picture with the Read tool.",
                               "Pictures: " + ", ".join(f"scene{n + 1}.jpg = {best['scenes'][n]['paint'][:160]}" for n in ns) +
-                              ". A picture is OK if it is a clean, friendly 3D cartoon that shows the described moment: faces and hands "
-                              "not broken, no extra limbs, NO text / letters / signs with words anywhere, nothing scary, hateful, "
-                              "religious-symbol-mocking or indecent.", schema, CONFIG.get("membership_model", "sonnet"),
+                              ". A picture is OK if it is a clean, friendly 3D cartoon with about the described person(s) in a clear pose: "
+                              "faces and hands not broken, no extra limbs, NO readable text / letters / signs with words anywhere (tiny "
+                              "unreadable marks are fine), nothing scary, hateful, religious-symbol-mocking or indecent. Do NOT reject "
+                              "because a prop or the exact moment differs from the description: the caption tells the story.", schema, CONFIG.get("membership_model", "sonnet"),
                               purpose="toon check", folder=folder)
         bad = {r["n"] - 1 for r in res["scenes"] if not r["ok"]}
         for r in res["scenes"]:
@@ -4286,17 +4290,28 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
             paint(n)
         except Exception as e:
             print(f"  ! cartoon scene {n + 1} not painted: {str(e)[:100]}")
-    if len(made) < 2:
-        raise RuntimeError("the free painters are busy: cartoon not possible")
-    good = check(sorted(made))
-    for _ in range(2):   # up to two more tries for each rejected picture (stray lettering is the usual fault)
-        for n in sorted(set(made) - good):
+    good = check(sorted(made)) if made else set()   # nothing painted yet (busy): the loop below waits and asks again
+    import time
+    deadline = time.time() + 20 * 60   # the painters allow only ~3 pictures at once, then say busy: wait and ask again
+    for _ in range(3):   # more tries for each rejected or missing picture (stray lettering is the usual fault)
+        todo = [n for n in range(len(best["scenes"][:3])) if n not in good]
+        if not todo or len(good) >= 3:
+            break
+        if len(good) >= 2 and time.time() + 300 > deadline:
+            break
+        for n in todo:
             try:
                 paint(n)
                 if n in check([n]):
                     good.add(n)
             except Exception as e:
                 print(f"  ! cartoon scene {n + 1} repaint failed: {str(e)[:80]}")
+                if "busy" in str(e) and time.time() + 300 < deadline:
+                    import status
+                    status.step("Free AI painters busy: asking again in 5 minutes", 4)
+                    time.sleep(300)
+                    _MODELS_DOWN.clear()
+                    break
         if len(good) >= 3:
             break
     if len(good) < 2:
@@ -4317,7 +4332,7 @@ def make_cartoon_roast_reel(state: dict, feed: list, today: str, tmp: str, stori
     songs = trending_songs(state)
     used = set(state.get("reel_politics_used", []))
     best = story = sources = None
-    for n in picks[:2]:   # the 2 most viral stories at most (the AI budget)
+    for n in picks[:4]:   # the 4 most viral stories at most (the AI budget)
         story = stories[n - 1]
         article = carousel.story_text(story["url"], story["title"]) or story["title"]
         related = [a for a in create_post.bing_articles(story["title"][:90], limit=6) if a["url"] != story["url"]][:3]
