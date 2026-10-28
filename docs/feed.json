@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-10-28",
+  "image": "posts/20261028-0633-reel_news_am-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-063314-reel_news_am-2026-10-28.mp4",
+  "headline": "Yash takes pride in Kannada roots at Ramayana's Los Angeles premiere, Namit Malhotra says film wouldn't have happened without him",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana LA premiere Ranbir Kapoor Yash Namit Malhotra 🎬\nRanbir Kapoor Lord Rama ke roop mein, film 5 November ko worldwide release.\nYash ne Kannada roots pe garv jataya, Namit Malhotra bole film Yash ke bina nahi banti.\nHindi, Tamil, Telugu, Kannada, Malayalam mein aa rahi hai.\nRanbir ka Ram sahi choice hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #Yash #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
+  "pin_comment": "Kisi Ranbir ya Yash fan ko bhejo 👇 HAAN ya NA likho",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "epic devotional vibe for Ram film"
+   },
+   {
+    "title": "Aavan Jaavan (From \"WAR 2\")",
+    "artist": "Pritam, Arijit Singh",
+    "lang": "hindi",
+    "mood": "grand premiere glamour"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "big hype for mega film"
+   },
+   {
+    "title": "APT.",
+    "artist": "Rosé, Bruno Mars",
+    "lang": "english",
+    "mood": "party energy at premiere"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article quote says he hopes the story gives the world a message about India's culture and heritage; 'duniya ko India dikhayenge' is not what he said."
+   ],
+   "fixed": [
+    "duniya ko India dikhayenge. → umeed hai ki yeh duniya ko India ki sanskriti aur virasat ka sandesh dega."
+   ]
+  },
+  "created_at": "2026-10-28T06:33:14+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-28",
   "image": "posts/20261028-0433-reel_break_am-2026-10-28.jpg",
   "kind": "reel",

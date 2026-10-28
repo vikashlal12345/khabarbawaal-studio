@@ -200,7 +200,8 @@
   "34eec6a0b1d5",
   "a6870efbdb82",
   "8af7b5f81fda",
-  "8dc801434cc8"
+  "8dc801434cc8",
+  "5b2f0b4dbb5c"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -340,7 +341,7 @@
   "reel_news_pm": "2026-10-27",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-27",
+  "reel_news_am": "2026-10-28",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -352,7 +353,7 @@
   "reel_break_noon": "2026-10-27",
   "reel_break_aft": "2026-10-27"
  },
- "inbox_since": "LNwlnSzIbn4I",
+ "inbox_since": "hjSskWQBfV44",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -721,7 +722,6 @@
   "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
  ],
  "reel_news_used": [
-  "119d9f27c7b0",
   "d0cb98ca7bfd",
   "278ba311b65b",
   "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-ajay-devgn-film-nears-500-crore-mohanlal-101791874664425.html",
@@ -800,7 +800,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -989,10 +990,6 @@
   }
  ],
  "songs_recent": [
-  "Pal Pal Dil Ke Paas - Title Track",
-  "Samjhawan",
-  "Sailor Song",
-  "I Think They Call This Love (Cover)",
   "Heeriye (feat. Arijit Singh)",
   "Zaalima",
   "Blinding Lights",
@@ -1028,7 +1025,11 @@
   "Dhun",
   "Sahiba",
   "Die With A Smile",
-  "Espresso"
+  "Espresso",
+  "Dhun",
+  "Aavan Jaavan (From \"WAR 2\")",
+  "Believer",
+  "APT."
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1129,6 +1130,10 @@
   },
   {
    "title": "Ranbir Kapoor and Sai Pallavi pose with fans, Yash arrives with wife Radhika Pandit at Ramayana's grand world premiere in Los Angeles",
+   "date": "2026-10-28"
+  },
+  {
+   "title": "Yash takes pride in Kannada roots at Ramayana's Los Angeles premiere, Namit Malhotra says film wouldn't have happened without him",
    "date": "2026-10-28"
   }
  ],
