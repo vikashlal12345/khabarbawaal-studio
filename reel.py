@@ -4156,9 +4156,9 @@ TOON_OPTION = {"type": "object", "properties": {
     "hook": {"type": "string", "description": "4-9 words, huge over picture 1: the leader/party first, then the roast. Hinglish, "
              "no emojis, a fact from the story"},
     "characters": {"type": "array", "description": "1-2 real people in the cartoon, main first", "items": {"type": "object", "properties": {
-        "name": {"type": "string"}, "look": {"type": "string", "description": "English, for the painter: the friendly caricature "
-                 "of this person: clothes and the usual public look (e.g. 'white kurta, short grey beard'); never mocking "
-                 "looks, body, age or health"}},
+        "name": {"type": "string"}, "look": {"type": "string", "description": "English, for the painter: a friendly caricature that people "
+                 "RECOGNISE as this real person: their famous features and usual public clothes (e.g. 'white hair, round glasses, "
+                 "white kurta, grey beard'); never mocking looks, body, age or health"}},
         "required": ["name", "look"], "additionalProperties": False}},
     "scenes": {"type": "array", "description": "EXACTLY 3 pictures that tell the story: setup, the problem / contradiction, the "
                "twist", "items": {"type": "object", "properties": {
@@ -4255,6 +4255,26 @@ def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_
     return shots + [pl.convert("RGB")]
 
 
+PARTY_SYMBOLS = [   # (words in the party / people names, what the painter draws; no letters)
+    (r"bjp|bharatiya janata|nda|modi|shah\b|yogi|nadda", "a small orange-and-green lotus flower badge on his scarf"),
+    (r"congress|inc\b|rahul|kharge|priyanka|sonia", "a small open-palm hand badge on his scarf, palm facing out"),
+    (r"aap\b|aam aadmi|kejriwal|mann\b|atishi", "a small broom badge on his cap or scarf"),
+    (r"tmc|trinamool|mamata|abhishek banerjee", "a small badge of two grass flowers on her shawl"),
+    (r"samajwadi|akhilesh|\bsp\b", "a small bicycle badge on his cap"),
+    (r"rjd|tejashwi|lalu", "a small lantern badge on his scarf"),
+    (r"dmk|stalin|udhayanidhi", "a small rising-sun badge on his shawl"),
+    (r"cpi|left front|communist|vijayan", "a small hammer-sickle-star badge on his shirt"),
+    (r"shiv sena|thackeray|shinde", "a small bow-and-arrow badge on his scarf"),
+    (r"ncp|sharad pawar|ajit pawar", "a small clock badge on his scarf"),
+]
+
+
+def party_symbol(best: dict) -> str:
+    """The party symbol to draw somewhere in a political cartoon (owner 28 Oct 2026), from the party and the characters' names."""
+    text = " ".join([str(best.get("party", ""))] + [str(c.get("name", "")) for c in best.get("characters", [])]).lower()
+    return next((draw for pat, draw in PARTY_SYMBOLS if re.search(pat, text)), "")
+
+
 TEXT_THINGS = re.compile(r"\b(banners?|signs?|signboards?|posters?|placards?|maps?|boards?|newspapers?|headlines?|labels?|flags? with|"
                          r"text|writing|letters?|words?|slogans?|billboards?|screens?|bus(?:es)?|trucks?|license plates?)\b", re.I)
 
@@ -4264,7 +4284,8 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     [(picture, narrator line, model)] for the pictures that passed (at least 2), else raises."""
     import random
     import fun
-    looks = " ".join(f"{c['name']}: {c['look']}." for c in best["characters"][:2])
+    looks = " ".join(f"{c['name']} (a friendly caricature of the real {c['name']}, recognisable as them): {c['look']}." for c in best["characters"][:2])
+    symbol = party_symbol(best)
     folder = os.path.join(tmp, "toon")
     os.makedirs(folder, exist_ok=True)
     made: dict[int, tuple[Image.Image, str]] = {}
@@ -4272,7 +4293,8 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     def paint(n: int) -> None:
         # painters write gibberish on anything that could carry words: take those things out of the scene
         scene = re.sub(r"\s+", " ", TEXT_THINGS.sub("", best['scenes'][n]['paint']))
-        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + " Plain background without any signs, boards or writing."
+        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + " Plain background without any signs, boards or writing." + \
+            (f" Show {symbol}, drawn clearly with no letters." if symbol else "")
         img, model = flux_image(prompt, random.randint(1, 999999))
         made[n] = (img, model)
         thumb = img.copy()
