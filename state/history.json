@@ -203,7 +203,8 @@
   "8dc801434cc8",
   "5b2f0b4dbb5c",
   "609943b83895",
-  "f4268a829154"
+  "f4268a829154",
+  "395fee2c2209"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -335,7 +336,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-19",
   "reel_clip_am": "2026-10-19",
-  "reel_politics": "2026-10-27",
+  "reel_politics": "2026-10-28",
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
@@ -355,7 +356,7 @@
   "reel_break_noon": "2026-10-28",
   "reel_break_aft": "2026-10-27"
  },
- "inbox_since": "sjSOlp9gjZ7A",
+ "inbox_since": "PtC1tgkguTk6",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -724,7 +725,6 @@
   "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/drishyam-3-worldwide-box-office-collection-ajay-devgn-film-nears-500-crore-mohanlal-101791874664425.html",
   "https://www.hindustantimes.com/trending/nasa-releases-artemis-ii-moon-images-why-the-lunar-surface-is-not-just-grey-101791892071453.html",
   "https://www.hindustantimes.com/entertainment/bollywood/randeep-hooda-poses-with-john-cena-shares-unseen-glimpses-of-wife-lin-laishram-daughter-from-sets-of-the-matchbox-movie-sam-hargrave-101791947304461.html",
   "https://www.hindustantimes.com/india-news/muskan-rastogi-lover-sahil-handed-death-penalty-for-navy-officer-saurabh-rajputs-blue-drum-murder-101791975185379.html",
@@ -803,7 +803,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -992,10 +993,6 @@
   }
  ],
  "songs_recent": [
-  "Jo Tum Mere Ho",
-  "Teri Meri Kahaani",
-  "Let Me Down Slowly",
-  "Iris",
   "Chaleya",
   "Shararat",
   "Beauty And A Beat",
@@ -1031,7 +1028,11 @@
   "Ez-Ez",
   "Madhosh",
   "Housewife",
-  "the cure"
+  "the cure",
+  "Narayan Mil Jayega",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Blinding Lights",
+  "Calm Down"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1144,6 +1145,10 @@
   },
   {
    "title": "Radhika Apte slams trolls criticising Alia Bhatt's physique in Alpha, calls out double standards for female actors in action roles",
+   "date": "2026-10-28"
+  },
+  {
+   "title": "‘Ravana is not all bad’: Sai Pallavi says key takeaway from Ramayana is to spot the Ravana in us and make changes over time",
    "date": "2026-10-28"
   }
  ],

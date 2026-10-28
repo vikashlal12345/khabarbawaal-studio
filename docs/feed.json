@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_politics-2026-10-28",
+  "image": "posts/20261028-1253-reel_politics-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-125308-reel_politics-2026-10-28.mp4",
+  "headline": "‘Ravana is not all bad’: Sai Pallavi says key takeaway from Ramayana is to spot the Ravana in us and make changes over time",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sai Pallavi Ramayana Ravana statement 🔥\nRanbir Kapoor, Yash, Sai Pallavi ki Ramayana ka premiere Los Angeles mein hua.\nSai Pallavi ne kaha, film ki badi seekh hai apne andar ka Ravana pehchaan kar waqt ke saath badalna.\nSai Pallavi ki baat sahi lagi? HAAN ya NA likho 👇\n\nVideo: @pallavicanvas on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SaiPallavi #Ramayana #RanbirKapoor #Bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
+  "pin_comment": "Kisi Ramayana fan ko bhejo 👇 Sai Pallavi sahi? HAAN ya NA",
+  "songs": [
+   {
+    "title": "Narayan Mil Jayega",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "devotional vibe = Ramayana seekh"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "intense dramatic Ravana energy"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "epic premiere night glow"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "calm, thoughtful takeaway"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article gives no date (27 October) for the premiere, so the unsupported date is removed.",
+    "Fact corrected to match the article: She said 'Ravana is not all bad', which is not the same as 'not bad at all'."
+   ],
+   "fixed": [
+    "world premiere 27 October ko Los Angeles mein hua → premiere Los Angeles mein hua",
+    "Ravana bilkul bura nahi hai → Ravana poori tarah bura nahi hai",
+    "removed weak photo slide(s) [2]"
+   ]
+  },
+  "created_at": "2026-10-28T12:53:08+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-28",
   "image": "posts/20261028-1034-reel_news_pm-2026-10-28.jpg",
   "kind": "reel",
@@ -392,50 +444,5 @@
    ]
   },
   "created_at": "2026-10-27T14:19:30+00:00"
- },
- {
-  "id": "reel_politics-2026-10-27",
-  "image": "posts/20261027-1238-reel_politics-2026-10-27.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261027-123852-reel_politics-2026-10-27.mp4",
-  "headline": "Janhvi Kapoor says Shikhar Pahariya took break from studies in London and moved to Juhu to be near her after Sridevi’s death",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Janhvi Kapoor Shikhar Pahariya Sridevi Koffee With Karan 💔\nJanhvi ne bataya (report ke mutabik) ki Sridevi ke nidhan ke baad Shikhar ne London mein padhai se break liya.\nWo Juhu shift hue taaki Janhvi ke paas rahein.\nKoffee With Karan par ye baat saamne aayi.\nYe sachcha saath hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#janhvikapoor #shikharpahariya #sridevi #koffeewithkaran #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
-  "pin_comment": "Apne best friend ko bhejo 👇 Sachcha saath? HAAN / NA",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "saath nibhane wala pyaar"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "love story, soft emotion"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "emotional, caring tone"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "deep love, heartfelt"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-27T12:38:52+00:00"
  }
 ]
