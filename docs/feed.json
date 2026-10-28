@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_pm-2026-10-28",
+  "image": "posts/20261028-1034-reel_news_pm-2026-10-28.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261028-103443-reel_news_pm-2026-10-28.mp4",
+  "headline": "Radhika Apte slams trolls criticising Alia Bhatt's physique in Alpha, calls out double standards for female actors in action roles",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Radhika Apte Alia Bhatt Alpha trolls 🔥\nRadhika Apte ne Alia Bhatt ki Alpha mein physique par trolling ki aalochna ki.\nUnhone action roles mein female actors par double standards ka mudda uthaya.\nYeh baat woh apni series Akka (Keerthy Suresh ke saath) ke promotion mein boli.\nRadhika sahi boli? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#aliabhatt #radhikaapte #bollywood #alpha #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
+  "pin_comment": "Kisi Alia fan ko bhejo 👇 Radhika sahi? HAAN ya NA",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "swagger = trolls ko jawab"
+   },
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "glam Alia vibe"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "sassy double standards vibe"
+   },
+   {
+    "title": "the cure",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "trolls ignore, self-love"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Akka is a crime thriller series on Netflix, not a film; Radhika is female so 'boli'.",
+    "Fact corrected to match the article: The text puts a paraphrase inside quotation marks as if it were her exact words; the actual quote is in English and says 'massive paunches'.",
+    "Slide 2: The photo is a collage of three women. The third, on the right, looks like Deepika Padukone, who is not part of the story. Radhika and Alia are both shown, so it is usable, but the extra person is unrelated."
+   ],
+   "fixed": [
+    "Radhika Apte bolin: → Radhika Apte boli:",
+    "apni film Akka (Keerthy Suresh ke saath) ke promotion mein bole. → apni series Akka (Keerthy Suresh ke saath) ke promotion mein boli.",
+    "Radhika Apte boli: \"Action karne wale actors ke paunches hain, Alia bloody fit hai.\" → Radhika Apte ne kaha ki action karne wale hero ke bade paunches hain, jabki Alia bloody fit hai."
+   ]
+  },
+  "created_at": "2026-10-28T10:34:43+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-28",
   "image": "posts/20261028-0834-reel_break_noon-2026-10-28.jpg",
   "kind": "reel",
@@ -384,53 +437,5 @@
    "fixed": []
   },
   "created_at": "2026-10-27T12:38:52+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-27",
-  "image": "posts/20261027-1034-reel_news_pm-2026-10-27.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261027-103404-reel_news_pm-2026-10-27.mp4",
-  "headline": "Shah Rukh's 'King' poster sparks online debate, netizens draw parallels with 'Dhurandhar 2'",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Shah Rukh Khan King poster Dhurandhar 2 comparison 🔥\nKing ke naye poster ne online behas chhed di hai.\nNetizens poster ki tulna Dhurandhar 2 se kar rahe hain.\nKya SRK ka poster dhamaka hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #king #srk #bollywoodnews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
-  "pin_comment": "Kisi SRK fan ko bhejo 👇 Poster pasand aaya? HAAN ya NA likho",
-  "songs": [
-   {
-    "title": "Tu Hi Disda (From \"Bhooth Bangla\")",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "romantic king-of-romance vibe"
-   },
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "Dhurandhar comparison = same energy"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "superstar poster feel"
-   },
-   {
-    "title": "Show Me Love",
-    "artist": "WizTheMc, bees & honey",
-    "lang": "english",
-    "mood": "romantic lover-boy angle"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "chheD → chhed",
-    "trol hua → troll hua"
-   ]
-  },
-  "created_at": "2026-10-27T10:34:04+00:00"
  }
 ]
