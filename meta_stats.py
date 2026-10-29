@@ -51,6 +51,15 @@ def main() -> int:
             host = h
             break
     if not host:
+        if probe:   # explain a refusal: who is the token, what may it do
+            for path, f in (("me", "id,name"), ("me/permissions", ""), ("me/accounts", "id,name,instagram_business_account"),
+                            ("me/assigned_instagram_accounts", "id,username"), (IG_ID, "id"), ("debug_token", "")):
+                p = {"fields": f} if f else {}
+                if path == "debug_token":
+                    p = {"input_token": os.environ["META_IG_TOKEN"]}
+                st, body = get(HOSTS[0], path, p)
+                txt = json.dumps(body, ensure_ascii=False).replace(os.environ["META_IG_TOKEN"], "***")
+                print(f"  {path}: HTTP {st} {txt[:500]}")
         return 1
     print(f"account: @{acc.get('username')} followers={acc.get('followers_count')} media={acc.get('media_count')}")
     st, media = get(host, f"{IG_ID}/media", {"fields": "id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count",
