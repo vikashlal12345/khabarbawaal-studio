@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_aft-2026-10-29",
+  "image": "posts/20261029-1420-reel_break_aft-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-142022-reel_break_aft-2026-10-29.mp4",
+  "headline": "Radhika Apte calls out trolls for double standards over Alia Bhatt’s ‘Alpha’ physique",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Radhika Apte Alia Bhatt Alpha physique trolls double standards 🔥\nRadhika ne kaha: \"Alia is bloody fit\", action karne wale male actors ke paunch par koi kuch nahi bolta.\nAlpha mein 18 saal ka kirdaar nibhane aur action avatar par Alia trolls ka shikaar bani thi.\nRadhika ki Akka 30 October ko Netflix par aa rahi hai.\nApne Alia fan dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: hungamaexpress (link pinned in comments 👇)\n\n#aliabhatt #radhikaapte #bollywood #alpha #reelsindia",
+  "source": "hungamaexpress",
+  "source_url": "https://www.hungamaexpress.com/news/55197-radhika-apte-calls-out-trolls-for-double-standards-over-alia-bhatts-alpha-physique",
+  "pin_comment": "Apne Alia Bhatt fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "action energy = Alpha vibe"
+   },
+   {
+    "title": "Water",
+    "artist": "Diljit Dosanjh, Mixsingh",
+    "lang": "hindi",
+    "mood": "confident clapback mood"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "bold, powerful women energy"
+   },
+   {
+    "title": "PUSH 2 START",
+    "artist": "Tyla",
+    "lang": "english",
+    "mood": "confident female swagger"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "18 saal ki kirdaar nibhane → 18 saal ka kirdaar nibhane"
+   ]
+  },
+  "created_at": "2026-10-29T14:20:22+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-10-29",
   "image": "posts/20261029-1258-reel_news_aft-2026-10-29.jpg",
   "kind": "reel",
@@ -373,56 +420,5 @@
    ]
   },
   "created_at": "2026-10-28T14:57:17+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-28",
-  "image": "posts/20261028-1419-reel_break_aft-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-141901-reel_break_aft-2026-10-28.mp4",
-  "headline": "Ranbir Kapoor meets content creator on California streets a day after Ramayana premiere, shares simple success advice",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ranbir Kapoor Beverly Hills fan video Ramayana premiere\nPeter Fouaad ne Ranbir se sadak par mulakat ka video share kiya.\nRanbir ki advice: \"Just work hard and be a good person.\"\nNext film mein chhota role maangne par bole: \"Of course.\"\nRanbir ki advice sahi lagi? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #bollywood #viral #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
-  "pin_comment": "Ranbir ki advice pe HAAN ya NA likho. Kisi Ranbir fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "calm, warm celebrity street moment"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "Ranbir charm, soft romantic vibe"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "star power after big premiere"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "gentle fan meeting moment"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't say the meeting was one day after the premiere; it only says he was in LA for the premiere.",
-    "Fact corrected to match the article: \"Of course\" was Ranbir's reply to Peter asking for a small role in his next film, not a comment on his role in Ramayana."
-   ],
-   "fixed": [
-    "Ramayana premiere ke ek din baad Ranbir Beverly Hills mein mile → Ramayana premiere ke liye Los Angeles mein the Ranbir, Beverly Hills mein mile",
-    "Role ki baat par bole: \"Of course.\" → Next film mein chhota role maangne par bole: \"Of course.\""
-   ]
-  },
-  "created_at": "2026-10-28T14:19:01+00:00"
  }
 ]

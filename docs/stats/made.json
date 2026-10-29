@@ -405,6 +405,11 @@
    "tag": "🎬 REEL · BOLLYWOOD",
    "at": "2026-10-29T12:58:01+00:00",
    "auto": false
+  },
+  "reel_break_aft-2026-10-29": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-29T14:20:22+00:00",
+   "auto": false
   }
  }
 }
