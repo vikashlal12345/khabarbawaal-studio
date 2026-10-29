@@ -4205,11 +4205,11 @@ def person_badge(photo: Image.Image | None, name: str) -> Image.Image:
         photo = photo.convert("RGB")
         side = min(photo.width, photo.height)
         top = 0 if photo.height > photo.width else (photo.height - side) // 2   # portraits: keep the face (top)
-        sq = photo.crop(((photo.width - side) // 2, top, (photo.width - side) // 2 + side, top + side)).resize((210, 210), Image.LANCZOS)
-        ring = Image.new("RGBA", (226, 226), (0, 0, 0, 0))
-        ImageDraw.Draw(ring).ellipse((0, 0, 225, 225), fill="#FFFFFF")
-        mask = Image.new("L", (210, 210), 0)
-        ImageDraw.Draw(mask).ellipse((0, 0, 209, 209), fill=255)
+        sq = photo.crop(((photo.width - side) // 2, top, (photo.width - side) // 2 + side, top + side)).resize((290, 290), Image.LANCZOS)
+        ring = Image.new("RGBA", (306, 306), (0, 0, 0, 0))
+        ImageDraw.Draw(ring).ellipse((0, 0, 305, 305), fill="#FFFFFF")
+        mask = Image.new("L", (290, 290), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0, 289, 289), fill=255)
         ring.paste(sq, (8, 8), mask)
         parts.append(ring)
     nm = pill(printable(name).upper(), font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(18, 8))
@@ -4262,7 +4262,7 @@ def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = ""
         for j, im in enumerate(line_images(hl, hf, hlh, "#FFFFFF", COVER_PINK, auto_highlight(hook), stroke=9)):
             frame.alpha_composite(im, ((RW - im.width) // 2, 250 + j * hlh))
     frame.alpha_composite(pill(tag, font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(22, 8)), (50, 120))
-    y = 740   # the real people (badges) on the right, between the hook and the caption box
+    y = 700   # the real people (badges) on the right, between the hook and the caption box
     for b in (badges or [])[:2]:
         frame.alpha_composite(b, (RW - b.width - 40, y))
         y += b.height + 24
