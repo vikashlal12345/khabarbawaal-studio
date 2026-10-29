@@ -2994,13 +2994,31 @@ def news_photos(item: dict, opt: dict) -> list[tuple]:
     return [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
 
 
-def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
+def photo_sharpness(im: Image.Image) -> float:
+    """How much real detail a photo has (edge strength at <= 800 px wide). Pixel size alone hides blur: a 1920 px video screenshot
+    with motion blur is soft (28 Oct 2026: the Madhuri Dixit Reel opened on one, owner: 'first image is not clear'). Sharp photos of
+    people score ~40+, soft video frames ~25-32."""
+    from PIL import ImageFilter, ImageStat
+    g = im.convert("L")
+    if g.width > 800:
+        g = g.resize((800, max(1, int(g.height * 800 / g.width))))
+    return ImageStat.Stat(g.filter(ImageFilter.FIND_EDGES)).stddev[0]
+
+
+def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bool = False) -> int:
     """📸 Photo contest (owner, 19 Oct 2026: 'the first image should be very attractive'): the AI looks at the
     candidate photos and picks the cover: a sharp close-up with a clear face or strong emotion that fits the story,
     not a crowd, a collage, a screenshot, or text-heavy. Returns the index (0 if there is one photo or the check fails)."""
     import fun
     if not photos:
         return 0
+    if not _gated and len(photos[:6]) > 1:   # 🔍 real sharpness: soft photos (video screenshots, motion blur) leave the contest when sharper ones exist
+        sc = [photo_sharpness(im) for im in photos[:6]]
+        top = max(sc)
+        keep = [i for i, v in enumerate(sc) if v >= 34 or v >= 0.85 * top]
+        print("  cover sharpness: " + ", ".join(f"{v:.0f}" for v in sc) + (f" -> only photos {[i + 1 for i in keep]} compete" if 0 < len(keep) < len(sc) else ""))
+        if 0 < len(keep) < len(sc):
+            return keep[pick_cover_photo([photos[i] for i in keep], about, tmp, _gated=True)]
     # 🔍 Clarity (owner, 23 Oct 2026: an Aamir Khan cover was soft and got ~300 views): a photo fills the 1080x1920 screen, so a
     # small LANDSCAPE photo is blown up 3x or more. Photos enlarged more than 2.6x only compete when nothing else is sharper.
     scale = lambda im: max(RW / im.width, RH / im.height)
@@ -3031,7 +3049,7 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str) -> int:
                               "Read tool. The best cover stops a scroll: a sharp close-up of the main person with a clear "
                               "face and strong emotion, bright and high contrast, tall or square, showing the story's "
                               "star (the best-known, most recognisable face; an actress, or an actor and actress together, beats "
-                              "an unknown person; when the story is about a model, actress, influencer or other glamorous young person "
+                              "an unknown person; a screenshot taken from a video, or a photo with motion blur or soft focus, is never the cover; when the story is about a model, actress, influencer or other glamorous young person "
                               "(even as the victim or the person at the centre of a case), HER photo is the cover, never a lawyer, "
                               "judge, official, relative or elderly person standing in for the story (owner 27 Oct 2026: a lawyer was "
                               "the cover of a model's case Reel and it got few views); a soft, blurry or low-resolution face is never the cover); never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
