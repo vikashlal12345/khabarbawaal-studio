@@ -23,21 +23,27 @@
    "title": "Copy the Janhvi Kapoor Reel's story style",
    "why": "The Janhvi Kapoor, Sridevi and Koffee With Karan Reel got 6,866 views, 14 shares and 9 saves. That is about 5x the average and the most shares of the week. It was an emotional, personal reveal from a famous family.",
    "change": "In the picker and hook rules for news and breaking slots, favour 'star opens up about family or past' stories (Sridevi, Kapoor, Khan families, Koffee With Karan) over box office or sales stories.",
-   "status": "new"
+   "status": "approved",
+   "decided_at": "2026-10-29T08:03:43+00:00",
+   "applied_at": "2026-10-29T08:03:43+00:00"
   },
   {
    "id": "2026-W44-4",
    "title": "Ask for shares in the last line, not just comments",
    "why": "Out of 41 Reels, most had 0-1 comments and 0 shares. Only 3 Reels got 3 or more shares, and the top one also had the most reach (5,620). Shares are what push a Reel to new people.",
    "change": "Change the pinned comment and last caption line on Bollywood Reels to a share line like 'Apne Janhvi fan dost ko bhejo 👇', with the star's name filled in. Keep the one-word comment question on the card.",
-   "status": "new"
+   "status": "approved",
+   "decided_at": "2026-10-29T08:03:43+00:00",
+   "applied_at": "2026-10-29T08:03:43+00:00"
   },
   {
    "id": "2026-W44-5",
    "title": "Add a small improvement to the 6 AM devotional",
    "why": "The devotional Reels are among the weakest: 128, 136 and 168 views, with only 3.2 to 3.9 seconds watched. Bollywood Reels were watched for 7 to 10 seconds.",
    "change": "Keep the 6 AM Reel exactly as is. Only change its first frame to a bigger, one-line hook with the god's name (like 'Aaj Shani Dev ki kripa kaise payein'), and keep the picture, song and timing unchanged.",
-   "status": "new"
+   "status": "approved",
+   "decided_at": "2026-10-29T08:03:43+00:00",
+   "applied_at": "2026-10-29T08:03:43+00:00"
   }
  ],
  "history": []

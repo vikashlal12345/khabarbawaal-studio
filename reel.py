@@ -785,10 +785,10 @@ NEWS_OPTION = {"type": "object", "properties": {
                  "(\"Aur hum? Uber mein baithke bhi nervous ho jaate hain\") or, for serious news, the punchy takeaway."},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from end_text"},
     "caption": {"type": "string", "description": "Hinglish: hook line with the searchable keywords (names, film/event, "
-                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a ONE-WORD comment vote that takes a side "
-                "('Salman sahi the? HAAN ya NA likho 👇', the words to type in CAPITALS). 1-3 emojis."},
-    "pin_comment": {"type": "string", "description": "Pinned first comment, max 20 words, no hashtags: a short share "
-                    "nudge to the right person, e.g. 'Kisi Salman fan ko bhejo 👇', plus the one-word vote to comment (HAAN / NA)"},
+                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a SHARE line that names the star "
+                "('Apne Janhvi fan dost ko bhejo 👇': shares are what push a Reel to new people; the one-word vote stays on the card). 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Pinned first comment, max 14 words, no hashtags: a share nudge that names the "
+                    "star or the story, e.g. 'Apne Salman fan dost ko bhejo 👇', 'Ye Sridevi ke har fan ko bhejo 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
@@ -2065,7 +2065,9 @@ an official, an institution or a court order (e.g. a Supreme Court order) rank l
 clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names.
 SHARES RULE (owner, 29 Oct 2026, from his shares / saves numbers: a star's family story got 14 shares + 9 saves, a celebrity kirtan 71 likes, \
 an RSS-anniversary story 57 likes): rank HIGHER (1) a famous person's family / relationship / emotional personal-life reveal (a star \
-talking about a parent, a late parent, a spouse, a child, a first meeting, a break-up, a hardship: the Janhvi Kapoor-Sridevi kind); (2) a \
+talking about a parent, a late parent, a spouse, a child, a first meeting, a break-up, a hardship, a Koffee With Karan confession, the Kapoor / \
+Khan / Bachchan / Kumar families: the Janhvi Kapoor-Sridevi kind got 5x our average views, 14 shares and 9 saves, our best Reel of the week; \
+prefer these over box-office numbers, property deals or film-schedule news); (2) a \
 celebrity or cricketer in a devotional / spiritual moment (kirtan, temple visit, aarti, a guru); (3) Hindu-pride and culture stories (RSS, \
 temples, festivals, Sanatan traditions, Indian heritage wins), told with real facts and no hate against any community."""
 
@@ -2183,9 +2185,10 @@ BREAK_OPTION = {"type": "object", "properties": {
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the "
                   "hook, shown in pink"},
     "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (names + event), "
-                "2-3 short fact lines, then the same one-word comment vote as the question ('HAAN ya NA likho 👇'). 1-3 emojis."},
-    "pin_comment": {"type": "string", "description": "Max 20 words, no hashtags: the one-word vote to comment + a share nudge like "
-                    "'Kisi ___ fan ko bhejo 👇'"},
+                "2-3 short fact lines, then a SHARE line that names the star ('Apne Janhvi fan dost ko bhejo 👇': shares push a Reel to new "
+                "people; the one-word vote stays on the card). 1-3 emojis."},
+    "pin_comment": {"type": "string", "description": "Max 14 words, no hashtags: a share nudge that names the star or the story, "
+                    "like 'Apne ___ fan dost ko bhejo 👇'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news search that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person, or empty"},
@@ -5333,10 +5336,12 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         parts, divider, switch, cta_at, total = step_parts(steps, switch_step, lines_of, body, lesson_f, small_gold)
         cta_y, handle_y = 1580, 1660
     else:
-        hook_l = lines_of(hook, body, CREAM)
-        y0 = 1330 - len(hook_l) * 50
-        items = [(y0 + i * int(body.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)]   # 🪝 visible at 0 s
-        end = t + len(hook_l) * gap + read_time(hook)
+        # 29 Oct 2026 (owner approved a weekly suggestion: devotional Reels were watched only ~3.5 s): a SHORT opening line shows BIGGER
+        hook_f = vfont("PlayfairDisplay-Variable.ttf", 96, "Bold") if len(hook.split()) <= 8 else body
+        hook_l = lines_of(hook, hook_f, CREAM)
+        y0 = 1330 - len(hook_l) * int(hook_f.size * 0.71)
+        items = [(y0 + i * int(hook_f.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)]   # 🪝 visible at 0 s
+        end = t + len(hook_l) * gap + max(read_time(hook), 4.6)   # a short hook keeps the old reading time (devotional timing unchanged)
         parts.append((items, end))
         t = end + 0.5 + pause
         items, y = [], 1060
@@ -5692,8 +5697,9 @@ DEVOTION_PLAN = {"type": "object", "properties": {
 
 DEVOTION_OPTION = {"type": "object", "properties": {
     "based_on": {"type": "string"},
-    "hook": {"type": "string", "description": "Morning greeting with feeling, max 11 words, natural pause '...', e.g. "
-             "'Navratri ka pehla din... Maa Shailputri ka aashirwaad aapke ghar aaye'"},
+    "hook": {"type": "string", "description": "The opening line on the first frame, 4-8 words, MUST contain the god's or festival's "
+             "name and a benefit or curiosity that makes people stop and read, warm and reverent, no emoji, e.g. "
+             "'Aaj Shani Dev ki kripa kaise payein', 'Hanuman ji ka aashirwaad aaj aise paayein', 'Navratri ka pehla din: Maa Shailputri'"},
     "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 22 words, "
                "only well-known traditional facts"},
     "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 18 words, people want to save it"},
