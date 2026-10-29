@@ -17,8 +17,7 @@ IG_ID = "17841423915208770"
 HOSTS = ["https://graph.facebook.com/v23.0", "https://graph.instagram.com/v23.0"]
 OUT = "docs/stats/instagram_api.json"
 # newest names first; older apps call 'saves' saved
-METRIC_SETS = ["views,reach,likes,comments,shares,saves,reposts", "views,reach,likes,comments,shares,saves",
-               "views,reach,likes,comments,shares,saved", "reach,likes,comments,shares,saved", "reach,likes,comments,shares"]
+METRIC_SETS = ["views,reach,likes,comments,shares,saved", "reach,likes,comments,shares,saved", "reach,likes,comments,shares"]
 
 
 def get(host: str, path: str, params: dict) -> tuple[int, dict]:
