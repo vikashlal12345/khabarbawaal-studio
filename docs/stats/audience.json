@@ -1,8 +1,8 @@
 {
- "summary": "From our last 101 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL   CHOOSE YOUR (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 2, top10 2, fun 2, calendar 2, custom 2, news 2, thought 2, ready 2, market 1. Lean toward what works, keep some variety.",
- "posts": 101,
- "likes": 200,
- "updated": "2026-10-28T22:31:06+00:00",
+ "summary": "From our last 79 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  WORLD (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: top10 2, fun 2, reel 2, news 2, market 2, custom 2, calendar 2, thought 2, ready 2. Lean toward what works, keep some variety.",
+ "posts": 79,
+ "likes": 172,
+ "updated": "2026-10-29T22:32:17+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -29,23 +29,31 @@
    2.8
   ],
   [
+   "TOP 5 NEWS",
+   2.6666666666666665
+  ],
+  [
    "MOOD",
    2.5
   ],
   [
-   "TOP 5 NEWS",
-   2.25
+   "VIRAL",
+   2.3333333333333335
+  ],
+  [
+   "TECH",
+   2.3333333333333335
   ],
   [
    "REEL   SHUBH NAVRATRI",
    2.25
   ],
   [
-   "RAAT KI 5 KHABREIN",
-   2.0
+   "POLITICS",
+   2.1666666666666665
   ],
   [
-   "TECH",
+   "RAAT KI 5 KHABREIN",
    2.0
   ],
   [
@@ -53,15 +61,7 @@
    2.0
   ],
   [
-   "BHAGWAN KA SAATH",
-   2.0
-  ],
-  [
-   "POLITICS",
-   2.0
-  ],
-  [
-   "WEB SERIES",
+   "AMAZING FACTS",
    2.0
   ],
   [
@@ -69,12 +69,20 @@
    2.0
   ],
   [
-   "BREAKING",
+   "MYTH VS FACT",
    2.0
   ],
   [
-   "BOLLYWOOD",
-   1.75
+   "ON THIS DAY",
+   2.0
+  ],
+  [
+   "THOUGHT OF THE DAY",
+   2.0
+  ],
+  [
+   "BHAGWAN KA SAATH",
+   2.0
   ],
   [
    "REEL  REALITY CHECK",
@@ -89,23 +97,7 @@
    1.6666666666666667
   ],
   [
-   "VIRAL",
-   1.5714285714285714
-  ],
-  [
-   "MYTH VS FACT",
-   1.5
-  ],
-  [
-   "AMAZING FACTS",
-   1.5
-  ],
-  [
-   "ON THIS DAY",
-   1.5
-  ],
-  [
-   "THOUGHT OF THE DAY",
+   "BOLLYWOOD",
    1.5
   ],
   [
@@ -113,31 +105,11 @@
    1.0
   ],
   [
-   "REEL  TOP 5 NEWS",
-   1.0
-  ],
-  [
-   "CLOSING BELL",
-   1.0
-  ],
-  [
-   "REEL  VIRAL",
-   1.0
-  ],
-  [
-   "RELATABLE",
-   1.0
-  ],
-  [
    "QUIZ",
    1.0
   ],
   [
-   "PREOPEN",
-   1.0
-  ],
-  [
-   "EXPLAINER",
+   "REEL  TOP 5 NEWS",
    1.0
   ],
   [
@@ -145,11 +117,19 @@
    1.0
   ],
   [
-   "REEL  WORLD",
-   0.0
+   "REEL  VIRAL",
+   1.0
+  ],
+  [
+   "EXPLAINER",
+   1.0
   ],
   [
    "REEL   CHOOSE YOUR",
+   0.0
+  ],
+  [
+   "REEL  WORLD",
    0.0
   ],
   [
@@ -159,15 +139,27 @@
  ],
  "kinds": [
   [
+   "top10",
+   2.5
+  ],
+  [
+   "fun",
+   2.5
+  ],
+  [
    "reel",
    2.3488372093023258
   ],
   [
-   "top10",
-   2.1666666666666665
+   "news",
+   2.090909090909091
   ],
   [
-   "fun",
+   "market",
+   2.0
+  ],
+  [
+   "custom",
    2.0
   ],
   [
@@ -175,24 +167,12 @@
    2.0
   ],
   [
-   "custom",
-   1.8333333333333333
-  ],
-  [
-   "news",
-   1.8095238095238095
-  ],
-  [
    "thought",
-   1.5
+   2.0
   ],
   [
    "ready",
-   1.5
-  ],
-  [
-   "market",
-   1.3333333333333333
+   1.7272727272727273
   ]
  ]
 }
