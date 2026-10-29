@@ -1,0 +1,46 @@
+name: Flash watch
+
+# Every 30 min (no AI, ~1 min): ⚡ a big film star in 6+ sites' news (4+ if also trending on X) that our Reels have not covered gets one extra
+# breaking-card Reel (max 2 a day, 3 h apart, never 11 PM-6 AM, never within 40 min of a slot); 🔁 a winning Reel gets a follow-up
+# pinned to the next news slot. See flash.py.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "12,42 * * * *"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: flash-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Look for a flash story and a winner to follow up
+        id: watch
+        run: |
+          python flash.py | tee flash.out
+          echo "flash=$(grep -c '^FLASH=1' flash.out)" >> "$GITHUB_OUTPUT"
+      - name: Save the pin
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "Flash watch $(date -u +%Y-%m-%dT%H:%MZ)"
+      - name: Make the flash Reel now
+        if: steps.watch.outputs.flash == '1'
+        run: gh workflow run hourly.yml -R "$GITHUB_REPOSITORY" -f kind=reel_flash

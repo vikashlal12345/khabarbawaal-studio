@@ -2167,7 +2167,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
 
 # ---------------------------------------------------------------- ⚡ Breaking card Reels (9 AM, 12 PM, 3 PM)
 
-BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft")
+BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft", "reel_flash")   # reel_flash = the extra ⚡ FLASH Reel (flash.py), not a daily slot
 BREAK_TAGS = ["BREAKING", "UPDATE", "FILM NEWS", "VIRAL", "CRICKET", "POLITICS", "BOLLYWOOD"]
 BREAK_PINK = "#FF3D8B"
 BREAK_OPTION = {"type": "object", "properties": {
@@ -2395,8 +2395,8 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": story["title"], "date": today}])[-40:]
     if story["id"]:
         state["seen"] = state.get("seen", []) + [story["id"]]
-    save_reel(feed, state, frames[0], out, f"{kind}-{today}", {
-        "headline": story["title"], "tag": "🎬 REEL · ⚡ BREAKING CARD", "caption": g.limit_hashtags(g.full_caption(post, it)),
+    save_reel(feed, state, frames[0], out, f"{kind}-{today}" + (__import__("time").strftime("-%H%M") if kind == "reel_flash" else ""), {   # flash: up to 2 a day, own ids
+        "headline": story["title"], "tag": "🎬 REEL · ⚡ FLASH" if kind == "reel_flash" else "🎬 REEL · ⚡ BREAKING CARD", "caption": g.limit_hashtags(g.full_caption(post, it)),
         "source": story["source"], "source_url": story["link"], "pin_comment": post.get("pin_comment", ""),
         "songs": songs_picked, "proof": proof})
 

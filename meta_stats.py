@@ -17,7 +17,8 @@ IG_ID = "17841423915208770"
 HOSTS = ["https://graph.facebook.com/v23.0", "https://graph.instagram.com/v23.0"]
 OUT = "docs/stats/instagram_api.json"
 # newest names first; older apps call 'saves' saved
-METRIC_SETS = ["views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions",
+METRIC_SETS = ["views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions,follows,profile_visits",
+               "views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions",
                "views,reach,likes,comments,shares,saved,reposts", "views,reach,likes,comments,shares,saved", "reach,likes,comments,shares,saved", "reach,likes,comments,shares"]
 
 
