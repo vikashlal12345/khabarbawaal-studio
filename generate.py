@@ -910,6 +910,13 @@ def make_special(kind: str, state: dict, feed: list, raised: dict, resolved: lis
             return limit_mode(kind, state, feed)
         # Never fail (owner, 15 Oct 2026): level 2 = a different, reliable Reel for this slot; level 3 = a ready-made
         # Reel from 📦 Ready moved into the feed.
+        if kind in reel.NEWS_KINDS or kind in reel.BREAK_KINDS:   # Breaking or Viral only (owner, 29 Oct 2026): a no-AI breaking card before any joke
+            try:
+                import emergency
+                if emergency.make_reel(kind, state, feed):
+                    return True
+            except Exception as e:
+                print(f"  ! no-AI breaking card failed: {type(e).__name__}: {str(e)[:100]}")
         if reel.make_backup(kind, state, feed):
             return True
         import evergreen

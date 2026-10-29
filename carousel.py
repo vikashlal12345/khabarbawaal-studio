@@ -143,14 +143,27 @@ class Collector:
         return len(self.items)
 
 
+def unrelated_text(text: str, title: str) -> bool:
+    """True when a fetched page text clearly is not the story (29 Oct 2026: a Times of India page gave only its cookie / privacy notice,
+    3 Reel tries in a row could not be fact-checked): fewer than 2 of the headline's longer words appear in it."""
+    words = {w for w in re.findall(r"[a-z]{4,}", (title or "").lower())} - {"with", "that", "this", "from", "over", "about", "after", "says", "news"}
+    if len(words) < 3:
+        return False
+    low = text.lower()
+    return sum(w in low for w in words) < 2
+
+
 def story_text(url: str, title: str = "", summary: str = "", limit: int = 6000) -> str:
     """A story's text for the writer and the proofreader. App / short-news pages the reader can't open (owner,
     16 Oct 2026: an Inshorts link gave 0 words, so a Prakash Raj Reel was blocked as 'unchecked') -> the summary
     inside the page + the same story from 2 news sites."""
     page = page_html(url) if url else ""
     text = article_text(page, limit) if page else ""
-    if len(text) >= 400:
+    if len(text) >= 400 and not unrelated_text(text, title):
         return text
+    if len(text) >= 400:
+        print(f"  story text: the page gave {len(text)} chars that are not the story (cookie / privacy notice?): other sites are used")
+        text = ""
     m = re.search(r'"content"\s*:\s*"((?:[^"\\]|\\.){80,}?)"', page or "")
     try:
         inner = json.loads(f'"{m.group(1)}"') if m else ""

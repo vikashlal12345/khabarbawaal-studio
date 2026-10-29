@@ -2123,7 +2123,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
     else:
         status.step("Picking the most viral, visual story", 2)
-        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used])[:40]
+        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID])[:40]
         intro = ""
         if REMAKE.get("link"):   # 🔄 remake: the same story again
             stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
@@ -2148,6 +2148,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             continue
         story = stories[opt["pick"] - 1]
         item = {"link": story["link"], "source": story["source"], "title": story["title"]}
+        LAST_PICK["link"] = story["link"]
         print(f"  news reel: {story['title']}")
         status.step(f"Collecting photos: {story['title'][:70]}", 3)
         photos = news_photos(item, opt)
@@ -2304,7 +2305,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     import status
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
-    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used])[:45]
+    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID])[:45]
     if REMAKE.get("link"):   # 🔄 remake: the same story again
         stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                     "summary": "", "category": "remake"}]
@@ -2341,6 +2342,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
             return _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs)
         except proofread.Unverified as e:   # e.g. every photo implies an injury the story doesn't state: next story
             print(f"  ! breaking card for '{story['title'][:50]}' blocked ({str(e)[:100]}): next story")
+            AVOID.add(story["link"])
             last_err = e
     raise last_err
 
@@ -6161,6 +6163,10 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
         return False
 
 
+AVOID: set = set()          # stories a news / breaking try could not turn into a checked Reel: the next try picks another story (29 Oct 2026)
+LAST_PICK = {"link": ""}
+
+
 def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -> bool:
     """Make today's Reel for this slot (try `attempt` of `tries`). 📌 A story the owner pinned to this slot on the stats page
     (owner, 26 Oct 2026) is the story: used for news / breaking / satire slots, removed once the Reel is made (or on the last try)."""
@@ -6169,11 +6175,17 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     if used_pin:
         REMAKE.update({"link": pin["link"], "title": pin["title"], "source": pin.get("source", "")})
         print(f"  📌 pinned story for this slot: {pin['title'][:80]}")
+    if attempt == 1:
+        AVOID.clear()
+    LAST_PICK["link"] = ""
     try:
         ok = _make(kind, state, feed, attempt, tries)
     finally:
         if used_pin:
             REMAKE.clear()
+    if not ok and LAST_PICK["link"] and not used_pin:
+        AVOID.add(LAST_PICK["link"])
+        print(f"  this story is left out of the next try: {LAST_PICK['link'][:90]}")
     if used_pin and (ok or attempt >= tries):
         state["pinned"].pop(kind, None)
         import generate as g
