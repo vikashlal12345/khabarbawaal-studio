@@ -68,7 +68,19 @@ def main() -> int:
     plan = json.loads((ROOT / "docs" / "app.json").read_text()).get("plan", [])
     decided = [f"- [{i['status']}] {i['title']}" for w in [prev] + prev.get("history", []) for i in w.get("items", []) if i.get("status") in ("approved", "skipped")]
     followers_prev = prev.get("followers")
+    # followers per day (the hourly snapshots in docs/stats/instagram.json; Meta gives no per-Reel follows number for Reels)
+    try:
+        snaps = json.loads((ROOT / "docs" / "stats" / "instagram.json").read_text()).get("followers", [])
+        ist = timezone(timedelta(hours=5, minutes=30))
+        by_day = {}
+        for f in snaps:
+            by_day[datetime.fromisoformat(f["at"]).astimezone(ist).date().isoformat()] = f["followers"]
+        days = sorted(by_day)[-10:]
+        follower_line = ("Followers at the end of each day (IST): " + ", ".join(f"{d[5:]}: {by_day[d]}" for d in days)) if len(days) >= 2 else ""
+    except Exception:
+        follower_line = ""
     user = (f"Followers now: {d['account']['followers']} (a week ago: {followers_prev if followers_prev is not None else 'unknown'}).\n"
+            + (follower_line + "\n" if follower_line else "") +
             f"Settled Reels (24 h+ old): {len(reels)}; average views {round(statistics.mean(m['views'] for m in reels))}, median {round(statistics.median(m['views'] for m in reels))}.\n"
             f"Daily plan (IST): " + "; ".join(f"{t} {n}" for t, _, n in plan) + "\n\n"
             "Average views by the hour the Reel was posted (IST), hour: (avg views, Reels): " + json.dumps({str(h): v for h, v in sorted(hours.items())}) + "\n\n"
