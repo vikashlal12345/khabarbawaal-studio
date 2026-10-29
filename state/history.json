@@ -339,7 +339,7 @@
   "thought": "2026-10-10",
   "reel_clip": "2026-10-19",
   "reel_clip_am": "2026-10-19",
-  "reel_politics": "2026-10-28",
+  "reel_politics": "2026-10-29",
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
@@ -713,19 +713,20 @@
   "Gita 1.4: Gita 1.4: Duryodhan Drona ko Pandav sena ke veer ginata hai, har ek ko Bhima-Arjun jaisa bolta hai. Seekh: darr hamari soch ka paimana ban jaata hai."
  ],
  "reel_politics_used": [
-  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
-  "https://www.msn.com/en-in/news/other/decision-on-20-rebel-tmc-mps-after-receiving-responses-speaker-om-birla/ar-AA2fNY6d",
-  "https://www.financialexpress.com/india-news/delhi-traders-urge-rahul-gandhi-to-defer-india-blocs-anti-sir-rally-over-diwali-rush/4368724/",
-  "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
-  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
-  "https://www.thedailyjagran.com/india/news/abhijeet-dipke-detained-before-reaching-connaught-place-for-cjp-tiranga-march-what-delhi-police-14-point-notice-said-10332980",
   "https://www.timesnownews.com/india/state-sponsored-terrorism-mamata-backs-jailed-cjp-leaders-as-custody-extended-article-156372641",
-  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
-  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
   "https://www.indiatoday.in/india/story/election-commission-sir-petition-defects-piyush-goyal-targets-congress-voter-deletions-row-3016357-2026-10-13",
-  "https://northdesk.in/punjab-pilgrim-bus-safety-row-the-nhrc-vs-aap/",
+  "https://www.financialexpress.com/india-news/delhi-traders-urge-rahul-gandhi-to-defer-india-blocs-anti-sir-rally-over-diwali-rush/4368724/",
+  "https://www.indiatvnews.com/news/india/raising-voice-against-drugs-has-become-death-sentence-rahul-gandhi-targets-mann-govt-over-anti-drug-activist-killing-in-punjab-latest-updates-2026-10-15-1057074",
+  "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27",
+  "https://timesofindia.indiatimes.com/india/delhi-sir-protest-live-updates-jantar-mantar-cjp-rahul-gandhi-gyanesh-kumar-resiganation-police-india-bloc-arvind-kejriwal-abhijeet-dipke-metro-latest-news/liveblog/134881483.cms",
   "https://timesofindia.indiatimes.com/city/delhi/made-lawrence-bishnoi-their-son-in-law-kejriwal-targets-centre-after-firing-at-tiger-shroffs-car/articleshow/135044108.cms",
-  "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
+  "https://www.msn.com/en-in/news/other/decision-on-20-rebel-tmc-mps-after-receiving-responses-speaker-om-birla/ar-AA2fNY6d",
+  "https://www.outlookindia.com/national/jantar-mantar-belongs-to-people-rahul-gandhi-backs-cjp-after-congress-skips-protest",
+  "https://www.freepressjournal.in/india/india-bloc-to-hold-massive-vote-chori-protest-in-delhi-on-october-12-rahul-gandhi-plans-to-approach-cji",
+  "https://www.msn.com/en-in/news/other/kejriwal-detained-amid-delhi-protest-delhi-police-hold-aap-chief-around-5000-in-custody/ar-AA2dWHma",
+  "https://northdesk.in/punjab-pilgrim-bus-safety-row-the-nhrc-vs-aap/",
+  "https://www.thedailyjagran.com/india/news/abhijeet-dipke-detained-before-reaching-connaught-place-for-cjp-tiranga-march-what-delhi-police-14-point-notice-said-10332980",
+  "https://newsable.asianetnews.com/india/aap-opposes-delhi-government-move-to-allow-alcohol-delivery-at-home-articleshow-ylggtlb"
  ],
  "reel_news_used": [
   "https://www.hindustantimes.com/entertainment/bollywood/karisma-kapoor-reveals-salman-khan-refused-to-shoot-with-her-over-her-too-open-clingy-outfit-in-dulhan-hum-le-jayenge-101792035143522.html",
@@ -993,13 +994,23 @@
     "Polling was held on October 23; India Today says ballot paper voting was used",
     "NDA wins Bengaluru Teachers' constituency (India TV News, 28 Oct 2026)"
    ]
+  },
+  {
+   "date": "2026-10-29",
+   "party": "AAP",
+   "format": "cartoon",
+   "topic": "Asianet Newsable/ANI: AAP opposes Delhi government move to allow alcohol delivery at home",
+   "hook": "Bharadwaj ka alarm: 24 ghante mein scheme wapas lo",
+   "punchline": "Line ki shikayat bhi, aur line kam karne wali scheme se bhi shikayat.",
+   "issue": "AAP queue complaint",
+   "facts": [
+    "Bharadwaj said CM cares why drinkers stand in queues, not patients.",
+    "He cited queues for medicines, Pink Cards, SIR and SDM office certificates.",
+    "AAP gave Delhi govt 24 hours to withdraw the home alcohol delivery scheme."
+   ]
   }
  ],
  "songs_recent": [
-  "Dhun",
-  "Sahiba",
-  "Die With A Smile",
-  "Espresso",
   "Dhun",
   "Aavan Jaavan (From \"WAR 2\")",
   "Believer",
@@ -1035,7 +1046,11 @@
   "Tabaahi (From \"Toxic\")",
   "Shararat",
   "Janice STFU",
-  "Stop The Wedding!"
+  "Stop The Wedding!",
+  "Tu hai kahan",
+  "Zihaal e Miskin",
+  "WAIT FOR U (feat. Drake & Tems)",
+  "Freestyle"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",

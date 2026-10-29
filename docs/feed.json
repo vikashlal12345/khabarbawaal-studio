@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_politics-2026-10-29",
+  "image": "posts/20261029-0440-reel_politics-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-044045-reel_politics-2026-10-29.mp4",
+  "headline": "Bharadwaj ka alarm: 24 ghante mein scheme wapas lo",
+  "tag": "🎬 REEL · 🎨 CARTOON ROAST",
+  "caption": "AAP Saurabh Bharadwaj Delhi queue vs alcohol delivery 🤔\nAAP ne lines ka rona roya, phir ghar delivery wali scheme par bhi aapatti jata di.\nLine lambi bhi problem, chhoti bhi problem 😂\nKaun sahi? Ek word likho: BJP ya AAP 👇\n\n🎨 AI cartoon (satire), pictures: AI illustration (Z-Image)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Cartoon Roast 🎨\nSource: Asianet Newsable (link pinned in comments 👇)\n\n#aap #delhi #saurabhbharadwaj #politicalsatire #reelsindia",
+  "source": "Asianet Newsable",
+  "source_url": "https://newsable.asianetnews.com/india/aap-opposes-delhi-government-move-to-allow-alcohol-delivery-at-home-articleshow-ylggtlb",
+  "pin_comment": "Line mein lagna bhi dikkat, line hatna bhi dikkat. Us dost ko bhejo jo kabhi khush nahi hota 👇",
+  "songs": [
+   {
+    "title": "Tu hai kahan",
+    "artist": "AUR",
+    "lang": "hindi",
+    "mood": "where is the logic, confused"
+   },
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "dramatic complaint energy"
+   },
+   {
+    "title": "WAIT FOR U (feat. Drake & Tems)",
+    "artist": "Future",
+    "lang": "english",
+    "mood": "waiting in queue = wait for u"
+   },
+   {
+    "title": "Freestyle",
+    "artist": "Lil Baby",
+    "lang": "english",
+    "mood": "rambling list of complaints"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "🎨 The pictures are AI cartoons (Z-Image): turn on Instagram's 'AI info' label when posting. It is satire: the captions are jokes about what the article says, not real quotes."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-29T04:40:45+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-29",
   "image": "posts/20261029-0432-reel_break_am-2026-10-29.jpg",
   "kind": "reel",
@@ -441,54 +488,5 @@
    ]
   },
   "created_at": "2026-10-28T06:33:14+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-28",
-  "image": "posts/20261028-0433-reel_break_am-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-043355-reel_break_am-2026-10-28.mp4",
-  "headline": "Ranbir Kapoor and Sai Pallavi pose with fans, Yash arrives with wife Radhika Pandit at Ramayana's grand world premiere in Los Angeles",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ranbir Kapoor Ramayana world premiere Los Angeles\nRanbir, Sai Pallavi aur Yash red carpet par pahunche.\nFilm ka pehla part 5 November ko release hoga.\nRamayana blockbuster hogi? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #ranbirkapoor #ramayana #saipallavi #yash",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
-  "pin_comment": "Ramayana blockbuster hogi? HAAN ya NA likho. Kisi Ranbir fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "epic romantic film premiere vibe"
-   },
-   {
-    "title": "Sahiba",
-    "artist": "Jasleen Royal, Stebin Ben",
-    "lang": "hindi",
-    "mood": "trending, star glam moment"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "red carpet glamour"
-   },
-   {
-    "title": "Espresso",
-    "artist": "Sabrina Carpenter",
-    "lang": "english",
-    "mood": "trending upbeat celebration"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Photo on slide 1 shows Yash with his wife Radhika Pandit, not Ranbir and Sai Pallavi."
-   ],
-   "fixed": [
-    "Ranbir aur Sai Pallavi Los Angeles red carpet par → Yash aur Radhika Pandit Los Angeles red carpet par"
-   ]
-  },
-  "created_at": "2026-10-28T04:33:55+00:00"
  }
 ]

@@ -8469,6 +8469,45 @@
      "tokens": 12460
     }
    }
+  },
+  "reel_politics": {
+   "posts": 0,
+   "requests": 10,
+   "input": 24,
+   "output": 8372,
+   "cache_read": 14613,
+   "cache_write": 224066,
+   "value_usd": 0.9815,
+   "by_purpose": {
+    "satire pick": {
+     "requests": 1,
+     "tokens": 29337
+    },
+    "cartoon roast writing": {
+     "requests": 2,
+     "tokens": 72186
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 25830
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 25483
+    },
+    "hook meaning": {
+     "requests": 3,
+     "tokens": 72141
+    },
+    "toon check": {
+     "requests": 1,
+     "tokens": 7576
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 14522
+    }
+   }
   }
  }
 }
