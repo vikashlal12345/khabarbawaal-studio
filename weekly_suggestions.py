@@ -29,7 +29,7 @@ SYSTEM = ("You are the analyst of the Instagram page @khabarbawaal (Hinglish vir
           "jargon; every suggestion rests on numbers in the data; each is something Claude Code can actually change in the robot (a slot's Reel type, "
           "which stories are favoured, hook or cover rules, timing, formats); NEVER suggest removing or changing the 6 AM devotional Reel (the owner "
           "wants to start his day with it; you may suggest small improvements to it); politics must stay pro-BJP/NDA, no hate, no invented facts, no "
-          "buy/sell tips; do not repeat a suggestion the owner already skipped or approved before (listed below); do not suggest buying anything.")
+          "buy/sell tips; do not repeat a suggestion the owner already skipped or approved before (listed below); do not suggest buying anything. The owner paused the 8:15 PM speaker video and the 6 PM cartoon roast until the page has 1,000+ followers: when the follower count reaches 1,000, make one of the suggestions \"Bring back the speaker video (8:15 PM) as planned\"; before that, never suggest politics or speaker Reels.")
 
 
 def hour_stats(reels):
