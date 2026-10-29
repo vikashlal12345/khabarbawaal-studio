@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_news_early-2026-10-29",
+  "image": "posts/20261029-0234-reel_news_early-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-023402-reel_news_early-2026-10-29.mp4",
+  "headline": "Exclusive | Bhumi Pednekkar set to reunite with Akshay Kumar in Priyadarshan's next film",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Akshay Kumar Bhumi Pednekar Priyadarshan film 🎬 Bhumi Pednekar ki Akshay ke saath wapsi!\nExclusive: Bhumi Pednekar Priyadarshan ki next film mein aa gayi hain.\nAkshay Kumar ke saath unka reunion hoga.\nJodi hit lagti hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#akshaykumar #bhumipednekar #bollywood #priyadarshan #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
+  "pin_comment": "Kisi Akshay fan ko bhejo 👇 Jodi hit? HAAN ya NA",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "fresh jodi, feel-good vibe"
+   },
+   {
+    "title": "Ashke",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "chart-topping hype for reunion"
+   },
+   {
+    "title": "Headlights (feat. KIDDO)",
+    "artist": "Alok, Alan Walker",
+    "lang": "english",
+    "mood": "upbeat big-news energy"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "jodi ka glam, party feel"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article only mentions their 2022 film Raksha Bandhan, not Toilet Ek Prem Katha",
+    "Slide 4: The 'Photo: The Free Press Journal' credit at bottom left overlaps and touches the '@khabarbawaal' handle text, so both are cramped and partly overlapping. Move the credit or the handle."
+   ],
+   "fixed": [
+    "Pednekkar → Pednekar",
+    "Toilet Ek Prem Katha wali jodi wapas → Raksha Bandhan wali jodi wapas",
+    "removed weak photo slide(s) [2]"
+   ]
+  },
+  "created_at": "2026-10-29T02:34:02+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-29",
   "image": "posts/20261029-0033-reel_devotion-2026-10-29.jpg",
   "kind": "reel",
@@ -440,53 +492,5 @@
    ]
   },
   "created_at": "2026-10-28T02:34:19+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-28",
-  "image": "posts/20261028-0033-reel_devotion-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-003328-reel_devotion-2026-10-28.mp4",
-  "headline": "Wednesday: Ganesh ji: Modak ka bhog... Bappa ka pyaar, bas sachche dil se maango",
-  "tag": "🎬 REEL · 🙏 JAI SHRI GANESH",
-  "caption": "Ganesh ji ka Budhwaar, modak jaisa meetha din ho 🙏\nSachche dil se yaad karo, Bappa zaroor sunte hain.\nSabka din mangalmay ho.\nJai Ganesh likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganeshji #modak #ganpatibappamorya #jaiganesh #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Apni maa ko bhejo, unka din ban jayega 🙏",
-  "songs": [
-   {
-    "title": "Vakratunda Mahakaya (Ganpati Shlok)",
-    "artist": "Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Vakrathunda Mahakaya",
-    "artist": "Vandemataram Srinivas, S.P. Balasubrahmanyam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Ganesh Aarti",
-    "artist": "Sanjay Dutt",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ganesh Jai Ganesh Deva",
-    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 3: The 'JAI SHRI GANESH' header overlaps Ganesh ji's golden crown, so the top of the text is hard to read. The image should be moved down or the header shifted.",
-    "Slide 4: The 'JAI SHRI GANESH' header overlaps Ganesh ji's golden crown, so the top of the text is hard to read. The image should be moved down or the header shifted."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-28T00:33:28+00:00"
  }
 ]

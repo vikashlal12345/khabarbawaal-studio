@@ -205,7 +205,8 @@
   "609943b83895",
   "f4268a829154",
   "395fee2c2209",
-  "cf972ba374be"
+  "cf972ba374be",
+  "90b91d945491"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -351,7 +352,7 @@
   "reel_news_aft": "2026-10-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-10-28",
+  "reel_news_early": "2026-10-29",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-28",
   "reel_break_noon": "2026-10-28",
@@ -726,7 +727,6 @@
   "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/muskan-rastogi-lover-sahil-handed-death-penalty-for-navy-officer-saurabh-rajputs-blue-drum-murder-101791975185379.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kangana-ranaut-backs-bittu-tabahi-after-river-he-cleaned-for-8-months-gets-polluted-again-101791974779795.html",
   "https://www.hindustantimes.com/entertainment/bollywood/karisma-kapoor-reveals-salman-khan-refused-to-shoot-with-her-over-her-too-open-clingy-outfit-in-dulhan-hum-le-jayenge-101792035143522.html",
   "https://www.bollywoodhungama.com/news/bollywood/breaking-jailer-2-ends-with-the-promise-of-third-part-hrithik-roshans-massy-special-appearance-has-a-chulbul-pandey-connection-spoilers-ahead/",
@@ -805,7 +805,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
-  "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/"
+  "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
+  "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -994,10 +995,6 @@
   }
  ],
  "songs_recent": [
-  "Azadi",
-  "Dhun",
-  "Believer",
-  "On My Way",
   "Tabaahi (From \"Toxic\")",
   "Alfaaz",
   "The One That Got Away",
@@ -1033,7 +1030,11 @@
   "Mangal Murti Gauri Lala (From \"Karwa Chauth Special Songs\")",
   "Devi Karwa Chauth Mai",
   "Mahadev Aarti-Sheesh Gang Ardhang Parvati",
-  "Jodi Jab Tose (From \"Karwa Chauth\")"
+  "Jodi Jab Tose (From \"Karwa Chauth\")",
+  "Barsaat",
+  "Ashke",
+  "Headlights (feat. KIDDO)",
+  "Beauty And A Beat"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1057,46 +1058,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "Virat Kohli and Anushka Sharma immerse themselves in devotional tunes at Krishna Das’ Mumbai concert",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Diljit Dosanjh hints at Koffee With Karan 9 appearance, says he will do only one interview this year",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Govinda claims someone is influencing Sunita Ahuja amid cheating allegations, says he's always had a ‘bad reputation’",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Madhoo is in love with Rashmika Mandanna owning her South Indian accent on Koffee With Karan; recalls being judged for it in Bollywood",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Nick Jonas shares sweet family moments with Priyanka Chopra, daughter Malti Marie runs to hug him backstage",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Raveena Tandon turns 54: When she cleaned studio floors as an intern, rejected films with Shah Rukh Khan, Ajay Devgn",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Kriti Sanon, Varun Dhawan wolf howl as they reunite with Bhediya director Amar Kaushik; fans wonder if sequel is underway",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Ahaan Panday’s action film with Ali Abbas Zafar, Sharvari titled Beparwah; Yash Raj Films shares first poster, announces release date",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "Kriti Sanon, Varun Dhawan reunite with Bhediya director Amar Kaushik, tease fans with ‘Obsessed’ post",
-   "date": "2026-10-26"
-  },
-  {
-   "title": "कल पटना में कांग्रेस अध्यक्ष मल्लिकार्जुन खरगे जी द्वारा, प्रधानमंत्री श्री नरेंद्र मोदी जी के स्वर्गीय पिताजी के उपर की गई टिप्पणी ने मुझे ",
-   "date": "2026-10-26"
-  },
   {
    "title": "Twisha case: HC reserves order on Giribala bail plea",
    "date": "2026-10-27"
@@ -1160,6 +1121,10 @@
   {
    "title": "कांग्रेस का राजनीतिक दिवालियापन सामने आ चुका है। तीन दिन पहले कांग्रेस अध्यक्ष मल्लिकार्जुन खड़गे ने प्रधानमंत्री श्री @narendramodi जी के स",
    "date": "2026-10-28"
+  },
+  {
+   "title": "Exclusive | Bhumi Pednekkar set to reunite with Akshay Kumar in Priyadarshan's next film",
+   "date": "2026-10-29"
   }
  ],
  "claude_limit": {
