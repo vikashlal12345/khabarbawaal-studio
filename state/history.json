@@ -1171,5 +1171,13 @@
   "at": "2026-10-25T15:34:12+00:00",
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
+ },
+ "pinned": {
+  "reel_break_noon": {
+   "link": "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
+   "title": "Janhvi Kapoor Faces Backlash For ‘Putting Down’ Tara Sutaria On Koffee With Karan 9 With Cheeky Jibe",
+   "source": "Asianet Newsable",
+   "at": "2026-10-29T08:06:50+00:00"
+  }
  }
 }
