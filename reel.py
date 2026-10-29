@@ -2027,7 +2027,12 @@ VIEWS RULE (owner, 23 Oct 2026, from his own numbers: the best Reels opened on a
 lead is a FAMOUS Bollywood / film actor or actress that most young Indians know at a glance (A-list stars, top cricketers, the PM); a \
 story with an actor AND an actress together, or an actress as the lead, goes even higher. Stories whose lead is an unknown person, \
 an official, an institution or a court order (e.g. a Supreme Court order) rank low: take them only when a famous star or leader is \
-clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names."""
+clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names.
+SHARES RULE (owner, 29 Oct 2026, from his shares / saves numbers: a star's family story got 14 shares + 9 saves, a celebrity kirtan 71 likes, \
+an RSS-anniversary story 57 likes): rank HIGHER (1) a famous person's family / relationship / emotional personal-life reveal (a star \
+talking about a parent, a late parent, a spouse, a child, a first meeting, a break-up, a hardship: the Janhvi Kapoor-Sridevi kind); (2) a \
+celebrity or cricketer in a devotional / spiritual moment (kirtan, temple visit, aarti, a guru); (3) Hindu-pride and culture stories (RSS, \
+temples, festivals, Sanatan traditions, Indian heritage wins), told with real facts and no hate against any community."""
 
 
 NEWS_KINDS = ("reel_news_early", "reel_news_am", "reel_news_noon", "reel_news_aft", "reel_news_pm", "reel_news",
@@ -2050,11 +2055,14 @@ def recent_news(state: dict, today: str) -> tuple[list[dict], str]:
 REMAKE: dict = {}   # 🔄 a Remake keeps the same story / video: {'link', 'title', 'source', 'video_id'} (remake.py)
 
 
+PRIDE = re.compile(r"\b(rss|mandir|temple|kirtan|aarti|bhajan|ayodhya|hindu|sanatan|diwali|chhath|dhanteras|kashi|mahakumbh|yoga)\b", re.I)
+
+
 def bollywood_first(stories: list) -> list:
     """Owner, 26 Oct 2026 (Bollywood news Reels avg ~1,500 views, devotional ~270, other topics weaker): the viral news and breaking
     pickers choose among Bollywood / film stories whenever there are at least 3 of them, otherwise among all (then FACE_RULE still ranks famous faces first)."""
     import emergency
-    b = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
+    b = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"]) or PRIDE.search(x["title"])]
     return b if len(b) >= 3 else stories
 
 
@@ -4293,16 +4301,19 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     def paint(n: int) -> None:
         # painters write gibberish on anything that could carry words: take those things out of the scene
         scene = re.sub(r"\s+", " ", TEXT_THINGS.sub("", best['scenes'][n]['paint']))
-        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + " Plain background without any signs, boards or writing." + \
+        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + " Only ONE person in the picture. Plain background without any signs, boards or writing." + \
             (f" Show {symbol}, drawn clearly with no letters." if symbol else "")
         img, model = flux_image(prompt, random.randint(1, 999999))
         made[n] = (img, model)
+        safe_ok.discard(n)   # a new picture: its old check no longer counts
         thumb = img.copy()
         thumb.thumbnail((576, 1024))
         thumb.save(os.path.join(folder, f"scene{n + 1}.jpg"), quality=85)
     schema = {"type": "object", "properties": {"scenes": {"type": "array", "items": {"type": "object", "properties": {
-        "n": {"type": "integer"}, "ok": {"type": "boolean"}, "problem": {"type": "string"}},
-        "required": ["n", "ok", "problem"], "additionalProperties": False}}}, "required": ["scenes"], "additionalProperties": False}
+        "n": {"type": "integer"}, "ok": {"type": "boolean"}, "safe": {"type": "boolean"}, "problem": {"type": "string"}},
+        "required": ["n", "ok", "safe", "problem"], "additionalProperties": False}}}, "required": ["scenes"], "additionalProperties": False}
+
+    safe_ok: set[int] = set()   # pictures that are clean even when they do not match the scene (last resort)
 
     def check(ns: list[int]) -> set[int]:
         res = fun.claude_json("You check AI-painted cartoon pictures for a political satire Reel. Open each picture with the Read tool.",
@@ -4310,9 +4321,13 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
                               ". A picture is OK if it is a clean, friendly 3D cartoon with about the described person(s) in a clear pose: "
                               "faces and hands not broken, no extra limbs, NO readable text / letters / signs with words anywhere (tiny "
                               "unreadable marks are fine), nothing scary, hateful, religious-symbol-mocking or indecent. Do NOT reject "
-                              "because a prop or the exact moment differs from the description: the caption tells the story.", schema, CONFIG.get("membership_model", "sonnet"),
+                              "because a prop or the exact moment differs from the description: the caption tells the story. ok = good and "
+                              "close to the description. safe = usable anyway: a clean friendly cartoon, no readable text, no broken "
+                              "face or hands, nothing scary, hateful or indecent, at most 2 people (even if it does not match the "
+                              "description).", schema, CONFIG.get("membership_model", "sonnet"),
                               purpose="toon check", folder=folder)
         bad = {r["n"] - 1 for r in res["scenes"] if not r["ok"]}
+        safe_ok.update(r["n"] - 1 for r in res["scenes"] if r["safe"])
         for r in res["scenes"]:
             if not r["ok"]:
                 print(f"  cartoon scene {r['n']} rejected: {r['problem'][:100]}")
@@ -4346,6 +4361,10 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
                     break
         if len(good) >= 3:
             break
+    if len(good) < 2:   # the painters give only ~3 pictures a run: use clean ones even if they miss the scene (the caption tells the story)
+        good = good | (safe_ok & set(made))
+        if len(good) >= 2:
+            print(f"  cartoon: using {len(good)} clean pictures that do not match their scene exactly")
     if len(good) < 2:
         raise RuntimeError("fewer than 2 cartoon pictures looked right")
     return [(made[n][0], best["scenes"][n]["line"], made[n][1]) for n in sorted(good)]
