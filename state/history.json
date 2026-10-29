@@ -1176,5 +1176,17 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {}
+ "pinned": {
+  "reel_break_aft": {
+   "link": "https://www.hungamaexpress.com/news/55197-radhika-apte-calls-out-trolls-for-double-standards-over-alia-bhatts-alpha-physique",
+   "title": "Radhika Apte calls out trolls for double standards over Alia Bhatt’s ‘Alpha’ physique",
+   "source": "hungamaexpress",
+   "at": "2026-10-29T10:15:11+00:00",
+   "followup": "Radhika Apte Alia Bhatt Alpha trolls"
+  }
+ },
+ "followed_winners": [
+  "18120264982752748"
+ ],
+ "winner_followup_day": "2026-10-29"
 }
