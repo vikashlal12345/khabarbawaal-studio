@@ -205,6 +205,9 @@ FLUX allowance; FLUX busy → no picture that night; since 14 Oct 2026 a 7 s Ree
 then e.g. `.venv/bin/python generate.py --kind fun`; restore with
 `git checkout docs/feed.json state/ && git clean -fq docs/posts` before uploading.
 
+## Official Meta API (connected 29 Oct 2026, owner's choice)
+`meta_stats.py` + `.github/workflows/meta-stats.yml` (manual `probe` test + daily 4:10 AM IST) read @khabarbawaal's numbers (followers, per post views / reach / likes / comments / shares / saved) from Meta's Graph API into `docs/stats/instagram_api.json`. Read-only; GitHub secret `META_IG_TOKEN` = a never-expiring system-user token (system user 'KhabarBawaal Stats Reader', app 'KhabarBawaal Stats' id 2083750168975160, Instagram account id 17841423915208770, permissions instagram_basic + instagram_manage_insights only). No reposts metric. If it stops: Business Settings > Users > System users > Generate token, update the secret. Not yet shown on the stats page or fed to the learning (offered to the owner).
+
 ## Open ideas (not built)
 Cloudflare email login for the app ·
 Instagram Graph API (shares/saves, auto post list).
