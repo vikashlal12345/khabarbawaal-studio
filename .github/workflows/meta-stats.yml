@@ -1,0 +1,44 @@
+name: Instagram numbers (Meta API)
+
+# Reads the page's numbers from Meta's official Graph API (read-only) into docs/stats/instagram_api.json.
+on:
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: "Only test the connection (prints a few lines, saves nothing)"
+        type: boolean
+        default: true
+  schedule:
+    - cron: "40 22 * * *"      # IST 4:10 AM daily
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hourly-post
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    env:
+      META_IG_TOKEN: ${{ secrets.META_IG_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.probe }}
+        run: python meta_stats.py --probe
+      - name: Read numbers
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.probe) }}
+        run: python meta_stats.py
+      - name: Upload
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.probe) }}
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "Instagram numbers $(date -u +%Y-%m-%dT%H:%MZ)"
