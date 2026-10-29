@@ -208,7 +208,9 @@ function hookChart(box, pts) {
     const latest = fol[fol.length - 1];
     const weekAgo = fol.find(f => inLast(f.at, 7)) || fol[0];
     const recent = Object.entries(links || {}).filter(([id, l]) => inLast(l.posted_at || l.linked_at, 7) && res[id]);
-    const likesPer = recent.length ? recent.reduce((a, [id]) => a + res[id].likes, 0) / recent.length : null;
+    const api = await getJSON('stats/instagram_api.json');
+    const wk = ((api && api.media) || []).filter(m => m.likes != null && inLast(m.time, 7));
+    const likesPer = wk.length ? wk.reduce((a, m) => a + m.likes, 0) / wk.length : (recent.length ? recent.reduce((a, [id]) => a + res[id].likes, 0) / recent.length : null);
     const change = latest && weekAgo ? latest.followers - weekAgo.followers : null;
     // one point per day (last reading of the day), last 14 days
     const byDay = {};
@@ -224,10 +226,10 @@ function hookChart(box, pts) {
     document.getElementById('growth').innerHTML = `<h2>📈 Growth</h2>
       <div class="kpis"><div class="kpi"><b>${latest ? latest.followers : '–'}</b><span>followers${latest ? ' · last known ' + new Date(latest.at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }) : ''}</span></div>
         <div class="kpi"><b>${change == null ? '–' : (change >= 0 ? '+' : '') + change}</b><span>this week</span></div>
-        <div class="kpi"><b>${likesPer == null ? '–' : likesPer.toFixed(1)}</b><span>likes per post (7 days)</span></div></div>
+        <div class="kpi"><b>${likesPer == null ? '–' : likesPer.toFixed(1)}</b><span>likes per Reel (7 days)</span></div></div>
       ${pts.length >= 2 ? lineChart(pts) : '<div class="muted" style="margin-top:10px">The followers chart appears after 2 days of data.</div>'}
       ${boostRows ? `<div class="sub">Boosts</div>${boostRows}` : ''}
-      <div class="muted" style="margin-top:8px">🕐 Instagram numbers: automatic reading switched off on 16 Oct 2026 (Instagram's rules); they update from your screen recordings${latest ? `, last ${ago(latest.at)}` : ''}.</div>`;
+      <div class="muted" style="margin-top:8px">🕐 Live from Meta's official API, every hour${latest ? ` (followers last read ${ago(latest.at)})` : ''}.</div>`;
     hookChart(document.querySelector('#growth .chart'), pts);
   }
 
@@ -323,8 +325,8 @@ function hookChart(box, pts) {
         ${audience && audience.summary ? 'The robot is learning from these numbers every night.' : 'The robot starts learning once posts have 30+ likes in total.'}</div>`;
   }
 
-  if (!Object.entries(links || {}).some(([id, l]) => inLast(l.posted_at || l.linked_at, 14) && res[id] && !boostsData[id])) {
-    const w = document.getElementById('works'); if (w) w.style.display = 'none';   // no likes numbers since 16 Oct
+  {   // the old likes-by-type box ran on numbers from 16 Oct; the live "Your Reels" list at the top (Meta API) replaces it
+    const w = document.getElementById('works'); if (w) w.style.display = 'none';
   }
 
   // --- 📮 your posting habit (from your ✅ Mark as posted taps: no Instagram access needed)
@@ -689,7 +691,7 @@ function hookChart(box, pts) {
 <script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 58;
+const PAGE_V = 59;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

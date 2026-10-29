@@ -89,6 +89,18 @@ def main() -> int:
     if probe:
         print(json.dumps(rows[:2], ensure_ascii=False)[:900])
         return 0
+    # follower history for the Growth chart (docs/stats/instagram.json, the old file the page already reads): one point per ~45 min
+    hist_path = "docs/stats/instagram.json"
+    try:
+        hist = json.load(open(hist_path))
+    except Exception:
+        hist = {"followers": [], "posts": {}}
+    nowiso = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    fl = hist.setdefault("followers", [])
+    if acc.get("followers_count") is not None and (not fl or (datetime.fromisoformat(nowiso) - datetime.fromisoformat(fl[-1]["at"])).total_seconds() > 2700):
+        fl.append({"at": nowiso, "followers": acc["followers_count"], "posts": acc.get("media_count")})
+        hist["followers"] = fl[-600:]
+        json.dump(hist, open(hist_path, "w"), ensure_ascii=False, indent=1)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump({"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"), "account": {
         "username": acc.get("username"), "followers": acc.get("followers_count"), "media_count": acc.get("media_count")},
