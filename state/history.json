@@ -207,7 +207,8 @@
   "395fee2c2209",
   "cf972ba374be",
   "90b91d945491",
-  "498d03c8fbc3"
+  "498d03c8fbc3",
+  "5b2f959a2b06"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -347,7 +348,7 @@
   "reel_news_pm": "2026-10-28",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-10-28",
+  "reel_news_am": "2026-10-29",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-10-15",
@@ -730,7 +731,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/karisma-kapoor-reveals-salman-khan-refused-to-shoot-with-her-over-her-too-open-clingy-outfit-in-dulhan-hum-le-jayenge-101792035143522.html",
   "https://www.bollywoodhungama.com/news/bollywood/breaking-jailer-2-ends-with-the-promise-of-third-part-hrithik-roshans-massy-special-appearance-has-a-chulbul-pandey-connection-spoilers-ahead/",
   "https://www.hindustantimes.com/trending/goabased-airline-fly91-surprises-young-pilot-by-bringing-her-parents-onboard-imagine-the-pride-101792049440473.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-international-trailer-to-be-unveiled-at-bengaluru-event-ranbir-kapoor-yash-sai-pallavi-to-attend/",
@@ -809,7 +809,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
   "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1026,10 +1027,6 @@
   }
  ],
  "songs_recent": [
-  "Ram Siya Ram",
-  "His Aura Hits You",
-  "Levitating",
-  "Heat Waves",
   "Ez-Ez",
   "Madhosh",
   "Housewife",
@@ -1065,7 +1062,11 @@
   "Azadi",
   "Alfaaz",
   "Stop The Wedding!",
-  "Housewife"
+  "Housewife",
+  "Teri Meri Kahaani",
+  "Lae Dooba by Sunidhi Chauhan",
+  "Die With A Smile",
+  "Señorita"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1159,6 +1160,10 @@
   },
   {
    "title": "Janhvi Kapoor's cheeky dating advice to Veer Pahariya on Koffee With Karan has internet calling it a dig at Tara Sutaria",
+   "date": "2026-10-29"
+  },
+  {
+   "title": "Sharvari dances with OG Rajshri heroine Madhuri Dixit to Yeh Prem Mol Liya song, calls it a ‘surreal’ moment with her idol",
    "date": "2026-10-29"
   }
  ],
