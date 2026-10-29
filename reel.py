@@ -3010,6 +3010,9 @@ def photo_sharpness(im: Image.Image) -> float:
     return ImageStat.Stat(g.filter(ImageFilter.FIND_EDGES)).stddev[0]
 
 
+COVER_PRUNE_SMALL = False   # True = the old rule: small photos leave the cover contest whenever bigger ones exist
+
+
 def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bool = False) -> int:
     """📸 Photo contest (owner, 19 Oct 2026: 'the first image should be very attractive'): the AI looks at the
     candidate photos and picks the cover: a sharp close-up with a clear face or strong emotion that fits the story,
@@ -3027,7 +3030,9 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bo
     # 🔍 Clarity (owner, 23 Oct 2026: an Aamir Khan cover was soft and got ~300 views): a photo fills the 1080x1920 screen, so a
     # small LANDSCAPE photo is blown up 3x or more. Photos enlarged more than 2.6x only compete when nothing else is sharper.
     scale = lambda im: max(RW / im.width, RH / im.height)
-    sharp_ok = [i for i, im in enumerate(photos[:6]) if scale(im) <= COVER_MAX_ENLARGE]
+    # 29 Oct 2026 (owner: the Tanu Weds Manu cover was a poster + the director, the pair's own photo was left out because it was smaller):
+    # small photos now compete too, they are shown WHOLE in a window by cover_hook_frame; the AI prefers the photo of the story's people.
+    sharp_ok = [i for i, im in enumerate(photos[:6]) if scale(im) <= COVER_MAX_ENLARGE] if COVER_PRUNE_SMALL else list(range(len(photos[:6])))
     if not sharp_ok and len(photos[:6]) > 1:   # all small: only the biggest ones compete (the window cover shows them whole)
         best = min(scale(im) for im in photos[:6])
         near = [i for i, im in enumerate(photos[:6]) if scale(im) <= best * 1.25]
@@ -3054,13 +3059,16 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bo
                               "Read tool. The best cover stops a scroll: a sharp close-up of the main person with a clear "
                               "face and strong emotion, bright and high contrast, tall or square, showing the story's "
                               "star (the best-known, most recognisable face; an actress, or an actor and actress together, beats "
-                              "an unknown person; a screenshot taken from a video, or a photo with motion blur or soft focus, is never the cover; when the story is about a model, actress, influencer or other glamorous young person "
+                              "an unknown person; the photo that shows the PEOPLE NAMED in the story with clear faces always beats a film poster, a collage, "
+                              "two pictures side by side or a photo of other people, even when it is smaller (small photos are shown whole in a framed window, "
+                              "so size is no reason to reject one); a screenshot taken from a video, or a photo with motion blur or soft focus, is never the cover; when the story is about a model, actress, influencer or other glamorous young person "
                               "(even as the victim or the person at the centre of a case), HER photo is the cover, never a lawyer, "
                               "judge, official, relative or elderly person standing in for the story (owner 27 Oct 2026: a lawyer was "
                               "the cover of a model's case Reel and it got few views); a soft, blurry or low-resolution face is never the cover); never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
                               "shows injuries, bandages, blood, a hospital, handcuffs, weapons or another event than the story "
                               "(it would suggest facts the story does not state).",
-                              f"The story: {about}\nPhotos: " + ", ".join(f"photo{n}.jpg" for n in range(1, min(len(photos), 6) + 1)),
+                              f"The story: {about}\nPhotos: " + ", ".join(f"photo{n}.jpg" + (" (small: shown in a window)" if max(RW / photos[n - 1].width, RH / photos[n - 1].height) > COVER_MAX_ENLARGE else "")
+                                                         for n in range(1, min(len(photos), 6) + 1)),
                               schema, CONFIG.get("membership_model", "sonnet"), purpose="cover photo", folder=folder)
     except Exception as e:
         print(f"  ! cover photo check failed ({str(e)[:80]}): first photo")
