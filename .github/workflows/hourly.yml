@@ -84,6 +84,16 @@ jobs:
           echo "skip=$([ "$busy" != "0" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
           [ "$busy" != "0" ] && echo "Chain is running: backup timer does nothing." || true
 
+      - name: Refresh Instagram numbers + flash watch (never blocks the post)
+        if: steps.chain.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          META_IG_TOKEN: ${{ secrets.META_IG_TOKEN }}
+        run: |
+          # GitHub's own timers for the Meta / flash workflows did not fire (29 Oct 2026): the post chain refreshes them at every run too
+          python meta_stats.py || true
+          python flash.py || true
+
       - name: Create post
         if: steps.chain.outputs.skip != 'true'
         run: |
