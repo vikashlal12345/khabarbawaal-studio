@@ -17,8 +17,7 @@ IG_ID = "17841423915208770"
 HOSTS = ["https://graph.facebook.com/v23.0", "https://graph.instagram.com/v23.0"]
 OUT = "docs/stats/instagram_api.json"
 # newest names first; older apps call 'saves' saved
-METRIC_SETS = ["views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions,follows,profile_visits",
-               "views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions",
+METRIC_SETS = ["views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions",
                "views,reach,likes,comments,shares,saved,reposts", "views,reach,likes,comments,shares,saved", "reach,likes,comments,shares,saved", "reach,likes,comments,shares"]
 
 
@@ -62,6 +61,12 @@ def main() -> int:
                 txt = json.dumps(body, ensure_ascii=False).replace(os.environ["META_IG_TOKEN"], "***")
                 print(f"  {path}: HTTP {st} {txt[:500]}")
         return 1
+    if probe:   # account-level daily numbers (Reels have no per-Reel follows metric)
+        import time as _t
+        for metric in ("follows_and_unfollows", "reach", "profile_views", "accounts_engaged"):
+            st, body = get(host, f"{IG_ID}/insights", {"metric": metric, "period": "day", "metric_type": "total_value",
+                                                       "since": int(_t.time()) - 3 * 86400, "until": int(_t.time())})
+            print(f"  account insight {metric}: HTTP {st} {json.dumps(body)[:260] if st == 200 else err(body)}")
     print(f"account: @{acc.get('username')} followers={acc.get('followers_count')} media={acc.get('media_count')}")
     st, media = get(host, f"{IG_ID}/media", {"fields": "id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count,thumbnail_url",
                                               "limit": 50})
