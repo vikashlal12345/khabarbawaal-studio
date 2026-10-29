@@ -82,6 +82,15 @@
   .mrow .mt b { color: var(--text); font-weight: 600; }
   .mrow .bar { height: 6px; margin-top: 6px; }
   .mchart rect { fill: var(--accent); }
+  .sg { border-top: 1px solid var(--line); padding: 12px 0; }
+  .sg:first-of-type { border-top: 0; }
+  .sg .st { font-weight: 700; font-size: 15px; }
+  .sg .why { color: var(--muted); font-size: 13px; margin: 4px 0; }
+  .sg .chg { font-size: 13px; margin: 4px 0 8px; }
+  .sg .acts { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .sg button { border: 1px solid var(--line); background: #222; color: var(--text); border-radius: 999px; padding: 8px 16px; font-weight: 700; font-size: 14px; cursor: pointer; }
+  .sg button.yes { background: var(--green); color: #000; border-color: var(--green); }
+  .sg button.undo { font-weight: 500; padding: 5px 12px; font-size: 12px; color: var(--muted); }
   .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 </style>
 </head>
@@ -89,6 +98,7 @@
 <header><a href="./" aria-label="Back">‹</a><h1>📊 Stats</h1></header>
 <main>
   <section id="meta"><h2>📊 Instagram, live from Meta</h2><div class="muted">Loading…</div></section>
+  <section id="sugg"><h2>💡 Weekly suggestions</h2><div class="muted">Loading…</div></section>
   <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
   <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
   <section id="habit"><h2>📮 Your posting habit</h2><div class="muted">Loading…</div></section>
@@ -631,9 +641,55 @@ function hookChart(box, pts) {
 })();
 </script>
 <script>
+// 💡 Weekly suggestions with Approve / Skip (owner, 29 Oct 2026): stats/suggestions.json is written every Sunday by weekly_suggestions.py. A choice is
+// remembered on this phone at once and sent to the robot's inbox (inbox.py saves it); Claude applies the approved ones when the owner asks in a chat.
+(async () => {
+  const box = document.getElementById('sugg');
+  const [data, app] = await Promise.all([getJSON('stats/suggestions.json'), getJSON('app.json')]);
+  const esc = t => String(t || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  if (!data || !data.items || !data.items.length) {
+    box.innerHTML = '<h2>💡 Weekly suggestions</h2><div class="muted">Claude reads your Instagram numbers every Sunday at 8 AM and writes 3-5 ideas here. You approve or skip each one; nothing changes without your yes.</div>';
+    return;
+  }
+  const remote = {};   // decisions from ALL phones, read from the robot's inbox (ntfy keeps ~12 h)
+  try {
+    const rr = await fetch(`https://ntfy.sh/${app.inbox}/json?poll=1&since=12h`);
+    for (const line of (await rr.text()).split('\n')) {
+      let mm, ev; try { mm = JSON.parse(line); ev = JSON.parse(mm.message); } catch { continue; }
+      if (ev.type === 'suggestion') remote[ev.id] = { d: ev.decision, t: mm.time * 1000 };
+    }
+  } catch {}
+  const local = id => { try { return JSON.parse(localStorage.getItem('sugg-' + id) || 'null'); } catch { return null; } };
+  const status = it => { const l = local(it.id), r = remote[it.id];
+    const best = [l, r].filter(Boolean).sort((a, b) => b.t - a.t)[0]; return best ? best.d : it.status; };
+  const label = { approved: '✅ Approved', skipped: '❌ Skipped', new: '' };
+  const card = it => { const st = status(it);
+    return `<div class="sg" data-id="${esc(it.id)}"><div class="st">${esc(it.title)}</div>
+      <div class="why">${esc(it.why)}</div><div class="chg">🛠️ <b>What Claude would change:</b> ${esc(it.change)}</div>
+      <div class="acts">${st === 'new' ? `<button class="yes" data-d="approved">✅ Approve</button><button data-d="skipped">❌ Skip</button>`
+        : `<span class="chip ${st === 'approved' ? 'posted' : ''}">${label[st]}</span><button class="undo" data-d="new">↩️ Undo</button>`}</div></div>`; };
+  function render() {
+    const approved = data.items.filter(i => status(i) === 'approved').length;
+    box.innerHTML = `<h2>💡 Weekly suggestions <span class="muted">${esc(data.week)}</span></h2>
+      <div class="muted" style="margin:-4px 0 6px">${esc(data.summary || '')}</div>
+      ${data.items.map(card).join('')}
+      ${approved ? `<div class="verdict ok" style="margin-top:10px">${approved} approved. To make them, open a chat with Claude and say: <b>apply the approved suggestions</b>.</div>` : ''}
+      <div class="muted" style="margin-top:8px">Nothing changes until you approve and ask Claude to apply it.</div>`;
+    box.querySelectorAll('.sg button[data-d]').forEach(b => b.onclick = async () => {
+      const id = b.closest('.sg').dataset.id, d = b.dataset.d;
+      try { localStorage.setItem('sugg-' + id, JSON.stringify({ d, t: Date.now() })); } catch {}
+      try { const r = await fetch('https://ntfy.sh/' + app.inbox, { method: 'POST', body: JSON.stringify({ type: 'suggestion', id, decision: d }) });
+            if (!r.ok) throw new Error(r.status); } catch { alert('Saved on this phone, but could not reach the robot (no internet?). Tap again later.'); }
+      render();
+    });
+  }
+  render();
+})();
+</script>
+<script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 57;
+const PAGE_V = 58;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

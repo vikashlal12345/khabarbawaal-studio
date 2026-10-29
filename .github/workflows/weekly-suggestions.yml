@@ -1,0 +1,41 @@
+name: Weekly suggestions
+
+# Every Sunday 8:00 IST Claude reads the Instagram numbers and writes 3-5 suggestions to docs/stats/suggestions.json.
+# The Stats page shows them with Approve / Skip buttons; nothing changes until the owner approves and asks Claude to apply them.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * 0"       # Sunday 8:00 IST
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-suggestions
+  cancel-in-progress: false
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      PUSH_VAPID_KEY: ${{ secrets.PUSH_VAPID_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Install Claude Code (membership mode)
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Write the suggestions
+        run: python weekly_suggestions.py
+      - name: Upload
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "Weekly suggestions $(date -u +%Y-%m-%dT%H:%MZ)"

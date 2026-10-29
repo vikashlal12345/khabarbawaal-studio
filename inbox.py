@@ -86,6 +86,18 @@ def process() -> int:
             else:
                 print(f"  inbox: 📌 pin ignored (slot {kind!r} or a story that is not on the stats list)")
             continue
+        if msg.get("type") == "suggestion" and msg.get("id") and msg.get("decision") in ("approved", "skipped", "new"):
+            # 💡 ✅ Approve / ❌ Skip on a weekly suggestion (owner, 29 Oct 2026): recorded in suggestions.json; Claude applies the approved ones in a chat
+            spath = g.DOCS / "stats" / "suggestions.json"
+            sdata = g.load_json(spath, {}) or {}
+            for week in [sdata] + sdata.get("history", []):
+                for it in week.get("items", []):
+                    if it.get("id") == msg["id"]:
+                        it["status"] = msg["decision"]
+                        it["decided_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+                        spath.write_text(json.dumps(sdata, ensure_ascii=False, indent=1))
+                        print(f"  inbox: 💡 suggestion {msg['id']} {msg['decision']}")
+            continue
         if msg.get("type") == "unpin_story":
             # ↩️ Undo of a pin on the stats page (owner, 26 Oct 2026): messages are processed in order, so pin then undo = no pin
             if (state.get("pinned") or {}).pop(str(msg.get("slot", "")), None):
