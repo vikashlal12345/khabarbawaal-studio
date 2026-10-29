@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_pm-2026-10-29",
+  "image": "posts/20261029-1035-reel_news_pm-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-103508-reel_news_pm-2026-10-29.mp4",
+  "headline": "Ranveer Singh's performance in Dhurandhar was more impactful than Ranbir Kapoor in Animal, feels Varun Dhawan",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Varun Dhawan Ranveer Singh Dhurandhar vs Ranbir Kapoor Animal 🔥\nKoffee With Karan 9 ke rapid-fire mein Varun ne kaha Dhurandhar mein Ranveer ki performance Animal ke Ranbir se zyada impactful thi.\nAap kiske saath ho, Ranveer ya Ranbir?\nApne Ranveer fan dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#varundhawan #ranveersingh #ranbirkapoor #koffeewithkaran #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html",
+  "pin_comment": "Ye apne Ranveer ya Ranbir fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "hype = clash of two stars"
+   },
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "trending vibe for Koffee couch"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "swagger = who is the bigger star"
+   },
+   {
+    "title": "APT.",
+    "artist": "Rosé, Bruno Mars",
+    "lang": "english",
+    "mood": "fun, high energy debate"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Varun picked Ranveer's Dhurandhar performance as more impactful than Ranbir's in Animal, not that Ranveer is better overall.",
+    "Fact corrected to match the article: Claim about fans being split is not supported by the article."
+   ],
+   "fixed": [
+    "Varun Dhawan: Ranveer Singh, Ranbir Kapoor se behtar → Varun Dhawan: Dhurandhar mein Ranveer ki performance Animal ke Ranbir se zyada impactful",
+    "Fans ab do hisson mein bante dikh rahe hain. → Aap kiske saath ho, Ranveer ya Ranbir?"
+   ]
+  },
+  "created_at": "2026-10-29T10:35:08+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-29",
   "image": "posts/20261029-0833-reel_break_noon-2026-10-29.jpg",
   "kind": "reel",
@@ -380,103 +431,5 @@
    ]
   },
   "created_at": "2026-10-28T12:53:08+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-28",
-  "image": "posts/20261028-1034-reel_news_pm-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-103443-reel_news_pm-2026-10-28.mp4",
-  "headline": "Radhika Apte slams trolls criticising Alia Bhatt's physique in Alpha, calls out double standards for female actors in action roles",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Radhika Apte Alia Bhatt Alpha trolls 🔥\nRadhika Apte ne Alia Bhatt ki Alpha mein physique par trolling ki aalochna ki.\nUnhone action roles mein female actors par double standards ka mudda uthaya.\nYeh baat woh apni series Akka (Keerthy Suresh ke saath) ke promotion mein boli.\nRadhika sahi boli? HAAN ya NA likho 👇 🎬\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#aliabhatt #radhikaapte #bollywood #alpha #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
-  "pin_comment": "Kisi Alia fan ko bhejo 👇 Radhika sahi? HAAN ya NA",
-  "songs": [
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "swagger = trolls ko jawab"
-   },
-   {
-    "title": "Madhosh",
-    "artist": "Tanishk Bagchi, Arslan Nizami",
-    "lang": "hindi",
-    "mood": "glam Alia vibe"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "sassy double standards vibe"
-   },
-   {
-    "title": "the cure",
-    "artist": "Olivia Rodrigo",
-    "lang": "english",
-    "mood": "trolls ignore, self-love"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Akka is a crime thriller series on Netflix, not a film; Radhika is female so 'boli'.",
-    "Fact corrected to match the article: The text puts a paraphrase inside quotation marks as if it were her exact words; the actual quote is in English and says 'massive paunches'.",
-    "Slide 2: The photo is a collage of three women. The third, on the right, looks like Deepika Padukone, who is not part of the story. Radhika and Alia are both shown, so it is usable, but the extra person is unrelated."
-   ],
-   "fixed": [
-    "Radhika Apte bolin: → Radhika Apte boli:",
-    "apni film Akka (Keerthy Suresh ke saath) ke promotion mein bole. → apni series Akka (Keerthy Suresh ke saath) ke promotion mein boli.",
-    "Radhika Apte boli: \"Action karne wale actors ke paunches hain, Alia bloody fit hai.\" → Radhika Apte ne kaha ki action karne wale hero ke bade paunches hain, jabki Alia bloody fit hai."
-   ]
-  },
-  "created_at": "2026-10-28T10:34:43+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-28",
-  "image": "posts/20261028-0834-reel_break_noon-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-083421-reel_break_noon-2026-10-28.mp4",
-  "headline": "Ramayana first reactions: Viewers compare Ranbir Kapoor-Yash's film to Lord of the Rings, music receives mixed response",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ranbir Kapoor Yash Ramayana first reactions Los Angeles premiere\nNitesh Tiwari ki film ka LA premiere 27 October ko hua.\nViewers ne scale, visuals aur performances ki tareef ki, par music par response mixed raha.\nFilm 5 November 2026 ko release hogi.\nRamayana hit hogi? HAAN ya NA likho 👇🎬\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #Ramayana #RanbirKapoor #Yash #BollywoodNews",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
-  "pin_comment": "Ramayana hit hogi? HAAN ya NA likho. Kisi Ranbir ya Yash fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ramayana vibe, devotional epic feel"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "epic hype for big film"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "high energy praise moment"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "cinematic mood, slow build"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-28T08:34:21+00:00"
  }
 ]

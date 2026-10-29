@@ -208,7 +208,8 @@
   "cf972ba374be",
   "90b91d945491",
   "498d03c8fbc3",
-  "5b2f959a2b06"
+  "5b2f959a2b06",
+  "158d56b7934f"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -345,7 +346,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-29",
-  "reel_news_pm": "2026-10-28",
+  "reel_news_pm": "2026-10-29",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-29",
@@ -360,7 +361,7 @@
   "reel_break_noon": "2026-10-29",
   "reel_break_aft": "2026-10-28"
  },
- "inbox_since": "rmXWcuhxEMlR",
+ "inbox_since": "nr4s8heoSzmh",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -731,7 +732,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/trending/goabased-airline-fly91-surprises-young-pilot-by-bringing-her-parents-onboard-imagine-the-pride-101792049440473.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-international-trailer-to-be-unveiled-at-bengaluru-event-ranbir-kapoor-yash-sai-pallavi-to-attend/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
   "https://newsriveting.com/amit-shah-distributes-devices-to-divyangs-and-those-affected-by-naxal-violence/",
@@ -810,7 +810,8 @@
   "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
-  "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2"
+  "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
+  "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1027,10 +1028,6 @@
   }
  ],
  "songs_recent": [
-  "the cure",
-  "Narayan Mil Jayega",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Blinding Lights",
   "Calm Down",
   "Heeriye (feat. Arijit Singh)",
   "Zaalima",
@@ -1066,7 +1063,11 @@
   "Señorita",
   "Peek A Boo",
   "Heat Waves",
-  "Just Give Me a Reason (feat. Nate Ruess)"
+  "Just Give Me a Reason (feat. Nate Ruess)",
+  "Ez-Ez",
+  "Sahiba",
+  "Big Dawgs",
+  "APT."
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1169,6 +1170,10 @@
   {
    "title": "Janhvi Kapoor Faces Backlash For ‘Putting Down’ Tara Sutaria On Koffee With Karan 9 With Cheeky Jibe",
    "date": "2026-10-29"
+  },
+  {
+   "title": "Ranveer Singh's performance in Dhurandhar was more impactful than Ranbir Kapoor in Animal, feels Varun Dhawan",
+   "date": "2026-10-29"
   }
  ],
  "claude_limit": {
@@ -1183,6 +1188,13 @@
    "source": "hungamaexpress",
    "at": "2026-10-29T10:15:11+00:00",
    "followup": "Radhika Apte Alia Bhatt Alpha trolls"
+  },
+  "reel_news_aft": {
+   "link": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/varun-dhawan-chooses-ranveer-singh-in-dhurandhar-over-ranbir-kapoor-in-animal-the-only-flex-that-one-should-do-is-with-your-work/articleshow/135299468.cms",
+   "title": "Varun Dhawan chooses Ranveer Singh in 'Dhurandhar' over Ranbir Kapoor in 'Animal': 'The only flex that one should do is with your work'",
+   "source": "The Times of India",
+   "at": "2026-10-29T10:32:28+00:00",
+   "flash": "varun dhawan"
   }
  },
  "followed_winners": [
