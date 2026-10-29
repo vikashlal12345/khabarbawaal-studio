@@ -161,10 +161,10 @@
   "cache_write": 122770
  },
  "2026-10-29": {
-  "replies": 159,
-  "input": 322,
-  "output": 107486,
-  "cache_read": 48926905,
-  "cache_write": 441013
+  "replies": 198,
+  "input": 400,
+  "output": 150804,
+  "cache_read": 67697775,
+  "cache_write": 938296
  }
 }
