@@ -27,7 +27,7 @@ import schedule
 ROOT = Path(__file__).parent
 AMBIGUOUS = {"king", "yash", "vijay", "shah", "srk"}        # words that are not always a star
 ALIASES = {"srk": "shah rukh", "shahrukh": "shah rukh", "shah ruk": "shah rukh"}
-NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_break_aft")
+NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_aft", "reel_news_night")
 
 
 def norm_name(n: str) -> str:

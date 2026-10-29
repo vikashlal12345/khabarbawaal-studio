@@ -114,10 +114,10 @@
 </main>
 <script>
 const JOB_NAMES = { news: '📰 News', create: '➕ Create', top10_day: '📰 Top 5 News', night_roundup: '🌅 Overnight Top 5',
-  reel_devotion: '🙏 6 AM Devotional', reel_clip_am: '😂 Tag that friend (old)', reel_clip: '😂 Tag that friend (old)', reel_break_am: '⚡ 10 AM Breaking card', reel_break_noon: '⚡ 2 PM Breaking card', reel_break_aft: '⚡ 7:45 PM Breaking card', reel_flash: '⚡ Flash (extra)', reel_politics: '🎨 6 PM Cartoon roast',
+  reel_devotion: '🙏 6 AM Devotional', reel_clip_am: '😂 Tag that friend (old)', reel_clip: '😂 Tag that friend (old)', reel_break_am: '⚡ 10 AM Breaking card', reel_break_noon: '⚡ 2 PM Breaking card', reel_break_aft: '⚡ 7:45 PM Breaking card', reel_flash: '⚡ Flash (extra)', reel_politics: '🎨 Cartoon roast (paused)',
   reel_meme: '😂 Meme (old)', reel_news_early: '🔥 8 AM Viral news', reel_news_am: '🔥 12 PM Viral news',
-  reel_news_noon: '🔥 11:30 Viral news (old)', reel_news_aft: '🔥 3 PM Viral news (old)', reel_news_pm: '🔥 4 PM Viral news',
-  reel_news: '🔥 Viral news (old)', reel_news_night: '🔥 9:15 PM Viral news (old)', reel_poll: '🗳️ Choose your poll (old)', reel_bachpan: '🧒 Bachpan (old)', reel_rotate: '🎭 7:45 PM Rotating (Bachpan / Tag / Meme / Comedy)', reel_official: '🎥🔊 8:15 PM Speaker video',
+  reel_news_noon: '🔥 11:30 Viral news (old)', reel_news_aft: '🔥 6 PM Viral news', reel_news_pm: '🔥 4 PM Viral news',
+  reel_news: '🔥 Viral news (old)', reel_news_night: '🔥 8:15 PM Viral news', reel_poll: '🗳️ Choose your poll (old)', reel_bachpan: '🧒 Bachpan (old)', reel_rotate: '🎭 7:45 PM Rotating (Bachpan / Tag / Meme / Comedy)', reel_official: '🎥🔊 Speaker video (paused until 1,000 followers)',
   reel_top5_am: '🎬 Overnight Top 5 (old)', reel_top5: '🎬 Top 5 News (old)', night_picture: '🙏 God picture (old)',
   night_ready: '📦 Ready (night)', night_calendar: '📅 Planner',
   night_learn: '📊 Learning', calendar: '📅 Previews', fun: 'Fun (old)', other: 'Other' };
@@ -691,7 +691,7 @@ function hookChart(box, pts) {
 <script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 59;
+const PAGE_V = 60;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
