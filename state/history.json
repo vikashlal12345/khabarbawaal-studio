@@ -357,10 +357,10 @@
   "reel_news_early": "2026-10-29",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-29",
-  "reel_break_noon": "2026-10-28",
+  "reel_break_noon": "2026-10-29",
   "reel_break_aft": "2026-10-28"
  },
- "inbox_since": "ScU50y3lv5ky",
+ "inbox_since": "rmXWcuhxEMlR",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -731,7 +731,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/breaking-jailer-2-ends-with-the-promise-of-third-part-hrithik-roshans-massy-special-appearance-has-a-chulbul-pandey-connection-spoilers-ahead/",
   "https://www.hindustantimes.com/trending/goabased-airline-fly91-surprises-young-pilot-by-bringing-her-parents-onboard-imagine-the-pride-101792049440473.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-international-trailer-to-be-unveiled-at-bengaluru-event-ranbir-kapoor-yash-sai-pallavi-to-attend/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
@@ -810,7 +809,8 @@
   "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
+  "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1027,9 +1027,6 @@
   }
  ],
  "songs_recent": [
-  "Ez-Ez",
-  "Madhosh",
-  "Housewife",
   "the cure",
   "Narayan Mil Jayega",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
@@ -1066,7 +1063,10 @@
   "Teri Meri Kahaani",
   "Lae Dooba by Sunidhi Chauhan",
   "Die With A Smile",
-  "Señorita"
+  "Señorita",
+  "Peek A Boo",
+  "Heat Waves",
+  "Just Give Me a Reason (feat. Nate Ruess)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1165,6 +1165,10 @@
   {
    "title": "Sharvari dances with OG Rajshri heroine Madhuri Dixit to Yeh Prem Mol Liya song, calls it a ‘surreal’ moment with her idol",
    "date": "2026-10-29"
+  },
+  {
+   "title": "Janhvi Kapoor Faces Backlash For ‘Putting Down’ Tara Sutaria On Koffee With Karan 9 With Cheeky Jibe",
+   "date": "2026-10-29"
   }
  ],
  "claude_limit": {
@@ -1172,12 +1176,5 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {
-  "reel_break_noon": {
-   "link": "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
-   "title": "Janhvi Kapoor Faces Backlash For ‘Putting Down’ Tara Sutaria On Koffee With Karan 9 With Cheeky Jibe",
-   "source": "Asianet Newsable",
-   "at": "2026-10-29T08:06:50+00:00"
-  }
- }
+ "pinned": {}
 }
