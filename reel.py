@@ -810,9 +810,44 @@ def unescape(s: str) -> str:
 VIRAL_FILE = Path(__file__).parent / "state" / "viral.json"   # tools/views_from_recording.py --save
 
 
+def meta_memory(note: str = "") -> str:
+    """Our best / most shared and saved / weakest Reels from docs/stats/instagram_api.json (hourly, Meta Graph API), Reels 24 h+ old
+    so their numbers have settled. '' when the file is missing or too small."""
+    from datetime import datetime, timezone
+    try:
+        d = json.loads((Path(__file__).parent / "docs" / "stats" / "instagram_api.json").read_text())
+    except Exception:
+        return ""
+    now = datetime.now(timezone.utc)
+
+    def old_enough(m, hours):
+        try:
+            return (now - datetime.strptime(m["time"], "%Y-%m-%dT%H:%M:%S%z")).total_seconds() > hours * 3600
+        except Exception:
+            return False
+    reels = [m for m in d.get("media", []) if m.get("views") is not None and old_enough(m, 24)]
+    if len(reels) < 12:
+        return ""
+    title = lambda m: re.sub(r"\s+", " ", (m.get("caption") or "Reel").split("\n")[0])[:80]
+    line = lambda m: (f"- {m['views']} views, {m.get('likes') or 0} likes, {m.get('shares') or 0} shares, {m.get('saves') or 0} saves"
+                      + (f", watched {m['ig_reels_avg_watch_time'] / 1000:.1f}s on average" if m.get("ig_reels_avg_watch_time") else "") + f": {title(m)}")
+    best = sorted(reels, key=lambda m: -m["views"])[:10]
+    shared = sorted((m for m in reels if (m.get("shares") or 0) + (m.get("saves") or 0) > 0), key=lambda m: -((m.get("shares") or 0) * 2 + (m.get("saves") or 0)))[:5]
+    weak = sorted((m for m in reels if old_enough(m, 36)), key=lambda m: m["views"])[:5]
+    return ("\n\nWhat worked for us, REAL numbers from Instagram (aim for SIMILAR stories, hooks and angles, never the same stories again" +
+            (f"; {note}" if note else "") +
+            "; the page's rules above always come first, e.g. no matches or topics the owner ruled out):"
+            "\nMost viewed Reels:\n" + "\n".join(line(m) for m in best) +
+            ("\nMost shared and saved (people send these to friends: the strongest signal):\n" + "\n".join(line(m) for m in shared) if shared else "") +
+            "\nWeakest Reels (avoid stories and angles like these):\n" + "\n".join(line(m) for m in weak))
+
+
 def viral_memory(note: str = "") -> str:
     """Our own winners and flops (views from the owner's Instagram screen recordings), shown to every picker and
     writer so they aim for what worked (owner, 15 Oct 2026: a Salman Khan reveal got 1.6k views + shares)."""
+    live = meta_memory(note)   # 📊 the real numbers from Meta's official API (29 Oct 2026), when available
+    if live:
+        return live
     try:
         data = json.loads(VIRAL_FILE.read_text())
     except Exception:
