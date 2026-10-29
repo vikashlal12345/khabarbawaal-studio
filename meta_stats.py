@@ -17,7 +17,8 @@ IG_ID = "17841423915208770"
 HOSTS = ["https://graph.facebook.com/v23.0", "https://graph.instagram.com/v23.0"]
 OUT = "docs/stats/instagram_api.json"
 # newest names first; older apps call 'saves' saved
-METRIC_SETS = ["views,reach,likes,comments,shares,saved", "reach,likes,comments,shares,saved", "reach,likes,comments,shares"]
+METRIC_SETS = ["views,reach,likes,comments,shares,saved,reposts,ig_reels_avg_watch_time,total_interactions",
+               "views,reach,likes,comments,shares,saved,reposts", "views,reach,likes,comments,shares,saved", "reach,likes,comments,shares,saved", "reach,likes,comments,shares"]
 
 
 def get(host: str, path: str, params: dict) -> tuple[int, dict]:
@@ -61,7 +62,7 @@ def main() -> int:
                 print(f"  {path}: HTTP {st} {txt[:500]}")
         return 1
     print(f"account: @{acc.get('username')} followers={acc.get('followers_count')} media={acc.get('media_count')}")
-    st, media = get(host, f"{IG_ID}/media", {"fields": "id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count",
+    st, media = get(host, f"{IG_ID}/media", {"fields": "id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count,thumbnail_url",
                                               "limit": 50})
     print(f"media list HTTP {st}" + ("" if st == 200 else f" - {err(media)}"))
     if st != 200:
@@ -72,8 +73,8 @@ def main() -> int:
     metric_ok = None
     for m in items[: (3 if probe else 50)]:
         row = {"id": m["id"], "permalink": m.get("permalink"), "caption": (m.get("caption") or "")[:140], "time": m.get("timestamp"),
-               "type": m.get("media_product_type") or m.get("media_type"), "likes": m.get("like_count"), "comments": m.get("comments_count")}
-        for ms in ([metric_ok] if metric_ok else METRIC_SETS):
+               "type": m.get("media_product_type") or m.get("media_type"), "thumb": m.get("thumbnail_url"), "likes": m.get("like_count"), "comments": m.get("comments_count")}
+        for ms in (METRIC_SETS[METRIC_SETS.index(metric_ok):] if metric_ok else METRIC_SETS):
             st, ins = get(host, f"{m['id']}/insights", {"metric": ms})
             if st == 200:
                 metric_ok = ms

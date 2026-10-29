@@ -9,13 +9,13 @@ on:
         type: boolean
         default: true
   schedule:
-    - cron: "40 22 * * *"      # IST 4:10 AM daily
+    - cron: "25 * * * *"       # every hour at :25 (the post chain starts at :07)
 
 permissions:
   contents: write
 
 concurrency:
-  group: hourly-post
+  group: meta-stats          # its own group: it must never queue behind (or replace) a post run
   cancel-in-progress: false
 
 jobs:
