@@ -5,8 +5,9 @@
 Runs every 30 min from .github/workflows/flash-watch.yml (no AI, only the free news feeds + our own Instagram numbers).
 
 ⚡ FLASH: when a big film star is in the news of 6+ different sites in the last 4 h (4+ when the name also trends on X; Bing News counts) and our
-   Reels have not covered that star in the last 6 h, one extra breaking-card Reel (kind `reel_flash`) is made right away with that story.
-   Limits: 2 a day, 3 h apart, never 11 PM-6 AM, never within 40 min of a scheduled slot. The workflow dispatches the hourly run.
+   Reels have not covered that star in the last 6 h, that story is PINNED to the next news / breaking slot (owner, 29 Oct 2026: 'always put it in
+   the next slot, the gap is just 2 hours': no extra Reel at a random time). A slot less than 30 min away is too close; if the next slot is
+   more than 3.5 h away (overnight) the story is left alone.
 🔁 WINNERS: a Reel 6-36 h old with a big number (views 2.5x the median and 3K+, or 5+ shares, or 5+ saves) gets a follow-up: a fresh
    development on the same story (2+ sites, newer than the Reel) is pinned to the next news / breaking slot, once a day.
 Writes state/history.json (pinned, flash_log, followed_winners); prints `FLASH=1` for the workflow when a flash run is needed."""
@@ -68,16 +69,6 @@ def covered_recently(name: str, hours: int = 6) -> bool:
 
 def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list) -> dict | None:
     import emergency
-    log = [datetime.fromisoformat(x) for x in state.get("flash_log", [])]
-    today = [t for t in log if (t + schedule.IST).date() == now_ist.date()]
-    if len(today) >= 2:
-        return print("  flash: 2 already today") or None
-    if log and (datetime.now(timezone.utc) - max(log)).total_seconds() < 3 * 3600:
-        return print("  flash: last one less than 3 h ago") or None
-    if schedule.is_quiet(now_ist) or now_ist.hour < 6:
-        return print("  flash: quiet hours") or None
-    if near_slot(now_ist):
-        return print("  flash: a scheduled slot is close") or None
     import create_post
     cutoff = time.time() - 8 * 3600
     trend_text = " ".join(t for t, _ in trends).lower()
@@ -164,16 +155,16 @@ def detect_winner(state: dict, now_ist: datetime) -> dict | None:
     return None
 
 
-def next_slot(state: dict, now_ist: datetime) -> str | None:
-    """The next news / breaking slot at least 75 min away (today, else tomorrow's first) that has no pin yet."""
+def next_slot(state: dict, now_ist: datetime, lead_min: int = 30, max_wait_h: float = 24) -> str | None:
+    """The next news / breaking slot at least `lead_min` minutes away that has no pin yet (and not more than `max_wait_h` hours away)."""
     pins = state.get("pinned") or {}
     options = []
     for kind in NEWS_SLOTS:
         h, m = schedule.SPECIALS[kind]
         slot = now_ist.replace(hour=h, minute=m, second=0, microsecond=0)
-        if slot < now_ist + timedelta(minutes=75):
+        if slot < now_ist + timedelta(minutes=lead_min):
             slot += timedelta(days=1)
-        if kind not in pins:
+        if kind not in pins and (slot - now_ist).total_seconds() <= max_wait_h * 3600:
             options.append((slot, kind))
     return min(options)[1] if options else None
 
@@ -192,11 +183,14 @@ def main() -> int:
         print(f"  ! flash check failed: {type(e).__name__}: {str(e)[:120]}")
     changed = False
     if flash:
-        state.setdefault("pinned", {})["reel_flash"] = {"link": flash["link"], "title": flash["title"][:200], "source": flash["source"],
-                                                        "at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
-        state.setdefault("flash_log", []).append(datetime.now(timezone.utc).isoformat(timespec="seconds"))
-        state["flash_log"] = state["flash_log"][-20:]
-        changed = True
+        slot = next_slot(state, now_ist, lead_min=30, max_wait_h=3.5)
+        if slot:
+            state.setdefault("pinned", {})[slot] = {"link": flash["link"], "title": flash["title"][:200], "source": flash["source"],
+                                                    "at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "flash": flash["name"]}
+            print(f"  ⚡ pinned to {slot}: {flash['title'][:80]}")
+            changed = True
+        else:
+            print("  flash: no free slot in the next 3.5 h: left alone")
     try:
         win = detect_winner(state, now_ist)
         changed = True   # followed_winners may have grown
@@ -211,7 +205,6 @@ def main() -> int:
         print(f"  ! winners check failed: {type(e).__name__}: {str(e)[:120]}")
     if changed and not dry:
         g.save_json(g.STATE_FILE, state)
-    print("FLASH=1" if flash else "FLASH=0")
     return 0
 
 
