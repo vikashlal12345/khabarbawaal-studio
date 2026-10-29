@@ -173,5 +173,30 @@
     }
    ]
   }
+ ],
+ "maa-parvati-karva-mata": [
+  {
+   "date": "2026-10-29",
+   "family": "Parvati",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-parvati-karva-mata-2026-10-29-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    },
+    {
+     "file": "maa-parvati-karva-mata-2026-10-29-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.2
+     ]
+    }
+   ]
+  }
  ]
 }

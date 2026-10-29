@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-10-29",
+  "image": "posts/20261029-0033-reel_devotion-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-003306-reel_devotion-2026-10-29.mp4",
+  "headline": "Karaka Chaturthi: Aaj chand ka intezaar hai... aur Maa ka saath bhi",
+  "tag": "🎬 REEL · 🙏 KARWA CHAUTH",
+  "caption": "Karaka Chaturthi par Shiv-Parvati ka naam lo 🙏\nJo vrat rakhti hain, unke sabr ko salaam.\nChand nikle toh dil ki ek dua zaroor maangna.\nJai Shiv Parvati likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#karwachauth #karakachaturthi #shivparvati #jaishivshankar #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jo vrat rakh rahi hain, unhe ye bhejo 🙏",
+  "songs": [
+   {
+    "title": "Mangal Murti Gauri Lala (From \"Karwa Chauth Special Songs\")",
+    "artist": "Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Devi Karwa Chauth Mai",
+    "artist": "Deepa Narayan Jha",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Mahadev Aarti-Sheesh Gang Ardhang Parvati",
+    "artist": "Amrita Chaturvedi, Upadhyay",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jodi Jab Tose (From \"Karwa Chauth\")",
+    "artist": "Sadhana Sargam",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The AI image has a faint, dark second face or figure at the bottom centre, below the raised hand. It looks like an artifact. It is also on slide 3. Slide 4's caption text sits close to it."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-29T00:33:06+00:00"
+ },
+ {
   "id": "reel_official-2026-10-28",
   "image": "posts/20261028-1457-reel_official-2026-10-28.jpg",
   "kind": "reel",

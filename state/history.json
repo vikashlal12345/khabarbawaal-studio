@@ -341,7 +341,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-10-28",
+  "reel_devotion": "2026-10-29",
   "reel_news_pm": "2026-10-28",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -994,10 +994,6 @@
   }
  ],
  "songs_recent": [
-  "Vakratunda Mahakaya (Ganpati Shlok)",
-  "Vakrathunda Mahakaya",
-  "Ganesh Aarti",
-  "Jai Ganesh Jai Ganesh Deva",
   "Azadi",
   "Dhun",
   "Believer",
@@ -1033,7 +1029,11 @@
   "Sam Dam Dand Bhed",
   "Dhurandhar Title Track",
   "Toofan (KGF Chapter 2)",
-  "Aarambh Hai Prachand (Gulaal)"
+  "Aarambh Hai Prachand (Gulaal)",
+  "Mangal Murti Gauri Lala (From \"Karwa Chauth Special Songs\")",
+  "Devi Karwa Chauth Mai",
+  "Mahadev Aarti-Sheesh Gang Ardhang Parvati",
+  "Jodi Jab Tose (From \"Karwa Chauth\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
