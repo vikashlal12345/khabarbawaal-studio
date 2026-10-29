@@ -4159,7 +4159,8 @@ TOON_STYLE = ("3D animated cartoon caricature in the style of an Indian TV polit
 TOON_OPTION = {"type": "object", "properties": {
     "feasible": {"type": "boolean", "description": "false if THIS story has no clear, funny contrast / own-goal / U-turn that "
                  "anyone gets in 20 seconds, or the articles lack the facts: then the other fields can be empty. A mild, fair roast of "
-                 "what someone said or did is enough: say false only when the story has nothing to joke about"},
+                 "what someone said or did is enough: say false when the story has nothing to joke about, or when it is local (a "
+                 "state department, a city scheme, a minor leader) and a young Indian elsewhere would not know the background"},
     "based_on": {"type": "string"}, "issue": {"type": "string", "description": "2-4 words"}, "party": {"type": "string"},
     "hook": {"type": "string", "description": "4-9 words, huge over picture 1: the leader/party first, then the roast. Hinglish, "
              "no emojis, a fact from the story"},
@@ -4191,11 +4192,42 @@ TOON_HELP = ("\n\nTHIS Reel is a CARTOON ROAST: a 3-picture 3D cartoon (like Ind
              "a narrator caption (the roast) based on a FACT from the articles; the characters never speak in made-up quotes. Roast "
              "their actions and promises, never looks, family, religion, caste or health. The painter cannot write: NO banners, signs, "
              "maps, posters, screens, buses with boards or anything carrying words in any picture; show only the characters, their "
-             "faces, hands and simple props. The free painter also fails on busy scenes: ONE person per picture, a clear pose, a "
+             "faces, hands and simple props. PICTURE 1's caption must give the CONTEXT in plain words (who did what, today) so a "
+             "viewer who has not seen the news understands; use the most famous names and the most widely known story. The free painter also fails on busy scenes: ONE person per picture, a clear pose, a "
              "plain background; the narrator caption (not the picture) carries the story. If the story has no clear funny contrast, set feasible=false.")
 
 
-def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = "", tag: str = "SATIRE · AI CARTOON") -> Image.Image:
+def person_badge(photo: Image.Image | None, name: str) -> Image.Image:
+    """A small round photo of the REAL person with a red name pill under it (owner 29 Oct 2026: the cartoon does not show who the
+    person is, so the real small photo stays on screen). No free photo: the name pill alone."""
+    parts = []
+    if photo is not None:
+        photo = photo.convert("RGB")
+        side = min(photo.width, photo.height)
+        top = 0 if photo.height > photo.width else (photo.height - side) // 2   # portraits: keep the face (top)
+        sq = photo.crop(((photo.width - side) // 2, top, (photo.width - side) // 2 + side, top + side)).resize((210, 210), Image.LANCZOS)
+        ring = Image.new("RGBA", (226, 226), (0, 0, 0, 0))
+        ImageDraw.Draw(ring).ellipse((0, 0, 225, 225), fill="#FFFFFF")
+        mask = Image.new("L", (210, 210), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0, 209, 209), fill=255)
+        ring.paste(sq, (8, 8), mask)
+        parts.append(ring)
+    nm = pill(printable(name).upper(), font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(18, 8))
+    while nm.width > 400 and len(name) > 6:
+        name = name.rsplit(" ", 1)[0] if " " in name else name[:-1]
+        nm = pill(printable(name).upper(), font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(18, 8))
+    parts.append(nm)
+    w = max(p.width for p in parts)
+    out = Image.new("RGBA", (w, sum(p.height for p in parts) + 8 * (len(parts) - 1)), (0, 0, 0, 0))
+    y = 0
+    for p in parts:
+        out.alpha_composite(p, ((w - p.width) // 2, y))
+        y += p.height + 8
+    return out
+
+
+def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = "", tag: str = "SATIRE · AI CARTOON",
+               badges: list | None = None) -> Image.Image:
     """One picture of the cartoon roast: the painting full-screen with a slow zoom, the narrator caption in a dark box at the bottom,
     the hook huge on top of picture 1, a small 'AI CARTOON' tag."""
     img = img.convert("RGB")
@@ -4230,11 +4262,15 @@ def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = ""
         for j, im in enumerate(line_images(hl, hf, hlh, "#FFFFFF", COVER_PINK, auto_highlight(hook), stroke=9)):
             frame.alpha_composite(im, ((RW - im.width) // 2, 250 + j * hlh))
     frame.alpha_composite(pill(tag, font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(22, 8)), (50, 120))
+    y = 740   # the real people (badges) on the right, between the hook and the caption box
+    for b in (badges or [])[:2]:
+        frame.alpha_composite(b, (RW - b.width - 40, y))
+        y += b.height + 24
     handle_tag(frame, 1790)
     return frame
 
 
-def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_mp4: str) -> list[Image.Image]:
+def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_mp4: str, badges: list | None = None) -> list[Image.Image]:
     """The cartoon roast: each picture ~3.5-6 s, then the punchline card + SEND THIS (5 s), then Follow. Returns frames to proofread."""
     logo = logo_img()
     pl = Image.new("RGBA", (RW, RH), YELLOW)
@@ -4252,7 +4288,7 @@ def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_
     for n, (img, line) in enumerate(scenes):
         dur = min(6.0, max(3.8 if n else 4.8, read_secs(line + (" " + hook if n == 0 else ""), 2.0)))
         for i in range(int(dur * FPS)):
-            f = toon_frame(img, line, i / FPS, dur, hook if n == 0 else "")
+            f = toon_frame(img, line, i / FPS, dur, hook if n == 0 else "", badges=badges)
             if i == int(1.2 * FPS):
                 shots.append(f.convert("RGB"))
             enc.add(f)
@@ -4426,16 +4462,33 @@ def make_cartoon_roast_reel(state: dict, feed: list, today: str, tmp: str, stori
     status.step("Painting the cartoon (free AI painters)", 4)
     scenes = paint_toon_scenes(best, tmp)
     models = ", ".join(dict.fromkeys(m for _, _, m in scenes))
+    badges, photo_credits = [], []
+    for c in best["characters"][:2]:   # the real person's small photo (free Wikipedia picture, credited) on every picture
+        try:
+            ph, credit = wiki_thumb(c["name"], 400)
+        except Exception:
+            ph, credit = None, ""
+        if ph is None:   # no free Wikipedia picture: the lead photo of a recent news article ABOUT them (AI-checked), with its source
+            try:
+                found = person_photos(c["name"], best["based_on"], tmp, others=tuple(o["name"] for o in best["characters"] if o is not c), want=1)
+                if found:
+                    ph, credit = found[0][0], f"photo from {found[0][1]}"
+            except Exception as e:
+                print(f"  ! news photo of {c['name']}: {str(e)[:80]}")
+        badges.append(person_badge(ph, c["name"]))
+        if ph is not None and credit:
+            photo_credits.append(f"{c['name']}: {credit}")
     item = {"link": story["url"], "source": story["site"], "title": story["title"]}
     out = os.path.join(tmp, "reel.mp4")
 
     def caption_of(d):
         d = d["post"]
-        return g.full_caption({**d, "caption": d["caption"].strip() + f"\n\n🎨 AI cartoon (satire), pictures: AI illustration ({models})"}, item)
+        return g.full_caption({**d, "caption": d["caption"].strip() + f"\n\n🎨 AI cartoon (satire), pictures: AI illustration ({models})"
+                                  + (f". Photos: {'; '.join(photo_credits)}" if photo_credits else "")}, item)
 
     def render(d):
         lines = [d["post"]["scenes"][i]["line"] if i < len(d["post"]["scenes"]) else scenes[i][1] for i in range(len(scenes))]
-        return toon_reel([(img, lines[i]) for i, (img, _, _) in enumerate(scenes)], d["post"]["hook"], d["post"]["punchline"], out)
+        return toon_reel([(img, lines[i]) for i, (img, _, _) in enumerate(scenes)], d["post"]["hook"], d["post"]["punchline"], out, badges)
     status.step("Making the cartoon + fact-checking", 5)
     frames, data, proof = proofread.run(render, {"post": best}, caption_of, sources, strict=True)
     post = data["post"]
@@ -4533,11 +4586,16 @@ def make_politics_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                             f"involving a death is fine when the joke is about a leader's claim or action (e.g. a claim "
                             f"a video exposed), never the death itself. Skip stories "
                             f"mainly about a leader's relatives, and stories that are only allegations (FIR, ED/CBI "
-                            f"case, chargesheet, no verdict). Empty if none.",
+                            f"case, chargesheet, no verdict). FAMOUS TOPIC (owner, 29 Oct 2026: a state liquor-delivery story was unknown to "
+                            f"most viewers): take the story ALL India already talks about today (national leaders, many outlets, "
+                            f"trending on X), never a state / city / department detail that needs background. Empty if none.",
                             {"type": "object", "properties": {"picks": {"type": "array", "items": {"type": "integer"}}},
                              "required": ["picks"], "additionalProperties": False},
                             CONFIG.get("membership_model", "sonnet"), purpose="satire pick")["picks"]
     picks = [n for n in picks if 1 <= n <= len(stories)][:3]
+    if CARTOON_ROAST and not REMAKE.get("link"):   # the cartoon needs a story everybody already knows (owner 29 Oct 2026): fresh + trending
+        fresh = [n for n in picks if age_h(stories[n - 1]) <= 36 or stories[n - 1].get("trend")]
+        picks = fresh or picks
     if REMAKE.get("link"):
         picks = [1]
     if not picks:
