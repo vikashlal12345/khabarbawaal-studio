@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_politics-2026-10-29",
+  "image": "posts/20261029-0515-reel_politics-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-051556-reel_politics-2026-10-29.mp4",
+  "headline": "Dipke: roz hazaaron Instagram posts gayab, Centre par ilzaam",
+  "tag": "🎬 REEL · 🎨 CARTOON ROAST",
+  "caption": "Abhijeet Dipke CJP Instagram crackdown claim 📱\nDipke ne X par kaha: Centre Instagram posts hata raha hai. Instagram ne IT Act ka legal requirement bataya.\nCrackdown ki shikayat X par, sabne dekhi 😅\nKaun sahi? Ek word likho: BJP ya CJP 👇\n\n🎨 AI cartoon (satire), pictures: AI illustration (Z-Image). Photos: Abhijeet Dipke: LetsUpp Marathi on YouTube (CC BY 4.0)\n\nFollow @khabarbawaal: roz shaam 6 baje naya Cartoon Roast 🎨\nSource: News9Live (link pinned in comments 👇)\n\n#AbhijeetDipke #CJP #Instagram #politicalsatire #reelsindia",
+  "source": "News9Live",
+  "source_url": "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861",
+  "pin_comment": "Crackdown ka sabse bada saboot: sabko pata chal gaya! Kisi CJP fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "azadi claim vs X post"
+   },
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "words vs reality, top chart"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "dramatic stop-the-show vibe"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "trending, dramatic complaint energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the Instagram message was about Varun Grover's restricted post; 'ye post' was ambiguous and implied Dipke's.",
+    "🎨 The pictures are AI cartoons (Z-Image): turn on Instagram's 'AI info' label when posting. It is satire: the captions are jokes about what the article says, not real quotes."
+   ],
+   "fixed": [
+    "Cockroach Janta Party ke founder → Cockroach Janata Party ke founder",
+    "Instagram ne kaha: ye post legal requirement ke tahat IT Act mein restrict hui. Twist! → Varun Grover ki post par Instagram ne kaha: legal requirement ke tahat IT Act mein restrict hui. Twist!"
+   ]
+  },
+  "created_at": "2026-10-29T05:15:56+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-29",
   "image": "posts/20261029-0432-reel_break_am-2026-10-29.jpg",
   "kind": "reel",

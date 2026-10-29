@@ -8472,40 +8472,40 @@
   },
   "reel_politics": {
    "posts": 0,
-   "requests": 10,
-   "input": 24,
-   "output": 8372,
-   "cache_read": 14613,
-   "cache_write": 224066,
-   "value_usd": 0.9815,
+   "requests": 22,
+   "input": 58,
+   "output": 24224,
+   "cache_read": 85879,
+   "cache_write": 469941,
+   "value_usd": 2.1308,
    "by_purpose": {
     "satire pick": {
-     "requests": 1,
-     "tokens": 29337
+     "requests": 2,
+     "tokens": 59169
     },
     "cartoon roast writing": {
-     "requests": 2,
-     "tokens": 72186
+     "requests": 5,
+     "tokens": 222847
     },
     "joke judge": {
-     "requests": 1,
-     "tokens": 25830
+     "requests": 3,
+     "tokens": 77740
     },
     "hook contest": {
-     "requests": 1,
-     "tokens": 25483
+     "requests": 2,
+     "tokens": 51010
     },
     "hook meaning": {
-     "requests": 3,
-     "tokens": 72141
+     "requests": 4,
+     "tokens": 96083
     },
     "toon check": {
-     "requests": 1,
-     "tokens": 7576
+     "requests": 2,
+     "tokens": 14810
     },
     "proofreading": {
-     "requests": 1,
-     "tokens": 14522
+     "requests": 4,
+     "tokens": 58443
     }
    }
   }
