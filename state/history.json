@@ -206,7 +206,8 @@
   "f4268a829154",
   "395fee2c2209",
   "cf972ba374be",
-  "90b91d945491"
+  "90b91d945491",
+  "498d03c8fbc3"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -354,11 +355,11 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-10-29",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-28",
+  "reel_break_am": "2026-10-29",
   "reel_break_noon": "2026-10-28",
   "reel_break_aft": "2026-10-28"
  },
- "inbox_since": "SRR8S5OHkaqc",
+ "inbox_since": "o139AfZ0LOmn",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -727,7 +728,6 @@
   "https://www.indiatoday.in/cities/bengaluru/story/karnataka-mlc-polls-jds-defeats-congress-bengaluru-teachers-constituency-3026476-2026-10-27"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/kangana-ranaut-backs-bittu-tabahi-after-river-he-cleaned-for-8-months-gets-polluted-again-101791974779795.html",
   "https://www.hindustantimes.com/entertainment/bollywood/karisma-kapoor-reveals-salman-khan-refused-to-shoot-with-her-over-her-too-open-clingy-outfit-in-dulhan-hum-le-jayenge-101792035143522.html",
   "https://www.bollywoodhungama.com/news/bollywood/breaking-jailer-2-ends-with-the-promise-of-third-part-hrithik-roshans-massy-special-appearance-has-a-chulbul-pandey-connection-spoilers-ahead/",
   "https://www.hindustantimes.com/trending/goabased-airline-fly91-surprises-young-pilot-by-bringing-her-parents-onboard-imagine-the-pride-101792049440473.html",
@@ -806,7 +806,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
   "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
-  "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html"
+  "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -995,10 +996,6 @@
   }
  ],
  "songs_recent": [
-  "Tabaahi (From \"Toxic\")",
-  "Alfaaz",
-  "The One That Got Away",
-  "stupid song",
   "Dhun",
   "Sahiba",
   "Die With A Smile",
@@ -1034,7 +1031,11 @@
   "Barsaat",
   "Ashke",
   "Headlights (feat. KIDDO)",
-  "Beauty And A Beat"
+  "Beauty And A Beat",
+  "Tabaahi (From \"Toxic\")",
+  "Shararat",
+  "Janice STFU",
+  "Stop The Wedding!"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1124,6 +1125,10 @@
   },
   {
    "title": "Exclusive | Bhumi Pednekkar set to reunite with Akshay Kumar in Priyadarshan's next film",
+   "date": "2026-10-29"
+  },
+  {
+   "title": "Janhvi Kapoor's cheeky dating advice to Veer Pahariya on Koffee With Karan has internet calling it a dig at Tara Sutaria",
    "date": "2026-10-29"
   }
  ],

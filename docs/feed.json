@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-10-29",
+  "image": "posts/20261029-0432-reel_break_am-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-043239-reel_break_am-2026-10-29.mp4",
+  "headline": "Janhvi Kapoor's cheeky dating advice to Veer Pahariya on Koffee With Karan has internet calling it a dig at Tara Sutaria",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Janhvi Kapoor Veer Pahariya Tara Sutaria Koffee With Karan dating advice\nRapid-fire mein Karan ne poocha Veer ko kya dating advice doge\nJanhvi bolin: \"Never take her to a concert\"\nInternet ko laga yeh Tara Sutaria par shade tha\nJanhvi ka dig tha? HAAN ya NA likho 👇 🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#janhvikapoor #koffeewithkaran #tarasutaria #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
+  "pin_comment": "Dig tha ya nahi? HAAN ya NA likho. Kisi Janhvi fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "shade throw = dramatic tabaahi"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "cheeky dig, naughty vibe"
+   },
+   {
+    "title": "Janice STFU",
+    "artist": "Drake",
+    "lang": "english",
+    "mood": "shade-throwing diss vibe"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "dating drama, breakup vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-29T04:32:39+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-29",
   "image": "posts/20261029-0234-reel_news_early-2026-10-29.jpg",
   "kind": "reel",
@@ -445,52 +490,5 @@
    ]
   },
   "created_at": "2026-10-28T04:33:55+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-28",
-  "image": "posts/20261028-0234-reel_news_early-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-023419-reel_news_early-2026-10-28.mp4",
-  "headline": "Captain Smit Machchhar, flydubai crew honoured by UAE President for mid-air heroism",
-  "tag": "🎬 REEL · INDIA",
-  "caption": "Captain Smit Machchhar flydubai UAE honour 🇮🇳\nUAE President Sheikh Mohamed bin Zayed ne Captain Smit Machchhar aur flydubai crew ko First Class Order of Zayed II diya.\nIs sammaan ki wajah mid-air emergency mein unki bahaduri aur quick action bataya gaya.\nCaptain Smit ko salute banta hai? HAAN ya NA likho 👇 ✈️\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#flydubai #captainsmit #indianpride #uae #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
-  "pin_comment": "Kisi pilot dost ko bhejo 👇 Salute ke liye HAAN comment karo",
-  "songs": [
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "desi pride, hype"
-   },
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "emotional proud moment"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "hero rising under pressure"
-   },
-   {
-    "title": "On My Way",
-    "artist": "Alan Walker, Sabrina Carpenter",
-    "lang": "english",
-    "mood": "uplifting flight vibes"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "Is sammaan ki wajah mid-air heroism bataya gaya. → Is sammaan ki wajah mid-air emergency mein unki bahaduri aur quick action bataya gaya."
-   ]
-  },
-  "created_at": "2026-10-28T02:34:19+00:00"
  }
 ]
