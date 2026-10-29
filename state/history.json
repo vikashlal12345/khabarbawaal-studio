@@ -209,7 +209,8 @@
   "90b91d945491",
   "498d03c8fbc3",
   "5b2f959a2b06",
-  "158d56b7934f"
+  "158d56b7934f",
+  "d606e7966fef"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -734,7 +735,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/ramayana-international-trailer-to-be-unveiled-at-bengaluru-event-ranbir-kapoor-yash-sai-pallavi-to-attend/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-imran-khan-to-move-bombay-hc-challenge-illegal-leave-india-notice-101792064056158.html",
   "https://newsriveting.com/amit-shah-distributes-devices-to-divyangs-and-those-affected-by-naxal-violence/",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-and-karisma-kapoor-bring-back-90s-chemistry-on-koffee-with-karan-9-heres-where-to-watch-6-films-of-favourite-bollywood-pair-judwaa-jeet-101792066666462.html",
@@ -813,7 +813,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
   "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
-  "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/tanu-weds-manu-3-wont-move-ahead-without-r-madhavan-and-kangana-ranaut-confirms-aanand-l-rai-denies-fresh-cast-reports-101793265815138.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1030,10 +1031,6 @@
   }
  ],
  "songs_recent": [
-  "Iris",
-  "Sam Dam Dand Bhed",
-  "Dhurandhar Title Track",
-  "Toofan (KGF Chapter 2)",
   "Aarambh Hai Prachand (Gulaal)",
   "Mangal Murti Gauri Lala (From \"Karwa Chauth Special Songs\")",
   "Devi Karwa Chauth Mai",
@@ -1069,7 +1066,11 @@
   "Madhosh",
   "Kabhi Shaam Dhale",
   "Espresso",
-  "Let Me Down Slowly"
+  "Let Me Down Slowly",
+  "Tera Hoke Rahoon",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Levitating",
+  "Girls Like You"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1175,6 +1176,10 @@
   },
   {
    "title": "Ranveer Singh's performance in Dhurandhar was more impactful than Ranbir Kapoor in Animal, feels Varun Dhawan",
+   "date": "2026-10-29"
+  },
+  {
+   "title": "Tanu Weds Manu 3 won't move ahead without R Madhavan and Kangana Ranaut, confirms Aanand L Rai, denies ‘fresh cast’ reports",
    "date": "2026-10-29"
   }
  ],

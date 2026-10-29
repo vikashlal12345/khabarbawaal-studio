@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_aft-2026-10-29",
+  "image": "posts/20261029-1258-reel_news_aft-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-125801-reel_news_aft-2026-10-29.mp4",
+  "headline": "Tanu Weds Manu 3 won't move ahead without R Madhavan and Kangana Ranaut, confirms Aanand L Rai, denies ‘fresh cast’ reports",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tanu Weds Manu 3 Kangana Ranaut R Madhavan cast news 🎬\nAanand L Rai ne 'fresh cast' reports ko deny kiya.\nTanu Weds Manu 3 R Madhavan aur Kangana Ranaut ke bina aage nahi badhegi.\nPehle ki Tanu-Manu jodi hi wapas aayegi.\nApne Kangana ya Madhavan fan dost ko bhejo 👇 Sahi decision? HAAN ya NA likho.\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#TanuWedsManu3 #KanganaRanaut #RMadhavan #bollywood #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/tanu-weds-manu-3-wont-move-ahead-without-r-madhavan-and-kangana-ranaut-confirms-aanand-l-rai-denies-fresh-cast-reports-101793265815138.html",
+  "pin_comment": "Ye Tanu Weds Manu ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "jodi wapas = romantic reunion vibe"
+   },
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "classic jodi nostalgia"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "fun upbeat comeback energy"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "Tanu ka swag, love story"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-29T12:58:01+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-29",
   "image": "posts/20261029-1035-reel_news_pm-2026-10-29.jpg",
   "kind": "reel",
@@ -379,57 +424,5 @@
    ]
   },
   "created_at": "2026-10-28T14:19:01+00:00"
- },
- {
-  "id": "reel_politics-2026-10-28",
-  "image": "posts/20261028-1253-reel_politics-2026-10-28.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261028-125308-reel_politics-2026-10-28.mp4",
-  "headline": "‘Ravana is not all bad’: Sai Pallavi says key takeaway from Ramayana is to spot the Ravana in us and make changes over time",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sai Pallavi Ramayana Ravana statement 🔥\nRanbir Kapoor, Yash, Sai Pallavi ki Ramayana ka premiere Los Angeles mein hua.\nSai Pallavi ne kaha, film ki badi seekh hai apne andar ka Ravana pehchaan kar waqt ke saath badalna.\nSai Pallavi ki baat sahi lagi? HAAN ya NA likho 👇\n\nVideo: @pallavicanvas on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SaiPallavi #Ramayana #RanbirKapoor #Bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
-  "pin_comment": "Kisi Ramayana fan ko bhejo 👇 Sai Pallavi sahi? HAAN ya NA",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional vibe = Ramayana seekh"
-   },
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "intense dramatic Ravana energy"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "epic premiere night glow"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "calm, thoughtful takeaway"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article gives no date (27 October) for the premiere, so the unsupported date is removed.",
-    "Fact corrected to match the article: She said 'Ravana is not all bad', which is not the same as 'not bad at all'."
-   ],
-   "fixed": [
-    "world premiere 27 October ko Los Angeles mein hua → premiere Los Angeles mein hua",
-    "Ravana bilkul bura nahi hai → Ravana poori tarah bura nahi hai",
-    "removed weak photo slide(s) [2]"
-   ]
-  },
-  "created_at": "2026-10-28T12:53:08+00:00"
  }
 ]
