@@ -352,7 +352,7 @@
   "reel_news_am": "2026-10-29",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-10-15",
+  "reel_news_aft": "2026-10-29",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-10-29",
@@ -361,7 +361,7 @@
   "reel_break_noon": "2026-10-29",
   "reel_break_aft": "2026-10-28"
  },
- "inbox_since": "nr4s8heoSzmh",
+ "inbox_since": "i8JUiRzixi9m",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -545,7 +545,8 @@
   "Diwali shopping season: mummy ka 'bas ek dukaan' aur 4 ghante",
   "Aamir Khan childhood friendship visit",
   "Bishnoi warning to everyone linked to Salman Khan, Tiger Shroff news",
-  "Bollywood paid PR claims everyone is debating"
+  "Bollywood paid PR claims everyone is debating",
+  "Flipkart Big Billion Days 2026 Apple and TV deals"
  ],
  "recent_reels": [
   "Wo dost jo match mein har ball pe expert ban jaata hai, phir khud gully mein pehli ball pe out hota hai",
@@ -581,7 +582,8 @@
   "Bachpan ka dost 10 saal baad ghar aaya. Mummy ne 5 minute mein uski salary, shaadi aur mere saare raaz bata diye.",
   "Interval se pehle hi desk ke neeche tiffin khola... poori class ko aloo paratha ki khushboo aa gayi",
   "Pehle: Salman ke saath photo daalna status pe Ab: contacts check Bishnoi bhai: My manager is also Salman Khan's friend",
-  "Bollywood ka paid PR sunke wo dost bolta hai: 'Tere 500 likes? Pakka paid hain.' Khud ki photo pe 12 likes, 11 alt account se."
+  "Bollywood ka paid PR sunke wo dost bolta hai: 'Tere 500 likes? Pakka paid hain.' Khud ki photo pe 12 likes, 11 alt account se.",
+  "Wo dost jo Big Billion Days mein bolta hai: 'iPhone sasta hai bhai, EMI mein toh free hi hai.' Salary: 3 din pehle khatam."
  ],
  "clip_licences": {
   "50753": "Free",
@@ -1028,10 +1030,6 @@
   }
  ],
  "songs_recent": [
-  "Calm Down",
-  "Heeriye (feat. Arijit Singh)",
-  "Zaalima",
-  "All The Stars",
   "Iris",
   "Sam Dam Dand Bhed",
   "Dhurandhar Title Track",
@@ -1067,7 +1065,11 @@
   "Ez-Ez",
   "Sahiba",
   "Big Dawgs",
-  "APT."
+  "APT.",
+  "Madhosh",
+  "Kabhi Shaam Dhale",
+  "Espresso",
+  "Let Me Down Slowly"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1189,12 +1191,12 @@
    "at": "2026-10-29T10:15:11+00:00",
    "followup": "Radhika Apte Alia Bhatt Alpha trolls"
   },
-  "reel_news_aft": {
-   "link": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/varun-dhawan-chooses-ranveer-singh-in-dhurandhar-over-ranbir-kapoor-in-animal-the-only-flex-that-one-should-do-is-with-your-work/articleshow/135299468.cms",
-   "title": "Varun Dhawan chooses Ranveer Singh in 'Dhurandhar' over Ranbir Kapoor in 'Animal': 'The only flex that one should do is with your work'",
-   "source": "The Times of India",
-   "at": "2026-10-29T10:32:28+00:00",
-   "flash": "varun dhawan"
+  "reel_news_night": {
+   "link": "https://newsable.asianetnews.com/entertainment/kriti-sanon-impresses-fans-as-nikki-in-obsession-promo-make-a-remake-with-her-watch-articleshow-fyw7tgy",
+   "title": "Kriti Sanon Impresses Fans as 'Nikki' in Obsession Promo: ‘Make a Remake With Her’ - WATCH",
+   "source": "newsable.asianetnews",
+   "at": "2026-10-29T12:32:43+00:00",
+   "flash": "kriti"
   }
  },
  "followed_winners": [

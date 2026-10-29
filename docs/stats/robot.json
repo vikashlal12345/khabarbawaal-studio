@@ -8625,6 +8625,61 @@
      "tokens": 31233
     }
    }
+  },
+  "reel_news_aft": {
+   "posts": 0,
+   "requests": 28,
+   "input": 84,
+   "output": 18454,
+   "cache_read": 163353,
+   "cache_write": 396978,
+   "value_usd": 1.7888,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 3,
+     "tokens": 117151
+    },
+    "photo check": {
+     "requests": 5,
+     "tokens": 31499
+    },
+    "quote video": {
+     "requests": 3,
+     "tokens": 76607
+    },
+    "cover photo": {
+     "requests": 3,
+     "tokens": 15275
+    },
+    "hook contest": {
+     "requests": 3,
+     "tokens": 82823
+    },
+    "hook meaning": {
+     "requests": 3,
+     "tokens": 76835
+    },
+    "proofreading": {
+     "requests": 4,
+     "tokens": 49649
+    },
+    "buzz topics": {
+     "requests": 1,
+     "tokens": 27313
+    },
+    "reel writing": {
+     "requests": 1,
+     "tokens": 43630
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 52171
+    },
+    "photo look": {
+     "requests": 1,
+     "tokens": 5916
+    }
+   }
   }
  }
 }

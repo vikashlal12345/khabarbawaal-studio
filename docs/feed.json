@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_aft-2026-10-29",
+  "image": "posts/20261029-1240-reel_news_aft-2026-10-29.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261029-124014-reel_news_aft-2026-10-29.mp4",
+  "headline": "Wo dost jo Big Billion Days mein bolta hai: 'iPhone sasta hai bhai, EMI mein toh free hi hai.' Salary: 3 din pehle khatam.",
+  "tag": "🎬 REEL · TAG THAT FRIEND",
+  "caption": "Flipkart Big Billion Days 2026 iPhone deal 😭\nSale aate hi dimaag band, wallet khula 📱\nApna sabse bekaar purchase ek emoji mein batao 👇\n\nFollow @khabarbawaal: roz naye memes, dosto ko tag karo 😂\n\n#flipkart #bigbillionDays #sale #trending #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "EMI wala option dekhte hi dost ka 'sasta hai' wala logic shuru ho jaata hai 😂 bhejo usse",
+  "songs": [
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "cart mein pyaar, madhosh shopping"
+   },
+   {
+    "title": "Kabhi Shaam Dhale",
+    "artist": "Jaani, Mohammad Faiz",
+    "lang": "hindi",
+    "mood": "sad hook = bank balance"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "sale ka caffeine rush"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "sad hook = balance gira"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-29T12:40:14+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-29",
   "image": "posts/20261029-1035-reel_news_pm-2026-10-29.jpg",
   "kind": "reel",
