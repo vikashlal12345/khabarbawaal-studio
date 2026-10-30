@@ -168,10 +168,17 @@
   "cache_write": 2009754
  },
  "2026-10-30": {
-  "replies": 346,
-  "input": 898,
-  "output": 513720,
-  "cache_read": 113472007,
-  "cache_write": 2213098
+  "replies": 348,
+  "input": 902,
+  "output": 534214,
+  "cache_read": 114582021,
+  "cache_write": 2246840
+ },
+ "2026-10-31": {
+  "replies": 91,
+  "input": 256,
+  "output": 125796,
+  "cache_read": 50993309,
+  "cache_write": 653110
  }
 }
