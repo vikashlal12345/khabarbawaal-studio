@@ -34,8 +34,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Look at one page
+        if: ${{ github.event_name == 'workflow_dispatch' && startsWith(inputs.discover, 'look:') }}
+        run: python meta_stats.py --look "${{ inputs.discover }}"
       - name: Business Discovery test
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.discover != '' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.discover != '' && !startsWith(inputs.discover, 'look:') }}
         run: python meta_stats.py --discover "${{ inputs.discover }}"
       - name: Save the competitor numbers (discover = all)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.discover == 'all' }}

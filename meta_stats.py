@@ -108,6 +108,20 @@ def read_competitors(host: str, force: bool = False) -> None:
 
 def main() -> int:
     probe = "--probe" in sys.argv
+    if "--look" in sys.argv:   # python meta_stats.py --look name : prints that page's last 30 posts (public numbers) for a human to read
+        name = sys.argv[sys.argv.index("--look") + 1].replace("look:", "").lstrip("@")
+        for h in HOSTS:
+            st, acc = get(h, IG_ID, {"fields": "username"})
+            if st == 200:
+                d = discover(h, name, 30)
+                if d:
+                    import statistics
+                    lk = [x["likes"] for x in d["media"] if x.get("likes") is not None]
+                    print(f"LOOK @{d['username']} followers={d['followers']} posts={d['media_count']} median_likes={statistics.median(lk) if lk else None}")
+                    for x in sorted(d["media"], key=lambda x: -(x.get("likes") or 0)):
+                        print("LOOK", x["time"][:16], x["type"], x["likes"], x["comments"], x["permalink"], "|", (x["caption"] or "").replace("\n", " ")[:170])
+                return 0
+        return 1
     if "--discover" in sys.argv:   # python meta_stats.py --discover name1,name2
         names = [n.strip().lstrip("@") for n in sys.argv[sys.argv.index("--discover") + 1].split(",") if n.strip()]
         for h in HOSTS:
