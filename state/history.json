@@ -212,7 +212,8 @@
   "158d56b7934f",
   "d606e7966fef",
   "596ebcd4851b",
-  "6716bf7ed97d"
+  "6716bf7ed97d",
+  "491269b9e623"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -360,12 +361,12 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-10-30",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-10-29",
+  "reel_break_am": "2026-10-30",
   "reel_break_noon": "2026-10-29",
   "reel_break_aft": "2026-10-29",
   "reel_news_night": "2026-10-29"
  },
- "inbox_since": "gRDtAM8IX8A9",
+ "inbox_since": "DXojfzyaJIVQ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -738,7 +739,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/ht-explainers/why-frro-asked-imran-khan-to-leave-india-the-law-the-notice-and-the-actors-options-101792122842206.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-khan-celebrates-14-years-with-saif-ali-khan-shares-unseen-family-moments-on-their-wedding-anniversary-forever-to-go-101792130390105.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
   "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
@@ -817,7 +817,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/tanu-weds-manu-3-wont-move-ahead-without-r-madhavan-and-kangana-ranaut-confirms-aanand-l-rai-denies-fresh-cast-reports-101793265815138.html",
   "https://www.hungamaexpress.com/news/55197-radhika-apte-calls-out-trolls-for-double-standards-over-alia-bhatts-alpha-physique",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-song-judi-jodi-sparks-debate-over-shreya-ghoshal-vs-chinmayi-sripaada-versions-as-fans-react-to-ranbir-kapoor-sai-pallavi-track-101793276299926.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
+  "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1034,10 +1035,6 @@
   }
  ],
  "songs_recent": [
-  "Stop The Wedding!",
-  "Tu hai kahan",
-  "Zihaal e Miskin",
-  "WAIT FOR U (feat. Drake & Tems)",
   "Freestyle",
   "Azadi",
   "Alfaaz",
@@ -1073,7 +1070,11 @@
   "His Aura Hits You",
   "Barsaat",
   "Believer",
-  "Beggin'"
+  "Beggin'",
+  "Tabaahi (From \"Toxic\")",
+  "One Name",
+  "Dracula",
+  "Infinity"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1163,6 +1164,10 @@
   },
   {
    "title": "Rakul Preet Singh says Ramayana is India's representation to the world, calls Surpanakha a very misunderstood character",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Siddharth Anand drops another cryptic post about Shah Rukh Khan starrer King at midnight; is a birthday surprise coming?",
    "date": "2026-10-30"
   }
  ],

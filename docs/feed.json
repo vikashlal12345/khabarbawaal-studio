@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-10-30",
+  "image": "posts/20261030-0436-reel_break_am-2026-10-30.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261030-043626-reel_break_am-2026-10-30.mp4",
+  "headline": "Siddharth Anand drops another cryptic post about Shah Rukh Khan starrer King at midnight; is a birthday surprise coming?",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Shah Rukh Khan KING Siddharth Anand cryptic post birthday surprise\n\nSiddharth Anand ne midnight 'Time For The World' post kiya, pehle 'It's' likha tha.\nSRK ka birthday 2 November ko hai. Director ne abhi kuch confirm nahi kiya.\nKING 24 December 2026 ko cinemas mein aa rahi hai.\n\nApne Shah Rukh fan dost ko bhejo 👇 🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#shahrukhkhan #king #siddharthanand #bollywood #reelsindia",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
+  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "mass hype = King ka swag"
+   },
+   {
+    "title": "One Name",
+    "artist": "Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "ek hi naam, SRK ka aura"
+   },
+   {
+    "title": "Dracula",
+    "artist": "Tame Impala",
+    "lang": "english",
+    "mood": "cryptic midnight post vibe"
+   },
+   {
+    "title": "Infinity",
+    "artist": "Jaymes Young",
+    "lang": "english",
+    "mood": "suspense, intezaar ka mood"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-30T04:36:26+00:00"
+ },
+ {
   "id": "reel_news_early-2026-10-30",
   "image": "posts/20261030-0236-reel_news_early-2026-10-30.jpg",
   "kind": "reel",
@@ -339,50 +384,5 @@
    "fixed": []
   },
   "created_at": "2026-10-29T06:32:43+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-29",
-  "image": "posts/20261029-0432-reel_break_am-2026-10-29.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261029-043239-reel_break_am-2026-10-29.mp4",
-  "headline": "Janhvi Kapoor's cheeky dating advice to Veer Pahariya on Koffee With Karan has internet calling it a dig at Tara Sutaria",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Janhvi Kapoor Veer Pahariya Tara Sutaria Koffee With Karan dating advice\nRapid-fire mein Karan ne poocha Veer ko kya dating advice doge\nJanhvi bolin: \"Never take her to a concert\"\nInternet ko laga yeh Tara Sutaria par shade tha\nJanhvi ka dig tha? HAAN ya NA likho 👇 🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#janhvikapoor #koffeewithkaran #tarasutaria #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
-  "pin_comment": "Dig tha ya nahi? HAAN ya NA likho. Kisi Janhvi fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "shade throw = dramatic tabaahi"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "cheeky dig, naughty vibe"
-   },
-   {
-    "title": "Janice STFU",
-    "artist": "Drake",
-    "lang": "english",
-    "mood": "shade-throwing diss vibe"
-   },
-   {
-    "title": "Stop The Wedding!",
-    "artist": "Ashe",
-    "lang": "english",
-    "mood": "dating drama, breakup vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-29T04:32:39+00:00"
  }
 ]
