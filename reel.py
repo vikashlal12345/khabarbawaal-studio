@@ -607,7 +607,8 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
 
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
               out_mp4: str, end: float = 3.0, hook: str = "",
-              hook_video: tuple[str, float, float] | None = None, hook_photo: Image.Image | None = None) -> list[Image.Image]:
+              hook_video: tuple[str, float, float] | None = None, hook_photo: Image.Image | None = None,
+              hook_credit: str | None = None) -> list[Image.Image]:
     """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
     uncropped instead of zooming. Each photo stays long enough to read its line in full: 2.5 s + 0.25 s
     a word, 4-8.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel; 12 Oct: +1 s).
@@ -651,7 +652,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         for i in range(int((hook_video[2] if hook_video else NEWS_COVER_SECS) * FPS)):
             still = next(stills, still) if stills else still
             frame = hook_frame(still, layer, i / FPS) if hook_video else \
-                cover_hook_frame(still, hook, tag, f"Photo: {slides[0][1]}" if slides[0][1] else "", i / FPS, dur=NEWS_COVER_SECS)
+                cover_hook_frame(still, hook, tag, f"Photo: {hook_credit if hook_credit is not None else slides[0][1]}" if (hook_credit if hook_credit is not None else slides[0][1]) else "", i / FPS, dur=NEWS_COVER_SECS)
             if i == int(0.6 * FPS):
                 hook_check.append(frame.convert("RGB"))
             enc.add(frame)
@@ -2153,6 +2154,10 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         status.step(f"Collecting photos: {story['title'][:70]}", 3)
         photos = news_photos(item, opt)
         if len(photos) >= 2:
+            sharp = max((photo_sharpness(x[0]) for x in photos if not x[3]), default=0)
+            if sharp < 30 and opt is not options[-1]:   # only soft photos (video frames): a story with a clearer star photo is better (owner, 30 Oct 2026)
+                print(f"  photos are soft (best sharpness {sharp:.0f}): trying the next story")
+                continue
             break
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
@@ -2336,6 +2341,10 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
             print(f"  no sharp photo for: {st['title'][:70]}")
     if not cands:
         raise RuntimeError("no breaking story had a sharp photo")
+    # a story whose photos are all soft video frames comes last (owner, 30 Oct 2026): a clearer star photo makes the better first frame
+    sharp_of = lambda c: max((photo_sharpness(x[0]) for x in c[2] if not x[3]), default=0)
+    if any(sharp_of(c) >= 30 for c in cands):
+        cands.sort(key=lambda c: sharp_of(c) < 30)
     last_err = None
     for opt, story, photos, it in cands:
         try:
@@ -2354,6 +2363,9 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     import status
     used = state.get("reel_news_used", [])
     # the first frame wants a tall, sharp photo of the star; the second frame another one
+    if not any(str(x[1]).startswith("Wikimedia") for x in photos):
+        photos.extend((im, f"{cr}", t, w) for im, cr, t, w in extra_cover_candidates(opt.get("wiki_title", ""), story["title"], tmp,
+                                                                                       [x for x in photos if not x[3]]))
     photos.sort(key=lambda x: (x[0].height / x[0].width < 0.9, -min(x[0].size)))
     photos.sort(key=lambda x: x[3])   # real photos first, X post screenshots last (stable: keeps the size order)
     real_n = sum(1 for x in photos if not x[3])
@@ -2999,6 +3011,40 @@ def news_photos(item: dict, opt: dict) -> list[tuple]:
     return [(img, credit, text.strip(), kind == "tweet") for (kind, img, credit, _), text in picked if text.strip()]
 
 
+def star_portrait(wiki_title: str) -> tuple[Image.Image, str] | None:
+    """A free, sharp portrait of the story's main person from Wikipedia / Wikimedia (credited), as one more candidate for the cover contest
+    (owner, 30 Oct 2026: the Rakul Preet cover was a soft video screenshot of her mid-sentence; he has asked for clear, good covers many times).
+    None when there is no title, no free picture or it is small."""
+    if not wiki_title:
+        return None
+    try:
+        img, credit = wiki_thumb(wiki_title, 960)
+    except Exception:
+        return None
+    if img is None or min(img.size) < 500:
+        return None
+    return img, (f"Wikimedia: {credit}" if credit else "Wikimedia Commons")
+
+
+def extra_cover_candidates(wiki_title: str, story_title: str, tmp: str, current: list) -> list[tuple]:
+    """When none of the story's own photos is really sharp (best sharpness < 38), look for better covers: the star's free Wikipedia portrait
+    and up to 2 recent news photos ABOUT the star (`person_photos`: their name in the headline, AI-checked for one sharp whole face).
+    Owner, 30 Oct 2026: the Rakul Preet cover was a soft video frame again. Returns [(img, credit, '', False)]; nothing when the photos are fine."""
+    if not wiki_title or (current and max(photo_sharpness(x[0]) for x in current) >= 38):
+        return []
+    out = []
+    pt = star_portrait(wiki_title)
+    if pt:
+        out.append((pt[0], pt[1], "", False))
+    try:
+        for img, site in person_photos(wiki_title, story_title[:60], tmp, want=2):
+            out.append((img, site, "", False))
+    except Exception as e:
+        print(f"  ! extra cover photos: {str(e)[:80]}")
+    print(f"  cover: the story's photos are soft: {len(out)} extra candidate(s) for {wiki_title}")
+    return out
+
+
 def photo_sharpness(im: Image.Image) -> float:
     """How much real detail a photo has (edge strength at <= 800 px wide). Pixel size alone hides blur: a 1920 px video screenshot
     with motion blur is soft (28 Oct 2026: the Madhuri Dixit Reel opened on one, owner: 'first image is not clear'). Sharp photos of
@@ -3064,7 +3110,7 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bo
                               "so size is no reason to reject one); a screenshot taken from a video, or a photo with motion blur or soft focus, is never the cover; when the story is about a model, actress, influencer or other glamorous young person "
                               "(even as the victim or the person at the centre of a case), HER photo is the cover, never a lawyer, "
                               "judge, official, relative or elderly person standing in for the story (owner 27 Oct 2026: a lawyer was "
-                              "the cover of a model's case Reel and it got few views); a soft, blurry or low-resolution face is never the cover); never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
+                              "the cover of a model's case Reel and it got few views); a soft, blurry or low-resolution face is never the cover); a flattering, composed or softly smiling face with open eyes beats a face caught mid-sentence with an open mouth, closed eyes or an awkward angle; never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
                               "shows injuries, bandages, blood, a hospital, handcuffs, weapons or another event than the story "
                               "(it would suggest facts the story does not state).",
                               f"The story: {about}\nPhotos: " + ", ".join(f"photo{n}.jpg" + (" (small: shown in a window)" if max(RW / photos[n - 1].width, RH / photos[n - 1].height) > COVER_MAX_ENLARGE else "")
@@ -3174,10 +3220,12 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "end_text"])
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
-    cover = None
+    cover, cover_credit = None, None
     if not hook_video and opt.get("hook"):   # ⭐ the standard cover: the best photo + the best hook (owner, 19 Oct 2026)
         real = [x for x in photos if not x[3]] or photos   # an X post screenshot is never the cover
-        cover = real[pick_cover_photo([x[0] for x in real], item["title"], tmp)][0]
+        real = real + extra_cover_candidates(opt.get("wiki_title", ""), item["title"], tmp, [x for x in real if not x[3]])
+        _c = real[pick_cover_photo([x[0] for x in real], item["title"], tmp)]
+        cover, cover_credit = _c[0], _c[1]
         article_text = article if article else __import__("carousel").story_text(item["link"], item["title"], item.get("summary", ""))
         opt["hook"] = pick_hook(item["title"], article_text, opt["hook"],
                                 card_text=" ".join([item["title"]] + [x[2] for x in photos] + [opt.get("end_text", "")]))
@@ -3190,7 +3238,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     def render(d):
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
                          d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
-                         hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover)
+                         hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover, hook_credit=cover_credit)
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
