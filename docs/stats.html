@@ -592,7 +592,7 @@ function hookChart(box, pts) {
     const top = Math.max(1, ...rows.map(m => m[metrics[sortKey][1]] || 0));
     const shown = showAll ? rows : rows.slice(0, 10);
     const list = shown.map((m, i) => `<a class="mrow" href="${esc(m.permalink)}" target="_blank" rel="noopener">
-      <div class="th" style="${m.thumb ? `background-image:url('${esc(m.thumb)}')` : ''}"><span class="rk">${i + 1}</span></div>
+      <div class="th" style="${m.thumb ? `background-image:url('${esc(m.thumb).replace(/'/g, '%27')}')` : ''}"><span class="rk">${i + 1}</span></div>
       <div><div class="ti">${esc(title(m))}</div>
         <div class="mt"><span>${when(m.time)}</span><span>👁 <b>${num(m.views)}</b></span><span>❤️ <b>${num(m.likes)}</b></span><span>💬 <b>${num(m.comments)}</b></span>
           <span>✈️ <b>${num(m.shares)}</b></span><span>🔖 <b>${num(m.saves)}</b></span><span>🔁 <b>${num(m.reposts)}</b></span>
@@ -691,7 +691,7 @@ function hookChart(box, pts) {
 <script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 60;
+const PAGE_V = 61;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

@@ -82,9 +82,10 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
         names[norm_name(raw)] = names.get(norm_name(raw), 0) + 1
     best = None
     now = datetime.now(timezone.utc)
+    pinned = list((state.get("pinned") or {}).values())
     for name in sorted((n for n in names if n not in AMBIGUOUS), key=lambda n: -names[n])[:8]:
-        if covered_recently(name):
-            continue
+        if covered_recently(name) or any(p.get("flash") == name or name in p.get("title", "").lower() for p in pinned):
+            continue   # already made, or already waiting in a slot (flash-watch and the post chain both run this check)
         sites, arts = set(), []
         for a in create_post.bing_articles(f"{name} bollywood", limit=15, newest=True):
             d = bing_dt(a)
@@ -143,7 +144,8 @@ def detect_winner(state: dict, now_ist: datetime) -> dict | None:
             d = bing_dt(a)
             if d is None:
                 continue
-            if d > posted + timedelta(hours=1) and (now - d).total_seconds() < 36 * 3600 and a["url"] not in used:
+            if d > posted + timedelta(hours=1) and (now - d).total_seconds() < 36 * 3600 and a["url"] not in used \
+                    and all(a["url"] != p.get("link") for p in (state.get("pinned") or {}).values()):
                 fresh.append(a)
         sites = {a["site"] for a in fresh}
         state.setdefault("followed_winners", []).append(m["id"])   # asked once, whatever the answer

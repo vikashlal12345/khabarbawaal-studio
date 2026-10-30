@@ -51,6 +51,17 @@ def merge_state(base, pushed, ours):
             out[key] = (theirs + [x for x in mine if x not in theirs])[-LIST_LIMITS.get(key, 1000):]
         elif isinstance(mine, int) and isinstance(theirs, int):
             out[key] = max(mine, theirs)
+        elif isinstance(mine, dict) and isinstance(theirs, dict):
+            # a real 3-way merge per entry (30 Oct 2026): taking ALL of our dict let a stale copy bring back a pin that was already used
+            # or erase today's specials_done marks written by a run that finished meanwhile
+            b = base.get(key) if isinstance(base, dict) and isinstance(base.get(key), dict) else {}
+            merged = dict(theirs)
+            for k in set(mine) | set(b):
+                if k in mine and mine[k] != b.get(k):
+                    merged[k] = mine[k]            # we added or changed it
+                elif k not in mine and k in b:
+                    merged.pop(k, None)            # we removed it
+            out[key] = merged
         else:
             out[key] = mine
     return out

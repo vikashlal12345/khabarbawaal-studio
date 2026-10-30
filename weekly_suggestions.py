@@ -94,7 +94,7 @@ def main() -> int:
         return 0
     iso = now.isocalendar()
     week_id = f"{iso[0]}-W{iso[1]:02d}"
-    items = [{"id": f"{week_id}-{n}", "title": i["title"][:120], "why": i["why"][:400], "change": i["change"][:300], "status": "new"}
+    items = [{"id": f"{now:%Y%m%d}-{n}", "title": i["title"][:120], "why": i["why"][:400], "change": i["change"][:300], "status": "new"}
              for n, i in enumerate(res["items"][:5], 1)]
     history = ([{k: prev[k] for k in ("week", "created", "items") if k in prev}] if prev.get("items") else []) + prev.get("history", [])
     out = {"week": week_id, "created": now.isoformat(timespec="seconds"), "summary": res["summary"][:400], "followers": d["account"]["followers"],
