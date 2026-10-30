@@ -25,6 +25,10 @@ import generate as g
 import schedule
 
 ROOT = Path(__file__).parent
+# stories about religious conflict are never pinned automatically (30 Oct 2026: 'Sara Ali Khan faces fatwa over Kedarnath Temple visit' came up):
+# the page must never fan hate between communities, so a human decides on those
+SENSITIVE = re.compile(r"(?i)fatwa|blasphem|communal|riot|jihad|conversion|namaz|mosque|masjid|azaan|\bbeef\b|lynch|boycott|hate speech|"
+                       r"religious sentiments|hurt(ing)? sentiments|offend(s|ed|ing)? (hindu|muslim|christian|sikh)|anti-hindu|anti-muslim")
 AMBIGUOUS = {"king", "yash", "vijay", "shah", "srk"}        # words that are not always a star
 ALIASES = {"srk": "shah rukh", "shahrukh": "shah rukh", "shah ruk": "shah rukh"}
 NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_aft", "reel_news_night")
@@ -75,7 +79,7 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
     # star names in today's feed headlines and in X trends (the feeds alone hold too few headlines to show a pile-up)
     names: dict[str, int] = {}
     for it in cands:
-        if it["ts"] >= cutoff and not emergency.SKIP_WORDS.search(it["title"]):
+        if it["ts"] >= cutoff and not emergency.SKIP_WORDS.search(it["title"]) and not SENSITIVE.search(it["title"]):
             for raw in set(m.lower() for m in emergency.STARS.findall(it["title"])):
                 names[norm_name(raw)] = names.get(norm_name(raw), 0) + 1
     for raw in set(m.lower() for m in emergency.STARS.findall(" ".join(t for t, _ in trends[:80]))):
@@ -91,7 +95,8 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
             d = bing_dt(a)
             if d is None:
                 continue
-            if (now - d).total_seconds() <= 4 * 3600 and name.split()[-1] in a["title"].lower() and not emergency.SKIP_WORDS.search(a["title"]):
+            if (now - d).total_seconds() <= 4 * 3600 and name.split()[-1] in a["title"].lower() and not emergency.SKIP_WORDS.search(a["title"]) \
+                    and not SENSITIVE.search(a["title"]):
                 sites.add(a["site"])
                 arts.append(a)
         need = 4 if name in trend_text else 6
@@ -144,7 +149,7 @@ def detect_winner(state: dict, now_ist: datetime) -> dict | None:
             d = bing_dt(a)
             if d is None:
                 continue
-            if d > posted + timedelta(hours=1) and (now - d).total_seconds() < 36 * 3600 and a["url"] not in used \
+            if d > posted + timedelta(hours=1) and (now - d).total_seconds() < 36 * 3600 and a["url"] not in used and not SENSITIVE.search(a["title"]) \
                     and all(a["url"] != p.get("link") for p in (state.get("pinned") or {}).values()):
                 fresh.append(a)
         sites = {a["site"] for a in fresh}
