@@ -582,23 +582,25 @@ function hookChart(box, pts) {
   const sum = k => reels.reduce((a, m) => a + (m[k] || 0), 0);
   const mature = reels.filter(m => Date.now() - new Date(m.time) > 12 * 3600000);   // young Reels are still climbing: left out of averages
   const avgWatch = (() => { const w = reels.filter(m => m.ig_reels_avg_watch_time != null); return w.length ? w.reduce((a, m) => a + m.ig_reels_avg_watch_time, 0) / w.length / 1000 : null; })();
+  const sendRate = m => m.reach >= 500 ? (m.shares || 0) / m.reach * 100 : 0;   // sends per reach (%): Instagram's strongest sharing signal
   const metrics = { views: ['👁 Views', 'views'], reach: ['👥 Reach', 'reach'], likes: ['❤️ Likes', 'likes'], shares: ['✈️ Shares', 'shares'],
-    saves: ['🔖 Saves', 'saves'], new: ['🆕 Newest', 'views'] };
+    saves: ['🔖 Saves', 'saves'], rate: ['📨 Sends/reach', 'rate'], new: ['🆕 Newest', 'views'] };
   let sortKey = 'views', showAll = false;
   const title = m => (m.caption || '').split('\n')[0].replace(/^[^A-Za-z0-9@#]+/, '') || 'Reel';
   const when = iso => { const h = (Date.now() - new Date(iso)) / 3600000; return h < 1 ? Math.max(1, Math.round(h * 60)) + ' min ago' : h < 48 ? Math.round(h) + ' h ago' : Math.round(h / 24) + ' d ago'; };
   const slotHour = iso => +new Date(iso).toLocaleString('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', hour12: false }) % 24;
   function render() {
-    const rows = [...reels].sort((a, b) => sortKey === 'new' ? new Date(b.time) - new Date(a.time) : (b[sortKey] || 0) - (a[sortKey] || 0));
-    const top = Math.max(1, ...rows.map(m => m[metrics[sortKey][1]] || 0));
+    const rows = [...reels].sort((a, b) => sortKey === 'new' ? new Date(b.time) - new Date(a.time) : (sortKey === 'rate' ? sendRate(b) - sendRate(a) : (b[sortKey] || 0) - (a[sortKey] || 0)));
+    const val = m => metrics[sortKey][1] === 'rate' ? sendRate(m) : (m[metrics[sortKey][1]] || 0);
+    const top = Math.max(0.0001, ...rows.map(val));
     const shown = showAll ? rows : rows.slice(0, 10);
     const list = shown.map((m, i) => `<a class="mrow" href="${esc(m.permalink)}" target="_blank" rel="noopener">
       <div class="th" style="${m.thumb ? `background-image:url('${esc(m.thumb).replace(/'/g, '%27')}')` : ''}"><span class="rk">${i + 1}</span></div>
       <div><div class="ti">${esc(title(m))}</div>
         <div class="mt"><span>${when(m.time)}</span><span>👁 <b>${num(m.views)}</b></span><span>❤️ <b>${num(m.likes)}</b></span><span>💬 <b>${num(m.comments)}</b></span>
-          <span>✈️ <b>${num(m.shares)}</b></span><span>🔖 <b>${num(m.saves)}</b></span><span>🔁 <b>${num(m.reposts)}</b></span>
+          <span>✈️ <b>${num(m.shares)}</b>${m.reach >= 500 ? ` (${sendRate(m).toFixed(2)}%)` : ''}</span><span>🔖 <b>${num(m.saves)}</b></span><span>🔁 <b>${num(m.reposts)}</b></span>
           ${m.ig_reels_avg_watch_time != null ? `<span>⏱ <b>${(m.ig_reels_avg_watch_time / 1000).toFixed(1)}s</b></span>` : ''}</div>
-        <div class="bar"><i style="width:${Math.max(2, (m[metrics[sortKey][1]] || 0) / top * 100)}%;background:var(--accent)"></i></div></div></a>`).join('');
+        <div class="bar"><i style="width:${Math.max(2, val(m) / top * 100)}%;background:var(--accent)"></i></div></div></a>`).join('');
     box.querySelector('.mlist').innerHTML = list;
     box.querySelector('.mmore').textContent = showAll ? 'Show top 10' : `Show all ${rows.length} Reels`;
     box.querySelectorAll('.seg button').forEach(b => b.classList.toggle('on', b.dataset.k === sortKey));
@@ -630,7 +632,8 @@ function hookChart(box, pts) {
       <div class="kpi"><b>${num(sum('comments'))}</b><span>comments</span></div>
       <div class="kpi"><b>${num(sum('shares'))}</b><span>shares</span></div>
       <div class="kpi"><b>${num(sum('saves'))}</b><span>saves</span></div>
-      <div class="kpi"><b>${num(sum('reposts'))}</b><span>reposts</span></div></div>
+      <div class="kpi"><b>${num(sum('reposts'))}</b><span>reposts</span></div>
+      <div class="kpi"><b>${(sum('shares') / Math.max(1, sum('reach')) * 100).toFixed(2)}%</b><span>sends per reach</span></div></div>
     ${avgWatch != null ? `<div class="muted" style="margin-top:8px">⏱ Average watch time per Reel: <b style="color:var(--text)">${avgWatch.toFixed(1)} s</b>. Comments include your own pinned ones.</div>` : ''}
     ${chart}
     <div class="sub">🏆 Your Reels</div>
@@ -718,7 +721,7 @@ function hookChart(box, pts) {
 <script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 62;
+const PAGE_V = 63;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

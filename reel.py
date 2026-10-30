@@ -775,6 +775,36 @@ MEME_OPTION = {"type": "object", "properties": {
     "required": list(_COMMON) + ["setup", "punch"], "additionalProperties": False}
 
 NEWS_TAGS = ["VIRAL", "BREAKING", "BOLLYWOOD", "CRICKET", "SPORTS", "TECH", "INDIA", "WORLD", "POLITICS", "MONEY"]
+RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the viewer's own life, so they SEND the Reel to a friend or "
+          "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
+          "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
+          "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
+          "save = 'Save karo, kaam aayega' (useful or festival stories). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
+                         "line": {"type": "string"}},
+          "required": ["type", "line"], "additionalProperties": False}
+
+
+def apply_relate(opt: dict, news: bool) -> None:
+    """The relatable ask (RELATE) goes where the viewer acts: the news Reel's end card (`end_text`, highlight on the action word), the breaking
+    card's green question line, and the caption's last line. Nothing happens when the writer gave none."""
+    rel = opt.pop("relate", None)
+    if not isinstance(rel, dict) or not str(rel.get("line", "")).strip():
+        return
+    line = plain_letters(re.sub(r"\s+", " ", str(rel["line"]).strip()))
+    if re.search(r"(?i)\btag\b|\blike if\b|\bto win\b", line) or len(line.split()) > 12 or len(line) < 6:
+        return   # tagging needs followers and Instagram shows engagement bait less: the writer's old lines stay
+    if news:
+        opt["end_text"] = line
+        opt["highlight"] = [w for w in re.findall(r"[A-Za-z]+", line) if w.lower() in ("bhejo", "likho", "save", "comment", "naam", "dost", "ek", "word")][:2]
+    else:
+        opt["question"] = line
+    cap = str(opt.get("caption", "")).rstrip().split("\n")
+    if cap and len(cap) > 1:
+        cap[-1] = line + (" 👇" if rel.get("type") in ("share_friend", "name_person", "which_one", "team_vote") and "👇" not in line else "")
+        opt["caption"] = "\n".join(cap)
+
+
 NEWS_OPTION = {"type": "object", "properties": {
     "pick": {"type": "integer", "description": "Story number from the list"},
     "hook": {"type": "string", "description": "🪝 Opening line on the first photo, 4-8 words, Hinglish, no emojis: the "
@@ -786,15 +816,16 @@ NEWS_OPTION = {"type": "object", "properties": {
                  "(\"Aur hum? Uber mein baithke bhi nervous ho jaate hain\") or, for serious news, the punchy takeaway."},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-2 words copied exactly from end_text"},
     "caption": {"type": "string", "description": "Hinglish: hook line with the searchable keywords (names, film/event, "
-                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a SHARE line that names the star "
-                "('Apne Janhvi fan dost ko bhejo 👇': shares are what push a Reel to new people; the one-word vote stays on the card). 1-3 emojis."},
+                "e.g. 'Drishyam 3 box office collection'), 2-3 short fact lines, then a last line that is the SAME ask as `relate` "
+                "(it replaces this last line: shares are what push a Reel to new people). 1-3 emojis."},
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 14 words, no hashtags: a share nudge that names the "
                     "star or the story, e.g. 'Apne Salman fan dost ko bhejo 👇', 'Ye Sridevi ke har fan ko bhejo 👇'"},
+    "relate": RELATE,
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
     "songs": SONGS},
-    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "hashtags", "photo_query", "wiki_title",
+    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "relate", "hashtags", "photo_query", "wiki_title",
                  "songs"],
     "additionalProperties": False}
 
@@ -2207,15 +2238,16 @@ BREAK_OPTION = {"type": "object", "properties": {
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the "
                   "hook, shown in pink"},
     "caption": {"type": "string", "description": "Hinglish: first line with the searchable keywords (names + event), "
-                "2-3 short fact lines, then a SHARE line that names the star ('Apne Janhvi fan dost ko bhejo 👇': shares push a Reel to new "
-                "people; the one-word vote stays on the card). 1-3 emojis."},
+                "2-3 short fact lines, then a last line that is the SAME ask as `relate` (it replaces this last line; shares push a Reel to new "
+                "people). 1-3 emojis."},
     "pin_comment": {"type": "string", "description": "Max 14 words, no hashtags: a share nudge that names the star or the story, "
                     "like 'Apne ___ fan dost ko bhejo 👇'"},
+    "relate": RELATE,
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news search that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person, or empty"},
     "songs": SONGS},
-    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment",
+    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment", "relate",
                  "hashtags", "photo_query", "wiki_title", "songs"], "additionalProperties": False}
 BREAK_WRITE = {"type": "object", "properties": {k: v for k, v in BREAK_OPTION["properties"].items()
                                                 if k not in ("pick", "photo_query", "wiki_title", "songs")},
@@ -2398,6 +2430,7 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
                             f"Headline: {story['title']}\n\nFull story:\n{facts[:5500]}", BREAK_WRITE,
                             CONFIG.get("membership_model", "sonnet"), purpose="breaking card write")
     opt = {**opt, **final}
+    apply_relate(opt, news=False)   # 30 Oct 2026: the relatable ask becomes the green question line + the caption's last line
     opt["hook"] = pick_hook(story["title"], facts, opt["hook"],   # 🪝 hook contest: only names that are on the card
                             card_text=" ".join([opt["headline"]] + opt["bullets"] + [opt["question"]]))
     opt["caption"] = unescape(opt["caption"])
@@ -3234,6 +3267,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     import status
     status.step("Making the video + proofreading", 5)
     opt["caption"] = unescape(opt["caption"])
+    apply_relate(opt, news=True)   # 30 Oct 2026: the relatable ask becomes the end card and the caption's last line
     roman_only(opt, ["caption", "pin_comment", "end_text"])
     picked_songs = checked_songs(opt.pop("songs", []), songs)   # kept out of the proofreader's text
     cover, cover_credit = None, None
