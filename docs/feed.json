@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_aft-2026-10-30",
+  "image": "posts/20261030-1420-reel_break_aft-2026-10-30.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261030-142035-reel_break_aft-2026-10-30.mp4",
+  "headline": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ranveer Singh Dhurandhar IIFA 2026 winners 🏆\nDhurandhar ne Best Film, Best Director aur Best Actor jeeta.\nAneet Padda Best Actress, Aryan Khan ko web series direction ka award.\nRanveer deserved tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #iifa2026 #ranveersingh #dhurandhar #bollywood\n\n(IIFA 2026, IIFA 2026 winners, Ranveer Singh Best Actor, Dhurandhar IIFA, Aditya Dhar, Aneet Padda Saiyaara, Aryan Khan Best Director, Bollywood awards 2026)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
+  "pin_comment": "Apne Ranveer Singh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "Dhurandhar film song = award win"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "Dhurandhar vibe, big win energy"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "glam awards night party vibe"
+   },
+   {
+    "title": "In A Minute",
+    "artist": "Lil Baby",
+    "lang": "english",
+    "mood": "swagger for a clean sweep"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover photo shows a woman in a saree and jewellery. The headline is about Ranveer Singh winning Best Actor. The image looks AI-generated or stock, and it is not clearly tied to the story. It could mislead readers, so please replace it with a real IIFA or Dhurandhar photo. Slide 1 can't be dropped."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-30T14:20:35+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-10-30",
   "image": "posts/20261030-1237-reel_news_aft-2026-10-30.jpg",
   "kind": "reel",
@@ -326,97 +373,5 @@
    ]
   },
   "created_at": "2026-10-29T14:51:16+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-29",
-  "image": "posts/20261029-1420-reel_break_aft-2026-10-29.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261029-142022-reel_break_aft-2026-10-29.mp4",
-  "headline": "Radhika Apte calls out trolls for double standards over Alia Bhatt’s ‘Alpha’ physique",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Radhika Apte Alia Bhatt Alpha physique trolls double standards 🔥\nRadhika ne kaha: \"Alia is bloody fit\", action karne wale male actors ke paunch par koi kuch nahi bolta.\nAlpha mein 18 saal ka kirdaar nibhane aur action avatar par Alia trolls ka shikaar bani thi.\nRadhika ki Akka 30 October ko Netflix par aa rahi hai.\nApne Alia fan dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: hungamaexpress (link pinned in comments 👇)\n\n#aliabhatt #radhikaapte #bollywood #alpha #reelsindia",
-  "source": "hungamaexpress",
-  "source_url": "https://www.hungamaexpress.com/news/55197-radhika-apte-calls-out-trolls-for-double-standards-over-alia-bhatts-alpha-physique",
-  "pin_comment": "Apne Alia Bhatt fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "action energy = Alpha vibe"
-   },
-   {
-    "title": "Water",
-    "artist": "Diljit Dosanjh, Mixsingh",
-    "lang": "hindi",
-    "mood": "confident clapback mood"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "bold, powerful women energy"
-   },
-   {
-    "title": "PUSH 2 START",
-    "artist": "Tyla",
-    "lang": "english",
-    "mood": "confident female swagger"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "18 saal ki kirdaar nibhane → 18 saal ka kirdaar nibhane"
-   ]
-  },
-  "created_at": "2026-10-29T14:20:22+00:00"
- },
- {
-  "id": "reel_news_aft-2026-10-29",
-  "image": "posts/20261029-1258-reel_news_aft-2026-10-29.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261029-125801-reel_news_aft-2026-10-29.mp4",
-  "headline": "Tanu Weds Manu 3 won't move ahead without R Madhavan and Kangana Ranaut, confirms Aanand L Rai, denies ‘fresh cast’ reports",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tanu Weds Manu 3 Kangana Ranaut R Madhavan cast news 🎬\nAanand L Rai ne 'fresh cast' reports ko deny kiya.\nTanu Weds Manu 3 R Madhavan aur Kangana Ranaut ke bina aage nahi badhegi.\nPehle ki Tanu-Manu jodi hi wapas aayegi.\nApne Kangana ya Madhavan fan dost ko bhejo 👇 Sahi decision? HAAN ya NA likho.\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#TanuWedsManu3 #KanganaRanaut #RMadhavan #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/tanu-weds-manu-3-wont-move-ahead-without-r-madhavan-and-kangana-ranaut-confirms-aanand-l-rai-denies-fresh-cast-reports-101793265815138.html",
-  "pin_comment": "Ye Tanu Weds Manu ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "jodi wapas = romantic reunion vibe"
-   },
-   {
-    "title": "Pal Pal Dil Ke Paas - Title Track",
-    "artist": "Arijit Singh, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "classic jodi nostalgia"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "fun upbeat comeback energy"
-   },
-   {
-    "title": "Girls Like You",
-    "artist": "Maroon 5",
-    "lang": "english",
-    "mood": "Tanu ka swag, love story"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-29T12:58:01+00:00"
  }
 ]

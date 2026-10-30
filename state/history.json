@@ -366,10 +366,10 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-30",
   "reel_break_noon": "2026-10-30",
-  "reel_break_aft": "2026-10-29",
+  "reel_break_aft": "2026-10-30",
   "reel_news_night": "2026-10-29"
  },
- "inbox_since": "UDkqXRmhCckz",
+ "inbox_since": "3Vin7vvqNhrM",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -742,7 +742,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
   "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
   "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
   "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
@@ -821,7 +820,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
   "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
-  "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/"
+  "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
+  "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1038,10 +1038,6 @@
   }
  ],
  "songs_recent": [
-  "Ez-Ez",
-  "Sahiba",
-  "Big Dawgs",
-  "APT.",
   "Madhosh",
   "Kabhi Shaam Dhale",
   "Espresso",
@@ -1077,7 +1073,11 @@
   "Lae Dooba by Sunidhi Chauhan",
   "Ala Bolelo",
   "Thriller",
-  "Housewife"
+  "Housewife",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Gehra Hua",
+  "Beauty And A Beat",
+  "In A Minute"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1188,6 +1188,10 @@
   {
    "title": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
    "date": "2026-10-30"
+  },
+  {
+   "title": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
+   "date": "2026-10-30"
   }
  ],
  "claude_limit": {
@@ -1195,15 +1199,7 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {
-  "reel_break_aft": {
-   "link": "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
-   "title": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
-   "source": "Bollywood Hungama",
-   "at": "2026-10-30T12:35:03+00:00",
-   "flash": "dhurandhar"
-  }
- },
+ "pinned": {},
  "followed_winners": [
   "18120264982752748"
  ],
