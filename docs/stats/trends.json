@@ -1,16 +1,6 @@
 {
- "at": "2026-10-30T00:35:01+00:00",
+ "at": "2026-10-30T02:36:16+00:00",
  "known": {
-  "https://www.hindustantimes.com/technology/apple-macbook-pro-with-proled-xdr-display-becomes-first-touchscreen-mac-101793213745716.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/india-news/charging-points-in-trains-to-remain-off-11-pm-5-am-101793212943446.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/priyanka-chopras-diy-mehendi-for-husband-nick-jonas-on-karwa-chauth-has-a-special-touch-for-daughter-malti-marie-101793237404257.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/india-news/over-4-5-lakh-puc-challans-issued-in-delhi-till-oct-27-traffic-police-data-101793239648260.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/trending/microsoft-offered-buyouts-to-60-000-employees-it-expects-only-3-000-to-accept-101793238920378.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/india-news/djb-likely-to-tap-contaminated-groundwater-to-bridge-delhi-s-supply-gap-101793238569368.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/india-news/supreme-court-election-commission-form-6-sir-special-intensive-revision-of-electoral-rolls-logical-discrepancy-notices-101793233435159.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/sai-pallavi-says-she-wants-a-life-partner-who-is-not-self-centered-owns-up-to-his-mistakes-and-knows-how-to-cook-101793187483581.html": "2026-10-29T02:34:04+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/anurag-kashyap-made-gangs-of-wasseypur-sets-feel-like-a-playground-never-flaunted-authority-aakhiri-ride-makers-chandan-roy-panchayat-101793195459483.html": "2026-10-29T02:34:04+00:00",
   "https://www.hindustantimes.com/india-news/nirmala-sitharaman-rahul-gandhi-spar-over-tata-leadership-dispute-stop-politicising-every-issue-101793243145068.html": "2026-10-29T05:15:59+00:00",
   "https://www.hindustantimes.com/india-news/ht-morning-brief-oct-29-jd-vance-reaches-out-to-iran-security-beefed-up-in-delhi-ahead-of-india-bloc-rally-101793244430743.html": "2026-10-29T04:32:42+00:00",
   "https://www.hindustantimes.com/trending/know-your-neighbourhood-the-story-of-how-delhi-s-majnu-ka-tila-got-its-name-101793244391453.html": "2026-10-29T05:15:59+00:00",
@@ -80,25 +70,91 @@
   "https://www.hindustantimes.com/trending/us/two-bits-pilani-alumni-raise-52-million-for-ai-startup-after-visiting-140-businesses-in-us-101793288219493.html": "2026-10-29T20:24:23+00:00",
   "https://www.hindustantimes.com/trending/us/sunny-ozells-last-instagram-post-shows-actor-patrick-stewart-all-smiles-attending-an-exhibition-101793305887435.html": "2026-10-30T00:35:01+00:00",
   "https://www.hindustantimes.com/india-news/supreme-court-seeks-bank-liability-for-digital-arrest-fraud-losses-101793317446009.html": "2026-10-30T00:35:01+00:00",
-  "https://www.hindustantimes.com/trending/bugatti-ceo-mate-rimac-s-chiron-stolen-after-he-leaves-keys-inside-thief-caught-in-austria-101793308874906.html": "2026-10-30T00:35:01+00:00",
-  "https://www.hindustantimes.com/india-news/tamil-nadu-to-conduct-social-justice-survey-next-year-panel-gets-cabinet-nod-101793299847191.html": "2026-10-30T00:35:01+00:00"
+  "https://www.hindustantimes.com/trending/bugatti-ceo-mate-rimac-s-chiron-stolen-after-he-leaves-keys-inside-thief-caught-in-austria-101793308874906.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/india-news/tamil-nadu-to-conduct-social-justice-survey-next-year-panel-gets-cabinet-nod-101793299847191.html": "2026-10-30T00:35:01+00:00",
+  "https://www.hindustantimes.com/trending/kerala-footballer-muhammed-riswan-among-2-indians-to-win-instagram-rings-award-this-year-101793326741216.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/india-news/takedown-orders-not-issued-by-meity-govt-official-on-restriction-of-social-media-posts-101793300448150.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/india-news/glacial-lake-outburst-in-bhutan-alert-sounded-in-north-bengal-101793325975831.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/india-news/supreme-court-rejects-mahua-moitra-s-plea-on-aif-fpi-ownership-disclosure-101793300206454.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/india-news/give-marriage-another-chance-sc-on-abortion-plea-101793300146228.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/trending/rayban-heir-rocco-basilico-rejects-stepbrothers-3-9-billion-offer-for-family-firm-stake-101793323098507.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/technology/stop-romanticising-your-outdated-kitchen-these-amazon-great-indian-festival-deals-could-make-life-much-easier-101793262299787.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html": "2026-10-30T02:36:16+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/sunny-deol-was-apprehensive-about-ott-debut-with-a-non-action-film-like-ikka-right-after-border-2-recalls-netflixs-ruchikaa-kapoor-sheikh-101793277132394.html": "2026-10-30T02:36:16+00:00"
  },
  "x": [],
  "google": [
-  "coloros 17",
-  "vasco vs flamengo",
-  "weather at my location",
-  "pm kisan 24th installment date",
-  "viral videos video",
-  "todays weather",
-  "mausam"
+  "weather mumbai",
+  "steinmeier",
+  "pelicans vs kings",
+  "western australia vs south australia",
+  "jailer film box office collection",
+  "audi",
+  "tasmania vs new south wales",
+  "ceo"
  ],
  "stories": [
   {
-   "title": "Supreme Court seeks bank liability for digital arrest fraud losses",
+   "title": "Kerala footballer Muhammed Riswan among 2 Indians to win Instagram Rings Award this year",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/supreme-court-seeks-bank-liability-for-digital-arrest-fraud-losses-101793317446009.html",
+   "link": "https://www.hindustantimes.com/trending/kerala-footballer-muhammed-riswan-among-2-indians-to-win-instagram-rings-award-this-year-101793326741216.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "Takedown orders not issued by Meity: Govt official on restriction of social media posts",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/takedown-orders-not-issued-by-meity-govt-official-on-restriction-of-social-media-posts-101793300448150.html",
    "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Glacial lake outburst in Bhutan; alert sounded in north Bengal",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/glacial-lake-outburst-in-bhutan-alert-sounded-in-north-bengal-101793325975831.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Supreme Court rejects Mahua Moitra’s plea on AIF-FPI ownership disclosure",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/supreme-court-rejects-mahua-moitra-s-plea-on-aif-fpi-ownership-disclosure-101793300206454.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Give marriage another chance: SC on abortion plea",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/give-marriage-another-chance-sc-on-abortion-plea-101793300146228.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Ray-Ban heir rejects stepbrother's $3.9 billion offer for family firm stake",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/rayban-heir-rocco-basilico-rejects-stepbrothers-3-9-billion-offer-for-family-firm-stake-101793323098507.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "Stop romanticising your outdated kitchen. These Amazon Great Indian Festival deals could make life much easier",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/technology/stop-romanticising-your-outdated-kitchen-these-amazon-great-indian-festival-deals-could-make-life-much-easier-101793262299787.html",
+   "category": "tech",
+   "hours": 0
+  },
+  {
+   "title": "Rakul Preet Singh says Ramayana is India's representation to the world, calls Surpanakha a very misunderstood character",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Sunny Deol was apprehensive about OTT 'debut' with a non-action film like Ikka right after Border 2, recalls Netflix's Ruchikaa Kapoor Sheik",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/sunny-deol-was-apprehensive-about-ott-debut-with-a-non-action-film-like-ikka-right-after-border-2-recalls-netflixs-ruchikaa-kapoor-sheikh-101793277132394.html",
+   "category": "entertainment",
    "hours": 0
   },
   {
@@ -106,62 +162,6 @@
    "source": "Hindustan Times",
    "link": "https://www.hindustantimes.com/trending/bugatti-ceo-mate-rimac-s-chiron-stolen-after-he-leaves-keys-inside-thief-caught-in-austria-101793308874906.html",
    "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Patrick Stewart's wife Sunny Ozell's last Instagram post shows Star Trek actor all smiles attending an exhibition",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/us/sunny-ozells-last-instagram-post-shows-actor-patrick-stewart-all-smiles-attending-an-exhibition-101793305887435.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Tamil Nadu to conduct social justice survey next year, panel gets cabinet nod",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/tamil-nadu-to-conduct-social-justice-survey-next-year-panel-gets-cabinet-nod-101793299847191.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Junglywood trailer out: Shaan R Grover leads a thriller set against Bollywood’s insider-outsider divide",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/junglywood-trailer-out-shaan-r-grover-leads-a-thriller-set-against-bollywoods-insider-outsider-divide/",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Sam Altman says MBA students chase what was 'cool five years ago' instead of trying something new",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/sam-altman-says-mba-students-chase-what-was-cool-five-years-ago-instead-of-trying-something-new-101793293096479.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Delhi's Jamia University agrees to students’ demands, sets timeline for union polls",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/delhis-jamia-university-agrees-to-students-demands-sets-timeline-for-jmi-student-union-polls-101793293361136.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "TVK functionary arrested for allegedly sexually harassing college student in Tamil Nadu",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/tvk-functionary-arrested-for-allegedly-sexually-harassing-college-student-in-tamil-nadu-101793292668523.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Udta Teer box office collection day 7: Ayushmann Khurrana and Sara Ali Khan film remains steady, collects ₹30 crore in its first week",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-7-ayushmann-khurrana-and-sara-ali-khan-film-remains-steady-collects-30-crore-in-its-first-week-101793292388266.html",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Ranbir Kapoor, Nitesh Tiwari, and others discuss Ramayana’s values with students from 500 schools; special episode to stream on JioHotstar",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/ranbir-kapoor-nitesh-tiwari-and-others-discuss-ramayanas-values-with-students-from-500-schools-special-episode-to-stream-on-jiohotstar/",
-   "category": "entertainment",
    "hours": 0
   }
  ]
