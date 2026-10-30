@@ -214,7 +214,8 @@
   "596ebcd4851b",
   "6716bf7ed97d",
   "491269b9e623",
-  "a1bee6a2e893"
+  "a1bee6a2e893",
+  "87066fdbb35e"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -363,11 +364,11 @@
   "reel_news_early": "2026-10-30",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-30",
-  "reel_break_noon": "2026-10-29",
+  "reel_break_noon": "2026-10-30",
   "reel_break_aft": "2026-10-29",
   "reel_news_night": "2026-10-29"
  },
- "inbox_since": "BaX2C1KkgPCw",
+ "inbox_since": "kBm8hLV3A27E",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -740,7 +741,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-makes-a-hilarious-confession-on-the-great-indian-kapil-show-says-their-bedroom-smells-like-dhaba-at-night-because-of-kareena-kapoor-101792139151681.html",
   "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
   "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
@@ -819,7 +819,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-song-judi-jodi-sparks-debate-over-shreya-ghoshal-vs-chinmayi-sripaada-versions-as-fans-react-to-ranbir-kapoor-sai-pallavi-track-101793276299926.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
   "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
-  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1174,6 +1175,10 @@
   {
    "title": "Aamir Khan celebrates first Karwa Chauth with wife Gauri Spratt at Anil Kapoor, Sunita Kpaoor's residence",
    "date": "2026-10-30"
+  },
+  {
+   "title": "Ramayana advance booking jumps 27% in US after positive reactions from premiere; Ranbir Kapoor, Yash film crosses ₹15 crore in India",
+   "date": "2026-10-30"
   }
  ],
  "claude_limit": {
@@ -1181,15 +1186,7 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {
-  "reel_break_noon": {
-   "link": "https://bestmediainfo.com/mediainfo/mediainfo-marketing/saif-joins-instagram-and-lands-3-brand-deals-in-18-days-will-ranbir-kapoor-and-aamir-khan-be-next-12767122",
-   "title": "Saif joins Instagram and lands 3 brand deals in 18 days: Will Ranbir Kapoor and Aamir Khan be next?",
-   "source": "Best Media Info",
-   "at": "2026-10-30T06:33:31+00:00",
-   "flash": "aamir"
-  }
- },
+ "pinned": {},
  "followed_winners": [
   "18120264982752748"
  ],

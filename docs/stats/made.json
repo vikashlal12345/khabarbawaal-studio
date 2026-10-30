@@ -437,6 +437,11 @@
    "tag": "🎬 REEL · BOLLYWOOD",
    "at": "2026-10-30T06:35:25+00:00",
    "auto": false
+  },
+  "reel_break_noon-2026-10-30": {
+   "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
+   "at": "2026-10-30T08:38:55+00:00",
+   "auto": true
   }
  }
 }
