@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_am-2026-10-30",
+  "image": "posts/20261030-0635-reel_news_am-2026-10-30.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261030-063525-reel_news_am-2026-10-30.mp4",
+  "headline": "Aamir Khan celebrates first Karwa Chauth with wife Gauri Spratt at Anil Kapoor, Sunita Kpaoor's residence",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Aamir Khan Gauri Spratt first Karwa Chauth Anil Kapoor Sunita Kapoor 🙏\nAamir Khan ne Gauri Spratt ke saath apni pehli Karwa Chauth manayi.\nCelebration Anil Kapoor aur Sunita Kapoor ke Mumbai wale ghar par hui, jo unka saalana Karwa Chauth event hai.\nAapko ye jodi kaisi lagi? Sahi lagi toh HAAN likho, nahi toh NA 👇\nApne Aamir fan dost ko bhejo 👇 ❤️\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#aamirkhan #bollywood #karwachauth #anilkapoor #reelsindia",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
+  "pin_comment": "Apne Aamir Khan fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "romantic = pehli Karwa Chauth saath"
+   },
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "soft love vibe, top chart"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "emotional love, couple moment"
+   },
+   {
+    "title": "Ordinary",
+    "artist": "Alex Warren",
+    "lang": "english",
+    "mood": "warm love song for couple"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The 'Photo: @RandomCineMood' credit overlaps the 'Read more on X' line at the bottom of the tweet screenshot. The tweet text is also very small. The screenshot's own claim, 'third wife', comes from a third-party post and is not in the article."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-30T06:35:25+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-30",
   "image": "posts/20261030-0436-reel_break_am-2026-10-30.jpg",
   "kind": "reel",
@@ -339,50 +386,5 @@
    ]
   },
   "created_at": "2026-10-29T08:33:36+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-29",
-  "image": "posts/20261029-0632-reel_news_am-2026-10-29.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261029-063243-reel_news_am-2026-10-29.mp4",
-  "headline": "Sharvari dances with OG Rajshri heroine Madhuri Dixit to Yeh Prem Mol Liya song, calls it a ‘surreal’ moment with her idol",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sharvari Madhuri Dixit dance Yeh Prem Mol Liya 💃\nSharvari ne Madhuri Dixit ke saath Yeh Prem Mol Liya song par dance kiya\nUnhone ise apni idol ke saath 'surreal' moment bataya\nMadhuri ka Sooraj Barjatya se rishta Hum Aapke Hain Koun (1994) se hai, Salman Khan ke saath\nMadhuri ki best film kaun si? HAHK ya DEVDAS likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#madhuridixit #sharvari #bollywood #viral #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
-  "pin_comment": "Kisi Madhuri fan ko bhejo 👇 Aapki favourite: HAHK ya DEVDAS?",
-  "songs": [
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "nostalgic romantic dance vibe"
-   },
-   {
-    "title": "Lae Dooba by Sunidhi Chauhan",
-    "artist": "Rochak Kohli, Manoj Muntashir",
-    "lang": "hindi",
-    "mood": "dance moment, filmy energy"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "classic romantic glow"
-   },
-   {
-    "title": "Señorita",
-    "artist": "Shawn Mendes, Camila Cabello",
-    "lang": "english",
-    "mood": "dance duo fun"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-29T06:32:43+00:00"
  }
 ]
