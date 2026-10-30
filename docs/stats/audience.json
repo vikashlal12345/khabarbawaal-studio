@@ -1,8 +1,8 @@
 {
- "summary": "From our last 79 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  WORLD (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: top10 2, fun 2, reel 2, news 2, market 2, custom 2, calendar 2, thought 2, ready 2. Lean toward what works, keep some variety.",
- "posts": 79,
- "likes": 172,
- "updated": "2026-10-29T22:32:17+00:00",
+ "summary": "From our last 58 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL   CHOOSE YOUR (0), REEL  WORLD (0). Formats: top10 2, reel 2, calendar 2, custom 2, news 2, fun 2, ready 2. Lean toward what works, keep some variety.",
+ "posts": 58,
+ "likes": 125,
+ "updated": "2026-10-30T22:33:54+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -17,67 +17,27 @@
    4.0
   ],
   [
-   "REEL 23  MEME",
-   3.0
-  ],
-  [
-   "REEL 33  NEWS SLIDESHOW",
-   3.0
-  ],
-  [
    "REEL  MEME",
    2.8
   ],
   [
    "TOP 5 NEWS",
-   2.6666666666666665
-  ],
-  [
-   "MOOD",
    2.5
   ],
   [
-   "VIRAL",
-   2.3333333333333335
-  ],
-  [
-   "TECH",
-   2.3333333333333335
+   "POLITICS",
+   2.25
   ],
   [
    "REEL   SHUBH NAVRATRI",
    2.25
   ],
   [
-   "POLITICS",
-   2.1666666666666665
-  ],
-  [
-   "RAAT KI 5 KHABREIN",
+   "VIRAL",
    2.0
   ],
   [
-   "WTF NEWS",
-   2.0
-  ],
-  [
-   "AMAZING FACTS",
-   2.0
-  ],
-  [
-   "MARKET BRIEF",
-   2.0
-  ],
-  [
-   "MYTH VS FACT",
-   2.0
-  ],
-  [
-   "ON THIS DAY",
-   2.0
-  ],
-  [
-   "THOUGHT OF THE DAY",
+   "MOOD",
    2.0
   ],
   [
@@ -85,27 +45,27 @@
    2.0
   ],
   [
-   "REEL  REALITY CHECK",
-   1.75
+   "TECH",
+   2.0
   ],
   [
-   "REEL  TAG THAT FRIEND",
-   1.6923076923076923
+   "REEL  REALITY CHECK",
+   1.75
   ],
   [
    "GITA GYAAN",
    1.6666666666666667
   ],
   [
-   "BOLLYWOOD",
+   "REEL  TAG THAT FRIEND",
    1.5
   ],
   [
-   "REEL  INDIA",
+   "REEL  RAAT KI TOP 5",
    1.0
   ],
   [
-   "QUIZ",
+   "REEL  INDIA",
    1.0
   ],
   [
@@ -113,16 +73,12 @@
    1.0
   ],
   [
-   "REEL  RAAT KI TOP 5",
-   1.0
-  ],
-  [
    "REEL  VIRAL",
    1.0
   ],
   [
-   "EXPLAINER",
-   1.0
+   "REEL  BACHPAN ME AISA KAUN KIYA",
+   0.0
   ],
   [
    "REEL   CHOOSE YOUR",
@@ -130,10 +86,6 @@
   ],
   [
    "REEL  WORLD",
-   0.0
-  ],
-  [
-   "REEL  BACHPAN ME AISA KAUN KIYA",
    0.0
   ]
  ],
@@ -143,19 +95,11 @@
    2.5
   ],
   [
-   "fun",
-   2.5
-  ],
-  [
    "reel",
-   2.3488372093023258
+   2.275
   ],
   [
-   "news",
-   2.090909090909091
-  ],
-  [
-   "market",
+   "calendar",
    2.0
   ],
   [
@@ -163,16 +107,16 @@
    2.0
   ],
   [
-   "calendar",
+   "news",
    2.0
   ],
   [
-   "thought",
+   "fun",
    2.0
   ],
   [
    "ready",
-   1.7272727272727273
+   1.8333333333333333
   ]
  ]
 }
