@@ -37,6 +37,12 @@ jobs:
       - name: Business Discovery test
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.discover != '' }}
         run: python meta_stats.py --discover "${{ inputs.discover }}"
+      - name: Save the competitor numbers (discover = all)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.discover == 'all' }}
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          python save.py "Competitor numbers $(date -u +%Y-%m-%dT%H:%MZ)"
       - name: Probe
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.probe && inputs.discover == '' }}
         run: python meta_stats.py --probe

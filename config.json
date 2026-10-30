@@ -19,19 +19,69 @@
   "lookback_hours": 8,
   "per_feed": 4,
   "feeds": [
-    {"name": "Hindustan Times", "category": "viral", "url": "https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml"},
-    {"name": "Indian Express", "category": "viral", "url": "https://indianexpress.com/section/trending/feed/"},
-    {"name": "News18", "category": "viral", "url": "https://www.news18.com/commonfeeds/v1/eng/rss/viral.xml"},
-
-    {"name": "Hindustan Times", "category": "india/politics", "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml"},
-    {"name": "Indian Express", "category": "politics", "url": "https://indianexpress.com/section/political-pulse/feed/"},
-    {"name": "News18", "category": "politics", "url": "https://www.news18.com/commonfeeds/v1/eng/rss/politics.xml"},
-
-    {"name": "Hindustan Times", "category": "entertainment", "url": "https://www.hindustantimes.com/feeds/rss/entertainment/bollywood/rssfeed.xml"},
-    {"name": "Bollywood Hungama", "category": "entertainment", "url": "https://www.bollywoodhungama.com/rss/news.xml"},
-
-    {"name": "News18", "category": "cricket", "url": "https://www.news18.com/commonfeeds/v1/eng/rss/cricket.xml"},
-
-    {"name": "Hindustan Times", "category": "tech", "url": "https://www.hindustantimes.com/feeds/rss/technology/rssfeed.xml"}
+    {
+      "name": "Hindustan Times",
+      "category": "viral",
+      "url": "https://www.hindustantimes.com/feeds/rss/trending/rssfeed.xml"
+    },
+    {
+      "name": "Indian Express",
+      "category": "viral",
+      "url": "https://indianexpress.com/section/trending/feed/"
+    },
+    {
+      "name": "News18",
+      "category": "viral",
+      "url": "https://www.news18.com/commonfeeds/v1/eng/rss/viral.xml"
+    },
+    {
+      "name": "Hindustan Times",
+      "category": "india/politics",
+      "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml"
+    },
+    {
+      "name": "Indian Express",
+      "category": "politics",
+      "url": "https://indianexpress.com/section/political-pulse/feed/"
+    },
+    {
+      "name": "News18",
+      "category": "politics",
+      "url": "https://www.news18.com/commonfeeds/v1/eng/rss/politics.xml"
+    },
+    {
+      "name": "Hindustan Times",
+      "category": "entertainment",
+      "url": "https://www.hindustantimes.com/feeds/rss/entertainment/bollywood/rssfeed.xml"
+    },
+    {
+      "name": "Bollywood Hungama",
+      "category": "entertainment",
+      "url": "https://www.bollywoodhungama.com/rss/news.xml"
+    },
+    {
+      "name": "News18",
+      "category": "cricket",
+      "url": "https://www.news18.com/commonfeeds/v1/eng/rss/cricket.xml"
+    },
+    {
+      "name": "Hindustan Times",
+      "category": "tech",
+      "url": "https://www.hindustantimes.com/feeds/rss/technology/rssfeed.xml"
+    }
+  ],
+  "competitors": [
+    "filmfare",
+    "pinkvilla",
+    "instantbollywood",
+    "bollywoodshaadis",
+    "zoomtv",
+    "koimoi",
+    "viralbhayani",
+    "voompla",
+    "bollywoodbubble",
+    "filmygyan",
+    "bollywoodnow",
+    "thelallantop"
   ]
 }

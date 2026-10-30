@@ -60,6 +60,50 @@ def discover(host: str, username: str, limit: int = 30) -> dict | None:
                       for x in media]}
 
 
+COMP = "docs/stats/competitors.json"
+
+
+def read_competitors(host: str, force: bool = False) -> None:
+    """📡 Once a day: the public numbers of the pages in config.json `competitors` (Meta's official Business Discovery) -> docs/stats/competitors.json:
+    per page followers, average / median likes of its last 30 posts, and its OUTLIERS of the last 21 days (posts with 2x+ the page's median likes):
+    what is working on the big Bollywood / viral pages right now. Patterns only: nothing is copied."""
+    import statistics
+    try:
+        old = json.load(open(COMP))
+        if not force and (datetime.now(timezone.utc) - datetime.fromisoformat(old["updated"])).total_seconds() < 20 * 3600:
+            return
+    except Exception:
+        pass
+    try:
+        names = json.load(open("config.json")).get("competitors", [])
+    except Exception:
+        names = []
+    pages = []
+    now = datetime.now(timezone.utc)
+    for n in names:
+        d = discover(host, n, 30)
+        if not d or not d["media"]:
+            continue
+        likes = [x["likes"] for x in d["media"] if x.get("likes") is not None]
+        if len(likes) < 8:
+            continue
+        med = statistics.median(likes)
+        top = []
+        for x in d["media"]:
+            try:
+                age = (now - datetime.strptime(x["time"], "%Y-%m-%dT%H:%M:%S%z")).total_seconds() / 86400
+            except Exception:
+                continue
+            if age <= 21 and x.get("likes") is not None and med > 0 and x["likes"] >= 2 * med:
+                top.append({**x, "ratio": round(x["likes"] / med, 1), "caption": x["caption"].split("\n")[0][:140]})
+        top.sort(key=lambda x: -x["ratio"])
+        pages.append({"username": d["username"], "followers": d["followers"], "avg_likes": round(statistics.mean(likes)), "median_likes": round(med),
+                      "posts": len(likes), "top": top[:5]})
+    if pages:
+        json.dump({"updated": now.isoformat(timespec="seconds"), "pages": pages}, open(COMP, "w"), ensure_ascii=False, indent=1)
+        print(f"competitors: {len(pages)} pages saved")
+
+
 def main() -> int:
     probe = "--probe" in sys.argv
     if "--discover" in sys.argv:   # python meta_stats.py --discover name1,name2
@@ -67,6 +111,9 @@ def main() -> int:
         for h in HOSTS:
             st, acc = get(h, IG_ID, {"fields": "username"})
             if st == 200:
+                if names == ["all"]:
+                    read_competitors(h, force=True)
+                    return 0
                 for n in names:
                     discover(h, n, 5)
                 return 0
@@ -140,6 +187,7 @@ def main() -> int:
         "username": acc.get("username"), "followers": acc.get("followers_count"), "media_count": acc.get("media_count")},
         "media": rows}, open(OUT, "w"), ensure_ascii=False, indent=1)
     print("saved", OUT, len(rows))
+    read_competitors(host)
     return 0
 
 
