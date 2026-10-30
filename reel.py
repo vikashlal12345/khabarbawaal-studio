@@ -2171,7 +2171,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
     else:
         status.step("Picking the most viral, visual story", 2)
-        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID])[:40]
+        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID])[:40]
         intro = ""
         if REMAKE.get("link"):   # 🔄 remake: the same story again
             stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
@@ -2196,11 +2196,17 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             continue
         story = stories[opt["pick"] - 1]
         item = {"link": story["link"], "source": story["source"], "title": story["title"]}
-        LAST_PICK["link"] = story["link"]
+        LAST_PICK["link"], LAST_PICK["title"] = story["link"], story["title"]
         print(f"  news reel: {story['title']}")
         status.step(f"Collecting photos: {story['title'][:70]}", 3)
         photos = news_photos(item, opt)
         if len(photos) >= 2:
+            import carousel as _car
+            article_txt = _car.story_text(item["link"], item["title"], story.get("summary", ""))
+            if len(article_txt.strip()) < 300:   # unreadable article: the strict proofreader would block it after all the work
+                print("  the article could not be read: trying the next story")
+                AVOID.add(story["link"]); AVOID.add(story["title"][:45].lower())
+                continue
             sharp = max((photo_sharpness(x[0]) for x in photos if not x[3]), default=0)
             if sharp < 30 and opt is not options[-1]:   # only soft photos (video frames): a story with a clearer star photo is better (owner, 30 Oct 2026)
                 print(f"  photos are soft (best sharpness {sharp:.0f}): trying the next story")
@@ -2209,7 +2215,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
         raise RuntimeError("no story had 2+ good photos")
-    cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, None,
+    cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, article_txt,
                                           f"{story['title']}. {story.get('summary', '')}")
     state["reel_news_used"] = (used + [story["link"]])[-80:]
     state["reel_news_recent"] = (recent_news(state, today)[0] + [{"title": story["title"], "date": today}])[-40:]
@@ -2358,7 +2364,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     import status
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
-    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID])[:45]
+    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID])[:45]
     if REMAKE.get("link"):   # 🔄 remake: the same story again
         stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                     "summary": "", "category": "remake"}]
@@ -2400,6 +2406,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         except proofread.Unverified as e:   # e.g. every photo implies an injury the story doesn't state: next story
             print(f"  ! breaking card for '{story['title'][:50]}' blocked ({str(e)[:100]}): next story")
             AVOID.add(story["link"])
+            AVOID.add(story["title"][:45].lower())   # the same event from another site has another link but nearly the same headline
             last_err = e
     raise last_err
 
@@ -2421,6 +2428,8 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel
     facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
+    if len(facts.strip()) < 300:   # 30 Oct 2026: the 2 PM card tried the same unreadable story 3 times (every claim 'could not be checked')
+        raise proofread.Unverified("the article could not be read (no text to check the card against)")
     # Second writing step from the FULL story (19 Oct 2026: written from the headline alone it invented a bystander,
     # a date and a name): same fields, only facts that are in the text
     status.step("Writing the card from the full story", 4)
@@ -6270,7 +6279,7 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
 
 
 AVOID: set = set()          # stories a news / breaking try could not turn into a checked Reel: the next try picks another story (29 Oct 2026)
-LAST_PICK = {"link": ""}
+LAST_PICK = {"link": "", "title": ""}
 
 
 def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -> bool:
@@ -6291,6 +6300,7 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
             REMAKE.clear()
     if not ok and LAST_PICK["link"] and not used_pin:
         AVOID.add(LAST_PICK["link"])
+        AVOID.add(LAST_PICK.get("title", "")[:45].lower())
         print(f"  this story is left out of the next try: {LAST_PICK['link'][:90]}")
     if used_pin and (ok or attempt >= tries):
         state["pinned"].pop(kind, None)
