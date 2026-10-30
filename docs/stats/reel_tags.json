@@ -12,5 +12,20 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "feeling"
+ },
+ {
+  "id": "reel_news_night-2026-10-30",
+  "key": "salmankhansanjayduttkhalnayakreturnsreunion",
+  "kind": "reel_news_night",
+  "secs": 22.5,
+  "at": "2026-10-30T14:51:35+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "hook": "question",
+  "photos": 3,
+  "short": false
  }
 ]

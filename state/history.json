@@ -216,7 +216,8 @@
   "491269b9e623",
   "a1bee6a2e893",
   "87066fdbb35e",
-  "d3d94408f95b"
+  "d3d94408f95b",
+  "2501e4851e34"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -367,9 +368,9 @@
   "reel_break_am": "2026-10-30",
   "reel_break_noon": "2026-10-30",
   "reel_break_aft": "2026-10-30",
-  "reel_news_night": "2026-10-29"
+  "reel_news_night": "2026-10-30"
  },
- "inbox_since": "3Vin7vvqNhrM",
+ "inbox_since": "ue0cryyylCa6",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -742,7 +743,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
   "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
   "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
   "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
@@ -821,7 +821,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
   "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
   "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
-  "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/"
+  "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
+  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-and-sanjay-dutt-to-reunite-on-screen-in-khalnayak-returns-heres-what-we-know/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1038,10 +1039,6 @@
   }
  ],
  "songs_recent": [
-  "Madhosh",
-  "Kabhi Shaam Dhale",
-  "Espresso",
-  "Let Me Down Slowly",
   "Tera Hoke Rahoon",
   "Pal Pal Dil Ke Paas - Title Track",
   "Levitating",
@@ -1077,7 +1074,11 @@
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Gehra Hua",
   "Beauty And A Beat",
-  "In A Minute"
+  "In A Minute",
+  "Azadi",
+  "Ez-Ez",
+  "Die With A Smile",
+  "Blinding Lights"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1191,6 +1192,10 @@
   },
   {
    "title": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Salman Khan and Sanjay Dutt to reunite on screen in Khalnayak Returns? Here's what we know",
    "date": "2026-10-30"
   }
  ],
