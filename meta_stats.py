@@ -5,6 +5,8 @@
 Read-only: followers, and for every recent post its views / reach / likes / comments / shares / saves / reposts.
 Writes docs/stats/instagram_api.json. The token (GitHub secret META_IG_TOKEN, system-user token, never expires)
 is never printed. Account id: config.json `ig_user_id` (owner's @khabarbawaal, from the app's token page)."""
+from __future__ import annotations
+
 import json
 import os
 import sys
