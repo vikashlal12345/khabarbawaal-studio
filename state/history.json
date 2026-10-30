@@ -215,7 +215,8 @@
   "6716bf7ed97d",
   "491269b9e623",
   "a1bee6a2e893",
-  "87066fdbb35e"
+  "87066fdbb35e",
+  "d3d94408f95b"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -352,7 +353,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-30",
-  "reel_news_pm": "2026-10-29",
+  "reel_news_pm": "2026-10-30",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-30",
@@ -368,7 +369,7 @@
   "reel_break_aft": "2026-10-29",
   "reel_news_night": "2026-10-29"
  },
- "inbox_since": "kBm8hLV3A27E",
+ "inbox_since": "w5MIhMJvKzVC",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -741,7 +742,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/new-video-shows-tiger-shroff-in-car-5-shots-fired-2-men-fleeing-with-another-guy-on-bike-juhu-mumbai-police-101792373267076.html",
   "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
   "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
@@ -820,7 +820,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
   "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1037,10 +1038,6 @@
   }
  ],
  "songs_recent": [
-  "Housewife",
-  "Teri Meri Kahaani",
-  "Lae Dooba by Sunidhi Chauhan",
-  "Die With A Smile",
   "Señorita",
   "Peek A Boo",
   "Heat Waves",
@@ -1076,7 +1073,11 @@
   "Jo Tum Mere Ho",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Iris",
-  "Ordinary"
+  "Ordinary",
+  "Thumkeshwari",
+  "Shararat",
+  "Jalebi Baby",
+  "Calm Down"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1179,6 +1180,10 @@
   {
    "title": "Ramayana advance booking jumps 27% in US after positive reactions from premiere; Ranbir Kapoor, Yash film crosses ₹15 crore in India",
    "date": "2026-10-30"
+  },
+  {
+   "title": "Eetha trailer out: Shraddha Kapoor celebrates Maharashtra's Lavani legacy as she transforms into Vithabai Narayangaonkar in Laxman Utekar's musical",
+   "date": "2026-10-30"
   }
  ],
  "claude_limit": {
@@ -1186,7 +1191,15 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {},
+ "pinned": {
+  "reel_news_aft": {
+   "link": "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
+   "title": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
+   "source": "Koimoi",
+   "at": "2026-10-30T10:35:56+00:00",
+   "flash": "shraddha"
+  }
+ },
  "followed_winners": [
   "18120264982752748"
  ],
