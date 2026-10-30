@@ -8,6 +8,10 @@ on:
         description: "Only test the connection (prints a few lines, saves nothing)"
         type: boolean
         default: true
+      discover:
+        description: "Test Business Discovery on these usernames (comma separated), nothing is saved"
+        type: string
+        default: ""
   schedule:
     - cron: "25 * * * *"       # every hour at :25 (the post chain starts at :07)
 
@@ -30,14 +34,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Business Discovery test
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.discover != '' }}
+        run: python meta_stats.py --discover "${{ inputs.discover }}"
       - name: Probe
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.probe }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.probe && inputs.discover == '' }}
         run: python meta_stats.py --probe
       - name: Read numbers
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.probe) }}
+        if: ${{ !(github.event_name == 'workflow_dispatch' && (inputs.probe || inputs.discover != '')) }}
         run: python meta_stats.py
       - name: Upload
-        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.probe) }}
+        if: ${{ !(github.event_name == 'workflow_dispatch' && (inputs.probe || inputs.discover != '')) }}
         run: |
           git config user.name "news-bot"
           git config user.email "news-bot@users.noreply.github.com"

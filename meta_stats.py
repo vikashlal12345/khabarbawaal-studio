@@ -41,8 +41,36 @@ def err(body: dict) -> str:
     return f"{e.get('code', '')} {e.get('message', '')}"[:200].replace(os.environ["META_IG_TOKEN"], "***")
 
 
+def discover(host: str, username: str, limit: int = 30) -> dict | None:
+    """📡 Meta's official Business Discovery: the PUBLIC numbers of another Business / Creator account (followers, recent posts with likes and
+    comments; never views): read-only, no scraping, no copying of posts. None + a printed reason when Meta refuses."""
+    fields = (f"business_discovery.username({username}){{username,name,followers_count,media_count,"
+              f"media.limit({limit}){{caption,like_count,comments_count,timestamp,media_type,media_product_type,permalink}}}}")
+    st, body = get(host, IG_ID, {"fields": fields})
+    if st != 200:
+        print(f"  discovery @{username}: HTTP {st} - {err(body)}")
+        return None
+    bd = body.get("business_discovery") or {}
+    media = (bd.get("media") or {}).get("data", [])
+    print(f"  discovery @{username}: {bd.get('followers_count')} followers, {len(media)} posts")
+    return {"username": bd.get("username", username), "name": bd.get("name"), "followers": bd.get("followers_count"),
+            "media_count": bd.get("media_count"),
+            "media": [{"caption": (x.get("caption") or "")[:200], "likes": x.get("like_count"), "comments": x.get("comments_count"),
+                       "time": x.get("timestamp"), "type": x.get("media_product_type") or x.get("media_type"), "permalink": x.get("permalink")}
+                      for x in media]}
+
+
 def main() -> int:
     probe = "--probe" in sys.argv
+    if "--discover" in sys.argv:   # python meta_stats.py --discover name1,name2
+        names = [n.strip().lstrip("@") for n in sys.argv[sys.argv.index("--discover") + 1].split(",") if n.strip()]
+        for h in HOSTS:
+            st, acc = get(h, IG_ID, {"fields": "username"})
+            if st == 200:
+                for n in names:
+                    discover(h, n, 5)
+                return 0
+        return 1
     host = None
     for h in HOSTS:
         st, acc = get(h, IG_ID, {"fields": "username,followers_count,follows_count,media_count"})
