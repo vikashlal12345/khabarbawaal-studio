@@ -359,7 +359,7 @@
   "reel_news_am": "2026-10-30",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-10-29",
+  "reel_news_aft": "2026-10-30",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-10-30",
@@ -369,7 +369,7 @@
   "reel_break_aft": "2026-10-29",
   "reel_news_night": "2026-10-29"
  },
- "inbox_since": "w5MIhMJvKzVC",
+ "inbox_since": "UDkqXRmhCckz",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -742,7 +742,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/bike-used-for-firing-at-tiger-shroff-recovered-by-police-two-detained-101792384252507.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lawrence-bishnoi-bollywood-hit-list-enmity-with-salman-khan-to-firing-on-tiger-shroff-and-threats-to-rohit-shetty-ranveer-singh-kapil-sharma-101792388411230.html",
   "https://www.bollywoodhungama.com/news/bollywood/sonakshi-sinha-and-zaheer-iqbal-starrer-tu-hai-meri-kiran-release-put-on-hold-by-bombay-high-court-over-rs-8-85-crores-dispute/",
   "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
@@ -821,7 +820,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
+  "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1038,10 +1038,6 @@
   }
  ],
  "songs_recent": [
-  "Señorita",
-  "Peek A Boo",
-  "Heat Waves",
-  "Just Give Me a Reason (feat. Nate Ruess)",
   "Ez-Ez",
   "Sahiba",
   "Big Dawgs",
@@ -1077,7 +1073,11 @@
   "Thumkeshwari",
   "Shararat",
   "Jalebi Baby",
-  "Calm Down"
+  "Calm Down",
+  "Lae Dooba by Sunidhi Chauhan",
+  "Ala Bolelo",
+  "Thriller",
+  "Housewife"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1184,6 +1184,10 @@
   {
    "title": "Eetha trailer out: Shraddha Kapoor celebrates Maharashtra's Lavani legacy as she transforms into Vithabai Narayangaonkar in Laxman Utekar's musical",
    "date": "2026-10-30"
+  },
+  {
+   "title": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
+   "date": "2026-10-30"
   }
  ],
  "claude_limit": {
@@ -1192,12 +1196,12 @@
   "alerted": true
  },
  "pinned": {
-  "reel_news_aft": {
-   "link": "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
-   "title": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
-   "source": "Koimoi",
-   "at": "2026-10-30T10:35:56+00:00",
-   "flash": "shraddha"
+  "reel_break_aft": {
+   "link": "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
+   "title": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
+   "source": "Bollywood Hungama",
+   "at": "2026-10-30T12:35:03+00:00",
+   "flash": "dhurandhar"
   }
  },
  "followed_winners": [

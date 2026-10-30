@@ -1,5 +1,60 @@
 [
  {
+  "id": "reel_news_aft-2026-10-30",
+  "image": "posts/20261030-1237-reel_news_aft-2026-10-30.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261030-123737-reel_news_aft-2026-10-30.mp4",
+  "headline": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Eetha trailer out Shraddha Kapoor Eetha Bai look 🔥\nLaxman Utekar ki musical Eetha ka trailer aa gaya hai.\nShraddha Kapoor Lavani legend Eetha Bai ban gayi hain.\nTrailer mein unka transformation chhaya hua hai.\nUs dost ko bhejo jo Shraddha ka fan hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Koimoi (link pinned in comments 👇)\n\n#shraddhakapoor #eetha #bollywood #lavani #reelsindia\n\n(Eetha trailer, Shraddha Kapoor Eetha, Shraddha Kapoor Lavani, Eetha Bai, Laxman Utekar Eetha, Eetha Bai Shraddha Kapoor, Shraddha Kapoor new movie, Eetha trailer out)",
+  "source": "Koimoi",
+  "source_url": "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
+  "pin_comment": "Apne Shraddha Kapoor fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Lae Dooba by Sunidhi Chauhan",
+    "artist": "Rochak Kohli, Manoj Muntashir",
+    "lang": "hindi",
+    "mood": "dance-heavy transformation, high energy"
+   },
+   {
+    "title": "Ala Bolelo",
+    "artist": "Anirudh Ravichander & Arunraja Kamaraj",
+    "lang": "hindi",
+    "mood": "mass dhol beat for trailer hype"
+   },
+   {
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "lang": "english",
+    "mood": "dramatic transformation reveal"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "trending chart pick, star-power vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article never mentions Vithabai Narayangaonkar; the character is Eetha Bai",
+    "Fact corrected to match the article: Vithabai Narayangaonkar and 'Maharashtra' are not in the article; the role is Eetha Bai",
+    "Fact corrected to match the article: Name not supported by article",
+    "Fact corrected to match the article: Name not supported by article"
+   ],
+   "fixed": [
+    "Eetha trailer out Shraddha Kapoor Vithabai Narayangaonkar look → Eetha trailer out Shraddha Kapoor Eetha Bai look",
+    "Maharashtra ki Lavani legacy celebrate karte hue Vithabai Narayangaonkar ban gayi hain. → Lavani legend Eetha Bai ban gayi hain.",
+    "Shraddha Kapoor Eetha trailer Vithabai Narayangaonkar → Shraddha Kapoor Eetha trailer Eetha Bai",
+    "Vithabai Narayangaonkar → Eetha Bai"
+   ]
+  },
+  "created_at": "2026-10-30T12:37:38+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-30",
   "image": "posts/20261030-1037-reel_news_pm-2026-10-30.jpg",
   "kind": "reel",
