@@ -100,6 +100,7 @@
   <section id="meta"><h2>📊 Instagram, live from Meta</h2><div class="muted">Loading…</div></section>
   <section id="sugg"><h2>💡 Weekly suggestions</h2><div class="muted">Loading…</div></section>
   <section id="comp"><h2>🔭 Other pages</h2><div class="muted">Loading…</div></section>
+  <section id="tags"><h2>🏷️ What works, by tag</h2><div class="muted">Loading…</div></section>
   <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
   <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
   <section id="habit"><h2>📮 Your posting habit</h2><div class="muted">Loading…</div></section>
@@ -719,9 +720,44 @@ function hookChart(box, pts) {
 })();
 </script>
 <script>
+// 🏷️ What works, by tag (owner, 30 Oct 2026): every Reel the robot makes is tagged (type, length, cover, hook style, ask, topic) in stats/reel_tags.json;
+// joined here with Instagram's numbers by the caption's first line. Groups with 2+ Reels, Reels 12 h+ old.
+(async () => {
+  const box = document.getElementById('tags');
+  const [tags, api] = await Promise.all([getJSON('stats/reel_tags.json'), getJSON('stats/instagram_api.json')]);
+  const key = c => String(c || '').split('\n')[0].toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60);
+  const byKey = {}; ((api && api.media) || []).forEach(m => { byKey[key(m.caption)] = m; });
+  const rows = (tags || []).map(t => ({ t, m: byKey[t.key] })).filter(x => x.m && x.m.views != null && Date.now() - new Date(x.m.time) > 12 * 3600000);
+  const head = '<h2>🏷️ What works, by tag</h2>';
+  if (rows.length < 4) { box.innerHTML = head + `<div class="muted">${(tags || []).length} Reels tagged so far (from 30 Oct 2026), ${rows.length} with numbers. This fills in over about 2 weeks: type, length, cover, hook style, the ask and the topic against views, watch time and sends.</div>`; return; }
+  const lenBucket = s => s <= 16 ? '⏱ up to 16 s' : s <= 21 ? '⏱ 17-21 s' : '⏱ over 21 s';
+  const groups = {
+    'Type': x => ({ news: '🔥 Viral news', breaking: '⚡ Breaking card', devotional: '🙏 Devotional' }[x.t.type] || x.t.type),
+    'Length': x => x.t.secs ? lenBucket(x.t.secs) : '',
+    'Cover': x => ({ full: 'Full-screen photo', window: 'Framed window', portrait: 'Wikipedia portrait' }[x.t.cover] || ''),
+    'Hook': x => ({ name_first: 'Name first', feeling: 'Feeling one-liner', question: 'Question' }[x.t.hook] || ''),
+    'Ask': x => ({ share_friend: 'Send to a friend', name_person: 'Name that person', which_one: 'Which one are you', team_vote: 'Team vote', save: 'Save this' }[x.t.relate] || ''),
+    'Topic': x => ({ couple_family: 'Couple / family', gossip: 'Gossip', promo: 'Promo (trailer…)', festival: 'Festival', politics: 'Politics', sports: 'Sports', other: 'Other' }[x.t.topic] || '')
+  };
+  const num = v => v >= 1000 ? (v / 1000).toFixed(1).replace('.0', '') + 'K' : String(Math.round(v));
+  let html = head + `<div class="muted" style="margin:-4px 0 8px">${rows.length} tagged Reels with numbers · average views · watch time · sends per reach</div>`;
+  for (const [name, fn] of Object.entries(groups)) {
+    const g = {}; rows.forEach(x => { const k = fn(x); if (k) (g[k] = g[k] || []).push(x); });
+    const list = Object.entries(g).filter(([, v]) => v.length >= 2).map(([k, v]) => ({ k, n: v.length,
+      views: v.reduce((a, x) => a + x.m.views, 0) / v.length, watch: v.reduce((a, x) => a + (x.m.ig_reels_avg_watch_time || 0), 0) / v.length / 1000,
+      rate: v.reduce((a, x) => a + (x.m.shares || 0), 0) / Math.max(1, v.reduce((a, x) => a + (x.m.reach || 0), 0)) * 100 })).sort((a, b) => b.views - a.views);
+    if (!list.length) continue;
+    const top = Math.max(...list.map(l => l.views));
+    html += `<div class="sub">${name}</div>` + list.map(l => `<div class="hbar" style="grid-template-columns:130px minmax(0,1fr) 120px"><span>${l.k} <span class="muted">(${l.n})</span></span>
+      <div class="track"><i style="width:${l.views / top * 100}%"></i></div><span class="num">${num(l.views)} · ${l.watch.toFixed(1)}s · ${l.rate.toFixed(2)}%</span></div>`).join('');
+  }
+  box.innerHTML = html;
+})();
+</script>
+<script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 63;
+const PAGE_V = 64;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

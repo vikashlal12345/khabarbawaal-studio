@@ -608,7 +608,7 @@ def own_reel(clip: str, dur: float, text: str, highlight: list[str], out_mp4: st
 def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, highlight: list[str], tag: str,
               out_mp4: str, end: float = 3.0, hook: str = "",
               hook_video: tuple[str, float, float] | None = None, hook_photo: Image.Image | None = None,
-              hook_credit: str | None = None) -> list[Image.Image]:
+              hook_credit: str | None = None, photo_secs: float | None = None, cover_secs: float | None = None) -> list[Image.Image]:
     """slides = [(photo, credit, text, whole)]; whole=True (X post screenshots) shows the picture
     uncropped instead of zooming. Each photo stays long enough to read its line in full: 2.5 s + 0.25 s
     a word, 4-8.5 s; end card 3 s (owner, 11 Oct 2026: 16/21/13-word lines = a 20 s Reel; 12 Oct: +1 s).
@@ -623,7 +623,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = NEWS_PHOTO_SECS
+        per = photo_secs or NEWS_PHOTO_SECS
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
@@ -649,10 +649,11 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         # hook_video = (path, start, secs): the official video plays under the line instead (🎥 10 PM Reel)
         stills = video_stills(*hook_video) if hook_video else None
         still = hook_photo if hook_photo is not None else next((x[0] for x in slides if not x[3]), slides[0][0])
-        for i in range(int((hook_video[2] if hook_video else NEWS_COVER_SECS) * FPS)):
+        cs = cover_secs or NEWS_COVER_SECS
+        for i in range(int((hook_video[2] if hook_video else cs) * FPS)):
             still = next(stills, still) if stills else still
             frame = hook_frame(still, layer, i / FPS) if hook_video else \
-                cover_hook_frame(still, hook, tag, f"Photo: {hook_credit if hook_credit is not None else slides[0][1]}" if (hook_credit if hook_credit is not None else slides[0][1]) else "", i / FPS, dur=NEWS_COVER_SECS)
+                cover_hook_frame(still, hook, tag, f"Photo: {hook_credit if hook_credit is not None else slides[0][1]}" if (hook_credit if hook_credit is not None else slides[0][1]) else "", i / FPS, dur=cs)
             if i == int(0.6 * FPS):
                 hook_check.append(frame.convert("RGB"))
             enc.add(frame)
@@ -775,6 +776,9 @@ MEME_OPTION = {"type": "object", "properties": {
     "required": list(_COMMON) + ["setup", "punch"], "additionalProperties": False}
 
 NEWS_TAGS = ["VIRAL", "BREAKING", "BOLLYWOOD", "CRICKET", "SPORTS", "TECH", "INDIA", "WORLD", "POLITICS", "MONEY"]
+TOPIC = {"type": "string", "enum": ["couple_family", "gossip", "promo", "festival", "politics", "sports", "other"],
+         "description": "What kind of story this is: couple_family (a couple, parents, kids, family moments), gossip (rumours, spats, dating, looks), "
+                        "promo (trailer, teaser, poster, release date, song launch), festival, politics, sports, other"}
 RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the viewer's own life, so they SEND the Reel to a friend or "
           "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
           "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
@@ -788,6 +792,7 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
 def apply_relate(opt: dict, news: bool) -> None:
     """The relatable ask (RELATE) goes where the viewer acts: the news Reel's end card (`end_text`, highlight on the action word), the breaking
     card's green question line, and the caption's last line. Nothing happens when the writer gave none."""
+    TAGS["topic"] = opt.get("topic", "")
     kws = opt.get("keywords")
     if isinstance(kws, list):   # Roman letters only, no '#', no duplicates, max 10 (the hidden search-words block under the hashtags)
         clean = []
@@ -796,7 +801,10 @@ def apply_relate(opt: dict, news: bool) -> None:
             if 2 < len(k) < 60 and k.lower() not in [c.lower() for c in clean]:
                 clean.append(k)
         opt["keywords"] = clean[:10]
+        TAGS["kw"] = len(clean[:10])
     rel = opt.pop("relate", None)
+    if isinstance(rel, dict):
+        TAGS["relate"] = rel.get("type", "")
     if not isinstance(rel, dict) or not str(rel.get("line", "")).strip():
         return
     line = plain_letters(re.sub(r"\s+", " ", str(rel["line"]).strip()))
@@ -829,6 +837,7 @@ NEWS_OPTION = {"type": "object", "properties": {
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 14 words, no hashtags: a share nudge that names the "
                     "star or the story, e.g. 'Apne Salman fan dost ko bhejo 👇', 'Ye Sridevi ke har fan ko bhejo 👇'"},
     "relate": RELATE,
+    "topic": TOPIC,
     "keywords": {"type": "array", "items": {"type": "string"}, "description": "6-10 search words people type on Instagram for this story, to sit "
                  "under the hashtags (Instagram search reads captions): the names, the film / show / event, the occasion, 2-3 natural "
                  "phrases ('Janhvi Kapoor Koffee With Karan', 'Karwa Chauth 2026'). Only names and events that are in the story; no '#'"},
@@ -836,7 +845,7 @@ NEWS_OPTION = {"type": "object", "properties": {
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
     "songs": SONGS},
-    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "relate", "keywords", "hashtags", "photo_query", "wiki_title",
+    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "relate", "topic", "keywords", "hashtags", "photo_query", "wiki_title",
                  "songs"],
     "additionalProperties": False}
 
@@ -1489,6 +1498,19 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
     (g.DOCS / "posts").mkdir(parents=True, exist_ok=True)
     shutil.copy(mp4, g.DOCS / name)
     state["songs_recent"] = (state.get("songs_recent", []) + [x["title"] for x in entry.get("songs", [])])[-40:]
+    try:   # 🏷️ the tags of this Reel (type, length, cover, hook, ask, topic) for the Stats page and the weekly suggestions
+        tagfile = g.DOCS / "stats" / "reel_tags.json"
+        tags = g.load_json(tagfile, []) or []
+        kind = re.sub(r"-\d{4}-\d{2}-\d{2}.*$", "", post_id)
+        tags = [t for t in tags if t.get("id") != post_id][-400:] + [{
+            "id": post_id, "key": caption_key(entry.get("caption", "")), "kind": kind, "secs": video_seconds(mp4),
+            "at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "type": TAGS.get("type") or (
+                "devotional" if kind == "reel_devotion" else "breaking" if kind in BREAK_KINDS else "news" if kind in NEWS_KINDS else "other"),
+            **{k: v for k, v in TAGS.items() if k != "type"}}]
+        tagfile.parent.mkdir(parents=True, exist_ok=True)
+        g.save_json(tagfile, tags)
+    except Exception as e:
+        print(f"  ! reel tags not saved: {str(e)[:80]}")
     g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
     import status
     status.done(f"Ready: {entry['headline'][:90]}", post=post_id)
@@ -2294,6 +2316,7 @@ BREAK_OPTION = {"type": "object", "properties": {
     "pin_comment": {"type": "string", "description": "Max 14 words, no hashtags: a share nudge that names the star or the story, "
                     "like 'Apne ___ fan dost ko bhejo 👇'"},
     "relate": RELATE,
+    "topic": TOPIC,
     "keywords": {"type": "array", "items": {"type": "string"}, "description": "6-10 search words people type on Instagram for this story, to sit "
                  "under the hashtags (Instagram search reads captions): the names, the film / show / event, the occasion, 2-3 natural "
                  "phrases ('Janhvi Kapoor Koffee With Karan', 'Karwa Chauth 2026'). Only names and events that are in the story; no '#'"},
@@ -2301,7 +2324,7 @@ BREAK_OPTION = {"type": "object", "properties": {
     "photo_query": {"type": "string", "description": "Short English news search that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person, or empty"},
     "songs": SONGS},
-    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment", "relate", "keywords",
+    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment", "relate", "topic", "keywords",
                  "hashtags", "photo_query", "wiki_title", "songs"], "additionalProperties": False}
 BREAK_WRITE = {"type": "object", "properties": {k: v for k, v in BREAK_OPTION["properties"].items()
                                                 if k not in ("pick", "photo_query", "wiki_title", "songs")},
@@ -2473,6 +2496,7 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     photos.sort(key=lambda x: x[3])   # real photos first, X post screenshots last (stable: keeps the size order)
     real_n = sum(1 for x in photos if not x[3])
     cover_i = pick_cover_photo([x[0] for x in photos[:real_n]], story["title"], tmp)   # 📸 photo contest, real photos only
+    TAGS.update({"type": "breaking", "cover": cover_kind(photos[cover_i][0], photos[cover_i][1]), "photos": 2})
     other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel
     facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
@@ -2490,6 +2514,7 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     apply_relate(opt, news=False)   # 30 Oct 2026: the relatable ask becomes the green question line + the caption's last line
     opt["hook"] = pick_hook(story["title"], facts, opt["hook"],   # 🪝 hook contest: only names that are on the card
                             card_text=" ".join([opt["headline"]] + opt["bullets"] + [opt["question"]]))
+    TAGS["hook"] = hook_style(opt["hook"])
     opt["caption"] = unescape(opt["caption"])
     roman_only(opt, ["caption", "pin_comment", "hook", "headline", "question"])
     bl = {"bullets_text": "\n".join(opt["bullets"])}
@@ -3337,10 +3362,14 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
         real = real + extra_cover_candidates(opt.get("wiki_title", ""), item["title"], tmp, [x for x in real if not x[3]])
         _c = real[pick_cover_photo([x[0] for x in real], item["title"], tmp)]
         cover, cover_credit = _c[0], _c[1]
+        TAGS["cover"] = cover_kind(cover, cover_credit)
         article_text = article if article else __import__("carousel").story_text(item["link"], item["title"], item.get("summary", ""))
         opt["hook"] = pick_hook(item["title"], article_text, opt["hook"],
                                 card_text=" ".join([item["title"]] + [x[2] for x in photos] + [opt.get("end_text", "")]))
-    photos = photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
+        TAGS["hook"] = hook_style(opt["hook"])
+    short = SERIES_KIND in SHORT_NEWS   # 30 Oct 2026: the 4 PM Reel is the short test (2 photos, ~14 s)
+    photos = photos[:2] if short else photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
+    TAGS.update({"photos": len(photos), "short": short, "type": "news"})
     roman_only(opt, ["hook"])
     images = [(img, whole) for img, _, _, whole in photos]
     data = {"post": opt, "slides": [{"n": i, "credit": c, "text": t} for i, (_, c, t, _) in enumerate(photos)]}
@@ -3349,7 +3378,8 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     def render(d):
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
                          d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
-                         hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover, hook_credit=cover_credit)
+                         hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover, hook_credit=cover_credit,
+                         end=2.5 if short else 3.0, photo_secs=4.5 if short else None, cover_secs=2.5 if short else None)
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
@@ -6330,6 +6360,40 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
         return False
 
 
+TAGS: dict = {}   # 🏷️ tags of the Reel being made (30 Oct 2026): written with its numbers-join key by save_reel into docs/stats/reel_tags.json
+SHORT_NEWS = {"reel_news_pm"}   # the 4 PM Reel is the SHORT test (30 Oct 2026): 2 photos, ~14 s, to compare with the 22 s ones
+
+
+def hook_style(hook: str) -> str:
+    h = hook.lower()
+    if "?" in h:
+        return "question"
+    if re.search(r"priceless|dil jeet|loot|kamaal|bhaavuk|bhavuk|hasa diya|mast|zabardast|alag nahi", h):
+        return "feeling"
+    return "name_first"
+
+
+def cover_kind(photo: Image.Image, credit: str = "") -> str:
+    if str(credit).startswith("Wikimedia"):
+        return "portrait"
+    return "window" if max(RW / photo.width, RH / photo.height) > COVER_MAX_ENLARGE else "full"
+
+
+def video_seconds(path: str) -> float:
+    try:
+        err = subprocess.run([ffmpeg_exe(), "-i", path], capture_output=True, text=True).stderr
+        h, m, sec = err.split("Duration:")[1][:12].strip().split(":")[0:3]
+        return round(int(h) * 3600 + int(m) * 60 + float(sec.split(",")[0]), 1)
+    except Exception:
+        return 0.0
+
+
+def caption_key(caption: str) -> str:
+    """Join key between our Reel and Instagram's copy of it: the caption's first line, letters and digits only, 60 characters."""
+    first = (caption or "").strip().split("\n")[0]
+    return re.sub(r"[^a-z0-9]", "", first.lower())[:60]
+
+
 AVOID: set = set()          # stories a news / breaking try could not turn into a checked Reel: the next try picks another story (29 Oct 2026)
 LAST_PICK = {"link": "", "title": ""}
 
@@ -6344,6 +6408,7 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
         print(f"  📌 pinned story for this slot: {pin['title'][:80]}")
     if attempt == 1:
         AVOID.clear()
+    TAGS.clear()
     LAST_PICK["link"] = ""
     try:
         ok = _make(kind, state, feed, attempt, tries)

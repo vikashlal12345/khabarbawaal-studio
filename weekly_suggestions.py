@@ -79,6 +79,27 @@ def main() -> int:
         follower_line = ("Followers at the end of each day (IST): " + ", ".join(f"{d[5:]}: {by_day[d]}" for d in days)) if len(days) >= 2 else ""
     except Exception:
         follower_line = ""
+    tag_line = ""
+    try:   # tags of the Reels the robot made (reel_tags.json) joined with their numbers by the caption's first line
+        tg = json.loads((ROOT / "docs" / "stats" / "reel_tags.json").read_text())
+        keyf = lambda c: re.sub(r"[^a-z0-9]", "", (c or "").strip().split("\n")[0].lower())[:60]
+        bykey = {keyf(m.get("caption")): m for m in d.get("media", [])}
+        joined = [(t, bykey[t["key"]]) for t in tg if t.get("key") in bykey and bykey[t["key"]].get("views") is not None and old(bykey[t["key"]], 12)]
+        if len(joined) >= 6:
+            def table(title, fn):
+                g = {}
+                for t, m in joined:
+                    k = fn(t)
+                    if k:
+                        g.setdefault(k, []).append(m)
+                rows = [(k, len(v), round(statistics.mean(x["views"] for x in v)), round(statistics.mean((x.get("ig_reels_avg_watch_time") or 0) / 1000 for x in v), 1),
+                         round(sum(x.get("shares") or 0 for x in v) / max(1, sum(x.get("reach") or 0 for x in v)) * 100, 2)) for k, v in g.items() if len(v) >= 2]
+                return (f"By {title} (name, Reels, avg views, avg watch seconds, sends per reach %): " + "; ".join(f"{k}: {n}, {av}, {wt}s, {sr}%" for k, n, av, wt, sr in sorted(rows, key=lambda r: -r[2]))) if rows else ""
+            tabs = [table("type", lambda t: t.get("type")), table("length", lambda t: ("<=16s" if t.get("secs", 0) <= 16 else "17-21s" if t.get("secs", 0) <= 21 else ">21s") if t.get("secs") else ""),
+                    table("cover", lambda t: t.get("cover")), table("hook style", lambda t: t.get("hook")), table("ask type", lambda t: t.get("relate")), table("topic", lambda t: t.get("topic"))]
+            tag_line = "Tagged Reels (the robot tags each Reel it makes; the 4 PM news Reel is the SHORT ~14 s test):\n" + "\n".join(x for x in tabs if x) + "\n\n"
+    except Exception:
+        pass
     comp_line = ""
     try:   # what works on the big pages (Meta's Business Discovery, daily): outliers of the last 3 weeks
         cd = json.loads((ROOT / "docs" / "stats" / "competitors.json").read_text())
@@ -96,7 +117,7 @@ def main() -> int:
             "Average views by the hour the Reel was posted (IST), hour: (avg views, Reels): " + json.dumps({str(h): v for h, v in sorted(hours.items())}) + "\n\n"
             f"This week's Reels ({len(week)}), most viewed first:\n" + "\n".join(line(m) for m in week[:14]) + "\n\n"
             "Best 8 of all time:\n" + "\n".join(line(m) for m in all_best) + "\n\nWeakest 8:\n" + "\n".join(line(m) for m in weak) + "\n\n"
-            + comp_line +
+            + tag_line + comp_line +
             "Earlier suggestions the owner decided on (never repeat these):\n" + ("\n".join(decided) or "(none yet)"))
     try:
         res = fun.claude_json(SYSTEM, user, SCHEMA, "sonnet", purpose="weekly suggestions")
