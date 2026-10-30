@@ -788,6 +788,14 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
 def apply_relate(opt: dict, news: bool) -> None:
     """The relatable ask (RELATE) goes where the viewer acts: the news Reel's end card (`end_text`, highlight on the action word), the breaking
     card's green question line, and the caption's last line. Nothing happens when the writer gave none."""
+    kws = opt.get("keywords")
+    if isinstance(kws, list):   # Roman letters only, no '#', no duplicates, max 10 (the hidden search-words block under the hashtags)
+        clean = []
+        for k in kws:
+            k = re.sub(r"\s+", " ", plain_letters(str(k)).replace("#", "")).strip(" ,.()")
+            if 2 < len(k) < 60 and k.lower() not in [c.lower() for c in clean]:
+                clean.append(k)
+        opt["keywords"] = clean[:10]
     rel = opt.pop("relate", None)
     if not isinstance(rel, dict) or not str(rel.get("line", "")).strip():
         return
@@ -821,11 +829,14 @@ NEWS_OPTION = {"type": "object", "properties": {
     "pin_comment": {"type": "string", "description": "Pinned first comment, max 14 words, no hashtags: a share nudge that names the "
                     "star or the story, e.g. 'Apne Salman fan dost ko bhejo 👇', 'Ye Sridevi ke har fan ko bhejo 👇'"},
     "relate": RELATE,
+    "keywords": {"type": "array", "items": {"type": "string"}, "description": "6-10 search words people type on Instagram for this story, to sit "
+                 "under the hashtags (Instagram search reads captions): the names, the film / show / event, the occasion, 2-3 natural "
+                 "phrases ('Janhvi Kapoor Koffee With Karan', 'Karwa Chauth 2026'). Only names and events that are in the story; no '#'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news-search query that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person/team/place, or empty"},
     "songs": SONGS},
-    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "relate", "hashtags", "photo_query", "wiki_title",
+    "required": ["pick", "hook", "tag", "end_text", "highlight", "caption", "pin_comment", "relate", "keywords", "hashtags", "photo_query", "wiki_title",
                  "songs"],
     "additionalProperties": False}
 
@@ -2249,11 +2260,14 @@ BREAK_OPTION = {"type": "object", "properties": {
     "pin_comment": {"type": "string", "description": "Max 14 words, no hashtags: a share nudge that names the star or the story, "
                     "like 'Apne ___ fan dost ko bhejo 👇'"},
     "relate": RELATE,
+    "keywords": {"type": "array", "items": {"type": "string"}, "description": "6-10 search words people type on Instagram for this story, to sit "
+                 "under the hashtags (Instagram search reads captions): the names, the film / show / event, the occasion, 2-3 natural "
+                 "phrases ('Janhvi Kapoor Koffee With Karan', 'Karwa Chauth 2026'). Only names and events that are in the story; no '#'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "photo_query": {"type": "string", "description": "Short English news search that finds photos of this exact story"},
     "wiki_title": {"type": "string", "description": "English Wikipedia title of the main person, or empty"},
     "songs": SONGS},
-    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment", "relate",
+    "required": ["pick", "tag", "hook", "headline", "bullets", "question", "highlight", "caption", "pin_comment", "relate", "keywords",
                  "hashtags", "photo_query", "wiki_title", "songs"], "additionalProperties": False}
 BREAK_WRITE = {"type": "object", "properties": {k: v for k, v in BREAK_OPTION["properties"].items()
                                                 if k not in ("pick", "photo_query", "wiki_title", "songs")},
@@ -3247,7 +3261,11 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "bad). WHO DOES WHAT: when someone accuses, criticises or quotes someone else, the hook must make clear who "
             "says it and who it is about; never put a harsh word (terrorism, gaddar, fraud, ...) next to a name that is "
             "only the accuser or that the story does not say it about (e.g. 'Mamata: CJP custody state-sponsored "
-            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
+            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
+            "opens): of the 5 hooks make at least 2 a short reaction line a friend would forward, with a feeling word, e.g. '<Name> ka reaction "
+            "bilkul priceless', '<Name> ne sabka dil jeet liya', '<A> ko <B> se alag nahi kar sakte', 'Bro ne poora show loot liya': only for "
+            "warm, funny or proud moments of the story (never for sad, serious or negative news), and still only what really happened in the "
+            "story: the feeling word is the opinion, the moment is the fact. " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
                                     "not on the card." if card_text else ""),
             f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\n" + (f"THE CARD (the hook must match it):\n{card_text}\n\n"
                                                                        if card_text else "") + f"Current hook: {current}{viral_memory()}",

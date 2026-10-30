@@ -539,9 +539,11 @@ def save_json(path: Path, data) -> None:
 
 def full_caption(post: dict, item: dict) -> str:
     tags = " ".join(t if t.startswith("#") else f"#{t}" for t in post["hashtags"])
+    kw = post.get("keywords") if isinstance(post.get("keywords"), list) else []
+    block = f"\n\n({', '.join(kw)})" if len(kw) >= 3 else ""   # hidden search words after the hashtags (30 Oct 2026, like the big viral pages)
     return (f"{post['caption'].strip()}\n\n"
             f"Follow {CONFIG['handle']} for daily updates.\n"
-            f"Source: {item['source']} (link pinned in comments 👇)\n\n{tags}")
+            f"Source: {item['source']} (link pinned in comments 👇)\n\n{tags}{block}")
 
 
 # ---------------------------------------------------------------- alerts
