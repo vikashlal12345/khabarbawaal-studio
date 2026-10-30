@@ -843,12 +843,28 @@ def meta_memory(note: str = "") -> str:
             "\nWeakest Reels (avoid stories and angles like these):\n" + "\n".join(line(m) for m in weak))
 
 
+def competitor_memory() -> str:
+    """What is working on the big Bollywood / viral pages RIGHT NOW (docs/stats/competitors.json, Meta's official Business Discovery, daily):
+    their posts of the last 21 days with 2x+ the page's usual likes. Inspiration for topics and angles only (owner, 30 Oct 2026)."""
+    try:
+        d = json.loads((Path(__file__).parent / "docs" / "stats" / "competitors.json").read_text())
+    except Exception:
+        return ""
+    rows = sorted(((t["ratio"], t["likes"], p["username"], t["caption"]) for p in d.get("pages", []) for t in p.get("top", [])
+                   if t.get("caption") and p.get("followers", 0) >= 500000), reverse=True)[:10]
+    if len(rows) < 4:
+        return ""
+    return ("\n\nWhat is working on the BIG Bollywood / viral pages right now (their posts with 2x+ their usual likes in the last 3 weeks: aim for the same KIND "
+            "of moment, e.g. couples, festival celebrations, a star's own words; never copy their wording, never take a claim from here: facts come only "
+            "from our own sources):\n" + "\n".join(f"- {r[0]}x usual likes, {r[1]} likes (@{r[2]}): {r[3][:110]}" for r in rows))
+
+
 def viral_memory(note: str = "") -> str:
     """Our own winners and flops (views from the owner's Instagram screen recordings), shown to every picker and
     writer so they aim for what worked (owner, 15 Oct 2026: a Salman Khan reveal got 1.6k views + shares)."""
     live = meta_memory(note)   # 📊 the real numbers from Meta's official API (29 Oct 2026), when available
     if live:
-        return live
+        return live + competitor_memory()
     try:
         data = json.loads(VIRAL_FILE.read_text())
     except Exception:

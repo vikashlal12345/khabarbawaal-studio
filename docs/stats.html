@@ -99,6 +99,7 @@
 <main>
   <section id="meta"><h2>📊 Instagram, live from Meta</h2><div class="muted">Loading…</div></section>
   <section id="sugg"><h2>💡 Weekly suggestions</h2><div class="muted">Loading…</div></section>
+  <section id="comp"><h2>🔭 Other pages</h2><div class="muted">Loading…</div></section>
   <section id="growth"><h2>📈 Growth</h2><div class="muted">Loading…</div></section>
   <section id="today"><h2>🗓️ Today's plan</h2><div class="muted">Loading…</div></section>
   <section id="habit"><h2>📮 Your posting habit</h2><div class="muted">Loading…</div></section>
@@ -689,9 +690,35 @@ function hookChart(box, pts) {
 })();
 </script>
 <script>
+// 🔭 Other pages (owner, 30 Oct 2026): the PUBLIC numbers of big Bollywood / viral pages from Meta's official Business Discovery, read once a day
+// (competitors.json). Only numbers and short captions: it shows what works there; nothing is copied.
+(async () => {
+  const box = document.getElementById('comp');
+  const d = await getJSON('stats/competitors.json');
+  if (!d || !d.pages || !d.pages.length) { box.innerHTML = '<h2>🔭 Other pages</h2><div class="muted">The robot reads these pages once a day: numbers appear here after the next refresh.</div>'; return; }
+  const esc = t => String(t || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const num = v => v == null ? '–' : v >= 1e6 ? (v / 1e6).toFixed(1).replace('.0', '') + 'M' : v >= 1000 ? (v / 1000).toFixed(1).replace('.0', '') + 'K' : String(v);
+  const posts = d.pages.flatMap(p => (p.top || []).map(t => ({ ...t, page: p.username, followers: p.followers })))
+    .filter(t => t.followers >= 500000 && t.caption).sort((a, b) => b.ratio - a.ratio).slice(0, 10);
+  const when = iso => { const h = (Date.now() - new Date(iso)) / 3600000; return h < 48 ? Math.round(h) + ' h ago' : Math.round(h / 24) + ' d ago'; };
+  box.innerHTML = `<h2>🔭 Other pages</h2>
+    <div class="muted" style="margin:-4px 0 8px">${d.pages.length} big pages · public numbers from Meta · updated ${ago(d.updated)} (daily)</div>
+    <div class="sub">🔥 Best posts there, last 3 weeks (likes vs the page's usual)</div>
+    ${posts.map(t => `<a class="mrow" style="grid-template-columns:62px minmax(0,1fr)" href="${esc(t.permalink)}" target="_blank" rel="noopener">
+      <div class="kpi" style="padding:6px;text-align:center"><b style="font-size:14px">${t.ratio}×</b></div>
+      <div><div class="ti">${esc(t.caption)}</div>
+        <div class="mt"><span>@${esc(t.page)}</span><span>❤️ <b>${num(t.likes)}</b></span><span>${esc(t.type === 'REELS' ? '🎬 Reel' : '🖼️ Post')}</span><span>${when(t.time)}</span></div></div></a>`).join('')}
+    <div class="sub">The pages</div>
+    ${[...d.pages].sort((a, b) => b.followers - a.followers).map(p => `<div class="best"><span>@${esc(p.username)}</span>
+      <span class="muted">${num(p.followers)} followers · ❤️ ${num(p.avg_likes)} per post</span></div>`).join('')}
+    <div class="muted" style="margin-top:8px">The robot also reads this list when it picks stories: it aims for the same kind of moment (couples, festivals, stars' own words), never copies.
+      Public likes only (views are private).</div>`;
+})();
+</script>
+<script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 61;
+const PAGE_V = 62;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

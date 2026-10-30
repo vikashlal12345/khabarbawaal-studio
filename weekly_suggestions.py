@@ -79,6 +79,16 @@ def main() -> int:
         follower_line = ("Followers at the end of each day (IST): " + ", ".join(f"{d[5:]}: {by_day[d]}" for d in days)) if len(days) >= 2 else ""
     except Exception:
         follower_line = ""
+    comp_line = ""
+    try:   # what works on the big pages (Meta's Business Discovery, daily): outliers of the last 3 weeks
+        cd = json.loads((ROOT / "docs" / "stats" / "competitors.json").read_text())
+        rows = sorted(((t["ratio"], t["likes"], p["username"], t["caption"]) for p in cd.get("pages", []) for t in p.get("top", [])
+                       if p.get("followers", 0) >= 500000 and t.get("caption")), reverse=True)[:12]
+        if rows:
+            comp_line = ("Posts on the big Bollywood / viral pages with 2x+ their usual likes in the last 3 weeks (public numbers, inspiration only):\n"
+                         + "\n".join(f"- {r[0]}x, {r[1]} likes (@{r[2]}): {r[3][:100]}" for r in rows) + "\n\n")
+    except Exception:
+        pass
     user = (f"Followers now: {d['account']['followers']} (a week ago: {followers_prev if followers_prev is not None else 'unknown'}).\n"
             + (follower_line + "\n" if follower_line else "") +
             f"Settled Reels (24 h+ old): {len(reels)}; average views {round(statistics.mean(m['views'] for m in reels))}, median {round(statistics.median(m['views'] for m in reels))}.\n"
@@ -86,6 +96,7 @@ def main() -> int:
             "Average views by the hour the Reel was posted (IST), hour: (avg views, Reels): " + json.dumps({str(h): v for h, v in sorted(hours.items())}) + "\n\n"
             f"This week's Reels ({len(week)}), most viewed first:\n" + "\n".join(line(m) for m in week[:14]) + "\n\n"
             "Best 8 of all time:\n" + "\n".join(line(m) for m in all_best) + "\n\nWeakest 8:\n" + "\n".join(line(m) for m in weak) + "\n\n"
+            + comp_line +
             "Earlier suggestions the owner decided on (never repeat these):\n" + ("\n".join(decided) or "(none yet)"))
     try:
         res = fun.claude_json(SYSTEM, user, SCHEMA, "sonnet", purpose="weekly suggestions")
