@@ -2122,6 +2122,9 @@ lead is a FAMOUS Bollywood / film actor or actress that most young Indians know 
 story with an actor AND an actress together, or an actress as the lead, goes even higher. Stories whose lead is an unknown person, \
 an official, an institution or a court order (e.g. a Supreme Court order) rank low: take them only when a famous star or leader is \
 clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names.
+PROMO RULE (owner, 30 Oct 2026: two Reels on the same Shraddha Kapoor trailer got ~300 views and ~70): trailer / teaser / poster / first-look / song-launch / \
+release-date announcements rank LOW (they are adverts, people do not forward them); take one only when it carries a personal or emotional angle of a big name, \
+and never a regional or niche film nobody outside its language has heard of.
 SHARES RULE (owner, 29 Oct 2026, from his shares / saves numbers: a star's family story got 14 shares + 9 saves, a celebrity kirtan 71 likes, \
 an RSS-anniversary story 57 likes): rank HIGHER (1) a famous person's family / relationship / emotional personal-life reveal (a star \
 talking about a parent, a late parent, a spouse, a child, a first meeting, a break-up, a hardship, a Koffee With Karan confession, the Kapoor / \
@@ -2149,6 +2152,37 @@ def recent_news(state: dict, today: str) -> tuple[list[dict], str]:
 
 
 REMAKE: dict = {}   # 🔄 a Remake keeps the same story / video: {'link', 'title', 'source', 'video_id'} (remake.py)
+
+
+GENERIC = {"trailer", "teaser", "bollywood", "actor", "actress", "film", "movie", "news", "says", "reveals", "about", "after", "their", "first", "latest",
+           "viral", "video", "photos", "photo", "social", "media", "ahead", "starrer", "release", "released", "report", "reports", "calls", "shares",
+           "celebrates", "internet", "fans", "update", "new", "out", "with", "from", "over", "this", "that", "have", "will", "been", "into"}
+
+
+def covered_before(title: str, hours: int = 12) -> bool:
+    """True when one of our Reels of the last `hours` already told this story (30 Oct 2026: the Eetha trailer went out twice in 2 hours from two
+    sites with different headlines): 3+ of the headline's significant words (names, film) appear in a recent Reel's headline / caption."""
+    from datetime import datetime, timezone
+    try:
+        posts = json.loads((Path(__file__).parent / "docs" / "feed.json").read_text())
+    except Exception:
+        return False
+    posts = posts if isinstance(posts, list) else posts.get("posts", [])
+    words = {w for w in re.findall(r"[a-z]{4,}", title.lower())} - GENERIC
+    if len(words) < 3:
+        return False
+    now = datetime.now(timezone.utc)
+    for p in posts:
+        try:
+            age = (now - datetime.fromisoformat(p["created_at"])).total_seconds() / 3600
+        except Exception:
+            continue
+        if age > hours or p.get("kind") not in (None, "news", "custom", "reel"):
+            continue
+        text = (p.get("headline", "") + " " + (p.get("caption", "") or "")[:200]).lower()
+        if sum(w in text for w in words) >= 3:
+            return True
+    return False
 
 
 PRIDE = re.compile(r"\b(rss|mandir|temple|kirtan|aarti|bhajan|ayodhya|hindu|sanatan|diwali|chhath|dhanteras|kashi|mahakumbh|yoga)\b", re.I)
@@ -2182,7 +2216,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
     else:
         status.step("Picking the most viral, visual story", 2)
-        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID])[:40]
+        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])])[:40]
         intro = ""
         if REMAKE.get("link"):   # 🔄 remake: the same story again
             stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
@@ -2378,7 +2412,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     import status
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
-    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID])[:45]
+    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])])[:45]
     if REMAKE.get("link"):   # 🔄 remake: the same story again
         stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                     "summary": "", "category": "remake"}]
@@ -3179,7 +3213,7 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bo
                               "star (the best-known, most recognisable face; an actress, or an actor and actress together, beats "
                               "an unknown person; the photo that shows the PEOPLE NAMED in the story with clear faces always beats a film poster, a collage, "
                               "two pictures side by side or a photo of other people, even when it is smaller (small photos are shown whole in a framed window, "
-                              "so size is no reason to reject one); a screenshot taken from a video, or a photo with motion blur or soft focus, is never the cover; when the story is about a model, actress, influencer or other glamorous young person "
+                              "so size is no reason to reject one); a screenshot taken from a video, a video / YouTube thumbnail, a picture that already carries text, a logo or words like OFFICIAL TEASER / TRAILER, or a photo with motion blur or soft focus, is never the cover; when the story is about a model, actress, influencer or other glamorous young person "
                               "(even as the victim or the person at the centre of a case), HER photo is the cover, never a lawyer, "
                               "judge, official, relative or elderly person standing in for the story (owner 27 Oct 2026: a lawyer was "
                               "the cover of a model's case Reel and it got few views); a soft, blurry or low-resolution face is never the cover); a flattering, composed or softly smiling face with open eyes beats a face caught mid-sentence with an open mouth, closed eyes or an awkward angle; never a crowd, a collage, a screenshot, a poster full of text or a blurry photo, and never a photo that "
@@ -3261,7 +3295,7 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "bad). WHO DOES WHAT: when someone accuses, criticises or quotes someone else, the hook must make clear who "
             "says it and who it is about; never put a harsh word (terrorism, gaddar, fraud, ...) next to a name that is "
             "only the accuser or that the story does not say it about (e.g. 'Mamata: CJP custody state-sponsored "
-            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
+            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). NO NICHE WORDS (30 Oct 2026: 'Eetha trailer out, Lavani queen bani' got a 3.5 s watch time): never an unexplained regional or niche word (an unknown film title, a folk-art name) in the hook unless every Indian knows it; say it with words everyone knows ('Shraddha ka naya avatar'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
             "opens): of the 5 hooks make at least 2 a short reaction line a friend would forward, with a feeling word, e.g. '<Name> ka reaction "
             "bilkul priceless', '<Name> ne sabka dil jeet liya', '<A> ko <B> se alag nahi kar sakte', 'Bro ne poora show loot liya': only for "
             "warm, funny or proud moments of the story (never for sad, serious or negative news), and still only what really happened in the "
