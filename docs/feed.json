@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_am-2026-10-31",
+  "image": "posts/20261031-0635-reel_news_am-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-063529-reel_news_am-2026-10-31.mp4",
+  "headline": "Varun Dhawan reunites with Sidharth Malhotra after Heated Rivalry joke on Koffee With Karan; Kiara Advani joins the fun",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Varun Dhawan Sidharth Malhotra Koffee With Karan Heated Rivalry 😂\nVarun ne Koffee With Karan mein Heated Rivalry ke Indian adaptation ke liye Sidharth Malhotra ka naam liya.\nUnhone Student of the Year ki chemistry par mazaak bhi kiya.\nKiara Advani bhi is masti mein shaamil hui.\nUs dost ko bhejo jo tumhara Sidharth hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#varundhawan #sidharthmalhotra #koffeewithkaran #bollywood #reelsindia\n\n(Varun Dhawan, Sidharth Malhotra, Kiara Advani, Koffee With Karan, Heated Rivalry, Student of the Year, Varun Sidharth reunion, Koffee With Karan 9)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-reunites-with-sidharth-malhotra-after-heated-rivalry-joke-on-koffee-with-karan-kiara-advani-joins-the-fun-student-of-the-year-101793423094250.html",
+  "pin_comment": "Apne Student of the Year wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "dosti + chemistry vibe"
+   },
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "yaari wali warm feeling"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "cheeky, flirty fun"
+   },
+   {
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "lang": "english",
+    "mood": "cool bromance feel"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The Heated Rivalry poster on the right is cropped at the edge, so the title reads 'HEATE RIVALR'. This is a layout problem. Slide 1 can't be dropped, so the image needs re-cropping."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-31T06:35:29+00:00"
+ },
+ {
   "id": "reel_break_am-2026-10-31",
   "image": "posts/20261031-0436-reel_break_am-2026-10-31.jpg",
   "kind": "reel",
@@ -351,97 +398,5 @@
    ]
   },
   "created_at": "2026-10-30T08:38:55+00:00"
- },
- {
-  "id": "reel_news_am-2026-10-30",
-  "image": "posts/20261030-0635-reel_news_am-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-063525-reel_news_am-2026-10-30.mp4",
-  "headline": "Aamir Khan celebrates first Karwa Chauth with wife Gauri Spratt at Anil Kapoor, Sunita Kpaoor's residence",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Aamir Khan Gauri Spratt first Karwa Chauth Anil Kapoor Sunita Kapoor 🙏\nAamir Khan ne Gauri Spratt ke saath apni pehli Karwa Chauth manayi.\nCelebration Anil Kapoor aur Sunita Kapoor ke Mumbai wale ghar par hui, jo unka saalana Karwa Chauth event hai.\nAapko ye jodi kaisi lagi? Sahi lagi toh HAAN likho, nahi toh NA 👇\nApne Aamir fan dost ko bhejo 👇 ❤️\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#aamirkhan #bollywood #karwachauth #anilkapoor #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
-  "pin_comment": "Apne Aamir Khan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "romantic = pehli Karwa Chauth saath"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft love vibe, top chart"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "emotional love, couple moment"
-   },
-   {
-    "title": "Ordinary",
-    "artist": "Alex Warren",
-    "lang": "english",
-    "mood": "warm love song for couple"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 3: The 'Photo: @RandomCineMood' credit overlaps the 'Read more on X' line at the bottom of the tweet screenshot. The tweet text is also very small. The screenshot's own claim, 'third wife', comes from a third-party post and is not in the article."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-30T06:35:25+00:00"
- },
- {
-  "id": "reel_break_am-2026-10-30",
-  "image": "posts/20261030-0436-reel_break_am-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-043626-reel_break_am-2026-10-30.mp4",
-  "headline": "Siddharth Anand drops another cryptic post about Shah Rukh Khan starrer King at midnight; is a birthday surprise coming?",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Shah Rukh Khan KING Siddharth Anand cryptic post birthday surprise\n\nSiddharth Anand ne midnight 'Time For The World' post kiya, pehle 'It's' likha tha.\nSRK ka birthday 2 November ko hai. Director ne abhi kuch confirm nahi kiya.\nKING 24 December 2026 ko cinemas mein aa rahi hai.\n\nApne Shah Rukh fan dost ko bhejo 👇 🔥\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#shahrukhkhan #king #siddharthanand #bollywood #reelsindia",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
-  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "mass hype = King ka swag"
-   },
-   {
-    "title": "One Name",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "ek hi naam, SRK ka aura"
-   },
-   {
-    "title": "Dracula",
-    "artist": "Tame Impala",
-    "lang": "english",
-    "mood": "cryptic midnight post vibe"
-   },
-   {
-    "title": "Infinity",
-    "artist": "Jaymes Young",
-    "lang": "english",
-    "mood": "suspense, intezaar ka mood"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-30T04:36:26+00:00"
  }
 ]

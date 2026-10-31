@@ -64,5 +64,20 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-10-31",
+  "key": "varundhawansidharthmalhotrakoffeewithkaranheatedrivalry",
+  "kind": "reel_news_am",
+  "secs": 17.0,
+  "at": "2026-10-31T06:35:29+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "hook": "name_first",
+  "photos": 2,
+  "short": false
  }
 ]
