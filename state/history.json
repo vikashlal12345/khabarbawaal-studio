@@ -217,7 +217,8 @@
   "a1bee6a2e893",
   "87066fdbb35e",
   "d3d94408f95b",
-  "2501e4851e34"
+  "2501e4851e34",
+  "42cb338b7956"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -363,7 +364,7 @@
   "reel_news_aft": "2026-10-30",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-10-30",
+  "reel_news_early": "2026-10-31",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-30",
   "reel_break_noon": "2026-10-30",
@@ -743,7 +744,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/jackie-shroff-attends-event-with-maharashtra-cm-devendra-fadnavis-in-first-public-appearance-after-shooting-attack-on-son-tiger-shroff-101792459210725.html",
   "https://www.bollywoodhungama.com/news/bollywood/dil-raju-calls-ranbir-kapoor-ranveer-singh-at-ramayanas-grand-hyderabad-event-immediately-apologizes-sorry-ranbir-kapoor-garu/",
   "https://www.hindustantimes.com/entertainment/bollywood/sharad-kelkar-says-he-spoke-to-tiger-shroff-after-firing-incident-trusts-mumbai-police-to-get-to-the-bottom-of-the-case-101792479383751.html",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-advance-booking-may-get-delayed-due-to-revenue-sharing-tussle-distributors-demand-60-share-in-week-1/",
@@ -822,7 +822,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
   "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
   "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
-  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-and-sanjay-dutt-to-reunite-on-screen-in-khalnayak-returns-heres-what-we-know/"
+  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-and-sanjay-dutt-to-reunite-on-screen-in-khalnayak-returns-heres-what-we-know/",
+  "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1039,10 +1040,6 @@
   }
  ],
  "songs_recent": [
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Water",
-  "All The Stars",
-  "PUSH 2 START",
   "Aarti Laxmi Ji Ki",
   "Mahalakshmi Ashtakam",
   "Laxmi Ji Ki Aarti",
@@ -1078,7 +1075,11 @@
   "Shani Dev Aarti",
   "Shani Chalisa",
   "Shani Dev Ki Aarti",
-  "Super Fast Shani Chalisa"
+  "Super Fast Shani Chalisa",
+  "Azadi",
+  "Ashke",
+  "Just Give Me a Reason (feat. Nate Ruess)",
+  "People"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1102,38 +1103,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "Captain Smit Machchhar, flydubai crew honoured by UAE President for mid-air heroism",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "Ranbir Kapoor and Sai Pallavi pose with fans, Yash arrives with wife Radhika Pandit at Ramayana's grand world premiere in Los Angeles",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "Yash takes pride in Kannada roots at Ramayana's Los Angeles premiere, Namit Malhotra says film wouldn't have happened without him",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "Ramayana first reactions: Viewers compare Ranbir Kapoor-Yash's film to Lord of the Rings, music receives mixed response",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "Radhika Apte slams trolls criticising Alia Bhatt's physique in Alpha, calls out double standards for female actors in action roles",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "‘Ravana is not all bad’: Sai Pallavi says key takeaway from Ramayana is to spot the Ravana in us and make changes over time",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "Ranbir Kapoor meets content creator on California streets a day after Ramayana premiere, shares simple success advice",
-   "date": "2026-10-28"
-  },
-  {
-   "title": "कांग्रेस का राजनीतिक दिवालियापन सामने आ चुका है। तीन दिन पहले कांग्रेस अध्यक्ष मल्लिकार्जुन खड़गे ने प्रधानमंत्री श्री @narendramodi जी के स",
-   "date": "2026-10-28"
-  },
   {
    "title": "Exclusive | Bhumi Pednekkar set to reunite with Akshay Kumar in Priyadarshan's next film",
    "date": "2026-10-29"
@@ -1197,6 +1166,10 @@
   {
    "title": "Salman Khan and Sanjay Dutt to reunite on screen in Khalnayak Returns? Here's what we know",
    "date": "2026-10-30"
+  },
+  {
+   "title": "'Attack on energy trade, infrastructure a calculated move to hold prices hostage': Jaishankar",
+   "date": "2026-10-31"
   }
  ],
  "claude_limit": {

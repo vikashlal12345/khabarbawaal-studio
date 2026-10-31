@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_early-2026-10-31",
+  "image": "posts/20261031-0236-reel_news_early-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-023641-reel_news_early-2026-10-31.mp4",
+  "headline": "'Attack on energy trade, infrastructure a calculated move to hold prices hostage': Jaishankar",
+  "tag": "🎬 REEL · INDIA",
+  "caption": "Jaishankar energy trade infrastructure attack West Asia 🇮🇳\nEAM Jaishankar ne kaha ki energy trade aur infrastructure par hamla 'prices ko bandhak banane ki calculated chaal' hai.\nYe baat West Asia ke tension aur Russia-Ukraine war ke beech aayi.\nJaishankar sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#jaishankar #india #foreignpolicy #indiannews #reelsindia\n\n(Jaishankar, EAM Jaishankar, energy trade, West Asia, Russia Ukraine war, India foreign policy, Jaishankar speech, oil prices)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
+  "pin_comment": "Ye har desh-bhakt dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "serious, desi-pride tone"
+   },
+   {
+    "title": "Ashke",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "trending, steady beat"
+   },
+   {
+    "title": "Just Give Me a Reason (feat. Nate Ruess)",
+    "artist": "P!nk, Nate Ruess",
+    "lang": "english",
+    "mood": "tension and diplomacy"
+   },
+   {
+    "title": "People",
+    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
+    "lang": "english",
+    "mood": "calm serious news bed"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-31T02:36:42+00:00"
+ },
+ {
   "id": "reel_devotion-2026-10-31",
   "image": "posts/20261031-0037-reel_devotion-2026-10-31.jpg",
   "kind": "reel",
@@ -353,50 +398,5 @@
    "fixed": []
   },
   "created_at": "2026-10-30T04:36:26+00:00"
- },
- {
-  "id": "reel_news_early-2026-10-30",
-  "image": "posts/20261030-0236-reel_news_early-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-023613-reel_news_early-2026-10-30.mp4",
-  "headline": "Rakul Preet Singh says Ramayana is India's representation to the world, calls Surpanakha a very misunderstood character",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Rakul Preet Singh Ramayana Surpanakha role 🔥\nRakul Ramayana trailer mein Surpanakha ke avatar mein dikhi hain.\nUnka kehna: Ramayana duniya ko India ki representation hai.\nSurpanakha ko wo 'very misunderstood character' bolti hain.\nFilm mein Ranbir Kapoor Lord Rama bane hain.\nApne Rakul fan dost ko bhejo 👇\nSahi ho toh HAAN likho, galat ho toh NA 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#RakulPreetSingh #Ramayana #RanbirKapoor #bollywoodnews #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
-  "pin_comment": "Ye Rakul aur Ramayana ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "epic Ramayana vibe, mass entry"
-   },
-   {
-    "title": "Barsaat",
-    "artist": "Banjaare, Roni",
-    "lang": "hindi",
-    "mood": "top chart, soft emotional pick"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "powerful villain-role energy"
-   },
-   {
-    "title": "Beggin'",
-    "artist": "Måneskin",
-    "lang": "english",
-    "mood": "bold twist on Surpanakha"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-30T02:36:13+00:00"
  }
 ]

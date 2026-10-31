@@ -35,5 +35,20 @@
   "secs": 34.1,
   "at": "2026-10-31T00:37:29+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-10-31",
+  "key": "jaishankarenergytradeinfrastructureattackwestasia",
+  "kind": "reel_news_early",
+  "secs": 22.5,
+  "at": "2026-10-31T02:36:42+00:00",
+  "type": "news",
+  "topic": "politics",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "full",
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
