@@ -108,5 +108,20 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-10-31",
+  "key": "diljitdosanjhsatlujcontroversydelhiconcert",
+  "kind": "reel_news_aft",
+  "secs": 22.5,
+  "at": "2026-10-31T12:36:43+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "window",
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]

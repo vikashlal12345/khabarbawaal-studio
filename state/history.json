@@ -221,7 +221,8 @@
   "42cb338b7956",
   "4dc3a9699453",
   "1beb408d3c7b",
-  "18ccd4c1b5e8"
+  "18ccd4c1b5e8",
+  "43766e4258b6"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -364,7 +365,7 @@
   "reel_news_am": "2026-10-31",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-10-30",
+  "reel_news_aft": "2026-10-31",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-10-31",
@@ -374,7 +375,7 @@
   "reel_break_aft": "2026-10-30",
   "reel_news_night": "2026-10-30"
  },
- "inbox_since": "p2E34YKJrpO9",
+ "inbox_since": "NUI8hQpgRmAK",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -747,7 +748,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
   "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html",
@@ -826,7 +826,8 @@
   "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-reunites-with-sidharth-malhotra-after-heated-rivalry-joke-on-koffee-with-karan-kiara-advani-joins-the-fun-student-of-the-year-101793423094250.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html",
+  "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1043,10 +1044,6 @@
   }
  ],
  "songs_recent": [
-  "Thumkeshwari",
-  "Shararat",
-  "Jalebi Baby",
-  "Calm Down",
   "Lae Dooba by Sunidhi Chauhan",
   "Ala Bolelo",
   "Thriller",
@@ -1082,7 +1079,11 @@
   "Humnava Mere",
   "Tera Hoke Rahoon",
   "back to friends",
-  "the cure"
+  "the cure",
+  "Water",
+  "Ez-Ez",
+  "Big Dawgs",
+  "Believer"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1188,6 +1189,10 @@
   },
   {
    "title": "Sanjay Dutt pays tribute to late friend Sanjay Gupta, vows to fulfil his dream of making Kaante 2",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Diljit Dosanjh addresses Satluj controversy at Delhi concert; says “Don't teach Punjabis how to fight”",
    "date": "2026-10-31"
   }
  ],

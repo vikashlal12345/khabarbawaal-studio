@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_aft-2026-10-31",
+  "image": "posts/20261031-1236-reel_news_aft-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-123643-reel_news_aft-2026-10-31.mp4",
+  "headline": "Diljit Dosanjh addresses Satluj controversy at Delhi concert; says “Don't teach Punjabis how to fight”",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Diljit Dosanjh Satluj controversy Delhi concert 🔥\nAura India Tour 2026 ke pehle din Delhi mein Diljit ne apni film Satluj par uthe vivaad par seedha bola.\nUnka kehna: \"Don't teach Punjabis how to fight\".\nDiljit sahi? HAAN ya NA likho 👇\n\nVideo: @GI_Bharat on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#diljitdosanjh #bollywoodnews #auratour #viral #reelsindia\n\n(Diljit Dosanjh, Satluj controversy, Aura India Tour 2026, Diljit Dosanjh Delhi concert, Diljit Dosanjh Satluj, Don't teach Punjabis how to fight, Diljit Dosanjh latest news)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/",
+  "pin_comment": "Apne Diljit fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Water",
+    "artist": "Diljit Dosanjh, Mixsingh",
+    "lang": "hindi",
+    "mood": "Diljit ka apna gaana, concert vibe"
+   },
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "swagger reply, hype beat"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "bold clap-back energy"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "fighting back, powerful hook"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo credit 'Photo: Bollywood Hungama' at the bottom left runs into the '@khabarbawaal' handle. The two texts overlap and are hard to read."
+   ],
+   "fixed": [
+    "#aurateour → #auratour"
+   ]
+  },
+  "created_at": "2026-10-31T12:36:43+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-10-31",
   "image": "posts/20261031-1036-reel_news_pm-2026-10-31.jpg",
   "kind": "reel",
@@ -439,52 +488,5 @@
    ]
   },
   "created_at": "2026-10-30T12:37:38+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-30",
-  "image": "posts/20261030-1037-reel_news_pm-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-103759-reel_news_pm-2026-10-30.mp4",
-  "headline": "Eetha trailer out: Shraddha Kapoor celebrates Maharashtra's Lavani legacy as she transforms into Vithabai Narayangaonkar in Laxman Utekar's musical",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Shraddha Kapoor Eetha trailer Lavani Vithabai Narayangaonkar 💃\nLaxman Utekar ki musical Eetha ka trailer aaya.\nShraddha Maharashtra ki Lavani virasat celebrate karte hue Vithabai Narayangaonkar bani hain.\nFilm Lavani aur Tamasha artist Vithabai Bhau Mang Narayangaonkar se inspired hai.\nUs dost ko bhejo jo Shraddha ka bada fan hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shraddhakapoor #eetha #lavani #bollywood #reelsindia",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
-  "pin_comment": "Ye apne Shraddha Kapoor fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Thumkeshwari",
-    "artist": "Sachin-Jigar, Divya Kumar",
-    "lang": "hindi",
-    "mood": "dance number = Lavani energy"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "sassy, fiery performer vibe"
-   },
-   {
-    "title": "Jalebi Baby",
-    "artist": "Tesher",
-    "lang": "english",
-    "mood": "fun desi-dance beat"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "groovy, trailer-fun mood"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The photo is cropped on the sides, so the 'OFFICIAL TEASER' and 'EETHA' lettering in the image is cut off. The image is labelled 'Official Teaser' while our text says 'trailer'. This is minor."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-30T10:37:59+00:00"
  }
 ]
