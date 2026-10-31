@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_devotion-2026-10-31",
+  "image": "posts/20261031-0037-reel_devotion-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-003729-reel_devotion-2026-10-31.mp4",
+  "headline": "Saturday: Shani Dev: Shani Dev ki kripa aaj kaise payein",
+  "tag": "🎬 REEL · 🙏 JAI SHANI DEV",
+  "caption": "Shani Dev ki kripa aaj kaise payein, Shanivaar ka ashirwaad 🙏\nJo karm sachche, uska phal bhi sachcha...\nAaj ek acha kaam karke din shuru karo.\nJai Shani Dev likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#shanidev #shanivaar #jaishanidev #bhakti #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Apne parivaar ko bhejo, Shanivaar ka ashirwaad sabko mile 🙏",
+  "songs": [
+   {
+    "title": "Shani Dev Aarti",
+    "artist": "Vishwajeet Borwankar, Priyanka Sarvadnya",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Shani Chalisa",
+    "artist": "Ketan Patwardhan",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Shani Dev Ki Aarti",
+    "artist": "Anu Dubey",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Super Fast Shani Chalisa",
+    "artist": "Nikhil Singh",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-31T00:37:29+00:00"
+ },
+ {
   "id": "reel_news_night-2026-10-30",
   "image": "posts/20261030-1451-reel_news_night-2026-10-30.jpg",
   "kind": "reel",
@@ -353,50 +398,5 @@
    "fixed": []
   },
   "created_at": "2026-10-30T02:36:13+00:00"
- },
- {
-  "id": "reel_devotion-2026-10-30",
-  "image": "posts/20261030-0034-reel_devotion-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-003456-reel_devotion-2026-10-30.mp4",
-  "headline": "Friday: Maa Lakshmi: Maa Lakshmi kamal par kyun virajti hain",
-  "tag": "🎬 REEL · 🙏 JAI MAA LAKSHMI",
-  "caption": "Maa Lakshmi kamal par kyun virajti hain? 🙏\nKeechad mein bhi khilna... yahi seekh hai.\nShukravaar ka aashirwaad aap sabko.\nJai Maa Lakshmi likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#maalakshmi #shukravaar #lakshmimata #bhakti #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Ghar ke sabse bade ko bhejo, unka aashirwaad milega 🙏",
-  "songs": [
-   {
-    "title": "Aarti Laxmi Ji Ki",
-    "artist": "Somalika Das",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Mahalakshmi Ashtakam",
-    "artist": "Rajalakshmee Sanjay",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Laxmi Ji Ki Aarti",
-    "artist": "Anuradha Paudwal, Hariom Sharan",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Lakshmi Aarthi",
-    "artist": "Bombay Saradha",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-30T00:34:56+00:00"
  }
 ]

@@ -27,5 +27,13 @@
   "hook": "question",
   "photos": 3,
   "short": false
+ },
+ {
+  "id": "reel_devotion-2026-10-31",
+  "key": "shanidevkikripaaajkaisepayeinshanivaarkaashirwaad",
+  "kind": "reel_devotion",
+  "secs": 34.1,
+  "at": "2026-10-31T00:37:29+00:00",
+  "type": "devotional"
  }
 ]
