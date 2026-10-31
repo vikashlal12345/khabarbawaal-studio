@@ -93,5 +93,20 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_pm-2026-10-31",
+  "key": "sanjayduttsanjayguptakaante2tribute",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-10-31T10:36:21+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]

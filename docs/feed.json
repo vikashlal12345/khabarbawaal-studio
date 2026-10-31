@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_pm-2026-10-31",
+  "image": "posts/20261031-1036-reel_news_pm-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-103621-reel_news_pm-2026-10-31.mp4",
+  "headline": "Sanjay Dutt pays tribute to late friend Sanjay Gupta, vows to fulfil his dream of making Kaante 2",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sanjay Dutt Sanjay Gupta Kaante 2 tribute 🙏\nSanjay Dutt ne apne purane dost aur filmmaker Sanjay Gupta ko bhavuk shraddhanjali di.\nSanjay Gupta ka ghar par accidental fall ke baad nidhan ho gaya.\nSanjay Dutt ne kaha ki woh unka Kaante 2 banane ka sapna poora karenge.\nUs dost ko bhejo jiske saath dosti purani hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SanjayDutt #SanjayGupta #Bollywood #Kaante2 #reelsindia\n\n(Sanjay Dutt, Sanjay Gupta, Sanjay Gupta death, Kaante 2, Sanjay Dutt tribute, Sanjay Dutt Sanjay Gupta friendship, Bollywood news, Suniel tribute)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html",
+  "pin_comment": "Ye apne sabse purane dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Humnava Mere",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "dosti aur yaadon ka dard"
+   },
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "waada nibhane wali bhavna"
+   },
+   {
+    "title": "back to friends",
+    "artist": "sombr",
+    "lang": "english",
+    "mood": "purani dosti ki yaad"
+   },
+   {
+    "title": "the cure",
+    "artist": "Olivia Rodrigo",
+    "lang": "english",
+    "mood": "shant, bhavuk tribute vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Kajol and Raveena Tandon are not mentioned in the article.",
+    "Fact corrected to match the article: The article gives conflicting days: he fell on Friday night and was found dead on Saturday morning. Removing the day avoids stating it wrongly."
+   ],
+   "fixed": [
+    "Kajol Raveena Tandon tribute → Suniel tribute",
+    "Sanjay Gupta ka Friday ko ghar par accidental fall → Sanjay Gupta ka ghar par accidental fall"
+   ]
+  },
+  "created_at": "2026-10-31T10:36:21+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-10-31",
   "image": "posts/20261031-0835-reel_break_noon-2026-10-31.jpg",
   "kind": "reel",
@@ -435,27 +486,5 @@
    "fixed": []
   },
   "created_at": "2026-10-30T10:37:59+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-30",
-  "image": "posts/20261030-0838-reel_break_noon-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-083855-reel_break_noon-2026-10-30.mp4",
-  "headline": "Ramayana advance booking jumps 27% in US after positive reactions from premiere; Ranbir Kapoor, Yash film crosses ₹15 crore in India",
-  "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
-  "caption": "Ramayana advance booking jumps 27% in US after positive reactions from premiere; Ranbir Kapoor, Yash film crosses ₹15 crore in India\nAfter a smashing start, the advance bookings for Nitesh Tiwari’s Ramayana Part One had plateaued.\nAdvance bookings for Ramayana opened on Dussehra, 15 full days before its global release.\nSahi ya galat? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #bollywood #trending #india #entertainment",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
-  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "fixed": [],
-   "issues": [
-    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
-   ]
-  },
-  "created_at": "2026-10-30T08:38:55+00:00"
  }
 ]

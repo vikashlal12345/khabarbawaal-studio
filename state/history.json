@@ -220,7 +220,8 @@
   "2501e4851e34",
   "42cb338b7956",
   "4dc3a9699453",
-  "1beb408d3c7b"
+  "1beb408d3c7b",
+  "18ccd4c1b5e8"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -357,7 +358,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-10-31",
-  "reel_news_pm": "2026-10-30",
+  "reel_news_pm": "2026-10-31",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-10-31",
@@ -373,7 +374,7 @@
   "reel_break_aft": "2026-10-30",
   "reel_news_night": "2026-10-30"
  },
- "inbox_since": "3KxYH6UOV7CI",
+ "inbox_since": "p2E34YKJrpO9",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -746,7 +747,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/prince-william-calls-karan-johar-an-icon-promises-to-watch-kabhi-khushi-kabhie-gham-after-meeting-filmmaker-in-london-101792495032259.html",
   "https://www.oneindia.com/india/amit-shah-meets-families-of-punjab-drug-victims-bhagwant-mann-announces-cbi-probe-into-jhota-murder-8240661.html",
   "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
@@ -825,7 +825,8 @@
   "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
   "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-reunites-with-sidharth-malhotra-after-heated-rivalry-joke-on-koffee-with-karan-kiara-advani-joins-the-fun-student-of-the-year-101793423094250.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1042,10 +1043,6 @@
   }
  ],
  "songs_recent": [
-  "Jo Tum Mere Ho",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Iris",
-  "Ordinary",
   "Thumkeshwari",
   "Shararat",
   "Jalebi Baby",
@@ -1081,7 +1078,11 @@
   "Narayan Mil Jayega",
   "Ram Siya Ram",
   "Beggin'",
-  "Sapphire"
+  "Sapphire",
+  "Humnava Mere",
+  "Tera Hoke Rahoon",
+  "back to friends",
+  "the cure"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1183,6 +1184,10 @@
   },
   {
    "title": "'Ramayana' advance booking report: Ranbir Kapoor, Yash's epic to cross Rs 20 crore mark in India; earns USD 3.45 million overseas",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Sanjay Dutt pays tribute to late friend Sanjay Gupta, vows to fulfil his dream of making Kaante 2",
    "date": "2026-10-31"
   }
  ],
