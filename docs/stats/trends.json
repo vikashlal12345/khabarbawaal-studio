@@ -1,5 +1,5 @@
 {
- "at": "2026-10-31T02:36:45+00:00",
+ "at": "2026-10-31T04:36:10+00:00",
  "known": {
   "https://www.hindustantimes.com/trending/kerala-footballer-muhammed-riswan-among-2-indians-to-win-instagram-rings-award-this-year-101793326741216.html": "2026-10-30T04:36:29+00:00",
   "https://www.hindustantimes.com/technology/stop-romanticising-your-outdated-kitchen-these-amazon-great-indian-festival-deals-could-make-life-much-easier-101793262299787.html": "2026-10-30T04:36:29+00:00",
@@ -70,44 +70,82 @@
   "https://www.hindustantimes.com/india-news/gujarat-hc-stays-ruling-against-ban-on-non-veg-near-somnath-temple-101793389516003.html": "2026-10-31T02:36:45+00:00",
   "https://www.hindustantimes.com/india-news/centre-notifies-social-security-board-for-gig-platform-and-unorganised-workers-101793388852930.html": "2026-10-31T02:36:45+00:00",
   "https://www.hindustantimes.com/india-news/ncte-sets-up-two-expert-panels-to-amend-teacher-recruitment-norms-101793388520235.html": "2026-10-31T02:36:45+00:00",
-  "https://www.hindustantimes.com/trending/gujarat-man-who-set-lawyer-s-parked-car-on-fire-over-noisy-alarm-arrested-101793411958710.html": "2026-10-31T02:36:45+00:00",
-  "https://www.hindustantimes.com/trending/tukaram-mundhe-says-public-service-is-never-about-an-individual-as-he-responds-to-harsh-goenkas-praise-101793409827230.html": "2026-10-31T02:36:45+00:00"
+  "https://www.hindustantimes.com/trending/gujarat-man-who-set-lawyer-s-parked-car-on-fire-over-noisy-alarm-arrested-101793411958710.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/trending/tukaram-mundhe-says-public-service-is-never-about-an-individual-as-he-responds-to-harsh-goenkas-praise-101793409827230.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-king-sells-overseas-rights-for-175-crore-highest-in-indian-cinema-history-film-needs-to-out-earn-pathaan-jawan-to-break-even-101793420095776.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/trending/chinas-stressed-young-adults-are-raising-moss-covered-bricks-instead-of-having-pets-101793417764114.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/india-news/west-bengal-govt-plans-to-set-up-magic-school-and-museum-advisory-committee-formed-101793418796362.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/india-news/ht-morning-brief-october-31-poland-top-court-chiefs-suspension-sparks-tensions-isro-launches-nvs-03-and-more-101793417823285.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/india-news/the-nashik-kumbh-a-34-700-crore-vision-of-faith-power-and-development-101793418139663.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/trending/aarush-yadav-arnav-kumar-raise-1-3-million-for-eyeglasses-that-let-people-type-without-speaking-aloud-101793416126767.html": "2026-10-31T04:36:10+00:00",
+  "https://www.hindustantimes.com/technology/i-replaced-my-rusted-geyser-7-features-i-tested-before-buying-my-2026-water-heater-101793349728845.html": "2026-10-31T04:36:10+00:00"
  },
  "x": [],
  "google": [
-  "dean wade",
-  "national unity day",
-  "genius",
-  "heat vs pacers",
-  "sri lanka national cricket team"
+  "tahlia mcgrath",
+  "vatsala rajagopal",
+  "wi vs ban",
+  "england vs india",
+  "eng vs ind",
+  "australia vs england",
+  "bangladesh vs south africa"
  ],
  "stories": [
   {
-   "title": "'Attack on energy trade, infrastructure a calculated move to hold prices hostage': Jaishankar",
+   "title": "Shah Rukh Khan's King sells overseas rights for ₹175 crore, highest in Indian cinema history; film needs to out-earn Pathaan, Jawan to break",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-king-sells-overseas-rights-for-175-crore-highest-in-indian-cinema-history-film-needs-to-out-earn-pathaan-jawan-to-break-even-101793420095776.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "China's stressed young adults are raising moss-covered bricks instead of having pets",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/chinas-stressed-young-adults-are-raising-moss-covered-bricks-instead-of-having-pets-101793417764114.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "West Bengal govt plans to set up magic school and museum, advisory committee formed",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/west-bengal-govt-plans-to-set-up-magic-school-and-museum-advisory-committee-formed-101793418796362.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Gujarat HC stays ruling against ban on non-veg near Somnath temple",
+   "title": "PM Modi congratulates ISRO scientists on successful GSLV-F18 launch: 'Our space scientists make nation proud'",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/gujarat-hc-stays-ruling-against-ban-on-non-veg-near-somnath-temple-101793389516003.html",
+   "link": "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Centre notifies social security board for gig, platform and unorganised workers",
+   "title": "HT Morning Brief October 31: Poland top court chief's suspension sparks tensions; Isro launches NVS-03 and more",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/centre-notifies-social-security-board-for-gig-platform-and-unorganised-workers-101793388852930.html",
+   "link": "https://www.hindustantimes.com/india-news/ht-morning-brief-october-31-poland-top-court-chiefs-suspension-sparks-tensions-isro-launches-nvs-03-and-more-101793417823285.html",
    "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "NCTE sets up two expert panels to amend teacher recruitment norms",
+   "title": "The Nashik Kumbh: A ₹34,700-crore vision of faith, power and development",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/ncte-sets-up-two-expert-panels-to-amend-teacher-recruitment-norms-101793388520235.html",
+   "link": "https://www.hindustantimes.com/india-news/the-nashik-kumbh-a-34-700-crore-vision-of-faith-power-and-development-101793418139663.html",
    "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Aarush Yadav, Arnav Kumar raise $1.3 million for eyeglasses that let people type without speaking aloud",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/aarush-yadav-arnav-kumar-raise-1-3-million-for-eyeglasses-that-let-people-type-without-speaking-aloud-101793416126767.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "I replaced my rusted geyser: 7 features I tested before buying my 2026 water heater",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/technology/i-replaced-my-rusted-geyser-7-features-i-tested-before-buying-my-2026-water-heater-101793349728845.html",
+   "category": "tech",
    "hours": 0
   },
   {
