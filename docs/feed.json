@@ -1,5 +1,64 @@
 [
  {
+  "id": "reel_break_noon-2026-10-31",
+  "image": "posts/20261031-0835-reel_break_noon-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-083540-reel_break_noon-2026-10-31.mp4",
+  "headline": "'Ramayana' advance booking report: Ranbir Kapoor, Yash's epic to cross Rs 20 crore mark in India; earns USD 3.45 million overseas",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ranbir Kapoor Yash Ramayana advance booking report 🎬\nOpening day ke around 1 lakh tickets national chains mein bik gaye, trade report ke mutabiq.\nReport: US mein advance booking USD 100,000 paar.\nFilm 5 November 2026 ko release hogi.\nTum kaunse ho: Ranbir ya Yash? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: The Times of India (link pinned in comments 👇)\n\n#reelsindia #ranbirkapoor #ramayana #yash #bollywood\n\n(Ranbir Kapoor Ramayana, Ramayana advance booking, Yash Ravana, Ramayana Part One, Nitesh Tiwari Ramayana, Ramayana release 5 November, Ramayana box office, Ranbir Kapoor Lord Ram)",
+  "source": "The Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
+  "pin_comment": "Apne Ranbir fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Narayan Mil Jayega",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "devotional epic vibe = Ramayana"
+   },
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "Ram naam fits the film"
+   },
+   {
+    "title": "Beggin'",
+    "artist": "Måneskin",
+    "lang": "english",
+    "mood": "high energy = booking hype"
+   },
+   {
+    "title": "Sapphire",
+    "artist": "Ed Sheeran",
+    "lang": "english",
+    "mood": "grand, uplifting feel"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Rs 20 crore figure is not in the article; article says about 1 lakh opening-day tickets sold",
+    "Fact corrected to match the article: Rs 20 crore is not in the article",
+    "Fact corrected to match the article: Article says US advance sales crossed $100,000, not $3.45 million",
+    "Fact corrected to match the article: Rs 20 crore and USD 3.45 million are not in the article; US figure is $100,000",
+    "Fact corrected to match the article: Article: trade report says approx. one lakh opening-day advance tickets in national chains; attributed to report, not stated as certain fact",
+    "Fact corrected to match the article: Figure is approximate and from a trade report"
+   ],
+   "fixed": [
+    "release se pehle 20 crore → release se pehle 1 lakh tickets bik chuke",
+    "Report: India mein Rs 20 crore paar → Report: national chains mein opening-day ke around 1 lakh tickets",
+    "Videsh mein USD 3.45 million ki kamai → US mein advance booking USD 100,000 paar (report)",
+    "Headline report: India mein Rs 20 crore paar, videsh mein USD 3.45 million. → Report: US mein advance booking USD 100,000 paar.",
+    "release se pehle 1 lakh tickets bik chuke → release se pehle around 1 lakh opening-day tickets bik chuke: report",
+    "Ramayana ke 1 lakh opening-day tickets bik chuke → Report: Ramayana ke around 1 lakh opening-day tickets bik chuke"
+   ]
+  },
+  "created_at": "2026-10-31T08:35:40+00:00"
+ },
+ {
   "id": "reel_news_am-2026-10-31",
   "image": "posts/20261031-0635-reel_news_am-2026-10-31.jpg",
   "kind": "reel",
