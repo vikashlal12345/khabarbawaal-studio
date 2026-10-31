@@ -1,5 +1,44 @@
 [
  {
+  "id": "reel_break_aft-2026-10-31",
+  "image": "posts/20261031-1421-reel_break_aft-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-142103-reel_break_aft-2026-10-31.mp4",
+  "headline": "Prakash Raj’s wife Pony Varma says actor lost films and ad deals over his political views",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Prakash Raj wife Pony Verma films ads political views 🎬\nPony Verma ke mutabiq Prakash Raj ne political views ki wajah se kai films aur ad deals kho di.\nUnhone kaha ki kuch logon ne advance dene ke baad bhi peeche kadam le liya.\nPrakash CJP protest mein bhi shamil hue the.\nPrakash Raj wali debate waale dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #prakashraj #bollywood #bollywoodnews #trending\n\n(Prakash Raj, Pony Verma, Prakash Raj wife, Prakash Raj films ads, Cockroach Janta Party, CJP protest Delhi, Gauri Lankesh, Prakash Raj Varanasi, Prakash Raj Drishyam)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/prakash-raj-s-wife-pony-varma-says-actor-lost-films-and-ad-deals-over-his-political-views-101793452104226.html",
+  "pin_comment": "Apne Prakash Raj wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "bayan ka drama, tez beat"
+   },
+   {
+    "title": "People",
+    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
+    "lang": "english",
+    "mood": "logon ki raay = debate"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "nuksaan wali udaasi"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-31T14:21:03+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-10-31",
   "image": "posts/20261031-1236-reel_news_aft-2026-10-31.jpg",
   "kind": "reel",
@@ -386,107 +425,5 @@
    "fixed": []
   },
   "created_at": "2026-10-30T14:51:35+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-30",
-  "image": "posts/20261030-1420-reel_break_aft-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-142035-reel_break_aft-2026-10-30.mp4",
-  "headline": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ranveer Singh Dhurandhar IIFA 2026 winners 🏆\nDhurandhar ne Best Film, Best Director aur Best Actor jeeta.\nAneet Padda Best Actress, Aryan Khan ko web series direction ka award.\nRanveer deserved tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #iifa2026 #ranveersingh #dhurandhar #bollywood\n\n(IIFA 2026, IIFA 2026 winners, Ranveer Singh Best Actor, Dhurandhar IIFA, Aditya Dhar, Aneet Padda Saiyaara, Aryan Khan Best Director, Bollywood awards 2026)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
-  "pin_comment": "Apne Ranveer Singh fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "Dhurandhar film song = award win"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "Dhurandhar vibe, big win energy"
-   },
-   {
-    "title": "Beauty And A Beat",
-    "artist": "Justin Bieber, Nicki Minaj",
-    "lang": "english",
-    "mood": "glam awards night party vibe"
-   },
-   {
-    "title": "In A Minute",
-    "artist": "Lil Baby",
-    "lang": "english",
-    "mood": "swagger for a clean sweep"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The cover photo shows a woman in a saree and jewellery. The headline is about Ranveer Singh winning Best Actor. The image looks AI-generated or stock, and it is not clearly tied to the story. It could mislead readers, so please replace it with a real IIFA or Dhurandhar photo. Slide 1 can't be dropped."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-10-30T14:20:35+00:00"
- },
- {
-  "id": "reel_news_aft-2026-10-30",
-  "image": "posts/20261030-1237-reel_news_aft-2026-10-30.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261030-123737-reel_news_aft-2026-10-30.mp4",
-  "headline": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Eetha trailer out Shraddha Kapoor Eetha Bai look 🔥\nLaxman Utekar ki musical Eetha ka trailer aa gaya hai.\nShraddha Kapoor Lavani legend Eetha Bai ban gayi hain.\nTrailer mein unka transformation chhaya hua hai.\nUs dost ko bhejo jo Shraddha ka fan hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Koimoi (link pinned in comments 👇)\n\n#shraddhakapoor #eetha #bollywood #lavani #reelsindia\n\n(Eetha trailer, Shraddha Kapoor Eetha, Shraddha Kapoor Lavani, Eetha Bai, Laxman Utekar Eetha, Eetha Bai Shraddha Kapoor, Shraddha Kapoor new movie, Eetha trailer out)",
-  "source": "Koimoi",
-  "source_url": "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
-  "pin_comment": "Apne Shraddha Kapoor fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Lae Dooba by Sunidhi Chauhan",
-    "artist": "Rochak Kohli, Manoj Muntashir",
-    "lang": "hindi",
-    "mood": "dance-heavy transformation, high energy"
-   },
-   {
-    "title": "Ala Bolelo",
-    "artist": "Anirudh Ravichander & Arunraja Kamaraj",
-    "lang": "hindi",
-    "mood": "mass dhol beat for trailer hype"
-   },
-   {
-    "title": "Thriller",
-    "artist": "Michael Jackson",
-    "lang": "english",
-    "mood": "dramatic transformation reveal"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "trending chart pick, star-power vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article never mentions Vithabai Narayangaonkar; the character is Eetha Bai",
-    "Fact corrected to match the article: Vithabai Narayangaonkar and 'Maharashtra' are not in the article; the role is Eetha Bai",
-    "Fact corrected to match the article: Name not supported by article",
-    "Fact corrected to match the article: Name not supported by article"
-   ],
-   "fixed": [
-    "Eetha trailer out Shraddha Kapoor Vithabai Narayangaonkar look → Eetha trailer out Shraddha Kapoor Eetha Bai look",
-    "Maharashtra ki Lavani legacy celebrate karte hue Vithabai Narayangaonkar ban gayi hain. → Lavani legend Eetha Bai ban gayi hain.",
-    "Shraddha Kapoor Eetha trailer Vithabai Narayangaonkar → Shraddha Kapoor Eetha trailer Eetha Bai",
-    "Vithabai Narayangaonkar → Eetha Bai"
-   ]
-  },
-  "created_at": "2026-10-30T12:37:38+00:00"
  }
 ]

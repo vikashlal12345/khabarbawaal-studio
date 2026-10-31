@@ -222,7 +222,8 @@
   "4dc3a9699453",
   "1beb408d3c7b",
   "18ccd4c1b5e8",
-  "43766e4258b6"
+  "43766e4258b6",
+  "8a0fb5d28b8d"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -372,10 +373,10 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-10-31",
   "reel_break_noon": "2026-10-31",
-  "reel_break_aft": "2026-10-30",
+  "reel_break_aft": "2026-10-31",
   "reel_news_night": "2026-10-30"
  },
- "inbox_since": "NUI8hQpgRmAK",
+ "inbox_since": "oQrIHDILBnIu",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -748,7 +749,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/faisal-malik-tells-audience-to-wait-and-watch-ramayana-part-2-hollywood-ranbir-kapoor-yash-nitesh-tiwari-namit-malhotra-101792486277561.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-yash-and-sai-pallavis-ramayana-made-tax-free-in-west-bengal-ahead-of-release-cm-suvendu-adhikari-announces-on-dussehra-101792551699237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-records-a-stellar-start-advance-booking-collection-crosses-3-crore-15-days-before-release-even-tickets-worth-2-700-are-sold-out-in-mumbai-101792561787621.html",
   "https://www.hindustantimes.com/entertainment/bollywood/tiger-shroff-seen-without-bandages-in-new-photos-with-minister-ashish-shelar-after-mumbai-firing-incident-101792567526513.html",
@@ -827,7 +827,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-reunites-with-sidharth-malhotra-after-heated-rivalry-joke-on-koffee-with-karan-kiara-advani-joins-the-fun-student-of-the-year-101793423094250.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html",
-  "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/"
+  "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/",
+  "https://www.hindustantimes.com/entertainment/bollywood/prakash-raj-s-wife-pony-varma-says-actor-lost-films-and-ad-deals-over-his-political-views-101793452104226.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1044,9 +1045,6 @@
   }
  ],
  "songs_recent": [
-  "Lae Dooba by Sunidhi Chauhan",
-  "Ala Bolelo",
-  "Thriller",
   "Housewife",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Gehra Hua",
@@ -1083,7 +1081,10 @@
   "Water",
   "Ez-Ez",
   "Big Dawgs",
-  "Believer"
+  "Believer",
+  "Azadi",
+  "People",
+  "Let Me Down Slowly"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1193,6 +1194,10 @@
   },
   {
    "title": "Diljit Dosanjh addresses Satluj controversy at Delhi concert; says “Don't teach Punjabis how to fight”",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Prakash Raj’s wife Pony Varma says actor lost films and ad deals over his political views",
    "date": "2026-10-31"
   }
  ],
