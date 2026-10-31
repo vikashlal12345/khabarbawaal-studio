@@ -137,5 +137,20 @@
   "kw": 9,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_night-2026-10-31",
+  "key": "janhvikapoorsridevinaginalookhalloween",
+  "kind": "reel_news_night",
+  "secs": 17.0,
+  "at": "2026-10-31T14:50:52+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "hook": "feeling",
+  "photos": 2,
+  "short": false
  }
 ]

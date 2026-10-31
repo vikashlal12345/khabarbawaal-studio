@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_night-2026-10-31",
+  "image": "posts/20261031-1450-reel_news_night-2026-10-31.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261031-145052-reel_news_night-2026-10-31.mp4",
+  "headline": "Janhvi Kapoor recreates mom Sridevi’s Nagina look for Halloween, calls it one of the most iconic movie moments ever",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Janhvi Kapoor Sridevi Nagina look Halloween 👻\nJanhvi Kapoor ne Halloween par maa Sridevi ka 1986 ki film Nagina wala look recreate kiya.\nUnhone ise movie ke sabse iconic moments mein se ek bataya.\nNagina ne Sridevi ko superstardom tak pahunchaya aur unhe industry ki sabse bankable female star bana diya.\nUs dost ko bhejo jo Sridevi ka fan hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#janhvikapoor #sridevi #halloween #bollywood #reelsindia\n\n(Janhvi Kapoor, Sridevi, Nagina, Janhvi Kapoor Halloween, Sridevi Nagina look, Halloween 2026, Janhvi Kapoor Sridevi look, Boney Kapoor family)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html",
+  "pin_comment": "Ye Sridevi ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "maa ki yaad, emotional tribute"
+   },
+   {
+    "title": "Khat",
+    "artist": "Navjot Ahuja",
+    "lang": "hindi",
+    "mood": "soft, nostalgic family feeling"
+   },
+   {
+    "title": "This Is Halloween",
+    "artist": "The Citizens of Halloween",
+    "lang": "english",
+    "mood": "Halloween look = spooky vibe"
+   },
+   {
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "lang": "english",
+    "mood": "Halloween night, spooky transformation"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says Nagina propelled her to superstardom and made her the most bankable female star; 'sabse badi' overstates.",
+    "Fact corrected to match the article: Article does not give a year; the '2026' is unsupported.",
+    "Fact corrected to match the article: Article does not say she won everyone's hearts; reworded to what the article says."
+   ],
+   "fixed": [
+    "Nagina ne Sridevi ko us daur ki sabse badi female star bana diya tha. → Nagina ne Sridevi ko superstardom tak pahunchaya aur unhe industry ki sabse bankable female star bana diya.",
+    "Janhvi Kapoor Sridevi Nagina look Halloween 2026 👻 → Janhvi Kapoor Sridevi Nagina look Halloween 👻",
+    "Janhvi ne maa Sridevi ka Nagina bankar sabka dil jeet liya → Janhvi ne maa Sridevi ka Nagina look recreate kiya"
+   ]
+  },
+  "created_at": "2026-10-31T14:50:52+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-10-31",
   "image": "posts/20261031-1421-reel_break_aft-2026-10-31.jpg",
   "kind": "reel",
