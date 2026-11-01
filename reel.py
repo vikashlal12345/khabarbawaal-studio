@@ -6421,6 +6421,14 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     """Make today's Reel for this slot (try `attempt` of `tries`). 📌 A story the owner pinned to this slot on the stats page
     (owner, 26 Oct 2026) is the story: used for news / breaking / satire slots, removed once the Reel is made (or on the last try)."""
     pin = (state.get("pinned") or {}).get(kind)
+    if pin and (pin.get("flash") or pin.get("followup")) and covered_before(pin.get("title", ""), 12):
+        # 1 Nov 2026: flash-watch pinned the Hrithik-Saba story to 6 PM while the 4 PM Reel picked the same story freely: an automatic pin
+        # is dropped when one of our Reels already told it (the owner's own pins from the Stats page are never dropped)
+        print(f"  the automatic pin was already told in a Reel of the last 12 h: dropped ({pin.get('title', '')[:70]})")
+        state["pinned"].pop(kind, None)
+        import generate as g
+        g.save_json(g.STATE_FILE, state)
+        pin = None
     used_pin = bool(pin) and (kind in NEWS_KINDS or kind in BREAK_KINDS or kind == "reel_politics")
     if used_pin:
         REMAKE.update({"link": pin["link"], "title": pin["title"], "source": pin.get("source", "")})
