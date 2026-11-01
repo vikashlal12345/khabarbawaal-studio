@@ -193,42 +193,38 @@ def next_slot(state: dict, now_ist: datetime, lead_min: int = 30, max_wait_h: fl
     return min(peak)[1] if peak else min(options)[1]
 
 
-def main() -> int:
-    dry = "--dry-run" in sys.argv
+def hot_now(state: dict, cands: list[dict]) -> list[dict]:
+    """🔥 What is hot RIGHT NOW, computed at creation time by the picker itself (owner, 1 Nov 2026: 'do not pin a story so early; check the story
+    at creation time only, so we always have the latest trending one'): a star / series story that 6+ sites run in the last 4 h (the Flash check),
+    and, once a day, a fresh development on our own hit (the winner check). Returned as story dicts marked `hot`; the picker lists them first,
+    after its own filters (already told, avoided). Never writes a pin."""
     import fun
-    state = g.load_json(g.STATE_FILE, {}) or {}
     now_ist = schedule.ist_now()
-    print(f"flash watch {now_ist:%a %H:%M} IST" + (" (dry run)" if dry else ""))
-    flash = None
+    out = []
     try:
-        cands = g.fetch_candidates(set())
-        flash = detect_flash(state, now_ist, cands, fun.x_trends() or [])
+        fl = detect_flash(state, now_ist, cands, fun.x_trends() or [])
+        if fl:
+            out.append({"id": "", "source": fl["source"], "category": "entertainment", "title": fl["title"], "summary": "", "link": fl["link"],
+                        "image": "", "ts": time.time(), "hot": f"{fl['name']}: many sites right now"})
     except Exception as e:
-        print(f"  ! flash check failed: {type(e).__name__}: {str(e)[:120]}")
-    changed = False
-    if flash:
-        slot = next_slot(state, now_ist, lead_min=30, max_wait_h=3.5)
-        if slot:
-            state.setdefault("pinned", {})[slot] = {"link": flash["link"], "title": flash["title"][:200], "source": flash["source"],
-                                                    "at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "flash": flash["name"]}
-            print(f"  ⚡ pinned to {slot}: {flash['title'][:80]}")
-            changed = True
-        else:
-            print("  flash: no free slot in the next 3.5 h: left alone")
+        print(f"  ! hot check failed: {type(e).__name__}: {str(e)[:100]}")
     try:
         win = detect_winner(state, now_ist)
-        changed = True   # followed_winners may have grown
         if win:
-            slot = next_slot(state, now_ist)
-            if slot:
-                state.setdefault("pinned", {})[slot] = {"link": win["link"], "title": win["title"][:200], "source": win["source"],
-                                                        "at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "followup": win["winner"]}
-                state["winner_followup_day"] = now_ist.date().isoformat()
-                print(f"  🔁 pinned to {slot}: {win['title'][:80]}")
+            state["winner_followup_day"] = now_ist.date().isoformat()
+            out.append({"id": "", "source": win["source"], "category": "entertainment", "title": win["title"], "summary": "", "link": win["link"],
+                        "image": "", "ts": time.time(), "hot": "a new development on our own hit"})
     except Exception as e:
-        print(f"  ! winners check failed: {type(e).__name__}: {str(e)[:120]}")
-    if changed and not dry:
-        g.save_json(g.STATE_FILE, state)
+        print(f"  ! follow-up check failed: {type(e).__name__}: {str(e)[:100]}")
+    return out
+
+
+def main() -> int:
+    """No pinning any more (1 Nov 2026): the picker calls hot_now() when it makes a Reel. `python flash.py` only prints what is hot now."""
+    state = g.load_json(g.STATE_FILE, {}) or {}
+    print(f"hot now ({schedule.ist_now():%a %H:%M} IST):")
+    for h in hot_now(state, g.fetch_candidates(set())):
+        print(f"  🔥 {h['hot']}: {h['title'][:90]}")
     return 0
 
 
