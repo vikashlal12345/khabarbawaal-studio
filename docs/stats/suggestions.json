@@ -1,0 +1,134 @@
+{
+ "week": "2026-W44",
+ "created": "2026-11-01T09:29:45+00:00",
+ "summary": "Views are steady: 42 settled Reels average 1,448 views, but one Janhvi Kapoor Reel got 7,060 and the 8 AM slot is still weak. Followers stayed at 92 this week, so views aren't turning into follows.",
+ "followers": 92,
+ "items": [
+  {
+   "id": "20261101-1",
+   "title": "Stop BJP-leader 'X post' stories in news slots",
+   "why": "The weakest Reels are Rajnath Singh (26 views), JP Nadda (186 and 206 views) and the ISRO/Modi congratulation (203). The best Bollywood Reels get 2,000 to 7,000.",
+   "change": "In the news and breaking pickers, rank a story low when it is only a politician's X post or a congratulation message, and pick a Bollywood story instead.",
+   "status": "new"
+  },
+  {
+   "id": "20261101-2",
+   "title": "Pick Bollywood stories where a star talks about their own life",
+   "why": "The top Reel (7,060 views, 14 shares, 10.4s watched) was Janhvi on Sridevi and her loss. Couple/family stories average 3,750 views against 1,019 for gossip.",
+   "change": "Add a rule to the pickers and writers: a star's own words about a parent, partner, child or past pain come before any reaction, trolling or award story.",
+   "status": "new"
+  },
+  {
+   "id": "20261101-3",
+   "title": "Show the star's name plus a feeling in the first line",
+   "why": "Reels with feeling hooks average 1,962 views against 1,545 for name-first, though there are only 2 and 7 Reels. The top Reels had an emotion emoji and a personal angle (💔, 🔥).",
+   "change": "In pick_hook, require at least 3 of the 5 hook options to be feeling lines, like 'Janhvi ka dard' next to the star name, for family and couple stories.",
+   "status": "new"
+  },
+  {
+   "id": "20261101-4",
+   "title": "Aim for the 12 PM and 6 PM times for the best stories",
+   "why": "6 PM Reels average 3,219 views and 12 PM 2,039, while 8 AM averages 741 and 8:15 PM 1,226.",
+   "change": "Make the Bollywood story picker hold the strongest family or couple story for the 12 PM and 6 PM slots, and use the next-best ones in the 8 AM and 8:15 PM slots.",
+   "status": "new"
+  },
+  {
+   "id": "20261101-5",
+   "title": "Add a save line to the 6 AM devotional",
+   "why": "The devotional Reels get only 90 to 214 views, but the Shani Dev one got 3 saves and 5 comments on 214 views. That means people want something to keep.",
+   "change": "Keep the 6 AM Reel and timing as they are. Add a short last line on the end card, like 'Save karo, subah padhne ke liye', and one more line in the caption.",
+   "status": "new"
+  }
+ ],
+ "history": [
+  {
+   "week": "2026-W44",
+   "created": "2026-11-01T03:30:30+00:00",
+   "items": [
+    {
+     "id": "20261101-1",
+     "title": "Favour family and couple stories over plain gossip",
+     "why": "Couple/family stories averaged 3,604 views and 0.15% sends, against 991 views for gossip. The top Reel was a Janhvi–Sridevi family moment with 14 shares.",
+     "change": "In the news and breaking story pickers, rank stories about a star's parent, child, spouse or family bond above gossip, reaction and controversy stories, and put 'gossip' in the pickers' low-priority list.",
+     "status": "approved",
+     "decided_at": "2026-11-01T03:37:07+00:00",
+     "applied_at": "2026-11-01T03:37:07+00:00"
+    },
+    {
+     "id": "20261101-2",
+     "title": "Make breaking cards pick warmer, personal stories",
+     "why": "Breaking cards averaged 910 views and 5.3 s watched. Viral news Reels averaged 2,100 views and 7.0 s watched.",
+     "change": "For the 10 AM, 2 PM and 7:45 PM breaking slots, have the picker prefer a star's own words, a family moment or a reveal. Skip stories that are only a trailer, an award list or a reaction to trolls.",
+     "status": "approved",
+     "decided_at": "2026-11-01T03:37:07+00:00",
+     "applied_at": "2026-11-01T03:37:07+00:00"
+    },
+    {
+     "id": "20261101-3",
+     "title": "Try the short 14-second Reel in the weak 8 AM slot",
+     "why": "Reels of 16 s or less averaged 1,762 views, against 996 for Reels over 21 s. The 8 AM slot is our weakest news slot at 740 views across 5 Reels. This is a small sample.",
+     "change": "Add the 8 AM Reel (reel_news_early) to the SHORT_NEWS list, with 2 photos, 4.5 s each, so it is about 14 s like the 4 PM test Reel.",
+     "status": "approved",
+     "decided_at": "2026-11-01T03:37:07+00:00",
+     "applied_at": "2026-11-01T03:37:07+00:00"
+    },
+    {
+     "id": "20261101-4",
+     "title": "Copy the 6 PM Reel's way of choosing a story into the 8:15 PM slot",
+     "why": "The 18:00 Reels average 3,218 views, but the 8:15 PM slot averages only 1,225 across 7 Reels, our biggest weak sample.",
+     "change": "At the 8:15 PM slot (reel_news_night), have the picker use the same rules as 6 PM, which are Bollywood stories only and the biggest name first. Then skip any story already covered in the 6 PM and 7:45 PM Reels.",
+     "status": "approved",
+     "decided_at": "2026-11-01T03:37:07+00:00",
+     "applied_at": "2026-11-01T03:37:07+00:00"
+    }
+   ]
+  },
+  {
+   "week": "2026-W44",
+   "created": "2026-10-29T07:41:43+00:00",
+   "items": [
+    {
+     "id": "2026-W44-1",
+     "title": "Move the 8:15 PM speaker video to the 12 PM peak",
+     "why": "Reels posted at 20:00 and 21:00 averaged only 216 and 129 views. Reels at 12:00 averaged 2,598 and at 18:00 averaged 3,530. Politics and speaker Reels are also the weakest (21 views for the Rajnath Singh Reel, 163 for Nadda).",
+     "change": "Swap the 20:15 speaker slot for a Bollywood breaking card (same picker as the 10:00 slot), and let the speaker video run at 13:00 only if a strong clip exists, otherwise skip it.",
+     "status": "new"
+    },
+    {
+     "id": "2026-W44-2",
+     "title": "Make the 7:45 PM and 8:15 PM slots Bollywood-only",
+     "why": "The 19:45 hour averages 1,493 views over 4 Reels. The 8 PM hour averages 216. Bollywood stories filled 12 of the top 14 Reels this week.",
+     "change": "Tell the news and breaking pickers to take only entertainment stories at 19:45 and any slot after it. Government or political stories would be used only if nothing from Bollywood is fresh.",
+     "status": "new"
+    },
+    {
+     "id": "2026-W44-3",
+     "title": "Copy the Janhvi Kapoor Reel's story style",
+     "why": "The Janhvi Kapoor, Sridevi and Koffee With Karan Reel got 6,866 views, 14 shares and 9 saves. That is about 5x the average and the most shares of the week. It was an emotional, personal reveal from a famous family.",
+     "change": "In the picker and hook rules for news and breaking slots, favour 'star opens up about family or past' stories (Sridevi, Kapoor, Khan families, Koffee With Karan) over box office or sales stories.",
+     "status": "approved",
+     "decided_at": "2026-10-29T08:03:43+00:00",
+     "applied_at": "2026-10-29T08:03:43+00:00"
+    },
+    {
+     "id": "2026-W44-4",
+     "title": "Ask for shares in the last line, not just comments",
+     "why": "Out of 41 Reels, most had 0-1 comments and 0 shares. Only 3 Reels got 3 or more shares, and the top one also had the most reach (5,620). Shares are what push a Reel to new people.",
+     "change": "Change the pinned comment and last caption line on Bollywood Reels to a share line like 'Apne Janhvi fan dost ko bhejo 👇', with the star's name filled in. Keep the one-word comment question on the card.",
+     "status": "approved",
+     "decided_at": "2026-10-29T08:03:43+00:00",
+     "applied_at": "2026-10-29T08:03:43+00:00"
+    },
+    {
+     "id": "2026-W44-5",
+     "title": "Add a small improvement to the 6 AM devotional",
+     "why": "The devotional Reels are among the weakest: 128, 136 and 168 views, with only 3.2 to 3.9 seconds watched. Bollywood Reels were watched for 7 to 10 seconds.",
+     "change": "Keep the 6 AM Reel exactly as is. Only change its first frame to a bigger, one-line hook with the god's name (like 'Aaj Shani Dev ki kripa kaise payein'), and keep the picture, song and timing unchanged.",
+     "status": "approved",
+     "decided_at": "2026-10-29T08:03:43+00:00",
+     "applied_at": "2026-10-29T08:03:43+00:00"
+    }
+   ]
+  }
+ ]
+}
