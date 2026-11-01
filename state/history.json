@@ -478,7 +478,7 @@
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-01",
-  "reel_news_noon": "2026-10-15",
+  "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-01",
   "reel_poll": "2026-10-19",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "nNqCBGUFJ3LA",
+ "inbox_since": "jCoOGkhVTbBm",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1406,7 +1406,9 @@
   "Jaan Ban Gaye",
   "Señorita",
   "Calm Down",
-  "Disturbia"
+  "Disturbia",
+  "Ordinary",
+  "Arcade"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1768,6 +1770,10 @@
   },
   {
    "title": "Himesh Reshammiya makes a BIG revelation: “I have written, sung and composed 15 songs in English; they don’t sound WANNABE at all”; adds, “There’s one song which is ABSOLUTELY right for Rihanna”",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "'It's not nice': Sai Pallavi reveals Yash's son cried after watching Ramayana",
    "date": "2026-11-01"
   }
  ],
