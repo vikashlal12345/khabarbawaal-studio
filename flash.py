@@ -28,6 +28,7 @@ ROOT = Path(__file__).parent
 # stories about religious conflict are never pinned automatically (30 Oct 2026: 'Sara Ali Khan faces fatwa over Kedarnath Temple visit' came up):
 # the page must never fan hate between communities, so a human decides on those
 # deaths and mourning are never pinned automatically either (1 Nov 2026: 'Hrithik mourns Kaabil director Sanjay Gupta' was pinned to the 8 AM slot)
+ROUTINE = re.compile(r"(?i)\b(birthday|b'day|bday|anniversary|wishes|wishing|greets|greetings|happy diwali|happy holi|festive wishes|celebrates diwali|celebrates halloween)\b")
 PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|box office|advance booking|release date|motion poster|song launch|promo|early impressions)\b")
 DEATH = re.compile(r"(?i)\b(died|dies|dead|death|passes away|passed away|passing|demise|funeral|last rites|cremation|mourns|mourning|mourn|"
                    r"tribute to (the )?late|late (friend|actor|director|singer)|condolences?|rip|shraddhanjali|final journey)\b")
@@ -85,7 +86,7 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
     # star names in today's feed headlines and in X trends (the feeds alone hold too few headlines to show a pile-up)
     names: dict[str, int] = {}
     for it in cands:
-        if it["ts"] >= cutoff and not emergency.SKIP_WORDS.search(it["title"]) and not SENSITIVE.search(it["title"]) and not DEATH.search(it["title"]):
+        if it["ts"] >= cutoff and not emergency.SKIP_WORDS.search(it["title"]) and not SENSITIVE.search(it["title"]) and not DEATH.search(it["title"]) and not ROUTINE.search(it["title"]):
             for raw in set(m.lower() for m in emergency.STARS.findall(it["title"])):
                 names[norm_name(raw)] = names.get(norm_name(raw), 0) + 1
     for raw in set(m.lower() for m in emergency.STARS.findall(" ".join(t for t, _ in trends[:80]))):
@@ -105,7 +106,7 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
             if d is None:
                 continue
             if (now - d).total_seconds() <= 4 * 3600 and name.split()[-1] in a["title"].lower() and not emergency.SKIP_WORDS.search(a["title"]) \
-                    and not SENSITIVE.search(a["title"]) and not DEATH.search(a["title"]) and not PROMO.search(a["title"]):
+                    and not SENSITIVE.search(a["title"]) and not DEATH.search(a["title"]) and not PROMO.search(a["title"]) and not ROUTINE.search(a["title"]):
                 sites.add(a["site"])
                 arts.append(a)
         need = 3 if name in SERIES else 4 if name in trend_text else 6
