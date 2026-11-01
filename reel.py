@@ -2146,6 +2146,9 @@ an official, an institution or a court order (e.g. a Supreme Court order) rank l
 clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names.
 FAMILY OVER GOSSIP (owner approved 1 Nov 2026, from the week's tags: couple / family stories averaged ~3,600 views and 0.15% sends, plain gossip ~990): rank \
 stories about a star's parent, child, spouse, couple or family bond ABOVE gossip, rumours, reactions and controversies; a gossip story is low priority unless it is huge.
+ROUTINE POSTS RANK LOW (owner approved 1 Nov 2026: 13 of 43 Reels stalled at ~200 views, mostly greetings, official news and controversies; the ones that took off were Koffee With Karan moments, Ramayana news and emotional personal stories): \
+birthday / anniversary wishes, festival greetings, official or government announcements (space launches, new chiefs, ministry news), award lists and a star's \
+plain social-media post that every page already runs are LOW priority; take one only when it carries a real story (a confession, a reveal, a family moment, a clash with a fact) people would send to a friend.
 PROMO RULE (owner, 30 Oct 2026: two Reels on the same Shraddha Kapoor trailer got ~300 views and ~70): trailer / teaser / poster / first-look / song-launch / \
 release-date announcements rank LOW (they are adverts, people do not forward them); take one only when it carries a personal or emotional angle of a big name, \
 and never a regional or niche film nobody outside its language has heard of.
