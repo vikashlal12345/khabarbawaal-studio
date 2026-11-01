@@ -28,12 +28,15 @@ ROOT = Path(__file__).parent
 # stories about religious conflict are never pinned automatically (30 Oct 2026: 'Sara Ali Khan faces fatwa over Kedarnath Temple visit' came up):
 # the page must never fan hate between communities, so a human decides on those
 # deaths and mourning are never pinned automatically either (1 Nov 2026: 'Hrithik mourns Kaabil director Sanjay Gupta' was pinned to the 8 AM slot)
+PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|box office|advance booking|release date|motion poster|song launch|promo|early impressions)\b")
 DEATH = re.compile(r"(?i)\b(died|dies|dead|death|passes away|passed away|passing|demise|funeral|last rites|cremation|mourns|mourning|mourn|"
                    r"tribute to (the )?late|late (friend|actor|director|singer)|condolences?|rip|shraddhanjali|final journey)\b")
 SENSITIVE = re.compile(r"(?i)fatwa|blasphem|communal|riot|jihad|conversion|namaz|mosque|masjid|azaan|\bbeef\b|lynch|boycott|hate speech|"
                        r"religious sentiments|hurt(ing)? sentiments|offend(s|ed|ing)? (hindu|muslim|christian|sikh)|anti-hindu|anti-muslim")
 AMBIGUOUS = {"king", "yash", "vijay", "shah", "srk"}        # words that are not always a star
 ALIASES = {"srk": "shah rukh", "shahrukh": "shah rukh", "shah ruk": "shah rukh"}
+PEAK_SLOTS = {"reel_news_am", "reel_news_pm"}   # 12 PM and 4 PM: the best hours (avg 1,808 / 1,829 views since 20 Oct 2026): pins go there first when they fit
+SERIES = ("koffee with karan", "ramayana")       # reliable series: Koffee With Karan 2,715 avg, Ramayana 1,519 avg
 NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_aft", "reel_news_night")
 
 
@@ -87,6 +90,9 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
                 names[norm_name(raw)] = names.get(norm_name(raw), 0) + 1
     for raw in set(m.lower() for m in emergency.STARS.findall(" ".join(t for t, _ in trends[:80]))):
         names[norm_name(raw)] = names.get(norm_name(raw), 0) + 1
+    for term in SERIES:   # 📺 series watch: a fresh Koffee With Karan / Ramayana story counts as a flash story with a lower bar (3 sites)
+        names.setdefault(term, 0)
+        names[term] += 5
     best = None
     now = datetime.now(timezone.utc)
     pinned = list((state.get("pinned") or {}).values())
@@ -99,10 +105,10 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
             if d is None:
                 continue
             if (now - d).total_seconds() <= 4 * 3600 and name.split()[-1] in a["title"].lower() and not emergency.SKIP_WORDS.search(a["title"]) \
-                    and not SENSITIVE.search(a["title"]) and not DEATH.search(a["title"]):
+                    and not SENSITIVE.search(a["title"]) and not DEATH.search(a["title"]) and not PROMO.search(a["title"]):
                 sites.add(a["site"])
                 arts.append(a)
-        need = 4 if name in trend_text else 6
+        need = 3 if name in SERIES else 4 if name in trend_text else 6
         print(f"  flash check: {name}: {len(sites)} sites in 4 h (need {need})")
         if len(sites) >= need:
             score = len(sites) + (3 if name in trend_text else 0)
@@ -111,7 +117,11 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
     if not best:
         return print("  flash: no mega story right now") or None
     score, name, sites, arts = best
-    top = arts[0]
+    import reel
+    fresh = [a for a in arts if not reel.covered_before(a["title"], 12)]   # an article about something we already told is no new story
+    if not fresh:
+        return print(f"  flash: every {name} article is a story we told in the last 12 h") or None
+    top = fresh[0]
     print(f"  ⚡ FLASH: {name} in {len(sites)} sites: {top['title'][:90]}")
     return {"link": top["url"], "title": top["title"], "source": top["site"], "name": name}
 
@@ -176,7 +186,10 @@ def next_slot(state: dict, now_ist: datetime, lead_min: int = 30, max_wait_h: fl
             slot += timedelta(days=1)
         if kind not in pins and (slot - now_ist).total_seconds() <= max_wait_h * 3600:
             options.append((slot, kind))
-    return min(options)[1] if options else None
+    if not options:
+        return None
+    peak = [o for o in options if o[1] in PEAK_SLOTS]
+    return min(peak)[1] if peak else min(options)[1]
 
 
 def main() -> int:
