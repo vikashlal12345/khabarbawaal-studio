@@ -232,7 +232,8 @@
   "767e7884d2f2",
   "882f4a3fc3ba",
   "37aca42f0c13",
-  "806cfb114ac5"
+  "806cfb114ac5",
+  "8698000c71f6"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -383,7 +384,8 @@
   "reel_break_am": "2026-11-01",
   "reel_break_noon": "2026-11-01",
   "reel_break_aft": "2026-11-01",
-  "reel_news_night": "2026-11-01"
+  "reel_news_night": "2026-11-01",
+  "reel_flash": "2026-11-01"
  },
  "inbox_since": "jCoOGkhVTbBm",
  "used_otps": [
@@ -758,7 +760,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
   "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
@@ -837,7 +838,8 @@
   "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
   "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html",
   "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-makes-a-big-revelation-i-have-written-sung-and-composed-15-songs-in-english-they-dont-sound-wannabe-at-all-adds-theres-one-song-whic/",
-  "https://www.mid-day.com/entertainment/bollywood-news/article/its-not-nice-sai-pallavi-reveals-yash-son-cried-after-watching-ramayana-23657996"
+  "https://www.mid-day.com/entertainment/bollywood-news/article/its-not-nice-sai-pallavi-reveals-yash-son-cried-after-watching-ramayana-23657996",
+  "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-waves-to-fans-from-protective-shield-outside-jalsa-amid-security-concerns-son-abhishek-stands-guard-101793542624173.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1054,10 +1056,6 @@
   }
  ],
  "songs_recent": [
-  "Mahamritunjay Mantra",
-  "Gaytri Mantra",
-  "Surya Mantra 108 Times - Om Hrim Suryay Namah",
-  "Surya Mantra - Japa Kusum",
   "Sahiba",
   "Pehle Bhi Main",
   "Iris",
@@ -1093,7 +1091,11 @@
   "Arz Kiya Hai | Coke Studio Bharat",
   "Humnava Mere",
   "Ordinary",
-  "Arcade"
+  "Arcade",
+  "Maan Meri Jaan",
+  "Jo Tum Mere Ho",
+  "Superstition",
+  "Unforgettable"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1219,6 +1221,10 @@
   },
   {
    "title": "'It's not nice': Sai Pallavi reveals Yash's son cried after watching Ramayana",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Amitabh Bachchan waves to fans from protective glass box outside Jalsa amid security concerns, son Abhishek stands guard",
    "date": "2026-11-01"
   }
  ],
