@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_news_aft-2026-11-01",
+  "image": "posts/20261101-1234-reel_news_aft-2026-11-01.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261101-123449-reel_news_aft-2026-11-01.mp4",
+  "headline": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Hrithik Roshan Saba Azad birthday post 💕\nHrithik ne Saba Azad ke birthday par sweet message likha, jisme convenience ke bajay pyaar chunne ki baat hai.\nSaath mein unhone apni kuch personal photos bhi share ki.\nUs dost ko bhejo jo aisa partner chahta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Zoom TV (link pinned in comments 👇)\n\n#hrithikroshan #sabaazad #bollywood #bollywoodnews #reelsindia\n\n(Hrithik Roshan, Saba Azad, Hrithik Roshan Saba Azad birthday, Saba Azad birthday, Hrithik Roshan girlfriend, Hrithik Roshan sons, Hrithik Saba love story, Bollywood couple)",
+  "source": "Zoom TV",
+  "source_url": "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
+  "pin_comment": "Apne us dost ko bhejo jo Hrithik-Saba ka fan hai 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "romantic birthday tribute vibe"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh",
+    "lang": "hindi",
+    "mood": "deep love, choosing love"
+   },
+   {
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "lang": "english",
+    "mood": "cosy couple feeling"
+   },
+   {
+    "title": "Just Give Me a Reason (feat. Nate Ruess)",
+    "artist": "P!nk, Nate Ruess",
+    "lang": "english",
+    "mood": "love worth choosing"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says he posted a series of personal photographs; it does not mention a rare photo or his sons.",
+    "Slide 4: The photo credit 'Photo: Mathrubhumi English' at the bottom left runs into the '@khabarbawaal' handle. The two overlap or touch, so the text is cramped."
+   ],
+   "fixed": [
+    "Saath mein unhone Saba ki ek rare photo bhi share ki, apne dono bete ke saath. → Saath mein unhone apni kuch personal photos bhi share ki."
+   ]
+  },
+  "created_at": "2026-11-01T12:34:49+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-01",
   "image": "posts/20261101-1038-reel_news_pm-2026-11-01.jpg",
   "kind": "reel",

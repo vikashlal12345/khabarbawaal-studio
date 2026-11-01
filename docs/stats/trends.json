@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T10:38:35+00:00",
+ "at": "2026-11-01T12:34:53+00:00",
  "known": {
   "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/": "2026-10-31T12:36:46+00:00",
   "https://www.bollywoodhungama.com/news/bollywood/sanjay-gupta-funeral-final-rites-to-be-held-at-mumbais-pawan-hans-crematorium-on-october-31/": "2026-10-31T22:34:11+00:00",
@@ -53,7 +53,7 @@
   "https://www.hindustantimes.com/india-news/as-maoist-shadow-fades-chhattisgarh-opens-indravati-tiger-reserve-to-tourists-101793510860550.html": "2026-11-01T06:36:04+00:00",
   "https://www.hindustantimes.com/entertainment/bollywood/nitesh-tiwari-reveals-6-5-years-went-into-ravana-jatayu-fight-50-designs-created-for-pushpak-viman-for-ramayana-yash-ranbir-kapoor-sai-pallavi-101793509788984.html": "2026-11-01T06:36:04+00:00",
   "https://www.hindustantimes.com/trending/bugatti-ceo-chases-thief-in-porsche-911-after-man-steals-luxury-chiron-supercar-with-keys-inside-101793507607646.html": "2026-11-01T06:36:04+00:00",
-  "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-confirms-plans-to-turn-director-it-would-collect-rs-100-cr-on-day-of-release-wishes-to-become-a-superstar-actor-amitabh-bachchans-13th-film-w/": "2026-11-01T10:38:35+00:00",
+  "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-confirms-plans-to-turn-director-it-would-collect-rs-100-cr-on-day-of-release-wishes-to-become-a-superstar-actor-amitabh-bachchans-13th-film-w/": "2026-11-01T12:34:53+00:00",
   "https://www.hindustantimes.com/india-news/underwater-pool-lighting-under-scanner-after-german-pilot-slovak-manager-die-in-bengaluru-pool-101793521300618.html": "2026-11-01T08:34:48+00:00",
   "https://www.hindustantimes.com/india-news/royal-enfield-bikes-tractors-among-prizes-in-mp-govts-quiz-outreach-for-students-farmers-101793517952899.html": "2026-11-01T08:34:48+00:00",
   "https://www.hindustantimes.com/india-news/tn-govt-sanctions-26-new-pocso-special-courts-to-speed-up-justice-101793520072090.html": "2026-11-01T08:34:48+00:00",
@@ -62,39 +62,85 @@
   "https://www.hindustantimes.com/trending/indian-tourist-offered-herbal-product-for-1-000-in-thailand-allegedly-charged-over-75-000-on-credit-card-101793517948692.html": "2026-11-01T08:34:48+00:00",
   "https://www.hindustantimes.com/india-news/cbi-takes-over-case-of-keralam-man-in-tripura-state-rifles-missing-since-2012-101793528895639.html": "2026-11-01T10:38:35+00:00",
   "https://www.hindustantimes.com/india-news/chhattisgarh-areas-once-part-of-red-corridor-now-centres-of-peace-pm-modi-101793528686449.html": "2026-11-01T10:38:35+00:00",
-  "https://www.hindustantimes.com/trending/know-your-neighbourhood-the-history-behind-the-sarai-name-in-several-delhi-localities-101793523932457.html": "2026-11-01T10:38:35+00:00",
+  "https://www.hindustantimes.com/trending/know-your-neighbourhood-the-history-behind-the-sarai-name-in-several-delhi-localities-101793523932457.html": "2026-11-01T12:34:53+00:00",
   "https://www.hindustantimes.com/india-news/maharashtra-cm-devendra-fadnavis-samvidhan-theft-charge-at-rahul-gandhi-amid-oppns-anti-cec-stir-101793524860071.html": "2026-11-01T10:38:35+00:00",
   "https://www.hindustantimes.com/trending/what-does-murasu-mean-india-names-cyclone-expected-to-hit-andhra-coast-on-november-3-101793524646729.html": "2026-11-01T10:38:35+00:00",
   "https://www.hindustantimes.com/india-news/uttarakhand-helicopter-crash-mortal-remains-of-all-six-victims-recovered-sent-to-rishikesh-aiims-101793526225186.html": "2026-11-01T10:38:35+00:00",
   "https://www.hindustantimes.com/trending/dont-be-in-a-hurry-goldman-sachs-ceo-david-solomon-shares-grandmothers-career-advice-101793519632870.html": "2026-11-01T10:38:35+00:00",
-  "https://www.hindustantimes.com/trending/us/goose-found-bleeding-with-rusty-metal-ring-stuck-around-its-beak-in-us-rescued-101793524992525.html": "2026-11-01T10:38:35+00:00"
+  "https://www.hindustantimes.com/trending/us/goose-found-bleeding-with-rusty-metal-ring-stuck-around-its-beak-in-us-rescued-101793524992525.html": "2026-11-01T10:38:35+00:00",
+  "https://www.hindustantimes.com/india-news/cm-naidu-directs-officials-to-gear-up-as-fresh-cyclone-threat-looms-over-andhra-101793535357043.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/india-news/as-india-bloc-rallies-bjp-takes-out-march-against-anti-sikh-riots-in-delhi-101793533842452.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/india-news/rahul-gandhi-says-gyanesh-kumar-will-go-to-jail-warns-modi-shah-bjp-of-legal-action-over-vote-chori-ramlila-maidan-protest-opposition-congress-delhi-101793531062268.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/india-news/cisf-transitions-to-functional-sector-architecture-to-strengthen-security-101793533222359.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/trending/canadian-ceo-recounts-terrifying-home-invasion-by-masked-men-that-left-him-his-wife-and-2-daughters-hospitalised-life-threatening-experience-101793530605643.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/trending/chinese-man-builds-flying-hoverboard-takes-it-over-mountains-and-yangtze-river-101793527208712.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-says-india-had-flying-cars-5000-years-ago-as-he-compares-pushpaka-vimana-in-ramayana-to-elon-musk-tesla-new-invention-101793529152042.html": "2026-11-01T12:34:53+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html": "2026-11-01T12:34:53+00:00"
  },
  "x": [],
  "google": [
-  "ind vs nz test",
-  "suzlon",
-  "top"
+  "getafe vs sevilla",
+  "pmgc 2026",
+  "racing santander vs real madrid",
+  "mumbai city fc",
+  "arsenal vs aston villa",
+  "london vs man city"
  ],
  "stories": [
+  {
+   "title": "CM Naidu directs officials to gear up as fresh cyclone threat looms over Andhra",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/cm-naidu-directs-officials-to-gear-up-as-fresh-cyclone-threat-looms-over-andhra-101793535357043.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "As INDIA bloc rallies, BJP takes out march against anti-Sikh riots in Delhi",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/as-india-bloc-rallies-bjp-takes-out-march-against-anti-sikh-riots-in-delhi-101793533842452.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Rahul Gandhi says Gyanesh Kumar will go to jail, warns BJP of ‘legal action over vote chori’",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/rahul-gandhi-says-gyanesh-kumar-will-go-to-jail-warns-modi-shah-bjp-of-legal-action-over-vote-chori-ramlila-maidan-protest-opposition-congress-delhi-101793531062268.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "CISF transitions to functional sector architecture to strengthen security",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/cisf-transitions-to-functional-sector-architecture-to-strengthen-security-101793533222359.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Canadian CEO recounts 'terrifying' home invasion by masked men that left him, wife and 2 daughters hospitalised: 'Life-threatening experienc",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/canadian-ceo-recounts-terrifying-home-invasion-by-masked-men-that-left-him-his-wife-and-2-daughters-hospitalised-life-threatening-experience-101793530605643.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "Chinese man builds flying hoverboard, takes it over mountains and Yangtze River",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/chinese-man-builds-flying-hoverboard-takes-it-over-mountains-and-yangtze-river-101793527208712.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "Ranbir Kapoor says India had flying cars 5000 years ago as he compares Pushpaka Vimana in Ramayana to Elon Musk and Tesla's new invention",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-says-india-had-flying-cars-5000-years-ago-as-he-compares-pushpaka-vimana-in-ramayana-to-elon-musk-tesla-new-invention-101793529152042.html",
+   "category": "entertainment",
+   "hours": 0
+  },
   {
    "title": "Himesh Reshammiya confirms plans to turn director: “It would collect Rs. 100 cr on day of release!”; wishes to become a superstar actor: “Am",
    "source": "Bollywood Hungama",
    "link": "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-confirms-plans-to-turn-director-it-would-collect-rs-100-cr-on-day-of-release-wishes-to-become-a-superstar-actor-amitabh-bachchans-13th-film-w/",
    "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "CBI takes over case of Keralam man in Tripura State Rifles missing since 2012",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/cbi-takes-over-case-of-keralam-man-in-tripura-state-rifles-missing-since-2012-101793528895639.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Chhattisgarh areas, once part of red corridor, now centres of peace: PM Modi",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/chhattisgarh-areas-once-part-of-red-corridor-now-centres-of-peace-pm-modi-101793528686449.html",
-   "category": "india/politics",
    "hours": 0
   },
   {
@@ -105,44 +151,9 @@
    "hours": 0
   },
   {
-   "title": "Maharashtra CM's ‘Samvidhan theft’ charge at Rahul Gandhi amid Oppn's anti-CEC stir",
+   "title": "Nikkhil Advani has a fanboy moment with Richard Gere as he shows Pretty Woman star Shah Rukh Khan's iconic Kal Ho Naa Ho song",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/maharashtra-cm-devendra-fadnavis-samvidhan-theft-charge-at-rahul-gandhi-amid-oppns-anti-cec-stir-101793524860071.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "What does Murasu mean? India names cyclone expected to hit Andhra coast on November 3",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/what-does-murasu-mean-india-names-cyclone-expected-to-hit-andhra-coast-on-november-3-101793524646729.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Uttarakhand helicopter crash: Mortal remains of all six victims recovered, sent to Rishikesh AIIMS",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/uttarakhand-helicopter-crash-mortal-remains-of-all-six-victims-recovered-sent-to-rishikesh-aiims-101793526225186.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "‘Don't be in a hurry’: Goldman Sachs CEO David Solomon shares grandmother's career advice",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/dont-be-in-a-hurry-goldman-sachs-ceo-david-solomon-shares-grandmothers-career-advice-101793519632870.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Goose found bleeding with rusty metal ring stuck around its beak in US, rescued",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/us/goose-found-bleeding-with-rusty-metal-ring-stuck-around-its-beak-in-us-rescued-101793524992525.html",
-   "category": "viral",
-   "hours": 0
-  },
-  {
-   "title": "Himesh Reshammiya makes a BIG revelation: “I have written, sung and composed 15 songs in English; they don’t sound WANNABE at all”; adds, “T",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-makes-a-big-revelation-i-have-written-sung-and-composed-15-songs-in-english-they-dont-sound-wannabe-at-all-adds-theres-one-song-whic/",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html",
    "category": "entertainment",
    "hours": 0
   }

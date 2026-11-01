@@ -373,7 +373,7 @@
   "reel_news_am": "2026-11-01",
   "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-10-31",
+  "reel_news_aft": "2026-11-01",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-01",
@@ -383,7 +383,7 @@
   "reel_break_aft": "2026-10-31",
   "reel_news_night": "2026-10-31"
  },
- "inbox_since": "iifaBLcftKM3",
+ "inbox_since": "iN1wGCbBnmRP",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -756,7 +756,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
@@ -835,7 +834,8 @@
   "https://www.hindustantimes.com/india-news/air-chief-marshal-dixit-takes-charge-of-iaf-amid-modernisation-push-101793475811068.html",
   "https://www.hindustantimes.com/entertainment/bollywood/nitesh-tiwari-reveals-6-5-years-went-into-ravana-jatayu-fight-50-designs-created-for-pushpak-viman-for-ramayana-yash-ranbir-kapoor-sai-pallavi-101793509788984.html",
   "https://www.hindustantimes.com/entertainment/bollywood/priyanka-chopra-channels-king-kylie-for-halloween-nick-jonas-dresses-as-cowboy-for-trick-or-treating-with-malti-marie-as-ghost-princess-101793512399072.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-beautiful-birthday-message-for-girlfriend-saba-azad-is-about-choosing-love-over-convenience-shares-rare-picture-of-her-with-his-sons-101793520298213.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-beautiful-birthday-message-for-girlfriend-saba-azad-is-about-choosing-love-over-convenience-shares-rare-picture-of-her-with-his-sons-101793520298213.html",
+  "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1052,10 +1052,6 @@
   }
  ],
  "songs_recent": [
-  "Sapphire",
-  "Humnava Mere",
-  "Tera Hoke Rahoon",
-  "back to friends",
   "the cure",
   "Water",
   "Ez-Ez",
@@ -1091,7 +1087,11 @@
   "Samjhawan",
   "Pal Pal Dil Ke Paas - Title Track",
   "Die With A Smile",
-  "Girls Like You"
+  "Girls Like You",
+  "Zaalima",
+  "Gehra Hua",
+  "Sweater Weather",
+  "Just Give Me a Reason (feat. Nate Ruess)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1202,6 +1202,10 @@
   {
    "title": "Hrithik Roshan pens sweet birthday message for girlfriend Saba Azad about choosing love over convenience, shares rare picture of her with his sons",
    "date": "2026-11-01"
+  },
+  {
+   "title": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
+   "date": "2026-11-01"
   }
  ],
  "claude_limit": {
@@ -1209,15 +1213,7 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {
-  "reel_news_aft": {
-   "link": "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
-   "title": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
-   "source": "Zoom TV",
-   "at": "2026-11-01T10:32:31+00:00",
-   "flash": "hrithik"
-  }
- },
+ "pinned": {},
  "followed_winners": [
   "18120264982752748",
   "18084634991359569"
