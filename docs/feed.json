@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_news_pm-2026-11-01",
+  "image": "posts/20261101-1038-reel_news_pm-2026-11-01.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261101-103830-reel_news_pm-2026-11-01.mp4",
+  "headline": "Hrithik Roshan pens sweet birthday message for girlfriend Saba Azad about choosing love over convenience, shares rare picture of her with his sons",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Hrithik Roshan Saba Azad birthday message 💕\nHrithik ne girlfriend Saba Azad ke birthday par dil se note likha, jisme unhone convenience ki jagah pyaar chunne ki baat ki.\nAakhri photo mein Saba, Hrithik ke dono sons Hrehaan aur Hridhaan ke saath dikhti hain.\nUs dost ko bhejo jo pyaar chuna convenience nahi 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#hrithikroshan #sabaazad #bollywood #bollywoodnews #reelsindia\n\n(Hrithik Roshan, Saba Azad, Hrithik Roshan Saba Azad birthday, Saba Azad birthday, Hrithik Roshan sons, Hrithik Roshan girlfriend, Hrithik Saba love note, Bollywood couple)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-beautiful-birthday-message-for-girlfriend-saba-azad-is-about-choosing-love-over-convenience-shares-rare-picture-of-her-with-his-sons-101793520298213.html",
+  "pin_comment": "Apne Hrithik fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Samjhawan",
+    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
+    "lang": "hindi",
+    "mood": "romantic, heartfelt love note"
+   },
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "sweet couple moment"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Bruno Mars, Lady Gaga",
+    "lang": "english",
+    "mood": "love over everything"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "romantic birthday vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: 'rare' is not in the article and 'unke' wrongly suggests the sons are Saba's; the sons are Hrithik's.",
+    "Slide 2: The photo is cropped at the right edge, so one of the sons (Hridhaan) is cut off. The slide text says the photo shows both sons."
+   ],
+   "fixed": [
+    "Saath mein Saba ki ek rare picture bhi share ki, jisme unke dono sons dikhte hain. → Aakhri photo mein Saba, Hrithik ke dono sons Hrehaan aur Hridhaan ke saath dikhti hain."
+   ]
+  },
+  "created_at": "2026-11-01T10:38:30+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-01",
   "image": "posts/20261101-0834-reel_break_noon-2026-11-01.jpg",
   "kind": "reel",
@@ -381,115 +431,5 @@
    ]
   },
   "created_at": "2026-10-31T12:36:43+00:00"
- },
- {
-  "id": "reel_news_pm-2026-10-31",
-  "image": "posts/20261031-1036-reel_news_pm-2026-10-31.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261031-103621-reel_news_pm-2026-10-31.mp4",
-  "headline": "Sanjay Dutt pays tribute to late friend Sanjay Gupta, vows to fulfil his dream of making Kaante 2",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sanjay Dutt Sanjay Gupta Kaante 2 tribute 🙏\nSanjay Dutt ne apne purane dost aur filmmaker Sanjay Gupta ko bhavuk shraddhanjali di.\nSanjay Gupta ka ghar par accidental fall ke baad nidhan ho gaya.\nSanjay Dutt ne kaha ki woh unka Kaante 2 banane ka sapna poora karenge.\nUs dost ko bhejo jiske saath dosti purani hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#SanjayDutt #SanjayGupta #Bollywood #Kaante2 #reelsindia\n\n(Sanjay Dutt, Sanjay Gupta, Sanjay Gupta death, Kaante 2, Sanjay Dutt tribute, Sanjay Dutt Sanjay Gupta friendship, Bollywood news, Suniel tribute)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html",
-  "pin_comment": "Ye apne sabse purane dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Humnava Mere",
-    "artist": "Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "dosti aur yaadon ka dard"
-   },
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "waada nibhane wali bhavna"
-   },
-   {
-    "title": "back to friends",
-    "artist": "sombr",
-    "lang": "english",
-    "mood": "purani dosti ki yaad"
-   },
-   {
-    "title": "the cure",
-    "artist": "Olivia Rodrigo",
-    "lang": "english",
-    "mood": "shant, bhavuk tribute vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Kajol and Raveena Tandon are not mentioned in the article.",
-    "Fact corrected to match the article: The article gives conflicting days: he fell on Friday night and was found dead on Saturday morning. Removing the day avoids stating it wrongly."
-   ],
-   "fixed": [
-    "Kajol Raveena Tandon tribute → Suniel tribute",
-    "Sanjay Gupta ka Friday ko ghar par accidental fall → Sanjay Gupta ka ghar par accidental fall"
-   ]
-  },
-  "created_at": "2026-10-31T10:36:21+00:00"
- },
- {
-  "id": "reel_break_noon-2026-10-31",
-  "image": "posts/20261031-0835-reel_break_noon-2026-10-31.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261031-083540-reel_break_noon-2026-10-31.mp4",
-  "headline": "'Ramayana' advance booking report: Ranbir Kapoor, Yash's epic to cross Rs 20 crore mark in India; earns USD 3.45 million overseas",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ranbir Kapoor Yash Ramayana advance booking report 🎬\nOpening day ke around 1 lakh tickets national chains mein bik gaye, trade report ke mutabiq.\nReport: US mein advance booking USD 100,000 paar.\nFilm 5 November 2026 ko release hogi.\nTum kaunse ho: Ranbir ya Yash? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: The Times of India (link pinned in comments 👇)\n\n#reelsindia #ranbirkapoor #ramayana #yash #bollywood\n\n(Ranbir Kapoor Ramayana, Ramayana advance booking, Yash Ravana, Ramayana Part One, Nitesh Tiwari Ramayana, Ramayana release 5 November, Ramayana box office, Ranbir Kapoor Lord Ram)",
-  "source": "The Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
-  "pin_comment": "Apne Ranbir fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional epic vibe = Ramayana"
-   },
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ram naam fits the film"
-   },
-   {
-    "title": "Beggin'",
-    "artist": "Måneskin",
-    "lang": "english",
-    "mood": "high energy = booking hype"
-   },
-   {
-    "title": "Sapphire",
-    "artist": "Ed Sheeran",
-    "lang": "english",
-    "mood": "grand, uplifting feel"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Rs 20 crore figure is not in the article; article says about 1 lakh opening-day tickets sold",
-    "Fact corrected to match the article: Rs 20 crore is not in the article",
-    "Fact corrected to match the article: Article says US advance sales crossed $100,000, not $3.45 million",
-    "Fact corrected to match the article: Rs 20 crore and USD 3.45 million are not in the article; US figure is $100,000",
-    "Fact corrected to match the article: Article: trade report says approx. one lakh opening-day advance tickets in national chains; attributed to report, not stated as certain fact",
-    "Fact corrected to match the article: Figure is approximate and from a trade report"
-   ],
-   "fixed": [
-    "release se pehle 20 crore → release se pehle 1 lakh tickets bik chuke",
-    "Report: India mein Rs 20 crore paar → Report: national chains mein opening-day ke around 1 lakh tickets",
-    "Videsh mein USD 3.45 million ki kamai → US mein advance booking USD 100,000 paar (report)",
-    "Headline report: India mein Rs 20 crore paar, videsh mein USD 3.45 million. → Report: US mein advance booking USD 100,000 paar.",
-    "release se pehle 1 lakh tickets bik chuke → release se pehle around 1 lakh opening-day tickets bik chuke: report",
-    "Ramayana ke 1 lakh opening-day tickets bik chuke → Report: Ramayana ke around 1 lakh opening-day tickets bik chuke"
-   ]
-  },
-  "created_at": "2026-10-31T08:35:40+00:00"
  }
 ]
