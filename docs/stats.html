@@ -581,6 +581,7 @@ function hookChart(box, pts) {
   const num = v => v == null ? '–' : v >= 10000 ? (v / 1000).toFixed(1).replace('.0', '') + 'K' : v >= 1000 ? (v / 1000).toFixed(1).replace('.0', '') + 'K' : String(v);
   const reels = d.media.filter(m => m.views != null);
   const sum = k => reels.reduce((a, m) => a + (m[k] || 0), 0);
+  const old24 = reels.filter(m => Date.now() - new Date(m.time) > 24 * 3600000);   // stall rate: Instagram tests a Reel on ~200 people, it takes off or stops there
   const mature = reels.filter(m => Date.now() - new Date(m.time) > 12 * 3600000);   // young Reels are still climbing: left out of averages
   const avgWatch = (() => { const w = reels.filter(m => m.ig_reels_avg_watch_time != null); return w.length ? w.reduce((a, m) => a + m.ig_reels_avg_watch_time, 0) / w.length / 1000 : null; })();
   const sendRate = m => m.reach >= 500 ? (m.shares || 0) / m.reach * 100 : 0;   // sends per reach (%): Instagram's strongest sharing signal
@@ -634,7 +635,8 @@ function hookChart(box, pts) {
       <div class="kpi"><b>${num(sum('shares'))}</b><span>shares</span></div>
       <div class="kpi"><b>${num(sum('saves'))}</b><span>saves</span></div>
       <div class="kpi"><b>${num(sum('reposts'))}</b><span>reposts</span></div>
-      <div class="kpi"><b>${(sum('shares') / Math.max(1, sum('reach')) * 100).toFixed(2)}%</b><span>sends per reach</span></div></div>
+      <div class="kpi"><b>${(sum('shares') / Math.max(1, sum('reach')) * 100).toFixed(2)}%</b><span>sends per reach</span></div>
+      <div class="kpi"><b>${old24.length ? Math.round(old24.filter(m => m.views < 400).length / old24.length * 100) + '%' : '–'}</b><span>stalled Reels (under 400 views, 24 h+ old)</span></div></div>
     ${avgWatch != null ? `<div class="muted" style="margin-top:8px">⏱ Average watch time per Reel: <b style="color:var(--text)">${avgWatch.toFixed(1)} s</b>. Comments include your own pinned ones.</div>` : ''}
     ${chart}
     <div class="sub">🏆 Your Reels</div>
@@ -758,7 +760,7 @@ function hookChart(box, pts) {
 <script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 65;
+const PAGE_V = 66;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
