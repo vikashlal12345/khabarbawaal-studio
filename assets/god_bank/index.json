@@ -22,32 +22,32 @@
      ]
     }
    ]
-  },
-  {
-   "date": "2026-11-05",
-   "family": "Vishnu",
-   "last_used": "",
-   "images": [
-    {
-     "file": "bhagwan-vishnu-2026-11-05-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.23
-     ]
-    },
-    {
-     "file": "bhagwan-vishnu-2026-11-05-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.4,
-      0.22
-     ]
-    }
-   ]
   }
  ],
  "maa-lakshmi": [
+  {
+   "date": "2026-10-23",
+   "family": "Lakshmi",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-lakshmi-2026-10-23-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    },
+    {
+     "file": "maa-lakshmi-2026-10-23-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-10-30",
    "family": "Lakshmi",
@@ -67,52 +67,6 @@
      "focus": [
       0.55,
       0.23
-     ]
-    }
-   ]
-  },
-  {
-   "date": "2026-11-06",
-   "family": "Lakshmi",
-   "last_used": "",
-   "images": [
-    {
-     "file": "maa-lakshmi-2026-11-06-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.26
-     ]
-    },
-    {
-     "file": "maa-lakshmi-2026-11-06-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.55,
-      0.2
-     ]
-    }
-   ]
-  },
-  {
-   "date": "2026-11-08",
-   "family": "Lakshmi",
-   "last_used": "",
-   "images": [
-    {
-     "file": "maa-lakshmi-2026-11-08-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.18
-     ]
-    },
-    {
-     "file": "maa-lakshmi-2026-11-08-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.6,
-      0.25
      ]
     }
    ]
@@ -161,29 +115,6 @@
      "focus": [
       0.5,
       0.18
-     ]
-    }
-   ]
-  },
-  {
-   "date": "2026-11-07",
-   "family": "Shani",
-   "last_used": "",
-   "images": [
-    {
-     "file": "shani-dev-2026-11-07-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.45,
-      0.25
-     ]
-    },
-    {
-     "file": "shani-dev-2026-11-07-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.25
      ]
     }
    ]
@@ -266,7 +197,7 @@
   {
    "date": "2026-10-27",
    "family": "Hanuman",
-   "last_used": "2026-11-03",
+   "last_used": "",
    "images": [
     {
      "file": "hanuman-ji-2026-10-27-1.jpg",
@@ -282,29 +213,6 @@
      "focus": [
       0.55,
       0.25
-     ]
-    }
-   ]
-  },
-  {
-   "date": "2026-11-10",
-   "family": "Hanuman",
-   "last_used": "",
-   "images": [
-    {
-     "file": "hanuman-ji-2026-11-10-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.22
-     ]
-    },
-    {
-     "file": "hanuman-ji-2026-11-10-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.22
      ]
     }
    ]
@@ -333,29 +241,6 @@
      ]
     }
    ]
-  },
-  {
-   "date": "2026-11-04",
-   "family": "Ganesha",
-   "last_used": "",
-   "images": [
-    {
-     "file": "ganesh-ji-2026-11-04-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.3
-     ]
-    },
-    {
-     "file": "ganesh-ji-2026-11-04-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.6,
-      0.25
-     ]
-    }
-   ]
   }
  ],
  "maa-parvati-karva-mata": [
@@ -378,48 +263,6 @@
      "focus": [
       0.55,
       0.2
-     ]
-    }
-   ]
-  }
- ],
- "bhagwan-shiv-ji": [
-  {
-   "date": "2026-11-02",
-   "family": "Shiva",
-   "last_used": "",
-   "images": [
-    {
-     "file": "bhagwan-shiv-ji-2026-11-02-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.25
-     ]
-    }
-   ]
-  }
- ],
- "shri-krishna-govardhan-puja": [
-  {
-   "date": "2026-11-09",
-   "family": "Krishna",
-   "last_used": "",
-   "images": [
-    {
-     "file": "shri-krishna-govardhan-puja-2026-11-09-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.55,
-      0.25
-     ]
-    },
-    {
-     "file": "shri-krishna-govardhan-puja-2026-11-09-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.3
      ]
     }
    ]

@@ -722,11 +722,11 @@ clip_wanted: one line describing the ideal clip.
 caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia); the \
 caption's first line carries the searchable keywords (the trend's name, e.g. 'Navratri garba', 'Gemini 4')."""
 
-SONGS = {"type": "array", "description": "2 chart + 2 newly released Hindi songs that fit this Reel's moment, copied exactly "
+SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit this Reel's moment, copied exactly "
          "from today's song lists",
          "items": {"type": "object", "properties": {
              "title": {"type": "string"}, "artist": {"type": "string"},
-             "lang": {"type": "string", "enum": ["hindi", "new"], "description": "hindi = a song from the Indian charts, new = a newly released Hindi song"},
+             "lang": {"type": "string", "enum": ["hindi", "english"], "description": "hindi = any Indian song"},
              "mood": {"type": "string", "description": "Max 6 words: why it fits this Reel, e.g. 'sad hook = UPI fail'"}},
              "required": ["title", "artist", "lang", "mood"], "additionalProperties": False}}
 
@@ -783,7 +783,7 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
           "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
           "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
           "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
-          "save = 'Save karo, kaam aayega' (useful or festival stories). DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "save = 'Save karo, kaam aayega' (useful or festival stories). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
           "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
@@ -1105,7 +1105,7 @@ def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]
     (owner, 13 Oct 2026: the JioSaavn list alone kept giving the same old songs). {lang: [(title, artist)]}:
     hindi = Indian songs: Shazam Top 200 India (most looked-up), Spotify Top 50 India + Top Songs India (week),
     Apple Music most played India (new releases), JioSaavn's Reels playlists and trending;
-    new = newly released Hindi songs (JioSaavn's new releases; owner 4 Nov 2026, was English chart songs).
+    english = Spotify Top 50 Global, Apple Music most played US, JioSaavn English trending.
     Sources are merged rank by rank (each one's #1 first), duplicates removed."""
     sources = {"hindi": [("Shazam India", lambda: _shazam("india")),
                          ("Spotify India today", lambda: _spotify("37i9dQZEVXbLZ52XmnySJg")),
@@ -1118,9 +1118,11 @@ def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]
                          ("JioSaavn trending", lambda: [_saavn_song(x) for x in _jiosaavn(
                              {"__call": "content.getTrending", "entity_type": "song", "entity_language": "hindi"})
                              if x.get("type") == "song"])],
-               "new": [("JioSaavn new Hindi", lambda: [_saavn_song(x) for x in _jiosaavn(
-                           {"__call": "content.getAlbums", "n": 30, "p": 1, "language": "hindi"})["data"]
-                           if x.get("type") == "song"])]}   # owner 4 Nov 2026: newly released Hindi songs instead of English ones
+               "english": [("Spotify Global today", lambda: _spotify("37i9dQZEVXbMDoHDwVN2tF")),
+                           ("Apple Music US", lambda: _apple("us")),
+                           ("JioSaavn trending", lambda: [_saavn_song(x) for x in _jiosaavn(
+                               {"__call": "content.getTrending", "entity_type": "song", "entity_language": "english"})
+                               if x.get("type") == "song"])]}
     RECENT_SONGS[:] = (state or {}).get("songs_recent", [])[-40:]
     out = {}
     for lang, srcs in sources.items():
@@ -1140,18 +1142,18 @@ def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]
                     if key not in seen:
                         seen.add(key)
                         merged.append((title, artist))
-        out[lang] = merged[:70 if lang == "hindi" else 30]
+        out[lang] = merged[:70 if lang == "hindi" else 35]
     return out
 
 
 def songs_prompt(songs: dict) -> str:
     if not any(songs.values()):
         return ""
-    lists = "\n".join(("Indian chart songs" if lang == "hindi" else "Newly released Hindi songs") + ":\n" + "\n".join(
+    lists = "\n".join(("Indian songs" if lang == "hindi" else "English songs") + ":\n" + "\n".join(
         f"- {t} | {a}   [{SONG_WHERE.get(t.lower().strip(), '')}]" for t, a in songs[lang]) for lang in songs if songs[lang])
     recent = ("\nSuggested for recent Reels (a trending song may repeat when it fits, but at least 2 of your 4 must "
               "not be in this list): " + "; ".join(dict.fromkeys(RECENT_SONGS))) if RECENT_SONGS else ""
-    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Indian chart songs + 2 newly released Hindi songs from these lists (today's "
+    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Indian + 2 English songs from these lists (today's "
             "charts: what India looks up on Shazam and plays on Spotify / Apple Music, and JioSaavn's Reels playlists; "
             "[...] says where each one charts). Pick songs whose hook, lyrics or vibe FIT THIS Reel's moment (a sad or "
             "dramatic line for a fail, hype for a win, romantic for love, calm for serious news...); among songs that "
@@ -1160,7 +1162,7 @@ def songs_prompt(songs: dict) -> str:
 
 
 def chart_songs(state: dict) -> list[dict]:
-    """2 chart + 2 new Hindi songs from the top of today's charts not suggested recently (Reels without AI writing)."""
+    """2 Indian + 2 English songs from the top of today's charts not suggested recently (Reels without AI writing)."""
     songs = trending_songs(state)
     return [{"title": t, "artist": a, "lang": lang, "mood": "high on today's charts"} for lang in songs
             for t, a in ([x for x in songs[lang] if x[0] not in RECENT_SONGS][:2] or songs[lang][:2])]
@@ -1196,7 +1198,7 @@ def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
     for s in picked:
         lang = s.get("lang", "")
         match = pool.get(s.get("title", "").strip().lower())
-        if match and match[0] not in seen and lang in ("hindi", "new") and sum(o["lang"] == lang for o in out) < 2:
+        if match and match[0] not in seen and lang in ("hindi", "english") and sum(o["lang"] == lang for o in out) < 2:
             seen.add(match[0])
             out.append({"title": match[0], "artist": match[1], "lang": lang, "mood": s.get("mood", "")[:40]})
     return out
@@ -2144,19 +2146,6 @@ an official, an institution or a court order (e.g. a Supreme Court order) rank l
 clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names.
 FAMILY OVER GOSSIP (owner approved 1 Nov 2026, from the week's tags: couple / family stories averaged ~3,600 views and 0.15% sends, plain gossip ~990): rank \
 stories about a star's parent, child, spouse, couple or family bond ABOVE gossip, rumours, reactions and controversies; a gossip story is low priority unless it is huge.
-EMOTIONAL FIRST (owner approved 1 Nov 2026, from 25 days of numbers: a respectful tribute got 5,593 views and 11 sends, the best of any Reel after the first Tiger Shroff story): a star's \
-real feelings about a parent, child, friend, a respectful tribute or memory (never told for shock), nostalgia, a first (first Karwa Chauth, first film with a parent) rank \
-at the TOP. SERIES RULE: this season's Koffee With Karan moments (7 Reels, avg 2,715, none stalled) and Ramayana news (20 Reels, avg 1,519) are reliable: when a fresh one \
-exists (not told in the last 12 h), rank it high. POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
-A festival story works only with a real person-story ('Aamir Khan's first Karwa Chauth' 2,557 views), not a plain greeting.
-HOT STORIES (owner 1 Nov 2026: 'check the story at creation time only, so we always have the latest trending one'): a story marked 🔥HOT is what many sites run \
-RIGHT NOW or a new development on one of our own hits: prefer it, but only when it carries a personal / emotional angle; skip a HOT story that is a greeting, a promo or a controversy.
-ROUTINE POSTS RANK LOW (owner approved 1 Nov 2026: 13 of 43 Reels stalled at ~200 views, mostly greetings, official news and controversies; the ones that took off were Koffee With Karan moments, Ramayana news and emotional personal stories): \
-birthday / anniversary wishes, festival greetings, official or government announcements (space launches, new chiefs, ministry news), award lists and a star's \
-plain social-media post that every page already runs are LOW priority; take one only when it carries a real story (a confession, a reveal, a family moment, a clash with a fact) people would send to a friend.
-STAR GOSSIP AND FAMILY FIRST, 'OTHER' LAST (owner 4 Nov 2026, last 10 days: star gossip / rows / reveals avg 2,268 views, couple + family 1,436, 'other' stories (IAF chief, ISRO, court orders, civic notices, lists) 743 and stalled half the time; half of all Reels stalled): \
-rank a famous star's gossip, spat, reveal or family moment above everything else; a story with no famous face and no personal angle comes last. \
-NEVER pick a birthday / anniversary / festival greeting or a story already told today in other words.\
 PROMO RULE (owner, 30 Oct 2026: two Reels on the same Shraddha Kapoor trailer got ~300 views and ~70): trailer / teaser / poster / first-look / song-launch / \
 release-date announcements rank LOW (they are adverts, people do not forward them); take one only when it carries a personal or emotional angle of a big name, \
 and never a regional or niche film nobody outside its language has heard of.
@@ -2231,35 +2220,6 @@ def bollywood_first(stories: list) -> list:
     return b if len(b) >= 3 else stories
 
 
-HARD_PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|motion poster|release date|song launch|promo|out now)\b")
-
-
-def drop_routine(stories: list, keep: int = 6) -> list:
-    """Owner 4 Nov 2026 (half the Reels stalled): birthday / anniversary / greeting stories leave the picker's list whenever at least `keep` other
-    stories remain; so do trailer / teaser / poster / first-look / release-date / song-launch adverts (owner 4 Nov 2026: the 12 PM 'Ramayana Part 2
-    release date' Reel got 24 views, 3 of 4 stalled Reels that day were promos). Box-office / advance-booking numbers stay (a 1,108-view Reel)."""
-    import flash
-    rest = [x for x in stories if not flash.ROUTINE.search(x["title"])]
-    stories = rest if len(rest) >= keep else stories
-    rest = [x for x in stories if not HARD_PROMO.search(x["title"])]
-    return rest if len(rest) >= keep else stories
-
-
-def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
-    """🔥 The stories that are hot at THIS moment (flash.hot_now: many sites right now, or a new development on our own hit) go first in the picker's
-    list, marked HOT, after the same filters as every story (already used, avoided, told in the last 12 h)."""
-    try:
-        import flash
-        hot = [h for h in flash.hot_now(state, raw) if h["link"] not in used and h["link"] not in AVOID and not covered_before(h["title"])]
-    except Exception as e:
-        print(f"  ! hot stories skipped: {str(e)[:80]}")
-        return stories
-    if hot:
-        print(f"  🔥 hot right now: " + " | ".join(h["title"][:60] for h in hot))
-    links = {h["link"] for h in hot}
-    return hot + [x for x in stories if x["link"] not in links]
-
-
 def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 The most viral, visual story of the last hours (the news feeds' lookback_hours) as a photo slideshow
     (owner, 13 Oct 2026: all posts are Reels now; it used to pick from the day's news carousels).
@@ -2280,22 +2240,19 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
     else:
         status.step("Picking the most viral, visual story", 2)
-        raw = g.fetch_candidates(set(state.get("seen", [])))
-        stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)]))[:40]
-        if kind == "reel_news_night":   # the 8 PM slot (was 8:15 PM, moved 6 Nov 2026; owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
+        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)])[:40]
+        if kind == "reel_news_night":   # the 8:15 PM slot (owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
             import emergency
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
             if len(only) >= 2:
                 stories = only
-        if not REMAKE.get("link"):
-            stories = add_hot(stories, raw, state, used)
         intro = ""
         if REMAKE.get("link"):   # 🔄 remake: the same story again
             stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                         "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
@@ -2488,21 +2445,13 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     import status
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
-    raw = g.fetch_candidates(set(state.get("seen", [])))
-    stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:45]
-    if kind == "reel_break_aft":   # the 7 PM slot (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
-        import emergency
-        only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
-        if len(only) >= 2:
-            stories = only
-    if not REMAKE.get("link"):
-        stories = add_hot(stories, raw, state, used)
+    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])])[:45]
     if REMAKE.get("link"):   # 🔄 remake: the same story again
         stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                     "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs(state)
@@ -2841,7 +2790,7 @@ SPEECH_OPTION = {"type": "object", "properties": {
                     "share nudge like 'Ye message sabko bhejo 🇮🇳'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": {"type": "array", "items": {"type": "object", "properties": {
-        "title": {"type": "string"}, "artist": {"type": "string"}, "lang": {"type": "string", "enum": ["hindi", "new"]},
+        "title": {"type": "string"}, "artist": {"type": "string"}, "lang": {"type": "string", "enum": ["hindi", "english"]},
         "mood": {"type": "string", "description": "Max 6 words: why it fits, e.g. 'attack mode, play it low'"}},
         "required": ["title", "artist", "lang", "mood"], "additionalProperties": False},
         "description": "4 tracks from the given list that fit the speech's mood"}},
@@ -3381,7 +3330,7 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "bad). WHO DOES WHAT: when someone accuses, criticises or quotes someone else, the hook must make clear who "
             "says it and who it is about; never put a harsh word (terrorism, gaddar, fraud, ...) next to a name that is "
             "only the accuser or that the story does not say it about (e.g. 'Mamata: CJP custody state-sponsored "
-            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). WATCH TIME (1 Nov 2026: Reels watched 7 s+ average 1,833 views, under 5 s only 380): make at least 1 of the 5 hooks a CURIOSITY GAP the Reel answers ('Varun ne Ranveer ko chuna, Ranbir ko nahi: kyun?', 'Sanjay Dutt ne Sanjay Gupta ko kya likha?'): a question or half-told fact whose answer comes later, never a lie. NO NICHE WORDS (30 Oct 2026: 'Eetha trailer out, Lavani queen bani' got a 3.5 s watch time): never an unexplained regional or niche word (an unknown film title, a folk-art name) in the hook unless every Indian knows it; say it with words everyone knows ('Shraddha ka naya avatar'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
+            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). NO NICHE WORDS (30 Oct 2026: 'Eetha trailer out, Lavani queen bani' got a 3.5 s watch time): never an unexplained regional or niche word (an unknown film title, a folk-art name) in the hook unless every Indian knows it; say it with words everyone knows ('Shraddha ka naya avatar'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
             "opens): of the 5 hooks make at least 2 a short reaction line a friend would forward, with a feeling word, e.g. '<Name> ka reaction "
             "bilkul priceless', '<Name> ne sabka dil jeet liya', '<A> ko <B> se alag nahi kar sakte', 'Bro ne poora show loot liya': only for "
             "warm, funny or proud moments of the story (never for sad, serious or negative news), and still only what really happened in the "
@@ -5468,11 +5417,6 @@ def read_time(text: str) -> float:
     return max(2.4, len(text.split()) / 3.2 + 1.2)
 
 
-def quick_read(text: str) -> float:
-    """Reading time for the short 6 AM devotional Reel (owner 6 Nov 2026: 15-17 s in all): ~4 words a second + a short hold."""
-    return max(2.2, len(text.split()) / 4.0 + 0.7)
-
-
 def faded(img: Image.Image, a: float) -> Image.Image:
     if a >= 1:
         return img
@@ -5522,8 +5466,8 @@ def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f
 
 def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: str, lesson: str,
               real_life: str, highlight: list[str], out_mp4: str, labels: dict | None = None,
-              steps: list[dict] | None = None, switch_step: int = 3, handle_text: str = "", quick: bool = False) -> list[Image.Image]:
-    """🙏 Devotional Reel (quick=True: ~16 s in all, owner 6 Nov 2026; the 6 AM Reel was ~31 s): the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
+              steps: list[dict] | None = None, switch_step: int = 3, handle_text: str = "") -> list[Image.Image]:
+    """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
     golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
     hook → Shri Krishna ka sandesh + lesson + verse → (2nd painting) Aaj ki seekh → send this. (No Sanskrit.)
     images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread.
@@ -5595,7 +5539,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         return out
 
     # Parts: (start, list of (y, image, appear_at)), plus fade-out time.
-    gap, pause = (0.2, 0.05) if quick else (0.45, 0.35)
+    gap, pause = 0.45, 0.35
     parts, t = [], 0.6
     cta_y, handle_y = 1380, 1470
     if steps:
@@ -5607,12 +5551,12 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         hook_l = lines_of(hook, hook_f, CREAM)
         y0 = 1330 - len(hook_l) * int(hook_f.size * 0.71)
         items = [(y0 + i * int(hook_f.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)]   # 🪝 visible at 0 s
-        end = t + len(hook_l) * gap + (max(quick_read(hook), 3.2) if quick else max(read_time(hook), 4.6))   # a short hook keeps the old reading time (devotional timing unchanged)
+        end = t + len(hook_l) * gap + max(read_time(hook), 4.6)   # a short hook keeps the old reading time (devotional timing unchanged)
         parts.append((items, end))
         t = end + 0.5 + pause
         items, y = [], 1060
         items.append((y, glow_line(lab["middle"], small_gold, GOLD), t)); y += 85
-        t2 = t + (0.5 if quick else 0.8)
+        t2 = t + 0.8
         y += 10
         divider_y = y
         y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
@@ -5622,7 +5566,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         if lab["source"]:
             items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
                           t))
-        end = t2 + len(les) * gap + (quick_read(lesson) if quick else read_time(lesson))
+        end = t2 + len(les) * gap + read_time(lesson)
         parts.append((items, end))
         divider = (divider_y, t2 - 0.2, end)
         t = end + 0.5 + pause
@@ -5632,10 +5576,10 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
         for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
             items.append((y, im, t)); y += int(take_f.size * 1.3)
-        end = t + (0.5 if quick else 0.8) + len(items) * gap + (quick_read(real_life) if quick else read_time(real_life))
+        end = t + 0.8 + len(items) * gap + read_time(real_life)
         parts.append((items, end))
         cta_at = end + 0.3
-        total = cta_at + (1.9 if quick else 3.0)
+        total = cta_at + 3.0
     cta = glow_line(lab["cta"], vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
     handle = glow_line(handle_text or CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
 
@@ -5966,9 +5910,9 @@ DEVOTION_OPTION = {"type": "object", "properties": {
     "hook": {"type": "string", "description": "The opening line on the first frame, 4-8 words, MUST contain the god's or festival's "
              "name and a benefit or curiosity that makes people stop and read, warm and reverent, no emoji, e.g. "
              "'Aaj Shani Dev ki kripa kaise payein', 'Hanuman ji ka aashirwaad aaj aise paayein', 'Navratri ka pehla din: Maa Shailputri'"},
-    "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 10 words (the Reel is only ~16 s), "
+    "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 22 words, "
                "only well-known traditional facts"},
-    "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 8 words, people want to save it"},
+    "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 18 words, people want to save it"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "caption": {"type": "string"},
     "pin_comment": {"type": "string", "description": "Max 15 words: a share line to family, e.g. 'Apni maa ko bhejo 🙏'"},
@@ -5982,8 +5926,7 @@ who the deity is in simple words, and a blessing or life lesson for today. Only 
 joke about any god, no politics, nothing against any religion or community. Write it like poetry: short lines, \
 natural pauses ("..."). Caption: 2-4 short Hinglish lines, the first naming the god/festival (searchable), 1-2 emojis \
 (🙏 fits), last line asks people to comment 'Jai ...' (e.g. 'Jai Mata Di likho 🙏'). Pinned comment: a share line to \
-family, e.g. 'Apni maa ko bhejo, unka din ban jayega 🙏'. LENGTH (owner 6 Nov 2026): the whole Reel is only ~16 seconds: \
-the opening line max 8 words, the lesson max 10 words, the blessing max 8 words (shorter is better)."""
+family, e.g. 'Apni maa ko bhejo, unka din ban jayega 🙏'."""
 
 
 def plain_letters(text: str) -> str:
@@ -6081,7 +6024,7 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily darshan 🙏\n\n{tags}"
     frames, data, proof = proofread.run(
         lambda d: gita_reel(images, "", d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"],
-                            d["post"]["highlight"], out, labels=labels, quick=True),
+                            d["post"]["highlight"], out, labels=labels),
         {"post": best}, caption_of,
         f"Devotional Reel for {subj['name']} ({plan['deity']}). Check the facts about the deity/festival are the "
         "well-known traditional ones." + ("" if exact else f" The paintings intentionally show {plan['family']} in general "
@@ -6429,7 +6372,7 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
 
 
 TAGS: dict = {}   # 🏷️ tags of the Reel being made (30 Oct 2026): written with its numbers-join key by save_reel into docs/stats/reel_tags.json
-SHORT_NEWS = {"reel_news_pm", "reel_news_early", "reel_news_am", "reel_news_aft", "reel_news_night"}   # the 4 PM Reel is the SHORT test (30 Oct 2026), the 8 AM one too (1 Nov 2026, owner approved): 2 photos, ~14 s, to compare with the 22 s ones
+SHORT_NEWS = {"reel_news_pm", "reel_news_early"}   # the 4 PM Reel is the SHORT test (30 Oct 2026), the 8 AM one too (1 Nov 2026, owner approved): 2 photos, ~14 s, to compare with the 22 s ones
 
 
 def hook_style(hook: str) -> str:
@@ -6470,14 +6413,6 @@ def make(kind: str, state: dict, feed: list, attempt: int = 1, tries: int = 1) -
     """Make today's Reel for this slot (try `attempt` of `tries`). 📌 A story the owner pinned to this slot on the stats page
     (owner, 26 Oct 2026) is the story: used for news / breaking / satire slots, removed once the Reel is made (or on the last try)."""
     pin = (state.get("pinned") or {}).get(kind)
-    if pin and (pin.get("flash") or pin.get("followup")) and covered_before(pin.get("title", ""), 12):
-        # 1 Nov 2026: flash-watch pinned the Hrithik-Saba story to 6 PM while the 4 PM Reel picked the same story freely: an automatic pin
-        # is dropped when one of our Reels already told it (the owner's own pins from the Stats page are never dropped)
-        print(f"  the automatic pin was already told in a Reel of the last 12 h: dropped ({pin.get('title', '')[:70]})")
-        state["pinned"].pop(kind, None)
-        import generate as g
-        g.save_json(g.STATE_FILE, state)
-        pin = None
     used_pin = bool(pin) and (kind in NEWS_KINDS or kind in BREAK_KINDS or kind == "reel_politics")
     if used_pin:
         REMAKE.update({"link": pin["link"], "title": pin["title"], "source": pin.get("source", "")})

@@ -420,54 +420,5 @@
    "fixed": []
   },
   "created_at": "2026-11-09T12:33:09+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-09",
-  "image": "posts/20261109-1036-reel_news_pm-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-103644-reel_news_pm-2026-11-09.mp4",
-  "headline": "Bhumi Pednekar raises alarm over ‘hazardous’ AQI in Mumbai post Diwali, says people were bursting crackers even at 3 AM",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Bhumi Pednekar Mumbai AQI Diwali crackers 3 AM 😷\nBhumi Pednekar ne Diwali ke baad Mumbai ke hazardous AQI par chinta jatayi.\nUnke mutabiq log raat 3 baje tak patakhe phod rahe the.\nNavy Nagar mein AQI raat 2 baje 497 tak pahunch gaya, Chembur aur Shivaji Nagar mein bhi 400 ke aas-paas ya paar gaya.\nBhumi sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bhumipednekar #mumbai #aqi #diwali #reelsindia\n\n(Bhumi Pednekar, Mumbai AQI, Diwali pollution, Navy Nagar AQI 497, Mumbai air quality, post Diwali crackers, Bhumi Pednekar Instagram)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
-  "pin_comment": "Ye Mumbai wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Toxic",
-    "artist": "Vishal Mishra, Hanita Bhambri",
-    "lang": "hindi",
-    "mood": "toxic hawa = toxic title"
-   },
-   {
-    "title": "Barsaat",
-    "artist": "Banjaare, Roni",
-    "lang": "hindi",
-    "mood": "saaf hawa ke liye baarish"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "baarish ki dua"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "dard bhara serious mood"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: 497 was the peak at 2 am, not the constant level; article says Chembur 401 and Shivaji Nagar 444 at peaks."
-   ],
-   "fixed": [
-    "Navy Nagar mein AQI 497 raha, kai ilaake 400 paar. → Navy Nagar mein AQI raat 2 baje 497 tak pahunch gaya, Chembur aur Shivaji Nagar mein bhi 400 ke aas-paas ya paar gaya."
-   ]
-  },
-  "created_at": "2026-11-09T10:36:44+00:00"
  }
 ]

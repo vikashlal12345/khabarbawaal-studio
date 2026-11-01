@@ -403,14 +403,14 @@
   "Ghar par koi nahi tha, toh maine poore josh mein gaana gaaya. Tabhi dekha: balcony mein padosi aunty kapde sukha rahi thi."
  ],
  "audience": {
-  "summary": "",
-  "posts": 0,
-  "likes": 0,
-  "updated": "2026-11-09T22:31:58+00:00",
+  "summary": "From our last 52 Instagram posts (engagement = likes + 2×comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), REEL  TECH (4); weakest REEL  WORLD (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: top10 3, reel 2, news 2, custom 2, calendar 2, ready 2. Lean toward what works, keep some variety.",
+  "posts": 52,
+  "likes": 113,
+  "updated": "2026-10-31T22:34:08+00:00",
   "waiting": "0/10 linked posts with results"
  },
  "specials_done": {
-  "night_learn": "2026-11-10",
+  "night_learn": "2026-11-01",
   "market_close": "2026-10-09",
   "top10_day": "2026-10-12",
   "night_ready": "2026-10-15",
@@ -427,25 +427,25 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-11-10",
-  "reel_news_pm": "2026-11-10",
+  "reel_devotion": "2026-11-01",
+  "reel_news_pm": "2026-10-31",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-10",
-  "reel_news_noon": "2026-11-01",
+  "reel_news_am": "2026-11-01",
+  "reel_news_noon": "2026-10-15",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-09",
+  "reel_news_aft": "2026-10-31",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-10",
+  "reel_news_early": "2026-11-01",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-10",
-  "reel_break_noon": "2026-11-10",
-  "reel_break_aft": "2026-11-09",
-  "reel_news_night": "2026-11-09",
+  "reel_break_am": "2026-11-01",
+  "reel_break_noon": "2026-11-01",
+  "reel_break_aft": "2026-10-31",
+  "reel_news_night": "2026-10-31",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "4BX9rAkpQNJC",
+ "inbox_since": "KoK6c6EtmuI3",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -897,7 +897,82 @@
   "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
   "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
-  "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
+  "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
+  "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
+  "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
+  "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
+  "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
+  "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
+  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
+  "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
+  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
+  "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
+  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
+  "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
+  "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
+  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
+  "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
+  "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
+  "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
+  "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
+  "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
+  "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
+  "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
+  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
+  "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
+  "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
+  "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
+  "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
+  "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
+  "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/tanu-weds-manu-3-wont-move-ahead-without-r-madhavan-and-kangana-ranaut-confirms-aanand-l-rai-denies-fresh-cast-reports-101793265815138.html",
+  "https://www.hungamaexpress.com/news/55197-radhika-apte-calls-out-trolls-for-double-standards-over-alia-bhatts-alpha-physique",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-song-judi-jodi-sparks-debate-over-shreya-ghoshal-vs-chinmayi-sripaada-versions-as-fans-react-to-ranbir-kapoor-sai-pallavi-track-101793276299926.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
+  "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
+  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
+  "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
+  "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
+  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-and-sanjay-dutt-to-reunite-on-screen-in-khalnayak-returns-heres-what-we-know/",
+  "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
+  "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-reunites-with-sidharth-malhotra-after-heated-rivalry-joke-on-koffee-with-karan-kiara-advani-joins-the-fun-student-of-the-year-101793423094250.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html",
+  "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/",
+  "https://www.hindustantimes.com/entertainment/bollywood/prakash-raj-s-wife-pony-varma-says-actor-lost-films-and-ad-deals-over-his-political-views-101793452104226.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1153,7 +1228,40 @@
   "Ram Siya Ram",
   "Heeriye (feat. Arijit Singh)",
   "Shree Hanuman Chalisa (From \"Ramayana\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Sweater Weather",
+  "Narayan Mil Jayega",
+  "Beggin'",
+  "Sapphire",
+  "back to friends",
+  "the cure",
+  "Water",
+  "Ez-Ez",
+  "Big Dawgs",
+  "Believer",
+  "Azadi",
+  "People",
+  "Let Me Down Slowly",
+  "Khat",
+  "This Is Halloween",
+  "Thriller",
+  "Mahamritunjay Mantra",
+  "Gaytri Mantra",
+  "Surya Mantra 108 Times - Om Hrim Suryay Namah",
+  "Surya Mantra - Japa Kusum",
+  "Sahiba",
+  "Pehle Bhi Main",
+  "Iris",
+  "Heat Waves",
+  "One Name",
+  "Believer",
+  "APT.",
+  "Dhun",
+  "Believer",
+  "Blinding Lights",
+  "Monster Mash",
+  "Somebody's Watching Me",
+  "Tera Mera Rishta - New Version (From \"Awarapan 2\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1260,6 +1368,90 @@
   {
    "title": "Mahabharat star Nitish Bharadwaj goes from predicting Oscar for Ramayana to criticising it, says film misrepresents India's history",
    "date": "2026-11-10"
+  },
+  {
+   "title": "Rakul Preet Singh says Ramayana is India's representation to the world, calls Surpanakha a very misunderstood character",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Siddharth Anand drops another cryptic post about Shah Rukh Khan starrer King at midnight; is a birthday surprise coming?",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Aamir Khan celebrates first Karwa Chauth with wife Gauri Spratt at Anil Kapoor, Sunita Kpaoor's residence",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Ramayana advance booking jumps 27% in US after positive reactions from premiere; Ranbir Kapoor, Yash film crosses ₹15 crore in India",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Eetha trailer out: Shraddha Kapoor celebrates Maharashtra's Lavani legacy as she transforms into Vithabai Narayangaonkar in Laxman Utekar's musical",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Eetha Trailer Out: Shraddha Kapoor Transforms Into Legendary Eetha Bai",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "IIFA 2026 Winners: Dhurandhar dominates with Best Film, Best Director, Best Actor; The Ba***ds of Bollywood wins Best Web Series",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "Salman Khan and Sanjay Dutt to reunite on screen in Khalnayak Returns? Here's what we know",
+   "date": "2026-10-30"
+  },
+  {
+   "title": "'Attack on energy trade, infrastructure a calculated move to hold prices hostage': Jaishankar",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "PM Modi congratulates ISRO scientists on successful GSLV-F18 launch: 'Our space scientists make nation proud'",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Varun Dhawan reunites with Sidharth Malhotra after Heated Rivalry joke on Koffee With Karan; Kiara Advani joins the fun",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "'Ramayana' advance booking report: Ranbir Kapoor, Yash's epic to cross Rs 20 crore mark in India; earns USD 3.45 million overseas",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Sanjay Dutt pays tribute to late friend Sanjay Gupta, vows to fulfil his dream of making Kaante 2",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Diljit Dosanjh addresses Satluj controversy at Delhi concert; says “Don't teach Punjabis how to fight”",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Prakash Raj’s wife Pony Varma says actor lost films and ad deals over his political views",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Janhvi Kapoor recreates mom Sridevi’s Nagina look for Halloween, calls it one of the most iconic movie moments ever",
+   "date": "2026-10-31"
+  },
+  {
+   "title": "Divya Dutta lauds Gajab Raat co-star Manoj Bajpayee for treating newcomers as equals, says working with him leaves one spoiled | HT Exclusive",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Manushi Chhillar: Not every project has to be the dream job, sometimes it just has to get you closer to it",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Air Chief Marshal Dixit takes charge of IAF amid modernisation push",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Nitesh Tiwari reveals 6.5 years went into Ravana-Jatayu fight, 50 designs created for Pushpak Viman for Ramayana",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Priyanka Chopra channels King Kylie for Halloween, Nick Jonas dresses as cowboy for trick-or-treating with Malti Marie as ghost princess",
+   "date": "2026-11-01"
   }
  ],
  "claude_limit": {
@@ -1267,7 +1459,15 @@
   "msg": "You've hit your weekly limit · resets 10pm (UTC)",
   "alerted": true
  },
- "pinned": {},
+ "pinned": {
+  "reel_news_pm": {
+   "link": "https://glamsham.com/bollywood/fashion-and-lifestyle/priyanka-chopra-king-kylie-vibes-halloween-malti-marie-nick-jonas/",
+   "title": "Priyanka Chopra gives ‘King Kylie’ vibes as she celebrates Halloween with Malti Marie and Nick Jonas",
+   "source": "Glamsham",
+   "at": "2026-11-01T08:32:27+00:00",
+   "flash": "priyanka"
+  }
+ },
  "followed_winners": [
   "18120264982752748",
   "18084634991359569",
@@ -1276,5 +1476,5 @@
   "18023602325946834",
   "18073698851610142"
  ],
- "winner_followup_day": "2026-11-06"
+ "winner_followup_day": "2026-11-01"
 }

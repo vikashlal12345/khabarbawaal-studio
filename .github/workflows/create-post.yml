@@ -19,7 +19,6 @@ permissions:
   issues: write
   pages: write
   id-token: write
-  actions: write      # the publish fallback starts deploy-app.yml
 
 concurrency:
   group: hourly-post        # takes turns with the hourly robot
@@ -31,6 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       GH_TOKEN: ${{ github.token }}
@@ -71,7 +71,12 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           python save.py "Your post (issue #$ISSUE)"
 
-      - uses: ./.github/actions/publish-pages   # try 1 gives up after 2 min, then a NEW run of deploy-app.yml publishes (owner 6 Nov 2026)
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
 
       - name: Phone alert (🔔 ✅ ready, or ❌ not made)
         if: always()

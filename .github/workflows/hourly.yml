@@ -8,7 +8,9 @@ name: Hourly post
 on:
   schedule:
     # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
-    - cron: "30 0,2,4,6,8,10,12,13,14 * * *"    # IST 6, 8, 10 AM, 12, 2, 4, 6, 7, 8 PM (Reels; owner 6 Nov 2026: 7 PM and 8 PM)
+    - cron: "30 0,2,4,6,8,10,12 * * *"          # IST 6, 8, 10 AM, 12, 2, 4, 6 PM (Reels)
+    - cron: "15 14 * * *"                       # IST 7:45 PM (breaking card)
+    - cron: "45 14 * * *"                       # IST 8:15 PM (speaker video)
   workflow_dispatch:
     inputs:
       kind:
@@ -46,6 +48,7 @@ jobs:
       cancel-in-progress: false
     environment:
       name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     env:
       # Membership mode: token from `claude setup-token` (uses your Claude plan, no API bill).
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -81,7 +84,7 @@ jobs:
           echo "skip=$([ "$busy" != "0" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
           [ "$busy" != "0" ] && echo "Chain is running: backup timer does nothing." || true
 
-      - name: Refresh Instagram numbers (never blocks the post)
+      - name: Refresh Instagram numbers + flash watch (never blocks the post)
         if: steps.chain.outputs.skip != 'true'
         continue-on-error: true
         env:
@@ -89,6 +92,7 @@ jobs:
         run: |
           # GitHub's own timers for the Meta / flash workflows did not fire (29 Oct 2026): the post chain refreshes them at every run too
           python meta_stats.py || true
+          python flash.py || true
 
       - name: Create post
         if: steps.chain.outputs.skip != 'true'
@@ -111,7 +115,12 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           python save.py "New post $(date -u +%Y-%m-%dT%H:%MZ)"
 
-      - uses: ./.github/actions/publish-pages   # try 1 gives up after 2 min, then a NEW run of deploy-app.yml publishes (owner 6 Nov 2026)
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
 
       - name: Phone alert (🔔 new posts, now live in the app)
         run: python push.py --after
