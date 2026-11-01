@@ -7,11 +7,11 @@
   "cache_write": 870036
  },
  "2026-10-02": {
-  "replies": 311,
-  "input": 626,
-  "output": 259994,
-  "cache_read": 72485600,
-  "cache_write": 1099766
+  "replies": 294,
+  "input": 592,
+  "output": 230779,
+  "cache_read": 72454259,
+  "cache_write": 1026688
  },
  "2026-10-04": {
   "replies": 353,
@@ -182,10 +182,10 @@
   "cache_write": 677970
  },
  "2026-11-01": {
-  "replies": 41,
-  "input": 98,
-  "output": 31277,
-  "cache_read": 32131545,
-  "cache_write": 903657
+  "replies": 50,
+  "input": 122,
+  "output": 40707,
+  "cache_read": 39355563,
+  "cache_write": 1785691
  }
 }
