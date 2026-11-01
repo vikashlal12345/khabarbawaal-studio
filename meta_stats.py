@@ -108,6 +108,35 @@ def read_competitors(host: str, force: bool = False) -> None:
 
 def main() -> int:
     probe = "--probe" in sys.argv
+    if "--history" in sys.argv:   # python meta_stats.py --history 25 : every post of the last N days with its numbers, one line each (read by a human)
+        days = int(sys.argv[sys.argv.index("--history") + 1])
+        for h in HOSTS:
+            st, acc = get(h, IG_ID, {"fields": "username"})
+            if st == 200:
+                host, after, rows = h, None, []
+                while True:
+                    p = {"fields": "id,caption,media_product_type,permalink,timestamp,like_count,comments_count", "limit": 50}
+                    if after:
+                        p["after"] = after
+                    st, media = get(host, f"{IG_ID}/media", p)
+                    if st != 200:
+                        print("media error", err(media)); break
+                    data = media.get("data", [])
+                    rows += data
+                    after = ((media.get("paging") or {}).get("cursors") or {}).get("after")
+                    last = data[-1]["timestamp"] if data else ""
+                    if not data or not after or datetime.strptime(last, "%Y-%m-%dT%H:%M:%S%z") < datetime.now(timezone.utc) - __import__("datetime").timedelta(days=days):
+                        break
+                cutoff = datetime.now(timezone.utc) - __import__("datetime").timedelta(days=days)
+                for x in rows:
+                    if datetime.strptime(x["timestamp"], "%Y-%m-%dT%H:%M:%S%z") < cutoff:
+                        continue
+                    st2, ins = get(host, f"{x['id']}/insights", {"metric": "views,reach,likes,comments,shares,saved,ig_reels_avg_watch_time"})
+                    v = {d["name"]: (d.get("values") or [{}])[0].get("value") for d in ins.get("data", [])} if st2 == 200 else {}
+                    print("HIST", x["id"], x["timestamp"][:16], x.get("media_product_type"), v.get("views"), v.get("reach"), v.get("likes"), v.get("comments"),
+                          v.get("shares"), v.get("saved"), round((v.get("ig_reels_avg_watch_time") or 0) / 1000, 1), "|", (x.get("caption") or "").replace("\n", " ")[:80])
+                return 0
+        return 1
     if "--look" in sys.argv:   # python meta_stats.py --look name : prints that page's last 30 posts (public numbers) for a human to read
         name = sys.argv[sys.argv.index("--look") + 1].replace("look:", "").lstrip("@")
         for h in HOSTS:
