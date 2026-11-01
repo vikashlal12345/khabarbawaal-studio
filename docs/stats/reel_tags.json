@@ -237,5 +237,21 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-01",
+  "key": "hrithikroshansabaazadbirthdaypost",
+  "kind": "reel_news_aft",
+  "secs": 17.0,
+  "at": "2026-11-01T12:34:49+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 45,
+  "hook": "name_first",
+  "photos": 2,
+  "short": false
  }
 ]
