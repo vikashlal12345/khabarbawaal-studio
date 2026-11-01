@@ -284,5 +284,21 @@
   "hook": "name_first",
   "photos": 3,
   "short": false
+ },
+ {
+  "id": "reel_news_noon-2026-11-01",
+  "key": "saipallaviyashsonramayanareaction",
+  "kind": "reel_news_noon",
+  "secs": 22.5,
+  "at": "2026-11-01T17:42:32+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 7,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 41,
+  "hook": "question",
+  "photos": 3,
+  "short": false
  }
 ]
