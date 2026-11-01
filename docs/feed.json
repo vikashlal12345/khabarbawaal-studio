@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_night-2026-11-01",
+  "image": "posts/20261101-1451-reel_news_night-2026-11-01.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261101-145124-reel_news_night-2026-11-01.mp4",
+  "headline": "Himesh Reshammiya makes a BIG revelation: “I have written, sung and composed 15 songs in English; they don’t sound WANNABE at all”; adds, “There’s one song which is ABSOLUTELY right for Rihanna”",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Himesh Reshammiya Rihanna song 15 English songs album 🎤\nHimesh ne Komal Nahta se baat karte hue bataya ki unhone apne international English album ke liye 15 gaane likhe, gaaye aur compose kiye hain.\nUnka kehna hai ki ye gaane WANNABE nahi lagte.\nAur ek gaana unke hisaab se bilkul Rihanna ke liye perfect hai.\nHimesh x Rihanna collab? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#himeshreshammiya #rihanna #bollywood #bollywoodnews #reelsindia\n\n(Himesh Reshammiya, Himesh Reshammiya Rihanna, Himesh English album, Himesh Komal Nahta interview, Himesh Reshammiya songs, Rihanna India, Bollywood news today)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-makes-a-big-revelation-i-have-written-sung-and-composed-15-songs-in-english-they-dont-sound-wannabe-at-all-adds-theres-one-song-whic/",
+  "pin_comment": "Apne Himesh ke fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "swag hype for Himesh's big plan"
+   },
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "desi swagger going global"
+   },
+   {
+    "title": "Disturbia",
+    "artist": "Rihanna",
+    "lang": "english",
+    "mood": "Rihanna's own hit, direct link"
+   },
+   {
+    "title": "Big Dawgs",
+    "artist": "Hanumankind, Kalmi",
+    "lang": "english",
+    "mood": "Indian artist global flex"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The 'Photo: Bollywood Hungama' credit at the bottom left overlaps and touches the '@khabarbawaal' handle text, so both are partly cut or crowded."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-01T14:51:24+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-01",
   "image": "posts/20261101-1419-reel_break_aft-2026-11-01.jpg",
   "kind": "reel",
@@ -385,97 +432,5 @@
    ]
   },
   "created_at": "2026-11-01T00:37:40+00:00"
- },
- {
-  "id": "reel_news_night-2026-10-31",
-  "image": "posts/20261031-1450-reel_news_night-2026-10-31.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261031-145052-reel_news_night-2026-10-31.mp4",
-  "headline": "Janhvi Kapoor recreates mom Sridevi’s Nagina look for Halloween, calls it one of the most iconic movie moments ever",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Janhvi Kapoor Sridevi Nagina look Halloween 👻\nJanhvi Kapoor ne Halloween par maa Sridevi ka 1986 ki film Nagina wala look recreate kiya.\nUnhone ise movie ke sabse iconic moments mein se ek bataya.\nNagina ne Sridevi ko superstardom tak pahunchaya aur unhe industry ki sabse bankable female star bana diya.\nUs dost ko bhejo jo Sridevi ka fan hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#janhvikapoor #sridevi #halloween #bollywood #reelsindia\n\n(Janhvi Kapoor, Sridevi, Nagina, Janhvi Kapoor Halloween, Sridevi Nagina look, Halloween 2026, Janhvi Kapoor Sridevi look, Boney Kapoor family)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html",
-  "pin_comment": "Ye Sridevi ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "maa ki yaad, emotional tribute"
-   },
-   {
-    "title": "Khat",
-    "artist": "Navjot Ahuja",
-    "lang": "hindi",
-    "mood": "soft, nostalgic family feeling"
-   },
-   {
-    "title": "This Is Halloween",
-    "artist": "The Citizens of Halloween",
-    "lang": "english",
-    "mood": "Halloween look = spooky vibe"
-   },
-   {
-    "title": "Thriller",
-    "artist": "Michael Jackson",
-    "lang": "english",
-    "mood": "Halloween night, spooky transformation"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says Nagina propelled her to superstardom and made her the most bankable female star; 'sabse badi' overstates.",
-    "Fact corrected to match the article: Article does not give a year; the '2026' is unsupported.",
-    "Fact corrected to match the article: Article does not say she won everyone's hearts; reworded to what the article says."
-   ],
-   "fixed": [
-    "Nagina ne Sridevi ko us daur ki sabse badi female star bana diya tha. → Nagina ne Sridevi ko superstardom tak pahunchaya aur unhe industry ki sabse bankable female star bana diya.",
-    "Janhvi Kapoor Sridevi Nagina look Halloween 2026 👻 → Janhvi Kapoor Sridevi Nagina look Halloween 👻",
-    "Janhvi ne maa Sridevi ka Nagina bankar sabka dil jeet liya → Janhvi ne maa Sridevi ka Nagina look recreate kiya"
-   ]
-  },
-  "created_at": "2026-10-31T14:50:52+00:00"
- },
- {
-  "id": "reel_break_aft-2026-10-31",
-  "image": "posts/20261031-1421-reel_break_aft-2026-10-31.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261031-142103-reel_break_aft-2026-10-31.mp4",
-  "headline": "Prakash Raj’s wife Pony Varma says actor lost films and ad deals over his political views",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Prakash Raj wife Pony Verma films ads political views 🎬\nPony Verma ke mutabiq Prakash Raj ne political views ki wajah se kai films aur ad deals kho di.\nUnhone kaha ki kuch logon ne advance dene ke baad bhi peeche kadam le liya.\nPrakash CJP protest mein bhi shamil hue the.\nPrakash Raj wali debate waale dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #prakashraj #bollywood #bollywoodnews #trending\n\n(Prakash Raj, Pony Verma, Prakash Raj wife, Prakash Raj films ads, Cockroach Janta Party, CJP protest Delhi, Gauri Lankesh, Prakash Raj Varanasi, Prakash Raj Drishyam)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/prakash-raj-s-wife-pony-varma-says-actor-lost-films-and-ad-deals-over-his-political-views-101793452104226.html",
-  "pin_comment": "Apne Prakash Raj wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "bayan ka drama, tez beat"
-   },
-   {
-    "title": "People",
-    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
-    "lang": "english",
-    "mood": "logon ki raay = debate"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "nuksaan wali udaasi"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-10-31T14:21:03+00:00"
  }
 ]

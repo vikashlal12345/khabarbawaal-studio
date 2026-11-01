@@ -231,7 +231,8 @@
   "7c3906422a97",
   "767e7884d2f2",
   "882f4a3fc3ba",
-  "37aca42f0c13"
+  "37aca42f0c13",
+  "806cfb114ac5"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -382,9 +383,9 @@
   "reel_break_am": "2026-11-01",
   "reel_break_noon": "2026-11-01",
   "reel_break_aft": "2026-11-01",
-  "reel_news_night": "2026-10-31"
+  "reel_news_night": "2026-11-01"
  },
- "inbox_since": "UgCplBMoWFGb",
+ "inbox_since": "nNqCBGUFJ3LA",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -757,7 +758,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
   "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
   "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
@@ -836,7 +836,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/priyanka-chopra-channels-king-kylie-for-halloween-nick-jonas-dresses-as-cowboy-for-trick-or-treating-with-malti-marie-as-ghost-princess-101793512399072.html",
   "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-beautiful-birthday-message-for-girlfriend-saba-azad-is-about-choosing-love-over-convenience-shares-rare-picture-of-her-with-his-sons-101793520298213.html",
   "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
-  "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html",
+  "https://www.bollywoodhungama.com/news/bollywood/himesh-reshammiya-makes-a-big-revelation-i-have-written-sung-and-composed-15-songs-in-english-they-dont-sound-wannabe-at-all-adds-theres-one-song-whic/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1053,10 +1054,6 @@
   }
  ],
  "songs_recent": [
-  "Believer",
-  "Azadi",
-  "People",
-  "Let Me Down Slowly",
   "Jo Tum Mere Ho",
   "Khat",
   "This Is Halloween",
@@ -1092,7 +1089,11 @@
   "Tera Hoke Rahoon",
   "Jaan Ban Gaye",
   "Señorita",
-  "Calm Down"
+  "Calm Down",
+  "Tabaahi (From \"Toxic\")",
+  "Ez-Ez",
+  "Disturbia",
+  "Big Dawgs"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1210,6 +1211,10 @@
   },
   {
    "title": "Nikkhil Advani has a fanboy moment with Richard Gere as he shows Pretty Woman star Shah Rukh Khan's iconic Kal Ho Naa Ho song",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Himesh Reshammiya makes a BIG revelation: “I have written, sung and composed 15 songs in English; they don’t sound WANNABE at all”; adds, “There’s one song which is ABSOLUTELY right for Rihanna”",
    "date": "2026-11-01"
   }
  ],

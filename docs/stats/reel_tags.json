@@ -268,5 +268,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_night-2026-11-01",
+  "key": "himeshreshammiyarihannasong15englishsongsalbum",
+  "kind": "reel_news_night",
+  "secs": 22.5,
+  "at": "2026-11-01T14:51:24+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 37,
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
