@@ -221,5 +221,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_pm-2026-11-01",
+  "key": "hrithikroshansabaazadbirthdaymessage",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-01T10:38:30+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 49,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]

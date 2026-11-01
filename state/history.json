@@ -428,7 +428,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-01",
-  "reel_news_pm": "2026-10-31",
+  "reel_news_pm": "2026-11-01",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-01",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-10-31",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "KoK6c6EtmuI3",
+ "inbox_since": "iifaBLcftKM3",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1261,7 +1261,11 @@
   "Blinding Lights",
   "Monster Mash",
   "Somebody's Watching Me",
-  "Tera Mera Rishta - New Version (From \"Awarapan 2\")"
+  "Tera Mera Rishta - New Version (From \"Awarapan 2\")",
+  "Samjhawan",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Die With A Smile",
+  "Girls Like You"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1452,6 +1456,10 @@
   {
    "title": "Priyanka Chopra channels King Kylie for Halloween, Nick Jonas dresses as cowboy for trick-or-treating with Malti Marie as ghost princess",
    "date": "2026-11-01"
+  },
+  {
+   "title": "Hrithik Roshan pens sweet birthday message for girlfriend Saba Azad about choosing love over convenience, shares rare picture of her with his sons",
+   "date": "2026-11-01"
   }
  ],
  "claude_limit": {
@@ -1460,12 +1468,12 @@
   "alerted": true
  },
  "pinned": {
-  "reel_news_pm": {
-   "link": "https://glamsham.com/bollywood/fashion-and-lifestyle/priyanka-chopra-king-kylie-vibes-halloween-malti-marie-nick-jonas/",
-   "title": "Priyanka Chopra gives ‘King Kylie’ vibes as she celebrates Halloween with Malti Marie and Nick Jonas",
-   "source": "Glamsham",
-   "at": "2026-11-01T08:32:27+00:00",
-   "flash": "priyanka"
+  "reel_news_aft": {
+   "link": "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
+   "title": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
+   "source": "Zoom TV",
+   "at": "2026-11-01T10:32:31+00:00",
+   "flash": "hrithik"
   }
  },
  "followed_winners": [
