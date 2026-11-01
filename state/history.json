@@ -441,11 +441,11 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-01",
   "reel_break_noon": "2026-11-01",
-  "reel_break_aft": "2026-10-31",
+  "reel_break_aft": "2026-11-01",
   "reel_news_night": "2026-10-31",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "iN1wGCbBnmRP",
+ "inbox_since": "UgCplBMoWFGb",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1266,7 +1266,10 @@
   "Pal Pal Dil Ke Paas - Title Track",
   "Die With A Smile",
   "Girls Like You",
-  "Just Give Me a Reason (feat. Nate Ruess)"
+  "Just Give Me a Reason (feat. Nate Ruess)",
+  "Jaan Ban Gaye",
+  "Señorita",
+  "Calm Down"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1464,6 +1467,10 @@
   },
   {
    "title": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Nikkhil Advani has a fanboy moment with Richard Gere as he shows Pretty Woman star Shah Rukh Khan's iconic Kal Ho Naa Ho song",
    "date": "2026-11-01"
   }
  ],
