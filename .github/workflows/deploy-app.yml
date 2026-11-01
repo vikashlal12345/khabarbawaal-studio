@@ -22,8 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/publish-pages   # owner 6 Nov 2026: a stuck publish gives up after 2 min
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
-          fallback: 'false'                       # this IS the fallback run: no loop
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
