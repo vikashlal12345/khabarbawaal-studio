@@ -2146,6 +2146,11 @@ an official, an institution or a court order (e.g. a Supreme Court order) rank l
 clearly in the story, and never when the only picture would be a building or a stranger. Still: real facts, no invented names.
 FAMILY OVER GOSSIP (owner approved 1 Nov 2026, from the week's tags: couple / family stories averaged ~3,600 views and 0.15% sends, plain gossip ~990): rank \
 stories about a star's parent, child, spouse, couple or family bond ABOVE gossip, rumours, reactions and controversies; a gossip story is low priority unless it is huge.
+EMOTIONAL FIRST (owner approved 1 Nov 2026, from 25 days of numbers: a respectful tribute got 5,593 views and 11 sends, the best of any Reel after the first Tiger Shroff story): a star's \
+real feelings about a parent, child, friend, a respectful tribute or memory (never told for shock), nostalgia, a first (first Karwa Chauth, first film with a parent) rank \
+at the TOP. SERIES RULE: this season's Koffee With Karan moments (7 Reels, avg 2,715, none stalled) and Ramayana news (20 Reels, avg 1,519) are reliable: when a fresh one \
+exists (not told in the last 12 h), rank it high. POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
+A festival story works only with a real person-story ('Aamir Khan's first Karwa Chauth' 2,557 views), not a plain greeting.
 ROUTINE POSTS RANK LOW (owner approved 1 Nov 2026: 13 of 43 Reels stalled at ~200 views, mostly greetings, official news and controversies; the ones that took off were Koffee With Karan moments, Ramayana news and emotional personal stories): \
 birthday / anniversary wishes, festival greetings, official or government announcements (space launches, new chiefs, ministry news), award lists and a star's \
 plain social-media post that every page already runs are LOW priority; take one only when it carries a real story (a confession, a reveal, a family moment, a clash with a fact) people would send to a friend.
@@ -3333,7 +3338,7 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "bad). WHO DOES WHAT: when someone accuses, criticises or quotes someone else, the hook must make clear who "
             "says it and who it is about; never put a harsh word (terrorism, gaddar, fraud, ...) next to a name that is "
             "only the accuser or that the story does not say it about (e.g. 'Mamata: CJP custody state-sponsored "
-            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). NO NICHE WORDS (30 Oct 2026: 'Eetha trailer out, Lavani queen bani' got a 3.5 s watch time): never an unexplained regional or niche word (an unknown film title, a folk-art name) in the hook unless every Indian knows it; say it with words everyone knows ('Shraddha ka naya avatar'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
+            "terrorism', never 'Mamata ne CJP netaon ke liye kaha: terrorism'). WATCH TIME (1 Nov 2026: Reels watched 7 s+ average 1,833 views, under 5 s only 380): make at least 1 of the 5 hooks a CURIOSITY GAP the Reel answers ('Varun ne Ranveer ko chuna, Ranbir ko nahi: kyun?', 'Sanjay Dutt ne Sanjay Gupta ko kya likha?'): a question or half-told fact whose answer comes later, never a lie. NO NICHE WORDS (30 Oct 2026: 'Eetha trailer out, Lavani queen bani' got a 3.5 s watch time): never an unexplained regional or niche word (an unknown film title, a folk-art name) in the hook unless every Indian knows it; say it with words everyone knows ('Shraddha ka naya avatar'). FEELING ONE-LINERS (30 Oct 2026, from how a big viral page "
             "opens): of the 5 hooks make at least 2 a short reaction line a friend would forward, with a feeling word, e.g. '<Name> ka reaction "
             "bilkul priceless', '<Name> ne sabka dil jeet liya', '<A> ko <B> se alag nahi kar sakte', 'Bro ne poora show loot liya': only for "
             "warm, funny or proud moments of the story (never for sad, serious or negative news), and still only what really happened in the "
