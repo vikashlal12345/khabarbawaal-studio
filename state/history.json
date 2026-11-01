@@ -230,7 +230,8 @@
   "90bb2cded5f1",
   "7c3906422a97",
   "767e7884d2f2",
-  "882f4a3fc3ba"
+  "882f4a3fc3ba",
+  "37aca42f0c13"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -380,10 +381,10 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-01",
   "reel_break_noon": "2026-11-01",
-  "reel_break_aft": "2026-10-31",
+  "reel_break_aft": "2026-11-01",
   "reel_news_night": "2026-10-31"
  },
- "inbox_since": "iN1wGCbBnmRP",
+ "inbox_since": "UgCplBMoWFGb",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -756,7 +757,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
   "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
@@ -835,7 +835,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/nitesh-tiwari-reveals-6-5-years-went-into-ravana-jatayu-fight-50-designs-created-for-pushpak-viman-for-ramayana-yash-ranbir-kapoor-sai-pallavi-101793509788984.html",
   "https://www.hindustantimes.com/entertainment/bollywood/priyanka-chopra-channels-king-kylie-for-halloween-nick-jonas-dresses-as-cowboy-for-trick-or-treating-with-malti-marie-as-ghost-princess-101793512399072.html",
   "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-beautiful-birthday-message-for-girlfriend-saba-azad-is-about-choosing-love-over-convenience-shares-rare-picture-of-her-with-his-sons-101793520298213.html",
-  "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272"
+  "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
+  "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1052,10 +1053,6 @@
   }
  ],
  "songs_recent": [
-  "the cure",
-  "Water",
-  "Ez-Ez",
-  "Big Dawgs",
   "Believer",
   "Azadi",
   "People",
@@ -1091,7 +1088,11 @@
   "Zaalima",
   "Gehra Hua",
   "Sweater Weather",
-  "Just Give Me a Reason (feat. Nate Ruess)"
+  "Just Give Me a Reason (feat. Nate Ruess)",
+  "Tera Hoke Rahoon",
+  "Jaan Ban Gaye",
+  "Señorita",
+  "Calm Down"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1205,6 +1206,10 @@
   },
   {
    "title": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
+   "date": "2026-11-01"
+  },
+  {
+   "title": "Nikkhil Advani has a fanboy moment with Richard Gere as he shows Pretty Woman star Shah Rukh Khan's iconic Kal Ho Naa Ho song",
    "date": "2026-11-01"
   }
  ],

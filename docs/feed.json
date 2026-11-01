@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_aft-2026-11-01",
+  "image": "posts/20261101-1419-reel_break_aft-2026-11-01.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261101-141945-reel_break_aft-2026-11-01.mp4",
+  "headline": "Nikkhil Advani has a fanboy moment with Richard Gere as he shows Pretty Woman star Shah Rukh Khan's iconic Kal Ho Naa Ho song",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Nikkhil Advani Richard Gere Shah Rukh Khan Kal Ho Naa Ho Pretty Woman\nNikkhil Advani Dharamshala International Film Festival mein Richard Gere se mile.\nUnhe Kal Ho Naa Ho ka Pretty Woman gaana dikhaya, SRK ke dance wala.\nInstagram par likha: \"Huge huge fan boy moment\" aur \"wait for his reaction\".\nApne Shah Rukh fan dost ko abhi bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #ShahRukhKhan #KalHoNaaHo #RichardGere #Bollywood\n\n(Nikkhil Advani, Richard Gere, Shah Rukh Khan, Kal Ho Naa Ho, Pretty Woman, Dharamshala International Film Festival, Preity Zinta, Kal Ho Naa Ho Pretty Woman song)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html",
+  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "romantic SRK-style feel"
+   },
+   {
+    "title": "Jaan Ban Gaye",
+    "artist": "Mithoon, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "soft filmy nostalgia vibe"
+   },
+   {
+    "title": "Señorita",
+    "artist": "Shawn Mendes, Camila Cabello",
+    "lang": "english",
+    "mood": "Hollywood romance meets Bollywood"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "feel-good fanboy moment"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-01T14:19:45+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-01",
   "image": "posts/20261101-1234-reel_news_aft-2026-11-01.jpg",
   "kind": "reel",
@@ -432,54 +477,5 @@
    "fixed": []
   },
   "created_at": "2026-10-31T14:21:03+00:00"
- },
- {
-  "id": "reel_news_aft-2026-10-31",
-  "image": "posts/20261031-1236-reel_news_aft-2026-10-31.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261031-123643-reel_news_aft-2026-10-31.mp4",
-  "headline": "Diljit Dosanjh addresses Satluj controversy at Delhi concert; says “Don't teach Punjabis how to fight”",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Diljit Dosanjh Satluj controversy Delhi concert 🔥\nAura India Tour 2026 ke pehle din Delhi mein Diljit ne apni film Satluj par uthe vivaad par seedha bola.\nUnka kehna: \"Don't teach Punjabis how to fight\".\nDiljit sahi? HAAN ya NA likho 👇\n\nVideo: @GI_Bharat on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#diljitdosanjh #bollywoodnews #auratour #viral #reelsindia\n\n(Diljit Dosanjh, Satluj controversy, Aura India Tour 2026, Diljit Dosanjh Delhi concert, Diljit Dosanjh Satluj, Don't teach Punjabis how to fight, Diljit Dosanjh latest news)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/",
-  "pin_comment": "Apne Diljit fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Water",
-    "artist": "Diljit Dosanjh, Mixsingh",
-    "lang": "hindi",
-    "mood": "Diljit ka apna gaana, concert vibe"
-   },
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "swagger reply, hype beat"
-   },
-   {
-    "title": "Big Dawgs",
-    "artist": "Hanumankind, Kalmi",
-    "lang": "english",
-    "mood": "bold clap-back energy"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "fighting back, powerful hook"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 5: The photo credit 'Photo: Bollywood Hungama' at the bottom left runs into the '@khabarbawaal' handle. The two texts overlap and are hard to read."
-   ],
-   "fixed": [
-    "#aurateour → #auratour"
-   ]
-  },
-  "created_at": "2026-10-31T12:36:43+00:00"
  }
 ]
