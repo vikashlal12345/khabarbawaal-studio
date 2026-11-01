@@ -2151,6 +2151,8 @@ real feelings about a parent, child, friend, a respectful tribute or memory (nev
 at the TOP. SERIES RULE: this season's Koffee With Karan moments (7 Reels, avg 2,715, none stalled) and Ramayana news (20 Reels, avg 1,519) are reliable: when a fresh one \
 exists (not told in the last 12 h), rank it high. POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
 A festival story works only with a real person-story ('Aamir Khan's first Karwa Chauth' 2,557 views), not a plain greeting.
+HOT STORIES (owner 1 Nov 2026: 'check the story at creation time only, so we always have the latest trending one'): a story marked 🔥HOT is what many sites run \
+RIGHT NOW or a new development on one of our own hits: prefer it, but only when it carries a personal / emotional angle; skip a HOT story that is a greeting, a promo or a controversy.
 ROUTINE POSTS RANK LOW (owner approved 1 Nov 2026: 13 of 43 Reels stalled at ~200 views, mostly greetings, official news and controversies; the ones that took off were Koffee With Karan moments, Ramayana news and emotional personal stories): \
 birthday / anniversary wishes, festival greetings, official or government announcements (space launches, new chiefs, ministry news), award lists and a star's \
 plain social-media post that every page already runs are LOW priority; take one only when it carries a real story (a confession, a reveal, a family moment, a clash with a fact) people would send to a friend.
@@ -2228,6 +2230,21 @@ def bollywood_first(stories: list) -> list:
     return b if len(b) >= 3 else stories
 
 
+def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
+    """🔥 The stories that are hot at THIS moment (flash.hot_now: many sites right now, or a new development on our own hit) go first in the picker's
+    list, marked HOT, after the same filters as every story (already used, avoided, told in the last 12 h)."""
+    try:
+        import flash
+        hot = [h for h in flash.hot_now(state, raw) if h["link"] not in used and h["link"] not in AVOID and not covered_before(h["title"])]
+    except Exception as e:
+        print(f"  ! hot stories skipped: {str(e)[:80]}")
+        return stories
+    if hot:
+        print(f"  🔥 hot right now: " + " | ".join(h["title"][:60] for h in hot))
+    links = {h["link"] for h in hot}
+    return hot + [x for x in stories if x["link"] not in links]
+
+
 def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> None:
     """🎬 The most viral, visual story of the last hours (the news feeds' lookback_hours) as a photo slideshow
     (owner, 13 Oct 2026: all posts are Reels now; it used to pick from the day's news carousels).
@@ -2248,19 +2265,22 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         intro = f"Today's planned preview: {event['topic']}. {event['brief']}\nPick the stories that preview it best.\n\n"
     else:
         status.step("Picking the most viral, visual story", 2)
-        stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)])[:40]
+        raw = g.fetch_candidates(set(state.get("seen", [])))
+        stories = bollywood_first([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)])[:40]
         if kind == "reel_news_night":   # the 8:15 PM slot (owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
             import emergency
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
             if len(only) >= 2:
                 stories = only
+        if not REMAKE.get("link"):
+            stories = add_hot(stories, raw, state, used)
         intro = ""
         if REMAKE.get("link"):   # 🔄 remake: the same story again
             stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                         "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
@@ -2453,13 +2473,16 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     import status
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
-    stories = bollywood_first([i for i in g.fetch_candidates(set(state.get("seen", []))) if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])])[:45]
+    raw = g.fetch_candidates(set(state.get("seen", [])))
+    stories = bollywood_first([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])])[:45]
+    if not REMAKE.get("link"):
+        stories = add_hot(stories, raw, state, used)
     if REMAKE.get("link"):   # 🔄 remake: the same story again
         stories = [{"id": "", "title": REMAKE["title"], "link": REMAKE["link"], "source": REMAKE.get("source", ""),
                     "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs(state)
