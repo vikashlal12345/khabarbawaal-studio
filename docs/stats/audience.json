@@ -1,8 +1,8 @@
 {
- "summary": "From our last 44 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), POLITICS (2); weakest REEL   CHOOSE YOUR (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 2, calendar 2, custom 2, ready 2. Lean toward what works, keep some variety.",
- "posts": 44,
- "likes": 90,
- "updated": "2026-11-01T22:32:22+00:00",
+ "summary": "From our last 38 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), POLITICS (2); weakest REEL   CHOOSE YOUR (0), REEL  WORLD (0). Formats: reel 2, custom 2, calendar 2, ready 1. Lean toward what works, keep some variety.",
+ "posts": 38,
+ "likes": 76,
+ "updated": "2026-11-02T22:50:18+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -10,7 +10,7 @@
   ],
   [
    "REEL  BOLLYWOOD",
-   4.142857142857143
+   4.5
   ],
   [
    "POLITICS",
@@ -18,7 +18,7 @@
   ],
   [
    "REEL  MEME",
-   2.25
+   2.3333333333333335
   ],
   [
    "REEL   SHUBH NAVRATRI",
@@ -29,23 +29,15 @@
    2.0
   ],
   [
-   "BHAGWAN KA SAATH",
-   2.0
-  ],
-  [
-   "GITA GYAAN",
-   1.6666666666666667
-  ],
-  [
    "REEL  REALITY CHECK",
-   1.6666666666666667
+   1.5
   ],
   [
-   "REEL  TAG THAT FRIEND",
-   1.125
+   "BHAGWAN KA SAATH",
+   1.5
   ],
   [
-   "REEL  RAAT KI TOP 5",
+   "REEL  INDIA",
    1.0
   ],
   [
@@ -53,7 +45,11 @@
    1.0
   ],
   [
-   "REEL  INDIA",
+   "GITA GYAAN",
+   1.0
+  ],
+  [
+   "REEL  RAAT KI TOP 5",
    1.0
   ],
   [
@@ -61,7 +57,11 @@
    1.0
   ],
   [
-   "REEL  WORLD",
+   "REEL  TAG THAT FRIEND",
+   1.0
+  ],
+  [
+   "REEL  BACHPAN ME AISA KAUN KIYA",
    0.0
   ],
   [
@@ -69,26 +69,26 @@
    0.0
   ],
   [
-   "REEL  BACHPAN ME AISA KAUN KIYA",
+   "REEL  WORLD",
    0.0
   ]
  ],
  "kinds": [
   [
    "reel",
-   2.1515151515151514
-  ],
-  [
-   "calendar",
-   2.0
+   2.1724137931034484
   ],
   [
    "custom",
    2.0
   ],
   [
+   "calendar",
+   2.0
+  ],
+  [
    "ready",
-   1.8333333333333333
+   1.25
   ]
  ]
 }
