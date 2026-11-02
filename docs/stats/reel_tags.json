@@ -315,5 +315,13 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_devotion-2026-11-02",
+  "key": "shivjineelkanthkyunkahlaye",
+  "kind": "reel_devotion",
+  "secs": 31.6,
+  "at": "2026-11-02T00:35:05+00:00",
+  "type": "devotional"
  }
 ]
