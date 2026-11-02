@@ -401,5 +401,21 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-02",
+  "key": "kareenakapoorkoffeewithkaranendingreaction",
+  "kind": "reel_news_aft",
+  "secs": 17.0,
+  "at": "2026-11-02T12:35:40+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "name_person",
+  "cover": "window",
+  "sharp": 31,
+  "hook": "name_first",
+  "photos": 2,
+  "short": false
  }
 ]
