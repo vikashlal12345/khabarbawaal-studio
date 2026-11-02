@@ -434,7 +434,7 @@
   "reel_news_am": "2026-11-02",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-01",
+  "reel_news_aft": "2026-11-02",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-02",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "dJA8cXQiFUeo",
+ "inbox_since": "5nzRzkrwn68D",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1286,7 +1286,9 @@
   "Levitating",
   "Rula Ke Gaya Ishq",
   "Jaan ‘Nisaar (Arijit)",
-  "Espresso"
+  "Espresso",
+  "Kabhi Shaam Dhale",
+  "Housewife"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1520,6 +1522,10 @@
   },
   {
    "title": "AR Rahman calls composing Ramayana music an honour, jokes about not everybody liking his work",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Kareena Kapoor expresses happiness over ‘Koffee with Karan’ coming to an end",
    "date": "2026-11-02"
   }
  ],
