@@ -236,7 +236,8 @@
   "8698000c71f6",
   "6b8cff0d9b90",
   "bf0910c1f515",
-  "a2c65cbc93fb"
+  "a2c65cbc93fb",
+  "8712108b76e0"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -386,11 +387,11 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-02",
   "reel_break_noon": "2026-11-02",
-  "reel_break_aft": "2026-11-01",
+  "reel_break_aft": "2026-11-02",
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "5nzRzkrwn68D",
+ "inbox_since": "wSnac0zyT9Yi",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -763,7 +764,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
@@ -842,7 +842,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/amitabh-bachchan-pays-emotional-tribute-to-sanjay-gupta-companions-from-the-world-of-art-are-being-snatched-away/articleshow/135446780.cms",
   "https://www.bollywoodhungama.com/news/bollywood/bigg-boss-20-panchayat-fame-aasif-khan-eliminated-from-salman-khan-hosted-show/",
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-calls-composing-ramayana-music-an-honour-jokes-about-not-everybody-liking-his-work-wonderment-tour-hans-zimmer-ranbir-kapoor-yash-101793612628243.html",
-  "https://ianslive.in/kareena-kapoor-expresses-happiness-over-koffee-with-karan-coming-to-an-end--20261102175108"
+  "https://ianslive.in/kareena-kapoor-expresses-happiness-over-koffee-with-karan-coming-to-an-end--20261102175108",
+  "https://www.bollywoodhungama.com/news/bollywood/ajay-devgn-faces-new-legal-challenge-over-vimal-elaichi-notice-as-maharashtra-fda-asserts-proceedings-will-continue/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1059,10 +1060,6 @@
   }
  ],
  "songs_recent": [
-  "Tabaahi (From \"Toxic\")",
-  "Ez-Ez",
-  "Disturbia",
-  "Big Dawgs",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Humnava Mere",
   "Ordinary",
@@ -1098,7 +1095,11 @@
   "Kabhi Shaam Dhale",
   "Sahiba",
   "Housewife",
-  "Girls Like You"
+  "Girls Like You",
+  "Barsaat",
+  "Gehra Hua",
+  "Favorite",
+  "Go Down Deh (feat. Sean Paul & Shaggy)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1220,6 +1221,10 @@
   },
   {
    "title": "Kareena Kapoor expresses happiness over ‘Koffee with Karan’ coming to an end",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Ajay Devgn faces new legal challenge over Vimal Elaichi notice as Maharashtra FDA asserts proceedings will continue",
    "date": "2026-11-02"
   }
  ],
