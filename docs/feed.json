@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_night-2026-11-02",
+  "image": "posts/20261102-1450-reel_news_night-2026-11-02.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261102-145034-reel_news_night-2026-11-02.mp4",
+  "headline": "Amitabh Bachchan recalls Jaya Bachchan’s cute nickname for him, but says his father eventually put a stop to it",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Amitabh Bachchan Jaya Bachchan nickname KBC Ranbir Alia 🥹\nKaun Banega Crorepati par Amitabh ne Jaya ka pyaar bhara nickname yaad kiya.\nRanbir ne kaha wo Amitabh jaise lambe hona chahte the, Alia ko Jaya jaisi chhoti imagine kiya.\nAmitabh ke mutabik unke father ne ye nickname eventually band karwa diya.\nUs dost ko bhejo jiska ghar mein cute nickname hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#amitabhbachchan #jayabachchan #kbc #bollywood #reelsindia\n\n(Amitabh Bachchan Jaya Bachchan nickname, Kaun Banega Crorepati, KBC Ranbir Kapoor Alia Bhatt, Amitabh Bachchan KBC, Jaya Bachchan, Ranbir Kapoor Alia Bhatt KBC, Bachchan family, Bollywood news)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-recalls-jaya-bachchan-s-cute-nickname-for-him-but-says-his-father-eventually-put-a-stop-to-it-101793626597966.html",
+  "pin_comment": "Apne Amitabh Bachchan fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "retro love, Amitabh-Jaya vibe"
+   },
+   {
+    "title": "Tere Liye",
+    "artist": "Atif Aslam, Shreya Ghoshal, Sachin Gupta, Sameer Anjaan",
+    "lang": "hindi",
+    "mood": "sweet couple nostalgia"
+   },
+   {
+    "title": "STAY",
+    "artist": "Justin Bieber, The Kid Laroi",
+    "lang": "english",
+    "mood": "warm togetherness"
+   },
+   {
+    "title": "I Think They Call This Love (Cover)",
+    "artist": "Matthew Ifield",
+    "lang": "english",
+    "mood": "cute nickname, soft love"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo credit 'Photo: Bollywood Hungama' at the bottom left overlaps and touches the '@khabarbawaal' handle text. The two texts collide."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-02T14:50:34+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-02",
   "image": "posts/20261102-1419-reel_break_aft-2026-11-02.jpg",
   "kind": "reel",
@@ -430,50 +477,5 @@
    "fixed": []
   },
   "created_at": "2026-11-01T14:51:24+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-01",
-  "image": "posts/20261101-1419-reel_break_aft-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-141945-reel_break_aft-2026-11-01.mp4",
-  "headline": "Nikkhil Advani has a fanboy moment with Richard Gere as he shows Pretty Woman star Shah Rukh Khan's iconic Kal Ho Naa Ho song",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Nikkhil Advani Richard Gere Shah Rukh Khan Kal Ho Naa Ho Pretty Woman\nNikkhil Advani Dharamshala International Film Festival mein Richard Gere se mile.\nUnhe Kal Ho Naa Ho ka Pretty Woman gaana dikhaya, SRK ke dance wala.\nInstagram par likha: \"Huge huge fan boy moment\" aur \"wait for his reaction\".\nApne Shah Rukh fan dost ko abhi bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #ShahRukhKhan #KalHoNaaHo #RichardGere #Bollywood\n\n(Nikkhil Advani, Richard Gere, Shah Rukh Khan, Kal Ho Naa Ho, Pretty Woman, Dharamshala International Film Festival, Preity Zinta, Kal Ho Naa Ho Pretty Woman song)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/nikkhil-advani-has-a-fanboy-moment-with-richard-gere-as-he-shows-pretty-woman-star-shah-rukh-khan-iconic-kal-ho-naa-ho-song-101793526828752.html",
-  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "romantic SRK-style feel"
-   },
-   {
-    "title": "Jaan Ban Gaye",
-    "artist": "Mithoon, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "soft filmy nostalgia vibe"
-   },
-   {
-    "title": "Señorita",
-    "artist": "Shawn Mendes, Camila Cabello",
-    "lang": "english",
-    "mood": "Hollywood romance meets Bollywood"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "feel-good fanboy moment"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-01T14:19:45+00:00"
  }
 ]
