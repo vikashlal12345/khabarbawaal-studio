@@ -369,7 +369,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-11-01",
+  "reel_devotion": "2026-11-02",
   "reel_news_pm": "2026-11-01",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -1056,10 +1056,6 @@
   }
  ],
  "songs_recent": [
-  "Sahiba",
-  "Pehle Bhi Main",
-  "Iris",
-  "Heat Waves",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "One Name",
   "Believer",
@@ -1095,7 +1091,11 @@
   "Maan Meri Jaan",
   "Jo Tum Mere Ho",
   "Superstition",
-  "Unforgettable"
+  "Unforgettable",
+  "Karpur Gauram Karunavtaram",
+  "Om Jai Shiv Omkara",
+  "Om Namah Shivaya Har Har By Anuradha Paudwal",
+  "Om Namah Shivaya"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
