@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_noon-2026-11-02",
+  "image": "posts/20261102-0835-reel_break_noon-2026-11-02.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261102-083517-reel_break_noon-2026-11-02.mp4",
+  "headline": "Bigg Boss 20: Panchayat fame Aasif Khan eliminated from Salman Khan-hosted show",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Aasif Khan Bigg Boss 20 eviction Salman Khan Panchayat\nPanchayat fame Aasif Khan Bigg Boss 20 se evict ho gaye.\nWeekend Ka Vaar mein Salman ne unhe \"epitome of badtameezi\" kaha tha.\nJaate waqt unhone apna last 'BB News' bulletin pesh kiya.\nAasif ka eviction sahi tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #biggboss20 #salmankhan #aasifkhan #panchayat\n\n(Aasif Khan, Bigg Boss 20, Salman Khan, Panchayat, Aasif Khan eviction, BB News, Qazi Touqeer, Weekend Ka Vaar)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/bigg-boss-20-panchayat-fame-aasif-khan-eliminated-from-salman-khan-hosted-show/",
+  "pin_comment": "Apne Bigg Boss fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "house game, hype exit"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "eviction ka dard"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "spotlight fades, show moves on"
+   },
+   {
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "lang": "english",
+    "mood": "drama, top global chart"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-02T08:35:17+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-02",
   "image": "posts/20261102-0636-reel_news_am-2026-11-02.jpg",
   "kind": "reel",
@@ -381,50 +426,5 @@
    ]
   },
   "created_at": "2026-11-01T10:38:30+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-01",
-  "image": "posts/20261101-0834-reel_break_noon-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-083445-reel_break_noon-2026-11-01.mp4",
-  "headline": "Priyanka Chopra channels King Kylie for Halloween, Nick Jonas dresses as cowboy for trick-or-treating with Malti Marie as ghost princess",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Priyanka Chopra Nick Jonas Malti Marie Diwaloween Halloween 🎃\nPriyanka ne Kylie Jenner ka King Kylie look liya, Nick cowboy bane\nMalti ghost princess bani, family ke saath trick-or-treating ki\nPriyanka ne likha: 'Diwaloween season is here' ✨\nUs dost ko bhejo jo Priyanka fan hai 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#priyankachopra #nickjonas #diwaloween #bollywood #reelsindia\n\n(Priyanka Chopra, Nick Jonas, Malti Marie, Diwaloween, Priyanka Chopra Halloween 2026, King Kylie look, Priyanka Chopra Varanasi, Halloween 2026)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/priyanka-chopra-channels-king-kylie-for-halloween-nick-jonas-dresses-as-cowboy-for-trick-or-treating-with-malti-marie-as-ghost-princess-101793512399072.html",
-  "pin_comment": "Apne Priyanka fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Monster Mash",
-    "artist": "Bobby \"Boris\" Pickett",
-    "lang": "english",
-    "mood": "Halloween fun = family costumes"
-   },
-   {
-    "title": "Somebody's Watching Me",
-    "artist": "Rockwell",
-    "lang": "english",
-    "mood": "spooky Halloween vibe"
-   },
-   {
-    "title": "Tera Mera Rishta - New Version (From \"Awarapan 2\")",
-    "artist": "Mithoon, Pritam",
-    "lang": "hindi",
-    "mood": "family bond, warm feel"
-   },
-   {
-    "title": "Akhiyaan Gulaab",
-    "artist": "Mitraz",
-    "lang": "hindi",
-    "mood": "sweet couple moment"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-01T08:34:46+00:00"
  }
 ]
