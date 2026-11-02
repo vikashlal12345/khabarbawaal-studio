@@ -440,12 +440,12 @@
   "reel_news_early": "2026-11-02",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-02",
-  "reel_break_noon": "2026-11-01",
+  "reel_break_noon": "2026-11-02",
   "reel_break_aft": "2026-11-01",
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "2HoTd16FDpTi",
+ "inbox_since": "GCQ2XVpQl656",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1510,6 +1510,10 @@
   },
   {
    "title": "Amitabh Bachchan pays emotional tribute to Sanjay Gupta: ‘Companions from the world of art are being snatched away’",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Bigg Boss 20: Panchayat fame Aasif Khan eliminated from Salman Khan-hosted show",
    "date": "2026-11-02"
   }
  ],
