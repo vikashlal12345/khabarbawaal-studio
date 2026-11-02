@@ -354,5 +354,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-11-02",
+  "key": "amitabhbachchansanjayguptatributebigbkaemotionalmessage",
+  "kind": "reel_news_am",
+  "secs": 22.5,
+  "at": "2026-11-02T06:36:47+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "portrait",
+  "sharp": 32,
+  "hook": "question",
+  "photos": 3,
+  "short": false
  }
 ]
