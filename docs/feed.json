@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_pm-2026-11-02",
+  "image": "posts/20261102-1036-reel_news_pm-2026-11-02.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261102-103624-reel_news_pm-2026-11-02.mp4",
+  "headline": "AR Rahman calls composing Ramayana music an honour, jokes about not everybody liking his work",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "AR Rahman Ramayana music honour 🙏 AR Rahman ne kaha ki Ramayana ka music compose karna unke liye ek honour hai.\nUnhone criticism par tanz karte hue kaha ki log kehte hain, agar sabko aapka kaam pasand aa raha hai, to wo jagah chhod do.\nRanbir Kapoor aur Yash ki Ramayana ka music ab sabki nazar mein hai.\nUs dost ko bhejo jo Rahman ka diwana hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#arrahman #ramayana #bollywood #ranbirkapoor #reelsindia\n\n(AR Rahman Ramayana, AR Rahman Ramayana music, Ramayana Ranbir Kapoor Yash, AR Rahman honour, Ramayana movie music, AR Rahman interview, Hindustan Times AR Rahman)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-calls-composing-ramayana-music-an-honour-jokes-about-not-everybody-liking-his-work-wonderment-tour-hans-zimmer-ranbir-kapoor-yash-101793612628243.html",
+  "pin_comment": "Apne AR Rahman fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jaan ‘Nisaar (Arijit)",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "soulful, music maestro vibe"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "epic, grand film feel"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Bruno Mars, Lady Gaga",
+    "lang": "english",
+    "mood": "warm, emotional honour moment"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "light, playful joke about critics"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article never says Rahman is an Oscar winner, so that claim isn't supported.",
+    "Fact corrected to match the article: Article quotes Rahman saying 'if everybody likes your work, get out from that place' as a jibe at criticism; caption misstated it.",
+    "Fact corrected to match the article: Article speaks of mixed responses and criticism, not trolling."
+   ],
+   "fixed": [
+    "Oscar winner ne kaha → AR Rahman ne kaha",
+    "Unhone mazaak mein ye bhi kaha ki har kisi ko unka kaam pasand nahi aata. → Unhone criticism par tanz karte hue kaha ki log kehte hain, agar sabko aapka kaam pasand aa raha hai, to wo jagah chhod do.",
+    "Ramayana ke music par trolling, Rahman ne kya bola? → Ramayana ke music par criticism, Rahman ne kya bola?"
+   ]
+  },
+  "created_at": "2026-11-02T10:36:24+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-02",
   "image": "posts/20261102-0835-reel_break_noon-2026-11-02.jpg",
   "kind": "reel",

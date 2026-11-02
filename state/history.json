@@ -373,7 +373,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-02",
-  "reel_news_pm": "2026-11-01",
+  "reel_news_pm": "2026-11-02",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-02",
@@ -390,7 +390,7 @@
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "GCQ2XVpQl656",
+ "inbox_since": "dJA8cXQiFUeo",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -763,7 +763,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
   "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
@@ -842,7 +841,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/yash-says-viewers-will-be-able-to-relate-with-both-rama-and-ravana-in-ramayana-calls-it-the-right-time-to-showcase-indian-film-to-the-world-101793533562454.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-thanks-fans-with-handwritten-note-for-birthday-greetings-mannat-gets-grand-makeover-with-king-visuals-srk-101793586142933.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/amitabh-bachchan-pays-emotional-tribute-to-sanjay-gupta-companions-from-the-world-of-art-are-being-snatched-away/articleshow/135446780.cms",
-  "https://www.bollywoodhungama.com/news/bollywood/bigg-boss-20-panchayat-fame-aasif-khan-eliminated-from-salman-khan-hosted-show/"
+  "https://www.bollywoodhungama.com/news/bollywood/bigg-boss-20-panchayat-fame-aasif-khan-eliminated-from-salman-khan-hosted-show/",
+  "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-calls-composing-ramayana-music-an-honour-jokes-about-not-everybody-liking-his-work-wonderment-tour-hans-zimmer-ranbir-kapoor-yash-101793612628243.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1059,10 +1059,6 @@
   }
  ],
  "songs_recent": [
-  "Zaalima",
-  "Gehra Hua",
-  "Sweater Weather",
-  "Just Give Me a Reason (feat. Nate Ruess)",
   "Tera Hoke Rahoon",
   "Jaan Ban Gaye",
   "Señorita",
@@ -1098,7 +1094,11 @@
   "Ez-Ez",
   "Rula Ke Gaya Ishq",
   "Blinding Lights",
-  "Thriller"
+  "Thriller",
+  "Jaan ‘Nisaar (Arijit)",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Die With A Smile",
+  "Espresso"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1212,6 +1212,10 @@
   },
   {
    "title": "Bigg Boss 20: Panchayat fame Aasif Khan eliminated from Salman Khan-hosted show",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "AR Rahman calls composing Ramayana music an honour, jokes about not everybody liking his work",
    "date": "2026-11-02"
   }
  ],
