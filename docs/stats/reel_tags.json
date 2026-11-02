@@ -323,5 +323,21 @@
   "secs": 31.6,
   "at": "2026-11-02T00:35:05+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-02",
+  "key": "yashramayanaravanaroleramaravanarelate",
+  "kind": "reel_news_early",
+  "secs": 14.0,
+  "at": "2026-11-02T02:34:00+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 7,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 69,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
