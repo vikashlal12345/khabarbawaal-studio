@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-11-02",
+  "image": "posts/20261102-0435-reel_break_am-2026-11-02.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261102-043525-reel_break_am-2026-11-02.mp4",
+  "headline": "Shah Rukh Khan thanks fans with handwritten note for birthday greetings, Mannat gets grand makeover with King visuals",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Shah Rukh Khan birthday Mannat handwritten note fans King 💛\nSRK 61 ke hue, par is saal Mannat ki balcony par nahi aaye.\nFans ke liye billboard par handwritten note: \"Thank you all for your wishes and love.\"\nMannat par King ke visuals bhi dikhe.\nApne SRK fan dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #srk #mannat #king #reelsindia\n\n(Shah Rukh Khan, SRK birthday, Mannat, SRK 61st birthday, King movie, Shah Rukh Khan handwritten note, SRK fans Mannat, Suhana Khan King)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-thanks-fans-with-handwritten-note-for-birthday-greetings-mannat-gets-grand-makeover-with-king-visuals-srk-101793586142933.html",
+  "pin_comment": "Apne SRK fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "fans ka pyaar, emotional shukriya"
+   },
+   {
+    "title": "Sang Rahiyo",
+    "artist": "Jasleen Royal, Ranveer Allahbadia",
+    "lang": "hindi",
+    "mood": "saath rehne wala warm vibe"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "dreamy birthday feeling"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "celebration, upbeat birthday mood"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-02T04:35:25+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-02",
   "image": "posts/20261102-0234-reel_news_early-2026-11-02.jpg",
   "kind": "reel",
@@ -423,59 +468,5 @@
    "fixed": []
   },
   "created_at": "2026-11-01T04:36:42+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-01",
-  "image": "posts/20261101-0326-reel_news_early-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-032627-reel_news_early-2026-11-01.mp4",
-  "headline": "Manushi Chhillar: Not every project has to be the dream job, sometimes it just has to get you closer to it",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Manushi Chhillar career advice HT City Showstoppers 🎬\nManushi ne HT City se apne film career ke baare mein khul ke baat ki.\nUnka kehna hai ki har project dream job nahi hota, kabhi wo bas aapko dream ke kareeb le jaata hai.\nWo apne instincts par chalna seekh rahi hain, perfect role ka wait nahi kar rahi.\nUs dost ko bhejo jo perfect mauke ka wait kar raha hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#manushichhillar #bollywood #bollywoodnews #motivation #reelsindia\n\n(Manushi Chhillar, Manushi Chhillar interview, HT City Showstoppers, Manushi Chhillar career, Manushi Chhillar film, Bollywood actress advice, Manushi Chhillar latest news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/htcity/htcity-showstoppers/manushi-chhillar-not-every-project-has-to-be-the-dream-job-sometimes-it-just-has-to-get-you-closer-to-it-101793474664676.html",
-  "pin_comment": "Apne us dost ko bhejo jo perfect role ka wait kar raha hai 👇",
-  "songs": [
-   {
-    "title": "Sahiba",
-    "artist": "Aditya Rikhari",
-    "lang": "hindi",
-    "mood": "dream chasing, calm hopeful vibe"
-   },
-   {
-    "title": "Pehle Bhi Main",
-    "artist": "Vishal Mishra, Raj Shekhar",
-    "lang": "hindi",
-    "mood": "soft, reflective career journey"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "emotional, heartfelt reflection"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "dreamy, chill glam vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article does not mention a Showstoppers shoot; it is an interview with HT City.",
-    "Fact corrected to match the article: Direct quote was not said in the article; the article only paraphrases her approach to fashion.",
-    "Fact corrected to match the article: Hindi rendering is a paraphrase of her English quote, not her exact words, so shouldn't be in quote marks."
-   ],
-   "fixed": [
-    "Miss World 20 saal mein jeetne ke baad → Miss World 20 saal ki umar mein jeetne ke baad",
-    "Manushi ne HT City Showstoppers shoot par apne film career ke baare mein khul ke baat ki. → Manushi ne HT City se apne film career ke baare mein khul ke baat ki.",
-    "Fashion par bolin: \"Aisa look jo mujhe pasand ho.\" → Fashion par bolin ki wo aisa look chunti hain jo unhe sach mein pasand ho.",
-    "Manushi kehti hain: \"Jo dil se chuna, usne hamesha zyada khushi di.\" Gut par bharosa. → Manushi kehti hain ki jo unhone dil se chuna, usne hamesha zyada khushi di. Gut par bharosa."
-   ]
-  },
-  "created_at": "2026-11-01T03:26:27+00:00"
  }
 ]
