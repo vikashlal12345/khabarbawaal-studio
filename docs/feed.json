@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_aft-2026-11-02",
+  "image": "posts/20261102-1235-reel_news_aft-2026-11-02.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261102-123540-reel_news_aft-2026-11-02.mp4",
+  "headline": "Kareena Kapoor expresses happiness over ‘Koffee with Karan’ coming to an end",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kareena Kapoor Koffee With Karan ending reaction 🔥\nKareena Kapoor ne Koffee with Karan ke khatam hone par apni khushi jaahir ki.\nPromo mein Karan Johar ne bataya ki ye show ka last season hai.\nKareena ne kaha ki ab unhe baar baar Koffee With Karan pe nahi aana padega.\nFavourite Koffee With Karan moment? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Ianslive (link pinned in comments 👇)\n\n#kareenakapoor #koffeewithkaran #bollywood #bollywoodnews #reelsindia\n\n(Kareena Kapoor, Koffee With Karan, Koffee With Karan season ending, Kareena Kapoor Khan reaction, Karan Johar, Bollywood news, Kareena Kapoor Koffee With Karan 2026)",
+  "source": "Ianslive",
+  "source_url": "https://ianslive.in/kareena-kapoor-expresses-happiness-over-koffee-with-karan-coming-to-an-end--20261102175108",
+  "pin_comment": "Apne Kareena fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Kabhi Shaam Dhale",
+    "artist": "Jaani, Mohammad Faiz",
+    "lang": "hindi",
+    "mood": "season end, thoda nostalgic"
+   },
+   {
+    "title": "Sahiba",
+    "artist": "Aditya Rikhari",
+    "lang": "hindi",
+    "mood": "soft, warm farewell vibe"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "chart-hit, glam star energy"
+   },
+   {
+    "title": "Girls Like You",
+    "artist": "Maroon 5",
+    "lang": "english",
+    "mood": "Kareena fan-girl vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Claim about fans watching every episode is not in the article; replaced with what the article says.",
+    "Fact corrected to match the article: Claim that the reaction is trending everywhere is not supported by the article."
+   ],
+   "fixed": [
+    "Season ke last tak fans ne har episode pe dhyaan rakha. → Promo mein Karan Johar ne bataya ki ye show ka last season hai.",
+    "Kareena ka ye reaction ab sab jagah chal raha hai. → Kareena ne kaha ki ab unhe baar baar Koffee With Karan pe nahi aana padega."
+   ]
+  },
+  "created_at": "2026-11-02T12:35:40+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-02",
   "image": "posts/20261102-1036-reel_news_pm-2026-11-02.jpg",
   "kind": "reel",
@@ -379,105 +430,5 @@
    "fixed": []
   },
   "created_at": "2026-11-01T14:19:45+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-01",
-  "image": "posts/20261101-1234-reel_news_aft-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-123449-reel_news_aft-2026-11-01.mp4",
-  "headline": "Hrithik Roshan Shares Heartfelt Birthday Tribute To Saba Azad",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Hrithik Roshan Saba Azad birthday post 💕\nHrithik ne Saba Azad ke birthday par sweet message likha, jisme convenience ke bajay pyaar chunne ki baat hai.\nSaath mein unhone apni kuch personal photos bhi share ki.\nUs dost ko bhejo jo aisa partner chahta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Zoom TV (link pinned in comments 👇)\n\n#hrithikroshan #sabaazad #bollywood #bollywoodnews #reelsindia\n\n(Hrithik Roshan, Saba Azad, Hrithik Roshan Saba Azad birthday, Saba Azad birthday, Hrithik Roshan girlfriend, Hrithik Roshan sons, Hrithik Saba love story, Bollywood couple)",
-  "source": "Zoom TV",
-  "source_url": "https://www.zoomtventertainment.com/bollywood/hrithik-roshan-shares-heartfelt-birthday-tribute-to-saba-azad-article-156446272",
-  "pin_comment": "Apne us dost ko bhejo jo Hrithik-Saba ka fan hai 👇",
-  "songs": [
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "romantic birthday tribute vibe"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh",
-    "lang": "hindi",
-    "mood": "deep love, choosing love"
-   },
-   {
-    "title": "Sweater Weather",
-    "artist": "The Neighbourhood",
-    "lang": "english",
-    "mood": "cosy couple feeling"
-   },
-   {
-    "title": "Just Give Me a Reason (feat. Nate Ruess)",
-    "artist": "P!nk, Nate Ruess",
-    "lang": "english",
-    "mood": "love worth choosing"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says he posted a series of personal photographs; it does not mention a rare photo or his sons.",
-    "Slide 4: The photo credit 'Photo: Mathrubhumi English' at the bottom left runs into the '@khabarbawaal' handle. The two overlap or touch, so the text is cramped."
-   ],
-   "fixed": [
-    "Saath mein unhone Saba ki ek rare photo bhi share ki, apne dono bete ke saath. → Saath mein unhone apni kuch personal photos bhi share ki."
-   ]
-  },
-  "created_at": "2026-11-01T12:34:49+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-01",
-  "image": "posts/20261101-1038-reel_news_pm-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-103830-reel_news_pm-2026-11-01.mp4",
-  "headline": "Hrithik Roshan pens sweet birthday message for girlfriend Saba Azad about choosing love over convenience, shares rare picture of her with his sons",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Hrithik Roshan Saba Azad birthday message 💕\nHrithik ne girlfriend Saba Azad ke birthday par dil se note likha, jisme unhone convenience ki jagah pyaar chunne ki baat ki.\nAakhri photo mein Saba, Hrithik ke dono sons Hrehaan aur Hridhaan ke saath dikhti hain.\nUs dost ko bhejo jo pyaar chuna convenience nahi 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#hrithikroshan #sabaazad #bollywood #bollywoodnews #reelsindia\n\n(Hrithik Roshan, Saba Azad, Hrithik Roshan Saba Azad birthday, Saba Azad birthday, Hrithik Roshan sons, Hrithik Roshan girlfriend, Hrithik Saba love note, Bollywood couple)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-beautiful-birthday-message-for-girlfriend-saba-azad-is-about-choosing-love-over-convenience-shares-rare-picture-of-her-with-his-sons-101793520298213.html",
-  "pin_comment": "Apne Hrithik fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Samjhawan",
-    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "romantic, heartfelt love note"
-   },
-   {
-    "title": "Pal Pal Dil Ke Paas - Title Track",
-    "artist": "Arijit Singh, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "sweet couple moment"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Bruno Mars, Lady Gaga",
-    "lang": "english",
-    "mood": "love over everything"
-   },
-   {
-    "title": "Girls Like You",
-    "artist": "Maroon 5",
-    "lang": "english",
-    "mood": "romantic birthday vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: 'rare' is not in the article and 'unke' wrongly suggests the sons are Saba's; the sons are Hrithik's.",
-    "Slide 2: The photo is cropped at the right edge, so one of the sons (Hridhaan) is cut off. The slide text says the photo shows both sons."
-   ],
-   "fixed": [
-    "Saath mein Saba ki ek rare picture bhi share ki, jisme unke dono sons dikhte hain. → Aakhri photo mein Saba, Hrithik ke dono sons Hrehaan aur Hridhaan ke saath dikhti hain."
-   ]
-  },
-  "created_at": "2026-11-01T10:38:30+00:00"
  }
 ]
