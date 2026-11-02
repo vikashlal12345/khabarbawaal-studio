@@ -437,7 +437,7 @@
   "reel_news_aft": "2026-11-01",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-01",
+  "reel_news_early": "2026-11-02",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-01",
   "reel_break_noon": "2026-11-01",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "jCoOGkhVTbBm",
+ "inbox_since": "PENePWrWkEUS",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1280,7 +1280,8 @@
   "Karpur Gauram Karunavtaram",
   "Om Jai Shiv Omkara",
   "Om Namah Shivaya Har Har By Anuradha Paudwal",
-  "Om Namah Shivaya"
+  "Om Namah Shivaya",
+  "All The Stars"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1495,6 +1496,10 @@
   {
    "title": "Amitabh Bachchan waves to fans from protective glass box outside Jalsa amid security concerns, son Abhishek stands guard",
    "date": "2026-11-01"
+  },
+  {
+   "title": "Yash says viewers will be able to relate with both Rama and Ravana in Ramayana, calls it the right time to showcase Indian film to the world",
+   "date": "2026-11-02"
   }
  ],
  "claude_limit": {
