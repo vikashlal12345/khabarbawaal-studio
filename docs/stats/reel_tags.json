@@ -432,5 +432,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_night-2026-11-02",
+  "key": "amitabhbachchanjayabachchannicknamekbcranbiralia",
+  "kind": "reel_news_night",
+  "secs": 22.5,
+  "at": "2026-11-02T14:50:34+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 34,
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
