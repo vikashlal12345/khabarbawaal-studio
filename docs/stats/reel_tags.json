@@ -385,5 +385,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-02",
+  "key": "arrahmanramayanamusichonourarrahmannekahakiramayanakamusicco",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-02T10:36:24+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 7,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 40,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]

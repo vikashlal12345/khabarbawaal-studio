@@ -428,7 +428,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-02",
-  "reel_news_pm": "2026-11-01",
+  "reel_news_pm": "2026-11-02",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-02",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "GCQ2XVpQl656",
+ "inbox_since": "dJA8cXQiFUeo",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1284,7 +1284,9 @@
   "All The Stars",
   "Sang Rahiyo",
   "Levitating",
-  "Rula Ke Gaya Ishq"
+  "Rula Ke Gaya Ishq",
+  "Jaan ‘Nisaar (Arijit)",
+  "Espresso"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1514,6 +1516,10 @@
   },
   {
    "title": "Bigg Boss 20: Panchayat fame Aasif Khan eliminated from Salman Khan-hosted show",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "AR Rahman calls composing Ramayana music an honour, jokes about not everybody liking his work",
    "date": "2026-11-02"
   }
  ],
