@@ -375,7 +375,7 @@
   "reel_news_pm": "2026-11-01",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-01",
+  "reel_news_am": "2026-11-02",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-01",
@@ -389,7 +389,7 @@
   "reel_news_night": "2026-11-01",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "jX7HzQLySdiE",
+ "inbox_since": "2HoTd16FDpTi",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -762,7 +762,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
   "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
@@ -841,7 +840,8 @@
   "https://www.mid-day.com/entertainment/bollywood-news/article/its-not-nice-sai-pallavi-reveals-yash-son-cried-after-watching-ramayana-23657996",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-waves-to-fans-from-protective-shield-outside-jalsa-amid-security-concerns-son-abhishek-stands-guard-101793542624173.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-says-viewers-will-be-able-to-relate-with-both-rama-and-ravana-in-ramayana-calls-it-the-right-time-to-showcase-indian-film-to-the-world-101793533562454.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-thanks-fans-with-handwritten-note-for-birthday-greetings-mannat-gets-grand-makeover-with-king-visuals-srk-101793586142933.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-thanks-fans-with-handwritten-note-for-birthday-greetings-mannat-gets-grand-makeover-with-king-visuals-srk-101793586142933.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/amitabh-bachchan-pays-emotional-tribute-to-sanjay-gupta-companions-from-the-world-of-art-are-being-snatched-away/articleshow/135446780.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1058,10 +1058,6 @@
   }
  ],
  "songs_recent": [
-  "Monster Mash",
-  "Somebody's Watching Me",
-  "Tera Mera Rishta - New Version (From \"Awarapan 2\")",
-  "Akhiyaan Gulaab",
   "Samjhawan",
   "Pal Pal Dil Ke Paas - Title Track",
   "Die With A Smile",
@@ -1097,7 +1093,11 @@
   "Teri Meri Kahaani",
   "Sang Rahiyo",
   "Heat Waves",
-  "Levitating"
+  "Levitating",
+  "Dhun",
+  "Rula Ke Gaya Ishq",
+  "Let Me Down Slowly",
+  "People"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1203,6 +1203,10 @@
   },
   {
    "title": "Shah Rukh Khan thanks fans with handwritten note for birthday greetings, Mannat gets grand makeover with King visuals",
+   "date": "2026-11-02"
+  },
+  {
+   "title": "Amitabh Bachchan pays emotional tribute to Sanjay Gupta: ‘Companions from the world of art are being snatched away’",
    "date": "2026-11-02"
   }
  ],

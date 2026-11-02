@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_news_am-2026-11-02",
+  "image": "posts/20261102-0636-reel_news_am-2026-11-02.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261102-063647-reel_news_am-2026-11-02.mp4",
+  "headline": "Amitabh Bachchan pays emotional tribute to Sanjay Gupta: ‘Companions from the world of art are being snatched away’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Amitabh Bachchan Sanjay Gupta tribute 🙏 Big B ka emotional message\n\nAmitabh Bachchan ne director Sanjay Gupta ko emotional shraddhanjali di.\nUnhone likha ki kala ki duniya ke saathi ek ek karke chhin rahe hain.\nAnil Kapoor ne bhi unhe yaad kiya hai.\n\nUs dost ko bhejo jisse baat nahi hui 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: The Times of India (link pinned in comments 👇)\n\n#amitabhbachchan #sanjaygupta #bollywood #tribute #reelsindia\n\n(Amitabh Bachchan, Sanjay Gupta, Amitabh Bachchan tribute, Sanjay Gupta death, Big B emotional post, Bollywood news, Sanjay Gupta Kaante, Amitabh Bachchan latest)",
+  "source": "The Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/amitabh-bachchan-pays-emotional-tribute-to-sanjay-gupta-companions-from-the-world-of-art-are-being-snatched-away/articleshow/135446780.cms",
+  "pin_comment": "Ye Amitabh Bachchan ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "soft, emotional tribute feel"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "loss and missing a friend"
+   },
+   {
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "lang": "english",
+    "mood": "quiet sad farewell"
+   },
+   {
+    "title": "People",
+    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
+    "lang": "english",
+    "mood": "mourning, reflective vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article mentions Anil Kapoor's tribute; Sanjay Dutt and Hrithik Roshan tributes are not in the article.",
+    "Fact corrected to match the article: Article doesn't say fans and industry are remembering him; it says Anil Kapoor also paid tribute.",
+    "Slide 5: The '@khabarbawaal' handle sits almost on top of the 'Photo: Wikimedia...' credit line at the bottom, so the two overlap a little and are hard to read."
+   ],
+   "fixed": [
+    "Sanjay Dutt aur Hrithik Roshan bhi unhe yaad kar chuke hain. → Anil Kapoor ne bhi unhe yaad kiya hai.",
+    "Amitabh ke tribute ke baad Sanjay Gupta ko fans aur industry yaad kar rahe hain. → Amitabh ke tribute ke baad Anil Kapoor ne bhi Sanjay Gupta ko yaad kiya."
+   ]
+  },
+  "created_at": "2026-11-02T06:36:47+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-02",
   "image": "posts/20261102-0435-reel_break_am-2026-11-02.jpg",
   "kind": "reel",
@@ -374,99 +426,5 @@
    "fixed": []
   },
   "created_at": "2026-11-01T08:34:46+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-01",
-  "image": "posts/20261101-0635-reel_news_am-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-063559-reel_news_am-2026-11-01.mp4",
-  "headline": "Nitesh Tiwari reveals 6.5 years went into Ravana-Jatayu fight, 50 designs created for Pushpak Viman for Ramayana",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana Nitesh Tiwari Ravana Jatayu fight 🎬\nNitesh Tiwari ne bataya Ravana-Jatayu fight par 6.5 saal lage.\nPushpak Viman ke liye 40-50 designs bane, lagbhag 2 saal laga.\nFilm mein Ranbir Kapoor aur Yash hain.\nRamayana dekhne wale dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia\n\n(Ramayana, Nitesh Tiwari, Ranbir Kapoor, Yash, Pushpak Viman, Ravana Jatayu fight, Ramayana movie, Ramayana behind the scenes)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/nitesh-tiwari-reveals-6-5-years-went-into-ravana-jatayu-fight-50-designs-created-for-pushpak-viman-for-ramayana-yash-ranbir-kapoor-sai-pallavi-101793509788984.html",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ramayana devotional vibe"
-   },
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "epic emotional feel"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "epic effort, big battle"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "grand cinematic energy"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says 40-50 designs, not exactly 50"
-   ],
-   "fixed": [
-    "Pushpak Viman ke liye 50 designs bane → Pushpak Viman ke liye 40-50 designs bane"
-   ]
-  },
-  "created_at": "2026-11-01T06:35:59+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-01",
-  "image": "posts/20261101-0436-reel_break_am-2026-11-01.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261101-043642-reel_break_am-2026-11-01.mp4",
-  "headline": "Air Chief Marshal Dixit takes charge of IAF amid modernisation push",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Air Chief Marshal Ashutosh Dixit new IAF chief 🇮🇳\nDixit ne 29th Chief of Air Staff ka charge liya, AP Singh retire hue.\nWo test pilot hain, 3,500+ flying hours, Operation Sindoor ke time CISC the.\nFighter jets ki kami aur LCA Mk-1A, Rafale deal unki badi list mein hain.\nUs dost ko bhejo jo Air Force ka fan hai 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #indianairforce #iaf #airchief #indianarmy\n\n(Ashutosh Dixit, Air Chief Marshal Dixit, new IAF chief, Chief of Air Staff, AP Singh retire, Operation Sindoor, LCA Mk-1A, Rafale deal India, Indian Air Force)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/air-chief-marshal-dixit-takes-charge-of-iaf-amid-modernisation-push-101793475811068.html",
-  "pin_comment": "Apne Air Force fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "josh, desh ka gaurav"
-   },
-   {
-    "title": "One Name",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "powerful, mass entry vibe"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "strong, powerful takeover"
-   },
-   {
-    "title": "APT.",
-    "artist": "Rosé, Bruno Mars",
-    "lang": "english",
-    "mood": "high energy opener"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-01T04:36:42+00:00"
  }
 ]
