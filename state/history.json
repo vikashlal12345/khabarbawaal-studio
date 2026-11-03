@@ -487,7 +487,7 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-03",
   "reel_break_noon": "2026-11-03",
-  "reel_break_aft": "2026-11-02",
+  "reel_break_aft": "2026-11-03",
   "reel_news_night": "2026-11-02",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
@@ -1856,6 +1856,10 @@
   },
   {
    "title": "Ranbir Kapoor brushes off Ramayana criticism, says what matters is people who value his intentions",
+   "date": "2026-11-03"
+  },
+  {
+   "title": "Bombay High Court asks BMC to restore Dia Mirza’s Diwali video: “India is a secular country”",
    "date": "2026-11-03"
   }
  ],
