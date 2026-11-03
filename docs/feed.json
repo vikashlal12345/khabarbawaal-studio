@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_early-2026-11-03",
+  "image": "posts/20261103-0235-reel_news_early-2026-11-03.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261103-023544-reel_news_early-2026-11-03.mp4",
+  "headline": "Salman Khan wishes Shah Rukh Khan stays young forever on his birthday; SRK says ‘working hard on physique because of you’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Salman Khan Shah Rukh Khan birthday wish aur King physique 💪\nSalman ne SRK ke liye wish kiya ki woh hamesha young rahein.\nSRK ne likha: 'Aapne kaha Bina shirt ke acchhi body hai sirf isse liye mehnat ki.'\nKing mein SRK ki chiselled body ki fans aur celebs ne tareef ki.\nUs dost ko bhejo jiske saath Karan-Arjun wali dosti hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #salmankhan #srkbirthday #bollywood #reelsindia\n\n(Salman Khan, Shah Rukh Khan, SRK birthday, King movie, Salman SRK friendship, Karan Arjun, SRK 61st birthday, Salman Khan wish)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-wishes-shah-rukh-khan-stays-young-on-his-birthday-srk-says-working-hard-on-physique-because-of-you-king-101793668527965.html",
+  "pin_comment": "Apne Salman-SRK fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "dosti aur swag vibe"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "yaari ka warm moment"
+   },
+   {
+    "title": "Ordinary",
+    "artist": "Alex Warren",
+    "lang": "english",
+    "mood": "sweet friendship feel"
+   },
+   {
+    "title": "Calm Down",
+    "artist": "Rema, Selena Gomez",
+    "lang": "english",
+    "mood": "light, happy birthday vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The quote in the caption was a paraphrase in quote marks, not what Shah Rukh wrote.",
+    "Fact corrected to match the article: Article doesn't say Salman is the motivation behind the physique; SRK only joked about it in his reply."
+   ],
+   "fixed": [
+    "SRK bole: 'Working hard on physique because of you'. → SRK ne likha: 'Aapne kaha Bina shirt ke acchhi body hai sirf isse liye mehnat ki.'",
+    "King ki chiselled body ke peeche Salman ki motivation hai. → King mein SRK ki chiselled body ki fans aur celebs ne tareef ki."
+   ]
+  },
+  "created_at": "2026-11-03T02:35:44+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-03",
   "image": "posts/20261103-0103-reel_devotion-2026-11-03.jpg",
   "kind": "reel",
@@ -381,54 +432,5 @@
    "fixed": []
   },
   "created_at": "2026-11-02T04:35:25+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-02",
-  "image": "posts/20261102-0234-reel_news_early-2026-11-02.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261102-023400-reel_news_early-2026-11-02.mp4",
-  "headline": "Yash says viewers will be able to relate with both Rama and Ravana in Ramayana, calls it the right time to showcase Indian film to the world",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Yash Ramayana Ravana role Rama Ravana relate 🎬\nYash ne kaha ki Ramayana mein darshak Rama aur Ravana dono se relate kar paayenge.\nYash film mein Ravana bane hain, aur unke hisaab se Indian film ko duniya ko dikhane ka yehi sahi waqt hai.\nFilm ka pehla part 5 November (Diwali 2026) ko aa raha hai.\nRamayana first-day wale dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #Yash #RanbirKapoor #Bollywood #reelsindia\n\n(Yash Ramayana, Yash Ravana, Ramayana release date, Ramayana 5 November, Ranbir Kapoor Ramayana, Yash Ravana role, Ramayana movie news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/yash-says-viewers-will-be-able-to-relate-with-both-rama-and-ravana-in-ramayana-calls-it-the-right-time-to-showcase-indian-film-to-the-world-101793533562454.html",
-  "pin_comment": "Apne Ramayana first-day wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ramayana vibe, devotional epic feel"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "Yash ravana aura, mass hype"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "epic power, villain energy"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "big film, global stage"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says only the first instalment is scheduled for Diwali 2026 (November 5); second part is Diwali 2027."
-   ],
-   "fixed": [
-    "Film 5 November ko theatres mein aa rahi hai. → Film ka pehla part 5 November (Diwali 2026) ko aa raha hai."
-   ]
-  },
-  "created_at": "2026-11-02T02:34:00+00:00"
  }
 ]
