@@ -434,7 +434,7 @@
   "reel_news_am": "2026-11-03",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-02",
+  "reel_news_aft": "2026-11-03",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-03",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-02",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "sO9u1wT0KgUC",
+ "inbox_since": "wwhF7ojHV2e2",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1296,7 +1296,8 @@
   "I Think They Call This Love (Cover)",
   "Hanuman Chalisa (Lofi)",
   "Tu hai kahan",
-  "Billie Jean"
+  "Billie Jean",
+  "Zihaal e Miskin"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1563,6 +1564,10 @@
   {
    "title": "King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36 million views; beats Jawan's Zinda Banda, Adipurush's Jai Shri Ram",
    "date": "2026-11-03"
+  },
+  {
+   "title": "Ranbir Kapoor brushes off Ramayana criticism, says what matters is people who value his intentions",
+   "date": "2026-11-03"
   }
  ],
  "claude_limit": {
@@ -1579,5 +1584,5 @@
   "18023602325946834",
   "18073698851610142"
  ],
- "winner_followup_day": "2026-11-01"
+ "winner_followup_day": "2026-11-03"
 }

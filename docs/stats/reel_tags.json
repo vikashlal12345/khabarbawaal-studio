@@ -534,5 +534,21 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-03",
+  "key": "ranbirkapoorramayanacriticismparbole",
+  "kind": "reel_news_aft",
+  "secs": 22.5,
+  "at": "2026-11-03T12:35:54+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 30,
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
