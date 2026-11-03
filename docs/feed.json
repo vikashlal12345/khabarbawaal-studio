@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_night-2026-11-03",
+  "image": "posts/20261103-1449-reel_news_night-2026-11-03.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261103-144937-reel_news_night-2026-11-03.mp4",
+  "headline": "Manoj Bajpayee, Boman Irani and Divya Dutta’s Last Man in Tower to premiere on Hindi Zee 5 on November 6",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Manoj Bajpayee Boman Irani Divya Dutta Last Man in Tower Zee5 🎬\nLast Man in Tower 6 November ko Hindi Zee 5 par premiere hoga.\nStar cast: Manoj Bajpayee, Boman Irani aur Divya Dutta.\nDirector Ben Rekhi hain.\nWeekend plan wale dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#manojbajpayee #bomanirani #zee5 #ott #reelsindia\n\n(Last Man in Tower, Manoj Bajpayee, Boman Irani, Divya Dutta, Zee5 premiere, 6 November OTT release, Last Man in Tower Zee5, new OTT release)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/manoj-bajpayee-boman-irani-and-divya-duttas-last-man-in-tower-to-premiere-on-hindi-zee-5-on-november-6/",
+  "pin_comment": "Apne Manoj Bajpayee fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "calm, classy OTT vibe"
+   },
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "nostalgic drama mood"
+   },
+   {
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga, Bruno Mars",
+    "lang": "english",
+    "mood": "stars together, warm feel"
+   },
+   {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "lang": "english",
+    "mood": "hype for big release"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: Bottom-left credit 'Photo: Bollywood Hungama' runs into the '@khabarbawaal' handle, so the two texts touch or overlap."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-03T14:49:37+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-03",
   "image": "posts/20261103-1420-reel_break_aft-2026-11-03.jpg",
   "kind": "reel",

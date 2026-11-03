@@ -245,7 +245,8 @@
   "b91f6332f802",
   "300b4de5ff23",
   "0902cb1051ba",
-  "710273b380ad"
+  "710273b380ad",
+  "5a2c187e3a68"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -396,7 +397,7 @@
   "reel_break_am": "2026-11-03",
   "reel_break_noon": "2026-11-03",
   "reel_break_aft": "2026-11-03",
-  "reel_news_night": "2026-11-02",
+  "reel_news_night": "2026-11-03",
   "reel_flash": "2026-11-01"
  },
  "inbox_since": "wwhF7ojHV2e2",
@@ -772,7 +773,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
   "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
@@ -851,7 +851,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-deepika-padukone-king-song-tu-mil-jaaye-most-watched-indian-film-song-24-hours-36-million-views-beats-zinda-banda-jai-shri-ram-adipurus-101793695460606.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-brushes-off-ramayana-criticism-says-what-matters-is-people-who-value-his-intentions-yash-sai-pallavi-nitesh-tiwari-101793703714558.html",
-  "https://www.bollywoodhungama.com/news/bollywood/bombay-high-court-asks-bmc-to-restore-dia-mirzas-diwali-video-india-is-a-secular-country/"
+  "https://www.bollywoodhungama.com/news/bollywood/bombay-high-court-asks-bmc-to-restore-dia-mirzas-diwali-video-india-is-a-secular-country/",
+  "https://www.bollywoodhungama.com/news/bollywood/manoj-bajpayee-boman-irani-and-divya-duttas-last-man-in-tower-to-premiere-on-hindi-zee-5-on-november-6/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1068,10 +1069,6 @@
   }
  ],
  "songs_recent": [
-  "Housewife",
-  "Girls Like You",
-  "Barsaat",
-  "Gehra Hua",
   "Favorite",
   "Go Down Deh (feat. Sean Paul & Shaggy)",
   "Pal Pal Dil Ke Paas - Title Track",
@@ -1107,7 +1104,11 @@
   "Ashke",
   "Dhun",
   "Thriller",
-  "the cure"
+  "the cure",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Aaj Bhi 2",
+  "Die With A Smile",
+  "Believer"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1233,6 +1234,10 @@
   },
   {
    "title": "Bombay High Court asks BMC to restore Dia Mirza’s Diwali video: “India is a secular country”",
+   "date": "2026-11-03"
+  },
+  {
+   "title": "Manoj Bajpayee, Boman Irani and Divya Dutta’s Last Man in Tower to premiere on Hindi Zee 5 on November 6",
    "date": "2026-11-03"
   }
  ],
