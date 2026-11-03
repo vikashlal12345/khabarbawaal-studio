@@ -1,5 +1,44 @@
 [
  {
+  "id": "reel_break_noon-2026-11-03",
+  "image": "posts/20261103-0835-reel_break_noon-2026-11-03.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261103-083516-reel_break_noon-2026-11-03.mp4",
+  "headline": "Yash says son Yatharv struggled to accept him as Ravana in Ramayana, as he's ‘Rama in real life’, recalls difficult conversation",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Yash Yatharv Ramayana Ravana son reaction 🎬\nYash ke bete Yatharv ko pasand nahi aaya ki papa Ravana bane hain.\nBete ne poocha: \"Aap Ravana? Aap toh Rama ho na?\"\nYash ne kaha: real life mein Rama, movie mein Ravana.\nApne Yash fan dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #yash #ramayana #bollywood #ranbirkapoor\n\n(Yash Ramayana, Yash Ravana, Yash son Yatharv, Ramayana movie, Nitesh Tiwari Ramayana, Ranbir Kapoor Ramayana, Ramayana 5 November, Yash interview Suma Kanakala)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html",
+  "pin_comment": "Apne Yash fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "warm family bond feel"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "emotional, heartfelt conversation"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "mellow, thoughtful father moment"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-03T08:35:16+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-03",
   "image": "posts/20261103-0634-reel_news_am-2026-11-03.jpg",
   "kind": "reel",
@@ -425,57 +464,5 @@
    "fixed": []
   },
   "created_at": "2026-11-02T08:35:17+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-02",
-  "image": "posts/20261102-0636-reel_news_am-2026-11-02.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261102-063647-reel_news_am-2026-11-02.mp4",
-  "headline": "Amitabh Bachchan pays emotional tribute to Sanjay Gupta: ‘Companions from the world of art are being snatched away’",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Amitabh Bachchan Sanjay Gupta tribute 🙏 Big B ka emotional message\n\nAmitabh Bachchan ne director Sanjay Gupta ko emotional shraddhanjali di.\nUnhone likha ki kala ki duniya ke saathi ek ek karke chhin rahe hain.\nAnil Kapoor ne bhi unhe yaad kiya hai.\n\nUs dost ko bhejo jisse baat nahi hui 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: The Times of India (link pinned in comments 👇)\n\n#amitabhbachchan #sanjaygupta #bollywood #tribute #reelsindia\n\n(Amitabh Bachchan, Sanjay Gupta, Amitabh Bachchan tribute, Sanjay Gupta death, Big B emotional post, Bollywood news, Sanjay Gupta Kaante, Amitabh Bachchan latest)",
-  "source": "The Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/amitabh-bachchan-pays-emotional-tribute-to-sanjay-gupta-companions-from-the-world-of-art-are-being-snatched-away/articleshow/135446780.cms",
-  "pin_comment": "Ye Amitabh Bachchan ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "soft, emotional tribute feel"
-   },
-   {
-    "title": "Rula Ke Gaya Ishq",
-    "artist": "Stebin Ben",
-    "lang": "hindi",
-    "mood": "loss and missing a friend"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "quiet sad farewell"
-   },
-   {
-    "title": "People",
-    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
-    "lang": "english",
-    "mood": "mourning, reflective vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article mentions Anil Kapoor's tribute; Sanjay Dutt and Hrithik Roshan tributes are not in the article.",
-    "Fact corrected to match the article: Article doesn't say fans and industry are remembering him; it says Anil Kapoor also paid tribute.",
-    "Slide 5: The '@khabarbawaal' handle sits almost on top of the 'Photo: Wikimedia...' credit line at the bottom, so the two overlap a little and are hard to read."
-   ],
-   "fixed": [
-    "Sanjay Dutt aur Hrithik Roshan bhi unhe yaad kar chuke hain. → Anil Kapoor ne bhi unhe yaad kiya hai.",
-    "Amitabh ke tribute ke baad Sanjay Gupta ko fans aur industry yaad kar rahe hain. → Amitabh ke tribute ke baad Anil Kapoor ne bhi Sanjay Gupta ko yaad kiya."
-   ]
-  },
-  "created_at": "2026-11-02T06:36:47+00:00"
  }
 ]

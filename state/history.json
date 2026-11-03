@@ -241,7 +241,8 @@
   "d346e57a8f1d",
   "0b5ac8417c2d",
   "1ab0cc8634ea",
-  "1e05ded0755a"
+  "1e05ded0755a",
+  "b91f6332f802"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -390,12 +391,12 @@
   "reel_news_early": "2026-11-03",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-03",
-  "reel_break_noon": "2026-11-02",
+  "reel_break_noon": "2026-11-03",
   "reel_break_aft": "2026-11-02",
   "reel_news_night": "2026-11-02",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "3LYaZQKi6lvN",
+ "inbox_since": "QxdFObXPm5BA",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -768,7 +769,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
@@ -847,7 +847,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-recalls-jaya-bachchan-s-cute-nickname-for-him-but-says-his-father-eventually-put-a-stop-to-it-101793626597966.html",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-wishes-shah-rukh-khan-stays-young-on-his-birthday-srk-says-working-hard-on-physique-because-of-you-king-101793668527965.html",
   "https://www.hindustantimes.com/entertainment/bollywood/orry-calls-sara-ali-khan-fake-friend-for-disappearing-during-his-difficult-time-claims-amrita-singh-hurled-abuses-at-him-and-never-apologised-101793674210067.html",
-  "https://www.bollywoodhungama.com/news/bollywood/ramayana-3-on-the-cards-namit-malhotra-says-makers-may-revisit-plans-after-audience-feedback/"
+  "https://www.bollywoodhungama.com/news/bollywood/ramayana-3-on-the-cards-namit-malhotra-says-makers-may-revisit-plans-after-audience-feedback/",
+  "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1064,9 +1065,6 @@
   }
  ],
  "songs_recent": [
-  "Dhun",
-  "Rula Ke Gaya Ishq",
-  "Let Me Down Slowly",
   "People",
   "Ez-Ez",
   "Rula Ke Gaya Ishq",
@@ -1103,7 +1101,10 @@
   "Ram Siya Ram",
   "His Aura Hits You",
   "All The Stars",
-  "Big Dawgs"
+  "Big Dawgs",
+  "Tera Hoke Rahoon",
+  "Iris",
+  "Heat Waves"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1213,6 +1214,10 @@
   },
   {
    "title": "Ramayana 3 on the cards? Namit Malhotra says makers may revisit plans after audience feedback",
+   "date": "2026-11-03"
+  },
+  {
+   "title": "Yash says son Yatharv struggled to accept him as Ravana in Ramayana, as he's ‘Rama in real life’, recalls difficult conversation",
    "date": "2026-11-03"
   }
  ],
