@@ -242,7 +242,8 @@
   "0b5ac8417c2d",
   "1ab0cc8634ea",
   "1e05ded0755a",
-  "b91f6332f802"
+  "b91f6332f802",
+  "300b4de5ff23"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -379,7 +380,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-03",
-  "reel_news_pm": "2026-11-02",
+  "reel_news_pm": "2026-11-03",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-03",
@@ -396,7 +397,7 @@
   "reel_news_night": "2026-11-02",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "QxdFObXPm5BA",
+ "inbox_since": "sO9u1wT0KgUC",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -769,7 +770,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
@@ -848,7 +848,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-wishes-shah-rukh-khan-stays-young-on-his-birthday-srk-says-working-hard-on-physique-because-of-you-king-101793668527965.html",
   "https://www.hindustantimes.com/entertainment/bollywood/orry-calls-sara-ali-khan-fake-friend-for-disappearing-during-his-difficult-time-claims-amrita-singh-hurled-abuses-at-him-and-never-apologised-101793674210067.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-3-on-the-cards-namit-malhotra-says-makers-may-revisit-plans-after-audience-feedback/",
-  "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-deepika-padukone-king-song-tu-mil-jaaye-most-watched-indian-film-song-24-hours-36-million-views-beats-zinda-banda-jai-shri-ram-adipurus-101793695460606.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1065,10 +1066,6 @@
   }
  ],
  "songs_recent": [
-  "People",
-  "Ez-Ez",
-  "Rula Ke Gaya Ishq",
-  "Blinding Lights",
   "Thriller",
   "Jaan ‘Nisaar (Arijit)",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
@@ -1104,7 +1101,11 @@
   "Big Dawgs",
   "Tera Hoke Rahoon",
   "Iris",
-  "Heat Waves"
+  "Heat Waves",
+  "Heeriye (feat. Arijit Singh)",
+  "Zaalima",
+  "Levitating",
+  "Billie Jean"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1218,6 +1219,10 @@
   },
   {
    "title": "Yash says son Yatharv struggled to accept him as Ravana in Ramayana, as he's ‘Rama in real life’, recalls difficult conversation",
+   "date": "2026-11-03"
+  },
+  {
+   "title": "King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36 million views; beats Jawan's Zinda Banda, Adipurush's Jai Shri Ram",
    "date": "2026-11-03"
   }
  ],

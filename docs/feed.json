@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_pm-2026-11-03",
+  "image": "posts/20261103-1034-reel_news_pm-2026-11-03.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261103-103430-reel_news_pm-2026-11-03.mp4",
+  "headline": "King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36 million views; beats Jawan's Zinda Banda, Adipurush's Jai Shri Ram",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Shah Rukh Khan Deepika Padukone King Tu Mil Jaaye song views 🔥\nKing ka romantic track Tu Mil Jaaye pehle 24 ghante mein 36 million views le gaya.\nHT ke mutabik ye ab sabse zyada dekha gaya Indian film song hai.\nJawan ke Zinda Banda aur Adipurush ke Jai Shri Ram ko bhi peeche chhoda.\nSRK ke us fan ko bhejo jo ye gaana loop pe sun raha hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #deepikapadukone #king #bollywood #reelsindia\n\n(Shah Rukh Khan King, Deepika Padukone, Tu Mil Jaaye song, King movie song views, Zinda Banda Jawan record, Shah Rukh Deepika jodi, Tu Mil Jaaye 36 million views)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-deepika-padukone-king-song-tu-mil-jaaye-most-watched-indian-film-song-24-hours-36-million-views-beats-zinda-banda-jai-shri-ram-adipurus-101793695460606.html",
+  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Heeriye (feat. Arijit Singh)",
+    "artist": "Jasleen Royal, Arijit Singh",
+    "lang": "hindi",
+    "mood": "romantic SRK-Deepika jodi vibe"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "classic romantic Shah Rukh feel"
+   },
+   {
+    "title": "Levitating",
+    "artist": "Dua Lipa",
+    "lang": "english",
+    "mood": "record-breaking high energy"
+   },
+   {
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "lang": "english",
+    "mood": "king of the charts"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-03T10:34:30+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-03",
   "image": "posts/20261103-0835-reel_break_noon-2026-11-03.jpg",
   "kind": "reel",
@@ -419,50 +464,5 @@
    ]
   },
   "created_at": "2026-11-02T10:36:24+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-02",
-  "image": "posts/20261102-0835-reel_break_noon-2026-11-02.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261102-083517-reel_break_noon-2026-11-02.mp4",
-  "headline": "Bigg Boss 20: Panchayat fame Aasif Khan eliminated from Salman Khan-hosted show",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Aasif Khan Bigg Boss 20 eviction Salman Khan Panchayat\nPanchayat fame Aasif Khan Bigg Boss 20 se evict ho gaye.\nWeekend Ka Vaar mein Salman ne unhe \"epitome of badtameezi\" kaha tha.\nJaate waqt unhone apna last 'BB News' bulletin pesh kiya.\nAasif ka eviction sahi tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #biggboss20 #salmankhan #aasifkhan #panchayat\n\n(Aasif Khan, Bigg Boss 20, Salman Khan, Panchayat, Aasif Khan eviction, BB News, Qazi Touqeer, Weekend Ka Vaar)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/bigg-boss-20-panchayat-fame-aasif-khan-eliminated-from-salman-khan-hosted-show/",
-  "pin_comment": "Apne Bigg Boss fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "house game, hype exit"
-   },
-   {
-    "title": "Rula Ke Gaya Ishq",
-    "artist": "Stebin Ben",
-    "lang": "hindi",
-    "mood": "eviction ka dard"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "spotlight fades, show moves on"
-   },
-   {
-    "title": "Thriller",
-    "artist": "Michael Jackson",
-    "lang": "english",
-    "mood": "drama, top global chart"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-02T08:35:17+00:00"
  }
 ]
