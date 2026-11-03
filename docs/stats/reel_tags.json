@@ -487,5 +487,21 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-11-03",
+  "key": "ramayana3onthecardsnamitmalhotraramayanathirdpart",
+  "kind": "reel_news_am",
+  "secs": 22.5,
+  "at": "2026-11-03T06:34:55+00:00",
+  "type": "news",
+  "topic": "promo",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 43,
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
