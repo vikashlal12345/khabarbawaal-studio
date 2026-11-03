@@ -437,7 +437,7 @@
   "reel_news_aft": "2026-11-02",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-02",
+  "reel_news_early": "2026-11-03",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-02",
   "reel_break_noon": "2026-11-02",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-02",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "38I0HyuCkOhS",
+ "inbox_since": "i7fCRNf4iHGL",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1541,6 +1541,10 @@
   {
    "title": "Amitabh Bachchan recalls Jaya Bachchan’s cute nickname for him, but says his father eventually put a stop to it",
    "date": "2026-11-02"
+  },
+  {
+   "title": "Salman Khan wishes Shah Rukh Khan stays young forever on his birthday; SRK says ‘working hard on physique because of you’",
+   "date": "2026-11-03"
   }
  ],
  "claude_limit": {
