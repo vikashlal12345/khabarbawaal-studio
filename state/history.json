@@ -488,7 +488,7 @@
   "reel_break_am": "2026-11-03",
   "reel_break_noon": "2026-11-03",
   "reel_break_aft": "2026-11-03",
-  "reel_news_night": "2026-11-02",
+  "reel_news_night": "2026-11-03",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
@@ -1430,7 +1430,8 @@
   "I Think They Call This Love (Cover)",
   "Hanuman Chalisa (Lofi)",
   "Tu hai kahan",
-  "Billie Jean"
+  "Billie Jean",
+  "Aaj Bhi 2"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1860,6 +1861,10 @@
   },
   {
    "title": "Bombay High Court asks BMC to restore Dia Mirza’s Diwali video: “India is a secular country”",
+   "date": "2026-11-03"
+  },
+  {
+   "title": "Manoj Bajpayee, Boman Irani and Divya Dutta’s Last Man in Tower to premiere on Hindi Zee 5 on November 6",
    "date": "2026-11-03"
   }
  ],
