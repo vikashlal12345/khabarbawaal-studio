@@ -243,7 +243,8 @@
   "1ab0cc8634ea",
   "1e05ded0755a",
   "b91f6332f802",
-  "300b4de5ff23"
+  "300b4de5ff23",
+  "0902cb1051ba"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -386,7 +387,7 @@
   "reel_news_am": "2026-11-03",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-02",
+  "reel_news_aft": "2026-11-03",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-03",
@@ -397,7 +398,7 @@
   "reel_news_night": "2026-11-02",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "sO9u1wT0KgUC",
+ "inbox_since": "wwhF7ojHV2e2",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -770,7 +771,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
@@ -849,7 +849,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/orry-calls-sara-ali-khan-fake-friend-for-disappearing-during-his-difficult-time-claims-amrita-singh-hurled-abuses-at-him-and-never-apologised-101793674210067.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-3-on-the-cards-namit-malhotra-says-makers-may-revisit-plans-after-audience-feedback/",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-deepika-padukone-king-song-tu-mil-jaaye-most-watched-indian-film-song-24-hours-36-million-views-beats-zinda-banda-jai-shri-ram-adipurus-101793695460606.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-deepika-padukone-king-song-tu-mil-jaaye-most-watched-indian-film-song-24-hours-36-million-views-beats-zinda-banda-jai-shri-ram-adipurus-101793695460606.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-brushes-off-ramayana-criticism-says-what-matters-is-people-who-value-his-intentions-yash-sai-pallavi-nitesh-tiwari-101793703714558.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1066,9 +1067,6 @@
   }
  ],
  "songs_recent": [
-  "Thriller",
-  "Jaan ‘Nisaar (Arijit)",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Die With A Smile",
   "Espresso",
   "Kabhi Shaam Dhale",
@@ -1105,7 +1103,10 @@
   "Heeriye (feat. Arijit Singh)",
   "Zaalima",
   "Levitating",
-  "Billie Jean"
+  "Billie Jean",
+  "Zihaal e Miskin",
+  "People",
+  "Let Me Down Slowly"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1224,6 +1225,10 @@
   {
    "title": "King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36 million views; beats Jawan's Zinda Banda, Adipurush's Jai Shri Ram",
    "date": "2026-11-03"
+  },
+  {
+   "title": "Ranbir Kapoor brushes off Ramayana criticism, says what matters is people who value his intentions",
+   "date": "2026-11-03"
   }
  ],
  "claude_limit": {
@@ -1235,7 +1240,8 @@
  "followed_winners": [
   "18120264982752748",
   "18084634991359569",
-  "17937042348407759"
+  "17937042348407759",
+  "18117277646011243"
  ],
- "winner_followup_day": "2026-11-01"
+ "winner_followup_day": "2026-11-03"
 }
