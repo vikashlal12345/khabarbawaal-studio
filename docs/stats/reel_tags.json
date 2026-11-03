@@ -518,5 +518,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-03",
+  "key": "shahrukhkhandeepikapadukonekingtumiljaayesongviews",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-03T10:34:30+00:00",
+  "type": "news",
+  "topic": "promo",
+  "kw": 7,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 39,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]
