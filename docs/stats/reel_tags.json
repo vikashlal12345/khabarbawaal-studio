@@ -565,5 +565,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_night-2026-11-03",
+  "key": "manojbajpayeebomaniranidivyaduttalastmanintowerzee5",
+  "kind": "reel_news_night",
+  "secs": 17.0,
+  "at": "2026-11-03T14:49:37+00:00",
+  "type": "news",
+  "topic": "promo",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 47,
+  "hook": "name_first",
+  "photos": 2,
+  "short": false
  }
 ]
