@@ -448,5 +448,13 @@
   "hook": "name_first",
   "photos": 3,
   "short": false
+ },
+ {
+  "id": "reel_devotion-2026-11-03",
+  "key": "hanumanjikibhaktiseaajkiseekh",
+  "kind": "reel_devotion",
+  "secs": 30.6,
+  "at": "2026-11-03T01:03:17+00:00",
+  "type": "devotional"
  }
 ]
