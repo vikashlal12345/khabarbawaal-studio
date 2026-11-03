@@ -1,8 +1,8 @@
 {
- "summary": "From our last 38 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (4), POLITICS (2); weakest REEL   CHOOSE YOUR (0), REEL  WORLD (0). Formats: reel 2, custom 2, calendar 2, ready 1. Lean toward what works, keep some variety.",
- "posts": 38,
- "likes": 76,
- "updated": "2026-11-02T22:50:18+00:00",
+ "summary": "From our last 26 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (5), REEL  MEME (3); weakest REEL  BACHPAN ME AISA KAUN KIYA (0), REEL   CHOOSE YOUR (0). Formats: reel 2, custom 2, ready 1. Lean toward what works, keep some variety.",
+ "posts": 26,
+ "likes": 55,
+ "updated": "2026-11-03T22:32:33+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -10,38 +10,26 @@
   ],
   [
    "REEL  BOLLYWOOD",
-   4.5
-  ],
-  [
-   "POLITICS",
-   2.5
+   4.8
   ],
   [
    "REEL  MEME",
-   2.3333333333333335
-  ],
-  [
-   "REEL   SHUBH NAVRATRI",
-   2.25
-  ],
-  [
-   "TECH",
-   2.0
+   3.0
   ],
   [
    "REEL  REALITY CHECK",
-   1.5
+   2.0
   ],
   [
-   "BHAGWAN KA SAATH",
-   1.5
+   "REEL   SHUBH NAVRATRI",
+   2.0
   ],
   [
-   "REEL  INDIA",
-   1.0
+   "POLITICS",
+   2.0
   ],
   [
-   "REEL  TOP 5 NEWS",
+   "REEL  VIRAL",
    1.0
   ],
   [
@@ -49,16 +37,20 @@
    1.0
   ],
   [
+   "BHAGWAN KA SAATH",
+   1.0
+  ],
+  [
    "REEL  RAAT KI TOP 5",
    1.0
   ],
   [
-   "REEL  VIRAL",
+   "REEL  INDIA",
    1.0
   ],
   [
    "REEL  TAG THAT FRIEND",
-   1.0
+   0.6
   ],
   [
    "REEL  BACHPAN ME AISA KAUN KIYA",
@@ -67,28 +59,20 @@
   [
    "REEL   CHOOSE YOUR",
    0.0
-  ],
-  [
-   "REEL  WORLD",
-   0.0
   ]
  ],
  "kinds": [
   [
    "reel",
-   2.1724137931034484
+   2.380952380952381
   ],
   [
    "custom",
-   2.0
-  ],
-  [
-   "calendar",
-   2.0
+   1.6666666666666667
   ],
   [
    "ready",
-   1.25
+   1.0
   ]
  ]
 }
