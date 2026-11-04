@@ -249,7 +249,8 @@
   "5a2c187e3a68",
   "3e707fb438ac",
   "a7fa5d7e725d",
-  "d904164e7138"
+  "d904164e7138",
+  "69ab56b80213"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -398,12 +399,12 @@
   "reel_news_early": "2026-11-04",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-04",
-  "reel_break_noon": "2026-11-03",
+  "reel_break_noon": "2026-11-04",
   "reel_break_aft": "2026-11-03",
   "reel_news_night": "2026-11-03",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "y39pRzzvE2Wl",
+ "inbox_since": "mFUhjWpSSLqB",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -776,7 +777,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
   "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
   "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
   "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
@@ -855,7 +855,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/manoj-bajpayee-boman-irani-and-divya-duttas-last-man-in-tower-to-premiere-on-hindi-zee-5-on-november-6/",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html",
   "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/",
-  "https://www.hindustantimes.com/entertainment/bollywood/namit-malhotra-confirms-ramayana-part-2-has-been-postponed-to-2028-hints-at-a-trilogy-101793766484103.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/namit-malhotra-confirms-ramayana-part-2-has-been-postponed-to-2028-hints-at-a-trilogy-101793766484103.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/hanuman-anshs-visually-impaired-singer-suneel-lodhi-begins-his-eye-treatment-hopes-to-regain-his-eyesight-in-emotional-post-101793774765746.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1072,10 +1073,6 @@
   }
  ],
  "songs_recent": [
-  "Tu hai kahan",
-  "back to friends",
-  "Just Give Me a Reason (feat. Nate Ruess)",
-  "Ram Siya Ram",
   "His Aura Hits You",
   "All The Stars",
   "Big Dawgs",
@@ -1111,7 +1108,11 @@
   "Stop The Wedding!",
   "Dhun",
   "Iris",
-  "Blinding Lights"
+  "Blinding Lights",
+  "Ram Siya Ram",
+  "Humnava Mere",
+  "Iris",
+  "End of Beginning"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1209,6 +1210,10 @@
   },
   {
    "title": "Namit Malhotra confirms Ramayana Part 2 has been postponed to 2028, hints at a trilogy",
+   "date": "2026-11-04"
+  },
+  {
+   "title": "Hanuman Ansh's visually impaired singer Suneel Lodhi begins his eye treatment, hopes to regain his eyesight in emotional post",
    "date": "2026-11-04"
   }
  ],
