@@ -1,8 +1,8 @@
 {
- "summary": "From our last 26 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (5), REEL  MEME (3); weakest REEL  BACHPAN ME AISA KAUN KIYA (0), REEL   CHOOSE YOUR (0). Formats: reel 2, custom 2, ready 1. Lean toward what works, keep some variety.",
- "posts": 26,
- "likes": 55,
- "updated": "2026-11-03T22:32:33+00:00",
+ "summary": "From our last 16 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (6), REEL  MEME (3); weakest REEL   CHOOSE YOUR (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 3, custom 2. Lean toward what works, keep some variety.",
+ "posts": 16,
+ "likes": 44,
+ "updated": "2026-11-04T22:32:21+00:00",
  "topics": [
   [
    "REEL   OFFICIAL SPEECH",
@@ -10,39 +10,19 @@
   ],
   [
    "REEL  BOLLYWOOD",
-   4.8
+   5.75
   ],
   [
    "REEL  MEME",
    3.0
   ],
   [
+   "REEL   SHUBH NAVRATRI",
+   2.5
+  ],
+  [
    "REEL  REALITY CHECK",
    2.0
-  ],
-  [
-   "REEL   SHUBH NAVRATRI",
-   2.0
-  ],
-  [
-   "POLITICS",
-   2.0
-  ],
-  [
-   "REEL  VIRAL",
-   1.0
-  ],
-  [
-   "GITA GYAAN",
-   1.0
-  ],
-  [
-   "BHAGWAN KA SAATH",
-   1.0
-  ],
-  [
-   "REEL  RAAT KI TOP 5",
-   1.0
   ],
   [
    "REEL  INDIA",
@@ -50,29 +30,25 @@
   ],
   [
    "REEL  TAG THAT FRIEND",
-   0.6
-  ],
-  [
-   "REEL  BACHPAN ME AISA KAUN KIYA",
-   0.0
+   0.3333333333333333
   ],
   [
    "REEL   CHOOSE YOUR",
+   0.0
+  ],
+  [
+   "REEL  BACHPAN ME AISA KAUN KIYA",
    0.0
   ]
  ],
  "kinds": [
   [
    "reel",
-   2.380952380952381
+   3.0714285714285716
   ],
   [
    "custom",
-   1.6666666666666667
-  ],
-  [
-   "ready",
-   1.0
+   1.5
   ]
  ]
 }
