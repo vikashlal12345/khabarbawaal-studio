@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_aft-2026-11-04",
+  "image": "posts/20261104-1419-reel_break_aft-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-141952-reel_break_aft-2026-11-04.mp4",
+  "headline": "Ramayana advance bookings cross Rs 110 crore with strong demand across India",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ramayana advance booking Ranbir Kapoor Yash Nitesh Tiwari 🎬\nZoom TV ke mutabik 4 November, 10 baje tak advance sales Rs 97.64 crore (blocked seats ke saath).\n25.88 lakh tickets, 83,736 shows, 901 cities. NCR, Mumbai, Bengaluru top par.\nRanbir Ram, Sai Pallavi Sita, Yash Ravan ke role mein. Film 5 November ko release 🙏\nUs dost ko bhejo jo pehle din dekhega 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: NDTV Profit (link pinned in comments 👇)\n\n#reelsindia #Ramayana #RanbirKapoor #Yash #Bollywood\n\n(Ramayana advance booking, Ranbir Kapoor Ramayana, Yash Ravan, Sai Pallavi Sita, Nitesh Tiwari Ramayana, Ramayana release 5 November, Ramayana box office, Namit Malhotra)",
+  "source": "NDTV Profit",
+  "source_url": "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq",
+  "pin_comment": "Apne Ranbir ya Yash fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "top chart, big hype"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "epic intense feel"
+   },
+   {
+    "title": "All The Stars",
+    "artist": "Kendrick Lamar, SZA",
+    "lang": "english",
+    "mood": "grand blockbuster energy"
+   },
+   {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "lang": "english",
+    "mood": "build-up anticipation"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: The photo carries a 'MOVIE REVIEW' label, and its bottom edge cuts the text off. The story is about advance booking, not a review, so the label is misleading."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-04T14:19:52+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-04",
   "image": "posts/20261104-1235-reel_news_aft-2026-11-04.jpg",
   "kind": "reel",
@@ -409,49 +456,5 @@
    "fixed": []
   },
   "created_at": "2026-11-03T14:20:30+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-03",
-  "image": "posts/20261103-1235-reel_news_aft-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-123554-reel_news_aft-2026-11-03.mp4",
-  "headline": "Ranbir Kapoor brushes off Ramayana criticism, says what matters is people who value his intentions",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ranbir Kapoor Ramayana criticism par bole 🙏\nRanbir ne online criticism ko brush off kiya.\nUnka kehna: farak sirf unse padta hai jo film ki niyat ki value karte hain.\nUs dost ko bhejo jo trolls se pareshaan hota hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #bollywood #bollywoodnews #reelsindia\n\n(Ranbir Kapoor, Ramayana, Ranbir Kapoor Ramayana criticism, Ramayana movie, Ranbir Kapoor Rama, Namit Malhotra Ramayana, Ranbir Kapoor interview, Ramayana trolls)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-brushes-off-ramayana-criticism-says-what-matters-is-people-who-value-his-intentions-yash-sai-pallavi-nitesh-tiwari-101793703714558.html",
-  "pin_comment": "Apne Ranbir fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zihaal e Miskin",
-    "artist": "Javed-Mohsin, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "soft, heartfelt tone"
-   },
-   {
-    "title": "People",
-    "artist": "Libianca Kenzonkinboum Fonji, Libianca",
-    "lang": "english",
-    "mood": "ignore the noise vibe"
-   },
-   {
-    "title": "Let Me Down Slowly",
-    "artist": "Alec Benjamin",
-    "lang": "english",
-    "mood": "emotional, reflective"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says the first instalment is scheduled for Nov 5; 'Part 1 5' read confusingly and stated as certain"
-   ],
-   "fixed": [
-    "Part 1 5 November ko release hogi. → Part 1 5 November ko release hona tay hai.",
-    "Part 1 5 November ko release → Part 1, 5 November ko release"
-   ]
-  },
-  "created_at": "2026-11-03T12:35:54+00:00"
  }
 ]

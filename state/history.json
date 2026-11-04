@@ -402,7 +402,7 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-04",
   "reel_break_noon": "2026-11-04",
-  "reel_break_aft": "2026-11-03",
+  "reel_break_aft": "2026-11-04",
   "reel_news_night": "2026-11-03",
   "reel_flash": "2026-11-01"
  },
@@ -779,7 +779,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
   "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
@@ -858,7 +857,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/namit-malhotra-confirms-ramayana-part-2-has-been-postponed-to-2028-hints-at-a-trilogy-101793766484103.html",
   "https://www.hindustantimes.com/entertainment/bollywood/hanuman-anshs-visually-impaired-singer-suneel-lodhi-begins-his-eye-treatment-hopes-to-regain-his-eyesight-in-emotional-post-101793774765746.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ayushmann-khurrana-and-rajkummar-rao-bring-back-memories-of-bareilly-ki-barfi-dance-together-at-diwali-party-101793779953753.html",
-  "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-and-kabir-khan-reunite-for-inspirational-real-life-story-ladaku-set-to-release-on-june-18-2027/"
+  "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-and-kabir-khan-reunite-for-inspirational-real-life-story-ladaku-set-to-release-on-june-18-2027/",
+  "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1075,10 +1075,6 @@
   }
  ],
  "songs_recent": [
-  "Levitating",
-  "Billie Jean",
-  "Zihaal e Miskin",
-  "People",
   "Let Me Down Slowly",
   "Ashke",
   "Dhun",
@@ -1114,7 +1110,11 @@
   "Ez-Ez",
   "Tabaahi (From \"Toxic\")",
   "Espresso",
-  "Headlights (feat. KIDDO)"
+  "Headlights (feat. KIDDO)",
+  "Alfaaz",
+  "Gehra Hua",
+  "All The Stars",
+  "Heat Waves"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1224,6 +1224,10 @@
   },
   {
    "title": "Kartik Aaryan and Kabir Khan reunite for inspirational real-life story Ladaku, set to release on June 18, 2027",
+   "date": "2026-11-04"
+  },
+  {
+   "title": "Ramayana advance bookings cross Rs 110 crore with strong demand across India",
    "date": "2026-11-04"
   }
  ],
