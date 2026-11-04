@@ -783,7 +783,7 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
           "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
           "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
           "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
-          "save = 'Save karo, kaam aayega' (useful or festival stories). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "save = 'Save karo, kaam aayega' (useful or festival stories). PREFER team_vote or which_one whenever the story has two sides, two people or a debatable act (owner 4 Nov 2026: one-word votes averaged 1,893 views and which_one 3,144, send-to-a-friend 1,057 and it stalled in 13 of 24); use share_friend only for a pure family / relationship / feelings story. Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
           "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
@@ -2156,6 +2156,9 @@ RIGHT NOW or a new development on one of our own hits: prefer it, but only when 
 ROUTINE POSTS RANK LOW (owner approved 1 Nov 2026: 13 of 43 Reels stalled at ~200 views, mostly greetings, official news and controversies; the ones that took off were Koffee With Karan moments, Ramayana news and emotional personal stories): \
 birthday / anniversary wishes, festival greetings, official or government announcements (space launches, new chiefs, ministry news), award lists and a star's \
 plain social-media post that every page already runs are LOW priority; take one only when it carries a real story (a confession, a reveal, a family moment, a clash with a fact) people would send to a friend.
+STAR GOSSIP AND FAMILY FIRST, 'OTHER' LAST (owner 4 Nov 2026, last 10 days: star gossip / rows / reveals avg 2,268 views, couple + family 1,436, 'other' stories (IAF chief, ISRO, court orders, civic notices, lists) 743 and stalled half the time; half of all Reels stalled): \
+rank a famous star's gossip, spat, reveal or family moment above everything else; a story with no famous face and no personal angle comes last. \
+NEVER pick a birthday / anniversary / festival greeting or a story already told today in other words.\
 PROMO RULE (owner, 30 Oct 2026: two Reels on the same Shraddha Kapoor trailer got ~300 views and ~70): trailer / teaser / poster / first-look / song-launch / \
 release-date announcements rank LOW (they are adverts, people do not forward them); take one only when it carries a personal or emotional angle of a big name, \
 and never a regional or niche film nobody outside its language has heard of.
@@ -2230,6 +2233,14 @@ def bollywood_first(stories: list) -> list:
     return b if len(b) >= 3 else stories
 
 
+def drop_routine(stories: list, keep: int = 6) -> list:
+    """Owner 4 Nov 2026 (half the Reels stalled; greetings were part of it): birthday / anniversary / greeting stories leave the picker's list
+    whenever at least `keep` other stories remain."""
+    import flash
+    rest = [x for x in stories if not flash.ROUTINE.search(x["title"])]
+    return rest if len(rest) >= keep else stories
+
+
 def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
     """🔥 The stories that are hot at THIS moment (flash.hot_now: many sites right now, or a new development on our own hit) go first in the picker's
     list, marked HOT, after the same filters as every story (already used, avoided, told in the last 12 h)."""
@@ -2266,7 +2277,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     else:
         status.step("Picking the most viral, visual story", 2)
         raw = g.fetch_candidates(set(state.get("seen", [])))
-        stories = bollywood_first([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)])[:40]
+        stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)]))[:40]
         if kind == "reel_news_night":   # the 8:15 PM slot (owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
             import emergency
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
@@ -2474,7 +2485,12 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
     raw = g.fetch_candidates(set(state.get("seen", [])))
-    stories = bollywood_first([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])])[:45]
+    stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:45]
+    if kind == "reel_break_aft":   # the 7:45 PM slot (owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
+        import emergency
+        only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
+        if len(only) >= 2:
+            stories = only
     if not REMAKE.get("link"):
         stories = add_hot(stories, raw, state, used)
     if REMAKE.get("link"):   # 🔄 remake: the same story again
@@ -6403,7 +6419,7 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
 
 
 TAGS: dict = {}   # 🏷️ tags of the Reel being made (30 Oct 2026): written with its numbers-join key by save_reel into docs/stats/reel_tags.json
-SHORT_NEWS = {"reel_news_pm", "reel_news_early"}   # the 4 PM Reel is the SHORT test (30 Oct 2026), the 8 AM one too (1 Nov 2026, owner approved): 2 photos, ~14 s, to compare with the 22 s ones
+SHORT_NEWS = {"reel_news_pm", "reel_news_early", "reel_news_am"}   # the 4 PM Reel is the SHORT test (30 Oct 2026), the 8 AM one too (1 Nov 2026, owner approved): 2 photos, ~14 s, to compare with the 22 s ones
 
 
 def hook_style(hook: str) -> str:
