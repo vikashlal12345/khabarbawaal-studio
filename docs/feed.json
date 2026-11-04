@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_aft-2026-11-04",
+  "image": "posts/20261104-1235-reel_news_aft-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-123510-reel_news_aft-2026-11-04.mp4",
+  "headline": "Kartik Aaryan and Kabir Khan reunite for inspirational real-life story Ladaku, set to release on June 18, 2027",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kartik Aaryan Kabir Khan Ladaku release date 🎬\n\nBirla Studios ne Ladaku ki worldwide release date announce ki: 18 June 2027.\nFilm mein Kartik Aaryan hain aur director hain Kabir Khan.\nYe ek inspirational real-life story par bani film hai.\n\nKartik-Kabir hit hogi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#kartikaaryan #kabirkhan #ladaku #bollywoodnews #reelsindia\n\n(Kartik Aaryan, Kabir Khan, Ladaku, Ladaku release date, Birla Studios, Kartik Aaryan new film, Bollywood 2027, Kartik Aaryan Kabir Khan film)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-and-kabir-khan-reunite-for-inspirational-real-life-story-ladaku-set-to-release-on-june-18-2027/",
+  "pin_comment": "Ye Kartik Aaryan ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "hype for a big reunion"
+   },
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "swag announcement energy"
+   },
+   {
+    "title": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "lang": "english",
+    "mood": "fun upbeat Kartik vibe"
+   },
+   {
+    "title": "Headlights (feat. KIDDO)",
+    "artist": "Alok, Alan Walker",
+    "lang": "english",
+    "mood": "big release-date hype"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The photo credit 'Photo: Bollywood Hungama' at the bottom left runs into the '@khabarbawaal' handle text, so the two overlap and are hard to read."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-04T12:35:10+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-04",
   "image": "posts/20261104-1034-reel_news_pm-2026-11-04.jpg",
   "kind": "reel",

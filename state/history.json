@@ -251,7 +251,8 @@
   "a7fa5d7e725d",
   "d904164e7138",
   "69ab56b80213",
-  "33f2ed51703b"
+  "33f2ed51703b",
+  "a7abfaaa8039"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -394,7 +395,7 @@
   "reel_news_am": "2026-11-04",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-03",
+  "reel_news_aft": "2026-11-04",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-04",
@@ -405,7 +406,7 @@
   "reel_news_night": "2026-11-03",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "mFUhjWpSSLqB",
+ "inbox_since": "Hrqmuo4UcVlX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -778,7 +779,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
   "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
   "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
@@ -857,7 +857,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/",
   "https://www.hindustantimes.com/entertainment/bollywood/namit-malhotra-confirms-ramayana-part-2-has-been-postponed-to-2028-hints-at-a-trilogy-101793766484103.html",
   "https://www.hindustantimes.com/entertainment/bollywood/hanuman-anshs-visually-impaired-singer-suneel-lodhi-begins-his-eye-treatment-hopes-to-regain-his-eyesight-in-emotional-post-101793774765746.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ayushmann-khurrana-and-rajkummar-rao-bring-back-memories-of-bareilly-ki-barfi-dance-together-at-diwali-party-101793779953753.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ayushmann-khurrana-and-rajkummar-rao-bring-back-memories-of-bareilly-ki-barfi-dance-together-at-diwali-party-101793779953753.html",
+  "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-and-kabir-khan-reunite-for-inspirational-real-life-story-ladaku-set-to-release-on-june-18-2027/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1074,10 +1075,6 @@
   }
  ],
  "songs_recent": [
-  "Iris",
-  "Heat Waves",
-  "Heeriye (feat. Arijit Singh)",
-  "Zaalima",
   "Levitating",
   "Billie Jean",
   "Zihaal e Miskin",
@@ -1113,7 +1110,11 @@
   "Teri Meri Kahaani",
   "Sahiba",
   "Just Give Me a Reason (feat. Nate Ruess)",
-  "Beauty And A Beat"
+  "Beauty And A Beat",
+  "Ez-Ez",
+  "Tabaahi (From \"Toxic\")",
+  "Espresso",
+  "Headlights (feat. KIDDO)"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1219,6 +1220,10 @@
   },
   {
    "title": "Ayushmann Khurrana and Rajkummar Rao bring back memories of Bareilly Ki Barfi, dance together at Diwali party",
+   "date": "2026-11-04"
+  },
+  {
+   "title": "Kartik Aaryan and Kabir Khan reunite for inspirational real-life story Ladaku, set to release on June 18, 2027",
    "date": "2026-11-04"
   }
  ],
