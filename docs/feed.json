@@ -1,5 +1,46 @@
 [
  {
+  "id": "reel_news_am-2026-11-04",
+  "image": "posts/20261104-0634-reel_news_am-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-063436-reel_news_am-2026-11-04.mp4",
+  "headline": "Namit Malhotra confirms Ramayana Part 2 has been postponed to 2028, hints at a trilogy",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana Part 2 release date Namit Malhotra 🎬\nProducer Namit Malhotra ne bataya ki Ramayana: Part 2 ab 2028 mein aayegi.\nTeam ko film complete karne aur grand finale dene ke liye zyada time chahiye, trilogy ka bhi hint diya.\nRanbir ya Yash: tum kaunse team ho? Ek word 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia\n\n(Ramayana Part 2, Namit Malhotra, Ramayana 2028, Ramayana trilogy, Ranbir Kapoor Ramayana, Yash Ravana, Ramayana release date)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/namit-malhotra-confirms-ramayana-part-2-has-been-postponed-to-2028-hints-at-a-trilogy-101793766484103.html",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "emotional wait, cinematic"
+   },
+   {
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "lang": "english",
+    "mood": "long wait, emotional"
+   },
+   {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "lang": "english",
+    "mood": "big epic anticipation"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The photo credit 'Photo: thedailyjagran.com' at the bottom left runs right up against the '@khabarbawaal' handle and almost overlaps it."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-04T06:34:36+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-04",
   "image": "posts/20261104-0434-reel_break_am-2026-11-04.jpg",
   "kind": "reel",
@@ -398,50 +439,5 @@
    "fixed": []
   },
   "created_at": "2026-11-03T06:34:55+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-03",
-  "image": "posts/20261103-0436-reel_break_am-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-043649-reel_break_am-2026-11-03.mp4",
-  "headline": "Orry calls Sara Ali Khan 'fake friend' for disappearing during his difficult time, claims Amrita Singh hurled abuses at him and never apologised",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Orry Sara Ali Khan fake friend Amrita Singh Double Date 🔥\nOrry ne Neha Dhupia aur Angad Bedi ke show Double Date mein dosti tootne ki baat ki\nUnka kehna hai ki mushkil waqt mein Sara ne ek baar bhi call nahi kiya\nOrry ka kathit taur par daava hai ki Amrita Singh ne gaaliyan di aur maafi nahi mangi\nTum kiske side ho: ORRY ya SARA? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #orry #saraalikhan #bollywood #doubledate\n\n(Orry Sara Ali Khan, Orry fake friend, Amrita Singh Orry, Double Date Neha Dhupia, Angad Bedi Double Date, Orhan Awatramani, Sara Ali Khan Orry fallout, Bollywood gossip)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/orry-calls-sara-ali-khan-fake-friend-for-disappearing-during-his-difficult-time-claims-amrita-singh-hurled-abuses-at-him-and-never-apologised-101793674210067.html",
-  "pin_comment": "Apne Sara Ali Khan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Samjhawan",
-    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "toota dosti ka dard"
-   },
-   {
-    "title": "Tu hai kahan",
-    "artist": "AUR",
-    "lang": "hindi",
-    "mood": "dost ka gayab hona"
-   },
-   {
-    "title": "back to friends",
-    "artist": "sombr",
-    "lang": "english",
-    "mood": "friendship toot gayi vibe"
-   },
-   {
-    "title": "Just Give Me a Reason (feat. Nate Ruess)",
-    "artist": "P!nk, Nate Ruess",
-    "lang": "english",
-    "mood": "rishte mein sawaal, wajah poochna"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-03T04:36:49+00:00"
  }
 ]
