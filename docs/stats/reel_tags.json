@@ -620,5 +620,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-04",
+  "key": "ramayanapart2releasedatenamitmalhotra",
+  "kind": "reel_news_am",
+  "secs": 17.0,
+  "at": "2026-11-04T06:34:36+00:00",
+  "type": "news",
+  "topic": "promo",
+  "kw": 7,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 40,
+  "hook": "question",
+  "photos": 2,
+  "short": false
  }
 ]
