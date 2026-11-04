@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-11-04",
+  "image": "posts/20261104-0434-reel_break_am-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-043428-reel_break_am-2026-11-04.mp4",
+  "headline": "‘Baby Doll’ singer Kanika Kapoor announces separation from husband Gautam Hathiramani",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Kanika Kapoor Gautam Hathiramani separation, Baby Doll singer ka elaan\nInstagram story par note share karke alag hone ki baat batayi.\nNote mein likha: \"my husband and I are going our separate ways\".\nMay 2022 mein hui thi shaadi, 4 saal se zyada baad faisla 💔\nUs dost ko bhejo jo Kanika ke gaane par jhoomta hai 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#kanikakapoor #bollywoodnews #babydoll #reelsindia #bollywood\n\n(Kanika Kapoor, Gautam Hathiramani, Kanika Kapoor separation, Kanika Kapoor divorce, Baby Doll singer, Kanika Kapoor Instagram note, Bollywood news, Kanika Kapoor husband)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/",
+  "pin_comment": "Apne Kanika Kapoor fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Kabhi Shaam Dhale",
+    "artist": "Jaani, Mohammad Faiz",
+    "lang": "hindi",
+    "mood": "sad, bichhadne ka dard"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "rishte ki kahaani, emotional"
+   },
+   {
+    "title": "Babydoll",
+    "artist": "Jamie Miller",
+    "lang": "english",
+    "mood": "Baby Doll singer ka link"
+   },
+   {
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "lang": "english",
+    "mood": "shaadi toot ne wala vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-04T04:34:28+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-04",
   "image": "posts/20261104-0234-reel_news_early-2026-11-04.jpg",
   "kind": "reel",
@@ -398,56 +443,5 @@
    "fixed": []
   },
   "created_at": "2026-11-03T04:36:49+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-03",
-  "image": "posts/20261103-0235-reel_news_early-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-023544-reel_news_early-2026-11-03.mp4",
-  "headline": "Salman Khan wishes Shah Rukh Khan stays young forever on his birthday; SRK says ‘working hard on physique because of you’",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Salman Khan Shah Rukh Khan birthday wish aur King physique 💪\nSalman ne SRK ke liye wish kiya ki woh hamesha young rahein.\nSRK ne likha: 'Aapne kaha Bina shirt ke acchhi body hai sirf isse liye mehnat ki.'\nKing mein SRK ki chiselled body ki fans aur celebs ne tareef ki.\nUs dost ko bhejo jiske saath Karan-Arjun wali dosti hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #salmankhan #srkbirthday #bollywood #reelsindia\n\n(Salman Khan, Shah Rukh Khan, SRK birthday, King movie, Salman SRK friendship, Karan Arjun, SRK 61st birthday, Salman Khan wish)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-wishes-shah-rukh-khan-stays-young-on-his-birthday-srk-says-working-hard-on-physique-because-of-you-king-101793668527965.html",
-  "pin_comment": "Apne Salman-SRK fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "dosti aur swag vibe"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "yaari ka warm moment"
-   },
-   {
-    "title": "Ordinary",
-    "artist": "Alex Warren",
-    "lang": "english",
-    "mood": "sweet friendship feel"
-   },
-   {
-    "title": "Calm Down",
-    "artist": "Rema, Selena Gomez",
-    "lang": "english",
-    "mood": "light, happy birthday vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The quote in the caption was a paraphrase in quote marks, not what Shah Rukh wrote.",
-    "Fact corrected to match the article: Article doesn't say Salman is the motivation behind the physique; SRK only joked about it in his reply."
-   ],
-   "fixed": [
-    "SRK bole: 'Working hard on physique because of you'. → SRK ne likha: 'Aapne kaha Bina shirt ke acchhi body hai sirf isse liye mehnat ki.'",
-    "King ki chiselled body ke peeche Salman ki motivation hai. → King mein SRK ki chiselled body ki fans aur celebs ne tareef ki."
-   ]
-  },
-  "created_at": "2026-11-03T02:35:44+00:00"
  }
 ]

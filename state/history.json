@@ -247,7 +247,8 @@
   "0902cb1051ba",
   "710273b380ad",
   "5a2c187e3a68",
-  "3e707fb438ac"
+  "3e707fb438ac",
+  "a7fa5d7e725d"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -395,13 +396,13 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-04",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-03",
+  "reel_break_am": "2026-11-04",
   "reel_break_noon": "2026-11-03",
   "reel_break_aft": "2026-11-03",
   "reel_news_night": "2026-11-03",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "RcCkGNhy37tX",
+ "inbox_since": "dWYSSIp1VLG2",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -774,7 +775,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
   "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
   "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
   "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
@@ -853,7 +853,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-brushes-off-ramayana-criticism-says-what-matters-is-people-who-value-his-intentions-yash-sai-pallavi-nitesh-tiwari-101793703714558.html",
   "https://www.bollywoodhungama.com/news/bollywood/bombay-high-court-asks-bmc-to-restore-dia-mirzas-diwali-video-india-is-a-secular-country/",
   "https://www.bollywoodhungama.com/news/bollywood/manoj-bajpayee-boman-irani-and-divya-duttas-last-man-in-tower-to-premiere-on-hindi-zee-5-on-november-6/",
-  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html",
+  "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1070,10 +1071,6 @@
   }
  ],
  "songs_recent": [
-  "Hanuman Chalisa (From \"Hanuman Chalisa - Zee Music Devotional\")",
-  "Hanuman Chalisa (Lofi)",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Jo Tum Mere Ho",
   "Ordinary",
   "Calm Down",
   "Samjhawan",
@@ -1109,7 +1106,11 @@
   "Tu Mil Jaaye (From \"KING\")",
   "Dhun",
   "Blinding Lights",
-  "Sunflower (Spider-Man: Into the Spider-Verse)"
+  "Sunflower (Spider-Man: Into the Spider-Verse)",
+  "Kabhi Shaam Dhale",
+  "Teri Meri Kahaani",
+  "Babydoll",
+  "Stop The Wedding!"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1199,6 +1200,10 @@
   },
   {
    "title": "Ranbir Kapoor weighs in on AI's impact on filmmaking, says it can never replace human touch",
+   "date": "2026-11-04"
+  },
+  {
+   "title": "‘Baby Doll’ singer Kanika Kapoor announces separation from husband Gautam Hathiramani",
    "date": "2026-11-04"
   }
  ],
