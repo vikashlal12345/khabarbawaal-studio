@@ -722,11 +722,11 @@ clip_wanted: one line describing the ideal clip.
 caption, pin_comment and hashtags follow the same rules as fun posts (exactly 5 hashtags, include #reelsindia); the \
 caption's first line carries the searchable keywords (the trend's name, e.g. 'Navratri garba', 'Gemini 4')."""
 
-SONGS = {"type": "array", "description": "2 Indian + 2 English songs that fit this Reel's moment, copied exactly "
+SONGS = {"type": "array", "description": "2 chart + 2 newly released Hindi songs that fit this Reel's moment, copied exactly "
          "from today's song lists",
          "items": {"type": "object", "properties": {
              "title": {"type": "string"}, "artist": {"type": "string"},
-             "lang": {"type": "string", "enum": ["hindi", "english"], "description": "hindi = any Indian song"},
+             "lang": {"type": "string", "enum": ["hindi", "new"], "description": "hindi = a song from the Indian charts, new = a newly released Hindi song"},
              "mood": {"type": "string", "description": "Max 6 words: why it fits this Reel, e.g. 'sad hook = UPI fail'"}},
              "required": ["title", "artist", "lang", "mood"], "additionalProperties": False}}
 
@@ -1105,7 +1105,7 @@ def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]
     (owner, 13 Oct 2026: the JioSaavn list alone kept giving the same old songs). {lang: [(title, artist)]}:
     hindi = Indian songs: Shazam Top 200 India (most looked-up), Spotify Top 50 India + Top Songs India (week),
     Apple Music most played India (new releases), JioSaavn's Reels playlists and trending;
-    english = Spotify Top 50 Global, Apple Music most played US, JioSaavn English trending.
+    new = newly released Hindi songs (JioSaavn's new releases; owner 4 Nov 2026, was English chart songs).
     Sources are merged rank by rank (each one's #1 first), duplicates removed."""
     sources = {"hindi": [("Shazam India", lambda: _shazam("india")),
                          ("Spotify India today", lambda: _spotify("37i9dQZEVXbLZ52XmnySJg")),
@@ -1118,11 +1118,9 @@ def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]
                          ("JioSaavn trending", lambda: [_saavn_song(x) for x in _jiosaavn(
                              {"__call": "content.getTrending", "entity_type": "song", "entity_language": "hindi"})
                              if x.get("type") == "song"])],
-               "english": [("Spotify Global today", lambda: _spotify("37i9dQZEVXbMDoHDwVN2tF")),
-                           ("Apple Music US", lambda: _apple("us")),
-                           ("JioSaavn trending", lambda: [_saavn_song(x) for x in _jiosaavn(
-                               {"__call": "content.getTrending", "entity_type": "song", "entity_language": "english"})
-                               if x.get("type") == "song"])]}
+               "new": [("JioSaavn new Hindi", lambda: [_saavn_song(x) for x in _jiosaavn(
+                           {"__call": "content.getAlbums", "n": 30, "p": 1, "language": "hindi"})["data"]
+                           if x.get("type") == "song"])]}   # owner 4 Nov 2026: newly released Hindi songs instead of English ones
     RECENT_SONGS[:] = (state or {}).get("songs_recent", [])[-40:]
     out = {}
     for lang, srcs in sources.items():
@@ -1142,18 +1140,18 @@ def trending_songs(state: dict | None = None) -> dict[str, list[tuple[str, str]]
                     if key not in seen:
                         seen.add(key)
                         merged.append((title, artist))
-        out[lang] = merged[:70 if lang == "hindi" else 35]
+        out[lang] = merged[:70 if lang == "hindi" else 30]
     return out
 
 
 def songs_prompt(songs: dict) -> str:
     if not any(songs.values()):
         return ""
-    lists = "\n".join(("Indian songs" if lang == "hindi" else "English songs") + ":\n" + "\n".join(
+    lists = "\n".join(("Indian chart songs" if lang == "hindi" else "Newly released Hindi songs") + ":\n" + "\n".join(
         f"- {t} | {a}   [{SONG_WHERE.get(t.lower().strip(), '')}]" for t, a in songs[lang]) for lang in songs if songs[lang])
     recent = ("\nSuggested for recent Reels (a trending song may repeat when it fits, but at least 2 of your 4 must "
               "not be in this list): " + "; ".join(dict.fromkeys(RECENT_SONGS))) if RECENT_SONGS else ""
-    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Indian + 2 English songs from these lists (today's "
+    return ("\n\nsongs: the owner adds music in Instagram. Suggest 2 Indian chart songs + 2 newly released Hindi songs from these lists (today's "
             "charts: what India looks up on Shazam and plays on Spotify / Apple Music, and JioSaavn's Reels playlists; "
             "[...] says where each one charts). Pick songs whose hook, lyrics or vibe FIT THIS Reel's moment (a sad or "
             "dramatic line for a fail, hype for a win, romantic for love, calm for serious news...); among songs that "
@@ -1162,7 +1160,7 @@ def songs_prompt(songs: dict) -> str:
 
 
 def chart_songs(state: dict) -> list[dict]:
-    """2 Indian + 2 English songs from the top of today's charts not suggested recently (Reels without AI writing)."""
+    """2 chart + 2 new Hindi songs from the top of today's charts not suggested recently (Reels without AI writing)."""
     songs = trending_songs(state)
     return [{"title": t, "artist": a, "lang": lang, "mood": "high on today's charts"} for lang in songs
             for t, a in ([x for x in songs[lang] if x[0] not in RECENT_SONGS][:2] or songs[lang][:2])]
@@ -1198,7 +1196,7 @@ def checked_songs(picked: list[dict], songs: dict) -> list[dict]:
     for s in picked:
         lang = s.get("lang", "")
         match = pool.get(s.get("title", "").strip().lower())
-        if match and match[0] not in seen and lang in ("hindi", "english") and sum(o["lang"] == lang for o in out) < 2:
+        if match and match[0] not in seen and lang in ("hindi", "new") and sum(o["lang"] == lang for o in out) < 2:
             seen.add(match[0])
             out.append({"title": match[0], "artist": match[1], "lang": lang, "mood": s.get("mood", "")[:40]})
     return out
@@ -2837,7 +2835,7 @@ SPEECH_OPTION = {"type": "object", "properties": {
                     "share nudge like 'Ye message sabko bhejo 🇮🇳'"},
     "hashtags": {"type": "array", "items": {"type": "string"}, "description": "Exactly 5, include #reelsindia"},
     "songs": {"type": "array", "items": {"type": "object", "properties": {
-        "title": {"type": "string"}, "artist": {"type": "string"}, "lang": {"type": "string", "enum": ["hindi", "english"]},
+        "title": {"type": "string"}, "artist": {"type": "string"}, "lang": {"type": "string", "enum": ["hindi", "new"]},
         "mood": {"type": "string", "description": "Max 6 words: why it fits, e.g. 'attack mode, play it low'"}},
         "required": ["title", "artist", "lang", "mood"], "additionalProperties": False},
         "description": "4 tracks from the given list that fit the speech's mood"}},
