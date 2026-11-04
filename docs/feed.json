@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_devotion-2026-11-04",
+  "image": "posts/20261104-0035-reel_devotion-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-003515-reel_devotion-2026-11-04.mp4",
+  "headline": "Wednesday: Ganesh ji: Ganesh ji ki kripa se din shubh banayein",
+  "tag": "🎬 REEL · 🙏 JAI GANESH DEVA",
+  "caption": "Ganesh ji ki kripa se aaj ka din shubh banayein 🙏\nEkdant, Lambodar... har naam mein ek seekh hai.\nAaj shaant mann se din shuru karein.\nJai Ganpati Bappa likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappamorya #ganesh #wednesday #ekdant #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Kisi apne ko bhejo jise aaj ashirwaad chahiye 🙏",
+  "songs": [
+   {
+    "title": "Gajanana (Sukhkarta Dukhharta) (Ganpati 2026)",
+    "artist": "Shreyas Puranik, Sukhvinder Singh",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Sukhkarta Dukhharta Hindi",
+    "artist": "Meet Bros",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Ganesh Aarti",
+    "artist": "Sanjay Dutt",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ganesh Jai Ganesh Deva",
+    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-04T00:35:15+00:00"
+ },
+ {
   "id": "reel_news_night-2026-11-03",
   "image": "posts/20261103-1449-reel_news_night-2026-11-03.jpg",
   "kind": "reel",
@@ -404,52 +449,5 @@
    "fixed": []
   },
   "created_at": "2026-11-03T01:03:17+00:00"
- },
- {
-  "id": "reel_news_night-2026-11-02",
-  "image": "posts/20261102-1450-reel_news_night-2026-11-02.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261102-145034-reel_news_night-2026-11-02.mp4",
-  "headline": "Amitabh Bachchan recalls Jaya Bachchan’s cute nickname for him, but says his father eventually put a stop to it",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Amitabh Bachchan Jaya Bachchan nickname KBC Ranbir Alia 🥹\nKaun Banega Crorepati par Amitabh ne Jaya ka pyaar bhara nickname yaad kiya.\nRanbir ne kaha wo Amitabh jaise lambe hona chahte the, Alia ko Jaya jaisi chhoti imagine kiya.\nAmitabh ke mutabik unke father ne ye nickname eventually band karwa diya.\nUs dost ko bhejo jiska ghar mein cute nickname hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#amitabhbachchan #jayabachchan #kbc #bollywood #reelsindia\n\n(Amitabh Bachchan Jaya Bachchan nickname, Kaun Banega Crorepati, KBC Ranbir Kapoor Alia Bhatt, Amitabh Bachchan KBC, Jaya Bachchan, Ranbir Kapoor Alia Bhatt KBC, Bachchan family, Bollywood news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-recalls-jaya-bachchan-s-cute-nickname-for-him-but-says-his-father-eventually-put-a-stop-to-it-101793626597966.html",
-  "pin_comment": "Apne Amitabh Bachchan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Pal Pal Dil Ke Paas - Title Track",
-    "artist": "Arijit Singh, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "retro love, Amitabh-Jaya vibe"
-   },
-   {
-    "title": "Tere Liye",
-    "artist": "Atif Aslam, Shreya Ghoshal, Sachin Gupta, Sameer Anjaan",
-    "lang": "hindi",
-    "mood": "sweet couple nostalgia"
-   },
-   {
-    "title": "STAY",
-    "artist": "Justin Bieber, The Kid Laroi",
-    "lang": "english",
-    "mood": "warm togetherness"
-   },
-   {
-    "title": "I Think They Call This Love (Cover)",
-    "artist": "Matthew Ifield",
-    "lang": "english",
-    "mood": "cute nickname, soft love"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 5: The photo credit 'Photo: Bollywood Hungama' at the bottom left overlaps and touches the '@khabarbawaal' handle text. The two texts collide."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-02T14:50:34+00:00"
  }
 ]
