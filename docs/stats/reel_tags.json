@@ -651,5 +651,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-04",
+  "key": "ayushmannkhurranarajkummarraobareillykibarfidancediwaliparty",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-04T10:34:44+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 7,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 41,
+  "hook": "feeling",
+  "photos": 2,
+  "short": true
  }
 ]

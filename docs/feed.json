@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_pm-2026-11-04",
+  "image": "posts/20261104-1034-reel_news_pm-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-103444-reel_news_pm-2026-11-04.mp4",
+  "headline": "Ayushmann Khurrana and Rajkummar Rao bring back memories of Bareilly Ki Barfi, dance together at Diwali party",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ayushmann Khurrana Rajkummar Rao Bareilly Ki Barfi dance Diwali party 🎉\nBareilly Ki Barfi ke co-stars Ayushmann aur Rajkummar Diwali party mein ek gaane par saath jhoome.\nDono ne Bareilly Ki Barfi (2017) mein saath kaam kiya tha.\nUs dost ko bhejo jiske saath purani yaadein hain 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ayushmannkhurrana #rajkummarrao #bollywood #diwali #reelsindia\n\n(Ayushmann Khurrana, Rajkummar Rao, Bareilly Ki Barfi, Diwali party, Ayushmann Rajkummar dance, Bollywood Diwali party, Bareilly Ki Barfi reunion)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ayushmann-khurrana-and-rajkummar-rao-bring-back-memories-of-bareilly-ki-barfi-dance-together-at-diwali-party-101793779953753.html",
+  "pin_comment": "Apne Bareilly Ki Barfi fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "dosti aur purani yaadein"
+   },
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "party vibe, masti"
+   },
+   {
+    "title": "Just Give Me a Reason (feat. Nate Ruess)",
+    "artist": "P!nk, Nate Ruess",
+    "lang": "english",
+    "mood": "dosti ka warm feel"
+   },
+   {
+    "title": "Beauty And A Beat",
+    "artist": "Justin Bieber, Nicki Minaj",
+    "lang": "english",
+    "mood": "party dance vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article does not give the year of the party, so '2026' is unsupported.",
+    "Fact corrected to match the article: The article does not say fans were reminded of the film. It does say they starred in it together in 2017."
+   ],
+   "fixed": [
+    "Diwali party 2026 → Diwali party",
+    "Fans ko film ki yaad phir se aa gayi. → Dono ne Bareilly Ki Barfi (2017) mein saath kaam kiya tha."
+   ]
+  },
+  "created_at": "2026-11-04T10:34:44+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-04",
   "image": "posts/20261104-0834-reel_break_noon-2026-11-04.jpg",
   "kind": "reel",
@@ -355,89 +406,5 @@
    ]
   },
   "created_at": "2026-11-03T12:35:54+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-03",
-  "image": "posts/20261103-1034-reel_news_pm-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-103430-reel_news_pm-2026-11-03.mp4",
-  "headline": "King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36 million views; beats Jawan's Zinda Banda, Adipurush's Jai Shri Ram",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Shah Rukh Khan Deepika Padukone King Tu Mil Jaaye song views 🔥\nKing ka romantic track Tu Mil Jaaye pehle 24 ghante mein 36 million views le gaya.\nHT ke mutabik ye ab sabse zyada dekha gaya Indian film song hai.\nJawan ke Zinda Banda aur Adipurush ke Jai Shri Ram ko bhi peeche chhoda.\nSRK ke us fan ko bhejo jo ye gaana loop pe sun raha hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #deepikapadukone #king #bollywood #reelsindia\n\n(Shah Rukh Khan King, Deepika Padukone, Tu Mil Jaaye song, King movie song views, Zinda Banda Jawan record, Shah Rukh Deepika jodi, Tu Mil Jaaye 36 million views)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-deepika-padukone-king-song-tu-mil-jaaye-most-watched-indian-film-song-24-hours-36-million-views-beats-zinda-banda-jai-shri-ram-adipurus-101793695460606.html",
-  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "romantic SRK-Deepika jodi vibe"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "classic romantic Shah Rukh feel"
-   },
-   {
-    "title": "Levitating",
-    "artist": "Dua Lipa",
-    "lang": "english",
-    "mood": "record-breaking high energy"
-   },
-   {
-    "title": "Billie Jean",
-    "artist": "Michael Jackson",
-    "lang": "english",
-    "mood": "king of the charts"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-03T10:34:30+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-03",
-  "image": "posts/20261103-0835-reel_break_noon-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-083516-reel_break_noon-2026-11-03.mp4",
-  "headline": "Yash says son Yatharv struggled to accept him as Ravana in Ramayana, as he's ‘Rama in real life’, recalls difficult conversation",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Yash Yatharv Ramayana Ravana son reaction 🎬\nYash ke bete Yatharv ko pasand nahi aaya ki papa Ravana bane hain.\nBete ne poocha: \"Aap Ravana? Aap toh Rama ho na?\"\nYash ne kaha: real life mein Rama, movie mein Ravana.\nApne Yash fan dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #yash #ramayana #bollywood #ranbirkapoor\n\n(Yash Ramayana, Yash Ravana, Yash son Yatharv, Ramayana movie, Nitesh Tiwari Ramayana, Ranbir Kapoor Ramayana, Ramayana 5 November, Yash interview Suma Kanakala)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/yash-says-son-yatharv-struggled-to-accept-him-as-ravana-in-ramayana-hes-rama-in-real-life-recalls-difficult-conversation-nitesh-tiwari-ranbir-kapoor-101793686969566.html",
-  "pin_comment": "Apne Yash fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "warm family bond feel"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "emotional, heartfelt conversation"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "mellow, thoughtful father moment"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-03T08:35:16+00:00"
  }
 ]
