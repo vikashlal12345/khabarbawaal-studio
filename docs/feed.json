@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_night-2026-11-04",
+  "image": "posts/20261104-1452-reel_news_night-2026-11-04.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261104-145201-reel_news_night-2026-11-04.mp4",
+  "headline": "Parivarik ManuRanjan trailer: Pankaj Tripathi, Aditi Rao Hydari's unusual equation promises twists, romance and comedy",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Parivarik ManuRanjan trailer Pankaj Tripathi Aditi Rao Hydari 🎬\nTrailer mein Aditi Rao Hydari Helen bani hain, ek house help jiske aane se Pankaj Tripathi ke ghar mein padosiyon ki gossip shuru ho jaati hai.\nTwists, romance aur comedy ka waada hai.\nUs padosi dost ko bhejo jo sab jaanta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#pankajtripathi #aditiraohydari #parivarikmanuranjan #bollywood #reelsindia\n\n(Parivarik ManuRanjan trailer, Pankaj Tripathi, Aditi Rao Hydari, Parivarik ManuRanjan, Pankaj Tripathi Aditi Rao Hydari, Bollywood trailer)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/parivarik-manuranjan-trailer-pankaj-tripathi-aditi-rao-hydaris-unusual-equation-promises-twists-romance-and-comedy-101793790260112.html",
+  "pin_comment": "Apne Pankaj Tripathi fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "playful, quirky comedy vibe"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "naughty gossip energy"
+   },
+   {
+    "title": "Housewife",
+    "artist": "Tate McRae",
+    "lang": "english",
+    "mood": "house help twist, playful"
+   },
+   {
+    "title": "Nicole Kidman",
+    "artist": "ADÉLA",
+    "lang": "english",
+    "mood": "cheeky, trending vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The photo credit 'Photo: hollywoodreporterindia' at the bottom left overlaps and collides with the '@khabarbawaal' handle text, so both are hard to read. Move one of them."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-04T14:52:01+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-04",
   "image": "posts/20261104-1419-reel_break_aft-2026-11-04.jpg",
   "kind": "reel",
@@ -364,97 +411,5 @@
    "fixed": []
   },
   "created_at": "2026-11-04T00:35:15+00:00"
- },
- {
-  "id": "reel_news_night-2026-11-03",
-  "image": "posts/20261103-1449-reel_news_night-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-144937-reel_news_night-2026-11-03.mp4",
-  "headline": "Manoj Bajpayee, Boman Irani and Divya Dutta’s Last Man in Tower to premiere on Hindi Zee 5 on November 6",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Manoj Bajpayee Boman Irani Divya Dutta Last Man in Tower Zee5 🎬\nLast Man in Tower 6 November ko Hindi Zee 5 par premiere hoga.\nStar cast: Manoj Bajpayee, Boman Irani aur Divya Dutta.\nDirector Ben Rekhi hain.\nWeekend plan wale dost ko bhejo 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#manojbajpayee #bomanirani #zee5 #ott #reelsindia\n\n(Last Man in Tower, Manoj Bajpayee, Boman Irani, Divya Dutta, Zee5 premiere, 6 November OTT release, Last Man in Tower Zee5, new OTT release)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/manoj-bajpayee-boman-irani-and-divya-duttas-last-man-in-tower-to-premiere-on-hindi-zee-5-on-november-6/",
-  "pin_comment": "Apne Manoj Bajpayee fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "calm, classy OTT vibe"
-   },
-   {
-    "title": "Aaj Bhi 2",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "nostalgic drama mood"
-   },
-   {
-    "title": "Die With A Smile",
-    "artist": "Lady Gaga, Bruno Mars",
-    "lang": "english",
-    "mood": "stars together, warm feel"
-   },
-   {
-    "title": "Believer",
-    "artist": "Imagine Dragons",
-    "lang": "english",
-    "mood": "hype for big release"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: Bottom-left credit 'Photo: Bollywood Hungama' runs into the '@khabarbawaal' handle, so the two texts touch or overlap."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-03T14:49:37+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-03",
-  "image": "posts/20261103-1420-reel_break_aft-2026-11-03.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261103-142030-reel_break_aft-2026-11-03.mp4",
-  "headline": "Bombay High Court asks BMC to restore Dia Mirza’s Diwali video: “India is a secular country”",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Dia Mirza Diwali video Bombay High Court BMC order 🔥\nBombay HC ne BMC se Dia Mirza ka video dobara upload karne ko kaha.\nVideo Diwali par public streets par cracker na jalane ki appeal ka tha.\nCourt bola, bench ke mutabiq Dia ne court ke direction ke hisaab se kaam kiya.\nCourt ka order sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #diamirza #bollywoodnews #bombayhighcourt #diwali\n\n(Dia Mirza, Dia Mirza Diwali video, Bombay High Court, BMC Diwali video, Dia Mirza BMC, firecrackers Diwali 2026, pollution free Diwali, India is a secular country)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/bombay-high-court-asks-bmc-to-restore-dia-mirzas-diwali-video-india-is-a-secular-country/",
-  "pin_comment": "Apne Dia Mirza fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ashke",
-    "artist": "Karan Aujla & MXRCI",
-    "lang": "hindi",
-    "mood": "serious news, strong beat"
-   },
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "calm, serious tone"
-   },
-   {
-    "title": "Thriller",
-    "artist": "Michael Jackson",
-    "lang": "english",
-    "mood": "dramatic court twist"
-   },
-   {
-    "title": "the cure",
-    "artist": "Olivia Rodrigo",
-    "lang": "english",
-    "mood": "light closing vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-03T14:20:30+00:00"
  }
 ]

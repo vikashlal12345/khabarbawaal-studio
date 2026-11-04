@@ -698,5 +698,21 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_night-2026-11-04",
+  "key": "parivarikmanuranjantrailerpankajtripathiaditiraohydari",
+  "kind": "reel_news_night",
+  "secs": 22.5,
+  "at": "2026-11-04T14:52:01+00:00",
+  "type": "news",
+  "topic": "promo",
+  "kw": 6,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 42,
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]

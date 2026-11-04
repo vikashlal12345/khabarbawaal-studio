@@ -252,7 +252,8 @@
   "d904164e7138",
   "69ab56b80213",
   "33f2ed51703b",
-  "a7abfaaa8039"
+  "a7abfaaa8039",
+  "3ac2fb35c11a"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -403,10 +404,10 @@
   "reel_break_am": "2026-11-04",
   "reel_break_noon": "2026-11-04",
   "reel_break_aft": "2026-11-04",
-  "reel_news_night": "2026-11-03",
+  "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "Hrqmuo4UcVlX",
+ "inbox_since": "2hdcsTsVHSpg",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -779,7 +780,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
@@ -858,7 +858,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/hanuman-anshs-visually-impaired-singer-suneel-lodhi-begins-his-eye-treatment-hopes-to-regain-his-eyesight-in-emotional-post-101793774765746.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ayushmann-khurrana-and-rajkummar-rao-bring-back-memories-of-bareilly-ki-barfi-dance-together-at-diwali-party-101793779953753.html",
   "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-and-kabir-khan-reunite-for-inspirational-real-life-story-ladaku-set-to-release-on-june-18-2027/",
-  "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq"
+  "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq",
+  "https://www.hindustantimes.com/entertainment/bollywood/parivarik-manuranjan-trailer-pankaj-tripathi-aditi-rao-hydaris-unusual-equation-promises-twists-romance-and-comedy-101793790260112.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1075,10 +1076,6 @@
   }
  ],
  "songs_recent": [
-  "Let Me Down Slowly",
-  "Ashke",
-  "Dhun",
-  "Thriller",
   "the cure",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Aaj Bhi 2",
@@ -1114,7 +1111,11 @@
   "Alfaaz",
   "Gehra Hua",
   "All The Stars",
-  "Heat Waves"
+  "Heat Waves",
+  "Peek A Boo",
+  "Shararat",
+  "Housewife",
+  "Nicole Kidman"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1228,6 +1229,10 @@
   },
   {
    "title": "Ramayana advance bookings cross Rs 110 crore with strong demand across India",
+   "date": "2026-11-04"
+  },
+  {
+   "title": "Parivarik ManuRanjan trailer: Pankaj Tripathi, Aditi Rao Hydari's unusual equation promises twists, romance and comedy",
    "date": "2026-11-04"
   }
  ],
