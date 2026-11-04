@@ -1,15 +1,6 @@
 {
- "at": "2026-11-04T02:34:06+00:00",
+ "at": "2026-11-04T04:34:31+00:00",
  "known": {
-  "https://www.hindustantimes.com/india-news/andhra-pradesh-odisha-up-safety-steps-in-wake-of-cyclone-murasu-101793672165861.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/india-news/special-neet-ug-round-to-help-fill-944-mbbs-vacant-seats-101793647581238.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/india-news/probe-ordered-into-assault-claim-by-17-tamil-nadu-recaptured-inmates-101793647519865.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/india-news/indias-manufacturing-growth-momentum-eases-in-oct-101793647160292.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/surat-court-issues-warrant-against-anurag-kashyap-for-failing-to-appear-in-case-over-anti-brahmin-remarks-101793671925509.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-wishes-shah-rukh-khan-stays-young-on-his-birthday-srk-says-working-hard-on-physique-because-of-you-king-101793668527965.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/trending/nest-of-englands-rarest-ant-species-stolen-from-uk-nature-reserve-police-launch-investigation-101793669996807.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/trending/squarespace-layoffs-300-affected-employees-to-get-at-least-16-weeks-pay-healthcare-visa-support-101793669406562.html": "2026-11-03T02:35:48+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/vfx-expert-arun-kumar-calls-for-law-to-mandate-bold-labelling-of-ai-on-social-media-amid-janhvi-kapoor-keerthy-suresh-flagging-misuse-ht-exclusive-101793623798269.html": "2026-11-03T02:35:48+00:00",
   "https://www.bollywoodhungama.com/news/bollywood/exclusive-tips-films-and-tips-music-come-on-board-for-emraan-hashmis-musical-horror-film-rooh/": "2026-11-03T04:36:54+00:00",
   "https://www.hindustantimes.com/trending/us/billionaire-ceo-works-in-modest-office-while-interns-enjoy-stunning-central-park-views-at-his-manhattan-firm-101793677824944.html": "2026-11-03T04:36:54+00:00",
   "https://www.hindustantimes.com/htcity/cinema/amitabh-bachchans-bulletproof-enclosure-shah-rukh-khan-waving-to-fans-from-afar-at-mannat-new-face-of-celeb-fan-meets-amid-threats-101793677440233.html": "2026-11-03T04:36:54+00:00",
@@ -82,73 +73,94 @@
   "https://www.hindustantimes.com/india-news/husband-calling-wife-stupid-not-cruelty-says-sc-101793730889828.html": "2026-11-04T02:34:06+00:00",
   "https://www.hindustantimes.com/trending/canva-announces-layoffs-after-hardest-year-over-1-200-employees-to-face-job-cuts-or-relocation-101793755319117.html": "2026-11-04T02:34:06+00:00",
   "https://www.hindustantimes.com/entertainment/bollywood/panchayat-chandan-roy-recalls-how-a-boy-asking-for-selfie-in-his-village-made-him-realise-the-show-was-a-hit-101793715368980.html": "2026-11-04T02:34:06+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html": "2026-11-04T02:34:06+00:00"
+  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html": "2026-11-04T02:34:06+00:00",
+  "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/": "2026-11-04T04:34:31+00:00",
+  "https://www.bollywoodhungama.com/news/bollywood/aditya-roy-kapur-and-tara-sutarias-film-with-milap-zaveri-titled-parwana/": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/trending/us/jd-vance-gets-ratioed-by-zohran-mamdani-after-praising-trump-s-nyc-achievements-101793765619214.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/trending/singapore-billionaires-daughters-ex-employee-jailed-for-stealing-s-73-000-patek-philippe-watch-spending-nearly-s-20-000-at-nightclubs-101793763198104.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/india-news/ht-morning-brief-nov-4-ec-says-previously-enrolled-voters-can-submit-form-6-for-inclusion-us-midterm-results-pour-in-101793756546435.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/shraddha-kapoor-reveals-why-she-didnt-sign-any-film-after-stree-2-success-despite-being-offered-good-money-eetha-101793760896221.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/india-news/delhi-police-files-fir-against-prashant-bhushan-for-allegedly-sharing-doctored-video-of-russian-fm-sergei-lavrov-criticising-india-101793762743112.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/technology/can-a-tablet-replace-your-laptop-features-to-consider-before-making-the-switch-101793726725300.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/india-news/tdpled-alliance-sweeps-andhra-pradesh-civic-elections-ysrcp-alleges-manipulation-101793762819810.html": "2026-11-04T04:34:31+00:00",
+  "https://www.hindustantimes.com/india-news/centre-asks-ott-platforms-news-sites-to-time-stamp-visuals-and-follow-it-law-in-letter-and-spirit-101793760469189.html": "2026-11-04T04:34:31+00:00"
  },
  "x": [],
  "google": [
-  "dan osborn",
-  "byron donalds",
-  "wellington vs northern districts",
-  "ind vs nz test",
-  "angie nixon",
-  "sports",
-  "temple device"
+  "sbin share price",
+  "el sayed",
+  "coal india share",
+  "mcx share price"
  ],
  "stories": [
   {
-   "title": "Legislators cannot prevent PAC’s scrutiny of CAG reports: Satheesan",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/legislators-cannot-prevent-pac-s-scrutiny-of-cag-reports-satheesan-101793732329757.html",
-   "category": "india/politics",
+   "title": "‘Baby Doll’ singer Kanika Kapoor announces separation from husband Gautam Hathiramani",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/",
+   "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "Assam to sack state staff for polygamy: CM",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/assam-to-sack-state-staff-for-polygamy-cm-101793731851194.html",
-   "category": "india/politics",
+   "title": "Aditya Roy Kapur and Tara Sutaria's film with Milap Zaveri titled Parwana",
+   "source": "Bollywood Hungama",
+   "link": "https://www.bollywoodhungama.com/news/bollywood/aditya-roy-kapur-and-tara-sutarias-film-with-milap-zaveri-titled-parwana/",
+   "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "SC seeks details of state laws violating DGP selection rules",
+   "title": "JD Vance gets ‘ratioed’ by Zohran Mamdani after praising Trump’s NYC achievements",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/sc-seeks-details-of-state-laws-violating-dgp-selection-rules-101793731369350.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Husband calling wife ‘stupid’ not cruelty, says SC",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/husband-calling-wife-stupid-not-cruelty-says-sc-101793730889828.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Canva announces layoffs after ‘hardest year’, over 1,200 employees to face job cuts or relocation",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/canva-announces-layoffs-after-hardest-year-over-1-200-employees-to-face-job-cuts-or-relocation-101793755319117.html",
+   "link": "https://www.hindustantimes.com/trending/us/jd-vance-gets-ratioed-by-zohran-mamdani-after-praising-trump-s-nyc-achievements-101793765619214.html",
    "category": "viral",
    "hours": 0
   },
   {
-   "title": "Panchayat's Chandan Roy recalls how a boy asking for selfie in his village made him realise the show was a hit",
+   "title": "Singapore billionaire's daughter's ex-employee jailed for stealing S$73,000 Patek Philippe watch, spending nearly S$20,000 at nightclubs",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/panchayat-chandan-roy-recalls-how-a-boy-asking-for-selfie-in-his-village-made-him-realise-the-show-was-a-hit-101793715368980.html",
+   "link": "https://www.hindustantimes.com/trending/singapore-billionaires-daughters-ex-employee-jailed-for-stealing-s-73-000-patek-philippe-watch-spending-nearly-s-20-000-at-nightclubs-101793763198104.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "HT Morning Brief Nov 4: EC says previously enrolled voters can submit Form 6 for inclusion, US midterm results pour in",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/ht-morning-brief-nov-4-ec-says-previously-enrolled-voters-can-submit-form-6-for-inclusion-us-midterm-results-pour-in-101793756546435.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Shraddha Kapoor says she didn't sign any film after Stree 2's success despite being offered good money in wait for ‘perfect story’",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/shraddha-kapoor-reveals-why-she-didnt-sign-any-film-after-stree-2-success-despite-being-offered-good-money-eetha-101793760896221.html",
    "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "Ranbir Kapoor weighs in on AI's impact on filmmaking, says it can never replace human touch",
+   "title": "Delhi Police files FIR against Prashant Bhushan for allegedly sharing doctored video of Russian FM criticising India",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html",
-   "category": "entertainment",
+   "link": "https://www.hindustantimes.com/india-news/delhi-police-files-fir-against-prashant-bhushan-for-allegedly-sharing-doctored-video-of-russian-fm-sergei-lavrov-criticising-india-101793762743112.html",
+   "category": "india/politics",
    "hours": 0
   },
   {
-   "title": "Kartik Aaryan to headline Vivek Agnihotri’s Operation Sindoor? Here’s what we know!",
-   "source": "Bollywood Hungama",
-   "link": "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-to-headline-vivek-agnihotris-operation-sindoor-heres-what-we-know/",
-   "category": "entertainment",
+   "title": "Can a tablet replace your laptop? Features to consider before making the switch",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/technology/can-a-tablet-replace-your-laptop-features-to-consider-before-making-the-switch-101793726725300.html",
+   "category": "tech",
+   "hours": 0
+  },
+  {
+   "title": "TDP-led alliance sweeps Andhra Pradesh civic elections; YSRCP alleges manipulation",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/tdpled-alliance-sweeps-andhra-pradesh-civic-elections-ysrcp-alleges-manipulation-101793762819810.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Centre asks OTT platforms, news sites to time-stamp visuals and follow IT law 'in letter and spirit'",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/centre-asks-ott-platforms-news-sites-to-time-stamp-visuals-and-follow-it-law-in-letter-and-spirit-101793760469189.html",
+   "category": "india/politics",
    "hours": 0
   }
  ]
