@@ -2231,11 +2231,17 @@ def bollywood_first(stories: list) -> list:
     return b if len(b) >= 3 else stories
 
 
+HARD_PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|motion poster|release date|song launch|promo|out now)\b")
+
+
 def drop_routine(stories: list, keep: int = 6) -> list:
-    """Owner 4 Nov 2026 (half the Reels stalled; greetings were part of it): birthday / anniversary / greeting stories leave the picker's list
-    whenever at least `keep` other stories remain."""
+    """Owner 4 Nov 2026 (half the Reels stalled): birthday / anniversary / greeting stories leave the picker's list whenever at least `keep` other
+    stories remain; so do trailer / teaser / poster / first-look / release-date / song-launch adverts (owner 4 Nov 2026: the 12 PM 'Ramayana Part 2
+    release date' Reel got 24 views, 3 of 4 stalled Reels that day were promos). Box-office / advance-booking numbers stay (a 1,108-view Reel)."""
     import flash
     rest = [x for x in stories if not flash.ROUTINE.search(x["title"])]
+    stories = rest if len(rest) >= keep else stories
+    rest = [x for x in stories if not HARD_PROMO.search(x["title"])]
     return rest if len(rest) >= keep else stories
 
 
