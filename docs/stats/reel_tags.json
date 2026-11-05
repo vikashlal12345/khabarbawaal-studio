@@ -738,5 +738,20 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_am-2026-11-05",
+  "key": "munnabhai3sanjayduttarshadwarsirajkumarhirani2027update",
+  "kind": "reel_break_am",
+  "secs": 13.0,
+  "at": "2026-11-05T04:35:01+00:00",
+  "type": "breaking",
+  "cover": "window",
+  "photos": 2,
+  "sharp": 38,
+  "topic": "promo",
+  "kw": 8,
+  "relate": "team_vote",
+  "hook": "question"
  }
 ]
