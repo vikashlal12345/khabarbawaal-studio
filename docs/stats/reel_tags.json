@@ -831,5 +831,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_night-2026-11-05",
+  "key": "salmankhansingingmaatrubhumisong",
+  "kind": "reel_news_night",
+  "secs": 22.5,
+  "at": "2026-11-05T14:49:59+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 6,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 42,
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
