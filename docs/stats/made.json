@@ -754,6 +754,21 @@
    "tag": "🎬 REEL · BOLLYWOOD",
    "at": "2026-11-05T14:49:59+00:00",
    "auto": false
+  },
+  "ayodhya_aarti-2026-11-05": {
+   "tag": "🎬 REEL · SARYU AARTI 🙏",
+   "at": "2026-11-05T15:19:21+00:00",
+   "auto": false
+  },
+  "ayodhya_raat-2026-11-05": {
+   "tag": "🎬 REEL · AYODHYA RAAT 🪔",
+   "at": "2026-11-05T15:19:22+00:00",
+   "auto": false
+  },
+  "ayodhya_subah-2026-11-05": {
+   "tag": "🎬 REEL · AYODHYA SUBAH 🌅",
+   "at": "2026-11-05T15:19:23+00:00",
+   "auto": false
   }
  }
 }
