@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_night-2026-11-05",
+  "image": "posts/20261105-1449-reel_news_night-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-144959-reel_news_night-2026-11-05.mp4",
+  "headline": "Salman Khan returns to playback singing after 11 years with ‘Teri Sexy Beauty’ from Maatrubhumi",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Salman Khan singing Maatrubhumi song 🎤\nSalman ne 11 saal baad playback singing ki hai.\nGaana 'Teri Sexy Beauty' unki upcoming film Maatrubhumi ka hai.\nFans ke liye ye bada comeback hai.\nBhai ka gaana hit? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#salmankhan #maatrubhumi #bollywood #bhai #reelsindia\n\n(Salman Khan, Maatrubhumi, Teri Sexy Beauty, Salman Khan singing, Salman Khan new song, Bollywood news)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/salman-khan-returns-to-playback-singing-after-11-years-with-teri-sexy-beauty-from-maatrubhumi/",
+  "pin_comment": "Apne Salman fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+    "artist": "Himesh Reshammiya, Sameer Anjaan",
+    "lang": "new",
+    "mood": "same film Maatrubhumi ka gaana"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "big star comeback hype"
+   },
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "swag entry vibe"
+   },
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "high energy hype"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 5: The 'Photo: Bollywood Hungama' credit at the bottom left touches or slightly overlaps the '@khabarbawaal' handle. The two should be moved apart."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T14:49:59+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-05",
   "image": "posts/20261105-1419-reel_break_aft-2026-11-05.jpg",
   "kind": "reel",

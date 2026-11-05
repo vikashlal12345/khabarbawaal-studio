@@ -258,7 +258,8 @@
   "9a2da3f14522",
   "e9b0a59889a4",
   "7ea4898a366d",
-  "4b7f96e6211f"
+  "4b7f96e6211f",
+  "aea9fcc5cd9e"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -409,10 +410,10 @@
   "reel_break_am": "2026-11-05",
   "reel_break_noon": "2026-11-05",
   "reel_break_aft": "2026-11-05",
-  "reel_news_night": "2026-11-04",
+  "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "4XGChU79RPFl",
+ "inbox_since": "4GV5yU9s5qUo",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -785,7 +786,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
   "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
@@ -864,7 +864,8 @@
   "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html",
   "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html",
   "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-raves-about-ramayana-calls-film-a-divine-blessing-101793877915800.html",
-  "https://jang.com.pk/en/75865-karan-johar-opens-up-about-his-children-future-in-bollywood-i-will-be-too-old-news"
+  "https://jang.com.pk/en/75865-karan-johar-opens-up-about-his-children-future-in-bollywood-i-will-be-too-old-news",
+  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-returns-to-playback-singing-after-11-years-with-teri-sexy-beauty-from-maatrubhumi/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1081,10 +1082,6 @@
   }
  ],
  "songs_recent": [
-  "Alfaaz",
-  "Gehra Hua",
-  "All The Stars",
-  "Heat Waves",
   "Peek A Boo",
   "Shararat",
   "Housewife",
@@ -1120,7 +1117,11 @@
   "Teri Meri Kahaani",
   "Aaj Bhi 2",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
+  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Tabaahi (From \"Toxic\")",
+  "Ez-Ez"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1234,6 +1235,10 @@
   },
   {
    "title": "Karan Johar opens up about his children future in Bollywood: 'I will be too old...\"",
+   "date": "2026-11-05"
+  },
+  {
+   "title": "Salman Khan returns to playback singing after 11 years with ‘Teri Sexy Beauty’ from Maatrubhumi",
    "date": "2026-11-05"
   }
  ],
