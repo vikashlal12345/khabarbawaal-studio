@@ -255,7 +255,8 @@
   "a7abfaaa8039",
   "3ac2fb35c11a",
   "34599d95d9a6",
-  "9a2da3f14522"
+  "9a2da3f14522",
+  "e9b0a59889a4"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -395,7 +396,7 @@
   "reel_news_pm": "2026-11-04",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-04",
+  "reel_news_am": "2026-11-05",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-04",
@@ -409,7 +410,7 @@
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "aBmmQpXN5TMJ",
+ "inbox_since": "vqAgn7ojgmX2",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -782,7 +783,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
   "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
   "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
   "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
@@ -861,7 +861,8 @@
   "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq",
   "https://www.hindustantimes.com/entertainment/bollywood/parivarik-manuranjan-trailer-pankaj-tripathi-aditi-rao-hydaris-unusual-equation-promises-twists-romance-and-comedy-101793790260112.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html",
-  "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/"
+  "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/",
+  "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1078,10 +1079,6 @@
   }
  ],
  "songs_recent": [
-  "Sunflower (Spider-Man: Into the Spider-Verse)",
-  "Kabhi Shaam Dhale",
-  "Teri Meri Kahaani",
-  "Babydoll",
   "Stop The Wedding!",
   "Dhun",
   "Iris",
@@ -1117,7 +1114,11 @@
   "Zaalima",
   "Soulmate",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "His Aura Hits You",
+  "Main Ram (From \"Ramayana\")",
+  "Mangal Rang (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1211,6 +1212,10 @@
   },
   {
    "title": "Rajkumar Hirani plans to begin filming Munna Bhai 3 starring Sanjay Dutt and Arshad Warsi in 2027: Report",
+   "date": "2026-11-05"
+  },
+  {
+   "title": "CONFIRMED: Sunny Deol makes a ROCKING entry as Lord Hanuman during Ramayana’s end credits",
    "date": "2026-11-05"
   }
  ],

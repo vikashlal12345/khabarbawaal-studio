@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_am-2026-11-05",
+  "image": "posts/20261105-0634-reel_news_am-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-063406-reel_news_am-2026-11-05.mp4",
+  "headline": "CONFIRMED: Sunny Deol makes a ROCKING entry as Lord Hanuman during Ramayana’s end credits",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sunny Deol Hanuman Ramayana end credits 🔥\nRamayana ab cinemas mein release ho chuki hai.\nBollywood Hungama ke mutabiq end credits mein Sunny Deol ki Lord Hanuman ke roop mein dhamakedaar entry confirm hui hai.\nFilm ab har jagah headlines mein hai.\nSunny ka Hanuman: SAHI ya GALAT? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#Ramayana #SunnyDeol #Bollywood #Hanuman #reelsindia\n\n(Sunny Deol Hanuman, Ramayana end credits, Ramayana movie, Sunny Deol Ramayana, Ranbir Kapoor Yash Ramayana, Ramayana Part 1, Ramayana Hanuman entry, Sunny Deol latest)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/",
+  "pin_comment": "Apne Sunny Deol fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "hype entry = surprise Hanuman reveal"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "mass aura = Sunny Deol entry"
+   },
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana devotional vibe"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana film, epic feel"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left overlaps and touches the '@khabarbawaal' handle, so the text collides."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T06:34:06+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-05",
   "image": "posts/20261105-0435-reel_break_am-2026-11-05.jpg",
   "kind": "reel",
