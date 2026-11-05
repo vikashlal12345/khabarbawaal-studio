@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_aft-2026-11-05",
+  "image": "posts/20261105-1419-reel_break_aft-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-141958-reel_break_aft-2026-11-05.mp4",
+  "headline": "Karan Johar opens up about his children future in Bollywood: 'I will be too old...\"",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Karan Johar on Yash Roohi Bollywood entry 💔\nKaran twins Yash aur Roohi ko Bollywood se dissuade kar rahe hain.\nUnka kehna: \"I will be too old to protect them.\"\nKareena Kapoor Khan ne alag raay di: protection hi shayad issue hai.\nKaran sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Daily Jang (link pinned in comments 👇)\n\n#karanjohar #bollywood #kareenakapoorkhan #bollywoodnews #reelsindia\n\n(Karan Johar, Karan Johar children, Yash Roohi Johar, Karan Johar Bollywood, Kareena Kapoor Khan, Dharma Productions, Karan Johar single father, Karan Johar interview)",
+  "source": "Daily Jang",
+  "source_url": "https://jang.com.pk/en/75865-karan-johar-opens-up-about-his-children-future-in-bollywood-i-will-be-too-old-news",
+  "pin_comment": "Apne Karan Johar fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "family feelings, emotional parent vibe"
+   },
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "soft emotional, bachchon ki yaad"
+   },
+   {
+    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Pritam, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "pyaar bhara parent moment"
+   },
+   {
+    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Vishal Mishra, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "dil ki baat, heartfelt"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "bahut old hounga → bahut old ho jaunga"
+   ]
+  },
+  "created_at": "2026-11-05T14:19:59+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-05",
   "image": "posts/20261105-1235-reel_news_aft-2026-11-05.jpg",
   "kind": "reel",
@@ -389,52 +436,5 @@
    "fixed": []
   },
   "created_at": "2026-11-04T14:52:01+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-04",
-  "image": "posts/20261104-1419-reel_break_aft-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-141952-reel_break_aft-2026-11-04.mp4",
-  "headline": "Ramayana advance bookings cross Rs 110 crore with strong demand across India",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ramayana advance booking Ranbir Kapoor Yash Nitesh Tiwari 🎬\nZoom TV ke mutabik 4 November, 10 baje tak advance sales Rs 97.64 crore (blocked seats ke saath).\n25.88 lakh tickets, 83,736 shows, 901 cities. NCR, Mumbai, Bengaluru top par.\nRanbir Ram, Sai Pallavi Sita, Yash Ravan ke role mein. Film 5 November ko release 🙏\nUs dost ko bhejo jo pehle din dekhega 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: NDTV Profit (link pinned in comments 👇)\n\n#reelsindia #Ramayana #RanbirKapoor #Yash #Bollywood\n\n(Ramayana advance booking, Ranbir Kapoor Ramayana, Yash Ravan, Sai Pallavi Sita, Nitesh Tiwari Ramayana, Ramayana release 5 November, Ramayana box office, Namit Malhotra)",
-  "source": "NDTV Profit",
-  "source_url": "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq",
-  "pin_comment": "Apne Ranbir ya Yash fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "top chart, big hype"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "epic intense feel"
-   },
-   {
-    "title": "All The Stars",
-    "artist": "Kendrick Lamar, SZA",
-    "lang": "english",
-    "mood": "grand blockbuster energy"
-   },
-   {
-    "title": "Heat Waves",
-    "artist": "Glass Animals",
-    "lang": "english",
-    "mood": "build-up anticipation"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The photo carries a 'MOVIE REVIEW' label, and its bottom edge cuts the text off. The story is about advance booking, not a review, so the label is misleading."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T14:19:52+00:00"
  }
 ]
