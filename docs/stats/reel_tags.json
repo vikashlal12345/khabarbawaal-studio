@@ -722,5 +722,21 @@
   "secs": 30.2,
   "at": "2026-11-05T00:36:02+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-05",
+  "key": "saifalikhankareenakapoorkoffeewithkaran",
+  "kind": "reel_news_early",
+  "secs": 14.0,
+  "at": "2026-11-05T02:34:59+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "name_person",
+  "cover": "window",
+  "sharp": 54,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
