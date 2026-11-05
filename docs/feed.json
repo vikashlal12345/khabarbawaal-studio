@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_news_early-2026-11-05",
+  "image": "posts/20261105-0234-reel_news_early-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-023459-reel_news_early-2026-11-05.mp4",
+  "headline": "Saif Ali Khan credits Kareena Kapoor for forging a bond with Sara Ali Khan and Ibrahim Ali Khan, says they reciprocate her efforts",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Saif Ali Khan Kareena Kapoor Koffee With Karan 💛\nSaif ne kaha Kareena ki wajah se Sara aur Ibrahim ke saath unka bond bana.\nSaif ke mutabiq Sara aur Ibrahim bhi Kareena ki koshish ka jawab pyaar se dete hain.\nKoffee With Karan par family life ki ye baat dil chhoo gayi.\nTumhare ghar ka family jodne wala kaun? Naam likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #kareenakapoor #koffeewithkaran #bollywood #reelsindia\n\n(Saif Ali Khan, Kareena Kapoor, Koffee With Karan, Sara Ali Khan, Ibrahim Ali Khan, Saif Kareena family, Koffee With Karan, Saif Ali Khan Koffee With Karan)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html",
+  "pin_comment": "Apne Saif-Kareena fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "family warmth, soft emotional bond"
+   },
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "pyaar aur apnapan"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "jodna, parivaar ka rishta"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "gentle, heartfelt family moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article gives no year for the episode; the 2026 claim is unsupported.",
+    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left runs into the '@khabarbawaal' handle, so the two texts overlap slightly. Move the credit or the handle."
+   ],
+   "fixed": [
+    "Koffee With Karan 2026 → Koffee With Karan"
+   ]
+  },
+  "created_at": "2026-11-05T02:34:59+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-05",
   "image": "posts/20261105-0036-reel_devotion-2026-11-05.jpg",
   "kind": "reel",
@@ -368,50 +418,5 @@
    "fixed": []
   },
   "created_at": "2026-11-04T04:34:28+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-04",
-  "image": "posts/20261104-0234-reel_news_early-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-023402-reel_news_early-2026-11-04.mp4",
-  "headline": "Ranbir Kapoor weighs in on AI's impact on filmmaking, says it can never replace human touch",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ranbir Kapoor AI filmmaking Ramayana ❤️\nRamayana promote karte hue Ranbir Kapoor aur Yash ne AI par apni baat rakhi.\nUnka kehna: AI filmmaking ko support kar sakta hai.\nPar human touch aur performance ki jagah kabhi nahi le sakta.\nIs Reel ko us dost ko bhejo jo AI se darta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #yash #bollywood #reelsindia\n\n(Ranbir Kapoor AI, Ranbir Kapoor Yash Ramayana, Ramayana AI filmmaking, Ranbir Kapoor interview, AI replace human touch, Ramayana promotion 2026)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-weighs-in-on-ais-impact-on-filmmaking-says-it-can-never-replace-human-touch-ramayana-yash-sai-pallavi-101793711746104.html",
-  "pin_comment": "Apne Ranbir fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Arijit Singh, Ed Sheeran, Madhubanti Bagchi & Kumaar",
-    "lang": "hindi",
-    "mood": "big-star filmy vibe"
-   },
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "warm, heartfelt star moment"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "cinematic, future tech feel"
-   },
-   {
-    "title": "Sunflower (Spider-Man: Into the Spider-Verse)",
-    "artist": "Post Malone, Swae Lee",
-    "lang": "english",
-    "mood": "chill, easy interview vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T02:34:02+00:00"
  }
 ]
