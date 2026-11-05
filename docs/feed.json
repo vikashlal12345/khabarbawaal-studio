@@ -1,5 +1,104 @@
 [
  {
+  "id": "ayodhya_aarti-2026-11-05",
+  "image": "posts/20261105-1519-ayodhya_aarti-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-151921-ayodhya_aarti-2026-11-05.mp4",
+  "headline": "Saryu aarti: Ayodhya ki shaam, Saryu ghat ki aarti",
+  "tag": "🎬 REEL · SARYU AARTI 🙏",
+  "caption": "Saryu ghat ki aarti: Ayodhya ki shaam ka sabse sukoon bhara nazara 🙏\nAapne Saryu aarti dekhi hai? Comment mein likho: HAAN ya NA 👇\n\nFollow @khabarbawaal: roz naya Bharat, naye nazare 🙏\n\n#ayodhya #saryuaarti #jaishriram #ramnagri #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Comment mein HAAN likho 🙏",
+  "songs": [
+   {
+    "title": "Main Ram (Ramayana)",
+    "artist": "new Hindi release",
+    "lang": "new",
+    "mood": "devotional, fits the Reel"
+   },
+   {
+    "title": "Mangal Rang (Ramayana)",
+    "artist": "new Hindi release",
+    "lang": "new",
+    "mood": "devotional, fits the Reel"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T15:19:21+00:00"
+ },
+ {
+  "id": "ayodhya_raat-2026-11-05",
+  "image": "posts/20261105-1519-ayodhya_raat-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-151922-ayodhya_raat-2026-11-05.mp4",
+  "headline": "Raat ki Ayodhya: roshni aur sajaavat",
+  "tag": "🎬 REEL · AYODHYA RAAT 🪔",
+  "caption": "Raat mein Ayodhya ki roshni aur sajaavat 🪔 Kaisa laga? Ek word mein likho 👇\n\nFollow @khabarbawaal: roz naya Bharat, naye nazare 🙏\n\n#ayodhya #ayodhyadham #jaishriram #nightvibes #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Ek word mein batao 🪔",
+  "songs": [
+   {
+    "title": "Judi Jodi (Ramayana)",
+    "artist": "new Hindi release",
+    "lang": "new",
+    "mood": "devotional, fits the Reel"
+   },
+   {
+    "title": "Mangal Rang (Ramayana)",
+    "artist": "new Hindi release",
+    "lang": "new",
+    "mood": "devotional, fits the Reel"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T15:19:22+00:00"
+ },
+ {
+  "id": "ayodhya_subah-2026-11-05",
+  "image": "posts/20261105-1519-ayodhya_subah-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-151923-ayodhya_subah-2026-11-05.mp4",
+  "headline": "Subah ki Ayodhya: Saryu ke ghat par shaanti",
+  "tag": "🎬 REEL · AYODHYA SUBAH 🌅",
+  "caption": "Subah ki Ayodhya, Saryu ke ghat par shaanti 🌅 Kisi ko bhejo jo yahan jaana chahta hai 👇\n\nFollow @khabarbawaal: roz naya Bharat, naye nazare 🙏\n\n#ayodhya #saryu #jaisiyaram #morningvibes #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jis dost ko Ayodhya jaana hai, use bhejo 👇",
+  "songs": [
+   {
+    "title": "Main Ram (Ramayana)",
+    "artist": "new Hindi release",
+    "lang": "new",
+    "mood": "devotional, fits the Reel"
+   },
+   {
+    "title": "Mangal Rang (Ramayana)",
+    "artist": "new Hindi release",
+    "lang": "new",
+    "mood": "devotional, fits the Reel"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T15:19:23+00:00"
+ },
+ {
   "id": "reel_news_night-2026-11-05",
   "image": "posts/20261105-1449-reel_news_night-2026-11-05.jpg",
   "kind": "reel",
