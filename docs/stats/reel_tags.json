@@ -816,5 +816,20 @@
   "hook": "question",
   "photos": 2,
   "short": false
+ },
+ {
+  "id": "reel_break_aft-2026-11-05",
+  "key": "karanjoharonyashroohibollywoodentry",
+  "kind": "reel_break_aft",
+  "secs": 13.0,
+  "at": "2026-11-05T14:19:58+00:00",
+  "type": "breaking",
+  "cover": "window",
+  "photos": 2,
+  "sharp": 37,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "team_vote",
+  "hook": "question"
  }
 ]
