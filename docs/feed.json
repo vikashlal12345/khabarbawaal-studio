@@ -1,5 +1,60 @@
 [
  {
+  "id": "reel_news_pm-2026-11-05",
+  "image": "posts/20261105-1036-reel_news_pm-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-103638-reel_news_pm-2026-11-05.mp4",
+  "headline": "Regina Cassandra questions Karan Johar for ignoring her during Kesari 2 promotions, says Janhvi Kapoor, Radhika Apte comments fuel north-south divide",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Regina Cassandra Karan Johar Kesari 2 Janhvi Kapoor 🎬\nRegina Cassandra ne aarop lagaya ki Karan Johar ke Dharma Productions ne Kesari 2 promotions mein unhe tag nahi kiya.\nJanhvi Kapoor aur Radhika Apte ke south cinema comments par bhi unhone aitraaz jataya.\nNorth-south divide par nayi bahes.\nRegina sahi? HAAN ya NA likho 👇\n\nVideo: @anaghakesav on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #reginacassandra #karanjohar #janhvikapoor #bollywood\n\n(Regina Cassandra, Karan Johar, Kesari 2, Janhvi Kapoor, Radhika Apte, north south divide, Bollywood south cinema, Regina Cassandra Karan Johar)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html",
+  "pin_comment": "Apne Janhvi Kapoor fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "drama and tension"
+   },
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "shikayat, calm complaint"
+   },
+   {
+    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "hurt feelings"
+   },
+   {
+    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "dramatic gossip vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Regina's claim must be attributed as her allegation, not stated as fact",
+    "Fact corrected to match the article: Article says she claimed Dharma Productions did not tag her; it was not Karan Johar personally, and it is her allegation",
+    "Fact corrected to match the article: Article: she objects to North actors talking about South cinema 'like that', not a blanket ban on comments.",
+    "Fact corrected to match the article: Article says walk out if they have the choice, not that a choice always exists."
+   ],
+   "fixed": [
+    "Regina: Karan Johar ke Dharma ne tag nahi kiya → Regina ka aarop: Karan Johar ke Dharma ne tag nahi kiya",
+    "Regina Cassandra ne Karan Johar se Kesari 2 promotions mein ignore karne par sawal uthaya. → Regina Cassandra ne aarop lagaya ki Karan Johar ke Dharma Productions ne Kesari 2 promotions mein unhe tag nahi kiya.",
+    "Regina Cassandra: North ke actors South par comment na karein → Regina Cassandra: North ke actors South cinema par aise comment na karein",
+    "asahaj ho toh film chhod dein, choice hoti hai. → asahaj ho toh film chhod dein, agar choice ho."
+   ]
+  },
+  "created_at": "2026-11-05T10:36:38+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-05",
   "image": "posts/20261105-0836-reel_break_noon-2026-11-05.jpg",
   "kind": "reel",
@@ -381,56 +436,5 @@
    "fixed": []
   },
   "created_at": "2026-11-04T12:35:10+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-04",
-  "image": "posts/20261104-1034-reel_news_pm-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-103444-reel_news_pm-2026-11-04.mp4",
-  "headline": "Ayushmann Khurrana and Rajkummar Rao bring back memories of Bareilly Ki Barfi, dance together at Diwali party",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ayushmann Khurrana Rajkummar Rao Bareilly Ki Barfi dance Diwali party 🎉\nBareilly Ki Barfi ke co-stars Ayushmann aur Rajkummar Diwali party mein ek gaane par saath jhoome.\nDono ne Bareilly Ki Barfi (2017) mein saath kaam kiya tha.\nUs dost ko bhejo jiske saath purani yaadein hain 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ayushmannkhurrana #rajkummarrao #bollywood #diwali #reelsindia\n\n(Ayushmann Khurrana, Rajkummar Rao, Bareilly Ki Barfi, Diwali party, Ayushmann Rajkummar dance, Bollywood Diwali party, Bareilly Ki Barfi reunion)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ayushmann-khurrana-and-rajkummar-rao-bring-back-memories-of-bareilly-ki-barfi-dance-together-at-diwali-party-101793779953753.html",
-  "pin_comment": "Apne Bareilly Ki Barfi fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "dosti aur purani yaadein"
-   },
-   {
-    "title": "Sahiba",
-    "artist": "Jasleen Royal, Stebin Ben",
-    "lang": "hindi",
-    "mood": "party vibe, masti"
-   },
-   {
-    "title": "Just Give Me a Reason (feat. Nate Ruess)",
-    "artist": "P!nk, Nate Ruess",
-    "lang": "english",
-    "mood": "dosti ka warm feel"
-   },
-   {
-    "title": "Beauty And A Beat",
-    "artist": "Justin Bieber, Nicki Minaj",
-    "lang": "english",
-    "mood": "party dance vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The article does not give the year of the party, so '2026' is unsupported.",
-    "Fact corrected to match the article: The article does not say fans were reminded of the film. It does say they starred in it together in 2017."
-   ],
-   "fixed": [
-    "Diwali party 2026 → Diwali party",
-    "Fans ko film ki yaad phir se aa gayi. → Dono ne Bareilly Ki Barfi (2017) mein saath kaam kiya tha."
-   ]
-  },
-  "created_at": "2026-11-04T10:34:44+00:00"
  }
 ]

@@ -256,7 +256,8 @@
   "3ac2fb35c11a",
   "34599d95d9a6",
   "9a2da3f14522",
-  "e9b0a59889a4"
+  "e9b0a59889a4",
+  "7ea4898a366d"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -393,7 +394,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-05",
-  "reel_news_pm": "2026-11-04",
+  "reel_news_pm": "2026-11-05",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-05",
@@ -410,7 +411,7 @@
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "CSp0c06rrlXa",
+ "inbox_since": "vo31unZUW2c1",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -783,7 +784,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
   "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
   "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
   "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
@@ -862,7 +862,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html",
   "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/",
   "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/",
-  "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html"
+  "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1079,10 +1080,6 @@
   }
  ],
  "songs_recent": [
-  "Ram Siya Ram",
-  "Humnava Mere",
-  "Iris",
-  "End of Beginning",
   "Teri Meri Kahaani",
   "Sahiba",
   "Just Give Me a Reason (feat. Nate Ruess)",
@@ -1118,7 +1115,11 @@
   "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
   "Heeriye (feat. Arijit Singh)",
   "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-  "Tu Mil Jaaye (From \"KING\")"
+  "Tu Mil Jaaye (From \"KING\")",
+  "Toxic",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1221,6 +1222,10 @@
   {
    "title": "Ramayana Public Review: Epic’s VFX Receives High Praise; Powerful Performances By Yash and Ranbir",
    "date": "2026-11-05"
+  },
+  {
+   "title": "Regina Cassandra questions Karan Johar for ignoring her during Kesari 2 promotions, says Janhvi Kapoor, Radhika Apte comments fuel north-south divide",
+   "date": "2026-11-05"
   }
  ],
  "claude_limit": {
@@ -1233,7 +1238,8 @@
   "18120264982752748",
   "18084634991359569",
   "17937042348407759",
-  "18117277646011243"
+  "18117277646011243",
+  "18023602325946834"
  ],
- "winner_followup_day": "2026-11-03"
+ "winner_followup_day": "2026-11-05"
 }
