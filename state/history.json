@@ -428,7 +428,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-05",
-  "reel_news_pm": "2026-11-04",
+  "reel_news_pm": "2026-11-05",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-05",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "CSp0c06rrlXa",
+ "inbox_since": "vo31unZUW2c1",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1645,6 +1645,10 @@
   {
    "title": "Ramayana Public Review: Epic’s VFX Receives High Praise; Powerful Performances By Yash and Ranbir",
    "date": "2026-11-05"
+  },
+  {
+   "title": "Regina Cassandra questions Karan Johar for ignoring her during Kesari 2 promotions, says Janhvi Kapoor, Radhika Apte comments fuel north-south divide",
+   "date": "2026-11-05"
   }
  ],
  "claude_limit": {
@@ -1661,5 +1665,5 @@
   "18023602325946834",
   "18073698851610142"
  ],
- "winner_followup_day": "2026-11-03"
+ "winner_followup_day": "2026-11-05"
 }
