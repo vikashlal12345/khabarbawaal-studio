@@ -254,7 +254,8 @@
   "33f2ed51703b",
   "a7abfaaa8039",
   "3ac2fb35c11a",
-  "34599d95d9a6"
+  "34599d95d9a6",
+  "9a2da3f14522"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -402,13 +403,13 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-05",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-04",
+  "reel_break_am": "2026-11-05",
   "reel_break_noon": "2026-11-04",
   "reel_break_aft": "2026-11-04",
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "aKkGEZ1XjSwO",
+ "inbox_since": "aBmmQpXN5TMJ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -781,7 +782,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
   "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
   "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
@@ -860,7 +860,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/kartik-aaryan-and-kabir-khan-reunite-for-inspirational-real-life-story-ladaku-set-to-release-on-june-18-2027/",
   "https://www.msn.com/en-in/entertainment/general/ramayana-advance-bookings-cross-rs-110-crore-with-strong-demand-across-india/ar-AA2gKADq",
   "https://www.hindustantimes.com/entertainment/bollywood/parivarik-manuranjan-trailer-pankaj-tripathi-aditi-rao-hydaris-unusual-equation-promises-twists-romance-and-comedy-101793790260112.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html",
+  "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1077,10 +1078,6 @@
   }
  ],
  "songs_recent": [
-  "Jai Ganesh Jai Ganesh Deva",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Dhun",
-  "Blinding Lights",
   "Sunflower (Spider-Man: Into the Spider-Verse)",
   "Kabhi Shaam Dhale",
   "Teri Meri Kahaani",
@@ -1116,7 +1113,11 @@
   "Jo Tum Mere Ho",
   "Tera Hoke Rahoon",
   "Judi Jodi (From \"Ramayana\")",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Zaalima",
+  "Soulmate",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1206,6 +1207,10 @@
   },
   {
    "title": "Saif Ali Khan credits Kareena Kapoor for forging a bond with Sara Ali Khan and Ibrahim Ali Khan, says they reciprocate her efforts",
+   "date": "2026-11-05"
+  },
+  {
+   "title": "Rajkumar Hirani plans to begin filming Munna Bhai 3 starring Sanjay Dutt and Arshad Warsi in 2027: Report",
    "date": "2026-11-05"
   }
  ],

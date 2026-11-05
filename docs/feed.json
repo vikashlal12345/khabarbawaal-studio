@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-11-05",
+  "image": "posts/20261105-0435-reel_break_am-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-043501-reel_break_am-2026-11-05.mp4",
+  "headline": "Rajkumar Hirani plans to begin filming Munna Bhai 3 starring Sanjay Dutt and Arshad Warsi in 2027: Report",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Munna Bhai 3 Sanjay Dutt Arshad Warsi Rajkumar Hirani 2027 update\nReport ke mutabik Munna Bhai 3 2027 mein floors par ja sakti hai.\nFarhad Samji screenplay par kaam kar rahe hain.\nSanjay Dutt aur Arshad Warsi ki jodi wapas aa sakti hai, par officially kuch confirm nahi.\nMunna Bhai 3 chahiye? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #MunnaBhai3 #SanjayDutt #ArshadWarsi #Bollywood\n\n(Munna Bhai 3, Sanjay Dutt Arshad Warsi, Rajkumar Hirani, Munna Bhai Circuit, Lage Raho Munna Bhai, Farhad Samji, Munna Bhai 3 2027, Bollywood news)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/",
+  "pin_comment": "Apne Munna Bhai fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "nostalgic fan feel"
+   },
+   {
+    "title": "Soulmate",
+    "artist": "Badshah, Arijit Singh",
+    "lang": "hindi",
+    "mood": "dosti, jodi vibe"
+   },
+   {
+    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Junaid Wasi",
+    "lang": "new",
+    "mood": "fun filmy mood"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "light, masti wala"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T04:35:01+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-05",
   "image": "posts/20261105-0234-reel_news_early-2026-11-05.jpg",
   "kind": "reel",
@@ -373,50 +418,5 @@
    "fixed": []
   },
   "created_at": "2026-11-04T06:34:36+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-04",
-  "image": "posts/20261104-0434-reel_break_am-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-043428-reel_break_am-2026-11-04.mp4",
-  "headline": "‘Baby Doll’ singer Kanika Kapoor announces separation from husband Gautam Hathiramani",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Kanika Kapoor Gautam Hathiramani separation, Baby Doll singer ka elaan\nInstagram story par note share karke alag hone ki baat batayi.\nNote mein likha: \"my husband and I are going our separate ways\".\nMay 2022 mein hui thi shaadi, 4 saal se zyada baad faisla 💔\nUs dost ko bhejo jo Kanika ke gaane par jhoomta hai 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#kanikakapoor #bollywoodnews #babydoll #reelsindia #bollywood\n\n(Kanika Kapoor, Gautam Hathiramani, Kanika Kapoor separation, Kanika Kapoor divorce, Baby Doll singer, Kanika Kapoor Instagram note, Bollywood news, Kanika Kapoor husband)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/baby-doll-singer-kanika-kapoor-announces-separation-from-husband-gautam-hathiramani/",
-  "pin_comment": "Apne Kanika Kapoor fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Kabhi Shaam Dhale",
-    "artist": "Jaani, Mohammad Faiz",
-    "lang": "hindi",
-    "mood": "sad, bichhadne ka dard"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "rishte ki kahaani, emotional"
-   },
-   {
-    "title": "Babydoll",
-    "artist": "Jamie Miller",
-    "lang": "english",
-    "mood": "Baby Doll singer ka link"
-   },
-   {
-    "title": "Stop The Wedding!",
-    "artist": "Ashe",
-    "lang": "english",
-    "mood": "shaadi toot ne wala vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T04:34:28+00:00"
  }
 ]
