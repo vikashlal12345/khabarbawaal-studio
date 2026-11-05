@@ -1,54 +1,7 @@
 {
- "summary": "From our last 16 Instagram posts (engagement = likes + 2\u00d7comments, not counting our own pinned comment): best topics REEL   OFFICIAL SPEECH (8), REEL  BOLLYWOOD (6), REEL  MEME (3); weakest REEL   CHOOSE YOUR (0), REEL  BACHPAN ME AISA KAUN KIYA (0). Formats: reel 3, custom 2. Lean toward what works, keep some variety.",
- "posts": 16,
- "likes": 44,
- "updated": "2026-11-04T22:32:21+00:00",
- "topics": [
-  [
-   "REEL   OFFICIAL SPEECH",
-   8.0
-  ],
-  [
-   "REEL  BOLLYWOOD",
-   5.75
-  ],
-  [
-   "REEL  MEME",
-   3.0
-  ],
-  [
-   "REEL   SHUBH NAVRATRI",
-   2.5
-  ],
-  [
-   "REEL  REALITY CHECK",
-   2.0
-  ],
-  [
-   "REEL  INDIA",
-   1.0
-  ],
-  [
-   "REEL  TAG THAT FRIEND",
-   0.3333333333333333
-  ],
-  [
-   "REEL   CHOOSE YOUR",
-   0.0
-  ],
-  [
-   "REEL  BACHPAN ME AISA KAUN KIYA",
-   0.0
-  ]
- ],
- "kinds": [
-  [
-   "reel",
-   3.0714285714285716
-  ],
-  [
-   "custom",
-   1.5
-  ]
- ]
+ "summary": "",
+ "posts": 2,
+ "likes": 2,
+ "updated": "2026-11-05T22:32:16+00:00",
+ "waiting": "2/10 linked posts with results"
 }
