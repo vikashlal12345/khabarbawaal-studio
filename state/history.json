@@ -257,7 +257,8 @@
   "34599d95d9a6",
   "9a2da3f14522",
   "e9b0a59889a4",
-  "7ea4898a366d"
+  "7ea4898a366d",
+  "4b7f96e6211f"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -400,7 +401,7 @@
   "reel_news_am": "2026-11-05",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-04",
+  "reel_news_aft": "2026-11-05",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-05",
@@ -411,7 +412,7 @@
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "vo31unZUW2c1",
+ "inbox_since": "KDLK4eImSbzm",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -784,7 +785,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
   "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
   "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
   "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
@@ -863,7 +863,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/",
   "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/",
   "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-raves-about-ramayana-calls-film-a-divine-blessing-101793877915800.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1080,10 +1081,6 @@
   }
  ],
  "songs_recent": [
-  "Teri Meri Kahaani",
-  "Sahiba",
-  "Just Give Me a Reason (feat. Nate Ruess)",
-  "Beauty And A Beat",
   "Ez-Ez",
   "Tabaahi (From \"Toxic\")",
   "Espresso",
@@ -1119,7 +1116,11 @@
   "Toxic",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+  "Narayan Mil Jayega",
+  "Dhun",
+  "Mangal Rang (From \"Ramayana\")",
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1225,6 +1226,10 @@
   },
   {
    "title": "Regina Cassandra questions Karan Johar for ignoring her during Kesari 2 promotions, says Janhvi Kapoor, Radhika Apte comments fuel north-south divide",
+   "date": "2026-11-05"
+  },
+  {
+   "title": "Karan Johar raves about 'Ramayana', calls film a \\\"divine blessing\\\"",
    "date": "2026-11-05"
   }
  ],
