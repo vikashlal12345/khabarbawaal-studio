@@ -714,5 +714,13 @@
   "hook": "name_first",
   "photos": 3,
   "short": false
+ },
+ {
+  "id": "reel_devotion-2026-11-05",
+  "key": "guruvaaraurvishnujikikripa",
+  "kind": "reel_devotion",
+  "secs": 30.2,
+  "at": "2026-11-05T00:36:02+00:00",
+  "type": "devotional"
  }
 ]

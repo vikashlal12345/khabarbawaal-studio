@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-11-05",
+  "image": "posts/20261105-0036-reel_devotion-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-003602-reel_devotion-2026-11-05.mp4",
+  "headline": "Thursday: Vishnu ji: Guruvaar ko Vishnu ji ki kripa kaise payein",
+  "tag": "🎬 REEL · 🙏 JAI SHRI HARI",
+  "caption": "Guruvaar aur Vishnu ji ki kripa 🙏\nPeela rang, tulsi aur ek sachha naam... bas itna kaafi hai.\nAaj apne parivaar ki khushi ke liye prarthna karo.\nJai Shri Hari likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#guruvaar #vishnubhagwan #omnamonarayanaya #harihari #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Apne parivaar ke group mein bhejo 🙏",
+  "songs": [
+   {
+    "title": "Vishnu Sahasranamam",
+    "artist": "M.S. Subbulakshmi",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ganesh Jai Ganesh Deva",
+    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Vishnu Sahasranamam (Version 1)",
+    "artist": "M.S.Subbulakshmi",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Sri Vishnu Sahasranamam",
+    "artist": "Rajalakshmee Sanjay",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The bottom line on the slide is garbled. It reads \"Jai Shri Hari · Apni nraa ko bhejo\", and the letters look broken. It doesn't match the intended text \"Apne parivaar ke group mein bhejo 🙏\". This is a rendering problem, so a text fix can't solve it. The slide needs to be re-rendered."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-05T00:36:02+00:00"
+ },
+ {
   "id": "reel_news_night-2026-11-04",
   "image": "posts/20261104-1452-reel_news_night-2026-11-04.jpg",
   "kind": "reel",
@@ -366,50 +413,5 @@
    "fixed": []
   },
   "created_at": "2026-11-04T02:34:02+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-04",
-  "image": "posts/20261104-0035-reel_devotion-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-003515-reel_devotion-2026-11-04.mp4",
-  "headline": "Wednesday: Ganesh ji: Ganesh ji ki kripa se din shubh banayein",
-  "tag": "🎬 REEL · 🙏 JAI GANESH DEVA",
-  "caption": "Ganesh ji ki kripa se aaj ka din shubh banayein 🙏\nEkdant, Lambodar... har naam mein ek seekh hai.\nAaj shaant mann se din shuru karein.\nJai Ganpati Bappa likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappamorya #ganesh #wednesday #ekdant #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Kisi apne ko bhejo jise aaj ashirwaad chahiye 🙏",
-  "songs": [
-   {
-    "title": "Gajanana (Sukhkarta Dukhharta) (Ganpati 2026)",
-    "artist": "Shreyas Puranik, Sukhvinder Singh",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Sukhkarta Dukhharta Hindi",
-    "artist": "Meet Bros",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Ganesh Aarti",
-    "artist": "Sanjay Dutt",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ganesh Jai Ganesh Deva",
-    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T00:35:15+00:00"
  }
 ]
