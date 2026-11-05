@@ -441,11 +441,11 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-05",
   "reel_break_noon": "2026-11-05",
-  "reel_break_aft": "2026-11-04",
+  "reel_break_aft": "2026-11-05",
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "KDLK4eImSbzm",
+ "inbox_since": "4XGChU79RPFl",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1319,7 +1319,8 @@
   "Soulmate",
   "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
   "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")"
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1653,6 +1654,10 @@
   },
   {
    "title": "Karan Johar raves about 'Ramayana', calls film a \\\"divine blessing\\\"",
+   "date": "2026-11-05"
+  },
+  {
+   "title": "Karan Johar opens up about his children future in Bollywood: 'I will be too old...\"",
    "date": "2026-11-05"
   }
  ],
