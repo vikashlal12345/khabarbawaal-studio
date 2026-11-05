@@ -405,12 +405,12 @@
   "reel_news_early": "2026-11-05",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-05",
-  "reel_break_noon": "2026-11-04",
+  "reel_break_noon": "2026-11-05",
   "reel_break_aft": "2026-11-04",
   "reel_news_night": "2026-11-04",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "vqAgn7ojgmX2",
+ "inbox_since": "CSp0c06rrlXa",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -783,7 +783,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/kriti-sanon-varun-dhawan-reunite-with-bhediya-director-amar-kaushik-tease-fans-with-obsessed-post/",
   "https://www.hindustantimes.com/india-news/anti-sir-protest-live-updates-delhi-bjp-congress-kharge-modi-cjp-dipke-das-ranka-neha-bora-gyanesh-kumar-rahul-gandhi-101792981940731.html",
   "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
   "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
@@ -862,7 +861,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/parivarik-manuranjan-trailer-pankaj-tripathi-aditi-rao-hydaris-unusual-equation-promises-twists-romance-and-comedy-101793790260112.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html",
   "https://www.bollywoodhungama.com/news/bollywood/rajkumar-hirani-plans-to-begin-filming-munna-bhai-3-starring-sanjay-dutt-and-arshad-warsi-in-2027-report/",
-  "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/"
+  "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/",
+  "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1079,10 +1079,6 @@
   }
  ],
  "songs_recent": [
-  "Stop The Wedding!",
-  "Dhun",
-  "Iris",
-  "Blinding Lights",
   "Ram Siya Ram",
   "Humnava Mere",
   "Iris",
@@ -1118,7 +1114,11 @@
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "His Aura Hits You",
   "Main Ram (From \"Ramayana\")",
-  "Mangal Rang (From \"Ramayana\")"
+  "Mangal Rang (From \"Ramayana\")",
+  "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
+  "Heeriye (feat. Arijit Singh)",
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+  "Tu Mil Jaaye (From \"KING\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1216,6 +1216,10 @@
   },
   {
    "title": "CONFIRMED: Sunny Deol makes a ROCKING entry as Lord Hanuman during Ramayana’s end credits",
+   "date": "2026-11-05"
+  },
+  {
+   "title": "Ramayana Public Review: Epic’s VFX Receives High Praise; Powerful Performances By Yash and Ranbir",
    "date": "2026-11-05"
   }
  ],

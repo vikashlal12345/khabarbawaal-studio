@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_break_noon-2026-11-05",
+  "image": "posts/20261105-0836-reel_break_noon-2026-11-05.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261105-083623-reel_break_noon-2026-11-05.mp4",
+  "headline": "Ramayana Public Review: Epic’s VFX Receives High Praise; Powerful Performances By Yash and Ranbir",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ramayana public review Yash Ranbir Kapoor Nitesh Tiwari\nFans ne VFX aur scale ko saraha, ek viewer ne Yash as Ravana ki tareef ki.\nRanbir ke Ram ko ek viewer ne 'surprisingly excellent' kaha.\nKuch logon ko music aur pacing average lagi.\nTum kaunse ho: Yash ya Ranbir? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Filmfare (link pinned in comments 👇)\n\n#reelsindia #Ramayana #RanbirKapoor #Yash #BollywoodNews\n\n(Ramayana review, Ramayana public review, Yash Ravana, Ranbir Kapoor Ram, Nitesh Tiwari, Ramayana Part 1, Ramayana VFX, Ramayana twitter review)",
+  "source": "Filmfare",
+  "source_url": "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
+    "artist": "Kumaar, Mellow D",
+    "lang": "hindi",
+    "mood": "Ram naam devotional hype"
+   },
+   {
+    "title": "Heeriye (feat. Arijit Singh)",
+    "artist": "Jasleen Royal, Arijit Singh",
+    "lang": "hindi",
+    "mood": "soft emotional chart song"
+   },
+   {
+    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+    "artist": "Junaid Kumar, Ganesh Acharya",
+    "lang": "new",
+    "mood": "mehnat ka phal, hype"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "big film celebration vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Headline stated a single viewer's opinion as fact; reviews were mixed and the article only quotes one viewer saying Yash 'steals the show'.",
+    "Fact corrected to match the article: Only one viewer said this; attribute it.",
+    "Fact corrected to match the article: Praise for Yash came from one viewer, not all fans."
+   ],
+   "fixed": [
+    "Yash ne Ravana banke poori Ramayana loot li → Ek viewer ke mutabiq Yash ne Ravana banke show loot liya",
+    "Yash as Ravana ko 'steals the show' kaha → Ek viewer ne Yash as Ravana ko 'steals the show' kaha",
+    "Fans ne VFX aur scale ko saraha, Yash as Ravana ki khoob tareef. → Fans ne VFX aur scale ko saraha, ek viewer ne Yash as Ravana ki tareef ki."
+   ]
+  },
+  "created_at": "2026-11-05T08:36:23+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-05",
   "image": "posts/20261105-0634-reel_news_am-2026-11-05.jpg",
   "kind": "reel",
@@ -379,91 +432,5 @@
    ]
   },
   "created_at": "2026-11-04T10:34:44+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-04",
-  "image": "posts/20261104-0834-reel_break_noon-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-083457-reel_break_noon-2026-11-04.mp4",
-  "headline": "Hanuman Ansh's visually impaired singer Suneel Lodhi begins his eye treatment, hopes to regain his eyesight in emotional post",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Suneel Lodhi eye treatment Hanuman Ansh singer Maine Tere Hi Bharose Hanuman\nVisually impaired singer ne Instagram par ilaaj shuru hone ki khabar di.\nUnhone likha, bas roshni laut aaye aur woh duniya dekh sakein.\nMP CM Dr Mohan Yadav ke nirdesh par Sagar mein jaanch hui.\nUs dost ko bhejo jo inke bhajan se judta hai 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #hanumanansh #suneellodhi #bhajan #viral\n\n(Suneel Lodhi, Suneel Lodhi eye treatment, Hanuman Ansh, Maine Tere Hi Bharose Hanuman, More Sankat Ke Kataiya, Bundeli Duniya, Mohan Yadav, Sagar Bundelkhand Medical College)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/hanuman-anshs-visually-impaired-singer-suneel-lodhi-begins-his-eye-treatment-hopes-to-regain-his-eyesight-in-emotional-post-101793774765746.html",
-  "pin_comment": "Apne Hanuman bhakt dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "devotional, dua and hope"
-   },
-   {
-    "title": "Humnava Mere",
-    "artist": "Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "emotional, caring tone"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "heartfelt, seeing clearly"
-   },
-   {
-    "title": "End of Beginning",
-    "artist": "Djo",
-    "lang": "english",
-    "mood": "hopeful new start"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T08:34:58+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-04",
-  "image": "posts/20261104-0634-reel_news_am-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-063436-reel_news_am-2026-11-04.mp4",
-  "headline": "Namit Malhotra confirms Ramayana Part 2 has been postponed to 2028, hints at a trilogy",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana Part 2 release date Namit Malhotra 🎬\nProducer Namit Malhotra ne bataya ki Ramayana: Part 2 ab 2028 mein aayegi.\nTeam ko film complete karne aur grand finale dene ke liye zyada time chahiye, trilogy ka bhi hint diya.\nRanbir ya Yash: tum kaunse team ho? Ek word 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia\n\n(Ramayana Part 2, Namit Malhotra, Ramayana 2028, Ramayana trilogy, Ranbir Kapoor Ramayana, Yash Ravana, Ramayana release date)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/namit-malhotra-confirms-ramayana-part-2-has-been-postponed-to-2028-hints-at-a-trilogy-101793766484103.html",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "emotional wait, cinematic"
-   },
-   {
-    "title": "Iris",
-    "artist": "The Goo Goo Dolls",
-    "lang": "english",
-    "mood": "long wait, emotional"
-   },
-   {
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "lang": "english",
-    "mood": "big epic anticipation"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The photo credit 'Photo: thedailyjagran.com' at the bottom left runs right up against the '@khabarbawaal' handle and almost overlaps it."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T06:34:36+00:00"
  }
 ]
