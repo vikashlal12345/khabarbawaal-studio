@@ -111,7 +111,7 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           python save.py "New post $(date -u +%Y-%m-%dT%H:%MZ)"
 
-      - uses: ./.github/actions/publish-pages   # 3 tries, each gives up after 2 min and cancels a stuck publish (owner 6 Nov 2026)
+      - uses: ./.github/actions/publish-pages   # try 1 gives up after 2 min, then a NEW run of deploy-app.yml publishes (owner 6 Nov 2026)
 
       - name: Phone alert (🔔 new posts, now live in the app)
         run: python push.py --after
