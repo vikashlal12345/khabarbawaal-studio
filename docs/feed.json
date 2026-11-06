@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_am-2026-11-06",
+  "image": "posts/20261106-0634-reel_news_am-2026-11-06.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261106-063442-reel_news_am-2026-11-06.mp4",
+  "headline": "Shah Rukh Khan admits struggling to remember Ed Sheeran's lyrics in King song Tu Mil Jaaye, praises daughter Suhana Khan for her effortless lip-sync",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Shah Rukh Khan Suhana Khan Tu Mil Jaaye King song 🎬\nSRK ne maana ki Ed Sheeran ke fast lyrics par lip-sync karna unke liye mushkil tha.\nUnhone beti Suhana Khan ke effortless lip-sync ki tareef ki.\nGaana King film ka Tu Mil Jaaye hai.\nLip-sync kiska best: SRK ya SUHANA? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#shahrukhkhan #suhanakhan #king #bollywood #reelsindia\n\n(Shah Rukh Khan, Suhana Khan, Tu Mil Jaaye, King movie, Ed Sheeran, Shah Rukh Khan Suhana, King song lip sync, SRK daughter)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-admits-struggling-to-remember-ed-sheerans-lyrics-in-king-song-tu-mil-jaaye-praises-daughter-suhana-khan-for-her-effortless-lipsync-101793938110868.html",
+  "pin_comment": "Ye Shah Rukh Khan ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "the song itself, SRK-Suhana moment"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "warm family bond vibe"
+   },
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "soft father-daughter feel"
+   },
+   {
+    "title": "Tu Aake Dekhle",
+    "artist": "King",
+    "lang": "hindi",
+    "mood": "King film connection, hype"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-06T06:34:42+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-06",
   "image": "posts/20261106-0435-reel_break_am-2026-11-06.jpg",
   "kind": "reel",
@@ -492,52 +537,5 @@
    ]
   },
   "created_at": "2026-11-05T08:36:23+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-05",
-  "image": "posts/20261105-0634-reel_news_am-2026-11-05.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261105-063406-reel_news_am-2026-11-05.mp4",
-  "headline": "CONFIRMED: Sunny Deol makes a ROCKING entry as Lord Hanuman during Ramayana’s end credits",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sunny Deol Hanuman Ramayana end credits 🔥\nRamayana ab cinemas mein release ho chuki hai.\nBollywood Hungama ke mutabiq end credits mein Sunny Deol ki Lord Hanuman ke roop mein dhamakedaar entry confirm hui hai.\nFilm ab har jagah headlines mein hai.\nSunny ka Hanuman: SAHI ya GALAT? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#Ramayana #SunnyDeol #Bollywood #Hanuman #reelsindia\n\n(Sunny Deol Hanuman, Ramayana end credits, Ramayana movie, Sunny Deol Ramayana, Ranbir Kapoor Yash Ramayana, Ramayana Part 1, Ramayana Hanuman entry, Sunny Deol latest)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/confirmed-sunny-deol-makes-a-rocking-entry-as-lord-hanuman-during-ramayanas-end-credits/",
-  "pin_comment": "Apne Sunny Deol fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "hype entry = surprise Hanuman reveal"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "mass aura = Sunny Deol entry"
-   },
-   {
-    "title": "Main Ram (From \"Ramayana\")",
-    "artist": "Prateek Walia, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana devotional vibe"
-   },
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana film, epic feel"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left overlaps and touches the '@khabarbawaal' handle, so the text collides."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-05T06:34:06+00:00"
  }
 ]
