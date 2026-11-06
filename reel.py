@@ -5468,6 +5468,11 @@ def read_time(text: str) -> float:
     return max(2.4, len(text.split()) / 3.2 + 1.2)
 
 
+def quick_read(text: str) -> float:
+    """Reading time for the short 6 AM devotional Reel (owner 6 Nov 2026: 15-17 s in all): ~4 words a second + a short hold."""
+    return max(2.2, len(text.split()) / 4.0 + 0.7)
+
+
 def faded(img: Image.Image, a: float) -> Image.Image:
     if a >= 1:
         return img
@@ -5517,8 +5522,8 @@ def step_parts(steps: list[dict], switch_step: int, lines_of, big, body, label_f
 
 def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: str, lesson: str,
               real_life: str, highlight: list[str], out_mp4: str, labels: dict | None = None,
-              steps: list[dict] | None = None, switch_step: int = 3, handle_text: str = "") -> list[Image.Image]:
-    """🙏 Devotional Reel: the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
+              steps: list[dict] | None = None, switch_step: int = 3, handle_text: str = "", quick: bool = False) -> list[Image.Image]:
+    """🙏 Devotional Reel (quick=True: ~16 s in all, owner 6 Nov 2026; the 6 AM Reel was ~31 s): the painting full screen (warm golden tone, soft dark edges, slow zoom, floating
     golden dust), elegant centred serif text that fades in line by line and stays long enough to read:
     hook → Shri Krishna ka sandesh + lesson + verse → (2nd painting) Aaj ki seekh → send this. (No Sanskrit.)
     images = [(painting, credit, focus_x 0-1 where Krishna/Arjuna are)]. Returns frames to proofread.
@@ -5590,7 +5595,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         return out
 
     # Parts: (start, list of (y, image, appear_at)), plus fade-out time.
-    gap, pause = 0.45, 0.35
+    gap, pause = (0.2, 0.05) if quick else (0.45, 0.35)
     parts, t = [], 0.6
     cta_y, handle_y = 1380, 1470
     if steps:
@@ -5602,12 +5607,12 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         hook_l = lines_of(hook, hook_f, CREAM)
         y0 = 1330 - len(hook_l) * int(hook_f.size * 0.71)
         items = [(y0 + i * int(hook_f.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)]   # 🪝 visible at 0 s
-        end = t + len(hook_l) * gap + max(read_time(hook), 4.6)   # a short hook keeps the old reading time (devotional timing unchanged)
+        end = t + len(hook_l) * gap + (max(quick_read(hook), 3.2) if quick else max(read_time(hook), 4.6))   # a short hook keeps the old reading time (devotional timing unchanged)
         parts.append((items, end))
         t = end + 0.5 + pause
         items, y = [], 1060
         items.append((y, glow_line(lab["middle"], small_gold, GOLD), t)); y += 85
-        t2 = t + 0.8
+        t2 = t + (0.5 if quick else 0.8)
         y += 10
         divider_y = y
         y += 30 + lesson_f.size // 2 + 20     # lesson lines are placed by their centre: start below the divider
@@ -5617,7 +5622,7 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         if lab["source"]:
             items.append((y + 20, glow_line(lab["source"], vfont("Cinzel-Variable.ttf", 36, "SemiBold"), GOLD),
                           t))
-        end = t2 + len(les) * gap + read_time(lesson)
+        end = t2 + len(les) * gap + (quick_read(lesson) if quick else read_time(lesson))
         parts.append((items, end))
         divider = (divider_y, t2 - 0.2, end)
         t = end + 0.5 + pause
@@ -5627,10 +5632,10 @@ def gita_reel(images: list[tuple[Image.Image, str, float]], verse: str, hook: st
         take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
         for i, im in enumerate(lines_of(real_life, take_f, CREAM)):
             items.append((y, im, t)); y += int(take_f.size * 1.3)
-        end = t + 0.8 + len(items) * gap + read_time(real_life)
+        end = t + (0.5 if quick else 0.8) + len(items) * gap + (quick_read(real_life) if quick else read_time(real_life))
         parts.append((items, end))
         cta_at = end + 0.3
-        total = cta_at + 3.0
+        total = cta_at + (1.9 if quick else 3.0)
     cta = glow_line(lab["cta"], vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
     handle = glow_line(handle_text or CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
 
@@ -5961,9 +5966,9 @@ DEVOTION_OPTION = {"type": "object", "properties": {
     "hook": {"type": "string", "description": "The opening line on the first frame, 4-8 words, MUST contain the god's or festival's "
              "name and a benefit or curiosity that makes people stop and read, warm and reverent, no emoji, e.g. "
              "'Aaj Shani Dev ki kripa kaise payein', 'Hanuman ji ka aashirwaad aaj aise paayein', 'Navratri ka pehla din: Maa Shailputri'"},
-    "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 22 words, "
+    "lesson": {"type": "string", "description": "Who the deity is / what today means, simple warm Hinglish, max 10 words (the Reel is only ~16 s), "
                "only well-known traditional facts"},
-    "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 18 words, people want to save it"},
+    "real_life": {"type": "string", "description": "A blessing or life lesson for today, max 8 words, people want to save it"},
     "highlight": {"type": "array", "items": {"type": "string"}, "description": "1-3 words copied exactly from the texts"},
     "caption": {"type": "string"},
     "pin_comment": {"type": "string", "description": "Max 15 words: a share line to family, e.g. 'Apni maa ko bhejo 🙏'"},
@@ -5977,7 +5982,8 @@ who the deity is in simple words, and a blessing or life lesson for today. Only 
 joke about any god, no politics, nothing against any religion or community. Write it like poetry: short lines, \
 natural pauses ("..."). Caption: 2-4 short Hinglish lines, the first naming the god/festival (searchable), 1-2 emojis \
 (🙏 fits), last line asks people to comment 'Jai ...' (e.g. 'Jai Mata Di likho 🙏'). Pinned comment: a share line to \
-family, e.g. 'Apni maa ko bhejo, unka din ban jayega 🙏'."""
+family, e.g. 'Apni maa ko bhejo, unka din ban jayega 🙏'. LENGTH (owner 6 Nov 2026): the whole Reel is only ~16 seconds: \
+the opening line max 8 words, the lesson max 10 words, the blessing max 8 words (shorter is better)."""
 
 
 def plain_letters(text: str) -> str:
@@ -6075,7 +6081,7 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         return f"{d['post']['caption'].strip()}\n\nFollow {CONFIG['handle']} for daily darshan 🙏\n\n{tags}"
     frames, data, proof = proofread.run(
         lambda d: gita_reel(images, "", d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"],
-                            d["post"]["highlight"], out, labels=labels),
+                            d["post"]["highlight"], out, labels=labels, quick=True),
         {"post": best}, caption_of,
         f"Devotional Reel for {subj['name']} ({plan['deity']}). Check the facts about the deity/festival are the "
         "well-known traditional ones." + ("" if exact else f" The paintings intentionally show {plan['family']} in general "
