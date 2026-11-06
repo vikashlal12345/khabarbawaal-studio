@@ -437,7 +437,7 @@
   "reel_news_aft": "2026-11-05",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-05",
+  "reel_news_early": "2026-11-06",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-05",
   "reel_break_noon": "2026-11-05",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "Psd0wGKnEzPY",
+ "inbox_since": "RKqFk8eh28zX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1667,6 +1667,10 @@
   {
    "title": "Salman Khan returns to playback singing after 11 years with ‘Teri Sexy Beauty’ from Maatrubhumi",
    "date": "2026-11-05"
+  },
+  {
+   "title": "Ramayana gets a massive theatrical upgrade across India; here's why",
+   "date": "2026-11-06"
   }
  ],
  "claude_limit": {
