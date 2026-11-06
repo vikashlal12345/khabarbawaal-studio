@@ -964,5 +964,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_night-2026-11-06",
+  "key": "tigershroffvidyutjammwalfiringincident",
+  "kind": "reel_news_night",
+  "secs": 17.0,
+  "at": "2026-11-06T14:35:50+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 30,
+  "hook": "question",
+  "photos": 2,
+  "short": false
  }
 ]

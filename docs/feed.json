@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_night-2026-11-06",
+  "image": "posts/20261106-1435-reel_news_night-2026-11-06.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261106-143550-reel_news_night-2026-11-06.mp4",
+  "headline": "Vidyut Jammwal says Tiger Shroff is stressed after firing incident, reveals actor is trying his best to move on",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Tiger Shroff Vidyut Jammwal firing incident 💛\nVidyut Jammwal ne kaha ki Mumbai mein gunmen ne Tiger ki car par firing ki, uske baad Tiger stressed hain.\nVidyut ke mutabiq Tiger apni poori koshish kar rahe hain aage badhne ki.\nUs dost ko bhejo jo mushkil waqt mein saath khada rehta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tigershroff #vidyutjammwal #bollywoodnews #viralnews #reelsindia\n\n(Tiger Shroff, Vidyut Jammwal, Tiger Shroff firing incident, Tiger Shroff car firing Mumbai, Tiger Shroff stressed, Vidyut Jammwal Tiger Shroff friendship, Bollywood news today, Tiger Shroff latest news)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/vidyut-jammwal-says-tiger-shroff-is-stressed-after-firing-incident-reveals-actor-is-trying-his-best-to-move-on-101793972209969.html",
+  "pin_comment": "Apne Tiger Shroff fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Humnava Mere",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "dost ka saath, sukoon bhara"
+   },
+   {
+    "title": "Kabhi Shaam Dhale",
+    "artist": "Jaani, Mohammad Faiz",
+    "lang": "hindi",
+    "mood": "shaant, aage badhne ka mood"
+   },
+   {
+    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "dard bhara, emotional hook"
+   },
+   {
+    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "slow emotional background"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: Tiger Shroff's photo is cropped at the left edge, so half of his face is cut off."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-06T14:35:50+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-06",
   "image": "posts/20261106-1337-reel_break_aft-2026-11-06.jpg",
   "kind": "reel",
@@ -530,52 +577,5 @@
    "fixed": []
   },
   "created_at": "2026-11-05T14:49:59+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-05",
-  "image": "posts/20261105-1419-reel_break_aft-2026-11-05.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261105-141958-reel_break_aft-2026-11-05.mp4",
-  "headline": "Karan Johar opens up about his children future in Bollywood: 'I will be too old...\"",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Karan Johar on Yash Roohi Bollywood entry 💔\nKaran twins Yash aur Roohi ko Bollywood se dissuade kar rahe hain.\nUnka kehna: \"I will be too old to protect them.\"\nKareena Kapoor Khan ne alag raay di: protection hi shayad issue hai.\nKaran sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Daily Jang (link pinned in comments 👇)\n\n#karanjohar #bollywood #kareenakapoorkhan #bollywoodnews #reelsindia\n\n(Karan Johar, Karan Johar children, Yash Roohi Johar, Karan Johar Bollywood, Kareena Kapoor Khan, Dharma Productions, Karan Johar single father, Karan Johar interview)",
-  "source": "Daily Jang",
-  "source_url": "https://jang.com.pk/en/75865-karan-johar-opens-up-about-his-children-future-in-bollywood-i-will-be-too-old-news",
-  "pin_comment": "Apne Karan Johar fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "family feelings, emotional parent vibe"
-   },
-   {
-    "title": "Aaj Bhi 2",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "soft emotional, bachchon ki yaad"
-   },
-   {
-    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Pritam, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "pyaar bhara parent moment"
-   },
-   {
-    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Vishal Mishra, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "dil ki baat, heartfelt"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "bahut old hounga → bahut old ho jaunga"
-   ]
-  },
-  "created_at": "2026-11-05T14:19:59+00:00"
  }
 ]
