@@ -262,7 +262,8 @@
   "aea9fcc5cd9e",
   "fecac4fce9f0",
   "a350ae9cdd78",
-  "6468039fee41"
+  "6468039fee41",
+  "4c1a5ca2ade6"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -400,7 +401,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-06",
-  "reel_news_pm": "2026-11-05",
+  "reel_news_pm": "2026-11-06",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-06",
@@ -417,7 +418,7 @@
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "hDotBTg7sVbX",
+ "inbox_since": "M6Om7klkVvHA",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -790,7 +791,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
@@ -869,7 +869,8 @@
   "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI",
   "https://www.hindustantimes.com/entertainment/bollywood/abhishek-bachchan-and-aishwarya-rai-arrive-at-manish-malhotras-diwali-bash-holding-hands-cant-take-their-eyes-off-each-other-in-a-loved-up-moment-101793931020606.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-admits-struggling-to-remember-ed-sheerans-lyrics-in-king-song-tu-mil-jaaye-praises-daughter-suhana-khan-for-her-effortless-lipsync-101793938110868.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/sandeep-reddy-vanga-praises-ramayanas-magnitude-calls-namit-malhotra-the-most-committed-producer-he-has-known-101793946890700.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sandeep-reddy-vanga-praises-ramayanas-magnitude-calls-namit-malhotra-the-most-committed-producer-he-has-known-101793946890700.html",
+  "https://www.bollywoodhungama.com/news/bollywood/ranveer-singhs-pralay-shoot-sparks-big-controversy-at-mumbais-azad-maidan-under-14-and-under-16-cricket-matches-postponed-mca-fumes-over-disruption/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1086,10 +1087,6 @@
   }
  ],
  "songs_recent": [
-  "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
-  "Heeriye (feat. Arijit Singh)",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-  "Tu Mil Jaaye (From \"KING\")",
   "Toxic",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
@@ -1125,7 +1122,11 @@
   "Main Ram (From \"Ramayana\")",
   "Judi Jodi (From \"Ramayana\")",
   "Jai Jai Ram",
-  "Chal Tere Ishq Mein"
+  "Chal Tere Ishq Mein",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "His Aura Hits You",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1227,6 +1228,10 @@
   },
   {
    "title": "Sandeep Reddy Vanga praises Ramayana's magnitude, calls Namit Malhotra the most committed producer he has known",
+   "date": "2026-11-06"
+  },
+  {
+   "title": "Ranveer Singh’s Pralay shoot sparks BIG controversy at Mumbai’s Azad Maidan; Under-14 and Under-16 cricket matches POSTPONED; MCA FUMES over disruption",
    "date": "2026-11-06"
   }
  ],

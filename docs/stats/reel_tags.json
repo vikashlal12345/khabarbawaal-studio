@@ -917,5 +917,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-06",
+  "key": "ranveersinghpralayshootazadmaidancontroversy",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-06T10:34:11+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 42,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]

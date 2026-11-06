@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_pm-2026-11-06",
+  "image": "posts/20261106-1034-reel_news_pm-2026-11-06.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261106-103411-reel_news_pm-2026-11-06.mp4",
+  "headline": "Ranveer Singh’s Pralay shoot sparks BIG controversy at Mumbai’s Azad Maidan; Under-14 and Under-16 cricket matches POSTPONED; MCA FUMES over disruption",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ranveer Singh Pralay shoot Azad Maidan controversy 🎬\nDhurandhar ke baad Ranveer ne Pralay ki shooting shuru ki.\nMumbai ke Azad Maidan par shoot se Under-14 aur Under-16 cricket matches postpone hue.\nMCA ne disruption par naraazgi jatayi hai.\nTum kaunse ho: SHOOTING ya MATCH? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #ranveersingh #pralay #bollywood #dhurandhar\n\n(Ranveer Singh Pralay, Pralay shoot, Azad Maidan, MCA, Ranveer Singh news, Dhurandhar The Revenge, Mumbai cricket matches postponed, Bollywood news)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ranveer-singhs-pralay-shoot-sparks-big-controversy-at-mumbais-azad-maidan-under-14-and-under-16-cricket-matches-postponed-mca-fumes-over-disruption/",
+  "pin_comment": "Apne Ranveer fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "Dhurandhar vibe = Ranveer entry"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "hype aura for star power"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "'karam farma de' = MCA plea"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "light playful twist on row"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The photo credit 'Photo: Bollywood Hungama' at the bottom left runs into the '@khabarbawaal' handle, so the two texts overlap and are hard to read."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-06T10:34:11+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-06",
   "image": "posts/20261106-0834-reel_break_noon-2026-11-06.jpg",
   "kind": "reel",
@@ -533,58 +580,5 @@
    ]
   },
   "created_at": "2026-11-05T10:36:38+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-05",
-  "image": "posts/20261105-0836-reel_break_noon-2026-11-05.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261105-083623-reel_break_noon-2026-11-05.mp4",
-  "headline": "Ramayana Public Review: Epic’s VFX Receives High Praise; Powerful Performances By Yash and Ranbir",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ramayana public review Yash Ranbir Kapoor Nitesh Tiwari\nFans ne VFX aur scale ko saraha, ek viewer ne Yash as Ravana ki tareef ki.\nRanbir ke Ram ko ek viewer ne 'surprisingly excellent' kaha.\nKuch logon ko music aur pacing average lagi.\nTum kaunse ho: Yash ya Ranbir? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Filmfare (link pinned in comments 👇)\n\n#reelsindia #Ramayana #RanbirKapoor #Yash #BollywoodNews\n\n(Ramayana review, Ramayana public review, Yash Ravana, Ranbir Kapoor Ram, Nitesh Tiwari, Ramayana Part 1, Ramayana VFX, Ramayana twitter review)",
-  "source": "Filmfare",
-  "source_url": "https://www.filmfare.com/news/bollywood/ramayana-public-review-epics-vfx-receives-high-praise-powerful-performances-by-yash-and-ranbir-87001.html",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
-    "artist": "Kumaar, Mellow D",
-    "lang": "hindi",
-    "mood": "Ram naam devotional hype"
-   },
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "soft emotional chart song"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "mehnat ka phal, hype"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "big film celebration vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Headline stated a single viewer's opinion as fact; reviews were mixed and the article only quotes one viewer saying Yash 'steals the show'.",
-    "Fact corrected to match the article: Only one viewer said this; attribute it.",
-    "Fact corrected to match the article: Praise for Yash came from one viewer, not all fans."
-   ],
-   "fixed": [
-    "Yash ne Ravana banke poori Ramayana loot li → Ek viewer ke mutabiq Yash ne Ravana banke show loot liya",
-    "Yash as Ravana ko 'steals the show' kaha → Ek viewer ne Yash as Ravana ko 'steals the show' kaha",
-    "Fans ne VFX aur scale ko saraha, Yash as Ravana ki khoob tareef. → Fans ne VFX aur scale ko saraha, ek viewer ne Yash as Ravana ki tareef ki."
-   ]
-  },
-  "created_at": "2026-11-05T08:36:23+00:00"
  }
 ]
