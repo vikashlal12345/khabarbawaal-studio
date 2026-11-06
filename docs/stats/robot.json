@@ -11514,6 +11514,45 @@
      "tokens": 10928
     }
    }
+  },
+  "reel_news_early": {
+   "posts": 0,
+   "requests": 8,
+   "input": 22,
+   "output": 5909,
+   "cache_read": 10790,
+   "cache_write": 196841,
+   "value_usd": 0.8477,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 1,
+     "tokens": 49515
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 5296
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 32826
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5243
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 37477
+    },
+    "hook meaning": {
+     "requests": 2,
+     "tokens": 67583
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 15622
+    }
+   }
   }
  }
 }
