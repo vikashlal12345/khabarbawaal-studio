@@ -24,4 +24,6 @@ jobs:
       name: github-pages
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/publish-pages   # 3 tries, each gives up after 2 min and cancels a stuck publish (owner 6 Nov 2026)
+      - uses: ./.github/actions/publish-pages   # owner 6 Nov 2026: a stuck publish gives up after 2 min
+        with:
+          fallback: 'false'                       # this IS the fallback run: no loop

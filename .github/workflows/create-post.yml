@@ -19,6 +19,7 @@ permissions:
   issues: write
   pages: write
   id-token: write
+  actions: write      # the publish fallback starts deploy-app.yml
 
 concurrency:
   group: hourly-post        # takes turns with the hourly robot
@@ -70,7 +71,7 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           python save.py "Your post (issue #$ISSUE)"
 
-      - uses: ./.github/actions/publish-pages   # 3 tries, each gives up after 2 min and cancels a stuck publish (owner 6 Nov 2026)
+      - uses: ./.github/actions/publish-pages   # try 1 gives up after 2 min, then a NEW run of deploy-app.yml publishes (owner 6 Nov 2026)
 
       - name: Phone alert (🔔 ✅ ready, or ❌ not made)
         if: always()
