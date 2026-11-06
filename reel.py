@@ -783,7 +783,7 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
           "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
           "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
           "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
-          "save = 'Save karo, kaam aayega' (useful or festival stories). PREFER team_vote or which_one whenever the story has two sides, two people or a debatable act (owner 4 Nov 2026: one-word votes averaged 1,893 views and which_one 3,144, send-to-a-friend 1,057 and it stalled in 13 of 24); use share_friend only for a pure family / relationship / feelings story. Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "save = 'Save karo, kaam aayega' (useful or festival stories). DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
           "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
@@ -6423,7 +6423,7 @@ def make_backup(kind: str, state: dict, feed: list) -> bool:
 
 
 TAGS: dict = {}   # 🏷️ tags of the Reel being made (30 Oct 2026): written with its numbers-join key by save_reel into docs/stats/reel_tags.json
-SHORT_NEWS = {"reel_news_pm", "reel_news_early", "reel_news_am"}   # the 4 PM Reel is the SHORT test (30 Oct 2026), the 8 AM one too (1 Nov 2026, owner approved): 2 photos, ~14 s, to compare with the 22 s ones
+SHORT_NEWS = {"reel_news_pm", "reel_news_early", "reel_news_am", "reel_news_aft", "reel_news_night"}   # the 4 PM Reel is the SHORT test (30 Oct 2026), the 8 AM one too (1 Nov 2026, owner approved): 2 photos, ~14 s, to compare with the 22 s ones
 
 
 def hook_style(hook: str) -> str:
