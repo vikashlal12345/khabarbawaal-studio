@@ -902,5 +902,20 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_noon-2026-11-06",
+  "key": "sandeepreddyvangaramayanareviewranbirkapooryashnamitmalhotra",
+  "kind": "reel_break_noon",
+  "secs": 13.0,
+  "at": "2026-11-06T08:34:50+00:00",
+  "type": "breaking",
+  "cover": "window",
+  "photos": 2,
+  "sharp": 41,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "team_vote",
+  "hook": "question"
  }
 ]
