@@ -22,8 +22,8 @@ SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Nav
             "reel_break_noon": (14, 0),                    # ⚡ breaking card
             "reel_news_pm": (16, 0),                       # 🔥 viral news
             "reel_news_aft": (18, 0),                      # 🔥 viral news (owner, 29 Oct 2026: replaces the 🎨 cartoon roast; Breaking or Viral only after 6 PM)
-            "reel_break_aft": (19, 45),                    # ⚡ breaking card (owner, 23 Oct 2026: replaces the 🎭 rotating joke slot, it did not go well)
-            "reel_news_night": (20, 15),                   # 🔥 viral news (owner, 29 Oct 2026: replaces the 🎥🔊 speaker video until the page has 1,000+ followers)
+            "reel_break_aft": (19, 0),                     # ⚡ breaking card (owner, 23 Oct 2026: replaces the 🎭 rotating joke slot, it did not go well)
+            "reel_news_night": (20, 0),                    # 🔥 viral news (owner, 29 Oct 2026: replaces the 🎥🔊 speaker video until the page has 1,000+ followers)
             "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",

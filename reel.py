@@ -2282,7 +2282,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         status.step("Picking the most viral, visual story", 2)
         raw = g.fetch_candidates(set(state.get("seen", [])))
         stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)]))[:40]
-        if kind == "reel_news_night":   # the 8:15 PM slot (owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
+        if kind == "reel_news_night":   # the 8 PM slot (was 8:15 PM, moved 6 Nov 2026; owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
             import emergency
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
             if len(only) >= 2:
@@ -2490,7 +2490,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     status.step("Picking the biggest breaking story", 2)
     raw = g.fetch_candidates(set(state.get("seen", [])))
     stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:45]
-    if kind == "reel_break_aft":   # the 7:45 PM slot (owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
+    if kind == "reel_break_aft":   # the 7 PM slot (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
         import emergency
         only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
         if len(only) >= 2:
