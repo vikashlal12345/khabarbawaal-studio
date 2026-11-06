@@ -269,7 +269,7 @@ def make_devotion(kind: str, state: dict, feed: list) -> bool:
         with tempfile.TemporaryDirectory() as tmp:
             out = os.path.join(tmp, "reel.mp4")
             reel.SERIES_KIND = kind
-            frames = reel.gita_reel(images, "", hook, lesson, real_life, highlight, out, labels=labels)
+            frames = reel.gita_reel(images, "", hook, lesson, real_life, highlight, out, labels=labels, quick=True)
             credits = "; ".join(dict.fromkeys(c for _, c, _ in images))
             hashtags = " ".join(f"#{t}" for t in tags + ["bhakti", "devotional", "india"])
             caption = (f"{hook}\n{lesson}\n\n{cta} 🙏\n\nPainting: {credits}\nFollow {g.CONFIG['handle']} for daily darshan 🙏\n\n{hashtags}")
