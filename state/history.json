@@ -261,7 +261,8 @@
   "4b7f96e6211f",
   "aea9fcc5cd9e",
   "fecac4fce9f0",
-  "a350ae9cdd78"
+  "a350ae9cdd78",
+  "6468039fee41"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -411,12 +412,12 @@
   "reel_news_early": "2026-11-06",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-06",
-  "reel_break_noon": "2026-11-05",
+  "reel_break_noon": "2026-11-06",
   "reel_break_aft": "2026-11-05",
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "CfZlW0AiGb0P",
+ "inbox_since": "hDotBTg7sVbX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -789,7 +790,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
@@ -868,7 +868,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/salman-khan-returns-to-playback-singing-after-11-years-with-teri-sexy-beauty-from-maatrubhumi/",
   "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI",
   "https://www.hindustantimes.com/entertainment/bollywood/abhishek-bachchan-and-aishwarya-rai-arrive-at-manish-malhotras-diwali-bash-holding-hands-cant-take-their-eyes-off-each-other-in-a-loved-up-moment-101793931020606.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-admits-struggling-to-remember-ed-sheerans-lyrics-in-king-song-tu-mil-jaaye-praises-daughter-suhana-khan-for-her-effortless-lipsync-101793938110868.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-admits-struggling-to-remember-ed-sheerans-lyrics-in-king-song-tu-mil-jaaye-praises-daughter-suhana-khan-for-her-effortless-lipsync-101793938110868.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/sandeep-reddy-vanga-praises-ramayanas-magnitude-calls-namit-malhotra-the-most-committed-producer-he-has-known-101793946890700.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1085,10 +1086,6 @@
   }
  ],
  "songs_recent": [
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "His Aura Hits You",
-  "Main Ram (From \"Ramayana\")",
-  "Mangal Rang (From \"Ramayana\")",
   "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
   "Heeriye (feat. Arijit Singh)",
   "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
@@ -1124,7 +1121,11 @@
   "Tu Mil Jaaye (From \"KING\")",
   "Judi Jodi (From \"Ramayana\")",
   "Tera Hoke Rahoon",
-  "Tu Aake Dekhle"
+  "Tu Aake Dekhle",
+  "Main Ram (From \"Ramayana\")",
+  "Judi Jodi (From \"Ramayana\")",
+  "Jai Jai Ram",
+  "Chal Tere Ishq Mein"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1222,6 +1223,10 @@
   },
   {
    "title": "Shah Rukh Khan admits struggling to remember Ed Sheeran's lyrics in King song Tu Mil Jaaye, praises daughter Suhana Khan for her effortless lip-sync",
+   "date": "2026-11-06"
+  },
+  {
+   "title": "Sandeep Reddy Vanga praises Ramayana's magnitude, calls Namit Malhotra the most committed producer he has known",
    "date": "2026-11-06"
   }
  ],
