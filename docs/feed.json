@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_devotion-2026-11-06",
+  "image": "posts/20261106-0035-reel_devotion-2026-11-06.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261106-003507-reel_devotion-2026-11-06.mp4",
+  "headline": "Friday: Maa Lakshmi: Maa Lakshmi ka aashirwaad: asli dhan kya hai",
+  "tag": "🎬 REEL · 🙏 SHUKRAVAR KI SHUBHKAMNA",
+  "caption": "Maa Lakshmi ka aashirwaad aaj aise paayein 🙏\nAsli dhan paisa nahi... apno ka saath hai.\nAaj ek diya Maa ke naam jalao.\nJai Maa Lakshmi likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#maalakshmi #shukravar #lakshmi #bhakti #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Ghar ke sab logon ko bhejo, Maa Lakshmi sabka bhala karein 🙏",
+  "songs": [
+   {
+    "title": "Aarti Laxmi Ji Ki",
+    "artist": "Somalika Das",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Om Jai Lakshmi Mata - Alka Yagnik",
+    "artist": "Alka Yagnik",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Mahalakshmi Ashtakam",
+    "artist": "Rajalakshmee Sanjay",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Laxmi Ji Ki Aarti",
+    "artist": "Anuradha Paudwal, Hariom Sharan",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-06T00:35:07+00:00"
+ },
+ {
   "id": "ayodhya_aarti-2026-11-05",
   "image": "posts/20261105-1519-ayodhya_aarti-2026-11-05.jpg",
   "kind": "reel",
@@ -535,52 +580,5 @@
    "fixed": []
   },
   "created_at": "2026-11-05T00:36:02+00:00"
- },
- {
-  "id": "reel_news_night-2026-11-04",
-  "image": "posts/20261104-1452-reel_news_night-2026-11-04.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261104-145201-reel_news_night-2026-11-04.mp4",
-  "headline": "Parivarik ManuRanjan trailer: Pankaj Tripathi, Aditi Rao Hydari's unusual equation promises twists, romance and comedy",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Parivarik ManuRanjan trailer Pankaj Tripathi Aditi Rao Hydari 🎬\nTrailer mein Aditi Rao Hydari Helen bani hain, ek house help jiske aane se Pankaj Tripathi ke ghar mein padosiyon ki gossip shuru ho jaati hai.\nTwists, romance aur comedy ka waada hai.\nUs padosi dost ko bhejo jo sab jaanta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#pankajtripathi #aditiraohydari #parivarikmanuranjan #bollywood #reelsindia\n\n(Parivarik ManuRanjan trailer, Pankaj Tripathi, Aditi Rao Hydari, Parivarik ManuRanjan, Pankaj Tripathi Aditi Rao Hydari, Bollywood trailer)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/parivarik-manuranjan-trailer-pankaj-tripathi-aditi-rao-hydaris-unusual-equation-promises-twists-romance-and-comedy-101793790260112.html",
-  "pin_comment": "Apne Pankaj Tripathi fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Peek A Boo",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "playful, quirky comedy vibe"
-   },
-   {
-    "title": "Shararat",
-    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
-    "lang": "hindi",
-    "mood": "naughty gossip energy"
-   },
-   {
-    "title": "Housewife",
-    "artist": "Tate McRae",
-    "lang": "english",
-    "mood": "house help twist, playful"
-   },
-   {
-    "title": "Nicole Kidman",
-    "artist": "ADÉLA",
-    "lang": "english",
-    "mood": "cheeky, trending vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 5: The photo credit 'Photo: hollywoodreporterindia' at the bottom left overlaps and collides with the '@khabarbawaal' handle text, so both are hard to read. Move one of them."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-04T14:52:01+00:00"
  }
 ]
