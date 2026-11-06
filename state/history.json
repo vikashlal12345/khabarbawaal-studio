@@ -263,7 +263,8 @@
   "fecac4fce9f0",
   "a350ae9cdd78",
   "6468039fee41",
-  "4c1a5ca2ade6"
+  "4c1a5ca2ade6",
+  "e457d3ebb631"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -407,7 +408,7 @@
   "reel_news_am": "2026-11-06",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-05",
+  "reel_news_aft": "2026-11-06",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-06",
@@ -418,7 +419,7 @@
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "M6Om7klkVvHA",
+ "inbox_since": "Dq54HWgGxZvx",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -791,7 +792,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
@@ -870,7 +870,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/abhishek-bachchan-and-aishwarya-rai-arrive-at-manish-malhotras-diwali-bash-holding-hands-cant-take-their-eyes-off-each-other-in-a-loved-up-moment-101793931020606.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-admits-struggling-to-remember-ed-sheerans-lyrics-in-king-song-tu-mil-jaaye-praises-daughter-suhana-khan-for-her-effortless-lipsync-101793938110868.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sandeep-reddy-vanga-praises-ramayanas-magnitude-calls-namit-malhotra-the-most-committed-producer-he-has-known-101793946890700.html",
-  "https://www.bollywoodhungama.com/news/bollywood/ranveer-singhs-pralay-shoot-sparks-big-controversy-at-mumbais-azad-maidan-under-14-and-under-16-cricket-matches-postponed-mca-fumes-over-disruption/"
+  "https://www.bollywoodhungama.com/news/bollywood/ranveer-singhs-pralay-shoot-sparks-big-controversy-at-mumbais-azad-maidan-under-14-and-under-16-cricket-matches-postponed-mca-fumes-over-disruption/",
+  "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-denies-that-indian-government-pressured-him-to-change-maatrubhumi-script-says-film-has-nothing-against-china-101793965433360.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1087,10 +1088,6 @@
   }
  ],
  "songs_recent": [
-  "Toxic",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
   "Narayan Mil Jayega",
   "Dhun",
   "Mangal Rang (From \"Ramayana\")",
@@ -1126,7 +1123,11 @@
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "His Aura Hits You",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Gehra Hua",
+  "Alfaaz",
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1233,6 +1234,10 @@
   {
    "title": "Ranveer Singh’s Pralay shoot sparks BIG controversy at Mumbai’s Azad Maidan; Under-14 and Under-16 cricket matches POSTPONED; MCA FUMES over disruption",
    "date": "2026-11-06"
+  },
+  {
+   "title": "Salman Khan denies that Indian government pressured him to change Maatrubhumi script, says film has nothing against China",
+   "date": "2026-11-06"
   }
  ],
  "claude_limit": {
@@ -1246,7 +1251,8 @@
   "18084634991359569",
   "17937042348407759",
   "18117277646011243",
-  "18023602325946834"
+  "18023602325946834",
+  "18073698851610142"
  ],
- "winner_followup_day": "2026-11-05"
+ "winner_followup_day": "2026-11-06"
 }

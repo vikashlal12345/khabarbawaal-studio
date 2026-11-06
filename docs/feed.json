@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_news_aft-2026-11-06",
+  "image": "posts/20261106-1235-reel_news_aft-2026-11-06.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261106-123530-reel_news_aft-2026-11-06.mp4",
+  "headline": "Salman Khan denies that Indian government pressured him to change Maatrubhumi script, says film has nothing against China",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Salman Khan Maatrubhumi script change 🎬\nSalman ne saaf kaha ki sarkar ne script badalne ka dabav nahi dala.\nFilm ka pehla naam Battle of Galwan tha, ab Maatrubhumi hai.\nSalman ke mutabik film mein China ke khilaaf kuch nahi hai.\nSalman sahi? HAAN ya NA likho 👇\n\nVideo: @VishalRC007 on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#salmankhan #maatrubhumi #bollywood #bollywoodnews #reelsindia\n\n(Salman Khan, Maatrubhumi, Battle of Galwan, Apoorva Lakhia, Salman Khan Maatrubhumi script, Salman Khan China film, Salman Khan latest news, Bollywood news today)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-denies-that-indian-government-pressured-him-to-change-maatrubhumi-script-says-film-has-nothing-against-china-101793965433360.html",
+  "pin_comment": "Apne Salman fan dost ko ye Reel bhejo 👇",
+  "songs": [
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "serious tone = script row"
+   },
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "chart #1, fits Salman's clear words"
+   },
+   {
+    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+    "artist": "Himesh Reshammiya, Sameer Anjaan",
+    "lang": "new",
+    "mood": "film's own patriotic song"
+   },
+   {
+    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Junaid Wasi",
+    "lang": "new",
+    "mood": "dramatic new release for tension"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Salman did not say 'only'. He said the film is about soldiers and their families."
+   ],
+   "fixed": [
+    "Film ka pehle naam Battle of Galwan tha → Film ka pehla naam Battle of Galwan tha",
+    "film sirf sainikon aur unke parivaaron ki kahani hai → film sainikon aur unke parivaaron ki kahani hai"
+   ]
+  },
+  "created_at": "2026-11-06T12:35:30+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-06",
   "image": "posts/20261106-1034-reel_news_pm-2026-11-06.jpg",
   "kind": "reel",
@@ -525,60 +575,5 @@
    "fixed": []
   },
   "created_at": "2026-11-05T12:35:44+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-05",
-  "image": "posts/20261105-1036-reel_news_pm-2026-11-05.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261105-103638-reel_news_pm-2026-11-05.mp4",
-  "headline": "Regina Cassandra questions Karan Johar for ignoring her during Kesari 2 promotions, says Janhvi Kapoor, Radhika Apte comments fuel north-south divide",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Regina Cassandra Karan Johar Kesari 2 Janhvi Kapoor 🎬\nRegina Cassandra ne aarop lagaya ki Karan Johar ke Dharma Productions ne Kesari 2 promotions mein unhe tag nahi kiya.\nJanhvi Kapoor aur Radhika Apte ke south cinema comments par bhi unhone aitraaz jataya.\nNorth-south divide par nayi bahes.\nRegina sahi? HAAN ya NA likho 👇\n\nVideo: @anaghakesav on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #reginacassandra #karanjohar #janhvikapoor #bollywood\n\n(Regina Cassandra, Karan Johar, Kesari 2, Janhvi Kapoor, Radhika Apte, north south divide, Bollywood south cinema, Regina Cassandra Karan Johar)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html",
-  "pin_comment": "Apne Janhvi Kapoor fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Toxic",
-    "artist": "Vishal Mishra, Hanita Bhambri",
-    "lang": "hindi",
-    "mood": "drama and tension"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "shikayat, calm complaint"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "hurt feelings"
-   },
-   {
-    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya",
-    "lang": "new",
-    "mood": "dramatic gossip vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Regina's claim must be attributed as her allegation, not stated as fact",
-    "Fact corrected to match the article: Article says she claimed Dharma Productions did not tag her; it was not Karan Johar personally, and it is her allegation",
-    "Fact corrected to match the article: Article: she objects to North actors talking about South cinema 'like that', not a blanket ban on comments.",
-    "Fact corrected to match the article: Article says walk out if they have the choice, not that a choice always exists."
-   ],
-   "fixed": [
-    "Regina: Karan Johar ke Dharma ne tag nahi kiya → Regina ka aarop: Karan Johar ke Dharma ne tag nahi kiya",
-    "Regina Cassandra ne Karan Johar se Kesari 2 promotions mein ignore karne par sawal uthaya. → Regina Cassandra ne aarop lagaya ki Karan Johar ke Dharma Productions ne Kesari 2 promotions mein unhe tag nahi kiya.",
-    "Regina Cassandra: North ke actors South par comment na karein → Regina Cassandra: North ke actors South cinema par aise comment na karein",
-    "asahaj ho toh film chhod dein, choice hoti hai. → asahaj ho toh film chhod dein, agar choice ho."
-   ]
-  },
-  "created_at": "2026-11-05T10:36:38+00:00"
  }
 ]
