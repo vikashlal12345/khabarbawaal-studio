@@ -441,11 +441,11 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-06",
   "reel_break_noon": "2026-11-06",
-  "reel_break_aft": "2026-11-05",
+  "reel_break_aft": "2026-11-06",
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "Dq54HWgGxZvx",
+ "inbox_since": "tXSWl5fBcHVS",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1327,7 +1327,8 @@
   "Laxmi Ji Ki Aarti",
   "Tu Aake Dekhle",
   "Jai Jai Ram",
-  "Chal Tere Ishq Mein"
+  "Chal Tere Ishq Mein",
+  "Pal Pal"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1693,6 +1694,10 @@
   },
   {
    "title": "Salman Khan denies that Indian government pressured him to change Maatrubhumi script, says film has nothing against China",
+   "date": "2026-11-06"
+  },
+  {
+   "title": "Shehzad Poonawalla wins Rise & Fall Season 2, takes home Rs. 35 lakhs prize money; pledges to donate it to flood relief",
    "date": "2026-11-06"
   }
  ],
