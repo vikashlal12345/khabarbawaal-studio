@@ -886,5 +886,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-11-06",
+  "key": "shahrukhkhansuhanakhantumiljaayekingsong",
+  "kind": "reel_news_am",
+  "secs": 14.0,
+  "at": "2026-11-06T06:34:42+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 34,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
