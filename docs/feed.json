@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_early-2026-11-06",
+  "image": "posts/20261106-0235-reel_news_early-2026-11-06.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261106-023508-reel_news_early-2026-11-06.mp4",
+  "headline": "Ramayana gets a massive theatrical upgrade across India; here's why",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana theatrical upgrade across India 🎬\nRamayana ko poore India mein ek massive theatrical upgrade mil raha hai.\nFilm ke saath Ranbir Kapoor, Yash aur Nitesh Tiwari ki epic ek bar phir charcha mein hai.\nBade parde ka maza ab aur bada.\nRamayana bade parde par dekhoge? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Mid-Day (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #Bollywood #reelsindia #Yash\n\n(Ramayana, Ramayana movie, Ramayana theatrical upgrade, Ranbir Kapoor Ramayana, Yash Ramayana, Nitesh Tiwari, Ramayana box office, Ramayana India release)",
+  "source": "Mid-Day",
+  "source_url": "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "devotional epic vibe = Ramayana"
+   },
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "hype for massive upgrade"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana's own new song"
+   },
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ram devotion = film moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The Mint logo in the photo is cut off at the right edge and reads 'mi'. This is a minor cosmetic problem. The headline sits over the actors' clothes, not their faces."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-06T02:35:08+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-06",
   "image": "posts/20261106-0035-reel_devotion-2026-11-06.jpg",
   "kind": "reel",
@@ -483,102 +530,5 @@
    "fixed": []
   },
   "created_at": "2026-11-05T04:35:01+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-05",
-  "image": "posts/20261105-0234-reel_news_early-2026-11-05.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261105-023459-reel_news_early-2026-11-05.mp4",
-  "headline": "Saif Ali Khan credits Kareena Kapoor for forging a bond with Sara Ali Khan and Ibrahim Ali Khan, says they reciprocate her efforts",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Saif Ali Khan Kareena Kapoor Koffee With Karan 💛\nSaif ne kaha Kareena ki wajah se Sara aur Ibrahim ke saath unka bond bana.\nSaif ke mutabiq Sara aur Ibrahim bhi Kareena ki koshish ka jawab pyaar se dete hain.\nKoffee With Karan par family life ki ye baat dil chhoo gayi.\nTumhare ghar ka family jodne wala kaun? Naam likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #kareenakapoor #koffeewithkaran #bollywood #reelsindia\n\n(Saif Ali Khan, Kareena Kapoor, Koffee With Karan, Sara Ali Khan, Ibrahim Ali Khan, Saif Kareena family, Koffee With Karan, Saif Ali Khan Koffee With Karan)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-credits-kareena-kapoor-for-forging-a-bond-with-sara-ali-khan-and-ibrahim-ali-khan-says-they-reciprocate-her-efforts-101793803566704.html",
-  "pin_comment": "Apne Saif-Kareena fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "family warmth, soft emotional bond"
-   },
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "pyaar aur apnapan"
-   },
-   {
-    "title": "Judi Jodi (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "jodna, parivaar ka rishta"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "gentle, heartfelt family moment"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article gives no year for the episode; the 2026 claim is unsupported.",
-    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left runs into the '@khabarbawaal' handle, so the two texts overlap slightly. Move the credit or the handle."
-   ],
-   "fixed": [
-    "Koffee With Karan 2026 → Koffee With Karan"
-   ]
-  },
-  "created_at": "2026-11-05T02:34:59+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-05",
-  "image": "posts/20261105-0036-reel_devotion-2026-11-05.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261105-003602-reel_devotion-2026-11-05.mp4",
-  "headline": "Thursday: Vishnu ji: Guruvaar ko Vishnu ji ki kripa kaise payein",
-  "tag": "🎬 REEL · 🙏 JAI SHRI HARI",
-  "caption": "Guruvaar aur Vishnu ji ki kripa 🙏\nPeela rang, tulsi aur ek sachha naam... bas itna kaafi hai.\nAaj apne parivaar ki khushi ke liye prarthna karo.\nJai Shri Hari likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#guruvaar #vishnubhagwan #omnamonarayanaya #harihari #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Apne parivaar ke group mein bhejo 🙏",
-  "songs": [
-   {
-    "title": "Vishnu Sahasranamam",
-    "artist": "M.S. Subbulakshmi",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ganesh Jai Ganesh Deva",
-    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Vishnu Sahasranamam (Version 1)",
-    "artist": "M.S.Subbulakshmi",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Sri Vishnu Sahasranamam",
-    "artist": "Rajalakshmee Sanjay",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The bottom line on the slide is garbled. It reads \"Jai Shri Hari · Apni nraa ko bhejo\", and the letters look broken. It doesn't match the intended text \"Apne parivaar ke group mein bhejo 🙏\". This is a rendering problem, so a text fix can't solve it. The slide needs to be re-rendered."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-05T00:36:02+00:00"
  }
 ]

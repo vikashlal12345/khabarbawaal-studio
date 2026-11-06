@@ -406,7 +406,7 @@
   "reel_news_aft": "2026-11-05",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-05",
+  "reel_news_early": "2026-11-06",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-05",
   "reel_break_noon": "2026-11-05",
@@ -414,7 +414,7 @@
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "Psd0wGKnEzPY",
+ "inbox_since": "RKqFk8eh28zX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -787,7 +787,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
@@ -866,7 +865,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/regina-cassandra-questions-karan-johar-for-ignoring-her-during-kesari-2-promotions-says-janhvi-kapoor-radhika-apte-comments-fuel-north-south-divide-101793867971165.html",
   "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-raves-about-ramayana-calls-film-a-divine-blessing-101793877915800.html",
   "https://jang.com.pk/en/75865-karan-johar-opens-up-about-his-children-future-in-bollywood-i-will-be-too-old-news",
-  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-returns-to-playback-singing-after-11-years-with-teri-sexy-beauty-from-maatrubhumi/"
+  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-returns-to-playback-singing-after-11-years-with-teri-sexy-beauty-from-maatrubhumi/",
+  "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1083,10 +1083,6 @@
   }
  ],
  "songs_recent": [
-  "Vishnu Sahasranamam",
-  "Jai Ganesh Jai Ganesh Deva",
-  "Vishnu Sahasranamam (Version 1)",
-  "Sri Vishnu Sahasranamam",
   "Jo Tum Mere Ho",
   "Tera Hoke Rahoon",
   "Judi Jodi (From \"Ramayana\")",
@@ -1122,7 +1118,11 @@
   "Aarti Laxmi Ji Ki",
   "Om Jai Lakshmi Mata - Alka Yagnik",
   "Mahalakshmi Ashtakam",
-  "Laxmi Ji Ki Aarti"
+  "Laxmi Ji Ki Aarti",
+  "Ram Siya Ram",
+  "Azadi",
+  "Mangal Rang (From \"Ramayana\")",
+  "Main Ram (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1146,38 +1146,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "Salman Khan wishes Shah Rukh Khan stays young forever on his birthday; SRK says ‘working hard on physique because of you’",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "Orry calls Sara Ali Khan 'fake friend' for disappearing during his difficult time, claims Amrita Singh hurled abuses at him and never apologised",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "Ramayana 3 on the cards? Namit Malhotra says makers may revisit plans after audience feedback",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "Yash says son Yatharv struggled to accept him as Ravana in Ramayana, as he's ‘Rama in real life’, recalls difficult conversation",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "King's Tu Mil Jaaye becomes most-watched Indian film song in 24 hours with 36 million views; beats Jawan's Zinda Banda, Adipurush's Jai Shri Ram",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "Ranbir Kapoor brushes off Ramayana criticism, says what matters is people who value his intentions",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "Bombay High Court asks BMC to restore Dia Mirza’s Diwali video: “India is a secular country”",
-   "date": "2026-11-03"
-  },
-  {
-   "title": "Manoj Bajpayee, Boman Irani and Divya Dutta’s Last Man in Tower to premiere on Hindi Zee 5 on November 6",
-   "date": "2026-11-03"
-  },
   {
    "title": "Ranbir Kapoor weighs in on AI's impact on filmmaking, says it can never replace human touch",
    "date": "2026-11-04"
@@ -1241,6 +1209,10 @@
   {
    "title": "Salman Khan returns to playback singing after 11 years with ‘Teri Sexy Beauty’ from Maatrubhumi",
    "date": "2026-11-05"
+  },
+  {
+   "title": "Ramayana gets a massive theatrical upgrade across India; here's why",
+   "date": "2026-11-06"
   }
  ],
  "claude_limit": {
