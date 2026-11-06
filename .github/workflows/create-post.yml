@@ -30,7 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       GH_TOKEN: ${{ github.token }}
@@ -71,12 +70,7 @@ jobs:
           git config user.email "news-bot@users.noreply.github.com"
           python save.py "Your post (issue #$ISSUE)"
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      - uses: ./.github/actions/publish-pages   # 3 tries, each gives up after 2 min and cancels a stuck publish (owner 6 Nov 2026)
 
       - name: Phone alert (🔔 ✅ ready, or ❌ not made)
         if: always()

@@ -1,0 +1,39 @@
+name: Publish the app (docs/) to GitHub Pages, without getting stuck
+description: >
+  Owner 6 Nov 2026: GitHub's Pages publish sometimes hangs for 10 minutes (the 12 PM and 4 PM Reels showed late).
+  actions/deploy-pages cancels its own deployment when its `timeout` runs out (default 10 min), so each try gives up
+  after 2 minutes, waits a little and tries again (3 tries; the last one fails loudly).
+runs:
+  using: composite
+  steps:
+    - uses: actions/configure-pages@v5
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: docs
+
+    - id: try1
+      uses: actions/deploy-pages@v4
+      continue-on-error: true
+      with:
+        timeout: 120000
+    - name: Wait before try 2
+      if: steps.try1.outcome != 'success'
+      shell: bash
+      run: sleep 15
+
+    - id: try2
+      if: steps.try1.outcome != 'success'
+      uses: actions/deploy-pages@v4
+      continue-on-error: true
+      with:
+        timeout: 120000
+    - name: Wait before try 3
+      if: steps.try1.outcome != 'success' && steps.try2.outcome != 'success'
+      shell: bash
+      run: sleep 30
+
+    - id: try3
+      if: steps.try1.outcome != 'success' && steps.try2.outcome != 'success'
+      uses: actions/deploy-pages@v4
+      with:
+        timeout: 180000
