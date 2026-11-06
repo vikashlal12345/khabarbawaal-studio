@@ -933,5 +933,21 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-06",
+  "key": "salmankhanmaatrubhumiscriptchange",
+  "kind": "reel_news_aft",
+  "secs": 22.5,
+  "at": "2026-11-06T12:35:30+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 58,
+  "hook": "question",
+  "photos": 3,
+  "short": false
  }
 ]
