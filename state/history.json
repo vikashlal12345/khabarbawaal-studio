@@ -259,7 +259,8 @@
   "e9b0a59889a4",
   "7ea4898a366d",
   "4b7f96e6211f",
-  "aea9fcc5cd9e"
+  "aea9fcc5cd9e",
+  "fecac4fce9f0"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -408,13 +409,13 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-06",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-05",
+  "reel_break_am": "2026-11-06",
   "reel_break_noon": "2026-11-05",
   "reel_break_aft": "2026-11-05",
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "RKqFk8eh28zX",
+ "inbox_since": "CBgzyPYsuFZk",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -787,7 +788,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
@@ -866,7 +866,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-raves-about-ramayana-calls-film-a-divine-blessing-101793877915800.html",
   "https://jang.com.pk/en/75865-karan-johar-opens-up-about-his-children-future-in-bollywood-i-will-be-too-old-news",
   "https://www.bollywoodhungama.com/news/bollywood/salman-khan-returns-to-playback-singing-after-11-years-with-teri-sexy-beauty-from-maatrubhumi/",
-  "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI"
+  "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI",
+  "https://www.hindustantimes.com/entertainment/bollywood/abhishek-bachchan-and-aishwarya-rai-arrive-at-manish-malhotras-diwali-bash-holding-hands-cant-take-their-eyes-off-each-other-in-a-loved-up-moment-101793931020606.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1083,10 +1084,6 @@
   }
  ],
  "songs_recent": [
-  "Jo Tum Mere Ho",
-  "Tera Hoke Rahoon",
-  "Judi Jodi (From \"Ramayana\")",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
   "Zaalima",
   "Soulmate",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
@@ -1122,7 +1119,11 @@
   "Ram Siya Ram",
   "Azadi",
   "Mangal Rang (From \"Ramayana\")",
-  "Main Ram (From \"Ramayana\")"
+  "Main Ram (From \"Ramayana\")",
+  "Jo Tum Mere Ho",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1212,6 +1213,10 @@
   },
   {
    "title": "Ramayana gets a massive theatrical upgrade across India; here's why",
+   "date": "2026-11-06"
+  },
+  {
+   "title": "Abhishek Bachchan and Aishwarya Rai arrive at Manish Malhotra's Diwali bash holding hands, can't take their eyes off each other in a loved-up moment",
    "date": "2026-11-06"
   }
  ],
