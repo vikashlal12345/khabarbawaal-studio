@@ -440,12 +440,12 @@
   "reel_news_early": "2026-11-06",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-06",
-  "reel_break_noon": "2026-11-05",
+  "reel_break_noon": "2026-11-06",
   "reel_break_aft": "2026-11-05",
   "reel_news_night": "2026-11-05",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "CfZlW0AiGb0P",
+ "inbox_since": "hDotBTg7sVbX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1325,7 +1325,9 @@
   "Om Jai Lakshmi Mata - Alka Yagnik",
   "Mahalakshmi Ashtakam",
   "Laxmi Ji Ki Aarti",
-  "Tu Aake Dekhle"
+  "Tu Aake Dekhle",
+  "Jai Jai Ram",
+  "Chal Tere Ishq Mein"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1679,6 +1681,10 @@
   },
   {
    "title": "Shah Rukh Khan admits struggling to remember Ed Sheeran's lyrics in King song Tu Mil Jaaye, praises daughter Suhana Khan for her effortless lip-sync",
+   "date": "2026-11-06"
+  },
+  {
+   "title": "Sandeep Reddy Vanga praises Ramayana's magnitude, calls Namit Malhotra the most committed producer he has known",
    "date": "2026-11-06"
   }
  ],
