@@ -1035,5 +1035,20 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_noon-2026-11-07",
+  "key": "salmankhanmaatrubhumiterisexybeautysongtrailerlaunch",
+  "kind": "reel_break_noon",
+  "secs": 13.0,
+  "at": "2026-11-07T08:34:15+00:00",
+  "type": "breaking",
+  "cover": "full",
+  "photos": 2,
+  "sharp": 39,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "team_vote",
+  "hook": "question"
  }
 ]
