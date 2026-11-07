@@ -1,5 +1,59 @@
 [
  {
+  "id": "reel_news_night-2026-11-07",
+  "image": "posts/20261107-1436-reel_news_night-2026-11-07.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261107-143611-reel_news_night-2026-11-07.mp4",
+  "headline": "Pyre director Vinod Kapri says 75% shows of film has been cut down within first week, reveals theatre owners were told only one film will be shown",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Pyre director Vinod Kapri ka dard 💔\n\nVinod Kapri ne kaha ki pichle do din mein film ke 75% show kam kar diye gaye.\nUnke mutabik theatre owners ko bataya gaya ki sirf ek film chalegi.\nUnke mutabik, chhoti film ke shows badi film ke liye hataye gaye.\n\nChhoti film ke saath ye insaaf hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#pyre #vinodkapri #bollywood #bollywoodnews #reelsindia\n\n(Vinod Kapri Pyre, Pyre film shows cut, Vinod Kapri video, Pyre theatres, small budget film, Bollywood news today)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/pyre-director-vinod-kapri-says-75-shows-of-film-has-been-cut-down-within-first-week-reveals-theatre-owners-were-told-only-one-film-will-be-shown-101794056941394.html",
+  "pin_comment": "Ye har movie lover ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "dard bhara, unfair lagta hai"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "heartbreak for small film"
+   },
+   {
+    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Vishal Mishra, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "emotional, struggle vibe"
+   },
+   {
+    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "pain of the director"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says 75% of shows were cut over the last two days, not in the first week",
+    "Fact corrected to match the article: Article never says the film has a tiny budget; it only calls it a small film with non-actors, and the claim is Kapri's.",
+    "Fact corrected to match the article: Kapri shared a video post on X, not an interview."
+   ],
+   "fixed": [
+    "pehle hafte mein film ke 75% show kam kar diye gaye → pichle do din mein film ke 75% show kam kar diye gaye",
+    "bade film ke liye → badi film ke liye",
+    "Tiny budget ki film ko badi film ke liye hataya gaya. → Unke mutabik, chhoti film ke shows badi film ke liye hataye gaye.",
+    "Vinod Kapri interview → Vinod Kapri video"
+   ]
+  },
+  "created_at": "2026-11-07T14:36:12+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-07",
   "image": "posts/20261107-1334-reel_break_aft-2026-11-07.jpg",
   "kind": "reel",
@@ -368,101 +422,5 @@
    "fixed": []
   },
   "created_at": "2026-11-07T00:34:27+00:00"
- },
- {
-  "id": "reel_news_night-2026-11-06",
-  "image": "posts/20261106-1435-reel_news_night-2026-11-06.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261106-143550-reel_news_night-2026-11-06.mp4",
-  "headline": "Vidyut Jammwal says Tiger Shroff is stressed after firing incident, reveals actor is trying his best to move on",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tiger Shroff Vidyut Jammwal firing incident 💛\nVidyut Jammwal ne kaha ki Mumbai mein gunmen ne Tiger ki car par firing ki, uske baad Tiger stressed hain.\nVidyut ke mutabiq Tiger apni poori koshish kar rahe hain aage badhne ki.\nUs dost ko bhejo jo mushkil waqt mein saath khada rehta hai 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#tigershroff #vidyutjammwal #bollywoodnews #viralnews #reelsindia\n\n(Tiger Shroff, Vidyut Jammwal, Tiger Shroff firing incident, Tiger Shroff car firing Mumbai, Tiger Shroff stressed, Vidyut Jammwal Tiger Shroff friendship, Bollywood news today, Tiger Shroff latest news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/vidyut-jammwal-says-tiger-shroff-is-stressed-after-firing-incident-reveals-actor-is-trying-his-best-to-move-on-101793972209969.html",
-  "pin_comment": "Apne Tiger Shroff fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Humnava Mere",
-    "artist": "Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "dost ka saath, sukoon bhara"
-   },
-   {
-    "title": "Kabhi Shaam Dhale",
-    "artist": "Jaani, Mohammad Faiz",
-    "lang": "hindi",
-    "mood": "shaant, aage badhne ka mood"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "dard bhara, emotional hook"
-   },
-   {
-    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya",
-    "lang": "new",
-    "mood": "slow emotional background"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: Tiger Shroff's photo is cropped at the left edge, so half of his face is cut off."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-06T14:35:50+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-06",
-  "image": "posts/20261106-1337-reel_break_aft-2026-11-06.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261106-133706-reel_break_aft-2026-11-06.mp4",
-  "headline": "Shehzad Poonawalla wins Rise & Fall Season 2, takes home Rs. 35 lakhs prize money; pledges to donate it to flood relief",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Shehzad Poonawalla Rise & Fall Season 2 winner, Rs 35 lakh prize\nVirender Sehwag ke host kiye show ki trophy 6 November ko jeeti\nFinale mein Priyanka Chahar Choudhary aur Gautam Gulati ko peeche chhoda\nPrize money baadh rahat ke liye donate karne ka vaada kiya\nShehzad deserving winner? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #RiseAndFall #ShehzadPoonawalla #BollywoodNews #Trending\n\n(Shehzad Poonawalla, Rise & Fall Season 2, Rise and Fall winner, Virender Sehwag, Priyanka Chahar Choudhary, Gautam Gulati, Shehzad Poonawalla Rs 35 lakh, Rise & Fall 2 finale)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/shehzad-poonawalla-wins-rise-pledges-to-donate-it-to-flood-relief/",
-  "pin_comment": "Apne Rise & Fall fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "winner entry = aura moment"
-   },
-   {
-    "title": "Pal Pal",
-    "artist": "Afusic, AliSoomroMusic",
-    "lang": "hindi",
-    "mood": "trending vibe for win"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "mehnat ka phal = trophy"
-   },
-   {
-    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "jeet ka celebration beat"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The photo is cropped at the top, so the 'SHEHZAD' part of the stage banner is cut off. The BREAKING tag sits near it. The text is still readable and the face is not covered, so this is minor."
-   ],
-   "fixed": [
-    "Raashi baadh rahat mein donate karne ka vaada → Baadh rahat mein donate karne ka vaada"
-   ]
-  },
-  "created_at": "2026-11-06T13:37:06+00:00"
  }
 ]

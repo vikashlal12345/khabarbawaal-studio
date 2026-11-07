@@ -272,7 +272,8 @@
   "11f61ecfaf4a",
   "9f4d97675adb",
   "0b0c2cbb520b",
-  "316ede432b0b"
+  "316ede432b0b",
+  "a4181f05614a"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -424,7 +425,7 @@
   "reel_break_am": "2026-11-07",
   "reel_break_noon": "2026-11-07",
   "reel_break_aft": "2026-11-07",
-  "reel_news_night": "2026-11-06",
+  "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01"
  },
  "inbox_since": "OCmFqlU6B0wd",
@@ -800,7 +801,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
   "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
   "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html",
   "https://www.hindustantimes.com/entertainment/bollywood/tanu-weds-manu-3-wont-move-ahead-without-r-madhavan-and-kangana-ranaut-confirms-aanand-l-rai-denies-fresh-cast-reports-101793265815138.html",
@@ -879,7 +879,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html",
   "https://www.bollywoodhungama.com/news/bollywood/priyanka-chopra-jonas-announces-ventilator-2-reunites-with-director-rajesh-mapuskar-film-set-for-2027-release/",
   "https://www.hindustantimes.com/entertainment/bollywood/vivek-oberoi-recalls-being-ostracised-from-bollywood-for-standing-up-against-what-he-perceived-as-wrong-says-filmmakers-got-calls-from-underworld-101794045158310.html",
-  "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-wins-personality-rights-case-delhi-high-court-passes-final-decree-after-four-defendants-settle/"
+  "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-wins-personality-rights-case-delhi-high-court-passes-final-decree-after-four-defendants-settle/",
+  "https://www.hindustantimes.com/entertainment/bollywood/pyre-director-vinod-kapri-says-75-shows-of-film-has-been-cut-down-within-first-week-reveals-theatre-owners-were-told-only-one-film-will-be-shown-101794056941394.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1096,10 +1097,6 @@
   }
  ],
  "songs_recent": [
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "His Aura Hits You",
-  "Pal Pal",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
   "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
   "Humnava Mere",
   "Kabhi Shaam Dhale",
@@ -1135,7 +1132,11 @@
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Heeriye (feat. Arijit Singh)",
   "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Zihaal e Miskin",
+  "Rula Ke Gaya Ishq",
+  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1249,6 +1250,10 @@
   },
   {
    "title": "Amitabh Bachchan wins personality rights case; Delhi High Court passes final decree after four defendants settle",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Pyre director Vinod Kapri says 75% shows of film has been cut down within first week, reveals theatre owners were told only one film will be shown",
    "date": "2026-11-07"
   }
  ],
