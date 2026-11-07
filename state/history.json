@@ -271,7 +271,8 @@
   "c4a230c897d2",
   "11f61ecfaf4a",
   "9f4d97675adb",
-  "0b0c2cbb520b"
+  "0b0c2cbb520b",
+  "316ede432b0b"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -422,11 +423,11 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-07",
   "reel_break_noon": "2026-11-07",
-  "reel_break_aft": "2026-11-06",
+  "reel_break_aft": "2026-11-07",
   "reel_news_night": "2026-11-06",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "aOpRzWsCYaYv",
+ "inbox_since": "OCmFqlU6B0wd",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -799,7 +800,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
   "https://newsable.asianetnews.com/entertainment/janhvi-kapoor-faces-backlash-for-putting-down-tara-sutaria-on-koffee-with-karan-9-with-cheeky-jibe-articleshow-9gh9uq2",
   "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-feels-ranveer-singh-performance-in-dhurandhar-was-more-impactful-than-ranbir-kapoor-in-animal-koffee-with-karan-season-9-101793260846932.html",
@@ -878,7 +878,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html",
   "https://www.bollywoodhungama.com/news/bollywood/priyanka-chopra-jonas-announces-ventilator-2-reunites-with-director-rajesh-mapuskar-film-set-for-2027-release/",
-  "https://www.hindustantimes.com/entertainment/bollywood/vivek-oberoi-recalls-being-ostracised-from-bollywood-for-standing-up-against-what-he-perceived-as-wrong-says-filmmakers-got-calls-from-underworld-101794045158310.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/vivek-oberoi-recalls-being-ostracised-from-bollywood-for-standing-up-against-what-he-perceived-as-wrong-says-filmmakers-got-calls-from-underworld-101794045158310.html",
+  "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-wins-personality-rights-case-delhi-high-court-passes-final-decree-after-four-defendants-settle/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1095,10 +1096,6 @@
   }
  ],
  "songs_recent": [
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-  "Gehra Hua",
-  "Alfaaz",
-  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
   "His Aura Hits You",
   "Pal Pal",
@@ -1134,7 +1131,11 @@
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Azadi",
   "Zihaal e Miskin",
-  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
+  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Heeriye (feat. Arijit Singh)",
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1244,6 +1245,10 @@
   },
   {
    "title": "Vivek Oberoi recalls being ostracised from Bollywood for standing up against what he perceived as wrong; says filmmakers got calls from underworld",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Amitabh Bachchan wins personality rights case; Delhi High Court passes final decree after four defendants settle",
    "date": "2026-11-07"
   }
  ],

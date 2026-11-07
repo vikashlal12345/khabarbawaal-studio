@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_aft-2026-11-07",
+  "image": "posts/20261107-1334-reel_break_aft-2026-11-07.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261107-133420-reel_break_aft-2026-11-07.mp4",
+  "headline": "Amitabh Bachchan wins personality rights case; Delhi High Court passes final decree after four defendants settle",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Amitabh Bachchan personality rights case Delhi High Court final decree\nNaam, photo, voice ya likeness bina consent commercial use nahi ho sakta\nChaar defendants ne settle kiya, baaki par summary judgment\nNov 2022 ka interim injunction ab final decree mein merge\nSahi faisla? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#amitabhbachchan #delhihighcourt #bollywoodnews #breakingnews #reelsindia\n\n(Amitabh Bachchan, Amitabh Bachchan personality rights, Delhi High Court, Justice Purushaindra Kumar Kaurav, Amitabh Bachchan Delhi High Court decree, Bachchan name photo voice, Kaun Banega Crorepati lottery, Bollywood news today)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-wins-personality-rights-case-delhi-high-court-passes-final-decree-after-four-defendants-settle/",
+  "pin_comment": "Apne Amitabh Bachchan fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "big win, swagger energy"
+   },
+   {
+    "title": "Heeriye (feat. Arijit Singh)",
+    "artist": "Jasleen Royal, Arijit Singh",
+    "lang": "hindi",
+    "mood": "feel-good victory vibe"
+   },
+   {
+    "title": "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Kumaar",
+    "lang": "new",
+    "mood": "classic grand feel for legend"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "grateful, blessed win"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The @khabarbawaal handle sits on top of the photo credit line at the bottom, so the two texts crowd and nearly overlap."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-07T13:34:20+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-07",
   "image": "posts/20261107-1234-reel_news_aft-2026-11-07.jpg",
   "kind": "reel",
@@ -417,55 +464,5 @@
    ]
   },
   "created_at": "2026-11-06T13:37:06+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-06",
-  "image": "posts/20261106-1235-reel_news_aft-2026-11-06.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261106-123530-reel_news_aft-2026-11-06.mp4",
-  "headline": "Salman Khan denies that Indian government pressured him to change Maatrubhumi script, says film has nothing against China",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Salman Khan Maatrubhumi script change 🎬\nSalman ne saaf kaha ki sarkar ne script badalne ka dabav nahi dala.\nFilm ka pehla naam Battle of Galwan tha, ab Maatrubhumi hai.\nSalman ke mutabik film mein China ke khilaaf kuch nahi hai.\nSalman sahi? HAAN ya NA likho 👇\n\nVideo: @VishalRC007 on X\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#salmankhan #maatrubhumi #bollywood #bollywoodnews #reelsindia\n\n(Salman Khan, Maatrubhumi, Battle of Galwan, Apoorva Lakhia, Salman Khan Maatrubhumi script, Salman Khan China film, Salman Khan latest news, Bollywood news today)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-denies-that-indian-government-pressured-him-to-change-maatrubhumi-script-says-film-has-nothing-against-china-101793965433360.html",
-  "pin_comment": "Apne Salman fan dost ko ye Reel bhejo 👇",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "serious tone = script row"
-   },
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "chart #1, fits Salman's clear words"
-   },
-   {
-    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Himesh Reshammiya, Sameer Anjaan",
-    "lang": "new",
-    "mood": "film's own patriotic song"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "dramatic new release for tension"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Salman did not say 'only'. He said the film is about soldiers and their families."
-   ],
-   "fixed": [
-    "Film ka pehle naam Battle of Galwan tha → Film ka pehla naam Battle of Galwan tha",
-    "film sirf sainikon aur unke parivaaron ki kahani hai → film sainikon aur unke parivaaron ki kahani hai"
-   ]
-  },
-  "created_at": "2026-11-06T12:35:30+00:00"
  }
 ]
