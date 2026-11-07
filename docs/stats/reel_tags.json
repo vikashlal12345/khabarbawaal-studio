@@ -988,5 +988,21 @@
   "secs": 16.1,
   "at": "2026-11-07T00:34:27+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-07",
+  "key": "farahkhanshreyaghoshalmainhoonnasongs",
+  "kind": "reel_news_early",
+  "secs": 14.0,
+  "at": "2026-11-07T02:34:32+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 8,
+  "relate": "which_one",
+  "cover": "portrait",
+  "sharp": 41,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
