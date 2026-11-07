@@ -437,7 +437,7 @@
   "reel_news_aft": "2026-11-06",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-06",
+  "reel_news_early": "2026-11-07",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-06",
   "reel_break_noon": "2026-11-06",
@@ -445,7 +445,7 @@
   "reel_news_night": "2026-11-06",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "ChgTvQvMntws",
+ "inbox_since": "GbdWJuj30rxT",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1332,7 +1332,8 @@
   "Shani Dev Aarti",
   "Shani Chalisa",
   "Shani Dev Ki Aarti",
-  "Super Fast Shani Chalisa"
+  "Super Fast Shani Chalisa",
+  "Betuka (From \"Nakhrewaalii\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1707,6 +1708,10 @@
   {
    "title": "Vidyut Jammwal says Tiger Shroff is stressed after firing incident, reveals actor is trying his best to move on",
    "date": "2026-11-06"
+  },
+  {
+   "title": "Farah Khan admits film industry insiders were unsure of Shreya Ghoshal for Main Hoon Na songs",
+   "date": "2026-11-07"
   }
  ],
  "claude_limit": {
