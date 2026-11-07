@@ -1,135 +1,4 @@
 {
- "2026-10-04": {
-  "fun": {
-   "posts": 6,
-   "requests": 12,
-   "input": 36,
-   "output": 6865,
-   "cache_read": 30935,
-   "cache_write": 31695,
-   "value_usd": 0.2017,
-   "by_purpose": {
-    "writing": {
-     "requests": 6,
-     "tokens": 25889
-    },
-    "proofreading": {
-     "requests": 6,
-     "tokens": 43642
-    }
-   }
-  },
-  "other": {
-   "posts": 0,
-   "requests": 0,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
-   "by_purpose": {}
-  },
-  "night_learn": {
-   "posts": 0,
-   "requests": 0,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
-   "by_purpose": {}
-  },
-  "news": {
-   "posts": 10,
-   "requests": 41,
-   "input": 150,
-   "output": 37401,
-   "cache_read": 211257,
-   "cache_write": 215633,
-   "value_usd": 1.2787,
-   "by_purpose": {
-    "writing": {
-     "requests": 10,
-     "tokens": 72320
-    },
-    "photo check": {
-     "requests": 10,
-     "tokens": 76121
-    },
-    "proofreading": {
-     "requests": 21,
-     "tokens": 316000
-    }
-   }
-  },
-  "create": {
-   "posts": 1,
-   "requests": 3,
-   "input": 10,
-   "output": 2828,
-   "cache_read": 10610,
-   "cache_write": 13924,
-   "value_usd": 0.0861,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 2801
-    },
-    "photo check": {
-     "requests": 1,
-     "tokens": 7953
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 16618
-    }
-   }
-  },
-  "fun bank": {
-   "posts": 0,
-   "requests": 2,
-   "input": 4,
-   "output": 6835,
-   "cache_read": 1378,
-   "cache_write": 8683,
-   "value_usd": 0.1034,
-   "by_purpose": {
-    "writing": {
-     "requests": 2,
-     "tokens": 16900
-    }
-   }
-  },
-  "market_close": {
-   "posts": 0,
-   "requests": 0,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
-   "by_purpose": {}
-  },
-  "top10_day": {
-   "posts": 1,
-   "requests": 3,
-   "input": 10,
-   "output": 5229,
-   "cache_read": 18601,
-   "cache_write": 36752,
-   "value_usd": 0.203,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 5733
-    },
-    "proofreading": {
-     "requests": 2,
-     "tokens": 54859
-    }
-   }
-  }
- },
  "2026-10-05": {
   "night_ready": {
    "posts": 0,
@@ -12235,6 +12104,18 @@
      "tokens": 56252
     }
    }
+  }
+ },
+ "2026-11-08": {
+  "other": {
+   "posts": 0,
+   "requests": 0,
+   "input": 0,
+   "output": 0,
+   "cache_read": 0,
+   "cache_write": 0,
+   "value_usd": 0.0,
+   "by_purpose": {}
   }
  }
 }
