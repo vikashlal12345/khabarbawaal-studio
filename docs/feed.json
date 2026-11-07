@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_early-2026-11-07",
+  "image": "posts/20261107-0234-reel_news_early-2026-11-07.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261107-023432-reel_news_early-2026-11-07.mp4",
+  "headline": "Farah Khan admits film industry insiders were unsure of Shreya Ghoshal for Main Hoon Na songs",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Farah Khan Shreya Ghoshal Main Hoon Na songs 🎬\nShreya tab bilkul nayi singer thi aur Devdas ke gaane abhi release nahi hue the.\nFilm industry ke kai log Main Hoon Na ke liye unpe sure nahi the.\nFarah Khan ne phir bhi unhe gaane ka mauka diya.\nShreya ka best gaana: Main Hoon Na ya Devdas? Likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#farahkhan #shreyaghoshal #mainhoonna #bollywood #reelsindia\n\n(Farah Khan, Shreya Ghoshal, Main Hoon Na songs, Main Hoon Na, Devdas, Shreya Ghoshal debut, Bollywood nostalgia, Farah Khan interview)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
+  "pin_comment": "Ye Shreya Ghoshal ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tere Liye",
+    "artist": "Atif Aslam, Shreya Ghoshal, Sachin Gupta, Sameer Anjaan",
+    "lang": "hindi",
+    "mood": "Shreya ki awaaz = nostalgia"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "soft melody, warm memory"
+   },
+   {
+    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Vishal Mishra, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "emotional, heartfelt throwback feel"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "light, fresh vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article never gives her age as 18; it says she was a brand-newcomer",
+    "Fact corrected to match the article: The age 18 is not supported by the article",
+    "Slide 1: The photo is cropped so Shreya Ghoshal's head and face are cut off. Only her torso shows, and it is the same photo as slide 4. Slide 1 can't be dropped, so use a better crop.",
+    "Slide 4: The 'Photo: Wikimedia Commons' credit overlaps the @khabarbawaal handle at the bottom, so both are hard to read."
+   ],
+   "fixed": [
+    "Shreya tab sirf 18 saal ki thi aur → Shreya tab bilkul nayi singer thi aur",
+    "Shreya Ghoshal 18 saal → Shreya Ghoshal debut"
+   ]
+  },
+  "created_at": "2026-11-07T02:34:32+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-07",
   "image": "posts/20261107-0034-reel_devotion-2026-11-07.jpg",
   "kind": "reel",
@@ -431,50 +484,5 @@
    "fixed": []
   },
   "created_at": "2026-11-06T02:35:08+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-06",
-  "image": "posts/20261106-0035-reel_devotion-2026-11-06.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261106-003507-reel_devotion-2026-11-06.mp4",
-  "headline": "Friday: Maa Lakshmi: Maa Lakshmi ka aashirwaad: asli dhan kya hai",
-  "tag": "🎬 REEL · 🙏 SHUKRAVAR KI SHUBHKAMNA",
-  "caption": "Maa Lakshmi ka aashirwaad aaj aise paayein 🙏\nAsli dhan paisa nahi... apno ka saath hai.\nAaj ek diya Maa ke naam jalao.\nJai Maa Lakshmi likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#maalakshmi #shukravar #lakshmi #bhakti #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Ghar ke sab logon ko bhejo, Maa Lakshmi sabka bhala karein 🙏",
-  "songs": [
-   {
-    "title": "Aarti Laxmi Ji Ki",
-    "artist": "Somalika Das",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Om Jai Lakshmi Mata - Alka Yagnik",
-    "artist": "Alka Yagnik",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Mahalakshmi Ashtakam",
-    "artist": "Rajalakshmee Sanjay",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Laxmi Ji Ki Aarti",
-    "artist": "Anuradha Paudwal, Hariom Sharan",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-06T00:35:07+00:00"
  }
 ]
