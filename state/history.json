@@ -269,7 +269,8 @@
   "292bcdef7048",
   "3d50a534332a",
   "c4a230c897d2",
-  "11f61ecfaf4a"
+  "11f61ecfaf4a",
+  "9f4d97675adb"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -407,7 +408,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-07",
-  "reel_news_pm": "2026-11-06",
+  "reel_news_pm": "2026-11-07",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-07",
@@ -424,7 +425,7 @@
   "reel_news_night": "2026-11-06",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "aBXSnJoDpnWn",
+ "inbox_since": "l5rUVD7U5VFT",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -797,7 +798,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoors-cheeky-dating-advice-to-veer-pahariya-on-koffee-with-karan-has-internet-calling-it-a-dig-at-tara-sutaria-101793239778325.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sharvari-dances-with-og-rajshri-heroine-madhuri-dixit-to-yeh-prem-mol-liya-song-calls-it-a-surreal-moment-with-her-idol-101793252310511.html",
@@ -876,7 +876,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
   "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html",
+  "https://www.bollywoodhungama.com/news/bollywood/priyanka-chopra-jonas-announces-ventilator-2-reunites-with-director-rajesh-mapuskar-film-set-for-2027-release/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1093,10 +1094,6 @@
   }
  ],
  "songs_recent": [
-  "Main Ram (From \"Ramayana\")",
-  "Judi Jodi (From \"Ramayana\")",
-  "Jai Jai Ram",
-  "Chal Tere Ishq Mein",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "His Aura Hits You",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
@@ -1132,7 +1129,11 @@
   "Thumkeshwari",
   "Toxic",
   "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")"
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Ashke",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1234,6 +1235,10 @@
   },
   {
    "title": "Salman Khan explains dichotomy of having love song like Teri Sexy Beauty in war film like Maatrubhumi",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Priyanka Chopra Jonas announces Ventilator 2, reunites with director Rajesh Mapuskar; film set for 2027 release",
    "date": "2026-11-07"
   }
  ],
