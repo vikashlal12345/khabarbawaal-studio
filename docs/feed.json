@@ -1,5 +1,44 @@
 [
  {
+  "id": "reel_news_aft-2026-11-07",
+  "image": "posts/20261107-1234-reel_news_aft-2026-11-07.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261107-123440-reel_news_aft-2026-11-07.mp4",
+  "headline": "Vivek Oberoi recalls being ostracised from Bollywood for standing up against what he perceived as wrong; says filmmakers got calls from underworld",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Vivek Oberoi ostracised from Bollywood podcast 🎬\nVivek ne bataya ki 2000s ki shuruaat mein ek controversy ke baad unhe bully kiya gaya.\nUnka kehna hai ki wo persona non grata ban gaye aur filmmakers ko underworld se calls aate the.\nVivek ke saath sahi hua ya galat? SAHI ya GALAT likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#VivekOberoi #Bollywood #BollywoodNews #Podcast #reelsindia\n\n(Vivek Oberoi, Vivek Oberoi podcast, Vivek Oberoi Bollywood ostracised, Vivek Oberoi underworld calls, Vivek Oberoi controversy, Bollywood news, Vivek Oberoi interview)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/vivek-oberoi-recalls-being-ostracised-from-bollywood-for-standing-up-against-what-he-perceived-as-wrong-says-filmmakers-got-calls-from-underworld-101794045158310.html",
+  "pin_comment": "Ye apne Vivek Oberoi fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "standing up alone, defiant"
+   },
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "hurt, emotional comeback"
+   },
+   {
+    "title": "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Emiway Bantai, Swaalina",
+    "lang": "new",
+    "mood": "Mumbai struggle, underworld vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-07T12:34:40+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-07",
   "image": "posts/20261107-1034-reel_news_pm-2026-11-07.jpg",
   "kind": "reel",
