@@ -1019,5 +1019,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-07",
+  "key": "ramayanaboxofficecollectionday2ranbirkapoorsaipallaviyash",
+  "kind": "reel_news_am",
+  "secs": 14.0,
+  "at": "2026-11-07T06:34:04+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "full",
+  "sharp": 61,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
