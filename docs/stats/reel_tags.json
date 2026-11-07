@@ -1066,5 +1066,21 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-07",
+  "key": "vivekoberoiostracisedfrombollywoodpodcast",
+  "kind": "reel_news_aft",
+  "secs": 14.0,
+  "at": "2026-11-07T12:34:40+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 27,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]
