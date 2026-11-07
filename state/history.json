@@ -267,7 +267,8 @@
   "e457d3ebb631",
   "a77d0cbe374a",
   "292bcdef7048",
-  "3d50a534332a"
+  "3d50a534332a",
+  "c4a230c897d2"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -408,7 +409,7 @@
   "reel_news_pm": "2026-11-06",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-06",
+  "reel_news_am": "2026-11-07",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-06",
@@ -422,7 +423,7 @@
   "reel_news_night": "2026-11-06",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "AVJSON6uZc2O",
+ "inbox_since": "4XcfDFT4c4rV",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -795,7 +796,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
   "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-bhumi-pednekkar-set-to-reunite-with-akshay-kumar-in-priyadarshans-next-film-101793234376307.html",
@@ -874,7 +874,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/shehzad-poonawalla-wins-rise-pledges-to-donate-it-to-flood-relief/",
   "https://www.hindustantimes.com/entertainment/bollywood/vidyut-jammwal-says-tiger-shroff-is-stressed-after-firing-incident-reveals-actor-is-trying-his-best-to-move-on-101793972209969.html",
   "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1091,10 +1092,6 @@
   }
  ],
  "songs_recent": [
-  "Jo Tum Mere Ho",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Tu Mil Jaaye (From \"KING\")",
   "Judi Jodi (From \"Ramayana\")",
   "Tera Hoke Rahoon",
@@ -1130,7 +1127,11 @@
   "Mere Ghar Ram Aaye Hain",
   "Tabaahi (From \"Toxic\")",
   "Shree Hanuman Chalisa (From \"Ramayana\")",
-  "Judi Jodi (From \"Ramayana\")"
+  "Judi Jodi (From \"Ramayana\")",
+  "One Name",
+  "Zaalima",
+  "Mangal Rang (From \"Ramayana\")",
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1224,6 +1225,10 @@
   },
   {
    "title": "Tamil director Shankar calls Yash's Ravana a lovable villain in his Ramayana review; praises actor's performance",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Ramayana worldwide box office collection day 2: Ranbir Kapoor, Sai Pallavi, Yash film overtakes Adipurush at over ₹221 crore",
    "date": "2026-11-07"
   }
  ],

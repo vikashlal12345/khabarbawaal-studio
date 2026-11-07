@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-11-07",
+  "image": "posts/20261107-0634-reel_news_am-2026-11-07.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261107-063404-reel_news_am-2026-11-07.mp4",
+  "headline": "Ramayana worldwide box office collection day 2: Ranbir Kapoor, Sai Pallavi, Yash film overtakes Adipurush at over ₹221 crore",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana box office collection day 2: Ranbir Kapoor, Sai Pallavi, Yash 🎬\nNitesh Tiwari ki Ramayana ne worldwide ₹221 crore se zyada kamaye aur Adipurush ko peeche chhod diya.\nOpening Adipurush se kam thi, phir bhi do din mein aage nikal gayi.\nRamayana Adipurush se behtar? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #Bollywood #BoxOffice #reelsindia\n\n(Ramayana box office collection day 2, Ranbir Kapoor Ramayana, Sai Pallavi Yash Ramayana, Ramayana vs Adipurush, Nitesh Tiwari Ramayana, Ramayana worldwide collection, Ramayana 221 crore)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html",
+  "pin_comment": "Apne Ranbir Kapoor fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "One Name",
+    "artist": "Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "hype = big opening win"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "epic grand film vibe"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana film's own song"
+   },
+   {
+    "title": "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "devotional celebration energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The ₹221.05 crore is the two-day worldwide total, not the day-2 collection alone."
+   ],
+   "fixed": [
+    "Ramayana Part 1 ne day 2 par worldwide ₹221.05 crore gross kiye. → Ramayana Part 1 ne do din mein worldwide ₹221.05 crore gross kiye."
+   ]
+  },
+  "created_at": "2026-11-07T06:34:04+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-07",
   "image": "posts/20261107-0434-reel_break_am-2026-11-07.jpg",
   "kind": "reel",
@@ -428,59 +477,5 @@
    "fixed": []
   },
   "created_at": "2026-11-06T06:34:42+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-06",
-  "image": "posts/20261106-0435-reel_break_am-2026-11-06.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261106-043554-reel_break_am-2026-11-06.mp4",
-  "headline": "Abhishek Bachchan and Aishwarya Rai arrive at Manish Malhotra's Diwali bash holding hands, can't take their eyes off each other in a loved-up moment",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Abhishek Bachchan Aishwarya Rai Manish Malhotra Diwali party hand in hand 💕\nDono 5 November ki party mein haath pakad kar pahunche.\nPaparazzi ne solo photo maangi, to dono ne politely mana kiya.\nEk fan ne likha: \"Giving 2008 energy again.\"\nAbhishek-Aishwarya cute lage? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#abhishekbachchan #aishwaryarai #bollywood #diwali #reelsindia\n\n(Abhishek Bachchan, Aishwarya Rai, Manish Malhotra Diwali party, Abhishek Aishwarya hand in hand, Bachchan couple Diwali, Aishwarya Rai red saree, Abhishek Aishwarya viral moment, Bollywood Diwali bash)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/abhishek-bachchan-and-aishwarya-rai-arrive-at-manish-malhotras-diwali-bash-holding-hands-cant-take-their-eyes-off-each-other-in-a-loved-up-moment-101793931020606.html",
-  "pin_comment": "Apne Aishwarya-Abhishek fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "romantic couple moment"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft love vibe"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "romantic, new release"
-   },
-   {
-    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Pritam, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "love, eyes only on each other"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article mentions no video; only photos and paparazzi appearance",
-    "Fact corrected to match the article: The article never says the year of the party; 'Diwali 2026' is unsupported.",
-    "Fact corrected to match the article: The article never says the year of the party; 'Diwali 2026' is unsupported."
-   ],
-   "fixed": [
-    "saath mein poz kiya → saath mein pose kiya",
-    "Abhishek Aishwarya viral video → Abhishek Aishwarya viral moment",
-    "#diwali2026 → #diwali",
-    "Bachchan couple Diwali 2026 → Bachchan couple Diwali"
-   ]
-  },
-  "created_at": "2026-11-06T04:35:54+00:00"
  }
 ]
