@@ -416,13 +416,13 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-07",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-06",
+  "reel_break_am": "2026-11-07",
   "reel_break_noon": "2026-11-06",
   "reel_break_aft": "2026-11-06",
   "reel_news_night": "2026-11-06",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "GbdWJuj30rxT",
+ "inbox_since": "AVJSON6uZc2O",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -795,7 +795,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-meets-content-creator-on-california-streets-a-day-after-ramayana-premiere-shares-simple-success-advice-101793183470830.html",
   "https://thenewsmill.com/2026/10/jp-nadda-condemns-kharges-remark-on-pm-modi-warns-of-voter-backlash/",
@@ -874,7 +873,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-denies-that-indian-government-pressured-him-to-change-maatrubhumi-script-says-film-has-nothing-against-china-101793965433360.html",
   "https://www.bollywoodhungama.com/news/bollywood/shehzad-poonawalla-wins-rise-pledges-to-donate-it-to-flood-relief/",
   "https://www.hindustantimes.com/entertainment/bollywood/vidyut-jammwal-says-tiger-shroff-is-stressed-after-firing-incident-reveals-actor-is-trying-his-best-to-move-on-101793972209969.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1091,10 +1091,6 @@
   }
  ],
  "songs_recent": [
-  "Ram Siya Ram",
-  "Azadi",
-  "Mangal Rang (From \"Ramayana\")",
-  "Main Ram (From \"Ramayana\")",
   "Jo Tum Mere Ho",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
@@ -1130,7 +1126,11 @@
   "Tere Liye",
   "Teri Meri Kahaani",
   "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Betuka (From \"Nakhrewaalii\")"
+  "Betuka (From \"Nakhrewaalii\")",
+  "Mere Ghar Ram Aaye Hain",
+  "Tabaahi (From \"Toxic\")",
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "Judi Jodi (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1220,6 +1220,10 @@
   },
   {
    "title": "Farah Khan admits film industry insiders were unsure of Shreya Ghoshal for Main Hoon Na songs",
+   "date": "2026-11-07"
+  },
+  {
+   "title": "Tamil director Shankar calls Yash's Ravana a lovable villain in his Ramayana review; praises actor's performance",
    "date": "2026-11-07"
   }
  ],

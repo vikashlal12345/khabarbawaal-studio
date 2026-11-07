@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-11-07",
+  "image": "posts/20261107-0434-reel_break_am-2026-11-07.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261107-043417-reel_break_am-2026-11-07.mp4",
+  "headline": "Tamil director Shankar calls Yash's Ravana a lovable villain in his Ramayana review; praises actor's performance",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Yash Ramayana Shankar review lovable villain Ravana\nDirector Shankar ne X par Ramayana ko spectacle kaha\nYash ke Ravana ko bola \"lovable villain\", performance ki tareef ki\nNitesh Tiwari ne jawab diya: \"Thanks a lot sir\" 🎬\nYash ka Ravana: HIT ya FLOP? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #Ramayana #Yash #RanbirKapoor #Bollywood\n\n(Yash Ravana, Ramayana review, Shankar Ramayana, Ranbir Kapoor Ramayana, Nitesh Tiwari, Sai Pallavi, Ramayana box office, lovable villain)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html",
+  "pin_comment": "Apne Yash fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Mere Ghar Ram Aaye Hain",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "Ramayana vibe, devotional pride"
+   },
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "Yash swagger, villain entry"
+   },
+   {
+    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
+    "artist": "A.R. Rahman",
+    "lang": "new",
+    "mood": "Ramayana film's own music"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana buzz, trending now"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-07T04:34:18+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-07",
   "image": "posts/20261107-0234-reel_news_early-2026-11-07.jpg",
   "kind": "reel",
@@ -437,52 +482,5 @@
    ]
   },
   "created_at": "2026-11-06T04:35:54+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-06",
-  "image": "posts/20261106-0235-reel_news_early-2026-11-06.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261106-023508-reel_news_early-2026-11-06.mp4",
-  "headline": "Ramayana gets a massive theatrical upgrade across India; here's why",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana theatrical upgrade across India 🎬\nRamayana ko poore India mein ek massive theatrical upgrade mil raha hai.\nFilm ke saath Ranbir Kapoor, Yash aur Nitesh Tiwari ki epic ek bar phir charcha mein hai.\nBade parde ka maza ab aur bada.\nRamayana bade parde par dekhoge? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Mid-Day (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #Bollywood #reelsindia #Yash\n\n(Ramayana, Ramayana movie, Ramayana theatrical upgrade, Ranbir Kapoor Ramayana, Yash Ramayana, Nitesh Tiwari, Ramayana box office, Ramayana India release)",
-  "source": "Mid-Day",
-  "source_url": "https://www.msn.com/en-in/entertainment/other/ramayana-gets-a-massive-theatrical-upgrade-across-india-heres-why/ar-AA2gR5jI",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "devotional epic vibe = Ramayana"
-   },
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "hype for massive upgrade"
-   },
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana's own new song"
-   },
-   {
-    "title": "Main Ram (From \"Ramayana\")",
-    "artist": "Prateek Walia, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ram devotion = film moment"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The Mint logo in the photo is cut off at the right edge and reads 'mi'. This is a minor cosmetic problem. The headline sits over the actors' clothes, not their faces."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-06T02:35:08+00:00"
  }
 ]
