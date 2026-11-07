@@ -1050,5 +1050,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-07",
+  "key": "priyankachoprajonasventilator2announcement",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-07T10:34:43+00:00",
+  "type": "news",
+  "topic": "promo",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 57,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
