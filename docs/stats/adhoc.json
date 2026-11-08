@@ -196,10 +196,10 @@
   "cache_write": 312590
  },
  "2026-11-08": {
-  "replies": 11,
-  "input": 24,
-  "output": 14119,
-  "cache_read": 545702,
-  "cache_write": 46180
+  "replies": 59,
+  "input": 138,
+  "output": 179224,
+  "cache_read": 8396644,
+  "cache_write": 268052
  }
 }
