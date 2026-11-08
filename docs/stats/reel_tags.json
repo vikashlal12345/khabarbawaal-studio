@@ -1121,5 +1121,21 @@
   "secs": 17.1,
   "at": "2026-11-08T00:33:26+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-08",
+  "key": "chinmayisripaadaramayanajudijodisonglive",
+  "kind": "reel_news_early",
+  "secs": 14.0,
+  "at": "2026-11-08T02:35:22+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 39,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]
