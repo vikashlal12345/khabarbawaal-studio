@@ -1183,5 +1183,21 @@
   "kw": 8,
   "relate": "name_person",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-08",
+  "key": "sonunigamsonnevaanmusicaljourney",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-08T10:34:10+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 35,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]

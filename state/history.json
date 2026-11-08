@@ -275,7 +275,8 @@
   "316ede432b0b",
   "a4181f05614a",
   "bed09ac2b3d4",
-  "ec2f56f57f14"
+  "ec2f56f57f14",
+  "0d36b1c51eb6"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -413,7 +414,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-08",
-  "reel_news_pm": "2026-11-07",
+  "reel_news_pm": "2026-11-08",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-08",
@@ -430,7 +431,7 @@
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "6rsdiUSjxFR0",
+ "inbox_since": "wCQxNIALeOn9",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -803,7 +804,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-song-judi-jodi-sparks-debate-over-shreya-ghoshal-vs-chinmayi-sripaada-versions-as-fans-react-to-ranbir-kapoor-sai-pallavi-track-101793276299926.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
   "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
@@ -882,7 +882,8 @@
   "https://www.hindustantimes.com/entertainment/music/chinmayi-sripaada-reveals-she-learnt-ramayana-song-judi-jodi-just-an-hour-before-performing-live-on-stage-says-improvisations-take-time-101794070158693.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-stunt-double-luke-ioannou-from-ramayana-shares-unseen-set-pics-calls-him-one-of-the-best-actors-101794050320287.html",
   "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
-  "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1099,10 +1100,6 @@
   }
  ],
  "songs_recent": [
-  "Zaalima",
-  "Mangal Rang (From \"Ramayana\")",
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
-  "Thumkeshwari",
   "Toxic",
   "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
   "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
@@ -1138,7 +1135,11 @@
   "Samjhawan",
   "Teri Meri Kahaani",
   "Main Ram (From \"Ramayana\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Pardesiya (From \"Param Sundari\")",
+  "Jo Tum Mere Ho",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1240,6 +1241,10 @@
   },
   {
    "title": "Sargun Mehta says she is biggest fan of husband Ravie Dubey after watching him as Lakshman in Ramayana, calls it a personal win",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Proud father Sonu Nigam gets emotional as son Nevaan begins musical journey at 19, reveals he practices vocals for 16 hours a day",
    "date": "2026-11-08"
   }
  ],
