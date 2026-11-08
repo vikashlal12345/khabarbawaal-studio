@@ -488,11 +488,11 @@
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-08",
   "reel_break_aft": "2026-11-08",
-  "reel_news_night": "2026-11-07",
+  "reel_news_night": "2026-11-08",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "oZ0euKcClDIF",
+ "inbox_since": "h1rehkvpIaVZ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1010,7 +1010,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
-  "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/"
+  "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
+  "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1495,6 +1496,10 @@
   },
   {
    "title": "Hrithik Roshan attends LACMA Art + Film Gala 2026, becomes first mainstream Indian actor to grace event",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Daler Mehndi thanks fans for their support during Uttarakhand event controversy, says brother Mika Singh showed up like a force to reckon with",
    "date": "2026-11-08"
   }
  ],
