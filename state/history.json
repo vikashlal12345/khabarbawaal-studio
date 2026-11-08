@@ -276,7 +276,8 @@
   "a4181f05614a",
   "bed09ac2b3d4",
   "ec2f56f57f14",
-  "0d36b1c51eb6"
+  "0d36b1c51eb6",
+  "527917f7e043"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -420,7 +421,7 @@
   "reel_news_am": "2026-11-08",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-07",
+  "reel_news_aft": "2026-11-08",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-08",
@@ -431,7 +432,7 @@
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "wCQxNIALeOn9",
+ "inbox_since": "HoEOmUC0BUs5",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -804,7 +805,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/rakul-preet-singh-says-ramayana-is-indias-representation-to-the-world-reveals-surpanakha-is-a-very-misunderstood-character-101793285804203.html",
   "https://www.bollywoodhungama.com/news/bollywood/siddharth-anand-drops-another-cryptic-post-about-shah-rukh-khan-starrer-king-at-midnight-is-a-birthday-surprise-coming/",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
@@ -883,7 +883,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-stunt-double-luke-ioannou-from-ramayana-shares-unseen-set-pics-calls-him-one-of-the-best-actors-101794050320287.html",
   "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1100,10 +1101,6 @@
   }
  ],
  "songs_recent": [
-  "Toxic",
-  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Ashke",
   "Tu Mil Jaaye (From \"KING\")",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
@@ -1139,7 +1136,11 @@
   "Pardesiya (From \"Param Sundari\")",
   "Jo Tum Mere Ho",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Zaalima",
+  "Humnava Mere",
+  "Mangal Rang (From \"Ramayana\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1245,6 +1246,10 @@
   },
   {
    "title": "Proud father Sonu Nigam gets emotional as son Nevaan begins musical journey at 19, reveals he practices vocals for 16 hours a day",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Kareena Kapoor has a beautiful family moment with Randhir Kapoor and Babita Kapoor on Diwali; sister Karisma joins in too",
    "date": "2026-11-08"
   }
  ],

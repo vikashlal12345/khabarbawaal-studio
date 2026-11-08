@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_aft-2026-11-08",
+  "image": "posts/20261108-1233-reel_news_aft-2026-11-08.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261108-123326-reel_news_aft-2026-11-08.mp4",
+  "headline": "Kareena Kapoor has a beautiful family moment with Randhir Kapoor and Babita Kapoor on Diwali; sister Karisma joins in too",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kareena Kapoor Karisma Kapoor Randhir Kapoor Babita Kapoor Diwali 2026 💛\nKareena ne Diwali par papa Randhir aur mummy Babita ke saath pyari tasveerein share kin.\nBehen Karisma bhi family moment mein saath dikhin.\nTum kaunse ho: Kareena ya Karisma? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kareenakapoor #karismakapoor #diwali2026 #bollywoodnews #reelsindia\n\n(Kareena Kapoor, Karisma Kapoor, Randhir Kapoor, Babita Kapoor, Kapoor family Diwali, Kareena Kapoor Diwali 2026, Diwali celebration Bollywood, Kapoor sisters)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
+  "pin_comment": "Apni Kapoor family fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "pyaar bhara family moment"
+   },
+   {
+    "title": "Humnava Mere",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "apno ke saath sukoon"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Diwali shubh vibe"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "meetha festive mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left runs into the '@khabarbawaal' handle, so the two texts overlap or touch."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-08T12:33:26+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-08",
   "image": "posts/20261108-1034-reel_news_pm-2026-11-08.jpg",
   "kind": "reel",
@@ -436,52 +483,5 @@
    "fixed": []
   },
   "created_at": "2026-11-07T12:34:40+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-07",
-  "image": "posts/20261107-1034-reel_news_pm-2026-11-07.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261107-103443-reel_news_pm-2026-11-07.mp4",
-  "headline": "Priyanka Chopra Jonas announces Ventilator 2, reunites with director Rajesh Mapuskar; film set for 2027 release",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Priyanka Chopra Jonas Ventilator 2 announcement 🎬\nPriyanka ne 2016 ki Marathi film Ventilator ka sequel announce kiya hai.\nDirector Rajesh Mapuskar ke saath phir reunion, film 2027 mein aayegi.\nSequel ka wait tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#priyankachopra #ventilator2 #bollywood #bollywoodnews #reelsindia\n\n(Priyanka Chopra Jonas, Ventilator 2, Rajesh Mapuskar, Ventilator sequel, Priyanka Chopra new film, Bollywood news today, Priyanka Chopra Marathi film, film 2027)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/priyanka-chopra-jonas-announces-ventilator-2-reunites-with-director-rajesh-mapuskar-film-set-for-2027-release/",
-  "pin_comment": "Apne Priyanka fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ashke",
-    "artist": "Karan Aujla & MXRCI",
-    "lang": "hindi",
-    "mood": "fresh comeback energy"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "hindi",
-    "mood": "warm reunion vibe"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "happy sequel announcement"
-   },
-   {
-    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Pritam, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "emotional return to roots"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The photo credit 'Photo: Bollywood Hungama' at the bottom left runs into the '@khabarbawaal' handle. The 'a' at the end of 'Hungama' touches the 'k' at the start of the handle, so the two overlap slightly."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-07T10:34:43+00:00"
  }
 ]
