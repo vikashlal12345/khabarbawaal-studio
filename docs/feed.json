@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_night-2026-11-08",
+  "image": "posts/20261108-1436-reel_news_night-2026-11-08.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261108-143638-reel_news_night-2026-11-08.mp4",
+  "headline": "Daler Mehndi thanks fans for their support during Uttarakhand event controversy, says brother Mika Singh showed up like a force to reckon with",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Daler Mehndi Mika Singh Uttarakhand Kunjapuri mela controversy 💛\nDaler Mehndi ne fans ka shukriya kaha, jo is controversy ke dauran unke saath rahe.\nUnhone kaha ki bhai Mika Singh \"force to reckon with\" ki tarah saath aaye.\nControversy Uttarakhand ke mantri Subodh Uniyal aur Daler ke beech Kunjapuri mela mein hui public confrontation par hai.\nComment mein likho: tumhari life ka Mika kaun? 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#dalermehndi #mikasingh #bollywoodnews #trending #reelsindia\n\n(Daler Mehndi, Mika Singh, Daler Mehndi Mika Singh, Daler Mehndi controversy, Uttarakhand Kunjapuri mela, Subodh Uniyal, Daler Mehndi thanks fans, Bollywood news)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
+  "pin_comment": "Apne bhai ya behen ko ye Reel bhejo 👇",
+  "songs": [
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "chart #1, bhai-bhai vibe"
+   },
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "hype, standing tall"
+   },
+   {
+    "title": "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "Navratri event connection"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "warm, emotional bond"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't mention Navratri; event was the Maa Kunjapuri Tourism and Development Fair",
+    "Fact corrected to match the article: Article says the Kunjapuri fair in New Tehri, not a Navratri event",
+    "Fact corrected to match the article: The article says the event was the Siddhpeeth Maa Kunjapuri Tourism and Development Fair. It never mentions Navratri."
+   ],
+   "fixed": [
+    "Daler Mehndi Mika Singh Uttarakhand Navratri event controversy → Daler Mehndi Mika Singh Uttarakhand Kunjapuri mela controversy",
+    "Navratri event mein hui public confrontation → Kunjapuri mela mein hui public confrontation",
+    "Uttarakhand Navratri event → Uttarakhand Kunjapuri mela"
+   ]
+  },
+  "created_at": "2026-11-08T14:36:38+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-08",
   "image": "posts/20261108-1334-reel_break_aft-2026-11-08.jpg",
   "kind": "reel",
@@ -392,106 +445,5 @@
    "fixed": []
   },
   "created_at": "2026-11-08T00:33:26+00:00"
- },
- {
-  "id": "reel_news_night-2026-11-07",
-  "image": "posts/20261107-1436-reel_news_night-2026-11-07.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261107-143611-reel_news_night-2026-11-07.mp4",
-  "headline": "Pyre director Vinod Kapri says 75% shows of film has been cut down within first week, reveals theatre owners were told only one film will be shown",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Pyre director Vinod Kapri ka dard 💔\n\nVinod Kapri ne kaha ki pichle do din mein film ke 75% show kam kar diye gaye.\nUnke mutabik theatre owners ko bataya gaya ki sirf ek film chalegi.\nUnke mutabik, chhoti film ke shows badi film ke liye hataye gaye.\n\nChhoti film ke saath ye insaaf hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#pyre #vinodkapri #bollywood #bollywoodnews #reelsindia\n\n(Vinod Kapri Pyre, Pyre film shows cut, Vinod Kapri video, Pyre theatres, small budget film, Bollywood news today)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/pyre-director-vinod-kapri-says-75-shows-of-film-has-been-cut-down-within-first-week-reveals-theatre-owners-were-told-only-one-film-will-be-shown-101794056941394.html",
-  "pin_comment": "Ye har movie lover ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zihaal e Miskin",
-    "artist": "Javed-Mohsin, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "dard bhara, unfair lagta hai"
-   },
-   {
-    "title": "Rula Ke Gaya Ishq",
-    "artist": "Stebin Ben",
-    "lang": "hindi",
-    "mood": "heartbreak for small film"
-   },
-   {
-    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Vishal Mishra, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "emotional, struggle vibe"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "pain of the director"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says 75% of shows were cut over the last two days, not in the first week",
-    "Fact corrected to match the article: Article never says the film has a tiny budget; it only calls it a small film with non-actors, and the claim is Kapri's.",
-    "Fact corrected to match the article: Kapri shared a video post on X, not an interview."
-   ],
-   "fixed": [
-    "pehle hafte mein film ke 75% show kam kar diye gaye → pichle do din mein film ke 75% show kam kar diye gaye",
-    "bade film ke liye → badi film ke liye",
-    "Tiny budget ki film ko badi film ke liye hataya gaya. → Unke mutabik, chhoti film ke shows badi film ke liye hataye gaye.",
-    "Vinod Kapri interview → Vinod Kapri video"
-   ]
-  },
-  "created_at": "2026-11-07T14:36:12+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-07",
-  "image": "posts/20261107-1334-reel_break_aft-2026-11-07.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261107-133420-reel_break_aft-2026-11-07.mp4",
-  "headline": "Amitabh Bachchan wins personality rights case; Delhi High Court passes final decree after four defendants settle",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Amitabh Bachchan personality rights case Delhi High Court final decree\nNaam, photo, voice ya likeness bina consent commercial use nahi ho sakta\nChaar defendants ne settle kiya, baaki par summary judgment\nNov 2022 ka interim injunction ab final decree mein merge\nSahi faisla? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#amitabhbachchan #delhihighcourt #bollywoodnews #breakingnews #reelsindia\n\n(Amitabh Bachchan, Amitabh Bachchan personality rights, Delhi High Court, Justice Purushaindra Kumar Kaurav, Amitabh Bachchan Delhi High Court decree, Bachchan name photo voice, Kaun Banega Crorepati lottery, Bollywood news today)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-wins-personality-rights-case-delhi-high-court-passes-final-decree-after-four-defendants-settle/",
-  "pin_comment": "Apne Amitabh Bachchan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "big win, swagger energy"
-   },
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "feel-good victory vibe"
-   },
-   {
-    "title": "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Kumaar",
-    "lang": "new",
-    "mood": "classic grand feel for legend"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "grateful, blessed win"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The @khabarbawaal handle sits on top of the photo credit line at the bottom, so the two texts crowd and nearly overlap."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-07T13:34:20+00:00"
  }
 ]

@@ -278,7 +278,8 @@
   "ec2f56f57f14",
   "0d36b1c51eb6",
   "527917f7e043",
-  "c97998d0c280"
+  "c97998d0c280",
+  "5dd3e712eba3"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -430,10 +431,10 @@
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-08",
   "reel_break_aft": "2026-11-08",
-  "reel_news_night": "2026-11-07",
+  "reel_news_night": "2026-11-08",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "oZ0euKcClDIF",
+ "inbox_since": "h1rehkvpIaVZ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -806,7 +807,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-celebrates-first-karwa-chauth-with-wife-gauri-spratt-at-anil-kapoor-sunita-kpaoors-residence-101793330214823.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-advance-booking-jumps-27-in-us-after-positive-reactions-from-la-premiere-ranbir-kapoor-yash-sai-pallavi-film-crosses-15-crore-in-india-101793345391229.html",
   "https://www.hindustantimes.com/entertainment/bollywood/eetha-trailer-out-shraddha-kapoor-celebrates-maharashtra-lavani-legacy-as-she-transforms-into-vithabai-narayangaonkar-in-laxman-utekar-musical-101793351089328.html",
   "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
@@ -885,7 +885,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
-  "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/"
+  "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
+  "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1102,10 +1103,6 @@
   }
  ],
  "songs_recent": [
-  "Zihaal e Miskin",
-  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Heeriye (feat. Arijit Singh)",
   "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
   "Zihaal e Miskin",
@@ -1141,7 +1138,11 @@
   "Alfaaz",
   "Ez-Ez",
   "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")"
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+  "Alfaaz",
+  "Azadi",
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+  "Tu Mil Jaaye (From \"KING\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1255,6 +1256,10 @@
   },
   {
    "title": "Hrithik Roshan attends LACMA Art + Film Gala 2026, becomes first mainstream Indian actor to grace event",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Daler Mehndi thanks fans for their support during Uttarakhand event controversy, says brother Mika Singh showed up like a force to reckon with",
    "date": "2026-11-08"
   }
  ],
