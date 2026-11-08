@@ -1,0 +1,29 @@
+name: Update app website
+
+# When changes are uploaded by hand (not by the robots, which deploy themselves),
+# publish the app straight away instead of waiting for the next hourly post.
+on:
+  push:
+    branches: [main]
+    paths: ["docs/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/publish-pages   # owner 6 Nov 2026: a stuck publish gives up after 2 min
+        with:
+          fallback: 'false'                       # this IS the fallback run: no loop

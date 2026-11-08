@@ -1,0 +1,205 @@
+{
+ "2026-10-04": {
+  "replies": 21,
+  "input": 42,
+  "output": 12129,
+  "cache_read": 18208652,
+  "cache_write": 894439
+ },
+ "2026-10-06": {
+  "replies": 137,
+  "input": 274,
+  "output": 102281,
+  "cache_read": 36349271,
+  "cache_write": 1078769
+ },
+ "2026-10-08": {
+  "replies": 54,
+  "input": 108,
+  "output": 45336,
+  "cache_read": 10626195,
+  "cache_write": 211585
+ },
+ "2026-10-09": {
+  "replies": 203,
+  "input": 406,
+  "output": 186719,
+  "cache_read": 34701830,
+  "cache_write": 676225
+ },
+ "2026-10-10": {
+  "replies": 578,
+  "input": 1156,
+  "output": 646383,
+  "cache_read": 139385502,
+  "cache_write": 3344727
+ },
+ "2026-10-11": {
+  "replies": 574,
+  "input": 1152,
+  "output": 626405,
+  "cache_read": 229661033,
+  "cache_write": 1874177
+ },
+ "2026-10-12": {
+  "replies": 511,
+  "input": 1056,
+  "output": 574123,
+  "cache_read": 114070340,
+  "cache_write": 2693812
+ },
+ "2026-10-13": {
+  "replies": 485,
+  "input": 1048,
+  "output": 509508,
+  "cache_read": 158773803,
+  "cache_write": 2059197
+ },
+ "2026-10-14": {
+  "replies": 302,
+  "input": 600,
+  "output": 379024,
+  "cache_read": 110850793,
+  "cache_write": 3018741
+ },
+ "2026-10-15": {
+  "replies": 610,
+  "input": 1230,
+  "output": 611514,
+  "cache_read": 221416897,
+  "cache_write": 4286843
+ },
+ "2026-10-16": {
+  "replies": 281,
+  "input": 556,
+  "output": 289194,
+  "cache_read": 115689726,
+  "cache_write": 3998407
+ },
+ "2026-10-19": {
+  "replies": 418,
+  "input": 862,
+  "output": 442907,
+  "cache_read": 102205726,
+  "cache_write": 5564664
+ },
+ "2026-10-20": {
+  "replies": 345,
+  "input": 738,
+  "output": 245318,
+  "cache_read": 79869643,
+  "cache_write": 3343209
+ },
+ "2026-10-21": {
+  "replies": 347,
+  "input": 780,
+  "output": 299860,
+  "cache_read": 74998096,
+  "cache_write": 4052944
+ },
+ "2026-10-22": {
+  "replies": 396,
+  "input": 816,
+  "output": 592845,
+  "cache_read": 101746208,
+  "cache_write": 6365303
+ },
+ "2026-10-23": {
+  "replies": 68,
+  "input": 142,
+  "output": 199489,
+  "cache_read": 26612452,
+  "cache_write": 2468676
+ },
+ "2026-10-24": {
+  "replies": 14,
+  "input": 26,
+  "output": 12395,
+  "cache_read": 8753795,
+  "cache_write": 710648
+ },
+ "2026-10-26": {
+  "replies": 316,
+  "input": 644,
+  "output": 262961,
+  "cache_read": 103438532,
+  "cache_write": 3050179
+ },
+ "2026-10-27": {
+  "replies": 18,
+  "input": 36,
+  "output": 6629,
+  "cache_read": 1723386,
+  "cache_write": 169803
+ },
+ "2026-10-28": {
+  "replies": 27,
+  "input": 56,
+  "output": 17104,
+  "cache_read": 3405888,
+  "cache_write": 122770
+ },
+ "2026-10-29": {
+  "replies": 234,
+  "input": 472,
+  "output": 174588,
+  "cache_read": 83846310,
+  "cache_write": 2009754
+ },
+ "2026-10-30": {
+  "replies": 348,
+  "input": 902,
+  "output": 534214,
+  "cache_read": 114582021,
+  "cache_write": 2246840
+ },
+ "2026-10-31": {
+  "replies": 106,
+  "input": 300,
+  "output": 132869,
+  "cache_read": 52882470,
+  "cache_write": 677970
+ },
+ "2026-11-01": {
+  "replies": 87,
+  "input": 214,
+  "output": 82373,
+  "cache_read": 71589446,
+  "cache_write": 3459273
+ },
+ "2026-11-04": {
+  "replies": 130,
+  "input": 282,
+  "output": 71465,
+  "cache_read": 6270910,
+  "cache_write": 1965239
+ },
+ "2026-11-05": {
+  "replies": 24,
+  "input": 56,
+  "output": 30014,
+  "cache_read": 4101918,
+  "cache_write": 184238
+ },
+ "2026-11-06": {
+  "replies": 76,
+  "input": 182,
+  "output": 73402,
+  "cache_read": 19153407,
+  "cache_write": 531634
+ },
+ "2026-11-07": {
+  "replies": 3,
+  "input": 6,
+  "output": 3707,
+  "cache_read": 692874,
+  "cache_write": 312590
+ },
+ "2026-11-08": {
+  "replies": 59,
+  "input": 138,
+  "output": 179224,
+  "cache_read": 8396644,
+  "cache_write": 268052
+ }
+}

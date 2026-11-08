@@ -1,0 +1,900 @@
+{
+ "2026-10-21": {
+  "reel_official-2026-10-21": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-21T16:13:38+00:00",
+   "auto": false
+  },
+  "c8c914fe17e3": {
+   "tag": "🎬 REEL · POLITICS",
+   "at": "2026-10-21T14:33:17+00:00",
+   "auto": false
+  },
+  "reel_rotate-2026-10-21": {
+   "tag": "🎬 REEL · TAG THAT FRIEND",
+   "at": "2026-10-21T14:18:30+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-21": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-21T12:46:16+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-21": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-21T10:34:28+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-22": {
+  "reel_news_pm-2026-10-22": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-22T10:33:20+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-22": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-22T08:34:11+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-22": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-22T06:34:05+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-22": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-22T04:33:12+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-22": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-22T02:33:14+00:00",
+   "auto": false
+  },
+  "reel_devotion-2026-10-22": {
+   "tag": "🎬 REEL · 🙏 JAI SHRI HARI",
+   "at": "2026-10-22T01:03:29+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-22": {
+   "tag": "🎬 REEL · ROAST · REPORT CARD",
+   "at": "2026-10-22T17:49:06+00:00",
+   "auto": false
+  },
+  "c70b675bf991": {
+   "tag": "POLITICS",
+   "at": "2026-10-22T12:58:52+00:00",
+   "auto": false
+  },
+  "reel_rotate-2026-10-22": {
+   "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
+   "at": "2026-10-22T14:23:43+00:00",
+   "auto": true
+  },
+  "reel_official-2026-10-22": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-22T17:30:56+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-23": {
+  "reel_devotion-2026-10-23": {
+   "tag": "🎬 REEL · 🙏 SHUBH SHUKRAVAR",
+   "at": "2026-10-23T00:33:45+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-23": {
+   "tag": "🎬 REEL · INDIA",
+   "at": "2026-10-23T02:34:18+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-23": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-23T04:33:30+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-23": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-23T06:33:52+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-23": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-23T08:33:11+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-23": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-23T10:33:19+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-23": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-23T12:45:08+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-23": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-23T14:18:40+00:00",
+   "auto": false
+  },
+  "reel_official-2026-10-23": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-23T15:38:56+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-24": {
+  "reel_devotion-2026-10-24": {
+   "tag": "🎬 REEL · 🙏 JAI SHANI DEV",
+   "at": "2026-10-24T00:33:34+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-24": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-24T02:33:30+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-24": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-24T04:32:37+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-24": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-24T06:34:51+00:00",
+   "auto": false
+  },
+  "c6ef73dd1fb8": {
+   "tag": "VIRAL",
+   "at": "2026-10-24T06:25:19+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-24": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-24T08:33:03+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-24": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-24T10:33:51+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-24": {
+   "tag": "🎬 REEL · REALITY CHECK",
+   "at": "2026-10-24T12:34:21+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-24": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-24T14:18:50+00:00",
+   "auto": false
+  },
+  "reel_official-2026-10-24": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-24T15:49:36+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-25": {
+  "reel_devotion-2026-10-25": {
+   "tag": "🎬 REEL · 🙏 JAI SURYA DEV",
+   "at": "2026-10-25T00:33:45+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-25": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-25T02:33:28+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-25": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-25T04:33:05+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-25": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-25T06:35:39+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-25": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-25T08:32:40+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-25": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-25T10:33:00+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-25": {
+   "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
+   "at": "2026-10-25T14:16:39+00:00",
+   "auto": true
+  },
+  "reel_official-2026-10-25": {
+   "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI) · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-25T15:50:04+00:00",
+   "auto": true
+  }
+ },
+ "2026-10-26": {
+  "reel_devotion-2026-10-26": {
+   "tag": "🎬 REEL · 🙏 VALMIKI JAYANTI",
+   "at": "2026-10-26T00:33:34+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-26": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-26T02:32:19+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-26": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-26T04:33:00+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-26": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-26T06:32:40+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-26": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-26T08:32:30+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-26": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-26T10:33:38+00:00",
+   "auto": false
+  },
+  "cf08033f6142": {
+   "tag": "🎬 REEL · INDIA",
+   "at": "2026-10-26T09:21:58+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-26": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-26T13:26:40+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-26": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-26T14:19:25+00:00",
+   "auto": false
+  },
+  "reel_official-2026-10-26": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-26T15:04:47+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-27": {
+  "reel_devotion-2026-10-27": {
+   "tag": "🎬 REEL · 🙏 JAI HANUMAN",
+   "at": "2026-10-27T00:32:33+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-27": {
+   "tag": "🎬 REEL · INDIA",
+   "at": "2026-10-27T02:33:37+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-27": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-27T04:32:38+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-27": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-27T06:33:52+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-27": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-27T08:32:54+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-27": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-27T10:34:04+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-27": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-27T12:38:52+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-27": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-27T14:19:30+00:00",
+   "auto": false
+  },
+  "reel_official-2026-10-27": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-27T14:55:59+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-28": {
+  "reel_devotion-2026-10-28": {
+   "tag": "🎬 REEL · 🙏 JAI SHRI GANESH",
+   "at": "2026-10-28T00:33:28+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-28": {
+   "tag": "🎬 REEL · INDIA",
+   "at": "2026-10-28T02:34:19+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-28": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-28T12:53:08+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-28": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-28T04:33:55+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-28": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-28T06:33:14+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-28": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-28T08:34:21+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-28": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-28T10:34:43+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-28": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-28T14:19:01+00:00",
+   "auto": false
+  },
+  "reel_official-2026-10-28": {
+   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
+   "at": "2026-10-28T14:57:17+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-29": {
+  "reel_devotion-2026-10-29": {
+   "tag": "🎬 REEL · 🙏 KARWA CHAUTH",
+   "at": "2026-10-29T00:33:06+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-29": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-29T02:34:02+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-29": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-29T04:32:39+00:00",
+   "auto": false
+  },
+  "reel_politics-2026-10-29": {
+   "tag": "🎬 REEL · 🎨 CARTOON ROAST",
+   "at": "2026-10-29T05:15:56+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-29": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-29T06:32:43+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-29": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-29T08:33:36+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-29": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-29T10:35:08+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-10-29": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-29T12:58:01+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-29": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-29T14:20:22+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-10-29": {
+   "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
+   "at": "2026-10-29T14:51:16+00:00",
+   "auto": true
+  }
+ },
+ "2026-10-30": {
+  "reel_devotion-2026-10-30": {
+   "tag": "🎬 REEL · 🙏 JAI MAA LAKSHMI",
+   "at": "2026-10-30T00:34:56+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-30": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-30T02:36:13+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-30": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-30T04:36:26+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-30": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-30T06:35:25+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-30": {
+   "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
+   "at": "2026-10-30T08:38:55+00:00",
+   "auto": true
+  },
+  "reel_news_pm-2026-10-30": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-30T10:37:59+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-10-30": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-30T12:37:38+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-30": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-30T14:20:35+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-10-30": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-30T14:51:35+00:00",
+   "auto": false
+  }
+ },
+ "2026-10-31": {
+  "reel_devotion-2026-10-31": {
+   "tag": "🎬 REEL · 🙏 JAI SHANI DEV",
+   "at": "2026-10-31T00:37:29+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-10-31": {
+   "tag": "🎬 REEL · INDIA",
+   "at": "2026-10-31T02:36:42+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-10-31": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-31T04:36:07+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-10-31": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-31T06:35:29+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-10-31": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-31T08:35:40+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-10-31": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-31T10:36:21+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-10-31": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-31T12:36:43+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-10-31": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-10-31T14:21:03+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-10-31": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-10-31T14:50:52+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-01": {
+  "reel_devotion-2026-11-01": {
+   "tag": "🎬 REEL · 🙏 JAI SURYA DEV",
+   "at": "2026-11-01T00:37:40+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-01": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-01T03:26:27+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-01": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-01T04:36:42+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-01": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-01T06:35:59+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-01": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-01T08:34:46+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-01": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-01T10:38:30+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-01": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-01T12:34:49+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-01": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-01T14:19:45+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-01": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-01T14:51:24+00:00",
+   "auto": false
+  },
+  "reel_news_noon-2026-11-01": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-01T17:42:33+00:00",
+   "auto": false
+  },
+  "reel_flash-2026-11-01-1748": {
+   "tag": "🎬 REEL · ⚡ FLASH",
+   "at": "2026-11-01T17:48:38+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-02": {
+  "reel_devotion-2026-11-02": {
+   "tag": "🎬 REEL · 🙏 HAR HAR MAHADEV",
+   "at": "2026-11-02T00:35:05+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-02": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-02T02:34:00+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-02": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-02T04:35:25+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-02": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-02T06:36:47+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-02": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-02T08:35:17+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-02": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-02T10:36:24+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-02": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-02T12:35:40+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-02": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-02T14:19:33+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-02": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-02T14:50:34+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-03": {
+  "reel_devotion-2026-11-03": {
+   "tag": "🎬 REEL · 🙏 JAI BAJRANGBALI",
+   "at": "2026-11-03T01:03:17+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-03": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-03T02:35:44+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-03": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-03T04:36:49+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-03": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-03T06:34:55+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-03": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-03T08:35:16+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-03": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-03T10:34:30+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-03": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-03T12:35:54+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-03": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-03T14:20:30+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-03": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-03T14:49:37+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-04": {
+  "reel_devotion-2026-11-04": {
+   "tag": "🎬 REEL · 🙏 JAI GANESH DEVA",
+   "at": "2026-11-04T00:35:15+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-04": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-04T02:34:02+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-04": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-04T04:34:28+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-04": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-04T06:34:36+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-04": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-04T08:34:58+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-04": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-04T10:34:44+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-04": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-04T12:35:10+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-04": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-04T14:19:52+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-04": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-04T14:52:01+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-05": {
+  "reel_devotion-2026-11-05": {
+   "tag": "🎬 REEL · 🙏 JAI SHRI HARI",
+   "at": "2026-11-05T00:36:02+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-05": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-05T02:34:59+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-05": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-05T04:35:01+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-05": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-05T06:34:06+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-05": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-05T08:36:23+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-05": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-05T10:36:38+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-05": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-05T12:35:44+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-05": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-05T14:19:59+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-05": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-05T14:49:59+00:00",
+   "auto": false
+  },
+  "ayodhya_aarti-2026-11-05": {
+   "tag": "🎬 REEL · SARYU AARTI 🙏",
+   "at": "2026-11-05T15:19:21+00:00",
+   "auto": false
+  },
+  "ayodhya_raat-2026-11-05": {
+   "tag": "🎬 REEL · AYODHYA RAAT 🪔",
+   "at": "2026-11-05T15:19:22+00:00",
+   "auto": false
+  },
+  "ayodhya_subah-2026-11-05": {
+   "tag": "🎬 REEL · AYODHYA SUBAH 🌅",
+   "at": "2026-11-05T15:19:23+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-06": {
+  "reel_devotion-2026-11-06": {
+   "tag": "🎬 REEL · 🙏 SHUKRAVAR KI SHUBHKAMNA",
+   "at": "2026-11-06T00:35:07+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-06": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-06T02:35:08+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-06": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-06T04:35:54+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-06": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-06T06:34:42+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-06": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-06T08:34:50+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-06": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-06T10:34:11+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-06": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-06T12:35:30+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-06": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-06T13:37:06+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-06": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-06T14:35:50+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-07": {
+  "reel_devotion-2026-11-07": {
+   "tag": "🎬 REEL · 🙏 JAI SHANI DEV",
+   "at": "2026-11-07T00:34:27+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-07": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-07T02:34:32+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-07": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-07T04:34:18+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-07": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-07T06:34:04+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-07": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-07T08:34:15+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-07": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-07T10:34:43+00:00",
+   "auto": false
+  },
+  "reel_news_aft-2026-11-07": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-07T12:34:40+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-07": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-07T13:34:20+00:00",
+   "auto": false
+  },
+  "reel_news_night-2026-11-07": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-07T14:36:12+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-08": {
+  "reel_devotion-2026-11-08": {
+   "tag": "🎬 REEL · 🙏 SHUBH DIWALI",
+   "at": "2026-11-08T00:33:26+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-08": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-08T02:35:22+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-08": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-08T04:34:47+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-08": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-08T06:36:35+00:00",
+   "auto": false
+  },
+  "own_jad_se_jud_story-2026-11-08": {
+   "tag": "🎬 REEL · 🎤 ORIGINAL RAP",
+   "at": "2026-11-08T04:46:49+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-08": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-08T08:35:07+00:00",
+   "auto": false
+  }
+ }
+}

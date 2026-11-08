@@ -1,0 +1,380 @@
+{
+ "bhagwan-vishnu": [
+  {
+   "date": "2026-10-22",
+   "family": "Vishnu",
+   "last_used": "",
+   "images": [
+    {
+     "file": "bhagwan-vishnu-2026-10-22-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.52,
+      0.21
+     ]
+    },
+    {
+     "file": "bhagwan-vishnu-2026-10-22-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.47,
+      0.17
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-05",
+   "family": "Vishnu",
+   "last_used": "",
+   "images": [
+    {
+     "file": "bhagwan-vishnu-2026-11-05-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.23
+     ]
+    },
+    {
+     "file": "bhagwan-vishnu-2026-11-05-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.4,
+      0.22
+     ]
+    }
+   ]
+  }
+ ],
+ "maa-lakshmi": [
+  {
+   "date": "2026-10-30",
+   "family": "Lakshmi",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-lakshmi-2026-10-30-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.27
+     ]
+    },
+    {
+     "file": "maa-lakshmi-2026-10-30-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.23
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-06",
+   "family": "Lakshmi",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-lakshmi-2026-11-06-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.26
+     ]
+    },
+    {
+     "file": "maa-lakshmi-2026-11-06-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.2
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-08",
+   "family": "Lakshmi",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-lakshmi-2026-11-08-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.18
+     ]
+    },
+    {
+     "file": "maa-lakshmi-2026-11-08-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.6,
+      0.25
+     ]
+    }
+   ]
+  }
+ ],
+ "shani-dev": [
+  {
+   "date": "2026-10-24",
+   "family": "Shani",
+   "last_used": "",
+   "images": [
+    {
+     "file": "shani-dev-2026-10-24-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    },
+    {
+     "file": "shani-dev-2026-10-24-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.22
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-10-31",
+   "family": "Shani",
+   "last_used": "",
+   "images": [
+    {
+     "file": "shani-dev-2026-10-31-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.45,
+      0.2
+     ]
+    },
+    {
+     "file": "shani-dev-2026-10-31-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.18
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "family": "Shani",
+   "last_used": "",
+   "images": [
+    {
+     "file": "shani-dev-2026-11-07-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.45,
+      0.25
+     ]
+    },
+    {
+     "file": "shani-dev-2026-11-07-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    }
+   ]
+  }
+ ],
+ "surya-dev": [
+  {
+   "date": "2026-10-25",
+   "family": "Surya",
+   "last_used": "",
+   "images": [
+    {
+     "file": "surya-dev-2026-10-25-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.26
+     ]
+    },
+    {
+     "file": "surya-dev-2026-10-25-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.17
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-01",
+   "family": "Surya",
+   "last_used": "",
+   "images": [
+    {
+     "file": "surya-dev-2026-11-01-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.48,
+      0.33
+     ]
+    },
+    {
+     "file": "surya-dev-2026-11-01-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    }
+   ]
+  }
+ ],
+ "maharishi-valmiki": [
+  {
+   "date": "2026-10-26",
+   "family": "Valmiki",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maharishi-valmiki-2026-10-26-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.29
+     ]
+    },
+    {
+     "file": "maharishi-valmiki-2026-10-26-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.22
+     ]
+    }
+   ]
+  }
+ ],
+ "hanuman-ji": [
+  {
+   "date": "2026-10-27",
+   "family": "Hanuman",
+   "last_used": "2026-11-03",
+   "images": [
+    {
+     "file": "hanuman-ji-2026-10-27-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.23
+     ]
+    },
+    {
+     "file": "hanuman-ji-2026-10-27-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.25
+     ]
+    }
+   ]
+  }
+ ],
+ "ganesh-ji": [
+  {
+   "date": "2026-10-28",
+   "family": "Ganesha",
+   "last_used": "",
+   "images": [
+    {
+     "file": "ganesh-ji-2026-10-28-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    },
+    {
+     "file": "ganesh-ji-2026-10-28-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.27
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-04",
+   "family": "Ganesha",
+   "last_used": "",
+   "images": [
+    {
+     "file": "ganesh-ji-2026-11-04-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    {
+     "file": "ganesh-ji-2026-11-04-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.6,
+      0.25
+     ]
+    }
+   ]
+  }
+ ],
+ "maa-parvati-karva-mata": [
+  {
+   "date": "2026-10-29",
+   "family": "Parvati",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-parvati-karva-mata-2026-10-29-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    },
+    {
+     "file": "maa-parvati-karva-mata-2026-10-29-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.2
+     ]
+    }
+   ]
+  }
+ ],
+ "bhagwan-shiv-ji": [
+  {
+   "date": "2026-11-02",
+   "family": "Shiva",
+   "last_used": "",
+   "images": [
+    {
+     "file": "bhagwan-shiv-ji-2026-11-02-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    }
+   ]
+  }
+ ]
+}
