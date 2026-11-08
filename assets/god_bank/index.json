@@ -49,29 +49,6 @@
  ],
  "maa-lakshmi": [
   {
-   "date": "2026-10-23",
-   "family": "Lakshmi",
-   "last_used": "",
-   "images": [
-    {
-     "file": "maa-lakshmi-2026-10-23-1.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.2
-     ]
-    },
-    {
-     "file": "maa-lakshmi-2026-10-23-2.jpg",
-     "credit": "AI illustration (Z-Image)",
-     "focus": [
-      0.5,
-      0.25
-     ]
-    }
-   ]
-  },
-  {
    "date": "2026-10-30",
    "family": "Lakshmi",
    "last_used": "",
@@ -113,6 +90,29 @@
      "focus": [
       0.55,
       0.2
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-11-08",
+   "family": "Lakshmi",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-lakshmi-2026-11-08-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.18
+     ]
+    },
+    {
+     "file": "maa-lakshmi-2026-11-08-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.6,
+      0.25
      ]
     }
    ]
