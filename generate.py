@@ -90,8 +90,6 @@ def fetch_candidates(seen: set[str]) -> list[dict]:
             if not link or not title:
                 continue
             link = clean_link(link)
-            if feed.get("link_must_contain") and feed["link_must_contain"] not in link:
-                continue   # e.g. Times of India: Hindi film news only, not Tamil / Telugu stories (owner 10 Nov 2026)
             item_id = hashlib.sha1(link.encode()).hexdigest()[:12]
             if item_id in taken:
                 continue
@@ -964,7 +962,7 @@ def main() -> int:
                                            "reel_devotion", "reel_clip_am", "reel_clip", "reel_politics", "reel_meme",
                                            "reel_news", "reel_news_am", "reel_news_pm", "reel_top5_am", "reel_top5",
                                            "reel_news_early", "reel_news_noon", "reel_news_aft", "reel_news_night",
-                                           "reel_poll", "reel_bachpan", "reel_official", "reel_break_am", "reel_break_noon", "reel_break_aft", "reel_break_night", "reel_flash", "reel_rotate",
+                                           "reel_poll", "reel_bachpan", "reel_official", "reel_break_am", "reel_break_noon", "reel_break_aft", "reel_flash", "reel_rotate",
                                            "ready_gita"],
                         default="auto", help="auto: follows the IST schedule (quiet hours, specials, every 3rd fun)")
     parser.add_argument("--min-gap", type=int, default=0,

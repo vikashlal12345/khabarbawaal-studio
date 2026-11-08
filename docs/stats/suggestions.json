@@ -1,42 +1,42 @@
 {
- "week": "2026-W46",
- "created": "2026-11-15T09:43:51+00:00",
- "summary": "A strong week: followers went from 92 to 198, and the average Reel got 2,386 views (the middle one 1,578). The best Reel hit 19,168 views, and the 12 PM slot is clearly the best hour.",
- "followers": 198,
+ "week": "2026-W45",
+ "created": "2026-11-08T09:19:02+00:00",
+ "summary": "Followers grew from 92 to 140 this week, with a jump on 6 Nov. The 41 settled Reels averaged 1,069 views but the middle one got only 384, so a few big hits carry the week. The top 3 were a Saif-Kareena Koffee With Karan moment (7,933), an Orry-Sara story (4,929) and an Abhishek-Aishwarya couple moment (4,549).",
+ "followers": 140,
  "items": [
   {
-   "id": "20261115-1",
-   "title": "Favour a star's real-life struggle and home stories",
-   "why": "The top Reel (Sharad Kapoor's leg injury and plea for work) got 19,168 views and 11.5 s watched, double the next best. Home and family stories (Jalsa 9,954, Mannat 8,794) came next.",
-   "change": "In the news and breaking pickers, rank a star's hardship, comeback, health or home/family story above plain gossip, and make the writers open with the human moment.",
+   "id": "20261108-1",
+   "title": "Keep every news and breaking Reel at 16 seconds or less",
+   "why": "Reels of 16 s or less averaged 1,510 views (28 Reels). Reels of 17-21 s averaged 516 and those over 21 s averaged 427 (14 Reels in total).",
+   "change": "Claude Code would cap the length of the 10 AM, 2 PM and 7 PM breaking cards and all news Reels at 16 s, using the short 2-photo layout, and cut the second card's text to 3 short bullets.",
    "status": "new"
   },
   {
-   "id": "20261115-2",
-   "title": "Skip small BTS clips, fairs and cricketers' personal news",
-   "why": "The weakest non-devotional Reels were a Lara Dutta behind-the-scenes clip (66 views), Chunky Panday and a donkey at a fair (164), and an Arshdeep engagement (196). All four got under 250 views against a 1,578 median.",
-   "change": "Add behind-the-scenes clips, regional fairs and cricketers' private events to the low-rank list in the pickers, used only when fewer than 6 better stories remain.",
+   "id": "20261108-2",
+   "title": "Rank stars' opinions on other people's films low",
+   "why": "3 of the 8 weakest Reels were 'X reviews Ramayana' stories (Shankar, Sandeep Reddy Vanga, Karan Johar). They reached about 1,100-1,200 people and then stalled, while couple and family stories averaged 2,405 views.",
+   "change": "Claude Code would add a rule to the news and breaking pickers so that a star's review or opinion of someone else's film or trailer ranks below couple, family and confession stories, and is dropped when 4 or more other stories exist.",
    "status": "new"
   },
   {
-   "id": "20261115-3",
-   "title": "Use a verdict or emoji ask, not rating or which-one",
-   "why": "Emoji asks averaged 4,279 views and verdict asks 3,492. Which-one asks got 1,618 and rating asks only 289.",
-   "change": "Change the RELATE rule so news and breaking Reels default to a verdict ask ('Sahi ya galat?') or an emoji ask, and drop the rating type.",
+   "id": "20261108-3",
+   "title": "Remove trailer and release-date stories even on thin days",
+   "why": "Promo stories still made 9 Reels this week and averaged only 609 views, the lowest of any topic. The current filter only removes them when 6 or more other stories remain.",
+   "change": "Claude Code would lower that limit in `reel.drop_routine()` from 6 other stories to 3, so promo stories are almost never picked.",
    "status": "new"
   },
   {
-   "id": "20261115-4",
-   "title": "Move the 8 PM breaking card to 1 PM",
-   "why": "Posts at 12 PM average 6,731 views and 2 PM 2,991, while 8 PM averages 1,334 and 7 PM 1,648. A 1 PM slot sits between the two best hours.",
-   "change": "In schedule.py, change the 20:00 breaking card to 13:00 as a test, and compare its views in two weeks. The Reel count stays at 9.",
+   "id": "20261108-4",
+   "title": "Make 'which one' the default question on the card",
+   "why": "'Which one' asks averaged 1,762 views (6 Reels), against 999 for team votes (21 Reels) and 919 for 'send to a friend' (10 Reels).",
+   "change": "Claude Code would change the ask rule so 'which one' is the default, team vote is used only for sports or clear two-sided fights, and 'send to a friend' is used at most once a day.",
    "status": "new"
   },
   {
-   "id": "20261115-5",
-   "title": "End the 14-second test, go back to about 20 seconds",
-   "why": "Reels of 16 s or less averaged 1,603 views and 6.6 s watched (6 Reels). Reels of 17-21 s averaged 2,479 views and 7.1 s watched (33 Reels).",
-   "change": "Empty SHORT_NEWS so every news Reel uses the normal 3 photos and about 20 s, then check again after a week.",
+   "id": "20261108-5",
+   "title": "Use the framed-window cover as the standard",
+   "why": "Window covers averaged 1,416 views (28 Reels) against 804 for full-screen covers (8 Reels). Sharp 40+ photos did not beat 'OK' ones (1,167 vs 1,559).",
+   "change": "Claude Code would make the window cover the default in `cover_hook_frame`, and use the full-screen cover only when no story photo is small and the face position is certain.",
    "status": "new"
   }
  ],

@@ -55,12 +55,6 @@
       "url": "https://www.hindustantimes.com/feeds/rss/entertainment/bollywood/rssfeed.xml"
     },
     {
-      "name": "Times of India",
-      "category": "entertainment",
-      "link_must_contain": "/entertainment/hindi/",
-      "url": "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms"
-    },
-    {
       "name": "Bollywood Hungama",
       "category": "entertainment",
       "url": "https://www.bollywoodhungama.com/rss/news.xml"

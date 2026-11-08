@@ -24,7 +24,6 @@ import os
 import re
 import shutil
 import subprocess
-import time
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
@@ -73,28 +72,6 @@ class Encoder:
         self.p.stdin.close()
         if self.p.wait() != 0:
             raise RuntimeError("ffmpeg failed")
-
-
-class FileEncoder:
-    """Frames go to JPEG files and ONE ffmpeg run joins them with a sound track (12 Nov 2026: no pipes between two ffmpeg processes, they jammed)."""
-
-    def __init__(self, out_mp4: str, audio: str):
-        import tempfile
-        self.out, self.audio, self.n = out_mp4, audio, 0
-        self.dir = tempfile.mkdtemp(prefix="frames_", dir=os.path.dirname(out_mp4) or None)
-
-    def add(self, frame: Image.Image) -> None:
-        frame.convert("RGB").save(f"{self.dir}/{self.n:05d}.jpg", "JPEG", quality=95)
-        self.n += 1
-
-    def close(self) -> None:
-        r = subprocess.run([ffmpeg_exe(), "-nostdin", "-loglevel", "error", "-y", "-framerate", str(FPS), "-i", f"{self.dir}/%05d.jpg", "-i", self.audio,
-                            "-map", "0:v", "-map", "1:a", "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-                            "-vf", "scale=in_range=full:out_range=tv,format=yuv420p", "-profile:v", "high", "-colorspace", "bt709", "-color_primaries", "bt709",
-                            "-color_trc", "bt709", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", self.out], capture_output=True, text=True)
-        shutil.rmtree(self.dir, ignore_errors=True)
-        if r.returncode != 0:
-            raise RuntimeError(f"ffmpeg failed: {r.stderr[:200]}")
 
 
 def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5, hold: float = 0.0,
@@ -299,7 +276,7 @@ def cover_hook_frame(photo: Image.Image, hook: str, tag: str, credit: str, t: fl
     if tag:
         frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
     if credit:
-        ImageDraw.Draw(frame).text((50, RH - 185), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")   # above the @handle line (12 Nov 2026: a long credit ran into the handle, the proofreader flagged it on 3 of 8 Reels)
+        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")
     handle_tag(frame, 1790)
     return frame
 
@@ -335,7 +312,7 @@ def cover_window_frame(photo: Image.Image, focus: tuple, hook: str, tag: str, cr
     if tag:
         frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
     if credit:
-        ImageDraw.Draw(frame).text((50, RH - 185), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")   # above the @handle line (12 Nov 2026: a long credit ran into the handle, the proofreader flagged it on 3 of 8 Reels)
+        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")
     handle_tag(frame, 1790)
     return frame
 
@@ -646,7 +623,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = max(photo_secs, min(7.5, 3.0 + 0.3 * len(text.split()))) if photo_secs else NEWS_PHOTO_SECS   # short news (owner 10 Nov 2026: 2.5 s + 0.3 s a word, 4.5-7 s; 12 Nov 2026 +0.5 s: 3 s + 0.3 s a word, 5-7.5 s)
+        per = photo_secs or NEWS_PHOTO_SECS
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
@@ -802,20 +779,12 @@ NEWS_TAGS = ["VIRAL", "BREAKING", "BOLLYWOOD", "CRICKET", "SPORTS", "TECH", "IND
 TOPIC = {"type": "string", "enum": ["couple_family", "gossip", "promo", "festival", "politics", "sports", "other"],
          "description": "What kind of story this is: couple_family (a couple, parents, kids, family moments), gossip (rumours, spats, dating, looks), "
                         "promo (trailer, teaser, poster, release date, song launch), festival, politics, sports, other"}
-RELATE = {"type": "object", "description": "ONE ask that comes from THIS story's own twist, so the viewer has a real opinion and answers in ONE word, number or emoji "
-          "(owner 12 Nov 2026: 'Team A ya Team B, 1 ya 2' had nothing in the Reel to ask about; he likes asks that fit the story). Pick the type that fits: "
-          "verdict = a yes/no on the story's key act or words ('Kiara ka jawab sahi tha? HAAN ya NA'), "
-          "twist = the story's own dilemma ('Pyaar pehle ya career? Ek word likho'), "
-          "rating = a number for a couple / wedding / family moment ('Is jodi ko 10 mein se kitne? Number likho'), "
-          "emoji = a reaction to a light story, the emoji named in WORDS because the video card cannot draw pictures ('Is khabar par ek emoji likho: dil, gussa ya hasi?'), "
-          "own_life = the viewer's own memory tied to the story ('Aapki life ka Shershaah wala moment kaun sa tha?'), "
-          "predict = a guess for a film / match / result ('Ye film hit hogi ya flop? Pehle bol do'), "
-          "finish_it = a short line from the viewer ('Trolls ko aur kya kehna chahiye tha? Ek line'), "
-          "share_friend = 'Us dost ko bhejo jo ...' ONLY when none of the others fits (at most 1 Reel in 4), save = 'Save karo, kaam aayega' (useful or festival stories). "
-          "NEVER 'Team A ya Team B' or '1 ya 2' unless the story really has two sides that BOTH appear in the Reel (a clash between two people, two rival films); never invent sides "
-          "(a married couple, a breakup, a reaction have no teams). For crime, accident, death or other serious stories use a plain one-word verdict ('Aapka kya kehna hai? Ek word likho'). "
-          "The line is max 12 words, Hinglish in English letters, and must make sense to someone who sees only this Reel.",
-          "properties": {"type": {"type": "string", "enum": ["verdict", "twist", "rating", "emoji", "own_life", "predict", "finish_it", "share_friend", "save"]},
+RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the viewer's own life, so they SEND the Reel to a friend or "
+          "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
+          "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
+          "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
+          "save = 'Save karo, kaam aayega' (useful or festival stories). DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
 
@@ -841,21 +810,14 @@ def apply_relate(opt: dict, news: bool) -> None:
     line = plain_letters(re.sub(r"\s+", " ", str(rel["line"]).strip()))
     if re.search(r"(?i)\btag\b|\blike if\b|\bto win\b", line) or len(line.split()) > 12 or len(line) < 6:
         return   # tagging needs followers and Instagram shows engagement bait less: the writer's old lines stay
-    serious = bool(CRIME.search(plain_letters(" ".join(str(opt.get(k, "")) for k in ("caption", "hook", "headline"))))) and rel.get("type") != "verdict"
-    if re.search(r"(?i)\bteam\b.*\bya\b.*\bteam\b|\b1 ya 2\b", line) or serious:
-        line = "Aapka kya kehna hai? Ek word likho"   # no made-up sides, and a plain ask for serious stories (owner 12 Nov 2026)
-        rel["type"] = "verdict"
-    TAGS["relate"] = rel.get("type", "")
     if news:
         opt["end_text"] = line
-        opt["highlight"] = [w for w in re.findall(r"[A-Za-z]+", line) if w.lower() in ("bhejo", "likho", "save", "comment", "naam", "dost", "ek", "word", "number", "emoji", "haan", "na")][:2]
+        opt["highlight"] = [w for w in re.findall(r"[A-Za-z]+", line) if w.lower() in ("bhejo", "likho", "save", "comment", "naam", "dost", "ek", "word")][:2]
     else:
         opt["question"] = line
     cap = str(opt.get("caption", "")).rstrip().split("\n")
     if cap and len(cap) > 1:
-        cap[-1] = line + (" 👇" if rel.get("type") != "save" and "👇" not in line else "")
-        if opt.get("topic") == "couple_family" and not re.search(r"(?i)\bsave\b", cap[-1]):   # couple / family stories were all saved (owner 10 Nov 2026): the caption also asks for a save
-            cap[-1] += " Save bhi kar lo 🔖"
+        cap[-1] = line + (" 👇" if rel.get("type") in ("share_friend", "name_person", "which_one", "team_vote") and "👇" not in line else "")
         opt["caption"] = "\n".join(cap)
 
 
@@ -2185,10 +2147,10 @@ stories about a star's parent, child, spouse, couple or family bond ABOVE gossip
 EMOTIONAL FIRST (owner approved 1 Nov 2026, from 25 days of numbers: a respectful tribute got 5,593 views and 11 sends, the best of any Reel after the first Tiger Shroff story): a star's \
 real feelings about a parent, child, friend, a respectful tribute or memory (never told for shock), nostalgia, a first (first Karwa Chauth, first film with a parent) rank \
 at the TOP. SERIES RULE: this season's Koffee With Karan moments (7 Reels, avg 2,715, none stalled) and Ramayana news (20 Reels, avg 1,519) are reliable: when a fresh one \
-exists (not told in the last 12 h) AND it has a personal or emotional angle (a cast member's feelings, a family or friendship story, a confession), rank it high; a technical, box-office or promotional Ramayana story is NOT strong (13 Nov 2026: a production-designer talk got 428 views). POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
+exists (not told in the last 12 h), rank it high. POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
 A festival story works only with a real person-story ('Aamir Khan's first Karwa Chauth' 2,557 views), not a plain greeting.
 HOT STORIES (owner 1 Nov 2026: 'check the story at creation time only, so we always have the latest trending one'): a story marked 🔥HOT is what many sites run \
-RIGHT NOW or a new development on one of our own hits: prefer it, but only when it carries a personal / emotional angle; skip a HOT story that is a greeting, a promo or a controversy. EXCEPTION: a story marked 'BIG POLITICS' (owner 10 Nov 2026) is a safe national story that 8+ sites run right now; choose it ONLY if it is a win, achievement or national-pride moment for India or the government, or a major national event; if you choose it write real facts only, no invented words, nothing that embarrasses the BJP / NDA.
+RIGHT NOW or a new development on one of our own hits: prefer it, but only when it carries a personal / emotional angle; skip a HOT story that is a greeting, a promo or a controversy.
 ROUTINE POSTS RANK LOW (owner approved 1 Nov 2026: 13 of 43 Reels stalled at ~200 views, mostly greetings, official news and controversies; the ones that took off were Koffee With Karan moments, Ramayana news and emotional personal stories): \
 birthday / anniversary wishes, festival greetings, official or government announcements (space launches, new chiefs, ministry news), award lists and a star's \
 plain social-media post that every page already runs are LOW priority; take one only when it carries a real story (a confession, a reveal, a family moment, a clash with a fact) people would send to a friend.
@@ -2272,89 +2234,6 @@ def bollywood_first(stories: list) -> list:
 HARD_PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|motion poster|release date|song launch|promo|out now)\b")
 
 
-POLITICS = re.compile(r"(?i)\b(rahul gandhi|priyanka gandhi|modi|amit shah|bjp|congress|aap|kejriwal|tmc|mamata|lok sabha|rajya sabha|parliament|"
-                      r"opposition|naxals?|elections?|assembly polls|chief ministers?|cm yogi|yogi adityanath|nitish|tejashwi|akhilesh|owaisi|"
-                      r"sharad pawar|uddhav|shiv sena|ministers?|mlas?|mps?|samajwadi|rjd|cpi|politic\w*)\b")
-
-
-def is_politics(s: dict) -> bool:
-    """A politics story (feed category or leader / party words), except Hindu-pride / culture stories (PRIDE) the pickers want."""
-    if PRIDE.search(s["title"]):
-        return False
-    return "politics" in str(s.get("category", "")) or bool(POLITICS.search(s["title"]))
-
-
-CRIME = re.compile(r"(?i)\b(firing|fired upon|shot at|shooting|shot dead|murder|murdered|stabbed|attack|attacked|assault|kidnap\w*|rape|bomb|blast|terror\w*|"
-                   r"accident|crash|stampede|suicide|arrest|arrested|jail)\b")
-REACTION = re.compile(r"(?i)\b(react|reacts|reacted|reaction|says|said|speaks|spoke|comments?|statement|opines|breaks silence|concerning|concern|slams|urges)\b")
-
-
-def is_weak_crime(s: dict) -> bool:
-    """Owner 10 Nov 2026 (the 10 AM 'Manoj Bajpayee on the firing outside Tiger Shroff's home' Reel got 474 views, wrong tone for a vote): crime / accident
-    stories leave the list, EXCEPT a story that names a film star and is not just somebody's reaction (the original Tiger Shroff firing story got 15,000)."""
-    import emergency
-    if not CRIME.search(s["title"]):
-        return False
-    return not (emergency.STARS.search(s["title"]) and not REACTION.search(s["title"]))
-
-
-ANNOUNCE = re.compile(r"(?i)\b(confirms?|announces?|unveils?)\b.*(\bsequel\b|\bpart \d|\b\d\b|\bfirst look\b|\bteaser\b|\btrailer\b|\brelease date\b|\bseason\b|\bcast\b)|\b(roped in|first asset|first look|to feature in)\b")
-THROWBACK = re.compile(r"(?i)\b(throwback|flashback|years ago|decades ago|old (?:video|interview|clip)|once (?:said|revealed|told)|recalls? (?:when|how|the time)|back in \d{4})\b|\bwhen\b.{0,40}\b(revealed|said|recalled|confessed|admitted)\b")
-TECHNICAL = re.compile(r"(?i)\b(production designer|cinematograph\w*|vfx|visual effects|sound design\w*|costume designer|explains how|making of|behind the lens)\b")
-
-
-def is_weak_type(s: dict) -> bool:
-    """Owner, 13 Nov 2026 (the 8 AM throwback got 256 views, the 10 AM production-designer talk 428, the 4 PM film announcement 365 while SRK / Sai Pallavi stories were in the
-    list): film announcements, throwbacks and technical talks are not the stories that get forwarded. Headline only."""
-    t = s["title"]
-    return bool(ANNOUNCE.search(t) or THROWBACK.search(t) or TECHNICAL.search(t))
-
-
-STRENGTH_SYSTEM = ("You are a Bollywood editor for an Instagram page for Indians aged 18-34. From a short list of stories, score how likely each is to be WATCHED TO THE END and SENT TO A FRIEND "
-                   "(1-10). Scores are based on this page's real results: stories about a BIG star's family, property, couple or parent moment, a confession, an emotional reveal, a Koffee With Karan "
-                   "moment, a real controversy or a star's own heartfelt words took off (4,000-9,000 views). Film announcements and confirmations, throwbacks of old interviews, technical talk "
-                   "(designers, cinematographers, VFX), box-office or release numbers, promotions, reviews and small-name stories stalled (200-400 views). A Ramayana story is strong ONLY when it "
-                   "has a personal or emotional angle. NEVER score a story highly (1-2) if it is about religious conflict, blasphemy, a communal issue, a death or funeral, an accident or a crime. "
-                   "Score every story; do not explain at length.")
-STRENGTH_SCHEMA = {"type": "object", "properties": {"scores": {"type": "array", "items": {"type": "object", "properties": {
-    "n": {"type": "integer"}, "score": {"type": "integer"}, "why": {"type": "string"}}, "required": ["n", "score", "why"], "additionalProperties": False}}},
-    "required": ["scores"], "additionalProperties": False}
-
-
-RELIGION_CONFLICT = re.compile(r"(?i)\b(qur'?an\w*|hadith|bible|sentiments|fatwa|blasphem\w*|hindu-muslim|haram|halal|azaan|religious (?:row|remark|controversy)|offensive (?:remark|post|verse))\b")
-
-
-def rank_picks(options: list, stories: list) -> list:
-    """Strength check (owner, 13 Nov 2026: the picker ignored its own rules and took weak stories): one more AI request scores the picker's top 3 stories and the Reel is made
-    from the highest score first. Any failure keeps the picker's own order; a Claude limit is passed on."""
-    import fun
-    valid = [o for o in options if 1 <= o.get("pick", 0) <= len(stories)]
-    if len(valid) < 2:
-        return options
-    listing = "\n".join(f"{i}. {stories[o['pick'] - 1]['title']}" + (f" -- {stories[o['pick'] - 1].get('summary', '')[:160]}" if stories[o['pick'] - 1].get("summary") else "")
-                        for i, o in enumerate(valid, 1))
-    try:
-        res = fun.claude_json(STRENGTH_SYSTEM, f"Stories:\n{listing}\n\nScore each one.", STRENGTH_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="story strength")["scores"]
-    except Exception as e:
-        if type(e).__name__ == "ClaudeLimit":
-            raise
-        print(f"  ! strength check failed ({str(e)[:80]}): the picker's order stays")
-        return options
-    score = {r["n"]: r["score"] for r in res if 1 <= r["n"] <= len(valid)}
-    if len(score) < len(valid):
-        return options
-    import flash
-    for i, o in enumerate(valid, 1):   # the page never tells religious-conflict, death or crime stories (13 Nov 2026 replay: 'Kareena legal notice over a Quranic verse' scored 8)
-        st_ = stories[o["pick"] - 1]
-        if flash.SENSITIVE.search(st_["title"]) or RELIGION_CONFLICT.search(st_["title"]) or flash.DEATH.search(st_["title"]) or is_weak_crime(st_):
-            score[i] = 1
-    order = sorted(range(1, len(valid) + 1), key=lambda i: (-score[i], i))
-    print("  strength check: " + " | ".join(f"{score[i]}/10 {stories[valid[i - 1]['pick'] - 1]['title'][:38]}" for i in order))
-    TAGS["strength"] = score[order[0]]
-    rest = [o for o in options if o not in valid]
-    return [valid[i - 1] for i in order] + rest
-
-
 def drop_routine(stories: list, keep: int = 6) -> list:
     """Owner 4 Nov 2026 (half the Reels stalled): birthday / anniversary / greeting stories leave the picker's list whenever at least `keep` other
     stories remain; so do trailer / teaser / poster / first-look / release-date / song-launch adverts (owner 4 Nov 2026: the 12 PM 'Ramayana Part 2
@@ -2362,36 +2241,8 @@ def drop_routine(stories: list, keep: int = 6) -> list:
     import flash
     rest = [x for x in stories if not flash.ROUTINE.search(x["title"])]
     stories = rest if len(rest) >= keep else stories
-    rest = [x for x in stories if not HARD_PROMO.search(x["title"] + " " + (x.get("summary") or ""))]   # 10 Nov 2026: the 8 AM trailer story had no trailer word in its headline
-    stories = rest if len(rest) >= keep else stories
-    rest = [x for x in stories if not is_weak_crime(x)]
-    stories = rest if len(rest) >= keep else stories
-    rest = [x for x in stories if not is_weak_type(x)]   # announcements, throwbacks, technical talks (13 Nov 2026)
-    stories = rest if len(rest) >= keep else stories
-    rest = [x for x in stories if not is_politics(x)]   # owner 10 Nov 2026: a Rahul-Modi debate card got 288 views at 7 PM (politics Reels avg 385 over 25 days, 85% stalled)
+    rest = [x for x in stories if not HARD_PROMO.search(x["title"])]
     return rest if len(rest) >= keep else stories
-
-
-FRESH_HOURS = 4   # owner 10 Nov 2026 ('we post late compared with other pages'): news / breaking pickers see stories of the last 4 h when 6+ exist (was 8 h)
-
-
-def story_age(s: dict) -> float | None:
-    """Hours since the story was published (feed time), None when unknown (HOT / pinned items)."""
-    return round((time.time() - s["ts"]) / 3600, 1) if s.get("ts") else None
-
-
-def fresh_only(stories: list, hours: float = FRESH_HOURS, keep: int = 6) -> list:
-    """Stories newer than `hours` (items with no time, e.g. HOT ones, stay) when at least `keep` remain, else the list as it was."""
-    new = [x for x in stories if not x.get("ts") or story_age(x) <= hours]
-    return new if len(new) >= keep else stories
-
-
-def age_tag(s: dict) -> str:
-    a = story_age(s)
-    return f"({a:.0f} h ago) " if a is not None and a >= 1 else "(under 1 h ago) " if a is not None else ""
-
-
-FRESH_NOTE = "\n\nEach story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size. BUT freshness never beats a strong story: a couple / family / Koffee With Karan / emotional moment of a big star beats a fresh trailer or promo, a crime or accident reaction, or an odd local viral story (owner 10 Nov 2026: three fresh weak picks got 153-474 views, the emotional ones 1,900-2,400)."
 
 
 def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
@@ -2436,7 +2287,6 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
             if len(only) >= 2:
                 stories = only
-        stories = fresh_only(stories)
         if not REMAKE.get("link"):
             stories = add_hot(stories, raw, state, used)
         intro = ""
@@ -2445,9 +2295,8 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                         "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
-    TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)   # what the picker saw (owner 10 Nov 2026)
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
     songs = trending_songs(state)
@@ -2455,11 +2304,10 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
                               f"(hours trending):\n{trends}\n\nWhat India is searching on Google today:\n{searches}"
                               f"\n\nStories:\n{listing}{viral_memory()}{recent_news(state, today)[1]}"
-                              f"{FRESH_NOTE}\n\nGive your top 3 picks, the most viral first."
+                              f"\n\nGive your top 3 picks, the most viral first."
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
-    options = rank_picks(options, stories)   # strength check on the top 3 (owner, 13 Nov 2026)
     for opt in options:
         if not 1 <= opt["pick"] <= len(stories):
             continue
@@ -2472,7 +2320,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         if len(photos) >= 2:
             import carousel as _car
             article_txt = _car.story_text(item["link"], item["title"], story.get("summary", ""))
-            if len(article_txt.strip()) < 300 or _car.unrelated_text(article_txt, item["title"]):   # unreadable article (or only a cookie / privacy notice, 13 Nov 2026): the strict proofreader would block it after all the work
+            if len(article_txt.strip()) < 300:   # unreadable article: the strict proofreader would block it after all the work
                 print("  the article could not be read: trying the next story")
                 AVOID.add(story["link"]); AVOID.add(story["title"][:45].lower())
                 continue
@@ -2484,10 +2332,6 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
         raise RuntimeError("no story had 2+ good photos")
-    TAGS["pick_no"] = opt.get("pick")
-    TAGS["age_h"] = story_age(story)   # how old the story was when we made the Reel (owner 10 Nov 2026)
-    if str(story.get("hot", "")).startswith("BIG POLITICS"):
-        state["big_politics_day"] = __import__("schedule").ist_now().date().isoformat()   # one big politics Reel a day: counted only when it was really made
     cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, article_txt,
                                           f"{story['title']}. {story.get('summary', '')}")
     state["reel_news_used"] = (used + [story["link"]])[-80:]
@@ -2499,7 +2343,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
 
 # ---------------------------------------------------------------- ⚡ Breaking card Reels (9 AM, 12 PM, 3 PM)
 
-BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft", "reel_break_night", "reel_flash")   # reel_flash = the extra ⚡ FLASH Reel (flash.py), not a daily slot
+BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft", "reel_flash")   # reel_flash = the extra ⚡ FLASH Reel (flash.py), not a daily slot
 BREAK_TAGS = ["BREAKING", "UPDATE", "FILM NEWS", "VIRAL", "CRICKET", "POLITICS", "BOLLYWOOD"]
 BREAK_PINK = "#FF3D8B"
 BREAK_OPTION = {"type": "object", "properties": {
@@ -2581,7 +2425,7 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
     mask = Image.new("L", (win_w, win_h), 0)
     ImageDraw.Draw(mask).rounded_rectangle((0, 0, win_w - 1, win_h - 1), radius=26, fill=255)
     words = len(" ".join(bullets[:4] + [question]).split())
-    d1, d2 = 3.0, min(12.0, max(7.0, read_secs(" ".join(bullets[:4] + [question]), 3.0)))   # owner 10 Nov 2026: 3 s + 0.25 s a word, 7-12 s (was 2.5 s, 6-9 s)
+    d1, d2 = 2.5, min(9.0, max(6.0, read_secs(" ".join(bullets[:4] + [question]), 2.5)))
     enc, frame, c1, c2 = Encoder(out_mp4), None, None, None
 
     def cover_of(img: Image.Image, w: int, h: int, z: float, cy: float = 0.28) -> Image.Image:
@@ -2629,7 +2473,7 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
         if i == int(d2 * FPS) - 2:
             c2 = frame.convert("RGB")
         enc.add(frame)
-    add_follow(enc, frame, 2.0)   # breaking card: cover 3.0 s and Follow card 2.0 s (owner 12 Nov 2026, +0.5 s each)
+    add_follow(enc, frame)
     enc.close()
     return [c1 or frame.convert("RGB"), c2 or frame.convert("RGB")]
 
@@ -2646,12 +2490,11 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     status.step("Picking the biggest breaking story", 2)
     raw = g.fetch_candidates(set(state.get("seen", [])))
     stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:45]
-    if kind in ("reel_break_aft", "reel_break_night"):   # the 7 PM and 8 PM slots (8 PM: owner 10 Nov 2026) (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
+    if kind == "reel_break_aft":   # the 7 PM slot (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
         import emergency
         only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
         if len(only) >= 2:
             stories = only
-    stories = fresh_only(stories)
     if not REMAKE.get("link"):
         stories = add_hot(stories, raw, state, used)
     if REMAKE.get("link"):   # 🔄 remake: the same story again
@@ -2659,18 +2502,16 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                     "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
-    TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs(state)
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA + FACE_RULE,
                               f"{fun.today_context()}\n\nTrending on X today (hours):\n{trends}\n\nStories:\n{listing}"
-                              f"{viral_memory()}{recent_news(state, today)[1]}{FRESH_NOTE}\n\nGive your top 3 picks, the most "
+                              f"{viral_memory()}{recent_news(state, today)[1]}\n\nGive your top 3 picks, the most "
                               "breaking first." + songs_prompt(songs),
                               options_schema(BREAK_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="breaking pick")["options"]
-    options = rank_picks(options, stories)   # strength check on the top 3 (owner, 13 Nov 2026)
     cands = []   # up to 3 stories with a sharp photo; the next one is tried when a Reel can't be proofread
     for o in options:
         if not 1 <= o["pick"] <= len(stories):
@@ -2716,15 +2557,11 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     photos.sort(key=lambda x: x[3])   # real photos first, X post screenshots last (stable: keeps the size order)
     real_n = sum(1 for x in photos if not x[3])
     cover_i = pick_cover_photo([x[0] for x in photos[:real_n]], story["title"], tmp)   # 📸 photo contest, real photos only
-    TAGS["pick_no"] = opt.get("pick")
-    TAGS["age_h"] = story_age(story)
-    if str(story.get("hot", "")).startswith("BIG POLITICS"):
-        state["big_politics_day"] = __import__("schedule").ist_now().date().isoformat()
     TAGS.update({"type": "breaking", "cover": cover_kind(photos[cover_i][0], photos[cover_i][1]), "photos": 2, "sharp": round(photo_sharpness(photos[cover_i][0]))})
     other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel
     facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
-    if len(facts.strip()) < 300 or carousel.unrelated_text(facts, it["title"]):   # 30 Oct 2026: the 2 PM card tried the same unreadable story 3 times; 13 Nov 2026: a page with only a cookie notice
+    if len(facts.strip()) < 300:   # 30 Oct 2026: the 2 PM card tried the same unreadable story 3 times (every claim 'could not be checked')
         raise proofread.Unverified("the article could not be read (no text to check the card against)")
     # Second writing step from the FULL story (19 Oct 2026: written from the headline alone it invented a bystander,
     # a date and a name): same fields, only facts that are in the text
@@ -3567,51 +3404,6 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
         return current
 
 
-STORY_LINES_SYSTEM = """You write the on-screen lines of a short Instagram news Reel for young Indians (Hinglish, English letters only, never Devanagari). \
-The Reel opens on a HOOK, then shows {n} photo screens, each with ONE line, then asks the viewer a question. The lines must tell ONE connected story in order, \
-like a friend telling it: line 1 ANSWERS the hook with the core fact (who did / said what: write the people's names); line 2 adds the NEXT fact \
-(what happened next, a detail, the twist, the reaction or the result){third}. Rules: every line is a complete fact taken from the article, max 12 words, \
-plain spoken Hinglish; it is NOT a description of the photo ('dono hanste dikhe', 'photo mein...'), does not repeat the hook or another line, and does not \
-start a new unrelated topic; the lines must make sense read one after another. Only facts the article states; no invented words or reactions; an allegation or \
-report is 'kathit' / 'reportedly'. The photo notes only tell you what the photos roughly show: use them only to keep a line compatible with its photo, \
-never as the story."""
-STORY_LINES_SCHEMA = {"type": "object", "properties": {"lines": {"type": "array", "items": {"type": "string"}}}, "required": ["lines"], "additionalProperties": False}
-
-
-def story_lines(item: dict, opt: dict, photos: list[tuple], article: str) -> list[tuple]:
-    """Owner 12 Nov 2026 (the Kiara Reel: line 1 'they decided to part', line 2 'both laughed on a chat show': no link): the photo lines of a news Reel
-    used to be captions written photo by photo by the carousel curation, which never saw the hook or the other line. One AI step now writes ALL the
-    lines together as one connected story that follows the hook. Any failure keeps the old lines. X post screenshots keep theirs."""
-    import fun
-    n = len(photos)
-    if n < 2 or any(x[3] for x in photos) or len(article.strip()) < 300:
-        return photos
-    base = (f"Headline: {item['title']}\nHook (the opening line): {opt.get('hook', '')}\nQuestion at the end: {opt.get('end_text', '')}\n"
-            f"Photo notes (what each photo roughly shows): " + " | ".join(f"photo {i}: {x[2]}" for i, x in enumerate(photos, 1))
-            + f"\n\nArticle:\n{article[:3000]}\n\nWrite exactly {n} lines, each STRICTLY 12 words or fewer (count them).")
-    lines, note = [], ""
-    for attempt in (1, 2):   # a second try when a line is too long (the screen fits about 12 words)
-        try:
-            res = fun.claude_json(STORY_LINES_SYSTEM.format(n=n, third=", line 3 the result or what it means" if n >= 3 else ""),
-                                  base + note, STORY_LINES_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="news story lines")["lines"]
-        except Exception as e:
-            if type(e).__name__ == "ClaudeLimit":
-                raise
-            print(f"  ! story lines failed ({str(e)[:80]}): the photo captions stay")
-            return photos
-        lines = [plain_letters(re.sub(r"\s+", " ", str(t)).strip()) for t in res]
-        if len(lines) == n and all(3 <= len(t.split()) <= 13 for t in lines):
-            break
-        note = "\n\nYour last try was too long: " + " | ".join(f"({len(t.split())} words) {t}" for t in lines) + ". Rewrite each line in 12 words or fewer, same story order."
-        lines = []
-    if not lines:
-        print("  ! story lines stayed too long / wrong count: the photo captions stay")
-        return photos
-    print("  story lines: " + " / ".join(lines))
-    TAGS["flow"] = 1
-    return [(img, credit, lines[i], whole) for i, (img, credit, _, whole) in enumerate(photos)]
-
-
 def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str,
                      article: str | None = None, hook_video: tuple[str, float, float] | None = None
                      ) -> tuple[Image.Image, str, dict]:
@@ -3641,9 +3433,6 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     photos = photos[:2] if short else photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
     TAGS.update({"photos": len(photos), "short": short, "type": "news"})
     roman_only(opt, ["hook"])
-    if article is None:
-        article = carousel.story_text(item["link"], item["title"], item.get("summary", ""))
-    photos = story_lines(item, opt, photos, article)   # one connected story across the photo lines (owner 12 Nov 2026)
     images = [(img, whole) for img, _, _, whole in photos]
     data = {"post": opt, "slides": [{"n": i, "credit": c, "text": t} for i, (_, c, t, _) in enumerate(photos)]}
     out = os.path.join(tmp, "reel.mp4")
@@ -3652,7 +3441,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
                          d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
                          hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover, hook_credit=cover_credit,
-                         end=2.5 if short else 3.0, photo_secs=5.0 if short else None, cover_secs=3.0 if short else None)   # owner 12 Nov 2026: cover and photos +0.5 s, end card unchanged
+                         end=2.5 if short else 3.0, photo_secs=4.5 if short else None, cover_secs=2.5 if short else None)
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
@@ -6229,17 +6018,6 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                            f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
                            f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
                            CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
-    if os.environ.get("AARTI_VIDEO", "1") != "0":   # 🪔 real aarti video first (owner, 12 Nov 2026); any failure -> the AI pictures below
-        try:
-            import aarti
-            status.step("Looking for real aarti video", 3)
-            vid = aarti.find_footage(plan, subj, today, state, tmp)
-            if vid:
-                return make_aarti_reel(state, feed, today, tmp, subj, plan, vid)
-        except Exception as e:
-            if type(e).__name__ == "ClaudeLimit":
-                raise
-            print(f"  ! real aarti video not used ({type(e).__name__}: {str(e)[:120]}): AI pictures")
     exact = True
     reuse = _DEVOTION_PICTURES.get((today, subj["name"]))
     if reuse:   # a retry: this morning's earlier try already has the pictures (owner, 22 Oct 2026: the retry painted
@@ -6314,153 +6092,6 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "caption": g.limit_hashtags(caption_of(data)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
-
-def aarti_reel(seg: str, hook: str, lesson: str, real_life: str, highlight: list[str], out_mp4: str, labels: dict, credit, ) -> list[Image.Image]:
-    """🪔 Devotional Reel on REAL aarti video (owner, 12 Nov 2026): the 20 s 1080x1920 clip `seg` (aarti.make_segment) full screen, a dark shade from 55 % down,
-    and the god's text BELOW the shrine: hook -> lesson -> blessing -> send line -> Follow card (~17.7 s). The clip's own sound stays. Returns 4 frames to proofread."""
-    hl = {norm(w) for phrase in highlight for w in phrase.split()}
-    body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
-    lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
-    small_gold = vfont("Cinzel-Variable.ttf", 40, "SemiBold")
-    take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
-    logo = logo_img(400, 96)
-    cta = glow_line(labels.get("cta") or "Send this to someone who needs it", vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
-    handle = glow_line(CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
-    head_txt = labels["head"]
-    head_f = vfont("Cinzel-Variable.ttf", 54, "Bold")
-    while head_f.size > 30 and ImageDraw.Draw(Image.new("RGBA", (1, 1))).textlength(head_txt, font=head_f) > RW - 260:
-        head_f = vfont("Cinzel-Variable.ttf", head_f.size - 2, "Bold")
-    head = glow_line(head_txt, head_f, GOLD)
-
-    def lines_of(text, fnt, color):
-        return [glow_line(ln, fnt, GOLD if any(norm(w) in hl for w in ln.split()) else color) for ln in wrap_centre(text, fnt, RW - 200)]
-    gap = 0.2
-    hook_f = vfont("PlayfairDisplay-Variable.ttf", 96, "Bold") if len(hook.split()) <= 8 else body
-    hook_l = lines_of(hook, hook_f, CREAM)
-    y0 = 1505 - len(hook_l) * int(hook_f.size * 0.71)
-    parts, t = [], 0.6
-    parts.append(([(y0 + i * int(hook_f.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)], t + len(hook_l) * gap + max(quick_read(hook), 3.4)))
-    t = parts[-1][1] + 0.55
-    items, y = [(1350, glow_line(labels["middle"], small_gold, GOLD), t)], 1450
-    les = lines_of(lesson, lesson_f, CREAM)
-    for im in les:
-        items.append((y, im, t)); y += int(lesson_f.size * 1.32)
-    parts.append((items, t + 0.5 + len(les) * gap + quick_read(lesson)))
-    t = parts[-1][1] + 0.55
-    items, y = [(1370, glow_line(labels["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t)], 1480
-    for im in lines_of(real_life, take_f, CREAM):
-        items.append((y, im, t)); y += int(take_f.size * 1.3)
-    parts.append((items, t + 0.5 + quick_read(real_life) + 0.4))
-    cta_at = parts[-1][1] + 0.3
-    total = cta_at + 1.9
-    grad = Image.new("L", (1, RH))
-    for yy in range(RH):
-        grad.putpixel((0, yy), int(max(246 * min(1.0, max(0.0, (yy - RH * 0.555) / (RH * 0.15))), 175 * max(0.0, 1 - yy / 400))))
-    overlay = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
-    overlay.putalpha(grad.resize((RW, RH)))
-    warm = Image.new("RGB", (RW, RH), "#3a2000")
-    credit_f = font("Poppins-SemiBold.ttf", 22)
-    n = int(total * FPS)
-    check_t = [1.9, parts[0][1] - 0.3, parts[1][1] - 0.3, total - 0.3]
-    checks: list[Image.Image] = []
-    p = subprocess.Popen([ffmpeg_exe(), "-nostdin", "-loglevel", "error", "-i", seg, "-t", f"{total + 0.2:.2f}", "-vf", f"scale={RW}:{RH},fps={FPS}",
-                          "-an", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
-    enc, frame, size = FileEncoder(out_mp4, seg), None, RW * RH * 3
-    try:
-        for i in range(n):
-            raw = p.stdout.read(size)
-            if len(raw) < size:
-                break
-            t = i / FPS
-            frame = Image.blend(Image.frombytes("RGB", (RW, RH), raw), warm, 0.10).convert("RGBA")
-            frame.alpha_composite(overlay)
-            if logo:
-                frame.alpha_composite(logo, ((RW - logo.width) // 2, 110))
-            frame.alpha_composite(head, ((RW - head.width) // 2, 262 - head.height // 2))
-            start = 0.0
-            for its, e in parts:
-                if start - 0.1 <= t <= e + 0.5:
-                    out_a = 1.0 if t <= e else 1 - (t - e) / 0.5
-                    for yy, im, at in its:
-                        a = min(1.0, max(0.0, (t - at) / 0.3)) * out_a
-                        if a > 0:
-                            frame.alpha_composite(faded(im, a), ((RW - im.width) // 2, int(yy - im.height / 2)))
-                start = e + 0.5
-            if t >= cta_at:
-                a = min(1.0, (t - cta_at) / 0.7)
-                frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, 1620 - cta.height // 2))
-                frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, 1705 - handle.height // 2))
-            line = credit if isinstance(credit, str) else next((c_[2] for c_ in credit if c_[0] <= t < c_[1] + 0.001), credit[-1][2] if credit else "")   # per-photo credits (owner 13 Nov 2026)
-            ImageDraw.Draw(frame).text((RW // 2, RH - 60), line[:90], font=credit_f, fill="#d8c9a3", anchor="mm", stroke_width=2, stroke_fill="#000000")
-            if len(checks) < len(check_t) and t >= check_t[len(checks)]:
-                checks.append(frame.convert("RGB"))
-            enc.add(frame)
-    finally:
-        p.kill()   # the reader still holds a few spare frames: never wait for it (that jammed the first test runs)
-        p.wait()
-    if frame is None:
-        raise RuntimeError("the aarti clip gave no frames")
-    add_follow(enc, frame)
-    enc.close()
-    while len(checks) < 4:
-        checks.append(frame.convert("RGB"))
-    return checks
-
-
-def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, plan: dict, vid: dict) -> None:
-    """🪔 The 6 AM Reel on real aarti footage (aarti.find_footage) with the god's / festival's text on top (owner, 12 Nov 2026). Raises on any failure so
-    make_devotion_reel falls back to the AI pictures."""
-    from datetime import date
-    import fun
-    import generate as g
-    import proofread
-    import status
-    day = date.fromisoformat(today)
-    official = vid["source"] == "x"
-    if official:
-        extra = (f"The video is the REAL aarti at the {vid['temple']}, filmed and posted by the temple itself. Write about the meaning of the aarti and the blessing; never "
-                 "describe how the idol, the priest or the temple looks, and make no historical claim beyond the very well-known ('Somnath, pehla Jyotirlinga').")
-    elif vid["source"] == "commons-photos":
-        extra = (f"The background is a slow slideshow of REAL photos of {subj['name']} (temples, idols, festival scenes): never describe what the photos show (no 'dekho', no 'in photos "
-                 "mein'), no claims about a place or an event; write about the meaning and the blessing of the god / festival.")
-    else:
-        extra = (f"The video is real stock footage of an aarti / temple scene and may not show {plan['deity']}: never describe any idol, priest, place or what happens on screen "
-                 "(no 'dekho', no 'is video mein'); write about the meaning and the blessing of the god / festival.")
-    status.step(f"Writing the {plan['deity']} Reel", 4)
-    model = CONFIG.get("membership_model", "sonnet")
-    options = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
-                              f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']} (deity: {plan['deity']}). Festivals today: {', '.join(subj['festivals']) or 'none'}.\n"
-                              f"On screen the parts are labelled '{plan['middle']}' (lesson) and '{plan['seekh']}' (real_life), so don't repeat those words.\n{extra}\n"
-                              + viral_memory("for tone and shareability only: today's Reel stays about the deity") + "\nWrite exactly 3 different Reels.",
-                              options_schema(DEVOTION_OPTION, "Exactly 3 different Reels"), model, purpose="aarti writing")["options"][:3]
-    for o in options:
-        o["caption"] = unescape(o["caption"])
-    best = fun.judge_best(options, lambda o: f"{o['hook']} -> {o['lesson']} -> {o['real_life']}", model, judge_system=GITA_JUDGE.replace("Gita", "devotional"), fallback=True)
-    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
-    for k in ("hook", "lesson", "real_life"):
-        best[k] = plain_letters(best[k])
-    labels = {k: screen_label(plan[k]).upper() if k != "cta" else screen_label(plan[k]) for k in ("head", "middle", "seekh", "cta")}
-    songs = devotional_songs(plan["song_searches"])[:4]
-    out = os.path.join(tmp, "reel.mp4")
-    status.step("Making the video + proofreading", 5)
-
-    def caption_of(d):
-        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
-        return f"{d['post']['caption'].strip()}\n\n{vid['caption_credit']}\nFollow {CONFIG['handle']} for daily darshan 🙏\n\n{tags}"
-    own = "the temple's own" if official else "free stock"
-    note = (f"Devotional Reel for {subj['name']} ({plan['deity']}) on REAL aarti video ({own} footage). The credit line at the bottom and any "
-            "small temple logo in the video are intentional: don't flag them. Check the facts about the deity / festival are the well-known traditional ones.")
-    frames, data, proof = proofread.run(lambda d: aarti_reel(vid["seg"], d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"], d["post"]["highlight"], out, labels,
-                                                              vid.get("credits") or vid["credit"]), {"post": best}, caption_of, note)
-    post = data["post"]
-    TAGS.update({"type": "devotional", "footage": "x-temple" if official else vid["source"], "silent": bool(vid["silent"])})
-    save_reel(feed, state, frames[0], out, f"reel_devotion-{today}", {
-        "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🪔 " + labels["head"],
-        "caption": g.limit_hashtags(caption_of(data)), "source": (f"{vid['temple']} (@{vid['handle']} on X)" if official else "Photos (free licence: Pixabay / Wikimedia Commons)" if vid["source"] == "commons-photos" else "Wikimedia Commons (CC BY)" if vid["source"] == "commons" else "Pixabay (free licence)"),
-        "source_url": (f"https://x.com/{vid['handle']}" if official else ""), "pin_comment": post.get("pin_comment", ""),
-        "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
-    state["aarti_used"] = (state.get("aarti_used", []) + [vid["id"]])[-40:]
-
 
 # ---------------------------------------------------------------- 🗳️ "CHOOSE YOUR ___" poll Reel (4 PM)
 # Owner, 15 Oct 2026, after a creator's "CHOOSE YOUR FUTURE" Reel got 16K likes + 8K comments in a day: 4 options,
