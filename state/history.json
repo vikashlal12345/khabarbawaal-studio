@@ -487,12 +487,12 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-08",
-  "reel_break_aft": "2026-11-07",
+  "reel_break_aft": "2026-11-08",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "HoEOmUC0BUs5",
+ "inbox_since": "oZ0euKcClDIF",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1009,7 +1009,8 @@
   "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
+  "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1286,7 +1287,9 @@
   "Jo Tum Mere Ho",
   "Samjhawan",
   "Main Ram (From \"Ramayana\")",
-  "Pardesiya (From \"Param Sundari\")"
+  "Pardesiya (From \"Param Sundari\")",
+  "Alfaaz",
+  "Ez-Ez"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1488,6 +1491,10 @@
   },
   {
    "title": "Kareena Kapoor has a beautiful family moment with Randhir Kapoor and Babita Kapoor on Diwali; sister Karisma joins in too",
+   "date": "2026-11-08"
+  },
+  {
+   "title": "Hrithik Roshan attends LACMA Art + Film Gala 2026, becomes first mainstream Indian actor to grace event",
    "date": "2026-11-08"
   }
  ],
