@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_aft-2026-11-09",
+  "image": "posts/20261109-1233-reel_news_aft-2026-11-09.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261109-123309-reel_news_aft-2026-11-09.mp4",
+  "headline": "Inside Bollywood's Diwali: How Alia Bhatt, Kareena Kapoor, Bachchans and more celebrated the festival of light",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Bollywood Diwali 2026 Alia Bhatt Kareena Kapoor Bachchan family 🪔\nAlia Bhatt, Kareena Kapoor aur Bachchan parivar ne manaya roshni ka tyohaar.\nHindustan Times ne dikhayi stars ki Diwali ki jhalak.\nKis star ki Diwali sabse zyada pasand aayi?\nKiski Diwali best: Alia ya Kareena? Ek naam likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bollywood #diwali #aliabhatt #kareenakapoor #reelsindia\n\n(Bollywood Diwali 2026, Alia Bhatt Diwali, Kareena Kapoor Diwali, Bachchan family Diwali, Bollywood stars Diwali celebration, Diwali photos celebs)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
+  "pin_comment": "Apne Alia ya Kareena fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Chammak Challo",
+    "artist": "Vishal & Shekhar, Akon",
+    "lang": "hindi",
+    "mood": "festive party vibe = Diwali masti"
+   },
+   {
+    "title": "Akhiyaan Gulaab",
+    "artist": "Mitraz",
+    "lang": "hindi",
+    "mood": "soft romantic Diwali glow"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "festive, family-celebration feel"
+   },
+   {
+    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Junaid Wasi",
+    "lang": "new",
+    "mood": "upbeat new track for party shots"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-09T12:33:09+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-09",
   "image": "posts/20261109-1036-reel_news_pm-2026-11-09.jpg",
   "kind": "reel",

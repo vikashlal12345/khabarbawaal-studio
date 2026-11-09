@@ -428,7 +428,7 @@
   "reel_news_am": "2026-11-09",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-08",
+  "reel_news_aft": "2026-11-09",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-09",
@@ -439,7 +439,7 @@
   "reel_news_night": "2026-11-08",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "OUa5HY4hwxQa",
+ "inbox_since": "DZ6uw0x4OQy8",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -812,7 +812,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
   "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/varun-dhawan-reunites-with-sidharth-malhotra-after-heated-rivalry-joke-on-koffee-with-karan-kiara-advani-joins-the-fun-student-of-the-year-101793423094250.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-advance-booking-report-ranbir-kapoor-yashs-epic-to-cross-rs-20-crore-mark-in-india-earns-usd-3-45-million-overseas/articleshow/135389079.cms",
@@ -891,7 +890,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html",
   "https://www.bollywoodhungama.com/news/bollywood/ahaan-pandays-beparwah-co-star-aaishvary-thackeray-loses-rs-19000-to-cyber-fraud-files-police-complaint/",
-  "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1108,10 +1108,6 @@
   }
  ],
  "songs_recent": [
-  "Pardesiya (From \"Param Sundari\")",
-  "Jo Tum Mere Ho",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Zaalima",
   "Humnava Mere",
   "Mangal Rang (From \"Ramayana\")",
@@ -1147,7 +1143,11 @@
   "Toxic",
   "Barsaat",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Chammak Challo",
+  "Akhiyaan Gulaab",
+  "Judi Jodi (From \"Ramayana\")",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1253,6 +1253,10 @@
   },
   {
    "title": "Bhumi Pednekar raises alarm over ‘hazardous’ AQI in Mumbai post Diwali, says people were bursting crackers even at 3 AM",
+   "date": "2026-11-09"
+  },
+  {
+   "title": "Inside Bollywood's Diwali: How Alia Bhatt, Kareena Kapoor, Bachchans and more celebrated the festival of light",
    "date": "2026-11-09"
   }
  ],

@@ -1332,5 +1332,21 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-09",
+  "key": "bollywooddiwali2026aliabhattkareenakapoorbachchanfamily",
+  "kind": "reel_news_aft",
+  "secs": 14.0,
+  "at": "2026-11-09T12:33:09+00:00",
+  "type": "news",
+  "topic": "festival",
+  "kw": 6,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 41,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]
