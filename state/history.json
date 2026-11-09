@@ -480,7 +480,7 @@
   "reel_news_am": "2026-11-09",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-08",
+  "reel_news_aft": "2026-11-09",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-09",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "OUa5HY4hwxQa",
+ "inbox_since": "DZ6uw0x4OQy8",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1016,7 +1016,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html",
   "https://www.bollywoodhungama.com/news/bollywood/ahaan-pandays-beparwah-co-star-aaishvary-thackeray-loses-rs-19000-to-cyber-fraud-files-police-complaint/",
-  "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1307,7 +1308,9 @@
   "Jai Jai Ram",
   "Ram Aayenge",
   "Shree Hanuman Chalisa (From \"Ramayana\")",
-  "Barsaat"
+  "Barsaat",
+  "Chammak Challo",
+  "Akhiyaan Gulaab"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1537,6 +1540,10 @@
   },
   {
    "title": "Bhumi Pednekar raises alarm over ‘hazardous’ AQI in Mumbai post Diwali, says people were bursting crackers even at 3 AM",
+   "date": "2026-11-09"
+  },
+  {
+   "title": "Inside Bollywood's Diwali: How Alia Bhatt, Kareena Kapoor, Bachchans and more celebrated the festival of light",
    "date": "2026-11-09"
   }
  ],
