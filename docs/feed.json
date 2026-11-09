@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_early-2026-11-09",
+  "image": "posts/20261109-0235-reel_news_early-2026-11-09.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261109-023506-reel_news_early-2026-11-09.mp4",
+  "headline": "Kareena Kapoor says she is ‘very against botox’ and vouches for self preservation rather than going going under the knife",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kareena Kapoor botox statement 💫\nKareena ne kaha ki wo botox ke 'very against' hain.\nUnka kehna hai ki aaj ki young girls ka 18 ya 20 saal se aage na dikhna chahna terrible hai.\nWo self preservation par vishwas karti hain, surgery par nahi.\nKareena sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kareenakapoor #bollywood #botox #beautysecrets #reelsindia\n\n(Kareena Kapoor botox, Kareena Kapoor interview, Kareena Kapoor beauty secret, Kareena Kapoor self preservation, Bollywood actress botox, Kareena Kapoor Khan)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html",
+  "pin_comment": "Apni us dost ko bhejo jo botox pe confuse hai 👇",
+  "songs": [
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "bold attitude, apni shartein"
+   },
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "calm, honest baat"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "nakhre wali swag"
+   },
+   {
+    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "confident, fresh vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article: Kareena called it terrible that young girls don't want to look beyond 18 or 20; she never said anything about 19 or that nobody can look young forever."
+   ],
+   "fixed": [
+    "Unka kehna hai ki koi 19 saal ka hamesha nahi dikh sakta. → Unka kehna hai ki aaj ki young girls ka 18 ya 20 saal se aage na dikhna chahna terrible hai."
+   ]
+  },
+  "created_at": "2026-11-09T02:35:06+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-09",
   "image": "posts/20261109-0033-reel_devotion-2026-11-09.jpg",
   "kind": "reel",

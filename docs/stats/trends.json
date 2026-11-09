@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T00:33:56+00:00",
+ "at": "2026-11-09T02:35:10+00:00",
  "known": {
   "https://www.hindustantimes.com/entertainment/bollywood/nanncy-gill-talks-udta-teer-working-with-ayushmann-khurrana-directing-plays-and-why-she-chose-the-uk-over-cashing-in-on-fame-101794084246980.html": "2026-11-08T02:35:26+00:00",
   "https://www.hindustantimes.com/trending/bombay-shaving-company-founder-shantanu-deshpande-reunites-with-maths-teacher-after-21-years-shares-emotional-video-101794102714042.html": "2026-11-08T04:34:51+00:00",
@@ -59,12 +59,62 @@
   "https://www.hindustantimes.com/trending/bill-gates-says-billionaires-should-pay-more-taxes-as-ai-widens-wealth-gap-101794124718712.html": "2026-11-08T20:09:02+00:00",
   "https://www.hindustantimes.com/india-news/delhis-air-struggle-begins-ahead-of-diwali-firecrackers-records-very-poor-air-quality-with-376-aqi-101794143976910.html": "2026-11-08T20:09:02+00:00",
   "https://www.hindustantimes.com/india-news/probe-everyone-s-involvement-on-irregularities-in-milma-ghee-supply-to-sabarimala-hc-to-sit-101794144674876.html": "2026-11-08T20:09:02+00:00",
-  "https://www.hindustantimes.com/trending/us-skydiver-returns-to-the-skies-after-cancer-treatment-sets-wingsuit-record-at-74-101794135464441.html": "2026-11-08T22:32:26+00:00"
+  "https://www.hindustantimes.com/trending/us-skydiver-returns-to-the-skies-after-cancer-treatment-sets-wingsuit-record-at-74-101794135464441.html": "2026-11-08T22:32:26+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-becomes-first-indian-actor-to-attend-lacma-art-film-gala-rubs-shoulders-with-leonardo-dicaprio-timothee-chalamet-nicole-kidman-101794190328349.html": "2026-11-09T02:35:10+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/alia-bhatt-performs-diwali-puja-ranbir-kapoor-gets-a-sweet-kiss-from-daughter-raha-in-pictures-from-celebration-at-new-home-101794187142700.html": "2026-11-09T02:35:10+00:00",
+  "https://www.hindustantimes.com/trending/cruise-ship-pianist-rescued-after-spending-9-hours-treading-water-off-california-coast-i-thought-i-was-gonna-die-101794187243642.html": "2026-11-09T02:35:10+00:00",
+  "https://www.hindustantimes.com/india-news/delhi-air-quality-very-poor-morning-after-diwali-capital-chokes-with-aqi-at-366-pollution-ncr-noida-gurugram-101794184711141.html": "2026-11-09T02:35:10+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html": "2026-11-09T02:35:10+00:00",
+  "https://www.hindustantimes.com/entertainment/bollywood/pyre-director-vinod-kapri-on-almost-quitting-filmmaking-after-ott-rejection-7000-bank-balance-and-losing-70-shows-after-ramayana-release-101794133763734.html": "2026-11-09T02:35:10+00:00"
  },
  "x": [],
  "google": [
-  "dividend",
-  "iran war"
+  "bucks vs celtics",
+  "delhi high court",
+  "timberwolves vs jazz"
  ],
- "stories": []
+ "stories": [
+  {
+   "title": "Hrithik Roshan becomes first Indian actor to attend LACMA Art Film Gala, rubs shoulders with Leonardo DiCaprio, Timothee Chalamet, Nicole Ki",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/hrithik-roshan-becomes-first-indian-actor-to-attend-lacma-art-film-gala-rubs-shoulders-with-leonardo-dicaprio-timothee-chalamet-nicole-kidman-101794190328349.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Alia Bhatt performs Diwali puja, Ranbir Kapoor gets a sweet kiss from daughter Raha in pictures from celebration at new home",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/alia-bhatt-performs-diwali-puja-ranbir-kapoor-gets-a-sweet-kiss-from-daughter-raha-in-pictures-from-celebration-at-new-home-101794187142700.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "Cruise ship pianist rescued after spending 9 hours treading water off California coast: ‘I thought I was gonna die’",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/trending/cruise-ship-pianist-rescued-after-spending-9-hours-treading-water-off-california-coast-i-thought-i-was-gonna-die-101794187243642.html",
+   "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "Delhi's air quality ‘very poor’ morning after Diwali, capital chokes with AQI at 376",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/delhi-air-quality-very-poor-morning-after-diwali-capital-chokes-with-aqi-at-366-pollution-ncr-noida-gurugram-101794184711141.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Kareena Kapoor says she is ‘very against botox’ and vouches for self preservation rather than going going under the knife",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html",
+   "category": "entertainment",
+   "hours": 0
+  },
+  {
+   "title": "HT Exclusive: Vinod Kapri on almost quitting filmmaking after Pyre's OTT rejection, ₹7,000 bank balance and losing 70% shows after Ramayana ",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/entertainment/bollywood/pyre-director-vinod-kapri-on-almost-quitting-filmmaking-after-ott-rejection-7000-bank-balance-and-losing-70-shows-after-ramayana-release-101794133763734.html",
+   "category": "entertainment",
+   "hours": 0
+  }
+ ]
 }
