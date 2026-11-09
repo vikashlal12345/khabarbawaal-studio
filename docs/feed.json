@@ -1,5 +1,53 @@
 [
  {
+  "id": "reel_devotion-2026-11-09",
+  "image": "posts/20261109-0033-reel_devotion-2026-11-09.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261109-003351-reel_devotion-2026-11-09.mp4",
+  "headline": "Govardhan Puja: Govardhan Puja: Krishna ne kya sikhaya",
+  "tag": "🎬 REEL · 🙏 GOVARDHAN PUJA",
+  "caption": "Govardhan Puja par Shri Krishna ko pranam 🙏\nChoti ungli par parvat uthane wale Kanha, sabke rakhwale.\nAaj Annakut ka bhog lagao, Krishna ka naam lo.\nComment mein Jai Shri Krishna likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#govardhanpuja #shrikrishna #jaishrikrishna #annakut #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Apne parivar ko bhejo, Govardhan Puja ki shubhkamnayein 🙏",
+  "songs": [
+   {
+    "title": "Lagan Tumse Laga Baithe",
+    "artist": "Kavita Raam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hare Krishna Hare (From \"Hare Krishna Hare\")",
+    "artist": "Palak Muchhal, Poonam Thakkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Radhe Braj Jan Man Sukhkari",
+    "artist": "Devi Neha Saraswat",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Mera Aap Ki Kripa Se",
+    "artist": "Navin Tripathi",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 2: In the header 'GOVARDHAN PUJA' there is a stray dot or mark above the 'R'. It looks like a rendering glitch. The 'd' in 'Govardhan' in the body text also looks slightly odd.",
+    "Slide 3: The header 'GOVARDHAN PUJA' overlaps Krishna's crown and the moon, so it is a bit harder to read. It does not cover his face. Slide 4 has the same overlap."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-09T00:33:51+00:00"
+ },
+ {
   "id": "reel_news_night-2026-11-08",
   "image": "posts/20261108-1436-reel_news_night-2026-11-08.jpg",
   "kind": "reel",
@@ -397,53 +445,5 @@
    ]
   },
   "created_at": "2026-11-08T02:35:22+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-08",
-  "image": "posts/20261108-0033-reel_devotion-2026-11-08.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261108-003326-reel_devotion-2026-11-08.mp4",
-  "headline": "Diwali/Deepavali: Naraka Chaturdasi: andhere par roshni ki jeet",
-  "tag": "🎬 REEL · 🙏 SHUBH DIWALI",
-  "caption": "Naraka Chaturdasi aur Diwali ki shubhkaamnayein 🙏\nAaj andhere par roshni ki jeet ka din hai.\nEk diya apne andar bhi jalao.\nJai Shri Krishna likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#narakachaturdashi #diwali #deepavali #jaishrikrishna #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Parivar ko bhejo, saath mein diya jalao 🙏",
-  "songs": [
-   {
-    "title": "Aarti Laxmi Ji Ki",
-    "artist": "Somalika Das",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Shri Ram Chandra Kripalu Bhajuman",
-    "artist": "Vipin Aneja, Amjad Nadeem Aamir",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Laxmi Ji Ki Aarti",
-    "artist": "Anuradha Paudwal, Hariom Sharan",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Ram Raksha Stotra",
-    "artist": "Jhanvi Arora, Amjad Nadeem Aamir",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: The image is labelled 'MAA LAKSHMI', but the text next to it is about Krishna defeating Narakasura. The picture, label and text don't match.",
-    "Slide 4: The slide says 'Jai Maa Lakshmi, family ko bhejo'. The text list gives 'Parivar ko bhejo, saath mein diya jalao'. The on-slide wording differs from the approved text."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-08T00:33:26+00:00"
  }
 ]

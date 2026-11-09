@@ -376,5 +376,30 @@
     }
    ]
   }
+ ],
+ "shri-krishna-govardhan-puja": [
+  {
+   "date": "2026-11-09",
+   "family": "Krishna",
+   "last_used": "",
+   "images": [
+    {
+     "file": "shri-krishna-govardhan-puja-2026-11-09-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.55,
+      0.25
+     ]
+    },
+    {
+     "file": "shri-krishna-govardhan-puja-2026-11-09-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   ]
+  }
  ]
 }
