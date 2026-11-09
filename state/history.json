@@ -282,7 +282,8 @@
   "5dd3e712eba3",
   "7ec492964051",
   "593e80e84225",
-  "dba264576e77"
+  "dba264576e77",
+  "8451e556d689"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -432,7 +433,7 @@
   "reel_news_early": "2026-11-09",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-09",
-  "reel_break_noon": "2026-11-08",
+  "reel_break_noon": "2026-11-09",
   "reel_break_aft": "2026-11-08",
   "reel_news_night": "2026-11-08",
   "reel_flash": "2026-11-01"
@@ -810,7 +811,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
   "https://www.bollywoodhungama.com/news/bollywood/salman-khan-and-sanjay-dutt-to-reunite-on-screen-in-khalnayak-returns-heres-what-we-know/",
   "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
   "https://www.hindustantimes.com/india-news/prime-minister-narendra-modi-isro-indian-space-research-organisation-gslv-f18-launch-nvs-03-navigation-satellite-101793418480182.html",
@@ -889,7 +889,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html",
+  "https://www.bollywoodhungama.com/news/bollywood/ahaan-pandays-beparwah-co-star-aaishvary-thackeray-loses-rs-19000-to-cyber-fraud-files-police-complaint/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1106,10 +1107,6 @@
   }
  ],
  "songs_recent": [
-  "Tera Hoke Rahoon",
-  "Jo Tum Mere Ho",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
   "Samjhawan",
   "Teri Meri Kahaani",
   "Main Ram (From \"Ramayana\")",
@@ -1145,7 +1142,11 @@
   "Jai Jai Ram",
   "Ram Aayenge",
   "Shree Hanuman Chalisa (From \"Ramayana\")",
-  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")"
+  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Toxic",
+  "Tabaahi (From \"Toxic\")",
+  "Betuka (From \"Nakhrewaalii\")",
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1243,6 +1244,10 @@
   },
   {
    "title": "Ramayana worldwide box office collection day 4: Ranbir Kapoor, Yash film storms past ₹500 crore on opening weekend; beats Adipurush's lifetime haul",
+   "date": "2026-11-09"
+  },
+  {
+   "title": "Ahaan Panday’s Beparwah co-star, Aaishvary Thackeray, loses Rs. 19,000 to cyber fraud; files police complaint",
    "date": "2026-11-09"
   }
  ],
