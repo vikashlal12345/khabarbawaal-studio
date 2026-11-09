@@ -1285,5 +1285,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-09",
+  "key": "ramayanaboxofficecollectionday4ranbirkapooryash",
+  "kind": "reel_news_am",
+  "secs": 14.0,
+  "at": "2026-11-09T06:33:14+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 41,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]

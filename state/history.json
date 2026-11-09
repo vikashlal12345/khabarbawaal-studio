@@ -281,7 +281,8 @@
   "c97998d0c280",
   "5dd3e712eba3",
   "7ec492964051",
-  "593e80e84225"
+  "593e80e84225",
+  "dba264576e77"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -422,7 +423,7 @@
   "reel_news_pm": "2026-11-08",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-08",
+  "reel_news_am": "2026-11-09",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-08",
@@ -436,7 +437,7 @@
   "reel_news_night": "2026-11-08",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "1AS5RUkXUOL4",
+ "inbox_since": "CjVk84mxZpgg",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -809,7 +810,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.koimoi.com/bollywood-news/eetha-trailer-out-shraddha-kapoor-transforms-into-legendary-eetha-bai/",
   "https://www.bollywoodhungama.com/news/bollywood/iifa-2026-winners-dhurandhar-dominates-with-best-film-best-director-best-actor-the-bads-of-bollywood-wins-best-web-series/",
   "https://www.bollywoodhungama.com/news/bollywood/salman-khan-and-sanjay-dutt-to-reunite-on-screen-in-khalnayak-returns-heres-what-we-know/",
   "https://www.hindustantimes.com/india-news/attack-on-energy-trade-infrastructure-a-calculated-move-to-hold-prices-hostage-jaishankar-101793408211909.html",
@@ -888,7 +888,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
   "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1105,10 +1106,6 @@
   }
  ],
  "songs_recent": [
-  "Main Ram (From \"Ramayana\")",
-  "Judi Jodi (From \"Ramayana\")",
-  "His Aura Hits You",
-  "Soulmate",
   "Tera Hoke Rahoon",
   "Jo Tum Mere Ho",
   "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
@@ -1144,7 +1141,11 @@
   "Hawayein",
   "Khat",
   "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Jai Jai Ram",
+  "Ram Aayenge",
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1238,6 +1239,10 @@
   },
   {
    "title": "Sunita Ahuja is confident about reunion with Govinda amid his dating rumours with Komal Rani Swarnkar, says ‘nobody can ever separate us’",
+   "date": "2026-11-09"
+  },
+  {
+   "title": "Ramayana worldwide box office collection day 4: Ranbir Kapoor, Yash film storms past ₹500 crore on opening weekend; beats Adipurush's lifetime haul",
    "date": "2026-11-09"
   }
  ],
