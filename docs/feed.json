@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_aft-2026-11-09",
+  "image": "posts/20261109-1335-reel_break_aft-2026-11-09.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261109-133510-reel_break_aft-2026-11-09.mp4",
+  "headline": "‘Any time, any place’: Rahul challenges PM Modi to debate anti-national charge",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Rahul Gandhi PM Modi debate challenge, dimagi Naxals, Bastar\n\nRahul Gandhi ne X par PM Modi ko debate ka challenge diya: kaun anti-national hai, \"any time, any place\".\nYe post PM Modi ke Bastar mein 'dimagi Naxals' wale bayan ke ek din baad aaya.\nRahul ne ANI ka video quote karke CRPF ko tag kiya.\n\nRahul ka challenge sahi ya drama? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #RahulGandhi #NarendraModi #Congress #BJP\n\n(Rahul Gandhi, PM Modi, Rahul Gandhi debate challenge, dimagi Naxals, Bastar CRPF CoBRA, Pawan Khera, Jairam Ramesh, Congress vs BJP)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
+  "pin_comment": "Apne politics wale dost ko ye debate wali khabar bhejo 👇",
+  "songs": [
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "intense face-off vibe"
+   },
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "dhamaakedaar swag"
+   },
+   {
+    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+    "artist": "Himesh Reshammiya, Sameer Anjaan",
+    "lang": "new",
+    "mood": "desh aur rashtra ka mudda"
+   },
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "serious powerful tone"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-09T13:35:10+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-09",
   "image": "posts/20261109-1233-reel_news_aft-2026-11-09.jpg",
   "kind": "reel",
@@ -382,101 +427,5 @@
    ]
   },
   "created_at": "2026-11-08T14:36:38+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-08",
-  "image": "posts/20261108-1334-reel_break_aft-2026-11-08.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261108-133409-reel_break_aft-2026-11-08.mp4",
-  "headline": "Hrithik Roshan attends LACMA Art + Film Gala 2026, becomes first mainstream Indian actor to grace event",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Hrithik Roshan LACMA Art + Film Gala 2026 Los Angeles\nHrithik 15th LACMA Gala mein 7 November ko pahunche\nReports ke mutabik pehle mainstream Indian actor jo is event mein aaye\nLeonardo DiCaprio, Tom Hanks, Nicole Kidman bhi the, Hrithik ne Brunello Cucinelli tuxedo pehna 🎬\nHrithik ne India ka naam roshan kiya? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#hrithikroshan #bollywood #lacma #bollywoodnews #reelsindia\n\n(Hrithik Roshan, Hrithik Roshan LACMA Gala, LACMA Art + Film Gala 2026, Hrithik Roshan Hollywood, Hrithik Roshan Leonardo DiCaprio, Hrithik Roshan tuxedo, Kavita Gupta, Bollywood news today)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
-  "pin_comment": "Apne Hrithik fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "swag entry, chart #1 vibe"
-   },
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "confident star walk"
-   },
-   {
-    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Himesh Reshammiya, Sameer Anjaan",
-    "lang": "new",
-    "mood": "India ka garv moment"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "mehnat ka phal, first"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says 'reportedly' first mainstream Indian actor; headline stated it as fact"
-   ],
-   "fixed": [
-    "Hrithik Roshan LACMA gala mein pehle Indian actor → Hrithik Roshan LACMA gala mein, kathit taur par pehle mainstream Indian actor"
-   ]
-  },
-  "created_at": "2026-11-08T13:34:09+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-08",
-  "image": "posts/20261108-1233-reel_news_aft-2026-11-08.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261108-123326-reel_news_aft-2026-11-08.mp4",
-  "headline": "Kareena Kapoor has a beautiful family moment with Randhir Kapoor and Babita Kapoor on Diwali; sister Karisma joins in too",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Kareena Kapoor Karisma Kapoor Randhir Kapoor Babita Kapoor Diwali 2026 💛\nKareena ne Diwali par papa Randhir aur mummy Babita ke saath pyari tasveerein share kin.\nBehen Karisma bhi family moment mein saath dikhin.\nTum kaunse ho: Kareena ya Karisma? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#kareenakapoor #karismakapoor #diwali2026 #bollywoodnews #reelsindia\n\n(Kareena Kapoor, Karisma Kapoor, Randhir Kapoor, Babita Kapoor, Kapoor family Diwali, Kareena Kapoor Diwali 2026, Diwali celebration Bollywood, Kapoor sisters)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
-  "pin_comment": "Apni Kapoor family fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "pyaar bhara family moment"
-   },
-   {
-    "title": "Humnava Mere",
-    "artist": "Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "apno ke saath sukoon"
-   },
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Diwali shubh vibe"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "meetha festive mood"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left runs into the '@khabarbawaal' handle, so the two texts overlap or touch."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-08T12:33:26+00:00"
  }
 ]
