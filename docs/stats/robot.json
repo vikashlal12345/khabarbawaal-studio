@@ -12495,6 +12495,53 @@
      "tokens": 12301
     }
    }
+  },
+  "reel_news_pm": {
+   "posts": 0,
+   "requests": 12,
+   "input": 40,
+   "output": 8988,
+   "cache_read": 30718,
+   "cache_write": 193280,
+   "value_usd": 0.866,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 1,
+     "tokens": 51362
+    },
+    "photo check": {
+     "requests": 3,
+     "tokens": 26040
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 34591
+    },
+    "people photos": {
+     "requests": 1,
+     "tokens": 8239
+    },
+    "people crops": {
+     "requests": 1,
+     "tokens": 4677
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5276
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 38776
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 35338
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 28727
+    }
+   }
   }
  }
 }
