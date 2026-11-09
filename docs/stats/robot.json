@@ -12370,6 +12370,45 @@
      "tokens": 26963
     }
    }
+  },
+  "reel_break_am": {
+   "posts": 0,
+   "requests": 9,
+   "input": 28,
+   "output": 7534,
+   "cache_read": 21507,
+   "cache_write": 182894,
+   "value_usd": 0.809,
+   "by_purpose": {
+    "breaking pick": {
+     "requests": 1,
+     "tokens": 51818
+    },
+    "photo check": {
+     "requests": 3,
+     "tokens": 28054
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5385
+    },
+    "breaking card write": {
+     "requests": 1,
+     "tokens": 39400
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 38675
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 35290
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 13341
+    }
+   }
   }
  }
 }
