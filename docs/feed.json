@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_pm-2026-11-09",
+  "image": "posts/20261109-1036-reel_news_pm-2026-11-09.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261109-103644-reel_news_pm-2026-11-09.mp4",
+  "headline": "Bhumi Pednekar raises alarm over ‘hazardous’ AQI in Mumbai post Diwali, says people were bursting crackers even at 3 AM",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Bhumi Pednekar Mumbai AQI Diwali crackers 3 AM 😷\nBhumi Pednekar ne Diwali ke baad Mumbai ke hazardous AQI par chinta jatayi.\nUnke mutabiq log raat 3 baje tak patakhe phod rahe the.\nNavy Nagar mein AQI raat 2 baje 497 tak pahunch gaya, Chembur aur Shivaji Nagar mein bhi 400 ke aas-paas ya paar gaya.\nBhumi sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bhumipednekar #mumbai #aqi #diwali #reelsindia\n\n(Bhumi Pednekar, Mumbai AQI, Diwali pollution, Navy Nagar AQI 497, Mumbai air quality, post Diwali crackers, Bhumi Pednekar Instagram)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
+  "pin_comment": "Ye Mumbai wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "toxic hawa = toxic title"
+   },
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "saaf hawa ke liye baarish"
+   },
+   {
+    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "baarish ki dua"
+   },
+   {
+    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "dard bhara serious mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: 497 was the peak at 2 am, not the constant level; article says Chembur 401 and Shivaji Nagar 444 at peaks."
+   ],
+   "fixed": [
+    "Navy Nagar mein AQI 497 raha, kai ilaake 400 paar. → Navy Nagar mein AQI raat 2 baje 497 tak pahunch gaya, Chembur aur Shivaji Nagar mein bhi 400 ke aas-paas ya paar gaya."
+   ]
+  },
+  "created_at": "2026-11-09T10:36:44+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-09",
   "image": "posts/20261109-0833-reel_break_noon-2026-11-09.jpg",
   "kind": "reel",
@@ -384,99 +433,5 @@
    "fixed": []
   },
   "created_at": "2026-11-08T12:33:26+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-08",
-  "image": "posts/20261108-1034-reel_news_pm-2026-11-08.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261108-103410-reel_news_pm-2026-11-08.mp4",
-  "headline": "Proud father Sonu Nigam gets emotional as son Nevaan begins musical journey at 19, reveals he practices vocals for 16 hours a day",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sonu Nigam son Nevaan musical journey 🎤\nSonu Nigam ka beta Nevaan 19 saal ki umar mein music ka safar shuru kar chuka hai.\nSonu ne bataya ki Nevaan roz 16 ghante vocals ki practice karta hai.\nEk waqt tha jab Nevaan apne pita ke saamne gaane se jhijhakta tha.\nPita-beta ki jodi sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sonunigam #nevaannigam #bollywood #bollywoodnews #reelsindia\n\n(Sonu Nigam, Nevaan Nigam, Sonu Nigam son, Nevaan singing debut, Sonu Nigam emotional, Sonu Nigam Nevaan 16 hours riyaz, Bollywood father son, Sonu Nigam interview)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
-  "pin_comment": "Ye Sonu Nigam ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Pardesiya (From \"Param Sundari\")",
-    "artist": "Sonu Nigam, Krishnakali Saha",
-    "lang": "hindi",
-    "mood": "Sonu Nigam's own voice, proud dad"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "warm emotional bond"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "soulful, blessing feel"
-   },
-   {
-    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Pritam, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "emotional, heartfelt"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The photo credit 'Photo: thedailyjagran.com' at the bottom left runs right up against the '@khabarbawaal' handle, so the two nearly overlap."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-08T10:34:10+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-08",
-  "image": "posts/20261108-0835-reel_break_noon-2026-11-08.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261108-083507-reel_break_noon-2026-11-08.mp4",
-  "headline": "Sargun Mehta says she is biggest fan of husband Ravie Dubey after watching him as Lakshman in Ramayana, calls it a personal win",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Sargun Mehta Ravie Dubey Ramayana Lakshman 🙏\nRamayana mein Ravie Dubey Lakshman bane hain.\nSargun ne Instagram par likha: \"your win feels like a personal win for everyone\".\nUnhone Ravie ko apna PROUDEST aur BIGGEST FAN bataya.\nComment mein likho: tumhara biggest fan kaun hai? 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #SargunMehta #RavieDubey #Ramayana #Bollywood\n\n(Sargun Mehta, Ravie Dubey, Ramayana Lakshman, Ramayana Part 1, Sargun Mehta Instagram post, Ravie Dubey Lakshman, Ranbir Kapoor Ramayana, Sargun Ravie love story)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Samjhawan",
-    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "pati ke liye pyaar bhara garv"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "couple ki pyaari kahaani"
-   },
-   {
-    "title": "Main Ram (From \"Ramayana\")",
-    "artist": "Prateek Walia, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana ka Lakshman moment"
-   },
-   {
-    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "happy couple vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The 'Photo: Wikimedia Commons' credit at bottom left overlaps the @khabarbawaal handle, so the text collides and is hard to read."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-08T08:35:07+00:00"
  }
 ]
