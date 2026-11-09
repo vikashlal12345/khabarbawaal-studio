@@ -483,7 +483,7 @@
   "reel_news_aft": "2026-11-08",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-08",
+  "reel_news_early": "2026-11-09",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-08",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "rSfLiGsnjt9R",
+ "inbox_since": "FckcHJ26bG0m",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1011,7 +1011,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
   "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
-  "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1294,7 +1295,10 @@
   "Lagan Tumse Laga Baithe",
   "Hare Krishna Hare (From \"Hare Krishna Hare\")",
   "Radhe Braj Jan Man Sukhkari",
-  "Mera Aap Ki Kripa Se"
+  "Mera Aap Ki Kripa Se",
+  "Shararat",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "O Mysaa Re (From \"Mysaa\") [Hindi]"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1505,6 +1509,10 @@
   {
    "title": "Daler Mehndi thanks fans for their support during Uttarakhand event controversy, says brother Mika Singh showed up like a force to reckon with",
    "date": "2026-11-08"
+  },
+  {
+   "title": "Kareena Kapoor says she is ‘very against botox’ and vouches for self preservation rather than going going under the knife",
+   "date": "2026-11-09"
   }
  ],
  "claude_limit": {

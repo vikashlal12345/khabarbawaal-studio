@@ -1254,5 +1254,21 @@
   "secs": 17.0,
   "at": "2026-11-09T00:33:51+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-09",
+  "key": "kareenakapoorbotoxstatement",
+  "kind": "reel_news_early",
+  "secs": 14.0,
+  "at": "2026-11-09T02:35:06+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 6,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 29,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
