@@ -291,7 +291,8 @@
   "63a0ea542f95",
   "206bd70dc41e",
   "34ca06dfd427",
-  "88461f977137"
+  "88461f977137",
+  "da250f012c08"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -442,11 +443,11 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-07",
-  "reel_break_aft": "2026-11-07",
+  "reel_break_aft": "2026-11-10",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "RZofQQEYCUKv",
+ "inbox_since": "m4ghzikXx4Wl",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -819,7 +820,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
   "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
   "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
@@ -898,7 +898,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/",
   "https://www.hindustantimes.com/entertainment/bollywood/prakash-raj-s-wife-pony-varma-says-actor-lost-films-and-ad-deals-over-his-political-views-101793452104226.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/yash-gets-goofy-with-his-kids-while-dressed-up-as-ravana-thanks-fans-for-the-love-for-ramayana-101794305819699.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/yash-gets-goofy-with-his-kids-while-dressed-up-as-ravana-thanks-fans-for-the-love-for-ramayana-101794305819699.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/anupam-kher-says-he-felt-proud-as-an-indian-when-audience-got-teary-eyed-at-ramayana-sweden-premiere-thanked-him-for-jatayu-101794312448543.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1115,10 +1116,6 @@
   }
  ],
  "songs_recent": [
-  "End of Beginning",
-  "Beauty And A Beat",
-  "Headlights (feat. KIDDO)",
-  "Alfaaz",
   "Shararat",
   "Nicole Kidman",
   "Vishnu Sahasranamam",
@@ -1154,7 +1151,11 @@
   "Mangal Rang (From \"Ramayana\")",
   "Peek A Boo",
   "Main Ram (From \"Ramayana\")",
-  "Judi Jodi (From \"Ramayana\")"
+  "Judi Jodi (From \"Ramayana\")",
+  "Ram Aayenge",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "Tu Mil Jaaye (From \"KING\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1264,6 +1265,10 @@
   },
   {
    "title": "Yash gets goofy with his kids while dressed up as Ravana; thanks fans for the love for Ramayana",
+   "date": "2026-11-10"
+  },
+  {
+   "title": "Anupam Kher says he felt proud as an Indian when audience got teary-eyed at Ramayana Sweden premiere, thanked him for voicing Jatayu",
    "date": "2026-11-10"
   }
  ],

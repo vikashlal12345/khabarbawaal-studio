@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_aft-2026-11-10",
+  "image": "posts/20261110-1335-reel_break_aft-2026-11-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261110-133511-reel_break_aft-2026-11-10.mp4",
+  "headline": "Anupam Kher says he felt proud as an Indian when audience got teary-eyed at Ramayana Sweden premiere, thanked him for voicing Jatayu",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Anupam Kher Ramayana Sweden premiere Stockholm Jatayu\nSweden premiere ke baad logon ne aansu bhari aankhon se Anupam ka haath milaya aur Jatayu ke liye shukriya kaha.\nAnupam ne X aur Instagram par likha: \"Proud to be Indian. Jai Shri Ram!\"\nFilm 5 November ko release hui, Part 2 Diwali 2028 mein aayega.\nTum kaunse ho: Team Ranbir ya Team Yash? Comment mein 1 ya 2 likho 🙏🎬\n\n#reelsindia #AnupamKher #Ramayana #RanbirKapoor #Bollywood\n\nTeam Ranbir ya Team Yash? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n\n\n(Anupam Kher, Ramayana Part 1, Ramayana Sweden premiere, Anupam Kher Jatayu, Stockholm premiere, Ranbir Kapoor Ramayana, Sai Pallavi Sita, Yash Ravana, Nitesh Tiwari Ramayana)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/anupam-kher-says-he-felt-proud-as-an-indian-when-audience-got-teary-eyed-at-ramayana-sweden-premiere-thanked-him-for-jatayu-101794312448543.html",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Aayenge",
+    "artist": "Payal Dev, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "Ram bhakti, garv ka pal"
+   },
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "bhavuk, dil chhoone wala"
+   },
+   {
+    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
+    "artist": "A.R. Rahman",
+    "lang": "new",
+    "mood": "Ramayana film ka devotional vibe"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "emotional, aankhein nam"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-10T13:35:11+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-10",
   "image": "posts/20261110-1234-reel_news_aft-2026-11-10.jpg",
   "kind": "reel",
@@ -381,50 +426,5 @@
    ]
   },
   "created_at": "2026-11-09T14:33:44+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-09",
-  "image": "posts/20261109-1335-reel_break_aft-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-133510-reel_break_aft-2026-11-09.mp4",
-  "headline": "‘Any time, any place’: Rahul challenges PM Modi to debate anti-national charge",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Rahul Gandhi PM Modi debate challenge, dimagi Naxals, Bastar\n\nRahul Gandhi ne X par PM Modi ko debate ka challenge diya: kaun anti-national hai, \"any time, any place\".\nYe post PM Modi ke Bastar mein 'dimagi Naxals' wale bayan ke ek din baad aaya.\nRahul ne ANI ka video quote karke CRPF ko tag kiya.\n\nRahul ka challenge sahi ya drama? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #RahulGandhi #NarendraModi #Congress #BJP\n\n(Rahul Gandhi, PM Modi, Rahul Gandhi debate challenge, dimagi Naxals, Bastar CRPF CoBRA, Pawan Khera, Jairam Ramesh, Congress vs BJP)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
-  "pin_comment": "Apne politics wale dost ko ye debate wali khabar bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "intense face-off vibe"
-   },
-   {
-    "title": "Peek A Boo",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "dhamaakedaar swag"
-   },
-   {
-    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Himesh Reshammiya, Sameer Anjaan",
-    "lang": "new",
-    "mood": "desh aur rashtra ka mudda"
-   },
-   {
-    "title": "Main Ram (From \"Ramayana\")",
-    "artist": "Prateek Walia, Kumar Vishwas",
-    "lang": "new",
-    "mood": "serious powerful tone"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-09T13:35:10+00:00"
  }
 ]
