@@ -24,6 +24,7 @@ import os
 import re
 import shutil
 import subprocess
+import time
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
@@ -2245,6 +2246,28 @@ def drop_routine(stories: list, keep: int = 6) -> list:
     return rest if len(rest) >= keep else stories
 
 
+FRESH_HOURS = 4   # owner 10 Nov 2026 ('we post late compared with other pages'): news / breaking pickers see stories of the last 4 h when 6+ exist (was 8 h)
+
+
+def story_age(s: dict) -> float | None:
+    """Hours since the story was published (feed time), None when unknown (HOT / pinned items)."""
+    return round((time.time() - s["ts"]) / 3600, 1) if s.get("ts") else None
+
+
+def fresh_only(stories: list, hours: float = FRESH_HOURS, keep: int = 6) -> list:
+    """Stories newer than `hours` (items with no time, e.g. HOT ones, stay) when at least `keep` remain, else the list as it was."""
+    new = [x for x in stories if not x.get("ts") or story_age(x) <= hours]
+    return new if len(new) >= keep else stories
+
+
+def age_tag(s: dict) -> str:
+    a = story_age(s)
+    return f"({a:.0f} h ago) " if a is not None and a >= 1 else "(under 1 h ago) " if a is not None else ""
+
+
+FRESH_NOTE = "\n\nEach story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size."
+
+
 def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
     """🔥 The stories that are hot at THIS moment (flash.hot_now: many sites right now, or a new development on our own hit) go first in the picker's
     list, marked HOT, after the same filters as every story (already used, avoided, told in the last 12 h)."""
@@ -2287,6 +2310,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
             if len(only) >= 2:
                 stories = only
+        stories = fresh_only(stories)
         if not REMAKE.get("link"):
             stories = add_hot(stories, raw, state, used)
         intro = ""
@@ -2295,7 +2319,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                         "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
@@ -2304,7 +2328,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                               f"{fun.today_context()}\n\n{intro}What India is talking about on X (Twitter) today "
                               f"(hours trending):\n{trends}\n\nWhat India is searching on Google today:\n{searches}"
                               f"\n\nStories:\n{listing}{viral_memory()}{recent_news(state, today)[1]}"
-                              f"\n\nGive your top 3 picks, the most viral first."
+                              f"{FRESH_NOTE}\n\nGive your top 3 picks, the most viral first."
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
@@ -2332,6 +2356,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
         raise RuntimeError("no story had 2+ good photos")
+    TAGS["age_h"] = story_age(story)   # how old the story was when we made the Reel (owner 10 Nov 2026)
     cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, article_txt,
                                           f"{story['title']}. {story.get('summary', '')}")
     state["reel_news_used"] = (used + [story["link"]])[-80:]
@@ -2495,6 +2520,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
         if len(only) >= 2:
             stories = only
+    stories = fresh_only(stories)
     if not REMAKE.get("link"):
         stories = add_hot(stories, raw, state, used)
     if REMAKE.get("link"):   # 🔄 remake: the same story again
@@ -2502,13 +2528,13 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                     "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs(state)
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA + FACE_RULE,
                               f"{fun.today_context()}\n\nTrending on X today (hours):\n{trends}\n\nStories:\n{listing}"
-                              f"{viral_memory()}{recent_news(state, today)[1]}\n\nGive your top 3 picks, the most "
+                              f"{viral_memory()}{recent_news(state, today)[1]}{FRESH_NOTE}\n\nGive your top 3 picks, the most "
                               "breaking first." + songs_prompt(songs),
                               options_schema(BREAK_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="breaking pick")["options"]
@@ -2557,6 +2583,7 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     photos.sort(key=lambda x: x[3])   # real photos first, X post screenshots last (stable: keeps the size order)
     real_n = sum(1 for x in photos if not x[3])
     cover_i = pick_cover_photo([x[0] for x in photos[:real_n]], story["title"], tmp)   # 📸 photo contest, real photos only
+    TAGS["age_h"] = story_age(story)
     TAGS.update({"type": "breaking", "cover": cover_kind(photos[cover_i][0], photos[cover_i][1]), "photos": 2, "sharp": round(photo_sharpness(photos[cover_i][0]))})
     other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel
