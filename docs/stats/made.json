@@ -881,5 +881,54 @@
    "at": "2026-11-08T04:34:47+00:00",
    "auto": false
   }
+ },
+ "2026-11-09": {
+  "reel_news_night-2026-11-09": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-09T14:33:44+00:00",
+   "auto": false
+  },
+  "reel_break_aft-2026-11-09": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-09T13:35:10+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-10": {
+  "reel_news_aft-2026-11-10": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-10T12:34:35+00:00",
+   "auto": false
+  },
+  "reel_news_pm-2026-11-10": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-10T10:32:56+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-10": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-10T08:34:35+00:00",
+   "auto": false
+  },
+  "reel_news_am-2026-11-10": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-10T06:34:45+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-10": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-10T04:34:10+00:00",
+   "auto": false
+  },
+  "reel_news_early-2026-11-10": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-10T02:33:45+00:00",
+   "auto": false
+  },
+  "reel_devotion-2026-11-10": {
+   "tag": "🎬 REEL · 🙏 JAI HANUMAN",
+   "at": "2026-11-10T00:34:09+00:00",
+   "auto": false
+  }
  }
 }
