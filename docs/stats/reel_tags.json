@@ -1418,5 +1418,21 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-10",
+  "key": "saipallavisitaswordramayanaindirakrishnan",
+  "kind": "reel_news_am",
+  "secs": 14.0,
+  "at": "2026-11-10T06:34:45+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 45,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]

@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-11-10",
+  "image": "posts/20261110-0634-reel_news_am-2026-11-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261110-063445-reel_news_am-2026-11-10.mp4",
+  "headline": "Ramayana actor Indira Krishnan defends Sai Pallavi’s Sita wielding a sword, admits she ‘didn’t connect’ bit with what she saw in Ramanand Sagar show",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sai Pallavi Sita sword Ramayana Indira Krishnan 🎬\nRamayana ki actor Indira Krishnan ne Sai Pallavi ki Sita ko talwar ke saath dekhne par kaha ki shuru mein unhe connect karna mushkil laga.\nUnhone maana ki purani TV show wali Sita se ye alag lagi.\nPhir bhi unka kehna hai ki Ramayana Sita ko ek strong character dikhati hai.\nSita talwar ke saath: SAHI ya GALAT? Likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #SaiPallavi #Bollywood #RanbirKapoor #reelsindia\n\n(Sai Pallavi Sita, Ramayana Sai Pallavi sword, Indira Krishnan Ramayana, Ramayana Nitesh Tiwari, Ramanand Sagar Sita, Ramayana movie 2026, Ranbir Kapoor Ramayana)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
+  "pin_comment": "Ye Ramayana ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana vibe, divine strong Sita"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh",
+    "lang": "hindi",
+    "mood": "intense, dramatic debate feel"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "fresh hit, soft emotional"
+   },
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "calm, thoughtful opinion"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article only says 'old television show'; Ramanand Sagar is not mentioned"
+   ],
+   "fixed": [
+    "Ramanand Sagar wali Sita se ye alag lagi → purani TV show wali Sita se ye alag lagi"
+   ]
+  },
+  "created_at": "2026-11-10T06:34:45+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-10",
   "image": "posts/20261110-0434-reel_break_am-2026-11-10.jpg",
   "kind": "reel",
@@ -376,97 +425,5 @@
    "fixed": []
   },
   "created_at": "2026-11-09T08:33:56+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-09",
-  "image": "posts/20261109-0633-reel_news_am-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-063314-reel_news_am-2026-11-09.mp4",
-  "headline": "Ramayana worldwide box office collection day 4: Ranbir Kapoor, Yash film storms past ₹500 crore on opening weekend; beats Adipurush's lifetime haul",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana box office collection day 4: Ranbir Kapoor, Yash 🎬\nRanbir Kapoor aur Yash ki Ramayana ne opening weekend mein worldwide ₹500 crore paar kar liye.\nSirf 4 din mein film ne Adipurush ka lifetime collection peeche chhod diya.\nPost-Diwali break se film ko aur boost milne ki ummeed hai.\nRamayana hit hai ya flop? HIT ya FLOP likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #RanbirKapoor #Yash #Bollywood #reelsindia\n\n(Ramayana box office collection day 4, Ranbir Kapoor Ramayana, Yash Ramayana, Ramayana 500 crore, Ramayana vs Adipurush, Ramayana worldwide collection, Ramayana opening weekend, Nitesh Tiwari Ramayana)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html",
-  "pin_comment": "Ye Ranbir Kapoor ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jai Jai Ram",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "hindi",
-    "mood": "Ramayana jashn, victory vibe"
-   },
-   {
-    "title": "Ram Aayenge",
-    "artist": "Payal Dev, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "Ram naam ka hype"
-   },
-   {
-    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
-    "artist": "A.R. Rahman",
-    "lang": "new",
-    "mood": "Ramayana film, devotional power"
-   },
-   {
-    "title": "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Sajid Khan",
-    "lang": "new",
-    "mood": "fresh energy for box office win"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-09T06:33:14+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-09",
-  "image": "posts/20261109-0434-reel_break_am-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-043416-reel_break_am-2026-11-09.mp4",
-  "headline": "Sunita Ahuja is confident about reunion with Govinda amid his dating rumours with Komal Rani Swarnkar, says ‘nobody can ever separate us’",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Sunita Ahuja Govinda reunion, Komal Rani Swarnkar rumours 💔\nPinkvilla se baat mein Sunita boli: 40 saal ki shaadi hai, kyun nahi chalegi.\nUnhone kaha ki koi unhe is janam mein alag nahi kar sakta.\nGovinda ko bachpan ka pyaar bataya aur saath khadi rehne ki baat kahi.\nSunita-Govinda dobara saath? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #Govinda #SunitaAhuja #Bollywood #BollywoodNews\n\n(Sunita Ahuja, Govinda, Govinda Sunita Ahuja reunion, Komal Rani Swarnkar, Sunita Ahuja Pinkvilla, Govinda marriage news, Sunita Ahuja interview, Govinda wife)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
-  "pin_comment": "Apne Govinda fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Hawayein",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "rishte ka bharosa, emotional vibe"
-   },
-   {
-    "title": "Khat",
-    "artist": "Navjot Ahuja",
-    "lang": "hindi",
-    "mood": "purani yaadein, shaadi ki kahani"
-   },
-   {
-    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Vishal Mishra, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "saath rehne ki umeed"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "dard bhara, rishton ka dukh"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The 'Photo: Wikimedia Commons' credit at the bottom left runs into the '@khabarbawaal' handle. They sit close together and slightly overlap."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-09T04:34:16+00:00"
  }
 ]
