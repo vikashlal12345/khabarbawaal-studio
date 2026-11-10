@@ -289,7 +289,8 @@
   "947377c5e2c2",
   "b1b8a309c50b",
   "63a0ea542f95",
-  "206bd70dc41e"
+  "206bd70dc41e",
+  "34ca06dfd427"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -427,7 +428,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-10",
-  "reel_news_pm": "2026-11-09",
+  "reel_news_pm": "2026-11-10",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-10",
@@ -444,7 +445,7 @@
   "reel_news_night": "2026-11-09",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "dkmh60CHlLl9",
+ "inbox_since": "4BX9rAkpQNJC",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -817,7 +818,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html",
   "https://www.hindustantimes.com/entertainment/bollywood/divya-dutta-lauds-gajab-raat-co-star-manoj-bajpayee-for-treating-newcomers-as-equals-says-working-with-him-leaves-one-spoiled-101793445673963.html",
   "https://www.hindustantimes.com/htcity/htcity-showstoppers/manushi-chhillar-not-every-project-has-to-be-the-dream-job-sometimes-it-just-has-to-get-you-closer-to-it-101793474664676.html",
   "https://www.hindustantimes.com/india-news/air-chief-marshal-dixit-takes-charge-of-iaf-amid-modernisation-push-101793475811068.html",
@@ -896,7 +896,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html",
   "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
-  "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/"
+  "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
+  "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1114,10 +1115,6 @@
  ],
  "songs_recent": [
   "Toxic",
-  "Tabaahi (From \"Toxic\")",
-  "Betuka (From \"Nakhrewaalii\")",
-  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-  "Toxic",
   "Barsaat",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
@@ -1152,7 +1149,11 @@
   "Humnava Mere",
   "Tera Hoke Rahoon",
   "Tu Mil Jaaye (From \"KING\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Ram Siya Ram",
+  "Heeriye (feat. Arijit Singh)",
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1254,6 +1255,10 @@
   },
   {
    "title": "Watch Video: ‘Definitely Not In Our Bed…’ Sidharth Malhotra’s Cheeky Remark As Pregnant Kiara Advani Flaunts Baby Bump On Koffee With Karan 9",
+   "date": "2026-11-10"
+  },
+  {
+   "title": "Mahabharat star Nitish Bharadwaj goes from predicting Oscar for Ramayana to criticising it, says film misrepresents India's history",
    "date": "2026-11-10"
   }
  ],

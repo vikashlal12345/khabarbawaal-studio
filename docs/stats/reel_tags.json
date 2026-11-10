@@ -1449,5 +1449,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_pm-2026-11-10",
+  "key": "nitishbharadwajramayanareview",
+  "kind": "reel_news_pm",
+  "secs": 14.0,
+  "at": "2026-11-10T10:32:56+00:00",
+  "type": "news",
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 54,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
