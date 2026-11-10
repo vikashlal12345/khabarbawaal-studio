@@ -784,7 +784,7 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
           "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
           "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
           "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
-          "save = 'Save karo, kaam aayega' (useful or festival stories). DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "save = 'Save karo, kaam aayega' (useful or festival stories). For which_one and team_vote NAME the two sides from THIS story and ask for a NUMBER (owner 10 Nov 2026, comments average 1 a Reel: one number is the easiest thing to type): 'Team Ranbir ya Team Yash? Comment mein 1 ya 2 likho' (max 12 words; the names must be in the story). DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
           "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
@@ -819,6 +819,8 @@ def apply_relate(opt: dict, news: bool) -> None:
     cap = str(opt.get("caption", "")).rstrip().split("\n")
     if cap and len(cap) > 1:
         cap[-1] = line + (" 👇" if rel.get("type") in ("share_friend", "name_person", "which_one", "team_vote") and "👇" not in line else "")
+        if opt.get("topic") == "couple_family" and not re.search(r"(?i)\bsave\b", cap[-1]):   # couple / family stories were all saved (owner 10 Nov 2026): the caption also asks for a save
+            cap[-1] += " Save bhi kar lo 🔖"
         opt["caption"] = "\n".join(cap)
 
 
@@ -2368,7 +2370,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
 
 # ---------------------------------------------------------------- ⚡ Breaking card Reels (9 AM, 12 PM, 3 PM)
 
-BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft", "reel_flash")   # reel_flash = the extra ⚡ FLASH Reel (flash.py), not a daily slot
+BREAK_KINDS = ("reel_break_am", "reel_break_noon", "reel_break_aft", "reel_break_night", "reel_flash")   # reel_flash = the extra ⚡ FLASH Reel (flash.py), not a daily slot
 BREAK_TAGS = ["BREAKING", "UPDATE", "FILM NEWS", "VIRAL", "CRICKET", "POLITICS", "BOLLYWOOD"]
 BREAK_PINK = "#FF3D8B"
 BREAK_OPTION = {"type": "object", "properties": {
@@ -2515,7 +2517,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     status.step("Picking the biggest breaking story", 2)
     raw = g.fetch_candidates(set(state.get("seen", [])))
     stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:45]
-    if kind == "reel_break_aft":   # the 7 PM slot (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
+    if kind in ("reel_break_aft", "reel_break_night"):   # the 7 PM and 8 PM slots (8 PM: owner 10 Nov 2026) (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
         import emergency
         only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
         if len(only) >= 2:
