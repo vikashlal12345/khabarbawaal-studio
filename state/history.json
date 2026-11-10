@@ -287,7 +287,8 @@
   "7ee6f7828f84",
   "21aac1cc5f43",
   "947377c5e2c2",
-  "b1b8a309c50b"
+  "b1b8a309c50b",
+  "63a0ea542f95"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -436,13 +437,13 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-10",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-09",
+  "reel_break_am": "2026-11-10",
   "reel_break_noon": "2026-11-09",
   "reel_break_aft": "2026-11-09",
   "reel_news_night": "2026-11-09",
   "reel_flash": "2026-11-01"
  },
- "inbox_since": "adCtrsy1GN1q",
+ "inbox_since": "Ce5pKnZoDO92",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -815,7 +816,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/sanjay-dutt-pays-tribute-to-late-friend-sanjay-gupta-vows-to-fulfil-his-dream-of-making-kaante-2-suniel-shetty-101793434712653.html",
   "https://www.bollywoodhungama.com/news/bollywood/diljit-dosanjh-addresses-satluj-controversy-at-delhi-concert-says-dont-teach-punjabis-how-to-fight/",
   "https://www.hindustantimes.com/entertainment/bollywood/prakash-raj-s-wife-pony-varma-says-actor-lost-films-and-ad-deals-over-his-political-views-101793452104226.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html",
@@ -894,7 +894,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
   "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1111,10 +1112,6 @@
   }
  ],
  "songs_recent": [
-  "Shararat",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Betuka (From \"Nakhrewaalii\")",
-  "O Mysaa Re (From \"Mysaa\") [Hindi]",
   "Hawayein",
   "Khat",
   "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
@@ -1150,6 +1147,10 @@
   "His Aura Hits You",
   "Gehra Hua",
   "Mangal Rang (From \"Ramayana\")",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Jo Tum Mere Ho",
+  "Teri Meri Kahaani",
+  "Tu Mil Jaaye (From \"KING\")",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
@@ -1240,6 +1241,10 @@
   },
   {
    "title": "Assamese craftsmen who created Ranbir Kapoor, Ravie Dubey's armour never knew it was for Ramayana, worked 3 years on cane-rubber armour",
+   "date": "2026-11-10"
+  },
+  {
+   "title": "Samantha Ruth Prabhu skips elaborate maternity shoot, shares relaxed picture with baby bump",
    "date": "2026-11-10"
   }
  ],
