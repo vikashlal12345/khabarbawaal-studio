@@ -193,6 +193,58 @@ def next_slot(state: dict, now_ist: datetime, lead_min: int = 30, max_wait_h: fl
     return min(peak)[1] if peak else min(options)[1]
 
 
+# 🗳️ Big politics door (owner 10 Nov 2026): politics is blocked in the news / breaking pickers (reel.drop_routine), except ONE huge, safe story a day.
+OPPOSITION = re.compile(r"(?i)\b(rahul gandhi|priyanka gandhi|sonia gandhi|congress|kharge|kejriwal|aap|mamata|tmc|trinamool|akhilesh|tejashwi|owaisi|pawan khera|"
+                        r"jairam ramesh|samajwadi|rjd|left front|cpi|cpm|uddhav|sharad pawar|stalin|dmk|opposition|inc)\b")
+BAD_NEWS = re.compile(r"(?i)\b(arrest|arrested|scam|scandal|fir|probe|raid|raids|backlash|slams|slammed|row|controversy|violence|clash|clashes|killed|attack|"
+                      r"blast|stampede|collapse|riot|protest|resign|resigns|resignation|setback|embarrass|trolled|gaffe)\b")
+STOP = set("the a an of to in on for and with from by at as is are was were be has have had will after over into about says said say new its his her their "
+           "this that than they them you your how why what when who whom not can could would may might more most also just very still".split())
+
+
+def sig_words(t: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z0-9]{4,}", t.lower()) if w not in STOP}
+
+
+def detect_big_politics(state: dict, now_ist: datetime, cands: list[dict], trends: list) -> dict | None:
+    """A politics story that 8+ different news sites run in the last 4 h (5+ when it also matches an X trend) and that is safe for the page:
+    not an opposition-led story, no arrest / scam / violence / controversy words, not religious-conflict, not a death story. At most once a day.
+    The picker may still choose another story (it is only listed first, marked HOT)."""
+    import reel
+    import create_post
+    if state.get("big_politics_day") == now_ist.date().isoformat():
+        return None
+    trend_words = set()
+    for t, _ in trends[:80]:
+        trend_words |= sig_words(t)
+    cutoff = time.time() - 6 * 3600
+    pool = [c for c in cands if c.get("ts", 0) >= cutoff and reel.is_politics(c) and not OPPOSITION.search(c["title"])
+            and not BAD_NEWS.search(c["title"]) and not SENSITIVE.search(c["title"]) and not DEATH.search(c["title"]) and not ROUTINE.search(c["title"])]
+    pool.sort(key=lambda c: -c["ts"])
+    now = datetime.now(timezone.utc)
+    best = None
+    for c in pool[:4]:
+        words = sig_words(c["title"])
+        if len(words) < 3 or reel.covered_before(c["title"], 12):
+            continue
+        sites, arts = {c["source"]}, [c]
+        query = " ".join(sorted(words, key=lambda w: -len(w))[:6])
+        for a in create_post.bing_articles(query, limit=15, newest=True):
+            d = bing_dt(a)
+            if d is None or (now - d).total_seconds() > 4 * 3600:
+                continue
+            tw = sig_words(a["title"])
+            if len(tw & words) >= max(3, int(0.4 * len(words))) and not OPPOSITION.search(a["title"]) and not BAD_NEWS.search(a["title"]):
+                sites.add(a["site"])
+        need = 5 if len(words & trend_words) >= 2 else 8
+        print(f"  big-politics check: {c['title'][:60]}: {len(sites)} sites in 4 h (need {need})")
+        if len(sites) >= need and (not best or len(sites) > best[0]):
+            best = (len(sites), c)
+    if not best:
+        return print("  big politics: nothing huge right now") or None
+    return {"title": best[1]["title"], "link": best[1]["link"], "source": best[1]["source"], "sites": best[0]}
+
+
 def hot_now(state: dict, cands: list[dict]) -> list[dict]:
     """🔥 What is hot RIGHT NOW, computed at creation time by the picker itself (owner, 1 Nov 2026: 'do not pin a story so early; check the story
     at creation time only, so we always have the latest trending one'): a star / series story that 6+ sites run in the last 4 h (the Flash check),
@@ -208,6 +260,14 @@ def hot_now(state: dict, cands: list[dict]) -> list[dict]:
                         "image": "", "ts": time.time(), "hot": f"{fl['name']}: many sites right now"})
     except Exception as e:
         print(f"  ! hot check failed: {type(e).__name__}: {str(e)[:100]}")
+    try:
+        bp = detect_big_politics(state, now_ist, cands, fun.x_trends() or [])
+        if bp:
+            state["big_politics_day"] = now_ist.date().isoformat()
+            out.append({"id": "", "source": bp["source"], "category": "politics", "title": bp["title"], "summary": "", "link": bp["link"],
+                        "image": "", "ts": time.time(), "hot": f"BIG POLITICS: {bp['sites']} sites run it right now"})
+    except Exception as e:
+        print(f"  ! big politics check failed: {type(e).__name__}: {str(e)[:100]}")
     try:
         win = detect_winner(state, now_ist)
         if win:
