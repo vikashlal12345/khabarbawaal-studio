@@ -1434,5 +1434,20 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_noon-2026-11-10",
+  "key": "sidharthmalhotrakiaraadvanikoffeewithkaran9promo",
+  "kind": "reel_break_noon",
+  "secs": 13.0,
+  "at": "2026-11-10T08:34:35+00:00",
+  "type": "breaking",
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 31,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "team_vote",
+  "hook": "name_first"
  }
 ]

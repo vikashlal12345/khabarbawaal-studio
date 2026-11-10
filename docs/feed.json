@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_noon-2026-11-10",
+  "image": "posts/20261110-0834-reel_break_noon-2026-11-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261110-083435-reel_break_noon-2026-11-10.mp4",
+  "headline": "Watch Video: ‘Definitely Not In Our Bed…’ Sidharth Malhotra’s Cheeky Remark As Pregnant Kiara Advani Flaunts Baby Bump On Koffee With Karan 9",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Sidharth Malhotra Kiara Advani Koffee With Karan 9 promo\nPehla joint TV appearance, Kiara ne baby bump dikhaya red dress mein\nSidharth bole: kaam ghar nahi laate, bedroom mein bilkul nahi\nEpisode 5, Wednesday 7 pm, JioHotstar par 🎬\nSidharth ka jawab mast tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: NewsX (link pinned in comments 👇)\n\n#reelsindia #KoffeeWithKaran #KiaraAdvani #SidharthMalhotra #Bollywood\n\n(Sidharth Malhotra, Kiara Advani, Koffee With Karan 9, Koffee With Karan promo, Karan Johar, Kiara Advani baby bump, Sidharth Kiara KWK episode 5, JioHotstar)",
+  "source": "NewsX",
+  "source_url": "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
+  "pin_comment": "Apne Kiara-Sidharth fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Humnava Mere",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "romantic couple vibe"
+   },
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "parents-to-be love song"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "sweet romantic moment"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "light, cheeky couple fun"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The @khabarbawaal handle overlaps the 'Photo: Wikimedia: Bollywood Hungama' credit at the bottom, so the credit is hard to read."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-10T08:34:35+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-10",
   "image": "posts/20261110-0634-reel_news_am-2026-11-10.jpg",
   "kind": "reel",
@@ -377,53 +424,5 @@
    ]
   },
   "created_at": "2026-11-09T10:36:44+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-09",
-  "image": "posts/20261109-0833-reel_break_noon-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-083355-reel_break_noon-2026-11-09.mp4",
-  "headline": "Ahaan Panday’s Beparwah co-star, Aaishvary Thackeray, loses Rs. 19,000 to cyber fraud; files police complaint",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Aaishvary Thackeray cyber fraud, Beparwah co-star ne police complaint ki\n\nBalasaheb Thackeray ke pote Aaishvary ke bank account se 30 October ki raat Rs. 19,638.15 kat gaye.\nOshiwara police station mein complaint di, FIR darj hui hai.\nPolice ko pata chala ki transactions videsh mein hue the.\n\nCyber fraud se tum safe ho? SAFE ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #aaishvarythackeray #bollywoodnews #cyberfraud #beparwah\n\n(Aaishvary Thackeray, Aaishvary Thackeray cyber fraud, Beparwah, Ahaan Panday Beparwah, Balasaheb Thackeray grandson, Oshiwara police, Nishaanchi, cyber fraud Mumbai)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ahaan-pandays-beparwah-co-star-aaishvary-thackeray-loses-rs-19000-to-cyber-fraud-files-police-complaint/",
-  "pin_comment": "Apne us dost ko bhejo jo online payments karta hai 👇",
-  "songs": [
-   {
-    "title": "Toxic",
-    "artist": "Vishal Mishra, Hanita Bhambri",
-    "lang": "hindi",
-    "mood": "toxic fraud, dramatic vibe"
-   },
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "tabaahi = loss feeling"
-   },
-   {
-    "title": "Betuka (From \"Nakhrewaalii\")",
-    "artist": "Vayu, Sharan Rawat",
-    "lang": "new",
-    "mood": "careless slip-up mood"
-   },
-   {
-    "title": "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Kumaar",
-    "lang": "new",
-    "mood": "light dramatic tone"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The 'Photo: Bollywood Hungama' credit at bottom left runs into the @khabarbawaal handle, so the two texts nearly overlap.",
-    "Slide 2: The Beparwah poster is cropped at the bottom, so the title 'BEPARWAH' is cut off."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-09T08:33:56+00:00"
  }
 ]
