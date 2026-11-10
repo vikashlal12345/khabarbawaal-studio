@@ -38,7 +38,7 @@ AMBIGUOUS = {"king", "yash", "vijay", "shah", "srk"}        # words that are not
 ALIASES = {"srk": "shah rukh", "shahrukh": "shah rukh", "shah ruk": "shah rukh"}
 PEAK_SLOTS = {"reel_news_am", "reel_news_pm"}   # 12 PM and 4 PM: the best hours (avg 1,808 / 1,829 views since 20 Oct 2026): pins go there first when they fit
 SERIES = ("koffee with karan", "ramayana")       # reliable series: Koffee With Karan 2,715 avg, Ramayana 1,519 avg
-NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_aft", "reel_news_night")
+NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_aft", "reel_break_night")
 
 
 def norm_name(n: str) -> str:
