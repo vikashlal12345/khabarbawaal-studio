@@ -1,161 +1,4 @@
 {
- "2026-10-06": {
-  "market_open": {
-   "posts": 1,
-   "requests": 2,
-   "input": 6,
-   "output": 2389,
-   "cache_read": 4963,
-   "cache_write": 18875,
-   "value_usd": 0.1004,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 8261
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 17972
-    }
-   }
-  },
-  "fun": {
-   "posts": 5,
-   "requests": 15,
-   "input": 46,
-   "output": 8678,
-   "cache_read": 38177,
-   "cache_write": 71775,
-   "value_usd": 0.3816,
-   "by_purpose": {
-    "writing": {
-     "requests": 5,
-     "tokens": 51909
-    },
-    "proofreading": {
-     "requests": 6,
-     "tokens": 43725
-    },
-    "joke judge": {
-     "requests": 4,
-     "tokens": 23042
-    }
-   }
-  },
-  "create": {
-   "posts": 5,
-   "requests": 22,
-   "input": 72,
-   "output": 14900,
-   "cache_read": 83432,
-   "cache_write": 123106,
-   "value_usd": 0.6729,
-   "by_purpose": {
-    "writing": {
-     "requests": 9,
-     "tokens": 71756
-    },
-    "photo check": {
-     "requests": 5,
-     "tokens": 32710
-    },
-    "proofreading": {
-     "requests": 8,
-     "tokens": 117044
-    }
-   }
-  },
-  "market_preopen": {
-   "posts": 1,
-   "requests": 0,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
-   "by_purpose": {}
-  },
-  "thought": {
-   "posts": 1,
-   "requests": 2,
-   "input": 6,
-   "output": 491,
-   "cache_read": 3986,
-   "cache_write": 6391,
-   "value_usd": 0.0313,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 4179
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 6695
-    }
-   }
-  },
-  "news": {
-   "posts": 9,
-   "requests": 36,
-   "input": 128,
-   "output": 43459,
-   "cache_read": 152415,
-   "cache_write": 297774,
-   "value_usd": 1.6565,
-   "by_purpose": {
-    "writing": {
-     "requests": 9,
-     "tokens": 85082
-    },
-    "photo check": {
-     "requests": 9,
-     "tokens": 95307
-    },
-    "proofreading": {
-     "requests": 18,
-     "tokens": 313387
-    }
-   }
-  },
-  "market_close": {
-   "posts": 1,
-   "requests": 2,
-   "input": 6,
-   "output": 1357,
-   "cache_read": 6091,
-   "cache_write": 18091,
-   "value_usd": 0.0872,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 8287
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 17258
-    }
-   }
-  },
-  "top10_day": {
-   "posts": 1,
-   "requests": 3,
-   "input": 10,
-   "output": 4069,
-   "cache_read": 11703,
-   "cache_write": 31389,
-   "value_usd": 0.1686,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 10162
-    },
-    "proofreading": {
-     "requests": 2,
-     "tokens": 37009
-    }
-   }
-  }
- },
  "2026-10-07": {
   "night_ready": {
    "posts": 0,
@@ -12143,6 +11986,18 @@
      "tokens": 12609
     }
    }
+  }
+ },
+ "2026-11-11": {
+  "other": {
+   "posts": 0,
+   "requests": 0,
+   "input": 0,
+   "output": 0,
+   "cache_read": 0,
+   "cache_write": 0,
+   "value_usd": 0.0,
+   "by_purpose": {}
   }
  }
 }
