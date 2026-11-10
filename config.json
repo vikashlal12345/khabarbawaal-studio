@@ -57,6 +57,7 @@
     {
       "name": "Times of India",
       "category": "entertainment",
+      "link_must_contain": "/entertainment/hindi/",
       "url": "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms"
     },
     {

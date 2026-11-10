@@ -2238,8 +2238,8 @@ HARD_PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|mot
 
 
 POLITICS = re.compile(r"(?i)\b(rahul gandhi|priyanka gandhi|modi|amit shah|bjp|congress|aap|kejriwal|tmc|mamata|lok sabha|rajya sabha|parliament|"
-                      r"opposition|naxal|election|assembly polls|chief minister|cm yogi|yogi adityanath|nitish|tejashwi|akhilesh|owaisi|"
-                      r"sharad pawar|uddhav|shiv sena|minister|mla|mp |samajwadi|rjd|cpi|politic)")
+                      r"opposition|naxals?|elections?|assembly polls|chief ministers?|cm yogi|yogi adityanath|nitish|tejashwi|akhilesh|owaisi|"
+                      r"sharad pawar|uddhav|shiv sena|ministers?|mlas?|mps?|samajwadi|rjd|cpi|politic\w*)\b")
 
 
 def is_politics(s: dict) -> bool:
@@ -2373,6 +2373,8 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     else:
         raise RuntimeError("no story had 2+ good photos")
     TAGS["age_h"] = story_age(story)   # how old the story was when we made the Reel (owner 10 Nov 2026)
+    if str(story.get("hot", "")).startswith("BIG POLITICS"):
+        state["big_politics_day"] = __import__("schedule").ist_now().date().isoformat()   # one big politics Reel a day: counted only when it was really made
     cover, out, entry = finish_with_quote({**item, "summary": story.get("summary", "")}, opt, photos, songs, tmp, article_txt,
                                           f"{story['title']}. {story.get('summary', '')}")
     state["reel_news_used"] = (used + [story["link"]])[-80:]
@@ -2600,6 +2602,8 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     real_n = sum(1 for x in photos if not x[3])
     cover_i = pick_cover_photo([x[0] for x in photos[:real_n]], story["title"], tmp)   # 📸 photo contest, real photos only
     TAGS["age_h"] = story_age(story)
+    if str(story.get("hot", "")).startswith("BIG POLITICS"):
+        state["big_politics_day"] = __import__("schedule").ist_now().date().isoformat()
     TAGS.update({"type": "breaking", "cover": cover_kind(photos[cover_i][0], photos[cover_i][1]), "photos": 2, "sharp": round(photo_sharpness(photos[cover_i][0]))})
     other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel

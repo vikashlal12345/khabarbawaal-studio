@@ -263,7 +263,6 @@ def hot_now(state: dict, cands: list[dict]) -> list[dict]:
     try:
         bp = detect_big_politics(state, now_ist, cands, fun.x_trends() or [])
         if bp:
-            state["big_politics_day"] = now_ist.date().isoformat()
             out.append({"id": "", "source": bp["source"], "category": "politics", "title": bp["title"], "summary": "", "link": bp["link"],
                         "image": "", "ts": time.time(), "hot": f"BIG POLITICS: {bp['sites']} sites run it right now"})
     except Exception as e:

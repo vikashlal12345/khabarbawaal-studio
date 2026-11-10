@@ -90,6 +90,8 @@ def fetch_candidates(seen: set[str]) -> list[dict]:
             if not link or not title:
                 continue
             link = clean_link(link)
+            if feed.get("link_must_contain") and feed["link_must_contain"] not in link:
+                continue   # e.g. Times of India: Hindi film news only, not Tamil / Telugu stories (owner 10 Nov 2026)
             item_id = hashlib.sha1(link.encode()).hexdigest()[:12]
             if item_id in taken:
                 continue
