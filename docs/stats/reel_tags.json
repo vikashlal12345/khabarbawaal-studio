@@ -1387,5 +1387,21 @@
   "secs": 16.4,
   "at": "2026-11-10T00:34:09+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-10",
+  "key": "ranbirkapoorraviedubeyramayanaarmourassamartisans",
+  "kind": "reel_news_early",
+  "secs": 14.0,
+  "at": "2026-11-10T02:33:45+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 8,
+  "relate": "team_vote",
+  "cover": "window",
+  "sharp": 60,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
