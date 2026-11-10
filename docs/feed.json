@@ -1,5 +1,53 @@
 [
  {
+  "id": "reel_devotion-2026-11-10",
+  "image": "posts/20261110-0034-reel_devotion-2026-11-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261110-003409-reel_devotion-2026-11-10.mp4",
+  "headline": "Tuesday: Hanuman ji: Mangalvaar ko Hanuman ji ki kripa paayein",
+  "tag": "🎬 REEL · 🙏 JAI HANUMAN",
+  "caption": "Mangalvaar ko Hanuman ji ki kripa paayein 🙏\nShakti ke saath vinamrata, yahi unki seekh.\nAaj thoda sa vinamra ban kar dekho.\nJai Hanuman likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#hanuman #mangalvaar #jaishreeram #bajrangbali #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Kisi apne ko bhejo jise aaj himmat chahiye 🙏",
+  "songs": [
+   {
+    "title": "Shree Hanuman Chalisa",
+    "artist": "Hariharan, Lalit Sen",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa",
+    "artist": "Anup Jalota",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa (From \"Hanuman Chalisa - Zee Music Devotional\")",
+    "artist": "Anup Jalota, Sanjeev-Ajay",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Sankatmochan Hanuman Ashtak (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
+    "artist": "Hariharan",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 3: The top of Hanuman ji's crown touches the 'JAI HANUMAN' header text. The text is still readable and the face is not covered.",
+    "Slide 4: The top of Hanuman ji's crown touches the 'JAI HANUMAN' header text. The text is still readable and the face is not covered."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-10T00:34:09+00:00"
+ },
+ {
   "id": "reel_news_night-2026-11-09",
   "image": "posts/20261109-1433-reel_news_night-2026-11-09.jpg",
   "kind": "reel",
@@ -377,106 +425,5 @@
    ]
   },
   "created_at": "2026-11-09T02:35:06+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-09",
-  "image": "posts/20261109-0033-reel_devotion-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-003351-reel_devotion-2026-11-09.mp4",
-  "headline": "Govardhan Puja: Govardhan Puja: Krishna ne kya sikhaya",
-  "tag": "🎬 REEL · 🙏 GOVARDHAN PUJA",
-  "caption": "Govardhan Puja par Shri Krishna ko pranam 🙏\nChoti ungli par parvat uthane wale Kanha, sabke rakhwale.\nAaj Annakut ka bhog lagao, Krishna ka naam lo.\nComment mein Jai Shri Krishna likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#govardhanpuja #shrikrishna #jaishrikrishna #annakut #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Apne parivar ko bhejo, Govardhan Puja ki shubhkamnayein 🙏",
-  "songs": [
-   {
-    "title": "Lagan Tumse Laga Baithe",
-    "artist": "Kavita Raam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Hare Krishna Hare (From \"Hare Krishna Hare\")",
-    "artist": "Palak Muchhal, Poonam Thakkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Radhe Braj Jan Man Sukhkari",
-    "artist": "Devi Neha Saraswat",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Mera Aap Ki Kripa Se",
-    "artist": "Navin Tripathi",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 2: In the header 'GOVARDHAN PUJA' there is a stray dot or mark above the 'R'. It looks like a rendering glitch. The 'd' in 'Govardhan' in the body text also looks slightly odd.",
-    "Slide 3: The header 'GOVARDHAN PUJA' overlaps Krishna's crown and the moon, so it is a bit harder to read. It does not cover his face. Slide 4 has the same overlap."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-09T00:33:51+00:00"
- },
- {
-  "id": "reel_news_night-2026-11-08",
-  "image": "posts/20261108-1436-reel_news_night-2026-11-08.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261108-143638-reel_news_night-2026-11-08.mp4",
-  "headline": "Daler Mehndi thanks fans for their support during Uttarakhand event controversy, says brother Mika Singh showed up like a force to reckon with",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Daler Mehndi Mika Singh Uttarakhand Kunjapuri mela controversy 💛\nDaler Mehndi ne fans ka shukriya kaha, jo is controversy ke dauran unke saath rahe.\nUnhone kaha ki bhai Mika Singh \"force to reckon with\" ki tarah saath aaye.\nControversy Uttarakhand ke mantri Subodh Uniyal aur Daler ke beech Kunjapuri mela mein hui public confrontation par hai.\nComment mein likho: tumhari life ka Mika kaun? 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#dalermehndi #mikasingh #bollywoodnews #trending #reelsindia\n\n(Daler Mehndi, Mika Singh, Daler Mehndi Mika Singh, Daler Mehndi controversy, Uttarakhand Kunjapuri mela, Subodh Uniyal, Daler Mehndi thanks fans, Bollywood news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
-  "pin_comment": "Apne bhai ya behen ko ye Reel bhejo 👇",
-  "songs": [
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "chart #1, bhai-bhai vibe"
-   },
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "hype, standing tall"
-   },
-   {
-    "title": "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "Navratri event connection"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "warm, emotional bond"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't mention Navratri; event was the Maa Kunjapuri Tourism and Development Fair",
-    "Fact corrected to match the article: Article says the Kunjapuri fair in New Tehri, not a Navratri event",
-    "Fact corrected to match the article: The article says the event was the Siddhpeeth Maa Kunjapuri Tourism and Development Fair. It never mentions Navratri."
-   ],
-   "fixed": [
-    "Daler Mehndi Mika Singh Uttarakhand Navratri event controversy → Daler Mehndi Mika Singh Uttarakhand Kunjapuri mela controversy",
-    "Navratri event mein hui public confrontation → Kunjapuri mela mein hui public confrontation",
-    "Uttarakhand Navratri event → Uttarakhand Kunjapuri mela"
-   ]
-  },
-  "created_at": "2026-11-08T14:36:38+00:00"
  }
 ]
