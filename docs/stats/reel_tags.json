@@ -1184,5 +1184,21 @@
   "kw": 9,
   "relate": "which_one",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_break_night-2026-11-10",
+  "key": "karanjoharrashmikamandannavijaydeverakondakwk9trolling",
+  "kind": "reel_break_night",
+  "secs": 16.0,
+  "at": "2026-11-10T14:35:31+00:00",
+  "type": "breaking",
+  "age_h": 0.8,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 32,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "which_one",
+  "hook": "question"
  }
 ]
