@@ -2237,6 +2237,18 @@ def bollywood_first(stories: list) -> list:
 HARD_PROMO = re.compile(r"(?i)\b(trailer|teaser|poster|first look|first-look|motion poster|release date|song launch|promo|out now)\b")
 
 
+POLITICS = re.compile(r"(?i)\b(rahul gandhi|priyanka gandhi|modi|amit shah|bjp|congress|aap|kejriwal|tmc|mamata|lok sabha|rajya sabha|parliament|"
+                      r"opposition|naxal|election|assembly polls|chief minister|cm yogi|yogi adityanath|nitish|tejashwi|akhilesh|owaisi|"
+                      r"sharad pawar|uddhav|shiv sena|minister|mla|mp |samajwadi|rjd|cpi|politic)")
+
+
+def is_politics(s: dict) -> bool:
+    """A politics story (feed category or leader / party words), except Hindu-pride / culture stories (PRIDE) the pickers want."""
+    if PRIDE.search(s["title"]):
+        return False
+    return "politics" in str(s.get("category", "")) or bool(POLITICS.search(s["title"]))
+
+
 def drop_routine(stories: list, keep: int = 6) -> list:
     """Owner 4 Nov 2026 (half the Reels stalled): birthday / anniversary / greeting stories leave the picker's list whenever at least `keep` other
     stories remain; so do trailer / teaser / poster / first-look / release-date / song-launch adverts (owner 4 Nov 2026: the 12 PM 'Ramayana Part 2
@@ -2245,6 +2257,8 @@ def drop_routine(stories: list, keep: int = 6) -> list:
     rest = [x for x in stories if not flash.ROUTINE.search(x["title"])]
     stories = rest if len(rest) >= keep else stories
     rest = [x for x in stories if not HARD_PROMO.search(x["title"])]
+    stories = rest if len(rest) >= keep else stories
+    rest = [x for x in stories if not is_politics(x)]   # owner 10 Nov 2026: a Rahul-Modi debate card got 288 views at 7 PM (politics Reels avg 385 over 25 days, 85% stalled)
     return rest if len(rest) >= keep else stories
 
 
