@@ -1379,5 +1379,13 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_devotion-2026-11-10",
+  "key": "mangalvaarkohanumanjikikripapaayein",
+  "kind": "reel_devotion",
+  "secs": 16.4,
+  "at": "2026-11-10T00:34:09+00:00",
+  "type": "devotional"
  }
 ]
