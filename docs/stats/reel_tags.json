@@ -1168,5 +1168,21 @@
   "hook": "question",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_aft-2026-11-10",
+  "key": "anupamkherramayanaswedenpremierestockholmjatayu",
+  "kind": "reel_break_aft",
+  "secs": 16.0,
+  "at": "2026-11-10T13:35:11+00:00",
+  "type": "breaking",
+  "age_h": 0.8,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 38,
+  "topic": "couple_family",
+  "kw": 9,
+  "relate": "which_one",
+  "hook": "name_first"
  }
 ]
