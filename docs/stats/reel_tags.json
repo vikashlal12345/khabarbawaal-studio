@@ -1152,5 +1152,21 @@
   "kw": 8,
   "relate": "team_vote",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_aft-2026-11-10",
+  "key": "yashramayanaravanakidsphoto",
+  "kind": "reel_news_aft",
+  "secs": 17.2,
+  "at": "2026-11-10T12:34:35+00:00",
+  "type": "news",
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 44,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]

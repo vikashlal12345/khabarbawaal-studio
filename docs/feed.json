@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_aft-2026-11-10",
+  "image": "posts/20261110-1234-reel_news_aft-2026-11-10.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261110-123435-reel_news_aft-2026-11-10.mp4",
+  "headline": "Yash gets goofy with his kids while dressed up as Ravana; thanks fans for the love for Ramayana",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Yash Ramayana Ravana kids photo 🎬\nYash ne Ravana ke look mein apne bacchon ke saath masti ki.\nNitesh Tiwari ki Ramayana mein Yash ne Ravana banke co-produce bhi kiya, Ranbir Kapoor aur Sai Pallavi unke co-stars hain.\nFans ke pyaar ke liye Yash ne shukriya bhi kaha.\nTum kaunse ho: Ram ya Ravan? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#yash #ramayana #bollywood #viral #reelsindia\n\n(Yash Ramayana, Yash Ravana kids, Yash Nitesh Tiwari Ramayana, Ranbir Kapoor Sai Pallavi Ramayana, Ramayana Yash thanks fans, Ramayana news, Yash goofy photo, Ramayana Ravana look)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/yash-gets-goofy-with-his-kids-while-dressed-up-as-ravana-thanks-fans-for-the-love-for-ramayana-101794305819699.html",
+  "pin_comment": "Ye Yash ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "hindi",
+    "mood": "Ramayana vibe, fresh and festive"
+   },
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "goofy, playful dad moment"
+   },
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana fan love"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "fun Ramayana energy"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article describes posted pictures, not a video",
+    "Fact corrected to match the article: Article describes a picture, not a video"
+   ],
+   "fixed": [
+    "Yash Ramayana Ravana kids video → Yash Ramayana Ravana kids photo",
+    "Yash goofy video → Yash goofy photo"
+   ]
+  },
+  "created_at": "2026-11-10T12:34:35+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-10",
   "image": "posts/20261110-1032-reel_news_pm-2026-11-10.jpg",
   "kind": "reel",
@@ -375,50 +426,5 @@
    "fixed": []
   },
   "created_at": "2026-11-09T13:35:10+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-09",
-  "image": "posts/20261109-1233-reel_news_aft-2026-11-09.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261109-123309-reel_news_aft-2026-11-09.mp4",
-  "headline": "Inside Bollywood's Diwali: How Alia Bhatt, Kareena Kapoor, Bachchans and more celebrated the festival of light",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Bollywood Diwali 2026 Alia Bhatt Kareena Kapoor Bachchan family 🪔\nAlia Bhatt, Kareena Kapoor aur Bachchan parivar ne manaya roshni ka tyohaar.\nHindustan Times ne dikhayi stars ki Diwali ki jhalak.\nKis star ki Diwali sabse zyada pasand aayi?\nKiski Diwali best: Alia ya Kareena? Ek naam likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#bollywood #diwali #aliabhatt #kareenakapoor #reelsindia\n\n(Bollywood Diwali 2026, Alia Bhatt Diwali, Kareena Kapoor Diwali, Bachchan family Diwali, Bollywood stars Diwali celebration, Diwali photos celebs)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
-  "pin_comment": "Apne Alia ya Kareena fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Chammak Challo",
-    "artist": "Vishal & Shekhar, Akon",
-    "lang": "hindi",
-    "mood": "festive party vibe = Diwali masti"
-   },
-   {
-    "title": "Akhiyaan Gulaab",
-    "artist": "Mitraz",
-    "lang": "hindi",
-    "mood": "soft romantic Diwali glow"
-   },
-   {
-    "title": "Judi Jodi (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "festive, family-celebration feel"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "upbeat new track for party shots"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-09T12:33:09+00:00"
  }
 ]
