@@ -623,7 +623,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = photo_secs or NEWS_PHOTO_SECS
+        per = max(photo_secs, min(7.0, 2.5 + 0.3 * len(text.split()))) if photo_secs else NEWS_PHOTO_SECS   # short news (owner 10 Nov 2026): 2.5 s + 0.3 s a word, 4.5-7 s
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
@@ -2425,7 +2425,7 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
     mask = Image.new("L", (win_w, win_h), 0)
     ImageDraw.Draw(mask).rounded_rectangle((0, 0, win_w - 1, win_h - 1), radius=26, fill=255)
     words = len(" ".join(bullets[:4] + [question]).split())
-    d1, d2 = 2.5, min(9.0, max(6.0, read_secs(" ".join(bullets[:4] + [question]), 2.5)))
+    d1, d2 = 2.5, min(12.0, max(7.0, read_secs(" ".join(bullets[:4] + [question]), 3.0)))   # owner 10 Nov 2026: 3 s + 0.25 s a word, 7-12 s (was 2.5 s, 6-9 s)
     enc, frame, c1, c2 = Encoder(out_mp4), None, None, None
 
     def cover_of(img: Image.Image, w: int, h: int, z: float, cy: float = 0.28) -> Image.Image:
