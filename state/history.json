@@ -483,7 +483,7 @@
   "reel_news_aft": "2026-11-09",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-09",
+  "reel_news_early": "2026-11-10",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-09",
   "reel_break_noon": "2026-11-09",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "Wd5P7Fpelass",
+ "inbox_since": "adCtrsy1GN1q",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1019,7 +1019,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
   "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
   "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1560,6 +1561,10 @@
   {
    "title": "Kajol shares candid Diwali moment with Ajay Devgn, says best times often go undocumented",
    "date": "2026-11-09"
+  },
+  {
+   "title": "Assamese craftsmen who created Ranbir Kapoor, Ravie Dubey's armour never knew it was for Ramayana, worked 3 years on cane-rubber armour",
+   "date": "2026-11-10"
   }
  ],
  "claude_limit": {
