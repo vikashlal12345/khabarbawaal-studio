@@ -296,7 +296,8 @@
   "662aa2b485a8",
   "9132fbb1a484",
   "a5c6f5b1d091",
-  "ee44025242f3"
+  "ee44025242f3",
+  "b3f652aa9ac3"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -446,13 +447,13 @@
   "reel_news_early": "2026-11-11",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-11",
-  "reel_break_noon": "2026-11-07",
+  "reel_break_noon": "2026-11-11",
   "reel_break_aft": "2026-11-10",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-10"
  },
- "inbox_since": "3AZAOaGsemuZ",
+ "inbox_since": "SJ9wV6vBvpIq",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -825,7 +826,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
@@ -904,7 +904,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-stands-by-newlyweds-rashmika-mandanna-and-vijay-deverakonda-after-koffee-with-karan-9-trolling-dont-demean-their-families-their-families-werent-on-that-couch/articleshow/135712338.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khans-next-film-director-vamshi-paidipally-says-he-knows-the-stress-and-sacrifice-actor-went-through-for-maatrubhumi-101794361575717.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/he-was-not-the-target-manoj-bajpayee-reacts-to-firing-outside-tiger-shroffs-home-says-crime-has-changed-its-nature/articleshow/135725172.cms",
-  "https://www.hindustantimes.com/htcity/cinema/exclusive-chunky-panday-reacts-to-the-most-expensive-donkey-being-named-after-him-at-chitrakoot-fair-101794311032559.html"
+  "https://www.hindustantimes.com/htcity/cinema/exclusive-chunky-panday-reacts-to-the-most-expensive-donkey-being-named-after-him-at-chitrakoot-fair-101794311032559.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/kapil-sharma-show-ayushmann-khurrana-refused-to-sit-on-horse-at-his-wedding-says-sooraj-barjatya-made-him-do-it-in-yeh-prem-mol-liya-101794382557893.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1121,10 +1122,6 @@
   }
  ],
  "songs_recent": [
-  "Shani Dev Ki Aarti",
-  "Super Fast Shani Chalisa",
-  "Betuka (From \"Nakhrewaalii\")",
-  "Mere Ghar Ram Aaye Hain",
   "Thumkeshwari",
   "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
   "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
@@ -1160,7 +1157,11 @@
   "Naal Nachna",
   "Ez-Ez",
   "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Aa To Sahii",
+  "Ashke",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1258,6 +1259,10 @@
   },
   {
    "title": "Exclusive | Chunky Panday reacts to the most expensive donkey being named after him at Chitrakoot fair",
+   "date": "2026-11-11"
+  },
+  {
+   "title": "Kapil Sharma's show: Ayushmann Khurrana refused to sit on a horse at his wedding, says Sooraj Barjatya made him do it in Yeh Prem Mol Liya",
    "date": "2026-11-11"
   }
  ],
