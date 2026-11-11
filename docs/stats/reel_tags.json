@@ -1291,5 +1291,22 @@
   "hook": "feeling",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_news_aft-2026-11-11",
+  "key": "sidharthmalhotrakiaraadvanikoffeewithkaran9breakupshershaah",
+  "kind": "reel_news_aft",
+  "secs": 17.8,
+  "at": "2026-11-11T12:34:33+00:00",
+  "type": "news",
+  "age_h": 1.3,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 31,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]
