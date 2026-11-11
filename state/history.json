@@ -483,7 +483,7 @@
   "reel_news_aft": "2026-11-10",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-08",
+  "reel_news_early": "2026-11-11",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-07",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-10"
  },
- "inbox_since": "L05IASJl0GkA",
+ "inbox_since": "69PDYD8JDnty",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1996,6 +1996,10 @@
   {
    "title": "Karan Johar STANDS BY newlyweds Rashmika - Vijay after 'KWK 9' trolling",
    "date": "2026-11-10"
+  },
+  {
+   "title": "Salman Khan's next film director Vamshi Paidipally says he knows the stress and sacrifice actor went through for Maatrubhumi",
+   "date": "2026-11-11"
   }
  ],
  "claude_limit": {
@@ -2016,7 +2020,7 @@
   "18118758538818105",
   "18106911791015136"
  ],
- "winner_followup_day": "2026-11-06",
+ "winner_followup_day": "2026-11-11",
  "aarti_photos_used": [
   "File:Mahalakshmi Temple, Mumbai.jpg",
   "File:Mahalakshmi temple, Kolhapur.jpg",
