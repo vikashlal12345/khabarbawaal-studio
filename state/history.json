@@ -298,7 +298,8 @@
   "a5c6f5b1d091",
   "ee44025242f3",
   "b3f652aa9ac3",
-  "d10010a55602"
+  "d10010a55602",
+  "6eddfd54e9db"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -442,7 +443,7 @@
   "reel_news_am": "2026-11-11",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-10",
+  "reel_news_aft": "2026-11-11",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-11",
@@ -454,7 +455,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-10"
  },
- "inbox_since": "UAKjLIq96Anb",
+ "inbox_since": "UJ2KWsSNUzUp",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -827,7 +828,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
   "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
   "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
@@ -906,7 +906,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/he-was-not-the-target-manoj-bajpayee-reacts-to-firing-outside-tiger-shroffs-home-says-crime-has-changed-its-nature/articleshow/135725172.cms",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-chunky-panday-reacts-to-the-most-expensive-donkey-being-named-after-him-at-chitrakoot-fair-101794311032559.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kapil-sharma-show-ayushmann-khurrana-refused-to-sit-on-horse-at-his-wedding-says-sooraj-barjatya-made-him-do-it-in-yeh-prem-mol-liya-101794382557893.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singh-deepika-padukone-celebrate-first-diwali-after-arrival-of-second-daughter-devi-in-bengaluru-with-prakash-and-ujjala-padukone-padukone-pics-go-viral/articleshow/135732509.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singh-deepika-padukone-celebrate-first-diwali-after-arrival-of-second-daughter-devi-in-bengaluru-with-prakash-and-ujjala-padukone-padukone-pics-go-viral/articleshow/135732509.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/sidharth-malhotra-and-kiara-advani-broke-up-during-shershaah-eventually-fell-in-love-after-talking-for-30-days-straight-youre-hot-and-cold-with-me/articleshow/135735188.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1123,10 +1124,6 @@
   }
  ],
  "songs_recent": [
-  "Shri Ram Chandra Kripalu Bhajuman",
-  "Ram Raksha Stotra",
-  "Mere Mehboob",
-  "Radha Gori Gori",
   "Mangal Rang (From \"Ramayana\")",
   "Peek A Boo",
   "Main Ram (From \"Ramayana\")",
@@ -1162,7 +1159,11 @@
   "Tera Hoke Rahoon",
   "Teri Meri Kahaani",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+  "Tu Hain Toh Main Hoon",
+  "Khairiyat",
+  "Betuka (From \"Nakhrewaalii\")",
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1268,6 +1269,10 @@
   },
   {
    "title": "Ranveer-DP celebrate first Diwali after second baby girl in Bengaluru: PICS",
+   "date": "2026-11-11"
+  },
+  {
+   "title": "Sidharth and Kiara broke up during Shershaah",
    "date": "2026-11-11"
   }
  ],

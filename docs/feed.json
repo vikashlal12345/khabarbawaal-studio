@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_aft-2026-11-11",
+  "image": "posts/20261111-1234-reel_news_aft-2026-11-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261111-123433-reel_news_aft-2026-11-11.mp4",
+  "headline": "Sidharth and Kiara broke up during Shershaah",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sidharth Malhotra Kiara Advani Koffee With Karan 9 breakup Shershaah 💔\nKWK 9 mein dono ne bataya ki Shershaah ki shooting ke dauraan pyaar kaise khila.\nKargil shoot se pehle dono ne alag hone ka faisla kiya tha.\nPyaar ya career? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #sidharthmalhotra #kiaraadvani #koffeewithkaran #bollywood\n\n(Sidharth Malhotra, Kiara Advani, Koffee With Karan 9, Shershaah, Sidharth Kiara breakup, Kargil shoot, KWK 9, Sidharth Kiara love story)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/sidharth-malhotra-and-kiara-advani-broke-up-during-shershaah-eventually-fell-in-love-after-talking-for-30-days-straight-youre-hot-and-cold-with-me/articleshow/135735188.cms",
+  "pin_comment": "Apne Sidharth-Kiara fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tu Hain Toh Main Hoon",
+    "artist": "Tanishk Bagchi, Arijit Singh",
+    "lang": "hindi",
+    "mood": "love story, couple reunion vibe"
+   },
+   {
+    "title": "Khairiyat",
+    "artist": "Pritam, Arijit Singh",
+    "lang": "hindi",
+    "mood": "breakup then pyaar, emotional"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "love and distance feel"
+   },
+   {
+    "title": "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Kumaar",
+    "lang": "new",
+    "mood": "romantic couple moment"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says they agreed to part ways before the schedule, not that they split during the shoot.",
+    "Fact corrected to match the article: Article: they agreed to part ways before the schedule, then spoke every night for 30 days."
+   ],
+   "fixed": [
+    "Khabar hai ki Sidharth aur Kiara Shershaah ke dauran alag ho gaye the. → Sidharth aur Kiara ne Shershaah ki shooting se pehle alag hone ka faisla kiya tha.",
+    "Kargil shoot ke baad dono ne alag hone ka faisla kiya tha. → Kargil shoot se pehle dono ne alag hone ka faisla kiya tha."
+   ]
+  },
+  "created_at": "2026-11-11T12:34:33+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-11",
   "image": "posts/20261111-1033-reel_news_pm-2026-11-11.jpg",
   "kind": "reel",
