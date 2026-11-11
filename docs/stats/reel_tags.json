@@ -1208,5 +1208,22 @@
   "secs": 17.3,
   "at": "2026-11-11T00:33:46+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-11",
+  "key": "salmankhanmaatrubhumitrailerdirectorvamshipaidipallynesalman",
+  "kind": "reel_news_early",
+  "secs": 17.8,
+  "at": "2026-11-11T02:36:06+00:00",
+  "type": "news",
+  "age_h": 0.3,
+  "topic": "other",
+  "kw": 8,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 38,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]

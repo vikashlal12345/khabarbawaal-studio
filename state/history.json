@@ -293,7 +293,8 @@
   "34ca06dfd427",
   "88461f977137",
   "da250f012c08",
-  "662aa2b485a8"
+  "662aa2b485a8",
+  "9132fbb1a484"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -440,7 +441,7 @@
   "reel_news_aft": "2026-11-10",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-08",
+  "reel_news_early": "2026-11-11",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-08",
   "reel_break_noon": "2026-11-07",
@@ -449,7 +450,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-10"
  },
- "inbox_since": "L05IASJl0GkA",
+ "inbox_since": "69PDYD8JDnty",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -822,7 +823,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
   "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
   "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
@@ -901,7 +901,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-recreates-mom-sridevi-nagina-look-for-halloween-calls-it-one-of-the-most-iconic-movie-moments-ever-101793454446413.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-gets-goofy-with-his-kids-while-dressed-up-as-ravana-thanks-fans-for-the-love-for-ramayana-101794305819699.html",
   "https://www.hindustantimes.com/entertainment/bollywood/anupam-kher-says-he-felt-proud-as-an-indian-when-audience-got-teary-eyed-at-ramayana-sweden-premiere-thanked-him-for-jatayu-101794312448543.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-stands-by-newlyweds-rashmika-mandanna-and-vijay-deverakonda-after-koffee-with-karan-9-trolling-dont-demean-their-families-their-families-werent-on-that-couch/articleshow/135712338.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-stands-by-newlyweds-rashmika-mandanna-and-vijay-deverakonda-after-koffee-with-karan-9-trolling-dont-demean-their-families-their-families-werent-on-that-couch/articleshow/135712338.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/salman-khans-next-film-director-vamshi-paidipally-says-he-knows-the-stress-and-sacrifice-actor-went-through-for-maatrubhumi-101794361575717.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1118,10 +1119,6 @@
   }
  ],
  "songs_recent": [
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
-  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Aarti Laxmi Ji Ki",
-  "Om Jai Lakshmi Mata - Alka Yagnik",
   "Mahalakshmi Ashtakam",
   "Laxmi Ji Ki Aarti",
   "Tu Aake Dekhle",
@@ -1157,7 +1154,11 @@
   "Shree Hanuman Chalisa (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
   "Shri Krishna Govind Hare Murari (From \"Shri Krishna Govind Hare Murari\")",
   "Hare Krishna Hare (From \"Hare Krishna Hare\")",
-  "Radhe Braj Jan Man Sukhkari"
+  "Radhe Braj Jan Man Sukhkari",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Alfaaz",
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1181,38 +1182,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "Chinmayi Sripaada reveals she learnt Ramayana song Judi Jodi just an hour before performing live on stage, says improvisations take time",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "Ranbir Kapoor's stunt double from Ramayana shares unseen set pics, calls him one of the best actors",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "‘I think after I did my nose’: How Janhvi Kapoor got Sridevi’s nod for her Bollywood debut",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "Sargun Mehta says she is biggest fan of husband Ravie Dubey after watching him as Lakshman in Ramayana, calls it a personal win",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "Proud father Sonu Nigam gets emotional as son Nevaan begins musical journey at 19, reveals he practices vocals for 16 hours a day",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "Kareena Kapoor has a beautiful family moment with Randhir Kapoor and Babita Kapoor on Diwali; sister Karisma joins in too",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "Hrithik Roshan attends LACMA Art + Film Gala 2026, becomes first mainstream Indian actor to grace event",
-   "date": "2026-11-08"
-  },
-  {
-   "title": "Daler Mehndi thanks fans for their support during Uttarakhand event controversy, says brother Mika Singh showed up like a force to reckon with",
-   "date": "2026-11-08"
-  },
   {
    "title": "Kareena Kapoor says she is ‘very against botox’ and vouches for self preservation rather than going going under the knife",
    "date": "2026-11-09"
@@ -1276,6 +1245,10 @@
   {
    "title": "Karan Johar STANDS BY newlyweds Rashmika - Vijay after 'KWK 9' trolling",
    "date": "2026-11-10"
+  },
+  {
+   "title": "Salman Khan's next film director Vamshi Paidipally says he knows the stress and sacrifice actor went through for Maatrubhumi",
+   "date": "2026-11-11"
   }
  ],
  "claude_limit": {
@@ -1290,7 +1263,8 @@
   "17937042348407759",
   "18117277646011243",
   "18023602325946834",
-  "18073698851610142"
+  "18073698851610142",
+  "18107622128201600"
  ],
- "winner_followup_day": "2026-11-06"
+ "winner_followup_day": "2026-11-11"
 }
