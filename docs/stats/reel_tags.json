@@ -1308,5 +1308,21 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_aft-2026-11-11",
+  "key": "sunillahriranbirkapoorramayanareviewoglakshmankahonesttake",
+  "kind": "reel_break_aft",
+  "secs": 15.7,
+  "at": "2026-11-11T13:34:57+00:00",
+  "type": "breaking",
+  "age_h": 0.0,
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 32,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "team_vote",
+  "hook": "question"
  }
 ]
