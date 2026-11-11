@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_pm-2026-11-11",
+  "image": "posts/20261111-1033-reel_news_pm-2026-11-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261111-103347-reel_news_pm-2026-11-11.mp4",
+  "headline": "Ranveer-DP celebrate first Diwali after second baby girl in Bengaluru: PICS",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ranveer Singh Deepika Padukone first Diwali after second baby girl 🪔\nBengaluru mein family aur dosto ke saath intimate celebration.\nDeepika-Ranveer ne second baby girl ke baad pehli Diwali manayi.\nTeam Ranveer ya Team Deepika? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ranveersingh #deepikapadukone #bollywood #diwali2026 #reelsindia\n\n(Ranveer Singh, Deepika Padukone, Ranveer Deepika Diwali 2026, Deepika Ranveer baby girl, Deepika Padukone Bengaluru, Bollywood Diwali 2026, DeepVeer)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singh-deepika-padukone-celebrate-first-diwali-after-arrival-of-second-daughter-devi-in-bengaluru-with-prakash-and-ujjala-padukone-padukone-pics-go-viral/articleshow/135732509.cms",
+  "pin_comment": "Ye Ranveer-Deepika ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "family love, warm couple vibe"
+   },
+   {
+    "title": "Teri Meri Kahaani",
+    "artist": "Arijit Singh, Palak Muchhal",
+    "lang": "hindi",
+    "mood": "cute couple story"
+   },
+   {
+    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Pritam, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "soft family moment"
+   },
+   {
+    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "romantic celebration"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 4: The 'Photo: Bollywood Hungama' credit at bottom left runs into the '@khabarbawaal' handle, so the two texts overlap and look cluttered. Move the credit or the handle."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-11T10:33:47+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-11",
   "image": "posts/20261111-0834-reel_break_noon-2026-11-11.jpg",
   "kind": "reel",
@@ -381,50 +428,5 @@
    ]
   },
   "created_at": "2026-11-10T12:34:35+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-10",
-  "image": "posts/20261110-1032-reel_news_pm-2026-11-10.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261110-103256-reel_news_pm-2026-11-10.mp4",
-  "headline": "Mahabharat star Nitish Bharadwaj goes from predicting Oscar for Ramayana to criticising it, says film misrepresents India's history",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Nitish Bharadwaj Ramayana review 🎬\nMahabharat ke Krishna Nitish Bharadwaj ne Ramayana dekhi.\nPehle Oscar ki baat ki thi, ab Ravana ke portrayal par sawaal uthaye.\nUnka kehna hai ki film India ki history ko galat dikhati hai.\nNitish sahi? SAHI ya GALAT ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #nitishbharadwaj #bollywood #mahabharat #reelsindia\n\n(Nitish Bharadwaj, Nitish Bharadwaj Ramayana, Mahabharat actor, Ramayana movie review, Ravana portrayal, Ranbir Kapoor Ramayana, Yash Ravana, Ramayana controversy)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
-  "pin_comment": "Ye Ramayana dekhne wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "Ramayana vibe, devotional feel"
-   },
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "calm backdrop for opinions"
-   },
-   {
-    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
-    "artist": "A.R. Rahman",
-    "lang": "new",
-    "mood": "Ramayana film song"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "light twist on the debate"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-10T10:32:56+00:00"
  }
 ]

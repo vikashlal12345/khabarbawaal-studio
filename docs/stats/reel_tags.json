@@ -1274,5 +1274,22 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-11",
+  "key": "ranveersinghdeepikapadukonefirstdiwaliaftersecondbabygirl",
+  "kind": "reel_news_pm",
+  "secs": 16.9,
+  "at": "2026-11-11T10:33:47+00:00",
+  "type": "news",
+  "age_h": 0.4,
+  "topic": "couple_family",
+  "kw": 7,
+  "relate": "which_one",
+  "cover": "window",
+  "sharp": 38,
+  "hook": "feeling",
+  "photos": 2,
+  "short": true
  }
 ]

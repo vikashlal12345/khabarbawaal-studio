@@ -297,7 +297,8 @@
   "9132fbb1a484",
   "a5c6f5b1d091",
   "ee44025242f3",
-  "b3f652aa9ac3"
+  "b3f652aa9ac3",
+  "d10010a55602"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -435,7 +436,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-11",
-  "reel_news_pm": "2026-11-07",
+  "reel_news_pm": "2026-11-11",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-11",
@@ -453,7 +454,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-10"
  },
- "inbox_since": "SJ9wV6vBvpIq",
+ "inbox_since": "UAKjLIq96Anb",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -826,7 +827,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-takes-a-break-from-social-media-for-a-few-days-following-medical-advice/",
   "https://www.hindustantimes.com/technology/oppo-find-x10-series-makes-its-debut-alongside-a-new-tablet-and-earbuds-built-for-a-connected-experience-101792676493048.html",
@@ -905,7 +905,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khans-next-film-director-vamshi-paidipally-says-he-knows-the-stress-and-sacrifice-actor-went-through-for-maatrubhumi-101794361575717.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/he-was-not-the-target-manoj-bajpayee-reacts-to-firing-outside-tiger-shroffs-home-says-crime-has-changed-its-nature/articleshow/135725172.cms",
   "https://www.hindustantimes.com/htcity/cinema/exclusive-chunky-panday-reacts-to-the-most-expensive-donkey-being-named-after-him-at-chitrakoot-fair-101794311032559.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/kapil-sharma-show-ayushmann-khurrana-refused-to-sit-on-horse-at-his-wedding-says-sooraj-barjatya-made-him-do-it-in-yeh-prem-mol-liya-101794382557893.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/kapil-sharma-show-ayushmann-khurrana-refused-to-sit-on-horse-at-his-wedding-says-sooraj-barjatya-made-him-do-it-in-yeh-prem-mol-liya-101794382557893.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singh-deepika-padukone-celebrate-first-diwali-after-arrival-of-second-daughter-devi-in-bengaluru-with-prakash-and-ujjala-padukone-padukone-pics-go-viral/articleshow/135732509.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1122,10 +1123,6 @@
   }
  ],
  "songs_recent": [
-  "Thumkeshwari",
-  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
   "Shri Ram Chandra Kripalu Bhajuman",
   "Ram Raksha Stotra",
   "Mere Mehboob",
@@ -1161,7 +1158,11 @@
   "Aa To Sahii",
   "Ashke",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")"
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+  "Tera Hoke Rahoon",
+  "Teri Meri Kahaani",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1263,6 +1264,10 @@
   },
   {
    "title": "Kapil Sharma's show: Ayushmann Khurrana refused to sit on a horse at his wedding, says Sooraj Barjatya made him do it in Yeh Prem Mol Liya",
+   "date": "2026-11-11"
+  },
+  {
+   "title": "Ranveer-DP celebrate first Diwali after second baby girl in Bengaluru: PICS",
    "date": "2026-11-11"
   }
  ],
