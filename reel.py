@@ -784,7 +784,7 @@ RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the 
           "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
           "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
           "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
-          "save = 'Save karo, kaam aayega' (useful or festival stories). For which_one and team_vote NAME the two sides from THIS story and ask for a NUMBER (owner 10 Nov 2026, comments average 1 a Reel: one number is the easiest thing to type): 'Team Ranbir ya Team Yash? Comment mein 1 ya 2 likho' (max 12 words; the names must be in the story). DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
+          "save = 'Save karo, kaam aayega' (useful or festival stories). For which_one and team_vote NAME the two sides from THIS story and ask for a NUMBER (owner 10 Nov 2026, comments average 1 a Reel: one number is the easiest thing to type): 'Team Ranbir ya Team Yash? Comment mein 1 ya 2 likho' (max 12 words; the names must be in the story). Use the 'Team A ya Team B' form ONLY when the story has two REAL sides or two real people to choose between; for crime, shooting, accident, death or other serious stories, or when there is no real second side, use a plain one-word vote ('Aapka kya kehna hai? Ek word likho') and never 'Team'. DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
           "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
@@ -811,6 +811,12 @@ def apply_relate(opt: dict, news: bool) -> None:
     line = plain_letters(re.sub(r"\s+", " ", str(rel["line"]).strip()))
     if re.search(r"(?i)\btag\b|\blike if\b|\bto win\b", line) or len(line.split()) > 12 or len(line) < 6:
         return   # tagging needs followers and Instagram shows engagement bait less: the writer's old lines stay
+    teams = re.findall(r"(?i)\bteam\s+([A-Za-z]+)", line)
+    if teams:   # 'Team A ya Team B' only for real sides (owner 10 Nov 2026: 'Team Salman ya Team Wait?', 'Team Salman ya Team Tiger?' about a shooting)
+        body = plain_letters(" ".join(str(opt.get(k, "")) for k in ("caption", "hook", "headline"))).lower()
+        if CRIME.search(body) or not all(t.lower() in body for t in teams):
+            line = "Aapka kya kehna hai? Ek word likho"
+            rel["type"] = "team_vote"
     if news:
         opt["end_text"] = line
         opt["highlight"] = [w for w in re.findall(r"[A-Za-z]+", line) if w.lower() in ("bhejo", "likho", "save", "comment", "naam", "dost", "ek", "word")][:2]
@@ -2249,6 +2255,20 @@ def is_politics(s: dict) -> bool:
     return "politics" in str(s.get("category", "")) or bool(POLITICS.search(s["title"]))
 
 
+CRIME = re.compile(r"(?i)\b(firing|fired upon|shot at|shooting|shot dead|murder|murdered|stabbed|attack|attacked|assault|kidnap\w*|rape|bomb|blast|terror\w*|"
+                   r"accident|crash|stampede|suicide|arrest|arrested|jail)\b")
+REACTION = re.compile(r"(?i)\b(react|reacts|reacted|reaction|says|said|speaks|spoke|comments?|statement|opines|breaks silence|concerning|concern|slams|urges)\b")
+
+
+def is_weak_crime(s: dict) -> bool:
+    """Owner 10 Nov 2026 (the 10 AM 'Manoj Bajpayee on the firing outside Tiger Shroff's home' Reel got 474 views, wrong tone for a vote): crime / accident
+    stories leave the list, EXCEPT a story that names a film star and is not just somebody's reaction (the original Tiger Shroff firing story got 15,000)."""
+    import emergency
+    if not CRIME.search(s["title"]):
+        return False
+    return not (emergency.STARS.search(s["title"]) and not REACTION.search(s["title"]))
+
+
 def drop_routine(stories: list, keep: int = 6) -> list:
     """Owner 4 Nov 2026 (half the Reels stalled): birthday / anniversary / greeting stories leave the picker's list whenever at least `keep` other
     stories remain; so do trailer / teaser / poster / first-look / release-date / song-launch adverts (owner 4 Nov 2026: the 12 PM 'Ramayana Part 2
@@ -2256,7 +2276,9 @@ def drop_routine(stories: list, keep: int = 6) -> list:
     import flash
     rest = [x for x in stories if not flash.ROUTINE.search(x["title"])]
     stories = rest if len(rest) >= keep else stories
-    rest = [x for x in stories if not HARD_PROMO.search(x["title"])]
+    rest = [x for x in stories if not HARD_PROMO.search(x["title"] + " " + (x.get("summary") or ""))]   # 10 Nov 2026: the 8 AM trailer story had no trailer word in its headline
+    stories = rest if len(rest) >= keep else stories
+    rest = [x for x in stories if not is_weak_crime(x)]
     stories = rest if len(rest) >= keep else stories
     rest = [x for x in stories if not is_politics(x)]   # owner 10 Nov 2026: a Rahul-Modi debate card got 288 views at 7 PM (politics Reels avg 385 over 25 days, 85% stalled)
     return rest if len(rest) >= keep else stories
@@ -2281,7 +2303,7 @@ def age_tag(s: dict) -> str:
     return f"({a:.0f} h ago) " if a is not None and a >= 1 else "(under 1 h ago) " if a is not None else ""
 
 
-FRESH_NOTE = "\n\nEach story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size."
+FRESH_NOTE = "\n\nEach story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size. BUT freshness never beats a strong story: a couple / family / Koffee With Karan / emotional moment of a big star beats a fresh trailer or promo, a crime or accident reaction, or an odd local viral story (owner 10 Nov 2026: three fresh weak picks got 153-474 views, the emotional ones 1,900-2,400)."
 
 
 def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
@@ -2337,6 +2359,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         raise RuntimeError("no fresh news stories to make a Reel from")
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
+    TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)   # what the picker saw (owner 10 Nov 2026)
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
     songs = trending_songs(state)
@@ -2372,6 +2395,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
         raise RuntimeError("no story had 2+ good photos")
+    TAGS["pick_no"] = opt.get("pick")
     TAGS["age_h"] = story_age(story)   # how old the story was when we made the Reel (owner 10 Nov 2026)
     if str(story.get("hot", "")).startswith("BIG POLITICS"):
         state["big_politics_day"] = __import__("schedule").ist_now().date().isoformat()   # one big politics Reel a day: counted only when it was really made
@@ -2548,6 +2572,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         raise RuntimeError("no fresh news stories to make a Reel from")
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
+    TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     songs = trending_songs(state)
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA + FACE_RULE,
@@ -2601,6 +2626,7 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     photos.sort(key=lambda x: x[3])   # real photos first, X post screenshots last (stable: keeps the size order)
     real_n = sum(1 for x in photos if not x[3])
     cover_i = pick_cover_photo([x[0] for x in photos[:real_n]], story["title"], tmp)   # 📸 photo contest, real photos only
+    TAGS["pick_no"] = opt.get("pick")
     TAGS["age_h"] = story_age(story)
     if str(story.get("hot", "")).startswith("BIG POLITICS"):
         state["big_politics_day"] = __import__("schedule").ist_now().date().isoformat()
