@@ -376,5 +376,30 @@
     }
    ]
   }
+ ],
+ "maa-yamuna-aur-yamraj-bhai-duj": [
+  {
+   "date": "2026-11-11",
+   "family": "Yamuna",
+   "last_used": "",
+   "images": [
+    {
+     "file": "maa-yamuna-aur-yamraj-bhai-duj-2026-11-11-1.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.22
+     ]
+    },
+    {
+     "file": "maa-yamuna-aur-yamraj-bhai-duj-2026-11-11-2.jpg",
+     "credit": "AI illustration (Z-Image)",
+     "focus": [
+      0.5,
+      0.22
+     ]
+    }
+   ]
+  }
  ]
 }

@@ -1200,5 +1200,13 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "question"
+ },
+ {
+  "id": "reel_devotion-2026-11-11",
+  "key": "bhaidujparyamrajkaaashirwaadjaanein",
+  "kind": "reel_devotion",
+  "secs": 17.3,
+  "at": "2026-11-11T00:33:46+00:00",
+  "type": "devotional"
  }
 ]

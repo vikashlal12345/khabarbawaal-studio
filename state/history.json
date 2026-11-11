@@ -430,7 +430,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-11-08",
+  "reel_devotion": "2026-11-11",
   "reel_news_pm": "2026-11-07",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -1118,10 +1118,6 @@
   }
  ],
  "songs_recent": [
-  "Sri Vishnu Sahasranamam",
-  "Soulmate",
-  "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
   "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
   "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Aarti Laxmi Ji Ki",
@@ -1157,7 +1153,11 @@
   "Zaalima",
   "Jo Tum Mere Ho",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Shree Hanuman Chalisa (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
+  "Shri Krishna Govind Hare Murari (From \"Shri Krishna Govind Hare Murari\")",
+  "Hare Krishna Hare (From \"Hare Krishna Hare\")",
+  "Radhe Braj Jan Man Sukhkari"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
