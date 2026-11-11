@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_break_am-2026-11-11",
+  "image": "posts/20261111-0435-reel_break_am-2026-11-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261111-043508-reel_break_am-2026-11-11.mp4",
+  "headline": "Manoj Bajpayee reacts to firing outside Tiger Shroff's home",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Manoj Bajpayee Tiger Shroff firing Bollywood security concerning\n\nHindustan Times ke mutabik Manoj ne Amitabh Bachchan ke bulletproof glass se fans ko greet karne wale visual ko concerning kaha.\nAccused ke bayan ke mutabik Tiger asli target nahi tha, unka asli target Salman Khan tha.\nManoj ne kaha ki state government poori chinta se situation monitor kar rahi hai.\n\nTeam Salman ya Team Tiger? Comment mein 1 ya 2 likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #manojbajpayee #tigershroff #bollywood #salmankhan\n\n(Manoj Bajpayee, Tiger Shroff firing, Bollywood security, Salman Khan security, Amitabh Bachchan bulletproof glass, Lawrence Bishnoi gang, Mumbai Police advisory, Manoj Bajpayee Last Man In Tower)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/he-was-not-the-target-manoj-bajpayee-reacts-to-firing-outside-tiger-shroffs-home-says-crime-has-changed-its-nature/articleshow/135725172.cms",
+  "pin_comment": "Apne Bollywood fan dost ko ye bhejo 👇",
+  "songs": [
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil & Armaan Khan",
+    "lang": "hindi",
+    "mood": "serious, tense tone for firing news"
+   },
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "heavy mood, calm serious story"
+   },
+   {
+    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "dard bhara, chinta wala moment"
+   },
+   {
+    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Vishal Mishra, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "emotional, serious background"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The claim comes from the accused's statement as reported; it should be attributed, not stated as fact.",
+    "Fact corrected to match the article: Article says this is per the accused's statement, not Manoj's own claim."
+   ],
+   "fixed": [
+    "Accused ka asli target Salman Khan tha → Accused ke bayan ke mutabik asli target Salman Khan tha",
+    "Unke mutabik Tiger asli target nahi tha, accused ka asli target Salman Khan tha. → Accused ke bayan ke mutabik Tiger asli target nahi tha, unka asli target Salman Khan tha."
+   ]
+  },
+  "created_at": "2026-11-11T04:35:08+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-11",
   "image": "posts/20261111-0236-reel_news_early-2026-11-11.jpg",
   "kind": "reel",
@@ -374,50 +425,5 @@
    ]
   },
   "created_at": "2026-11-10T06:34:45+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-10",
-  "image": "posts/20261110-0434-reel_break_am-2026-11-10.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261110-043410-reel_break_am-2026-11-10.mp4",
-  "headline": "Samantha Ruth Prabhu skips elaborate maternity shoot, shares relaxed picture with baby bump",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Samantha Ruth Prabhu maternity shoot baby bump Raj Nidimoru 🤰\nSamantha ne elaborate maternity shoot ki jagah relaxed photo share ki.\nSofa par cushions ke beech red kurta aur sunglasses mein dikhi.\nCaption likha: \"Consider this my maternity shoot.\"\nTum kaunse ho: simple photo ya full shoot? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #samantharuthprabhu #bollywood #babybump #celebnews\n\n(Samantha Ruth Prabhu, Samantha maternity shoot, Samantha baby bump, Raj Nidimoru, Samantha pregnancy, Maa Inti Bangaaram, Consider this my maternity shoot, Samantha Raj Nidimoru baby)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
-  "pin_comment": "Apne Samantha fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft, warm, motherhood vibe"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "gentle love story feel"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "dreamy, new beginning feel"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "calm, blessing-like mood"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-10T04:34:10+00:00"
  }
 ]
