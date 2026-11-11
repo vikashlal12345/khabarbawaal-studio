@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_news_am-2026-11-11",
+  "image": "posts/20261111-0636-reel_news_am-2026-11-11.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261111-063607-reel_news_am-2026-11-11.mp4",
+  "headline": "Exclusive | Chunky Panday reacts to the most expensive donkey being named after him at Chitrakoot fair",
+  "tag": "🎬 REEL · VIRAL",
+  "caption": "Chunky Panday donkey Chitrakoot fair ₹72,000 😂\nMadhya Pradesh ke Chitrakoot mela mein Chunky naam ka gadha ₹72,000 mein bika.\nChunky ne khud bataya ki ye sunke wo kaafi amused hue.\nChunky ka reaction sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#chunkypanday #viral #bollywood #funny #reelsindia\n\n(Chunky Panday, Chunky Panday donkey, Chitrakoot fair, Chitrakoot mela donkey, most expensive donkey, Chunky Panday reaction, viral news)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/htcity/cinema/exclusive-chunky-panday-reacts-to-the-most-expensive-donkey-being-named-after-him-at-chitrakoot-fair-101794311032559.html",
+  "pin_comment": "Ye apne Chunky Panday fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Naal Nachna",
+    "artist": "Shashwat Sachdev, Afsana Khan",
+    "lang": "hindi",
+    "mood": "fun, upbeat desi mood"
+   },
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "swag beat for funny reveal"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "playful, quirky tune"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "light, masti vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The donkey was named Chunky; Chunky Panday is the actor.",
+    "Fact corrected to match the article: The article says Chunky 'reportedly' fetched the highest price, so the claim needs attribution.",
+    "Slide 4: The '@khabarbawaal' handle overlaps the 'Photo: Wikimedia Commons' credit at the bottom left, so both are hard to read."
+   ],
+   "fixed": [
+    "mela mein Chunky Panday naam ka gadha → mela mein Chunky naam ka gadha",
+    "bika, sabse mehnga. → bika, reportedly sabse mehnga."
+   ]
+  },
+  "created_at": "2026-11-11T06:36:07+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-11",
   "image": "posts/20261111-0435-reel_break_am-2026-11-11.jpg",
   "kind": "reel",
@@ -376,54 +428,5 @@
    "fixed": []
   },
   "created_at": "2026-11-10T08:34:35+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-10",
-  "image": "posts/20261110-0634-reel_news_am-2026-11-10.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261110-063445-reel_news_am-2026-11-10.mp4",
-  "headline": "Ramayana actor Indira Krishnan defends Sai Pallavi’s Sita wielding a sword, admits she ‘didn’t connect’ bit with what she saw in Ramanand Sagar show",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sai Pallavi Sita sword Ramayana Indira Krishnan 🎬\nRamayana ki actor Indira Krishnan ne Sai Pallavi ki Sita ko talwar ke saath dekhne par kaha ki shuru mein unhe connect karna mushkil laga.\nUnhone maana ki purani TV show wali Sita se ye alag lagi.\nPhir bhi unka kehna hai ki Ramayana Sita ko ek strong character dikhati hai.\nSita talwar ke saath: SAHI ya GALAT? Likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#Ramayana #SaiPallavi #Bollywood #RanbirKapoor #reelsindia\n\n(Sai Pallavi Sita, Ramayana Sai Pallavi sword, Indira Krishnan Ramayana, Ramayana Nitesh Tiwari, Ramanand Sagar Sita, Ramayana movie 2026, Ranbir Kapoor Ramayana)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
-  "pin_comment": "Ye Ramayana ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana vibe, divine strong Sita"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh",
-    "lang": "hindi",
-    "mood": "intense, dramatic debate feel"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "fresh hit, soft emotional"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "calm, thoughtful opinion"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article only says 'old television show'; Ramanand Sagar is not mentioned"
-   ],
-   "fixed": [
-    "Ramanand Sagar wali Sita se ye alag lagi → purani TV show wali Sita se ye alag lagi"
-   ]
-  },
-  "created_at": "2026-11-10T06:34:45+00:00"
  }
 ]

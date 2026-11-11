@@ -1241,5 +1241,22 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-11",
+  "key": "chunkypandaydonkeychitrakootfair72000",
+  "kind": "reel_news_am",
+  "secs": 16.3,
+  "at": "2026-11-11T06:36:07+00:00",
+  "type": "news",
+  "age_h": 0.7,
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "team_vote",
+  "cover": "portrait",
+  "sharp": 57,
+  "hook": "question",
+  "photos": 2,
+  "short": true
  }
 ]
