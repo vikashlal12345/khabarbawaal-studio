@@ -155,15 +155,20 @@ def vetted_candidates(plan: dict, subj: dict, used_order: list[str]) -> list[dic
     out = []
     for c in clips:
         gods = c.get("gods", [])
+        fests = c.get("festivals", [])
+        if subj.get("kind") != "weekday" and any(f and f in fest for f in fests):
+            out.append((-1, last_use.get(c["id"], -1), c))   # a clip of THIS festival beats everything
+            continue
         rank = next((i for i, w in enumerate(wanted) if w in gods), None)
         if rank is None and "generic" in gods:
             rank = len(wanted)
         if rank is None:
             continue
         out.append((rank, last_use.get(c["id"], -1), c))
-    out.sort(key=lambda x: (x[0], x[1]))
-    return [{"id": c["id"], "source": "pixabay", "url": c["url"], "w": c.get("w", 0), "h": c.get("h", 0), "dur": c.get("dur", 0), "tags": c.get("tags", ""),
-             "user": c.get("user", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for _, _, c in out]
+    # god-specific first; then the sharper source (height >= 2000 px = no upscaling), then never-used / least recently used
+    out.sort(key=lambda x: (x[0], (x[2].get("h", 0) or 0) < 2000, x[1]))
+    return [{"id": c["id"], "source": c.get("source", "pixabay"), "url": c["url"], "w": c.get("w", 0), "h": c.get("h", 0), "dur": c.get("dur", 0), "tags": c.get("tags", ""),
+             "user": c.get("user", ""), "lic": c.get("lic", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for _, _, c in out]
 
 
 def official_candidates(plan: dict, subj: dict, used: set[str]) -> list[dict]:
@@ -190,21 +195,29 @@ def official_candidates(plan: dict, subj: dict, used: set[str]) -> list[dict]:
 
 
 def _download(url: str, path: str, limit_mb: int = 220) -> bool:
-    try:
-        with requests.get(url, headers=UA, stream=True, timeout=60) as r:
-            if r.status_code != 200:
-                return False
-            n = 0
-            with open(path, "wb") as f:
-                for chunk in r.iter_content(1 << 20):
-                    n += len(chunk)
-                    if n > limit_mb << 20:
-                        return False
-                    f.write(chunk)
-        return os.path.getsize(path) > 50_000
-    except Exception as e:
-        print(f"  ! download failed: {str(e)[:60]}")
-        return False
+    import time
+    wiki = "wikimedia.org" in url
+    headers = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"} if wiki else UA   # Wikimedia asks for a contact and answers bursts with 429
+    for attempt in range(2 if wiki else 1):
+        try:
+            with requests.get(url, headers=headers, stream=True, timeout=60) as r:
+                if r.status_code == 429 and wiki:
+                    time.sleep(6)
+                    continue
+                if r.status_code != 200:
+                    return False
+                n = 0
+                with open(path, "wb") as f:
+                    for chunk in r.iter_content(1 << 20):
+                        n += len(chunk)
+                        if n > limit_mb << 20:
+                            return False
+                        f.write(chunk)
+            return os.path.getsize(path) > 50_000
+        except Exception as e:
+            print(f"  ! download failed: {str(e)[:60]}")
+            return False
+    return False
 
 
 def _loudest_start(path: str, secs: float) -> float:
@@ -253,7 +266,9 @@ def make_segment(src: str, out: str, source: str) -> tuple[str, bool]:
     return out, keep_audio
 
 
-SCREEN_SYSTEM = ("You choose REAL video footage for a devotional Instagram Reel for Indians: a short aarti / puja / temple video with the day's god written on top. "
+SCREEN_SYSTEM = ("You choose REAL video footage for a devotional Instagram Reel for Indians: a short video with the day's god or festival written on top. Good footage is: an aarti, "
+                 "a puja, diyas / lamps / incense, a temple or ghat, the idol (murti) of the wanted god shown respectfully, or a real scene of the wanted festival (procession, "
+                 "rangoli, decorations, lights, rituals). "
                  "Open every image with the Read tool. Reject: not Indian Hindu (Buddhist, church, mosque, Western), CGI / cartoon / illustration, a person posing for the camera, "
                  "tourists / selfies, shops or markets, cremation / death scenes, anything disrespectful, dark / blurry / grey footage, footage with burnt-in text, "
                  "watermarks or logos (the temple's own small logo is fine), and an idol or shrine of a DIFFERENT god than the wanted one. A video that shows aarti plates, diyas, "
@@ -265,7 +280,7 @@ SCREEN_SCHEMA = {"type": "object", "properties": {"clips": {"type": "array", "it
     "required": ["clips"], "additionalProperties": False}
 
 
-def _screen(cands: list[dict], wanted: str, folder: str, frames_of: dict[int, list[str]]) -> list[tuple[int, int]]:
+def _screen(cands: list[dict], wanted: str, folder: str, frames_of: dict[int, list[str]], min_fit: int = 7) -> list[tuple[int, int]]:
     """The AI looks at the pictures of each candidate (file names in frames_of) -> [(n, fit)] of the OK ones, best first."""
     listing = "\n".join(f"Clip {n}: {', '.join(frames_of[n])} (tags: {c['tags'][:80]})" for n, c in enumerate(cands, 1) if frames_of.get(n))
     if not listing:
@@ -275,7 +290,7 @@ def _screen(cands: list[dict], wanted: str, folder: str, frames_of: dict[int, li
     good = []
     for c in res:
         print(f"    clip {c['n']}: fit {c['fit']}/10, {'OK' if c['ok'] else 'rejected'} ({c['why'][:80]})")
-        if c["ok"] and c["fit"] >= 7:
+        if c["ok"] and c["fit"] >= min_fit:
             good.append((c["n"], c["fit"]))
     return sorted(good, key=lambda x: -x[1])
 
@@ -296,7 +311,7 @@ def _try_clip(c: dict, src: str, wanted: str, folder: str) -> dict | None:
     if not crops:
         return None
     try:
-        ok = _screen([c], wanted, folder, {1: crops})
+        ok = _screen([c], wanted, folder, {1: crops}, min_fit=5 if c.get("vetted") else 7)
     except Exception as e:
         if type(e).__name__ == "ClaudeLimit":
             raise
@@ -305,7 +320,12 @@ def _try_clip(c: dict, src: str, wanted: str, folder: str) -> dict | None:
     if not ok:
         return None
     official = c["source"] == "x"
-    credit = f"Video + sound: {c['temple']} (@{c['handle']}) on X" if official else f"Video: {c['user']} / Pixabay"
+    if official:
+        credit = f"Video + sound: {c['temple']} (@{c['handle']}) on X"
+    elif c["source"] == "commons":
+        credit = f"Video: {c['user'][:40]} / Wikimedia Commons ({c.get('lic', 'CC BY')})"   # CC BY needs the author's name
+    else:
+        credit = f"Video: {c['user']} / Pixabay"
     print(f"  aarti footage: {c['id']} ({'official ' + c['temple'] if official else ('vetted ' if c.get('vetted') else '') + 'Pixabay ' + c['tags'][:50]}), "
           f"{'own sound' if keep_audio else 'silent'}")
     return {"seg": seg, "id": c["id"], "source": c["source"], "credit": credit, "caption_credit": credit + " 🙏", "silent": not keep_audio,
@@ -344,10 +364,10 @@ def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> d
     # 2) the vetted link list: the clip is downloaded from its link right now
     vet = vetted_candidates(plan, subj, used_order)
     print(f"  aarti footage: {len(cands)} official, {len(vet)} vetted links for {wanted}")
-    for c in vet[:4]:
+    for c in vet[:6]:
         path = os.path.join(folder, f"{c['id']}.mp4")
         if not _download(c["url"], path):
-            fresh = _pixabay_url_by_id(c["pid"])
+            fresh = _pixabay_url_by_id(c["pid"]) if c["source"] == "pixabay" else ""
             if not fresh or not _download(fresh, path):
                 print(f"  ! vetted clip {c['id']}: link dead")
                 continue

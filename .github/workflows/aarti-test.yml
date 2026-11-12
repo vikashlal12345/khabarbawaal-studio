@@ -1,0 +1,33 @@
+name: Aarti Reel test
+# Manual only: makes the 6 AM real-aarti Reel for the given dates in a temporary folder and attaches the videos. Posts nothing, saves nothing to the app.
+on:
+  workflow_dispatch:
+    inputs:
+      dates:
+        description: "Dates to make (YYYY-MM-DD, space separated)"
+        required: true
+        default: "2026-11-16 2026-11-10"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: npm install -g @anthropic-ai/claude-code
+      - run: python -u tools/aarti_ci_test.py ${{ inputs.dates }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aarti-reels
+          path: aarti_out/
+          if-no-files-found: ignore
