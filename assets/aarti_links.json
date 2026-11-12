@@ -1,5 +1,5 @@
 {
- "note": "Vetted video LINKS per god / festival (no files stored): the robot downloads the clip from 'url' at run time (Pixabay: a dead link is looked up again by id). 'gods': who it fits ('generic' = aarti / diya / ghat footage with no clear idol, fine for any god). 'festivals': festival it shows. Screened by the AI on 12 Nov 2026 (Pixabay 291 clips, Wikimedia Commons 186). Commons clips are CC BY: the credit line is shown on screen and in the caption. Add more: send Pixabay video page links.",
+ "note": "Vetted video LINKS per god / festival (no files stored): the robot downloads the clip from 'url' at run time (Pixabay: a dead link is looked up again by id). 'gods': who it fits ('generic' = aarti / diya / ghat footage with no clear idol, fine for any god). 'festivals': festival it shows. Screened by the AI on 12 Nov 2026 (Pixabay 291 clips, Wikimedia Commons 186). Commons clips are CC BY: the credit line is shown on screen and in the caption. Add more: send Pixabay video page links. Wikimedia Commons Durga Puja clips were dropped on 12 Nov 2026: Wikimedia refuses downloads from GitHub (HTTP 429).",
  "clips": [
   {
    "id": "pb206414",
@@ -223,8 +223,7 @@
    "lic": "Pixabay",
    "shows": "Chhath ghat devotees with offerings at river",
    "gods": [
-    "surya",
-    "generic"
+    "surya"
    ],
    "festivals": [
     "chhath"
@@ -243,8 +242,7 @@
    "lic": "Pixabay",
    "shows": "Chhath crowd with offerings and sugarcane at river",
    "gods": [
-    "surya",
-    "generic"
+    "surya"
    ],
    "festivals": [
     "chhath"
@@ -263,8 +261,7 @@
    "lic": "Pixabay",
    "shows": "Chhath at sunset with offering clay lamp",
    "gods": [
-    "surya",
-    "generic"
+    "surya"
    ],
    "festivals": [
     "chhath"
@@ -307,66 +304,6 @@
     "holi"
    ],
    "tags": "holi, festival, hindu, happy, celebration, decoration, colorful, red, shiva, india, young,"
-  },
-  {
-   "id": "cmSovabazarRoyalDurgaIdolImmersio",
-   "source": "commons",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Sovabazar_Royal_Durga_Idol_Immersion_-_River_Hooghly_-_Baghbazar_Ghat_-_Kolkata_2014-10-03_9218.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "page": "https://commons.wikimedia.org/wiki/File:Sovabazar_Royal_Durga_Idol_Immersion_-_River_Hooghly_-_Baghbazar_Ghat_-_Kolkata_2014-10-03_9218.ogv",
-   "user": "gangulybiswarup",
-   "w": 1920,
-   "h": 1080,
-   "dur": null,
-   "lic": "CC BY 3.0",
-   "shows": "Durga idol on boat during immersion on Hooghly",
-   "gods": [
-    "durga"
-   ],
-   "festivals": [
-    "durga puja"
-   ],
-   "tags": "Sovabazar Royal Durga Idol Immersion - River Hooghly - Baghbazar Ghat - Kolkata 2014-",
-   "size_mb": 117
-  },
-  {
-   "id": "cmDurgaIdolImmersionGatheringBa",
-   "source": "commons",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Durga_Idol_Immersion_Gathering_-_Baja_Kadamtala_Ghat_-_Kolkata_2012-10-24_1752.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "page": "https://commons.wikimedia.org/wiki/File:Durga_Idol_Immersion_Gathering_-_Baja_Kadamtala_Ghat_-_Kolkata_2012-10-24_1752.ogv",
-   "user": "Biswarup Ganguly",
-   "w": 1920,
-   "h": 1080,
-   "dur": null,
-   "lic": "CC BY 3.0",
-   "shows": "Decorated Durga idol among crowd at immersion",
-   "gods": [
-    "durga"
-   ],
-   "festivals": [
-    "durga puja"
-   ],
-   "tags": "Durga Idol Immersion Gathering - Baja Kadamtala Ghat - Kolkata 2012-10-24 1752.ogv",
-   "size_mb": 143
-  },
-  {
-   "id": "cmDurgaIdolImmersionPreparation",
-   "source": "commons",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Durga_Idol_Immersion_Preparation_-_Baja_Kadamtala_Ghat_-_Kolkata_2012-10-24_1272.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "page": "https://commons.wikimedia.org/wiki/File:Durga_Idol_Immersion_Preparation_-_Baja_Kadamtala_Ghat_-_Kolkata_2012-10-24_1272.ogv",
-   "user": "Biswarup Ganguly",
-   "w": 1920,
-   "h": 1080,
-   "dur": null,
-   "lic": "CC BY 3.0",
-   "shows": "Durga idol close-up with devotees at ghat before immersion",
-   "gods": [
-    "durga"
-   ],
-   "festivals": [
-    "durga puja"
-   ],
-   "tags": "Durga Idol Immersion Preparation - Baja Kadamtala Ghat - Kolkata 2012-10-24 1272.ogv",
-   "size_mb": 83
   }
  ]
 }
