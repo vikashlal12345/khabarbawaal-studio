@@ -305,7 +305,8 @@
   "255120edad26",
   "56bed8a85a5a",
   "4bd6901b7ec2",
-  "acf6406c353e"
+  "acf6406c353e",
+  "3c03612fa22e"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -459,9 +460,9 @@
   "reel_break_aft": "2026-11-12",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
-  "reel_break_night": "2026-11-11"
+  "reel_break_night": "2026-11-12"
  },
- "inbox_since": "YGRboZ3lvpC7",
+ "inbox_since": "LGInXkKP2joJ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -834,7 +835,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
   "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
   "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
@@ -913,7 +913,8 @@
   "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957",
   "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/lara-dutta-defends-sai-pallavis-warrior-sita-in-nitesh-tiwaris-ramayana-rise-of-a-legend-youre-not-going-to-be-a-helpless-woman-in-that-situation/articleshow/135767194.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/lara-dutta-defends-sai-pallavis-warrior-sita-in-nitesh-tiwaris-ramayana-rise-of-a-legend-youre-not-going-to-be-a-helpless-woman-in-that-situation/articleshow/135767194.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-extends-support-to-shraddha-kapoors-eetha-despite-clash-with-his-own-film-maatrubhumi-may-war-rest-in-peace-on-december-4-all-the-best/articleshow/135772686.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1130,10 +1131,6 @@
   }
  ],
  "songs_recent": [
-  "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
-  "Dhun",
-  "Mangal Rang (From \"Ramayana\")",
-  "Main Ram (From \"Ramayana\")",
   "Soulmate",
   "Sang Rahiyo",
   "Tu Mil Jaaye (From \"KING\")",
@@ -1169,7 +1166,11 @@
   "His Aura Hits You",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Tere Liye",
+  "Tu Hi Disda (From \"Bhooth Bangla\")",
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1287,6 +1288,10 @@
   },
   {
    "title": "Lara Dutta DEFENDS Sai Pallavi's warrior Sita in Ramayana: 'You're not going to be helpless woman'",
+   "date": "2026-11-12"
+  },
+  {
+   "title": "Salman extends support to Shraddha's 'Eetha' despite clash with his own film 'Maatrubhumi'",
    "date": "2026-11-12"
   }
  ],
