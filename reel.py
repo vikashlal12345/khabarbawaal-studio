@@ -299,7 +299,7 @@ def cover_hook_frame(photo: Image.Image, hook: str, tag: str, credit: str, t: fl
     if tag:
         frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
     if credit:
-        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")
+        ImageDraw.Draw(frame).text((50, RH - 185), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")   # above the @handle line (12 Nov 2026: a long credit ran into the handle, the proofreader flagged it on 3 of 8 Reels)
     handle_tag(frame, 1790)
     return frame
 
@@ -335,7 +335,7 @@ def cover_window_frame(photo: Image.Image, focus: tuple, hook: str, tag: str, cr
     if tag:
         frame.alpha_composite(pill(printable(tag).upper(), font("Anton-Regular.ttf", 56), RED, "#FFFFFF", pad=(30, 8)), (50, 150))
     if credit:
-        ImageDraw.Draw(frame).text((50, RH - 120), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")
+        ImageDraw.Draw(frame).text((50, RH - 185), printable(credit)[:60], font=font("Poppins-SemiBold.ttf", 24), fill="#CCCCCC")   # above the @handle line (12 Nov 2026: a long credit ran into the handle, the proofreader flagged it on 3 of 8 Reels)
     handle_tag(frame, 1790)
     return frame
 
@@ -815,7 +815,7 @@ RELATE = {"type": "object", "description": "ONE ask that comes from THIS story's
           "NEVER 'Team A ya Team B' or '1 ya 2' unless the story really has two sides that BOTH appear in the Reel (a clash between two people, two rival films); never invent sides "
           "(a married couple, a breakup, a reaction have no teams). For crime, accident, death or other serious stories use a plain one-word verdict ('Aapka kya kehna hai? Ek word likho'). "
           "The line is max 12 words, Hinglish in English letters, and must make sense to someone who sees only this Reel.",
-          "properties": {"type": {"type": "string", "enum": ["verdict", "twist", "rating", "emoji", "own_life", "predict", "finish_it", "share_friend", "save", "team_vote", "which_one"]},
+          "properties": {"type": {"type": "string", "enum": ["verdict", "twist", "rating", "emoji", "own_life", "predict", "finish_it", "share_friend", "save"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
 
