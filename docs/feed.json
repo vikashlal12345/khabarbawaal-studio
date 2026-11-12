@@ -1,5 +1,61 @@
 [
  {
+  "id": "reel_news_early-2026-11-12",
+  "image": "posts/20261112-0233-reel_news_early-2026-11-12.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261112-023314-reel_news_early-2026-11-12.mp4",
+  "headline": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Anirudh Ravichander Kavya Maran first wedding photos 💍\nShaadi ki pehli tasveerein saamne aayi hain.\nAnirudh ne likha, \"My once in a lifetime, for a lifetime.\"\nTeam Anirudh ya Team Kavya? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: News18 (link pinned in comments 👇)\n\n#reelsindia #anirudh #kavyamaran #wedding #anirudhkavya\n\n(Anirudh Ravichander, Kavya Maran, Anirudh Kavya Maran wedding, wedding photos, Hema Malini, Hema Malini Ramayana review, Ramayana, Ramayana review)",
+  "source": "News18",
+  "source_url": "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
+  "pin_comment": "Ye khabar apne dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
+    "lang": "hindi",
+    "mood": "shaadi wali romantic vibe"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "romantic couple moment"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "milan = shaadi hook"
+   },
+   {
+    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "soft romantic mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Hema Malini/Ramayana review is not in the article; replaced with the article's actual caption quote.",
+    "Fact corrected to match the article: 'Pehli shaadi' reads as 'first marriage'; the article says first wedding photos.",
+    "Fact corrected to match the article: The article does not say fans loved the photo.",
+    "Fact corrected to match the article: The Ramayana hashtag is unrelated to the story."
+   ],
+   "fixed": [
+    "Saath hi Hema Malini ne Ramayana ka review bhi diya. → Anirudh ne likha, \"My once in a lifetime, for a lifetime.\"",
+    "Pehli shaadi ki tasveerein saamne aayi hain. → Shaadi ki pehli tasveerein saamne aayi hain.",
+    "apni pehli shaadi ki photos share ki. → apni shaadi ki pehli photos share ki.",
+    "mehmaan ke saath, fans ko khoob pasand aayi. → mehmaan ke saath.",
+    "#ramayana → #anirudhkavya"
+   ]
+  },
+  "created_at": "2026-11-12T02:33:14+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-12",
   "image": "posts/20261112-0035-reel_devotion-2026-11-12.jpg",
   "kind": "reel",

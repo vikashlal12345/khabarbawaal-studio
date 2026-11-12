@@ -447,7 +447,7 @@
   "reel_news_aft": "2026-11-11",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-11",
+  "reel_news_early": "2026-11-12",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-11",
   "reel_break_noon": "2026-11-11",
@@ -456,7 +456,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "LAUmxpmnsnAI",
+ "inbox_since": "DZ56DCm5Y3CX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -829,7 +829,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/21900-digital-arrest-complaints-registered-till-sept-mha-to-sc-101792697131006.html",
   "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
@@ -908,7 +907,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singh-deepika-padukone-celebrate-first-diwali-after-arrival-of-second-daughter-devi-in-bengaluru-with-prakash-and-ujjala-padukone-padukone-pics-go-viral/articleshow/135732509.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/sidharth-malhotra-and-kiara-advani-broke-up-during-shershaah-eventually-fell-in-love-after-talking-for-30-days-straight-youre-hot-and-cold-with-me/articleshow/135735188.cms",
   "https://www.ndtvprofit.com/entertainment/og-lakshman-sunil-lahri-reviews-ranbir-kapoor-s-ramayana-says-it-was-a-bittersweet-experience-12313072",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/cricketer-arshdeep-singh-gets-engaged-to-actor-samreen-kaur-couple-shares-romantic-proposal-pic-and-says-happiest-it-gave-us-each-other/articleshow/135739815.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/cricketer-arshdeep-singh-gets-engaged-to-actor-samreen-kaur-couple-shares-romantic-proposal-pic-and-says-happiest-it-gave-us-each-other/articleshow/135739815.cms",
+  "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1125,10 +1125,6 @@
   }
  ],
  "songs_recent": [
-  "Shree Hanuman Chalisa (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
-  "Shri Krishna Govind Hare Murari (From \"Shri Krishna Govind Hare Murari\")",
-  "Hare Krishna Hare (From \"Hare Krishna Hare\")",
-  "Radhe Braj Jan Man Sukhkari",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Alfaaz",
   "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
@@ -1164,7 +1160,11 @@
   "Vishnu Sahasranamam",
   "Jai Ganesh Jai Ganesh Deva",
   "Sri Vishnu Sahasranamam",
-  "Vishnu Sahasranamam (Version 1)"
+  "Vishnu Sahasranamam (Version 1)",
+  "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
+  "Zaalima",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1188,38 +1188,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "Kareena Kapoor says she is ‘very against botox’ and vouches for self preservation rather than going going under the knife",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "Sunita Ahuja is confident about reunion with Govinda amid his dating rumours with Komal Rani Swarnkar, says ‘nobody can ever separate us’",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "Ramayana worldwide box office collection day 4: Ranbir Kapoor, Yash film storms past ₹500 crore on opening weekend; beats Adipurush's lifetime haul",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "Ahaan Panday’s Beparwah co-star, Aaishvary Thackeray, loses Rs. 19,000 to cyber fraud; files police complaint",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "Bhumi Pednekar raises alarm over ‘hazardous’ AQI in Mumbai post Diwali, says people were bursting crackers even at 3 AM",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "Inside Bollywood's Diwali: How Alia Bhatt, Kareena Kapoor, Bachchans and more celebrated the festival of light",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "‘Any time, any place’: Rahul challenges PM Modi to debate anti-national charge",
-   "date": "2026-11-09"
-  },
-  {
-   "title": "Kajol shares candid Diwali moment with Ajay Devgn, says best times often go undocumented",
-   "date": "2026-11-09"
-  },
   {
    "title": "Assamese craftsmen who created Ranbir Kapoor, Ravie Dubey's armour never knew it was for Ramayana, worked 3 years on cane-rubber armour",
    "date": "2026-11-10"
@@ -1283,6 +1251,10 @@
   {
    "title": "Arshdeep Singh announces engagement to Samreen Kaur with heartfelt note",
    "date": "2026-11-11"
+  },
+  {
+   "title": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
+   "date": "2026-11-12"
   }
  ],
  "claude_limit": {
@@ -1298,7 +1270,8 @@
   "18117277646011243",
   "18023602325946834",
   "18073698851610142",
-  "18107622128201600"
+  "18107622128201600",
+  "17885682390526060"
  ],
- "winner_followup_day": "2026-11-11"
+ "winner_followup_day": "2026-11-12"
 }
