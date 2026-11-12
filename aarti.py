@@ -168,8 +168,8 @@ def vetted_candidates(plan: dict, subj: dict, used_order: list[str]) -> list[dic
         if rank is None:
             continue
         out.append((rank, last_use.get(c["id"], -1), c))
-    # god-specific first; then the sharper source (height >= 2000 px = no upscaling), then never-used / least recently used
-    out.sort(key=lambda x: (x[0], (x[2].get("h", 0) or 0) < 2000, x[1]))
+    # god-specific first; then never-used / least recently used (so a clip never repeats day after day), then the sharper source (height >= 2000 px = no upscaling)
+    out.sort(key=lambda x: (x[0], x[1], (x[2].get("h", 0) or 0) < 2000))
     n_wanted = len(wanted)
     return [{"specific": rank < n_wanted, "id": c["id"], "source": c.get("source", "pixabay"), "url": c["url"], "w": c.get("w", 0), "h": c.get("h", 0), "dur": c.get("dur", 0), "tags": c.get("tags", ""),
              "user": c.get("user", ""), "lic": c.get("lic", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for rank, _, c in out]
