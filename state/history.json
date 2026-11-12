@@ -304,7 +304,8 @@
   "045f678bf2b7",
   "255120edad26",
   "56bed8a85a5a",
-  "4bd6901b7ec2"
+  "4bd6901b7ec2",
+  "acf6406c353e"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -455,12 +456,12 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-12",
   "reel_break_noon": "2026-11-12",
-  "reel_break_aft": "2026-11-11",
+  "reel_break_aft": "2026-11-12",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "tGoR6xKWJSeC",
+ "inbox_since": "YGRboZ3lvpC7",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -833,7 +834,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
   "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
@@ -912,7 +912,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/shocking-amitabh-bachchans-jalsa-at-centre-of-family-dispute-sister-in-law-ramola-challenges-gift-deed-transferring-iconic-bungalow-to-jaya-bachchan/",
   "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957",
   "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/lara-dutta-defends-sai-pallavis-warrior-sita-in-nitesh-tiwaris-ramayana-rise-of-a-legend-youre-not-going-to-be-a-helpless-woman-in-that-situation/articleshow/135767194.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1129,10 +1130,6 @@
   }
  ],
  "songs_recent": [
-  "Tu Hain Toh Main Hoon",
-  "Khairiyat",
-  "Betuka (From \"Nakhrewaalii\")",
-  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
   "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
   "Dhun",
   "Mangal Rang (From \"Ramayana\")",
@@ -1168,7 +1165,11 @@
   "Heeriye (feat. Arijit Singh)",
   "Aaj Bhi 2",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Shree Hanuman Chalisa (From \"Ramayana\")"
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "His Aura Hits You",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1282,6 +1283,10 @@
   },
   {
    "title": "Addinath Kothare recalls being Ranbir Kapoor’s schoolmate before ‘Ramayana’",
+   "date": "2026-11-12"
+  },
+  {
+   "title": "Lara Dutta DEFENDS Sai Pallavi's warrior Sita in Ramayana: 'You're not going to be helpless woman'",
    "date": "2026-11-12"
   }
  ],
