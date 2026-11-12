@@ -59,7 +59,10 @@ FAKE = re.compile(r"(?i)\b(3d|cgi|animat\w*|cartoon\w*|render\w*|illustrat\w*|mo
 
 
 def _family_key(plan: dict, subj: dict) -> str:
-    text = f"{plan.get('family', '')} {plan.get('deity', '')} {subj.get('deity', '')} {subj.get('name', '')}".lower()
+    if subj.get("kind") == "festival":   # a festival's clips follow the festival's own name (Raksha Bandhan got a Krishna temple because the writer's plan told a Krishna story)
+        text = " ".join(subj.get("festivals", []) + [subj.get("name", "")]).lower()
+    else:
+        text = f"{plan.get('family', '')} {plan.get('deity', '')} {subj.get('deity', '')} {subj.get('name', '')}".lower()
     for key, words in (("shiva", ("shiv", "mahadev", "shankar", "bholenath")), ("hanuman", ("hanuman", "bajrang")), ("ganesh", ("ganesh", "ganpati", "vinayak")),
                        ("lakshmi", ("lakshmi", "laxmi")), ("durga", ("durga", "navratri", "devi", "maa ", "mata")), ("shani", ("shani",)),
                        ("surya", ("surya", "sun ")), ("krishna", ("krishna", "janmashtami")), ("rama", ("ram ", "rama", "ayodhya")), ("vishnu", ("vishnu", "narayan"))):
@@ -385,7 +388,7 @@ def photo_queries(plan: dict, subj: dict) -> list[str]:
     for q in PHOTO_QUERIES.get(key, []):
         if q not in qs:
             qs.append(q)
-    return qs[:6]
+    return qs[:8]
 
 
 def _wiki_json(params: dict) -> dict:
@@ -401,13 +404,13 @@ def _wiki_json(params: dict) -> dict:
     return {}
 
 
-def commons_photos(queries: list[str], used: set[str], per_query: int = 8) -> list[dict]:
+def commons_photos(queries: list[str], used: set[str], per_query: int = 14) -> list[dict]:
     """Free-licence photos (>= 1600 px) for these searches, thumbnails 1280 px wide: [{title, thumb, w, h, lic, artist, page}]."""
     titles = []
     for q in queries:
         j = _wiki_json({"action": "query", "format": "json", "list": "search", "srnamespace": 6, "srlimit": 30, "srsearch": "filetype:bitmap " + q})
         found = [x["title"] for x in j.get("query", {}).get("search", [])]
-        titles += [(t, q) for t in found if t not in used and t not in [x[0] for x in titles]][:per_query + 6]
+        titles += [(t, q) for t in found if t not in used and t not in [x[0] for x in titles]][:per_query + 14]
     out = []
     for i in range(0, len(titles), 40):
         chunk = titles[i:i + 40]
@@ -431,7 +434,7 @@ def commons_photos(queries: list[str], used: set[str], per_query: int = 8) -> li
         per[c["q"]] = per.get(c["q"], 0) + 1
         if per[c["q"]] <= per_query:
             res.append(c)
-    return res[:24]
+    return res[:36]
 
 
 def _cover_crop(im, w: int = 1080, h: int = 1920, zoom: float = 1.0):
@@ -444,7 +447,7 @@ def _cover_crop(im, w: int = 1080, h: int = 1920, zoom: float = 1.0):
 
 
 def photo_segment(images: list, out: str, secs: float = SEG_SECS) -> str:
-    """5 photos -> a silent 1080x1920 H.264 video: each with a slow zoom-in, 0.6 s cross-fades (frames go to JPEG files, ONE ffmpeg run)."""
+    """3-5 photos -> a silent 1080x1920 H.264 video: each with a slow zoom-in, 0.6 s cross-fades (frames go to JPEG files, ONE ffmpeg run)."""
     import shutil
     from PIL import Image
     n = len(images)
@@ -495,7 +498,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
     used = set(state.get("aarti_photos_used", []))
     cands = commons_photos(queries, used)
     print(f"  aarti photos: {len(cands)} free-licence photos for {queries}")
-    if len(cands) < 5:
+    if len(cands) < 3:
         return None
     folder = tempfile.mkdtemp(prefix="photos_", dir=tmp)
     kept = []
@@ -511,7 +514,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
             continue
         c["img"] = im
         kept.append(c)
-    if len(kept) < 5:
+    if len(kept) < 3:
         return None
     # AI check on contact sheets of the real 9:16 crops (12 per sheet)
     good = []
@@ -536,7 +539,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
             print(f"  ! photo screen failed: {str(e)[:80]}")
             continue
         for p in res:
-            if 1 <= p["n"] <= len(batch) and p["ok"] and p["fit"] >= 6:
+            if 1 <= p["n"] <= len(batch) and p["ok"] and p["fit"] >= 5:
                 good.append((p["fit"], batch[p["n"] - 1]))
                 print(f"    photo: fit {p['fit']}/10 {batch[p['n'] - 1]['title'][5:60]} ({p['why'][:50]})")
     good.sort(key=lambda x: -x[0])
@@ -548,7 +551,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
         pick.append(c)
         if len(pick) == 5:
             break
-    if len(pick) < 4:
+    if len(pick) < 3:
         print(f"  aarti photos: only {len(pick)} good photos")
         return None
     out = photo_segment([c["img"] for c in pick], os.path.join(folder, "slides.mp4"))
