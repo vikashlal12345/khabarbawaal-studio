@@ -1482,5 +1482,37 @@
    "(2 h ago) Salim Khan holds wife Salma's hand in heartwarming phot"
   ],
   "n_stories": 10
+ },
+ {
+  "id": "reel_news_aft-2026-11-12",
+  "key": "addinathkothareranbirkapoorschoolmateramayanaschoolmeinsaath",
+  "kind": "reel_news_aft",
+  "secs": 17.8,
+  "at": "2026-11-12T12:33:06+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Kareena Kapoor: When Jewellery Becomes a Legal Issue",
+   "(under 1 h ago) Harshvardhan Rane buys a lavish Rs. 15-16 crore home, a",
+   "(under 1 h ago) Who is Samreen Kaur? Meet the actor-model Arshdeep Sing",
+   "(under 1 h ago) Addinath Kothare recalls being Ranbir Kapoor’s schoolma",
+   "(1 h ago) Lara Dutta DEFENDS Sai Pallavi's warrior Sita in Ramaya",
+   "(2 h ago) Ranbir Kapoor, Yash and Sai Pallavi’s ‘Ramayana: Part 2",
+   "(2 h ago) 'Indra Dev' Kunal Kapoor finds new fan-following in Tha",
+   "(2 h ago) Ramayana crosses ₹1000 crore at the box office in 8 day",
+   "(3 h ago) Imtiaz Ali's O Saathi Re starring Aditi Rao Hydari, Avi",
+   "(3 h ago) Kareena Kapoor Khan faces legal notice over Quranic ver"
+  ],
+  "n_stories": 12,
+  "pick_no": 4,
+  "age_h": 0.8,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "own_life",
+  "cover": "window",
+  "sharp": 43,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

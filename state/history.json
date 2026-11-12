@@ -303,7 +303,8 @@
   "da02445a94d7",
   "045f678bf2b7",
   "255120edad26",
-  "56bed8a85a5a"
+  "56bed8a85a5a",
+  "4bd6901b7ec2"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -447,7 +448,7 @@
   "reel_news_am": "2026-11-12",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-11",
+  "reel_news_aft": "2026-11-12",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-12",
@@ -459,7 +460,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "hcAXHs3Z9wGq",
+ "inbox_since": "tGoR6xKWJSeC",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -832,7 +833,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
@@ -911,7 +911,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-recalls-not-having-a-house-of-his-own-before-marrying-gauri-khan-says-even-mannat-was-beyond-his-means-101794449409007.html",
   "https://www.bollywoodhungama.com/news/bollywood/shocking-amitabh-bachchans-jalsa-at-centre-of-family-dispute-sister-in-law-ramola-challenges-gift-deed-transferring-iconic-bungalow-to-jaya-bachchan/",
   "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957",
-  "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1128,10 +1129,6 @@
   }
  ],
  "songs_recent": [
-  "Tera Hoke Rahoon",
-  "Teri Meri Kahaani",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
   "Tu Hain Toh Main Hoon",
   "Khairiyat",
   "Betuka (From \"Nakhrewaalii\")",
@@ -1167,7 +1164,11 @@
   "Sahiba",
   "Pal Pal Dil Ke Paas - Title Track",
   "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-  "Tu Mil Jaaye (From \"KING\")"
+  "Tu Mil Jaaye (From \"KING\")",
+  "Heeriye (feat. Arijit Singh)",
+  "Aaj Bhi 2",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Shree Hanuman Chalisa (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1277,6 +1278,10 @@
   },
   {
    "title": "Karan Johar is shocked at actors trying to be box office gurus and demanding alpha characters: 'When are you acting exactly?'",
+   "date": "2026-11-12"
+  },
+  {
+   "title": "Addinath Kothare recalls being Ranbir Kapoor’s schoolmate before ‘Ramayana’",
    "date": "2026-11-12"
   }
  ],

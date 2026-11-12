@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_aft-2026-11-12",
+  "image": "posts/20261112-1233-reel_news_aft-2026-11-12.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261112-123306-reel_news_aft-2026-11-12.mp4",
+  "headline": "Addinath Kothare recalls being Ranbir Kapoor’s schoolmate before ‘Ramayana’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Addinath Kothare Ranbir Kapoor schoolmate Ramayana 🎬 School mein saath cricket khelne wale dost ab Ramayana mein co-star hain. Addinath Kothare ne promotions ke dauran Ranbir ke saath apni bachpan ki dosti yaad ki. Aapka school ka dost ab kahan hai? Ek word likho 👇 💛\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #bollywood #bollywoodnews #reelsindia\n\n(Addinath Kothare, Ranbir Kapoor, Ramayana, Ranbir Kapoor schoolmate, Ramayana cast, Ranbir Kapoor Ramayana, Bollywood news, school friend)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms",
+  "pin_comment": "Apne school ke dost ko bhejo jiske saath cricket khela 👇",
+  "songs": [
+   {
+    "title": "Heeriye (feat. Arijit Singh)",
+    "artist": "Jasleen Royal, Arijit Singh",
+    "lang": "hindi",
+    "mood": "dosti aur purani yaadein"
+   },
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "nostalgia, bichhde dost ki yaad"
+   },
+   {
+    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Junaid Wasi",
+    "lang": "new",
+    "mood": "bachpan ke din yaad aaye"
+   },
+   {
+    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
+    "artist": "A.R. Rahman",
+    "lang": "new",
+    "mood": "Ramayana ka devotional vibe"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-12T12:33:06+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-12",
   "image": "posts/20261112-1032-reel_news_pm-2026-11-12.jpg",
   "kind": "reel",
@@ -403,52 +448,5 @@
    ]
   },
   "created_at": "2026-11-11T12:34:33+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-11",
-  "image": "posts/20261111-1033-reel_news_pm-2026-11-11.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261111-103347-reel_news_pm-2026-11-11.mp4",
-  "headline": "Ranveer-DP celebrate first Diwali after second baby girl in Bengaluru: PICS",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ranveer Singh Deepika Padukone first Diwali after second baby girl 🪔\nBengaluru mein family aur dosto ke saath intimate celebration.\nDeepika-Ranveer ne second baby girl ke baad pehli Diwali manayi.\nTeam Ranveer ya Team Deepika? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ranveersingh #deepikapadukone #bollywood #diwali2026 #reelsindia\n\n(Ranveer Singh, Deepika Padukone, Ranveer Deepika Diwali 2026, Deepika Ranveer baby girl, Deepika Padukone Bengaluru, Bollywood Diwali 2026, DeepVeer)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singh-deepika-padukone-celebrate-first-diwali-after-arrival-of-second-daughter-devi-in-bengaluru-with-prakash-and-ujjala-padukone-padukone-pics-go-viral/articleshow/135732509.cms",
-  "pin_comment": "Ye Ranveer-Deepika ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "family love, warm couple vibe"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "cute couple story"
-   },
-   {
-    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Pritam, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "soft family moment"
-   },
-   {
-    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya",
-    "lang": "new",
-    "mood": "romantic celebration"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The 'Photo: Bollywood Hungama' credit at bottom left runs into the '@khabarbawaal' handle, so the two texts overlap and look cluttered. Move the credit or the handle."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-11T10:33:47+00:00"
  }
 ]
