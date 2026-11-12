@@ -1,0 +1,23 @@
+name: Aarti video probe
+# Manual only: searches Pixabay (free licence) for aarti / temple / festival videos and prints what exists. Posts nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      queries:
+        description: "Optional: space-separated searches (quote multi-word ones), default = all gods and festivals"
+        required: false
+        default: ""
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python tools/aarti_probe.py ${{ github.event.inputs.queries }}
