@@ -26,8 +26,8 @@ SEG_SECS = 20.0
 LINKS_FILE = Path(__file__).parent / "assets" / "aarti_links.json"   # vetted clip LINKS per god (no video files stored): {"clips": [{id, url, user, tags, w, h, dur, gods: [...]}]}
 # festival words -> the gods whose clips fit (the vetted list is tagged by god; 'generic' = aarti / diya footage with no clear idol, fine for any god)
 FESTIVAL_GODS = [("diwali|deepavali|dhanteras|bhai dooj|govardhan|narak|lakshmi", ["lakshmi"]), ("navratri|durga|dussehra|dasara|vijayadashami", ["durga"]),
-                 ("ganesh|ganpati|vinayaka", ["ganesh"]), ("janmashtami|krishna|ram navami|rama|vishnu", ["vishnu"]), ("hanuman", ["hanuman"]),
-                 ("shivratri|shivaratri|sawan|shravan|shiv", ["shiva"]), ("chhath|surya|sankranti|pongal", ["surya"])]
+                 ("ganesh|ganpati|vinayaka", ["ganesh"]), ("janmashtami|krishna|vishnu|jagannath|rath yatra", ["vishnu"]), ("hanuman", ["hanuman"]),
+                 ("shivratri|shivaratri|sawan|shravan|shiv", ["shiva"]), ("chhath|surya", ["surya"])]
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
 
 # Official temple X accounts that post fresh vertical aarti videos (checked 12 Nov 2026; the other temples' accounts show only posts 1-4 years old
@@ -144,8 +144,8 @@ def vetted_candidates(plan: dict, subj: dict, used_order: list[str]) -> list[dic
         return []
     wanted = []
     key = _family_key(plan, subj)
-    if key:
-        wanted.append({"krishna": "vishnu", "rama": "vishnu"}.get(key, key))
+    if key and key != "rama":   # no Ram clip exists: Ram Navami / Ayodhya use the generic ones (never a Krishna temple)
+        wanted.append({"krishna": "vishnu"}.get(key, key))
     fest = " ".join(subj.get("festivals", []) + [subj.get("name", "")]).lower()
     if subj.get("kind") != "weekday":
         for pattern, gods in FESTIVAL_GODS:
