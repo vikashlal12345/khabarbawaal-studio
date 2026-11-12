@@ -6358,6 +6358,9 @@ def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, p
     if official:
         extra = (f"The video is the REAL aarti at the {vid['temple']}, filmed and posted by the temple itself. Write about the meaning of the aarti and the blessing; never "
                  "describe how the idol, the priest or the temple looks, and make no historical claim beyond the very well-known ('Somnath, pehla Jyotirlinga').")
+    elif vid["source"] == "commons-photos":
+        extra = (f"The background is a slow slideshow of REAL photos of {subj['name']} (temples, idols, festival scenes): never describe what the photos show (no 'dekho', no 'in photos "
+                 "mein'), no claims about a place or an event; write about the meaning and the blessing of the god / festival.")
     else:
         extra = (f"The video is real stock footage of an aarti / temple scene and may not show {plan['deity']}: never describe any idol, priest, place or what happens on screen "
                  "(no 'dekho', no 'is video mein'); write about the meaning and the blessing of the god / festival.")
@@ -6391,7 +6394,7 @@ def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, p
     TAGS.update({"type": "devotional", "footage": "x-temple" if official else vid["source"], "silent": bool(vid["silent"])})
     save_reel(feed, state, frames[0], out, f"reel_devotion-{today}", {
         "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🪔 " + labels["head"],
-        "caption": g.limit_hashtags(caption_of(data)), "source": (f"{vid['temple']} (@{vid['handle']} on X)" if official else "Wikimedia Commons (CC BY)" if vid["source"] == "commons" else "Pixabay (free licence)"),
+        "caption": g.limit_hashtags(caption_of(data)), "source": (f"{vid['temple']} (@{vid['handle']} on X)" if official else "Wikimedia Commons photos (free licence)" if vid["source"] == "commons-photos" else "Wikimedia Commons (CC BY)" if vid["source"] == "commons" else "Pixabay (free licence)"),
         "source_url": (f"https://x.com/{vid['handle']}" if official else ""), "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
     state["aarti_used"] = (state.get("aarti_used", []) + [vid["id"]])[-40:]
