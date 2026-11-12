@@ -474,7 +474,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-12",
-  "reel_news_pm": "2026-11-11",
+  "reel_news_pm": "2026-11-12",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-12",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "bhRG4MUwwo0v",
+ "inbox_since": "hcAXHs3Z9wGq",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -2049,11 +2049,15 @@
   {
    "title": "Kiara Advani Recalls Bonding With Alia Bhatt And Katrina Kaif Over Motherhood",
    "date": "2026-11-12"
+  },
+  {
+   "title": "Karan Johar is shocked at actors trying to be box office gurus and demanding alpha characters: 'When are you acting exactly?'",
+   "date": "2026-11-12"
   }
  ],
  "claude_limit": {
-  "at": "2026-10-25T15:34:12+00:00",
-  "msg": "You've hit your weekly limit · resets 10pm (UTC)",
+  "at": "2026-11-12T10:31:51+00:00",
+  "msg": "You've hit your 5-hour limit · resets 10:40am (UTC)",
   "alerted": true
  },
  "pinned": {},
