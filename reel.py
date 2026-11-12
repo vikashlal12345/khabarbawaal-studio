@@ -3477,6 +3477,51 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
         return current
 
 
+STORY_LINES_SYSTEM = """You write the on-screen lines of a short Instagram news Reel for young Indians (Hinglish, English letters only, never Devanagari). \
+The Reel opens on a HOOK, then shows {n} photo screens, each with ONE line, then asks the viewer a question. The lines must tell ONE connected story in order, \
+like a friend telling it: line 1 ANSWERS the hook with the core fact (who did / said what: write the people's names); line 2 adds the NEXT fact \
+(what happened next, a detail, the twist, the reaction or the result){third}. Rules: every line is a complete fact taken from the article, max 12 words, \
+plain spoken Hinglish; it is NOT a description of the photo ('dono hanste dikhe', 'photo mein...'), does not repeat the hook or another line, and does not \
+start a new unrelated topic; the lines must make sense read one after another. Only facts the article states; no invented words or reactions; an allegation or \
+report is 'kathit' / 'reportedly'. The photo notes only tell you what the photos roughly show: use them only to keep a line compatible with its photo, \
+never as the story."""
+STORY_LINES_SCHEMA = {"type": "object", "properties": {"lines": {"type": "array", "items": {"type": "string"}}}, "required": ["lines"], "additionalProperties": False}
+
+
+def story_lines(item: dict, opt: dict, photos: list[tuple], article: str) -> list[tuple]:
+    """Owner 12 Nov 2026 (the Kiara Reel: line 1 'they decided to part', line 2 'both laughed on a chat show': no link): the photo lines of a news Reel
+    used to be captions written photo by photo by the carousel curation, which never saw the hook or the other line. One AI step now writes ALL the
+    lines together as one connected story that follows the hook. Any failure keeps the old lines. X post screenshots keep theirs."""
+    import fun
+    n = len(photos)
+    if n < 2 or any(x[3] for x in photos) or len(article.strip()) < 300:
+        return photos
+    base = (f"Headline: {item['title']}\nHook (the opening line): {opt.get('hook', '')}\nQuestion at the end: {opt.get('end_text', '')}\n"
+            f"Photo notes (what each photo roughly shows): " + " | ".join(f"photo {i}: {x[2]}" for i, x in enumerate(photos, 1))
+            + f"\n\nArticle:\n{article[:3000]}\n\nWrite exactly {n} lines, each STRICTLY 12 words or fewer (count them).")
+    lines, note = [], ""
+    for attempt in (1, 2):   # a second try when a line is too long (the screen fits about 12 words)
+        try:
+            res = fun.claude_json(STORY_LINES_SYSTEM.format(n=n, third=", line 3 the result or what it means" if n >= 3 else ""),
+                                  base + note, STORY_LINES_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="news story lines")["lines"]
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! story lines failed ({str(e)[:80]}): the photo captions stay")
+            return photos
+        lines = [plain_letters(re.sub(r"\s+", " ", str(t)).strip()) for t in res]
+        if len(lines) == n and all(3 <= len(t.split()) <= 13 for t in lines):
+            break
+        note = "\n\nYour last try was too long: " + " | ".join(f"({len(t.split())} words) {t}" for t in lines) + ". Rewrite each line in 12 words or fewer, same story order."
+        lines = []
+    if not lines:
+        print("  ! story lines stayed too long / wrong count: the photo captions stay")
+        return photos
+    print("  story lines: " + " / ".join(lines))
+    TAGS["flow"] = 1
+    return [(img, credit, lines[i], whole) for i, (img, credit, _, whole) in enumerate(photos)]
+
+
 def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tmp: str,
                      article: str | None = None, hook_video: tuple[str, float, float] | None = None
                      ) -> tuple[Image.Image, str, dict]:
@@ -3506,6 +3551,9 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
     photos = photos[:2] if short else photos[:3]   # shorter Reels (owner, 14 Oct 2026): 3 photos max
     TAGS.update({"photos": len(photos), "short": short, "type": "news"})
     roman_only(opt, ["hook"])
+    if article is None:
+        article = carousel.story_text(item["link"], item["title"], item.get("summary", ""))
+    photos = story_lines(item, opt, photos, article)   # one connected story across the photo lines (owner 12 Nov 2026)
     images = [(img, whole) for img, _, _, whole in photos]
     data = {"post": opt, "slides": [{"n": i, "credit": c, "text": t} for i, (_, c, t, _) in enumerate(photos)]}
     out = os.path.join(tmp, "reel.mp4")
