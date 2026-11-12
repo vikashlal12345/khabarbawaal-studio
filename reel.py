@@ -624,7 +624,7 @@ def news_reel(slides: list[tuple[Image.Image, str, str, bool]], end_text: str, h
         bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(40)), Image.new("RGB", (RW, RH), "#000000"), 0.55)
         lines, fnt, lh = fit_lines(text, RIGHT - LEFT, 420, sizes=range(72, 40, -4))
         nums = {norm(w) for line in lines for w in line if any(c.isdigit() for c in w)}
-        per = max(photo_secs, min(7.0, 2.5 + 0.3 * len(text.split()))) if photo_secs else NEWS_PHOTO_SECS   # short news (owner 10 Nov 2026): 2.5 s + 0.3 s a word, 4.5-7 s
+        per = max(photo_secs, min(7.5, 3.0 + 0.3 * len(text.split()))) if photo_secs else NEWS_PHOTO_SECS   # short news (owner 10 Nov 2026: 2.5 s + 0.3 s a word, 4.5-7 s; 12 Nov 2026 +0.5 s: 3 s + 0.3 s a word, 5-7.5 s)
         if whole:   # fit inside the photo window, on a dark card
             card = Image.new("RGB", (RW, photo_h), "#111111")
             fit = photo.copy()
@@ -2492,7 +2492,7 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
     mask = Image.new("L", (win_w, win_h), 0)
     ImageDraw.Draw(mask).rounded_rectangle((0, 0, win_w - 1, win_h - 1), radius=26, fill=255)
     words = len(" ".join(bullets[:4] + [question]).split())
-    d1, d2 = 2.5, min(12.0, max(7.0, read_secs(" ".join(bullets[:4] + [question]), 3.0)))   # owner 10 Nov 2026: 3 s + 0.25 s a word, 7-12 s (was 2.5 s, 6-9 s)
+    d1, d2 = 3.0, min(12.0, max(7.0, read_secs(" ".join(bullets[:4] + [question]), 3.0)))   # owner 10 Nov 2026: 3 s + 0.25 s a word, 7-12 s (was 2.5 s, 6-9 s)
     enc, frame, c1, c2 = Encoder(out_mp4), None, None, None
 
     def cover_of(img: Image.Image, w: int, h: int, z: float, cy: float = 0.28) -> Image.Image:
@@ -2540,7 +2540,7 @@ def breaking_reel(first: Image.Image, second: Image.Image, credit: str, tag: str
         if i == int(d2 * FPS) - 2:
             c2 = frame.convert("RGB")
         enc.add(frame)
-    add_follow(enc, frame)
+    add_follow(enc, frame, 2.0)   # breaking card: cover 3.0 s and Follow card 2.0 s (owner 12 Nov 2026, +0.5 s each)
     enc.close()
     return [c1 or frame.convert("RGB"), c2 or frame.convert("RGB")]
 
@@ -3514,7 +3514,7 @@ def finish_news_reel(item: dict, opt: dict, photos: list[tuple], songs: dict, tm
         return news_reel([(images[s["n"]][0], s["credit"], s["text"], images[s["n"]][1]) for s in d["slides"]],
                          d["post"]["end_text"], d["post"]["highlight"], d["post"]["tag"], out,
                          hook=d["post"].get("hook", ""), hook_video=hook_video, hook_photo=cover, hook_credit=cover_credit,
-                         end=2.5 if short else 3.0, photo_secs=4.5 if short else None, cover_secs=2.5 if short else None)
+                         end=2.5 if short else 3.0, photo_secs=5.0 if short else None, cover_secs=3.0 if short else None)   # owner 12 Nov 2026: cover and photos +0.5 s, end card unchanged
 
     def drop(d, numbers):   # proofreader flagged weak photos; keep at least 2
         keep = [s for i, s in enumerate(d["slides"], 1) if i not in numbers]
