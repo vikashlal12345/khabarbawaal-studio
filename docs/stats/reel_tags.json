@@ -1340,5 +1340,13 @@
   "kw": 8,
   "relate": "which_one",
   "hook": "question"
+ },
+ {
+  "id": "reel_devotion-2026-11-12",
+  "key": "vishnujiharmushkilmeinsaathdetehain",
+  "kind": "reel_devotion",
+  "secs": 17.1,
+  "at": "2026-11-12T00:35:38+00:00",
+  "type": "devotional"
  }
 ]
