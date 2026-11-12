@@ -198,11 +198,6 @@ def main() -> None:
     git("config", "user.email", "stats-bot@users.noreply.github.com")
     r = subprocess.run(["python3", "save.py", "Stats update from Mac"], cwd=CLONE, capture_output=True, text=True)
     print(r.stdout.strip() or r.stderr.strip()[:200])
-    try:   # 🪔 Somnath's newest aarti pieces for the 6 AM God Reel (owner, 12 Nov 2026): X works from this Mac, not from GitHub (aarti_collect.py)
-        import aarti_collect
-        print("aarti collect: added", aarti_collect.run())
-    except Exception as e:
-        print(f"aarti collect failed: {type(e).__name__}: {str(e)[:100]}")
 
 
 if __name__ == "__main__":
