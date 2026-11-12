@@ -452,13 +452,13 @@
   "reel_news_early": "2026-11-12",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-12",
-  "reel_break_noon": "2026-11-11",
+  "reel_break_noon": "2026-11-12",
   "reel_break_aft": "2026-11-11",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "KSdNwucPXilT",
+ "inbox_since": "bhRG4MUwwo0v",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -831,7 +831,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
   "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
@@ -910,7 +909,8 @@
   "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
   "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-recalls-not-having-a-house-of-his-own-before-marrying-gauri-khan-says-even-mannat-was-beyond-his-means-101794449409007.html",
-  "https://www.bollywoodhungama.com/news/bollywood/shocking-amitabh-bachchans-jalsa-at-centre-of-family-dispute-sister-in-law-ramola-challenges-gift-deed-transferring-iconic-bungalow-to-jaya-bachchan/"
+  "https://www.bollywoodhungama.com/news/bollywood/shocking-amitabh-bachchans-jalsa-at-centre-of-family-dispute-sister-in-law-ramola-challenges-gift-deed-transferring-iconic-bungalow-to-jaya-bachchan/",
+  "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1127,10 +1127,6 @@
   }
  ],
  "songs_recent": [
-  "Aa To Sahii",
-  "Ashke",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
   "Tera Hoke Rahoon",
   "Teri Meri Kahaani",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
@@ -1166,7 +1162,11 @@
   "Khat",
   "Humnava Mere",
   "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Sahiba",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Tu Mil Jaaye (From \"KING\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1268,6 +1268,10 @@
   },
   {
    "title": "SHOCKING: Amitabh Bachchan's Jalsa at centre of family DISPUTE; sister-in-law Ramola challenges gift deed transferring iconic bungalow to Jaya Bachchan",
+   "date": "2026-11-12"
+  },
+  {
+   "title": "Kiara Advani Recalls Bonding With Alia Bhatt And Katrina Kaif Over Motherhood",
    "date": "2026-11-12"
   }
  ],

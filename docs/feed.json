@@ -1,23 +1,50 @@
 [
  {
-  "id": "reel_aarti_test-2026-11-12",
-  "image": "posts/20261112-0649-reel_aarti_test-2026-11-12.jpg",
+  "id": "reel_break_noon-2026-11-12",
+  "image": "posts/20261112-0834-reel_break_noon-2026-11-12.jpg",
   "kind": "reel",
   "media": "reel",
-  "video": "posts/20261112-064944-reel_aarti_test-2026-11-12.mp4",
-  "headline": "Somnath Mahadev aarti: Somnath ke Mahadev: Bholenath ki kripa kaise payein",
-  "tag": "🎬 REEL · 🙏 SOMNATH AARTI (TEST)",
-  "caption": "Somnath Mahadev ki shaam ki aarti 🙏\nBholenath dikhave se nahi, sachche bhaav se khush hote hain.\nAaj thoda ruk kar unka naam lijiye.\nHar Har Mahadev likho 🙏\n\nVideo + sound: Shree Somnath Temple (@Somnath_Temple) on X 🙏\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan 🙏\n\n#somnathtemple #bholenath #mahadev #jyotirlinga #reelsindia",
-  "source": "Shree Somnath Temple (@Somnath_Temple on X)",
-  "source_url": "https://x.com/Somnath_Temple",
-  "pin_comment": "Kisi Shiv bhakt ko bhejo, unka din ban jayega 🙏",
-  "songs": [],
+  "video": "posts/20261112-083401-reel_break_noon-2026-11-12.mp4",
+  "headline": "Kiara Advani Recalls Bonding With Alia Bhatt And Katrina Kaif Over Motherhood",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Kiara Advani Koffee With Karan Alia Bhatt Katrina Kaif motherhood\n\nKoffee With Karan 9 par Kiara Advani ne motherhood ke mushkil pal share kiye.\nPostpartum mein Alia Bhatt, Katrina Kaif aur Patralekhaa se guidance li.\nKaran Johar ke mutabik ye actresses ek doosre ka sounding board hain.\n\nKiara ka mom guilt par bolna sahi tha? HAAN ya NA 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: NDTV (link pinned in comments 👇)\n\n#reelsindia #kiaraadvani #aliabhatt #katrinakaif #koffeewithkaran\n\n(Kiara Advani, Koffee With Karan, Alia Bhatt, Katrina Kaif, Sidharth Malhotra, Karan Johar, Patralekhaa, Kiara Advani motherhood)",
+  "source": "NDTV",
+  "source_url": "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957",
+  "pin_comment": "Apne Kiara ya Alia fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "dosti aur pyaar ka warm vibe"
+   },
+   {
+    "title": "Pal Pal Dil Ke Paas - Title Track",
+    "artist": "Arijit Singh, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "motherhood ka pyaara emotional moment"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "light, happy KWK mood"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "soft emotional family feel"
+   }
+  ],
   "proof": {
-   "state": "ok",
-   "issues": [],
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo credit line at the bottom left overlaps and collides with the @khabarbawaal handle, so both are hard to read."
+   ],
    "fixed": []
   },
-  "created_at": "2026-11-12T06:49:44+00:00"
+  "created_at": "2026-11-12T08:34:02+00:00"
  },
  {
   "id": "reel_news_am-2026-11-12",
