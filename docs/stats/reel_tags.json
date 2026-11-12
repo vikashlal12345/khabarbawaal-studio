@@ -1431,5 +1431,35 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-12",
+  "key": "kiaraadvanikoffeewithkaranaliabhattkatrinakaifmotherhood",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-12T08:34:01+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Kiara Advani Recalls Bonding With Alia Bhatt And Katrin",
+   "(under 1 h ago) Imtiaz Ali's O Saathi Re starring Aditi Rao Hydari, Avi",
+   "(under 1 h ago) Kareena Kapoor Khan faces legal notice over Quranic ver",
+   "(under 1 h ago) SCOOP: Hanuman Ansh makers hit JACKPOT yet again; Sony ",
+   "(under 1 h ago) Salim Khan holds wife Salma's hand in heartwarming phot",
+   "(under 1 h ago) Lara Dutta defends Kaikeyi's look in Ramayana amid cost",
+   "(1 h ago) Kiara Advani reveals Alia Bhatt helped her navigate ret",
+   "(2 h ago) From Kismet to Dhurandhar and Ramayana: How Bollywood b",
+   "(2 h ago) Ranbir Kapoor's on-screen mother in Ramayana, Indira Kr",
+   "(3 h ago) 'Ramayana' Jatayu voice actor Anupam calls himself 'The"
+  ],
+  "n_stories": 11,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 31,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]
