@@ -483,7 +483,7 @@
   "reel_news_aft": "2026-11-11",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-11",
+  "reel_news_early": "2026-11-12",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-11",
   "reel_break_noon": "2026-11-11",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "LAUmxpmnsnAI",
+ "inbox_since": "DZ56DCm5Y3CX",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1469,7 +1469,8 @@
   "Naal Nachna",
   "Aa To Sahii",
   "Tu Hain Toh Main Hoon",
-  "Khairiyat"
+  "Khairiyat",
+  "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -2032,6 +2033,10 @@
   {
    "title": "Arshdeep Singh announces engagement to Samreen Kaur with heartfelt note",
    "date": "2026-11-11"
+  },
+  {
+   "title": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
+   "date": "2026-11-12"
   }
  ],
  "claude_limit": {
@@ -2052,7 +2057,7 @@
   "18118758538818105",
   "18106911791015136"
  ],
- "winner_followup_day": "2026-11-11",
+ "winner_followup_day": "2026-11-12",
  "aarti_photos_used": [
   "File:Mahalakshmi Temple, Mumbai.jpg",
   "File:Mahalakshmi temple, Kolhapur.jpg",
