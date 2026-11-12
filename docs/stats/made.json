@@ -1018,6 +1018,11 @@
    "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
    "at": "2026-11-12T10:32:21+00:00",
    "auto": true
+  },
+  "reel_news_aft-2026-11-12": {
+   "tag": "🎬 REEL · BOLLYWOOD",
+   "at": "2026-11-12T12:33:06+00:00",
+   "auto": false
   }
  }
 }
