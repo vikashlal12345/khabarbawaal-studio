@@ -1,59 +1,53 @@
 [
  {
   "id": "reel_news_early-2026-11-12",
-  "image": "posts/20261112-0233-reel_news_early-2026-11-12.jpg",
+  "image": "posts/20261112-0241-reel_news_early-2026-11-12.jpg",
   "kind": "reel",
   "media": "reel",
-  "video": "posts/20261112-023314-reel_news_early-2026-11-12.mp4",
+  "video": "posts/20261112-024136-reel_news_early-2026-11-12.mp4",
   "headline": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
   "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Anirudh Ravichander Kavya Maran first wedding photos 💍\nShaadi ki pehli tasveerein saamne aayi hain.\nAnirudh ne likha, \"My once in a lifetime, for a lifetime.\"\nTeam Anirudh ya Team Kavya? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: News18 (link pinned in comments 👇)\n\n#reelsindia #anirudh #kavyamaran #wedding #anirudhkavya\n\n(Anirudh Ravichander, Kavya Maran, Anirudh Kavya Maran wedding, wedding photos, Hema Malini, Hema Malini Ramayana review, Ramayana, Ramayana review)",
+  "caption": "Anirudh Ravichander Kavya Maran first wedding photos 💍\nShaadi ki pehli tasveerein saamne aayi hain.\nAnirudh ne Instagram par Kavya ke saath apni pehli photo share ki.\nTeam Anirudh ya Team Kavya? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: News18 (link pinned in comments 👇)\n\n#reelsindia #anirudh #kavyamaran #wedding #anirudhkavya\n\n(Anirudh Ravichander, Kavya Maran, Anirudh Kavya Maran wedding, wedding photos, Anirudh Ravichander wedding, Kavya Maran wedding photos, Hema Malini Ramayana, Hema Malini)",
   "source": "News18",
   "source_url": "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
-  "pin_comment": "Ye khabar apne dost ko bhejo 👇",
+  "pin_comment": "Ye Anirudh-Kavya ke har fan ko bhejo 👇",
   "songs": [
    {
-    "title": "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
-    "artist": "Anvita Dutt Guptan, Vishal & Shekhar",
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
     "lang": "hindi",
-    "mood": "shaadi wali romantic vibe"
+    "mood": "romantic hook = newlywed couple"
    },
    {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
     "lang": "hindi",
-    "mood": "romantic couple moment"
+    "mood": "for a lifetime = love song"
    },
    {
     "title": "Tu Mil Jaaye (From \"KING\")",
     "artist": "Sachin-Jigar, Ed Sheeran",
     "lang": "new",
-    "mood": "milan = shaadi hook"
+    "mood": "finding your person, wedding vibe"
    },
    {
     "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
     "artist": "Himesh Reshammiya, Mayur Puri",
     "lang": "new",
-    "mood": "soft romantic mood"
+    "mood": "soft romantic celebration"
    }
   ],
   "proof": {
    "state": "check",
    "issues": [
-    "Fact corrected to match the article: Hema Malini/Ramayana review is not in the article; replaced with the article's actual caption quote.",
-    "Fact corrected to match the article: 'Pehli shaadi' reads as 'first marriage'; the article says first wedding photos.",
-    "Fact corrected to match the article: The article does not say fans loved the photo.",
-    "Fact corrected to match the article: The Ramayana hashtag is unrelated to the story."
+    "Fact corrected to match the article: The quote is not in the article; the article only says he shared a picture with his bride on Instagram.",
+    "Slide 1: The photo is cropped at the right edge, so Kavya Maran's face is cut off. Slide 4 shows the same photo uncropped."
    ],
    "fixed": [
-    "Saath hi Hema Malini ne Ramayana ka review bhi diya. → Anirudh ne likha, \"My once in a lifetime, for a lifetime.\"",
-    "Pehli shaadi ki tasveerein saamne aayi hain. → Shaadi ki pehli tasveerein saamne aayi hain.",
-    "apni pehli shaadi ki photos share ki. → apni shaadi ki pehli photos share ki.",
-    "mehmaan ke saath, fans ko khoob pasand aayi. → mehmaan ke saath.",
-    "#ramayana → #anirudhkavya"
+    "Anirudh ne likha, \"My once in a lifetime, for a lifetime.\" → Anirudh ne Instagram par Kavya ke saath apni pehli photo share ki."
    ]
   },
-  "created_at": "2026-11-12T02:33:14+00:00"
+  "created_at": "2026-11-12T02:41:36+00:00"
  },
  {
   "id": "reel_devotion-2026-11-12",
@@ -443,54 +437,5 @@
    ]
   },
   "created_at": "2026-11-11T04:35:08+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-11",
-  "image": "posts/20261111-0236-reel_news_early-2026-11-11.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261111-023606-reel_news_early-2026-11-11.mp4",
-  "headline": "Salman Khan's next film director Vamshi Paidipally says he knows the stress and sacrifice actor went through for Maatrubhumi",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Salman Khan Maatrubhumi trailer: director Vamshi Paidipally ne Salman ke stress aur sacrifice par kya kaha 🎬\nApoorva Lakhia ki Maatrubhumi ka trailer Tuesday shaam ko release hua.\nSalman ki next film ke director Vamshi Paidipally ne kaha ki wo jaante hain Salman ne is film ke liye kitna stress aur sacrifice jhela.\nTeam Salman ya Team Wait? Comment mein 1 ya 2 likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#salmankhan #maatrubhumi #bollywood #bollywoodnews #reelsindia\n\n(Salman Khan, Maatrubhumi, Maatrubhumi trailer, Vamshi Paidipally, Apoorva Lakhia, Salman Khan new film, Salman Khan sacrifice, Bollywood news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/salman-khans-next-film-director-vamshi-paidipally-says-he-knows-the-stress-and-sacrifice-actor-went-through-for-maatrubhumi-101794361575717.html",
-  "pin_comment": "Ye Salman ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "intense hype for Bhai's comeback"
-   },
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "top chart, fits star moment"
-   },
-   {
-    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Himesh Reshammiya, Sameer Anjaan",
-    "lang": "new",
-    "mood": "patriotic, same film"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "mehnat and sacrifice vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says trailer was released on Tuesday evening; 'kal raat' is unsupported."
-   ],
-   "fixed": [
-    "kal raat release hua → Tuesday shaam ko release hua"
-   ]
-  },
-  "created_at": "2026-11-11T02:36:06+00:00"
  }
 ]

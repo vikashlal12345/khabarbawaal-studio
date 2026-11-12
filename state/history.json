@@ -829,7 +829,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/aamir-khan-breaks-down-in-tears-talking-about-careers-weakest-moments-says-he-lost-relationships-time-with-kids-by-working-like-a-madman-101792722887717.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
   "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
@@ -908,6 +907,7 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/sidharth-malhotra-and-kiara-advani-broke-up-during-shershaah-eventually-fell-in-love-after-talking-for-30-days-straight-youre-hot-and-cold-with-me/articleshow/135735188.cms",
   "https://www.ndtvprofit.com/entertainment/og-lakshman-sunil-lahri-reviews-ranbir-kapoor-s-ramayana-says-it-was-a-bittersweet-experience-12313072",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/cricketer-arshdeep-singh-gets-engaged-to-actor-samreen-kaur-couple-shares-romantic-proposal-pic-and-says-happiest-it-gave-us-each-other/articleshow/135739815.cms",
+  "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
   "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html"
  ],
  "devotion_images_used": [
@@ -1125,10 +1125,6 @@
   }
  ],
  "songs_recent": [
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Alfaaz",
-  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
   "Gehra Hua",
   "Barsaat",
   "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
@@ -1163,6 +1159,10 @@
   "Vishnu Sahasranamam (Version 1)",
   "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
   "Zaalima",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Tera Hoke Rahoon",
+  "Jo Tum Mere Ho",
   "Tu Mil Jaaye (From \"KING\")",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
  ],
@@ -1251,6 +1251,10 @@
   {
    "title": "Arshdeep Singh announces engagement to Samreen Kaur with heartfelt note",
    "date": "2026-11-11"
+  },
+  {
+   "title": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
+   "date": "2026-11-12"
   },
   {
    "title": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
