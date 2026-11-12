@@ -1461,5 +1461,26 @@
   "kw": 8,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-12",
+  "key": "karanjoharisshockedatactorstryingtobeboxofficegurusanddemand",
+  "kind": "reel_news_pm",
+  "secs": 17.0,
+  "at": "2026-11-12T10:32:21+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Ranbir Kapoor turned vegetarian to play Lord Rama in Ra",
+   "(under 1 h ago) Harshvardhan Rane buys luxury home worth Rs 15-16 crore",
+   "(under 1 h ago) Karan Johar is shocked at actors trying to be box offic",
+   "(under 1 h ago) Imtiaz Ali's O Saathi Re starring Aditi Rao Hydari, Avi",
+   "(1 h ago) Kareena Kapoor Khan faces legal notice over Quranic ver",
+   "(2 h ago) Karan says actors want to be box office gurus, ask for ",
+   "(2 h ago) SCOOP: Hanuman Ansh makers hit JACKPOT yet again; Sony ",
+   "(2 h ago) Babil Khan reveals getting trolled for being himself do",
+   "(2 h ago) 'Ramayana' box office collection day 8 (LIVE)",
+   "(2 h ago) Salim Khan holds wife Salma's hand in heartwarming phot"
+  ],
+  "n_stories": 10
  }
 ]

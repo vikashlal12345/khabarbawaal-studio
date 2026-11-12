@@ -302,7 +302,8 @@
   "6eddfd54e9db",
   "da02445a94d7",
   "045f678bf2b7",
-  "255120edad26"
+  "255120edad26",
+  "56bed8a85a5a"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -440,7 +441,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-12",
-  "reel_news_pm": "2026-11-11",
+  "reel_news_pm": "2026-11-12",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-12",
@@ -458,7 +459,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "bhRG4MUwwo0v",
+ "inbox_since": "hcAXHs3Z9wGq",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -831,7 +832,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
   "https://www.bollywoodhungama.com/news/bollywood/family-full-house-geeta-kapur-says-rohit-sharma-has-qualities-she-wants-in-an-ideal-partner-mukesh-chhabra-names-vicky-kaushal-ranbir-kapoor-for-biopic/",
   "https://www.bollywoodhungama.com/news/bollywood/scoop-ramayana-2-delayed-to-2028-ranbir-kapoor-yash-starrer-to-release-on-diwali-2028/",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-says-he-felt-offended-helpless-when-faceless-nameless-trolls-attacked-his-wife-and-daughter-over-ghooskhor-pandat-row-gajab-raat-101792807335381.html",
@@ -910,7 +910,8 @@
   "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-recalls-not-having-a-house-of-his-own-before-marrying-gauri-khan-says-even-mannat-was-beyond-his-means-101794449409007.html",
   "https://www.bollywoodhungama.com/news/bollywood/shocking-amitabh-bachchans-jalsa-at-centre-of-family-dispute-sister-in-law-ramola-challenges-gift-deed-transferring-iconic-bungalow-to-jaya-bachchan/",
-  "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957"
+  "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957",
+  "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1273,11 +1274,15 @@
   {
    "title": "Kiara Advani Recalls Bonding With Alia Bhatt And Katrina Kaif Over Motherhood",
    "date": "2026-11-12"
+  },
+  {
+   "title": "Karan Johar is shocked at actors trying to be box office gurus and demanding alpha characters: 'When are you acting exactly?'",
+   "date": "2026-11-12"
   }
  ],
  "claude_limit": {
-  "at": "2026-10-25T15:34:12+00:00",
-  "msg": "You've hit your weekly limit · resets 10pm (UTC)",
+  "at": "2026-11-12T10:31:51+00:00",
+  "msg": "You've hit your 5-hour limit · resets 10:40am (UTC)",
   "alerted": true
  },
  "pinned": {},
