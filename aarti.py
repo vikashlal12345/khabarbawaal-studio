@@ -171,68 +171,17 @@ def vetted_candidates(plan: dict, subj: dict, used_order: list[str]) -> list[dic
              "user": c.get("user", ""), "lic": c.get("lic", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for _, _, c in out]
 
 
-RELEASE_API = "https://api.github.com/repos/vikashlal12345/khabarbawaal-studio/releases/tags/aarti-bank"
-
-
-def _gh_headers() -> dict:
-    h = {"Accept": "application/vnd.github+json", "User-Agent": "khabarbawaal-studio"}
-    if os.environ.get("GITHUB_TOKEN"):
-        h["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
-    return h
-
-
-def release_candidates(used: set[str]) -> list[dict]:
-    """Somnath's newest aarti pieces that the Mac collected (aarti_collect.py) into the public release 'aarti-bank' (X shows nothing to GitHub's computers). Owner,
-    12 Nov 2026: the folder is public only briefly: a piece is deleted right after its Reel is saved (delete_release_asset) and the Mac clears leftovers after 3 days.
-    Files are named somnath-YYYYMMDD-<tweet id>.mp4."""
-    from datetime import datetime, timedelta, timezone
-    try:
-        r = requests.get(RELEASE_API, headers=_gh_headers(), timeout=25)
-        if r.status_code != 200:
-            return []
-        files = r.json().get("assets", [])
-    except Exception as e:
-        print(f"  ! aarti release: {str(e)[:60]}")
-        return []
-    out, cutoff = [], datetime.now(timezone.utc) - timedelta(days=4)
-    for a in sorted(files, key=lambda x: x["name"], reverse=True):
-        m = re.match(r"somnath-(\d{8})-(\d+)\.mp4$", a["name"])
-        if not m or datetime.strptime(m.group(1), "%Y%m%d").replace(tzinfo=timezone.utc) < cutoff or f"x{m.group(2)}" in used:
-            continue
-        out.append({"id": f"x{m.group(2)}", "source": "x", "url": a["browser_download_url"], "handle": "Somnath_Temple", "temple": "Shree Somnath Temple", "dur": 20,
-                    "tags": "Somnath aarti", "user": "Shree Somnath Temple", "thumb": "", "q": "release", "release_name": a["name"], "asset_id": a["id"]})
-    return out[:3]
-
-
-def delete_release_asset(name: str) -> bool:
-    """Takes a used piece out of the public release again (needs GITHUB_TOKEN with contents: write, which the hourly workflow has)."""
-    try:
-        r = requests.get(RELEASE_API, headers=_gh_headers(), timeout=25)
-        for a in r.json().get("assets", []) if r.status_code == 200 else []:
-            if a["name"] == name:
-                d = requests.delete(f"https://api.github.com/repos/vikashlal12345/khabarbawaal-studio/releases/assets/{a['id']}", headers=_gh_headers(), timeout=25)
-                print(f"  aarti release: removed {name} (HTTP {d.status_code})")
-                return d.status_code in (200, 204)
-    except Exception as e:
-        print(f"  ! aarti release delete: {str(e)[:60]}")
-    return False
-
-
 def official_candidates(plan: dict, subj: dict, used: set[str]) -> list[dict]:
-    """The god's official temple video: first the pieces the Mac collected into the release (works from GitHub), then X itself (works from the Mac),
-    e.g. @Somnath_Temple for Shiva (videos of the last 4 days, 10 s +)."""
+    """The god's official temple account on X (videos of the last 4 days, 10 s +), e.g. @Somnath_Temple for Shiva. From GitHub X answers 429 until its 15-minute window resets and the
+    address's 30 reads are used up by others straight after: official_videos waits for the reset and asks at once (tested 12 Nov 2026: HTTP 200 on the second try)."""
     import reel
     key = _family_key(plan, subj)
     handles = TEMPLE_X.get(key, [])
     if not handles:
         return []
-    if key in ("shiva", "shiv", "mahadev", "shankar"):
-        rel = release_candidates(used)
-        if rel:
-            return rel
     names = dict(handles)
     try:
-        vids = reel.official_videos(set(), tuple(h for h, _ in handles), hours=96, max_wait=45)
+        vids = reel.official_videos(set(), tuple(h for h, _ in handles), hours=96, max_wait=900)
     except Exception as e:
         print(f"  ! X temple videos: {str(e)[:80]}")
         return []
@@ -381,7 +330,7 @@ def _try_clip(c: dict, src: str, wanted: str, folder: str) -> dict | None:
     print(f"  aarti footage: {c['id']} ({'official ' + c['temple'] if official else ('vetted ' if c.get('vetted') else '') + 'Pixabay ' + c['tags'][:50]}), "
           f"{'own sound' if keep_audio else 'silent'}")
     return {"seg": seg, "id": c["id"], "source": c["source"], "credit": credit, "caption_credit": credit + " 🙏", "silent": not keep_audio,
-            "temple": c.get("temple") or "", "handle": c.get("handle") or "", "release_name": c.get("release_name", "")}
+            "temple": c.get("temple") or "", "handle": c.get("handle") or ""}
 
 
 def _pixabay_url_by_id(pid: str) -> str:
