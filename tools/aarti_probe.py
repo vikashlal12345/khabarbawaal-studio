@@ -17,5 +17,5 @@ for q in QUERIES:
         v = h.get("videos", {})
         big = v.get("large") or v.get("medium") or {}
         print("HIT " + json.dumps({"q": q, "id": h["id"], "dur": h.get("duration"), "tags": h.get("tags"), "w": big.get("width"), "h": big.get("height"),
-                                   "url": big.get("url"), "med": (v.get("medium") or {}).get("url"), "pic": h.get("picture_id"), "user": h.get("user"),
+                                   "url": big.get("url"), "med": (v.get("medium") or {}).get("url"), "pic": h.get("picture_id"), "thumb": big.get("thumbnail") or (v.get("medium") or {}).get("thumbnail") or (v.get("small") or {}).get("thumbnail"), "user": h.get("user"),
                                    "page": h.get("pageURL"), "likes": h.get("likes"), "views": h.get("views")}, ensure_ascii=False), flush=True)

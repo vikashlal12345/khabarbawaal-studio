@@ -75,6 +75,28 @@ class Encoder:
             raise RuntimeError("ffmpeg failed")
 
 
+class FileEncoder:
+    """Frames go to JPEG files and ONE ffmpeg run joins them with a sound track (12 Nov 2026: no pipes between two ffmpeg processes, they jammed)."""
+
+    def __init__(self, out_mp4: str, audio: str):
+        import tempfile
+        self.out, self.audio, self.n = out_mp4, audio, 0
+        self.dir = tempfile.mkdtemp(prefix="frames_", dir=os.path.dirname(out_mp4) or None)
+
+    def add(self, frame: Image.Image) -> None:
+        frame.convert("RGB").save(f"{self.dir}/{self.n:05d}.jpg", "JPEG", quality=95)
+        self.n += 1
+
+    def close(self) -> None:
+        r = subprocess.run([ffmpeg_exe(), "-nostdin", "-loglevel", "error", "-y", "-framerate", str(FPS), "-i", f"{self.dir}/%05d.jpg", "-i", self.audio,
+                            "-map", "0:v", "-map", "1:a", "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+                            "-vf", "scale=in_range=full:out_range=tv,format=yuv420p", "-profile:v", "high", "-colorspace", "bt709", "-color_primaries", "bt709",
+                            "-color_trc", "bt709", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", self.out], capture_output=True, text=True)
+        shutil.rmtree(self.dir, ignore_errors=True)
+        if r.returncode != 0:
+            raise RuntimeError(f"ffmpeg failed: {r.stderr[:200]}")
+
+
 def clip_frames(path: str, start: float, dur: float, w: int, h: int, crop_x: float = 0.5, hold: float = 0.0,
                 crop_bottom: float = 0.0):
     """Frames of a clip, scaled to cover w x h (crop centred at crop_x of the width), 30 fps;
@@ -6146,6 +6168,17 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
                            f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']}. Festivals today: "
                            f"{', '.join(subj['festivals']) or 'none'}. Plan the Reel.", DEVOTION_PLAN,
                            CONFIG.get("membership_model", "sonnet"), purpose="devotion plan")
+    if os.environ.get("AARTI_VIDEO", "1") != "0":   # 🪔 real aarti video first (owner, 12 Nov 2026); any failure -> the AI pictures below
+        try:
+            import aarti
+            status.step("Looking for real aarti video", 3)
+            vid = aarti.find_footage(plan, subj, today, state, tmp)
+            if vid:
+                return make_aarti_reel(state, feed, today, tmp, subj, plan, vid)
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! real aarti video not used ({type(e).__name__}: {str(e)[:120]}): AI pictures")
     exact = True
     reuse = _DEVOTION_PICTURES.get((today, subj["name"]))
     if reuse:   # a retry: this morning's earlier try already has the pictures (owner, 22 Oct 2026: the retry painted
@@ -6220,6 +6253,149 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "caption": g.limit_hashtags(caption_of(data)), "source": "KhabarBawaal Original", "source_url": "",
         "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
+
+def aarti_reel(seg: str, hook: str, lesson: str, real_life: str, highlight: list[str], out_mp4: str, labels: dict, credit: str) -> list[Image.Image]:
+    """🪔 Devotional Reel on REAL aarti video (owner, 12 Nov 2026): the 20 s 1080x1920 clip `seg` (aarti.make_segment) full screen, a dark shade from 55 % down,
+    and the god's text BELOW the shrine: hook -> lesson -> blessing -> send line -> Follow card (~17.7 s). The clip's own sound stays. Returns 4 frames to proofread."""
+    hl = {norm(w) for phrase in highlight for w in phrase.split()}
+    body = vfont("PlayfairDisplay-Variable.ttf", 70, "Bold")
+    lesson_f = vfont("PlayfairDisplay-Variable.ttf", 56, "SemiBold")
+    small_gold = vfont("Cinzel-Variable.ttf", 40, "SemiBold")
+    take_f = vfont("PlayfairDisplay-Variable.ttf", 64, "Bold")
+    logo = logo_img(400, 96)
+    cta = glow_line(labels.get("cta") or "Send this to someone who needs it", vfont("PlayfairDisplay-Variable.ttf", 48, "SemiBold"), GOLD)
+    handle = glow_line(CONFIG["handle"], vfont("PlayfairDisplay-Variable.ttf", 36, "SemiBold"), "#E8D9B8")
+    head_txt = labels["head"]
+    head_f = vfont("Cinzel-Variable.ttf", 54, "Bold")
+    while head_f.size > 30 and ImageDraw.Draw(Image.new("RGBA", (1, 1))).textlength(head_txt, font=head_f) > RW - 260:
+        head_f = vfont("Cinzel-Variable.ttf", head_f.size - 2, "Bold")
+    head = glow_line(head_txt, head_f, GOLD)
+
+    def lines_of(text, fnt, color):
+        return [glow_line(ln, fnt, GOLD if any(norm(w) in hl for w in ln.split()) else color) for ln in wrap_centre(text, fnt, RW - 200)]
+    gap = 0.2
+    hook_f = vfont("PlayfairDisplay-Variable.ttf", 96, "Bold") if len(hook.split()) <= 8 else body
+    hook_l = lines_of(hook, hook_f, CREAM)
+    y0 = 1505 - len(hook_l) * int(hook_f.size * 0.71)
+    parts, t = [], 0.6
+    parts.append(([(y0 + i * int(hook_f.size * 1.3), im, -1.0) for i, im in enumerate(hook_l)], t + len(hook_l) * gap + max(quick_read(hook), 3.4)))
+    t = parts[-1][1] + 0.55
+    items, y = [(1350, glow_line(labels["middle"], small_gold, GOLD), t)], 1450
+    les = lines_of(lesson, lesson_f, CREAM)
+    for im in les:
+        items.append((y, im, t)); y += int(lesson_f.size * 1.32)
+    parts.append((items, t + 0.5 + len(les) * gap + quick_read(lesson)))
+    t = parts[-1][1] + 0.55
+    items, y = [(1370, glow_line(labels["seekh"], vfont("Cinzel-Variable.ttf", 46, "Bold"), GOLD), t)], 1480
+    for im in lines_of(real_life, take_f, CREAM):
+        items.append((y, im, t)); y += int(take_f.size * 1.3)
+    parts.append((items, t + 0.5 + quick_read(real_life) + 0.4))
+    cta_at = parts[-1][1] + 0.3
+    total = cta_at + 1.9
+    grad = Image.new("L", (1, RH))
+    for yy in range(RH):
+        grad.putpixel((0, yy), int(max(246 * min(1.0, max(0.0, (yy - RH * 0.555) / (RH * 0.15))), 175 * max(0.0, 1 - yy / 400))))
+    overlay = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    overlay.putalpha(grad.resize((RW, RH)))
+    warm = Image.new("RGB", (RW, RH), "#3a2000")
+    credit_f = font("Poppins-SemiBold.ttf", 22)
+    n = int(total * FPS)
+    check_t = [1.9, parts[0][1] - 0.3, parts[1][1] - 0.3, total - 0.3]
+    checks: list[Image.Image] = []
+    p = subprocess.Popen([ffmpeg_exe(), "-nostdin", "-loglevel", "error", "-i", seg, "-t", f"{total + 0.2:.2f}", "-vf", f"scale={RW}:{RH},fps={FPS}",
+                          "-an", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+    enc, frame, size = FileEncoder(out_mp4, seg), None, RW * RH * 3
+    try:
+        for i in range(n):
+            raw = p.stdout.read(size)
+            if len(raw) < size:
+                break
+            t = i / FPS
+            frame = Image.blend(Image.frombytes("RGB", (RW, RH), raw), warm, 0.10).convert("RGBA")
+            frame.alpha_composite(overlay)
+            if logo:
+                frame.alpha_composite(logo, ((RW - logo.width) // 2, 110))
+            frame.alpha_composite(head, ((RW - head.width) // 2, 262 - head.height // 2))
+            start = 0.0
+            for its, e in parts:
+                if start - 0.1 <= t <= e + 0.5:
+                    out_a = 1.0 if t <= e else 1 - (t - e) / 0.5
+                    for yy, im, at in its:
+                        a = min(1.0, max(0.0, (t - at) / 0.3)) * out_a
+                        if a > 0:
+                            frame.alpha_composite(faded(im, a), ((RW - im.width) // 2, int(yy - im.height / 2)))
+                start = e + 0.5
+            if t >= cta_at:
+                a = min(1.0, (t - cta_at) / 0.7)
+                frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, 1620 - cta.height // 2))
+                frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, 1705 - handle.height // 2))
+            ImageDraw.Draw(frame).text((RW // 2, RH - 60), credit[:90], font=credit_f, fill="#d8c9a3", anchor="mm", stroke_width=2, stroke_fill="#000000")
+            if len(checks) < len(check_t) and t >= check_t[len(checks)]:
+                checks.append(frame.convert("RGB"))
+            enc.add(frame)
+    finally:
+        p.kill()   # the reader still holds a few spare frames: never wait for it (that jammed the first test runs)
+        p.wait()
+    if frame is None:
+        raise RuntimeError("the aarti clip gave no frames")
+    add_follow(enc, frame)
+    enc.close()
+    while len(checks) < 4:
+        checks.append(frame.convert("RGB"))
+    return checks
+
+
+def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, plan: dict, vid: dict) -> None:
+    """🪔 The 6 AM Reel on real aarti footage (aarti.find_footage) with the god's / festival's text on top (owner, 12 Nov 2026). Raises on any failure so
+    make_devotion_reel falls back to the AI pictures."""
+    from datetime import date
+    import fun
+    import generate as g
+    import proofread
+    import status
+    day = date.fromisoformat(today)
+    official = vid["source"] == "x"
+    if official:
+        extra = (f"The video is the REAL aarti at the {vid['temple']}, filmed and posted by the temple itself. Write about the meaning of the aarti and the blessing; never "
+                 "describe how the idol, the priest or the temple looks, and make no historical claim beyond the very well-known ('Somnath, pehla Jyotirlinga').")
+    else:
+        extra = (f"The video is real stock footage of an aarti / temple scene and may not show {plan['deity']}: never describe any idol, priest, place or what happens on screen "
+                 "(no 'dekho', no 'is video mein'); write about the meaning and the blessing of the god / festival.")
+    status.step(f"Writing the {plan['deity']} Reel", 4)
+    model = CONFIG.get("membership_model", "sonnet")
+    options = fun.claude_json(DEVOTION_SYSTEM.format(page=CONFIG["page_name"]),
+                              f"Today: {day:%A, %d %B %Y}. Reel subject: {subj['name']} (deity: {plan['deity']}). Festivals today: {', '.join(subj['festivals']) or 'none'}.\n"
+                              f"On screen the parts are labelled '{plan['middle']}' (lesson) and '{plan['seekh']}' (real_life), so don't repeat those words.\n{extra}\n"
+                              + viral_memory("for tone and shareability only: today's Reel stays about the deity") + "\nWrite exactly 3 different Reels.",
+                              options_schema(DEVOTION_OPTION, "Exactly 3 different Reels"), model, purpose="aarti writing")["options"][:3]
+    for o in options:
+        o["caption"] = unescape(o["caption"])
+    best = fun.judge_best(options, lambda o: f"{o['hook']} -> {o['lesson']} -> {o['real_life']}", model, judge_system=GITA_JUDGE.replace("Gita", "devotional"), fallback=True)
+    roman_only(best, ["caption", "pin_comment", "hook", "lesson", "real_life"])
+    for k in ("hook", "lesson", "real_life"):
+        best[k] = plain_letters(best[k])
+    labels = {k: screen_label(plan[k]).upper() if k != "cta" else screen_label(plan[k]) for k in ("head", "middle", "seekh", "cta")}
+    songs = devotional_songs(plan["song_searches"])[:4]
+    out = os.path.join(tmp, "reel.mp4")
+    status.step("Making the video + proofreading", 5)
+
+    def caption_of(d):
+        tags = " ".join(t if t.startswith("#") else f"#{t}" for t in d["post"]["hashtags"])
+        return f"{d['post']['caption'].strip()}\n\n{vid['caption_credit']}\nFollow {CONFIG['handle']} for daily darshan 🙏\n\n{tags}"
+    own = "the temple's own" if official else "free stock"
+    note = (f"Devotional Reel for {subj['name']} ({plan['deity']}) on REAL aarti video ({own} footage). The credit line at the bottom and any "
+            "small temple logo in the video are intentional: don't flag them. Check the facts about the deity / festival are the well-known traditional ones.")
+    frames, data, proof = proofread.run(lambda d: aarti_reel(vid["seg"], d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"], d["post"]["highlight"], out, labels,
+                                                              vid["credit"]), {"post": best}, caption_of, note)
+    post = data["post"]
+    TAGS.update({"type": "devotional", "footage": "x-temple" if official else "pixabay", "silent": bool(vid["silent"])})
+    save_reel(feed, state, frames[0], out, f"reel_devotion-{today}", {
+        "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🪔 " + labels["head"],
+        "caption": g.limit_hashtags(caption_of(data)), "source": (f"{vid['temple']} (@{vid['handle']} on X)" if official else "Pixabay (free licence)"),
+        "source_url": (f"https://x.com/{vid['handle']}" if official else ""), "pin_comment": post.get("pin_comment", ""),
+        "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
+    state["aarti_used"] = (state.get("aarti_used", []) + [vid["id"]])[-40:]
+
 
 # ---------------------------------------------------------------- 🗳️ "CHOOSE YOUR ___" poll Reel (4 PM)
 # Owner, 15 Oct 2026, after a creator's "CHOOSE YOUR FUTURE" Reel got 16K likes + 8K comments in a day: 4 options,
