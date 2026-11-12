@@ -481,7 +481,7 @@ PHOTO_SYSTEM = ("You choose REAL photos for a devotional Instagram Reel for Indi
                 "festival text. Open the picture with the Read tool: a grid of numbered 9:16 crops, exactly what the phone will show. GOOD: a real, sharp, well lit photo that clearly shows the "
                 "wanted temple, idol, ritual or festival scene, with the main subject inside the crop, respectful, no text overlay or watermark. Reject: blurry, dark, tiny subject, "
                 "a wrong place or god, tourists posing or selfies, close-ups of strangers' faces, a diagram, a map, a painting of something else, a modern building with no devotional "
-                "element, non-Hindu scenes, and anything disrespectful. The lower 40 % of the screen is covered by the Reel's text, so the subject must be in the upper 60 %.")
+                "element, non-Hindu scenes, photos taken in a museum or outside India, photos where strangers' faces are the main subject, and anything disrespectful. The lower 40 % of the screen is covered by the Reel's text, so the subject must be in the upper 60 %.")
 PHOTO_SCHEMA = {"type": "object", "properties": {"photos": {"type": "array", "items": {"type": "object", "properties": {
     "n": {"type": "integer"}, "ok": {"type": "boolean"}, "fit": {"type": "integer", "description": "1-10"}, "why": {"type": "string"}},
     "required": ["n", "ok", "fit", "why"], "additionalProperties": False}}}, "required": ["photos"], "additionalProperties": False}
