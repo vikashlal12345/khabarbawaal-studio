@@ -10,10 +10,12 @@ find_footage(plan, subj, today, state, tmp) -> dict | None
 Nothing here posts anything; reel.make_aarti_reel renders and saves."""
 from __future__ import annotations
 
+import json
 import os
 import re
 import subprocess
 import tempfile
+from pathlib import Path
 
 import requests
 
@@ -21,6 +23,11 @@ import fun
 from generate import CONFIG
 
 SEG_SECS = 20.0
+LINKS_FILE = Path(__file__).parent / "assets" / "aarti_links.json"   # vetted clip LINKS per god (no video files stored): {"clips": [{id, url, user, tags, w, h, dur, gods: [...]}]}
+# festival words -> the gods whose clips fit (the vetted list is tagged by god; 'generic' = aarti / diya footage with no clear idol, fine for any god)
+FESTIVAL_GODS = [("diwali|deepavali|dhanteras|bhai dooj|govardhan|narak|lakshmi", ["lakshmi"]), ("navratri|durga|dussehra|dasara|vijayadashami", ["durga"]),
+                 ("ganesh|ganpati|vinayaka", ["ganesh"]), ("janmashtami|krishna|ram navami|rama|vishnu", ["vishnu"]), ("hanuman", ["hanuman"]),
+                 ("shivratri|shivaratri|sawan|shravan|shiv", ["shiva"]), ("chhath|surya|sankranti|pongal", ["surya"])]
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
 
 # Official temple X accounts that post fresh vertical aarti videos (checked 12 Nov 2026; the other temples' accounts show only posts 1-4 years old
@@ -125,6 +132,38 @@ def pixabay_candidates(queries: list[str], used: set[str]) -> list[dict]:
     # vertical first, then 4K landscape; short searches first
     out.sort(key=lambda c: (c["h"] <= c["w"], queries.index(c["q"])))
     return out
+
+
+def vetted_candidates(plan: dict, subj: dict, used_order: list[str]) -> list[dict]:
+    """Clips from the vetted LINK list (assets/aarti_links.json) for today's god / festival, then the generic aarti ones: the god's own clips first, never-used
+    first, then the least recently used (a clip returns about once a month with new text)."""
+    try:
+        clips = json.load(open(LINKS_FILE)).get("clips", [])
+    except Exception as e:
+        print(f"  aarti: no vetted link list ({str(e)[:50]})")
+        return []
+    wanted = []
+    key = _family_key(plan, subj)
+    if key:
+        wanted.append({"krishna": "vishnu", "rama": "vishnu"}.get(key, key))
+    fest = " ".join(subj.get("festivals", []) + [subj.get("name", "")]).lower()
+    if subj.get("kind") != "weekday":
+        for pattern, gods in FESTIVAL_GODS:
+            if re.search(pattern, fest):
+                wanted += [g_ for g_ in gods if g_ not in wanted]
+    last_use = {cid: i for i, cid in enumerate(used_order)}
+    out = []
+    for c in clips:
+        gods = c.get("gods", [])
+        rank = next((i for i, w in enumerate(wanted) if w in gods), None)
+        if rank is None and "generic" in gods:
+            rank = len(wanted)
+        if rank is None:
+            continue
+        out.append((rank, last_use.get(c["id"], -1), c))
+    out.sort(key=lambda x: (x[0], x[1]))
+    return [{"id": c["id"], "source": "pixabay", "url": c["url"], "w": c.get("w", 0), "h": c.get("h", 0), "dur": c.get("dur", 0), "tags": c.get("tags", ""),
+             "user": c.get("user", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for _, _, c in out]
 
 
 def official_candidates(plan: dict, subj: dict, used: set[str]) -> list[dict]:
@@ -241,80 +280,103 @@ def _screen(cands: list[dict], wanted: str, folder: str, frames_of: dict[int, li
     return sorted(good, key=lambda x: -x[1])
 
 
+def _try_clip(c: dict, src: str, wanted: str, folder: str) -> dict | None:
+    """Cut the 20 s 9:16 segment, let the AI check the real crop; the result dict or None."""
+    try:
+        seg, keep_audio = make_segment(src, os.path.join(folder, f"{c['id']}_seg.mp4"), c["source"])
+    except Exception as e:
+        print(f"  ! {c['id']}: {str(e)[:100]}")
+        return None
+    crops = []
+    for k, at in enumerate((2, 8, 14), 1):
+        f = os.path.join(folder, f"{c['id']}_crop{k}.jpg")
+        _run([_ffmpeg(), "-v", "error", "-y", "-ss", str(at), "-i", seg, "-frames:v", "1", "-vf", "scale=405:-2", f])
+        if os.path.exists(f):
+            crops.append(os.path.basename(f))
+    if not crops:
+        return None
+    try:
+        ok = _screen([c], wanted, folder, {1: crops})
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":
+            raise
+        print(f"  ! crop check failed: {str(e)[:80]}")
+        return None
+    if not ok:
+        return None
+    official = c["source"] == "x"
+    credit = f"Video + sound: {c['temple']} (@{c['handle']}) on X" if official else f"Video: {c['user']} / Pixabay"
+    print(f"  aarti footage: {c['id']} ({'official ' + c['temple'] if official else ('vetted ' if c.get('vetted') else '') + 'Pixabay ' + c['tags'][:50]}), "
+          f"{'own sound' if keep_audio else 'silent'}")
+    return {"seg": seg, "id": c["id"], "source": c["source"], "credit": credit, "caption_credit": credit + " 🙏", "silent": not keep_audio,
+            "temple": c.get("temple") or "", "handle": c.get("handle") or ""}
+
+
+def _pixabay_url_by_id(pid: str) -> str:
+    """A fresh MP4 link for a Pixabay video id (when a stored link no longer works)."""
+    key = os.environ.get("PIXABAY_API_KEY", "")
+    if not key:
+        return ""
+    try:
+        hits = requests.get("https://pixabay.com/api/videos/", timeout=25, params={"key": key, "id": pid}).json().get("hits", [])
+        v = hits[0].get("videos", {}) if hits else {}
+        return (v.get("large") or v.get("medium") or {}).get("url", "")
+    except Exception:
+        return ""
+
+
 def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> dict | None:
-    """The real aarti footage for today's god / festival, or None (the caller then uses the AI-picture flow)."""
-    used = set(state.get("aarti_used", []))
+    """The real aarti footage for today's god / festival, or None (the caller then uses the AI-picture flow). Order: the god's official temple account
+    (fresh, own sound), the vetted LINK list (downloaded now), a fresh Pixabay search (AI-screened)."""
+    used_order = list(state.get("aarti_used", []))
+    used = set(used_order)
     wanted = (f"{plan.get('deity') or subj.get('deity') or subj.get('name')} ({subj.get('name', '')}"
               f"{'; festival: ' + ', '.join(subj['festivals']) if subj.get('festivals') else ''})")
-    cands = official_candidates(plan, subj, used)
-    pix = pixabay_candidates(queries_for(plan, subj), used)
-    print(f"  aarti footage: {len(cands)} official + {len(pix)} Pixabay candidates for {wanted}")
     folder = tempfile.mkdtemp(prefix="aarti_", dir=tmp)
-    pool = cands + pix[:14]
-    # 1) thumbnails of the Pixabay clips + a frame of each official clip (their video is downloaded first, 3 are small enough)
-    local: dict[str, str] = {}
-    frames: dict[int, list[str]] = {}
-    for n, c in enumerate(pool, 1):
-        files = []
-        if c["source"] == "pixabay":
-            p = os.path.join(folder, f"t{n}.jpg")
-            if _download(c["thumb"], p, 5):
-                files.append(f"t{n}.jpg")
-        else:
-            path = os.path.join(folder, f"x{n}.mp4")
-            if _download(c["url"], path):
-                local[c["id"]] = path
-                _, _, secs, _ = _info(path)
-                for k, at in enumerate((0.25, 0.6), 1):
-                    _run([_ffmpeg(), "-v", "error", "-y", "-ss", f"{secs * at:.1f}", "-i", path, "-frames:v", "1", "-vf", "scale=360:-2", os.path.join(folder, f"x{n}_{k}.jpg")])
-                    if os.path.exists(os.path.join(folder, f"x{n}_{k}.jpg")):
-                        files.append(f"x{n}_{k}.jpg")
-        frames[n] = files
-    pool_idx = [n for n in frames if frames[n]]
-    if not pool_idx:
+    # 1) official temple video (screened like any new clip)
+    cands = official_candidates(plan, subj, used)
+    for n, c in enumerate(cands, 1):
+        path = os.path.join(folder, f"{c['id']}.mp4")
+        if _download(c["url"], path):
+            got = _try_clip(c, path, wanted, folder)
+            if got:
+                return got
+    # 2) the vetted link list: the clip is downloaded from its link right now
+    vet = vetted_candidates(plan, subj, used_order)
+    print(f"  aarti footage: {len(cands)} official, {len(vet)} vetted links for {wanted}")
+    for c in vet[:4]:
+        path = os.path.join(folder, f"{c['id']}.mp4")
+        if not _download(c["url"], path):
+            fresh = _pixabay_url_by_id(c["pid"])
+            if not fresh or not _download(fresh, path):
+                print(f"  ! vetted clip {c['id']}: link dead")
+                continue
+        got = _try_clip(c, path, wanted, folder)
+        if got:
+            return got
+    # 3) last resort: search Pixabay now and let the AI pick from thumbnails
+    pix = pixabay_candidates(queries_for(plan, subj), used)[:14]
+    print(f"  aarti footage: searching Pixabay: {len(pix)} candidates")
+    frames, keep = {}, []
+    for n, c in enumerate(pix, 1):
+        p = os.path.join(folder, f"t{n}.jpg")
+        if _download(c["thumb"], p, 5):
+            frames[len(keep) + 1] = [f"t{n}.jpg"]
+            keep.append(c)
+    if not keep:
         return None
-    sub = [pool[n - 1] for n in pool_idx]
-    sub_frames = {i: frames[n] for i, n in enumerate(pool_idx, 1)}
     try:
-        ranked = _screen(sub, wanted, folder, sub_frames)
+        ranked = _screen(keep, wanted, folder, frames)
     except Exception as e:
         if type(e).__name__ == "ClaudeLimit":
             raise
         print(f"  ! footage screen failed: {str(e)[:80]}")
         return None
-    # official temple footage first when it passed (its own sound and the real temple), then the best stock clip
-    order = sorted(ranked, key=lambda x: (sub[x[0] - 1]["source"] != "x", -x[1]))
-    for i, fit in order[:3]:
-        c = sub[i - 1]
-        src = local.get(c["id"]) or os.path.join(folder, f"{c['id']}.mp4")
-        if not os.path.exists(src) and not _download(c["url"], src):
-            continue
-        try:
-            seg, keep_audio = make_segment(src, os.path.join(folder, f"{c['id']}_seg.mp4"), c["source"])
-        except Exception as e:
-            print(f"  ! {c['id']}: {str(e)[:100]}")
-            continue
-        # 2) the AI checks the real 9:16 crop
-        crops = []
-        for k, at in enumerate((2, 8, 14), 1):
-            f = os.path.join(folder, f"{c['id']}_crop{k}.jpg")
-            _run([_ffmpeg(), "-v", "error", "-y", "-ss", str(at), "-i", seg, "-frames:v", "1", "-vf", "scale=405:-2", f])
-            if os.path.exists(f):
-                crops.append(os.path.basename(f))
-        if not crops:
-            continue
-        try:
-            ok = _screen([c], wanted, folder, {1: crops})
-        except Exception as e:
-            if type(e).__name__ == "ClaudeLimit":
-                raise
-            print(f"  ! crop check failed: {str(e)[:80]}")
-            continue
-        if not ok:
-            continue
-        official = c["source"] == "x"
-        credit = f"Video + sound: {c['temple']} (@{c['handle']}) on X" if official else f"Video: {c['user']} / Pixabay"
-        print(f"  aarti footage: {c['id']} ({'official ' + c['temple'] if official else 'Pixabay ' + c['tags'][:50]}), {'own sound' if keep_audio else 'silent'}")
-        return {"seg": seg, "id": c["id"], "source": c["source"], "credit": credit, "caption_credit": credit + " 🙏", "silent": not keep_audio,
-                "temple": c.get("temple") or "", "handle": c.get("handle") or ""}
+    for i, fit in ranked[:3]:
+        c = keep[i - 1]
+        src = os.path.join(folder, f"{c['id']}.mp4")
+        if _download(c["url"], src):
+            got = _try_clip(c, src, wanted, folder)
+            if got:
+                return got
     return None

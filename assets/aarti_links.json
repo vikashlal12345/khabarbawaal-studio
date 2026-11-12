@@ -1,0 +1,109 @@
+{
+ "note": "Vetted Pixabay video LINKS (no files stored), one entry per clip; the robot downloads the clip from 'url' at run time (a dead link is looked up again by id). 'gods' = who it fits; 'generic' = aarti / diya / ghat footage with no clear idol, fine for any god. Screened by the AI on 12 Nov 2026 (7 of 177 passed). Add more: send Pixabay video page links.",
+ "clips": [
+  {
+   "id": "pb44740",
+   "url": "https://cdn.pixabay.com/video/2020/07/15/44740-439982664_large.mp4",
+   "page": "https://pixabay.com/videos/id-44740/",
+   "user": "Stock-Freelr",
+   "w": 1920,
+   "h": 1080,
+   "dur": 36,
+   "tags": "indian temple, india, temple, mandir, diya, shiva, satisfying, hindu, hinduism, religion, architectu",
+   "shows": "rows of lit diyas in clay pots",
+   "gods": [
+    "lakshmi",
+    "generic"
+   ]
+  },
+  {
+   "id": "pb72054",
+   "url": "https://cdn.pixabay.com/video/2021/04/24/72054-541168460_large.mp4",
+   "page": "https://pixabay.com/videos/id-72054/",
+   "user": "LIVE_VISUAL_MEDIA",
+   "w": 1920,
+   "h": 1080,
+   "dur": 10,
+   "tags": "kerala, temple, krishna, shiva, trivandrum",
+   "shows": "brass aarti lamp with flames",
+   "gods": [
+    "generic"
+   ]
+  },
+  {
+   "id": "pb136922",
+   "url": "https://cdn.pixabay.com/video/2022/10/29/136922-765457800_large.mp4",
+   "page": "https://pixabay.com/videos/id-136922/",
+   "user": "arunutp",
+   "w": 1920,
+   "h": 1080,
+   "dur": 54,
+   "tags": "woman, shiva, chhath, puja, bihar, culture, india, festival",
+   "shows": "Chhath puja plate with diyas and fruit",
+   "gods": [
+    "surya",
+    "lakshmi",
+    "generic"
+   ]
+  },
+  {
+   "id": "pb269245",
+   "url": "https://cdn.pixabay.com/video/2025/04/01/269245_large.mp4",
+   "page": "https://pixabay.com/videos/id-269245/",
+   "user": "artosuraj",
+   "w": 1920,
+   "h": 1080,
+   "dur": 10,
+   "tags": "sunrise, twilight, sunlight, horizontal, illuminated, medieval, morning, scenic, sun, boat, gothic s",
+   "shows": "Ganga at sunrise",
+   "gods": [
+    "surya",
+    "generic"
+   ]
+  },
+  {
+   "id": "pb385756",
+   "url": "https://cdn.pixabay.com/video/2026/10/29/385756_large.mp4",
+   "page": "https://pixabay.com/videos/id-385756/",
+   "user": "AbrahamSuna",
+   "w": 3840,
+   "h": 2160,
+   "dur": 47,
+   "tags": "hinduism, hindu religion, hindu culture, hindu goddesses, indian temples, ancient temples, famous te",
+   "shows": "Jagannath temple at dusk (drone)",
+   "gods": [
+    "vishnu",
+    "generic"
+   ]
+  },
+  {
+   "id": "pb279876",
+   "url": "https://cdn.pixabay.com/video/2025/05/18/279876_large.mp4",
+   "page": "https://pixabay.com/videos/id-279876/",
+   "user": "Roadsandwander",
+   "w": 3840,
+   "h": 2160,
+   "dur": 40,
+   "tags": "temple, trayambakeshwar, rishikesh, shiva, uttrakhand, mahadev, ganga, hinduism, india",
+   "shows": "Rishikesh Ganga ghat and temple (drone)",
+   "gods": [
+    "shiva",
+    "generic"
+   ]
+  },
+  {
+   "id": "pb276474",
+   "url": "https://cdn.pixabay.com/video/2025/05/03/276474_large.mp4",
+   "page": "https://pixabay.com/videos/id-276474/",
+   "user": "Roadsandwander",
+   "w": 3840,
+   "h": 2160,
+   "dur": 15,
+   "tags": "uttrakhand, shiva, devprayag, alaknanda, ganga, india",
+   "shows": "Devprayag Ganga confluence (drone)",
+   "gods": [
+    "generic"
+   ]
+  }
+ ]
+}
