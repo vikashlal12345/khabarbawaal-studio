@@ -1542,5 +1542,32 @@
   "kw": 9,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_break_night-2026-11-12",
+  "key": "salmankhanshraddhakapooreethamaatrubhumiclash",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-12T14:34:18+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Daayra OTT release: Kareena Kapoor and Prithviraj Sukum",
+   "(under 1 h ago) IIT Kharagpur to offer NMC-recognised postgraduate medi",
+   "(under 1 h ago) Salman extends support to Shraddha's 'Eetha' despite cl",
+   "(under 1 h ago) Ravie Dubey has a ‘thousand reasons to be happy’ as Ram",
+   "(1 h ago) Babil Khan opens up about trolling over his emotional s",
+   "(2 h ago) Harshvardhan Rane buys a lavish Rs. 15-16 crore home, a",
+   "(4 h ago) 'Indra Dev' Kunal Kapoor finds new fan-following in Tha"
+  ],
+  "n_stories": 7,
+  "pick_no": 3,
+  "age_h": 0.3,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 43,
+  "topic": "gossip",
+  "kw": 9,
+  "relate": "team_vote",
+  "hook": "question"
  }
 ]
