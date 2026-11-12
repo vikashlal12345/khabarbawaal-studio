@@ -1353,18 +1353,15 @@
   "id": "reel_news_early-2026-11-12",
   "key": "anirudhravichanderkavyamaranfirstweddingphotos",
   "kind": "reel_news_early",
-  "secs": 16.9,
-  "at": "2026-11-12T02:33:14+00:00",
+  "secs": 18.7,
+  "at": "2026-11-12T02:41:36+00:00",
   "type": "news",
   "pool": [
-   "(under 1 h ago) Anirudh Ravichander, Kavya Maran Share First Wedding Ph",
-   "(1 h ago) ‘Drishyam 3’ day 40: Ajay's film stays blockbuster; wor",
-   "(2 h ago) 'Ramayana': Ranbir Kapoor, Yash's film nears Rs 1,000 c",
-   "(2 h ago) Sidharth Malhotra was aware The Vvaan was being written"
+   "Anirudh Ravichander, Kavya Maran Share First Wedding Ph"
   ],
-  "n_stories": 4,
+  "n_stories": 1,
   "pick_no": 1,
-  "age_h": 0.0,
+  "age_h": null,
   "topic": "couple_family",
   "kw": 8,
   "relate": "which_one",
@@ -1372,6 +1369,7 @@
   "sharp": 47,
   "hook": "question",
   "photos": 2,
-  "short": true
+  "short": true,
+  "flow": 1
  }
 ]
