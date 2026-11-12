@@ -1514,5 +1514,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_aft-2026-11-12",
+  "key": "laraduttasaipallaviramayanasitasupport",
+  "kind": "reel_break_aft",
+  "secs": 17.0,
+  "at": "2026-11-12T13:35:16+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) ‘Kareena Kapoor is a Sanatani’: Hindu outfit backs acto",
+   "(1 h ago) Harshvardhan Rane buys a lavish Rs. 15-16 crore home, a",
+   "(2 h ago) Lara Dutta DEFENDS Sai Pallavi's warrior Sita in Ramaya",
+   "(3 h ago) 'Indra Dev' Kunal Kapoor finds new fan-following in Tha",
+   "(4 h ago) Imtiaz Ali's O Saathi Re starring Aditi Rao Hydari, Avi",
+   "(4 h ago) Kareena Kapoor Khan faces legal notice over Quranic ver",
+   "(5 h ago) SCOOP: Hanuman Ansh makers hit JACKPOT yet again; Sony ",
+   "(5 h ago) Babil Khan reveals getting trolled for being himself do"
+  ],
+  "n_stories": 8,
+  "pick_no": 3,
+  "age_h": 2.1,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 48,
+  "topic": "gossip",
+  "kw": 9,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]
