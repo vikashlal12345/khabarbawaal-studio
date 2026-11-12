@@ -167,8 +167,9 @@ def vetted_candidates(plan: dict, subj: dict, used_order: list[str]) -> list[dic
         out.append((rank, last_use.get(c["id"], -1), c))
     # god-specific first; then the sharper source (height >= 2000 px = no upscaling), then never-used / least recently used
     out.sort(key=lambda x: (x[0], (x[2].get("h", 0) or 0) < 2000, x[1]))
-    return [{"id": c["id"], "source": c.get("source", "pixabay"), "url": c["url"], "w": c.get("w", 0), "h": c.get("h", 0), "dur": c.get("dur", 0), "tags": c.get("tags", ""),
-             "user": c.get("user", ""), "lic": c.get("lic", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for _, _, c in out]
+    n_wanted = len(wanted)
+    return [{"specific": rank < n_wanted, "id": c["id"], "source": c.get("source", "pixabay"), "url": c["url"], "w": c.get("w", 0), "h": c.get("h", 0), "dur": c.get("dur", 0), "tags": c.get("tags", ""),
+             "user": c.get("user", ""), "lic": c.get("lic", ""), "thumb": "", "q": "vetted", "vetted": True, "pid": c["id"][2:]} for rank, _, c in out]
 
 
 def official_candidates(plan: dict, subj: dict, used: set[str]) -> list[dict]:
@@ -346,6 +347,219 @@ def _pixabay_url_by_id(pid: str) -> str:
         return ""
 
 
+
+# 📷 Real photos from Wikimedia Commons for a god / temple / festival that has no video (owner, 12 Nov 2026): CC0, public domain and plain CC BY only (BY-SA would
+# bind the Reel), the AI picks sharp, relevant ones by looking at the real 9:16 crops, a slow zoom turns 5 of them into the 20 s background.
+PHOTO_QUERIES = {
+    "shiva": ["Kashi Vishwanath Temple", "Shiva temple India", "Mahashivratri", "Somnath temple", "Shivling puja"],
+    "hanuman": ["Hanuman temple India", "Sankat Mochan temple", "Hanuman statue", "Hanuman Jayanti"],
+    "ganesh": ["Siddhivinayak temple", "Lalbaugcha Raja", "Dagdusheth Ganpati", "Ganesh Chaturthi", "Ganesha idol"],
+    "vishnu": ["Krishna temple India", "Tirupati Balaji temple", "Jagannath temple Puri", "Janmashtami", "Dahi Handi"],
+    "krishna": ["Krishna temple India", "Janmashtami", "Dahi Handi", "Vrindavan temple"],
+    "rama": ["Ram Mandir Ayodhya", "Ram Navami", "Ram temple India"],
+    "lakshmi": ["Mahalakshmi temple", "Lakshmi puja", "Diwali Lakshmi idol", "Dhanteras"],
+    "durga": ["Vaishno Devi", "Durga Puja pandal", "Navratri Garba", "Durga idol", "Kali Puja"],
+    "shani": ["Shani Shingnapur", "Shani Dev temple", "Shani idol"],
+    "surya": ["Konark Sun Temple", "Surya temple India", "Chhath Puja", "Makar Sankranti"],
+}
+FESTIVAL_WORDS = {"chhat": "Chhath Puja", "deepavali": "Diwali", "diwali": "Diwali", "dussehra": "Dussehra Ravana", "dasara": "Dussehra Ravana", "navratri": "Navratri Garba",
+                  "durga": "Durga Puja pandal", "bhai duj": "Bhai Dooj", "bhai dooj": "Bhai Dooj", "makar sankranti": "Makar Sankranti", "pongal": "Pongal", "ugadi": "Ugadi",
+                  "gudi padwa": "Gudi Padwa", "baisakhi": "Baisakhi", "vaisakhi": "Baisakhi", "raksha bandhan": "Raksha Bandhan rakhi", "janmashtami": "Janmashtami", "onam": "Onam Pookalam",
+                  "karwa": "Karva Chauth", "karva": "Karva Chauth", "dhanteras": "Dhanteras", "govardhan": "Govardhan Puja", "ram navami": "Ram Navami", "hanuman jayanti": "Hanuman Jayanti",
+                  "lohri": "Lohri", "holi": "Holi festival", "guru purnima": "Guru Purnima", "rath yatra": "Rath Yatra Puri", "tulsi": "Tulsi Vivah", "kali puja": "Kali Puja",
+                  "ganesh": "Ganesh Chaturthi", "shivratri": "Mahashivratri", "shivaratri": "Mahashivratri", "bihu": "Bihu", "vishu": "Vishu", "teej": "Teej festival"}
+LIC_OK = re.compile(r"(?i)^(cc0|public domain|pd\b|cc by( |-)?\d)")
+WIKI_HEADERS = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}
+
+
+def photo_queries(plan: dict, subj: dict) -> list[str]:
+    qs = []
+    if subj.get("kind") != "weekday":
+        text = " ".join(subj.get("festivals", []) + [subj.get("name", "")]).lower()
+        for word, q in FESTIVAL_WORDS.items():
+            if word in text and q not in qs:
+                qs.append(q)
+        if not qs:
+            qs.append(re.split(r"[(/:]", (subj.get("festivals") or [subj.get("name", "")])[0])[0].strip())
+    key = _family_key(plan, subj)
+    for q in PHOTO_QUERIES.get(key, []):
+        if q not in qs:
+            qs.append(q)
+    return qs[:6]
+
+
+def _wiki_json(params: dict) -> dict:
+    import time
+    for k in range(4):
+        try:
+            r = requests.get("https://commons.wikimedia.org/w/api.php", params=params, headers=WIKI_HEADERS, timeout=30)
+            if r.status_code == 200:
+                return r.json()
+        except Exception:
+            pass
+        time.sleep(3 * (k + 1))
+    return {}
+
+
+def commons_photos(queries: list[str], used: set[str], per_query: int = 8) -> list[dict]:
+    """Free-licence photos (>= 1600 px) for these searches, thumbnails 1280 px wide: [{title, thumb, w, h, lic, artist, page}]."""
+    titles = []
+    for q in queries:
+        j = _wiki_json({"action": "query", "format": "json", "list": "search", "srnamespace": 6, "srlimit": 30, "srsearch": "filetype:bitmap " + q})
+        found = [x["title"] for x in j.get("query", {}).get("search", [])]
+        titles += [(t, q) for t in found if t not in used and t not in [x[0] for x in titles]][:per_query + 6]
+    out = []
+    for i in range(0, len(titles), 40):
+        chunk = titles[i:i + 40]
+        j = _wiki_json({"action": "query", "format": "json", "titles": "|".join(t for t, _ in chunk), "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata",
+                        "iiurlwidth": 1280, "iiextmetadatafilter": "LicenseShortName|Artist"})
+        qmap = dict(chunk)
+        for p in j.get("query", {}).get("pages", {}).values():
+            ii = (p.get("imageinfo") or [{}])[0]
+            md = ii.get("extmetadata", {})
+            lic = md.get("LicenseShortName", {}).get("value", "")
+            if not LIC_OK.match(lic or "") or re.search(r"(?i)\bsa\b|share", lic) or (ii.get("width") or 0) < 1600 or not ii.get("thumburl") or "image" not in (ii.get("mime") or ""):
+                continue
+            out.append({"title": p["title"], "thumb": ii["thumburl"], "w": ii["width"], "h": ii["height"], "lic": lic, "q": qmap.get(p["title"], ""),
+                        "artist": re.sub(r"<[^>]+>", "", md.get("Artist", {}).get("value", "")).strip()[:50] or "Wikimedia Commons contributor",
+                        "page": "https://commons.wikimedia.org/wiki/" + p["title"].replace(" ", "_")})
+    # keep the order of the searches (most specific first), a few per search
+    order = {q: i for i, q in enumerate(queries)}
+    out.sort(key=lambda c: order.get(c["q"], 99))
+    per, res = {}, []
+    for c in out:
+        per[c["q"]] = per.get(c["q"], 0) + 1
+        if per[c["q"]] <= per_query:
+            res.append(c)
+    return res[:24]
+
+
+def _cover_crop(im, w: int = 1080, h: int = 1920, zoom: float = 1.0):
+    """Centre crop of a photo to 9:16 (cover), `zoom` 1.0 = the whole crop."""
+    from PIL import Image
+    k = max(w / im.width, h / im.height) * zoom
+    big = im.resize((int(im.width * k) + 1, int(im.height * k) + 1), Image.BILINEAR)
+    x0, y0 = (big.width - w) // 2, (big.height - h) // 2
+    return big.crop((x0, y0, x0 + w, y0 + h))
+
+
+def photo_segment(images: list, out: str, secs: float = SEG_SECS) -> str:
+    """5 photos -> a silent 1080x1920 H.264 video: each with a slow zoom-in, 0.6 s cross-fades (frames go to JPEG files, ONE ffmpeg run)."""
+    import shutil
+    from PIL import Image
+    n = len(images)
+    per = (secs + 0.6 * (n - 1)) / n
+    fps = 30
+    folder = tempfile.mkdtemp(prefix="slides_", dir=os.path.dirname(out))
+    step = per - 0.6   # photo i starts at i * step and lasts `per` s; the first 0.6 s of photo i cross-fades from photo i-1
+    total = int(secs * fps)
+
+    def frame_of(i: int, t_local: float) -> "Image.Image":
+        z = 1.0 + 0.12 * min(1.0, max(0.0, t_local / per))
+        return _cover_crop(images[i], zoom=z)
+    for f in range(total):
+        t = f / fps
+        i = min(n - 1, int(t // step))
+        t_local = t - i * step
+        if i > 0 and t_local < 0.6:
+            fr = Image.blend(frame_of(i - 1, t_local + step), frame_of(i, t_local), t_local / 0.6)
+        else:
+            fr = frame_of(i, t_local)
+        fr.save(os.path.join(folder, f"{f:05d}.jpg"), "JPEG", quality=94)
+    r = _run([_ffmpeg(), "-nostdin", "-loglevel", "error", "-y", "-framerate", str(fps), "-i", os.path.join(folder, "%05d.jpg"), "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+              "-t", str(secs), "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-vf", "format=yuv420p", "-c:a", "aac", "-b:a", "128k", "-shortest", out])
+    shutil.rmtree(folder, ignore_errors=True)
+    if r.returncode != 0 or not os.path.exists(out):
+        raise RuntimeError(f"slideshow failed: {r.stderr[:200]}")
+    return out
+
+
+PHOTO_SYSTEM = ("You choose REAL photos for a devotional Instagram Reel for Indians: a slow slideshow (one photo at a time, full screen 9:16, zoom-in) behind the day's god / temple / "
+                "festival text. Open the picture with the Read tool: a grid of numbered 9:16 crops, exactly what the phone will show. GOOD: a real, sharp, well lit photo that clearly shows the "
+                "wanted temple, idol, ritual or festival scene, with the main subject inside the crop, respectful, no text overlay or watermark. Reject: blurry, dark, tiny subject, "
+                "a wrong place or god, tourists posing or selfies, close-ups of strangers' faces, a diagram, a map, a painting of something else, a modern building with no devotional "
+                "element, non-Hindu scenes, and anything disrespectful. The lower 40 % of the screen is covered by the Reel's text, so the subject must be in the upper 60 %.")
+PHOTO_SCHEMA = {"type": "object", "properties": {"photos": {"type": "array", "items": {"type": "object", "properties": {
+    "n": {"type": "integer"}, "ok": {"type": "boolean"}, "fit": {"type": "integer", "description": "1-10"}, "why": {"type": "string"}},
+    "required": ["n", "ok", "fit", "why"], "additionalProperties": False}}}, "required": ["photos"], "additionalProperties": False}
+
+
+def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) -> dict | None:
+    """The real-photo slideshow for today's god / festival, or None."""
+    from PIL import Image, ImageDraw
+    import io
+    import reel
+    queries = photo_queries(plan, subj)
+    if not queries:
+        return None
+    used = set(state.get("aarti_photos_used", []))
+    cands = commons_photos(queries, used)
+    print(f"  aarti photos: {len(cands)} free-licence photos for {queries}")
+    if len(cands) < 5:
+        return None
+    folder = tempfile.mkdtemp(prefix="photos_", dir=tmp)
+    kept = []
+    for c in cands:
+        r = reel.wiki_get(c["thumb"])
+        if r is None:
+            continue
+        try:
+            im = Image.open(io.BytesIO(r.content)).convert("RGB")
+        except Exception:
+            continue
+        if min(im.size) < 700:
+            continue
+        c["img"] = im
+        kept.append(c)
+    if len(kept) < 5:
+        return None
+    # AI check on contact sheets of the real 9:16 crops (12 per sheet)
+    good = []
+    for b in range(0, len(kept), 12):
+        batch = kept[b:b + 12]
+        tw, th = 270, 480
+        sheet = Image.new("RGB", (6 * tw, 2 * th), "black")
+        for i, c in enumerate(batch):
+            crop = _cover_crop(c["img"], tw, th)
+            d = ImageDraw.Draw(crop)
+            d.rectangle((0, 0, 44, 30), fill="black")
+            d.text((6, 6), str(i + 1), fill="yellow")
+            sheet.paste(crop, ((i % 6) * tw, (i // 6) * th))
+        name = f"sheet_{b // 12}.jpg"
+        sheet.save(os.path.join(folder, name), "JPEG", quality=88)
+        try:
+            res = fun.claude_json(PHOTO_SYSTEM, f"Wanted: {wanted}. File: {name}. Score every numbered crop.\n" + "\n".join(f"{i}: {c['title'][5:80]}" for i, c in enumerate(batch, 1)),
+                                  PHOTO_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="aarti photo screen", folder=folder)["photos"]
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! photo screen failed: {str(e)[:80]}")
+            continue
+        for p in res:
+            if 1 <= p["n"] <= len(batch) and p["ok"] and p["fit"] >= 6:
+                good.append((p["fit"], batch[p["n"] - 1]))
+                print(f"    photo: fit {p['fit']}/10 {batch[p['n'] - 1]['title'][5:60]} ({p['why'][:50]})")
+    good.sort(key=lambda x: -x[0])
+    pick, seen_q = [], {}
+    for fit, c in good:   # at most 3 from one search so the slideshow shows variety
+        if seen_q.get(c["q"], 0) >= 3:
+            continue
+        seen_q[c["q"]] = seen_q.get(c["q"], 0) + 1
+        pick.append(c)
+        if len(pick) == 5:
+            break
+    if len(pick) < 4:
+        print(f"  aarti photos: only {len(pick)} good photos")
+        return None
+    out = photo_segment([c["img"] for c in pick], os.path.join(folder, "slides.mp4"))
+    credit = "Photos: Wikimedia Commons (CC BY / CC0)"
+    names = "; ".join(dict.fromkeys(f"{c['artist']} ({c['lic']})" for c in pick))
+    state["aarti_photos_used"] = (state.get("aarti_photos_used", []) + [c["title"] for c in pick])[-80:]
+    print(f"  aarti footage: slideshow of {len(pick)} real photos from Wikimedia Commons")
+    return {"seg": out, "id": "ph" + str(abs(hash(pick[0]["title"])))[:8], "source": "commons-photos", "credit": credit, "caption_credit": f"Photos: {names[:260]} / Wikimedia Commons 🙏",
+            "silent": True, "temple": "", "handle": "", "pages": [c["page"] for c in pick]}
+
+
 def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> dict | None:
     """The real aarti footage for today's god / festival, or None (the caller then uses the AI-picture flow). Order: the god's official temple account
     (fresh, own sound), the vetted LINK list (downloaded now), a fresh Pixabay search (AI-screened)."""
@@ -362,19 +576,39 @@ def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> d
             got = _try_clip(c, path, wanted, folder)
             if got:
                 return got
-    # 2) the vetted link list: the clip is downloaded from its link right now
+    # 2) the vetted link list: the clip is downloaded from its link right now. The festival's / god's OWN clips first, then real photos of that
+    #    temple / festival (owner 12 Nov 2026), then the generic clips (diyas, ghat, temple aerial)
     vet = vetted_candidates(plan, subj, used_order)
     print(f"  aarti footage: {len(cands)} official, {len(vet)} vetted links for {wanted}")
-    for c in vet[:6]:
-        path = os.path.join(folder, f"{c['id']}.mp4")
-        if not _download(c["url"], path):
-            fresh = _pixabay_url_by_id(c["pid"]) if c["source"] == "pixabay" else ""
-            if not fresh or not _download(fresh, path):
-                print(f"  ! vetted clip {c['id']}: link dead")
-                continue
-        got = _try_clip(c, path, wanted, folder)
+
+    def try_vetted(group: list[dict]) -> dict | None:
+        for c in group[:6]:
+            path = os.path.join(folder, f"{c['id']}.mp4")
+            if not _download(c["url"], path):
+                fresh = _pixabay_url_by_id(c["pid"]) if c["source"] == "pixabay" else ""
+                if not fresh or not _download(fresh, path):
+                    print(f"  ! vetted clip {c['id']}: link dead")
+                    continue
+            got = _try_clip(c, path, wanted, folder)
+            if got:
+                return got
+        return None
+    got = try_vetted([c for c in vet if c.get("specific")])
+    if got:
+        return got
+    if os.environ.get("AARTI_PHOTOS", "1") != "0":
+        try:
+            got = photo_slideshow(plan, subj, state, tmp, wanted)
+        except Exception as e:
+            if type(e).__name__ == "ClaudeLimit":
+                raise
+            print(f"  ! photo slideshow failed: {type(e).__name__}: {str(e)[:100]}")
+            got = None
         if got:
             return got
+    got = try_vetted([c for c in vet if not c.get("specific")])
+    if got:
+        return got
     # 3) last resort: search Pixabay now and let the AI pick from thumbnails
     pix = pixabay_candidates(queries_for(plan, subj), used)[:14]
     print(f"  aarti footage: searching Pixabay: {len(pix)} candidates")
