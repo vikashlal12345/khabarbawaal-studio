@@ -53,6 +53,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       PUSH_VAPID_KEY: ${{ secrets.PUSH_VAPID_KEY }}   # 🔔 phone alerts (push.py)
       PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}   # 🎬 free stock videos/photos
+      GITHUB_TOKEN: ${{ github.token }}   # 🪔 the robot removes a used Somnath piece from the public 'aarti-bank' release
       TIMED: ${{ github.event_name == 'schedule' || inputs.chain }}
     steps:
       - uses: actions/checkout@v4

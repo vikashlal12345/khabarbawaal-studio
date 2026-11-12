@@ -6395,6 +6395,12 @@ def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, p
         "source_url": (f"https://x.com/{vid['handle']}" if official else ""), "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
     state["aarti_used"] = (state.get("aarti_used", []) + [vid["id"]])[-40:]
+    if vid.get("release_name"):   # the public folder holds a piece only until its Reel is saved (owner, 12 Nov 2026)
+        try:
+            import aarti
+            aarti.delete_release_asset(vid["release_name"])
+        except Exception as e:
+            print(f"  ! release clean-up: {str(e)[:60]}")
 
 
 # ---------------------------------------------------------------- 🗳️ "CHOOSE YOUR ___" poll Reel (4 PM)
