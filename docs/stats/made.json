@@ -996,7 +996,12 @@
   },
   "reel_news_early-2026-11-12": {
    "tag": "🎬 REEL · BOLLYWOOD",
-   "at": "2026-11-12T02:33:14+00:00",
+   "at": "2026-11-12T02:41:36+00:00",
+   "auto": false
+  },
+  "reel_break_am-2026-11-12": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-12T04:34:04+00:00",
    "auto": false
   }
  }
