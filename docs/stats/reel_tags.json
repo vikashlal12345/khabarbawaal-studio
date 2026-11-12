@@ -1399,5 +1399,37 @@
   "kw": 9,
   "relate": "share_friend",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-11-12",
+  "key": "amitabhbachchanjalsabungalowdispute",
+  "kind": "reel_news_am",
+  "secs": 18.4,
+  "at": "2026-11-12T06:33:58+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Why has Kareena Kapoor Khan received legal notice over ",
+   "(under 1 h ago) Imtiaz Ali's O Saathi Re starring Aditi Rao Hydari, Avi",
+   "(under 1 h ago) Kareena Kapoor Khan faces legal notice over Quranic ver",
+   "(under 1 h ago) SCOOP: Hanuman Ansh makers hit JACKPOT yet again; Sony ",
+   "(under 1 h ago) SHOCKING: Amitabh Bachchan's Jalsa at centre of family ",
+   "(under 1 h ago) Ranbir Kapoor's on-screen mother in Ramayana, Indira Kr",
+   "(under 1 h ago) 'Why watch Bollywood without the songs': Western audien",
+   "(under 1 h ago) Ramayana worldwide box office collection: Unstoppable R",
+   "(1 h ago) 'Ramayana' Jatayu voice actor Anupam calls himself 'The",
+   "(1 h ago) 'Ramayana': Did you know? Yash's 10-headed Ravana scene"
+  ],
+  "n_stories": 13,
+  "pick_no": 5,
+  "age_h": -1.4,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "emoji",
+  "cover": "window",
+  "sharp": 39,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
