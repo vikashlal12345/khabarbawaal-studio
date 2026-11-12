@@ -739,7 +739,7 @@ function hookChart(box, pts) {
     'Cover': x => ({ full: 'Full-screen photo', window: 'Framed window', portrait: 'Wikipedia portrait' }[x.t.cover] || ''),
     'Cover sharpness': x => x.t.sharp == null ? '' : x.t.sharp >= 40 ? 'Sharp (40+)' : x.t.sharp >= 34 ? 'OK (34-39)' : 'Soft (under 34)',
     'Hook': x => ({ name_first: 'Name first', feeling: 'Feeling one-liner', question: 'Question' }[x.t.hook] || ''),
-    'Ask': x => ({ share_friend: 'Send to a friend', name_person: 'Name that person', which_one: 'Which one are you', team_vote: 'Team vote', save: 'Save this' }[x.t.relate] || ''),
+    'Ask': x => ({ share_friend: 'Send to a friend', name_person: 'Name that person', which_one: 'Which one are you (old)', team_vote: 'Team vote (old)', save: 'Save this', verdict: 'Verdict (yes / no)', twist: 'Story twist', rating: 'Rating', emoji: 'Emoji reaction', own_life: 'Your own life', predict: 'Predict', finish_it: 'Finish it' }[x.t.relate] || ''),
     'Topic': x => ({ couple_family: 'Couple / family', gossip: 'Gossip', promo: 'Promo (trailer…)', festival: 'Festival', politics: 'Politics', sports: 'Sports', other: 'Other' }[x.t.topic] || '')
   };
   const num = v => v >= 1000 ? (v / 1000).toFixed(1).replace('.0', '') + 'K' : String(Math.round(v));
@@ -760,7 +760,7 @@ function hookChart(box, pts) {
 <script>
 // Page version (owner, 26 Oct 2026: his phone kept showing an old copy of this page): shown at the bottom, equals the CACHE number in
 // sw.js; when the live sw.js is newer, the page opens itself again under a new address, once.
-const PAGE_V = 68;
+const PAGE_V = 69;
 document.body.insertAdjacentHTML('beforeend', `<div class="muted" style="text-align:center;margin:18px 0 40px;font-size:12px">Stats page v${PAGE_V}</div>`);
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 fetch('sw.js?t=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {

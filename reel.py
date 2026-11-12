@@ -780,12 +780,20 @@ NEWS_TAGS = ["VIRAL", "BREAKING", "BOLLYWOOD", "CRICKET", "SPORTS", "TECH", "IND
 TOPIC = {"type": "string", "enum": ["couple_family", "gossip", "promo", "festival", "politics", "sports", "other"],
          "description": "What kind of story this is: couple_family (a couple, parents, kids, family moments), gossip (rumours, spats, dating, looks), "
                         "promo (trailer, teaser, poster, release date, song launch), festival, politics, sports, other"}
-RELATE = {"type": "object", "description": "ONE ask that ties THIS story to the viewer's own life, so they SEND the Reel to a friend or "
-          "COMMENT a name / one word (owner, 30 Oct 2026: tagging needs followers, sending and writing do not). Pick the type that fits the story: "
-          "share_friend = 'Us dost ko bhejo jo ...' (relatable gossip, relationships, habits), name_person = 'Comment mein likho: tumhari life ka ___ kaun?', "
-          "which_one = 'Tum kaunse ho: A ya B? Ek word likho' (two sides or two people), team_vote = a one-word side vote ('Sahi? HAAN ya NA likho'), "
-          "save = 'Save karo, kaam aayega' (useful or festival stories). For which_one and team_vote NAME the two sides from THIS story and ask for a NUMBER (owner 10 Nov 2026, comments average 1 a Reel: one number is the easiest thing to type): 'Team Ranbir ya Team Yash? Comment mein 1 ya 2 likho' (max 12 words; the names must be in the story). Use the 'Team A ya Team B' form ONLY when the story has two REAL sides or two real people to choose between; for crime, shooting, accident, death or other serious stories, or when there is no real second side, use a plain one-word vote ('Aapka kya kehna hai? Ek word likho') and never 'Team'. DEFAULT to team_vote (a one-word side vote), which_one or name_person: almost every story has two sides, two people or someone to name. Use share_friend ONLY when none of those can fit (at most 1 Reel in 4) (owner 6 Nov 2026, 42 Reels: one-word votes avg 1,724 views / 23% stalled, which_one 2,084, name_person 4,779, send-to-a-friend 843 / 58% stalled). Max 10 words, Hinglish, never 'tag', never 'like if', no claim about the story",
-          "properties": {"type": {"type": "string", "enum": ["share_friend", "name_person", "which_one", "team_vote", "save"]},
+RELATE = {"type": "object", "description": "ONE ask that comes from THIS story's own twist, so the viewer has a real opinion and answers in ONE word, number or emoji "
+          "(owner 12 Nov 2026: 'Team A ya Team B, 1 ya 2' had nothing in the Reel to ask about; he likes asks that fit the story). Pick the type that fits: "
+          "verdict = a yes/no on the story's key act or words ('Kiara ka jawab sahi tha? HAAN ya NA'), "
+          "twist = the story's own dilemma ('Pyaar pehle ya career? Ek word likho'), "
+          "rating = a number for a couple / wedding / family moment ('Is jodi ko 10 mein se kitne? Number likho'), "
+          "emoji = a reaction to a light story, the emoji named in WORDS because the video card cannot draw pictures ('Is khabar par ek emoji likho: dil, gussa ya hasi?'), "
+          "own_life = the viewer's own memory tied to the story ('Aapki life ka Shershaah wala moment kaun sa tha?'), "
+          "predict = a guess for a film / match / result ('Ye film hit hogi ya flop? Pehle bol do'), "
+          "finish_it = a short line from the viewer ('Trolls ko aur kya kehna chahiye tha? Ek line'), "
+          "share_friend = 'Us dost ko bhejo jo ...' ONLY when none of the others fits (at most 1 Reel in 4), save = 'Save karo, kaam aayega' (useful or festival stories). "
+          "NEVER 'Team A ya Team B' or '1 ya 2' unless the story really has two sides that BOTH appear in the Reel (a clash between two people, two rival films); never invent sides "
+          "(a married couple, a breakup, a reaction have no teams). For crime, accident, death or other serious stories use a plain one-word verdict ('Aapka kya kehna hai? Ek word likho'). "
+          "The line is max 12 words, Hinglish in English letters, and must make sense to someone who sees only this Reel.",
+          "properties": {"type": {"type": "string", "enum": ["verdict", "twist", "rating", "emoji", "own_life", "predict", "finish_it", "share_friend", "save", "team_vote", "which_one"]},
                          "line": {"type": "string"}},
           "required": ["type", "line"], "additionalProperties": False}
 
@@ -811,20 +819,19 @@ def apply_relate(opt: dict, news: bool) -> None:
     line = plain_letters(re.sub(r"\s+", " ", str(rel["line"]).strip()))
     if re.search(r"(?i)\btag\b|\blike if\b|\bto win\b", line) or len(line.split()) > 12 or len(line) < 6:
         return   # tagging needs followers and Instagram shows engagement bait less: the writer's old lines stay
-    teams = re.findall(r"(?i)\bteam\s+([A-Za-z]+)", line)
-    if teams:   # 'Team A ya Team B' only for real sides (owner 10 Nov 2026: 'Team Salman ya Team Wait?', 'Team Salman ya Team Tiger?' about a shooting)
-        body = plain_letters(" ".join(str(opt.get(k, "")) for k in ("caption", "hook", "headline"))).lower()
-        if CRIME.search(body) or not all(t.lower() in body for t in teams):
-            line = "Aapka kya kehna hai? Ek word likho"
-            rel["type"] = "team_vote"
+    serious = bool(CRIME.search(plain_letters(" ".join(str(opt.get(k, "")) for k in ("caption", "hook", "headline"))))) and rel.get("type") != "verdict"
+    if re.search(r"(?i)\bteam\b.*\bya\b.*\bteam\b|\b1 ya 2\b", line) or serious:
+        line = "Aapka kya kehna hai? Ek word likho"   # no made-up sides, and a plain ask for serious stories (owner 12 Nov 2026)
+        rel["type"] = "verdict"
+    TAGS["relate"] = rel.get("type", "")
     if news:
         opt["end_text"] = line
-        opt["highlight"] = [w for w in re.findall(r"[A-Za-z]+", line) if w.lower() in ("bhejo", "likho", "save", "comment", "naam", "dost", "ek", "word")][:2]
+        opt["highlight"] = [w for w in re.findall(r"[A-Za-z]+", line) if w.lower() in ("bhejo", "likho", "save", "comment", "naam", "dost", "ek", "word", "number", "emoji", "haan", "na")][:2]
     else:
         opt["question"] = line
     cap = str(opt.get("caption", "")).rstrip().split("\n")
     if cap and len(cap) > 1:
-        cap[-1] = line + (" 👇" if rel.get("type") in ("share_friend", "name_person", "which_one", "team_vote") and "👇" not in line else "")
+        cap[-1] = line + (" 👇" if rel.get("type") != "save" and "👇" not in line else "")
         if opt.get("topic") == "couple_family" and not re.search(r"(?i)\bsave\b", cap[-1]):   # couple / family stories were all saved (owner 10 Nov 2026): the caption also asks for a save
             cap[-1] += " Save bhi kar lo 🔖"
         opt["caption"] = "\n".join(cap)
