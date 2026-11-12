@@ -1371,5 +1371,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-12",
+  "key": "shahrukhkhanmannatgaurikhandubaievent",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-12T04:34:04+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) 'Ramayana' Jakarta premiere: Ranbir and Yash starrer wi",
+   "(under 1 h ago) Shah Rukh Khan recalls not having a house of his own be",
+   "(1 h ago) Missed the Diwali sale rush? Check out these refrigerat",
+   "(2 h ago) Shah Rukh's secret entry, 100 photographers outside, 35",
+   "(2 h ago) Sohail Khan’s post for parents Salim Khan and Salma Kha",
+   "(2 h ago) Kiara Advani reveals bonding over motherhood with Alia ",
+   "(3 h ago) ‘Drishyam 3’ day 40: Ajay's film stays blockbuster; wor",
+   "(4 h ago) 'Ramayana': Ranbir Kapoor, Yash's film nears Rs 1,000 c"
+  ],
+  "n_stories": 8,
+  "pick_no": 2,
+  "age_h": 0.9,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 38,
+  "topic": "couple_family",
+  "kw": 9,
+  "relate": "share_friend",
+  "hook": "name_first"
  }
 ]

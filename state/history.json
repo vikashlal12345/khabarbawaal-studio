@@ -300,7 +300,8 @@
   "b3f652aa9ac3",
   "d10010a55602",
   "6eddfd54e9db",
-  "da02445a94d7"
+  "da02445a94d7",
+  "045f678bf2b7"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -449,14 +450,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-12",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-11",
+  "reel_break_am": "2026-11-12",
   "reel_break_noon": "2026-11-11",
   "reel_break_aft": "2026-11-11",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-11"
  },
- "inbox_since": "DZ56DCm5Y3CX",
+ "inbox_since": "wdDTfTjc7sRU",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -829,7 +830,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-team-shares-video-of-his-injuries-after-juhu-firing-incident-actor-reportedly-sustained-cuts-and-bruises/",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-vs-adipurush-advance-booking-ranbir-kapoor-yash-starrer-dwarfs-prabhas-film-outpaces-it-by-120-in-pre-sales-namit-malhotra-nitesh-tiwari-101792731242503.html",
   "https://www.bollywoodhungama.com/news/bollywood/aamir-khan-says-rajkumar-hirani-will-narrate-3-idiots-sequels-final-script-in-the-coming-weeks/",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-deepika-padukone-set-to-shoot-grand-song-for-king-in-mumbai-from-october-26-report/",
@@ -908,7 +908,8 @@
   "https://www.ndtvprofit.com/entertainment/og-lakshman-sunil-lahri-reviews-ranbir-kapoor-s-ramayana-says-it-was-a-bittersweet-experience-12313072",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/cricketer-arshdeep-singh-gets-engaged-to-actor-samreen-kaur-couple-shares-romantic-proposal-pic-and-says-happiest-it-gave-us-each-other/articleshow/135739815.cms",
   "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
-  "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html"
+  "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-recalls-not-having-a-house-of-his-own-before-marrying-gauri-khan-says-even-mannat-was-beyond-his-means-101794449409007.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1125,10 +1126,6 @@
   }
  ],
  "songs_recent": [
-  "Gehra Hua",
-  "Barsaat",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Naal Nachna",
   "Ez-Ez",
   "Ichak Dana (From \"Meethe Mein Kya Hai\")",
@@ -1164,7 +1161,11 @@
   "Tera Hoke Rahoon",
   "Jo Tum Mere Ho",
   "Tu Mil Jaaye (From \"KING\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1258,6 +1259,10 @@
   },
   {
    "title": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
+   "date": "2026-11-12"
+  },
+  {
+   "title": "Shah Rukh Khan recalls not having a house of his own before marrying Gauri Khan, says even Mannat was beyond his means",
    "date": "2026-11-12"
   }
  ],
