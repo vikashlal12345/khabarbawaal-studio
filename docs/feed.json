@@ -1,5 +1,25 @@
 [
  {
+  "id": "reel_aarti_test-2026-11-12",
+  "image": "posts/20261112-0649-reel_aarti_test-2026-11-12.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261112-064944-reel_aarti_test-2026-11-12.mp4",
+  "headline": "Somnath Mahadev aarti: Somnath ke Mahadev: Bholenath ki kripa kaise payein",
+  "tag": "🎬 REEL · 🙏 SOMNATH AARTI (TEST)",
+  "caption": "Somnath Mahadev ki shaam ki aarti 🙏\nBholenath dikhave se nahi, sachche bhaav se khush hote hain.\nAaj thoda ruk kar unka naam lijiye.\nHar Har Mahadev likho 🙏\n\nVideo + sound: Shree Somnath Temple (@Somnath_Temple) on X 🙏\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan 🙏\n\n#somnathtemple #bholenath #mahadev #jyotirlinga #reelsindia",
+  "source": "Shree Somnath Temple (@Somnath_Temple on X)",
+  "source_url": "https://x.com/Somnath_Temple",
+  "pin_comment": "Kisi Shiv bhakt ko bhejo, unka din ban jayega 🙏",
+  "songs": [],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-12T06:49:44+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-12",
   "image": "posts/20261112-0633-reel_news_am-2026-11-12.jpg",
   "kind": "reel",
@@ -426,57 +446,5 @@
    "fixed": []
   },
   "created_at": "2026-11-11T08:34:52+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-11",
-  "image": "posts/20261111-0636-reel_news_am-2026-11-11.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261111-063607-reel_news_am-2026-11-11.mp4",
-  "headline": "Exclusive | Chunky Panday reacts to the most expensive donkey being named after him at Chitrakoot fair",
-  "tag": "🎬 REEL · VIRAL",
-  "caption": "Chunky Panday donkey Chitrakoot fair ₹72,000 😂\nMadhya Pradesh ke Chitrakoot mela mein Chunky naam ka gadha ₹72,000 mein bika.\nChunky ne khud bataya ki ye sunke wo kaafi amused hue.\nChunky ka reaction sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#chunkypanday #viral #bollywood #funny #reelsindia\n\n(Chunky Panday, Chunky Panday donkey, Chitrakoot fair, Chitrakoot mela donkey, most expensive donkey, Chunky Panday reaction, viral news)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/htcity/cinema/exclusive-chunky-panday-reacts-to-the-most-expensive-donkey-being-named-after-him-at-chitrakoot-fair-101794311032559.html",
-  "pin_comment": "Ye apne Chunky Panday fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Naal Nachna",
-    "artist": "Shashwat Sachdev, Afsana Khan",
-    "lang": "hindi",
-    "mood": "fun, upbeat desi mood"
-   },
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "swag beat for funny reveal"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "playful, quirky tune"
-   },
-   {
-    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "light, masti vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The donkey was named Chunky; Chunky Panday is the actor.",
-    "Fact corrected to match the article: The article says Chunky 'reportedly' fetched the highest price, so the claim needs attribution.",
-    "Slide 4: The '@khabarbawaal' handle overlaps the 'Photo: Wikimedia Commons' credit at the bottom left, so both are hard to read."
-   ],
-   "fixed": [
-    "mela mein Chunky Panday naam ka gadha → mela mein Chunky naam ka gadha",
-    "bika, sabse mehnga. → bika, reportedly sabse mehnga."
-   ]
-  },
-  "created_at": "2026-11-11T06:36:07+00:00"
  }
 ]
