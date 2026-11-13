@@ -2185,7 +2185,7 @@ stories about a star's parent, child, spouse, couple or family bond ABOVE gossip
 EMOTIONAL FIRST (owner approved 1 Nov 2026, from 25 days of numbers: a respectful tribute got 5,593 views and 11 sends, the best of any Reel after the first Tiger Shroff story): a star's \
 real feelings about a parent, child, friend, a respectful tribute or memory (never told for shock), nostalgia, a first (first Karwa Chauth, first film with a parent) rank \
 at the TOP. SERIES RULE: this season's Koffee With Karan moments (7 Reels, avg 2,715, none stalled) and Ramayana news (20 Reels, avg 1,519) are reliable: when a fresh one \
-exists (not told in the last 12 h), rank it high. POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
+exists (not told in the last 12 h) AND it has a personal or emotional angle (a cast member's feelings, a family or friendship story, a confession), rank it high; a technical, box-office or promotional Ramayana story is NOT strong (13 Nov 2026: a production-designer talk got 428 views). POLITICS averaged 385 views (85% stalled) and trailers / box-office numbers 924: take them only when nothing else is left. \
 A festival story works only with a real person-story ('Aamir Khan's first Karwa Chauth' 2,557 views), not a plain greeting.
 HOT STORIES (owner 1 Nov 2026: 'check the story at creation time only, so we always have the latest trending one'): a story marked 🔥HOT is what many sites run \
 RIGHT NOW or a new development on one of our own hits: prefer it, but only when it carries a personal / emotional angle; skip a HOT story that is a greeting, a promo or a controversy. EXCEPTION: a story marked 'BIG POLITICS' (owner 10 Nov 2026) is a safe national story that 8+ sites run right now; choose it ONLY if it is a win, achievement or national-pride moment for India or the government, or a major national event; if you choose it write real facts only, no invented words, nothing that embarrasses the BJP / NDA.
@@ -2298,6 +2298,54 @@ def is_weak_crime(s: dict) -> bool:
     return not (emergency.STARS.search(s["title"]) and not REACTION.search(s["title"]))
 
 
+ANNOUNCE = re.compile(r"(?i)\b(confirms?|announces?|unveils?)\b.*(\bsequel\b|\bpart \d|\b\d\b|\bfirst look\b|\bteaser\b|\btrailer\b|\brelease date\b|\bseason\b|\bcast\b)|\b(roped in|first asset|first look|to feature in)\b")
+THROWBACK = re.compile(r"(?i)\b(throwback|flashback|years ago|decades ago|old (?:video|interview|clip)|once (?:said|revealed|told)|recalls? (?:when|how|the time)|back in \d{4})\b|\bwhen\b.{0,40}\b(revealed|said|recalled|confessed|admitted)\b")
+TECHNICAL = re.compile(r"(?i)\b(production designer|cinematograph\w*|vfx|visual effects|sound design\w*|costume designer|explains how|making of|behind the lens)\b")
+
+
+def is_weak_type(s: dict) -> bool:
+    """Owner, 13 Nov 2026 (the 8 AM throwback got 256 views, the 10 AM production-designer talk 428, the 4 PM film announcement 365 while SRK / Sai Pallavi stories were in the
+    list): film announcements, throwbacks and technical talks are not the stories that get forwarded. Headline only."""
+    t = s["title"]
+    return bool(ANNOUNCE.search(t) or THROWBACK.search(t) or TECHNICAL.search(t))
+
+
+STRENGTH_SYSTEM = ("You are a Bollywood editor for an Instagram page for Indians aged 18-34. From a short list of stories, score how likely each is to be WATCHED TO THE END and SENT TO A FRIEND "
+                   "(1-10). Scores are based on this page's real results: stories about a BIG star's family, property, couple or parent moment, a confession, an emotional reveal, a Koffee With Karan "
+                   "moment, a real controversy or a star's own heartfelt words took off (4,000-9,000 views). Film announcements and confirmations, throwbacks of old interviews, technical talk "
+                   "(designers, cinematographers, VFX), box-office or release numbers, promotions, reviews and small-name stories stalled (200-400 views). A Ramayana story is strong ONLY when it "
+                   "has a personal or emotional angle. Score every story; do not explain at length.")
+STRENGTH_SCHEMA = {"type": "object", "properties": {"scores": {"type": "array", "items": {"type": "object", "properties": {
+    "n": {"type": "integer"}, "score": {"type": "integer"}, "why": {"type": "string"}}, "required": ["n", "score", "why"], "additionalProperties": False}}},
+    "required": ["scores"], "additionalProperties": False}
+
+
+def rank_picks(options: list, stories: list) -> list:
+    """Strength check (owner, 13 Nov 2026: the picker ignored its own rules and took weak stories): one more AI request scores the picker's top 3 stories and the Reel is made
+    from the highest score first. Any failure keeps the picker's own order; a Claude limit is passed on."""
+    import fun
+    valid = [o for o in options if 1 <= o.get("pick", 0) <= len(stories)]
+    if len(valid) < 2:
+        return options
+    listing = "\n".join(f"{i}. {stories[o['pick'] - 1]['title']}" + (f" -- {stories[o['pick'] - 1].get('summary', '')[:160]}" if stories[o['pick'] - 1].get("summary") else "")
+                        for i, o in enumerate(valid, 1))
+    try:
+        res = fun.claude_json(STRENGTH_SYSTEM, f"Stories:\n{listing}\n\nScore each one.", STRENGTH_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="story strength")["scores"]
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit":
+            raise
+        print(f"  ! strength check failed ({str(e)[:80]}): the picker's order stays")
+        return options
+    score = {r["n"]: r["score"] for r in res if 1 <= r["n"] <= len(valid)}
+    if len(score) < len(valid):
+        return options
+    order = sorted(range(1, len(valid) + 1), key=lambda i: (-score[i], i))
+    print("  strength check: " + " | ".join(f"{score[i]}/10 {stories[valid[i - 1]['pick'] - 1]['title'][:38]}" for i in order))
+    TAGS["strength"] = score[order[0]]
+    rest = [o for o in options if o not in valid]
+    return [valid[i - 1] for i in order] + rest
+
+
 def drop_routine(stories: list, keep: int = 6) -> list:
     """Owner 4 Nov 2026 (half the Reels stalled): birthday / anniversary / greeting stories leave the picker's list whenever at least `keep` other
     stories remain; so do trailer / teaser / poster / first-look / release-date / song-launch adverts (owner 4 Nov 2026: the 12 PM 'Ramayana Part 2
@@ -2308,6 +2356,8 @@ def drop_routine(stories: list, keep: int = 6) -> list:
     rest = [x for x in stories if not HARD_PROMO.search(x["title"] + " " + (x.get("summary") or ""))]   # 10 Nov 2026: the 8 AM trailer story had no trailer word in its headline
     stories = rest if len(rest) >= keep else stories
     rest = [x for x in stories if not is_weak_crime(x)]
+    stories = rest if len(rest) >= keep else stories
+    rest = [x for x in stories if not is_weak_type(x)]   # announcements, throwbacks, technical talks (13 Nov 2026)
     stories = rest if len(rest) >= keep else stories
     rest = [x for x in stories if not is_politics(x)]   # owner 10 Nov 2026: a Rahul-Modi debate card got 288 views at 7 PM (politics Reels avg 385 over 25 days, 85% stalled)
     return rest if len(rest) >= keep else stories
@@ -2400,6 +2450,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                               + songs_prompt(songs),
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
+    options = rank_picks(options, stories)   # strength check on the top 3 (owner, 13 Nov 2026)
     for opt in options:
         if not 1 <= opt["pick"] <= len(stories):
             continue
@@ -2610,6 +2661,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                               "breaking first." + songs_prompt(songs),
                               options_schema(BREAK_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="breaking pick")["options"]
+    options = rank_picks(options, stories)   # strength check on the top 3 (owner, 13 Nov 2026)
     cands = []   # up to 3 stories with a sharp photo; the next one is tried when a Reel can't be proofread
     for o in options:
         if not 1 <= o["pick"] <= len(stories):
