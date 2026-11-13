@@ -1789,5 +1789,34 @@
   "kw": 8,
   "relate": "rating",
   "hook": "question"
+ },
+ {
+  "id": "reel_break_night-2026-11-13",
+  "key": "preetikaraoweddingamritaraosisterbeintehaaactorshaadibengalu",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-13T14:34:49+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Game Changers announces The Writer Series; Rajkumar Hir",
+   "(under 1 h ago) Moushumi Chatterjee's husband Jayanta Mukherjee passes ",
+   "(1 h ago) Amrita Rao’s sister Preetika Rao ties the knot in Benga",
+   "(2 h ago) Jaya Prada’s sita throwback: Fans compare her Sita with",
+   "(2 h ago) Will Ashneer Grover join Karan Johar and Malaika Arora ",
+   "(2 h ago) Diljit drops video of Latin Grammys '26 stage act with ",
+   "(2 h ago) Parivarik ManuRanjan review: Pankaj Tripathi, Aditi Rao",
+   "(2 h ago) Amrita Rao’s sister Preetika ties the knot in Bengaluru",
+   "(4 h ago) Dhurandhar and Ramayana to feature at IFFI leading Indi"
+  ],
+  "n_stories": 9,
+  "pick_no": 3,
+  "age_h": 1.4,
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 79,
+  "topic": "couple_family",
+  "kw": 7,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]
