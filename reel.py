@@ -6315,7 +6315,7 @@ def make_devotion_reel(state: dict, feed: list, today: str, tmp: str) -> None:
         "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
 
-def aarti_reel(seg: str, hook: str, lesson: str, real_life: str, highlight: list[str], out_mp4: str, labels: dict, credit: str) -> list[Image.Image]:
+def aarti_reel(seg: str, hook: str, lesson: str, real_life: str, highlight: list[str], out_mp4: str, labels: dict, credit, ) -> list[Image.Image]:
     """🪔 Devotional Reel on REAL aarti video (owner, 12 Nov 2026): the 20 s 1080x1920 clip `seg` (aarti.make_segment) full screen, a dark shade from 55 % down,
     and the god's text BELOW the shrine: hook -> lesson -> blessing -> send line -> Follow card (~17.7 s). The clip's own sound stays. Returns 4 frames to proofread."""
     hl = {norm(w) for phrase in highlight for w in phrase.split()}
@@ -6390,7 +6390,8 @@ def aarti_reel(seg: str, hook: str, lesson: str, real_life: str, highlight: list
                 a = min(1.0, (t - cta_at) / 0.7)
                 frame.alpha_composite(faded(cta, a), ((RW - cta.width) // 2, 1620 - cta.height // 2))
                 frame.alpha_composite(faded(handle, a), ((RW - handle.width) // 2, 1705 - handle.height // 2))
-            ImageDraw.Draw(frame).text((RW // 2, RH - 60), credit[:90], font=credit_f, fill="#d8c9a3", anchor="mm", stroke_width=2, stroke_fill="#000000")
+            line = credit if isinstance(credit, str) else next((c_[2] for c_ in credit if c_[0] <= t < c_[1] + 0.001), credit[-1][2] if credit else "")   # per-photo credits (owner 13 Nov 2026)
+            ImageDraw.Draw(frame).text((RW // 2, RH - 60), line[:90], font=credit_f, fill="#d8c9a3", anchor="mm", stroke_width=2, stroke_fill="#000000")
             if len(checks) < len(check_t) and t >= check_t[len(checks)]:
                 checks.append(frame.convert("RGB"))
             enc.add(frame)
@@ -6450,7 +6451,7 @@ def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, p
     note = (f"Devotional Reel for {subj['name']} ({plan['deity']}) on REAL aarti video ({own} footage). The credit line at the bottom and any "
             "small temple logo in the video are intentional: don't flag them. Check the facts about the deity / festival are the well-known traditional ones.")
     frames, data, proof = proofread.run(lambda d: aarti_reel(vid["seg"], d["post"]["hook"], d["post"]["lesson"], d["post"]["real_life"], d["post"]["highlight"], out, labels,
-                                                              vid["credit"]), {"post": best}, caption_of, note)
+                                                              vid.get("credits") or vid["credit"]), {"post": best}, caption_of, note)
     post = data["post"]
     TAGS.update({"type": "devotional", "footage": "x-temple" if official else vid["source"], "silent": bool(vid["silent"])})
     save_reel(feed, state, frames[0], out, f"reel_devotion-{today}", {
