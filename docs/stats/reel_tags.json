@@ -1666,5 +1666,34 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-13",
+  "key": "aditiraohydarisiddharthfamilytraditionfilmfareinterview",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-13T08:34:18+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Shilpa Shetty to host relationship reality show Pyaar K",
+   "(under 1 h ago) Aditi Rao Hydari reveals the family tradition she share",
+   "(under 1 h ago) Rana Daggubati unveils first asset of Scary Picture sta",
+   "(1 h ago) Moushumi Chatterjee's husband Jayanta Mukherjee passes ",
+   "(1 h ago) Suniel Shetty confirms 'Awara Paagal Deewana 2' with Ak",
+   "(1 h ago) Bandit Queen 2: Honey says sequel follows Phoolan after",
+   "(2 h ago) Nitesh Tiwari's Ramayana is a hit in all countries wher",
+   "(3 h ago) Johnny Walker found happiness beyond fame: son Nasirr K",
+   "(3 h ago) Student of the Year After Dark director Reema Maya defe"
+  ],
+  "n_stories": 9,
+  "pick_no": 2,
+  "age_h": -2.5,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 40,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "twist",
+  "hook": "question"
  }
 ]
