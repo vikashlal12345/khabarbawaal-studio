@@ -371,7 +371,8 @@ FESTIVAL_WORDS = {"chhat": "Chhath Puja", "deepavali": "Diwali", "diwali": "Diwa
                   "karwa": "Karva Chauth", "karva": "Karva Chauth", "dhanteras": "Dhanteras", "govardhan": "Govardhan Puja", "ram navami": "Ram Navami", "hanuman jayanti": "Hanuman Jayanti",
                   "lohri": "Lohri", "holi": "Holi festival", "guru purnima": "Guru Purnima", "rath yatra": "Rath Yatra Puri", "tulsi": "Tulsi Vivah", "kali puja": "Kali Puja",
                   "ganesh": "Ganesh Chaturthi", "shivratri": "Mahashivratri", "shivaratri": "Mahashivratri", "bihu": "Bihu", "vishu": "Vishu", "teej": "Teej festival"}
-LIC_OK = re.compile(r"(?i)^(cc0|public domain|pd\b|cc by( |-)?\d)")
+LIC_OK = re.compile(r"(?i)^(cc0|public domain|pd\b|cc by( |-)?\d|cc by-sa( |-)?\d)")   # owner 13 Nov 2026: photos that need a credit (BY, BY-SA) are fine, the credit is shown
+LIC_NO = re.compile(r"(?i)\b(nc|nd|noncommercial|noderivs)\b")
 WIKI_HEADERS = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}
 
 
@@ -464,8 +465,10 @@ def commons_photos(queries: list[str], used: set[str], per_query: int = 14) -> l
     """Free-licence photos (>= 1600 px) for these searches, thumbnails 1280 px wide: [{title, thumb, w, h, lic, artist, page}]."""
     titles = []
     for q in queries:
-        j = _wiki_json({"action": "query", "format": "json", "list": "search", "srnamespace": 6, "srlimit": 30, "srsearch": "filetype:bitmap " + q})
-        found = [x["title"] for x in j.get("query", {}).get("search", [])]
+        found = []
+        for flag in ("haswbstatement:P6731=Q63348049 ", "haswbstatement:P6731=Q63348069 ", ""):   # Commons Quality images, Featured pictures, then everything
+            j = _wiki_json({"action": "query", "format": "json", "list": "search", "srnamespace": 6, "srlimit": 30, "srsearch": "filetype:bitmap " + flag + q})
+            found += [x["title"] for x in j.get("query", {}).get("search", []) if x["title"] not in found]
         titles += [(t, q) for t in found if t not in used and t not in [x[0] for x in titles]][:per_query + 14]
     out = []
     for i in range(0, len(titles), 40):
@@ -477,7 +480,7 @@ def commons_photos(queries: list[str], used: set[str], per_query: int = 14) -> l
             ii = (p.get("imageinfo") or [{}])[0]
             md = ii.get("extmetadata", {})
             lic = md.get("LicenseShortName", {}).get("value", "")
-            if not LIC_OK.match(lic or "") or re.search(r"(?i)\bsa\b|share", lic) or (ii.get("width") or 0) < 1600 or not ii.get("thumburl") or "image" not in (ii.get("mime") or ""):
+            if not LIC_OK.match(lic or "") or LIC_NO.search(lic) or (ii.get("width") or 0) < 1600 or not ii.get("thumburl") or "image" not in (ii.get("mime") or ""):
                 continue
             out.append({"title": p["title"], "thumb": ii["thumburl"], "w": ii["width"], "h": ii["height"], "lic": lic, "q": qmap.get(p["title"], ""),
                         "artist": re.sub(r"<[^>]+>", "", md.get("Artist", {}).get("value", "")).strip()[:50] or "Wikimedia Commons contributor",
@@ -500,6 +503,13 @@ def _cover_crop(im, w: int = 1080, h: int = 1920, zoom: float = 1.0):
     big = im.resize((int(im.width * k) + 1, int(im.height * k) + 1), Image.BILINEAR)
     x0, y0 = (big.width - w) // 2, (big.height - h) // 2
     return big.crop((x0, y0, x0 + w, y0 + h))
+
+
+def photo_times(n: int, secs: float = SEG_SECS) -> list[tuple[float, float]]:
+    """(start, end) of every photo in photo_segment, for the per-photo credit line."""
+    per = (secs + 0.6 * (n - 1)) / n
+    step = per - 0.6
+    return [(i * step, min(secs, i * step + per)) for i in range(n)]
 
 
 def photo_segment(images: list, out: str, secs: float = SEG_SECS) -> str:
@@ -637,12 +647,18 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
         return None
     out = photo_segment([c["img"] for c in pick], os.path.join(folder, "slides.mp4"))
     srcs = {c.get("source", "commons") for c in pick}
-    credit = "Photos: Pixabay" if srcs == {"pixabay-photos"} else "Photos: Wikimedia Commons (CC BY / CC0)" if "pixabay-photos" not in srcs else "Photos: Pixabay, Wikimedia Commons"
+    credit = "Photos: Pixabay" if srcs == {"pixabay-photos"} else "Photos: Wikimedia Commons" if "pixabay-photos" not in srcs else "Photos: Pixabay, Wikimedia Commons"
     names = "; ".join(dict.fromkeys(f"{c['artist']} ({c['lic']})" for c in pick))
+    times = photo_times(len(pick))
+    credits = []   # one credit line per photo, on screen while that photo shows
+    for (t0, t1), c in zip(times, pick):
+        who = c["artist"][:30]
+        credits.append((t0, t1, f"Photo: {who} / {c['lic']}" + (" / Pixabay" if c.get("source") == "pixabay-photos" else " / Wikimedia Commons")))
+    pages = "\n".join(c["page"] for c in pick if c.get("page") and c.get("source") != "pixabay-photos")
     state["aarti_photos_used"] = (state.get("aarti_photos_used", []) + [c["title"] for c in pick])[-80:]
     print(f"  aarti footage: slideshow of {len(pick)} real photos from Wikimedia Commons")
-    return {"seg": out, "id": "ph" + str(abs(hash(pick[0]["title"])))[:8], "source": "commons-photos", "credit": credit, "caption_credit": f"Photos: {names[:260]} 🙏",
-            "silent": True, "temple": "", "handle": "", "pages": [c["page"] for c in pick]}
+    return {"seg": out, "id": "ph" + str(abs(hash(pick[0]["title"])))[:8], "source": "commons-photos", "credit": credit, "caption_credit": f"Photos: {names[:300]} 🙏" + (f"\nSources:\n{pages}" if pages else ""),
+            "silent": True, "temple": "", "handle": "", "pages": [c["page"] for c in pick], "credits": credits}
 
 
 def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> dict | None:
