@@ -561,13 +561,16 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
     if len(cands) < 3:
         return None
     folder = tempfile.mkdtemp(prefix="photos_", dir=tmp)
-    kept = []
+    kept, why_not = [], {}
     for c in cands:
         if c.get("source") == "pixabay-photos":
             try:
                 r = requests.get(c["thumb"], headers=UA, timeout=40)
+                if r.status_code != 200:
+                    why_not[f"HTTP {r.status_code}"] = why_not.get(f"HTTP {r.status_code}", 0) + 1
                 r = r if r.status_code == 200 else None
-            except Exception:
+            except Exception as e:
+                why_not["download error"] = why_not.get("download error", 0) + 1
                 r = None
         else:
             r = reel.wiki_get(c["thumb"])
@@ -576,11 +579,14 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
         try:
             im = Image.open(io.BytesIO(r.content)).convert("RGB")
         except Exception:
+            why_not["not an image"] = why_not.get("not an image", 0) + 1
             continue
-        if min(im.size) < 900 or max(im.size) < 1400:   # very good quality only: too small a photo would be soft on the full screen
+        if min(im.size) < 800 or max(im.size) < 1200:   # very good quality only: too small a photo would be soft on the full screen
+            why_not["too small"] = why_not.get("too small", 0) + 1
             continue
         c["img"] = im
         kept.append(c)
+    print(f"  aarti photos: {len(kept)} usable of {len(cands)}; dropped: {why_not}")
     if len(kept) < 3:
         return None
     # AI check on contact sheets of the real 9:16 crops (12 per sheet)
