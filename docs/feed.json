@@ -1,5 +1,62 @@
 [
  {
+  "id": "reel_news_aft-2026-11-13",
+  "image": "posts/20261113-1235-reel_news_aft-2026-11-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261113-123531-reel_news_aft-2026-11-13.mp4",
+  "headline": "'Ramayana' box office: RK's film becomes record breaker in Vietnam, Thailand, Cambodia, Nepal",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana box office Ranbir Kapoor Yash 🎬\nNitesh Tiwari ki 'Ramayana: Rise of a Legend' ne 8 din mein duniya bhar mein Rs 1000 crore paar kiye.\nFilm ko Southeast Asia ke un deshon mein khaas response mila jinka Ramayana se itihaasik rishta hai.\nRamayana final kitne crore karegi? Number likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #ramayana #ranbirkapoor #boxoffice #bollywood\n\n(Ramayana box office, Ramayana 1000 crore, Ranbir Kapoor Ramayana, Nitesh Tiwari, Ramayana Southeast Asia, Ramayana Rise of a Legend, Yash Ramayana, Ramayana worldwide collection)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-box-office-ranbir-kapoor-sai-pallavi-and-yashs-film-becomes-a-record-breaker-in-vietnam-thailand-cambodia-and-nepal-amid-the-film-crossing-rs-1000-crore-worldwide/articleshow/135801054.cms",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Radhe Radhe",
+    "artist": "Hansraj Raghuwanshi, Mista Baaz",
+    "lang": "hindi",
+    "mood": "devotional celebration vibe"
+   },
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "record-breaking hype"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana film celebration"
+   },
+   {
+    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "upbeat festive win"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article names no countries (Vietnam, Thailand, Cambodia, Nepal); Nepal is not Southeast Asia",
+    "Fact corrected to match the article: Article only says traction in Southeast Asian countries with historical ties; no countries or records named",
+    "Fact corrected to match the article: Article does not mention Vietnam or Thailand",
+    "Fact corrected to match the article: Article does not mention Vietnam or Thailand",
+    "Fact corrected to match the article: Article doesn't say Yash plays Ravana"
+   ],
+   "fixed": [
+    "Film Vietnam, Thailand, Cambodia aur Nepal mein record breaker bani. → Film ko Southeast Asia ke un deshon mein khaas response mila jinka Ramayana se itihaasik rishta hai.",
+    "Ranbir ki Ramayana Vietnam, Thailand, Cambodia, Nepal mein record breaker bani. → Ranbir ki Ramayana ko Southeast Asia ke deshon mein khaas response mila.",
+    "Ranbir ki Ramayana ne Vietnam Thailand mein kya kiya? → Ranbir ki Ramayana ne Southeast Asia mein kya kiya?",
+    "Ramayana Vietnam Thailand → Ramayana Southeast Asia",
+    "Yash Ravana → Yash Ramayana"
+   ]
+  },
+  "created_at": "2026-11-13T12:35:31+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-13",
   "image": "posts/20261113-1033-reel_news_pm-2026-11-13.jpg",
   "kind": "reel",
@@ -378,50 +435,5 @@
    ]
   },
   "created_at": "2026-11-12T13:35:16+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-12",
-  "image": "posts/20261112-1233-reel_news_aft-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-123306-reel_news_aft-2026-11-12.mp4",
-  "headline": "Addinath Kothare recalls being Ranbir Kapoor’s schoolmate before ‘Ramayana’",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Addinath Kothare Ranbir Kapoor schoolmate Ramayana 🎬 School mein saath cricket khelne wale dost ab Ramayana mein co-star hain. Addinath Kothare ne promotions ke dauran Ranbir ke saath apni bachpan ki dosti yaad ki. Aapka school ka dost ab kahan hai? Ek word likho 👇 💛\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ranbirkapoor #ramayana #bollywood #bollywoodnews #reelsindia\n\n(Addinath Kothare, Ranbir Kapoor, Ramayana, Ranbir Kapoor schoolmate, Ramayana cast, Ranbir Kapoor Ramayana, Bollywood news, school friend)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms",
-  "pin_comment": "Apne school ke dost ko bhejo jiske saath cricket khela 👇",
-  "songs": [
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "dosti aur purani yaadein"
-   },
-   {
-    "title": "Aaj Bhi 2",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "nostalgia, bichhde dost ki yaad"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "bachpan ke din yaad aaye"
-   },
-   {
-    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
-    "artist": "A.R. Rahman",
-    "lang": "new",
-    "mood": "Ramayana ka devotional vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-12T12:33:06+00:00"
  }
 ]
