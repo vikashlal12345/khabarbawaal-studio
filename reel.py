@@ -2472,7 +2472,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
         if len(photos) >= 2:
             import carousel as _car
             article_txt = _car.story_text(item["link"], item["title"], story.get("summary", ""))
-            if len(article_txt.strip()) < 300:   # unreadable article: the strict proofreader would block it after all the work
+            if len(article_txt.strip()) < 300 or _car.unrelated_text(article_txt, item["title"]):   # unreadable article (or only a cookie / privacy notice, 13 Nov 2026): the strict proofreader would block it after all the work
                 print("  the article could not be read: trying the next story")
                 AVOID.add(story["link"]); AVOID.add(story["title"][:45].lower())
                 continue
@@ -2724,7 +2724,7 @@ def _breaking_build(kind, state, feed, today, tmp, opt, story, photos, it, songs
     other_i = next((k for k in range(real_n) if k != cover_i), cover_i)   # the details frame: another real photo
     import carousel
     facts = carousel.story_text(it["link"], it["title"], story.get("summary", ""))
-    if len(facts.strip()) < 300:   # 30 Oct 2026: the 2 PM card tried the same unreadable story 3 times (every claim 'could not be checked')
+    if len(facts.strip()) < 300 or carousel.unrelated_text(facts, it["title"]):   # 30 Oct 2026: the 2 PM card tried the same unreadable story 3 times; 13 Nov 2026: a page with only a cookie notice
         raise proofread.Unverified("the article could not be read (no text to check the card against)")
     # Second writing step from the FULL story (19 Oct 2026: written from the headline alone it invented a bystander,
     # a date and a name): same fields, only facts that are in the text
