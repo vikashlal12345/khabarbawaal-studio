@@ -606,6 +606,13 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
                 raise
             print(f"  ! photo screen failed: {str(e)[:80]}")
             continue
+        if os.environ.get("AARTI_DEBUG_DIR"):   # CI only: keep the contact sheet so the candidates can be looked at
+            os.makedirs(os.environ["AARTI_DEBUG_DIR"], exist_ok=True)
+            import shutil as _sh
+            _sh.copy(os.path.join(folder, name), os.path.join(os.environ["AARTI_DEBUG_DIR"], f"{abs(hash(wanted)) % 10000}_{name}"))
+            for p in res:
+                if 1 <= p["n"] <= len(batch):
+                    print(f"    scored {p['n']:>2}: fit {p['fit']}/10 ok={p['ok']} {batch[p['n'] - 1].get('tags', '')[:40]} | {p['why'][:70]}")
         for p in res:
             if 1 <= p["n"] <= len(batch) and p["ok"] and p["fit"] >= 7:
                 good.append((p["fit"], batch[p["n"] - 1]))
