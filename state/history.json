@@ -443,7 +443,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-11-12",
+  "reel_devotion": "2026-11-13",
   "reel_news_pm": "2026-11-12",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -1131,10 +1131,6 @@
   }
  ],
  "songs_recent": [
-  "Soulmate",
-  "Sang Rahiyo",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Judi Jodi (From \"Ramayana\")",
   "Vishnu Sahasranamam",
   "Jai Ganesh Jai Ganesh Deva",
   "Sri Vishnu Sahasranamam",
@@ -1170,7 +1166,11 @@
   "Tere Liye",
   "Tu Hi Disda (From \"Bhooth Bangla\")",
   "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")"
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
+  "Aarti Laxmi Ji Ki",
+  "Om Jai Lakshmi Mata - Alka Yagnik",
+  "Laxmi Ji Ki Aarti",
+  "Jai Lakshmi Mata - Aarti"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1311,5 +1311,10 @@
   "18107622128201600",
   "17885682390526060"
  ],
- "winner_followup_day": "2026-11-12"
+ "winner_followup_day": "2026-11-12",
+ "aarti_photos_used": [
+  "File:Mahalakshmi Temple, Mumbai.jpg",
+  "File:Mahalakshmi temple, Kolhapur.jpg",
+  "File:Mahalakshmi Temple, Mumbai (11848).jpg"
+ ]
 }

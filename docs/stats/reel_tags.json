@@ -1569,5 +1569,15 @@
   "kw": 9,
   "relate": "team_vote",
   "hook": "question"
+ },
+ {
+  "id": "reel_devotion-2026-11-13",
+  "key": "maalakshmikakamalhumeinkyasikhatahai",
+  "kind": "reel_devotion",
+  "secs": 16.6,
+  "at": "2026-11-13T00:34:03+00:00",
+  "type": "devotional",
+  "footage": "commons-photos",
+  "silent": true
  }
 ]
