@@ -6394,7 +6394,7 @@ def make_aarti_reel(state: dict, feed: list, today: str, tmp: str, subj: dict, p
     TAGS.update({"type": "devotional", "footage": "x-temple" if official else vid["source"], "silent": bool(vid["silent"])})
     save_reel(feed, state, frames[0], out, f"reel_devotion-{today}", {
         "headline": printable(f"{subj['name']}: {post['hook']}")[:140], "tag": "🎬 REEL · 🪔 " + labels["head"],
-        "caption": g.limit_hashtags(caption_of(data)), "source": (f"{vid['temple']} (@{vid['handle']} on X)" if official else "Wikimedia Commons photos (free licence)" if vid["source"] == "commons-photos" else "Wikimedia Commons (CC BY)" if vid["source"] == "commons" else "Pixabay (free licence)"),
+        "caption": g.limit_hashtags(caption_of(data)), "source": (f"{vid['temple']} (@{vid['handle']} on X)" if official else "Photos (free licence: Pixabay / Wikimedia Commons)" if vid["source"] == "commons-photos" else "Wikimedia Commons (CC BY)" if vid["source"] == "commons" else "Pixabay (free licence)"),
         "source_url": (f"https://x.com/{vid['handle']}" if official else ""), "pin_comment": post.get("pin_comment", ""),
         "songs": [{k: s_[k] for k in ("title", "artist", "lang", "mood")} for s_ in songs], "proof": proof})
     state["aarti_used"] = (state.get("aarti_used", []) + [vid["id"]])[-40:]
