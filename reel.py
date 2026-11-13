@@ -2314,10 +2314,14 @@ STRENGTH_SYSTEM = ("You are a Bollywood editor for an Instagram page for Indians
                    "(1-10). Scores are based on this page's real results: stories about a BIG star's family, property, couple or parent moment, a confession, an emotional reveal, a Koffee With Karan "
                    "moment, a real controversy or a star's own heartfelt words took off (4,000-9,000 views). Film announcements and confirmations, throwbacks of old interviews, technical talk "
                    "(designers, cinematographers, VFX), box-office or release numbers, promotions, reviews and small-name stories stalled (200-400 views). A Ramayana story is strong ONLY when it "
-                   "has a personal or emotional angle. Score every story; do not explain at length.")
+                   "has a personal or emotional angle. NEVER score a story highly (1-2) if it is about religious conflict, blasphemy, a communal issue, a death or funeral, an accident or a crime. "
+                   "Score every story; do not explain at length.")
 STRENGTH_SCHEMA = {"type": "object", "properties": {"scores": {"type": "array", "items": {"type": "object", "properties": {
     "n": {"type": "integer"}, "score": {"type": "integer"}, "why": {"type": "string"}}, "required": ["n", "score", "why"], "additionalProperties": False}}},
     "required": ["scores"], "additionalProperties": False}
+
+
+RELIGION_CONFLICT = re.compile(r"(?i)\b(qur'?an\w*|hadith|bible|sentiments|fatwa|blasphem\w*|hindu-muslim|haram|halal|azaan|religious (?:row|remark|controversy)|offensive (?:remark|post|verse))\b")
 
 
 def rank_picks(options: list, stories: list) -> list:
@@ -2339,6 +2343,11 @@ def rank_picks(options: list, stories: list) -> list:
     score = {r["n"]: r["score"] for r in res if 1 <= r["n"] <= len(valid)}
     if len(score) < len(valid):
         return options
+    import flash
+    for i, o in enumerate(valid, 1):   # the page never tells religious-conflict, death or crime stories (13 Nov 2026 replay: 'Kareena legal notice over a Quranic verse' scored 8)
+        st_ = stories[o["pick"] - 1]
+        if flash.SENSITIVE.search(st_["title"]) or RELIGION_CONFLICT.search(st_["title"]) or flash.DEATH.search(st_["title"]) or is_weak_crime(st_):
+            score[i] = 1
     order = sorted(range(1, len(valid) + 1), key=lambda i: (-score[i], i))
     print("  strength check: " + " | ".join(f"{score[i]}/10 {stories[valid[i - 1]['pick'] - 1]['title'][:38]}" for i in order))
     TAGS["strength"] = score[order[0]]
