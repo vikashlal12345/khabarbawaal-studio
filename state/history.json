@@ -310,7 +310,8 @@
   "a66691dd441a",
   "d618654dba87",
   "3bbd213e4d32",
-  "5bf0ba968051"
+  "5bf0ba968051",
+  "4d8883f4aa34"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -448,7 +449,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-13",
-  "reel_news_pm": "2026-11-12",
+  "reel_news_pm": "2026-11-13",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-13",
@@ -466,7 +467,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "KfCq2Rcs6jTM",
+ "inbox_since": "CqrTvEOxe6ih",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -839,7 +840,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
@@ -918,7 +918,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html",
-  "https://www.bollywoodhungama.com/news/bollywood/aditi-rao-hydari-reveals-the-family-tradition-she-shares-with-husband-siddharth-its-common-that-everyone-laughs-together/"
+  "https://www.bollywoodhungama.com/news/bollywood/aditi-rao-hydari-reveals-the-family-tradition-she-shares-with-husband-siddharth-its-common-that-everyone-laughs-together/",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/suniel-shetty-confirms-awara-paagal-deewana-2-with-akshay-kumar-sequel-to-go-on-floors-in-early-2027-report/articleshow/135793712.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1135,10 +1136,6 @@
   }
  ],
  "songs_recent": [
-  "Khat",
-  "Humnava Mere",
-  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
   "Sahiba",
   "Pal Pal Dil Ke Paas - Title Track",
   "Ichak Dana (From \"Meethe Mein Kya Hai\")",
@@ -1174,7 +1171,11 @@
   "Tera Hoke Rahoon",
   "Jo Tum Mere Ho",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+  "To Chaloon",
+  "Alfaaz",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Betuka (From \"Nakhrewaalii\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1280,6 +1281,10 @@
   },
   {
    "title": "Aditi Rao Hydari reveals the family tradition she shares with husband Siddharth: “It's common that everyone laughs together”",
+   "date": "2026-11-13"
+  },
+  {
+   "title": "Suniel Shetty confirms 'Awara Paagal Deewana 2' with Akshay Kumar",
    "date": "2026-11-13"
   }
  ],

@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_pm-2026-11-13",
+  "image": "posts/20261113-1033-reel_news_pm-2026-11-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261113-103334-reel_news_pm-2026-11-13.mp4",
+  "headline": "Suniel Shetty confirms 'Awara Paagal Deewana 2' with Akshay Kumar",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Awara Paagal Deewana 2 Akshay Kumar Suniel Shetty 🎬\nSuniel Shetty ne confirm kiya ki Awara Paagal Deewana 2 ki shooting agle saal ki shuruaat mein shuru hogi.\nSequel ka maksad Akshay Kumar aur Suniel Shetty ki jodi ko phir saath laana hai.\nAkshay-Suniel ki jodi ka sequel dekhoge? Sirf HAAN likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#akshaykumar #sunielshetty #bollywood #awarapaagaldeewana2 #reelsindia\n\n(Awara Paagal Deewana 2, Akshay Kumar, Suniel Shetty, Akshay Suniel jodi, Bollywood sequel, Awara Paagal Deewana sequel, Suniel Shetty confirms, Bollywood news)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/suniel-shetty-confirms-awara-paagal-deewana-2-with-akshay-kumar-sequel-to-go-on-floors-in-early-2027-report/articleshow/135793712.cms",
+  "pin_comment": "Apne Akshay Kumar fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "To Chaloon",
+    "artist": "Anu Malik, Roopkumar Rathod",
+    "lang": "hindi",
+    "mood": "90s nostalgia vibe = old jodi returns"
+   },
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "top chart, fresh energy"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "fun, light, celebration"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "masti mood for reunion"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article: Suniel confirmed the sequel and its timeline; he did not confirm Akshay's return.",
+    "Fact corrected to match the article: Article says the sequel aims to reunite them; cast not confirmed."
+   ],
+   "fixed": [
+    "Suniel Shetty ne Akshay ke saath sequel confirm kiya → Suniel Shetty ne Awara Paagal Deewana 2 confirm kiya",
+    "Sequel mein Akshay Kumar aur Suniel Shetty ki jodi phir saath dikhegi. → Sequel ka maksad Akshay Kumar aur Suniel Shetty ki jodi ko phir saath laana hai."
+   ]
+  },
+  "created_at": "2026-11-13T10:33:34+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-13",
   "image": "posts/20261113-0834-reel_break_noon-2026-11-13.jpg",
   "kind": "reel",
@@ -372,27 +423,5 @@
    "fixed": []
   },
   "created_at": "2026-11-12T12:33:06+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-12",
-  "image": "posts/20261112-1032-reel_news_pm-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-103220-reel_news_pm-2026-11-12.mp4",
-  "headline": "Karan Johar is shocked at actors trying to be box office gurus and demanding alpha characters: 'When are you acting exactly?'",
-  "tag": "🎬 REEL · ⚙️ AUTO MODE (no AI)",
-  "caption": "Karan Johar is shocked at actors trying to be box office gurus and demanding alpha characters: 'When are you acting exactly?'\nHe said, \"I’ve had actors ask me if the film has anything deeply rooted.\nI hope it’s rooted in a great script.\nKya ye sahi hai? Comment karo HAAN ya NA 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #bollywood #trending #india #entertainment",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html",
-  "pin_comment": "Kisi dost ko bhejo jo ye jaanna chahta hai 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "fixed": [],
-   "issues": [
-    "⚙️ AUTO MODE: Claude's limit was reached, so this Reel was made WITHOUT AI. The words are copied from the article and nothing was fact-checked or reworded: please read it before posting."
-   ]
-  },
-  "created_at": "2026-11-12T10:32:21+00:00"
  }
 ]

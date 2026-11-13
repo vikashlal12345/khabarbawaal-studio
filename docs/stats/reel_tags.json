@@ -1695,5 +1695,37 @@
   "kw": 8,
   "relate": "twist",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-13",
+  "key": "awarapaagaldeewana2akshaykumarsunielshetty",
+  "kind": "reel_news_pm",
+  "secs": 19.0,
+  "at": "2026-11-13T10:33:34+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Moushumi Chatterjee's husband Jayanta Mukherjee passes ",
+   "(under 1 h ago) Will Ashneer Grover join Karan Johar and Malaika Arora ",
+   "(under 1 h ago) Shilpa Shetty to host relationship reality show Pyaar K",
+   "(under 1 h ago) Pankaj Tripathi calls out Hindi films for promoting che",
+   "(under 1 h ago) Mahesh Manjrekar says Nana Patekar suffered for no reas",
+   "(under 1 h ago) Varun Grover calls out ‘entitlement’ of Ramanand Sagar’",
+   "(under 1 h ago) Moushmi Chatterjee's producer husband Jayanta Mukherjee",
+   "(2 h ago) 'Ramayana' box office collection day 9 (LIVE)",
+   "(3 h ago) Moushumi Chatterjee's husband Jayanta Mukherjee passes ",
+   "(3 h ago) Suniel Shetty confirms 'Awara Paagal Deewana 2' with Ak"
+  ],
+  "n_stories": 11,
+  "pick_no": 10,
+  "age_h": 3.2,
+  "topic": "promo",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 78,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
