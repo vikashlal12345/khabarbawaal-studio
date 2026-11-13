@@ -375,6 +375,62 @@ LIC_OK = re.compile(r"(?i)^(cc0|public domain|pd\b|cc by( |-)?\d)")
 WIKI_HEADERS = {"User-Agent": "KhabarBawaalStudio/1.0 (github.com/vikashlal12345)"}
 
 
+IDOL_QUERIES = {
+    "shiva": ["shiva idol", "lord shiva statue", "shivling temple", "shiva murti"],
+    "hanuman": ["hanuman idol", "hanuman statue", "hanuman murti", "lord hanuman temple"],
+    "ganesh": ["ganesh idol", "ganesha statue", "ganpati murti", "lord ganesha"],
+    "vishnu": ["krishna idol", "vishnu idol", "radha krishna murti", "krishna statue", "jagannath idol"],
+    "krishna": ["krishna idol", "radha krishna murti", "krishna statue"],
+    "rama": ["ram darbar idol", "lord rama statue", "ram sita hanuman idol"],
+    "lakshmi": ["lakshmi idol", "goddess lakshmi statue", "maa lakshmi murti", "lakshmi puja idol"],
+    "durga": ["durga idol", "maa durga murti", "goddess durga statue", "durga puja idol"],
+    "shani": ["shani dev idol", "shani statue", "shani temple idol", "shani dev murti"],
+    "surya": ["surya dev idol", "sun god statue", "surya temple", "sun temple konark"],
+}
+
+
+def idol_queries(plan: dict, subj: dict) -> list[str]:
+    """Pixabay photo searches: the idol of the day's god (weekday / Navratri) or the festival's own scene, e.g. 'lakshmi idol'."""
+    qs = []
+    if subj.get("kind") != "weekday":
+        text = " ".join(subj.get("festivals", []) + [subj.get("name", "")]).lower()
+        for word, q in FESTIVAL_WORDS.items():
+            if word in text and q.split()[0].lower() not in [x.split()[0].lower() for x in qs]:
+                qs.append(q)
+    key = _family_key(plan, subj)
+    qs += [q for q in IDOL_QUERIES.get(key, []) if q not in qs]
+    return qs[:6]
+
+
+def pixabay_photos(queries: list[str], used: set[str], want: int = 24) -> list[dict]:
+    """Real high-quality PHOTOS from Pixabay (free licence, no credit needed): vertical first (they fill the 9:16 screen), the most liked first, AI / CGI / illustration
+    tagged ones left out: [{title, thumb, w, h, lic, artist, q, page, source}]."""
+    key = os.environ.get("PIXABAY_API_KEY", "")
+    if not key:
+        return []
+    out, seen = [], set()
+    for orient in ("vertical", "all"):
+        for q in queries:
+            try:
+                hits = requests.get("https://pixabay.com/api/", timeout=25, params={"key": key, "q": q, "image_type": "photo", "orientation": orient, "safesearch": "true",
+                                                                               "per_page": 30, "min_width": 1000, "min_height": 1200, "order": "popular"}).json().get("hits", [])
+            except Exception as e:
+                print(f"  ! Pixabay photos '{q}': {str(e)[:60]}")
+                continue
+            for h in hits:
+                tid = f"pxp{h['id']}"
+                tags = h.get("tags", "")
+                if tid in seen or tid in used or FAKE.search(tags) or re.search(r"(?i)\b(ai|generated|midjourney|render|3d|graphic|vector)\b", tags) or not h.get("largeImageURL"):
+                    continue
+                seen.add(tid)
+                out.append({"title": tid, "thumb": h["largeImageURL"], "w": h.get("imageWidth", 0), "h": h.get("imageHeight", 0), "lic": "Pixabay", "artist": h.get("user", "Pixabay contributor"),
+                            "q": q, "page": h.get("pageURL", ""), "source": "pixabay-photos", "likes": h.get("likes", 0), "tags": tags})
+        if len(out) >= 12:
+            break
+    out.sort(key=lambda c: (-(c["h"] > c["w"]), -c["likes"]))
+    return out[:want]
+
+
 def photo_queries(plan: dict, subj: dict) -> list[str]:
     qs = []
     if subj.get("kind") != "weekday":
@@ -478,7 +534,10 @@ def photo_segment(images: list, out: str, secs: float = SEG_SECS) -> str:
 
 
 PHOTO_SYSTEM = ("You choose REAL photos for a devotional Instagram Reel for Indians: a slow slideshow (one photo at a time, full screen 9:16, zoom-in) behind the day's god / temple / "
-                "festival text. Open the picture with the Read tool: a grid of numbered 9:16 crops, exactly what the phone will show. GOOD: a real, sharp, well lit photo that clearly shows the "
+                "festival text. THE OWNER WANTS VERY GOOD QUALITY: only photos a devotional page would be proud to show. For a god's day the main subject must be the IDOL (murti) or statue of THAT "
+                "god, clearly visible, sharp, well lit, fills much of the picture (not a distant temple, a tower or a building); for a festival, the idol or a clear festival scene. Reject: temple exteriors "
+                "and towers, anything with construction, scaffolding, workers, wires, vehicles or signboards in view, cluttered or dark pictures, low resolution, heavy filters, watermarks, and an idol "
+                "of a different god.  Open the picture with the Read tool: a grid of numbered 9:16 crops, exactly what the phone will show. GOOD: a real, sharp, well lit photo that clearly shows the "
                 "wanted temple, idol, ritual or festival scene, with the main subject inside the crop, respectful, no text overlay or watermark. Reject: blurry, dark, tiny subject, "
                 "a wrong place or god, tourists posing or selfies, close-ups of strangers' faces, a diagram, a map, a painting of something else, a modern building with no devotional "
                 "element, non-Hindu scenes, photos taken in a museum or outside India, photos where strangers' faces are the main subject, and anything disrespectful. The lower 40 % of the screen is covered by the Reel's text, so the subject must be in the upper 60 %.")
@@ -493,24 +552,32 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
     import io
     import reel
     queries = photo_queries(plan, subj)
-    if not queries:
+    iq = idol_queries(plan, subj)
+    if not queries and not iq:
         return None
     used = set(state.get("aarti_photos_used", []))
-    cands = commons_photos(queries, used)
-    print(f"  aarti photos: {len(cands)} free-licence photos for {queries}")
+    cands = pixabay_photos(iq, used) + commons_photos(queries, used, per_query=6)[:12]
+    print(f"  aarti photos: {len(cands)} candidates ({sum(1 for c in cands if c.get('source') == 'pixabay-photos')} Pixabay idol photos) for {iq + queries}")
     if len(cands) < 3:
         return None
     folder = tempfile.mkdtemp(prefix="photos_", dir=tmp)
     kept = []
     for c in cands:
-        r = reel.wiki_get(c["thumb"])
+        if c.get("source") == "pixabay-photos":
+            try:
+                r = requests.get(c["thumb"], headers=UA, timeout=40)
+                r = r if r.status_code == 200 else None
+            except Exception:
+                r = None
+        else:
+            r = reel.wiki_get(c["thumb"])
         if r is None:
             continue
         try:
             im = Image.open(io.BytesIO(r.content)).convert("RGB")
         except Exception:
             continue
-        if min(im.size) < 700:
+        if min(im.size) < 900 or max(im.size) < 1400:   # very good quality only: too small a photo would be soft on the full screen
             continue
         c["img"] = im
         kept.append(c)
@@ -518,6 +585,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
         return None
     # AI check on contact sheets of the real 9:16 crops (12 per sheet)
     good = []
+    kept = kept[:30]
     for b in range(0, len(kept), 12):
         batch = kept[b:b + 12]
         tw, th = 270, 480
@@ -531,7 +599,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
         name = f"sheet_{b // 12}.jpg"
         sheet.save(os.path.join(folder, name), "JPEG", quality=88)
         try:
-            res = fun.claude_json(PHOTO_SYSTEM, f"Wanted: {wanted}. File: {name}. Score every numbered crop.\n" + "\n".join(f"{i}: {c['title'][5:80]}" for i, c in enumerate(batch, 1)),
+            res = fun.claude_json(PHOTO_SYSTEM, f"Wanted: {wanted}. File: {name}. Score every numbered crop.\n" + "\n".join(f"{i}: {c.get('tags') or c['title'][5:80]}" for i, c in enumerate(batch, 1)),
                                   PHOTO_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="aarti photo screen", folder=folder)["photos"]
         except Exception as e:
             if type(e).__name__ == "ClaudeLimit":
@@ -539,7 +607,7 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
             print(f"  ! photo screen failed: {str(e)[:80]}")
             continue
         for p in res:
-            if 1 <= p["n"] <= len(batch) and p["ok"] and p["fit"] >= 5:
+            if 1 <= p["n"] <= len(batch) and p["ok"] and p["fit"] >= 7:
                 good.append((p["fit"], batch[p["n"] - 1]))
                 print(f"    photo: fit {p['fit']}/10 {batch[p['n'] - 1]['title'][5:60]} ({p['why'][:50]})")
     good.sort(key=lambda x: -x[0])
@@ -555,11 +623,12 @@ def photo_slideshow(plan: dict, subj: dict, state: dict, tmp: str, wanted: str) 
         print(f"  aarti photos: only {len(pick)} good photos")
         return None
     out = photo_segment([c["img"] for c in pick], os.path.join(folder, "slides.mp4"))
-    credit = "Photos: Wikimedia Commons (CC BY / CC0)"
+    srcs = {c.get("source", "commons") for c in pick}
+    credit = "Photos: Pixabay" if srcs == {"pixabay-photos"} else "Photos: Wikimedia Commons (CC BY / CC0)" if "pixabay-photos" not in srcs else "Photos: Pixabay, Wikimedia Commons"
     names = "; ".join(dict.fromkeys(f"{c['artist']} ({c['lic']})" for c in pick))
     state["aarti_photos_used"] = (state.get("aarti_photos_used", []) + [c["title"] for c in pick])[-80:]
     print(f"  aarti footage: slideshow of {len(pick)} real photos from Wikimedia Commons")
-    return {"seg": out, "id": "ph" + str(abs(hash(pick[0]["title"])))[:8], "source": "commons-photos", "credit": credit, "caption_credit": f"Photos: {names[:260]} / Wikimedia Commons 🙏",
+    return {"seg": out, "id": "ph" + str(abs(hash(pick[0]["title"])))[:8], "source": "commons-photos", "credit": credit, "caption_credit": f"Photos: {names[:260]} 🙏",
             "silent": True, "temple": "", "handle": "", "pages": [c["page"] for c in pick]}
 
 
