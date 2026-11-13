@@ -1759,5 +1759,35 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_aft-2026-11-13",
+  "key": "farahkhanfaisutanyareceptionmumbai",
+  "kind": "reel_break_aft",
+  "secs": 17.0,
+  "at": "2026-11-13T13:33:43+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Game Changers announces The Writer Series; Rajkumar Hir",
+   "(under 1 h ago) Moushumi Chatterjee's husband Jayanta Mukherjee passes ",
+   "(under 1 h ago) Farah Khan says Faisal Shaikh aka Faisu directed his ow",
+   "(under 1 h ago) Amrita Rao’s sister Preetika Rao ties the knot in Benga",
+   "(1 h ago) Jaya Prada’s sita throwback: Fans compare her Sita with",
+   "(1 h ago) Will Ashneer Grover join Karan Johar and Malaika Arora ",
+   "(1 h ago) Diljit drops video of Latin Grammys '26 stage act with ",
+   "(1 h ago) Parivarik ManuRanjan review: Pankaj Tripathi, Aditi Rao",
+   "(1 h ago) Amrita Rao’s sister Preetika ties the knot in Bengaluru",
+   "(3 h ago) Dhurandhar and Ramayana to feature at IFFI leading Indi"
+  ],
+  "n_stories": 10,
+  "pick_no": 3,
+  "age_h": 0.4,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 52,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "rating",
+  "hook": "question"
  }
 ]
