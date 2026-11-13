@@ -1579,5 +1579,35 @@
   "type": "devotional",
   "footage": "commons-photos",
   "silent": true
+ },
+ {
+  "id": "reel_news_early-2026-11-13",
+  "key": "ranveersinghdeepikapadukonesecretengagement",
+  "kind": "reel_news_early",
+  "secs": 17.2,
+  "at": "2026-11-13T02:35:58+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Home is an emotion, identity and a source of pride: SRK",
+   "(1 h ago) Sai recalls breaking down on 'Ramayana: Rise of a Legen",
+   "(1 h ago) When Ranveer Singh revealed secret engagement to Deepik",
+   "(2 h ago) Sai Pallavi recalls crying on Ramayana sets after diale",
+   "(2 h ago) 'Ramayana' day 8: Ranbir, Yash, Sai starrer enters Rs 1",
+   "(7 h ago) EXCLUSIVE: Divya Dutta reflects on a memorable 2026 as ",
+   "(7 h ago) Ektaa R Kapoor reunites with Sajid Khan and Amar Butala",
+   "(8 h ago) Netflix announces Pushpak Vimaan: Jaideep Ahlawat, Abhi"
+  ],
+  "n_stories": 8,
+  "pick_no": 3,
+  "age_h": 1.2,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "rating",
+  "cover": "window",
+  "sharp": 51,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

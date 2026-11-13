@@ -306,7 +306,8 @@
   "56bed8a85a5a",
   "4bd6901b7ec2",
   "acf6406c353e",
-  "3c03612fa22e"
+  "3c03612fa22e",
+  "a66691dd441a"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -453,7 +454,7 @@
   "reel_news_aft": "2026-11-12",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-12",
+  "reel_news_early": "2026-11-13",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-12",
   "reel_break_noon": "2026-11-12",
@@ -462,7 +463,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "o0TR0EoBVZWp",
+ "inbox_since": "5sPnxyBSYZP6",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -835,7 +836,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/scoop-ranbir-kapoor-secretly-tipped-off-sandeep-reddy-vanga-about-ramayana-2s-delay-helped-prabhas-spirit-grab-diwali-2027/",
   "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
   "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
@@ -914,7 +914,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/karan-johar-is-shocked-at-actors-trying-to-be-box-office-gurus-and-demanding-alpha-characters-when-are-you-acting-exactly-101794475263231.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/lara-dutta-defends-sai-pallavis-warrior-sita-in-nitesh-tiwaris-ramayana-rise-of-a-legend-youre-not-going-to-be-a-helpless-woman-in-that-situation/articleshow/135767194.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-extends-support-to-shraddha-kapoors-eetha-despite-clash-with-his-own-film-maatrubhumi-may-war-rest-in-peace-on-december-4-all-the-best/articleshow/135772686.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-extends-support-to-shraddha-kapoors-eetha-despite-clash-with-his-own-film-maatrubhumi-may-war-rest-in-peace-on-december-4-all-the-best/articleshow/135772686.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1131,10 +1132,6 @@
   }
  ],
  "songs_recent": [
-  "Vishnu Sahasranamam",
-  "Jai Ganesh Jai Ganesh Deva",
-  "Sri Vishnu Sahasranamam",
-  "Vishnu Sahasranamam (Version 1)",
   "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
   "Zaalima",
   "Tu Mil Jaaye (From \"KING\")",
@@ -1170,7 +1167,11 @@
   "Aarti Laxmi Ji Ki",
   "Om Jai Lakshmi Mata - Alka Yagnik",
   "Laxmi Ji Ki Aarti",
-  "Jai Lakshmi Mata - Aarti"
+  "Jai Lakshmi Mata - Aarti",
+  "Raanjhan",
+  "Samjhawan",
+  "Judi Jodi (From \"Ramayana\")",
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1194,38 +1195,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "Assamese craftsmen who created Ranbir Kapoor, Ravie Dubey's armour never knew it was for Ramayana, worked 3 years on cane-rubber armour",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Samantha Ruth Prabhu skips elaborate maternity shoot, shares relaxed picture with baby bump",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Ramayana actor Indira Krishnan defends Sai Pallavi’s Sita wielding a sword, admits she ‘didn’t connect’ bit with what she saw in Ramanand Sagar show",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Watch Video: ‘Definitely Not In Our Bed…’ Sidharth Malhotra’s Cheeky Remark As Pregnant Kiara Advani Flaunts Baby Bump On Koffee With Karan 9",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Mahabharat star Nitish Bharadwaj goes from predicting Oscar for Ramayana to criticising it, says film misrepresents India's history",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Yash gets goofy with his kids while dressed up as Ravana; thanks fans for the love for Ramayana",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Anupam Kher says he felt proud as an Indian when audience got teary-eyed at Ramayana Sweden premiere, thanked him for voicing Jatayu",
-   "date": "2026-11-10"
-  },
-  {
-   "title": "Karan Johar STANDS BY newlyweds Rashmika - Vijay after 'KWK 9' trolling",
-   "date": "2026-11-10"
-  },
   {
    "title": "Salman Khan's next film director Vamshi Paidipally says he knows the stress and sacrifice actor went through for Maatrubhumi",
    "date": "2026-11-11"
@@ -1293,6 +1262,10 @@
   {
    "title": "Salman extends support to Shraddha's 'Eetha' despite clash with his own film 'Maatrubhumi'",
    "date": "2026-11-12"
+  },
+  {
+   "title": "When Ranveer Singh revealed secret engagement to Deepika Padukone",
+   "date": "2026-11-13"
   }
  ],
  "claude_limit": {
@@ -1309,9 +1282,10 @@
   "18023602325946834",
   "18073698851610142",
   "18107622128201600",
-  "17885682390526060"
+  "17885682390526060",
+  "18118758538818105"
  ],
- "winner_followup_day": "2026-11-12",
+ "winner_followup_day": "2026-11-13",
  "aarti_photos_used": [
   "File:Mahalakshmi Temple, Mumbai.jpg",
   "File:Mahalakshmi temple, Kolhapur.jpg",

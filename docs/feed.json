@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_early-2026-11-13",
+  "image": "posts/20261113-0235-reel_news_early-2026-11-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261113-023558-reel_news_early-2026-11-13.mp4",
+  "headline": "When Ranveer Singh revealed secret engagement to Deepika Padukone",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ranveer Singh Deepika Padukone secret engagement 💍\nRanveer aur Deepika ne Koffee With Karan par apni private engagement ki baatein batayi.\nDono ne 2015 mein engagement ki thi, duniya ko bhanak tak nahi lagi.\nIs jodi ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ranveersingh #deepikapadukone #bollywood #couplegoals #reelsindia\n\n(Ranveer Singh, Deepika Padukone, RanDeep, secret engagement, Ranveer Deepika wedding, Bollywood couple, Deepika Padukone engagement 2015, Bollywood news)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms",
+  "pin_comment": "Apne Ranveer-Deepika fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Raanjhan",
+    "artist": "Sachet-Parampara, Parampara Tandon",
+    "lang": "hindi",
+    "mood": "romantic secret love vibe"
+   },
+   {
+    "title": "Samjhawan",
+    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
+    "lang": "hindi",
+    "mood": "couple love, soft moment"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "jodi = perfect couple"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "shaadi celebration vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the engagement was discussed on Koffee With Karan; wedding details not discussed there."
+   ],
+   "fixed": [
+    "Ranveer aur Deepika ne TV par apni shaadi aur private engagement ki baatein batayi. → Ranveer aur Deepika ne Koffee With Karan par apni private engagement ki baatein batayi."
+   ]
+  },
+  "created_at": "2026-11-13T02:35:58+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-13",
   "image": "posts/20261113-0034-reel_devotion-2026-11-13.jpg",
   "kind": "reel",
@@ -391,56 +440,5 @@
    ]
   },
   "created_at": "2026-11-12T02:41:36+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-12",
-  "image": "posts/20261112-0035-reel_devotion-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-003538-reel_devotion-2026-11-12.mp4",
-  "headline": "Thursday: Vishnu ji: Vishnu ji har mushkil mein kaise saath dete hain",
-  "tag": "🎬 REEL · 🙏 JAI SHRI HARI",
-  "caption": "Vishnu ji har mushkil mein saath dete hain 🙏\nUnpe vishwas rakho... raasta zaroor milega.\nAaj ye apno ko bhejiye.\nJai Shri Hari likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#vishnu #shrihari #jaishrihari #guruvaar #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Kisi apne ko bhejo jise aaj himmat chahiye 🙏",
-  "songs": [
-   {
-    "title": "Vishnu Sahasranamam",
-    "artist": "M.S. Subbulakshmi",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ganesh Jai Ganesh Deva",
-    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Sri Vishnu Sahasranamam",
-    "artist": "Rajalakshmee Sanjay",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Vishnu Sahasranamam (Version 1)",
-    "artist": "M.S.Subbulakshmi",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Many corrections were needed: please give it a quick read."
-   ],
-   "fixed": [
-    "Vishnu ji har mushkil mein kaise saath dete → Vishnu ji har mushkil mein kaise saath dete hain",
-    "Vishnu ji ne rakshaa ki → Vishnu ji ne raksha ki",
-    "Aaj ye apne apno ko bhejiye → Aaj ye apno ko bhejiye"
-   ]
-  },
-  "created_at": "2026-11-12T00:35:38+00:00"
  }
 ]
