@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_break_am-2026-11-13",
+  "image": "posts/20261113-0434-reel_break_am-2026-11-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261113-043430-reel_break_am-2026-11-13.mp4",
+  "headline": "Subrata Chakraborty explains Indianising Ayodhya and Lanka",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Ramayana: Rise of a Legend, Subrata Chakraborty, Amit Ray, Ayodhya Lanka sets\nSubrata Chakraborty aur Amit Ray ne film par 3 saal kaam kiya.\nUnhone settings ko Indian pehchaan di, Ayodhya aur Lanka ka contrast alag rakha.\nRamayana ka ye look pasand aaya? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #ramayana #bollywood #ayodhya #filmnews\n\n(Ramayana Rise of a Legend, Subrata Chakraborty, Amit Ray, Ayodhya Lanka sets, Ramayana production design, Ramayana film, Ramayana behind the scenes)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana ka grand look"
+   },
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ayodhya wali bhakti feel"
+   },
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "epic cinematic mood"
+   },
+   {
+    "title": "Ashke",
+    "artist": "Karan Aujla & MXRCI",
+    "lang": "hindi",
+    "mood": "chart hit, strong vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The year 2026 is not in the article, so the claim is unsupported."
+   ],
+   "fixed": [
+    "Ramayana film 2026 → Ramayana film"
+   ]
+  },
+  "created_at": "2026-11-13T04:34:30+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-13",
   "image": "posts/20261113-0235-reel_news_early-2026-11-13.jpg",
   "kind": "reel",
@@ -345,100 +394,5 @@
    "fixed": []
   },
   "created_at": "2026-11-12T06:33:58+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-12",
-  "image": "posts/20261112-0434-reel_break_am-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-043404-reel_break_am-2026-11-12.mp4",
-  "headline": "Shah Rukh Khan recalls not having a house of his own before marrying Gauri Khan, says even Mannat was beyond his means",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Shah Rukh Khan Mannat Gauri Khan Dubai event 🏠\nDubai ke event mein SRK ne kaha ki Gauri se shaadi tak unka apna ghar nahi tha.\nUnke mutabik pehla ghar aur Mannat, dono unke budget se bahar the.\nEvent mein wo King ke track Tu Mil Jaaye par bhi naache. King 24 December 2026 ko release hogi.\nApne Shah Rukh fan dost ko bhejo 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #shahrukhkhan #srk #mannat #bollywood\n\n(Shah Rukh Khan, SRK Mannat, Gauri Khan, Shah Rukh Khan Dubai event, Karan Johar Dubai, King movie, Tu Mil Jaaye, Shahrukhz Residences, Mannat renovation)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-khan-recalls-not-having-a-house-of-his-own-before-marrying-gauri-khan-says-even-mannat-was-beyond-his-means-101794449409007.html",
-  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "hindi",
-    "mood": "SRK ki KING vibe, emotional"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft emotional struggle story"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "gratitude, dil se baat"
-   },
-   {
-    "title": "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Sajid Khan",
-    "lang": "new",
-    "mood": "fun filmy energy"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-12T04:34:04+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-12",
-  "image": "posts/20261112-0241-reel_news_early-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-024136-reel_news_early-2026-11-12.mp4",
-  "headline": "Anirudh Ravichander, Kavya Maran Share First Wedding Photos; Hema Malini Reviews Ramayana",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Anirudh Ravichander Kavya Maran first wedding photos 💍\nShaadi ki pehli tasveerein saamne aayi hain.\nAnirudh ne Instagram par Kavya ke saath apni pehli photo share ki.\nTeam Anirudh ya Team Kavya? Comment mein 1 ya 2 likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: News18 (link pinned in comments 👇)\n\n#reelsindia #anirudh #kavyamaran #wedding #anirudhkavya\n\n(Anirudh Ravichander, Kavya Maran, Anirudh Kavya Maran wedding, wedding photos, Anirudh Ravichander wedding, Kavya Maran wedding photos, Hema Malini Ramayana, Hema Malini)",
-  "source": "News18",
-  "source_url": "https://www.news18.com/movies/bollywood/anirudh-ravichander-kavya-maran-share-first-wedding-photos-hema-malini-reviews-ramayana-ws-l-10422147.html",
-  "pin_comment": "Ye Anirudh-Kavya ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "romantic hook = newlywed couple"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "for a lifetime = love song"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "finding your person, wedding vibe"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "soft romantic celebration"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The quote is not in the article; the article only says he shared a picture with his bride on Instagram.",
-    "Slide 1: The photo is cropped at the right edge, so Kavya Maran's face is cut off. Slide 4 shows the same photo uncropped."
-   ],
-   "fixed": [
-    "Anirudh ne likha, \"My once in a lifetime, for a lifetime.\" → Anirudh ne Instagram par Kavya ke saath apni pehli photo share ki."
-   ]
-  },
-  "created_at": "2026-11-12T02:41:36+00:00"
  }
 ]

@@ -307,7 +307,8 @@
   "4bd6901b7ec2",
   "acf6406c353e",
   "3c03612fa22e",
-  "a66691dd441a"
+  "a66691dd441a",
+  "d618654dba87"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -456,14 +457,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-13",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-12",
+  "reel_break_am": "2026-11-13",
   "reel_break_noon": "2026-11-12",
   "reel_break_aft": "2026-11-12",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "5sPnxyBSYZP6",
+ "inbox_since": "TRq0ISD0USah",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -836,7 +837,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/udta-teer-box-office-collection-day-1-ayushmann-khurrana-and-sara-ali-khan-film-collects-4-10-crore-beats-pati-patni-aur-woh-do-aakash-kaushik-101792827158409.html",
   "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
@@ -915,7 +915,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-actor-addinath-kothare-recalls-being-ranbir-kapoors-schoolmate-says-they-played-cricket-together-before-reuniting-as-brothers-in-nitesh-tiwaris-epic-film/articleshow/135767907.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/lara-dutta-defends-sai-pallavis-warrior-sita-in-nitesh-tiwaris-ramayana-rise-of-a-legend-youre-not-going-to-be-a-helpless-woman-in-that-situation/articleshow/135767194.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-extends-support-to-shraddha-kapoors-eetha-despite-clash-with-his-own-film-maatrubhumi-may-war-rest-in-peace-on-december-4-all-the-best/articleshow/135772686.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1132,10 +1133,6 @@
   }
  ],
  "songs_recent": [
-  "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
-  "Zaalima",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Tera Hoke Rahoon",
   "Jo Tum Mere Ho",
   "Tu Mil Jaaye (From \"KING\")",
@@ -1171,7 +1168,11 @@
   "Raanjhan",
   "Samjhawan",
   "Judi Jodi (From \"Ramayana\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Mangal Rang (From \"Ramayana\")",
+  "Main Ram (From \"Ramayana\")",
+  "Gehra Hua",
+  "Ashke"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1265,6 +1266,10 @@
   },
   {
    "title": "When Ranveer Singh revealed secret engagement to Deepika Padukone",
+   "date": "2026-11-13"
+  },
+  {
+   "title": "Subrata Chakraborty explains Indianising Ayodhya and Lanka",
    "date": "2026-11-13"
   }
  ],

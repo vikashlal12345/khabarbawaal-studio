@@ -1609,5 +1609,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-13",
+  "key": "ramayanariseofalegendsubratachakrabortyamitrayayodhyalankase",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-13T04:34:30+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Sai Pallavi Reflects on Emotional Moment Filming Ramaya",
+   "(under 1 h ago) Mahesh Manjrekar on Nana Patekar’s final hours and Tanu",
+   "(under 1 h ago) Subrata Chakraborty explains Indianising Ayodhya and La",
+   "(under 1 h ago) Saurabh Sachdeva who plays Maricha in the film opens up",
+   "(2 h ago) 200 shows added for Pyre after row, director Vinod Kapr",
+   "(2 h ago) Lara Dutta defends Sai Pallavi's warrior Sita in Ramaya",
+   "(3 h ago) Sai recalls breaking down on 'Ramayana: Rise of a Legen",
+   "(4 h ago) Sai Pallavi recalls crying on Ramayana sets after diale"
+  ],
+  "n_stories": 8,
+  "pick_no": 3,
+  "age_h": 0.6,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 42,
+  "topic": "promo",
+  "kw": 7,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]
