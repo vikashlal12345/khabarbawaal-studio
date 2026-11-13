@@ -1637,5 +1637,34 @@
   "kw": 7,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-13",
+  "key": "dipikachikhliaramayana1000crorereaction",
+  "kind": "reel_news_am",
+  "secs": 17.8,
+  "at": "2026-11-13T06:36:13+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Johnny Walker found happiness beyond fame: son Nasirr K",
+   "(1 h ago) Ravie Dubey shares Ramayana BTS pics",
+   "(1 h ago) Student of the Year After Dark director Reema Maya defe",
+   "(2 h ago) Ramayana worldwide box office collection day 8: Ranbir ",
+   "(2 h ago) OG Sita Dipika Chikhlia says she always knew Ranbir Kap",
+   "(2 h ago) Mahesh Manjrekar on Nana Patekar’s final hours and Tanu",
+   "(3 h ago) Saurabh Sachdeva who plays Maricha in the film opens up"
+  ],
+  "n_stories": 7,
+  "pick_no": 5,
+  "age_h": 1.9,
+  "topic": "other",
+  "kw": 7,
+  "relate": "emoji",
+  "cover": "window",
+  "sharp": 37,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

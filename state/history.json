@@ -308,7 +308,8 @@
   "acf6406c353e",
   "3c03612fa22e",
   "a66691dd441a",
-  "d618654dba87"
+  "d618654dba87",
+  "3bbd213e4d32"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -449,7 +450,7 @@
   "reel_news_pm": "2026-11-12",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-12",
+  "reel_news_am": "2026-11-13",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-12",
@@ -464,7 +465,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "TRq0ISD0USah",
+ "inbox_since": "xzsHjfJix04v",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -837,7 +838,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/koffee-with-karan-varun-dhawan-janhvi-kapoor-spill-secrets-about-karan-johar-while-arjun-kapoor-joins-them-for-a-fun-rapid-fire-round-101792831965182.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
@@ -916,7 +916,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/lara-dutta-defends-sai-pallavis-warrior-sita-in-nitesh-tiwaris-ramayana-rise-of-a-legend-youre-not-going-to-be-a-helpless-woman-in-that-situation/articleshow/135767194.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-extends-support-to-shraddha-kapoors-eetha-despite-clash-with-his-own-film-maatrubhumi-may-war-rest-in-peace-on-december-4-all-the-best/articleshow/135772686.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1133,10 +1134,6 @@
   }
  ],
  "songs_recent": [
-  "Tera Hoke Rahoon",
-  "Jo Tum Mere Ho",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Tu Mil Jaaye (From \"KING\")",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
@@ -1172,7 +1169,11 @@
   "Mangal Rang (From \"Ramayana\")",
   "Main Ram (From \"Ramayana\")",
   "Gehra Hua",
-  "Ashke"
+  "Ashke",
+  "Dhun",
+  "Zaalima",
+  "Mangal Rang (From \"Ramayana\")",
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1270,6 +1271,10 @@
   },
   {
    "title": "Subrata Chakraborty explains Indianising Ayodhya and Lanka",
+   "date": "2026-11-13"
+  },
+  {
+   "title": "OG Sita Dipika Chikhlia says she always knew Ranbir Kapoor, Yash's Ramayana would be a hit as it crosses ₹1000 crore worldwide, praises VFX and cast",
    "date": "2026-11-13"
   }
  ],

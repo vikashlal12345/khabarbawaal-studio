@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-11-13",
+  "image": "posts/20261113-0636-reel_news_am-2026-11-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261113-063613-reel_news_am-2026-11-13.mp4",
+  "headline": "OG Sita Dipika Chikhlia says she always knew Ranbir Kapoor, Yash's Ramayana would be a hit as it crosses ₹1000 crore worldwide, praises VFX and cast",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Dipika Chikhlia Ramayana 1000 crore reaction 🙏\nOG Sita Dipika Chikhlia ne kaha ki unhe pehle se pata tha Ranbir Kapoor aur Yash ki Ramayana hit hogi.\nFilm ne duniya bhar mein ₹1000 crore paar kar liye, unhone VFX aur cast ki bhi tareef ki.\nIs khabar par ek emoji likho: dil, haath jode ya taali? 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #Ramayana #DipikaChikhlia #RanbirKapoor #Bollywood\n\n(Dipika Chikhlia, Ramayana 1000 crore, Ranbir Kapoor Yash Ramayana, OG Sita, Ramanand Sagar Ramayan, Ramayana box office, Ramayana review)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html",
+  "pin_comment": "Ye apne Ramayan wale bachpan ke dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Dhun",
+    "artist": "Mithoon, Arijit Singh",
+    "lang": "hindi",
+    "mood": "nostalgic, soft Ramayan memories"
+   },
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "emotional, heartfelt tribute vibe"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana film's own devotional feel"
+   },
+   {
+    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+    "artist": "Junaid Kumar, Ganesh Acharya",
+    "lang": "new",
+    "mood": "win, hustle, blockbuster celebration"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article doesn't say she watched the film; she reacted to its box office success when told by paparazzi."
+   ],
+   "fixed": [
+    "Dipika Chikhlia ne Ramayana dekhkar kya kaha? → Dipika Chikhlia ne Ramayana ki success par kya kaha?"
+   ]
+  },
+  "created_at": "2026-11-13T06:36:13+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-13",
   "image": "posts/20261113-0434-reel_break_am-2026-11-13.jpg",
   "kind": "reel",
@@ -347,52 +396,5 @@
    "fixed": []
   },
   "created_at": "2026-11-12T08:34:02+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-12",
-  "image": "posts/20261112-0633-reel_news_am-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-063358-reel_news_am-2026-11-12.mp4",
-  "headline": "SHOCKING: Amitabh Bachchan's Jalsa at centre of family DISPUTE; sister-in-law Ramola challenges gift deed transferring iconic bungalow to Jaya Bachchan",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Amitabh Bachchan Jalsa bungalow dispute 🏠\nMumbai Mirror ki report ke mutabiq Amitabh ki sister-in-law Ramola ne Jalsa ko Jaya Bachchan ke naam karne wale gift deed ko challenge kiya hai.\nYe abhi report kiye gaye daave hain, aage ki details ka intezaar.\nIs khabar par ek word likho: dukh, hairani ya chinta? 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#amitabhbachchan #bachchanfamily #bollywoodnews #jalsa #reelsindia\n\n(Amitabh Bachchan Jalsa, Jalsa bungalow dispute, Jaya Bachchan, Ramola Bachchan, Bachchan family, Mumbai Mirror, Amitabh Bachchan news, Jalsa gift deed)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/shocking-amitabh-bachchans-jalsa-at-centre-of-family-dispute-sister-in-law-ramola-challenges-gift-deed-transferring-iconic-bungalow-to-jaya-bachchan/",
-  "pin_comment": "Ye Bachchan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Khat",
-    "artist": "Navjot Ahuja",
-    "lang": "hindi",
-    "mood": "bhaari dil, rishton ki uljhan"
-   },
-   {
-    "title": "Humnava Mere",
-    "artist": "Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "apno se doori ka dard"
-   },
-   {
-    "title": "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Vishal Mishra, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "emotional, family tension"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "dard bhara title = dispute"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 4: The 'Photo: Bollywood Hungama' credit at the bottom left runs into the '@khabarbawaal' handle, so the two texts overlap slightly."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-12T06:33:58+00:00"
  }
 ]
