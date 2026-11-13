@@ -41,7 +41,7 @@ for kind in sys.argv[1:]:
         cap = p.get("caption", "")
         hashtags = re.findall(r"(?<!\w)#\w+", cap.split("\n\n(")[0])
         info = {"headline": p["headline"][:80], "secs": round(secs, 1), "proof": (p.get("proof") or {}).get("state"), "issues": (p.get("proof") or {}).get("issues", [])[:2],
-                "ask": tags.get("relate"), "age_h": tags.get("age_h"), "pool": len(tags.get("pool", [])), "pick_no": tags.get("pick_no"), "flow": tags.get("flow"), "cover": tags.get("cover"),
+                "ask": tags.get("relate"), "strength": tags.get("strength"), "age_h": tags.get("age_h"), "pool": len(tags.get("pool", [])), "pick_no": tags.get("pick_no"), "flow": tags.get("flow"), "cover": tags.get("cover"),
                 "tag": p.get("tag"), "source": p.get("source")}
         lo, hi = (11.5, 18.5) if kind in reel.BREAK_KINDS else (14.0, 24.0)
         if not lo <= secs <= hi:
