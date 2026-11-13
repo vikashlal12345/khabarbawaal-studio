@@ -483,7 +483,7 @@
   "reel_news_aft": "2026-11-12",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-12",
+  "reel_news_early": "2026-11-13",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-12",
   "reel_break_noon": "2026-11-12",
@@ -492,7 +492,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "o0TR0EoBVZWp",
+ "inbox_since": "5sPnxyBSYZP6",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -1472,7 +1472,8 @@
   "Khairiyat",
   "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
   "Tu Hi Disda (From \"Bhooth Bangla\")",
-  "Jai Lakshmi Mata - Aarti"
+  "Jai Lakshmi Mata - Aarti",
+  "Raanjhan"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -2067,6 +2068,10 @@
   {
    "title": "Salman extends support to Shraddha's 'Eetha' despite clash with his own film 'Maatrubhumi'",
    "date": "2026-11-12"
+  },
+  {
+   "title": "When Ranveer Singh revealed secret engagement to Deepika Padukone",
+   "date": "2026-11-13"
   }
  ],
  "claude_limit": {
@@ -2087,7 +2092,7 @@
   "18118758538818105",
   "18106911791015136"
  ],
- "winner_followup_day": "2026-11-12",
+ "winner_followup_day": "2026-11-13",
  "aarti_photos_used": [
   "File:Mahalakshmi Temple, Mumbai.jpg",
   "File:Mahalakshmi temple, Kolhapur.jpg",
