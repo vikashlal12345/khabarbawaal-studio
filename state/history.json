@@ -312,7 +312,8 @@
   "3bbd213e4d32",
   "5bf0ba968051",
   "4d8883f4aa34",
-  "f21612c20281"
+  "f21612c20281",
+  "5ac8fbaf07d1"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -463,12 +464,12 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-13",
   "reel_break_noon": "2026-11-13",
-  "reel_break_aft": "2026-11-12",
+  "reel_break_aft": "2026-11-13",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "Zfysrc2cmpEg",
+ "inbox_since": "C7JyNVgljjpx",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -841,7 +842,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amitabh-bachchan-diwali-confession-leaves-ramayana-stars-ranbir-kapoor-sai-pallavi-ravi-dubey-laughing-on-kaun-banega-crorepati-101792908262008.html",
   "https://www.bollywoodhungama.com/news/bollywood/tiger-shroff-sells-mumbais-khar-apartment-for-rs-9-crores/",
   "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
@@ -920,7 +920,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html",
   "https://www.bollywoodhungama.com/news/bollywood/aditi-rao-hydari-reveals-the-family-tradition-she-shares-with-husband-siddharth-its-common-that-everyone-laughs-together/",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/suniel-shetty-confirms-awara-paagal-deewana-2-with-akshay-kumar-sequel-to-go-on-floors-in-early-2027-report/articleshow/135793712.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-box-office-ranbir-kapoor-sai-pallavi-and-yashs-film-becomes-a-record-breaker-in-vietnam-thailand-cambodia-and-nepal-amid-the-film-crossing-rs-1000-crore-worldwide/articleshow/135801054.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-box-office-ranbir-kapoor-sai-pallavi-and-yashs-film-becomes-a-record-breaker-in-vietnam-thailand-cambodia-and-nepal-amid-the-film-crossing-rs-1000-crore-worldwide/articleshow/135801054.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-says-faisal-shaikh-aka-faisu-directed-his-own-reception-ceremony-brought-wife-tanya-to-click-pictures-with-guests-101794572672997.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1137,10 +1138,6 @@
   }
  ],
  "songs_recent": [
-  "Heeriye (feat. Arijit Singh)",
-  "Aaj Bhi 2",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Shree Hanuman Chalisa (From \"Ramayana\")",
   "His Aura Hits You",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
@@ -1176,7 +1173,11 @@
   "Radhe Radhe",
   "Tabaahi (From \"Toxic\")",
   "Mangal Rang (From \"Ramayana\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Jaiye Sajana",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1290,6 +1291,10 @@
   },
   {
    "title": "'Ramayana' box office: RK's film becomes record breaker in Vietnam, Thailand, Cambodia, Nepal",
+   "date": "2026-11-13"
+  },
+  {
+   "title": "Farah Khan says Faisal Shaikh aka Faisu directed his own reception ceremony, brought wife Tanya to click pictures with guests",
    "date": "2026-11-13"
   }
  ],
