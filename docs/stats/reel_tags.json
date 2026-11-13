@@ -1727,5 +1727,37 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-13",
+  "key": "ramayanaboxofficeranbirkapooryash",
+  "kind": "reel_news_aft",
+  "secs": 18.7,
+  "at": "2026-11-13T12:35:31+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Moushumi Chatterjee's husband Jayanta Mukherjee passes ",
+   "(under 1 h ago) Will Ashneer Grover join Karan Johar and Malaika Arora ",
+   "(under 1 h ago) Parivarik ManuRanjan review: Pankaj Tripathi, Aditi Rao",
+   "(under 1 h ago) Amrita Rao’s sister Preetika ties the knot in Bengaluru",
+   "(under 1 h ago) Shilpa Shetty to host relationship reality show Pyaar K",
+   "(1 h ago) 'Ramayana' box office: RK's film becomes record breaker",
+   "(2 h ago) Anupam reveals he postponed dubbing for Jatayu in Ramay",
+   "(2 h ago) Dhurandhar and Ramayana to feature at IFFI leading Indi",
+   "(2 h ago) Pankaj Tripathi calls out Hindi films for promoting che",
+   "(3 h ago) Mahesh Manjrekar says Nana Patekar suffered for no reas"
+  ],
+  "n_stories": 10,
+  "pick_no": 6,
+  "age_h": 1.1,
+  "topic": "other",
+  "kw": 8,
+  "relate": "predict",
+  "cover": "window",
+  "sharp": 47,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
