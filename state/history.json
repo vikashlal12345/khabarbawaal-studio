@@ -309,7 +309,8 @@
   "3c03612fa22e",
   "a66691dd441a",
   "d618654dba87",
-  "3bbd213e4d32"
+  "3bbd213e4d32",
+  "5bf0ba968051"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -459,13 +460,13 @@
   "reel_news_early": "2026-11-13",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-13",
-  "reel_break_noon": "2026-11-12",
+  "reel_break_noon": "2026-11-13",
   "reel_break_aft": "2026-11-12",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-12"
  },
- "inbox_since": "xzsHjfJix04v",
+ "inbox_since": "KfCq2Rcs6jTM",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -838,7 +839,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-says-the-same-people-who-talk-about-culture-used-abusive-language-in-comments-on-her-parents-and-sister-posts-during-rakhi-ad-row-101792841721894.html",
   "https://www.hindustantimes.com/entertainment/bollywood/manoj-bajpayee-neeraj-pandey-werent-worried-about-ghooskhor-pandat-title-row-affecting-gajab-raat-netflix-101792826887920.html",
   "https://www.hindustantimes.com/entertainment/bollywood/rohit-shetty-refers-to-firing-incident-involving-him-tiger-shroff-attack-during-appearance-at-bigg-boss-20-salman-khan-qazi-touqeer-101792894850657.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-attack-trial-begins-nurse-says-intruder-demanded-1-crore-recalls-actor-overpowering-him-kareena-kapoor-bollywood-101792904124535.html",
@@ -917,7 +917,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-extends-support-to-shraddha-kapoors-eetha-despite-clash-with-his-own-film-maatrubhumi-may-war-rest-in-peace-on-december-4-all-the-best/articleshow/135772686.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html",
+  "https://www.bollywoodhungama.com/news/bollywood/aditi-rao-hydari-reveals-the-family-tradition-she-shares-with-husband-siddharth-its-common-that-everyone-laughs-together/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1134,10 +1135,6 @@
   }
  ],
  "songs_recent": [
-  "Tu Mil Jaaye (From \"KING\")",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
   "Khat",
   "Humnava Mere",
   "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
@@ -1173,7 +1170,11 @@
   "Dhun",
   "Zaalima",
   "Mangal Rang (From \"Ramayana\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")"
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+  "Tera Hoke Rahoon",
+  "Jo Tum Mere Ho",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1275,6 +1276,10 @@
   },
   {
    "title": "OG Sita Dipika Chikhlia says she always knew Ranbir Kapoor, Yash's Ramayana would be a hit as it crosses ₹1000 crore worldwide, praises VFX and cast",
+   "date": "2026-11-13"
+  },
+  {
+   "title": "Aditi Rao Hydari reveals the family tradition she shares with husband Siddharth: “It's common that everyone laughs together”",
    "date": "2026-11-13"
   }
  ],

@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_noon-2026-11-13",
+  "image": "posts/20261113-0834-reel_break_noon-2026-11-13.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261113-083418-reel_break_noon-2026-11-13.mp4",
+  "headline": "Aditi Rao Hydari reveals the family tradition she shares with husband Siddharth: “It's common that everyone laughs together”",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Aditi Rao Hydari Siddharth family tradition Filmfare interview 😊\nAditi ne bataya ki unki aur Siddharth ki family mein sab saath hanste hain.\nUnke mutabik mushkil waqt mein bhi kuch hansne ka bahana dhundna zaroori hai.\nUnki film Parivarik ManuRanjan aaj SonyLIV par premiere hui.\nSaath hasna ya saath khana? HASNA ya KHANA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #AditiRaoHydari #Siddharth #Bollywood #ParivarikManuRanjan\n\n(Aditi Rao Hydari, Siddharth, Aditi Rao Hydari Siddharth, Aditi Rao Hydari Filmfare interview, Parivarik ManuRanjan, Parivarik ManuRanjan SonyLIV, Pankaj Tripathi, Bollywood news)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/aditi-rao-hydari-reveals-the-family-tradition-she-shares-with-husband-siddharth-its-common-that-everyone-laughs-together/",
+  "pin_comment": "Apne Aditi Rao Hydari fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "couple love, warm family vibe"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "sweet couple moment"
+   },
+   {
+    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "romantic, ghar ka pyaar"
+   },
+   {
+    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "soft romantic feel"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-13T08:34:18+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-13",
   "image": "posts/20261113-0636-reel_news_am-2026-11-13.jpg",
   "kind": "reel",
@@ -349,52 +394,5 @@
    ]
   },
   "created_at": "2026-11-12T10:32:21+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-12",
-  "image": "posts/20261112-0834-reel_break_noon-2026-11-12.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261112-083401-reel_break_noon-2026-11-12.mp4",
-  "headline": "Kiara Advani Recalls Bonding With Alia Bhatt And Katrina Kaif Over Motherhood",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Kiara Advani Koffee With Karan Alia Bhatt Katrina Kaif motherhood\n\nKoffee With Karan 9 par Kiara Advani ne motherhood ke mushkil pal share kiye.\nPostpartum mein Alia Bhatt, Katrina Kaif aur Patralekhaa se guidance li.\nKaran Johar ke mutabik ye actresses ek doosre ka sounding board hain.\n\nKiara ka mom guilt par bolna sahi tha? HAAN ya NA 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: NDTV (link pinned in comments 👇)\n\n#reelsindia #kiaraadvani #aliabhatt #katrinakaif #koffeewithkaran\n\n(Kiara Advani, Koffee With Karan, Alia Bhatt, Katrina Kaif, Sidharth Malhotra, Karan Johar, Patralekhaa, Kiara Advani motherhood)",
-  "source": "NDTV",
-  "source_url": "https://www.ndtv.com/lifestyle/kiara-advani-recalls-bonding-with-alia-bhatt-and-katrina-kaif-over-motherhood-12315957",
-  "pin_comment": "Apne Kiara ya Alia fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Sahiba",
-    "artist": "Jasleen Royal, Stebin Ben",
-    "lang": "hindi",
-    "mood": "dosti aur pyaar ka warm vibe"
-   },
-   {
-    "title": "Pal Pal Dil Ke Paas - Title Track",
-    "artist": "Arijit Singh, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "motherhood ka pyaara emotional moment"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "light, happy KWK mood"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "soft emotional family feel"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Slide 1: The photo credit line at the bottom left overlaps and collides with the @khabarbawaal handle, so both are hard to read."
-   ],
-   "fixed": []
-  },
-  "created_at": "2026-11-12T08:34:02+00:00"
  }
 ]
