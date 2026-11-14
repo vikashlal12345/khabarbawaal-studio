@@ -2039,5 +2039,34 @@
   "kw": 8,
   "relate": "twist",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_break_night-2026-11-14",
+  "key": "varundhawanyashrajfilmsfirsthorrorfilmabhaypannu",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-14T14:35:11+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Varun Dhawan to Headline Yash Raj Films’ First-Ever Hor",
+   "(under 1 h ago) HT Leadership Summit 2026: Ananya Panday calls herself ",
+   "(2 h ago) At HTLS, Imtiaz Ali hails Dhurandhar, says many in Boll",
+   "(2 h ago) Ananya Birla teases Ananya Panday as she dials up Adity",
+   "(2 h ago) Davakhar backs Ramayana: Santosh backs its Oscars bid",
+   "(3 h ago) Vir Hirani to voice Mowgli in upcoming AI-generated fea",
+   "(6 h ago) BREAKING: Most violent Godzilla film ever, Godzilla Min",
+   "(6 h ago) EXCLUSIVE: Amit Sadh makes SHOCKING confession: \"I don'"
+  ],
+  "n_stories": 8,
+  "strength": 8,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 34,
+  "topic": "promo",
+  "kw": 8,
+  "relate": "verdict",
+  "hook": "name_first"
  }
 ]
