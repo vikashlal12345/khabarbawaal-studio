@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-11-14",
+  "image": "posts/20261114-0634-reel_news_am-2026-11-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261114-063400-reel_news_am-2026-11-14.mp4",
+  "headline": "Josh actor Sharad Kapoor appeals for work after leg injury, gets emotional over four pet dogs moved to welfare centre",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sharad Kapoor Josh actor leg injury appeal for work 💔\nJosh actor Sharad Kapoor ne leg injury ke baad kaam ki appeal ki hai.\nEmotional hote hue unhone bataya ki unke 4 pet dogs ko abhi Mumbai ke NGO YODA ke welfare centre mein shift karna pada.\nKya industry ko unhe kaam dena chahiye? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sharadkapoor #bollywood #josh #emotional #reelsindia\n\n(Sharad Kapoor, Josh actor, Sharad Kapoor leg injury, Sharad Kapoor pet dogs, YODA welfare centre, Sharad Kapoor appeal work, Bollywood actor emotional, Mumbai NGO YODA)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html",
+  "pin_comment": "Ye Sharad Kapoor ke liye zyada se zyada logon ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zihaal e Miskin",
+    "artist": "Javed-Mohsin, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "sad, emotional helpless feeling"
+   },
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "heavy heart, struggle"
+   },
+   {
+    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Pritam, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "soft emotional bond with pets"
+   },
+   {
+    "title": "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Manoj Muntashir",
+    "lang": "new",
+    "mood": "hopeful prayerful tone"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says he only hopes to resume work by January; it is not a certain return."
+   ],
+   "fixed": [
+    "Sharad bole: paisa nahi, bas achha kaam chahiye, January tak wapsi. → Sharad bole: paisa nahi, bas achha kaam chahiye, January tak wapsi ki umeed."
+   ]
+  },
+  "created_at": "2026-11-14T06:34:00+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-14",
   "image": "posts/20261114-0433-reel_break_am-2026-11-14.jpg",
   "kind": "reel",
@@ -427,54 +476,5 @@
    ]
   },
   "created_at": "2026-11-13T06:36:13+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-13",
-  "image": "posts/20261113-0434-reel_break_am-2026-11-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261113-043430-reel_break_am-2026-11-13.mp4",
-  "headline": "Subrata Chakraborty explains Indianising Ayodhya and Lanka",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Ramayana: Rise of a Legend, Subrata Chakraborty, Amit Ray, Ayodhya Lanka sets\nSubrata Chakraborty aur Amit Ray ne film par 3 saal kaam kiya.\nUnhone settings ko Indian pehchaan di, Ayodhya aur Lanka ka contrast alag rakha.\nRamayana ka ye look pasand aaya? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #ramayana #bollywood #ayodhya #filmnews\n\n(Ramayana Rise of a Legend, Subrata Chakraborty, Amit Ray, Ayodhya Lanka sets, Ramayana production design, Ramayana film, Ramayana behind the scenes)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-rise-of-a-legend-took-three-years-to-build-its-visual-world-subrata-chakraborty-explains-indianising-ayodhya-and-lanka/articleshow/135788630.cms",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana ka grand look"
-   },
-   {
-    "title": "Main Ram (From \"Ramayana\")",
-    "artist": "Prateek Walia, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ayodhya wali bhakti feel"
-   },
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "epic cinematic mood"
-   },
-   {
-    "title": "Ashke",
-    "artist": "Karan Aujla & MXRCI",
-    "lang": "hindi",
-    "mood": "chart hit, strong vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The year 2026 is not in the article, so the claim is unsupported."
-   ],
-   "fixed": [
-    "Ramayana film 2026 → Ramayana film"
-   ]
-  },
-  "created_at": "2026-11-13T04:34:30+00:00"
  }
 ]

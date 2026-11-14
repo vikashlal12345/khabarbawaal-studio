@@ -1884,5 +1884,34 @@
   "kw": 8,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-14",
+  "key": "sharadkapoorjoshactorleginjuryappealforwork",
+  "kind": "reel_news_am",
+  "secs": 19.0,
+  "at": "2026-11-14T06:34:00+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) BREAKING: Most violent Godzilla film ever, Godzilla Min",
+   "(under 1 h ago) EXCLUSIVE: Amit Sadh makes SHOCKING confession: \"I don'",
+   "(under 1 h ago) EXCLUSIVE: Blockbuster filmmaker Ali Abbas Zafar debuts",
+   "(2 h ago) Rana Daggubati on his first-ever horror movie, led by K",
+   "(2 h ago) 'Pratap' actor Amit credits Ajay's ‘Gangaajal’ for insp",
+   "(4 h ago) Josh actor Sharad Kapoor appeals for work after leg inj"
+  ],
+  "n_stories": 6,
+  "strength": 5,
+  "pick_no": 6,
+  "age_h": 3.6,
+  "topic": "other",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 39,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

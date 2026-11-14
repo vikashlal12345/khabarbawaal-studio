@@ -316,7 +316,8 @@
   "5ac8fbaf07d1",
   "2f4ae951287e",
   "3526de764ce0",
-  "1d2a4093c3a9"
+  "1d2a4093c3a9",
+  "9f85168e596e"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -457,7 +458,7 @@
   "reel_news_pm": "2026-11-13",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-13",
+  "reel_news_am": "2026-11-14",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-13",
@@ -472,7 +473,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-13"
  },
- "inbox_since": "g3DEbBeyjdJf",
+ "inbox_since": "wglaEX6TDs5Q",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -845,7 +846,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
   "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
   "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
   "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
@@ -924,7 +924,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-says-faisal-shaikh-aka-faisu-directed-his-own-reception-ceremony-brought-wife-tanya-to-click-pictures-with-guests-101794572672997.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amrita-rao-s-sister-preetika-rao-ties-the-knot-in-bengaluru-keeps-husband-s-face-hidden-as-she-calls-wedding-too-personal-and-sacred-101794573388678.html",
   "https://www.hindustantimes.com/entertainment/bollywood/pankaj-tripathi-says-money-doesnt-excite-him-anymore-refuses-offers-despite-large-fees-interview-parivarik-manuranjan-mirzapur-101794560471529.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1141,10 +1142,6 @@
   }
  ],
  "songs_recent": [
-  "Mangal Rang (From \"Ramayana\")",
-  "Main Ram (From \"Ramayana\")",
-  "Gehra Hua",
-  "Ashke",
   "Dhun",
   "Zaalima",
   "Mangal Rang (From \"Ramayana\")",
@@ -1180,7 +1177,11 @@
   "Shararat",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-  "Shree Hanuman Chalisa (From \"Ramayana\")"
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "Zihaal e Miskin",
+  "Aaj Bhi 2",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1278,6 +1279,10 @@
   },
   {
    "title": "Lara Dutta says she almost had her wrist ‘sawn off’ on Ramayana set, shares BTS clip of stuck bracelet being cut off with hacksaw blade",
+   "date": "2026-11-14"
+  },
+  {
+   "title": "Josh actor Sharad Kapoor appeals for work after leg injury, gets emotional over four pet dogs moved to welfare centre",
    "date": "2026-11-14"
   }
  ],
