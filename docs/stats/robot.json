@@ -12447,6 +12447,53 @@
      "tokens": 10904
     }
    }
+  },
+  "reel_news_early": {
+   "posts": 0,
+   "requests": 10,
+   "input": 28,
+   "output": 5486,
+   "cache_read": 15653,
+   "cache_write": 253493,
+   "value_usd": 1.0706,
+   "by_purpose": {
+    "reel news pick": {
+     "requests": 1,
+     "tokens": 52255
+    },
+    "story strength": {
+     "requests": 1,
+     "tokens": 36007
+    },
+    "photo check": {
+     "requests": 2,
+     "tokens": 18207
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 35797
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5233
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 39899
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 36509
+    },
+    "news story lines": {
+     "requests": 1,
+     "tokens": 36790
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 13963
+    }
+   }
   }
  }
 }
