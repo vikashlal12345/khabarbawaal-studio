@@ -320,7 +320,8 @@
   "9f85168e596e",
   "668336127408",
   "3d1ad2d5e327",
-  "da9ebeb64dd6"
+  "da9ebeb64dd6",
+  "2c6717092bb3"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -471,12 +472,12 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-14",
   "reel_break_noon": "2026-11-14",
-  "reel_break_aft": "2026-11-13",
+  "reel_break_aft": "2026-11-14",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-13"
  },
- "inbox_since": "6deWdRx62E4m",
+ "inbox_since": "qBkFiZ0vQUFy",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -849,7 +850,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ahaan-panday-action-film-with-ali-abbas-zafar-sharvari-titled-beparwah-yash-raj-films-release-date-saiyaara-101792995529154.html",
@@ -928,7 +928,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/tiger-shroff-resumes-work-on-lag-jaa-gale-wraps-pune-schedule-with-janhvi-kapoor-weeks-after-firing-incident/articleshow/135828848.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/soha-ali-khan-childhood-pictures-parents-sharmila-tagore-mansoor-ali-khan-tiger-pataudi-nehru-on-childrens-day-gandhi-family-101794652562994.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/soha-ali-khan-childhood-pictures-parents-sharmila-tagore-mansoor-ali-khan-tiger-pataudi-nehru-on-childrens-day-gandhi-family-101794652562994.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/who-is-ramola-bachchan-meet-the-fashion-designer-entrepreneur-and-ex-tv-presenter-at-the-centre-of-the-jalsa-ownership-dispute-with-amitabh-bachchan-and-jaya-bachchan/articleshow/135833050.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1145,10 +1146,6 @@
   }
  ],
  "songs_recent": [
-  "Radhe Radhe",
-  "Tabaahi (From \"Toxic\")",
-  "Mangal Rang (From \"Ramayana\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Jaiye Sajana",
   "Pal Pal Dil Ke Paas - Title Track",
   "Tu Mil Jaaye (From \"KING\")",
@@ -1184,7 +1181,11 @@
   "Humnava Mere",
   "Raanjhan",
   "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-  "Main Ram (From \"Ramayana\")"
+  "Main Ram (From \"Ramayana\")",
+  "Zaalima",
+  "Barsaat",
+  "Judi Jodi (From \"Ramayana\")",
+  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1299,6 +1300,10 @@
   {
    "title": "Soha Ali Khan digs out childhood pictures of parents Sharmila Tagore, Mansoor Ali Khan Pataudi with Nehru on Children's Day",
    "date": "2026-11-14"
+  },
+  {
+   "title": "Who is Ramola Bachchan? Meet fashion designer, TV presenter at centre of Big B's Jalsa dispute",
+   "date": "2026-11-14"
   }
  ],
  "claude_limit": {
@@ -1316,9 +1321,10 @@
   "18073698851610142",
   "18107622128201600",
   "17885682390526060",
-  "18118758538818105"
+  "18118758538818105",
+  "18106911791015136"
  ],
- "winner_followup_day": "2026-11-13",
+ "winner_followup_day": "2026-11-14",
  "aarti_photos_used": [
   "File:Mahalakshmi Temple, Mumbai.jpg",
   "File:Mahalakshmi temple, Kolhapur.jpg",

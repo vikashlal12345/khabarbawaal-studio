@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_break_aft-2026-11-14",
+  "image": "posts/20261114-1335-reel_break_aft-2026-11-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261114-133517-reel_break_aft-2026-11-14.mp4",
+  "headline": "Who is Ramola Bachchan? Meet fashion designer, TV presenter at centre of Big B's Jalsa dispute",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Amitabh Bachchan Jalsa dispute Ramola Bachchan gift deed Jaya Bachchan\nRamola Bachchan, Amitabh ki sister-in-law, ne Jalsa ke gift deed par sawaal uthaye hain.\nUnka kehna hai ki property pehle unki thi, phir Jaya Bachchan ko transfer hui.\nAuthorities unki chinta ki jaanch kar rahe hain. 🏠\nJalsa vivaad par aap kiske saath? RAMOLA ya BACHCHAN likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#amitabhbachchan #jalsa #bachchanfamily #bollywoodnews #reelsindia\n\n(Ramola Bachchan, Amitabh Bachchan Jalsa, Jalsa dispute, Jaya Bachchan gift deed, Ajitabh Bachchan, Bachchan family dispute, Amitabh Bachchan sister in law, Jalsa bungalow Mumbai)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/who-is-ramola-bachchan-meet-the-fashion-designer-entrepreneur-and-ex-tv-presenter-at-the-centre-of-the-jalsa-ownership-dispute-with-amitabh-bachchan-and-jaya-bachchan/articleshow/135833050.cms",
+  "pin_comment": "Apne Amitabh Bachchan fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "family drama ka emotional vibe"
+   },
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "bhaari, serious mood"
+   },
+   {
+    "title": "Judi Jodi (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "parivar aur rishton ki baat"
+   },
+   {
+    "title": "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "ghar ke vivaad mein shanti"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Transfer is Ramola's allegation; attribute it to her instead of stating it as fact",
+    "Fact corrected to match the article: Article says she alleges it was her property; a first-person quote is not in the article, so it is reworded as an attributed claim."
+   ],
+   "fixed": [
+    "Deed Jaya Bachchan ko transfer hui, jaanch jaari → Unke mutabik deed Jaya Bachchan ko transfer hui, jaanch jaari",
+    "Jalsa pehle meri property thi → Jalsa pehle unki property thi"
+   ]
+  },
+  "created_at": "2026-11-14T13:35:17+00:00"
+ },
+ {
   "id": "reel_news_aft-2026-11-14",
   "image": "posts/20261114-1235-reel_news_aft-2026-11-14.jpg",
   "kind": "reel",
@@ -368,50 +419,5 @@
    ]
   },
   "created_at": "2026-11-13T14:34:49+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-13",
-  "image": "posts/20261113-1333-reel_break_aft-2026-11-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261113-133343-reel_break_aft-2026-11-13.mp4",
-  "headline": "Farah Khan says Faisal Shaikh aka Faisu directed his own reception ceremony, brought wife Tanya to click pictures with guests",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Farah Khan Faisu Tanya reception Mumbai 🎬\nFarah ne kaha Faisu poora reception khud direct kar raha tha.\nSabko khada karke pehle pictures, phir lights dim karwayi.\nFaisu ne bataya ki Farah ko vlog mein direct karte dekh kar seekha.\nFaisu ke reception andaaz ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #farahkhan #faisu #bollywood #trending\n\n(Farah Khan, Faisal Shaikh, Mr Faisu, Faisu Tanya wedding, Faisu reception Mumbai, Farah Khan YouTube vlog, Faisu Tanya Farah Khan vlog, Faisu nikah Madinah)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-says-faisal-shaikh-aka-faisu-directed-his-own-reception-ceremony-brought-wife-tanya-to-click-pictures-with-guests-101794572672997.html",
-  "pin_comment": "Apne Faisu fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jaiye Sajana",
-    "artist": "Shashwat Sachdev, Jasmine Sandlas",
-    "lang": "hindi",
-    "mood": "shaadi wali happy vibe"
-   },
-   {
-    "title": "Pal Pal Dil Ke Paas - Title Track",
-    "artist": "Arijit Singh, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "newlywed romantic mood"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "naye jodi ka pyaar"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "romantic filmy touch"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-13T13:33:43+00:00"
  }
 ]

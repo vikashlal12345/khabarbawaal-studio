@@ -2010,5 +2010,34 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_aft-2026-11-14",
+  "key": "amitabhbachchanjalsadisputeramolabachchangiftdeedjayabachcha",
+  "kind": "reel_break_aft",
+  "secs": 17.0,
+  "at": "2026-11-14T13:35:17+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Varun Dhawan Turns Horror Hero For YRF; Rocket Boys Fam",
+   "(under 1 h ago) HT Leadership Summit 2026: Imtiaz Ali hails Dhurandhar,",
+   "(under 1 h ago) Ananya Birla teases Ananya Panday as she dials up Adity",
+   "(under 1 h ago) Who is Ramola Bachchan? Meet fashion designer, TV prese",
+   "(under 1 h ago) HT Leadership Summit 2026: Imtiaz Ali never thought Mai",
+   "(2 h ago) Davakhar backs Ramayana: Santosh backs its Oscars bid",
+   "(2 h ago) Vir Hirani to voice Mowgli in upcoming AI-generated fea",
+   "(3 h ago) Bollywood’s new security blanket: More bouncers, 6-7 se"
+  ],
+  "n_stories": 8,
+  "strength": 8,
+  "pick_no": 4,
+  "age_h": 0.8,
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 32,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "twist",
+  "hook": "name_first"
  }
 ]
