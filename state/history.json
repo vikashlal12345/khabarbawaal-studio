@@ -317,7 +317,8 @@
   "2f4ae951287e",
   "3526de764ce0",
   "1d2a4093c3a9",
-  "9f85168e596e"
+  "9f85168e596e",
+  "668336127408"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -467,13 +468,13 @@
   "reel_news_early": "2026-11-14",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-14",
-  "reel_break_noon": "2026-11-13",
+  "reel_break_noon": "2026-11-14",
   "reel_break_aft": "2026-11-13",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-13"
  },
- "inbox_since": "wglaEX6TDs5Q",
+ "inbox_since": "s6k8k70yhrhv",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -846,7 +847,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
   "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
   "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
   "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
@@ -925,7 +925,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/amrita-rao-s-sister-preetika-rao-ties-the-knot-in-bengaluru-keeps-husband-s-face-hidden-as-she-calls-wedding-too-personal-and-sacred-101794573388678.html",
   "https://www.hindustantimes.com/entertainment/bollywood/pankaj-tripathi-says-money-doesnt-excite-him-anymore-refuses-offers-despite-large-fees-interview-parivarik-manuranjan-mirzapur-101794560471529.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1142,10 +1143,6 @@
   }
  ],
  "songs_recent": [
-  "Dhun",
-  "Zaalima",
-  "Mangal Rang (From \"Ramayana\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
   "Tera Hoke Rahoon",
   "Jo Tum Mere Ho",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
@@ -1181,7 +1178,11 @@
   "Zihaal e Miskin",
   "Aaj Bhi 2",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")"
+  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
+  "Peek A Boo",
+  "Madhosh",
+  "O Mysaa Re (From \"Mysaa\") [Hindi]",
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1283,6 +1284,10 @@
   },
   {
    "title": "Josh actor Sharad Kapoor appeals for work after leg injury, gets emotional over four pet dogs moved to welfare centre",
+   "date": "2026-11-14"
+  },
+  {
+   "title": "Shruti says her mannequin Fiona kept changing positions",
    "date": "2026-11-14"
   }
  ],

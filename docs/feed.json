@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_break_noon-2026-11-14",
+  "image": "posts/20261114-0835-reel_break_noon-2026-11-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261114-083506-reel_break_noon-2026-11-14.mp4",
+  "headline": "Shruti says her mannequin Fiona kept changing positions",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Shruti Haasan Fiona mannequin Mumbai ghar Double Date\n\nNeha Dhupia aur Angad Bedi ke show Double Date par Shruti ne bataya ki unke Mumbai ghar mein mannequin Fiona khud position badalti thi.\nUnhone Hanuman Chalisa chalayi, namak haath mein liya aur mannequin ko dismantle kar diya.\nUnke mutabiq ab ghar shant hai. 👻\n\nShruti ne Fiona ko hatakar sahi kiya? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #shrutihaasan #bollywood #doubledate #viral\n\n(Shruti Haasan, Shruti Haasan Fiona, Shruti Haasan mannequin, Double Date Neha Dhupia, Angad Bedi Double Date, Shruti Haasan Mumbai home, Shruti Haasan Hanuman Chalisa, Kamal Haasan daughter)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms",
+  "pin_comment": "Apne darpok dost ko bhejo jo bhoot se darta hai 👇",
+  "songs": [
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "playful spooky vibe"
+   },
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "mysterious dreamy mood"
+   },
+   {
+    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "eerie haunted feel"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "light fun twist"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The mannequin moving is Shruti's own claim, so it should be attributed to her and not stated as fact."
+   ],
+   "fixed": [
+    "Shruti ke Mumbai ghar mein mannequin Fiona khud position badalti thi → Shruti ke mutabiq unke Mumbai ghar mein mannequin Fiona khud position badalti thi"
+   ]
+  },
+  "created_at": "2026-11-14T08:35:06+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-14",
   "image": "posts/20261114-0634-reel_news_am-2026-11-14.jpg",
   "kind": "reel",
@@ -382,99 +431,5 @@
    ]
   },
   "created_at": "2026-11-13T10:33:34+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-13",
-  "image": "posts/20261113-0834-reel_break_noon-2026-11-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261113-083418-reel_break_noon-2026-11-13.mp4",
-  "headline": "Aditi Rao Hydari reveals the family tradition she shares with husband Siddharth: “It's common that everyone laughs together”",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Aditi Rao Hydari Siddharth family tradition Filmfare interview 😊\nAditi ne bataya ki unki aur Siddharth ki family mein sab saath hanste hain.\nUnke mutabik mushkil waqt mein bhi kuch hansne ka bahana dhundna zaroori hai.\nUnki film Parivarik ManuRanjan aaj SonyLIV par premiere hui.\nSaath hasna ya saath khana? HASNA ya KHANA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #AditiRaoHydari #Siddharth #Bollywood #ParivarikManuRanjan\n\n(Aditi Rao Hydari, Siddharth, Aditi Rao Hydari Siddharth, Aditi Rao Hydari Filmfare interview, Parivarik ManuRanjan, Parivarik ManuRanjan SonyLIV, Pankaj Tripathi, Bollywood news)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/aditi-rao-hydari-reveals-the-family-tradition-she-shares-with-husband-siddharth-its-common-that-everyone-laughs-together/",
-  "pin_comment": "Apne Aditi Rao Hydari fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "couple love, warm family vibe"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "sweet couple moment"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "romantic, ghar ka pyaar"
-   },
-   {
-    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya",
-    "lang": "new",
-    "mood": "soft romantic feel"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-13T08:34:18+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-13",
-  "image": "posts/20261113-0636-reel_news_am-2026-11-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261113-063613-reel_news_am-2026-11-13.mp4",
-  "headline": "OG Sita Dipika Chikhlia says she always knew Ranbir Kapoor, Yash's Ramayana would be a hit as it crosses ₹1000 crore worldwide, praises VFX and cast",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Dipika Chikhlia Ramayana 1000 crore reaction 🙏\nOG Sita Dipika Chikhlia ne kaha ki unhe pehle se pata tha Ranbir Kapoor aur Yash ki Ramayana hit hogi.\nFilm ne duniya bhar mein ₹1000 crore paar kar liye, unhone VFX aur cast ki bhi tareef ki.\nIs khabar par ek emoji likho: dil, haath jode ya taali? 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #Ramayana #DipikaChikhlia #RanbirKapoor #Bollywood\n\n(Dipika Chikhlia, Ramayana 1000 crore, Ranbir Kapoor Yash Ramayana, OG Sita, Ramanand Sagar Ramayan, Ramayana box office, Ramayana review)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/og-sita-dipika-chikhlia-says-she-always-knew-ranbir-kapoor-yashs-ramayana-would-be-a-hit-as-it-crosses-1000-crore-worldwide-praises-vfx-and-cast-101794539772178.html",
-  "pin_comment": "Ye apne Ramayan wale bachpan ke dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "nostalgic, soft Ramayan memories"
-   },
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "emotional, heartfelt tribute vibe"
-   },
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana film's own devotional feel"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "win, hustle, blockbuster celebration"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article doesn't say she watched the film; she reacted to its box office success when told by paparazzi."
-   ],
-   "fixed": [
-    "Dipika Chikhlia ne Ramayana dekhkar kya kaha? → Dipika Chikhlia ne Ramayana ki success par kya kaha?"
-   ]
-  },
-  "created_at": "2026-11-13T06:36:13+00:00"
  }
 ]

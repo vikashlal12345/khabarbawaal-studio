@@ -12584,6 +12584,57 @@
      "tokens": 28698
     }
    }
+  },
+  "reel_break_noon": {
+   "posts": 0,
+   "requests": 13,
+   "input": 42,
+   "output": 9850,
+   "cache_read": 29327,
+   "cache_write": 237362,
+   "value_usd": 1.0509,
+   "by_purpose": {
+    "breaking pick": {
+     "requests": 1,
+     "tokens": 54397
+    },
+    "story strength": {
+     "requests": 1,
+     "tokens": 35962
+    },
+    "photo check": {
+     "requests": 3,
+     "tokens": 26850
+    },
+    "people photos": {
+     "requests": 1,
+     "tokens": 8312
+    },
+    "people crops": {
+     "requests": 1,
+     "tokens": 4655
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5867
+    },
+    "breaking card write": {
+     "requests": 1,
+     "tokens": 40175
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 39624
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 36469
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 24270
+    }
+   }
   }
  }
 }

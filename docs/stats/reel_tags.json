@@ -1913,5 +1913,36 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-14",
+  "key": "shrutihaasanfionamannequinmumbaighardoubledate",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-14T08:35:06+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Varun Dhawan enters his Horror era Yash Raj Films Style",
+   "(under 1 h ago) Vir Hirani to voice Mowgli in upcoming AI-generated fea",
+   "(under 1 h ago) BREAKING: Most violent Godzilla film ever, Godzilla Min",
+   "(under 1 h ago) Varun Dhawan to headline Yash Raj Films' first horror f",
+   "(under 1 h ago) EXCLUSIVE: Amit Sadh makes SHOCKING confession: \"I don'",
+   "(under 1 h ago) Paytm founder Vijay Shekhar Sharma reacts to Elon Musk ",
+   "(under 1 h ago) Amit hopes film revives career; seeks more acting work",
+   "(under 1 h ago) Gurugram Police takes note after resident shares dashca",
+   "(1 h ago) Ramayana worldwide box office collection day 9: Ranbir ",
+   "(2 h ago) Shruti says her mannequin Fiona kept changing positions"
+  ],
+  "n_stories": 11,
+  "strength": 6,
+  "pick_no": 10,
+  "age_h": 1.5,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 34,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]
