@@ -707,9 +707,15 @@ def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> d
             got = None
         if got:
             return got
-    got = try_vetted([c for c in vet if not c.get("specific")])
-    if got:
-        return got
+    # Owner, 14 Nov 2026: 'if you are not getting aarti videos / photos for a god, go ahead with the AI pictures for now': the generic clips (diyas, lamp, sunrise) and the
+    # blind Pixabay search are OFF by default; the caller then makes the old AI-picture Reel. AARTI_GENERIC=1 / AARTI_SEARCH=1 switch them back on.
+    if os.environ.get("AARTI_GENERIC", "0") == "1":
+        got = try_vetted([c for c in vet if not c.get("specific")])
+        if got:
+            return got
+    if os.environ.get("AARTI_SEARCH", "0") != "1":
+        print("  aarti footage: no footage or idol photos of this god / festival: the AI pictures are used")
+        return None
     # 3) last resort: search Pixabay now and let the AI pick from thumbnails
     pix = pixabay_candidates(queries_for(plan, subj), used)[:14]
     print(f"  aarti footage: searching Pixabay: {len(pix)} candidates")
