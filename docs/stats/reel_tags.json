@@ -1977,5 +1977,38 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-14",
+  "key": "sohaalikhansharmilatagoremansooralikhanpataudichildrensday",
+  "kind": "reel_news_aft",
+  "secs": 18.4,
+  "at": "2026-11-14T12:35:36+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Varun Dhawan YRF: Here is everything we know about his ",
+   "(under 1 h ago) Davakhar backs Ramayana: Santosh backs its Oscars bid",
+   "(under 1 h ago) Saif shares Rajasthan road trip photos; Kareena REACTS,",
+   "(1 h ago) Vir Hirani to voice Mowgli in upcoming AI-generated fea",
+   "(1 h ago) Soha Ali Khan digs out childhood pictures of parents Sh",
+   "(2 h ago) Bollywood’s new security blanket: More bouncers, 6-7 se",
+   "(2 h ago) Neetu recalls Krishna Raj tore Rishi’s envelope",
+   "(2 h ago) Neetu Kapoor recalls mother-in-law Krishna Raj Kapoor’s",
+   "(3 h ago) Tinnu Anand discharged from hospital after 14 days, rec",
+   "(4 h ago) BREAKING: Most violent Godzilla film ever, Godzilla Min"
+  ],
+  "n_stories": 10,
+  "strength": 9,
+  "pick_no": 5,
+  "age_h": 1.4,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "emoji",
+  "cover": "window",
+  "sharp": 36,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

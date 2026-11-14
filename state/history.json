@@ -319,7 +319,8 @@
   "1d2a4093c3a9",
   "9f85168e596e",
   "668336127408",
-  "3d1ad2d5e327"
+  "3d1ad2d5e327",
+  "da9ebeb64dd6"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -463,7 +464,7 @@
   "reel_news_am": "2026-11-14",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-13",
+  "reel_news_aft": "2026-11-14",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-14",
@@ -475,7 +476,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-13"
  },
- "inbox_since": "ls9Gxvx8liQI",
+ "inbox_since": "6deWdRx62E4m",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -848,7 +849,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
   "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kriti-sanon-varun-dhawan-wolf-howl-as-they-reunite-with-bhediya-director-amar-kaushik-fans-wonder-if-sequel-is-underway-101793016942101.html",
@@ -927,7 +927,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html",
   "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/tiger-shroff-resumes-work-on-lag-jaa-gale-wraps-pune-schedule-with-janhvi-kapoor-weeks-after-firing-incident/articleshow/135828848.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/tiger-shroff-resumes-work-on-lag-jaa-gale-wraps-pune-schedule-with-janhvi-kapoor-weeks-after-firing-incident/articleshow/135828848.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/soha-ali-khan-childhood-pictures-parents-sharmila-tagore-mansoor-ali-khan-tiger-pataudi-nehru-on-childrens-day-gandhi-family-101794652562994.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1144,10 +1145,6 @@
   }
  ],
  "songs_recent": [
-  "To Chaloon",
-  "Alfaaz",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Betuka (From \"Nakhrewaalii\")",
   "Radhe Radhe",
   "Tabaahi (From \"Toxic\")",
   "Mangal Rang (From \"Ramayana\")",
@@ -1183,7 +1180,11 @@
   "Ez-Ez",
   "Aavan Jaavan (From \"WAR 2\")",
   "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")"
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Humnava Mere",
+  "Raanjhan",
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
+  "Main Ram (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1293,6 +1294,10 @@
   },
   {
    "title": "Lag Jaa Gale: Tiger wraps Pune schedule; Janhvi co-stars",
+   "date": "2026-11-14"
+  },
+  {
+   "title": "Soha Ali Khan digs out childhood pictures of parents Sharmila Tagore, Mansoor Ali Khan Pataudi with Nehru on Children's Day",
    "date": "2026-11-14"
   }
  ],
