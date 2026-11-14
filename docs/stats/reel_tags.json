@@ -1828,5 +1828,34 @@
   "type": "devotional",
   "footage": "pixabay",
   "silent": true
+ },
+ {
+  "id": "reel_news_early-2026-11-14",
+  "key": "pankajtripathiinterview",
+  "kind": "reel_news_early",
+  "secs": 18.4,
+  "at": "2026-11-14T02:33:13+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Lara Dutta says she almost had her wrist ‘sawn off’ on ",
+   "(under 1 h ago) Pankaj Tripathi says money doesn't excite him anymore, ",
+   "(1 h ago) CM Yogi’s deleted Hindu voters remark sparks political ",
+   "(2 h ago) 'Drishyam 3' day 43: Ajay Devgn, Tabu film nears Rs 589",
+   "(2 h ago) 'Ramayana' day 9: Ranbir Kapoor, Yash film earns Rs 1,1",
+   "(8 h ago) BREAKING: Dhurandhar to OPEN Indian Panorama at 57th IF"
+  ],
+  "n_stories": 6,
+  "strength": 7,
+  "pick_no": 2,
+  "age_h": 0.9,
+  "topic": "other",
+  "kw": 6,
+  "relate": "twist",
+  "cover": "window",
+  "sharp": 41,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
