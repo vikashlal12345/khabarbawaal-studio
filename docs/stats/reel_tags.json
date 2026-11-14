@@ -1857,5 +1857,32 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-14",
+  "key": "laraduttaramayanabtsclipkaikeyilookbracelethacksawsekata",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-14T04:33:56+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) EXCLUSIVE: Blockbuster filmmaker Ali Abbas Zafar debuts",
+   "(under 1 h ago) Sun, faith, and the Ganga: Bihar gears up for the sacre",
+   "(2 h ago) Josh actor Sharad Kapoor appeals for work after leg inj",
+   "(3 h ago) Lara Dutta says she almost had her wrist ‘sawn off’ on ",
+   "(4 h ago) 'Drishyam 3' day 43: Ajay Devgn, Tabu film nears Rs 589",
+   "(4 h ago) 'Ramayana' day 9: Ranbir Kapoor, Yash film earns Rs 1,1"
+  ],
+  "n_stories": 6,
+  "strength": 7,
+  "pick_no": 4,
+  "age_h": 2.8,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 67,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]

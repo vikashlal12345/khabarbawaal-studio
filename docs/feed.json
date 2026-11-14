@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-11-14",
+  "image": "posts/20261114-0433-reel_break_am-2026-11-14.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261114-043356-reel_break_am-2026-11-14.mp4",
+  "headline": "Lara Dutta says she almost had her wrist ‘sawn off’ on Ramayana set, shares BTS clip of stuck bracelet being cut off with hacksaw blade",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Lara Dutta Ramayana BTS clip, Kaikeyi look, bracelet hacksaw se kata\nLara ne Instagram par Kaikeyi look ka BTS carousel share kiya.\nVanity van mein fansa bracelet hacksaw blade se kata gaya.\nCaption: \"Including almost having your wrist sawn off!!\"\nLara ki mehnat ko salaam? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#laradutta #ramayana #bollywood #reelsindia #kaikeyi\n\n(Lara Dutta, Lara Dutta Kaikeyi, Ramayana BTS, Ramayana Lara Dutta bracelet, Nitesh Tiwari Ramayana, Ranbir Kapoor Ramayana, Ramayana 1000 crore, Lara Dutta Instagram)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "masti bhara BTS moment"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "dramatic scare = high energy"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "light fun twist"
+   },
+   {
+    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
+    "artist": "A.R. Rahman",
+    "lang": "new",
+    "mood": "Ramayana set connect"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-14T04:33:56+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-14",
   "image": "posts/20261114-0233-reel_news_early-2026-11-14.jpg",
   "kind": "reel",
@@ -431,54 +476,5 @@
    ]
   },
   "created_at": "2026-11-13T04:34:30+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-13",
-  "image": "posts/20261113-0235-reel_news_early-2026-11-13.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261113-023558-reel_news_early-2026-11-13.mp4",
-  "headline": "When Ranveer Singh revealed secret engagement to Deepika Padukone",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ranveer Singh Deepika Padukone secret engagement 💍\nRanveer aur Deepika ne Koffee With Karan par apni private engagement ki baatein batayi.\nDono ne 2015 mein engagement ki thi, duniya ko bhanak tak nahi lagi.\nIs jodi ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ranveersingh #deepikapadukone #bollywood #couplegoals #reelsindia\n\n(Ranveer Singh, Deepika Padukone, RanDeep, secret engagement, Ranveer Deepika wedding, Bollywood couple, Deepika Padukone engagement 2015, Bollywood news)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/i-thought-i-should-make-move-when-ranveer-singh-revealed-secret-engagement-to-deepika-padukone/articleshow/135785883.cms",
-  "pin_comment": "Apne Ranveer-Deepika fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Raanjhan",
-    "artist": "Sachet-Parampara, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "romantic secret love vibe"
-   },
-   {
-    "title": "Samjhawan",
-    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "couple love, soft moment"
-   },
-   {
-    "title": "Judi Jodi (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "jodi = perfect couple"
-   },
-   {
-    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "shaadi celebration vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says the engagement was discussed on Koffee With Karan; wedding details not discussed there."
-   ],
-   "fixed": [
-    "Ranveer aur Deepika ne TV par apni shaadi aur private engagement ki baatein batayi. → Ranveer aur Deepika ne Koffee With Karan par apni private engagement ki baatein batayi."
-   ]
-  },
-  "created_at": "2026-11-13T02:35:58+00:00"
  }
 ]

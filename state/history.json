@@ -315,7 +315,8 @@
   "f21612c20281",
   "5ac8fbaf07d1",
   "2f4ae951287e",
-  "3526de764ce0"
+  "3526de764ce0",
+  "1d2a4093c3a9"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -464,14 +465,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-14",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-13",
+  "reel_break_am": "2026-11-14",
   "reel_break_noon": "2026-11-13",
   "reel_break_aft": "2026-11-13",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-13"
  },
- "inbox_since": "zUzyOGpKybOt",
+ "inbox_since": "g3DEbBeyjdJf",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -844,7 +845,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/trending/chickfila-made-23-9-billion-despite-shutting-every-sunday-its-ceo-says-staff-well-being-matters-more-than-sales-101792924167239.html",
   "https://www.hindustantimes.com/entertainment/bollywood/virat-kohli-and-anushka-sharma-immerse-themselves-in-devotional-tunes-at-krishna-das-mumbai-concert-101792978212705.html",
   "https://www.hindustantimes.com/entertainment/bollywood/diljit-dosanjh-hints-at-koffee-with-karan-9-appearance-says-he-will-do-only-one-interview-this-year-101792985031303.html",
   "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
@@ -923,7 +923,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ramayana-box-office-ranbir-kapoor-sai-pallavi-and-yashs-film-becomes-a-record-breaker-in-vietnam-thailand-cambodia-and-nepal-amid-the-film-crossing-rs-1000-crore-worldwide/articleshow/135801054.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-says-faisal-shaikh-aka-faisu-directed-his-own-reception-ceremony-brought-wife-tanya-to-click-pictures-with-guests-101794572672997.html",
   "https://www.hindustantimes.com/entertainment/bollywood/amrita-rao-s-sister-preetika-rao-ties-the-knot-in-bengaluru-keeps-husband-s-face-hidden-as-she-calls-wedding-too-personal-and-sacred-101794573388678.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/pankaj-tripathi-says-money-doesnt-excite-him-anymore-refuses-offers-despite-large-fees-interview-parivarik-manuranjan-mirzapur-101794560471529.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/pankaj-tripathi-says-money-doesnt-excite-him-anymore-refuses-offers-despite-large-fees-interview-parivarik-manuranjan-mirzapur-101794560471529.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1140,10 +1141,6 @@
   }
  ],
  "songs_recent": [
-  "Raanjhan",
-  "Samjhawan",
-  "Judi Jodi (From \"Ramayana\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
   "Mangal Rang (From \"Ramayana\")",
   "Main Ram (From \"Ramayana\")",
   "Gehra Hua",
@@ -1179,7 +1176,11 @@
   "Arz Kiya Hai | Coke Studio Bharat",
   "Jo Tum Mere Ho",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Tu Mil Jaaye (From \"KING\")"
+  "Tu Mil Jaaye (From \"KING\")",
+  "Shararat",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Shree Hanuman Chalisa (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1273,6 +1274,10 @@
   },
   {
    "title": "Pankaj Tripathi says money doesn't excite him anymore, refuses offers despite large fees | Interview",
+   "date": "2026-11-14"
+  },
+  {
+   "title": "Lara Dutta says she almost had her wrist ‘sawn off’ on Ramayana set, shares BTS clip of stuck bracelet being cut off with hacksaw blade",
    "date": "2026-11-14"
   }
  ],
