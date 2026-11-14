@@ -1944,5 +1944,38 @@
   "kw": 8,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-14",
+  "key": "tigershroffjanhvikapoorlagjaagale",
+  "kind": "reel_news_pm",
+  "secs": 18.4,
+  "at": "2026-11-14T10:35:15+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Varun Dhawan Shares Adorable Vacation Photos With Daugh",
+   "(under 1 h ago) Vir Hirani to voice Mowgli in upcoming AI-generated fea",
+   "(under 1 h ago) Lag Jaa Gale: Tiger wraps Pune schedule; Janhvi co-star",
+   "(1 h ago) Bachchan’s Jalsa faces family property dispute, Ramola ",
+   "(1 h ago) Tinnu Anand discharged from hospital after 14 days, rec",
+   "(1 h ago) Finding roles I want remains a struggle, willing to wai",
+   "(2 h ago) Varun Dhawan steps into horror genre",
+   "(2 h ago) BREAKING: Most violent Godzilla film ever, Godzilla Min",
+   "(2 h ago) Varun Dhawan to headline Yash Raj Films' first horror f",
+   "(2 h ago) EXCLUSIVE: Amit Sadh makes SHOCKING confession: \"I don'"
+  ],
+  "n_stories": 11,
+  "strength": 8,
+  "pick_no": 3,
+  "age_h": 0.9,
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 35,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

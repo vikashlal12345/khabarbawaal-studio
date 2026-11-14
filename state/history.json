@@ -318,7 +318,8 @@
   "3526de764ce0",
   "1d2a4093c3a9",
   "9f85168e596e",
-  "668336127408"
+  "668336127408",
+  "3d1ad2d5e327"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -456,7 +457,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-14",
-  "reel_news_pm": "2026-11-13",
+  "reel_news_pm": "2026-11-14",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-14",
@@ -474,7 +475,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-13"
  },
- "inbox_since": "s6k8k70yhrhv",
+ "inbox_since": "ls9Gxvx8liQI",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -847,7 +848,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/govinda-claims-someone-is-influencing-sunita-ahuja-amid-feud-says-bad-reputation-has-always-been-synonymous-with-his-name-komal-rani-swarnkar-101792991097210.html",
   "https://www.hindustantimes.com/entertainment/bollywood/madhoo-is-in-love-with-rashmika-mandanna-owning-her-south-indian-accent-on-koffee-with-karan-recalls-being-judged-for-it-in-bollywood-101792999003740.html",
   "https://www.hindustantimes.com/entertainment/bollywood/nick-jonas-shares-sweet-family-moments-with-priyanka-chopra-daughter-malti-marie-runs-to-hug-him-backstage-101792993346237.html",
   "https://www.hindustantimes.com/entertainment/bollywood/raveena-tandon-turns-54-when-she-cleaned-studio-floors-as-an-intern-rejected-films-with-shah-rukh-khan-ajay-devgn-101793009690978.html",
@@ -926,7 +926,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/pankaj-tripathi-says-money-doesnt-excite-him-anymore-refuses-offers-despite-large-fees-interview-parivarik-manuranjan-mirzapur-101794560471529.html",
   "https://www.hindustantimes.com/entertainment/bollywood/lara-dutta-says-she-almost-had-her-wrist-sawn-off-on-ramayana-set-in-bts-clip-ranbir-kapoor-sai-pallavi-yash-nitesh-tiwari-101794577694547.html",
   "https://www.hindustantimes.com/entertainment/bollywood/josh-actor-sharad-kapoor-appeals-for-work-after-leg-injury-gets-emotional-over-four-pet-dogs-moved-to-welfare-centre-101794623892165.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/tiger-shroff-resumes-work-on-lag-jaa-gale-wraps-pune-schedule-with-janhvi-kapoor-weeks-after-firing-incident/articleshow/135828848.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1143,10 +1144,6 @@
   }
  ],
  "songs_recent": [
-  "Tera Hoke Rahoon",
-  "Jo Tum Mere Ho",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
   "To Chaloon",
   "Alfaaz",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
@@ -1182,7 +1179,11 @@
   "Peek A Boo",
   "Madhosh",
   "O Mysaa Re (From \"Mysaa\") [Hindi]",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Ez-Ez",
+  "Aavan Jaavan (From \"WAR 2\")",
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1288,6 +1289,10 @@
   },
   {
    "title": "Shruti says her mannequin Fiona kept changing positions",
+   "date": "2026-11-14"
+  },
+  {
+   "title": "Lag Jaa Gale: Tiger wraps Pune schedule; Janhvi co-stars",
    "date": "2026-11-14"
   }
  ],
