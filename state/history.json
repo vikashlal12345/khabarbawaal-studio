@@ -326,7 +326,8 @@
   "e0b4a8d8cf6a",
   "d6c0847a22ca",
   "8bfe884151a7",
-  "163de0a5ad4c"
+  "163de0a5ad4c",
+  "abaf5bddabc1"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -470,7 +471,7 @@
   "reel_news_am": "2026-11-15",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-14",
+  "reel_news_aft": "2026-11-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-15",
@@ -482,7 +483,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-14"
  },
- "inbox_since": "5MJs74VoTRvL",
+ "inbox_since": "nqMGg9GX6AsB",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -855,7 +856,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
   "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
   "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
@@ -934,7 +934,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/katrina-kaif-calls-vicky-kaushal-the-peace-to-her-hysteria-as-she-talks-about-juggling-business-marriage-motherhood-101794708187538.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/vishal-dadlani-reveals-he-tonsured-his-head-at-the-age-of-23-at-tirupati-i-was-very-religious-very-much-so/articleshow/135848157.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-rules-out-hosting-another-chat-show-after-koffee-with-karan-hints-at-possible-shah-rukh-khan-appearance-in-the-finale-episode/articleshow/135850427.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html",
+  "https://www.bollywoodhungama.com/news/bollywood/ramayana-to-release-in-china-russia-japan-and-south-korea-in-q1-2027-film-already-submitted-for-censor-clearance-in-china/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1151,10 +1152,6 @@
   }
  ],
  "songs_recent": [
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-  "Ez-Ez",
-  "Aavan Jaavan (From \"WAR 2\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
   "Humnava Mere",
   "Raanjhan",
@@ -1190,7 +1187,11 @@
   "Mangal Rang (From \"Ramayana\")",
   "Shree Hanuman Chalisa (From \"Ramayana\")",
   "Tera Hoke Rahoon",
-  "Alfaaz"
+  "Alfaaz",
+  "Main Ram (From \"Ramayana\")",
+  "Mangal Rang (From \"Ramayana\")",
+  "Ram Siya Ram",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1296,6 +1297,10 @@
   },
   {
    "title": "Kunal Kapoor is overwhelmed by love from Southeast Asia for his appearance as Indra in Ramayana, thanks fans for artwork",
+   "date": "2026-11-15"
+  },
+  {
+   "title": "Ramayana to release in China, Russia, Japan and South Korea in Q1 2027; film already submitted for censor clearance in China",
    "date": "2026-11-15"
   }
  ],

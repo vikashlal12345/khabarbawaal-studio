@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_aft-2026-11-15",
+  "image": "posts/20261115-1234-reel_news_aft-2026-11-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261115-123405-reel_news_aft-2026-11-15.mp4",
+  "headline": "Ramayana to release in China, Russia, Japan and South Korea in Q1 2027; film already submitted for censor clearance in China",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ramayana China Russia Japan release 🎬\nRanbir Kapoor aur Yash ki Ramayana China, Russia, Japan aur South Korea mein release hogi.\nRelease Q1 2027 mein hai.\nFilm China ke censor clearance ke liye submit ho chuki hai.\nRamayana wahan hit hogi ya flop? Pehle bol do 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #yash #bollywood #reelsindia\n\n(Ramayana, Ranbir Kapoor, Yash, Ramayana China release, Ramayana Japan, Ramayana Russia, Ramayana South Korea)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ramayana-to-release-in-china-russia-japan-and-south-korea-in-q1-2027-film-already-submitted-for-censor-clearance-in-china/",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana ka gaana"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "gaurav wala mood"
+   },
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "Ram bhakti vibe"
+   },
+   {
+    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+    "artist": "Shashwat Sachdev, Shahzad Ali",
+    "lang": "hindi",
+    "mood": "hype, big-film energy"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-15T12:34:05+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-15",
   "image": "posts/20261115-1034-reel_news_pm-2026-11-15.jpg",
   "kind": "reel",
@@ -425,50 +470,5 @@
    "fixed": []
   },
   "created_at": "2026-11-14T12:35:36+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-14",
-  "image": "posts/20261114-1035-reel_news_pm-2026-11-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261114-103515-reel_news_pm-2026-11-14.mp4",
-  "headline": "Lag Jaa Gale: Tiger wraps Pune schedule; Janhvi co-stars",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Tiger Shroff Janhvi Kapoor Lag Jaa Gale 🎬\nOctober 18 ko car par firing ke baad Tiger ne kaam dobara shuru kiya.\nPune schedule Janhvi Kapoor ke saath wrap ho gaya.\nFilm: Lag Jaa Gale.\nTiger ki himmat ko salute banta hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#tigershroff #janhvikapoor #lagjaagale #bollywoodnews #reelsindia\n\n(Tiger Shroff, Janhvi Kapoor, Lag Jaa Gale, Tiger Shroff firing incident, Tiger Shroff Pune schedule, Tiger Shroff Janhvi film, Bollywood news)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/tiger-shroff-resumes-work-on-lag-jaa-gale-wraps-pune-schedule-with-janhvi-kapoor-weeks-after-firing-incident/articleshow/135828848.cms",
-  "pin_comment": "Apne Tiger Shroff fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Ez-Ez",
-    "artist": "Hanumankind, Raj Ranjodh",
-    "lang": "hindi",
-    "mood": "hype comeback energy"
-   },
-   {
-    "title": "Aavan Jaavan (From \"WAR 2\")",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "Tiger-Janhvi romantic action vibe"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "mehnat, back to work"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "life goes on feel"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-14T10:35:15+00:00"
  }
 ]

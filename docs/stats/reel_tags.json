@@ -2221,5 +2221,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-15",
+  "key": "ramayanachinarussiajapanrelease",
+  "kind": "reel_news_aft",
+  "secs": 20.5,
+  "at": "2026-11-15T12:34:05+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Ramayana to release in China, Russia, Japan and South K",
+   "(under 1 h ago) Inside Varun Dhawan's 4BHK Juhu home: Black-and-white i",
+   "(2 h ago) Panchayat Season 5 Iss Saal Nahi Aayega? Prime Video's ",
+   "(2 h ago) Chhath Puja's lesser-known Kosi Bharna ritual involves ",
+   "(2 h ago) Supriya Pathak reveals Pankaj Kapur threatened to leave",
+   "(3 h ago) Javed Akhtar spotted in wheelchair at Mumbai airport wi"
+  ],
+  "n_stories": 6,
+  "strength": 8,
+  "pick_no": 1,
+  "age_h": 0.8,
+  "topic": "promo",
+  "kw": 7,
+  "relate": "predict",
+  "cover": "window",
+  "sharp": 49,
+  "hook": "name_first",
+  "photos": 2,
+  "short": true
  }
 ]
