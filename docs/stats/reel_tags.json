@@ -2188,5 +2188,38 @@
   "kw": 8,
   "relate": "verdict",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_pm-2026-11-15",
+  "key": "kunalkapoorindraramayanafanlove",
+  "kind": "reel_news_pm",
+  "secs": 18.4,
+  "at": "2026-11-15T10:34:48+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Ramayana BMS Sales: Yash Marks Biggest Bollywood Debut,",
+   "(under 1 h ago) Ramayana to release in China, Russia, Japan and South K",
+   "(under 1 h ago) Panchayat Season 5 Iss Saal Nahi Aayega? Prime Video's ",
+   "(2 h ago) Javed Akhtar spotted in wheelchair at Mumbai airport wi",
+   "(2 h ago) RGV backs Namit Malhotra's strategy for 'Ramayana'; pre",
+   "(2 h ago) Actor Kunal Kapoor thanks audience for response on 'Ram",
+   "(2 h ago) 'Ramayana' box office collection day 11 (LIVE)",
+   "(3 h ago) When Irrfan Khan went to Rajesh Khanna's house as an AC",
+   "(3 h ago) Vinod Kapri says he was warned of ‘serious repercussion",
+   "(4 h ago) Kunal Kapoor is overwhelmed by love from Southeast Asia"
+  ],
+  "n_stories": 10,
+  "strength": 6,
+  "pick_no": 10,
+  "age_h": 4.0,
+  "topic": "other",
+  "kw": 7,
+  "relate": "verdict",
+  "cover": "full",
+  "sharp": 68,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

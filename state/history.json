@@ -325,7 +325,8 @@
   "f01dcee48ea7",
   "e0b4a8d8cf6a",
   "d6c0847a22ca",
-  "8bfe884151a7"
+  "8bfe884151a7",
+  "163de0a5ad4c"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -463,7 +464,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-15",
-  "reel_news_pm": "2026-11-14",
+  "reel_news_pm": "2026-11-15",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-15",
@@ -481,7 +482,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-14"
  },
- "inbox_since": "3E4zbdlIamAO",
+ "inbox_since": "5MJs74VoTRvL",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -854,7 +855,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/twisha-case-hc-reserves-order-on-giribala-bail-plea-101793040949633.html",
   "https://www.bollywoodhungama.com/news/bollywood/vijay-deverakonda-and-rashmika-mandanna-team-files-cyber-crime-complaint-in-hyderabad-over-alleged-fake-claims-and-online-harassment/",
   "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
   "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
@@ -933,7 +933,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/addinath-kothare-met-ranbir-kapoor-in-school-recalls-auditioning-for-lakshman-before-landing-bharat-role-in-nitesh-tiwari-ramayana-yash-interview-101794567774936.html",
   "https://www.hindustantimes.com/entertainment/bollywood/katrina-kaif-calls-vicky-kaushal-the-peace-to-her-hysteria-as-she-talks-about-juggling-business-marriage-motherhood-101794708187538.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/vishal-dadlani-reveals-he-tonsured-his-head-at-the-age-of-23-at-tirupati-i-was-very-religious-very-much-so/articleshow/135848157.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-rules-out-hosting-another-chat-show-after-koffee-with-karan-hints-at-possible-shah-rukh-khan-appearance-in-the-finale-episode/articleshow/135850427.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-rules-out-hosting-another-chat-show-after-koffee-with-karan-hints-at-possible-shah-rukh-khan-appearance-in-the-finale-episode/articleshow/135850427.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1150,10 +1151,6 @@
   }
  ],
  "songs_recent": [
-  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
-  "Peek A Boo",
-  "Madhosh",
-  "O Mysaa Re (From \"Mysaa\") [Hindi]",
   "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
   "Ez-Ez",
   "Aavan Jaavan (From \"WAR 2\")",
@@ -1189,7 +1186,11 @@
   "Jo Tum Mere Ho",
   "Ashke",
   "Tu Mil Jaaye (From \"KING\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Mangal Rang (From \"Ramayana\")",
+  "Shree Hanuman Chalisa (From \"Ramayana\")",
+  "Tera Hoke Rahoon",
+  "Alfaaz"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1291,6 +1292,10 @@
   },
   {
    "title": "Karan Johar rules out hosting another chat show after 'Koffee with Karan'",
+   "date": "2026-11-15"
+  },
+  {
+   "title": "Kunal Kapoor is overwhelmed by love from Southeast Asia for his appearance as Indra in Ramayana, thanks fans for artwork",
    "date": "2026-11-15"
   }
  ],

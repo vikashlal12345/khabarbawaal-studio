@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_pm-2026-11-15",
+  "image": "posts/20261115-1034-reel_news_pm-2026-11-15.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261115-103448-reel_news_pm-2026-11-15.mp4",
+  "headline": "Kunal Kapoor is overwhelmed by love from Southeast Asia for his appearance as Indra in Ramayana, thanks fans for artwork",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Kunal Kapoor Indra Ramayana fan love 🎬\nKunal Kapoor ne Ramayana mein Indra ka kirdaar nibhaya.\nThailand aur Southeast Asia ke deshon se unhe khoob pyaar mila.\nFans ke banaye artwork ke liye unhone shukriya kaha.\nKunal ka Indra kaisa laga? Ek word likho: SAHI ya NA 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #kunalkapoor #ranbirkapoor #bollywood #reelsindia\n\n(Kunal Kapoor, Kunal Kapoor Indra, Ramayana, Ramayana Part 1, Nitesh Tiwari Ramayana, Ramayana Thailand, Kunal Kapoor fan art)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html",
+  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "Ramayana feel, grateful vibe"
+   },
+   {
+    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
+    "artist": "A.R. Rahman",
+    "lang": "new",
+    "mood": "devotional Ramayana pride"
+   },
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "fan love, warm thanks"
+   },
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "top chart, upbeat gratitude"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article mentions Thailand and Southeast Asia; Indonesia is not said as a source of love",
+    "Fact corrected to match the article: Indonesia love not in article",
+    "Fact corrected to match the article: Subtitle not in article; film is Ramayana: Part 1"
+   ],
+   "fixed": [
+    "Thailand aur Indonesia jaise deshon se → Thailand aur Southeast Asia ke deshon se",
+    "Ramayana Thailand Indonesia → Ramayana Thailand",
+    "Ramayana Rise of a Legend → Ramayana Part 1"
+   ]
+  },
+  "created_at": "2026-11-15T10:34:48+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-15",
   "image": "posts/20261115-0834-reel_break_noon-2026-11-15.jpg",
   "kind": "reel",
@@ -417,54 +470,5 @@
    "fixed": []
   },
   "created_at": "2026-11-14T10:35:15+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-14",
-  "image": "posts/20261114-0835-reel_break_noon-2026-11-14.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261114-083506-reel_break_noon-2026-11-14.mp4",
-  "headline": "Shruti says her mannequin Fiona kept changing positions",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Shruti Haasan Fiona mannequin Mumbai ghar Double Date\n\nNeha Dhupia aur Angad Bedi ke show Double Date par Shruti ne bataya ki unke Mumbai ghar mein mannequin Fiona khud position badalti thi.\nUnhone Hanuman Chalisa chalayi, namak haath mein liya aur mannequin ko dismantle kar diya.\nUnke mutabiq ab ghar shant hai. 👻\n\nShruti ne Fiona ko hatakar sahi kiya? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #shrutihaasan #bollywood #doubledate #viral\n\n(Shruti Haasan, Shruti Haasan Fiona, Shruti Haasan mannequin, Double Date Neha Dhupia, Angad Bedi Double Date, Shruti Haasan Mumbai home, Shruti Haasan Hanuman Chalisa, Kamal Haasan daughter)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shruti-haasan-says-her-mannequin-fiona-kept-changing-positions-she-dismantled-it-to-cleanse-her-home/articleshow/135825677.cms",
-  "pin_comment": "Apne darpok dost ko bhejo jo bhoot se darta hai 👇",
-  "songs": [
-   {
-    "title": "Peek A Boo",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "playful spooky vibe"
-   },
-   {
-    "title": "Madhosh",
-    "artist": "Tanishk Bagchi, Arslan Nizami",
-    "lang": "hindi",
-    "mood": "mysterious dreamy mood"
-   },
-   {
-    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
-    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
-    "lang": "new",
-    "mood": "eerie haunted feel"
-   },
-   {
-    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "light fun twist"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The mannequin moving is Shruti's own claim, so it should be attributed to her and not stated as fact."
-   ],
-   "fixed": [
-    "Shruti ke Mumbai ghar mein mannequin Fiona khud position badalti thi → Shruti ke mutabiq unke Mumbai ghar mein mannequin Fiona khud position badalti thi"
-   ]
-  },
-  "created_at": "2026-11-14T08:35:06+00:00"
  }
 ]
