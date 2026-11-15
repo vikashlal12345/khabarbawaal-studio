@@ -2249,5 +2249,32 @@
   "hook": "name_first",
   "photos": 2,
   "short": true
+ },
+ {
+  "id": "reel_break_aft-2026-11-15",
+  "key": "kiaraadvanigenevieveselfiesidharthmalhotrasecondbaby",
+  "kind": "reel_break_aft",
+  "secs": 17.0,
+  "at": "2026-11-15T13:33:56+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Josh actor Sharad Kapoor seeks work after battling depr",
+   "(under 1 h ago) Armaan: 'No better duo than AR Rahman, Hans Zimmer to c",
+   "(1 h ago) Kiara spends quality time with her mother Genevieve bef",
+   "(2 h ago) Inside Varun Dhawan's 4BHK Juhu home: Black-and-white i",
+   "(2 h ago) Panchayat Season 5 Iss Saal Nahi Aayega? Prime Video's ",
+   "(6 h ago) Vinod Kapri says he was warned of ‘serious repercussion"
+  ],
+  "n_stories": 6,
+  "strength": 8,
+  "pick_no": 3,
+  "age_h": 1.0,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 41,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "emoji",
+  "hook": "question"
  }
 ]

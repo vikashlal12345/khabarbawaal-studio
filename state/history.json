@@ -327,7 +327,8 @@
   "d6c0847a22ca",
   "8bfe884151a7",
   "163de0a5ad4c",
-  "abaf5bddabc1"
+  "abaf5bddabc1",
+  "a9f16d1c12f4"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -478,7 +479,7 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-15",
   "reel_break_noon": "2026-11-15",
-  "reel_break_aft": "2026-11-14",
+  "reel_break_aft": "2026-11-15",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-14"
@@ -856,7 +857,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/saif-ali-khan-and-vidya-balan-reunite-for-ritesh-batra-long-years-ago-melanie-laurent-joins-cast/",
   "https://www.hindustantimes.com/entertainment/bollywood/king-is-here-shah-rukh-khan-unveils-look-from-film-to-release-on-december-24-suhana-khan-deepika-padukone-abhishek-bachchan-rani-mukerji-101793075848559.html",
   "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
@@ -935,7 +935,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/vishal-dadlani-reveals-he-tonsured-his-head-at-the-age-of-23-at-tirupati-i-was-very-religious-very-much-so/articleshow/135848157.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-rules-out-hosting-another-chat-show-after-koffee-with-karan-hints-at-possible-shah-rukh-khan-appearance-in-the-finale-episode/articleshow/135850427.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html",
-  "https://www.bollywoodhungama.com/news/bollywood/ramayana-to-release-in-china-russia-japan-and-south-korea-in-q1-2027-film-already-submitted-for-censor-clearance-in-china/"
+  "https://www.bollywoodhungama.com/news/bollywood/ramayana-to-release-in-china-russia-japan-and-south-korea-in-q1-2027-film-already-submitted-for-censor-clearance-in-china/",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kiara-advani-spends-quality-time-with-her-mother-genevieve-advani-before-welcoming-second-child-with-sidharth-malhotra-shares-a-happy-selfie/articleshow/135855734.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1152,10 +1153,6 @@
   }
  ],
  "songs_recent": [
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Humnava Mere",
-  "Raanjhan",
-  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
   "Main Ram (From \"Ramayana\")",
   "Zaalima",
   "Barsaat",
@@ -1191,7 +1188,11 @@
   "Main Ram (From \"Ramayana\")",
   "Mangal Rang (From \"Ramayana\")",
   "Ram Siya Ram",
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")"
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Teri Meri Kahaani",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1301,6 +1302,10 @@
   },
   {
    "title": "Ramayana to release in China, Russia, Japan and South Korea in Q1 2027; film already submitted for censor clearance in China",
+   "date": "2026-11-15"
+  },
+  {
+   "title": "Kiara spends quality time with her mother Genevieve before welcoming second child with Sidharth",
    "date": "2026-11-15"
   }
  ],
