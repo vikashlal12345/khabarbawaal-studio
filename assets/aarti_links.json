@@ -1,0 +1,309 @@
+{
+ "note": "Vetted video LINKS per god / festival (no files stored): the robot downloads the clip from 'url' at run time (Pixabay: a dead link is looked up again by id). 'gods': who it fits ('generic' = aarti / diya / ghat footage with no clear idol, fine for any god). 'festivals': festival it shows. Screened by the AI on 12 Nov 2026 (Pixabay 291 clips, Wikimedia Commons 186). Commons clips are CC BY: the credit line is shown on screen and in the caption. Add more: send Pixabay video page links. Wikimedia Commons Durga Puja clips were dropped on 12 Nov 2026: Wikimedia refuses downloads from GitHub (HTTP 429).",
+ "clips": [
+  {
+   "id": "pb206414",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2024/04/01/206414_large.mp4",
+   "page": "https://pixabay.com/videos/id-206414/",
+   "user": "SV_Studios",
+   "w": 4096,
+   "h": 2160,
+   "dur": 16,
+   "lic": "Pixabay",
+   "shows": "Aerial of large Shiva statue by river in Haridwar",
+   "gods": [
+    "shiva"
+   ],
+   "festivals": [],
+   "tags": "statue, temple, mahadev, shiva, god, hinduism, lord, india, hindu, shiv, kedarnath, religi"
+  },
+  {
+   "id": "pb200023",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2024/02/10/200023-911915504_large.mp4",
+   "page": "https://pixabay.com/videos/id-200023/",
+   "user": "aerialglimpses",
+   "w": 3840,
+   "h": 2160,
+   "dur": 10,
+   "lic": "Pixabay",
+   "shows": "Aerial of ISKCON Krishna temple, Bangalore",
+   "gods": [
+    "vishnu"
+   ],
+   "festivals": [],
+   "tags": "temple, iskon temple, iskcon, india, shiva, bangalore, shri krishna, lord krishna temple, "
+  },
+  {
+   "id": "pb279876",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2025/05/18/279876_large.mp4",
+   "page": "https://pixabay.com/videos/id-279876/",
+   "user": "Roadsandwander",
+   "w": 3840,
+   "h": 2160,
+   "dur": 40,
+   "lic": "Pixabay",
+   "shows": "Real drone view of Trimbakeshwar temple on Ganga, Rishikesh",
+   "gods": [
+    "shiva"
+   ],
+   "festivals": [],
+   "tags": "temple, trayambakeshwar, rishikesh, shiva, uttrakhand, mahadev, ganga, hinduism, india"
+  },
+  {
+   "id": "pb298797",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2025/08/21/298797_large.mp4",
+   "page": "https://pixabay.com/videos/id-298797/",
+   "user": "thenomadwanderer",
+   "w": 3840,
+   "h": 2160,
+   "dur": 13,
+   "lic": "Pixabay",
+   "shows": "Real drone view of giant Shiva statue, Vrindavan",
+   "gods": [
+    "shiva"
+   ],
+   "festivals": [],
+   "tags": "shiv, mahadev, baba, bhole baba, vrindavan, char dham, char dham vrindavan, drone view, sh"
+  },
+  {
+   "id": "pb346548",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2026/04/15/346548_large.mp4",
+   "page": "https://pixabay.com/videos/id-346548/",
+   "user": "artosuraj",
+   "w": 3840,
+   "h": 2160,
+   "dur": 18,
+   "lic": "Pixabay",
+   "shows": "Varanasi ghat with temple spires and boats, daylight",
+   "gods": [
+    "shiva"
+   ],
+   "festivals": [],
+   "tags": "varanasi, india, indian, pilgrimage, historical, shiva, ancient, ghat, sky, ganga, water, "
+  },
+  {
+   "id": "pb44740",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2020/07/15/44740-439982664_large.mp4",
+   "page": "https://pixabay.com/videos/id-44740/",
+   "user": "Stock-Freelr",
+   "w": 1920,
+   "h": 1080,
+   "dur": 36,
+   "lic": "Pixabay",
+   "shows": "rows of lit diyas on clay pots with wheatgrass",
+   "gods": [
+    "generic"
+   ],
+   "festivals": [
+    "diwali"
+   ],
+   "tags": "indian temple, india, temple, mandir, diya, shiva, satisfying, hindu, hinduism, religion, "
+  },
+  {
+   "id": "pb381155",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2026/10/07/381155_large.mp4",
+   "page": "https://pixabay.com/videos/id-381155/",
+   "user": "Sushil_Baluni",
+   "w": 2560,
+   "h": 1440,
+   "dur": 34,
+   "lic": "Pixabay",
+   "shows": "aerial of white Hindu temple",
+   "gods": [
+    "shiva"
+   ],
+   "festivals": [],
+   "tags": "mandir, shiva, drone, camera, india, temple, photographer"
+  },
+  {
+   "id": "pb442",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2015/08/13/442-136215984_large.mp4",
+   "page": "https://pixabay.com/videos/id-442/",
+   "user": "Vimeo-Free-Videos",
+   "w": 1920,
+   "h": 1080,
+   "dur": 8,
+   "lic": "Pixabay",
+   "shows": "colorful South Indian temple gopuram sculptures",
+   "gods": [
+    "generic"
+   ],
+   "festivals": [],
+   "tags": "india, temple, journey, sightseeing, spiritual, meditation, monastery, health, care, monk,"
+  },
+  {
+   "id": "pb365244",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2026/07/21/365244_large.mp4",
+   "page": "https://pixabay.com/videos/id-365244/",
+   "user": "RitikRana",
+   "w": 1920,
+   "h": 1080,
+   "dur": 7,
+   "lic": "Pixabay",
+   "shows": "real home puja setup with kalash, rangoli, offerings",
+   "gods": [
+    "ganesh"
+   ],
+   "festivals": [
+    "ganesh chaturthi"
+   ],
+   "tags": "indian god, ganesha, hindu god, traditional, hinduism, bhagwan, wedding tradition, cultura"
+  },
+  {
+   "id": "pb72054",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2021/04/24/72054-541168460_large.mp4",
+   "page": "https://pixabay.com/videos/id-72054/",
+   "user": "LIVE_VISUAL_MEDIA",
+   "w": 1920,
+   "h": 1080,
+   "dur": 10,
+   "lic": "Pixabay",
+   "shows": "Real brass Kerala oil lamp with lit wicks, warm and sharp",
+   "gods": [
+    "generic"
+   ],
+   "festivals": [],
+   "tags": "kerala, temple, krishna, shiva, trivandrum"
+  },
+  {
+   "id": "pb34001",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2020/03/20/34001-400217331_large.mp4",
+   "page": "https://pixabay.com/videos/id-34001/",
+   "user": "abhishektelang",
+   "w": 1920,
+   "h": 1080,
+   "dur": 23,
+   "lic": "Pixabay",
+   "shows": "Holi crowd with colors at Vrindavan temple",
+   "gods": [
+    "vishnu"
+   ],
+   "festivals": [
+    "holi"
+   ],
+   "tags": "holi, festival, hindu, shiva, vrindavan, happy, celebration, decoration, colorful, red, in"
+  },
+  {
+   "id": "pb298794",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2025/08/21/298794_large.mp4",
+   "page": "https://pixabay.com/videos/id-298794/",
+   "user": "thenomadwanderer",
+   "w": 3840,
+   "h": 2160,
+   "dur": 11,
+   "lic": "Pixabay",
+   "shows": "drone view of red sandstone Govind Dev temple",
+   "gods": [
+    "vishnu"
+   ],
+   "festivals": [],
+   "tags": "govind dev, govind dev ji, thakur ji, vrindavan, temple, ancient, architecture, travel, re"
+  },
+  {
+   "id": "pb138656",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2022/11/12/138656-770322572_large.mp4",
+   "page": "https://pixabay.com/videos/id-138656/",
+   "user": "31166478",
+   "w": 3840,
+   "h": 2160,
+   "dur": 6,
+   "lic": "Pixabay",
+   "shows": "Chhath ghat devotees with offerings at river",
+   "gods": [
+    "surya"
+   ],
+   "festivals": [
+    "chhath"
+   ],
+   "tags": "hinduism, chhath, shiva, bihar, varanasi, india, river, flowers, cultural, outdoor"
+  },
+  {
+   "id": "pb138751",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2022/11/13/138751-770553713_large.mp4",
+   "page": "https://pixabay.com/videos/id-138751/",
+   "user": "31166478",
+   "w": 3840,
+   "h": 2160,
+   "dur": 14,
+   "lic": "Pixabay",
+   "shows": "Chhath crowd with offerings and sugarcane at river",
+   "gods": [
+    "surya"
+   ],
+   "festivals": [
+    "chhath"
+   ],
+   "tags": "river, flowers, shiva, rituals, chhath, bihar, hinduism, india, holy, people, varanasi, wo"
+  },
+  {
+   "id": "pb138750",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2022/11/13/138750-770553709_large.mp4",
+   "page": "https://pixabay.com/videos/id-138750/",
+   "user": "31166478",
+   "w": 3840,
+   "h": 2160,
+   "dur": 6,
+   "lic": "Pixabay",
+   "shows": "Chhath at sunset with offering clay lamp",
+   "gods": [
+    "surya"
+   ],
+   "festivals": [
+    "chhath"
+   ],
+   "tags": "hinduism, worship, chhath, bihar, varanasi, people, celebration, religious, outdoor, shiva"
+  },
+  {
+   "id": "pb269245",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2025/04/01/269245_large.mp4",
+   "page": "https://pixabay.com/videos/id-269245/",
+   "user": "artosuraj",
+   "w": 1920,
+   "h": 1080,
+   "dur": 10,
+   "lic": "Pixabay",
+   "shows": "sunrise over water with birds",
+   "gods": [
+    "surya",
+    "generic"
+   ],
+   "festivals": [],
+   "tags": "sunrise, twilight, sunlight, horizontal, illuminated, medieval, morning, scenic, sun, boat"
+  },
+  {
+   "id": "pb34002",
+   "source": "pixabay",
+   "url": "https://cdn.pixabay.com/video/2020/03/20/34002-400217322_large.mp4",
+   "page": "https://pixabay.com/videos/id-34002/",
+   "user": "abhishektelang",
+   "w": 1920,
+   "h": 1080,
+   "dur": 64,
+   "lic": "Pixabay",
+   "shows": "crowd of people covered in Holi colors, aerial",
+   "gods": [
+    "vishnu"
+   ],
+   "festivals": [
+    "holi"
+   ],
+   "tags": "holi, festival, hindu, happy, celebration, decoration, colorful, red, shiva, india, young,"
+  }
+ ]
+}

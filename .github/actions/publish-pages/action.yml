@@ -1,0 +1,39 @@
+name: Publish the app (docs/) to GitHub Pages, without getting stuck
+description: >
+  Owner 6 Nov 2026: GitHub's Pages publish sometimes hangs (the 12 PM, 4 PM and 7 PM Reels showed late). Try 1 gives up after 2 minutes
+  (the action then cancels its own deployment). A cancelled deployment is tied to this run's commit id and can NEVER be repeated from the
+  same run (tries 2 and 3 of the first version failed at once with 'Deployment cancelled', 7 PM Reel, 6 Nov 2026), so the retry is a NEW run
+  of deploy-app.yml, which has a new commit id and publishes the latest docs/. Set fallback to 'false' in deploy-app.yml itself (no loop).
+inputs:
+  fallback:
+    description: "'true' = when try 1 fails, publish from a new run of deploy-app.yml"
+    default: "true"
+runs:
+  using: composite
+  steps:
+    - uses: actions/configure-pages@v5
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: docs
+
+    - id: try1
+      uses: actions/deploy-pages@v4
+      continue-on-error: true
+      with:
+        timeout: 120000
+
+    - name: Publish from a new run (try 1 failed)
+      if: steps.try1.outcome != 'success' && inputs.fallback == 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        echo "Publish try 1 failed: publishing from new runs (new commit ids)"
+        bash "$GITHUB_ACTION_PATH/fallback.sh"
+
+    - name: Publish failed
+      if: steps.try1.outcome != 'success' && inputs.fallback != 'true'
+      shell: bash
+      run: |
+        echo "::error::Pages publish failed"
+        exit 1

@@ -1,0 +1,132 @@
+[
+ {
+  "id": "r20261014-1931-explainer",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261014-1931-explainer.jpg",
+  "video": "posts/r20261014-1931-explainer.mp4",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "BbY WOW",
+    "artist": "KAROL G, Judeline, rusowsky",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Choosin' Texas",
+    "artist": "Ella Langley",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "headline": "SIP Kya Hai? Simple Explainer",
+  "tag": "📦 EXPLAINER",
+  "caption": "SIP naam sab ne suna hai, par kaam kaise karta hai ye kam log jaante hain. Ab clear? Not investment advice. Save karo aur dost ko share karo!\n\nFollow @khabarbawaal for daily updates.\n\n#viral #trending #india #sip #mutualfunds",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The flame icon covers the last letters (\"ER\") of the faint \"EXPLAINER\" watermark in the yellow area. The watermark is only decorative and the real title is clear, so this is minor."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T19:32:53+00:00"
+ },
+ {
+  "id": "r20261014-1933-on_this_day",
+  "kind": "ready",
+  "media": "reel",
+  "image": "posts/r20261014-1933-on_this_day.jpg",
+  "video": "posts/r20261014-1933-on_this_day.mp4",
+  "songs": [
+   {
+    "title": "Barsaat",
+    "artist": "Banjaare, Roni",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "BbY WOW",
+    "artist": "KAROL G, Judeline, rusowsky",
+    "lang": "english",
+    "mood": "high on today's charts"
+   },
+   {
+    "title": "Choosin' Texas",
+    "artist": "Ella Langley",
+    "lang": "english",
+    "mood": "high on today's charts"
+   }
+  ],
+  "headline": "15 October: 4 Things Jo Yaad Rakhne Layak Hain",
+  "tag": "📦 ON THIS DAY",
+  "caption": "15 October ko Kalam saab ka janam hua aur Tata Airlines ne udaan bhari. Itihaas ka ek hi din, kitni kahaniyan! Tumhe inme se kaunsa sabse interesting laga? Save karo aur dosto ko share karo.\n\nFollow @khabarbawaal for daily updates.\n\n#onthisday #india #history #apjabdulkalam #viral",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-10-14T19:34:05+00:00",
+  "valid_on": "2026-10-15"
+ },
+ {
+  "id": "r20261014-213222-bhakti",
+  "kind": "ready",
+  "image": "posts/r20261014-213222-bhakti.jpg",
+  "headline": "Maa, aaj interview hai. mujhe jeet nahi chahiye bas himmat chahiye, baaki aap sambhal lena.",
+  "tag": "📦 🙏 BHAGWAN KA SAATH",
+  "caption": "Himmat mil jaye, toh aadha kaam ho gaya. 🙏\nComment karo Jai Maa Skandamata\n\nFollow @khabarbawaal 🙏\n\n#navratri #jaimatadi #bhakti #explorepage #reelsindia",
+  "pin_comment": "Interview wale dost ko ye zaroor bhejna. All the best!",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "media": "reel",
+  "video": "posts/r20261014-213222-bhakti.mp4",
+  "songs": [
+   {
+    "title": "Maa Skandamata Aarti",
+    "artist": "Vivaan Arindam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Skandamata",
+    "artist": "Sital Kabi",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Maa Skandamata Amritwani",
+    "artist": "Chetna Shukla",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "created_at": "2026-10-14T21:32:35+00:00"
+ }
+]

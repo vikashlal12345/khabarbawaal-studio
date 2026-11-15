@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>News Studio</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Studio">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+  :root {
+    --bg: #0d0d0d; --card: #1a1a1a; --line: #2a2a2a; --text: #f2f2f2; --muted: #9a9a9a;
+    --accent: #FFD400; --red: #E50914;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: rgba(13,13,13,.92);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    padding: calc(env(safe-area-inset-top) + 10px) 16px 10px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .brand { font-weight: 800; font-size: 20px; letter-spacing: .5px; }
+  .brand span { color: var(--accent); }
+  .status { color: var(--muted); font-size: 12px; }
+  .icon-btn { border: 1px solid var(--line); background: var(--card); color: var(--text);
+    border-radius: 999px; width: 40px; height: 40px; font-size: 18px; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(env(safe-area-inset-bottom) + 24px); }
+  .post { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden; margin-bottom: 20px; }
+  .post img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #222; }
+  .meta { display: flex; align-items: center; gap: 8px; padding: 12px 14px 0; font-size: 12px; color: var(--muted); }
+  .tag.fun { background: var(--accent); color: #000; }
+  .tag.reel { background: #e50914; color: #fff; }
+  #activity:empty { display: none; }
+  #activity { max-width: 560px; margin: 12px auto 0; padding: 10px 12px; border-radius: 12px; background: #161616; border: 1px solid var(--line); font-size: 13px; }
+  .act-head { font-weight: 700; margin-bottom: 4px; }
+  .act-head small, .act-row small { color: var(--muted); font-weight: 400; }
+  .act-row { padding: 7px 0; border-top: 1px solid #222; line-height: 1.4; }
+  .act-row span { color: #ccc; }
+  .act-row .dots { color: var(--accent); letter-spacing: 1px; margin-left: 4px; }
+  .act-row.fail span { color: #ff6b6b; }
+  .act-row.fallback span { color: #f5b041; }
+  .act-row[data-post] { cursor: pointer; }
+  .act-next { padding-top: 7px; border-top: 1px solid #222; color: var(--muted); }
+  .post video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #222; }
+  .tag { background: var(--red); color: #fff; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
+  .new { background: var(--accent); color: #000; font-weight: 700; border-radius: 6px; padding: 2px 8px; }
+  .caption { padding: 10px 14px 0; font-size: 14px; white-space: pre-wrap; color: #ddd;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .caption.open { -webkit-line-clamp: unset; display: block; }
+  .actions { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; padding: 12px 14px 14px; }
+  .actions .primary { grid-column: 1 / -1; padding: 14px 6px; font-size: 16px; }
+  .actions button, .actions a { border: 0; border-radius: 10px; padding: 12px 6px; font-size: 14px;
+    font-weight: 600; text-align: center; text-decoration: none; white-space: nowrap; color: var(--text); background: #262626; }
+  .actions .primary { background: var(--accent); color: #000; }
+  .empty { text-align: center; color: var(--muted); padding: 60px 20px; }
+  .post-hint { margin: 8px 12px 0; padding: 9px 12px; border-radius: 10px; background: #1d1d1d; font-size: 13px; }
+  .post-hint:empty { display: none; }
+  .tip { margin: 8px 14px 0; font-size: 13px; color: var(--muted); }
+  #toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 24px);
+    transform: translateX(-50%) translateY(20px); opacity: 0; transition: .25s; pointer-events: none;
+    background: #fff; color: #000; padding: 10px 18px; border-radius: 999px; font-weight: 600;
+    font-size: 14px; max-width: calc(100% - 32px); text-align: center; }
+  .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .carousel::-webkit-scrollbar { display: none; }
+  .carousel img { flex: 0 0 100%; scroll-snap-align: center; }
+  .opt-label { text-align: center; font-size: 12px; color: var(--muted); padding: 8px 0 0; }
+  .opt-label b { color: var(--accent); }
+  .more-slides { display: flex; gap: 6px; overflow-x: auto; padding: 8px 14px 0; scrollbar-width: none; }
+  .more-slides img { width: 64px; height: 80px; object-fit: cover; border-radius: 6px; flex: none; aspect-ratio: auto; }
+  .more-label { font-size: 12px; color: var(--muted); padding: 6px 14px 0; }
+  .tag.custom { background: #2f80ed; }
+  .tag.top10 { background: #ff6b00; }
+  .proof { margin: 10px 14px 0; padding: 8px 12px; border-radius: 10px; font-size: 13px; line-height: 1.4; }
+  .proof.ok { background: rgba(61, 220, 132, .12); color: #3ddc84; }
+  .proof.check { background: rgba(255, 170, 0, .14); color: #ffb020; }
+  .proof.none { background: #222; color: var(--muted); }
+  .proof ul { margin: 4px 0 0; padding-left: 18px; color: var(--text); }
+  .tag.thought { background: #7b2cbf; }
+  .tag.market { background: #16a34a; }
+  .tag.calendar { background: #0ea5e9; }
+  .tag.ready { background: #a16207; }
+  .tabs { display: flex; gap: 8px; max-width: 560px; margin: 12px auto 0; padding: 0 16px; }
+  .tabs button { flex: 1; border: 1px solid var(--line); background: var(--card); color: var(--text);
+    border-radius: 999px; padding: 9px 4px; font-weight: 700; font-size: 14px; white-space: nowrap; }
+  .tabs button.on { background: var(--accent); color: #000; border-color: var(--accent); }
+  .insta { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 14px 14px;
+    font-size: 13px; color: var(--muted); }
+  .insta button { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 999px;
+    padding: 6px 12px; font-size: 13px; }
+  .used { opacity: .45; }
+  .sheet { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.7); display: flex; align-items: flex-end; }
+  .sheet[hidden] { display: none; }
+  .sheet-box { width: 100%; max-width: 560px; margin: 0 auto; background: var(--card); border-radius: 18px 18px 0 0;
+    padding: 18px 16px calc(env(safe-area-inset-bottom) + 18px); display: flex; flex-direction: column; gap: 10px; }
+  .sheet-box h2 { margin: 0; font-size: 18px; }
+  .sheet-box p { margin: 0; color: var(--muted); font-size: 13px; }
+  .sheet-box textarea { width: 100%; min-height: 120px; border-radius: 10px; border: 1px solid var(--line); background: #111;
+    color: var(--text); font: 16px/1.4 inherit; padding: 10px; resize: vertical; }
+  .sheet-box .field { width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #111; color: var(--text);
+    font: 18px/1.3 inherit; padding: 12px; letter-spacing: 2px; }
+  .sheet-box .pick { display: block; text-align: center; border: 1px dashed var(--line); border-radius: 10px; padding: 12px;
+    font-size: 14px; font-weight: 700; color: var(--text); cursor: pointer; }
+  .media-preview { display: flex; gap: 6px; overflow-x: auto; }
+  .media-preview:empty { display: none; }
+  .media-preview img { height: 84px; border-radius: 8px; }
+  .overlay-text { margin: 8px 12px 0; padding: 10px 12px; border-radius: 10px; background: #1d1d1d; font-size: 14px; }
+  .overlay-text b { color: var(--accent); }
+  .songs { margin: 8px 12px 0; padding: 10px 12px; border-radius: 10px; background: #1d1d1d; font-size: 14px; }
+  .songs b { color: var(--accent); }
+  .songs button { display: block; width: 100%; text-align: left; margin-top: 6px; padding: 8px 10px;
+    background: #262626; color: #eee; border: 1px solid #333; border-radius: 8px; font-size: 14px; }
+  .songs small { color: var(--muted); }
+  .sheet-box .row { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+  .sheet-box .format { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .sheet-box .format button { padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: #111;
+    color: var(--text); font-size: 15px; }
+  .sheet-box .format button.on { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 700; }
+  .sheet-box button { border: 0; border-radius: 10px; padding: 13px; font-size: 15px; font-weight: 700; background: #262626; color: var(--text); }
+  .sheet-box button.primary { background: var(--accent); color: #000; }
+  .head-btns { display: flex; gap: 8px; }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="brand" id="brand">Studio</div>
+    <div class="status" id="status">Loading…</div>
+  </div>
+  <div class="head-btns">
+    <a class="icon-btn" href="stats.html" aria-label="Stats" style="display:grid;place-items:center;text-decoration:none">📊</a>
+    <button class="icon-btn" id="alerts" aria-label="Phone alerts">🔕</button>
+    <button class="icon-btn" id="create" aria-label="Create post">➕</button>
+    <button class="icon-btn" id="refresh" aria-label="Refresh">↻</button>
+  </div>
+</header>
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-box">
+    <h2>✍️ Create a post</h2>
+    <p>Paste a news link, write a topic or the news in your own words, or add your own video/photos with a line of context. The AI writes all the text. Ready in about 3–6 minutes.</p>
+    <div class="format"><button type="button" id="fmt-post" class="on">📰 Post</button><button type="button" id="fmt-reel">🎬 Reel</button></div>
+    <input id="create-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="Your PIN" class="field">
+    <label class="pick">🎬 Add your video or photos (optional)<input type="file" id="create-media" accept="video/*,image/*" multiple hidden></label>
+    <div class="media-preview" id="media-preview"></div>
+    <textarea id="create-input" placeholder="https://… or e.g. Virat Kohli announces retirement from T20s"></textarea>
+    <input id="create-otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6-digit code from Google Authenticator" class="field">
+    <div class="row">
+      <button type="button" id="create-cancel">Cancel</button>
+      <button type="button" class="primary" id="create-go">Create post</button>
+    </div>
+  </div>
+</div>
+<div class="sheet" id="remake-sheet" hidden>
+  <div class="sheet-box">
+    <h2>🔄 Make this Reel again</h2>
+    <p id="remake-what"></p>
+    <input id="remake-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="Your PIN" class="field">
+    <textarea id="remake-input" placeholder="What didn't you like? e.g. the hook is boring, the photo is wrong, make it shorter, choose another story"></textarea>
+    <input id="remake-otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6-digit code from Google Authenticator" class="field">
+    <div class="row">
+      <button type="button" id="remake-cancel">Cancel</button>
+      <button type="button" class="primary" id="remake-go">Make it again</button>
+    </div>
+  </div>
+</div>
+<div class="tabs"><button id="tab-feed" class="on">Posts</button><button id="tab-posted">✅ Posted</button><button id="tab-activity">⏳ Activity</button></div>
+<div id="activity"></div>
+<div id="post-hint" class="post-hint"></div>
+<main id="feed"></main>
+<div id="toast"></div>
+
+<script>
+const feedEl = document.getElementById('feed');
+const statusEl = document.getElementById('status');
+const toastEl = document.getElementById('toast');
+const files = {};      // image path -> File, ready for the share sheet
+const pending = {};    // image path -> Promise<File>
+const chosen = {};     // post id -> picked option index (posts with photo options)
+let posts = [];
+let feedPosts = [], tab = 'feed';
+let igLinks = {}, boosts = {};
+let remoteMarks = {}, inboxSince = '12h';   // ✅ taps from ALL phones, read from the robot's inbox (owner, 24 Oct 2026)
+let inboxTopic = null, pushKey = null;
+
+function currentImage(post) {
+  return post.options ? post.options[chosen[post.id] || 0] : post.image;
+}
+
+// Everything that gets shared: the cover (or picked option) + carousel slides.
+function allImages(post) {
+  if (post.video) return [post.video];   // 🎬 Reel: the video file is what gets shared
+  return [currentImage(post), ...(post.slides || [])];
+}
+
+function toast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toast.t);
+  toast.t = setTimeout(() => toastEl.classList.remove('show'), 2200);
+}
+
+function ago(iso) {
+  const mins = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return mins + ' min ago';
+  const h = Math.round(mins / 60);
+  return h < 24 ? h + 'h ago' : Math.round(h / 24) + 'd ago';
+}
+
+function esc(s) {
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// iOS only allows the share sheet straight from a tap, so the image file
+// is fetched ahead of time (when the card scrolls into view).
+function prepare(post) {
+  return Promise.all(allImages(post).map(fetchFile));
+}
+
+function fetchFile(src) {
+  if (!pending[src]) {
+    const p = fetch(src).then(r => r.blob()).then(b => {
+      const f = new File([b], src.split('/').pop(), { type: src.endsWith('.mp4') ? 'video/mp4' : 'image/jpeg' });
+      if (pending[src] === p) files[src] = f;   // not if it was released meanwhile
+      return f;
+    }).catch(err => { if (pending[src] === p) delete pending[src]; throw err; });
+    pending[src] = p;
+  }
+  return pending[src];
+}
+
+// iPhone gives a page little memory: only the posts near the screen keep their files ready.
+const KEEP_READY = 12;
+const kept = [];   // post ids with files ready, least recently seen first
+function keepReady(post) {
+  const i = kept.indexOf(post.id);
+  if (i >= 0) kept.splice(i, 1);
+  kept.push(post.id);
+  while (kept.length > KEEP_READY) {
+    const old = feedPosts.find(p => p.id === kept.shift());
+    if (old) for (const src of allImages(old)) { delete files[src]; delete pending[src]; }
+  }
+}
+
+// Comment to paste under the post and pin (Instagram doesn't make links in captions clickable).
+// New posts carry an AI-written pin_comment; older ones fall back to the fixed lines.
+function commentText(post) {
+  const pin = (post.pin_comment || '').trim();
+  if (post.kind === 'fun') return pin || 'Tag karo 3 dosto ko jo ye dekh ke pakka hasenge 😂👇';
+  if (!post.source_url) return pin || 'Aap kya sochte ho? Comment mein batao 👇';
+  return pin ? `${pin}\n\n🔗 Source: ${post.source_url}` : `🔗 Source: ${post.source_url}`;
+}
+
+async function copyComment(post) {
+  try {
+    await navigator.clipboard.writeText(commentText(post));
+    toast(post.kind === 'fun' || post.pin_comment ? 'Comment copied — paste & pin it 📌' : 'Link copied — paste as comment, then pin it 📌');
+  } catch {
+    toast('Could not copy — open 🔗 Story and copy the link');
+  }
+}
+
+async function copyCaption(post) {
+  try {
+    await navigator.clipboard.writeText(post.caption);
+    toast('Caption copied ✓');
+  } catch {
+    toast('Could not copy — long-press the caption to copy');
+  }
+}
+
+async function share(post) {
+  const ready = allImages(post).map(src => files[src]);
+  if (ready.some(f => !f)) {
+    toast(post.video ? 'Preparing video… tap again' : ready.length > 1 ? 'Preparing slides… tap again' : 'Preparing image… tap again');
+    prepare(post).catch(() => {});
+    return;
+  }
+  // Shared exactly as prepared, in slide order (renaming/re-timestamping the files broke
+  // Instagram's ordering, so the original files are sent unchanged).
+  // Instagram orders shared photos by their time stamp, and downloads finish in random order
+  // (the cover is usually the biggest file). Same files and names, time stamps set in slide order.
+  const base = Date.now() - 60000;
+  const list = ready.map((f, i) => new File([f], f.name, { type: f.type || 'image/jpeg', lastModified: base + i * 1000 }));
+  navigator.clipboard.writeText(post.caption).catch(() => {});
+  if (list.length > 10) toast(`${list.length} slides: Instagram takes max 10 here. Tap "Save Images", then post from Instagram (+ → Select multiple)`);
+  if (navigator.canShare && navigator.canShare({ files: list })) {
+    try {
+      await navigator.share({ files: list });
+      toast(post.video ? 'Caption copied: pick Reel, add a trending song, paste caption' : list.length > 1 ? `${list.length} slides sent — paste caption in Instagram` : 'Caption copied — after posting, tap 💬 Comment for the link');
+    } catch (e) {
+      if (e.name !== 'AbortError') toast('Share failed: ' + e.message);
+    }
+  } else {
+    window.open(currentImage(post), '_blank');
+    toast('Long-press the image to save it');
+  }
+}
+
+const observer = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    if (e.isIntersecting) {
+      const post = posts.find(p => p.id === e.target.dataset.id);
+      if (post) { keepReady(post); prepare(post).catch(() => {}); }
+    }
+  }
+}, { rootMargin: '400px' });
+
+// Reels: a video loads only near the screen (and is unloaded when far away), and only the
+// one that is mostly on screen plays.
+const videoNear = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    const v = e.target;
+    if (e.isIntersecting && !v.getAttribute('src')) { v.src = v.dataset.src; }
+    else if (!e.isIntersecting && v.getAttribute('src')) { v.pause(); v.removeAttribute('src'); v.load(); }
+  }
+}, { rootMargin: '600px' });
+const videoPlay = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    if (e.intersectionRatio >= 0.6) e.target.play().catch(() => {});
+    else e.target.pause();
+  }
+}, { threshold: [0, 0.6] });
+
+function proofHtml(p) {
+  const pr = p.proof;
+  if (!pr) return '';
+  const fixed = pr.fixed && pr.fixed.length ? ` · auto-fixed ${pr.fixed.length}` : '';
+  if (pr.state === 'ok') return `<div class="proof ok">✅ Proofread${fixed}</div>`;
+  if (pr.state === 'none') return '<div class="proof none">Not proofread: give it a quick read before posting</div>';
+  return `<div class="proof check">⚠️ Check before posting${fixed}<ul>${
+    pr.issues.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
+}
+
+// ✅ Posted (owner, 15 Oct 2026; 22 Oct 2026: one tap, no Instagram link): ✅ Mark as posted moves a post from
+// Posts (to do) to ✅ Posted and ↩️ Undo moves it back. The robot keeps the mark in stats/ig_links.json.
+// Both tabs still clear 24 hours after the robot made the post (feed.json keep_days), 🗑️ works the same in both.
+// 24 Oct 2026 (owner has two phones): a tap on one phone shows on the other. Every tap is in the robot's inbox (ntfy keeps ~12 h);
+// each phone reads it (pollMarks) and the NEWEST tap wins, this phone's own (markt-) or another phone's; older ones come from the
+// robot's list (igLinks).
+function isLinked(p) {
+  const r = remoteMarks[p.id], mine = +(localGet('markt-' + p.id) || 0);
+  if (r && r.t >= mine) return r.on;
+  return !localGet('unposted-' + p.id) && !!(igLinks[p.id] || localGet('linked-' + p.id));
+}
+async function pollMarks() {
+  if (document.hidden) return;
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const r = await fetch(`https://ntfy.sh/${inboxTopic}/json?poll=1&since=${inboxSince}`);
+    const before = JSON.stringify(shown().map(p => isLinked(p)));
+    for (const line of (await r.text()).split('\n')) {
+      if (!line.trim()) continue;
+      let m; try { m = JSON.parse(line); } catch { continue; }
+      inboxSince = m.id || inboxSince;
+      let ev; try { ev = JSON.parse(m.message); } catch { continue; }
+      if ((ev.type === 'posted' || ev.type === 'unposted') && ev.post && (!remoteMarks[ev.post] || m.time >= remoteMarks[ev.post].t))
+        remoteMarks[ev.post] = { on: ev.type === 'posted', t: m.time };
+    }
+    if (JSON.stringify(shown().map(p => isLinked(p))) !== before) { render(); updateTabs(); }
+  } catch {}
+}
+function shown() { return feedPosts.filter(p => !localGet('deleted-' + p.id)); }
+function updateTabs() {
+  const all = shown(), done = all.filter(isLinked).length;
+  document.getElementById('tab-feed').textContent = `Posts (${all.length - done})`;
+  document.getElementById('tab-posted').textContent = `✅ Posted (${done})`;
+}
+
+// 🔄 Remake (owner, 22 Oct 2026): only Reels made by the robot that are not marked posted. While it is being remade the button says so.
+function remakeBtn(p) {
+  if (!p.video || p.media === 'video' || isLinked(p)) return '';
+  const t = +(localGet('remaking-' + p.id) || 0);
+  if (t && new Date(p.created_at).getTime() < t) return '<button disabled title="Being remade">🔄 Remaking…</button>';
+  return '<button data-act="remake" title="Make this Reel again with your feedback">🔄 Remake</button>';
+}
+
+function instaHtml(p) {
+  const boosted = localGet('boost-' + p.id) === '1' || (boosts[p.id] && localGet('boost-' + p.id) !== '0');
+  const boostBtn = `<button data-act="boost" style="${boosted ? 'background:var(--accent);color:#000;border-color:var(--accent)' : ''}">🚀 ${boosted ? 'Boosted' : 'Boost?'}</button>`;
+  return isLinked(p)
+    ? `<div class="insta"><span>✅ Posted</span><span style="display:flex;gap:6px">${boostBtn}<button data-act="unpost">↩️ Undo</button></span></div>`
+    : `<div class="insta"><span>Posted it on Instagram?</span><span style="display:flex;gap:6px">${boostBtn}<button data-act="posted">✅ Mark as posted</button></span></div>`;
+}
+
+// The app shows small preview copies (docs/posts/p/, made by save.py); 📤 Post still shares the
+// full pictures. A missing preview falls back to the full picture. later=true: loaded on first swipe.
+function pv(src) { return src.replace('posts/', 'posts/p/'); }
+function img(src, alt, later = false) {
+  return `<img ${later ? 'data-src' : 'src'}="${pv(src)}" data-full="${src}" alt="${alt}" loading="lazy"
+    onerror="if (this.src.includes('/p/')) this.src = this.dataset.full">`;
+}
+
+function render() {
+  observer.disconnect(); videoNear.disconnect(); videoPlay.disconnect();   // the old cards are replaced below
+  if (tab === 'activity') { feedEl.innerHTML = ''; return; }   // the ⏳ Activity tab shows only the activity list
+  updateTabs();
+  posts = shown().filter(p => isLinked(p) === (tab === 'posted'));
+  if (!posts.length) {
+    feedEl.innerHTML = tab === 'posted'
+      ? '<div class="empty">Nothing posted yet.<br>After posting on Instagram, tap ✅ Mark as posted on the post: it moves here.</div>'
+      : shown().length ? '<div class="empty">All done: everything is posted ✅<br>New Reels appear here when the robot makes them.</div>'
+      : '<div class="empty">No posts yet.<br>The first one appears after the next hourly run.</div>';
+    return;
+  }
+  const lastSeen = localGet('lastSeen');
+  feedEl.innerHTML = posts.map(p => `
+    <article class="post" data-id="${p.id}">
+      ${p.video ? `<video data-src="${p.video}" poster="${pv(p.image)}" muted loop playsinline preload="metadata"></video>`
+      : p.options && p.options.length > 1 ? `
+      <div class="carousel" data-role="options">${p.options.map((o, i) => img(o, esc(p.headline), i > 0)).join('')}</div>
+      <div class="opt-label">Cover option <b>1</b> of ${p.options.length} · swipe ← → to choose</div>
+      ${p.slides && p.slides.length ? `<div class="more-label">+ ${p.slides.length} more slides (all shared together)</div>
+      <div class="more-slides">${p.slides.map(sl => img(sl, '')).join('')}</div>` : ''}`
+      : p.slides && p.slides.length ? `
+      <div class="carousel" data-role="slides">${[p.image, ...p.slides].map((o, i) => img(o, esc(p.headline), i > 0)).join('')}</div>
+      <div class="opt-label">Slide <b>1</b> of ${p.slides.length + 1} · swipe ← → · Post shares all ${p.slides.length + 1}</div>`
+      : img(p.image, esc(p.headline))}
+      <div class="meta">
+        <span class="tag${['fun', 'reel', 'custom', 'top10', 'thought', 'market', 'calendar', 'ready'].includes(p.kind) ? ' ' + p.kind : ''}">${p.kind === 'custom' ? '✍️ YOUR PICK · ' : ''}${esc(p.tag || 'NEWS')}</span>
+        ${lastSeen && p.created_at > lastSeen ? '<span class="new">NEW</span>' : ''}
+        <span>${ago(p.created_at)} · ${esc(p.source)}</span>
+      </div>
+      ${proofHtml(p)}
+      ${p.kind === 'ready' ? (p.valid_on ? '<div class="proof check">📅 Post today only: it\'s about today\'s date.</div>' : '<div class="proof none">📦 Ready post: evergreen, post it any time within 24 hours (then it is cleared).</div>') : ''}
+      ${p.overlay_text ? `<div class="overlay-text"><b>🎬 Text on video:</b> ${esc(p.overlay_text)}</div>` : ''}
+      ${p.songs && p.songs.length ? `<div class="songs"><b>🎵 Song ideas</b> <small>tap to copy and search it in Instagram: pick one with ↗ (trending there) and start it at the drop, not the intro</small>${
+        p.songs.map((s, i) => `<button data-act="song" data-song="${i}">${s.lang === 'hindi' ? '🇮🇳' : '🌍'} ${esc(s.title)}: ${esc(s.artist)}${
+          s.mood ? ` <small>· ${esc(s.mood)}</small>` : ''}</button>`).join('')}</div>` : ''}
+      ${p.video && p.media !== 'video' ? '<div class="tip">🖼️ Cover: when posting, pick the frame with the big opening line.</div>' : ''}
+      <div class="caption">${esc(p.caption)}</div>
+      <div class="actions">
+        <button class="primary" data-act="share">${p.media === 'video' ? '💾 Cover' : '📤 Post'}</button>
+        ${p.overlay_text ? '<button data-act="overlay">🎬 Text</button>' : ''}
+        <button data-act="copy">📋 Caption</button>
+        <button data-act="comment">💬 Comment</button>
+        ${remakeBtn(p)}
+        <button data-act="delete" title="Delete">🗑️ Delete</button>
+        ${p.source_url ? `<a href="${p.source_url}" target="_blank" rel="noopener">🔗 Story</a>` : '<button data-act="whatsapp">🟢 WhatsApp</button>'}
+      </div>
+      ${instaHtml(p)}
+    </article>`).join('');
+  feedEl.querySelectorAll('.post').forEach(el => observer.observe(el));
+  feedEl.querySelectorAll('video[data-src]').forEach(v => { videoNear.observe(v); videoPlay.observe(v); });
+  if (tab === 'feed') localSet('lastSeen', posts[0].created_at);
+}
+
+feedEl.addEventListener('click', e => {
+  const card = e.target.closest('.post');
+  if (!card) return;
+  const post = posts.find(p => p.id === card.dataset.id);
+  const act = e.target.closest('[data-act]')?.dataset.act;
+  if (act === 'share') { localSet('lastShare', String(Date.now())); share(post); postHint(); }
+  else if (act === 'copy') copyCaption(post);
+  else if (act === 'song') {
+    const s = post.songs[+e.target.closest('[data-song]').dataset.song];
+    navigator.clipboard.writeText(`${s.title} ${s.artist.split(',')[0]}`)
+      .then(() => toast(`🎵 Copied "${s.title}": paste it in Instagram's music search`), () => toast('Could not copy'));
+  }
+  else if (act === 'comment') copyComment(post);
+  else if (act === 'overlay') navigator.clipboard.writeText(post.overlay_text)
+    .then(() => toast('Text copied: add it on the video with Instagram\'s Aa tool'), () => toast('Could not copy'));
+  else if (act === 'whatsapp') share(post);
+  else if (act === 'posted') markPosted(post, true);
+  else if (act === 'unpost') markPosted(post, false);
+  else if (act === 'boost') toggleBoost(post);
+  else if (act === 'delete') deletePost(post);
+  else if (act === 'remake') openRemake(post);
+  else if (e.target.classList.contains('caption')) e.target.classList.toggle('open');
+});
+
+// Track which photo option is showing.
+feedEl.addEventListener('scroll', e => {
+  const c = e.target;
+  if (!c.classList || !c.classList.contains('carousel')) return;
+  c.querySelectorAll('img[data-src]').forEach(i => { i.src = i.dataset.src; i.removeAttribute('data-src'); });
+  const card = c.closest('.post');
+  const post = posts.find(p => p.id === card.dataset.id);
+  const i = Math.round(c.scrollLeft / c.clientWidth);
+  card.querySelector('.opt-label b').textContent = i + 1;
+  if (c.dataset.role === 'options' && chosen[post.id] !== i) {
+    chosen[post.id] = i;
+    prepare(post).catch(() => {});
+  }
+}, true);
+
+// ➕ Create: opens a GitHub issue (only the owner's issues are processed).
+const sheet = document.getElementById('sheet');
+const createInput = document.getElementById('create-input');
+// 🔐 Two-factor create: PIN (on this phone, asked once a day) + 6-digit code from the
+// authenticator app (checked by the robot). The request goes to the private inbox.
+const pinEl = document.getElementById('create-pin'), otpEl = document.getElementById('create-otp');
+async function sha(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('khabarbawaal:' + text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+const todayKey = () => new Date().toISOString().slice(0, 10);
+document.getElementById('create').addEventListener('click', () => {
+  const hasPin = !!localGet('pinHash'), unlocked = localGet('pinOk') === todayKey();
+  pinEl.hidden = hasPin && unlocked;
+  pinEl.placeholder = hasPin ? 'Your PIN' : 'Create a PIN (4–8 digits)';
+  pinEl.value = ''; otpEl.value = '';
+  sheet.hidden = false; (pinEl.hidden ? createInput : pinEl).focus();
+});
+document.getElementById('create-cancel').addEventListener('click', () => { sheet.hidden = true; });
+
+// 🎬 Your video/photos: the video stays on the phone. We grab up to 6 moments, join them into
+// one picture (3 per row) and send only that, so the robot can see what happens.
+const mediaEl = document.getElementById('create-media'), mediaPreview = document.getElementById('media-preview');
+let media = null;   // { blob, n, cols, type }
+const CELL_W = 720;
+// One photo at a time, shrunk straight away: a full 12 MP photo needs ~48 MB of phone memory.
+function loadImage(file) {
+  return new Promise((res, rej) => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const c = document.createElement('canvas'), k = Math.min(1, CELL_W / img.naturalWidth);
+      c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url); img.src = '';
+      res(c);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); rej(new Error('image')); };
+    img.src = url;
+  });
+}
+function once(el, ev, ms = 8000) {
+  return new Promise((res, rej) => {
+    const t = setTimeout(() => rej(new Error(ev + ' timeout')), ms);
+    el.addEventListener(ev, () => { clearTimeout(t); res(); }, { once: true });
+  });
+}
+async function videoFrames(file, n = 6) {
+  const v = document.createElement('video');
+  v.muted = true; v.playsInline = true; v.preload = 'auto';
+  const url = URL.createObjectURL(file);
+  v.src = url;
+  await once(v, 'loadedmetadata');
+  try { await v.play(); v.pause(); } catch {}   // iPhone only decodes frames after a play
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    v.currentTime = Math.min(v.duration - 0.1, v.duration * (i + 0.5) / n);
+    await once(v, 'seeked');
+    const c = document.createElement('canvas');
+    const k = Math.min(1, CELL_W / v.videoWidth);   // 4K videos: keep memory small
+    c.width = Math.round(v.videoWidth * k); c.height = Math.round(v.videoHeight * k);
+    c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+    out.push(c);
+  }
+  v.pause(); v.removeAttribute('src'); v.load(); URL.revokeObjectURL(url);   // free the video right away
+  return out;
+}
+function frameSheet(frames, cellH) {
+  const cols = Math.min(3, frames.length), rows = Math.ceil(frames.length / 3);
+  const c = document.createElement('canvas');
+  c.width = cols * CELL_W; c.height = rows * cellH;
+  const x = c.getContext('2d');
+  x.fillStyle = '#000'; x.fillRect(0, 0, c.width, c.height);
+  frames.forEach((f, i) => {   // fill each cell, cropping the edges like a cover photo
+    const w = f.videoWidth || f.naturalWidth || f.width, h = f.videoHeight || f.naturalHeight || f.height;
+    const s = Math.max(CELL_W / w, cellH / h);
+    x.save(); x.beginPath(); x.rect((i % 3) * CELL_W, Math.floor(i / 3) * cellH, CELL_W, cellH); x.clip();
+    x.drawImage(f, (i % 3) * CELL_W + (CELL_W - w * s) / 2, Math.floor(i / 3) * cellH + (cellH - h * s) / 2, w * s, h * s);
+    x.restore();
+  });
+  return new Promise(res => c.toBlob(b => res({ blob: b, n: frames.length, cols }), 'image/jpeg', 0.85));
+}
+// 📰 Post / 🎬 Reel. A Reel from your own video sends the video itself (shrunk first if too big).
+let format = 'post';
+for (const f of ['post', 'reel']) document.getElementById('fmt-' + f).addEventListener('click', () => {
+  format = f;
+  document.getElementById('fmt-post').classList.toggle('on', f === 'post');
+  document.getElementById('fmt-reel').classList.toggle('on', f === 'reel');
+});
+const MAX_UPLOAD = 14.5 * 1024 * 1024;   // the inbox (ntfy.sh) takes files up to 15 MB
+// Re-record the video at Reel size (max 1280 px, first 15 s) so it fits the inbox. iPhone plays it muted
+// to re-record it, so the shrunk copy has no sound (the owner adds a song in Instagram).
+async function shrinkVideo(file, maxSec = 15) {
+  const v = document.createElement('video'), url = URL.createObjectURL(file);
+  v.muted = true; v.playsInline = true; v.src = url;
+  await once(v, 'loadedmetadata');
+  const k = Math.min(1, 1280 / Math.max(v.videoWidth, v.videoHeight));
+  const c = document.createElement('canvas');
+  c.width = 2 * Math.round(v.videoWidth * k / 2); c.height = 2 * Math.round(v.videoHeight * k / 2);
+  const ctx = c.getContext('2d');
+  const type = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm'].find(t => MediaRecorder.isTypeSupported(t));
+  const rec = new MediaRecorder(c.captureStream(30), { mimeType: type, videoBitsPerSecond: 3000000 });
+  const chunks = [];
+  rec.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+  const stopped = new Promise(res => { rec.onstop = res; });
+  rec.start(500);
+  await v.play();
+  await new Promise(res => {
+    const draw = () => {
+      ctx.drawImage(v, 0, 0, c.width, c.height);
+      if (v.ended || v.currentTime >= maxSec) { v.pause(); res(); } else requestAnimationFrame(draw);
+    };
+    draw();
+  });
+  rec.stop(); await stopped;
+  v.removeAttribute('src'); v.load(); URL.revokeObjectURL(url);
+  return new Blob(chunks, { type: type.split(';')[0] });
+}
+async function uploadVideo(file) {
+  let blob = file, name = 'video.' + (file.name.split('.').pop() || 'mp4').toLowerCase();
+  if (file.size > MAX_UPLOAD) {
+    toast('Video is big: shrinking it to Reel size (takes as long as the video)…');
+    blob = await shrinkVideo(file);
+    name = blob.type.includes('webm') ? 'video.webm' : 'video.mp4';
+    if (blob.size > MAX_UPLOAD) throw new Error('still too big');
+  }
+  toast('Sending your video…');
+  const up = await fetch('https://ntfy.sh/' + inboxTopic + '?filename=' + name, { method: 'PUT', body: blob });
+  if (!up.ok) throw new Error(up.status);
+  return (await up.json()).attachment.url;
+}
+
+mediaEl.addEventListener('change', async () => {
+  const files = [...mediaEl.files];
+  media = null; mediaPreview.innerHTML = '';
+  if (!files.length) return;
+  toast('Reading your ' + (files[0].type.startsWith('video') ? 'video' : 'photos') + '…');
+  try {
+    const video = files.find(f => f.type.startsWith('video'));
+    let frames, cellH;
+    if (video) {
+      frames = await videoFrames(video);
+      cellH = Math.min(1280, Math.round(CELL_W * frames[0].height / frames[0].width));
+    } else {
+      frames = [];
+      for (const f of files.slice(0, 6)) frames.push(await loadImage(f));   // one at a time
+      cellH = 900;
+    }
+    media = { ...(await frameSheet(frames, cellH)), type: video ? 'video' : 'photos', file: video || null };
+    const old = mediaPreview.querySelector('img');
+    if (old) URL.revokeObjectURL(old.src);
+    mediaPreview.innerHTML = `<img src="${URL.createObjectURL(media.blob)}" alt="">`;
+    createInput.placeholder = 'Context: what is happening, who, where… e.g. Delhi metro mein seat ke liye do aunties ki ladai';
+    toast(`✅ ${media.n} ${video ? 'moments' : 'photos'} ready: now write the context`);
+  } catch (e) {
+    toast('Couldn\'t read that file. Try a shorter video or photos.');
+  }
+});
+document.getElementById('create-go').addEventListener('click', async () => {
+  const text = createInput.value.trim(), code = otpEl.value.trim();
+  if (!pinEl.hidden) {
+    const pin = pinEl.value.trim();
+    if (!/^\d{4,8}$/.test(pin)) { toast('PIN must be 4–8 digits'); return; }
+    if (!localGet('pinHash')) {
+      if (prompt('Type the new PIN again to confirm') !== pin) { toast('PINs didn\'t match'); return; }
+      localSet('pinHash', await sha(pin));
+    } else if (await sha(pin) !== localGet('pinHash')) { toast('Wrong PIN'); return; }
+    localSet('pinOk', todayKey());
+  }
+  if (!text) { toast(media ? 'Write a line of context about your video' : 'Paste a link or write the news first'); return; }
+  if (!/^\d{6}$/.test(code)) { toast('Enter the 6-digit code from Google Authenticator'); return; }
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const req = { type: 'create', text, otp: code, ts: Math.floor(Date.now() / 1000), format };
+    if (media) {   // the frame picture goes to the inbox as a file (kept a few hours), then the request links it
+      const up = await fetch('https://ntfy.sh/' + inboxTopic + '?filename=frames.jpg', { method: 'PUT', body: media.blob });
+      if (!up.ok) throw new Error(up.status);
+      req.media = { url: (await up.json()).attachment.url, n: media.n, cols: media.cols, type: media.type };
+      if (format === 'reel' && media.file) {
+        try { req.media.video = await uploadVideo(media.file); }
+        catch (e) {   // fall back to today's way: text + covers, you post the video from your gallery
+          req.format = 'post';
+          toast('Couldn\'t send the video: making a post with text + covers instead');
+        }
+      }
+    }
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify(req) });
+    if (!r.ok) throw new Error(r.status);
+    actAdd({ job: 'create', ref: String(req.ts), title: `✍️ ${req.format === 'reel' ? '🎬 Reel' : '📰 Post'}: ${text.slice(0, 60)}`,
+             state: 'run', n: 1, of: 6, text: '📨 Sent: waiting for the robot to pick it up (usually within a minute)', at: req.ts });
+    showTab('activity');   // watch it here
+    sheet.hidden = true; createInput.value = ''; otpEl.value = '';
+    media = null; mediaEl.value = ''; mediaPreview.innerHTML = '';
+    toast(req.format === 'reel' ? '✅ Request sent: your Reel will be ready in about 4–6 minutes'
+                                : '✅ Request sent: your post will be ready in about 3–5 minutes');
+  } catch (e) {
+    toast('Couldn\'t send (no internet?). Try again.');
+  }
+});
+
+// 🔄 Remake: your feedback + the authenticator code (like ➕ Create) go to the robot, which makes that Reel again and replaces it.
+const remakeSheet = document.getElementById('remake-sheet'), remakeInput = document.getElementById('remake-input');
+const remakePin = document.getElementById('remake-pin'), remakeOtp = document.getElementById('remake-otp');
+let remakePost = null;
+function openRemake(post) {
+  remakePost = post;
+  document.getElementById('remake-what').textContent = (post.headline || '').slice(0, 110) + ' — ready in about 5–15 minutes; the new Reel takes its place here.';
+  const hasPin = !!localGet('pinHash'), unlocked = localGet('pinOk') === todayKey();
+  remakePin.hidden = hasPin && unlocked;
+  remakePin.placeholder = hasPin ? 'Your PIN' : 'Create a PIN (4–8 digits)';
+  remakePin.value = ''; remakeOtp.value = ''; remakeInput.value = '';
+  remakeSheet.hidden = false; (remakePin.hidden ? remakeInput : remakePin).focus();
+}
+document.getElementById('remake-cancel').addEventListener('click', () => { remakeSheet.hidden = true; });
+document.getElementById('remake-go').addEventListener('click', async () => {
+  const text = remakeInput.value.trim(), code = remakeOtp.value.trim();
+  if (!remakePost) return;
+  if (!remakePin.hidden) {
+    const pin = remakePin.value.trim();
+    if (!/^\d{4,8}$/.test(pin)) { toast('PIN must be 4–8 digits'); return; }
+    if (!localGet('pinHash')) {
+      if (prompt('Type the new PIN again to confirm') !== pin) { toast('PINs didn\'t match'); return; }
+      localSet('pinHash', await sha(pin));
+    } else if (await sha(pin) !== localGet('pinHash')) { toast('Wrong PIN'); return; }
+    localSet('pinOk', todayKey());
+  }
+  if (text.length < 5) { toast('Write what you didn\'t like (a few words)'); return; }
+  if (!/^\d{6}$/.test(code)) { toast('Enter the 6-digit code from Google Authenticator'); return; }
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const req = { type: 'create', text: text.slice(0, 1500), otp: code, ts: Math.floor(Date.now() / 1000), format: 'reel', remake: remakePost.id };
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify(req) });
+    if (!r.ok) throw new Error(r.status);
+    localSet('remaking-' + remakePost.id, String(Date.now()));
+    actAdd({ job: 'create', ref: String(req.ts), title: `🔄 Remake: ${text.slice(0, 60)}`, state: 'run', n: 1, of: 6,
+             text: '📨 Sent: waiting for the robot to pick it up (usually within a minute)', at: req.ts });
+    remakeSheet.hidden = true; remakeInput.value = ''; remakeOtp.value = '';
+    toast('✅ Sent: the new Reel replaces this one in about 5–15 minutes');
+    showTab('activity');
+    render();
+  } catch (e) {
+    toast('Couldn\'t send (no internet?). Try again.');
+  }
+});
+
+// ✅ Mark as posted, 🗑️ Delete and 🚀 Boost go to the robot's private inbox (no GitHub screen). The robot collects
+// them on its next run (every 30-60 min).
+// 🗑️ Delete: hidden on this phone at once; the robot removes it (and its images) on its next run.
+async function deletePost(post) {
+  if (!confirm('Delete this post from the app?')) return;
+  localSet('deleted-' + post.id, '1');
+  render();
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify({ type: 'delete', post: post.id }) });
+    toast('🗑️ Deleted');
+  } catch { toast('Hidden here; will retry when online'); }
+}
+
+// 🚀 Mark a post as boosted (paid). Boosted posts are left out of the learning and shown under Stats → Boosts.
+async function toggleBoost(post) {
+  const on = !(localGet('boost-' + post.id) === '1' || (boosts[post.id] && localGet('boost-' + post.id) !== '0'));
+  if (on && !confirm('Mark this post as boosted (paid promotion)?')) return;
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify({ type: 'boost', post: post.id, on }) });
+    if (!r.ok) throw new Error(r.status);
+    localSet('boost-' + post.id, on ? '1' : '0');
+    toast(on ? '🚀 Marked as boosted' : 'Boost mark removed');
+    render();
+  } catch { toast('Couldn\'t save (no internet?). Try again.'); }
+}
+
+// ✅ Mark as posted (on = true) / ↩️ Undo (on = false), owner 22 Oct 2026: moves at once on this phone; the robot
+// keeps it (stats/ig_links.json) on its next run.
+async function markPosted(post, on) {
+  try {
+    if (!inboxTopic) inboxTopic = (await (await fetch('app.json?t=' + Date.now())).json()).inbox;
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST',
+      body: JSON.stringify({ type: on ? 'posted' : 'unposted', post: post.id }) });
+    if (!r.ok) throw new Error(r.status);
+    if (on) { localSet('linked-' + post.id, 'posted'); localDel('unposted-' + post.id); }
+    else { localDel('linked-' + post.id); localSet('unposted-' + post.id, '1'); }
+    localSet('markt-' + post.id, String(Math.floor(Date.now() / 1000)));   // so the newest tap wins over another phone's
+    delete remoteMarks[post.id];
+    toast(on ? '✅ Moved to Posted' : '↩️ Moved back to Posts');
+    render();
+  } catch (e) {
+    toast('Could not save (no internet?). Try again.');
+  }
+}
+function localDel(k) { try { localStorage.removeItem(k); } catch {} }
+
+function localGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
+function localSet(k, v) { try { localStorage.setItem(k, v); } catch {} }
+
+// ⏱️ Posting gap (owner, 14 Oct 2026: Reels posted close together or at night got 1-7 views): the time since the
+// last 📤 Post on this phone, and night hours. Updated every 30 s.
+function postHint() {
+  const el = document.getElementById('post-hint');
+  if (!el) return;
+  const ist = new Date(Date.now() + 330 * 60000), h = ist.getUTCHours();
+  const last = +(localGet('lastShare') || 0), mins = last ? Math.floor((Date.now() - last) / 60000) : null;
+  el.textContent = h >= 23 || h < 6 ? '🌙 Night: posts now get very few views. Best to post after 6 AM.'
+    : mins !== null && mins < 60 ? `⏱️ Last post shared ${mins} min ago. Wait ${60 - mins} min for the best reach.`
+    : mins !== null ? '✅ Good time to post (more than 1 hour since the last one).' : '';
+}
+postHint();
+setInterval(postHint, 30000);
+
+let lastSig = '';
+async function load() {
+  statusEl.textContent = 'Refreshing…';
+  try {
+    const res = await fetch('feed.json?t=' + Date.now(), { cache: 'no-store' });
+    feedPosts = await res.json();
+    const opt = async p => { try { const r = await fetch(p + '?t=' + Date.now(), { cache: 'no-store' }); return r.ok ? r.json() : null; } catch { return null; } };
+    const [links, bst] = await Promise.all([opt('stats/ig_links.json'), opt('stats/boosts.json')]);
+    // Coming back from Instagram: only rebuild the feed if something changed (rebuilding reloads every picture).
+    const sig = JSON.stringify([feedPosts, links, bst]);
+    const same = sig === lastSig && feedEl.children.length;
+    lastSig = sig;
+    boosts = bst || {};
+    igLinks = links || {};
+    if (!same) render();
+    else updateTabs();
+    pollMarks();   // taps made on the other phone
+    const all = shown();
+    statusEl.textContent = all.length
+      ? `${all.length} posts · latest ${ago(all[0].created_at)}`
+      : 'Waiting for first post';
+  } catch {
+    statusEl.textContent = 'Offline — showing saved posts';
+  }
+}
+
+// Brand name comes from manifest.json (written by make_brand.py from config.json).
+fetch('manifest.json').then(r => r.json()).then(m => {
+  const [first, ...rest] = m.short_name.match(/[A-Z0-9]?[a-z0-9]+|[A-Z0-9]+(?![a-z])/g) || [m.short_name];
+  document.getElementById('brand').innerHTML = `${esc(first)}<span>${esc(rest.join(''))}</span> Studio`;
+  document.title = m.name;
+}).catch(() => {});
+
+document.getElementById('refresh').addEventListener('click', load);
+function showTab(name) {
+  tab = name;
+  for (const t of ['feed', 'posted', 'activity']) document.getElementById('tab-' + t).classList.toggle('on', tab === t);
+  render(); renderActivity(); window.scrollTo(0, 0);
+}
+for (const t of ['feed', 'posted', 'activity']) document.getElementById('tab-' + t).addEventListener('click', () => showTab(t));
+// ⏳ Activity: each step of 🎬 Reels and ➕ Create requests, sent by the robot to a private ntfy.sh
+// topic (status.py) and checked every 10 s while the app is open. Kept 24 hours on this phone.
+let statusTopic = null, statusSince = '24h', reelTimes = [];
+function actGet() { try { return JSON.parse(localGet('activity') || '{}'); } catch { return {}; } }
+function actSave(a) { localSet('activity', JSON.stringify(a)); }
+const isFinal = s => s === 'ok' || s === 'fail' || s === 'fallback';
+// Keep the latest step per job; returns true when this event newly finishes it.
+function actAdd(ev) {
+  const a = actGet(), key = ev.job + '|' + ev.ref, old = a[key];
+  if (old && (ev.at < old.at || (isFinal(old.state) && !isFinal(ev.state)))) return false;
+  a[key] = { ...old, ...ev, title: ev.title || (old && old.title) };
+  actSave(a);
+  return isFinal(ev.state) && !(old && isFinal(old.state));
+}
+async function pollStatus() {
+  if (document.hidden) return;
+  try {
+    if (!statusTopic) {
+      const cfg = await (await fetch('app.json?t=' + Date.now())).json();
+      statusTopic = cfg.status; reelTimes = cfg.reels || []; inboxTopic = inboxTopic || cfg.inbox; pushKey = cfg.push_key;
+    }
+    if (statusTopic) {
+      const r = await fetch(`https://ntfy.sh/${statusTopic}/json?poll=1&since=${statusSince}`);
+      let finished = false;
+      for (const line of (await r.text()).split('\n')) {
+        if (!line.trim()) continue;
+        const m = JSON.parse(line);
+        statusSince = m.id;
+        try { const ev = JSON.parse(m.message); if (ev.job && actAdd(ev) && ev.state === 'ok') finished = true; } catch {}
+      }
+      if (finished) load();   // something new is ready: show it
+    }
+  } catch {}
+  renderActivity();
+}
+function nextReel() {
+  const ist = new Date(Date.now() + 330 * 60000), now = ist.getUTCHours() * 60 + ist.getUTCMinutes();
+  for (let d = 0; d < 2; d++) for (const [t, name] of reelTimes) {
+    const [h, m] = t.split(':').map(Number), at = h * 60 + m + d * 1440;
+    if (at <= now) continue;
+    const left = at - now, when = `${(h + 11) % 12 + 1}${m ? ':' + String(m).padStart(2, '0') : ''} ${h < 12 ? 'AM' : 'PM'}`;
+    return `${name} at ${when} (in ${left >= 60 ? Math.floor(left / 60) + ' h ' : ''}${left % 60} min)`;
+  }
+  return '';
+}
+function renderActivity() {
+  const box = document.getElementById('activity'), a = actGet(), now = Date.now() / 1000;
+  for (const k in a) if (now - a[k].at > 86400) delete a[k];   // cleared after 24 hours
+  actSave(a);
+  const rows = Object.values(a).sort((x, y) => y.at - x.at), next = nextReel();
+  const running = rows.filter(r => r.state === 'run' && now - r.at <= 1200).length;
+  document.getElementById('tab-activity').textContent = running ? `⏳ Activity (${running})` : '⏳ Activity';
+  if (tab !== 'activity') { box.innerHTML = ''; return; }
+  box.innerHTML = '<div class="act-head">⏳ Activity <small>last 24 hours · tap a ✅ to open the post</small></div>' +
+    (rows.length ? '' : '<div class="act-row"><span>Nothing in the last 24 hours yet. Reels and your ➕ requests show up here.</span></div>') + rows.map(r => {
+    const icon = { ok: '✅', fail: '❌', fallback: '⚠️' }[r.state] || '⏳';
+    const dots = r.state === 'run' && r.of ? `<span class="dots">${'●'.repeat(Math.min(r.n, r.of))}${'○'.repeat(Math.max(0, r.of - r.n))}</span>` : '';
+    const stuck = r.state === 'run' && now - r.at > 1200 ? ' · no update for 20+ min (it may have stopped)' : '';
+    return `<div class="act-row ${r.state}"${r.post ? ` data-post="${esc(r.post)}"` : ''}><b>${icon} ${esc(r.title || r.job)}</b>${dots}<br>
+      <span>${esc(r.text || '')}${stuck}</span> <small>· ${ago(new Date(r.at * 1000).toISOString())}</small></div>`;
+  }).join('') + (next ? `<div class="act-next">Next Reel: ${esc(next)}</div>` : '');
+}
+function openPost(id) {
+  const p = feedPosts.find(x => x.id === id);
+  showTab(p && isLinked(p) ? 'posted' : 'feed');
+  const card = document.querySelector(`.post[data-id="${CSS.escape(id)}"]`);
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else toast('That post is no longer in the app (deleted or older than 24 hours)');
+}
+document.getElementById('activity').addEventListener('click', e => {   // tap a ✅ row: open that post
+  const row = e.target.closest('[data-post]');
+  if (row) openPost(row.dataset.post);
+});
+setInterval(pollStatus, 10000);
+setInterval(pollMarks, 30000);
+
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { load(); pollStatus(); } });
+// 🔔 Phone alerts: the robot (push.py) notifies this phone when a post is ready. iPhone allows it only
+// in the app opened from the Home Screen icon, after a tap here; the phone's push address goes to the inbox.
+let swReg = null;
+const alertsBtn = document.getElementById('alerts');
+function alertsIcon() {
+  alertsBtn.textContent = window.Notification && Notification.permission === 'granted' && localGet('alerts') ? '🔔' : '🔕';
+}
+function keyBytes(b64) {
+  const s = atob(b64.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - b64.length % 4) % 4));
+  return Uint8Array.from(s, c => c.charCodeAt(0));
+}
+alertsBtn.addEventListener('click', async () => {
+  if (!swReg || !window.PushManager || !window.Notification) {
+    toast('Open Studio from its Home Screen icon, then tap 🔕 again');
+    return;
+  }
+  try {
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') { toast('Alerts are blocked: iPhone Settings → Notifications → Studio → Allow'); return; }
+    if (!pushKey || !inboxTopic) {
+      const cfg = await (await fetch('app.json?t=' + Date.now())).json();
+      pushKey = cfg.push_key; inboxTopic = inboxTopic || cfg.inbox;
+    }
+    const sub = await swReg.pushManager.getSubscription() ||
+      await swReg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyBytes(pushKey) });
+    const r = await fetch('https://ntfy.sh/' + inboxTopic, { method: 'POST', body: JSON.stringify({ type: 'push_sub', sub: sub.toJSON() }) });
+    if (!r.ok) throw new Error(r.status);
+    localSet('alerts', '1');
+    alertsIcon();
+    swReg.showNotification('🔔 Alerts are on', { body: 'This phone will get a notification when each post is ready.', icon: 'icons/icon-192.png' });
+    toast('🔔 Alerts on: the robot also sends a test at its next run');
+  } catch (e) {
+    toast('Could not turn on alerts (no internet?). Try again.');
+  }
+});
+alertsIcon();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+  navigator.serviceWorker.ready.then(r => { swReg = r; });
+  navigator.serviceWorker.addEventListener('message', e => {   // tapped a 🔔 alert while the app was open
+    if (e.data && 'openPost' in e.data) load().then(() => { if (e.data.openPost) openPost(e.data.openPost); });
+  });
+}
+const alertPost = decodeURIComponent((location.hash.match(/^#post=(.+)/) || [])[1] || '');   // tapped while closed
+load().then(() => {
+  if (!alertPost) return;
+  history.replaceState(null, '', location.pathname);
+  openPost(alertPost);
+});
+pollStatus();
+</script>
+</body>
+</html>
