@@ -2276,5 +2276,32 @@
   "kw": 8,
   "relate": "emoji",
   "hook": "question"
+ },
+ {
+  "id": "reel_break_night-2026-11-15",
+  "key": "sonirazdanaliabhattpregnancyconfessiondarlings",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-15T14:34:56+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Soni recalls smoking 100 cigarettes a day when she was ",
+   "(1 h ago) Josh actor Sharad Kapoor seeks work after battling depr",
+   "(2 h ago) Armaan: 'No better duo than AR Rahman, Hans Zimmer to c",
+   "(3 h ago) Inside Varun Dhawan's 4BHK Juhu home: Black-and-white i",
+   "(4 h ago) Panchayat Season 5 Iss Saal Nahi Aayega? Prime Video's ",
+   "(7 h ago) Vinod Kapri says he was warned of ‘serious repercussion"
+  ],
+  "n_stories": 6,
+  "strength": 8,
+  "pick_no": 1,
+  "age_h": 0.6,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 51,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook": "name_first"
  }
 ]
