@@ -12536,6 +12536,37 @@
    "cache_write": 0,
    "value_usd": 0.0,
    "by_purpose": {}
+  },
+  "reel_devotion": {
+   "posts": 0,
+   "requests": 5,
+   "input": 14,
+   "output": 3374,
+   "cache_read": 5719,
+   "cache_write": 121714,
+   "value_usd": 0.5212,
+   "by_purpose": {
+    "devotion plan": {
+     "requests": 1,
+     "tokens": 37670
+    },
+    "aarti footage screen": {
+     "requests": 1,
+     "tokens": 6462
+    },
+    "aarti writing": {
+     "requests": 1,
+     "tokens": 39450
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 36238
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 11001
+    }
+   }
   }
  }
 }
