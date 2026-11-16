@@ -2399,5 +2399,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-16",
+  "key": "sonusoodsharadkapoorjoshactormeeting",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-16T08:33:29+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Sonu Sood meets Josh actor Sharad Kapoor after his emot",
+   "(under 1 h ago) Tanhaji: The Unsung Warrior and Adipurush director Om R",
+   "(under 1 h ago) Sonakshi Sinha files complaint over morphed photos, Del",
+   "(under 1 h ago) 'Ramayana' box office collection day 12 (LIVE)",
+   "(2 h ago) Ramayana worldwide box office collection day 11: Ranbir",
+   "(2 h ago) Twinkle Khanna calls Ravana the 'original tech bro', co",
+   "(4 h ago) Soni Razdan had ‘no clue’ she was pregnant with Alia Bh"
+  ],
+  "n_stories": 7,
+  "strength": 7,
+  "pick_no": 1,
+  "age_h": 0.6,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 44,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook": "feeling"
  }
 ]

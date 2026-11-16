@@ -332,7 +332,8 @@
   "30deb5f9611e",
   "3122d6d3dc88",
   "42a9cefeb2f3",
-  "9c2fdd030fe8"
+  "9c2fdd030fe8",
+  "fa16f27afbc6"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -482,13 +483,13 @@
   "reel_news_early": "2026-11-16",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-16",
-  "reel_break_noon": "2026-11-15",
+  "reel_break_noon": "2026-11-16",
   "reel_break_aft": "2026-11-15",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "k2saQdJakYi0",
+ "inbox_since": "N8J3V8Wu1AaY",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -861,7 +862,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
@@ -940,7 +940,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/soni-razdan-recalls-smoking-100-cigarettes-a-day-when-she-was-pregnant-with-alia-bhatt-during-gumraah-shoot-i-had-no-clue-im-not-a-smoker/articleshow/135857499.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/sonu-sood-meets-josh-actor-sharad-kapoor-after-his-emotional-plea-for-work-checks-on-his-health-101794811248701.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1157,10 +1158,6 @@
   }
  ],
  "songs_recent": [
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-  "Heeriye (feat. Arijit Singh)",
-  "Arz Kiya Hai | Coke Studio Bharat",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
   "Jo Tum Mere Ho",
   "Ashke",
   "Tu Mil Jaaye (From \"KING\")",
@@ -1196,7 +1193,11 @@
   "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
   "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
   "His Aura Hits You",
-  "Azadi"
+  "Azadi",
+  "Tere Liye",
+  "Guzarish",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1294,6 +1295,10 @@
   },
   {
    "title": "Apoorva Lakhia says Salman Khan filmed in freezing rain",
+   "date": "2026-11-16"
+  },
+  {
+   "title": "Sonu Sood meets Josh actor Sharad Kapoor after his emotional plea for work, checks on his health",
    "date": "2026-11-16"
   }
  ],
