@@ -1,7 +1,12 @@
 name: Cartoon ideas test
-# Manual only: makes the two AI-cartoon follower test Reels in a temporary folder and attaches the videos. Posts nothing, saves nothing to the app.
+# Manual only: makes the AI-cartoon follower test Reels in a temporary folder and attaches the videos. Posts nothing, saves nothing to the app.
 on:
   workflow_dispatch:
+    inputs:
+      ideas:
+        description: "Idea names, space separated (empty = both)"
+        required: false
+        default: ""
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,7 +23,7 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: npm install -g @anthropic-ai/claude-code
-      - run: python -u tools/toon_ideas.py
+      - run: python -u tools/toon_ideas.py ${{ inputs.ideas }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
