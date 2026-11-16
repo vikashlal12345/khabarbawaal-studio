@@ -2370,5 +2370,34 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-16",
+  "key": "salmankhanmaatrubhumishoot7crain",
+  "kind": "reel_news_am",
+  "secs": 18.7,
+  "at": "2026-11-16T06:34:52+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Tanhaji: The Unsung Warrior and Adipurush director Om R",
+   "(under 1 h ago) Sonakshi Sinha files complaint over morphed photos, Del",
+   "(under 1 h ago) Twinkle Khanna calls Ravana the 'original tech bro', co",
+   "(2 h ago) Soni Razdan had ‘no clue’ she was pregnant with Alia Bh",
+   "(3 h ago) Tamannaah Bhatia joins Chhath Puja celebrations in Mumb",
+   "(3 h ago) Apoorva Lakhia says Salman Khan filmed in freezing rain"
+  ],
+  "n_stories": 6,
+  "strength": 6,
+  "pick_no": 6,
+  "age_h": 3.0,
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "rating",
+  "cover": "window",
+  "sharp": 52,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

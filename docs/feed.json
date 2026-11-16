@@ -1,5 +1,56 @@
 [
  {
+  "id": "reel_news_am-2026-11-16",
+  "image": "posts/20261116-0634-reel_news_am-2026-11-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261116-063452-reel_news_am-2026-11-16.mp4",
+  "headline": "Apoorva Lakhia says Salman Khan filmed in freezing rain",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Salman Khan Maatrubhumi shoot -7°C rain 🔥\nDirector Apoorva Lakhia ke mutabik Salman ne -7°C aur barish mein shoot kiya; film ki shooting lagbhag 14,000 feet par hui.\nFilm: Maatrubhumi: May War Rest In Peace. Barish mein bina acclimatise hue scene kiya.\nSalman ki is mehnat ko 10 mein se kitne? Number likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#salmankhan #bollywood #maatrubhumi #bollywoodnews #reelsindia\n\n(Salman Khan, Maatrubhumi, May War Rest In Peace, Apoorva Lakhia, Salman Khan new film, Salman Khan shooting, Bollywood news)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms",
+  "pin_comment": "Apne Salman fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+    "artist": "Himesh Reshammiya, Sameer Anjaan",
+    "lang": "new",
+    "mood": "film ka gana, desh bhakti josh"
+   },
+   {
+    "title": "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
+    "artist": "Sajid Khan",
+    "lang": "new",
+    "mood": "Salman film ka naya gana"
+   },
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "hype = Salman ka aura"
+   },
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "josh wala beat"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the 14,000 feet location was the film team's shoot altitude, not Lakhia's claim about Salman's scene, which was at -7°C in rain.",
+    "Fact corrected to match the article: Article says 'no extra oxygen', not no oxygen at all."
+   ],
+   "fixed": [
+    "Director Apoorva Lakhia ke mutabik Salman ne 14,000 feet par shoot kiya. → Director Apoorva Lakhia ke mutabik Salman ne -7°C aur barish mein shoot kiya; film ki shooting lagbhag 14,000 feet par hui.",
+    "Minus 7 degree baarish mein Salman ne bina oxygen 3 takes diye. → Minus 7 degree baarish mein Salman ne bina extra oxygen 3 takes diye."
+   ]
+  },
+  "created_at": "2026-11-16T06:34:52+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-16",
   "image": "posts/20261116-0434-reel_break_am-2026-11-16.jpg",
   "kind": "reel",
@@ -388,48 +439,5 @@
    "fixed": []
   },
   "created_at": "2026-11-15T08:34:00+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-15",
-  "image": "posts/20261115-0633-reel_news_am-2026-11-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261115-063347-reel_news_am-2026-11-15.mp4",
-  "headline": "Vishal Dadlani reveals he tonsured his head at the age of 23 at Tirupati: 'I was very religious'",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Vishal Dadlani Tirupati tonsure story 🙏\nVishal Dadlani ne bataya ki 23 saal ki umar mein unhone Tirupati mein sar mundwaya.\nUnka kehna hai ki tab wo bahut religious the.\nUnhone yeh bhi bataya ki bachpan mein hi tay kar liya tha ki kabhi sharab nahi peenge.\nAapki life ki sabse badi mannat kaun si thi? Ek word 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#vishaldadlani #tirupati #bollywood #trending #reelsindia\n\n(Vishal Dadlani, Vishal Dadlani Tirupati, Tirupati tonsure, Vishal Dadlani religious, Vishal Dadlani interview, Bollywood news)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/vishal-dadlani-reveals-he-tonsured-his-head-at-the-age-of-23-at-tirupati-i-was-very-religious-very-much-so/articleshow/135848157.cms",
-  "pin_comment": "Ye Vishal Dadlani ke fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "calm, spiritual-emotional feel"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft reflective memory vibe"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "dua / mannat feel"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article: the childhood vow was about never drinking alcohol, not the reason for the tonsure."
-   ],
-   "fixed": [
-    "Bachpan ki ek mannat is faisle ki wajah bani. → Unhone yeh bhi bataya ki bachpan mein hi tay kar liya tha ki kabhi sharab nahi peenge."
-   ]
-  },
-  "created_at": "2026-11-15T06:33:47+00:00"
  }
 ]

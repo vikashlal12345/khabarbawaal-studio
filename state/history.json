@@ -331,7 +331,8 @@
   "a9f16d1c12f4",
   "30deb5f9611e",
   "3122d6d3dc88",
-  "42a9cefeb2f3"
+  "42a9cefeb2f3",
+  "9c2fdd030fe8"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -472,7 +473,7 @@
   "reel_news_pm": "2026-11-15",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-15",
+  "reel_news_am": "2026-11-16",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-15",
@@ -487,7 +488,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "qEuy9sSooGBm",
+ "inbox_since": "k2saQdJakYi0",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -860,7 +861,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
@@ -939,7 +939,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kiara-advani-spends-quality-time-with-her-mother-genevieve-advani-before-welcoming-second-child-with-sidharth-malhotra-shares-a-happy-selfie/articleshow/135855734.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/soni-razdan-recalls-smoking-100-cigarettes-a-day-when-she-was-pregnant-with-alia-bhatt-during-gumraah-shoot-i-had-no-clue-im-not-a-smoker/articleshow/135857499.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1156,10 +1157,6 @@
   }
  ],
  "songs_recent": [
-  "Raanjhan",
-  "Tere Liye",
-  "Sahiba",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
   "Heeriye (feat. Arijit Singh)",
   "Arz Kiya Hai | Coke Studio Bharat",
@@ -1195,7 +1192,11 @@
   "Gehra Hua",
   "Pal Pal",
   "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")"
+  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
+  "His Aura Hits You",
+  "Azadi"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1289,6 +1290,10 @@
   },
   {
    "title": "Supriya Pathak reveals Pankaj Kapur threatened to walk out if their wedding lasted over an hour, kept checking time",
+   "date": "2026-11-16"
+  },
+  {
+   "title": "Apoorva Lakhia says Salman Khan filmed in freezing rain",
    "date": "2026-11-16"
   }
  ],
