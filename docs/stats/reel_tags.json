@@ -2313,5 +2313,35 @@
   "type": "devotional",
   "footage": "x-temple",
   "silent": false
+ },
+ {
+  "id": "reel_news_early-2026-11-16",
+  "key": "raviedubeylakshmanramayanapart1fanskepyaarparemotionalnote",
+  "kind": "reel_news_early",
+  "secs": 18.7,
+  "at": "2026-11-16T02:33:46+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Trade, Indo-Pacific in focus as PM Modi heads to Manila",
+   "(under 1 h ago) Dubey thanks Ramayana audiences: Ravie says audience lo",
+   "(under 1 h ago) Virginia couple charged after hosting teen party with u",
+   "(under 1 h ago) NIA probes network of overground workers operating in J",
+   "(under 1 h ago) Deep depression LIVE updates: Odisha steps up preparedn",
+   "(1 h ago) Government may call Parliament winter session in early ",
+   "(2 h ago) Ramayana sets second-Sunday record: Film earns Rs 75 cr"
+  ],
+  "n_stories": 7,
+  "strength": 7,
+  "pick_no": 2,
+  "age_h": 0.4,
+  "topic": "other",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 43,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

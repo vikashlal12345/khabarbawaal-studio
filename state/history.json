@@ -329,7 +329,8 @@
   "163de0a5ad4c",
   "abaf5bddabc1",
   "a9f16d1c12f4",
-  "30deb5f9611e"
+  "30deb5f9611e",
+  "3122d6d3dc88"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -476,7 +477,7 @@
   "reel_news_aft": "2026-11-15",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-15",
+  "reel_news_early": "2026-11-16",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-15",
   "reel_break_noon": "2026-11-15",
@@ -858,7 +859,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/shah-rukh-s-king-poster-sparks-online-debate-netizens-draw-parallels-with-dhurandhar-2-101793093090266.html",
   "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
@@ -937,7 +937,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-to-release-in-china-russia-japan-and-south-korea-in-q1-2027-film-already-submitted-for-censor-clearance-in-china/",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kiara-advani-spends-quality-time-with-her-mother-genevieve-advani-before-welcoming-second-child-with-sidharth-malhotra-shares-a-happy-selfie/articleshow/135855734.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/soni-razdan-recalls-smoking-100-cigarettes-a-day-when-she-was-pregnant-with-alia-bhatt-during-gumraah-shoot-i-had-no-clue-im-not-a-smoker/articleshow/135857499.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/soni-razdan-recalls-smoking-100-cigarettes-a-day-when-she-was-pregnant-with-alia-bhatt-during-gumraah-shoot-i-had-no-clue-im-not-a-smoker/articleshow/135857499.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1154,10 +1155,6 @@
   }
  ],
  "songs_recent": [
-  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Hey Chhathi Maiya",
-  "Piya Pardesiya Chhath Puja Geet",
-  "Chhathi Maiya Ayetan Aaj",
   "Choti Maiya Ayetan Aaj",
   "Main Ram (From \"Ramayana\")",
   "Mangal Rang (From \"Ramayana\")",
@@ -1193,7 +1190,11 @@
   "Karpur Gauram Karunavtaram",
   "Om Namah Shivaya Har Har By Anuradha Paudwal",
   "Om Namah Shivaya",
-  "Shiva Shiva Shankaraa (From \"Kannappa\")"
+  "Shiva Shiva Shankaraa (From \"Kannappa\")",
+  "Dhun",
+  "Zaalima",
+  "Judi Jodi (From \"Ramayana\")",
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1217,38 +1218,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "When Ranveer Singh revealed secret engagement to Deepika Padukone",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "Subrata Chakraborty explains Indianising Ayodhya and Lanka",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "OG Sita Dipika Chikhlia says she always knew Ranbir Kapoor, Yash's Ramayana would be a hit as it crosses ₹1000 crore worldwide, praises VFX and cast",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "Aditi Rao Hydari reveals the family tradition she shares with husband Siddharth: “It's common that everyone laughs together”",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "Suniel Shetty confirms 'Awara Paagal Deewana 2' with Akshay Kumar",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "'Ramayana' box office: RK's film becomes record breaker in Vietnam, Thailand, Cambodia, Nepal",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "Farah Khan says Faisal Shaikh aka Faisu directed his own reception ceremony, brought wife Tanya to click pictures with guests",
-   "date": "2026-11-13"
-  },
-  {
-   "title": "Amrita Rao’s sister Preetika Rao ties the knot in Bengaluru, keeps husband’s face hidden as she calls wedding ‘too personal and sacred’",
-   "date": "2026-11-13"
-  },
   {
    "title": "Pankaj Tripathi says money doesn't excite him anymore, refuses offers despite large fees | Interview",
    "date": "2026-11-14"
@@ -1312,6 +1281,10 @@
   {
    "title": "Soni recalls smoking 100 cigarettes a day when she was pregnant with Alia",
    "date": "2026-11-15"
+  },
+  {
+   "title": "Dubey thanks Ramayana audiences: Ravie says audience love eased his fear",
+   "date": "2026-11-16"
   }
  ],
  "claude_limit": {

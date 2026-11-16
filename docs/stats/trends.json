@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T00:43:19+00:00",
+ "at": "2026-11-16T02:33:51+00:00",
  "known": {
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/this-is-how-you-make-our-ramayana-in-2026-parineeti-chopra-praises-ramayana-rise-of-a-legend-for-its-3d-visuals/articleshow/135845583.cms": "2026-11-15T02:34:07+00:00",
   "https://www.hindustantimes.com/india-news/tackling-inequality-is-key-for-india-in-age-of-change-economist-joseph-e-stiglitz-at-ht-leadership-summit-nobel-laureate-101794707476613.html": "2026-11-15T02:34:07+00:00",
@@ -79,65 +79,73 @@
   "https://www.hindustantimes.com/trending/south-korean-man-who-topped-tax-accountancy-exam-admits-ai-assisted-cheating-in-video-confession-101794761003324.html": "2026-11-16T00:43:19+00:00",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-madhuri-dixits-bed-breaking-scene-in-hum-aapke-hain-koun-was-inspired-from-a-real-life-scene-reveals-sooraj-barjatya/articleshow/135860305.cms": "2026-11-15T22:31:29+00:00",
   "https://www.hindustantimes.com/india-news/magnifying-smaller-identities-mohan-bhagwat-says-efforts-on-to-divide-india-using-british-era-tactics-101794759209625.html": "2026-11-15T22:31:29+00:00",
-  "https://www.hindustantimes.com/entertainment/bollywood/ravie-dubey-humbled-by-all-the-love-for-his-portrayal-of-lakshman-in-ramayana-recalls-feeling-scared-that-he-would-disappoint-everyone-101794758388570.html": "2026-11-15T22:31:29+00:00"
+  "https://www.hindustantimes.com/entertainment/bollywood/ravie-dubey-humbled-by-all-the-love-for-his-portrayal-of-lakshman-in-ramayana-recalls-feeling-scared-that-he-would-disappoint-everyone-101794758388570.html": "2026-11-15T22:31:29+00:00",
+  "https://www.hindustantimes.com/india-news/buddha-relics-arrive-at-arunachal-s-golden-pagoda-for-final-phase-of-exposition-101794796185340.html": "2026-11-16T02:33:51+00:00",
+  "https://www.hindustantimes.com/india-news/rajasthan-railway-blast-accused-have-isi-linkspolice-101794795503580.html": "2026-11-16T02:33:51+00:00",
+  "https://www.hindustantimes.com/india-news/indian-enrolment-for-us-higher-education-fell-notes-report-president-donald-trump-us-visa-post-study-work-opt-101794794680857.html": "2026-11-16T02:33:51+00:00",
+  "https://www.hindustantimes.com/india-news/indigo-flight-returns-to-pune-after-landing-gear-malfunction-fliers-safe-101794769118782.html": "2026-11-16T02:33:51+00:00",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms": "2026-11-16T02:33:51+00:00",
+  "https://www.hindustantimes.com/trending/us/virginia-couple-charged-after-hosting-teen-party-with-underage-drinking-fireworks-101794794056220.html": "2026-11-16T02:33:51+00:00",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-box-office-collection-day-11-ranbir-kapoor-yash-and-sai-pallavis-film-earns-rs-75-crore-sets-record-for-bollywoods-biggest-second-sunday/articleshow/135868927.cms": "2026-11-16T02:33:51+00:00"
  },
  "x": [],
  "google": [
-  "el niño–southern oscillation",
-  "surya",
-  "celtics vs mavericks",
-  "with",
-  "jazz vs spurs",
-  "weather lucknow"
+  "wizards vs rockets",
+  "breaking bad",
+  "bengaluru",
+  "icc 2027 world cup qualifier format",
+  "mp police admit card 2026",
+  "16 november",
+  "start"
  ],
  "stories": [
   {
-   "title": "Late actress Nimmi’s caretaker booked for allegedly misappropriating Juhu flats, Rs 2 crore",
+   "title": "Buddha relics arrive at Arunachal’s Golden Pagoda for final phase of exposition",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/buddha-relics-arrive-at-arunachal-s-golden-pagoda-for-final-phase-of-exposition-101794796185340.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Rajasthan railway blast accused have ISI links: Police",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/rajasthan-railway-blast-accused-have-isi-linkspolice-101794795503580.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Indian enrolment for US higher education fell 6.5% in 2025-26, notes report",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/indian-enrolment-for-us-higher-education-fell-notes-report-president-donald-trump-us-visa-post-study-work-opt-101794794680857.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "IndiGo flight returns to Pune after landing gear malfunction, fliers safe",
+   "source": "Hindustan Times",
+   "link": "https://www.hindustantimes.com/india-news/indigo-flight-returns-to-pune-after-landing-gear-malfunction-fliers-safe-101794769118782.html",
+   "category": "india/politics",
+   "hours": 0
+  },
+  {
+   "title": "Dubey thanks Ramayana audiences: Ravie says audience love eased his fear",
    "source": "Times of India",
-   "link": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/late-actress-nimmis-caretaker-booked-for-allegedly-misappropriating-juhu-flats-rs-2-crore-fds-and-jewellery-meant-for-legal-heirs/articleshow/135863133.cms",
+   "link": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms",
    "category": "entertainment",
    "hours": 0
   },
   {
-   "title": "Depression over Bay of Bengal likely to intensify into severe cyclonic storm by Nov 17, move towards Andhra Pradesh coast: IMD",
+   "title": "Virginia couple charged after hosting teen party with underage drinking, fireworks",
    "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/depression-over-bay-of-bengal-to-intensify-into-severe-cyclonic-storm-by-nov-17-move-towards-andhra-pradesh-coast-imd-101794761096139.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "PM Modi, Trump to join ASEAN Summit in Manila; global conflicts, maritime, economic ties on agenda",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/pm-modi-trump-to-join-asean-summit-in-manila-global-conflicts-maritime-economic-ties-on-agenda-101794760688896.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "Ram Gopal Varma claims 'Ramayana: Part 1' is made in less than Rs 800 crore",
-   "source": "Times of India",
-   "link": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ram-gopal-varma-claims-ranbir-kapoors-ramayana-part-1-is-made-in-less-than-rs-800-crore-many-are-stupid-to-assume-both-the-parts-will-cost-the-same/articleshow/135861186.cms",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Ramayana box office collection day 11: Ranbir Kapoor, Yash film mints ₹75 crore to score Bollywood's biggest 2nd Sunday, beats Dhurandhar 2,",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/entertainment/bollywood/ramayana-box-office-collection-day-11-ranbir-kapoor-yash-film-mints-75-crore-to-score-bollywood-biggest-2nd-sunday-beats-dhurandhar-2-jawan-101794751132586.html",
-   "category": "entertainment",
-   "hours": 0
-  },
-  {
-   "title": "Uttarakhand MLA loses temper, vandalises stage after he was denied chance to speak at event; booked",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/india-news/uttarakhand-mla-loses-temper-vandalises-stage-after-he-was-denied-chance-to-speak-at-event-booked-101794759929744.html",
-   "category": "india/politics",
-   "hours": 0
-  },
-  {
-   "title": "South Korean man who topped tax accountancy exam admits AI-assisted cheating in video confession",
-   "source": "Hindustan Times",
-   "link": "https://www.hindustantimes.com/trending/south-korean-man-who-topped-tax-accountancy-exam-admits-ai-assisted-cheating-in-video-confession-101794761003324.html",
+   "link": "https://www.hindustantimes.com/trending/us/virginia-couple-charged-after-hosting-teen-party-with-underage-drinking-fireworks-101794794056220.html",
    "category": "viral",
+   "hours": 0
+  },
+  {
+   "title": "Ramayana sets second-Sunday record: Film earns Rs 75 crore",
+   "source": "Times of India",
+   "link": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-box-office-collection-day-11-ranbir-kapoor-yash-and-sai-pallavis-film-earns-rs-75-crore-sets-record-for-bollywoods-biggest-second-sunday/articleshow/135868927.cms",
+   "category": "entertainment",
    "hours": 0
   }
  ]
