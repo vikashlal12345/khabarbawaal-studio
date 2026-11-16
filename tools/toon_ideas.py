@@ -16,10 +16,10 @@ IDEAS = {
            dict(paint="Little Ranbir looking up at the ceiling dramatically with a hand on his heart, tragic expression, classroom", line="Ranbir: Sir, dog kha gaya... Ramayana ki shooting ke liye 🐶"),
            dict(paint="Little Ranbir walking proudly with big sunglasses on and school bag on his shoulder, bright school corridor", line="Aaj bhi wohi excuse: 'Dates nahi mil rahi' 😎")]),
  "B_sharmaji_ka_beta": dict(hook="SHARMA JI KA BETA 😭", punch="Har ghar ki kahani 😭\nKal: Papa vs Cricket. Follow karo",
-   characters=[{"name": "Mummy", "look": "angry Indian mother in a saree, hands on hips"}, {"name": "Sharma ji ka beta", "look": "nerdy Indian boy with round glasses and a golden trophy"}],
-   scenes=[dict(paint="Mummy, an angry Indian mother in a saree, holding a chappal in her raised hand, shouting expression, home kitchen", line="Mummy: Ramayana ne records tod diye... aur tumne? Sirf screen time 😤"),
-           dict(paint="Sharma ji ka beta, a nerdy Indian boy with round glasses holding a big golden trophy, huge smug smile", line="Sharma ji ka beta: Mummy, main bhi hit hoon... 98% laya hoon 🤓"),
-           dict(paint="a sad slouching Indian teenage boy in a hoodie holding a report card, looking down, bedroom", line="Main: Mummy, 'Part 2' mein sudhar jaunga 😭")]),
+   characters=[],
+   scenes=[dict(paint="an angry Indian mother in a colourful saree with a bindi, hair in a bun, raising a slipper in her right hand, shouting, home living room", line="Mummy: Ramayana ne records tod diye... aur tumne? Sirf screen time 😤"),
+           dict(paint="a nerdy Indian schoolboy with round glasses and neat uniform, giving a big proud thumbs-up with a smug smile, close-up, living room", line="Sharma ji ka beta: Mummy, main bhi hit hoon... 98% laya hoon 🤓"),
+           dict(paint="a sad Indian teenage boy in a plain grey hoodie, slouching with his head down and hands in pockets, bedroom", line="Main: Mummy, 'Part 2' mein sudhar jaunga 😭")]),
 }
 out = os.path.join(SC, "ideas"); os.makedirs(out, exist_ok=True)
 for name in (sys.argv[1:] or IDEAS):
