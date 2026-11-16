@@ -334,7 +334,8 @@
   "42a9cefeb2f3",
   "9c2fdd030fe8",
   "fa16f27afbc6",
-  "c1a188f022cc"
+  "c1a188f022cc",
+  "9ecc5d882d20"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -478,7 +479,7 @@
   "reel_news_am": "2026-11-16",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-15",
+  "reel_news_aft": "2026-11-16",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-16",
@@ -490,7 +491,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "h9FvHMUTE37Z",
+ "inbox_since": "0RbAkjwbdj4e",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -863,7 +864,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
   "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
@@ -942,7 +942,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/sonu-sood-meets-josh-actor-sharad-kapoor-after-his-emotional-plea-for-work-checks-on-his-health-101794811248701.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/double-xl-actor-and-former-indian-cricketer-shikhar-dhawan-says-wife-sophie-brought-stability-to-his-life-admits-having-no-contact-with-son-for-4-years/articleshow/135881150.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/double-xl-actor-and-former-indian-cricketer-shikhar-dhawan-says-wife-sophie-brought-stability-to-his-life-admits-having-no-contact-with-son-for-4-years/articleshow/135881150.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/harshvardhan-rane-gets-3-5-crore-luxury-car-from-sanam-teri-kasam-producer-deepak-mukut-mawra-hocane-101794828888049.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1159,10 +1160,6 @@
   }
  ],
  "songs_recent": [
-  "Mangal Rang (From \"Ramayana\")",
-  "Shree Hanuman Chalisa (From \"Ramayana\")",
-  "Tera Hoke Rahoon",
-  "Alfaaz",
   "Main Ram (From \"Ramayana\")",
   "Mangal Rang (From \"Ramayana\")",
   "Ram Siya Ram",
@@ -1198,7 +1195,11 @@
   "Rula Ke Gaya Ishq",
   "Humnava Mere",
   "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Ashke",
+  "Kabhi Shaam Dhale",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1304,6 +1305,10 @@
   },
   {
    "title": "Shikhar admits having NO contact with son for 4 years",
+   "date": "2026-11-16"
+  },
+  {
+   "title": "Harshvardhan Rane gets ₹3.5 crore luxury car from Sanam Teri Kasam producer, asks him to approve film's sequel",
    "date": "2026-11-16"
   }
  ],

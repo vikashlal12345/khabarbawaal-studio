@@ -2458,5 +2458,35 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-16",
+  "key": "harshvardhanranelandroverdefenderoctagift",
+  "kind": "reel_news_aft",
+  "secs": 19.0,
+  "at": "2026-11-16T12:35:20+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Harshvardhan Rane gets ₹3.5 crore luxury car from Sanam",
+   "(under 1 h ago) 'Bach gaye': Amitabh Bachchan drops cryptic X post amid",
+   "(1 h ago) Bachchan recalls near-fatal incident where he almost dr",
+   "(1 h ago) HT Exclusive: Sunny Deol's Suryaa postponed amid contro",
+   "(2 h ago) Panchayat 5 delayed? Makers cryptic posts leave fans gu",
+   "(5 h ago) Tanhaji: The Unsung Warrior and Adipurush director Om R",
+   "(5 h ago) Sonakshi Sinha files complaint over morphed photos, Del"
+  ],
+  "n_stories": 7,
+  "strength": 7,
+  "pick_no": 1,
+  "age_h": 0.5,
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "predict",
+  "cover": "window",
+  "sharp": 41,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
