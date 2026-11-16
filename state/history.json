@@ -333,7 +333,8 @@
   "3122d6d3dc88",
   "42a9cefeb2f3",
   "9c2fdd030fe8",
-  "fa16f27afbc6"
+  "fa16f27afbc6",
+  "c1a188f022cc"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -471,7 +472,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-16",
-  "reel_news_pm": "2026-11-15",
+  "reel_news_pm": "2026-11-16",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-16",
@@ -489,7 +490,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "N8J3V8Wu1AaY",
+ "inbox_since": "h9FvHMUTE37Z",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -862,7 +863,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
@@ -941,7 +941,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/sonu-sood-meets-josh-actor-sharad-kapoor-after-his-emotional-plea-for-work-checks-on-his-health-101794811248701.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sonu-sood-meets-josh-actor-sharad-kapoor-after-his-emotional-plea-for-work-checks-on-his-health-101794811248701.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/double-xl-actor-and-former-indian-cricketer-shikhar-dhawan-says-wife-sophie-brought-stability-to-his-life-admits-having-no-contact-with-son-for-4-years/articleshow/135881150.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1158,10 +1159,6 @@
   }
  ],
  "songs_recent": [
-  "Jo Tum Mere Ho",
-  "Ashke",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
   "Mangal Rang (From \"Ramayana\")",
   "Shree Hanuman Chalisa (From \"Ramayana\")",
   "Tera Hoke Rahoon",
@@ -1197,7 +1194,11 @@
   "Tere Liye",
   "Guzarish",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Rula Ke Gaya Ishq",
+  "Humnava Mere",
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1299,6 +1300,10 @@
   },
   {
    "title": "Sonu Sood meets Josh actor Sharad Kapoor after his emotional plea for work, checks on his health",
+   "date": "2026-11-16"
+  },
+  {
+   "title": "Shikhar admits having NO contact with son for 4 years",
    "date": "2026-11-16"
   }
  ],

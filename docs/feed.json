@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_news_pm-2026-11-16",
+  "image": "posts/20261116-1035-reel_news_pm-2026-11-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261116-103525-reel_news_pm-2026-11-16.mp4",
+  "headline": "Shikhar admits having NO contact with son for 4 years",
+  "tag": "🎬 REEL · CRICKET",
+  "caption": "Shikhar Dhawan son contact 4 saal 💔 Shikhar Dhawan Double XL interview\nPuraane cricketer aur 'Double XL' actor Shikhar ne kaha ki unka 4 saal se bete se koi contact nahi hai.\nWo Gurugram mein wife Sophie Shine ke saath rehte hain, aur unke mutabik Sophie ne unki life mein stability layi.\nRishta ya ego, bada kya? Ek word likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#shikhardhawan #cricket #bollywood #viral #reelsindia\n\n(Shikhar Dhawan, Shikhar Dhawan son, Shikhar Dhawan Sophie Shine, Double XL, Shikhar Dhawan interview, Shikhar Dhawan family, Team India cricketer, Dhawan emotional)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/double-xl-actor-and-former-indian-cricketer-shikhar-dhawan-says-wife-sophie-brought-stability-to-his-life-admits-having-no-contact-with-son-for-4-years/articleshow/135881150.cms",
+  "pin_comment": "Ye Shikhar Dhawan ke har fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "dard bhara, bichde rishte jaisa"
+   },
+   {
+    "title": "Humnava Mere",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "emotional, apno ki kami"
+   },
+   {
+    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "udaas, dil ki baat"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "dua jaisa, dheema emotional"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The photo is cropped at the top so the face is cut off at the eyes, and a camcorder on a tripod covers the middle of the face. The person is hard to recognise."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-16T10:35:25+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-16",
   "image": "posts/20261116-0833-reel_break_noon-2026-11-16.jpg",
   "kind": "reel",
@@ -386,103 +433,5 @@
    "fixed": []
   },
   "created_at": "2026-11-15T12:34:05+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-15",
-  "image": "posts/20261115-1034-reel_news_pm-2026-11-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261115-103448-reel_news_pm-2026-11-15.mp4",
-  "headline": "Kunal Kapoor is overwhelmed by love from Southeast Asia for his appearance as Indra in Ramayana, thanks fans for artwork",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Kunal Kapoor Indra Ramayana fan love 🎬\nKunal Kapoor ne Ramayana mein Indra ka kirdaar nibhaya.\nThailand aur Southeast Asia ke deshon se unhe khoob pyaar mila.\nFans ke banaye artwork ke liye unhone shukriya kaha.\nKunal ka Indra kaisa laga? Ek word likho: SAHI ya NA 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ramayana #kunalkapoor #ranbirkapoor #bollywood #reelsindia\n\n(Kunal Kapoor, Kunal Kapoor Indra, Ramayana, Ramayana Part 1, Nitesh Tiwari Ramayana, Ramayana Thailand, Kunal Kapoor fan art)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/kunal-kapoor-is-overwhelmed-by-love-from-southeast-asia-for-his-ramayana-character-indra-thanks-fans-for-artwork-nitesh-tiwari-thailand-101794719852278.html",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana feel, grateful vibe"
-   },
-   {
-    "title": "Shree Hanuman Chalisa (From \"Ramayana\")",
-    "artist": "A.R. Rahman",
-    "lang": "new",
-    "mood": "devotional Ramayana pride"
-   },
-   {
-    "title": "Tera Hoke Rahoon",
-    "artist": "Arijit Singh",
-    "lang": "hindi",
-    "mood": "fan love, warm thanks"
-   },
-   {
-    "title": "Alfaaz",
-    "artist": "Hamza Malik, Zain Zohaib",
-    "lang": "hindi",
-    "mood": "top chart, upbeat gratitude"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article mentions Thailand and Southeast Asia; Indonesia is not said as a source of love",
-    "Fact corrected to match the article: Indonesia love not in article",
-    "Fact corrected to match the article: Subtitle not in article; film is Ramayana: Part 1"
-   ],
-   "fixed": [
-    "Thailand aur Indonesia jaise deshon se → Thailand aur Southeast Asia ke deshon se",
-    "Ramayana Thailand Indonesia → Ramayana Thailand",
-    "Ramayana Rise of a Legend → Ramayana Part 1"
-   ]
-  },
-  "created_at": "2026-11-15T10:34:48+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-15",
-  "image": "posts/20261115-0834-reel_break_noon-2026-11-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261115-083400-reel_break_noon-2026-11-15.mp4",
-  "headline": "Karan Johar rules out hosting another chat show after 'Koffee with Karan'",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Karan Johar Koffee With Karan ke baad koi chat show host nahi karenge 🎬\nKaran ne kaha ki wo is show ko bahut pasand karte hain, par ab naye projects par ja rahe hain.\nReality TV jaise alag formats explore karne ke liye wo tayyar hain. Season 9 is celebrity chat show ka final season hai.\nKaran ka faisla sahi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #karanjohar #koffeewithkaran #bollywood #bollywoodnews\n\n(Karan Johar, Koffee With Karan, Koffee With Karan Season 9, Karan Johar chat show, Karan Johar reality TV, Koffee With Karan final season, Karan Johar new projects, Bollywood news)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/karan-johar-rules-out-hosting-another-chat-show-after-koffee-with-karan-hints-at-possible-shah-rukh-khan-appearance-in-the-finale-episode/articleshow/135850427.cms",
-  "pin_comment": "Apne Koffee With Karan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "yaadon wala emotional mood"
-   },
-   {
-    "title": "Ashke",
-    "artist": "Karan Aujla & MXRCI",
-    "lang": "hindi",
-    "mood": "KJo naam, chart hit vibe"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "bade star, bada moment"
-   },
-   {
-    "title": "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
-    "lang": "new",
-    "mood": "end of an era feel"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-15T08:34:00+00:00"
  }
 ]

@@ -2427,5 +2427,36 @@
   "kw": 8,
   "relate": "verdict",
   "hook": "feeling"
+ },
+ {
+  "id": "reel_news_pm-2026-11-16",
+  "key": "shikhardhawansoncontact4saalshikhardhawandoublexlinterview",
+  "kind": "reel_news_pm",
+  "secs": 18.4,
+  "at": "2026-11-16T10:35:25+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Twinkle Khanna calls Ravana the 'original tech bro' aft",
+   "(under 1 h ago) Panchayat 5 delayed? Makers cryptic posts leave fans gu",
+   "(under 1 h ago) Shikhar admits having NO contact with son for 4 years",
+   "(1 h ago) Ram Gopal Varma claims Ramayana Part 1's budget is unde",
+   "(3 h ago) Tanhaji: The Unsung Warrior and Adipurush director Om R",
+   "(3 h ago) Sonakshi Sinha files complaint over morphed photos, Del",
+   "(3 h ago) 'Ramayana' box office collection day 12 (LIVE)",
+   "(4 h ago) Ramayana worldwide box office collection day 11: Ranbir"
+  ],
+  "n_stories": 8,
+  "strength": 8,
+  "pick_no": 3,
+  "age_h": 1.0,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "twist",
+  "cover": "window",
+  "sharp": 42,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
