@@ -335,7 +335,8 @@
   "9c2fdd030fe8",
   "fa16f27afbc6",
   "c1a188f022cc",
-  "9ecc5d882d20"
+  "9ecc5d882d20",
+  "908f87d02a77"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -486,12 +487,12 @@
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-16",
   "reel_break_noon": "2026-11-16",
-  "reel_break_aft": "2026-11-15",
+  "reel_break_aft": "2026-11-16",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-15"
  },
- "inbox_since": "0RbAkjwbdj4e",
+ "inbox_since": "HwAheSt2h0j8",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -864,7 +865,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-first-reactions-viewers-compares-ranbir-kapoor-yash-sai-pallavi-nitesh-tiwari-film-to-lord-of-the-rings-ar-rahan-hans-zimmer-101793170555111.html",
   "https://www.hindustantimes.com/entertainment/bollywood/radhika-apte-slams-trolls-criticising-alia-bhatts-physique-in-alpha-calls-out-double-standards-for-female-actors-in-action-roles-101793177938862.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ravana-is-not-all-bad-sai-pallavi-says-key-takeaway-from-ramayana-is-to-spot-the-ravana-in-us-and-make-changes-over-time-yash-ranbir-kapoor-101793182612118.html",
@@ -943,7 +943,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms",
   "https://www.hindustantimes.com/entertainment/bollywood/sonu-sood-meets-josh-actor-sharad-kapoor-after-his-emotional-plea-for-work-checks-on-his-health-101794811248701.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/double-xl-actor-and-former-indian-cricketer-shikhar-dhawan-says-wife-sophie-brought-stability-to-his-life-admits-having-no-contact-with-son-for-4-years/articleshow/135881150.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/harshvardhan-rane-gets-3-5-crore-luxury-car-from-sanam-teri-kasam-producer-deepak-mukut-mawra-hocane-101794828888049.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/harshvardhan-rane-gets-3-5-crore-luxury-car-from-sanam-teri-kasam-producer-deepak-mukut-mawra-hocane-101794828888049.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/bach-gaye-amitabh-bachchan-drops-cryptic-x-post-amid-bomb-threats-naming-him-and-others-surface-in-mumbai/articleshow/135887932.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1160,9 +1161,6 @@
   }
  ],
  "songs_recent": [
-  "Main Ram (From \"Ramayana\")",
-  "Mangal Rang (From \"Ramayana\")",
-  "Ram Siya Ram",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Teri Meri Kahaani",
   "Pal Pal Dil Ke Paas - Title Track",
@@ -1199,7 +1197,10 @@
   "Ashke",
   "Kabhi Shaam Dhale",
   "Tu Mil Jaaye (From \"KING\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Tabaahi (From \"Toxic\")",
+  "Hawayein",
+  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1309,6 +1310,10 @@
   },
   {
    "title": "Harshvardhan Rane gets ₹3.5 crore luxury car from Sanam Teri Kasam producer, asks him to approve film's sequel",
+   "date": "2026-11-16"
+  },
+  {
+   "title": "'Bach gaye': Amitabh Bachchan drops cryptic X post amid bomb threats naming him",
    "date": "2026-11-16"
   }
  ],
