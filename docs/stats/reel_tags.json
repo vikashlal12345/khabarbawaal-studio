@@ -1884,5 +1884,34 @@
   "kw": 8,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_break_night-2026-11-16",
+  "key": "shahrukhkhankoffeewithkaran9finaleyashroohijohardebut",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-16T14:35:01+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) The Vvaan 2 officially announced: Ektaa R Kapoor reunit",
+   "(under 1 h ago) Virat Kohli, Priyanka Chopra Jonas, Shraddha Kapoor, Al",
+   "(under 1 h ago) Exclusive| Tiger Shroff back on sets after firing, NDAs",
+   "(under 1 h ago) Exclusive| Where did the OG Bollywood rom-coms go, asks",
+   "(under 1 h ago) Imtiaz Ali defends star kids, says ‘they have a terribl",
+   "(1 h ago) The Vvaan 2 announced on Chhath Puja, Ektaa Kapoor to t",
+   "(1 h ago) Diljit says, 'Ye Mahakal ki dharti hai' at Indore conce",
+   "(2 h ago) Shah Rukh Khan to appear on the finale episode of 'Koff"
+  ],
+  "n_stories": 8,
+  "strength": 8,
+  "pick_no": 8,
+  "age_h": 1.9,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 48,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "hook": "question"
  }
 ]

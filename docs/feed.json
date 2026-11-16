@@ -1,5 +1,60 @@
 [
  {
+  "id": "reel_break_night-2026-11-16",
+  "image": "posts/20261116-1435-reel_break_night-2026-11-16.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261116-143501-reel_break_night-2026-11-16.mp4",
+  "headline": "Shah Rukh Khan to appear on the finale episode of 'Koffee With Karan 9'?",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Shah Rukh Khan Koffee With Karan 9 finale, Yash Roohi Johar debut 🔥\nReport ke mutabik SRK finale episode mein dikhenge.\nKaran Johar ke twins Yash aur Roohi ka chat show debut bhi ho sakta hai.\nSRK ka segment chhota hoga, official confirmation abhi baaki hai.\nApne Shah Rukh fan dost ko bhejo 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #shahrukhkhan #koffeewithkaran #karanjohar #bollywood\n\n(Shah Rukh Khan, Koffee With Karan 9, Koffee With Karan finale, Karan Johar, Yash Roohi Johar, SRK Koffee With Karan, Shah Rukh Khan Karan Johar kids, King release December)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shah-rukh-khan-to-appear-on-the-finale-episode-of-koffee-with-karan-9-with-karan-johars-children-yash-and-roohi-heres-what-we-know/articleshow/135888335.cms",
+  "pin_comment": "Apne Shah Rukh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "SRK ki Raees wali vibe"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "warm, emotional finale feel"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "SRK ki KING ka naya gaana"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "soft, nostalgic goodbye mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says the twins' appearance is only reported/possible, not confirmed",
+    "Fact corrected to match the article: Short segment and the shoot are only reported by the article",
+    "Fact corrected to match the article: Appearance is reported, not confirmed",
+    "Fact corrected to match the article: Unconfirmed report should not be stated as fact"
+   ],
+   "fixed": [
+    "Karan ke twins Yash aur Roohi ka debut → Report: Karan ke twins Yash aur Roohi ka debut ho sakta hai",
+    "SRK ka sirf chhota segment, shoot ho chuka → Report ke mutabik SRK ka sirf chhota segment, shoot ho chuka",
+    "Shah Rukh Khan Koffee With Karan 9 finale mein → Report: Shah Rukh Khan Koffee With Karan 9 finale mein",
+    "SRK KOFFEE FINALE MEIN, KIDS BHI → REPORT: SRK KOFFEE FINALE MEIN, KIDS BHI?"
+   ]
+  },
+  "created_at": "2026-11-16T14:35:01+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-16",
   "image": "posts/20261116-1335-reel_break_aft-2026-11-16.jpg",
   "kind": "reel",
@@ -382,62 +437,5 @@
    "fixed": []
   },
   "created_at": "2026-11-16T00:43:13+00:00"
- },
- {
-  "id": "reel_break_night-2026-11-15",
-  "image": "posts/20261115-1434-reel_break_night-2026-11-15.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261115-143456-reel_break_night-2026-11-15.mp4",
-  "headline": "Soni recalls smoking 100 cigarettes a day when she was pregnant with Alia",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Soni Razdan Alia Bhatt pregnancy confession Darlings\n\nSoni Razdan ne apni pregnancy ke din yaad kiye.\nLate 80s aur early 90s ke challenges, costume changes tak.\nAlia ne bhi pregnancy mein kaam nahi roka, Darlings produce ki.\n\nSoni ka khulkar bolna sahi? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #aliabhatt #sonirazdan #bollywoodnews #bollywood\n\n(Soni Razdan, Alia Bhatt, Alia Bhatt pregnancy, Darlings, Soni Razdan interview, Bollywood news, Alia Bhatt mother Soni Razdan, Soni Razdan pregnancy)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/soni-razdan-recalls-smoking-100-cigarettes-a-day-when-she-was-pregnant-with-alia-bhatt-during-gumraah-shoot-i-had-no-clue-im-not-a-smoker/articleshow/135857499.cms",
-  "pin_comment": "Apne Alia Bhatt fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Pehle Bhi Main",
-    "artist": "Vishal Mishra, Raj Shekhar",
-    "lang": "hindi",
-    "mood": "maa-beti ki emotional baat"
-   },
-   {
-    "title": "Khwaab Dekhoon (From \"Ek Din\")",
-    "artist": "Irshad Kamil, Arijit Singh",
-    "lang": "hindi",
-    "mood": "soft, yaadon wala feel"
-   },
-   {
-    "title": "Betuka (From \"Nakhrewaalii\")",
-    "artist": "Vayu, Sharan Rawat",
-    "lang": "new",
-    "mood": "light, personal confession vibe"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "zindagi ka sach, reflective"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The 100 cigarettes a day claim is not in the article.",
-    "Fact corrected to match the article: The 100 cigarettes quote is not in the article; the article mentions costume changes caused by the pregnancy.",
-    "Fact corrected to match the article: The 100 cigarettes claim is not in the article.",
-    "Fact corrected to match the article: Article says she reflected on her own experiences in the late 80s/early 90s, not Alia's pregnancy time",
-    "Fact corrected to match the article: Article says she reflected on her own experiences, not Alia's pregnancy"
-   ],
-   "fixed": [
-    "Alia ki maa Soni: pregnancy mein 100 cigarettes roz → Alia ki maa Soni ne pregnancy ke challenges yaad kiye",
-    "Kaha: pregnancy mein din ki 100 cigarettes peeti thi → Kaha: costume change jaise challenges jhele the",
-    "Soni Razdan Alia Bhatt pregnancy confession 100 cigarettes Darlings → Soni Razdan Alia Bhatt pregnancy confession Darlings",
-    "Soni Razdan ne Alia ke time ki yaadein share kin → Soni Razdan ne apni pregnancy ki yaadein share kin",
-    "Soni Razdan ne Alia ke time ki pregnancy yaad ki. → Soni Razdan ne apni pregnancy ke din yaad kiye."
-   ]
-  },
-  "created_at": "2026-11-15T14:34:56+00:00"
  }
 ]
