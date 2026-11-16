@@ -2255,10 +2255,31 @@ def covered_before(title: str, hours: int = 12) -> bool:
         text = (p.get("headline", "") + " " + (p.get("caption", "") or "")[:200]).lower()
         if sum(w in text for w in words) >= 3:
             return True
+    return told_in_days(title, 3)
+
+
+def told_in_days(title: str, days: int = 3) -> bool:
+    """Owner, 16 Nov 2026: the Addinath Kothare / Ranbir Kapoor school story got 4,806 views on 12 Nov and came again on 15 Nov (64 views). feed.json keeps only
+    24 h, so this reads state['reel_news_recent'] (titles of every news / breaking Reel, 2+ days): 4+ shared significant words = the same story."""
+    from datetime import date, timedelta
+    try:
+        st = json.loads((Path(__file__).parent / "state" / "history.json").read_text())
+    except Exception:
+        return False
+    words = {w for w in re.findall(r"[a-z]{4,}", title.lower())} - GENERIC
+    if len(words) < 4:
+        return False
+    since = (date.today() - timedelta(days=days)).isoformat()
+    for r in st.get("reel_news_recent", []):
+        if r.get("date", "") < since:
+            continue
+        old = {w for w in re.findall(r"[a-z]{4,}", (r.get("title") or "").lower())} - GENERIC
+        if len(words & old) >= 4:
+            return True
     return False
 
 
-PRIDE = re.compile(r"\b(rss|mandir|temple|kirtan|aarti|bhajan|ayodhya|hindu|sanatan|diwali|chhath|dhanteras|kashi|mahakumbh|yoga)\b", re.I)
+PRIDE =re.compile(r"\b(rss|mandir|temple|kirtan|aarti|bhajan|ayodhya|hindu|sanatan|diwali|chhath|dhanteras|kashi|mahakumbh|yoga)\b", re.I)
 
 
 def bollywood_first(stories: list) -> list:
