@@ -330,7 +330,8 @@
   "abaf5bddabc1",
   "a9f16d1c12f4",
   "30deb5f9611e",
-  "3122d6d3dc88"
+  "3122d6d3dc88",
+  "42a9cefeb2f3"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -479,7 +480,7 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-16",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-15",
+  "reel_break_am": "2026-11-16",
   "reel_break_noon": "2026-11-15",
   "reel_break_aft": "2026-11-15",
   "reel_news_night": "2026-11-07",
@@ -859,7 +860,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/janhvi-kapoor-says-shikhar-pahariya-took-break-from-studies-in-london-and-moved-to-juhu-to-be-near-her-after-sridevi-s-death-101793099343035.html",
   "https://www.bollywoodhungama.com/news/bollywood/shah-rukh-khan-and-kareena-kapoor-khan-to-recreate-chammak-challo-style-energy-for-king-song-report/",
   "https://www.indiablooms.com/news/rahul-gandhi-stunned-after-president-meeting-india-bloc-to-approach-cji-over-vote-chori-claims/details",
   "https://www.hindustantimes.com/trending/captain-smit-machchhar-flydubai-crew-honoured-by-uae-president-for-mid-air-heroism-101793151947981.html",
@@ -938,7 +938,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-to-release-in-china-russia-japan-and-south-korea-in-q1-2027-film-already-submitted-for-censor-clearance-in-china/",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kiara-advani-spends-quality-time-with-her-mother-genevieve-advani-before-welcoming-second-child-with-sidharth-malhotra-shares-a-happy-selfie/articleshow/135855734.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/soni-razdan-recalls-smoking-100-cigarettes-a-day-when-she-was-pregnant-with-alia-bhatt-during-gumraah-shoot-i-had-no-clue-im-not-a-smoker/articleshow/135857499.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ravie-dubey-thanks-fans-for-showering-love-on-his-lakshman-role-in-ramayana-admits-he-was-scared-of-disappointing-everyone/articleshow/135869738.cms",
+  "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1155,10 +1156,6 @@
   }
  ],
  "songs_recent": [
-  "Choti Maiya Ayetan Aaj",
-  "Main Ram (From \"Ramayana\")",
-  "Mangal Rang (From \"Ramayana\")",
-  "Ram Siya Ram",
   "Raanjhan",
   "Tere Liye",
   "Sahiba",
@@ -1194,7 +1191,11 @@
   "Dhun",
   "Zaalima",
   "Judi Jodi (From \"Ramayana\")",
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")"
+  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+  "Gehra Hua",
+  "Pal Pal",
+  "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
+  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1284,6 +1285,10 @@
   },
   {
    "title": "Dubey thanks Ramayana audiences: Ravie says audience love eased his fear",
+   "date": "2026-11-16"
+  },
+  {
+   "title": "Supriya Pathak reveals Pankaj Kapur threatened to walk out if their wedding lasted over an hour, kept checking time",
    "date": "2026-11-16"
   }
  ],

@@ -2343,5 +2343,32 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-16",
+  "key": "supriyapathakpankajkapurweddingdeadlinethegreatindiankapilsh",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-16T04:34:34+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Tanhaji: The Unsung Warrior and Adipurush director Om R",
+   "(under 1 h ago) Sonakshi Sinha files complaint over morphed photos, Del",
+   "(under 1 h ago) Tamannaah Bhatia joins Chhath Puja celebrations in Mumb",
+   "(under 1 h ago) Supriya Pathak reveals Pankaj Kapur threatened to walk ",
+   "(1 h ago) Apoorva Lakhia says Salman Khan filmed in freezing rain",
+   "(4 h ago) Ramayana sets second-Sunday record: Film earns Rs 75 cr"
+  ],
+  "n_stories": 6,
+  "strength": 8,
+  "pick_no": 4,
+  "age_h": 0.7,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 52,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "share_friend",
+  "hook": "question"
  }
 ]
