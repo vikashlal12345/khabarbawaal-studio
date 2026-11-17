@@ -12277,6 +12277,57 @@
      "tokens": 13579
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 10,
+   "input": 24,
+   "output": 4886,
+   "cache_read": 6817,
+   "cache_write": 346725,
+   "value_usd": 1.4365,
+   "by_purpose": {
+    "writing": {
+     "requests": 1,
+     "tokens": 55420
+    },
+    "topic search": {
+     "requests": 1,
+     "tokens": 38080
+    },
+    "topic article pick": {
+     "requests": 1,
+     "tokens": 38541
+    },
+    "reel brief": {
+     "requests": 1,
+     "tokens": 38222
+    },
+    "reel style": {
+     "requests": 1,
+     "tokens": 38149
+    },
+    "reel topic meaning": {
+     "requests": 1,
+     "tokens": 39401
+    },
+    "reel writing": {
+     "requests": 1,
+     "tokens": 52073
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 38570
+    },
+    "photo look": {
+     "requests": 1,
+     "tokens": 6961
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 13035
+    }
+   }
   }
  }
 }
