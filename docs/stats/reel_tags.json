@@ -1921,5 +1921,33 @@
   "secs": 17.1,
   "at": "2026-11-17T00:35:18+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-17",
+  "key": "priyankachopraabhishekbachchanprankstorypriyankaneabhishekka",
+  "kind": "reel_news_early",
+  "secs": 18.4,
+  "at": "2026-11-17T02:34:05+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) RSS farmers' body seeks budget to tackle El Niño, clima",
+   "(under 1 h ago) Sunny Deol’s Suryaa: Ant Se Aarambh Tak postponed to 20",
+   "(2 h ago) Ramayana nears Rs 800 Crore: Film earns Rs 32 crore on ",
+   "(7 h ago) E. Niwas returns to feature films with Kurla Boyz, a su",
+   "(8 h ago) Priyanka once hid Abhishek's phone and sent 'I miss you"
+  ],
+  "n_stories": 5,
+  "strength": 9,
+  "pick_no": 5,
+  "age_h": 7.9,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "rating",
+  "cover": "window",
+  "sharp": 57,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
