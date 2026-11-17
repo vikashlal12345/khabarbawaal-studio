@@ -114,6 +114,116 @@
       "name": "Hindustan Times",
       "category": "world",
       "url": "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml"
+    },
+    {
+      "name": "The Hindu",
+      "category": "entertainment",
+      "url": "https://www.thehindu.com/entertainment/movies/feeder/default.rss"
+    },
+    {
+      "name": "DNA India",
+      "category": "entertainment",
+      "url": "https://www.dnaindia.com/feeds/entertainment.xml"
+    },
+    {
+      "name": "NDTV",
+      "category": "entertainment",
+      "url": "https://feeds.feedburner.com/ndtvmovies-latest"
+    },
+    {
+      "name": "Times of India",
+      "category": "viral",
+      "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+    },
+    {
+      "name": "NDTV",
+      "category": "viral",
+      "url": "https://feeds.feedburner.com/ndtvnews-trending-news"
+    },
+    {
+      "name": "Bollywood Hungama",
+      "category": "viral",
+      "url": "https://www.bollywoodhungama.com/rss/features.xml"
+    },
+    {
+      "name": "Times of India",
+      "category": "news",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"
+    },
+    {
+      "name": "NDTV",
+      "category": "news",
+      "url": "https://feeds.feedburner.com/ndtvnews-latest"
+    },
+    {
+      "name": "The Hindu",
+      "category": "news",
+      "url": "https://www.thehindu.com/news/national/feeder/default.rss"
+    },
+    {
+      "name": "Mint",
+      "category": "news",
+      "url": "https://www.livemint.com/rss/news"
+    },
+    {
+      "name": "Business Standard",
+      "category": "news",
+      "url": "https://www.business-standard.com/rss/home_page_top_stories.rss"
+    },
+    {
+      "name": "Scroll",
+      "category": "news",
+      "url": "https://feeds.feedburner.com/ScrollinArticles.rss"
+    },
+    {
+      "name": "Deccan Herald",
+      "category": "news",
+      "url": "https://www.deccanherald.com/feed"
+    },
+    {
+      "name": "DNA India",
+      "category": "news",
+      "url": "https://www.dnaindia.com/feeds/india.xml"
+    },
+    {
+      "name": "ESPNcricinfo",
+      "category": "cricket",
+      "url": "https://www.espncricinfo.com/rss/content/story/feeds/0.xml"
+    },
+    {
+      "name": "Sportstar",
+      "category": "cricket",
+      "url": "https://sportstar.thehindu.com/feeder/default.rss"
+    },
+    {
+      "name": "Mint",
+      "category": "tech",
+      "url": "https://www.livemint.com/rss/technology"
+    },
+    {
+      "name": "NDTV Gadgets",
+      "category": "tech",
+      "url": "https://feeds.feedburner.com/gadgets360-latest"
+    },
+    {
+      "name": "ET Now",
+      "category": "tech",
+      "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"
+    },
+    {
+      "name": "BBC",
+      "category": "world",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml"
+    },
+    {
+      "name": "Al Jazeera",
+      "category": "world",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml"
+    },
+    {
+      "name": "TechCrunch",
+      "category": "tech",
+      "url": "https://techcrunch.com/feed/"
     }
   ],
   "competitors": [
