@@ -2413,6 +2413,12 @@ def drop_routine(stories: list, keep: int = 6) -> list:
     return rest if len(rest) >= keep else stories
 
 
+MEGA_NOTE = ("\n\n🌋 MEGA STORY (owner 17 Nov 2026): the whole country is talking about this story today, so it is the Reel. Write it with the page's usual rules: real facts from the story only, allegations "
+             "as 'kathit', no invented quotes. TONE BY TOPIC: politics = the right-wing lens (call out controversial words or acts in the hook and question, never neutral; BJP / NDA shown fairly); a death = a "
+             "respectful tribute, no jokes, no shock; a crime or arrest = facts only, 'kathit', no private person's name, no graphic detail; cricket / sport = proud or curious, a side-taking question. Never hate "
+             "against a community and no call to violence. Use the story's most discussed angle in the hook (a personal moment, a surprise, a clash).")
+
+
 FRESH_HOURS = 4   # owner 10 Nov 2026 ('we post late compared with other pages'): news / breaking pickers see stories of the last 4 h when 6+ exist (was 8 h)
 
 
@@ -2447,6 +2453,11 @@ def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
     if hot:
         print(f"  🔥 hot right now: " + " | ".join(h["title"][:60] for h in hot))
     links = {h["link"] for h in hot}
+    mega = [h for h in hot if h.get("mega")]
+    if mega:   # 🌋 a story the whole country talks about (owner 17 Nov 2026): it IS the Reel, whatever the slot's usual filters
+        print(f"  🌋 MEGA story: {mega[0]['title'][:80]}")
+        TAGS["mega"] = 1
+        return mega[:1]
     return hot + [x for x in stories if x["link"] not in links]
 
 
@@ -2489,6 +2500,8 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)   # what the picker saw (owner 10 Nov 2026)
+    if TAGS.get("mega"):
+        intro = MEGA_NOTE.strip() + "\n\n"
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"
     searches = "\n".join(f"- {t}" for t in fun.google_trends()) or "(unavailable)"
     songs = trending_songs(state)
@@ -2707,7 +2720,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     songs = trending_songs(state)
     options = fun.claude_json(NEWS_SYSTEM.format(page=CONFIG["page_name"]) + BREAK_EXTRA + FACE_RULE,
                               f"{fun.today_context()}\n\nTrending on X today (hours):\n{trends}\n\nStories:\n{listing}"
-                              f"{viral_memory()}{recent_news(state, today)[1]}{FRESH_NOTE}\n\nGive your top 3 picks, the most "
+                              f"{viral_memory()}{recent_news(state, today)[1]}{FRESH_NOTE}{MEGA_NOTE if TAGS.get('mega') else ''}\n\nGive your top 3 picks, the most "
                               "breaking first." + songs_prompt(songs),
                               options_schema(BREAK_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="breaking pick")["options"]

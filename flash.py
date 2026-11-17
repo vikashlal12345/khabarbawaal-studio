@@ -245,6 +245,71 @@ def detect_big_politics(state: dict, now_ist: datetime, cands: list[dict], trend
     return {"title": best[1]["title"], "link": best[1]["link"], "source": best[1]["source"], "sites": best[0]}
 
 
+# ---- 🌋 MEGA STORY door (owner 17 Nov 2026: 'Sonia Gandhi's book launch / Dhoni's IPL retirement: very big stories must not be missed') ----
+GRAPHIC = re.compile(r"(?i)\b(rape|raped|gang[- ]?rape|molest\w*|sexual(ly)? (assault|abuse)|child abuse|minor girl|POCSO|beheaded|dismember\w*|mutilat\w*|suicide|self[- ]harm|massacre|"
+                     r"terror(ist)? attack|bomb blast)\b")
+GOVT = re.compile(r"(?i)\b(bjp|nda|modi|amit shah|yogi|nadda|rajnath|union minister|centre|pmo)\b")
+MEGA_SITES = 10      # different sites in 6 h (owner 17 Nov 2026)
+MEGA_SITES_TREND = 5  # when 2+ of the story's words also trend on X / Google India
+MEGA_SITES_NAME = 7   # when 1 word (a name, e.g. 'dhoni') trends: 17 Nov 2026 the Dhoni IPL-retirement story had 9 sites
+
+
+def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list, gtrends: list | None = None, hours: int = 6) -> dict | None:
+    """🌋 A story of ANY topic (politics, cricket, a star, an event) that 10+ different sites ran in the last 6 h (5+ when its words also trend on X or Google India): 'the talk of today'.
+    Not limited to once a day. Never: religious conflict, graphic violence / sexual crime / suicide, a story that embarrasses the BJP / government, a greeting, a story our Reels
+    already told in the last 24 h. Deaths and crimes are allowed (the writer is told to keep a respectful, facts-only tone). The picker makes it the Reel when it exists."""
+    import reel
+    import create_post
+    trend_words = set()
+    for t, _ in trends[:80]:
+        trend_words |= sig_words(t)
+    for t in gtrends or []:
+        trend_words |= sig_words(t)
+    cutoff = time.time() - hours * 3600
+    pool = [c for c in cands if c.get("ts", 0) >= cutoff and not SENSITIVE.search(c["title"]) and not GRAPHIC.search(c["title"]) and not ROUTINE.search(c["title"])
+            and not (GOVT.search(c["title"]) and BAD_NEWS.search(c["title"]))]
+    # cheap first pass: stories that several of our own feeds already share words with
+    sw = {id(c): sig_words(c["title"]) for c in pool}
+    def feeds(c):
+        w = sw[id(c)]
+        return len({o["source"] for o in pool if len(w) >= 3 and len(w & sw[id(o)]) >= max(3, int(0.5 * len(w)))})
+    pool.sort(key=lambda c: (-feeds(c), -c.get("ts", 0)))
+    now = datetime.now(timezone.utc)
+    best, seen_words = None, []
+    for c in pool[:12]:
+        words = sw[id(c)]
+        if len(words) < 3 or any(len(words & x) >= max(3, int(0.6 * len(words))) for x in seen_words):
+            continue
+        seen_words.append(words)
+        if len(seen_words) > 5 or reel.covered_before(c["title"], 24) or reel.told_in_days(c["title"], 3):
+            continue
+        sites, arts = {c["source"]}, [c]
+        query = " ".join(sorted(words, key=lambda w: -len(w))[:6])
+        for a in create_post.bing_articles(query, limit=20, newest=True):
+            d = bing_dt(a)
+            if d is None or (now - d).total_seconds() > hours * 3600:
+                continue
+            tw = sig_words(a["title"])
+            if len(tw & words) >= max(3, int(0.4 * len(words))) and not SENSITIVE.search(a["title"]):
+                sites.add(a["site"])
+        nt = len(words & trend_words)
+        if nt >= 1:   # the story is worded differently on every site: also count the sites that run the TREND's own words (e.g. 'Sonia Gandhi' for 'Rahul ... at Sonia Gandhi's book launch')
+            tl = [t for t, _ in trends[:80]] + list(gtrends or [])
+            tw_best = next((sig_words(t.lstrip("#")) for t in tl if sig_words(t.lstrip("#")) and sig_words(t.lstrip("#")) <= words | {w for x in sw.values() for w in x} and sig_words(t.lstrip("#")) & words), None)
+            if tw_best:
+                for a in create_post.bing_articles(" ".join(sorted(tw_best)), limit=25, newest=True):
+                    d = bing_dt(a)
+                    if d is not None and (now - d).total_seconds() <= hours * 3600 and tw_best <= sig_words(a["title"]) and not SENSITIVE.search(a["title"]):
+                        sites.add(a["site"])
+        need = MEGA_SITES_TREND if nt >= 2 else MEGA_SITES_NAME if nt == 1 else MEGA_SITES
+        print(f"  mega check: {c['title'][:60]}: {len(sites)} sites in {hours} h (need {need}, {nt} trend words)")
+        if len(sites) >= need and (not best or len(sites) > best[0]):
+            best = (len(sites), c)
+    if not best:
+        return print("  mega story: nothing huge right now") or None
+    return {"title": best[1]["title"], "link": best[1]["link"], "source": best[1]["source"], "sites": best[0], "category": best[1].get("category", "")}
+
+
 def hot_now(state: dict, cands: list[dict]) -> list[dict]:
     """🔥 What is hot RIGHT NOW, computed at creation time by the picker itself (owner, 1 Nov 2026: 'do not pin a story so early; check the story
     at creation time only, so we always have the latest trending one'): a star / series story that 6+ sites run in the last 4 h (the Flash check),
@@ -260,6 +325,13 @@ def hot_now(state: dict, cands: list[dict]) -> list[dict]:
                         "image": "", "ts": time.time(), "hot": f"{fl['name']}: many sites right now"})
     except Exception as e:
         print(f"  ! hot check failed: {type(e).__name__}: {str(e)[:100]}")
+    try:
+        mg = detect_mega(state, now_ist, cands, fun.x_trends() or [], fun.google_trends() or [])
+        if mg:
+            out.insert(0, {"id": "", "source": mg["source"], "category": mg["category"] or "viral", "title": mg["title"], "summary": "", "link": mg["link"],
+                           "image": "", "ts": time.time(), "hot": f"MEGA: {mg['sites']} sites run it", "mega": True})
+    except Exception as e:
+        print(f"  ! mega check failed: {type(e).__name__}: {str(e)[:100]}")
     try:
         bp = detect_big_politics(state, now_ist, cands, fun.x_trends() or [])
         if bp:
