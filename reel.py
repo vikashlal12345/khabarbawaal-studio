@@ -3570,11 +3570,18 @@ def hook_meaning_ok(hook: str, title: str, facts: str) -> bool:
     return ok
 
 
+HOOK_TEST = {"reel_news_early", "reel_news_aft"}   # 8 AM and 6 PM Reels test a curiosity-gap hook (owner 17 Nov 2026); tag `hook_test` = 1 for comparison
+HOOK_TEST_NOTE = ("\n\nHOOK TEST (17 Nov 2026: Reels watched 7.9 s on average passed, those watched 5.2 s stalled): for THIS Reel the hook you choose as best must open a CURIOSITY GAP or a direct question "
+                  "in 4-8 words: the viewer must need the answer (who? why? what did X say?), the star's name first, never a plain statement of the news and never a lie: the answer must really be in the story.")
+
+
 def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_text: str = "") -> str:
     """🪝 Hook contest (owner, 19 Oct 2026): the AI writes 5 hooks from the full story and picks the strongest, using
     the pattern of the owner's best posts: the biggest name first, then the shock or twist, a fact from the story
     (no invented details, no clickbait lies). Falls back to the current hook."""
     import fun
+    if SERIES_KIND in HOOK_TEST:
+        TAGS["hook_test"] = 1
     try:
         res = fun.claude_json(
             "You write the opening line of a short Instagram news Reel for young Indians (Hinglish, English letters, no "
@@ -3592,7 +3599,7 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "story: the feeling word is the opinion, the moment is the fact. " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
                                     "not on the card." if card_text else ""),
             f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\n" + (f"THE CARD (the hook must match it):\n{card_text}\n\n"
-                                                                       if card_text else "") + f"Current hook: {current}{viral_memory()}",
+                                                                       if card_text else "") + f"Current hook: {current}{viral_memory()}{HOOK_TEST_NOTE if SERIES_KIND in HOOK_TEST else ''}",
             HOOKS_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="hook contest")
         hooks = [h.strip() for h in res["hooks"] if h.strip()]
         order = ([hooks[res["best"]]] if 0 <= res["best"] < len(hooks) else []) + [h for k, h in enumerate(hooks) if k != res["best"]]
