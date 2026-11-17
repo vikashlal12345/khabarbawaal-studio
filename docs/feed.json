@@ -1,5 +1,57 @@
 [
  {
+  "id": "reel_break_am-2026-11-17",
+  "image": "posts/20261117-0435-reel_break_am-2026-11-17.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261117-043519-reel_break_am-2026-11-17.mp4",
+  "headline": "Avengers: Doomsday creates HISTORY; emerges as the FIRST film to open midnight show bookings ONE MONTH before release; shows already filling FAST",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Avengers Doomsday midnight show booking ek mahina pehle shuru\nFilm 17 December ko India mein release hogi\nMumbai, Delhi-NCR, Kolkata jaise shehron mein 12 baje ke baad ke shows ki booking khuli hai, aur kai shows already bhar rahe hain\nDune Part Three ko IMAX mila, Avengers ko nahi 🎬🔥\nAvengers Doomsday India mein sabse bada opener banegi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#avengersdoomsday #marvel #bollywoodnews #advancebooking #reelsindia\n\n(Avengers Doomsday, Avengers Doomsday midnight show, Avengers Doomsday advance booking, Avengers Doomsday India release, Marvel film December 2026, Dune Part Three, Robert Downey Jr Doctor Doom, King Shah Rukh Khan)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/avengers-doomsday-creates-history-emerges-as-the-first-film-to-open-midnight-show-bookings-one-month-before-release-shows-already-filling-fast/",
+  "pin_comment": "Apne Marvel fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tabaahi (From \"Toxic\")",
+    "artist": "Raj Shekhar, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "hype = record bookings"
+   },
+   {
+    "title": "One Name",
+    "artist": "Anirudh Ravichander & Super Subu",
+    "lang": "hindi",
+    "mood": "mass entry energy"
+   },
+   {
+    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Junaid Wasi",
+    "lang": "new",
+    "mood": "light fun watch-plan vibe"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "upbeat fan excitement"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says bookings opened in these cities and several screenings are filling up; it does not say the shows in each of these cities are filling up.",
+    "Fact corrected to match the article: Article doesn't say the 12:05/3:05 shows specifically are filling up; it says bookings are open for those times and several screenings are filling up.",
+    "Slide 2: The poster image is cropped at the bottom, so the word 'DOOMSDAY' under 'AVENGERS' is cut off. It is minor, and the poster is still relevant."
+   ],
+   "fixed": [
+    "Mumbai, Delhi-NCR, Kolkata mein 12 baje ke baad ke shows already bhar rahe hain → Mumbai, Delhi-NCR, Kolkata jaise shehron mein 12 baje ke baad ke shows ki booking khuli hai, aur kai shows already bhar rahe hain",
+    "12:05 am aur 3:05 am ke kai shows tezi se bhar rahe → 12:05 am aur 3:05 am jaise shows ki booking khuli, kai shows tezi se bhar rahe"
+   ]
+  },
+  "created_at": "2026-11-17T04:35:19+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-17",
   "image": "posts/20261117-0234-reel_news_early-2026-11-17.jpg",
   "kind": "reel",
@@ -388,56 +440,5 @@
    ]
   },
   "created_at": "2026-11-16T06:34:52+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-16",
-  "image": "posts/20261116-0434-reel_break_am-2026-11-16.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261116-043434-reel_break_am-2026-11-16.mp4",
-  "headline": "Supriya Pathak reveals Pankaj Kapur threatened to walk out if their wedding lasted over an hour, kept checking time",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Supriya Pathak Pankaj Kapur wedding deadline, The Great Indian Kapil Show\nKapil Sharma ne shaadi ki photo mein Pankaj ko \"angry\" bataya.\nSupriya ke mutabik Pankaj ne kaha tha ki ek ghante mein shaadi nahi hui toh walk out kar jayenge.\nWoh har kuch minute mein time dekhte rahe.\nApne Pankaj Kapur jaise time-strict dost ko bhejo 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #supriyapathak #pankajkapur #kapilsharma #bollywood\n\n(Supriya Pathak, Pankaj Kapur, The Great Indian Kapil Show, Kapil Sharma, Yeh Prem Mol Liya, Sooraj Barjatya, Ayushmann Khurrana, Pankaj Kapur Supriya Pathak wedding)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/supriya-pathak-reveals-pankaj-kapur-threatened-to-walk-out-if-their-wedding-lasted-over-an-hour-kept-checking-time-101794799773158.html",
-  "pin_comment": "Apne Supriya-Pankaj fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil & Armaan Khan",
-    "lang": "hindi",
-    "mood": "romantic couple story"
-   },
-   {
-    "title": "Pal Pal",
-    "artist": "Afusic, AliSoomroMusic",
-    "lang": "hindi",
-    "mood": "time ticking, pal pal"
-   },
-   {
-    "title": "Yeh Prem Mol Liya Title Track (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Kumaar",
-    "lang": "new",
-    "mood": "same show's film title track"
-   },
-   {
-    "title": "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Manoj Muntashir",
-    "lang": "new",
-    "mood": "family warmth from the film"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Yeh Supriya ka bayan hai, isliye attribute karna zaroori hai",
-    "Fact corrected to match the article: Yeh Supriya ka bayan hai, fact ki tarah nahi likhna chahiye"
-   ],
-   "fixed": [
-    "Pankaj ne kaha: ek ghante mein shaadi nahi, toh walk out → Supriya ke mutabik Pankaj ne kaha: ek ghante mein shaadi nahi, toh walk out",
-    "Pankaj har kuch minute mein time check karte rahe → Supriya ke mutabik Pankaj har kuch minute mein time check karte rahe"
-   ]
-  },
-  "created_at": "2026-11-16T04:34:34+00:00"
  }
 ]

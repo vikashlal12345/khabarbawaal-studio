@@ -1949,5 +1949,30 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-17",
+  "key": "avengersdoomsdaymidnightshowbookingekmahinapehleshuru",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-17T04:35:19+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) John Abraham makes a STRONG appeal to tourists visiting",
+   "(under 1 h ago) Avengers: Doomsday creates HISTORY; emerges as the FIRS",
+   "(1 h ago) Over 230 films to be screened at IFFI 2026 in Goa; Dhur",
+   "(3 h ago) Sunny Deol’s Suryaa: Ant Se Aarambh Tak postponed to 20"
+  ],
+  "n_stories": 4,
+  "strength": 4,
+  "pick_no": 2,
+  "age_h": -2.0,
+  "cover": "full",
+  "photos": 2,
+  "sharp": 49,
+  "topic": "promo",
+  "kw": 8,
+  "relate": "predict",
+  "hook": "name_first"
  }
 ]

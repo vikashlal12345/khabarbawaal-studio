@@ -338,7 +338,8 @@
   "9ecc5d882d20",
   "908f87d02a77",
   "2f70b21d3666",
-  "94e44e02d612"
+  "94e44e02d612",
+  "136274aa95d1"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -487,14 +488,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-17",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-14",
+  "reel_break_am": "2026-11-17",
   "reel_break_noon": "2026-11-13",
   "reel_break_aft": "2026-11-13",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-16"
  },
- "inbox_since": "sqyf2Rhcgx9M",
+ "inbox_since": "g5XXKcKyt3bO",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -867,7 +868,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-denies-that-indian-government-pressured-him-to-change-maatrubhumi-script-says-film-has-nothing-against-china-101793965433360.html",
   "https://www.bollywoodhungama.com/news/bollywood/shehzad-poonawalla-wins-rise-pledges-to-donate-it-to-flood-relief/",
   "https://www.hindustantimes.com/entertainment/bollywood/vidyut-jammwal-says-tiger-shroff-is-stressed-after-firing-incident-reveals-actor-is-trying-his-best-to-move-on-101793972209969.html",
   "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
@@ -946,7 +946,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-and-sai-pallavi-pose-with-fans-yash-arrives-with-wife-radhika-pandit-at-ramayana-world-premiere-in-los-angeles-nitesh-tiwari-101793155886188.html",
   "https://www.hindustantimes.com/entertainment/bollywood/yash-takes-pride-in-kannada-roots-at-ramayanas-los-angeles-premiere-namit-malhotra-says-film-wouldnt-have-happened-without-him-101793163003295.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shah-rukh-khan-to-appear-on-the-finale-episode-of-koffee-with-karan-9-with-karan-johars-children-yash-and-roohi-heres-what-we-know/articleshow/135888335.cms",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/priyanka-chopra-once-hid-abhishek-bachchans-phone-and-sent-an-i-miss-you-text-to-an-actress-who-replied-what-is-wrong-with-you-to-him/articleshow/135899923.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/priyanka-chopra-once-hid-abhishek-bachchans-phone-and-sent-an-i-miss-you-text-to-an-actress-who-replied-what-is-wrong-with-you-to-him/articleshow/135899923.cms",
+  "https://www.bollywoodhungama.com/news/bollywood/avengers-doomsday-creates-history-emerges-as-the-first-film-to-open-midnight-show-bookings-one-month-before-release-shows-already-filling-fast/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1163,10 +1164,6 @@
   }
  ],
  "songs_recent": [
-  "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
-  "Mere Rehte (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Aarti Laxmi Ji Ki",
   "Om Jai Lakshmi Mata - Alka Yagnik",
   "Mahalakshmi Ashtakam",
   "Laxmi Ji Ki Aarti",
@@ -1202,7 +1199,11 @@
   "Peek A Boo",
   "Shararat",
   "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-  "Betuka (From \"Nakhrewaalii\")"
+  "Betuka (From \"Nakhrewaalii\")",
+  "Tabaahi (From \"Toxic\")",
+  "One Name",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1292,6 +1293,10 @@
   },
   {
    "title": "Priyanka once hid Abhishek's phone and sent 'I miss you' text to an actress",
+   "date": "2026-11-17"
+  },
+  {
+   "title": "Avengers: Doomsday creates HISTORY; emerges as the FIRST film to open midnight show bookings ONE MONTH before release; shows already filling FAST",
    "date": "2026-11-17"
   }
  ],
