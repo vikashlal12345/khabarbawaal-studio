@@ -254,6 +254,7 @@ ENT_SKIP = set("india indian today news live update updates latest breaking worl
 MEGA_SITES = 10      # different sites in 6 h (owner 17 Nov 2026)
 MEGA_SITES_TREND = 5  # when 2+ of the story's words also trend on X / Google India
 MEGA_SITES_ENT = 8    # a name shared by 4+ sites' headlines (entity pass)
+MEGA_SITES_OTHER = 9   # non-Bollywood topics (cricket, politics, business...): never below 9 sites, even when trending
 MEGA_SITES_NAME = 7   # when 1 word (a name, e.g. 'dhoni') trends: 17 Nov 2026 the Dhoni IPL-retirement story had 9 sites
 
 
@@ -359,6 +360,11 @@ def annotate_sites(stories: list, top: int = 30, hours: int = 6) -> None:
         print(f"  ! site count skipped: {str(e)[:80]}")
 
 
+def emergency_stars(c: dict) -> bool:
+    import emergency
+    return c.get("category") == "entertainment" or bool(emergency.STARS.search(c["title"]))
+
+
 def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list, gtrends: list | None = None, hours: int = 6) -> dict | None:
     """🌋 A story of ANY topic (politics, cricket, a star, an event) that 10+ different sites ran in the last 6 h (5+ when its words also trend on X or Google India): 'the talk of today'.
     Not limited to once a day. Never: religious conflict, a story that embarrasses the BJP / government, a greeting, a story our Reels
@@ -414,6 +420,9 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
                     if d is not None and (now - d).total_seconds() <= hours * 3600 and tw_best <= sig_words(a["title"]) and not SENSITIVE.search(a["title"]):
                         sites.add(a["site"])
         need = MEGA_SITES_TREND if nt >= 2 else MEGA_SITES_NAME if nt == 1 else MEGA_SITES
+        import emergency
+        if not (c.get("category") == "entertainment" or emergency.STARS.search(c["title"])):
+            need = max(need, MEGA_SITES_OTHER)   # owner 17 Nov 2026: Bollywood first; any other topic only when it is REALLY big
         print(f"  mega check: {c['title'][:60]}: {len(sites)} sites in {hours} h (need {need}, {nt} trend words)")
         if len(sites) >= need and (not best or len(sites) > best[0]):
             best = (len(sites), c)
@@ -443,7 +452,7 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
             if ent in tw and len(tw & words) >= 2:
                 sites.add(a["site"])
         print(f"  mega entity check: {ent}: {len(sites)} sites in {hours} h (need {MEGA_SITES_ENT})")
-        if len(sites) >= MEGA_SITES_ENT and not (GOVT.search(rep["title"]) and BAD_NEWS.search(rep["title"])) and (not best or len(sites) > best[0]):
+        if len(sites) >= (MEGA_SITES_ENT if emergency_stars(rep) else MEGA_SITES_OTHER) and not (GOVT.search(rep["title"]) and BAD_NEWS.search(rep["title"])) and (not best or len(sites) > best[0]):
             best = (len(sites), rep)
     if not best:
         return print("  mega story: nothing huge right now") or None
