@@ -2067,5 +2067,39 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-17",
+  "key": "ranveersinghdhurandhargrammy2027nomination",
+  "kind": "reel_news_aft",
+  "secs": 19.0,
+  "at": "2026-11-17T12:35:03+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Shraddha Kapoor gives a glimpse of Vithabai's extraordi",
+   "(under 1 h ago) Zeenat Aman spotted on sets of Pitch To Get Rich Season",
+   "(under 1 h ago) T-Series and Hungama join hands to launch FastTV with R",
+   "(under 1 h ago) Chhaya Kadam wins Special Award at BRICS+ International",
+   "(under 1 h ago) 'Ramayana' effect: Kolkata's SVF Cinemas to serve ONLY ",
+   "(under 1 h ago) Sunny Deol's 'Suryaa' release deferred as makers await ",
+   "(under 1 h ago) First Tamil song at Grammys: Devan Ekambaram and Susha ",
+   "(1 h ago) Sharad Kapoor alleges people filmed donation videos and",
+   "(2 h ago) Lara Dutta defends Kaikeyi’s actions in Ramayana, says ",
+   "(2 h ago) Ranveer Singh's 'Dhurandhar' misses 'Grammy' recognitio"
+  ],
+  "n_stories": 10,
+  "strength": 4,
+  "pick_no": 10,
+  "age_h": 2.2,
+  "topic": "other",
+  "kw": 7,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 52,
+  "hook_rule": "detail1",
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

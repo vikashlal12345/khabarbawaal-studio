@@ -341,7 +341,8 @@
   "94e44e02d612",
   "136274aa95d1",
   "d4580234a35f",
-  "9a29c664d2e9"
+  "9a29c664d2e9",
+  "4e39315da68c"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -485,7 +486,7 @@
   "reel_news_am": "2026-11-17",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-13",
+  "reel_news_aft": "2026-11-17",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-17",
@@ -497,7 +498,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-16"
  },
- "inbox_since": "7A5QlCiRQSz7",
+ "inbox_since": "QNVhlnj5ngaU",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -870,7 +871,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html",
   "https://www.bollywoodhungama.com/news/bollywood/priyanka-chopra-jonas-announces-ventilator-2-reunites-with-director-rajesh-mapuskar-film-set-for-2027-release/",
@@ -949,7 +949,8 @@
   "https://www.bollywoodhungama.com/news/bollywood/avengers-doomsday-creates-history-emerges-as-the-first-film-to-open-midnight-show-bookings-one-month-before-release-shows-already-filling-fast/",
   "https://www.bollywoodhungama.com/news/bollywood/ananya-panday-addresses-debate-on-nepotism-says-i-am-very-proud-to-be-my-fathers-daughter/",
   "https://www.hindustantimes.com/entertainment/bollywood/bollywood-turns-up-at-guruji-mahasatsang-bhumi-pednekar-neil-nitin-mukesh-attend-chahatt-khanna-breaks-into-tears-during-aarti-101794891442335.html",
-  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kareena-kapoor-hrithik-roshan-reunite-after-23-years-video-shared-by-karan-johar-sparks-excitement-but-heres-the-truth/articleshow/135918592.cms"
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kareena-kapoor-hrithik-roshan-reunite-after-23-years-video-shared-by-karan-johar-sparks-excitement-but-heres-the-truth/articleshow/135918592.cms",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singhs-dhurandhar-misses-grammy-recognition-despite-eight-entires-including-phir-se-jaan-se-guzarte-hai-raye-leads-this-years-nominations/articleshow/135920917.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1166,10 +1167,6 @@
   }
  ],
  "songs_recent": [
-  "Shri Krishna Govind Hare Murari (From \"Shri Krishna Govind Hare Murari\")",
-  "Naal Nachna",
-  "Aa To Sahii",
-  "Tu Hain Toh Main Hoon",
   "Khairiyat",
   "Tu Meri Main Tera Main Tera Tu Meri - Title Track (From \"Tu Meri Main Tera Main Tera Tu Meri\")",
   "Tu Hi Disda (From \"Bhooth Bangla\")",
@@ -1205,7 +1202,11 @@
   "Pal Pal Dil Ke Paas - Title Track",
   "Heeriye (feat. Arijit Singh)",
   "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-  "Tu Mil Jaaye (From \"KING\")"
+  "Tu Mil Jaaye (From \"KING\")",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Azadi",
+  "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1311,6 +1312,10 @@
   },
   {
    "title": "Kareena Kapoor, Hrithik Roshan reunite after 23 years? Video shared by Karan Johar sparks excitement, but here's the truth!",
+   "date": "2026-11-17"
+  },
+  {
+   "title": "Ranveer Singh's 'Dhurandhar' misses 'Grammy' recognition despite eight entires",
    "date": "2026-11-17"
   }
  ],
