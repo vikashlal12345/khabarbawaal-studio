@@ -74,6 +74,46 @@
       "name": "Hindustan Times",
       "category": "tech",
       "url": "https://www.hindustantimes.com/feeds/rss/technology/rssfeed.xml"
+    },
+    {
+      "name": "Pinkvilla",
+      "category": "entertainment",
+      "url": "https://www.pinkvilla.com/rss.xml"
+    },
+    {
+      "name": "Indian Express",
+      "category": "entertainment",
+      "url": "https://indianexpress.com/section/entertainment/feed/"
+    },
+    {
+      "name": "News18",
+      "category": "entertainment",
+      "url": "https://www.news18.com/commonfeeds/v1/eng/rss/movies.xml"
+    },
+    {
+      "name": "ABP Live",
+      "category": "entertainment",
+      "url": "https://news.abplive.com/entertainment/feed"
+    },
+    {
+      "name": "India Today",
+      "category": "viral",
+      "url": "https://www.indiatoday.in/rss/home"
+    },
+    {
+      "name": "Hindustan Times",
+      "category": "cricket",
+      "url": "https://www.hindustantimes.com/feeds/rss/cricket/rssfeed.xml"
+    },
+    {
+      "name": "The Economic Times",
+      "category": "tech",
+      "url": "https://economictimes.indiatimes.com/rssfeedstopstories.cms"
+    },
+    {
+      "name": "Hindustan Times",
+      "category": "world",
+      "url": "https://www.hindustantimes.com/feeds/rss/world-news/rssfeed.xml"
     }
   ],
   "competitors": [

@@ -2454,15 +2454,38 @@ def site_tag(s: dict) -> str:
     return f"(🌐{s['sites']} sites) " if s.get("sites", 0) >= 2 else ""
 
 
-def rank_by_sites(stories: list) -> None:
-    """Owner 17 Nov 2026 ('the 12-sites approach for all Reels: the latest, trending news and gossip'): counts the sites that run each of the first 30 stories (Bing News, last 6 h, no AI)
-    and puts the most widely run ones first (in place, stable). Any failure leaves the list as it was."""
+TREND_BAR = (6, 5, 4, 3)   # owner 17 Nov 2026: 'the story pick must be trending, no compromise': a story is eligible only if this many different sites ran it (or its words trend on X / Google)
+
+
+def rank_by_sites(stories: list, hours: int = 6) -> None:
+    """STRICT trending rule (owner 17 Nov 2026): counts the sites that ran each of the first 40 stories in the last `hours` (Bing News, no AI). Only stories run by 6+ sites, or whose
+    words trend on X / Google India (2+ words), stay in the picker's list, most widely run first (max 15). If fewer than 3 qualify the bar steps down 6 -> 5 -> 4 -> 3 sites, never
+    lower (the bar used is in TAGS['bar']). In place; any failure leaves the list as it was."""
     try:
         import flash
-        flash.annotate_sites(stories, 30, 6)
-        stories.sort(key=lambda s: -min(s.get("sites", 1), 15))
-        top = [f"{s.get('sites', 1)}:{s['title'][:30]}" for s in stories[:4]]
-        print("  sites: " + " | ".join(top))
+        import fun
+        flash.annotate_sites(stories, 40, hours)
+        tw = set()
+        for t, _ in (fun.x_trends() or [])[:80]:
+            tw |= flash.sig_words(t.lstrip("#"))
+        for t in fun.google_trends() or []:
+            tw |= flash.sig_words(t.lstrip("#"))
+
+        def trending(s):
+            return len(flash.sig_words(s["title"]) & tw) >= 2
+        for bar in TREND_BAR:
+            ok = [s for s in stories if s.get("sites", 1) >= bar or trending(s)]
+            if len(ok) >= 3:
+                break
+        else:
+            bar, ok = 0, list(stories)
+        for s in ok:
+            if trending(s) and s.get("sites", 1) < bar:
+                s["sites"] = max(s.get("sites", 1), bar)   # shown as run by the bar's sites: it trends on X / Google
+        ok.sort(key=lambda s: -min(s.get("sites", 1), 15))
+        stories[:] = ok[:15]
+        TAGS["bar"] = bar
+        print(f"  trending bar {bar}+ sites: {len(ok)} stories qualify | " + " | ".join(f"{s.get('sites', 1)}:{s['title'][:28]}" for s in stories[:4]))
     except Exception as e:
         print(f"  ! site ranking skipped: {str(e)[:80]}")
 
@@ -2515,7 +2538,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             if len(only) >= 2:
                 stories = only
         stories = fresh_only(stories, 14 if kind == "reel_news_early" else FRESH_HOURS)   # 8 AM (5 of 6 Reels stalled, 16 Nov 2026): the overnight pool is thin, so the day's strongest unused story of the last 14 h competes
-        rank_by_sites(stories)
+        rank_by_sites(stories, 14 if kind == "reel_news_early" else 6)
         if not REMAKE.get("link"):
             stories = add_hot(stories, raw, state, used)
         intro = ""
