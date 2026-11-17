@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_am-2026-11-17",
+  "image": "posts/20261117-0635-reel_news_am-2026-11-17.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261117-063546-reel_news_am-2026-11-17.mp4",
+  "headline": "Ananya Panday addresses debate on nepotism; says, “I am very proud to be my father’s daughter”",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Ananya Panday nepotism debate Chunky Panday 🎬\nAnanya ne nepotism debate par saaf kaha: \"I am very proud to be my father's daughter.\"\nHindustan Times se baat karte hue unhone Gen Z ko \"badnaam for no reason\" bataya aur apne privilege ko khule dil se maana.\nAnanya ka jawab sahi tha? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#AnanyaPanday #Bollywood #Nepotism #ChunkyPanday #reelsindia\n\n(Ananya Panday, Ananya Panday nepotism, Chunky Panday, Ananya Panday interview, nepotism debate Bollywood, Gen Z badnaam, Hindustan Times interview, Ananya Panday father)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ananya-panday-addresses-debate-on-nepotism-says-i-am-very-proud-to-be-my-fathers-daughter/",
+  "pin_comment": "Ye Ananya Panday ke fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "confident, proud swagger"
+   },
+   {
+    "title": "Arz Kiya Hai | Coke Studio Bharat",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "soft, honest reply vibe"
+   },
+   {
+    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
+    "artist": "Junaid Kumar, Ganesh Acharya",
+    "lang": "new",
+    "mood": "hustle, own journey"
+   },
+   {
+    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "debate and drama"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-17T06:35:46+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-17",
   "image": "posts/20261117-0435-reel_break_am-2026-11-17.jpg",
   "kind": "reel",
@@ -389,56 +434,5 @@
    "fixed": []
   },
   "created_at": "2026-11-16T08:33:29+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-16",
-  "image": "posts/20261116-0634-reel_news_am-2026-11-16.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261116-063452-reel_news_am-2026-11-16.mp4",
-  "headline": "Apoorva Lakhia says Salman Khan filmed in freezing rain",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Salman Khan Maatrubhumi shoot -7°C rain 🔥\nDirector Apoorva Lakhia ke mutabik Salman ne -7°C aur barish mein shoot kiya; film ki shooting lagbhag 14,000 feet par hui.\nFilm: Maatrubhumi: May War Rest In Peace. Barish mein bina acclimatise hue scene kiya.\nSalman ki is mehnat ko 10 mein se kitne? Number likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#salmankhan #bollywood #maatrubhumi #bollywoodnews #reelsindia\n\n(Salman Khan, Maatrubhumi, May War Rest In Peace, Apoorva Lakhia, Salman Khan new film, Salman Khan shooting, Bollywood news)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/salman-khan-shot-in-7c-rain-without-acclimatising-for-maatrubhumi-may-war-rest-in-peace-recalls-director-apoorva-lakhia/articleshow/135871440.cms",
-  "pin_comment": "Apne Salman fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jai Hind (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Himesh Reshammiya, Sameer Anjaan",
-    "lang": "new",
-    "mood": "film ka gana, desh bhakti josh"
-   },
-   {
-    "title": "Teri Sexy Beauty (From \"Maatrubhumi: May War Rest in Peace\")",
-    "artist": "Sajid Khan",
-    "lang": "new",
-    "mood": "Salman film ka naya gana"
-   },
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "hype = Salman ka aura"
-   },
-   {
-    "title": "Azadi",
-    "artist": "Dub Sharma, DIVINE",
-    "lang": "hindi",
-    "mood": "josh wala beat"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says the 14,000 feet location was the film team's shoot altitude, not Lakhia's claim about Salman's scene, which was at -7°C in rain.",
-    "Fact corrected to match the article: Article says 'no extra oxygen', not no oxygen at all."
-   ],
-   "fixed": [
-    "Director Apoorva Lakhia ke mutabik Salman ne 14,000 feet par shoot kiya. → Director Apoorva Lakhia ke mutabik Salman ne -7°C aur barish mein shoot kiya; film ki shooting lagbhag 14,000 feet par hui.",
-    "Minus 7 degree baarish mein Salman ne bina oxygen 3 takes diye. → Minus 7 degree baarish mein Salman ne bina extra oxygen 3 takes diye."
-   ]
-  },
-  "created_at": "2026-11-16T06:34:52+00:00"
  }
 ]

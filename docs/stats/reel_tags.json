@@ -1974,5 +1974,35 @@
   "kw": 8,
   "relate": "predict",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-11-17",
+  "key": "ananyapandaynepotismdebatechunkypanday",
+  "kind": "reel_news_am",
+  "secs": 18.4,
+  "at": "2026-11-17T06:35:46+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Ranveer Singh’s Dhurandhar Soundtrack Fails to Secure N",
+   "(under 1 h ago) Ananya Panday addresses debate on nepotism; says, “I am",
+   "(under 1 h ago) John Abraham makes a STRONG appeal to tourists visiting",
+   "(under 1 h ago) Bollywood turns up at Guruji's Mahasatsang: Bhumi Pedne",
+   "(2 h ago) Ramayana worldwide box office collection day 12: Ranbir",
+   "(2 h ago) Ananya Panday addresses nepotism debate",
+   "(3 h ago) Over 230 films to be screened at IFFI 2026 in Goa; Dhur"
+  ],
+  "n_stories": 7,
+  "strength": 8,
+  "pick_no": 2,
+  "age_h": -2.4,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 36,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
