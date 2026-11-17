@@ -3570,9 +3570,13 @@ def hook_meaning_ok(hook: str, title: str, facts: str) -> bool:
     return ok
 
 
-HOOK_TEST = {"reel_news_early", "reel_news_aft"}   # 8 AM and 6 PM Reels test a curiosity-gap hook (owner 17 Nov 2026); tag `hook_test` = 1 for comparison
-HOOK_TEST_NOTE = ("\n\nHOOK TEST (17 Nov 2026: Reels watched 7.9 s on average passed, those watched 5.2 s stalled): for THIS Reel the hook you choose as best must open a CURIOSITY GAP or a direct question "
-                  "in 4-8 words: the viewer must need the answer (who? why? what did X say?), the star's name first, never a plain statement of the news and never a lie: the answer must really be in the story.")
+HOOK_TEST = set()   # 17 Nov 2026: replaced by HOOK_DETAIL (all news / breaking Reels); a first idea (force a question) was dropped: nearly every hook is already a question
+HOOK_DETAIL = ("\n\nHOOK STYLE FROM OUR BEST REELS (owner 17 Nov 2026; hooks of Reels at 7,000-19,000 views: 'Sharad Kapoor ke chaar kutte kyun door hue?', 'SRK: Gauri se shaadi tak apna ghar nahi tha', "
+               "'Amitabh ke Jalsa ki 1993 deed par kya vivaad?', 'Kiara ne Alia aur Katrina ke baare mein kya bataya?'; hooks of Reels under 300 views: 'Salman ne landing ke baad seedha kya kiya?', "
+               "'Harshvardhan ne gaadi ke baad kya maanga?', 'Farah Khan ne Faisu ke reception mein kya dekha?', 'Preetika Rao ne pati ka chehra kyun chhupaya?'). What the winners share: ONE concrete, striking "
+               "DETAIL from the story (a number, an object, a year, a hardship: 'chaar kutte', 'apna ghar nahi tha', '1993 deed') or two BIG stars named together, and a feeling (loss, struggle, family). The losers are vague "
+               "('kya kiya / kya dekha / kya maanga') with no detail and a small name. So: at least 3 of the 5 hooks must contain a concrete detail taken from the story, the biggest star's name first, and the hook you "
+               "choose as best must too. Never a lie or a guessed detail: the detail must be in the story.")
 
 
 def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_text: str = "") -> str:
@@ -3580,8 +3584,7 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
     the pattern of the owner's best posts: the biggest name first, then the shock or twist, a fact from the story
     (no invented details, no clickbait lies). Falls back to the current hook."""
     import fun
-    if SERIES_KIND in HOOK_TEST:
-        TAGS["hook_test"] = 1
+    TAGS["hook_rule"] = "detail1"   # tags from 17 Nov 2026 on: hook asked for a concrete detail (compare with Reels before that date)
     try:
         res = fun.claude_json(
             "You write the opening line of a short Instagram news Reel for young Indians (Hinglish, English letters, no "
@@ -3599,7 +3602,7 @@ def pick_hook(title: str, facts: str, current: str, tmp_note: str = "", card_tex
             "story: the feeling word is the opinion, the moment is the fact. " + tmp_note + (" The hook must be about the SAME person and fact as the card below: no name that is "
                                     "not on the card." if card_text else ""),
             f"Headline: {title}\n\nStory:\n{facts[:3500]}\n\n" + (f"THE CARD (the hook must match it):\n{card_text}\n\n"
-                                                                       if card_text else "") + f"Current hook: {current}{viral_memory()}{HOOK_TEST_NOTE if SERIES_KIND in HOOK_TEST else ''}",
+                                                                       if card_text else "") + f"Current hook: {current}{viral_memory()}{HOOK_DETAIL}",
             HOOKS_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="hook contest")
         hooks = [h.strip() for h in res["hooks"] if h.strip()]
         order = ([hooks[res["best"]]] if 0 <= res["best"] < len(hooks) else []) + [h for k, h in enumerate(hooks) if k != res["best"]]
