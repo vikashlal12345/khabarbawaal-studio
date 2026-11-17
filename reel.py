@@ -2195,6 +2195,9 @@ plain social-media post that every page already runs are LOW priority; take one 
 STAR GOSSIP AND FAMILY FIRST, 'OTHER' LAST (owner 4 Nov 2026, last 10 days: star gossip / rows / reveals avg 2,268 views, couple + family 1,436, 'other' stories (IAF chief, ISRO, court orders, civic notices, lists) 743 and stalled half the time; half of all Reels stalled): \
 rank a famous star's gossip, spat, reveal or family moment above everything else; a story with no famous face and no personal angle comes last. \
 NEVER pick a birthday / anniversary / festival greeting or a story already told today in other words.\
+BREAKOUT RULE (owner 17 Nov 2026, from the last 6 days: the Reels that broke out (7,000-19,000 views) were a BIG star's personal / family moment or a surprising real event; the weak ones were small-name gossip, \
+car / property gifts, Hollywood promos, booking numbers and a topic told again): rank a big star's personal moment, family dispute or bond, confession, or a surprising real injury first; a car / property / \
+luxury purchase, Hollywood news, ticket-booking numbers, small-name gossip and any topic told in the last 5 days (unless a big new development) rank LAST.
 PROMO RULE (owner, 30 Oct 2026: two Reels on the same Shraddha Kapoor trailer got ~300 views and ~70): trailer / teaser / poster / first-look / song-launch / \
 release-date announcements rank LOW (they are adverts, people do not forward them); take one only when it carries a personal or emotional angle of a big name, \
 and never a regional or niche film nobody outside its language has heard of.
@@ -2322,20 +2325,25 @@ def is_weak_crime(s: dict) -> bool:
 ANNOUNCE = re.compile(r"(?i)\b(confirms?|announces?|unveils?)\b.*(\bsequel\b|\bpart \d|\b\d\b|\bfirst look\b|\bteaser\b|\btrailer\b|\brelease date\b|\bseason\b|\bcast\b)|\b(roped in|first asset|first look|to feature in)\b")
 THROWBACK = re.compile(r"(?i)\b(throwback|flashback|years ago|decades ago|old (?:video|interview|clip)|once (?:said|revealed|told)|recalls? (?:when|how|the time)|back in \d{4})\b|\bwhen\b.{0,40}\b(revealed|said|recalled|confessed|admitted)\b")
 TECHNICAL = re.compile(r"(?i)\b(production designer|cinematograph\w*|vfx|visual effects|sound design\w*|costume designer|explains how|making of|behind the lens)\b")
+LOW_VIEWS = re.compile(r"(?i)\b(land rover|defender|range rover|bmw|mercedes|lamborghini|ferrari|porsche|rolls[- ]royce|luxury (?:car|suv)|car gift|gifts? (?:a |an |his |her )?(?:car|suv)|bought (?:a |an )?(?:new )?(?:car|flat|apartment|bungalow|house)|real estate|net worth|"
+                       r"avengers|marvel|hollywood|doomsday|midnight shows?|advance bookings?|booking opens?|tickets? (?:sales|booking))\b")   # 16 Nov 2026: car gift 163 views, Avengers booking 230
 
 
 def is_weak_type(s: dict) -> bool:
     """Owner, 13 Nov 2026 (the 8 AM throwback got 256 views, the 10 AM production-designer talk 428, the 4 PM film announcement 365 while SRK / Sai Pallavi stories were in the
     list): film announcements, throwbacks and technical talks are not the stories that get forwarded. Headline only."""
     t = s["title"]
-    return bool(ANNOUNCE.search(t) or THROWBACK.search(t) or TECHNICAL.search(t))
+    return bool(ANNOUNCE.search(t) or THROWBACK.search(t) or TECHNICAL.search(t) or LOW_VIEWS.search(t))
 
 
 STRENGTH_SYSTEM = ("You are a Bollywood editor for an Instagram page for Indians aged 18-34. From a short list of stories, score how likely each is to be WATCHED TO THE END and SENT TO A FRIEND "
                    "(1-10). Scores are based on this page's real results: stories about a BIG star's family, property, couple or parent moment, a confession, an emotional reveal, a Koffee With Karan "
                    "moment, a real controversy or a star's own heartfelt words took off (4,000-9,000 views). Film announcements and confirmations, throwbacks of old interviews, technical talk "
                    "(designers, cinematographers, VFX), box-office or release numbers, promotions, reviews and small-name stories stalled (200-400 views). A Ramayana story is strong ONLY when it "
-                   "has a personal or emotional angle. NEVER score a story highly (1-2) if it is about religious conflict, blasphemy, a communal issue, a death or funeral, an accident or a crime. "
+                   "has a personal or emotional angle. NEVER score a story highly (1-2) if it is about religious conflict, blasphemy, a communal issue, a death or funeral, a fatal accident or a crime (a famous actor's own injury or recovery told respectfully is fine and can score high). "
+                   "Also score LOW (1-3): car / property / luxury purchases and gifts, Hollywood or Marvel news, ticket-booking numbers, a story that only repeats a topic the page already told in the last 5 days "
+                   "(the list is given) unless it has a big NEW development, and plain first-time gossip about a small name. Highest (8-10): a BIG star's personal moment: family, parent / child / couple bond, a confession, "
+                   "an emotional reveal or a surprising real injury / near miss (e.g. 19,000 views for a famous actor's leg injury story; 10,000 for a star's family house dispute the first time it came out). "
                    "Score every story; do not explain at length.")
 STRENGTH_SCHEMA = {"type": "object", "properties": {"scores": {"type": "array", "items": {"type": "object", "properties": {
     "n": {"type": "integer"}, "score": {"type": "integer"}, "why": {"type": "string"}}, "required": ["n", "score", "why"], "additionalProperties": False}}},
@@ -2343,6 +2351,17 @@ STRENGTH_SCHEMA = {"type": "object", "properties": {"scores": {"type": "array", 
 
 
 RELIGION_CONFLICT = re.compile(r"(?i)\b(qur'?an\w*|hadith|bible|sentiments|fatwa|blasphem\w*|hindu-muslim|haram|halal|azaan|religious (?:row|remark|controversy)|offensive (?:remark|post|verse))\b")
+
+
+def recent_titles(days: int = 5) -> list:
+    """Titles of the news / breaking Reels of the last `days` days (state['reel_news_recent']); [] when unreadable."""
+    from datetime import date, timedelta
+    try:
+        st = json.loads((Path(__file__).parent / "state" / "history.json").read_text())
+    except Exception:
+        return []
+    since = (date.today() - timedelta(days=days)).isoformat()
+    return [r["title"] for r in st.get("reel_news_recent", []) if r.get("date", "") >= since and r.get("title")]
 
 
 def rank_picks(options: list, stories: list) -> list:
@@ -2354,8 +2373,9 @@ def rank_picks(options: list, stories: list) -> list:
         return options
     listing = "\n".join(f"{i}. {stories[o['pick'] - 1]['title']}" + (f" -- {stories[o['pick'] - 1].get('summary', '')[:160]}" if stories[o['pick'] - 1].get("summary") else "")
                         for i, o in enumerate(valid, 1))
+    told = "\n".join(f"- {t}" for t in recent_titles(5)[-30:]) or "(none)"
     try:
-        res = fun.claude_json(STRENGTH_SYSTEM, f"Stories:\n{listing}\n\nScore each one.", STRENGTH_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="story strength")["scores"]
+        res = fun.claude_json(STRENGTH_SYSTEM, f"Stories:\n{listing}\n\nTopics the page already told in the last 5 days:\n{told}\n\nScore each one.", STRENGTH_SCHEMA, CONFIG.get("membership_model", "sonnet"), purpose="story strength")["scores"]
     except Exception as e:
         if type(e).__name__ == "ClaudeLimit":
             raise
@@ -2457,7 +2477,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
             if len(only) >= 2:
                 stories = only
-        stories = fresh_only(stories)
+        stories = fresh_only(stories, 14 if kind == "reel_news_early" else FRESH_HOURS)   # 8 AM (5 of 6 Reels stalled, 16 Nov 2026): the overnight pool is thin, so the day's strongest unused story of the last 14 h competes
         if not REMAKE.get("link"):
             stories = add_hot(stories, raw, state, used)
         intro = ""
