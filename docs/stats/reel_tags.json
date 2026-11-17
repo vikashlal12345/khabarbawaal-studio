@@ -2101,5 +2101,37 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_aft-2026-11-17",
+  "key": "nawazuddinsiddiquishorasiddiquigenzactingnews18interview",
+  "kind": "reel_break_aft",
+  "secs": 17.0,
+  "at": "2026-11-17T13:34:04+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) From Shraddha Kapoor's Lavani To Alia Bhatt's Kathak: B",
+   "(under 1 h ago) PM Modi calls for initiative on seafarers’ safety at Ea",
+   "(under 1 h ago) Hungama and T-Series join hands to launch FastTV with R",
+   "(under 1 h ago) Chhaya Kadam wins Special Award at BRICS+ International",
+   "(under 1 h ago) Javed Akhtar hits back at troll criticising him for pra",
+   "(under 1 h ago) Archana's son Aayushmaan reveals parents' reaction to 6",
+   "(under 1 h ago) Nawazuddin Siddiqui says his 16-year-old daughter Shora",
+   "(1 h ago) 'Ramayana' effect: Kolkata's SVF Cinemas to serve ONLY ",
+   "(1 h ago) Sunny Deol's 'Suryaa' release deferred as makers await ",
+   "(2 h ago) Shraddha Kapoor gives a glimpse of Vithabai's extraordi"
+  ],
+  "n_stories": 12,
+  "strength": 8,
+  "pick_no": 7,
+  "age_h": 0.8,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 39,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "name_first"
  }
 ]

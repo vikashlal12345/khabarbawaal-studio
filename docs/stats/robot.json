@@ -12191,6 +12191,49 @@
      "tokens": 15050
     }
    }
+  },
+  "reel_break_aft": {
+   "posts": 0,
+   "requests": 10,
+   "input": 30,
+   "output": 7785,
+   "cache_read": 25947,
+   "cache_write": 214403,
+   "value_usd": 0.9382,
+   "by_purpose": {
+    "breaking pick": {
+     "requests": 1,
+     "tokens": 55075
+    },
+    "story strength": {
+     "requests": 1,
+     "tokens": 37130
+    },
+    "photo check": {
+     "requests": 3,
+     "tokens": 21349
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5330
+    },
+    "breaking card write": {
+     "requests": 1,
+     "tokens": 40337
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 40332
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 36503
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 12109
+    }
+   }
   }
  }
 }
