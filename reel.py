@@ -1547,6 +1547,15 @@ def save_reel(feed: list, state: dict, cover: Image.Image, mp4: str, post_id: st
         g.save_json(tagfile, tags)
     except Exception as e:
         print(f"  ! reel tags not saved: {str(e)[:80]}")
+    try:   # ⚠️ a mega story about a death / crime / abuse / suicide / attack: the owner checks the photos before posting (owner 17 Nov 2026)
+        import flash
+        if TAGS.get("mega") and (flash.GRAPHIC.search(entry.get("headline", "")) or flash.DEATH.search(entry.get("headline", "")) or flash.BAD_NEWS.search(entry.get("headline", ""))):
+            pr = dict(entry.get("proof") or {"state": "ok", "issues": [], "fixed": []})
+            pr["state"] = "check"
+            pr["issues"] = ["⚠️ Sensitive story (death / crime / abuse / attack): check that no photo shows a victim, a child or a private person before posting."] + list(pr.get("issues") or [])
+            entry = {**entry, "proof": pr}
+    except Exception as e:
+        print(f"  ! sensitive note skipped: {str(e)[:80]}")
     g.save_post(feed, state, cover, post_id, {"kind": "reel", "media": "reel", "video": name, **entry})
     import status
     status.done(f"Ready: {entry['headline'][:90]}", post=post_id)
