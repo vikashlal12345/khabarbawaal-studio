@@ -2447,11 +2447,11 @@ def age_tag(s: dict) -> str:
     return f"({a:.0f} h ago) " if a is not None and a >= 1 else "(under 1 h ago) " if a is not None else ""
 
 
-FRESH_NOTE = "\n\nEach story shows how many sites run it (🌐N sites, last 6 h): 12+ means it is the talk of today and every other page will make it; with similar strength prefer the one more sites run, but a strong personal / family story of a big star beats a widely run weak one. Each story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size. BUT freshness never beats a strong story: a couple / family / Koffee With Karan / emotional moment of a big star beats a fresh trailer or promo, a crime or accident reaction, or an odd local viral story (owner 10 Nov 2026: three fresh weak picks got 153-474 views, the emotional ones 1,900-2,400)."
+FRESH_NOTE = "\n\nEach story shows how many sites run it (🌐N sites, last 6 h; 📈Google News = it is also in Google News's own top list): 12+ sites or a Google News top place means it is the talk of today and every other page will make it; with similar strength prefer the one more sites run, but a strong personal / family story of a big star beats a widely run weak one. Each story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size. BUT freshness never beats a strong story: a couple / family / Koffee With Karan / emotional moment of a big star beats a fresh trailer or promo, a crime or accident reaction, or an odd local viral story (owner 10 Nov 2026: three fresh weak picks got 153-474 views, the emotional ones 1,900-2,400)."
 
 
 def site_tag(s: dict) -> str:
-    return f"(🌐{s['sites']} sites) " if s.get("sites", 0) >= 2 else ""
+    return (f"(🌐{s['sites']} sites{', 📈Google News ' + s['gtop'] if s.get('gtop') else ''}) " if s.get("sites", 0) >= 2 or s.get("gtop") else "")
 
 
 TREND_BAR = (6, 5, 4, 3)   # owner 17 Nov 2026: 'the story pick must be trending, no compromise': a story is eligible only if this many different sites ran it (or its words trend on X / Google)
@@ -2471,8 +2471,14 @@ def rank_by_sites(stories: list, hours: int = 6) -> None:
         for t in fun.google_trends() or []:
             tw |= flash.sig_words(t.lstrip("#"))
 
+        gn = flash.gnews_top(25)
+        for s in stories:
+            m = flash.gnews_match(s["title"], gn) if gn else None
+            if m:
+                s["gtop"] = f"{m['section']} #{m['rank']}"
+
         def trending(s):
-            return len(flash.sig_words(s["title"]) & tw) >= 2
+            return len(flash.sig_words(s["title"]) & tw) >= 2 or bool(s.get("gtop"))
         for bar in TREND_BAR:
             ok = [s for s in stories if s.get("sites", 1) >= bar or trending(s)]
             if len(ok) >= 3:
@@ -2482,7 +2488,7 @@ def rank_by_sites(stories: list, hours: int = 6) -> None:
         for s in ok:
             if trending(s) and s.get("sites", 1) < bar:
                 s["sites"] = max(s.get("sites", 1), bar)   # shown as run by the bar's sites: it trends on X / Google
-        ok.sort(key=lambda s: -min(s.get("sites", 1), 15))
+        ok.sort(key=lambda s: -(min(s.get("sites", 1), 15) + (3 if s.get("gtop") else 0)))
         stories[:] = ok[:15]
         TAGS["bar"] = bar
         print(f"  trending bar {bar}+ sites: {len(ok)} stories qualify | " + " | ".join(f"{s.get('sites', 1)}:{s['title'][:28]}" for s in stories[:4]))

@@ -283,6 +283,47 @@ def bing_discovery(hours: int = 6) -> list[dict]:
     return out
 
 
+GN_BASE = "https://news.google.com/rss"
+GN_SECTIONS = {"top": "", "entertainment": "ENTERTAINMENT", "sports": "SPORTS", "business": "BUSINESS", "world": "WORLD", "tech": "TECHNOLOGY"}
+_GN_CACHE: dict = {"t": 0, "items": []}
+
+
+def gnews_top(top: int = 25) -> list[dict]:
+    """Google News (public RSS, India edition; owner 17 Nov 2026): its Top stories and Entertainment / Sports / Business / World / Technology lists are ordered by how much a story is being
+    covered right now. Returns [{title, rank, section}] (cached 10 minutes); [] on any failure. Only for ranking: the links are Google redirects, so the article itself comes from our feeds / Bing."""
+    import feedparser
+    import requests
+    if time.time() - _GN_CACHE["t"] < 600 and _GN_CACHE["items"]:
+        return _GN_CACHE["items"]
+    out = []
+    for name, sec in GN_SECTIONS.items():
+        url = f"{GN_BASE}/headlines/section/topic/{sec}?hl=en-IN&gl=IN&ceid=IN:en" if sec else f"{GN_BASE}?hl=en-IN&gl=IN&ceid=IN:en"
+        try:
+            r = requests.get(url, headers={"User-Agent": "khabarbawaal-studio news reader"}, timeout=15)
+            for i, e in enumerate(feedparser.parse(r.content).entries[:top], 1):
+                t = re.sub(r"\s+-\s+[^-]{2,40}$", "", e.get("title", "")).strip()   # drop the ' - Source' tail
+                if t:
+                    out.append({"title": t, "rank": i, "section": name})
+        except Exception as ex:
+            print(f"  ! google news {name} skipped: {str(ex)[:60]}")
+    if out:
+        _GN_CACHE.update(t=time.time(), items=out)
+    return out
+
+
+def gnews_match(title: str, items: list[dict]) -> dict | None:
+    """The best Google News item that is the same story as `title` (half or more of the headline's key words, at least 3), or None."""
+    w = sig_words(title)
+    if len(w) < 3:
+        return None
+    best = None
+    for it in items:
+        iw = sig_words(it["title"])
+        if len(w & iw) >= max(3, int(0.5 * min(len(w), len(iw)))) and (best is None or it["rank"] < best["rank"]):
+            best = it
+    return best
+
+
 def site_count(title: str, hours: int = 6) -> int:
     """How many different sites ran this story in the last `hours` (Bing News, headline words); 1 when unknown."""
     import create_post
@@ -329,6 +370,11 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
         trend_words |= sig_words(t)
     for t in gtrends or []:
         trend_words |= sig_words(t)
+    try:
+        for it in gnews_top(12):   # a story near the top of Google News counts as trending
+            trend_words |= sig_words(it["title"])
+    except Exception:
+        pass
     cutoff = time.time() - hours * 3600
     cands = list(cands) + bing_discovery(hours)   # stories our own feeds do not carry (17 Nov 2026: the Nvidia / Jensen Huang scandal was in none of them)
     pool = [c for c in cands if c.get("ts", 0) >= cutoff and not SENSITIVE.search(c["title"]) and not ROUTINE.search(c["title"])
