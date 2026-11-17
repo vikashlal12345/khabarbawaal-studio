@@ -371,10 +371,9 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
     for t in gtrends or []:
         trend_words |= sig_words(t)
     try:
-        for it in gnews_top(12):   # a story near the top of Google News counts as trending
-            trend_words |= sig_words(it["title"])
+        gn = [it for it in gnews_top(25) if it["rank"] <= 10]   # a story in the first 10 places of a Google News list counts as trending (the story itself must match, not just share words)
     except Exception:
-        pass
+        gn = []
     cutoff = time.time() - hours * 3600
     cands = list(cands) + bing_discovery(hours)   # stories our own feeds do not carry (17 Nov 2026: the Nvidia / Jensen Huang scandal was in none of them)
     pool = [c for c in cands if c.get("ts", 0) >= cutoff and not SENSITIVE.search(c["title"]) and not ROUTINE.search(c["title"])
@@ -404,6 +403,8 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
             if len(tw & words) >= max(3, int(0.4 * len(words))) and not SENSITIVE.search(a["title"]):
                 sites.add(a["site"])
         nt = len(words & trend_words)
+        if gn and gnews_match(c["title"], gn):
+            nt = max(nt, 2)
         if nt >= 1:   # the story is worded differently on every site: also count the sites that run the TREND's own words (e.g. 'Sonia Gandhi' for 'Rahul ... at Sonia Gandhi's book launch')
             tl = [t for t, _ in trends[:80]] + list(gtrends or [])
             tw_best = next((sig_words(t.lstrip("#")) for t in tl if sig_words(t.lstrip("#")) and sig_words(t.lstrip("#")) <= words | {w for x in sw.values() for w in x} and sig_words(t.lstrip("#")) & words), None)

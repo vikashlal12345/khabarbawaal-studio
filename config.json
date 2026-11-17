@@ -126,19 +126,9 @@
       "url": "https://www.dnaindia.com/feeds/entertainment.xml"
     },
     {
-      "name": "NDTV",
-      "category": "entertainment",
-      "url": "https://feeds.feedburner.com/ndtvmovies-latest"
-    },
-    {
       "name": "Times of India",
       "category": "viral",
       "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
-    },
-    {
-      "name": "NDTV",
-      "category": "viral",
-      "url": "https://feeds.feedburner.com/ndtvnews-trending-news"
     },
     {
       "name": "Bollywood Hungama",
@@ -149,11 +139,6 @@
       "name": "Times of India",
       "category": "news",
       "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"
-    },
-    {
-      "name": "NDTV",
-      "category": "news",
-      "url": "https://feeds.feedburner.com/ndtvnews-latest"
     },
     {
       "name": "The Hindu",

@@ -2464,7 +2464,7 @@ def rank_by_sites(stories: list, hours: int = 6) -> None:
     try:
         import flash
         import fun
-        flash.annotate_sites(stories, 40, hours)
+        flash.annotate_sites(stories, 60, hours)
         tw = set()
         for t, _ in (fun.x_trends() or [])[:80]:
             tw |= flash.sig_words(t.lstrip("#"))
@@ -2537,7 +2537,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
     else:
         status.step("Picking the most viral, visual story", 2)
         raw = g.fetch_candidates(set(state.get("seen", [])))
-        stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)]))[:40]
+        stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"], 24 if kind == "reel_news_night" else 12)]))[:60]
         if kind == "reel_news_night":   # the 8 PM slot (was 8:15 PM, moved 6 Nov 2026; owner approved 1 Nov 2026): Bollywood stories only, biggest name first, nothing told in today's earlier Reels
             import emergency
             only = [x for x in stories if x.get("category") == "entertainment" or emergency.STARS.search(x["title"])]
@@ -2755,7 +2755,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
     used = state.get("reel_news_used", [])
     status.step("Picking the biggest breaking story", 2)
     raw = g.fetch_candidates(set(state.get("seen", [])))
-    stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:45]
+    stories = bollywood_first(drop_routine([i for i in raw if i["link"] not in used and i["link"] not in AVOID and i["title"][:45].lower() not in AVOID and not covered_before(i["title"])]))[:60]
     if kind in ("reel_break_aft", "reel_break_night"):   # the 7 PM and 8 PM slots (8 PM: owner 10 Nov 2026) (was 7:45 PM, moved 6 Nov 2026; owner 4 Nov 2026): Bollywood stories only, nothing told earlier today
         import emergency
         only = [x for x in stories if (x.get("category") == "entertainment" or emergency.STARS.search(x["title"])) and not covered_before(x["title"], 24)]
