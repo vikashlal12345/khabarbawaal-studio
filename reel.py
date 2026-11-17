@@ -2415,7 +2415,7 @@ def drop_routine(stories: list, keep: int = 6) -> list:
 
 MEGA_NOTE = ("\n\n🌋 MEGA STORY (owner 17 Nov 2026): the whole country is talking about this story today, so it is the Reel. Write it with the page's usual rules: real facts from the story only, allegations "
              "as 'kathit', no invented quotes. TONE BY TOPIC: politics = the right-wing lens (call out controversial words or acts in the hook and question, never neutral; BJP / NDA shown fairly); a death = a "
-             "respectful tribute, no jokes, no shock; a crime or arrest = facts only, 'kathit', no private person's name, no graphic detail; cricket / sport = proud or curious, a side-taking question. Never hate "
+             "respectful tribute, no jokes, no shock; a crime or arrest = facts only, 'kathit', no private person's name, no graphic detail; a rape or child-abuse case = NEVER the victim's name, face, family, school or any detail that identifies them (Indian law), no graphic detail, respect and a call for justice only; a suicide = no method, no blame, one line that help exists (Tele-MANAS 14416); a massacre or terror attack = facts and respect for the victims, no glorifying, no blaming a community; cricket / sport = proud or curious, a side-taking question. Never hate "
              "against a community and no call to violence. Use the story's most discussed angle in the hook (a personal moment, a surprise, a clash).")
 
 
@@ -2438,7 +2438,24 @@ def age_tag(s: dict) -> str:
     return f"({a:.0f} h ago) " if a is not None and a >= 1 else "(under 1 h ago) " if a is not None else ""
 
 
-FRESH_NOTE = "\n\nEach story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size. BUT freshness never beats a strong story: a couple / family / Koffee With Karan / emotional moment of a big star beats a fresh trailer or promo, a crime or accident reaction, or an odd local viral story (owner 10 Nov 2026: three fresh weak picks got 153-474 views, the emotional ones 1,900-2,400)."
+FRESH_NOTE = "\n\nEach story shows how many sites run it (🌐N sites, last 6 h): 12+ means it is the talk of today and every other page will make it; with similar strength prefer the one more sites run, but a strong personal / family story of a big star beats a widely run weak one. Each story shows how old it is. Prefer the NEWEST one: pages that post a story first get the views, so a story under 2 hours old beats an older one of similar size. BUT freshness never beats a strong story: a couple / family / Koffee With Karan / emotional moment of a big star beats a fresh trailer or promo, a crime or accident reaction, or an odd local viral story (owner 10 Nov 2026: three fresh weak picks got 153-474 views, the emotional ones 1,900-2,400)."
+
+
+def site_tag(s: dict) -> str:
+    return f"(🌐{s['sites']} sites) " if s.get("sites", 0) >= 2 else ""
+
+
+def rank_by_sites(stories: list) -> None:
+    """Owner 17 Nov 2026 ('the 12-sites approach for all Reels: the latest, trending news and gossip'): counts the sites that run each of the first 30 stories (Bing News, last 6 h, no AI)
+    and puts the most widely run ones first (in place, stable). Any failure leaves the list as it was."""
+    try:
+        import flash
+        flash.annotate_sites(stories, 30, 6)
+        stories.sort(key=lambda s: -min(s.get("sites", 1), 15))
+        top = [f"{s.get('sites', 1)}:{s['title'][:30]}" for s in stories[:4]]
+        print("  sites: " + " | ".join(top))
+    except Exception as e:
+        print(f"  ! site ranking skipped: {str(e)[:80]}")
 
 
 def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
@@ -2489,6 +2506,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
             if len(only) >= 2:
                 stories = only
         stories = fresh_only(stories, 14 if kind == "reel_news_early" else FRESH_HOURS)   # 8 AM (5 of 6 Reels stalled, 16 Nov 2026): the overnight pool is thin, so the day's strongest unused story of the last 14 h competes
+        rank_by_sites(stories)
         if not REMAKE.get("link"):
             stories = add_hot(stories, raw, state, used)
         intro = ""
@@ -2497,7 +2515,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                         "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{site_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)   # what the picker saw (owner 10 Nov 2026)
     if TAGS.get("mega"):
@@ -2706,6 +2724,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         if len(only) >= 2:
             stories = only
     stories = fresh_only(stories)
+    rank_by_sites(stories)
     if not REMAKE.get("link"):
         stories = add_hot(stories, raw, state, used)
     if REMAKE.get("link"):   # 🔄 remake: the same story again
@@ -2713,7 +2732,7 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
                     "summary": "", "category": "remake"}]
     if not stories:
         raise RuntimeError("no fresh news stories to make a Reel from")
-    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
+    listing = "\n".join(f"{n}. [{s['category']} | {s['source']}] {age_tag(s)}{site_tag(s)}{'🔥HOT (' + s['hot'] + ') ' if s.get('hot') else ''}{s['title']}"
                         + (f"\n   {s['summary'][:160]}" if s["summary"] else "") for n, s in enumerate(stories, 1))
     TAGS["pool"] = [f"{age_tag(s)}{s['title'][:55]}" for s in stories[:10]]; TAGS["n_stories"] = len(stories)
     trends = "\n".join(f"- {t} ({h} h)" for t, h in fun.x_trends()[:30]) or "(unavailable)"

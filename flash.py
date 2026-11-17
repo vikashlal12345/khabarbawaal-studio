@@ -249,14 +249,78 @@ def detect_big_politics(state: dict, now_ist: datetime, cands: list[dict], trend
 GRAPHIC = re.compile(r"(?i)\b(rape|raped|gang[- ]?rape|molest\w*|sexual(ly)? (assault|abuse)|child abuse|minor girl|POCSO|beheaded|dismember\w*|mutilat\w*|suicide|self[- ]harm|massacre|"
                      r"terror(ist)? attack|bomb blast)\b")
 GOVT = re.compile(r"(?i)\b(bjp|nda|modi|amit shah|yogi|nadda|rajnath|union minister|centre|pmo)\b")
+ENT_SKIP = set("india indian today news live update updates latest breaking world after before while with from this that over year years also says said monday tuesday wednesday thursday friday saturday sunday "
+               "january february march april june july august september october november december people video photos watch reports report first big best week".split())
 MEGA_SITES = 10      # different sites in 6 h (owner 17 Nov 2026)
 MEGA_SITES_TREND = 5  # when 2+ of the story's words also trend on X / Google India
+MEGA_SITES_ENT = 8    # a name shared by 4+ sites' headlines (entity pass)
 MEGA_SITES_NAME = 7   # when 1 word (a name, e.g. 'dhoni') trends: 17 Nov 2026 the Dhoni IPL-retirement story had 9 sites
+
+
+DISCOVERY = ("top stories today", "AI news", "stock market news", "breaking news India", "India news today", "business news India", "technology news", "world news", "cricket news", "Bollywood news")
+
+
+def bing_discovery(hours: int = 6) -> list[dict]:
+    """Newest Bing News headlines for a few broad searches, as candidate stories ({title, link, source, ts, category}); [] on any failure."""
+    import create_post
+    from concurrent.futures import ThreadPoolExecutor
+    now = datetime.now(timezone.utc)
+
+    def one(q):
+        try:
+            return create_post.bing_articles(q, limit=25, newest=True)
+        except Exception:
+            return []
+    out, seen = [], set()
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        for arts in ex.map(one, DISCOVERY):
+            for a in arts:
+                d = bing_dt(a)
+                if d is None or (now - d).total_seconds() > hours * 3600 or not a.get("title") or a["title"] in seen:
+                    continue
+                seen.add(a["title"])
+                out.append({"id": "", "title": a["title"], "link": a.get("url", ""), "source": a.get("site", ""), "summary": "", "category": "viral", "ts": d.timestamp(), "image": ""})
+    return out
+
+
+def site_count(title: str, hours: int = 6) -> int:
+    """How many different sites ran this story in the last `hours` (Bing News, headline words); 1 when unknown."""
+    import create_post
+    words = sig_words(title)
+    if len(words) < 3:
+        return 1
+    now = datetime.now(timezone.utc)
+    sites = set()
+    try:
+        arts = create_post.bing_articles(" ".join(sorted(words, key=lambda w: -len(w))[:6]), limit=20, newest=True)
+    except Exception:
+        return 1
+    for a in arts:
+        d = bing_dt(a)
+        if d is None or (now - d).total_seconds() > hours * 3600:
+            continue
+        if len(sig_words(a["title"]) & words) >= max(3, int(0.4 * len(words))):
+            sites.add(a["site"])
+    return max(1, len(sites))
+
+
+def annotate_sites(stories: list, top: int = 30, hours: int = 6) -> None:
+    """Puts story['sites'] on the first `top` stories (threads, no AI): the picker sees how many sites run each one (owner 17 Nov 2026: 'the 12-sites approach for all Reels')."""
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [s for s in stories[:top] if "sites" not in s]
+    if not todo:
+        return
+    try:
+        with ThreadPoolExecutor(max_workers=6) as ex:
+            for s, n in zip(todo, ex.map(lambda x: site_count(x["title"], hours), todo)):
+                s["sites"] = n
+    except Exception as e:
+        print(f"  ! site count skipped: {str(e)[:80]}")
 
 
 def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list, gtrends: list | None = None, hours: int = 6) -> dict | None:
     """🌋 A story of ANY topic (politics, cricket, a star, an event) that 10+ different sites ran in the last 6 h (5+ when its words also trend on X or Google India): 'the talk of today'.
-    Not limited to once a day. Never: religious conflict, graphic violence / sexual crime / suicide, a story that embarrasses the BJP / government, a greeting, a story our Reels
+    Not limited to once a day. Never: religious conflict, a story that embarrasses the BJP / government, a greeting, a story our Reels
     already told in the last 24 h. Deaths and crimes are allowed (the writer is told to keep a respectful, facts-only tone). The picker makes it the Reel when it exists."""
     import reel
     import create_post
@@ -266,7 +330,8 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
     for t in gtrends or []:
         trend_words |= sig_words(t)
     cutoff = time.time() - hours * 3600
-    pool = [c for c in cands if c.get("ts", 0) >= cutoff and not SENSITIVE.search(c["title"]) and not GRAPHIC.search(c["title"]) and not ROUTINE.search(c["title"])
+    cands = list(cands) + bing_discovery(hours)   # stories our own feeds do not carry (17 Nov 2026: the Nvidia / Jensen Huang scandal was in none of them)
+    pool = [c for c in cands if c.get("ts", 0) >= cutoff and not SENSITIVE.search(c["title"]) and not ROUTINE.search(c["title"])
             and not (GOVT.search(c["title"]) and BAD_NEWS.search(c["title"]))]
     # cheap first pass: stories that several of our own feeds already share words with
     sw = {id(c): sig_words(c["title"]) for c in pool}
@@ -276,12 +341,12 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
     pool.sort(key=lambda c: (-feeds(c), -c.get("ts", 0)))
     now = datetime.now(timezone.utc)
     best, seen_words = None, []
-    for c in pool[:12]:
+    for c in pool[:30]:
         words = sw[id(c)]
         if len(words) < 3 or any(len(words & x) >= max(3, int(0.6 * len(words))) for x in seen_words):
             continue
         seen_words.append(words)
-        if len(seen_words) > 5 or reel.covered_before(c["title"], 24) or reel.told_in_days(c["title"], 3):
+        if len(seen_words) > 14 or reel.covered_before(c["title"], 24) or reel.told_in_days(c["title"], 3):
             continue
         sites, arts = {c["source"]}, [c]
         query = " ".join(sorted(words, key=lambda w: -len(w))[:6])
@@ -305,6 +370,34 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
         print(f"  mega check: {c['title'][:60]}: {len(sites)} sites in {hours} h (need {need}, {nt} trend words)")
         if len(sites) >= need and (not best or len(sites) > best[0]):
             best = (len(sites), c)
+    # entity pass (17 Nov 2026, the Nvidia / Jensen Huang scandal): a name that headlines of 4+ different sites share, counted by Bing; titles must share the name AND another word with the story's headline
+    from collections import defaultdict
+    ent_src = defaultdict(set)
+    ent_rep = {}
+    for c in pool:
+        for w in set(re.findall(r"\b[A-Z][a-z]{3,}\b", c["title"])):
+            lw = w.lower()
+            if lw in STOP or lw in ENT_SKIP:
+                continue
+            ent_src[lw].add(c["source"])
+            if lw not in ent_rep or c.get("ts", 0) > ent_rep[lw].get("ts", 0):
+                ent_rep[lw] = c
+    for ent, srcs in sorted(ent_src.items(), key=lambda kv: -len(kv[1]))[:6]:
+        rep = ent_rep[ent]
+        if len(srcs) < 4 or reel.covered_before(rep["title"], 24) or reel.told_in_days(rep["title"], 3) or any(ent in x for x in seen_words):
+            continue
+        words = sig_words(rep["title"])
+        sites = set()
+        for a in create_post.bing_articles(ent, limit=25, newest=True):
+            d = bing_dt(a)
+            if d is None or (now - d).total_seconds() > hours * 3600 or SENSITIVE.search(a["title"]):
+                continue
+            tw = sig_words(a["title"])
+            if ent in tw and len(tw & words) >= 2:
+                sites.add(a["site"])
+        print(f"  mega entity check: {ent}: {len(sites)} sites in {hours} h (need {MEGA_SITES_ENT})")
+        if len(sites) >= MEGA_SITES_ENT and not (GOVT.search(rep["title"]) and BAD_NEWS.search(rep["title"])) and (not best or len(sites) > best[0]):
+            best = (len(sites), rep)
     if not best:
         return print("  mega story: nothing huge right now") or None
     return {"title": best[1]["title"], "link": best[1]["link"], "source": best[1]["source"], "sites": best[0], "category": best[1].get("category", "")}
