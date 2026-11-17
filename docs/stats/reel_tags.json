@@ -1913,5 +1913,13 @@
   "kw": 8,
   "relate": "share_friend",
   "hook": "question"
+ },
+ {
+  "id": "reel_devotion-2026-11-17",
+  "key": "hanumanjikoapnishaktiyaaddilanipadithi",
+  "kind": "reel_devotion",
+  "secs": 17.1,
+  "at": "2026-11-17T00:35:18+00:00",
+  "type": "devotional"
  }
 ]

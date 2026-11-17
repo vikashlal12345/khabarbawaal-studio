@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-11-17",
+  "image": "posts/20261117-0035-reel_devotion-2026-11-17.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261117-003518-reel_devotion-2026-11-17.mp4",
+  "headline": "Tuesday: Hanuman ji: Hanuman ji ko apni shakti yaad kyun nahi thi",
+  "tag": "🎬 REEL · 🙏 JAI HANUMAN",
+  "caption": "Hanuman ji ko apni shakti yaad dilani padi thi 🙏\nJambavan ke shabdon se unhone sagar laangha.\nHum mein bhi himmat chhupi hai... bas yaad karni hai.\nJai Hanuman likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#hanumanji #ramayana #jaihanuman #motivation #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Jo thaka hua ho, usko ye bhejo 🙏",
+  "songs": [
+   {
+    "title": "Shree Hanuman Chalisa",
+    "artist": "Hariharan, Lalit Sen",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa",
+    "artist": "Anup Jalota",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Hanuman Chalisa (From \"Hanuman Chalisa - Zee Music Devotional\")",
+    "artist": "Anup Jalota, Sanjeev-Ajay",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Sankatmochan Hanuman Ashtak",
+    "artist": "Hariharan, Lalit Sen",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "laanghaa → laangha"
+   ]
+  },
+  "created_at": "2026-11-17T00:35:18+00:00"
+ },
+ {
   "id": "reel_break_night-2026-11-16",
   "image": "posts/20261116-1435-reel_break_night-2026-11-16.jpg",
   "kind": "reel",
