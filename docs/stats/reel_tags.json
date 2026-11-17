@@ -2133,5 +2133,37 @@
   "relate": "verdict",
   "hook_rule": "detail1",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_break_night-2026-11-17",
+  "key": "archanapuransinghayushmaansethisamikshashettyengagementitaly",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-17T14:34:53+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Ranbir Kapoor's Ramayana Beats Global Titles To Enter I",
+   "(under 1 h ago) PM Modi picks up Indian flag marker during Quad photo o",
+   "(under 1 h ago) Hungama and T-Series join hands to launch FastTV with R",
+   "(under 1 h ago) Chhaya Kadam wins Special Award at BRICS+ International",
+   "(under 1 h ago) Fans dress as Hindu gods to watch RK's 'Ramayana' in Th",
+   "(2 h ago) Javed Akhtar hits back at troll criticising him for pra",
+   "(2 h ago) Archana's son Aayushmaan reveals parents' reaction to 6",
+   "(2 h ago) 'Ramayana' effect: Kolkata's SVF Cinemas to serve ONLY ",
+   "(2 h ago) Sunny Deol's 'Suryaa' release deferred as makers await ",
+   "(3 h ago) Shraddha Kapoor gives a glimpse of Vithabai's extraordi"
+  ],
+  "n_stories": 12,
+  "strength": 5,
+  "pick_no": 7,
+  "age_h": 1.7,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 55,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "rating",
+  "hook_rule": "detail1",
+  "hook": "name_first"
  }
 ]

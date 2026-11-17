@@ -343,7 +343,8 @@
   "d4580234a35f",
   "9a29c664d2e9",
   "4e39315da68c",
-  "3cfdbca5d83c"
+  "3cfdbca5d83c",
+  "394717402add"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -497,9 +498,9 @@
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
-  "reel_break_night": "2026-11-16"
+  "reel_break_night": "2026-11-17"
  },
- "inbox_since": "EnUSBbD5e9ei",
+ "inbox_since": "w298Pl30ppvU",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -872,7 +873,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html",
   "https://www.bollywoodhungama.com/news/bollywood/priyanka-chopra-jonas-announces-ventilator-2-reunites-with-director-rajesh-mapuskar-film-set-for-2027-release/",
   "https://www.hindustantimes.com/entertainment/bollywood/vivek-oberoi-recalls-being-ostracised-from-bollywood-for-standing-up-against-what-he-perceived-as-wrong-says-filmmakers-got-calls-from-underworld-101794045158310.html",
   "https://www.bollywoodhungama.com/news/bollywood/amitabh-bachchan-wins-personality-rights-case-delhi-high-court-passes-final-decree-after-four-defendants-settle/",
@@ -951,7 +951,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/bollywood-turns-up-at-guruji-mahasatsang-bhumi-pednekar-neil-nitin-mukesh-attend-chahatt-khanna-breaks-into-tears-during-aarti-101794891442335.html",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kareena-kapoor-hrithik-roshan-reunite-after-23-years-video-shared-by-karan-johar-sparks-excitement-but-heres-the-truth/articleshow/135918592.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/ranveer-singhs-dhurandhar-misses-grammy-recognition-despite-eight-entires-including-phir-se-jaan-se-guzarte-hai-raye-leads-this-years-nominations/articleshow/135920917.cms",
-  "https://www.hindustantimes.com/entertainment/bollywood/nawazuddin-siddiqui-says-16-year-old-daughter-shora-knows-more-about-acting-than-him-101794919208510.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/nawazuddin-siddiqui-says-16-year-old-daughter-shora-knows-more-about-acting-than-him-101794919208510.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/archana-puran-singhs-son-aayushmaan-reveals-how-parents-reacted-to-his-six-year-age-gap-with-fiance-samiksha-what-if-he-is-not-ready-to-be-serious/articleshow/135926325.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1168,10 +1169,6 @@
   }
  ],
  "songs_recent": [
-  "Raanjhan",
-  "To Chaloon",
-  "Radhe Radhe",
-  "Jaiye Sajana",
   "Zaalima",
   "Jo Tum Mere Ho",
   "Tu Mil Jaaye (From \"KING\")",
@@ -1207,7 +1204,11 @@
   "Teri Meri Kahaani",
   "Barsaat",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Tera Hoke Rahoon",
+  "Sang Rahiyo",
+  "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
+  "Aao Ri Chirraiya (From \"Mysaa\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1321,6 +1322,10 @@
   },
   {
    "title": "Nawazuddin Siddiqui says his 16-year-old daughter Shora knows more about acting than him, calls Gen Z 'very smart'",
+   "date": "2026-11-17"
+  },
+  {
+   "title": "Archana's son Aayushmaan reveals parents' reaction to 6-year age gap with Samiksha",
    "date": "2026-11-17"
   }
  ],

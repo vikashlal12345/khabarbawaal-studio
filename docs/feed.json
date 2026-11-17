@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_night-2026-11-17",
+  "image": "posts/20261117-1434-reel_break_night-2026-11-17.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261117-143453-reel_break_night-2026-11-17.mp4",
+  "headline": "Archana's son Aayushmaan reveals parents' reaction to 6-year age gap with Samiksha",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Archana Puran Singh Ayushmaan Sethi Samiksha Shetty engagement Italy proposal\nAyushmaan ne Italy trip mein Samiksha ko propose kiya.\nVlog mein unki ghabrahat aur family ki excitement dikhi.\nSamiksha ne emotional hokar yes bola.\nIs jodi ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#reelsindia #archanapuransingh #bollywood #engagement #proposal\n\n(Archana Puran Singh, Ayushmaan Sethi, Samiksha Shetty, Ayushmaan Sethi engagement, Italy proposal, Parmeet Sethi, Aaryamann Sethi, Archana Puran Singh son engaged)",
+  "source": "Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/archana-puran-singhs-son-aayushmaan-reveals-how-parents-reacted-to-his-six-year-age-gap-with-fiance-samiksha-what-if-he-is-not-ready-to-be-serious/articleshow/135926325.cms",
+  "pin_comment": "Apne Archana Puran Singh fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Tera Hoke Rahoon",
+    "artist": "Arijit Singh",
+    "lang": "hindi",
+    "mood": "proposal romantic vibe"
+   },
+   {
+    "title": "Sang Rahiyo",
+    "artist": "Jasleen Royal, Ranveer Allahbadia",
+    "lang": "hindi",
+    "mood": "saath rehne ka waada"
+   },
+   {
+    "title": "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Kumaar",
+    "lang": "new",
+    "mood": "love declaration"
+   },
+   {
+    "title": "Aao Ri Chirraiya (From \"Mysaa\")",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "soft, warm family feel"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-17T14:34:53+00:00"
+ },
+ {
   "id": "reel_break_aft-2026-11-17",
   "image": "posts/20261117-1334-reel_break_aft-2026-11-17.jpg",
   "kind": "reel",
@@ -428,48 +473,5 @@
    ]
   },
   "created_at": "2026-11-16T14:35:01+00:00"
- },
- {
-  "id": "reel_break_aft-2026-11-16",
-  "image": "posts/20261116-1335-reel_break_aft-2026-11-16.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261116-133502-reel_break_aft-2026-11-16.mp4",
-  "headline": "'Bach gaye': Amitabh Bachchan drops cryptic X post amid bomb threats naming him",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Amitabh Bachchan Bach Gaye post Jalsa Lawrence Bishnoi gang\n15-16 November ki raat Big B ne X par sirf \"bach gaye\" likha, koi context nahi diya.\nDelhi Police Special Cell ne Bishnoi gang se jude 2 kathit shooter pakde, ek Jalsa ke bahar hamle ki yojana se juda bataya gaya.\nPichle ek mahine mein Jalsa ka naam 3 dhamki bhare emails mein aaya.\nBig B ki post ka matlab? BACH ya KUCH likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Times of India (link pinned in comments 👇)\n\n#amitabhbachchan #bigb #bollywood #breakingnews #reelsindia\n\n(Amitabh Bachchan, Bach Gaye, Amitabh Bachchan Jalsa, Lawrence Bishnoi gang, Delhi Police Special Cell, Big B cryptic post, Jalsa bomb threat, Amitabh Bachchan X post)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/bach-gaye-amitabh-bachchan-drops-cryptic-x-post-amid-bomb-threats-naming-him-and-others-surface-in-mumbai/articleshow/135887932.cms",
-  "pin_comment": "Apne Amitabh Bachchan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "serious, dramatic vibe"
-   },
-   {
-    "title": "Hawayein",
-    "artist": "Pritam, Arijit Singh",
-    "lang": "hindi",
-    "mood": "calm, thoughtful tone"
-   },
-   {
-    "title": "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Emiway Bantai, Swaalina",
-    "lang": "new",
-    "mood": "Mumbai city vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Arrested men are alleged shooters with suspected links to the gang; attribute the allegation."
-   ],
-   "fixed": [
-    "Delhi Police ne 2 Bishnoi gang shooter pakde → Delhi Police ne Bishnoi gang se jude 2 kathit shooter pakde"
-   ]
-  },
-  "created_at": "2026-11-16T13:35:02+00:00"
  }
 ]
