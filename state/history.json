@@ -479,7 +479,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-17",
-  "reel_news_pm": "2026-11-13",
+  "reel_news_pm": "2026-11-17",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-17",
@@ -497,7 +497,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-16"
  },
- "inbox_since": "w9K0x6UK3D9U",
+ "inbox_since": "7A5QlCiRQSz7",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -870,7 +870,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
   "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html",
   "https://www.hindustantimes.com/entertainment/bollywood/salman-khan-explains-dichotomy-of-having-love-song-like-teri-sexy-beauty-in-war-film-like-maatrubhumi-101794019740104.html",
@@ -949,7 +948,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/priyanka-chopra-once-hid-abhishek-bachchans-phone-and-sent-an-i-miss-you-text-to-an-actress-who-replied-what-is-wrong-with-you-to-him/articleshow/135899923.cms",
   "https://www.bollywoodhungama.com/news/bollywood/avengers-doomsday-creates-history-emerges-as-the-first-film-to-open-midnight-show-bookings-one-month-before-release-shows-already-filling-fast/",
   "https://www.bollywoodhungama.com/news/bollywood/ananya-panday-addresses-debate-on-nepotism-says-i-am-very-proud-to-be-my-fathers-daughter/",
-  "https://www.hindustantimes.com/entertainment/bollywood/bollywood-turns-up-at-guruji-mahasatsang-bhumi-pednekar-neil-nitin-mukesh-attend-chahatt-khanna-breaks-into-tears-during-aarti-101794891442335.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/bollywood-turns-up-at-guruji-mahasatsang-bhumi-pednekar-neil-nitin-mukesh-attend-chahatt-khanna-breaks-into-tears-during-aarti-101794891442335.html",
+  "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kareena-kapoor-hrithik-roshan-reunite-after-23-years-video-shared-by-karan-johar-sparks-excitement-but-heres-the-truth/articleshow/135918592.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1166,10 +1166,6 @@
   }
  ],
  "songs_recent": [
-  "Shani Dev Ki Aarti",
-  "Super Fast Shani Chalisa",
-  "Mere Ghar Ram Aaye Hain",
-  "Shree Hanuman Chalisa (From \"Shree Hanuman Chalisa (Hanuman Ashtak)\")",
   "Shri Krishna Govind Hare Murari (From \"Shri Krishna Govind Hare Murari\")",
   "Naal Nachna",
   "Aa To Sahii",
@@ -1205,7 +1201,11 @@
   "Ram Siya Ram",
   "Humnava Mere",
   "Mangal Rang (From \"Ramayana\")",
-  "Main Ram (From \"Ramayana\")"
+  "Main Ram (From \"Ramayana\")",
+  "Pal Pal Dil Ke Paas - Title Track",
+  "Heeriye (feat. Arijit Singh)",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Tu Mil Jaaye (From \"KING\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1307,6 +1307,10 @@
   },
   {
    "title": "Bollywood turns up at Guruji's Mahasatsang: Bhumi Pednekar, Neil Nitin Mukesh attend, Chahatt Khanna breaks into tears during aarti",
+   "date": "2026-11-17"
+  },
+  {
+   "title": "Kareena Kapoor, Hrithik Roshan reunite after 23 years? Video shared by Karan Johar sparks excitement, but here's the truth!",
    "date": "2026-11-17"
   }
  ],

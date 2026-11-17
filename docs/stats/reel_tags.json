@@ -2034,5 +2034,38 @@
   "kw": 9,
   "relate": "verdict",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-17",
+  "key": "kareenakapoorhrithikroshanreunionkaranjohar",
+  "kind": "reel_news_pm",
+  "secs": 18.7,
+  "at": "2026-11-17T10:33:55+00:00",
+  "type": "news",
+  "pool": [
+   "(under 1 h ago) Kareena Kapoor, Hrithik Roshan reunite after 23 years? ",
+   "(under 1 h ago) Tuned Instagram systems in India to curb sexually sugge",
+   "(under 1 h ago) T-Series and Hungama join hands to launch FastTV with R",
+   "(under 1 h ago) Chhaya Kadam wins Special Award at BRICS+ International",
+   "(under 1 h ago) Arjun Kapoor partners with London Fog Watches as face o",
+   "(under 1 h ago) Esha Deol gets emotional as she adds late father Dharme",
+   "(under 1 h ago) Oldest living James Bond actor George Lazenby congratul",
+   "(2 h ago) ‘Eetha’: Shraddha Kapoor showcases Lavani dance in firs",
+   "(2 h ago) 'Ramayana' box office collection day 13 (LIVE)",
+   "(2 h ago) Karan Johar teases Kareena Kapoor and Hrithik Roshan's "
+  ],
+  "n_stories": 11,
+  "strength": 7,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 35,
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
