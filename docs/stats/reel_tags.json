@@ -2004,5 +2004,35 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-17",
+  "key": "chahattkhannabhumipednekarneilnitinmukeshgurujimahasatsangmu",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-17T08:34:28+00:00",
+  "type": "breaking",
+  "pool": [
+   "(under 1 h ago) Bilkis Bano expresses shock, disbelief at SC order susp",
+   "(under 1 h ago) Arjun Kapoor partners with London Fog Watches as face o",
+   "(under 1 h ago) EXCLUSIVE: Golmaal 5 sparks MASSIVE bidding war! Distri",
+   "(under 1 h ago) Ramayana, Dhurandhar 2 propel Indian box office past ₹1",
+   "(1 h ago) ‘You want to test one for a day?’: Deepinder Goyal laud",
+   "(1 h ago) Pattinson named as Bond: DDLJ link renews attention",
+   "(2 h ago) DYK 'Ramayana' star Kunal Kapoor once admitted he was o",
+   "(2 h ago) Bollywood turns up at Guruji's Mahasatsang: Bhumi Pedne",
+   "(4 h ago) Ramayana worldwide box office collection day 12: Ranbir"
+  ],
+  "n_stories": 9,
+  "strength": 6,
+  "pick_no": 8,
+  "age_h": 2.4,
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 24,
+  "topic": "couple_family",
+  "kw": 9,
+  "relate": "verdict",
+  "hook": "question"
  }
 ]

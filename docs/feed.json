@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_noon-2026-11-17",
+  "image": "posts/20261117-0834-reel_break_noon-2026-11-17.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261117-083428-reel_break_noon-2026-11-17.mp4",
+  "headline": "Bollywood turns up at Guruji's Mahasatsang: Bhumi Pednekar, Neil Nitin Mukesh attend, Chahatt Khanna breaks into tears during aarti",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Chahatt Khanna Bhumi Pednekar Neil Nitin Mukesh Guruji Mahasatsang Mumbai\nGuruji ke annual Mahasatsang mein Chahatt Khanna aarti ke dauran rone lagi.\nBhumi Pednekar ne aarti ki aur Neil Nitin Mukesh ne devotees ko prasad baanta.\nEvent 16 November ko ITC Maratha, Mumbai mein hua.\nAisi shraddha dekh kar dil chhua? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#reelsindia #bollywood #chahattkhanna #bhumipednekar #satsang\n\n(Chahatt Khanna, Bhumi Pednekar, Neil Nitin Mukesh, Guruji Mahasatsang, Nirmal Singh Ji Maharaj, Shukrana Guruji, ITC Maratha Mumbai, Bollywood satsang, Chahatt Khanna aarti)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/bollywood-turns-up-at-guruji-mahasatsang-bhumi-pednekar-neil-nitin-mukesh-attend-chahatt-khanna-breaks-into-tears-during-aarti-101794891442335.html",
+  "pin_comment": "Apne Bhumi Pednekar fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "devotional aarti moment"
+   },
+   {
+    "title": "Humnava Mere",
+    "artist": "Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "emotional, tearful feeling"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "spiritual, calm and auspicious"
+   },
+   {
+    "title": "Main Ram (From \"Ramayana\")",
+    "artist": "Prateek Walia, Kumar Vishwas",
+    "lang": "new",
+    "mood": "bhakti feel for satsang"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Slide 1: The cover headline is about Chahatt Khanna, but the photo appears to show Bhumi Pednekar. Readers may take her for Chahatt. Use a Chahatt photo or a caption naming who is shown."
+   ],
+   "fixed": []
+  },
+  "created_at": "2026-11-17T08:34:28+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-17",
   "image": "posts/20261117-0635-reel_news_am-2026-11-17.jpg",
   "kind": "reel",
@@ -389,50 +436,5 @@
    "fixed": []
   },
   "created_at": "2026-11-16T10:35:25+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-16",
-  "image": "posts/20261116-0833-reel_break_noon-2026-11-16.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261116-083329-reel_break_noon-2026-11-16.mp4",
-  "headline": "Sonu Sood meets Josh actor Sharad Kapoor after his emotional plea for work, checks on his health",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Sonu Sood Sharad Kapoor Josh actor meeting 🙏\nSharad ne kaam maangne ki emotional appeal ki thi.\nEk din baad Sonu unse mile aur sehat ka haal poocha.\nReport ke mutabik Sonu ne medical supplies arrange kiye.\nSonu Sood ka ye kadam sahi laga? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sonusood #sharadkapoor #bollywood #bollywoodnews #reelsindia\n\n(Sonu Sood, Sharad Kapoor, Josh actor Sharad Kapoor, Sonu Sood Sharad Kapoor meeting, Sharad Kapoor health, Sharad Kapoor CINTAA appeal, Bollywood news, Sonu Sood help)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sonu-sood-meets-josh-actor-sharad-kapoor-after-his-emotional-plea-for-work-checks-on-his-health-101794811248701.html",
-  "pin_comment": "Apne Sonu Sood fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tere Liye",
-    "artist": "Atif Aslam, Shreya Ghoshal, Sachin Gupta, Sameer Anjaan",
-    "lang": "hindi",
-    "mood": "emotional, madad ka jazba"
-   },
-   {
-    "title": "Guzarish",
-    "artist": "Satinder Sartaaj",
-    "lang": "hindi",
-    "mood": "dil chhoone wali pukaar"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "soft, warm moment"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "halka, positive vibe"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-16T08:33:29+00:00"
  }
 ]

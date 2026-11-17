@@ -340,7 +340,8 @@
   "2f70b21d3666",
   "94e44e02d612",
   "136274aa95d1",
-  "d4580234a35f"
+  "d4580234a35f",
+  "9a29c664d2e9"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -490,13 +491,13 @@
   "reel_news_early": "2026-11-17",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-17",
-  "reel_break_noon": "2026-11-13",
+  "reel_break_noon": "2026-11-17",
   "reel_break_aft": "2026-11-13",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-16"
  },
- "inbox_since": "MmFz7fJp4wzD",
+ "inbox_since": "w9K0x6UK3D9U",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -869,7 +870,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/vidyut-jammwal-says-tiger-shroff-is-stressed-after-firing-incident-reveals-actor-is-trying-his-best-to-move-on-101793972209969.html",
   "https://www.hindustantimes.com/entertainment/bollywood/farah-khan-admits-film-industry-insiders-were-unsure-of-shreya-ghoshal-for-main-hoon-na-songs-101793979332630.html",
   "https://www.hindustantimes.com/entertainment/bollywood/tamil-director-shankar-calls-yash-ravana-lovable-villain-ramayana-review-performance-ranbir-kapoor-sai-pallavi-101794022699790.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-2-ranbir-kapoor-sai-pallavi-yash-film-overtakes-adipurush-at-over-221-crore-nitesh-tiwari-101794025618656.html",
@@ -948,7 +948,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/shah-rukh-khan-to-appear-on-the-finale-episode-of-koffee-with-karan-9-with-karan-johars-children-yash-and-roohi-heres-what-we-know/articleshow/135888335.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/priyanka-chopra-once-hid-abhishek-bachchans-phone-and-sent-an-i-miss-you-text-to-an-actress-who-replied-what-is-wrong-with-you-to-him/articleshow/135899923.cms",
   "https://www.bollywoodhungama.com/news/bollywood/avengers-doomsday-creates-history-emerges-as-the-first-film-to-open-midnight-show-bookings-one-month-before-release-shows-already-filling-fast/",
-  "https://www.bollywoodhungama.com/news/bollywood/ananya-panday-addresses-debate-on-nepotism-says-i-am-very-proud-to-be-my-fathers-daughter/"
+  "https://www.bollywoodhungama.com/news/bollywood/ananya-panday-addresses-debate-on-nepotism-says-i-am-very-proud-to-be-my-fathers-daughter/",
+  "https://www.hindustantimes.com/entertainment/bollywood/bollywood-turns-up-at-guruji-mahasatsang-bhumi-pednekar-neil-nitin-mukesh-attend-chahatt-khanna-breaks-into-tears-during-aarti-101794891442335.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1165,10 +1166,6 @@
   }
  ],
  "songs_recent": [
-  "Jai Jai Ram",
-  "Chal Tere Ishq Mein",
-  "Shani Dev Aarti",
-  "Shani Chalisa",
   "Shani Dev Ki Aarti",
   "Super Fast Shani Chalisa",
   "Mere Ghar Ram Aaye Hain",
@@ -1204,7 +1201,11 @@
   "His Aura Hits You",
   "Arz Kiya Hai | Coke Studio Bharat",
   "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+  "Ram Siya Ram",
+  "Humnava Mere",
+  "Mangal Rang (From \"Ramayana\")",
+  "Main Ram (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1302,6 +1303,10 @@
   },
   {
    "title": "Ananya Panday addresses debate on nepotism; says, “I am very proud to be my father’s daughter”",
+   "date": "2026-11-17"
+  },
+  {
+   "title": "Bollywood turns up at Guruji's Mahasatsang: Bhumi Pednekar, Neil Nitin Mukesh attend, Chahatt Khanna breaks into tears during aarti",
    "date": "2026-11-17"
   }
  ],
