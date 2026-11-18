@@ -12173,13 +12173,13 @@
    }
   },
   "create": {
-   "posts": 0,
-   "requests": 2,
-   "input": 6,
-   "output": 1189,
-   "cache_read": 4649,
-   "cache_write": 40450,
-   "value_usd": 0.1742,
+   "posts": 1,
+   "requests": 12,
+   "input": 34,
+   "output": 7446,
+   "cache_read": 71869,
+   "cache_write": 355930,
+   "value_usd": 1.5053,
    "by_purpose": {
     "cartoon create": {
      "requests": 1,
@@ -12188,6 +12188,46 @@
     "toon check": {
      "requests": 1,
      "tokens": 6214
+    },
+    "writing": {
+     "requests": 1,
+     "tokens": 55706
+    },
+    "reel brief": {
+     "requests": 1,
+     "tokens": 38435
+    },
+    "reel style": {
+     "requests": 1,
+     "tokens": 38334
+    },
+    "reel news script": {
+     "requests": 1,
+     "tokens": 101809
+    },
+    "photo check": {
+     "requests": 1,
+     "tokens": 10244
+    },
+    "quote video": {
+     "requests": 1,
+     "tokens": 38833
+    },
+    "cover photo": {
+     "requests": 1,
+     "tokens": 5957
+    },
+    "hook contest": {
+     "requests": 1,
+     "tokens": 44076
+    },
+    "hook meaning": {
+     "requests": 1,
+     "tokens": 39532
+    },
+    "proofreading": {
+     "requests": 1,
+     "tokens": 16059
     }
    }
   },
