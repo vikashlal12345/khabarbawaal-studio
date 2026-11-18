@@ -5025,7 +5025,7 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     def paint(n: int) -> None:
         # painters write gibberish on anything that could carry words: take those things out of the scene
         scene = re.sub(r"\s+", " ", TEXT_THINGS.sub("", best['scenes'][n]['paint']))
-        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + " Only ONE person in the picture. Plain background without any signs, boards or writing." + \
+        prompt = TOON_STYLE + f"Characters: {looks} Scene: {scene}" + FLUX_AVOID + (" At most TWO people in the picture. Plain background without any signs, boards or writing." if best.get("allow_two") else " Only ONE person in the picture. Plain background without any signs, boards or writing.") + \
             (f" Show {symbol}, drawn clearly with no letters." if symbol else "")
         img, model = flux_image(prompt, random.randint(1, 999999))
         made[n] = (img, model)
@@ -5042,7 +5042,7 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     def check(ns: list[int]) -> set[int]:
         res = fun.claude_json("You check AI-painted cartoon pictures for a political satire Reel. Open each picture with the Read tool.",
                               "Pictures: " + ", ".join(f"scene{n + 1}.jpg = {best['scenes'][n]['paint'][:160]}" for n in ns) +
-                              ". A picture is OK if it is a clean, friendly 3D cartoon with about the described person(s) in a clear pose: "
+                              ". A picture is OK if it is a clean, friendly cartoon or storybook illustration with about the described person(s) in a clear pose: "
                               "faces and hands not broken, no extra limbs, NO readable text / letters / signs with words anywhere (tiny "
                               "unreadable marks are fine), nothing scary, hateful, religious-symbol-mocking or indecent. Do NOT reject "
                               "because a prop or the exact moment differs from the description: the caption tells the story. ok = good and "
