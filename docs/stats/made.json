@@ -1216,7 +1216,17 @@
   },
   "reel_news_am-2026-11-18": {
    "tag": "🎬 REEL · BOLLYWOOD",
-   "at": "2026-11-18T07:04:44+00:00",
+   "at": "2026-11-18T07:48:14+00:00",
+   "auto": false
+  },
+  "reel_break_noon-2026-11-18": {
+   "tag": "🎬 REEL · ⚡ BREAKING CARD",
+   "at": "2026-11-18T09:07:16+00:00",
+   "auto": false
+  },
+  "c14e263c6dac": {
+   "tag": "🎬 REEL · 🎨 AI CARTOON",
+   "at": "2026-11-18T08:24:42+00:00",
    "auto": false
   }
  }

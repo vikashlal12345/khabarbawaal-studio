@@ -496,13 +496,13 @@
   "reel_news_early": "2026-11-18",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-18",
-  "reel_break_noon": "2026-11-17",
+  "reel_break_noon": "2026-11-18",
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-17"
  },
- "inbox_since": "KCXFlG1N2Aqh",
+ "inbox_since": "G1hm8o8T4U99",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -881,7 +881,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/music/chinmayi-sripaada-reveals-she-learnt-ramayana-song-judi-jodi-just-an-hour-before-performing-live-on-stage-says-improvisations-take-time-101794070158693.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-stunt-double-luke-ioannou-from-ramayana-shares-unseen-set-pics-calls-him-one-of-the-best-actors-101794050320287.html",
   "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
@@ -960,7 +959,8 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-box-office-collection-day-13-ranbir-kapoor-and-yash-starrer-nears-rs-1500-crore-worldwide-despite-second-tuesday-dip/articleshow/135943827.cms",
   "https://www.aljazeera.com/video/newsfeed/2026/11/18/rubio-rules-out-cyberattacks-or-links-between-tech-outages?traffic_source=rss",
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
-  "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478"
+  "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
+  "https://www.msn.com/en-us/news/other/prince-williams-bole-chudiyan-moment-with-kjo-kareena-and-saif-at-dharma-watch/ar-AA2hGsdh"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1177,10 +1177,6 @@
   }
  ],
  "songs_recent": [
-  "Main Ram (From \"Ramayana\")",
-  "Pal Pal Dil Ke Paas - Title Track",
-  "Heeriye (feat. Arijit Singh)",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Tu Mil Jaaye (From \"KING\")",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Azadi",
@@ -1216,7 +1212,11 @@
   "Dilruba Dilnasheen",
   "Soulmate",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Zaalima",
+  "Peek A Boo",
+  "Mangal Rang (From \"Ramayana\")",
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1318,6 +1318,10 @@
   },
   {
    "title": "Dia Mirza Shares Cryptic Post About Nawazuddin Siddiqui’s ‘Offensive Character’, Internet Smells ‘PR Stunt’",
+   "date": "2026-11-18"
+  },
+  {
+   "title": "Prince William's Bole Chudiyan moment with KJo, Kareena and Saif at Dharma. Watch",
    "date": "2026-11-18"
   }
  ],

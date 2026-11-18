@@ -2272,5 +2272,33 @@
   "secs": 24.5,
   "at": "2026-11-18T08:24:42+00:00",
   "type": "other"
+ },
+ {
+  "id": "reel_break_noon-2026-11-18",
+  "key": "princewilliamdharmaproductionskaranjoharkareenakapoorsaifali",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-18T09:07:16+00:00",
+  "type": "breaking",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Prince William's Bole Chudiyan moment with KJo, Kareena",
+   "(under 1 h ago) Bombay High Court sets aside ICICI Bank’s sanction to p",
+   "(1 h ago) Prince William gets a taste of Indian cinema at Karan J",
+   "(3 h ago) Exclusive: Tabu joins Tunnel Men, YRF Entertainment's N",
+   "(under 1 h ago) Tabu joins Tunnel Men, YRF Entertainment's Netflix seri"
+  ],
+  "n_stories": 5,
+  "strength": 8,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "cover": "full",
+  "photos": 2,
+  "sharp": 56,
+  "topic": "other",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]
