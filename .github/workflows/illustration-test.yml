@@ -23,5 +23,7 @@ jobs:
         if: always()
         with:
           name: illustration-sample
-          path: toon_out/illustration_sample.mp4
+          path: |
+            toon_out/illustration_sample.mp4
+            toon_out/illustration_picture*.jpg
           if-no-files-found: ignore

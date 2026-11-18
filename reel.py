@@ -160,10 +160,10 @@ def ease_out(t: float) -> float:
     return 1 - (1 - t) ** 3
 
 
-def fit_lines(text: str, max_w: int, max_h: int, sizes=range(88, 40, -4), name="Poppins-Bold.ttf"):
+def fit_lines(text: str, max_w: int, max_h: int, sizes=range(88, 40, -4), name="Poppins-Bold.ttf", keep: bool = False):
     """Wrap text (keeping its line breaks) at the biggest size that fits; a lone last word
     gets company from the line above."""
-    paragraphs = [p.split() for p in printable(text).split("\n") if p.strip()]
+    paragraphs = [p.split() for p in (text if keep else printable(text)).split("\n") if p.strip()]   # keep=True: Devanagari stays (owner 18 Nov 2026, Poppins Bold draws it)
     probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
     for size in sizes:
         fnt = font(name, size)
@@ -4998,8 +4998,11 @@ def illu_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = ""
         sd.line((0, y, RW, y), fill=(0, 0, 0, int(190 * ((y - (RH - 520)) / 520) ** 1.4)))
     frame.alpha_composite(shade)
     if hook:
-        hl, hf, hlh = fit_lines(printable(hook), RIGHT - LEFT + 60, 420, sizes=range(104, 60, -4), name="Anton-Regular.ttf")
-        for j, im in enumerate(line_images(hl, hf, hlh, "#FFFFFF", COVER_PINK, auto_highlight(hook), stroke=9)):
+        deva = bool(re.search(r"[\u0900-\u097F]", hook))   # a Devanagari word in the hook (owner 18 Nov 2026: 'write anth in Hindi'): Poppins Bold draws it correctly with Pillow's basic layout (checked 18 Nov 2026), Anton cannot
+        htxt = hook if deva else printable(hook)
+        hl, hf, hlh = fit_lines(htxt, RIGHT - LEFT + 60, 420, sizes=range(104, 60, -4), name="Poppins-Bold.ttf" if deva else "Anton-Regular.ttf", keep=deva)
+        hi = {norm(w) for w in re.findall(r"[\u0900-\u097F]+", hook)} if deva else auto_highlight(hook)
+        for j, im in enumerate(line_images(hl, hf, hlh, "#FFFFFF", COVER_PINK, hi, stroke=9)):
             frame.alpha_composite(im, ((RW - im.width) // 2, 230 + j * hlh))
     if line:
         lines, fnt, lh = fit_lines(printable(line), RIGHT - LEFT + 60, 260, sizes=range(54, 38, -4), name="Poppins-Bold.ttf")

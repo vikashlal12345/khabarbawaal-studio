@@ -21,8 +21,10 @@ os.makedirs(os.path.join(ROOT, "toon_out"), exist_ok=True)
 try:
     scenes = reel.paint_toon_scenes(best, tmp)
     keep = list(reel.LAST_TOON_GOOD)
+    for n, ((img, _, _), i) in enumerate(zip(scenes, keep), 1):   # keep the raw paintings too
+        img.convert("RGB").save(os.path.join(ROOT, "toon_out", f"illustration_picture{n}.jpg"), quality=92)
     out = os.path.join(tmp, "sample.mp4")
-    reel.illustration_reel([(img, best["scenes"][i]["line"]) for (img, _, _), i in zip(scenes, keep)], "THE ANTH I WANT", out, [6, 6])
+    reel.illustration_reel([(img, best["scenes"][i]["line"]) for (img, _, _), i in zip(scenes, keep)], "THE अंत I WANT", out, [6, 6])
     dst = os.path.join(ROOT, "toon_out", "illustration_sample.mp4"); shutil.copy(out, dst)
     print("RESULT OK", dst, [m for _, _, m in scenes], flush=True)
 except Exception as e:
