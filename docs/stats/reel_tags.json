@@ -2417,5 +2417,13 @@
   "relate": "verdict",
   "hook_rule": "detail1",
   "hook": "name_first"
+ },
+ {
+  "id": "ca6b76d288a5",
+  "key": "aisaantsabkochahiye",
+  "kind": "ca6b76d288a5",
+  "secs": 13.5,
+  "at": "2026-11-18T16:51:53+00:00",
+  "type": "other"
  }
 ]
