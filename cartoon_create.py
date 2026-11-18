@@ -124,7 +124,13 @@ def build(raw: str, tmp: str, status_step=lambda t, n=0: None):
     models = ", ".join(sorted({m for _, _, m in scenes}))
     status_step("Making the video", 5)
     out = os.path.join(tmp, "cartoon.mp4")
-    shots = reel.toon_reel([(img, lines[i]) for (img, _, _), i in zip(scenes, keep)], hook, punch, out, None, durs)
+    import functools
+    orig_frame = reel.toon_frame
+    reel.toon_frame = functools.partial(orig_frame, tag="AI COMEDY · CARTOON")   # not 'SATIRE': this is the owner's own comedy cartoon
+    try:
+        shots = reel.toon_reel([(img, lines[i]) for (img, _, _), i in zip(scenes, keep)], hook, punch, out, None, durs)
+    finally:
+        reel.toon_frame = orig_frame
     handle = g.CONFIG["handle"]
     cap = res["caption"].strip() + "\n\n🎨 AI cartoon (fiction), pictures: AI illustration (" + models + ")\n\nFollow " + handle + ": roz ki khabar + memes 🔥\n\n" + " ".join(
         ("#" + h.lstrip("#").replace(" ", "")) for h in res["hashtags"][:5])
