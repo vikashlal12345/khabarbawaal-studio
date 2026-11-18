@@ -19,15 +19,42 @@ import re
 import generate as g
 
 CARTOON_RE = re.compile(r"(?i)^\s*cartoon\b")
+CARTOON_WORD = re.compile(r"(?i)\bcartoon\b")
+RETRY_RE = re.compile(r"(?i)\b(retry|try again|again|redo|remake|same|dobara|phir se|once more)\b")
 
 
-def is_cartoon(raw: str) -> bool:
-    return bool(CARTOON_RE.match(raw or ""))
+def last_request(state: dict | None) -> str:
+    return (state or {}).get("cartoon_last", "") or ""
+
+
+def is_cartoon(raw: str, state: dict | None = None) -> bool:
+    """A request that starts with 'cartoon', or names a cartoon in its first words ('retry cartoon gta reel', owner 18 Nov 2026), or says retry / again about the topic of the last
+    cartoon request ('Retry GTA reel'): then the cartoon of ➕ Create is made, never a news Reel."""
+    head = (raw or "")[:300]
+    if CARTOON_WORD.search(head):
+        return True
+    last = last_request(state)
+    if last and RETRY_RE.search(head) and len(head) < 140:
+        low = set(re.findall(r"[a-z0-9]{3,}", last.lower())[:200])
+        mine = set(re.findall(r"[a-z0-9]{3,}", head.lower())) - {"reel", "retry", "again", "redo", "remake", "same", "post", "create", "the", "make", "once", "more", "dobara", "phir"}
+        return bool(mine & low)
+    return False
+
+
+def resolve(raw: str, state: dict | None = None) -> str:
+    """The request to build: a short 'retry / cartoon <topic>' without frames reuses the frames of the last cartoon request (state['cartoon_last']); the owner's extra words are added as a note."""
+    spec = parse(raw)
+    if spec["frames"]:
+        return raw
+    last = last_request(state)
+    if last and RETRY_RE.search(raw[:300]) and parse(last)["frames"]:
+        return last.rstrip() + "\nOwner's note for this retry: " + raw.strip()[:300]
+    return raw
 
 
 def parse(raw: str) -> dict:
     """{'topic', 'frames': [{'scene', 'line', 'secs'}], 'hook', 'last', 'follow', 'context'}; frames may be empty (context only)."""
-    text = CARTOON_RE.sub("", raw, count=1).strip(" \n:-")
+    text = CARTOON_RE.sub("", raw, count=1).strip(" \n:-") if CARTOON_RE.match(raw or "") else (raw or "").strip()
     out = {"topic": "", "frames": [], "hook": "", "last": "", "follow": "", "context": ""}
     m = re.search(r"(?im)^\s*topic\s*[:\-]\s*(.+)$", text)
     if m:

@@ -328,7 +328,7 @@ def main() -> int:
     known = {p["id"] for p in g.load_json(g.FEED_FILE, [])}
     try:
         import cartoon_create
-        if cartoon_create.is_cartoon(raw):   # 🎨 'cartoon' + frames (owner 18 Nov 2026): an AI cartoon Reel from his frames, never real photos
+        if cartoon_create.is_cartoon(raw, g.load_json(g.STATE_FILE, {})):   # 🎨 'cartoon' + frames (owner 18 Nov 2026): an AI cartoon Reel from his frames, never real photos
             code = make_cartoon(raw)
         else:
             code = make_reel(raw) if reel_wanted else make(raw)
@@ -720,6 +720,10 @@ def make_cartoon(raw: str) -> int:
     import reel
     summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
     state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
+    raw_in = raw
+    raw = cartoon_create.resolve(raw, state)   # 'Retry GTA reel' = the frames of the last cartoon request
+    if cartoon_create.parse(raw)["frames"] and raw_in == raw:
+        state["cartoon_last"] = raw[:3000]       # remembered for 'retry' requests
     try:
         with tempfile.TemporaryDirectory() as tmp:
             cover, mp4, entry = cartoon_create.build(raw, tmp, note)
