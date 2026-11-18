@@ -694,10 +694,13 @@ def find_footage(plan: dict, subj: dict, today: str, state: dict, tmp: str) -> d
             if got:
                 return got
         return None
-    got = try_vetted([c for c in vet if c.get("specific")])
-    if got:
-        return got
-    if os.environ.get("AARTI_PHOTOS", "1") != "0":
+    # Owner, 18 Nov 2026 ('today's God Reel was not good; if you do not get temple aarti videos, show the AI pictures like before'): the vetted stock clips (Pixabay) and the idol-photo
+    # slideshow are OFF by default; only a real TEMPLE aarti video (step 1) replaces the AI pictures. AARTI_VETTED=1 / AARTI_PHOTOS=1 switch them back on.
+    if os.environ.get("AARTI_VETTED", "0") == "1":
+        got = try_vetted([c for c in vet if c.get("specific")])
+        if got:
+            return got
+    if os.environ.get("AARTI_PHOTOS", "0") == "1":
         try:
             got = photo_slideshow(plan, subj, state, tmp, wanted)
         except Exception as e:
