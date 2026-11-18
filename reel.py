@@ -2335,7 +2335,7 @@ ANNOUNCE = re.compile(r"(?i)\b(confirms?|announces?|unveils?)\b.*(\bsequel\b|\bp
 THROWBACK = re.compile(r"(?i)\b(throwback|flashback|years ago|decades ago|old (?:video|interview|clip)|once (?:said|revealed|told)|recalls? (?:when|how|the time)|back in \d{4})\b|\bwhen\b.{0,40}\b(revealed|said|recalled|confessed|admitted)\b")
 TECHNICAL = re.compile(r"(?i)\b(production designer|cinematograph\w*|vfx|visual effects|sound design\w*|costume designer|explains how|making of|behind the lens)\b")
 LOW_VIEWS = re.compile(r"(?i)\b(land rover|defender|range rover|bmw|mercedes|lamborghini|ferrari|porsche|rolls[- ]royce|luxury (?:car|suv)|car gift|gifts? (?:a |an |his |her )?(?:car|suv)|bought (?:a |an )?(?:new )?(?:car|flat|apartment|bungalow|house)|real estate|net worth|"
-                       r"avengers|marvel|hollywood|doomsday|midnight shows?|advance bookings?|booking opens?|tickets? (?:sales|booking))\b")   # 16 Nov 2026: car gift 163 views, Avengers booking 230
+                       r"avengers|marvel|hollywood|doomsday|hathaway|pattinson|james bond|bezos|taylor swift|kardashian|jenner|beyonc[eé]|zendaya|dicaprio|brad pitt|angelina jolie|tom cruise|timoth[eé]e|sydney sweeney|harry potter|oscars?|golden globes?|met gala|disney|pixar|warner bros|midnight shows?|advance bookings?|booking opens?|tickets? (?:sales|booking))\b")   # 16 Nov 2026: car gift 163 views, Avengers booking 230
 
 
 def is_weak_type(s: dict) -> bool:
@@ -3522,6 +3522,19 @@ def photo_sharpness(im: Image.Image) -> float:
     return ImageStat.Stat(g.filter(ImageFilter.FIND_EDGES)).stddev[0]
 
 
+def text_like(im: Image.Image) -> bool:
+    """A screenshot of a post / chat (dark or white background, thin text, almost no colour): never a cover. Owner 18 Nov 2026: the Dia Mirza Reel opened on a zoomed, cropped text
+    screenshot because its edge-rich text scored 'sharpest' and the real photos were dropped. Real photos have colour and mid-tones."""
+    try:
+        import numpy as np
+        g = np.asarray(im.convert("L").resize((200, 200)), dtype=float)
+        ext = float(((g < 35) | (g > 220)).mean())
+        sat = float(np.asarray(im.convert("HSV").resize((100, 100)))[:, :, 1].mean())
+        return ext >= 0.7 and sat < 15
+    except Exception:
+        return False
+
+
 COVER_PRUNE_SMALL = False   # True = the old rule: small photos leave the cover contest whenever bigger ones exist
 
 
@@ -3532,6 +3545,11 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bo
     import fun
     if not photos:
         return 0
+    if not _gated and len(photos[:6]) > 1:   # 📝 screenshots of text are never the cover while a real photo exists
+        real = [i for i, im in enumerate(photos[:6]) if not text_like(im)]
+        if 0 < len(real) < len(photos[:6]):
+            print(f"  cover: {len(photos[:6]) - len(real)} text screenshot(s) left out of the contest")
+            return real[pick_cover_photo([photos[i] for i in real], about, tmp)]
     if not _gated and len(photos[:6]) > 1:   # 🔍 real sharpness: soft photos (video screenshots, motion blur) leave the contest when sharper ones exist
         sc = [photo_sharpness(im) for im in photos[:6]]
         top = max(sc)

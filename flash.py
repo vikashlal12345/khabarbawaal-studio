@@ -360,6 +360,17 @@ def annotate_sites(stories: list, top: int = 30, hours: int = 6) -> None:
         print(f"  ! site count skipped: {str(e)[:80]}")
 
 
+INDIAN_SITES = ("times of india", "hindustan times", "ndtv", "india today", "news18", "indian express", "the hindu", "mint", "economic times", "business standard", "firstpost", "abp", "zee", "moneycontrol",
+                "deccan", "scroll", "dna", "republic", "outlook", "cnbctv18", "cnbc-tv18", "cnbc tv18", "tribune", "telegraph india", "financial express", "theprint", "free press", "mid-day", "pinkvilla",
+                "bollywood", "koimoi", "india.com", "oneindia", "navbharat", "dainik", "jagran", "amar ujala", "bhaskar", "sportstar", "cricbuzz", "espncricinfo", "wion", "news9", "quint", "jansatta",
+                "lokmat", "pti", "ians", "ani news", "livemint", "the week", "iamgujarat", "tv9", "aaj tak", "hindi", "sakshi", "manorama", "gadgets 360", "gadgets360", "inc42", "entrackr", "bw ", "kalinga")
+MEGA_INDIAN_SITES = 5   # non-Bollywood mega stories must be run by 5+ INDIAN outlets (owner 17 Nov 2026: 'big stories like Dhoni, Sonia, Nvidia'; a US 'Rubio / tech outages' story with 10 foreign sites passed on 18 Nov)
+
+
+def indian_count(sites) -> int:
+    return sum(1 for x in sites if any(k in x.lower() for k in INDIAN_SITES))
+
+
 def emergency_stars(c: dict) -> bool:
     import emergency
     return c.get("category") == "entertainment" or bool(emergency.STARS.search(c["title"]))
@@ -377,9 +388,10 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
     for t in gtrends or []:
         trend_words |= sig_words(t)
     try:
-        gn = [it for it in gnews_top(25) if it["rank"] <= 10]   # a story in the first 10 places of a Google News list counts as trending (the story itself must match, not just share words)
+        gn = [it for it in gnews_top(25) if it["rank"] <= 10]
+        gn15 = [it for it in gnews_top(25) if it["rank"] <= 15]   # a story in the first 10 places of a Google News list counts as trending (the story itself must match, not just share words)
     except Exception:
-        gn = []
+        gn, gn15 = [], []
     cutoff = time.time() - hours * 3600
     cands = list(cands) + bing_discovery(hours)   # stories our own feeds do not carry (17 Nov 2026: the Nvidia / Jensen Huang scandal was in none of them)
     pool = [c for c in cands if c.get("ts", 0) >= cutoff and not SENSITIVE.search(c["title"]) and not ROUTINE.search(c["title"])
@@ -424,7 +436,11 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
         if not (c.get("category") == "entertainment" or emergency.STARS.search(c["title"])):
             need = max(need, MEGA_SITES_OTHER)   # owner 17 Nov 2026: Bollywood first; any other topic only when it is REALLY big
         print(f"  mega check: {c['title'][:60]}: {len(sites)} sites in {hours} h (need {need}, {nt} trend words)")
-        if len(sites) >= need and (not best or len(sites) > best[0]):
+        star = emergency_stars(c)
+        if star:
+            need = MEGA_SITES   # Bollywood: the normal picker handles ordinary stories; only a 10+ site story is forced
+        indian_ok = star or (indian_count(sites) >= MEGA_INDIAN_SITES and bool(gn15 and gnews_match(c["title"], gn15)))   # non-Bollywood: Indian outlets AND a Google News top-15 place
+        if len(sites) >= need and indian_ok and (not best or len(sites) > best[0]):
             best = (len(sites), c)
     # entity pass (17 Nov 2026, the Nvidia / Jensen Huang scandal): a name that headlines of 4+ different sites share, counted by Bing; titles must share the name AND another word with the story's headline
     from collections import defaultdict
@@ -451,8 +467,8 @@ def detect_mega(state: dict, now_ist: datetime, cands: list[dict], trends: list,
             tw = sig_words(a["title"])
             if ent in tw and len(tw & words) >= 2:
                 sites.add(a["site"])
-        print(f"  mega entity check: {ent}: {len(sites)} sites in {hours} h (need {MEGA_SITES_ENT})")
-        if len(sites) >= (MEGA_SITES_ENT if emergency_stars(rep) else MEGA_SITES_OTHER) and not (GOVT.search(rep["title"]) and BAD_NEWS.search(rep["title"])) and (not best or len(sites) > best[0]):
+        print(f"  mega entity check: {ent}: {len(sites)} sites ({indian_count(sites)} Indian) in {hours} h (need {MEGA_SITES_ENT})")
+        if len(sites) >= (MEGA_SITES if emergency_stars(rep) else MEGA_SITES_OTHER) and (emergency_stars(rep) or (indian_count(sites) >= MEGA_INDIAN_SITES and bool(gn15 and gnews_match(rep["title"], gn15)))) and not (GOVT.search(rep["title"]) and BAD_NEWS.search(rep["title"])) and (not best or len(sites) > best[0]):
             best = (len(sites), rep)
     if not best:
         return print("  mega story: nothing huge right now") or None
