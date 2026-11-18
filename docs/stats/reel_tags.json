@@ -2334,5 +2334,34 @@
   "hook": "name_first",
   "photos": 3,
   "short": false
+ },
+ {
+  "id": "reel_news_pm-2026-11-18",
+  "key": "msdhoniiplretirementpardhanushjuhichawlavarundhawankareactio",
+  "kind": "reel_news_pm",
+  "secs": 18.1,
+  "at": "2026-11-18T11:04:28+00:00",
+  "type": "news",
+  "bar": 3,
+  "pool": [
+   "(2 h ago) Ali Fazal to headline BBC-CBC adaptation of E.M. Forste",
+   "(2 h ago) Rajinikanth enjoys family time in Greece with daughters",
+   "(under 1 h ago) Dhanush, Juhi Chawla, Varun Dhawan react to MS Dhoni's ",
+   "(under 1 h ago) Bharatbala reunites with AR Rahman for Banaras, film to"
+  ],
+  "n_stories": 4,
+  "strength": 8,
+  "pick_no": 3,
+  "age_h": 0.8,
+  "topic": "sports",
+  "kw": 8,
+  "relate": "finish_it",
+  "cover": "window",
+  "sharp": 46,
+  "hook_rule": "detail1",
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

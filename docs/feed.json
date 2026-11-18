@@ -1,5 +1,48 @@
 [
  {
+  "id": "reel_news_pm-2026-11-18",
+  "image": "posts/20261118-1104-reel_news_pm-2026-11-18.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261118-110427-reel_news_pm-2026-11-18.mp4",
+  "headline": "Dhanush, Juhi Chawla, Varun Dhawan react to MS Dhoni's IPL retirement, say ‘game will never be quite the same’",
+  "tag": "🎬 REEL · CRICKET",
+  "caption": "MS Dhoni IPL retirement par Dhanush, Juhi Chawla, Varun Dhawan ka reaction 💙\nDhoni ke retirement ke baad film industry ne unke asar ko salaam kiya.\nDhanush ne kaha ki 'game will never be quite the same'.\nDhoni ka sabse yaadgaar moment kaun sa tha? Ek line likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#msdhoni #dhoni #csk #bollywood #reelsindia\n\n(MS Dhoni retirement, Dhoni IPL retirement, Dhanush Dhoni, Juhi Chawla Dhoni, Varun Dhawan Dhoni, Dhoni reaction Bollywood, Thala Dhoni, CSK)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html",
+  "pin_comment": "Ye apne Dhoni fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "nostalgic yaadein, emotional tribute"
+   },
+   {
+    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Pritam, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "emotional, heartfelt salaam"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "big, grand, fan love"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article attributes this quote only to Dhanush, not to all the stars."
+   ],
+   "fixed": [
+    "Stars ne kaha ki 'game will never be quite the same' → Dhanush ne kaha ki 'game will never be quite the same'"
+   ]
+  },
+  "created_at": "2026-11-18T11:04:28+00:00"
+ },
+ {
   "id": "cbeb3941c9c7",
   "image": "posts/20261118-0924-cbeb3941c9c7.jpg",
   "kind": "custom",
@@ -479,50 +522,5 @@
    "fixed": []
   },
   "created_at": "2026-11-17T12:35:03+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-17",
-  "image": "posts/20261117-1033-reel_news_pm-2026-11-17.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261117-103355-reel_news_pm-2026-11-17.mp4",
-  "headline": "Kareena Kapoor, Hrithik Roshan reunite after 23 years? Video shared by Karan Johar sparks excitement, but here's the truth!",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Kareena Kapoor Hrithik Roshan reunion Karan Johar 🔥\nKaran Johar ne Kareena aur Hrithik ke saath ka ek video share kiya, fans K3G ke 25 saal baad reunion ki baat kar rahe hain.\nVideo ek ad ka hai, film ka nahi, lekin excitement poori hai.\nKareena-Hrithik ki film banni chahiye? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: The Times of India (link pinned in comments 👇)\n\n#kareenakapoor #hrithikroshan #karanjohar #k3g #reelsindia\n\n(Kareena Kapoor, Hrithik Roshan, Karan Johar, Kabhi Khushi Kabhie Gham, K3G reunion, Poo Rohan, Kareena Hrithik video, Bollywood news)",
-  "source": "The Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/kareena-kapoor-hrithik-roshan-reunite-after-23-years-video-shared-by-karan-johar-sparks-excitement-but-heres-the-truth/articleshow/135918592.cms",
-  "pin_comment": "Apne Poo wale dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Pal Pal Dil Ke Paas - Title Track",
-    "artist": "Arijit Singh, Parampara Tandon",
-    "lang": "hindi",
-    "mood": "nostalgic romantic throwback"
-   },
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "reunion vibes, fans excited"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "retro romantic feel"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "milne ka wait khatam"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-17T10:33:55+00:00"
  }
 ]

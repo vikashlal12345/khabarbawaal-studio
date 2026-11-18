@@ -346,7 +346,8 @@
   "3cfdbca5d83c",
   "394717402add",
   "918376a65a9a",
-  "f9156f129c58"
+  "f9156f129c58",
+  "a00fba176fc9"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -484,7 +485,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-18",
-  "reel_news_pm": "2026-11-17",
+  "reel_news_pm": "2026-11-18",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-18",
@@ -502,7 +503,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-17"
  },
- "inbox_since": "G1hm8o8T4U99",
+ "inbox_since": "7dkEV0iolvH8",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -885,7 +886,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-stunt-double-luke-ioannou-from-ramayana-shares-unseen-set-pics-calls-him-one-of-the-best-actors-101794050320287.html",
   "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
@@ -964,7 +964,8 @@
   "https://www.aljazeera.com/video/newsfeed/2026/11/18/rubio-rules-out-cyberattacks-or-links-between-tech-outages?traffic_source=rss",
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
-  "https://www.msn.com/en-us/news/other/prince-williams-bole-chudiyan-moment-with-kjo-kareena-and-saif-at-dharma-watch/ar-AA2hGsdh"
+  "https://www.msn.com/en-us/news/other/prince-williams-bole-chudiyan-moment-with-kjo-kareena-and-saif-at-dharma-watch/ar-AA2hGsdh",
+  "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1181,9 +1182,6 @@
   }
  ],
  "songs_recent": [
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
-  "Tera Hoke Rahoon",
-  "Sang Rahiyo",
   "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
   "Aao Ri Chirraiya (From \"Mysaa\")",
   "Alfaaz",
@@ -1220,7 +1218,10 @@
   "Tabaahi (From \"Toxic\")",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Tu Mil Jaaye (From \"KING\")",
-  "Aao Ri Chirraiya (From \"Mysaa\")"
+  "Aao Ri Chirraiya (From \"Mysaa\")",
+  "Aaj Bhi 2",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Tu Mil Jaaye (From \"KING\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1326,6 +1327,10 @@
   },
   {
    "title": "Prince William's Bole Chudiyan moment with KJo, Kareena and Saif at Dharma. Watch",
+   "date": "2026-11-18"
+  },
+  {
+   "title": "Dhanush, Juhi Chawla, Varun Dhawan react to MS Dhoni's IPL retirement, say ‘game will never be quite the same’",
    "date": "2026-11-18"
   }
  ],
