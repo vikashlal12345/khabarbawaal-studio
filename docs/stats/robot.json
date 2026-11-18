@@ -12173,13 +12173,13 @@
    }
   },
   "create": {
-   "posts": 1,
-   "requests": 12,
-   "input": 34,
-   "output": 7446,
-   "cache_read": 71869,
-   "cache_write": 355930,
-   "value_usd": 1.5053,
+   "posts": 2,
+   "requests": 23,
+   "input": 66,
+   "output": 14180,
+   "cache_read": 147936,
+   "cache_write": 669506,
+   "value_usd": 2.8345,
    "by_purpose": {
     "cartoon create": {
      "requests": 1,
@@ -12190,44 +12190,48 @@
      "tokens": 6214
     },
     "writing": {
-     "requests": 1,
-     "tokens": 55706
+     "requests": 2,
+     "tokens": 111399
     },
     "reel brief": {
-     "requests": 1,
-     "tokens": 38435
+     "requests": 2,
+     "tokens": 76872
     },
     "reel style": {
-     "requests": 1,
-     "tokens": 38334
+     "requests": 2,
+     "tokens": 76780
     },
     "reel news script": {
-     "requests": 1,
-     "tokens": 101809
+     "requests": 2,
+     "tokens": 203316
     },
     "photo check": {
-     "requests": 1,
-     "tokens": 10244
+     "requests": 2,
+     "tokens": 21026
     },
     "quote video": {
-     "requests": 1,
-     "tokens": 38833
+     "requests": 2,
+     "tokens": 77668
     },
     "cover photo": {
-     "requests": 1,
-     "tokens": 5957
+     "requests": 2,
+     "tokens": 11181
     },
     "hook contest": {
-     "requests": 1,
-     "tokens": 44076
+     "requests": 2,
+     "tokens": 88015
     },
     "hook meaning": {
-     "requests": 1,
-     "tokens": 39532
+     "requests": 2,
+     "tokens": 79041
     },
     "proofreading": {
+     "requests": 2,
+     "tokens": 31950
+    },
+    "people photos": {
      "requests": 1,
-     "tokens": 16059
+     "tokens": 8146
     }
    }
   },

@@ -2317,5 +2317,22 @@
   "hook": "question",
   "photos": 3,
   "short": false
+ },
+ {
+  "id": "cbeb3941c9c7",
+  "key": "gta6releaseps5updatelaunchsepehleyekarnazaroorihai",
+  "kind": "cbeb3941c9c7",
+  "secs": 22.5,
+  "at": "2026-11-18T09:24:05+00:00",
+  "type": "news",
+  "topic": "other",
+  "kw": 8,
+  "relate": "share_friend",
+  "cover": "window",
+  "sharp": 38,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 3,
+  "short": false
  }
 ]
