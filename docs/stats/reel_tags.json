@@ -2393,5 +2393,29 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_night-2026-11-18",
+  "key": "ayushmannkhurranasharvariyehpremmolliyatrailersoorajbarjatya",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-18T14:34:32+00:00",
+  "type": "breaking",
+  "bar": 0,
+  "mega": 1,
+  "pool": [
+   "(under 1 h ago) Yeh Prem Mol Liya trailer out: Sooraj Barjatya brings a"
+  ],
+  "n_stories": 1,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 35,
+  "topic": "promo",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "name_first"
  }
 ]

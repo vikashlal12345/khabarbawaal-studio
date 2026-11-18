@@ -502,9 +502,9 @@
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
-  "reel_break_night": "2026-11-17"
+  "reel_break_night": "2026-11-18"
  },
- "inbox_since": "TW6EME0uaY7R",
+ "inbox_since": "X1WqmaxuStHO",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -889,7 +889,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
   "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
@@ -968,7 +967,8 @@
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
   "https://www.msn.com/en-us/news/other/prince-williams-bole-chudiyan-moment-with-kjo-kareena-and-saif-at-dharma-watch/ar-AA2hGsdh",
   "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/sidharth-malhotra-and-kiara-advani-request-privacy-after-daughter-saraayah-face-appears-in-airport-video-101795003264041.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sidharth-malhotra-and-kiara-advani-request-privacy-after-daughter-saraayah-face-appears-in-airport-video-101795003264041.html",
+  "https://www.bollywoodhungama.com/news/bollywood/yeh-prem-mol-liya-trailer-out-sooraj-barjatya-brings-a-tale-of-a-modern-marriage-with-ayushmann-khurrana-and-sharvari/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1185,10 +1185,6 @@
   }
  ],
  "songs_recent": [
-  "Ji Ji Re Ji (From \"Eetha\")",
-  "Vakratunda Mahakaya (Ganpati Shlok)",
-  "Vakrathunda Mahakaya",
-  "Ganesh Aarti",
   "Jai Ganesh Jai Ganesh Deva",
   "Hanuman Chalisa by Shankar Mahadevan",
   "Dhun",
@@ -1224,7 +1220,11 @@
   "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
   "Jo Tum Mere Ho",
   "Tu Mil Jaaye (From \"KING\")",
-  "Teri Meri Kahaani"
+  "Teri Meri Kahaani",
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Barsaat",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1338,6 +1338,10 @@
   },
   {
    "title": "Sidharth Malhotra and Kiara Advani request privacy after daughter Saraayah’s face appears in airport video",
+   "date": "2026-11-18"
+  },
+  {
+   "title": "Yeh Prem Mol Liya trailer out: Sooraj Barjatya brings a tale of a modern marriage with Ayushmann Khurrana and Sharvari",
    "date": "2026-11-18"
   }
  ],
