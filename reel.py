@@ -4982,6 +4982,57 @@ def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_
     return shots + [pl.convert("RGB")]
 
 
+def illu_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = "", tag: str = "AI ILLUSTRATION") -> Image.Image:
+    """One picture of an illustration Reel (owner 18 Nov 2026: 'the first frame line overlaps the face'): the painting fills the screen with a slow zoom, the hook sits on the
+    empty space ABOVE the people (picture 1), a small shadowed caption line sits below the faces, no box, nothing across the middle of the picture."""
+    img = img.convert("RGB")
+    k = max(RW / img.width, RH / img.height) * (1.0 + 0.04 * min(1.0, t / max(dur, 0.1)))
+    big = img.resize((int(img.width * k) + 1, int(img.height * k) + 1), Image.BICUBIC)
+    x0, y0 = (big.width - RW) // 2, (big.height - RH) // 2
+    frame = big.crop((x0, y0, x0 + RW, y0 + RH)).convert("RGBA")
+    shade = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shade)
+    for y in range(620):
+        sd.line((0, y, RW, y), fill=(0, 0, 0, int(150 * (1 - y / 620) ** 1.5)))
+    for y in range(RH - 520, RH):
+        sd.line((0, y, RW, y), fill=(0, 0, 0, int(190 * ((y - (RH - 520)) / 520) ** 1.4)))
+    frame.alpha_composite(shade)
+    if hook:
+        hl, hf, hlh = fit_lines(printable(hook), RIGHT - LEFT + 60, 420, sizes=range(104, 60, -4), name="Anton-Regular.ttf")
+        for j, im in enumerate(line_images(hl, hf, hlh, "#FFFFFF", COVER_PINK, auto_highlight(hook), stroke=9)):
+            frame.alpha_composite(im, ((RW - im.width) // 2, 230 + j * hlh))
+    if line:
+        lines, fnt, lh = fit_lines(printable(line), RIGHT - LEFT + 60, 260, sizes=range(54, 38, -4), name="Poppins-Bold.ttf")
+        glow = Image.new("RGBA", (RW, RH), (0, 0, 0, 0))
+        gd = ImageDraw.Draw(glow)
+        top = RH - 330 - len(lines) * lh
+        for j, words in enumerate(lines):
+            gd.text((RW // 2, top + j * lh), " ".join(words), font=fnt, fill="#FFFFFF", anchor="mt", stroke_width=4, stroke_fill=(0, 0, 0, 230))
+        frame.alpha_composite(glow)
+    frame.alpha_composite(pill(tag, font("Poppins-Bold.ttf", 28), RED, "#FFFFFF", pad=(22, 8)), (50, 120))
+    handle_tag(frame, 1790)
+    return frame
+
+
+def illustration_reel(scenes: list[tuple[Image.Image, str]], hook: str, out_mp4: str, durs: list | None = None) -> list[Image.Image]:
+    """An illustration Reel: each picture 5-7 s (hook over picture 1), then the Follow card. Returns frames for a cover / check."""
+    enc, shots = Encoder(out_mp4), []
+    last = None
+    for n, (img, line) in enumerate(scenes):
+        dur = min(8.0, max(5.0, read_secs(line + (" " + hook if n == 0 else ""), 2.5)))
+        if durs and n < len(durs) and durs[n]:
+            dur = min(9.0, max(float(durs[n]), read_secs(line, 2.0)))
+        for i in range(int(dur * FPS)):
+            f = illu_frame(img, line, i / FPS, dur, hook if n == 0 else "")
+            if i == int(1.0 * FPS):
+                shots.append(f.convert("RGB"))
+            last = f
+            enc.add(f)
+    add_follow(enc, last, FOLLOW_SECS)
+    enc.close()
+    return shots
+
+
 PARTY_SYMBOLS = [   # (words in the party / people names, what the painter draws; no letters)
     (r"bjp|bharatiya janata|nda|modi|shah\b|yogi|nadda", "a small orange-and-green lotus flower badge on his scarf"),
     (r"congress|inc\b|rahul|kharge|priyanka|sonia", "a small open-palm hand badge on his scarf, palm facing out"),
