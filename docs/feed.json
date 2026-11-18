@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_am-2026-11-18",
+  "image": "posts/20261118-0704-reel_news_am-2026-11-18.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261118-070444-reel_news_am-2026-11-18.mp4",
+  "headline": "Dia Mirza Shares Cryptic Post About Nawazuddin Siddiqui’s ‘Offensive Character’, Internet Smells ‘PR Stunt’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Dia Mirza Nawazuddin Siddiqui cryptic post 👀\nDia Mirza ki ek cryptic Instagram post ko Nawazuddin Siddiqui ke 'offensive character' se jod kar dekha ja raha hai.\nKuch log ise PR stunt bol rahe hain.\nYe PR stunt hai ya sach? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: ABP Live (link pinned in comments 👇)\n\n#diamirza #nawazuddinsiddiqui #bollywood #bollywoodnews #reelsindia\n\n(Dia Mirza, Nawazuddin Siddiqui, Dia Mirza cryptic post, Dia Mirza Instagram, Nawazuddin Siddiqui character, Bollywood news, PR stunt)",
+  "source": "ABP Live",
+  "source_url": "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
+  "pin_comment": "Apne Bollywood gossip wale dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Toxic",
+    "artist": "Vishal Mishra, Hanita Bhambri",
+    "lang": "hindi",
+    "mood": "cryptic drama vibe"
+   },
+   {
+    "title": "Akhiyaan Gulaab",
+    "artist": "Mitraz",
+    "lang": "hindi",
+    "mood": "soft, chart-popular background"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "mysterious, thoda gossip mood"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "light masti wali beat"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-18T07:04:44+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-18",
   "image": "posts/20261118-0504-reel_break_am-2026-11-18.jpg",
   "kind": "reel",
@@ -413,50 +458,5 @@
    "fixed": []
   },
   "created_at": "2026-11-17T08:34:28+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-17",
-  "image": "posts/20261117-0635-reel_news_am-2026-11-17.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261117-063546-reel_news_am-2026-11-17.mp4",
-  "headline": "Ananya Panday addresses debate on nepotism; says, “I am very proud to be my father’s daughter”",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ananya Panday nepotism debate Chunky Panday 🎬\nAnanya ne nepotism debate par saaf kaha: \"I am very proud to be my father's daughter.\"\nHindustan Times se baat karte hue unhone Gen Z ko \"badnaam for no reason\" bataya aur apne privilege ko khule dil se maana.\nAnanya ka jawab sahi tha? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#AnanyaPanday #Bollywood #Nepotism #ChunkyPanday #reelsindia\n\n(Ananya Panday, Ananya Panday nepotism, Chunky Panday, Ananya Panday interview, nepotism debate Bollywood, Gen Z badnaam, Hindustan Times interview, Ananya Panday father)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/ananya-panday-addresses-debate-on-nepotism-says-i-am-very-proud-to-be-my-fathers-daughter/",
-  "pin_comment": "Ye Ananya Panday ke fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "His Aura Hits You",
-    "artist": "Ravi Basrur, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "confident, proud swagger"
-   },
-   {
-    "title": "Arz Kiya Hai | Coke Studio Bharat",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft, honest reply vibe"
-   },
-   {
-    "title": "Kar Mehnat (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "hustle, own journey"
-   },
-   {
-    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya",
-    "lang": "new",
-    "mood": "debate and drama"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-17T06:35:46+00:00"
  }
 ]
