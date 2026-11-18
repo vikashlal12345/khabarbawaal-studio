@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_break_am-2026-11-18",
+  "image": "posts/20261118-0504-reel_break_am-2026-11-18.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261118-050425-reel_break_am-2026-11-18.mp4",
+  "headline": "Rubio rules out cyberattacks or links between tech outages",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Marco Rubio US outages Microsoft FAA banks news\n\nRubio ne kaha US outages ke peeche koi malign actor ka evidence zero hai.\nMicrosoft, FAA aur US banks mein pichhle kuch din outages hue.\nFAA ka nationwide ground stop 4.5 ghante chala.\n\nRubio ki baat par bharosa karte ho? Ek word likho: HAAN ya NA 👇\n\n#reelsindia #breakingnews #usnews #marcorubio #techoutage\n\nRubio ki baat par bharosa hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Al Jazeera (link pinned in comments 👇)\n\n\n\n(Marco Rubio, US outages, Microsoft outage, FAA ground stop, US banks outage, cyberattack, Trump Manila, Jay Clayton)",
+  "source": "Al Jazeera",
+  "source_url": "https://www.aljazeera.com/video/newsfeed/2026/11/18/rubio-rules-out-cyberattacks-or-links-between-tech-outages?traffic_source=rss",
+  "pin_comment": "Apne news-lover dost ko ye khabar bhejo 👇",
+  "songs": [
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "suspense vibe = outage ka sawaal"
+   },
+   {
+    "title": "Vaari Jaavan",
+    "artist": "Shashwat Sachdev, Jasmine Sandlas",
+    "lang": "hindi",
+    "mood": "serious dramatic mood"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "calm, serious khabar ka tone"
+   },
+   {
+    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "intense background for news"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Rubio said there is zero evidence of a malign actor; the slide stated it as fact."
+   ],
+   "fixed": [
+    "Rubio: outages ke peeche koi malign actor nahi → Rubio: outages ke peeche malign actor ka koi evidence nahi",
+    "US banks mein recent din outages hue → US banks mein pichhle kuch din outages hue"
+   ]
+  },
+  "created_at": "2026-11-18T05:04:25+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-18",
   "image": "posts/20261118-0304-reel_news_early-2026-11-18.jpg",
   "kind": "reel",
@@ -408,57 +458,5 @@
    "fixed": []
   },
   "created_at": "2026-11-17T06:35:46+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-17",
-  "image": "posts/20261117-0435-reel_break_am-2026-11-17.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261117-043519-reel_break_am-2026-11-17.mp4",
-  "headline": "Avengers: Doomsday creates HISTORY; emerges as the FIRST film to open midnight show bookings ONE MONTH before release; shows already filling FAST",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Avengers Doomsday midnight show booking ek mahina pehle shuru\nFilm 17 December ko India mein release hogi\nMumbai, Delhi-NCR, Kolkata jaise shehron mein 12 baje ke baad ke shows ki booking khuli hai, aur kai shows already bhar rahe hain\nDune Part Three ko IMAX mila, Avengers ko nahi 🎬🔥\nAvengers Doomsday India mein sabse bada opener banegi? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#avengersdoomsday #marvel #bollywoodnews #advancebooking #reelsindia\n\n(Avengers Doomsday, Avengers Doomsday midnight show, Avengers Doomsday advance booking, Avengers Doomsday India release, Marvel film December 2026, Dune Part Three, Robert Downey Jr Doctor Doom, King Shah Rukh Khan)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/bollywood/avengers-doomsday-creates-history-emerges-as-the-first-film-to-open-midnight-show-bookings-one-month-before-release-shows-already-filling-fast/",
-  "pin_comment": "Apne Marvel fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "hype = record bookings"
-   },
-   {
-    "title": "One Name",
-    "artist": "Anirudh Ravichander & Super Subu",
-    "lang": "hindi",
-    "mood": "mass entry energy"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "light fun watch-plan vibe"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "upbeat fan excitement"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article says bookings opened in these cities and several screenings are filling up; it does not say the shows in each of these cities are filling up.",
-    "Fact corrected to match the article: Article doesn't say the 12:05/3:05 shows specifically are filling up; it says bookings are open for those times and several screenings are filling up.",
-    "Slide 2: The poster image is cropped at the bottom, so the word 'DOOMSDAY' under 'AVENGERS' is cut off. It is minor, and the poster is still relevant."
-   ],
-   "fixed": [
-    "Mumbai, Delhi-NCR, Kolkata mein 12 baje ke baad ke shows already bhar rahe hain → Mumbai, Delhi-NCR, Kolkata jaise shehron mein 12 baje ke baad ke shows ki booking khuli hai, aur kai shows already bhar rahe hain",
-    "12:05 am aur 3:05 am ke kai shows tezi se bhar rahe → 12:05 am aur 3:05 am jaise shows ki booking khuli, kai shows tezi se bhar rahe"
-   ]
-  },
-  "created_at": "2026-11-17T04:35:19+00:00"
  }
 ]
