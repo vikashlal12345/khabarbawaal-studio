@@ -3496,7 +3496,7 @@ def extra_cover_candidates(wiki_title: str, story_title: str, tmp: str, current:
     """When none of the story's own photos is really sharp (best sharpness < 38), look for better covers: the star's free Wikipedia portrait
     and up to 2 recent news photos ABOUT the star (`person_photos`: their name in the headline, AI-checked for one sharp whole face).
     Owner, 30 Oct 2026: the Rakul Preet cover was a soft video frame again. Returns [(img, credit, '', False)]; nothing when the photos are fine."""
-    if not wiki_title or (current and max(photo_sharpness(x[0]) for x in current) >= 38):
+    if not wiki_title or any(full_quality(x[0]) for x in current):   # owner 18 Nov 2026: a FULL-screen, very sharp photo cover does best: look for one whenever none exists
         return []
     out = []
     pt = star_portrait(wiki_title)
@@ -3509,6 +3509,15 @@ def extra_cover_candidates(wiki_title: str, story_title: str, tmp: str, current:
         print(f"  ! extra cover photos: {str(e)[:80]}")
     print(f"  cover: the story's photos are soft: {len(out)} extra candidate(s) for {wiki_title}")
     return out
+
+
+def full_quality(im: Image.Image) -> bool:
+    """A photo that fills the 1080x1920 screen sharply (owner 18 Nov 2026: the Dia Mirza remake and the Prince William / Karan Johar Reels, both full-screen sharp covers, got 1,600-2,900
+    views in 2-3 h and 8+ s of watch time; the Kareena Kapoor window cover got 48): sharpness 40+, enlarged at most COVER_MAX_ENLARGE, not a text screenshot."""
+    try:
+        return photo_sharpness(im) >= 40 and max(RW / im.width, RH / im.height) <= COVER_MAX_ENLARGE and not text_like(im)
+    except Exception:
+        return False
 
 
 def photo_sharpness(im: Image.Image) -> float:
@@ -3550,6 +3559,11 @@ def pick_cover_photo(photos: list[Image.Image], about: str, tmp: str, _gated: bo
         if 0 < len(real) < len(photos[:6]):
             print(f"  cover: {len(photos[:6]) - len(real)} text screenshot(s) left out of the contest")
             return real[pick_cover_photo([photos[i] for i in real], about, tmp)]
+    if not _gated and len(photos[:6]) > 1:   # 🖼️ full-screen, sharp photos compete alone when at least one exists (owner 18 Nov 2026)
+        fq = [i for i, im in enumerate(photos[:6]) if full_quality(im)]
+        if 0 < len(fq) < len(photos[:6]):
+            print(f"  cover: {len(fq)} full-screen sharp photo(s) compete, the rest left out")
+            return fq[pick_cover_photo([photos[i] for i in fq], about, tmp, _gated=True)]
     if not _gated and len(photos[:6]) > 1:   # 🔍 real sharpness: soft photos (video screenshots, motion blur) leave the contest when sharper ones exist
         sc = [photo_sharpness(im) for im in photos[:6]]
         top = max(sc)
