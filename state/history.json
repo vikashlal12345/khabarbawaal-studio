@@ -879,7 +879,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/pyre-director-vinod-kapri-says-75-shows-of-film-has-been-cut-down-within-first-week-reveals-theatre-owners-were-told-only-one-film-will-be-shown-101794056941394.html",
   "https://www.hindustantimes.com/entertainment/music/chinmayi-sripaada-reveals-she-learnt-ramayana-song-judi-jodi-just-an-hour-before-performing-live-on-stage-says-improvisations-take-time-101794070158693.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ranbir-kapoor-stunt-double-luke-ioannou-from-ramayana-shares-unseen-set-pics-calls-him-one-of-the-best-actors-101794050320287.html",
   "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
@@ -958,6 +957,7 @@
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/archana-puran-singhs-son-aayushmaan-reveals-how-parents-reacted-to-his-six-year-age-gap-with-fiance-samiksha-what-if-he-is-not-ready-to-be-serious/articleshow/135926325.cms",
   "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-box-office-collection-day-13-ranbir-kapoor-and-yash-starrer-nears-rs-1500-crore-worldwide-despite-second-tuesday-dip/articleshow/135943827.cms",
   "https://www.aljazeera.com/video/newsfeed/2026/11/18/rubio-rules-out-cyberattacks-or-links-between-tech-outages?traffic_source=rss",
+  "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478"
  ],
  "devotion_images_used": [
@@ -1175,10 +1175,6 @@
   }
  ],
  "songs_recent": [
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-  "Ram Siya Ram",
-  "Humnava Mere",
-  "Mangal Rang (From \"Ramayana\")",
   "Main Ram (From \"Ramayana\")",
   "Pal Pal Dil Ke Paas - Title Track",
   "Heeriye (feat. Arijit Singh)",
@@ -1214,7 +1210,11 @@
   "Toxic",
   "Akhiyaan Gulaab",
   "Betuka (From \"Nakhrewaalii\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Dilruba Dilnasheen",
+  "Soulmate",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1308,6 +1308,10 @@
   },
   {
    "title": "Rubio rules out cyberattacks or links between tech outages",
+   "date": "2026-11-18"
+  },
+  {
+   "title": "Dia Mirza Shares Cryptic Post About Nawazuddin Siddiqui’s ‘Offensive Character’, Internet Smells ‘PR Stunt’",
    "date": "2026-11-18"
   },
   {
