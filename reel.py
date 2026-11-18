@@ -4937,7 +4937,7 @@ def toon_frame(img: Image.Image, line: str, t: float, dur: float, hook: str = ""
     return frame
 
 
-def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_mp4: str, badges: list | None = None) -> list[Image.Image]:
+def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_mp4: str, badges: list | None = None, durs: list | None = None) -> list[Image.Image]:
     """The cartoon roast: each picture ~3.5-6 s, then the punchline card + SEND THIS (5 s), then Follow. Returns frames to proofread."""
     logo = logo_img()
     pl = Image.new("RGBA", (RW, RH), YELLOW)
@@ -4954,6 +4954,8 @@ def toon_reel(scenes: list[tuple[Image.Image, str]], hook: str, punch: str, out_
     enc, shots = Encoder(out_mp4), []
     for n, (img, line) in enumerate(scenes):
         dur = min(6.0, max(3.8 if n else 4.8, read_secs(line + (" " + hook if n == 0 else ""), 2.0)))
+        if durs and n < len(durs) and durs[n]:   # the owner's own seconds for this frame (cartoon from ➕ Create), never shorter than the reading time
+            dur = min(9.0, max(float(durs[n]), read_secs(line + (" " + hook if n == 0 else ""), 2.0)))
         for i in range(int(dur * FPS)):
             f = toon_frame(img, line, i / FPS, dur, hook if n == 0 else "", badges=badges)
             if i == int(1.2 * FPS):
@@ -4986,6 +4988,9 @@ def party_symbol(best: dict) -> str:
     return next((draw for pat, draw in PARTY_SYMBOLS if re.search(pat, text)), "")
 
 
+LAST_TOON_GOOD: list = []   # the frame numbers (0-based) that paint_toon_scenes returned, in order
+
+
 TEXT_THINGS = re.compile(r"\b(banners?|signs?|signboards?|posters?|placards?|maps?|boards?|newspapers?|headlines?|labels?|flags? with|"
                          r"text|writing|letters?|words?|slogans?|billboards?|screens?|bus(?:es)?|trucks?|license plates?)\b", re.I)
 
@@ -4997,6 +5002,8 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     import fun
     looks = " ".join(f"{c['name']} (a friendly caricature of the real {c['name']}, recognisable as them): {c['look']}." for c in best["characters"][:2])
     symbol = party_symbol(best)
+    N = min(len(best["scenes"]), int(best.get("max_scenes", 3)))   # ➕ Create cartoons may have up to 4 frames
+    need = int(best.get("need", 2))
     folder = os.path.join(tmp, "toon")
     os.makedirs(folder, exist_ok=True)
     made: dict[int, tuple[Image.Image, str]] = {}
@@ -5035,7 +5042,7 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
             if not r["ok"]:
                 print(f"  cartoon scene {r['n']} rejected: {r['problem'][:100]}")
         return {n for n in ns if n not in bad}
-    for n in range(len(best["scenes"][:3])):
+    for n in range(len(best["scenes"][:N])):
         try:
             paint(n)
         except Exception as e:
@@ -5044,10 +5051,10 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
     import time
     deadline = time.time() + 20 * 60   # the painters allow only ~3 pictures at once, then say busy: wait and ask again
     for _ in range(3):   # more tries for each rejected or missing picture (stray lettering is the usual fault)
-        todo = [n for n in range(len(best["scenes"][:3])) if n not in good]
-        if not todo or len(good) >= 3:
+        todo = [n for n in range(len(best["scenes"][:N])) if n not in good]
+        if not todo or len(good) >= N:
             break
-        if len(good) >= 2 and time.time() + 300 > deadline:
+        if len(good) >= need and time.time() + 300 > deadline:
             break
         for n in todo:
             try:
@@ -5062,14 +5069,16 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
                     time.sleep(300)
                     _MODELS_DOWN.clear()
                     break
-        if len(good) >= 3:
+        if len(good) >= N:
             break
-    if len(good) < 2:   # the painters give only ~3 pictures a run: use clean ones even if they miss the scene (the caption tells the story)
+    if len(good) < need:   # the painters give only ~3 pictures a run: use clean ones even if they miss the scene (the caption tells the story)
         good = good | (safe_ok & set(made))
-        if len(good) >= 2:
+        if len(good) >= need:
             print(f"  cartoon: using {len(good)} clean pictures that do not match their scene exactly")
-    if len(good) < 2:
-        raise RuntimeError("fewer than 2 cartoon pictures looked right")
+    if len(good) < need:
+        raise RuntimeError(f"fewer than {need} cartoon pictures looked right")
+    global LAST_TOON_GOOD
+    LAST_TOON_GOOD = sorted(good)
     return [(made[n][0], best["scenes"][n]["line"], made[n][1]) for n in sorted(good)]
 
 

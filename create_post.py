@@ -327,7 +327,11 @@ def main() -> int:
         return make_media(raw, media)
     known = {p["id"] for p in g.load_json(g.FEED_FILE, [])}
     try:
-        code = make_reel(raw) if reel_wanted else make(raw)
+        import cartoon_create
+        if cartoon_create.is_cartoon(raw):   # 🎨 'cartoon' + frames (owner 18 Nov 2026): an AI cartoon Reel from his frames, never real photos
+            code = make_cartoon(raw)
+        else:
+            code = make_reel(raw) if reel_wanted else make(raw)
         if fun.LIMIT_SEEN and not os.environ.get("MEDIA"):   # a limit error was swallowed on the way: the result is not trustworthy
             feed = g.load_json(g.FEED_FILE, [])
             import remake
@@ -707,6 +711,30 @@ def topic_article(text: str) -> dict | None:
         return None
     art = read_article(arts[n - 1]["url"])
     return art if art and art.get("title") else None
+
+
+def make_cartoon(raw: str) -> int:
+    """🎨 An AI cartoon Reel from the owner's 'cartoon ...' request (see cartoon_create.py). Nothing is made when the painters stay busy: the reason goes to the Activity box."""
+    import tempfile
+    import cartoon_create
+    import reel
+    summary_file = g.Path(os.environ.get("SUMMARY_FILE", g.ROOT / ".create_summary.md"))
+    state = g.load_json(g.STATE_FILE, {"seen": [], "recent_headlines": []})
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            cover, mp4, entry = cartoon_create.build(raw, tmp, note)
+            feed = g.load_json(g.FEED_FILE, [])
+            post_id = "c" + g.hashlib.sha1((raw + "|cartoon" + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:11]
+            reel.save_reel(feed, state, cover, mp4, post_id, {**entry, "kind": "custom", "request": raw[:1500]})
+    except Exception as e:
+        if type(e).__name__ == "ClaudeLimit" or fun.is_limit(str(e)):
+            raise
+        print(f"  ! cartoon not made: {str(e)[:300]}")
+        failed(f"The cartoon couldn't be made: {str(e)[:160]}. Nothing was posted: send it again in a while (the free painters are often busy).")
+        return 0
+    summary_file.write_text(f"✅ **Cartoon Reel ready:** {entry['headline']}\n\nOpen the KhabarBawaal Studio app (pull to refresh), then tap 📤 Post. Turn on Instagram's 'AI info' label.")
+    print("cartoon Reel ready")
+    return 0
 
 
 def make_reel(raw: str) -> int:

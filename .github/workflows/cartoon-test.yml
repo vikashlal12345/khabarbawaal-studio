@@ -1,0 +1,32 @@
+name: Cartoon create test
+# Manual only: builds a ➕ Create cartoon request from a text file in a temporary folder and attaches the video. Posts nothing, saves nothing to the app.
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "Request file"
+        required: true
+        default: "tools/cartoon_tests/gta.txt"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: npm install -g @anthropic-ai/claude-code
+      - run: python -u tools/cartoon_test.py ${{ inputs.file }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cartoon-test
+          path: toon_out/cartoon_*.mp4
+          if-no-files-found: ignore

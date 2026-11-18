@@ -361,7 +361,7 @@ STOP_WORDS = set("create make reel post latest new news auto mode please the and
                  "trending today now give want write kar karo bana banao ek ka ki ke par pe".split())
 GENERIC = {"bollywood", "film", "films", "movie", "movies", "cinema", "actor", "actress", "celebrity", "celebrities", "star", "stars",
            "entertainment", "gossip", "box", "office"}
-NEEDS_AI = re.compile(r"[\"“”]|(?i:\b(in one frame|side by side|exact line|write this|on that line|photos? in|vertical)\b)")
+NEEDS_AI = re.compile(r"(?i:^\s*cartoon\b)|[\"“”]|(?i:\b(in one frame|side by side|exact line|write this|on that line|photos? in|vertical)\b)")
 
 
 def keywords(text: str) -> list[str]:
