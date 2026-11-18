@@ -2363,5 +2363,35 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-18",
+  "key": "sidharthmalhotrakiaraadvanidaughtersaraayahprivacy",
+  "kind": "reel_news_aft",
+  "secs": 18.1,
+  "at": "2026-11-18T13:04:24+00:00",
+  "type": "news",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Shraddha Kapoor goes beyond dance workshops to understa",
+   "(under 1 h ago) Sidharth Malhotra and Kiara Advani request privacy afte",
+   "(2 h ago) Inside PICS of Samantha Ruth Prabhu's Baby Shower: Fath",
+   "(4 h ago) Ali Fazal to headline BBC-CBC adaptation of E.M. Forste",
+   "(1 h ago) Shashaank Khaitaan announces Aisi Deewangi Dekhi Nahin "
+  ],
+  "n_stories": 5,
+  "strength": 9,
+  "pick_no": 2,
+  "age_h": 0.8,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 31,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

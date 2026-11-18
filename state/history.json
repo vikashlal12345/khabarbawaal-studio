@@ -347,7 +347,8 @@
   "394717402add",
   "918376a65a9a",
   "f9156f129c58",
-  "a00fba176fc9"
+  "a00fba176fc9",
+  "bf4f34680889"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -491,7 +492,7 @@
   "reel_news_am": "2026-11-18",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-17",
+  "reel_news_aft": "2026-11-18",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-18",
@@ -503,7 +504,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-17"
  },
- "inbox_since": "7dkEV0iolvH8",
+ "inbox_since": "TW6EME0uaY7R",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -886,7 +887,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://indianexpress.com/article/entertainment/bollywood/how-janhvi-kapoor-finally-got-sridevis-nod-for-her-bollywood-debut-10955322/",
   "https://www.hindustantimes.com/entertainment/bollywood/sargun-mehta-says-she-is-biggest-fan-of-husband-ravie-dubey-after-watching-him-as-lakshman-in-ramayana-calls-it-a-personal-win-101794116982448.html",
   "https://www.hindustantimes.com/entertainment/bollywood/proud-father-sonu-nigam-gets-emotional-as-son-nevaan-begins-musical-journey-at-19-reveals-he-practices-vocals-for-16-hours-a-day-101794132381054.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
@@ -965,7 +965,8 @@
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
   "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
   "https://www.msn.com/en-us/news/other/prince-williams-bole-chudiyan-moment-with-kjo-kareena-and-saif-at-dharma-watch/ar-AA2hGsdh",
-  "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/sidharth-malhotra-and-kiara-advani-request-privacy-after-daughter-saraayah-face-appears-in-airport-video-101795003264041.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1182,10 +1183,6 @@
   }
  ],
  "songs_recent": [
-  "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
-  "Aao Ri Chirraiya (From \"Mysaa\")",
-  "Alfaaz",
-  "Ashke",
   "Ji Ji Re Ji (From \"Eetha\")",
   "Vakratunda Mahakaya (Ganpati Shlok)",
   "Vakrathunda Mahakaya",
@@ -1221,7 +1218,11 @@
   "Aao Ri Chirraiya (From \"Mysaa\")",
   "Aaj Bhi 2",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Tu Mil Jaaye (From \"KING\")"
+  "Tu Mil Jaaye (From \"KING\")",
+  "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
+  "Jo Tum Mere Ho",
+  "Tu Mil Jaaye (From \"KING\")",
+  "Teri Meri Kahaani"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1331,6 +1332,10 @@
   },
   {
    "title": "Dhanush, Juhi Chawla, Varun Dhawan react to MS Dhoni's IPL retirement, say ‘game will never be quite the same’",
+   "date": "2026-11-18"
+  },
+  {
+   "title": "Sidharth Malhotra and Kiara Advani request privacy after daughter Saraayah’s face appears in airport video",
    "date": "2026-11-18"
   }
  ],
