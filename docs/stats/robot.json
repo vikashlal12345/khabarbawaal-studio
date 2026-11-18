@@ -1,335 +1,4 @@
 {
- "2026-10-12": {
-  "night_ready": {
-   "posts": 0,
-   "requests": 8,
-   "input": 24,
-   "output": 9942,
-   "cache_read": 16157,
-   "cache_write": 64236,
-   "value_usd": 0.3581,
-   "by_purpose": {
-    "writing": {
-     "requests": 2,
-     "tokens": 17392
-    },
-    "proofreading": {
-     "requests": 3,
-     "tokens": 44751
-    },
-    "gita writing": {
-     "requests": 1,
-     "tokens": 12543
-    },
-    "joke judge": {
-     "requests": 1,
-     "tokens": 7714
-    },
-    "flux pick": {
-     "requests": 1,
-     "tokens": 7959
-    }
-   }
-  },
-  "night_calendar": {
-   "posts": 0,
-   "requests": 1,
-   "input": 2,
-   "output": 489,
-   "cache_read": 0,
-   "cache_write": 10425,
-   "value_usd": 0.0466,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 10916
-    }
-   }
-  },
-  "night_picture": {
-   "posts": 0,
-   "requests": 4,
-   "input": 12,
-   "output": 2810,
-   "cache_read": 5097,
-   "cache_write": 22225,
-   "value_usd": 0.1175,
-   "by_purpose": {
-    "bhakti writing": {
-     "requests": 1,
-     "tokens": 8485
-    },
-    "joke judge": {
-     "requests": 1,
-     "tokens": 6823
-    },
-    "flux pick": {
-     "requests": 1,
-     "tokens": 7222
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 7614
-    }
-   }
-  },
-  "night_learn": {
-   "posts": 0,
-   "requests": 0,
-   "input": 0,
-   "output": 0,
-   "cache_read": 0,
-   "cache_write": 0,
-   "value_usd": 0.0,
-   "by_purpose": {}
-  },
-  "reel_devotion": {
-   "posts": 0,
-   "requests": 6,
-   "input": 18,
-   "output": 4175,
-   "cache_read": 9790,
-   "cache_write": 36393,
-   "value_usd": 0.1884,
-   "by_purpose": {
-    "devotion plan": {
-     "requests": 1,
-     "tokens": 8271
-    },
-    "flux pick": {
-     "requests": 1,
-     "tokens": 7033
-    },
-    "devotion writing": {
-     "requests": 1,
-     "tokens": 7757
-    },
-    "joke judge": {
-     "requests": 1,
-     "tokens": 7032
-    },
-    "proofreading": {
-     "requests": 2,
-     "tokens": 20283
-    }
-   }
-  },
-  "night_roundup": {
-   "posts": 1,
-   "requests": 4,
-   "input": 14,
-   "output": 4683,
-   "cache_read": 17473,
-   "cache_write": 40933,
-   "value_usd": 0.2124,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 8839
-    },
-    "proofreading": {
-     "requests": 3,
-     "tokens": 54264
-    }
-   }
-  },
-  "reel_clip_am": {
-   "posts": 0,
-   "requests": 4,
-   "input": 12,
-   "output": 2805,
-   "cache_read": 10723,
-   "cache_write": 26996,
-   "value_usd": 0.137,
-   "by_purpose": {
-    "reel writing": {
-     "requests": 1,
-     "tokens": 12589
-    },
-    "joke judge": {
-     "requests": 1,
-     "tokens": 14057
-    },
-    "clip pick": {
-     "requests": 1,
-     "tokens": 6995
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 6895
-    }
-   }
-  },
-  "calendar": {
-   "posts": 0,
-   "requests": 5,
-   "input": 20,
-   "output": 7270,
-   "cache_read": 26901,
-   "cache_write": 46527,
-   "value_usd": 0.2615,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 9270
-    },
-    "photo check": {
-     "requests": 1,
-     "tokens": 9224
-    },
-    "proofreading": {
-     "requests": 3,
-     "tokens": 62224
-    }
-   }
-  },
-  "reel_clip": {
-   "posts": 0,
-   "requests": 4,
-   "input": 10,
-   "output": 2671,
-   "cache_read": 2901,
-   "cache_write": 28191,
-   "value_usd": 0.1398,
-   "by_purpose": {
-    "reel writing": {
-     "requests": 1,
-     "tokens": 13052
-    },
-    "joke judge": {
-     "requests": 1,
-     "tokens": 6948
-    },
-    "clip pick": {
-     "requests": 1,
-     "tokens": 6754
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 7019
-    }
-   }
-  },
-  "news": {
-   "posts": 1,
-   "requests": 4,
-   "input": 14,
-   "output": 3747,
-   "cache_read": 15149,
-   "cache_write": 36525,
-   "value_usd": 0.1851,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 13273
-    },
-    "photo check": {
-     "requests": 1,
-     "tokens": 8431
-    },
-    "proofreading": {
-     "requests": 2,
-     "tokens": 33731
-    }
-   }
-  },
-  "reel_politics": {
-   "posts": 0,
-   "requests": 8,
-   "input": 16,
-   "output": 12503,
-   "cache_read": 5976,
-   "cache_write": 66950,
-   "value_usd": 0.3935,
-   "by_purpose": {
-    "satire pick": {
-     "requests": 1,
-     "tokens": 7933
-    },
-    "satire writing": {
-     "requests": 3,
-     "tokens": 47888
-    },
-    "joke judge": {
-     "requests": 3,
-     "tokens": 22698
-    },
-    "clip pick": {
-     "requests": 1,
-     "tokens": 6926
-    }
-   }
-  },
-  "reel_meme": {
-   "posts": 0,
-   "requests": 4,
-   "input": 10,
-   "output": 2805,
-   "cache_read": 4068,
-   "cache_write": 28830,
-   "value_usd": 0.1437,
-   "by_purpose": {
-    "reel writing": {
-     "requests": 1,
-     "tokens": 13390
-    },
-    "joke judge": {
-     "requests": 1,
-     "tokens": 6851
-    },
-    "clip pick": {
-     "requests": 1,
-     "tokens": 7433
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 8039
-    }
-   }
-  },
-  "reel_news": {
-   "posts": 0,
-   "requests": 3,
-   "input": 10,
-   "output": 3520,
-   "cache_read": 9478,
-   "cache_write": 20221,
-   "value_usd": 0.1171,
-   "by_purpose": {
-    "reel news pick": {
-     "requests": 1,
-     "tokens": 10748
-    },
-    "photo check": {
-     "requests": 1,
-     "tokens": 9225
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 13256
-    }
-   }
-  },
-  "top10_day": {
-   "posts": 1,
-   "requests": 2,
-   "input": 6,
-   "output": 2028,
-   "cache_read": 4416,
-   "cache_write": 24476,
-   "value_usd": 0.1187,
-   "by_purpose": {
-    "writing": {
-     "requests": 1,
-     "tokens": 13142
-    },
-    "proofreading": {
-     "requests": 1,
-     "tokens": 17784
-    }
-   }
-  }
- },
  "2026-10-13": {
   "night_ready": {
    "posts": 0,
@@ -12326,6 +11995,39 @@
     "proofreading": {
      "requests": 1,
      "tokens": 13035
+    }
+   }
+  }
+ },
+ "2026-11-18": {
+  "reel_devotion": {
+   "posts": 0,
+   "requests": 6,
+   "input": 18,
+   "output": 3823,
+   "cache_read": 10610,
+   "cache_write": 134573,
+   "value_usd": 0.5777,
+   "by_purpose": {
+    "devotion plan": {
+     "requests": 1,
+     "tokens": 40126
+    },
+    "aarti footage screen": {
+     "requests": 1,
+     "tokens": 6364
+    },
+    "aarti writing": {
+     "requests": 1,
+     "tokens": 41942
+    },
+    "joke judge": {
+     "requests": 1,
+     "tokens": 38722
+    },
+    "proofreading": {
+     "requests": 2,
+     "tokens": 21870
     }
    }
   }

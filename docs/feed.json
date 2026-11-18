@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_devotion-2026-11-18",
+  "image": "posts/20261118-0124-reel_devotion-2026-11-18.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261118-012416-reel_devotion-2026-11-18.mp4",
+  "headline": "Wednesday: Ganesh ji: Aaj Ganpati Bappa ki kripa kaise payein",
+  "tag": "🎬 REEL · 🪔 JAI GANESH",
+  "caption": "Aaj Ganpati Bappa ki kripa kaise payein? 🙏\nSachche mann se naam lo... naya kaam shuru karo.\nBappa har kadam par saath hain.\nGanpati Bappa Morya likho 🙏\n\nVideo: RitikRana / Pixabay 🙏\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappa #bappamorya #ganeshji #aajkaaashirwaad #reelsindia",
+  "source": "Pixabay (free licence)",
+  "source_url": "",
+  "pin_comment": "Kisi apne ko bhejo jise aaj Bappa ke aashirwaad ki zaroorat hai 🙏",
+  "songs": [
+   {
+    "title": "Vakratunda Mahakaya (Ganpati Shlok)",
+    "artist": "Lata Mangeshkar",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Vakrathunda Mahakaya",
+    "artist": "Vandemataram Srinivas, S.P. Balasubrahmanyam",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Ganesh Aarti",
+    "artist": "Sanjay Dutt",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Jai Ganesh Jai Ganesh Deva",
+    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "naya shuruaat ka mahatva → nayi shuruaat ka mahatva"
+   ]
+  },
+  "created_at": "2026-11-18T01:24:16+00:00"
+ },
+ {
   "id": "c5db247a7496",
   "image": "posts/20261117-1756-c5db247a7496.jpg",
   "kind": "custom",
@@ -417,52 +464,5 @@
    ]
   },
   "created_at": "2026-11-17T02:34:05+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-17",
-  "image": "posts/20261117-0035-reel_devotion-2026-11-17.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261117-003518-reel_devotion-2026-11-17.mp4",
-  "headline": "Tuesday: Hanuman ji: Hanuman ji ko apni shakti yaad kyun nahi thi",
-  "tag": "🎬 REEL · 🙏 JAI HANUMAN",
-  "caption": "Hanuman ji ko apni shakti yaad dilani padi thi 🙏\nJambavan ke shabdon se unhone sagar laangha.\nHum mein bhi himmat chhupi hai... bas yaad karni hai.\nJai Hanuman likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#hanumanji #ramayana #jaihanuman #motivation #reelsindia",
-  "source": "KhabarBawaal Original",
-  "source_url": "",
-  "pin_comment": "Jo thaka hua ho, usko ye bhejo 🙏",
-  "songs": [
-   {
-    "title": "Shree Hanuman Chalisa",
-    "artist": "Hariharan, Lalit Sen",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Hanuman Chalisa",
-    "artist": "Anup Jalota",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Hanuman Chalisa (From \"Hanuman Chalisa - Zee Music Devotional\")",
-    "artist": "Anup Jalota, Sanjeev-Ajay",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Sankatmochan Hanuman Ashtak",
-    "artist": "Hariharan, Lalit Sen",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "laanghaa → laangha"
-   ]
-  },
-  "created_at": "2026-11-17T00:35:18+00:00"
  }
 ]
