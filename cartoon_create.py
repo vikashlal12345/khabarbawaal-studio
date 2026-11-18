@@ -138,11 +138,11 @@ def build(raw: str, tmp: str, status_step=lambda t, n=0: None):
         lines.append(owner_lines[i] if i < len(owner_lines) and owner_lines[i] else fr["line"])
     hook = spec["hook"] or res["hook"]
     punch = spec["last"] or res["punchline"]
-    best = {"characters": [], "scenes": [{"paint": f["paint"], "line": lines[i]} for i, f in enumerate(frames)], "max_scenes": 4, "need": len(frames)}
+    best = {"characters": [], "scenes": [{"paint": f["paint"], "line": lines[i]} for i, f in enumerate(frames)], "max_scenes": 4, "need": len(frames), "wait_min": 45}
     old_style = reel.TOON_STYLE
     reel.TOON_STYLE = TOON_STYLE_FUN
     try:
-        status_step("Painting the cartoon pictures (free painters can take 10-20 minutes)", 4)
+        status_step("Painting the cartoon pictures (the free painters can take up to 45 minutes when they are busy)", 4)
         scenes = reel.paint_toon_scenes(best, tmp)
     finally:
         reel.TOON_STYLE = old_style

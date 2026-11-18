@@ -5063,8 +5063,9 @@ def paint_toon_scenes(best: dict, tmp: str) -> list[tuple[Image.Image, str, str]
             print(f"  ! cartoon scene {n + 1} not painted: {str(e)[:100]}")
     good = check(sorted(made)) if made else set()   # nothing painted yet (busy): the loop below waits and asks again
     import time
-    deadline = time.time() + 20 * 60   # the painters allow only ~3 pictures at once, then say busy: wait and ask again
-    for _ in range(3):   # more tries for each rejected or missing picture (stray lettering is the usual fault)
+    wait_min = int(best.get("wait_min", 20))   # ➕ Create cartoons wait up to 45 min (owner 18 Nov 2026: the painters were busy for the 3rd picture and the request failed)
+    deadline = time.time() + wait_min * 60   # the painters allow only ~3 pictures at once, then say busy: wait and ask again
+    for _ in range(3 if wait_min <= 20 else 9):   # more tries for each rejected or missing picture (stray lettering is the usual fault)
         todo = [n for n in range(len(best["scenes"][:N])) if n not in good]
         if not todo or len(good) >= N:
             break
