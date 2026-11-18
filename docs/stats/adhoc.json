@@ -1,10 +1,10 @@
 {
  "2026-10-14": {
-  "replies": 176,
-  "input": 348,
-  "output": 186679,
-  "cache_read": 110548001,
-  "cache_write": 1593211
+  "replies": 175,
+  "input": 346,
+  "output": 186540,
+  "cache_read": 110526522,
+  "cache_write": 1239733
  },
  "2026-10-15": {
   "replies": 480,
@@ -21,11 +21,11 @@
   "cache_write": 2790135
  },
  "2026-10-19": {
-  "replies": 418,
-  "input": 862,
-  "output": 442907,
-  "cache_read": 102205726,
-  "cache_write": 5564664
+  "replies": 407,
+  "input": 840,
+  "output": 419498,
+  "cache_read": 102187298,
+  "cache_write": 5313690
  },
  "2026-10-20": {
   "replies": 345,
@@ -196,10 +196,10 @@
   "cache_write": 1426455
  },
  "2026-11-18": {
-  "replies": 94,
-  "input": 212,
-  "output": 66685,
-  "cache_read": 30934893,
-  "cache_write": 1198433
+  "replies": 122,
+  "input": 276,
+  "output": 87976,
+  "cache_read": 41439130,
+  "cache_write": 1723484
  }
 }
