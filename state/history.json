@@ -352,7 +352,8 @@
   "a35a85edcbb1",
   "e9f9ef722bd0",
   "5a3670e57d48",
-  "b64f147502ae"
+  "b64f147502ae",
+  "5d914a94cbf2"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -496,7 +497,7 @@
   "reel_news_am": "2026-11-19",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
-  "reel_news_aft": "2026-11-18",
+  "reel_news_aft": "2026-11-19",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-19",
@@ -508,7 +509,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-18"
  },
- "inbox_since": "qDDoKskar595",
+ "inbox_since": "oUav7LmEhJJC",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -895,7 +896,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html",
   "https://www.bollywoodhungama.com/news/bollywood/ahaan-pandays-beparwah-co-star-aaishvary-thackeray-loses-rs-19000-to-cyber-fraud-files-police-complaint/",
   "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
@@ -974,7 +974,8 @@
   "https://www.bollywoodhungama.com/news/features/alia-bhatt-becomes-cover-star-of-times-first-ever-time-100-next-india-list-talks-about-women-centric-films-says-i-am-not-going-to-stop-choosing-films-that-are-women-led/",
   "https://news.abplive.com/entertainment/celebrities/main-akeli-ho-gayi-thi-ankita-lokhande-says-vicky-jain-wasn-t-there-for-her-during-bigg-boss-1876633",
   "https://www.bollywoodhungama.com/news/features/priyanka-chopra-jonas-shares-video-of-daughter-malti-marie-chants-gayatri-mantra-actor-calls-it-beautiful-see-postx/",
-  "https://english.mathrubhumi.com/movies-music/news/general-knowledge-ananya-birlas-call-to-alia-bhatt-takes-a-hilarious-turn-on-koffee-with-karan-9-lx6fzyir"
+  "https://english.mathrubhumi.com/movies-music/news/general-knowledge-ananya-birlas-call-to-alia-bhatt-takes-a-hilarious-turn-on-koffee-with-karan-9-lx6fzyir",
+  "https://news.abplive.com/entertainment/celebrities/alia-bhatt-supports-deepika-padukone-s-8-hour-shift-demand-says-it-cannot-be-arbitrary-1876709"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1191,10 +1192,6 @@
   }
  ],
  "songs_recent": [
-  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Aao Ri Chirraiya (From \"Mysaa\")",
-  "Aaj Bhi 2",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Tu Mil Jaaye (From \"KING\")",
   "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
@@ -1230,7 +1227,11 @@
   "Peek A Boo",
   "Shararat",
   "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")"
+  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+  "Azadi",
+  "Ez-Ez",
+  "Betuka (From \"Nakhrewaalii\")",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1336,6 +1337,10 @@
   },
   {
    "title": "'General knowledge?' Ananya Birla's call to Alia Bhatt takes a hilarious turn on Koffee With Karan 9",
+   "date": "2026-11-19"
+  },
+  {
+   "title": "Alia Bhatt Supports Deepika Padukone’s 8-Hour Shift Demand; Says ‘It Cannot Be Arbitrary’",
    "date": "2026-11-19"
   }
  ],

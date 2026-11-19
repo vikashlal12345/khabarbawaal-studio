@@ -2584,5 +2584,34 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_news_aft-2026-11-19",
+  "key": "aliabhattdeepikapadukone8hourshiftdemand",
+  "kind": "reel_news_aft",
+  "secs": 18.4,
+  "at": "2026-11-19T13:04:28+00:00",
+  "type": "news",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Delhi Confidential: Nitin Gadkari set for ‘The Great In",
+   "(2 h ago) R Madhavan’s son Vedaant Madhavan sets new in 800-yard ",
+   "(2 h ago) Arjun Sarja slams people for demeaning his elder daught",
+   "(under 1 h ago) Alia Bhatt Supports Deepika Padukone’s 8-Hour Shift Dem"
+  ],
+  "n_stories": 4,
+  "strength": 6,
+  "pick_no": 4,
+  "age_h": 0.3,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 40,
+  "hook_rule": "detail1",
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

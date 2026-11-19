@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_aft-2026-11-19",
+  "image": "posts/20261119-1304-reel_news_aft-2026-11-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261119-130428-reel_news_aft-2026-11-19.mp4",
+  "headline": "Alia Bhatt Supports Deepika Padukone’s 8-Hour Shift Demand; Says ‘It Cannot Be Arbitrary’",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Alia Bhatt Deepika Padukone 8 hour shift demand 🎬\nAlia Bhatt ne Deepika Padukone ki 8 ghante ki shift wali demand ko support kiya.\nAlia ke mutabik fair working hours par baat honi chahiye, aur ye 'arbitrary' nahi ho sakta.\nBollywood mein kaam ke ghante ab badi bahas ban gaye hain.\nAlia ki baat sahi hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: ABP Live (link pinned in comments 👇)\n\n#aliabhatt #deepikapadukone #bollywoodnews #bollywood #reelsindia\n\n(Alia Bhatt, Deepika Padukone, 8 hour shift, Bollywood working hours, Alia Bhatt Deepika Padukone support, fair working hours, Bollywood news, Alia Bhatt latest)",
+  "source": "ABP Live",
+  "source_url": "https://news.abplive.com/entertainment/celebrities/alia-bhatt-supports-deepika-padukone-s-8-hour-shift-demand-says-it-cannot-be-arbitrary-1876709",
+  "pin_comment": "Apne us dost ko bhejo jo roz overtime karta hai 👇",
+  "songs": [
+   {
+    "title": "Azadi",
+    "artist": "Dub Sharma, DIVINE",
+    "lang": "hindi",
+    "mood": "hype anthem = standing up for rights"
+   },
+   {
+    "title": "Ez-Ez",
+    "artist": "Hanumankind, Raj Ranjodh",
+    "lang": "hindi",
+    "mood": "bold energy for a strong stand"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "fresh vibe, light mood"
+   },
+   {
+    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+    "artist": "Himesh Reshammiya, Junaid Wasi",
+    "lang": "new",
+    "mood": "work-life balance hint"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-19T13:04:28+00:00"
+ },
+ {
   "id": "reel_news_pm-2026-11-19",
   "image": "posts/20261119-1105-reel_news_pm-2026-11-19.jpg",
   "kind": "reel",
@@ -387,50 +432,5 @@
    "fixed": []
   },
   "created_at": "2026-11-18T14:34:32+00:00"
- },
- {
-  "id": "reel_news_aft-2026-11-18",
-  "image": "posts/20261118-1304-reel_news_aft-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-130424-reel_news_aft-2026-11-18.mp4",
-  "headline": "Sidharth Malhotra and Kiara Advani request privacy after daughter Saraayah’s face appears in airport video",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sidharth Malhotra Kiara Advani daughter Saraayah privacy 💔\nAirport video mein beti Saraayah ka chehra dikha, jiske baad dono ne privacy ki request ki.\nSaraayah sirf 1 saal ki hai, aur dono ne use ab tak public attention se door rakha tha.\nStar bachchon ko privacy milni chahiye? HAAN ya NA likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sidharthmalhotra #kiaraadvani #bollywood #viral #reelsindia\n\n(Sidharth Malhotra, Kiara Advani, Saraayah, Kiara Advani daughter, Sidharth Kiara privacy, airport video, Bollywood news, Sidharth Malhotra daughter)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sidharth-malhotra-and-kiara-advani-request-privacy-after-daughter-saraayah-face-appears-in-airport-video-101795003264041.html",
-  "pin_comment": "Ye Kiara-Sidharth ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Kumaar",
-    "lang": "new",
-    "mood": "parents ka pyaar, beti ke liye"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "soft family love vibe"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "emotional, apno ko paane ki feeling"
-   },
-   {
-    "title": "Teri Meri Kahaani",
-    "artist": "Arijit Singh, Palak Muchhal",
-    "lang": "hindi",
-    "mood": "couple ki kahani"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-18T13:04:24+00:00"
  }
 ]
