@@ -12109,6 +12109,25 @@
      "tokens": 10714
     }
    }
+  },
+  "create": {
+   "posts": 1,
+   "requests": 2,
+   "input": 6,
+   "output": 1544,
+   "cache_read": 2121,
+   "cache_write": 44440,
+   "value_usd": 0.1934,
+   "by_purpose": {
+    "cartoon create": {
+     "requests": 1,
+     "tokens": 40610
+    },
+    "toon check": {
+     "requests": 1,
+     "tokens": 7501
+    }
+   }
   }
  }
 }

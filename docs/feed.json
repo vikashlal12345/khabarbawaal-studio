@@ -1,5 +1,27 @@
 [
  {
+  "id": "cf84f244cfcf",
+  "image": "posts/20261119-0132-cf84f244cfcf.jpg",
+  "kind": "custom",
+  "media": "reel",
+  "video": "posts/20261119-013250-cf84f244cfcf.mp4",
+  "headline": "GTA 6 kal aa raha hai, bhai!",
+  "tag": "🎬 REEL · 🎨 AI CARTOON",
+  "caption": "GTA 6 ka naam suna aur achanak sabko viral fever ho gaya 😂\nBoss ko sab pata hai, kyunki wo bhi usi line mein hai.\nTumne kabhi gaming ke liye fake leave li hai? HAAN ya NA likho 👇\n\n🎨 AI cartoon (fiction), pictures: AI illustration (Z-Image)\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#GTA6 #GTAVI #OfficeHumor #IndianMemes #Relatable",
+  "source": "KhabarBawaal Original",
+  "pin_comment": "Kisi aise dost ko bhejo jo GTA 6 ke din 'bimaar' ho jayega 👇",
+  "songs": [],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "🎨 AI cartoon (fiction): the pictures are AI-painted. Turn on Instagram's 'AI info' label when posting."
+   ],
+   "fixed": []
+  },
+  "request": "cartoon\nFrame 1 (0–5 seconds)\nA young Indian corporate guy sitting at his office desk, looking deeply at his phone with a shocked, wide-eyed expression as a glowing notification pops up on his screen.\nOn-screen text: \"POV: You just realized GTA 6 drops tomorrow.\"\nFrame 2 (6–11 seconds)\nThe same young guy now sitting on his bedroom bed, aggressively typing on a laptop with a mischievous, evil grin while a fake thermometer and a bottle of cough syrup sit right next to him as props.\nOn-screen text: \"Me typing: 'Sir, sudden viral fever, cannot login today'\"\nFrame 3 (12–17 seconds)\nA strict, grumpy Indian boss sitting in his cabin, staring deadpan at his computer screen showing a \"Sick Leave Email\", slowly shaking his head while a gaming controller peeks out from his own office drawer.\nOn-screen text: \"The Boss: 'Approved. (See you in Vice City)'\"",
+  "created_at": "2026-11-19T01:32:50+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-19",
   "image": "posts/20261119-0033-reel_devotion-2026-11-19.jpg",
   "kind": "reel",
@@ -510,52 +532,5 @@
    "fixed": []
   },
   "created_at": "2026-11-18T03:04:42+00:00"
- },
- {
-  "id": "reel_devotion-2026-11-18",
-  "image": "posts/20261118-0124-reel_devotion-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-012416-reel_devotion-2026-11-18.mp4",
-  "headline": "Wednesday: Ganesh ji: Aaj Ganpati Bappa ki kripa kaise payein",
-  "tag": "🎬 REEL · 🪔 JAI GANESH",
-  "caption": "Aaj Ganpati Bappa ki kripa kaise payein? 🙏\nSachche mann se naam lo... naya kaam shuru karo.\nBappa har kadam par saath hain.\nGanpati Bappa Morya likho 🙏\n\nVideo: RitikRana / Pixabay 🙏\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#ganpatibappa #bappamorya #ganeshji #aajkaaashirwaad #reelsindia",
-  "source": "Pixabay (free licence)",
-  "source_url": "",
-  "pin_comment": "Kisi apne ko bhejo jise aaj Bappa ke aashirwaad ki zaroorat hai 🙏",
-  "songs": [
-   {
-    "title": "Vakratunda Mahakaya (Ganpati Shlok)",
-    "artist": "Lata Mangeshkar",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Vakrathunda Mahakaya",
-    "artist": "Vandemataram Srinivas, S.P. Balasubrahmanyam",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Ganesh Aarti",
-    "artist": "Sanjay Dutt",
-    "lang": "hindi",
-    "mood": "devotional"
-   },
-   {
-    "title": "Jai Ganesh Jai Ganesh Deva",
-    "artist": "Super Cassettes Industries Private Limited, Anuradha Paudwal",
-    "lang": "hindi",
-    "mood": "devotional"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": [
-    "naya shuruaat ka mahatva → nayi shuruaat ka mahatva"
-   ]
-  },
-  "created_at": "2026-11-18T01:24:16+00:00"
  }
 ]
