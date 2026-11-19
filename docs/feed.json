@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_break_am-2026-11-19",
+  "image": "posts/20261119-0506-reel_break_am-2026-11-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261119-050641-reel_break_am-2026-11-19.mp4",
+  "headline": "Alia Bhatt becomes cover star of TIME’s first-ever TIME 100 Next India list, talks about women-centric films; says, “I am not going to stop choosing films that are women-led”",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Alia Bhatt TIME 100 Next India cover star, Ranbir Kapoor par boli\n\nTIME ke pehle TIME 100 Next India list ki cover star bani Alia.\nRanbir ke baare mein boli: \"that's Ranbir for me, and that's our reality.\"\nBoli: \"I am not going to stop choosing films that are women-led.\"\n\nAlia ka women-led films par stand sahi hai? HAAN ya NA 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#aliabhatt #reelsindia #bollywood #ranbirkapoor #time100next\n\n(Alia Bhatt, Alia Bhatt TIME 100 Next India, TIME 100 Next India 2026, Alia Bhatt Ranbir Kapoor, Alia Bhatt cover star, women-led films, Alia Bhatt interview, Bollywood news)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/features/alia-bhatt-becomes-cover-star-of-times-first-ever-time-100-next-india-list-talks-about-women-centric-films-says-i-am-not-going-to-stop-choosing-films-that-are-women-led/",
+  "pin_comment": "Apne Alia Bhatt fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "His Aura Hits You",
+    "artist": "Ravi Basrur, Vishal Mishra",
+    "lang": "hindi",
+    "mood": "hype = big win moment"
+   },
+   {
+    "title": "Thumkeshwari",
+    "artist": "Sachin-Jigar, Divya Kumar",
+    "lang": "hindi",
+    "mood": "celebration vibe"
+   },
+   {
+    "title": "Ji Ji Re Ji (From \"Eetha\")",
+    "artist": "Ajay-Atul, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "jashn ka mood"
+   },
+   {
+    "title": "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Emiway Bantai, Swaalina",
+    "lang": "new",
+    "mood": "Mumbai se global safar"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: She spoke about Ranbir, not to him; female gender"
+   ],
+   "fixed": [
+    "Bole: women-led films choosna nahi rokungi → Boli: women-led films choosna nahi rokungi",
+    "Ranbir ko bola: feel seen → Ranbir ke baare mein boli: feel seen",
+    "Ranbir Kapoor par bole → Ranbir Kapoor par boli",
+    "Bola: \"I am not → Boli: \"I am not",
+    "women-led films choosna nahi rokungi → women-led films chunna nahi rokungi"
+   ]
+  },
+  "created_at": "2026-11-19T05:06:41+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-19",
   "image": "posts/20261119-0303-reel_news_early-2026-11-19.jpg",
   "kind": "reel",
@@ -460,100 +513,5 @@
    "fixed": []
   },
   "created_at": "2026-11-18T07:48:14+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-18",
-  "image": "posts/20261118-0504-reel_break_am-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-050425-reel_break_am-2026-11-18.mp4",
-  "headline": "Rubio rules out cyberattacks or links between tech outages",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Marco Rubio US outages Microsoft FAA banks news\n\nRubio ne kaha US outages ke peeche koi malign actor ka evidence zero hai.\nMicrosoft, FAA aur US banks mein pichhle kuch din outages hue.\nFAA ka nationwide ground stop 4.5 ghante chala.\n\nRubio ki baat par bharosa karte ho? Ek word likho: HAAN ya NA 👇\n\n#reelsindia #breakingnews #usnews #marcorubio #techoutage\n\nRubio ki baat par bharosa hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Al Jazeera (link pinned in comments 👇)\n\n\n\n(Marco Rubio, US outages, Microsoft outage, FAA ground stop, US banks outage, cyberattack, Trump Manila, Jay Clayton)",
-  "source": "Al Jazeera",
-  "source_url": "https://www.aljazeera.com/video/newsfeed/2026/11/18/rubio-rules-out-cyberattacks-or-links-between-tech-outages?traffic_source=rss",
-  "pin_comment": "Apne news-lover dost ko ye khabar bhejo 👇",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "suspense vibe = outage ka sawaal"
-   },
-   {
-    "title": "Vaari Jaavan",
-    "artist": "Shashwat Sachdev, Jasmine Sandlas",
-    "lang": "hindi",
-    "mood": "serious dramatic mood"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "calm, serious khabar ka tone"
-   },
-   {
-    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
-    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
-    "lang": "new",
-    "mood": "intense background for news"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Rubio said there is zero evidence of a malign actor; the slide stated it as fact."
-   ],
-   "fixed": [
-    "Rubio: outages ke peeche koi malign actor nahi → Rubio: outages ke peeche malign actor ka koi evidence nahi",
-    "US banks mein recent din outages hue → US banks mein pichhle kuch din outages hue"
-   ]
-  },
-  "created_at": "2026-11-18T05:04:25+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-18",
-  "image": "posts/20261118-0304-reel_news_early-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-030442-reel_news_early-2026-11-18.mp4",
-  "headline": "‘Ramayana’ nears Rs 1,500 crore mark at worldwide box office",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Ramayana box office collection 1500 crore 🎬\nRamayana: Part One worldwide Rs 1,500 crore gross ke kareeb pahunch gayi hai. India mein film ne lagbhag Rs 28.70 crore net kamaye.\nFilm abhi bhi strong chal rahi hai.\nRamayana kitne crore par rukegi? Number likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Times of India (link pinned in comments 👇)\n\n#ramayana #ranbirkapoor #boxoffice #bollywood #reelsindia\n\n(Ramayana box office, Ramayana Part One collection, Ramayana 1500 crore, Ranbir Kapoor Ramayana, Yash Ramayana, Ramayana worldwide collection, Bollywood box office, Ramayana Part One)",
-  "source": "Times of India",
-  "source_url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/ramayana-box-office-collection-day-13-ranbir-kapoor-and-yash-starrer-nears-rs-1500-crore-worldwide-despite-second-tuesday-dip/articleshow/135943827.cms",
-  "pin_comment": "Apne Ramayana fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Hanuman Chalisa by Shankar Mahadevan",
-    "artist": "Shankar Mahadevan",
-    "lang": "hindi",
-    "mood": "devotional pride for Ramayana"
-   },
-   {
-    "title": "Dhun",
-    "artist": "Mithoon, Arijit Singh",
-    "lang": "hindi",
-    "mood": "epic emotional build-up"
-   },
-   {
-    "title": "O Ragho (From \"Ramayana\")",
-    "artist": "Shubham Shirule, Kumar Vishwas",
-    "lang": "new",
-    "mood": "film's own song, Ram vibe"
-   },
-   {
-    "title": "Judi Jodi (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "Ramayana soundtrack, celebratory"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-18T03:04:42+00:00"
  }
 ]

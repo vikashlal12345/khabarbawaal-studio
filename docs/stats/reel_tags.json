@@ -2470,5 +2470,32 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-19",
+  "key": "aliabhatttime100nextindiacoverstarranbirkapoorparboli",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-19T05:06:41+00:00",
+  "type": "breaking",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Alia Bhatt BREAKS SILENCE On 'Unequal' Marriage Theory ",
+   "(under 1 h ago) Sharad Kapoor hadn’t bathed or stepped out of bed for t",
+   "(under 1 h ago) Alia Bhatt becomes cover star of TIME’s first-ever TIME",
+   "(under 1 h ago) TIME100 Next India: Alia Bhatt headlines TIME Magazine’"
+  ],
+  "n_stories": 4,
+  "strength": 9,
+  "pick_no": 3,
+  "age_h": -1.9,
+  "cover": "full",
+  "photos": 2,
+  "sharp": 36,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "name_first"
  }
 ]

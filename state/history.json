@@ -349,7 +349,8 @@
   "f9156f129c58",
   "a00fba176fc9",
   "bf4f34680889",
-  "a35a85edcbb1"
+  "a35a85edcbb1",
+  "e9f9ef722bd0"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -498,14 +499,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-19",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-18",
+  "reel_break_am": "2026-11-19",
   "reel_break_noon": "2026-11-18",
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-18"
  },
- "inbox_since": "2JGJodEcGi80",
+ "inbox_since": "zn402XuJSvxf",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -892,7 +893,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-has-beautiful-family-moment-with-randhir-kapoor-and-babita-kapoor-on-diwali-sister-karisma-joins-in-too-101794136570648.html",
   "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
   "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html",
@@ -971,7 +971,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sidharth-malhotra-and-kiara-advani-request-privacy-after-daughter-saraayah-face-appears-in-airport-video-101795003264041.html",
   "https://www.bollywoodhungama.com/news/bollywood/yeh-prem-mol-liya-trailer-out-sooraj-barjatya-brings-a-tale-of-a-modern-marriage-with-ayushmann-khurrana-and-sharvari/",
-  "https://news.abplive.com/entertainment/celebrities/lara-dutta-mahesh-bhupati-s-daughter-saira-wins-tennis-championship-in-uae-actor-shares-proud-moment-1876586"
+  "https://news.abplive.com/entertainment/celebrities/lara-dutta-mahesh-bhupati-s-daughter-saira-wins-tennis-championship-in-uae-actor-shares-proud-moment-1876586",
+  "https://www.bollywoodhungama.com/news/features/alia-bhatt-becomes-cover-star-of-times-first-ever-time-100-next-india-list-talks-about-women-centric-films-says-i-am-not-going-to-stop-choosing-films-that-are-women-led/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1188,10 +1189,6 @@
   }
  ],
  "songs_recent": [
-  "Akhiyaan Gulaab",
-  "Betuka (From \"Nakhrewaalii\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-  "Dilruba Dilnasheen",
   "Soulmate",
   "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
   "Ichak Dana (From \"Meethe Mein Kya Hai\")",
@@ -1227,7 +1224,11 @@
   "Zaalima",
   "Jo Tum Mere Ho",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Aao Ri Chirraiya (From \"Mysaa\")"
+  "Aao Ri Chirraiya (From \"Mysaa\")",
+  "His Aura Hits You",
+  "Thumkeshwari",
+  "Ji Ji Re Ji (From \"Eetha\")",
+  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1317,6 +1318,10 @@
   },
   {
    "title": "Lara Dutta, Mahesh Bhupati's Daughter Saira Wins Tennis Championship In UAE; Actor Shares Proud Moment",
+   "date": "2026-11-19"
+  },
+  {
+   "title": "Alia Bhatt becomes cover star of TIME’s first-ever TIME 100 Next India list, talks about women-centric films; says, “I am not going to stop choosing films that are women-led”",
    "date": "2026-11-19"
   }
  ],
