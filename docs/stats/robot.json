@@ -12112,20 +12112,20 @@
   },
   "create": {
    "posts": 2,
-   "requests": 4,
-   "input": 12,
-   "output": 3081,
-   "cache_read": 4276,
-   "cache_write": 90196,
-   "value_usd": 0.3921,
+   "requests": 6,
+   "input": 18,
+   "output": 4568,
+   "cache_read": 9028,
+   "cache_write": 133012,
+   "value_usd": 0.5788,
    "by_purpose": {
     "cartoon create": {
-     "requests": 2,
-     "tokens": 82537
+     "requests": 3,
+     "tokens": 124520
     },
     "toon check": {
-     "requests": 2,
-     "tokens": 15028
+     "requests": 3,
+     "tokens": 22106
     }
    }
   },
