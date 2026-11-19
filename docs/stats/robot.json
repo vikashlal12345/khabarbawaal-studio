@@ -12111,21 +12111,21 @@
    }
   },
   "create": {
-   "posts": 1,
-   "requests": 2,
-   "input": 6,
-   "output": 1544,
-   "cache_read": 2121,
-   "cache_write": 44440,
-   "value_usd": 0.1934,
+   "posts": 2,
+   "requests": 4,
+   "input": 12,
+   "output": 3081,
+   "cache_read": 4276,
+   "cache_write": 90196,
+   "value_usd": 0.3921,
    "by_purpose": {
     "cartoon create": {
-     "requests": 1,
-     "tokens": 40610
+     "requests": 2,
+     "tokens": 82537
     },
     "toon check": {
-     "requests": 1,
-     "tokens": 7501
+     "requests": 2,
+     "tokens": 15028
     }
    }
   },
