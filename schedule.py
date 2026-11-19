@@ -16,20 +16,20 @@ QUIET_START, QUIET_END = 23, 5                       # no posts 11 PM - 5 AM
 REGULAR_HOURS: list[int] = []
 # 9 Reels (owner, 19 Oct 2026: poll + one news + one breaking card removed, no replacement).
 SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Navratri goddess / god of the day
-            "reel_news_early": (8, 30),                     # 🔥 viral news
-            "reel_break_am": (10, 30),                      # ⚡ breaking card
+            "reel_news_early": (8, 0),                     # 🔥 viral news
+            "reel_break_am": (10, 15),                      # ⚡ breaking card
             "reel_news_am": (12, 30),                       # 🔥 viral news
-            "reel_break_noon": (14, 30),                    # ⚡ breaking card
-            "reel_news_pm": (16, 30),                       # 🔥 viral news
-            "reel_news_aft": (18, 30),                      # 🔥 viral news (owner, 29 Oct 2026: replaces the 🎨 cartoon roast; Breaking or Viral only after 6 PM)
+            "reel_break_noon": (14, 45),                    # ⚡ breaking card
+            "reel_news_pm": (17, 0),                       # 🔥 viral news
+            # 'reel_news_aft' (18:30) dropped 19 Nov 2026 (owner: 6 news / breaking Reels between 8 AM and 7 PM, God Reel 6 AM): kept as a MANUAL kind
             # 'reel_break_aft' (19:00) dropped 17 Nov 2026 (owner: 8 Reels, 8:30 / 10:30 / 12:30 / 2:30 / 4:30 / 6:30 / 8:00 PM; gaps of 2 h, 1.5 h before the last): kept as a MANUAL kind
-            "reel_break_night": (20, 0),                   # ⚡ breaking card (owner 10 Nov 2026: replaces the 8 PM viral news, the weakest news slot: 939 avg views, 1 of 3 stalled; breaking cards avg 1,927)
+            "reel_break_night": (19, 0),                   # ⚡ breaking card (owner 10 Nov 2026: replaces the 8 PM viral news, the weakest news slot: 939 avg views, 1 of 3 stalled; breaking cards avg 1,927)
             "night_learn": (4, 0)}                         # night work, nothing posted: learning from stats
 PREVIEW_KINDS: tuple[str, ...] = ()                  # 📅 planned previews stopped (every news slot = most viral story)
 MANUAL = {"top10_viral", "top10_day", "night_roundup", "thought", "market_open", "market_preopen", "market_close",
           "reel_top5_am", "reel_top5", "night_ready", "night_calendar", "night_picture",
           "reel_news_noon", "reel_clip_am", "reel_clip", "reel_meme", "reel_poll", "reel_news",
-          "reel_rotate", "reel_bachpan", "reel_flash", "reel_break_aft", "reel_politics", "reel_official", "reel_news_night"}
+          "reel_rotate", "reel_bachpan", "reel_flash", "reel_break_aft", "reel_news_aft", "reel_politics", "reel_official", "reel_news_night"}
 NIGHT_JOBS = {"night_ready", "night_calendar", "night_picture", "night_learn"}   # 3 AM: 🙏 god picture (bhakti.py)   # joke bank retired: jokes are trend-only
 SPECIAL_WINDOW = (-3, 55)                             # minutes around a special's time that count as its run (19 Oct 2026: GitHub started the 9:30 PM run 25 min late and the slot was lost)
 WINDOWS = {"market_preopen": (-1, 5)}                 # pre-open data exists only after 9:08
