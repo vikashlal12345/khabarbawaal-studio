@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_break_noon-2026-11-19",
+  "image": "posts/20261119-0905-reel_break_noon-2026-11-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261119-090518-reel_break_noon-2026-11-19.mp4",
+  "headline": "Priyanka Chopra Jonas shares video of daughter Malti Marie chants Gayatri Mantra, actor calls it “Beautiful”; see postx",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Priyanka Chopra Malti Marie Gayatri Mantra video, Bluefly shoot\nPriyanka ne Bluefly shoot se family ke pal share kiye.\nVideo mein Malti unki godi mein baithkar Gayatri Mantra bolti dikhi.\nAakhri verse ke baad Priyanka ne kaha: \"So beautiful.\"\nIs pyaari jhalak ko 10 mein se kitne number doge? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #priyankachopra #maltimarie #bollywoodnews #gayatrimantra\n\n(Priyanka Chopra, Malti Marie, Malti Gayatri Mantra, Priyanka Chopra Jonas daughter, Bluefly, Nick Jonas, Priyanka Chopra video, Bollywood news today)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/features/priyanka-chopra-jonas-shares-video-of-daughter-malti-marie-chants-gayatri-mantra-actor-calls-it-beautiful-see-postx/",
+  "pin_comment": "Apne Priyanka fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Narayan Mil Jayega",
+    "artist": "Payal Dev, Jubin Nautiyal",
+    "lang": "hindi",
+    "mood": "devotional vibe = mantra moment"
+   },
+   {
+    "title": "Ram Siya Ram",
+    "artist": "Sachet Tandon",
+    "lang": "hindi",
+    "mood": "calm, spiritual family moment"
+   },
+   {
+    "title": "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Manoj Muntashir",
+    "lang": "new",
+    "mood": "devotional, sweet mother-child feel"
+   },
+   {
+    "title": "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "bhakti mood, blessing vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article does not say the video went viral; it only says it caught attention."
+   ],
+   "fixed": [
+    "MALTI KA GAYATRI MANTRA VIRAL → MALTI KA GAYATRI MANTRA VIDEO"
+   ]
+  },
+  "created_at": "2026-11-19T09:05:18+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-19",
   "image": "posts/20261119-0705-reel_news_am-2026-11-19.jpg",
   "kind": "reel",
@@ -513,50 +562,5 @@
    "fixed": []
   },
   "created_at": "2026-11-18T09:07:16+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-18",
-  "image": "posts/20261118-0748-reel_news_am-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-074813-reel_news_am-2026-11-18.mp4",
-  "headline": "Dia Mirza Shares Cryptic Post About Nawazuddin Siddiqui’s ‘Offensive Character’, Internet Smells ‘PR Stunt’",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Dia Mirza Nawazuddin Siddiqui cryptic post 👀\nDia Mirza ki ek cryptic post ko Nawazuddin Siddiqui ke 'offensive character' se jod kar dekha ja raha hai.\nInternet par kuch log ise PR stunt bhi bol rahe hain.\nPR stunt hai ya sach? Ek word likho: STUNT ya SACH 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: ABP Live (link pinned in comments 👇)\n\n#diamirza #nawazuddinsiddiqui #bollywood #bollywoodnews #reelsindia\n\n(Dia Mirza, Nawazuddin Siddiqui, Dia Mirza cryptic post, Dia Mirza Instagram post, Nawazuddin offensive character, PR stunt, Bollywood news, Bollywood gossip)",
-  "source": "ABP Live",
-  "source_url": "https://news.abplive.com/entertainment/celebrities/dia-mirza-shares-cryptic-post-about-nawazuddin-siddiqui-offensive-character-internet-smells-pr-stunt-1876478",
-  "pin_comment": "Apne Dia Mirza fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Dilruba Dilnasheen",
-    "artist": "Rito Riba & Siddhant Kaushal",
-    "lang": "hindi",
-    "mood": "chart #1, mystery post vibe"
-   },
-   {
-    "title": "Soulmate",
-    "artist": "Badshah, Arijit Singh",
-    "lang": "hindi",
-    "mood": "trending, soft dramatic mood"
-   },
-   {
-    "title": "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya, Junaid Wasi",
-    "lang": "new",
-    "mood": "new release, gossip twist"
-   },
-   {
-    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "playful, internet smells drama"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-18T07:48:14+00:00"
  }
 ]

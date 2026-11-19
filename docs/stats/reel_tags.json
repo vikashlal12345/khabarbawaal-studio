@@ -2526,5 +2526,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-19",
+  "key": "priyankachopramaltimariegayatrimantravideoblueflyshoot",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-19T09:05:18+00:00",
+  "type": "breaking",
+  "bar": 4,
+  "pool": [
+   "(under 1 h ago) ‘Kaali Kheti’ Ending Explained: Jackie Shroff’s Film Re",
+   "(1 h ago) Saif Ali Khan Receives Threat; Mumbai Police Probe Baba",
+   "(under 1 h ago) Saif Ali Khan receives death threat from Baba Siddique ",
+   "(under 1 h ago) Priyanka Chopra Jonas shares video of daughter Malti Ma",
+   "(3 h ago) Kaali Kheti Movie Review: Jackie Shroff's powerful perf"
+  ],
+  "n_stories": 5,
+  "strength": 9,
+  "pick_no": 4,
+  "age_h": -3.3,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 32,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "rating",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]
