@@ -2497,5 +2497,34 @@
   "relate": "verdict",
   "hook_rule": "detail1",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_am-2026-11-19",
+  "key": "ankitalokhandevickyjainbiggbosskedauranakelipadgayithi",
+  "kind": "reel_news_am",
+  "secs": 19.3,
+  "at": "2026-11-19T07:05:53+00:00",
+  "type": "news",
+  "bar": 4,
+  "pool": [
+   "(under 1 h ago) Kaali Kheti Movie Review: Jackie Shroff, Sharad Kelkar ",
+   "(1 h ago) Ranbir Kapoor's 'Ramayana' Beats Ranveer Singh's 'Dhura",
+   "(under 1 h ago) 'Main Akeli Ho Gayi Thi': Ankita Lokhande Says Vicky Ja",
+   "(1 h ago) Kaali Kheti Movie Review: Jackie Shroff's powerful perf"
+  ],
+  "n_stories": 4,
+  "strength": 8,
+  "pick_no": 3,
+  "age_h": 0.4,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 32,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

@@ -350,7 +350,8 @@
   "a00fba176fc9",
   "bf4f34680889",
   "a35a85edcbb1",
-  "e9f9ef722bd0"
+  "e9f9ef722bd0",
+  "5a3670e57d48"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -491,7 +492,7 @@
   "reel_news_pm": "2026-11-18",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-18",
+  "reel_news_am": "2026-11-19",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-18",
@@ -506,7 +507,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-18"
  },
- "inbox_since": "zn402XuJSvxf",
+ "inbox_since": "flBhFBcin7I5",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -893,7 +894,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.bollywoodhungama.com/news/bollywood/hrithik-roshan-attends-lacma-art-film-gala-2026-becomes-first-mainstream-indian-actor-to-grace-event/",
   "https://www.hindustantimes.com/entertainment/bollywood/daler-mehndi-thanks-fans-for-their-support-during-uttarakhand-event-controversy-says-brother-mika-singh-showed-up-like-a-force-to-reckon-with-101794140143883.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kareena-kapoor-says-she-is-very-against-botox-and-vouches-for-self-preservation-rather-than-going-going-under-the-knife-101794129934066.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sunita-ahuja-is-confident-about-reunion-with-govinda-amid-his-dating-rumours-with-komal-rani-swarnkar-says-nobody-can-ever-separate-us-101794195038671.html",
@@ -972,7 +972,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sidharth-malhotra-and-kiara-advani-request-privacy-after-daughter-saraayah-face-appears-in-airport-video-101795003264041.html",
   "https://www.bollywoodhungama.com/news/bollywood/yeh-prem-mol-liya-trailer-out-sooraj-barjatya-brings-a-tale-of-a-modern-marriage-with-ayushmann-khurrana-and-sharvari/",
   "https://news.abplive.com/entertainment/celebrities/lara-dutta-mahesh-bhupati-s-daughter-saira-wins-tennis-championship-in-uae-actor-shares-proud-moment-1876586",
-  "https://www.bollywoodhungama.com/news/features/alia-bhatt-becomes-cover-star-of-times-first-ever-time-100-next-india-list-talks-about-women-centric-films-says-i-am-not-going-to-stop-choosing-films-that-are-women-led/"
+  "https://www.bollywoodhungama.com/news/features/alia-bhatt-becomes-cover-star-of-times-first-ever-time-100-next-india-list-talks-about-women-centric-films-says-i-am-not-going-to-stop-choosing-films-that-are-women-led/",
+  "https://news.abplive.com/entertainment/celebrities/main-akeli-ho-gayi-thi-ankita-lokhande-says-vicky-jain-wasn-t-there-for-her-during-bigg-boss-1876633"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1189,10 +1190,6 @@
   }
  ],
  "songs_recent": [
-  "Soulmate",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
-  "Zaalima",
   "Peek A Boo",
   "Mangal Rang (From \"Ramayana\")",
   "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
@@ -1228,7 +1225,11 @@
   "His Aura Hits You",
   "Thumkeshwari",
   "Ji Ji Re Ji (From \"Eetha\")",
-  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
+  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Rula Ke Gaya Ishq",
+  "Tera Hoke Rahoon",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1322,6 +1323,10 @@
   },
   {
    "title": "Alia Bhatt becomes cover star of TIME’s first-ever TIME 100 Next India list, talks about women-centric films; says, “I am not going to stop choosing films that are women-led”",
+   "date": "2026-11-19"
+  },
+  {
+   "title": "'Main Akeli Ho Gayi Thi': Ankita Lokhande Says Vicky Jain Wasn't There For Her During 'Bigg Boss'",
    "date": "2026-11-19"
   }
  ],
