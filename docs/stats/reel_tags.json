@@ -2613,5 +2613,34 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_night-2026-11-19",
+  "key": "keerthysureshmysskinviralvideoparjawabsathyavansavithiripres",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-19T14:35:16+00:00",
+  "type": "breaking",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Delhi Confidential: Nitin Gadkari set for ‘The Great In",
+   "(under 1 h ago) Keerthy Suresh addresses ‘uncomfortable’ moment with My",
+   "(1 h ago) Inside PICS of Anirudh Ravichander and Kavya Maran’s We",
+   "(under 1 h ago) ‘My favourite kind of magic’: Anirudh Ravichander drops",
+   "(under 1 h ago) ‘Bachelor Party D’eux’ movie review: Amal Neerad makes ",
+   "(1 h ago) Shashi Tharoor to make his docuseries host debut with I"
+  ],
+  "n_stories": 6,
+  "strength": 7,
+  "pick_no": 2,
+  "age_h": 0.6,
+  "cover": "portrait",
+  "photos": 2,
+  "sharp": 35,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]

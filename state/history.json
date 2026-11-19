@@ -353,7 +353,8 @@
   "e9f9ef722bd0",
   "5a3670e57d48",
   "b64f147502ae",
-  "5d914a94cbf2"
+  "5d914a94cbf2",
+  "046c03b02353"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -507,9 +508,9 @@
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
-  "reel_break_night": "2026-11-18"
+  "reel_break_night": "2026-11-19"
  },
- "inbox_since": "oUav7LmEhJJC",
+ "inbox_since": "bUOI77WKHUhf",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -896,7 +897,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-worldwide-box-office-collection-day-4-ranbir-kapoor-yash-sai-pallavi-film-opening-weekend-500-crore-beat-adipurush-lifetime-collection-101794193877395.html",
   "https://www.bollywoodhungama.com/news/bollywood/ahaan-pandays-beparwah-co-star-aaishvary-thackeray-loses-rs-19000-to-cyber-fraud-files-police-complaint/",
   "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
   "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
@@ -975,7 +975,8 @@
   "https://news.abplive.com/entertainment/celebrities/main-akeli-ho-gayi-thi-ankita-lokhande-says-vicky-jain-wasn-t-there-for-her-during-bigg-boss-1876633",
   "https://www.bollywoodhungama.com/news/features/priyanka-chopra-jonas-shares-video-of-daughter-malti-marie-chants-gayatri-mantra-actor-calls-it-beautiful-see-postx/",
   "https://english.mathrubhumi.com/movies-music/news/general-knowledge-ananya-birlas-call-to-alia-bhatt-takes-a-hilarious-turn-on-koffee-with-karan-9-lx6fzyir",
-  "https://news.abplive.com/entertainment/celebrities/alia-bhatt-supports-deepika-padukone-s-8-hour-shift-demand-says-it-cannot-be-arbitrary-1876709"
+  "https://news.abplive.com/entertainment/celebrities/alia-bhatt-supports-deepika-padukone-s-8-hour-shift-demand-says-it-cannot-be-arbitrary-1876709",
+  "https://indianexpress.com/article/entertainment/tamil/keerthy-suresh-addresses-uncomfortable-moment-with-sathyavan-savithiri-co-star-mysskin-10970255/"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1192,10 +1193,6 @@
   }
  ],
  "songs_recent": [
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Tu Mil Jaaye (From \"KING\")",
-  "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
-  "Jo Tum Mere Ho",
   "Tu Mil Jaaye (From \"KING\")",
   "Teri Meri Kahaani",
   "Arz Kiya Hai | Coke Studio Bharat",
@@ -1231,7 +1228,11 @@
   "Azadi",
   "Ez-Ez",
   "Betuka (From \"Nakhrewaalii\")",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")"
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Barbaad",
+  "Tera Zikr",
+  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1341,6 +1342,10 @@
   },
   {
    "title": "Alia Bhatt Supports Deepika Padukone’s 8-Hour Shift Demand; Says ‘It Cannot Be Arbitrary’",
+   "date": "2026-11-19"
+  },
+  {
+   "title": "Keerthy Suresh addresses ‘uncomfortable’ moment with Mysskin: ‘Get some things right’",
    "date": "2026-11-19"
   }
  ],
