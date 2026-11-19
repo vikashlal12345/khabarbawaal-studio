@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_news_early-2026-11-19",
+  "image": "posts/20261119-0303-reel_news_early-2026-11-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261119-030352-reel_news_early-2026-11-19.mp4",
+  "headline": "Lara Dutta, Mahesh Bhupati's Daughter Saira Wins Tennis Championship In UAE; Actor Shares Proud Moment",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Lara Dutta Mahesh Bhupathi daughter Saira tennis championship 🎾\nLara Dutta aur Mahesh Bhupathi ki beti Saira ne UAE mein tennis championship jeeti.\nLara ne ye proud moment share kiya.\nIs proud family moment ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: ABP Live (link pinned in comments 👇)\n\n#laradutta #maheshbhupathi #bollywood #proudmom #reelsindia\n\n(Lara Dutta, Mahesh Bhupathi, Saira Bhupathi, Saira tennis championship, Lara Dutta daughter, UAE tennis, Bollywood family)",
+  "source": "ABP Live",
+  "source_url": "https://news.abplive.com/entertainment/celebrities/lara-dutta-mahesh-bhupati-s-daughter-saira-wins-tennis-championship-in-uae-actor-shares-proud-moment-1876586",
+  "pin_comment": "Ye Lara Dutta ke fan ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Zaalima",
+    "artist": "Arijit Singh, Harshdeep Kaur",
+    "lang": "hindi",
+    "mood": "warm proud feeling"
+   },
+   {
+    "title": "Jo Tum Mere Ho",
+    "artist": "Anuv Jain",
+    "lang": "hindi",
+    "mood": "family love, soft vibe"
+   },
+   {
+    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "gratitude, proud moment"
+   },
+   {
+    "title": "Aao Ri Chirraiya (From \"Mysaa\")",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "beti ka pyaar"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-19T03:03:52+00:00"
+ },
+ {
   "id": "cf84f244cfcf",
   "image": "posts/20261119-0132-cf84f244cfcf.jpg",
   "kind": "custom",
@@ -370,28 +415,6 @@
    "fixed": []
   },
   "created_at": "2026-11-18T09:07:16+00:00"
- },
- {
-  "id": "c14e263c6dac",
-  "image": "posts/20261118-0824-c14e263c6dac.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261118-082442-c14e263c6dac.mp4",
-  "headline": "GTA 6 aa raha hai, sab bimaar!",
-  "tag": "🎬 REEL · 🎨 AI CARTOON",
-  "caption": "GTA 6 aa raha hai aur achanak pura office bimaar ho gaya 🤒🎮\nBoss ki drawer mein bhi controller mil gaya, sach batao.\nTumne leave li ya \"tabiyat kharab\" wala bahana banaya?\nKaunsa bahana sabse best tha? Comment mein likho 👇\n\n🎨 AI cartoon (fiction), pictures: AI illustration (Z-Image)\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#GTA6 #Gaming #IndianMemes #OfficeHumor #Relatable",
-  "source": "KhabarBawaal Original",
-  "pin_comment": "Apne us dost ko bhejo jo GTA 6 ke liye sick leave lega 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "🎨 AI cartoon (fiction): the pictures are AI-painted. Turn on Instagram's 'AI info' label when posting."
-   ],
-   "fixed": []
-  },
-  "request": "cartoon + GTA 6 frames (owner, 17 Nov 2026)",
-  "created_at": "2026-11-18T08:24:42+00:00"
  },
  {
   "id": "reel_news_am-2026-11-18",

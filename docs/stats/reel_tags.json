@@ -2441,5 +2441,34 @@
   "secs": 24.7,
   "at": "2026-11-19T01:32:50+00:00",
   "type": "other"
+ },
+ {
+  "id": "reel_news_early-2026-11-19",
+  "key": "laraduttamaheshbhupathidaughtersairatennischampionship",
+  "kind": "reel_news_early",
+  "secs": 17.8,
+  "at": "2026-11-19T03:03:52+00:00",
+  "type": "news",
+  "bar": 5,
+  "pool": [
+   "(under 1 h ago) Ananya Panday says she called Hrithik Roshan ‘uncle’ as",
+   "(under 1 h ago) Lara Dutta, Mahesh Bhupati's Daughter Saira Wins Tennis",
+   "(3 h ago) Ranveer Singh to reunite with director Aditya Dhar for ",
+   "(2 h ago) Yemen's Houthis say they targeted King Khalid airport a"
+  ],
+  "n_stories": 4,
+  "strength": 8,
+  "pick_no": 2,
+  "age_h": 0.2,
+  "topic": "couple_family",
+  "kw": 7,
+  "relate": "rating",
+  "cover": "full",
+  "sharp": 48,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
