@@ -17,10 +17,10 @@ REGULAR_HOURS: list[int] = []
 # 9 Reels (owner, 19 Oct 2026: poll + one news + one breaking card removed, no replacement).
 SPECIALS = {"reel_devotion": (6, 0),                       # 🙏 festival / Navratri goddess / god of the day
             "reel_news_early": (8, 0),                     # 🔥 viral news
-            "reel_break_am": (10, 15),                      # ⚡ breaking card
-            "reel_news_am": (12, 30),                       # 🔥 viral news
-            "reel_break_noon": (14, 45),                    # ⚡ breaking card
-            "reel_news_pm": (17, 0),                       # 🔥 viral news
+            "reel_break_am": (10, 0),                      # ⚡ breaking card
+            "reel_news_am": (12, 0),                       # 🔥 viral news
+            "reel_break_noon": (14, 0),                    # ⚡ breaking card
+            "reel_news_pm": (16, 0),                       # 🔥 viral news
             # 'reel_news_aft' (18:30) dropped 19 Nov 2026 (owner: 6 news / breaking Reels between 8 AM and 7 PM, God Reel 6 AM): kept as a MANUAL kind
             # 'reel_break_aft' (19:00) dropped 17 Nov 2026 (owner: 8 Reels, 8:30 / 10:30 / 12:30 / 2:30 / 4:30 / 6:30 / 8:00 PM; gaps of 2 h, 1.5 h before the last): kept as a MANUAL kind
             "reel_break_night": (19, 0),                   # ⚡ breaking card (owner 10 Nov 2026: replaces the 8 PM viral news, the weakest news slot: 939 avg views, 1 of 3 stalled; breaking cards avg 1,927)

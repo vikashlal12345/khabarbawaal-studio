@@ -8,10 +8,7 @@ name: Hourly post
 on:
   schedule:
     # Backup for the chain (IST = UTC + 5:30); only posts if the chain has stopped.
-    - cron: "30 0,2,11,13 * * *"                  # IST 6:00 AM, 8:00 AM, 5:00 PM, 7:00 PM (Reels; owner 19 Nov 2026: 7 Reels a day)
-    - cron: "45 4 * * *"                          # IST 10:15 AM
-    - cron: "0 7 * * *"                           # IST 12:30 PM
-    - cron: "15 9 * * *"                          # IST 2:45 PM
+    - cron: "30 0,2,4,6,8,10,13 * * *"            # IST 6, 8, 10 AM, 12, 2, 4, 7 PM (Reels; owner 19 Nov 2026: slots on the hour)
   workflow_dispatch:
     inputs:
       kind:
