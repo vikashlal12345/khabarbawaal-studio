@@ -37,7 +37,7 @@ SENSITIVE = re.compile(r"(?i)fatwa|blasphem|communal|riot|jihad|conversion|namaz
 AMBIGUOUS = {"king", "yash", "vijay", "shah", "srk"}        # words that are not always a star
 ALIASES = {"srk": "shah rukh", "shahrukh": "shah rukh", "shah ruk": "shah rukh"}
 PEAK_SLOTS = {"reel_news_am", "reel_news_pm"}   # 12 PM and 4 PM: the best hours (avg 1,808 / 1,829 views since 20 Oct 2026): pins go there first when they fit
-SERIES = ("koffee with karan", "ramayana")       # reliable series: Koffee With Karan 2,715 avg, Ramayana 1,519 avg (bar 2 sites in 6 h since 19 Nov 2026)
+SERIES = ("koffee with karan",)       # reliable series: Koffee With Karan 2,715 avg, Ramayana 1,519 avg (bar 2 sites in 6 h since 19 Nov 2026; Ramayana removed 19 Nov 2026: a film, not an episode series, its news is mostly promos)
 NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_night")
 
 
