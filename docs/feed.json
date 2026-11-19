@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_devotion-2026-11-19",
+  "image": "posts/20261119-0033-reel_devotion-2026-11-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261119-003353-reel_devotion-2026-11-19.mp4",
+  "headline": "Thursday: Vishnu ji: Vishnu ji ki kripa aaj kaise payein",
+  "tag": "🎬 REEL · 🙏 JAI SHRI HARI",
+  "caption": "Vishnu ji ki kripa Guruvaar ko paane ka simple tareeka 🙏\nWo palanhaar hain... har mushkil mein saath dete hain.\nAaj bharosa rakho, sab theek hoga.\nJai Shri Hari likho 🙏\n\nFollow @khabarbawaal: roz subah 6 baje aaj ke Bhagwan ka aashirwad 🙏\n\n#vishnu #guruvaar #jaishrihari #bhakti #reelsindia",
+  "source": "KhabarBawaal Original",
+  "source_url": "",
+  "pin_comment": "Apni maa ko bhejo, unka din ban jayega 🙏",
+  "songs": [
+   {
+    "title": "Bhaja Govindam",
+    "artist": "M.S. Subbulakshmi, Adi Shankaracharya",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Laxmi Ji Ki Aarti",
+    "artist": "Anuradha Paudwal, Hariom Sharan",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Bhajan Kar Hari Vishnu Ka",
+    "artist": "Anu Dubey",
+    "lang": "hindi",
+    "mood": "devotional"
+   },
+   {
+    "title": "Shree Vishnu Amritwani (From \"Shree Vishnu Amritwani\")",
+    "artist": "Anuradha Paudwal",
+    "lang": "hindi",
+    "mood": "devotional"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-19T00:33:54+00:00"
+ },
+ {
   "id": "ca6b76d288a5",
   "image": "posts/20261118-1651-ca6b76d288a5.jpg",
   "kind": "custom",

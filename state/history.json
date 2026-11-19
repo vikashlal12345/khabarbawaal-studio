@@ -485,7 +485,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-11-18",
+  "reel_devotion": "2026-11-19",
   "reel_news_pm": "2026-11-18",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -1185,10 +1185,6 @@
   }
  ],
  "songs_recent": [
-  "Dhun",
-  "O Ragho (From \"Ramayana\")",
-  "Judi Jodi (From \"Ramayana\")",
-  "Gehra Hua",
   "Vaari Jaavan",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
   "O Mysaa Re (From \"Mysaa\") [Hindi]",
@@ -1224,7 +1220,11 @@
   "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
   "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
   "Ranjheya Ve",
-  "Arz Kiya Hai | Coke Studio Bharat"
+  "Arz Kiya Hai | Coke Studio Bharat",
+  "Bhaja Govindam",
+  "Laxmi Ji Ki Aarti",
+  "Bhajan Kar Hari Vishnu Ka",
+  "Shree Vishnu Amritwani (From \"Shree Vishnu Amritwani\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
