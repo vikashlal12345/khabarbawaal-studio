@@ -2511,6 +2511,15 @@ def add_hot(stories: list, raw: list, state: dict, used: list) -> list:
         print(f"  🔥 hot right now: " + " | ".join(h["title"][:60] for h in hot))
     links = {h["link"] for h in hot}
     mega = [h for h in hot if h.get("mega")]
+    try:
+        import flash as _fl
+        series_hot = [h for h in hot if not h.get("mega") and any(n in h.get("hot", "") for n in _fl.SERIES)]
+        if mega and series_hot and not _fl.emergency_stars(mega[0]):   # owner 19 Nov 2026: a Koffee With Karan / Kapil Show story first; a non-Bollywood mega story waits for the next slot
+            print(f"  🌋 mega story waits (a series story goes first): {mega[0]['title'][:70]}")
+            hot = series_hot + [h for h in hot if h not in series_hot and not h.get("mega")]
+            mega = []
+    except Exception as e:
+        print(f"  ! series-first check skipped: {str(e)[:60]}")
     if mega:   # 🌋 a story the whole country talks about (owner 17 Nov 2026): it IS the Reel, whatever the slot's usual filters
         print(f"  🌋 MEGA story: {mega[0]['title'][:80]}")
         TAGS["mega"] = 1
