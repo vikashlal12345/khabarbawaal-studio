@@ -2554,5 +2554,35 @@
   "relate": "rating",
   "hook_rule": "detail1",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-19",
+  "key": "aliabhattananyabirlakoffeewithkaran9moment",
+  "kind": "reel_news_pm",
+  "secs": 18.1,
+  "at": "2026-11-19T11:05:02+00:00",
+  "type": "news",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) 'General knowledge?' Ananya Birla's call to Alia Bhatt ",
+   "(under 1 h ago) Saif Ali Khan receives death threat",
+   "(2 h ago) Saif Ali Khan gets death threat from accused in Baba Si",
+   "(under 1 h ago) Avinash Mishra Reacts To Eisha Singh Breakup Speculatio",
+   "(1 h ago) Shah Rukh Khan Checked On Me, Sonu Sood Offered To Pain"
+  ],
+  "n_stories": 5,
+  "strength": 8,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "own_life",
+  "cover": "portrait",
+  "sharp": 33,
+  "hook_rule": "detail1",
+  "hook": "feeling",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

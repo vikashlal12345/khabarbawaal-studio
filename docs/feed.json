@@ -1,5 +1,55 @@
 [
  {
+  "id": "reel_news_pm-2026-11-19",
+  "image": "posts/20261119-1105-reel_news_pm-2026-11-19.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261119-110502-reel_news_pm-2026-11-19.mp4",
+  "headline": "'General knowledge?' Ananya Birla's call to Alia Bhatt takes a hilarious turn on Koffee With Karan 9",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Alia Bhatt Ananya Birla Koffee With Karan 9 moment 😂\nKoffee With Karan 9 mein Ananya Birla ne Alia Bhatt ko call kiya.\nAlia ke 'General knowledge? You are calling the wrong person' wale jawab se baat hilarious mod le gayi.\nAapka aisa funny dost kaun hai? Naam likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Mathrubhumi English (link pinned in comments 👇)\n\n#aliabhatt #koffeewithkaran #ananyabirla #bollywood #reelsindia\n\n(Alia Bhatt, Ananya Birla, Koffee With Karan 9, Koffee With Karan, Karan Johar, Alia Bhatt Koffee With Karan, Ananya Birla Alia Bhatt call, KWK 9)",
+  "source": "Mathrubhumi English",
+  "source_url": "https://english.mathrubhumi.com/movies-music/news/general-knowledge-ananya-birlas-call-to-alia-bhatt-takes-a-hilarious-turn-on-koffee-with-karan-9-lx6fzyir",
+  "pin_comment": "Apne Alia Bhatt fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "masti bhara funny moment"
+   },
+   {
+    "title": "Shararat",
+    "artist": "Jasmine Sandlas, Madhubanti Bagchi",
+    "lang": "hindi",
+    "mood": "shararati banter vibe"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "light, fun, filmy"
+   },
+   {
+    "title": "Ichak Dana (From \"Meethe Mein Kya Hai\")",
+    "artist": "Amit Trivedi, Kumaar",
+    "lang": "new",
+    "mood": "playful couch-banter mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: 'General knowledge?' was Alia's quip in reply, not the question that began the call"
+   ],
+   "fixed": [
+    "bola kuch bhool gayi → boli kuch bhool gayi",
+    "Sawal 'General knowledge?' se shuru hua aur baat hilarious mod le gayi. → Alia ke 'General knowledge? You are calling the wrong person' wale jawab se baat hilarious mod le gayi."
+   ]
+  },
+  "created_at": "2026-11-19T11:05:02+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-19",
   "image": "posts/20261119-0905-reel_break_noon-2026-11-19.jpg",
   "kind": "reel",
@@ -382,185 +432,5 @@
    "fixed": []
   },
   "created_at": "2026-11-18T13:04:24+00:00"
- },
- {
-  "id": "reel_news_pm-2026-11-18",
-  "image": "posts/20261118-1104-reel_news_pm-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-110427-reel_news_pm-2026-11-18.mp4",
-  "headline": "Dhanush, Juhi Chawla, Varun Dhawan react to MS Dhoni's IPL retirement, say ‘game will never be quite the same’",
-  "tag": "🎬 REEL · CRICKET",
-  "caption": "MS Dhoni IPL retirement par Dhanush, Juhi Chawla, Varun Dhawan ka reaction 💙\nDhoni ke retirement ke baad film industry ne unke asar ko salaam kiya.\nDhanush ne kaha ki 'game will never be quite the same'.\nDhoni ka sabse yaadgaar moment kaun sa tha? Ek line likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#msdhoni #dhoni #csk #bollywood #reelsindia\n\n(MS Dhoni retirement, Dhoni IPL retirement, Dhanush Dhoni, Juhi Chawla Dhoni, Varun Dhawan Dhoni, Dhoni reaction Bollywood, Thala Dhoni, CSK)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/dhanush-juhi-chawla-varun-dhawan-react-to-mahendra-singh-dhoni-ipl-retirement-say-game-will-never-be-quite-the-same-101794992980919.html",
-  "pin_comment": "Ye apne Dhoni fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Aaj Bhi 2",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "nostalgic yaadein, emotional tribute"
-   },
-   {
-    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-    "artist": "Pritam, Amitabh Bhattacharya",
-    "lang": "new",
-    "mood": "emotional, heartfelt salaam"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "big, grand, fan love"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article attributes this quote only to Dhanush, not to all the stars."
-   ],
-   "fixed": [
-    "Stars ne kaha ki 'game will never be quite the same' → Dhanush ne kaha ki 'game will never be quite the same'"
-   ]
-  },
-  "created_at": "2026-11-18T11:04:28+00:00"
- },
- {
-  "id": "cbeb3941c9c7",
-  "image": "posts/20261118-0924-cbeb3941c9c7.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261118-092405-cbeb3941c9c7.mp4",
-  "headline": "Day before GTA 6 release, PlayStation issues update on mandatory PS5 software installation",
-  "tag": "🎬 REEL · TECH",
-  "caption": "GTA 6 release PS5 update: launch se pehle ye karna zaroori hai 🎮\nGTA 6 19 November ko aa raha hai, GTA V ke 13 saal baad.\nSony ne mandatory PS5 system software update jari kiya hai, launch se pehle install karna hoga.\nGame ka size reportedly lagbhag 212 GB hai.\nUs gamer dost ko bhejo jo GTA 6 ka wait kar raha hai 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#GTA6 #PS5 #RockstarGames #gaming #reelsindia\n\n(GTA 6 release date, GTA 6 PS5 update, GTA VI November 19, PlayStation 5 mandatory update, Jason Duval Lucia Caminos, GTA 6 size 212 GB, Rockstar Games GTA 6, GTA 6 India)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/world-news/day-before-gta-6-release-playstation-issues-update-on-mandatory-ps5-software-installation-101794987986337.html",
-  "pin_comment": "Apne gamer dost ko bhejo jo GTA 6 ka wait kar raha hai 👇",
-  "songs": [
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "gangster vibe = GTA hype"
-   },
-   {
-    "title": "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
-    "artist": "Shashwat Sachdev, Shahzad Ali",
-    "lang": "hindi",
-    "mood": "crime-world intense energy"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "big launch, fans waiting"
-   },
-   {
-    "title": "Aao Ri Chirraiya (From \"Mysaa\")",
-    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
-    "lang": "new",
-    "mood": "fresh release, new-game feel"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "request": "retry cartoon gta reel",
-  "created_at": "2026-11-18T09:24:05+00:00"
- },
- {
-  "id": "c9d2bc7693cd",
-  "image": "posts/20261118-0913-c9d2bc7693cd.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261118-091332-c9d2bc7693cd.mp4",
-  "headline": "Day before GTA 6 release, PlayStation issues update on mandatory PS5 software installation",
-  "tag": "🎬 REEL · VIRAL",
-  "caption": "GTA 6 release PS5 update: launch se pehle ye karna zaroori hai 🎮\nGTA 6 kal, 19 November ko aa raha hai, GTA V ke 13 saal baad.\nSony ne PS5 par mandatory system software update jaari kiya hai, game khelne se pehle install karna padega.\nGame lagbhag 212 GB ka bataya ja raha hai, storage pehle se check kar lo.\nIs khabar par ek emoji likho: dil, gussa ya hasi? 👇\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#GTA6 #PS5 #Gaming #RockstarGames #reelsindia\n\n(GTA 6 release date, GTA 6 PS5 update, GTA VI November 19, PlayStation 5 mandatory update, GTA 6 file size 212 GB, Jason Duval Lucia Caminos, Rockstar Games GTA 6, GTA 6 India)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/world-news/day-before-gta-6-release-playstation-issues-update-on-mandatory-ps5-software-installation-101794987986337.html",
-  "pin_comment": "Apne gamer dost ko ye bhejo, update abhi karwa do 👇",
-  "songs": [
-   {
-    "title": "Toxic",
-    "artist": "Vishal Mishra, Hanita Bhambri",
-    "lang": "hindi",
-    "mood": "crime-game vibe, Jason-Lucia energy"
-   },
-   {
-    "title": "Tabaahi (From \"Toxic\")",
-    "artist": "Raj Shekhar, Vishal Mishra",
-    "lang": "hindi",
-    "mood": "hype for launch day"
-   },
-   {
-    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "intezaar khatam, mood fresh"
-   },
-   {
-    "title": "Bam Bam (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "high-energy download hype"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "request": "Retry GTA reel",
-  "created_at": "2026-11-18T09:13:32+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-18",
-  "image": "posts/20261118-0907-reel_break_noon-2026-11-18.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261118-090716-reel_break_noon-2026-11-18.mp4",
-  "headline": "Prince William's Bole Chudiyan moment with KJo, Kareena and Saif at Dharma. Watch",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Prince William Dharma Productions Karan Johar Kareena Kapoor Saif Ali Khan Bole Chudiyan\nBritain ke Prince William Mumbai mein Karan Johar ke Dharma office gaye.\nSaif Ali Khan aur Kareena Kapoor Khan ne unka swagat kiya, wo lagbhag 45 minute ruke.\nDancers ne Kabhi Khushi Kabhie Gham ke Bole Chudiyan aur Say Shava Shava par performance diya.\nKareena ka swagat shaandar tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: India Today (link pinned in comments 👇)\n\n#reelsindia #princewilliam #karanjohar #kareenakapoor #bollywood\n\n(Prince William Karan Johar, Prince William Mumbai, Dharma Productions, Kareena Kapoor Saif Ali Khan, Bole Chudiyan, Kabhi Khushi Kabhie Gham, Prince William India visit, Karan Johar Prince William)",
-  "source": "India Today",
-  "source_url": "https://www.msn.com/en-us/news/other/prince-williams-bole-chudiyan-moment-with-kjo-kareena-and-saif-at-dharma-watch/ar-AA2hGsdh",
-  "pin_comment": "Apne Kareena fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "royal meets Bollywood, filmy vibe"
-   },
-   {
-    "title": "Peek A Boo",
-    "artist": "Vishal Mishra",
-    "lang": "hindi",
-    "mood": "fun, light viral moment"
-   },
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "grand, celebratory mood"
-   },
-   {
-    "title": "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-    "artist": "Himesh Reshammiya",
-    "lang": "new",
-    "mood": "filmy, retro Bollywood touch"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-18T09:07:16+00:00"
  }
 ]
