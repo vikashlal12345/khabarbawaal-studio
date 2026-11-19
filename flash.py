@@ -37,8 +37,10 @@ SENSITIVE = re.compile(r"(?i)fatwa|blasphem|communal|riot|jihad|conversion|namaz
 AMBIGUOUS = {"king", "yash", "vijay", "shah", "srk"}        # words that are not always a star
 ALIASES = {"srk": "shah rukh", "shahrukh": "shah rukh", "shah ruk": "shah rukh"}
 PEAK_SLOTS = {"reel_news_am", "reel_news_pm"}   # 12 PM and 4 PM: the best hours (avg 1,808 / 1,829 views since 20 Oct 2026): pins go there first when they fit
-SERIES = ("koffee with karan",)       # reliable series: Koffee With Karan 2,715 avg, Ramayana 1,519 avg (bar 2 sites in 6 h since 19 Nov 2026; Ramayana removed 19 Nov 2026: a film, not an episode series, its news is mostly promos)
+SERIES = ("koffee with karan", "kapil sharma show", "bigg boss")       # reliable series: Koffee With Karan 2,715 avg, Ramayana 1,519 avg (bar 2 sites in 6 h since 19 Nov 2026; Ramayana removed 19 Nov 2026: a film, not an episode series, its news is mostly promos)
 NEWS_SLOTS = ("reel_news_early", "reel_break_am", "reel_news_am", "reel_break_noon", "reel_news_pm", "reel_news_aft", "reel_break_night")
+
+SERIES_KEY = {"koffee with karan": "karan", "kapil sharma show": "kapil", "bigg boss": "bigg boss"}   # the word that must be in a headline for the series (19 Nov 2026)
 
 
 def norm_name(n: str) -> str:
@@ -105,14 +107,14 @@ def detect_flash(state: dict, now_ist: datetime, cands: list[dict], trends: list
             d = bing_dt(a)
             if d is None:
                 continue
-            if (now - d).total_seconds() <= (6 if name in SERIES else 4) * 3600 and name.split()[-1] in a["title"].lower() and not emergency.SKIP_WORDS.search(a["title"]) \
+            if (now - d).total_seconds() <= (6 if name in SERIES else 4) * 3600 and SERIES_KEY.get(name, name.split()[-1]) in a["title"].lower() and not emergency.SKIP_WORDS.search(a["title"]) \
                     and not SENSITIVE.search(a["title"]) and not DEATH.search(a["title"]) and not PROMO.search(a["title"]) and not ROUTINE.search(a["title"]):
                 sites.add(a["site"])
                 arts.append(a)
         need = 2 if name in SERIES else 4 if name in trend_text else 6   # 19 Nov 2026 (owner: the Ananya Birla Koffee With Karan stories were missed at 12:30 and 2:30): series bar 2 sites, 6 h
         print(f"  flash check: {name}: {len(sites)} sites in {6 if name in SERIES else 4} h (need {need})")
         if len(sites) >= need:
-            score = len(sites) + (3 if name in trend_text else 0) + (20 if name in SERIES else 0) + (1 if name == "koffee with karan" else 0)   # a Koffee With Karan / Ramayana story beats a plain pile-up (19 Nov 2026: a 'Men's Day special' list had won)
+            score = len(sites) + (3 if name in trend_text else 0) + (20 if name in SERIES else 0) + (2 if name == "koffee with karan" else 1 if name == "kapil sharma show" else 0)   # a Koffee With Karan / Ramayana story beats a plain pile-up (19 Nov 2026: a 'Men's Day special' list had won)
             if not best or score > best[0]:
                 best = (score, name, sites, arts)
     if not best:

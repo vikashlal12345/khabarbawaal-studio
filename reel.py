@@ -2207,6 +2207,8 @@ NEVER pick a birthday / anniversary / festival greeting or a story already told 
 BREAKOUT RULE (owner 17 Nov 2026, from the last 6 days: the Reels that broke out (7,000-19,000 views) were a BIG star's personal / family moment or a surprising real event; the weak ones were small-name gossip, \
 car / property gifts, Hollywood promos, booking numbers and a topic told again): rank a big star's personal moment, family dispute or bond, confession, or a surprising real injury first; a car / property / \
 luxury purchase, Hollywood news, ticket-booking numbers, small-name gossip and any topic told in the last 5 days (unless a big new development) rank LAST.
+STAR IN TROUBLE (owner 19 Nov 2026, from our best Reel: a Josh actor's leg-injury appeal for work, 19,403 views; the Sonu Sood follow-up 1,764): a famous or well-known actor's own injury, illness, money trouble or appeal for work, and the help that arrives, is a TOP story: tell it respectfully, facts only, never mock, never guess a diagnosis, no graphic detail. \
+TALK SHOWS (owner 19 Nov 2026): fresh moments from Koffee With Karan, The Great Indian Kapil Show and Bigg Boss rank high ONLY when a famous person confesses, fights or reveals something personal; a plain contestant's gossip or a clip of a show's promo ranks low. \
 PROMO RULE (owner, 30 Oct 2026: two Reels on the same Shraddha Kapoor trailer got ~300 views and ~70): trailer / teaser / poster / first-look / song-launch / \
 release-date announcements rank LOW (they are adverts, people do not forward them); take one only when it carries a personal or emotional angle of a big name, \
 and never a regional or niche film nobody outside its language has heard of.
