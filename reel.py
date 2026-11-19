@@ -2340,11 +2340,21 @@ LOW_VIEWS = re.compile(r"(?i)\b(land rover|defender|range rover|bmw|mercedes|lam
                        r"avengers|marvel|hollywood|doomsday|hathaway|pattinson|james bond|bezos|taylor swift|kardashian|jenner|beyonc[eé]|zendaya|dicaprio|brad pitt|angelina jolie|tom cruise|timoth[eé]e|sydney sweeney|harry potter|oscars?|golden globes?|met gala|disney|pixar|warner bros|midnight shows?|advance bookings?|booking opens?|tickets? (?:sales|booking))\b")   # 16 Nov 2026: car gift 163 views, Avengers booking 230
 
 
+CHILD_WORDS = re.compile(r"(?i)\b(daughter|baby girl|baby boy|newborn|toddler|little one|little princess|munchkin|kids?|children|child|minor|twins)\b")
+FEELINGS = re.compile(r"(?i)\b(says?|said|opens? up|reveals?|admits?|recalls?|confess\w*|breaks? silence|emotional|heartbreak\w*|misses|talks? about|wishes? for|writes?|letter|note)\b")
+
+
+def is_child_story(title: str) -> bool:
+    """Owner 19 Nov 2026 (Lara Dutta's daughter's tennis win 62 views, Sidharth-Kiara's daughter 99, Priyanka's daughter chanting a mantra 46): a story whose subject is a star's CHILD
+    (achievement, photo, video) is not the star's own words or feelings; headlines with the star's own feelings ('opens up', 'says', 'reveals') stay."""
+    return bool(CHILD_WORDS.search(title) and not FEELINGS.search(title))
+
+
 def is_weak_type(s: dict) -> bool:
     """Owner, 13 Nov 2026 (the 8 AM throwback got 256 views, the 10 AM production-designer talk 428, the 4 PM film announcement 365 while SRK / Sai Pallavi stories were in the
     list): film announcements, throwbacks and technical talks are not the stories that get forwarded. Headline only."""
     t = s["title"]
-    return bool(ANNOUNCE.search(t) or THROWBACK.search(t) or TECHNICAL.search(t) or LOW_VIEWS.search(t))
+    return bool(ANNOUNCE.search(t) or THROWBACK.search(t) or TECHNICAL.search(t) or LOW_VIEWS.search(t) or is_child_story(t))
 
 
 STRENGTH_SYSTEM = ("You are a Bollywood editor for an Instagram page for Indians aged 18-34. From a short list of stories, score how likely each is to be WATCHED TO THE END and SENT TO A FRIEND "
@@ -2355,6 +2365,8 @@ STRENGTH_SYSTEM = ("You are a Bollywood editor for an Instagram page for Indians
                    "Also score LOW (1-3): car / property / luxury purchases and gifts, Hollywood or Marvel news, ticket-booking numbers, a story that only repeats a topic the page already told in the last 5 days "
                    "(the list is given) unless it has a big NEW development, and plain first-time gossip about a small name. Highest (8-10): a BIG star's personal moment: family, parent / child / couple bond, a confession, "
                    "an emotional reveal or a surprising real injury / near miss (e.g. 19,000 views for a famous actor's leg injury story; 10,000 for a star's family house dispute the first time it came out). "
+                   "A story whose subject is a star's CHILD (the child's achievement, photo, video or name) or a star's religious video scores LOW (1-3) unless the star's own words or feelings are the story "
+                   "(owner 19 Nov 2026: three such stories got 46-99 views while the AI had scored two of them 9/10). "
                    "Score every story; do not explain at length.")
 STRENGTH_SCHEMA = {"type": "object", "properties": {"scores": {"type": "array", "items": {"type": "object", "properties": {
     "n": {"type": "integer"}, "score": {"type": "integer"}, "why": {"type": "string"}}, "required": ["n", "score", "why"], "additionalProperties": False}}},
@@ -2487,6 +2499,14 @@ def rank_by_sites(stories: list, hours: int = 6) -> None:
                 break
         else:
             bar, ok = 0, list(stories)
+        if 0 < bar <= 4:   # owner 19 Nov 2026 (bar 3 Reels averaged 986 views, bar 6 averaged 2,616): on a thin day only stories in Google News's top 15 (any list) stay, when at least 2 such stories exist
+            def gn_rank(s):
+                m = re.search(r"#(\d+)", s.get("gtop", "") or "")
+                return int(m.group(1)) if m else 99
+            strong = [s for s in ok if gn_rank(s) <= 15]
+            if len(strong) >= 2:
+                print(f"  thin day (bar {bar}): only the {len(strong)} stories in Google News's top 15 stay")
+                ok = strong
         for s in ok:
             if trending(s) and s.get("sites", 1) < bar:
                 s["sites"] = max(s.get("sites", 1), bar)   # shown as run by the bar's sites: it trends on X / Google
@@ -2581,6 +2601,7 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                               options_schema(NEWS_OPTION, "Top 3 picks, best first"),
                               CONFIG.get("membership_model", "sonnet"), purpose="reel news pick")["options"]
     options = rank_picks(options, stories)   # strength check on the top 3 (owner, 13 Nov 2026)
+    soft_pick = None
     for opt in options:
         if not 1 <= opt["pick"] <= len(stories):
             continue
@@ -2598,13 +2619,21 @@ def make_news_reel(kind: str, state: dict, feed: list, today: str, tmp: str) -> 
                 AVOID.add(story["link"]); AVOID.add(story["title"][:45].lower())
                 continue
             sharp = max((photo_sharpness(x[0]) for x in photos if not x[3]), default=0)
-            if sharp < 30 and opt is not options[-1]:   # only soft photos (video frames): a story with a clearer star photo is better (owner, 30 Oct 2026)
-                print(f"  photos are soft (best sharpness {sharp:.0f}): trying the next story")
-                continue
+            if sharp < SOFT_COVER:   # owner 19 Nov 2026 (covers under 40 sharpness: 4 of 6 stalled): a story with a sharper photo goes first, the best-ranked soft one is the fallback
+                if soft_pick is None:
+                    soft_pick = (opt, story, item, photos, article_txt, sharp)
+                if opt is not options[-1]:
+                    print(f"  photos are soft (best sharpness {sharp:.0f}): trying the next story")
+                    continue
+                opt, story, item, photos, article_txt, sharp = soft_pick
+                print(f"  no story had a sharp photo: using the best-ranked one ({story['title'][:60]})")
             break
         print(f"  only {len(photos)} usable photo(s): trying the next story")
     else:
-        raise RuntimeError("no story had 2+ good photos")
+        if soft_pick is None:
+            raise RuntimeError("no story had 2+ good photos")
+        opt, story, item, photos, article_txt, sharp = soft_pick
+        print(f"  no other story worked: using the best-ranked soft-photo story ({story['title'][:60]})")
     TAGS["pick_no"] = opt.get("pick")
     TAGS["age_h"] = story_age(story)   # how old the story was when we made the Reel (owner 10 Nov 2026)
     if str(story.get("hot", "")).startswith("BIG POLITICS"):
@@ -2810,8 +2839,8 @@ def make_breaking_reel(kind: str, state: dict, feed: list, today: str, tmp: str)
         raise RuntimeError("no breaking story had a sharp photo")
     # a story whose photos are all soft video frames comes last (owner, 30 Oct 2026): a clearer star photo makes the better first frame
     sharp_of = lambda c: max((photo_sharpness(x[0]) for x in c[2] if not x[3]), default=0)
-    if any(sharp_of(c) >= 30 for c in cands):
-        cands.sort(key=lambda c: sharp_of(c) < 30)
+    if any(sharp_of(c) >= SOFT_COVER for c in cands):   # owner 19 Nov 2026: soft covers (under 40) stall: stories with a sharper photo first, order otherwise kept
+        cands.sort(key=lambda c: sharp_of(c) < SOFT_COVER)
     last_err = None
     for opt, story, photos, it in cands:
         try:
@@ -3522,6 +3551,7 @@ def extra_cover_candidates(wiki_title: str, story_title: str, tmp: str, current:
     return out
 
 
+SOFT_COVER = 40   # a story whose best photo is sharper than this is tried before one with only softer photos (owner 19 Nov 2026)
 FULL_SHARP = 45   # owner 19 Nov 2026: raised from 40 (the covers that worked were 49 and 56, the one that stalled 35)
 
 
