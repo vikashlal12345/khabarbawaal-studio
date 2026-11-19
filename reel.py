@@ -3522,11 +3522,14 @@ def extra_cover_candidates(wiki_title: str, story_title: str, tmp: str, current:
     return out
 
 
+FULL_SHARP = 45   # owner 19 Nov 2026: raised from 40 (the covers that worked were 49 and 56, the one that stalled 35)
+
+
 def full_quality(im: Image.Image) -> bool:
     """A photo that fills the 1080x1920 screen sharply (owner 18 Nov 2026: the Dia Mirza remake and the Prince William / Karan Johar Reels, both full-screen sharp covers, got 1,600-2,900
-    views in 2-3 h and 8+ s of watch time; the Kareena Kapoor window cover got 48): sharpness 40+, enlarged at most COVER_MAX_ENLARGE, not a text screenshot."""
+    views in 2-3 h and 8+ s of watch time; the Kareena Kapoor window cover got 48): sharpness 40+, enlarged at most COVER_MAX_ENLARGE, not a text screenshot (sharpness bar `FULL_SHARP`)."""
     try:
-        return photo_sharpness(im) >= 40 and max(RW / im.width, RH / im.height) <= COVER_MAX_ENLARGE and not text_like(im)
+        return photo_sharpness(im) >= FULL_SHARP and max(RW / im.width, RH / im.height) <= COVER_MAX_ENLARGE and not text_like(im)
     except Exception:
         return False
 
