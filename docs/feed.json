@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_early-2026-11-20",
+  "image": "posts/20261120-0235-reel_news_early-2026-11-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261120-023542-reel_news_early-2026-11-20.mp4",
+  "headline": "Sameera Reddy says South cinema gave her far more respect, money and stardom than Bollywood | Interview",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Sameera Reddy South cinema vs Bollywood interview 🎬\nSameera ne kaha ki South cinema ne unhe Bollywood se zyada respect, paisa aur stardom diya.\nUnhone filmon mein nayi maaon ke working hours ki debate par bhi apni baat rakhi.\nSameera ki baat sahi hai? SAHI ya GALAT likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sameerareddy #bollywood #southcinema #bollywoodnews #reelsindia\n\n(Sameera Reddy interview, Sameera Reddy South cinema, Sameera Reddy Bollywood, Sameera Reddy working hours, new mothers films, Hindustan Times interview, Bollywood vs South cinema, working hours debate)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html",
+  "pin_comment": "Ye apni kaam-kaaji dost ko bhejo jise izzat chahiye 👇",
+  "songs": [
+   {
+    "title": "Sahiba",
+    "artist": "Jasleen Royal, Stebin Ben",
+    "lang": "hindi",
+    "mood": "apni pehchaan ki ladai"
+   },
+   {
+    "title": "Khat",
+    "artist": "Navjot Ahuja",
+    "lang": "hindi",
+    "mood": "dil ki baat, emotional tone"
+   },
+   {
+    "title": "Mangal Rang (From \"Ramayana\")",
+    "artist": "A.R. Rahman, Kumar Vishwas",
+    "lang": "new",
+    "mood": "calm, respectful vibe"
+   },
+   {
+    "title": "Tu Mil Jaaye (From \"KING\")",
+    "artist": "Sachin-Jigar, Ed Sheeran",
+    "lang": "new",
+    "mood": "soft, reflective mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article never mentions an 8-hour shift; it only discusses working hours for new mothers."
+   ],
+   "fixed": [
+    "8 hour shift debate → working hours debate"
+   ]
+  },
+  "created_at": "2026-11-20T02:35:42+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-20",
   "image": "posts/20261120-0103-reel_devotion-2026-11-20.jpg",
   "kind": "reel",
@@ -379,27 +428,5 @@
    "fixed": []
   },
   "created_at": "2026-11-19T03:03:52+00:00"
- },
- {
-  "id": "cf84f244cfcf",
-  "image": "posts/20261119-0132-cf84f244cfcf.jpg",
-  "kind": "custom",
-  "media": "reel",
-  "video": "posts/20261119-013250-cf84f244cfcf.mp4",
-  "headline": "GTA 6 kal aa raha hai, bhai!",
-  "tag": "🎬 REEL · 🎨 AI CARTOON",
-  "caption": "GTA 6 ka naam suna aur achanak sabko viral fever ho gaya 😂\nBoss ko sab pata hai, kyunki wo bhi usi line mein hai.\nTumne kabhi gaming ke liye fake leave li hai? HAAN ya NA likho 👇\n\n🎨 AI cartoon (fiction), pictures: AI illustration (Z-Image)\n\nFollow @khabarbawaal: roz ki khabar + memes 🔥\n\n#GTA6 #GTAVI #OfficeHumor #IndianMemes #Relatable",
-  "source": "KhabarBawaal Original",
-  "pin_comment": "Kisi aise dost ko bhejo jo GTA 6 ke din 'bimaar' ho jayega 👇",
-  "songs": [],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "🎨 AI cartoon (fiction): the pictures are AI-painted. Turn on Instagram's 'AI info' label when posting."
-   ],
-   "fixed": []
-  },
-  "request": "cartoon\nFrame 1 (0–5 seconds)\nA young Indian corporate guy sitting at his office desk, looking deeply at his phone with a shocked, wide-eyed expression as a glowing notification pops up on his screen.\nOn-screen text: \"POV: You just realized GTA 6 drops tomorrow.\"\nFrame 2 (6–11 seconds)\nThe same young guy now sitting on his bedroom bed, aggressively typing on a laptop with a mischievous, evil grin while a fake thermometer and a bottle of cough syrup sit right next to him as props.\nOn-screen text: \"Me typing: 'Sir, sudden viral fever, cannot login today'\"\nFrame 3 (12–17 seconds)\nA strict, grumpy Indian boss sitting in his cabin, staring deadpan at his computer screen showing a \"Sick Leave Email\", slowly shaking his head while a gaming controller peeks out from his own office drawer.\nOn-screen text: \"The Boss: 'Approved. (See you in Vice City)'\"",
-  "created_at": "2026-11-19T01:32:50+00:00"
  }
 ]

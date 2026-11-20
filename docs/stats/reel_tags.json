@@ -2658,5 +2658,34 @@
   "secs": 16.8,
   "at": "2026-11-20T01:03:15+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-20",
+  "key": "sameerareddysouthcinemavsbollywoodinterview",
+  "kind": "reel_news_early",
+  "secs": 18.7,
+  "at": "2026-11-20T02:35:42+00:00",
+  "type": "news",
+  "bar": 0,
+  "pool": [
+   "(7 h ago) Aamir Khan leases 3 luxury apartments in Mumbai’s Santa",
+   "(2 h ago) 'Ramayana' day 15: Ranbir Kapoor, Yash film earns Rs 19",
+   "(under 1 h ago) 'The Vvaan' OTT Release: When And Where To Watch Sidhar",
+   "(2 h ago) Sameera Reddy says South cinema gave her far more respe"
+  ],
+  "n_stories": 4,
+  "strength": 6,
+  "pick_no": 4,
+  "age_h": 1.8,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 25,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
