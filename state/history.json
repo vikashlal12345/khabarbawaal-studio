@@ -355,7 +355,8 @@
   "b64f147502ae",
   "5d914a94cbf2",
   "046c03b02353",
-  "0d08936af509"
+  "0d08936af509",
+  "33b7d742831c"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -504,14 +505,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-20",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-19",
+  "reel_break_am": "2026-11-20",
   "reel_break_noon": "2026-11-19",
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-19"
  },
- "inbox_since": "LGATypydfMob",
+ "inbox_since": "wsae5X7EKmT9",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -902,7 +903,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/bhumi-pednekar-raises-alarm-over-hazardous-aqi-in-mumbai-post-diwali-says-people-were-bursting-crackers-even-at-3-am-101794212828354.html",
   "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
   "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html",
@@ -981,7 +981,8 @@
   "https://english.mathrubhumi.com/movies-music/news/general-knowledge-ananya-birlas-call-to-alia-bhatt-takes-a-hilarious-turn-on-koffee-with-karan-9-lx6fzyir",
   "https://news.abplive.com/entertainment/celebrities/alia-bhatt-supports-deepika-padukone-s-8-hour-shift-demand-says-it-cannot-be-arbitrary-1876709",
   "https://indianexpress.com/article/entertainment/tamil/keerthy-suresh-addresses-uncomfortable-moment-with-sathyavan-savithiri-co-star-mysskin-10970255/",
-  "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1198,10 +1199,6 @@
   }
  ],
  "songs_recent": [
-  "Bhaja Govindam",
-  "Laxmi Ji Ki Aarti",
-  "Bhajan Kar Hari Vishnu Ka",
-  "Shree Vishnu Amritwani (From \"Shree Vishnu Amritwani\")",
   "Zaalima",
   "Jo Tum Mere Ho",
   "Karam Farma De (From \"Meethe Mein Kya Hai\")",
@@ -1237,7 +1234,11 @@
   "Sahiba",
   "Khat",
   "Mangal Rang (From \"Ramayana\")",
-  "Tu Mil Jaaye (From \"KING\")"
+  "Tu Mil Jaaye (From \"KING\")",
+  "Gehra Hua",
+  "Darkhaast",
+  "O Mysaa Re (From \"Mysaa\") [Hindi]",
+  "Bam Bam (From \"Ganesh : Dust To Stardust\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1323,6 +1324,10 @@
   },
   {
    "title": "Sameera Reddy says South cinema gave her far more respect, money and stardom than Bollywood | Interview",
+   "date": "2026-11-20"
+  },
+  {
+   "title": "Saif Ali Khan receives death threat in the name of Baba Siddique's alleged killers; police launch investigation",
    "date": "2026-11-20"
   }
  ],

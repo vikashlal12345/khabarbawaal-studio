@@ -1,5 +1,50 @@
 [
  {
+  "id": "reel_break_am-2026-11-20",
+  "image": "posts/20261120-0435-reel_break_am-2026-11-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261120-043508-reel_break_am-2026-11-20.mp4",
+  "headline": "Saif Ali Khan receives death threat in the name of Baba Siddique's alleged killers; police launch investigation",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Saif Ali Khan death threat, Zeeshan Akhtar voice message, Mumbai Police jaanch\nMumbai Police ke mutabiq Saif ko Zeeshan Akhtar ke naam se voice message mila.\nMessage mein Baba Siddique jaisa anjaam hone ki baat kahi gayi.\nPolice dekh rahi hai ki threat asli hai ya AI se kisi ne naam use kiya.\nSaif ki security badhni chahiye? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #bollywood #breakingnews #mumbaipolice #reelsindia\n\n(Saif Ali Khan, Saif Ali Khan death threat, Zeeshan Akhtar, Baba Siddique, Mumbai Police, Saif Kareena, Bollywood threat news, Saif Ali Khan news today)",
+  "source": "Hindustan Times",
+  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html",
+  "pin_comment": "Apne Saif Ali Khan fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Gehra Hua",
+    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
+    "lang": "hindi",
+    "mood": "serious, gambhir mood"
+   },
+   {
+    "title": "Darkhaast",
+    "artist": "Mithoon, Arijit Singh, Sunidhi Chauhan, Sayeed Quadri",
+    "lang": "hindi",
+    "mood": "chinta aur dard ka mood"
+   },
+   {
+    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "calm serious background"
+   },
+   {
+    "title": "Bam Bam (From \"Ganesh : Dust To Stardust\")",
+    "artist": "Junaid Kumar, Ganesh Acharya",
+    "lang": "new",
+    "mood": "tez beat, alert feel"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": []
+  },
+  "created_at": "2026-11-20T04:35:08+00:00"
+ },
+ {
   "id": "reel_news_early-2026-11-20",
   "image": "posts/20261120-0235-reel_news_early-2026-11-20.jpg",
   "kind": "reel",
@@ -383,50 +428,5 @@
    ]
   },
   "created_at": "2026-11-19T05:06:41+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-19",
-  "image": "posts/20261119-0303-reel_news_early-2026-11-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261119-030352-reel_news_early-2026-11-19.mp4",
-  "headline": "Lara Dutta, Mahesh Bhupati's Daughter Saira Wins Tennis Championship In UAE; Actor Shares Proud Moment",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Lara Dutta Mahesh Bhupathi daughter Saira tennis championship 🎾\nLara Dutta aur Mahesh Bhupathi ki beti Saira ne UAE mein tennis championship jeeti.\nLara ne ye proud moment share kiya.\nIs proud family moment ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: ABP Live (link pinned in comments 👇)\n\n#laradutta #maheshbhupathi #bollywood #proudmom #reelsindia\n\n(Lara Dutta, Mahesh Bhupathi, Saira Bhupathi, Saira tennis championship, Lara Dutta daughter, UAE tennis, Bollywood family)",
-  "source": "ABP Live",
-  "source_url": "https://news.abplive.com/entertainment/celebrities/lara-dutta-mahesh-bhupati-s-daughter-saira-wins-tennis-championship-in-uae-actor-shares-proud-moment-1876586",
-  "pin_comment": "Ye Lara Dutta ke fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Zaalima",
-    "artist": "Arijit Singh, Harshdeep Kaur",
-    "lang": "hindi",
-    "mood": "warm proud feeling"
-   },
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "family love, soft vibe"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "gratitude, proud moment"
-   },
-   {
-    "title": "Aao Ri Chirraiya (From \"Mysaa\")",
-    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
-    "lang": "new",
-    "mood": "beti ka pyaar"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-19T03:03:52+00:00"
  }
 ]

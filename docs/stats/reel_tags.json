@@ -2687,5 +2687,32 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-20",
+  "key": "saifalikhandeaththreatzeeshanakhtarvoicemessagemumbaipolicej",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-20T04:35:08+00:00",
+  "type": "breaking",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Ananya Panday recalls backlash over her struggle remark",
+   "(under 1 h ago) Bruno Mars’ Father Peter Hernandez Dies At 74; Singer S",
+   "(1 h ago) Sharad Kapoor says Josh co-star Shah Rukh Khan called h",
+   "(2 h ago) Saif Ali Khan receives death threat in the name of Baba"
+  ],
+  "n_stories": 4,
+  "strength": 9,
+  "pick_no": 4,
+  "age_h": 1.8,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 76,
+  "topic": "other",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]
