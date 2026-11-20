@@ -2746,5 +2746,29 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-20",
+  "key": "samantharuthprabhurajnidimorubabyboydevnidimoru",
+  "kind": "reel_break_noon",
+  "secs": 15.0,
+  "at": "2026-11-20T08:34:25+00:00",
+  "type": "breaking",
+  "bar": 6,
+  "mega": 1,
+  "pool": [
+   "(under 1 h ago) Samantha Ruth Prabhu, Raj Nidimoru Welcome First Child,"
+  ],
+  "n_stories": 1,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 53,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "emoji",
+  "hook_rule": "detail1",
+  "hook": "name_first"
  }
 ]

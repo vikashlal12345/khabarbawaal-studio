@@ -507,13 +507,13 @@
   "reel_news_early": "2026-11-20",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-20",
-  "reel_break_noon": "2026-11-19",
+  "reel_break_noon": "2026-11-20",
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-19"
  },
- "inbox_since": "n926njIM9hOf",
+ "inbox_since": "QRACcqYxobs8",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -904,7 +904,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html",
   "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html",
   "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
@@ -983,7 +982,8 @@
   "https://indianexpress.com/article/entertainment/tamil/keerthy-suresh-addresses-uncomfortable-moment-with-sathyavan-savithiri-co-star-mysskin-10970255/",
   "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html",
+  "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1200,10 +1200,6 @@
   }
  ],
  "songs_recent": [
-  "His Aura Hits You",
-  "Thumkeshwari",
-  "Ji Ji Re Ji (From \"Eetha\")",
-  "Mumbai Sapno Ka Samandar (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
   "Rula Ke Gaya Ishq",
   "Tera Hoke Rahoon",
   "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
@@ -1239,7 +1235,11 @@
   "Samjhawan",
   "Mann Mera",
   "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
-  "O Ragho (From \"Ramayana\")"
+  "O Ragho (From \"Ramayana\")",
+  "Jo Tum Mere Ho",
+  "Heeriye (feat. Arijit Singh)",
+  "Judi Jodi (From \"Ramayana\")",
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1333,6 +1333,10 @@
   },
   {
    "title": "Sharad Kapoor says Josh co-star Shah Rukh Khan called him after his emotional appeal for work, reveals plan to meet Aryan Khan",
+   "date": "2026-11-20"
+  },
+  {
+   "title": "Samantha Ruth Prabhu, Raj Nidimoru Welcome First Child, Name Baby Boy Dev Nidimoru",
    "date": "2026-11-20"
   }
  ],
