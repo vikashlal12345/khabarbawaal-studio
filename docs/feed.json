@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_pm-2026-11-20",
+  "image": "posts/20261120-1035-reel_news_pm-2026-11-20.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261120-103539-reel_news_pm-2026-11-20.mp4",
+  "headline": "‘O.M Operation Mole’: Is Mammootty’s casting in the Dhanush-starrer justified?",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Mammootty Dhanush O.M Operation Mole casting 🎬\nRajkumar Periasamy ki film 'O.M: Operation Mole' se Mammootty 7 saal baad Tamil cinema mein wapas aaye hain.\nSawaal ye hai ki kya unki casting sahi hai? The Hindu ne yahi bahas uthayi hai.\nDhanush ke saath Mammootty ka combo dekhne ko aap excited ho?\nMammootty ki casting sahi hai? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: The Hindu (link pinned in comments 👇)\n\n#Mammootty #Dhanush #OperationMole #SouthCinema #reelsindia\n\n(Mammootty Dhanush, O.M Operation Mole, Mammootty Tamil cinema return, Dhanush new film, Mammootty casting, Dhanush Mammootty film, Operation Mole movie)",
+  "source": "The Hindu",
+  "source_url": "https://www.thehindu.com/entertainment/movies/om-operation-mole-mammootty-dhanush-sai-pallavi-rajkumar-periasamy-sai-abhyankkar/article71723402.ece",
+  "pin_comment": "Apne Mammootty ya Dhanush fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Veezha Veera (From \"O.M: Operation Mole\")",
+    "artist": "Sai Abhyankkar, Tippu, Arun Srinivasan",
+    "lang": "hindi",
+    "mood": "film's own chart-topping song"
+   },
+   {
+    "title": "Alfaaz",
+    "artist": "Hamza Malik, Zain Zohaib",
+    "lang": "hindi",
+    "mood": "number 1 vibe, big comeback"
+   },
+   {
+    "title": "Ji Ji Re Ji (From \"Eetha\")",
+    "artist": "Ajay-Atul, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "grand, energetic return feel"
+   },
+   {
+    "title": "Aao Ri Chirraiya (From \"Mysaa\")",
+    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
+    "lang": "new",
+    "mood": "fresh, mellow cinema mood"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: The article says the film is directed by Rajkumar Periasamy, not Dhanush's film, and it has already been released (Nov 20)."
+   ],
+   "fixed": [
+    "Dhanush ki film 'O.M: Operation Mole' se Mammootty 7 saal baad Tamil cinema mein wapas aa rahe hain. → Rajkumar Periasamy ki film 'O.M: Operation Mole' se Mammootty 7 saal baad Tamil cinema mein wapas aaye hain."
+   ]
+  },
+  "created_at": "2026-11-20T10:35:39+00:00"
+ },
+ {
   "id": "reel_break_noon-2026-11-20",
   "image": "posts/20261120-0834-reel_break_noon-2026-11-20.jpg",
   "kind": "reel",
@@ -381,54 +430,5 @@
    ]
   },
   "created_at": "2026-11-19T11:05:02+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-19",
-  "image": "posts/20261119-0905-reel_break_noon-2026-11-19.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261119-090518-reel_break_noon-2026-11-19.mp4",
-  "headline": "Priyanka Chopra Jonas shares video of daughter Malti Marie chants Gayatri Mantra, actor calls it “Beautiful”; see postx",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Priyanka Chopra Malti Marie Gayatri Mantra video, Bluefly shoot\nPriyanka ne Bluefly shoot se family ke pal share kiye.\nVideo mein Malti unki godi mein baithkar Gayatri Mantra bolti dikhi.\nAakhri verse ke baad Priyanka ne kaha: \"So beautiful.\"\nIs pyaari jhalak ko 10 mein se kitne number doge? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#reelsindia #priyankachopra #maltimarie #bollywoodnews #gayatrimantra\n\n(Priyanka Chopra, Malti Marie, Malti Gayatri Mantra, Priyanka Chopra Jonas daughter, Bluefly, Nick Jonas, Priyanka Chopra video, Bollywood news today)",
-  "source": "Bollywood Hungama",
-  "source_url": "https://www.bollywoodhungama.com/news/features/priyanka-chopra-jonas-shares-video-of-daughter-malti-marie-chants-gayatri-mantra-actor-calls-it-beautiful-see-postx/",
-  "pin_comment": "Apne Priyanka fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Narayan Mil Jayega",
-    "artist": "Payal Dev, Jubin Nautiyal",
-    "lang": "hindi",
-    "mood": "devotional vibe = mantra moment"
-   },
-   {
-    "title": "Ram Siya Ram",
-    "artist": "Sachet Tandon",
-    "lang": "hindi",
-    "mood": "calm, spiritual family moment"
-   },
-   {
-    "title": "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Manoj Muntashir",
-    "lang": "new",
-    "mood": "devotional, sweet mother-child feel"
-   },
-   {
-    "title": "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Mayur Puri",
-    "lang": "new",
-    "mood": "bhakti mood, blessing vibe"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article does not say the video went viral; it only says it caught attention."
-   ],
-   "fixed": [
-    "MALTI KA GAYATRI MANTRA VIRAL → MALTI KA GAYATRI MANTRA VIDEO"
-   ]
-  },
-  "created_at": "2026-11-19T09:05:18+00:00"
  }
 ]

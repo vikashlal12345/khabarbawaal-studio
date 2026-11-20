@@ -2770,5 +2770,34 @@
   "relate": "emoji",
   "hook_rule": "detail1",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_news_pm-2026-11-20",
+  "key": "mammoottydhanushomoperationmolecasting",
+  "kind": "reel_news_pm",
+  "secs": 17.5,
+  "at": "2026-11-20T10:35:39+00:00",
+  "type": "news",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Bigg Boss Bangla 3: Jeetu Kamal wins ticket to finale a",
+   "(2 h ago) Ramayana Part One Box Office Collections: Ranbir Kapoor",
+   "(under 1 h ago) ‘O.M Operation Mole’: Is Mammootty’s casting in the Dha",
+   "(1 h ago) ‘Aaksamlo Oka Tara’ movie review: Dulquer Salmaan, Satv"
+  ],
+  "n_stories": 4,
+  "strength": 2,
+  "pick_no": 3,
+  "age_h": 0.3,
+  "topic": "gossip",
+  "kw": 7,
+  "relate": "verdict",
+  "cover": "portrait",
+  "sharp": 43,
+  "hook_rule": "detail1",
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

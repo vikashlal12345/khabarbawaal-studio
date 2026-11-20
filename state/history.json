@@ -357,7 +357,8 @@
   "046c03b02353",
   "0d08936af509",
   "33b7d742831c",
-  "03026e08661f"
+  "03026e08661f",
+  "d9b4756385c4"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -495,7 +496,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-20",
-  "reel_news_pm": "2026-11-19",
+  "reel_news_pm": "2026-11-20",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-20",
@@ -513,7 +514,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-19"
  },
- "inbox_since": "QRACcqYxobs8",
+ "inbox_since": "Fsw2bmQiCHYc",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -904,7 +905,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html",
   "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html",
   "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
@@ -983,7 +983,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html",
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html",
-  "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797"
+  "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797",
+  "https://www.thehindu.com/entertainment/movies/om-operation-mole-mammootty-dhanush-sai-pallavi-rajkumar-periasamy-sai-abhyankkar/article71723402.ece"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1200,10 +1201,6 @@
   }
  ],
  "songs_recent": [
-  "Rula Ke Gaya Ishq",
-  "Tera Hoke Rahoon",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
   "Narayan Mil Jayega",
   "Ram Siya Ram",
   "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
@@ -1239,7 +1236,11 @@
   "Jo Tum Mere Ho",
   "Heeriye (feat. Arijit Singh)",
   "Judi Jodi (From \"Ramayana\")",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")"
+  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
+  "Veezha Veera (From \"O.M: Operation Mole\")",
+  "Alfaaz",
+  "Ji Ji Re Ji (From \"Eetha\")",
+  "Aao Ri Chirraiya (From \"Mysaa\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1337,6 +1338,10 @@
   },
   {
    "title": "Samantha Ruth Prabhu, Raj Nidimoru Welcome First Child, Name Baby Boy Dev Nidimoru",
+   "date": "2026-11-20"
+  },
+  {
+   "title": "‘O.M Operation Mole’: Is Mammootty’s casting in the Dhanush-starrer justified?",
    "date": "2026-11-20"
   }
  ],
