@@ -2714,5 +2714,37 @@
   "relate": "verdict",
   "hook_rule": "detail1",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-20",
+  "key": "sharadkapoorshahrukhkhancalljoshcostarhelp",
+  "kind": "reel_news_am",
+  "secs": 19.0,
+  "at": "2026-11-20T06:35:51+00:00",
+  "type": "news",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Bigg Boss Tamil 10: Lakshmipriya questions Shathiga’s d",
+   "(1 h ago) Shah Rukh Khan assures Sharad Kapoor of help",
+   "(2 h ago) Shah Rukh Khan calls Sharad Kapoor, steps in to help af",
+   "(3 h ago) Bruno Mars’ Father Peter Hernandez Dies At 74; Singer S",
+   "(3 h ago) Sharad Kapoor says Josh co-star Shah Rukh Khan called h",
+   "(under 1 h ago) OM Chapter 1 Twitter Review: 11 tweets to read before w",
+   "(3 h ago) ‘Sathyavan Savitri’ movie review: A contrived courtroom"
+  ],
+  "n_stories": 7,
+  "strength": 9,
+  "pick_no": 5,
+  "age_h": 3.4,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "rating",
+  "cover": "window",
+  "sharp": 27,
+  "hook_rule": "detail1",
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

@@ -356,7 +356,8 @@
   "5d914a94cbf2",
   "046c03b02353",
   "0d08936af509",
-  "33b7d742831c"
+  "33b7d742831c",
+  "03026e08661f"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -497,7 +498,7 @@
   "reel_news_pm": "2026-11-19",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
-  "reel_news_am": "2026-11-19",
+  "reel_news_am": "2026-11-20",
   "reel_news_noon": "2026-11-01",
   "reel_bachpan": "2026-10-18",
   "reel_news_aft": "2026-11-19",
@@ -512,7 +513,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-19"
  },
- "inbox_since": "wsae5X7EKmT9",
+ "inbox_since": "n926njIM9hOf",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -903,7 +904,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/inside-bollywoods-diwali-how-alia-bhatt-kareena-kapoor-bachchans-and-more-celebrated-the-festival-of-light-101794224769385.html",
   "https://www.hindustantimes.com/india-news/any-time-any-place-rahul-challenges-pm-modi-to-debate-anti-national-charge-101794226383127.html",
   "https://www.hindustantimes.com/entertainment/bollywood/kajol-shares-candid-diwali-moment-with-ajay-devgn-says-best-times-often-go-undocumented-101794232567117.html",
   "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html",
@@ -982,7 +982,8 @@
   "https://news.abplive.com/entertainment/celebrities/alia-bhatt-supports-deepika-padukone-s-8-hour-shift-demand-says-it-cannot-be-arbitrary-1876709",
   "https://indianexpress.com/article/entertainment/tamil/keerthy-suresh-addresses-uncomfortable-moment-with-sathyavan-savithiri-co-star-mysskin-10970255/",
   "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html",
-  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html",
+  "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1199,10 +1200,6 @@
   }
  ],
  "songs_recent": [
-  "Zaalima",
-  "Jo Tum Mere Ho",
-  "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-  "Aao Ri Chirraiya (From \"Mysaa\")",
   "His Aura Hits You",
   "Thumkeshwari",
   "Ji Ji Re Ji (From \"Eetha\")",
@@ -1238,7 +1235,11 @@
   "Gehra Hua",
   "Darkhaast",
   "O Mysaa Re (From \"Mysaa\") [Hindi]",
-  "Bam Bam (From \"Ganesh : Dust To Stardust\")"
+  "Bam Bam (From \"Ganesh : Dust To Stardust\")",
+  "Samjhawan",
+  "Mann Mera",
+  "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
+  "O Ragho (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1328,6 +1329,10 @@
   },
   {
    "title": "Saif Ali Khan receives death threat in the name of Baba Siddique's alleged killers; police launch investigation",
+   "date": "2026-11-20"
+  },
+  {
+   "title": "Sharad Kapoor says Josh co-star Shah Rukh Khan called him after his emotional appeal for work, reveals plan to meet Aryan Khan",
    "date": "2026-11-20"
   }
  ],
