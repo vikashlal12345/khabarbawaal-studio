@@ -358,7 +358,8 @@
   "0d08936af509",
   "33b7d742831c",
   "03026e08661f",
-  "d9b4756385c4"
+  "d9b4756385c4",
+  "40fd088dbfc5"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -512,9 +513,9 @@
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
-  "reel_break_night": "2026-11-19"
+  "reel_break_night": "2026-11-20"
  },
- "inbox_since": "Fsw2bmQiCHYc",
+ "inbox_since": "KTVutUZPAKFp",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -905,7 +906,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/assamese-craftsmen-who-created-ranbir-kapoor-ravie-dubey-armour-never-knew-it-was-for-ramayana-worked-3-years-on-cane-rubber-armour-101794274724147.html",
   "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
   "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
@@ -984,7 +984,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html",
   "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html",
   "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797",
-  "https://www.thehindu.com/entertainment/movies/om-operation-mole-mammootty-dhanush-sai-pallavi-rajkumar-periasamy-sai-abhyankkar/article71723402.ece"
+  "https://www.thehindu.com/entertainment/movies/om-operation-mole-mammootty-dhanush-sai-pallavi-rajkumar-periasamy-sai-abhyankkar/article71723402.ece",
+  "https://www.hindustantimes.com/entertainment/bollywood/anil-kapoor-meets-french-president-emmanuel-macron-in-paris-gets-a-tour-of-his-office-101795178665304.html"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1201,10 +1202,6 @@
   }
  ],
  "songs_recent": [
-  "Narayan Mil Jayega",
-  "Ram Siya Ram",
-  "Bulaye Chhathi Maa (From \"Yeh Prem Mol Liya\")",
-  "Jai Ambe Bol (From \"Yeh Prem Mol Liya\")",
   "Peek A Boo",
   "Shararat",
   "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
@@ -1240,7 +1237,11 @@
   "Veezha Veera (From \"O.M: Operation Mole\")",
   "Alfaaz",
   "Ji Ji Re Ji (From \"Eetha\")",
-  "Aao Ri Chirraiya (From \"Mysaa\")"
+  "Aao Ri Chirraiya (From \"Mysaa\")",
+  "His Aura Hits You",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Mangal Rang (From \"Ramayana\")",
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1342,6 +1343,10 @@
   },
   {
    "title": "‘O.M Operation Mole’: Is Mammootty’s casting in the Dhanush-starrer justified?",
+   "date": "2026-11-20"
+  },
+  {
+   "title": "Anil Kapoor meets French President Emmanuel Macron in Paris, gets a tour of his office",
    "date": "2026-11-20"
   }
  ],

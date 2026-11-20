@@ -2799,5 +2799,30 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_night-2026-11-20",
+  "key": "anilkapooremmanuelmacronparismeeting",
+  "kind": "reel_break_night",
+  "secs": 16.2,
+  "at": "2026-11-20T13:33:57+00:00",
+  "type": "breaking",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Anil Kapoor meets French President Emmanuel Macron in P",
+   "(1 h ago) 'Hanuman Ansh' director says none of the big production",
+   "(3 h ago) Aakasamlo Oka Tara Twitter Review: 9 Tweets to read bef"
+  ],
+  "n_stories": 3,
+  "pick_no": 1,
+  "age_h": 0.5,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 37,
+  "topic": "other",
+  "kw": 8,
+  "relate": "share_friend",
+  "hook_rule": "detail1",
+  "hook": "name_first"
  }
 ]
