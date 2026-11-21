@@ -359,7 +359,8 @@
   "33b7d742831c",
   "03026e08661f",
   "d9b4756385c4",
-  "40fd088dbfc5"
+  "40fd088dbfc5",
+  "cfe1cc1276e7"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -508,14 +509,14 @@
   "reel_official": "2026-10-28",
   "reel_news_early": "2026-11-21",
   "reel_rotate": "2026-10-22",
-  "reel_break_am": "2026-11-20",
+  "reel_break_am": "2026-11-21",
   "reel_break_noon": "2026-11-20",
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-20"
  },
- "inbox_since": "8Wjsjx9kW873",
+ "inbox_since": "8ueMQDR9hk2R",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -906,7 +907,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
   "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
   "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
   "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
@@ -985,7 +985,8 @@
   "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797",
   "https://www.thehindu.com/entertainment/movies/om-operation-mole-mammootty-dhanush-sai-pallavi-rajkumar-periasamy-sai-abhyankkar/article71723402.ece",
   "https://www.hindustantimes.com/entertainment/bollywood/anil-kapoor-meets-french-president-emmanuel-macron-in-paris-gets-a-tour-of-his-office-101795178665304.html",
-  "https://scroll.in/article/1097218/nikhil-gupta-sentenced-for-20-years-in-plot-to-assassinate-sikh-separatist-leader-in-new-york"
+  "https://scroll.in/article/1097218/nikhil-gupta-sentenced-for-20-years-in-plot-to-assassinate-sikh-separatist-leader-in-new-york",
+  "https://www.dnaindia.com/bollywood/report-ramayana-box-office-collection-day-16-yash-film-beats-kgf-2-to-become-his-biggest-blockbuster-in-india-3224422"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1202,10 +1203,6 @@
   }
  ],
  "songs_recent": [
-  "Barbaad",
-  "Tera Zikr",
-  "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
   "Aarti Laxmi Ji Ki",
   "Om Jai Lakshmi Mata - Alka Yagnik",
   "Mahalakshmi Ashtakam",
@@ -1241,7 +1238,11 @@
   "Aaj Bhi 2",
   "Rula Ke Gaya Ishq",
   "Madirapan (From \"Maatrubhumi: May War Rest in Peace\")",
-  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+  "Ram Ji Aake Bhala Karenge (From \"Bhooth Bangla\")",
+  "Narayan Mil Jayega",
+  "Main Ram (From \"Ramayana\")",
+  "Shree Hanuman Chalisa (From \"Ramayana\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1319,6 +1320,10 @@
   },
   {
    "title": "Nikhil Gupta sentenced for 20 years in plot to assassinate Sikh separatist leader in New York",
+   "date": "2026-11-21"
+  },
+  {
+   "title": "Ramayana box office collection day 16: Yash film beats KGF 2 to become his biggest blockbuster in India",
    "date": "2026-11-21"
   }
  ],

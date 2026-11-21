@@ -2859,5 +2859,31 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_am-2026-11-21",
+  "key": "yashramayanapartonenekgf2kopeechechhoda",
+  "kind": "reel_break_am",
+  "secs": 17.0,
+  "at": "2026-11-21T04:35:04+00:00",
+  "type": "breaking",
+  "bar": 4,
+  "pool": [
+   "(2 h ago) OM box office collection day 1: Dhanush scores his care",
+   "(3 h ago) Ramayana box office collection day 16: Yash film beats ",
+   "(3 h ago) Jackie Shroff recalls Danny Denzongpa praising Tiger Sh"
+  ],
+  "n_stories": 3,
+  "strength": 7,
+  "pick_no": 2,
+  "age_h": 2.8,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 53,
+  "topic": "other",
+  "kw": 8,
+  "relate": "rating",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]
