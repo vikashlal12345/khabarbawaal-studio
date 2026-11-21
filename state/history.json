@@ -496,7 +496,7 @@
   "reel_meme": "2026-10-19",
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
-  "reel_devotion": "2026-11-20",
+  "reel_devotion": "2026-11-21",
   "reel_news_pm": "2026-11-20",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
@@ -1202,10 +1202,6 @@
   }
  ],
  "songs_recent": [
-  "Peek A Boo",
-  "Shararat",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
-  "Ichak Dana (From \"Meethe Mein Kya Hai\")",
   "Azadi",
   "Ez-Ez",
   "Betuka (From \"Nakhrewaalii\")",
@@ -1241,7 +1237,11 @@
   "His Aura Hits You",
   "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
   "Mangal Rang (From \"Ramayana\")",
-  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")"
+  "Dard-e-Dil Dard-e-Jigar (From \"Gunmaaster G9\")",
+  "Shani Dev Aarti",
+  "Shani Chalisa",
+  "Shani Dev Ki Aarti",
+  "Super Fast Shani Chalisa"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",

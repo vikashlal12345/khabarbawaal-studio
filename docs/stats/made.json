@@ -1,31 +1,4 @@
 {
- "2026-10-21": {
-  "reel_official-2026-10-21": {
-   "tag": "🎬 REEL · 🎥🔊 SPEAKER VIDEO",
-   "at": "2026-10-21T16:13:38+00:00",
-   "auto": false
-  },
-  "c8c914fe17e3": {
-   "tag": "🎬 REEL · POLITICS",
-   "at": "2026-10-21T14:33:17+00:00",
-   "auto": false
-  },
-  "reel_rotate-2026-10-21": {
-   "tag": "🎬 REEL · TAG THAT FRIEND",
-   "at": "2026-10-21T14:18:30+00:00",
-   "auto": false
-  },
-  "reel_politics-2026-10-21": {
-   "tag": "🎬 REEL · BOLLYWOOD",
-   "at": "2026-10-21T12:46:16+00:00",
-   "auto": false
-  },
-  "reel_news_pm-2026-10-21": {
-   "tag": "🎬 REEL · BOLLYWOOD",
-   "at": "2026-10-21T10:34:28+00:00",
-   "auto": false
-  }
- },
  "2026-10-22": {
   "reel_news_pm-2026-10-22": {
    "tag": "🎬 REEL · BOLLYWOOD",
@@ -1341,6 +1314,13 @@
   "reel_break_night-2026-11-20": {
    "tag": "🎬 REEL · ⚡ BREAKING CARD",
    "at": "2026-11-20T13:33:57+00:00",
+   "auto": false
+  }
+ },
+ "2026-11-21": {
+  "reel_devotion-2026-11-21": {
+   "tag": "🎬 REEL · 🙏 JAI SHANI DEV",
+   "at": "2026-11-21T01:03:48+00:00",
    "auto": false
   }
  }

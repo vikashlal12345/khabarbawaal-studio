@@ -2824,5 +2824,13 @@
   "relate": "share_friend",
   "hook_rule": "detail1",
   "hook": "name_first"
+ },
+ {
+  "id": "reel_devotion-2026-11-21",
+  "key": "shanidevkikripaaajkaisepayein",
+  "kind": "reel_devotion",
+  "secs": 16.9,
+  "at": "2026-11-21T01:03:48+00:00",
+  "type": "devotional"
  }
 ]
