@@ -29,6 +29,30 @@ if not host:
 now = datetime.now(timezone.utc)
 cutoff = now - timedelta(days=days)
 
+if only == "comments":
+    after, ids = None, []
+    while True:
+        p = {"fields": "id,timestamp,media_product_type,caption", "limit": 50}
+        if after:
+            p["after"] = after
+        st, media = M.get(host, f"{M.IG_ID}/media", p)
+        if st != 200:
+            print("media error", M.err(media)); break
+        data = media.get("data", [])
+        ids += [(x["id"], x["timestamp"], (x.get("caption") or "")[:60]) for x in data]
+        after = ((media.get("paging") or {}).get("cursors") or {}).get("after")
+        if not data or not after or datetime.strptime(data[-1]["timestamp"], "%Y-%m-%dT%H:%M:%S%z") < cutoff:
+            break
+    res = []
+    for mid, ts, cap in ids:
+        if datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S%z") < cutoff:
+            continue
+        st, body = M.get(host, f"{mid}/comments", {"fields": "id,text,timestamp,username,like_count,replies.limit(5){text,username,timestamp}", "limit": 30})
+        res.append({"id": mid, "time": ts, "cap": cap, "status": st, "comments": body.get("data", []) if st == 200 else M.err(body)[:100]})
+    json.dump(res, open(out / "comments.json", "w"), ensure_ascii=False)
+    print("COMMENTS saved:", len(res), "with comments:", sum(1 for r in res if isinstance(r["comments"], list) and r["comments"]), flush=True)
+    sys.exit(0)
+
 if only == "competitors":
     import json as _j
     cfg = _j.load(open("config.json"))
