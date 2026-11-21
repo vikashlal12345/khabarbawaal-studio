@@ -1,0 +1,32 @@
+name: Meta deep export
+# Manual only: read-only export of our own Reels (numbers, full captions, frames) and account reach for analysis. Posts nothing, saves nothing to the app.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days back"
+        default: "40"
+      what:
+        description: "all | reels | account"
+        default: "all"
+jobs:
+  deep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      META_IG_TOKEN: ${{ secrets.META_IG_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install imageio-ffmpeg
+      - run: python -u tools/meta_deep.py ${{ inputs.days }} ${{ inputs.what }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: meta-deep
+          path: deep_out/
+          if-no-files-found: ignore
