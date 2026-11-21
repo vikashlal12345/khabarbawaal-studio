@@ -511,13 +511,13 @@
   "reel_news_early": "2026-11-21",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-21",
-  "reel_break_noon": "2026-11-20",
+  "reel_break_noon": "2026-11-21",
   "reel_break_aft": "2026-11-17",
   "reel_news_night": "2026-11-07",
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-20"
  },
- "inbox_since": "otdbPs40ngEn",
+ "inbox_since": "U76KHI99QsEl",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -908,7 +908,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
   "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
@@ -987,7 +986,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/anil-kapoor-meets-french-president-emmanuel-macron-in-paris-gets-a-tour-of-his-office-101795178665304.html",
   "https://scroll.in/article/1097218/nikhil-gupta-sentenced-for-20-years-in-plot-to-assassinate-sikh-separatist-leader-in-new-york",
   "https://www.dnaindia.com/bollywood/report-ramayana-box-office-collection-day-16-yash-film-beats-kgf-2-to-become-his-biggest-blockbuster-in-india-3224422",
-  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-apologises-to-shraddha-kapoor-over-maatrubhumi-and-eetha-box-office-clash-i-feel-really-really-bad-about-it/"
+  "https://www.bollywoodhungama.com/news/bollywood/salman-khan-apologises-to-shraddha-kapoor-over-maatrubhumi-and-eetha-box-office-clash-i-feel-really-really-bad-about-it/",
+  "https://timesofindia.indiatimes.com/tv/news/hindi/bigg-boss-20-gauahar-khan-calls-amrapali-dubey-indian-beauty-says-every-time-i-see-her-on-screen-even-without-makeup-the-screen-is-lit/articleshow/136043962.cms"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1204,10 +1204,6 @@
   }
  ],
  "songs_recent": [
-  "Sahiba",
-  "Khat",
-  "Mangal Rang (From \"Ramayana\")",
-  "Tu Mil Jaaye (From \"KING\")",
   "Gehra Hua",
   "Darkhaast",
   "O Mysaa Re (From \"Mysaa\") [Hindi]",
@@ -1243,7 +1239,11 @@
   "Soulmate",
   "Dilruba Dilnasheen",
   "Saala Pyaar (From \"Mr. & Mrs. Grey\")",
-  "Jhumka Patola (From \"Yeh Prem Mol Liya\")"
+  "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+  "Peek A Boo",
+  "Madhosh",
+  "Betuka (From \"Nakhrewaalii\")",
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1329,6 +1329,10 @@
   },
   {
    "title": "Salman Khan apologises to Shraddha Kapoor over Maatrubhumi and Eetha box office clash: “I feel really, really bad about it”",
+   "date": "2026-11-21"
+  },
+  {
+   "title": "Bigg Boss 20: Gauahar Khan calls Amrapali Dubey ‘Indian beauty’, says, 'Every time I see her on screen even without makeup, the screen is lit'",
    "date": "2026-11-21"
   }
  ],

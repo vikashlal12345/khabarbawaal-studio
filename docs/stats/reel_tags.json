@@ -2915,5 +2915,33 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_noon-2026-11-21",
+  "key": "munawarfaruquibiggboss20qazitouqeeramrapalidubeywinner",
+  "kind": "reel_break_noon",
+  "secs": 17.0,
+  "at": "2026-11-21T08:35:40+00:00",
+  "type": "breaking",
+  "bar": 4,
+  "pool": [
+   "(under 1 h ago) Bigg Boss 20: Gauahar Khan calls Amrapali Dubey ‘Indian",
+   "(1 h ago) Dadasaheb Phalke International Film Festival Awards 202",
+   "(under 1 h ago) Hailey Bieber Opens Up About Harassment, Street Abuse A",
+   "(1 h ago) Hanu-Man 2 The Rise of Vanaras: Panja Vaisshnav Tej ann",
+   "(3 h ago) 'Show Time': Sonu Nigam Delights Passengers With Improm"
+  ],
+  "n_stories": 5,
+  "strength": 6,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "cover": "window",
+  "photos": 2,
+  "sharp": 49,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "predict",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]

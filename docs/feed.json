@@ -1,5 +1,52 @@
 [
  {
+  "id": "reel_break_noon-2026-11-21",
+  "image": "posts/20261121-0835-reel_break_noon-2026-11-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261121-083540-reel_break_noon-2026-11-21.mp4",
+  "headline": "Bigg Boss 20: Gauahar Khan calls Amrapali Dubey ‘Indian beauty’, says, 'Every time I see her on screen even without makeup, the screen is lit'",
+  "tag": "🎬 REEL · ⚡ BREAKING CARD",
+  "caption": "Munawar Faruqui Bigg Boss 20 Qazi Touqeer Amrapali Dubey winner\n\nMunawar ne Telly Talk se baat karte hue Qazi Touqeer ko definite winner bataya.\nAmrapali Dubey ko unhone sensible aur well-mannered kaha.\nQazi ko entertaining aur quirky character bola.\n\nBigg Boss 20 ka winner Qazi banega? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: The Times of India (link pinned in comments 👇)\n\n#reelsindia #BiggBoss20 #MunawarFaruqui #QaziTouqeer #AmrapaliDubey\n\n(Munawar Faruqui, Bigg Boss 20, Qazi Touqeer, Amrapali Dubey, Bigg Boss 20 winner, Telly Talk, Munawar Faruqui Bigg Boss 20, Bigg Boss 20 news)",
+  "source": "The Times of India",
+  "source_url": "https://timesofindia.indiatimes.com/tv/news/hindi/bigg-boss-20-gauahar-khan-calls-amrapali-dubey-indian-beauty-says-every-time-i-see-her-on-screen-even-without-makeup-the-screen-is-lit/articleshow/136043962.cms",
+  "pin_comment": "Apne Bigg Boss fan dost ko ye Munawar ki baat bhejo 👇",
+  "songs": [
+   {
+    "title": "Peek A Boo",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "tareef aur glam vibe"
+   },
+   {
+    "title": "Madhosh",
+    "artist": "Tanishk Bagchi, Arslan Nizami",
+    "lang": "hindi",
+    "mood": "khoobsurti ki tareef"
+   },
+   {
+    "title": "Betuka (From \"Nakhrewaalii\")",
+    "artist": "Vayu, Sharan Rawat",
+    "lang": "new",
+    "mood": "stylish, nakhrewaali vibe"
+   },
+   {
+    "title": "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Mayur Puri",
+    "lang": "new",
+    "mood": "soft, pyaari tareef"
+   }
+  ],
+  "proof": {
+   "state": "ok",
+   "issues": [],
+   "fixed": [
+    "removed weak photo slide(s) [2]"
+   ]
+  },
+  "created_at": "2026-11-21T08:35:40+00:00"
+ },
+ {
   "id": "reel_news_am-2026-11-21",
   "image": "posts/20261121-0635-reel_news_am-2026-11-21.jpg",
   "kind": "reel",
@@ -287,105 +334,5 @@
    ]
   },
   "created_at": "2026-11-20T10:35:39+00:00"
- },
- {
-  "id": "reel_break_noon-2026-11-20",
-  "image": "posts/20261120-0834-reel_break_noon-2026-11-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261120-083425-reel_break_noon-2026-11-20.mp4",
-  "headline": "Samantha Ruth Prabhu, Raj Nidimoru Welcome First Child, Name Baby Boy Dev Nidimoru",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Samantha Ruth Prabhu Raj Nidimoru baby boy Dev Nidimoru 👶\nSamantha aur Raj Nidimoru ne bête ka swagat kiya.\nNaam bataya: Dev Nidimoru. Instagram par photo bhi share ki.\nUnhone likha: \"The happiest our hearts have ever been.\"\nIs jodi ko badhai dene ke liye ek emoji likho: dil ❤️\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: ABP Live (link pinned in comments 👇)\n\n#samantharuthprabhu #rajnidimoru #bollywoodnews #newbaby #reelsindia\n\n(Samantha Ruth Prabhu, Raj Nidimoru, Dev Nidimoru, Samantha baby boy, Samantha Raj baby, Samantha Raj Instagram post, Samantha Raj parents, Samantha Ruth Prabhu news)",
-  "source": "ABP Live",
-  "source_url": "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797",
-  "pin_comment": "Apne Samantha fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Jo Tum Mere Ho",
-    "artist": "Anuv Jain",
-    "lang": "hindi",
-    "mood": "pyaar bhara family moment"
-   },
-   {
-    "title": "Heeriye (feat. Arijit Singh)",
-    "artist": "Jasleen Royal, Arijit Singh",
-    "lang": "hindi",
-    "mood": "soft romantic couple vibe"
-   },
-   {
-    "title": "Judi Jodi (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "jodi ka celebration"
-   },
-   {
-    "title": "Karam Farma De (From \"Meethe Mein Kya Hai\")",
-    "artist": "Amit Trivedi, Kumaar",
-    "lang": "new",
-    "mood": "baby ke liye dua, blessing"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: Article does not say this is their first child",
-    "Fact corrected to match the article: Article does not say it is their first child"
-   ],
-   "fixed": [
-    "ne apne pehle bête ka swagat kiya → ne bête ka swagat kiya",
-    "Samantha Raj first child → Samantha Raj baby"
-   ]
-  },
-  "created_at": "2026-11-20T08:34:25+00:00"
- },
- {
-  "id": "reel_news_am-2026-11-20",
-  "image": "posts/20261120-0635-reel_news_am-2026-11-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261120-063551-reel_news_am-2026-11-20.mp4",
-  "headline": "Sharad Kapoor says Josh co-star Shah Rukh Khan called him after his emotional appeal for work, reveals plan to meet Aryan Khan",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sharad Kapoor Shah Rukh Khan call Josh co-star help 🙏\nJosh actor Sharad Kapoor ne kaam ke liye appeal ki thi, jo viral hui.\nUske baad Shah Rukh Khan ne unhe call karke madad ka bharosa diya.\nSharad ne bataya ki woh Aryan Khan se milne ka plan bana rahe hain.\nShah Rukh ki is dosti ko 10 mein se kitne? Number likho 👇 Save bhi kar lo 🔖\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#ShahRukhKhan #SharadKapoor #Bollywood #Josh #reelsindia\n\n(Sharad Kapoor, Shah Rukh Khan, Josh movie, Sharad Kapoor appeal for work, Aryan Khan, Sonu Sood, Salman Khan, Josh co-star)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html",
-  "pin_comment": "Ye Shah Rukh ke har fan ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Samjhawan",
-    "artist": "Jawad Ahmad, Shaarib Toshi, Arijit Singh, Shreya Ghoshal",
-    "lang": "hindi",
-    "mood": "dosti aur sahara ka emotional moment"
-   },
-   {
-    "title": "Mann Mera",
-    "artist": "Gajendra Verma",
-    "lang": "hindi",
-    "mood": "dil chhoo lene wali feeling"
-   },
-   {
-    "title": "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
-    "artist": "Himesh Reshammiya, Kumaar",
-    "lang": "new",
-    "mood": "saath dene ka warm vibe"
-   },
-   {
-    "title": "O Ragho (From \"Ramayana\")",
-    "artist": "Shubham Shirule, Kumar Vishwas",
-    "lang": "new",
-    "mood": "bharosa aur madad ka bhaav"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The quoted words 'Main help karunga' are not Shah Rukh's actual quote in the article (he said he is ready to help and to do whatever he likes); invented direct quote."
-   ],
-   "fixed": [
-    "Sharad Kapoor ke mutabiq Shah Rukh ne call kiya: \"Main help karunga.\" → Sharad Kapoor ke mutabiq Shah Rukh ne call karke madad ke liye taiyar hone ki baat kahi."
-   ]
-  },
-  "created_at": "2026-11-20T06:35:51+00:00"
  }
 ]
