@@ -506,7 +506,7 @@
   "reel_news_aft": "2026-11-19",
   "reel_poll": "2026-10-19",
   "reel_official": "2026-10-28",
-  "reel_news_early": "2026-11-20",
+  "reel_news_early": "2026-11-21",
   "reel_rotate": "2026-10-22",
   "reel_break_am": "2026-11-20",
   "reel_break_noon": "2026-11-20",
@@ -906,7 +906,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/samantha-ruth-prabhu-skips-elaborate-maternity-shoot-shares-relaxed-picture-with-baby-bump-101794277459177.html",
   "https://www.hindustantimes.com/entertainment/bollywood/ramayana-actor-indira-krishnan-defends-sai-pallavi-sita-wielding-a-sword-ramanand-sagar-show-nitesh-tiwari-namit-malhotra-ranbir-kapoor-101794282592382.html",
   "https://www.newsx.com/entertainment/watch-video-definitely-not-in-our-bed-sidharth-malhotras-cheeky-remark-as-pregnant-kiara-advani-flaunts-baby-bump-on-koffee-with-karan-9-291225/",
   "https://www.hindustantimes.com/entertainment/bollywood/mahabharat-star-nitish-bharadwaj-goes-from-predicting-oscar-for-ramayana-to-criticising-it-ranbir-kapoor-sai-pallavi-nitesh-tiwari-101794298751230.html",
@@ -985,7 +984,8 @@
   "https://www.hindustantimes.com/entertainment/bollywood/sharad-kapoor-says-josh-co-star-shah-rukh-khan-called-him-after-his-emotional-appeal-for-work-reveals-plan-to-meet-aryan-khan-101795140320242.html",
   "https://news.abplive.com/entertainment/celebrities/samantha-ruth-prabhu-raj-nidimoru-welcome-first-child-name-baby-boy-dev-nidimoru-1876797",
   "https://www.thehindu.com/entertainment/movies/om-operation-mole-mammootty-dhanush-sai-pallavi-rajkumar-periasamy-sai-abhyankkar/article71723402.ece",
-  "https://www.hindustantimes.com/entertainment/bollywood/anil-kapoor-meets-french-president-emmanuel-macron-in-paris-gets-a-tour-of-his-office-101795178665304.html"
+  "https://www.hindustantimes.com/entertainment/bollywood/anil-kapoor-meets-french-president-emmanuel-macron-in-paris-gets-a-tour-of-his-office-101795178665304.html",
+  "https://scroll.in/article/1097218/nikhil-gupta-sentenced-for-20-years-in-plot-to-assassinate-sikh-separatist-leader-in-new-york"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1202,10 +1202,6 @@
   }
  ],
  "songs_recent": [
-  "Azadi",
-  "Ez-Ez",
-  "Betuka (From \"Nakhrewaalii\")",
-  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
   "Barbaad",
   "Tera Zikr",
   "Afsaana Banaaya Aapne (From \"Gunmaaster G9\")",
@@ -1241,7 +1237,11 @@
   "Shani Dev Aarti",
   "Shani Chalisa",
   "Shani Dev Ki Aarti",
-  "Super Fast Shani Chalisa"
+  "Super Fast Shani Chalisa",
+  "Aaj Bhi 2",
+  "Rula Ke Gaya Ishq",
+  "Madirapan (From \"Maatrubhumi: May War Rest in Peace\")",
+  "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1265,38 +1265,6 @@
   "2115105371945922853"
  ],
  "reel_news_recent": [
-  {
-   "title": "‘Ramayana’ nears Rs 1,500 crore mark at worldwide box office",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Rubio rules out cyberattacks or links between tech outages",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Dia Mirza Shares Cryptic Post About Nawazuddin Siddiqui’s ‘Offensive Character’, Internet Smells ‘PR Stunt’",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Dia Mirza Shares Cryptic Post About Nawazuddin Siddiqui’s ‘Offensive Character’, Internet Smells ‘PR Stunt’",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Prince William's Bole Chudiyan moment with KJo, Kareena and Saif at Dharma. Watch",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Dhanush, Juhi Chawla, Varun Dhawan react to MS Dhoni's IPL retirement, say ‘game will never be quite the same’",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Sidharth Malhotra and Kiara Advani request privacy after daughter Saraayah’s face appears in airport video",
-   "date": "2026-11-18"
-  },
-  {
-   "title": "Yeh Prem Mol Liya trailer out: Sooraj Barjatya brings a tale of a modern marriage with Ayushmann Khurrana and Sharvari",
-   "date": "2026-11-18"
-  },
   {
    "title": "Lara Dutta, Mahesh Bhupati's Daughter Saira Wins Tennis Championship In UAE; Actor Shares Proud Moment",
    "date": "2026-11-19"
@@ -1348,6 +1316,10 @@
   {
    "title": "Anil Kapoor meets French President Emmanuel Macron in Paris, gets a tour of his office",
    "date": "2026-11-20"
+  },
+  {
+   "title": "Nikhil Gupta sentenced for 20 years in plot to assassinate Sikh separatist leader in New York",
+   "date": "2026-11-21"
   }
  ],
  "claude_limit": {

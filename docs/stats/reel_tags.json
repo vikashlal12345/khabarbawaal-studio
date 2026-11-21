@@ -2832,5 +2832,32 @@
   "secs": 16.9,
   "at": "2026-11-21T01:03:48+00:00",
   "type": "devotional"
+ },
+ {
+  "id": "reel_news_early-2026-11-21",
+  "key": "nikhilguptasentencedto19years7monthsnewyorkplotcase",
+  "kind": "reel_news_early",
+  "secs": 19.0,
+  "at": "2026-11-21T02:36:39+00:00",
+  "type": "news",
+  "bar": 3,
+  "mega": 1,
+  "pool": [
+   "(under 1 h ago) Nikhil Gupta sentenced for 20 years in plot to assassin"
+  ],
+  "n_stories": 1,
+  "strength": 1,
+  "pick_no": 1,
+  "age_h": 0.0,
+  "topic": "other",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 46,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

@@ -1,5 +1,58 @@
 [
  {
+  "id": "reel_news_early-2026-11-21",
+  "image": "posts/20261121-0236-reel_news_early-2026-11-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261121-023639-reel_news_early-2026-11-21.mp4",
+  "headline": "Nikhil Gupta sentenced for 20 years in plot to assassinate Sikh separatist leader in New York",
+  "tag": "🎬 REEL · BREAKING",
+  "caption": "Nikhil Gupta sentenced to 19 years 7 months New York plot case 🚨\nNew York mein ek Sikh separatist leader ko maarne ki saazish ke case mein Nikhil Gupta ko 19 saal 7 mahine ki saza suna di gayi hai.\nYe khabar aaj kai sites par chal rahi hai.\nAapka kya kehna hai? Ek word likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Scroll (link pinned in comments 👇)\n\n#NikhilGupta #BreakingNews #NewYork #IndiaNews #reelsindia\n\n(Nikhil Gupta, Nikhil Gupta sentenced, Nikhil Gupta 19 years 7 months, New York plot case, Sikh separatist leader, assassination plot New York, Nikhil Gupta verdict, US court sentence)",
+  "source": "Scroll",
+  "source_url": "https://scroll.in/article/1097218/nikhil-gupta-sentenced-for-20-years-in-plot-to-assassinate-sikh-separatist-leader-in-new-york",
+  "pin_comment": "Ye khabar apne un dost ko bhejo jo news follow karte hain 👇",
+  "songs": [
+   {
+    "title": "Aaj Bhi 2",
+    "artist": "Vishal Mishra",
+    "lang": "hindi",
+    "mood": "serious, heavy news tone"
+   },
+   {
+    "title": "Rula Ke Gaya Ishq",
+    "artist": "Stebin Ben",
+    "lang": "hindi",
+    "mood": "sombre mood for verdict"
+   },
+   {
+    "title": "Madirapan (From \"Maatrubhumi: May War Rest in Peace\")",
+    "artist": "Himesh Reshammiya",
+    "lang": "new",
+    "mood": "intense, dramatic backdrop"
+   },
+   {
+    "title": "Tujh Mein Basi Meri Jaan (From \"Prahaar: The Untold Story Of Ujjwal Nikam\")",
+    "artist": "Pritam, Amitabh Bhattacharya",
+    "lang": "new",
+    "mood": "court and justice vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: Article says 19 years and seven months, not 20 years",
+    "Fact corrected to match the article: Sentence was 19 years 7 months",
+    "Fact corrected to match the article: Sentence was 19 years 7 months"
+   ],
+   "fixed": [
+    "sentenced 20 years → sentenced to 19 years 7 months",
+    "ko 20 saal ki saza → ko 19 saal 7 mahine ki saza",
+    "Nikhil Gupta 20 years → Nikhil Gupta 19 years 7 months"
+   ]
+  },
+  "created_at": "2026-11-21T02:36:39+00:00"
+ },
+ {
   "id": "reel_devotion-2026-11-21",
   "image": "posts/20261121-0103-reel_devotion-2026-11-21.jpg",
   "kind": "reel",
@@ -285,54 +338,5 @@
    "fixed": []
   },
   "created_at": "2026-11-20T04:35:08+00:00"
- },
- {
-  "id": "reel_news_early-2026-11-20",
-  "image": "posts/20261120-0235-reel_news_early-2026-11-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261120-023542-reel_news_early-2026-11-20.mp4",
-  "headline": "Sameera Reddy says South cinema gave her far more respect, money and stardom than Bollywood | Interview",
-  "tag": "🎬 REEL · BOLLYWOOD",
-  "caption": "Sameera Reddy South cinema vs Bollywood interview 🎬\nSameera ne kaha ki South cinema ne unhe Bollywood se zyada respect, paisa aur stardom diya.\nUnhone filmon mein nayi maaon ke working hours ki debate par bhi apni baat rakhi.\nSameera ki baat sahi hai? SAHI ya GALAT likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Hindustan Times (link pinned in comments 👇)\n\n#sameerareddy #bollywood #southcinema #bollywoodnews #reelsindia\n\n(Sameera Reddy interview, Sameera Reddy South cinema, Sameera Reddy Bollywood, Sameera Reddy working hours, new mothers films, Hindustan Times interview, Bollywood vs South cinema, working hours debate)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/sameera-reddy-says-south-cinema-gave-her-far-more-respect-money-and-stardom-than-bollywood-interview-101795087996258.html",
-  "pin_comment": "Ye apni kaam-kaaji dost ko bhejo jise izzat chahiye 👇",
-  "songs": [
-   {
-    "title": "Sahiba",
-    "artist": "Jasleen Royal, Stebin Ben",
-    "lang": "hindi",
-    "mood": "apni pehchaan ki ladai"
-   },
-   {
-    "title": "Khat",
-    "artist": "Navjot Ahuja",
-    "lang": "hindi",
-    "mood": "dil ki baat, emotional tone"
-   },
-   {
-    "title": "Mangal Rang (From \"Ramayana\")",
-    "artist": "A.R. Rahman, Kumar Vishwas",
-    "lang": "new",
-    "mood": "calm, respectful vibe"
-   },
-   {
-    "title": "Tu Mil Jaaye (From \"KING\")",
-    "artist": "Sachin-Jigar, Ed Sheeran",
-    "lang": "new",
-    "mood": "soft, reflective mood"
-   }
-  ],
-  "proof": {
-   "state": "check",
-   "issues": [
-    "Fact corrected to match the article: The article never mentions an 8-hour shift; it only discusses working hours for new mothers."
-   ],
-   "fixed": [
-    "8 hour shift debate → working hours debate"
-   ]
-  },
-  "created_at": "2026-11-20T02:35:42+00:00"
  }
 ]
