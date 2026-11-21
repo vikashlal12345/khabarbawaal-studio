@@ -2971,5 +2971,38 @@
   "photos": 2,
   "short": true,
   "flow": 1
+ },
+ {
+  "id": "reel_break_night-2026-11-21",
+  "key": "sunielshettyklrahulcenturynewzealandtest",
+  "kind": "reel_break_night",
+  "secs": 17.0,
+  "at": "2026-11-21T13:34:46+00:00",
+  "type": "breaking",
+  "bar": 0,
+  "pool": [
+   "(3 h ago) 'A Little Miracle, All Over Again': Dheeraj Dhoopar And",
+   "(4 h ago) Madhur Bhandarkar says Dhurandhar was the right choice ",
+   "(1 h ago) IFFI 2026 | ‘Fatherland’ producer Ewa Puszczyńska: Film",
+   "(1 h ago) Suniel Shetty hails son-in-law KL Rahul after historic ",
+   "(under 1 h ago) Prabhas tops Ormax Media’s Stars India Loves October 20",
+   "(under 1 h ago) Chitrangda Singh Says Army Roots Made Maatrubhumi More ",
+   "(1 h ago) Hanuman Ansh director Vishal Chaturvedi calls out indus",
+   "(2 h ago) Diljit's Ahmedabad concert faces objection over four so",
+   "(2 h ago) 'Yeh Prem Mol Liya' OTT platform: When and where to wat",
+   "(4 h ago) The Calf Doll’s Ankur Hooda: ‘Haryana’s cinema has bare"
+  ],
+  "n_stories": 10,
+  "strength": 7,
+  "pick_no": 4,
+  "age_h": 1.1,
+  "cover": "full",
+  "photos": 2,
+  "sharp": 38,
+  "topic": "couple_family",
+  "kw": 8,
+  "relate": "verdict",
+  "hook_rule": "detail1",
+  "hook": "question"
  }
 ]
