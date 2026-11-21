@@ -29,6 +29,23 @@ if not host:
 now = datetime.now(timezone.utc)
 cutoff = now - timedelta(days=days)
 
+if only == "competitors":
+    import json as _j
+    cfg = _j.load(open("config.json"))
+    names = cfg.get("competitors") or []
+    names = [n["username"] if isinstance(n, dict) else n for n in names]
+    comp = {}
+    for nm in names:
+        fields = (f"business_discovery.username({nm}){{username,followers_count,media_count,media.limit(50){{timestamp,like_count,comments_count,media_product_type}}}}")
+        st, body = M.get(host, M.IG_ID, {"fields": fields})
+        if st != 200:
+            print("COMP", nm, "ERR", M.err(body)[:80]); continue
+        bd = body.get("business_discovery") or {}
+        comp[nm] = {"followers": bd.get("followers_count"), "media": (bd.get("media") or {}).get("data", [])}
+        print("COMP", nm, bd.get("followers_count"), len(comp[nm]["media"]), flush=True)
+    json.dump(comp, open(out / "competitors_raw.json", "w"), ensure_ascii=False)
+    sys.exit(0)
+
 if only in ("all", "account"):
     acct = {"daily": []}
     for k in range(days, -1, -1):
