@@ -2943,5 +2943,33 @@
   "relate": "predict",
   "hook_rule": "detail1",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_pm-2026-11-21",
+  "key": "dadasahebphalkeawards2026ranveersingh",
+  "kind": "reel_news_pm",
+  "secs": 17.8,
+  "at": "2026-11-21T10:34:58+00:00",
+  "type": "news",
+  "bar": 4,
+  "pool": [
+   "(3 h ago) Dadasaheb Phalke International Film Festival Awards 202",
+   "(2 h ago) Dadasaheb Phalke Awards 2026: Dhurandhar, Saiyaara Lead",
+   "(2 h ago) Kaun Banega Crorepati 18: Bhushan Thakare becomes first"
+  ],
+  "n_stories": 3,
+  "strength": 4,
+  "pick_no": 2,
+  "age_h": 1.9,
+  "topic": "other",
+  "kw": 7,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 45,
+  "hook_rule": "detail1",
+  "hook": "name_first",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]

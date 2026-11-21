@@ -361,7 +361,8 @@
   "d9b4756385c4",
   "40fd088dbfc5",
   "cfe1cc1276e7",
-  "84e7f9b900f1"
+  "84e7f9b900f1",
+  "b09a9234228e"
  ],
  "recent_headlines": [
   "[BOLLYWOOD] Soundarya Rajinikanth Defends Katrina Kaif Amid Trolling Over Her Postpartum Weight Gain",
@@ -499,7 +500,7 @@
   "reel_news": "2026-10-18",
   "night_picture": "2026-10-15",
   "reel_devotion": "2026-11-21",
-  "reel_news_pm": "2026-11-20",
+  "reel_news_pm": "2026-11-21",
   "reel_top5": "2026-10-14",
   "reel_top5_am": "2026-10-15",
   "reel_news_am": "2026-11-21",
@@ -517,7 +518,7 @@
   "reel_flash": "2026-11-01",
   "reel_break_night": "2026-11-20"
  },
- "inbox_since": "U76KHI99QsEl",
+ "inbox_since": "DscOFQY9nLqJ",
  "used_otps": [
   "787116:59703335",
   "814441:59708591",
@@ -908,7 +909,6 @@
   "https://www.news9live.com/india/abhijeet-dipke-says-instagram-crackdown-by-centre-many-posts-blocked-claims-cjp-3019861"
  ],
  "reel_news_used": [
-  "https://www.hindustantimes.com/entertainment/bollywood/national-award-winner-vfx-expert-arun-kumar-says-criticism-around-ramayana-jailer-2-dada-visuals-based-on-growing-confusion-on-cgi-vs-ai-ht-exclusive-101792580592166.html",
   "https://www.bollywoodhungama.com/news/bollywood/ramayana-chennai-event-ranbir-kapoor-apologizes-for-achhai-burai-slip-of-tongue-says-jo-bhi-main-kehna-chahoon-barbaad-karein-alfaaz-mere/",
   "https://www.hindustantimes.com/entertainment/bollywood/ar-rahman-reveals-2014-email-that-predicted-his-ramayana-journey-now-composing-with-hans-zimmer-ranbir-kapoor-nitesh-tiwari-yash-101792646898974.html",
   "https://www.hindustantimes.com/india-news/tiger-shroff-firing-attack-accused-bihar-delhi-mumbai-police-probe-101792655052901.html",
@@ -987,7 +987,8 @@
   "https://scroll.in/article/1097218/nikhil-gupta-sentenced-for-20-years-in-plot-to-assassinate-sikh-separatist-leader-in-new-york",
   "https://www.dnaindia.com/bollywood/report-ramayana-box-office-collection-day-16-yash-film-beats-kgf-2-to-become-his-biggest-blockbuster-in-india-3224422",
   "https://www.bollywoodhungama.com/news/bollywood/salman-khan-apologises-to-shraddha-kapoor-over-maatrubhumi-and-eetha-box-office-clash-i-feel-really-really-bad-about-it/",
-  "https://timesofindia.indiatimes.com/tv/news/hindi/bigg-boss-20-gauahar-khan-calls-amrapali-dubey-indian-beauty-says-every-time-i-see-her-on-screen-even-without-makeup-the-screen-is-lit/articleshow/136043962.cms"
+  "https://timesofindia.indiatimes.com/tv/news/hindi/bigg-boss-20-gauahar-khan-calls-amrapali-dubey-indian-beauty-says-every-time-i-see-her-on-screen-even-without-makeup-the-screen-is-lit/articleshow/136043962.cms",
+  "https://news.abplive.com/entertainment/dadasaheb-phalke-awards-2026-dhurandhar-saiyaara-lead-ranveer-singh-aneet-padda-take-top-honours-1876921"
  ],
  "devotion_images_used": [
   "Godess Durga painting.JPG",
@@ -1204,10 +1205,6 @@
   }
  ],
  "songs_recent": [
-  "Gehra Hua",
-  "Darkhaast",
-  "O Mysaa Re (From \"Mysaa\") [Hindi]",
-  "Bam Bam (From \"Ganesh : Dust To Stardust\")",
   "Samjhawan",
   "Mann Mera",
   "Tum Jeene Ki Wajah Ho (From \"Yeh Prem Mol Liya\")",
@@ -1243,7 +1240,11 @@
   "Peek A Boo",
   "Madhosh",
   "Betuka (From \"Nakhrewaalii\")",
-  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")"
+  "Saawan Aaya Hai (From \"Yeh Prem Mol Liya\")",
+  "Ishq Jalakar - Karvaan (From \"Dhurandhar\")",
+  "Tabaahi (From \"Toxic\")",
+  "Do Din Ki Zindagi (From \"Gunmaaster G9\")",
+  "Gunmaaster G9 (Title Track) (From \"Gunmaaster G9\")"
  ],
  "poll_recent": [
   "apps: WhatsApp Guest Calling launch: which video call app wins, Zoom, Meet, Teams or WhatsApp?",
@@ -1333,6 +1334,10 @@
   },
   {
    "title": "Bigg Boss 20: Gauahar Khan calls Amrapali Dubey ‘Indian beauty’, says, 'Every time I see her on screen even without makeup, the screen is lit'",
+   "date": "2026-11-21"
+  },
+  {
+   "title": "Dadasaheb Phalke Awards 2026: Dhurandhar, Saiyaara Lead; Ranveer Singh, Aneet Padda Take Top Honours",
    "date": "2026-11-21"
   }
  ],
