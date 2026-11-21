@@ -82,6 +82,16 @@ if only in ("all", "reels"):
             st2, ins = M.get(host, f"{x['id']}/insights", {"metric": "views,reach,likes,comments,shares,saved,ig_reels_avg_watch_time"})
         v = {d["name"]: (d.get("values") or [{}])[0].get("value") for d in ins.get("data", [])} if st2 == 200 else {}
         rec = {"id": x["id"], "time": x["timestamp"], "type": x.get("media_product_type"), "caption": x.get("caption") or "", "permalink": x.get("permalink"), **v}
+        th = x.get("thumbnail_url")
+        if th:   # the cover image Instagram shows (first frame / chosen cover), resized small
+            try:
+                tf = out / f"th_{x['id']}.src"
+                urllib.request.urlretrieve(th, tf)
+                subprocess.run([FF, "-loglevel", "error", "-i", str(tf), "-vf", "scale=270:-1", "-q:v", "6", str(out / "frames" / f"{x['id']}_cover.jpg"), "-y"], capture_output=True)
+                tf.unlink()
+            except Exception as e:
+                rec["thumb_error"] = str(e)[:80]
+        rec["has_media_url"] = bool(x.get("media_url"))
         url = x.get("media_url")
         dur = None
         if url and x.get("media_product_type") == "REELS":
