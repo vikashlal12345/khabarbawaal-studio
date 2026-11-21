@@ -1,5 +1,54 @@
 [
  {
+  "id": "reel_news_am-2026-11-21",
+  "image": "posts/20261121-0635-reel_news_am-2026-11-21.jpg",
+  "kind": "reel",
+  "media": "reel",
+  "video": "posts/20261121-063518-reel_news_am-2026-11-21.mp4",
+  "headline": "Salman Khan apologises to Shraddha Kapoor over Maatrubhumi and Eetha box office clash: “I feel really, really bad about it”",
+  "tag": "🎬 REEL · BOLLYWOOD",
+  "caption": "Salman Khan apologises to Shraddha Kapoor, Maatrubhumi vs Eetha box office clash 🎬\nSalman ki film Maatrubhumi: May War Rest in Peace aur Shraddha ki biopic Eetha ek hi time par aa rahi hain.\nSalman ne is clash par kaha: \"I feel really, really bad about it\".\nSalman ka Shraddha se maafi maangna sahi tha? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki viral khabar, sabse pehle 🔥\nSource: Bollywood Hungama (link pinned in comments 👇)\n\n#salmankhan #shraddhakapoor #bollywood #bollywoodnews #reelsindia\n\n(Salman Khan, Shraddha Kapoor, Salman Khan apologises Shraddha Kapoor, Maatrubhumi, Eetha, Maatrubhumi May War Rest in Peace, Maatrubhumi vs Eetha box office clash, Salman Khan interview)",
+  "source": "Bollywood Hungama",
+  "source_url": "https://www.bollywoodhungama.com/news/bollywood/salman-khan-apologises-to-shraddha-kapoor-over-maatrubhumi-and-eetha-box-office-clash-i-feel-really-really-bad-about-it/",
+  "pin_comment": "Apne Salman fan dost ko bhejo 👇",
+  "songs": [
+   {
+    "title": "Soulmate",
+    "artist": "Badshah, Arijit Singh",
+    "lang": "hindi",
+    "mood": "maafi aur dosti ka vibe"
+   },
+   {
+    "title": "Dilruba Dilnasheen",
+    "artist": "Rito Riba, Siddhant Kaushal",
+    "lang": "hindi",
+    "mood": "soft, dil se baat"
+   },
+   {
+    "title": "Saala Pyaar (From \"Mr. & Mrs. Grey\")",
+    "artist": "Vishal Shelke, Ghulam Mohd. Khavar",
+    "lang": "new",
+    "mood": "naya gaana, dil wali baat"
+   },
+   {
+    "title": "Jhumka Patola (From \"Yeh Prem Mol Liya\")",
+    "artist": "Himesh Reshammiya, Sonia Kapoor Reshammiya",
+    "lang": "new",
+    "mood": "light Bollywood vibe"
+   }
+  ],
+  "proof": {
+   "state": "check",
+   "issues": [
+    "Fact corrected to match the article: This is Salman's account of the call, so it should be attributed to him and not stated as fact."
+   ],
+   "fixed": [
+    "Shraddha ne Salman se kaha, sir dono films ke liye jagah hai. → Salman ke mutabik, Shraddha ne kaha, sir dono films ke liye jagah hai."
+   ]
+  },
+  "created_at": "2026-11-21T06:35:18+00:00"
+ },
+ {
   "id": "reel_break_am-2026-11-21",
   "image": "posts/20261121-0435-reel_break_am-2026-11-21.jpg",
   "kind": "reel",
@@ -338,50 +387,5 @@
    ]
   },
   "created_at": "2026-11-20T06:35:51+00:00"
- },
- {
-  "id": "reel_break_am-2026-11-20",
-  "image": "posts/20261120-0435-reel_break_am-2026-11-20.jpg",
-  "kind": "reel",
-  "media": "reel",
-  "video": "posts/20261120-043508-reel_break_am-2026-11-20.mp4",
-  "headline": "Saif Ali Khan receives death threat in the name of Baba Siddique's alleged killers; police launch investigation",
-  "tag": "🎬 REEL · ⚡ BREAKING CARD",
-  "caption": "Saif Ali Khan death threat, Zeeshan Akhtar voice message, Mumbai Police jaanch\nMumbai Police ke mutabiq Saif ko Zeeshan Akhtar ke naam se voice message mila.\nMessage mein Baba Siddique jaisa anjaam hone ki baat kahi gayi.\nPolice dekh rahi hai ki threat asli hai ya AI se kisi ne naam use kiya.\nSaif ki security badhni chahiye? HAAN ya NA likho 👇\n\nFollow @khabarbawaal: roz ki breaking khabar, sabse pehle ⚡\nSource: Hindustan Times (link pinned in comments 👇)\n\n#saifalikhan #bollywood #breakingnews #mumbaipolice #reelsindia\n\n(Saif Ali Khan, Saif Ali Khan death threat, Zeeshan Akhtar, Baba Siddique, Mumbai Police, Saif Kareena, Bollywood threat news, Saif Ali Khan news today)",
-  "source": "Hindustan Times",
-  "source_url": "https://www.hindustantimes.com/entertainment/bollywood/saif-ali-khan-receives-death-threat-in-the-name-of-baba-siddiques-alleged-killers-police-launch-investigation-101795141254625.html",
-  "pin_comment": "Apne Saif Ali Khan fan dost ko bhejo 👇",
-  "songs": [
-   {
-    "title": "Gehra Hua",
-    "artist": "Shashwat Sachdev, Arijit Singh, Irshad Kamil, Armaan Khan",
-    "lang": "hindi",
-    "mood": "serious, gambhir mood"
-   },
-   {
-    "title": "Darkhaast",
-    "artist": "Mithoon, Arijit Singh, Sunidhi Chauhan, Sayeed Quadri",
-    "lang": "hindi",
-    "mood": "chinta aur dard ka mood"
-   },
-   {
-    "title": "O Mysaa Re (From \"Mysaa\") [Hindi]",
-    "artist": "Jakes Bejoy, Neha Sandeep Shitole",
-    "lang": "new",
-    "mood": "calm serious background"
-   },
-   {
-    "title": "Bam Bam (From \"Ganesh : Dust To Stardust\")",
-    "artist": "Junaid Kumar, Ganesh Acharya",
-    "lang": "new",
-    "mood": "tez beat, alert feel"
-   }
-  ],
-  "proof": {
-   "state": "ok",
-   "issues": [],
-   "fixed": []
-  },
-  "created_at": "2026-11-20T04:35:08+00:00"
  }
 ]

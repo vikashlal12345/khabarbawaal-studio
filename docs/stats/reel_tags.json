@@ -2885,5 +2885,35 @@
   "relate": "rating",
   "hook_rule": "detail1",
   "hook": "question"
+ },
+ {
+  "id": "reel_news_am-2026-11-21",
+  "key": "salmankhanapologisestoshraddhakapoormaatrubhumivseethaboxoff",
+  "kind": "reel_news_am",
+  "secs": 17.8,
+  "at": "2026-11-21T06:35:18+00:00",
+  "type": "news",
+  "bar": 6,
+  "pool": [
+   "(under 1 h ago) Bigg Boss Malayalam 8: Shibina reacts to Goutham's rema",
+   "(under 1 h ago) Salman Khan apologises to Shraddha Kapoor over Maatrubh",
+   "(under 1 h ago) Salman Khan apologises to Shraddha Kapoor over Maatrubh",
+   "(under 1 h ago) 'Hanuman Ansh' Vishal Chaturvedi calls Ranbir Kapoor's ",
+   "(1 h ago) Salman explains why he avoided 'Maatrubhumi' and 'King'"
+  ],
+  "n_stories": 5,
+  "strength": 8,
+  "pick_no": 2,
+  "age_h": -2.3,
+  "topic": "gossip",
+  "kw": 8,
+  "relate": "verdict",
+  "cover": "window",
+  "sharp": 46,
+  "hook_rule": "detail1",
+  "hook": "question",
+  "photos": 2,
+  "short": true,
+  "flow": 1
  }
 ]
